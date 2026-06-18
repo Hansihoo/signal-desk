@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Local generated data
+data/*.sqlite
+data/*.sqlite-*
+data/raw/*
+!data/raw/.gitkeep
+
+# Generated reports and rendered output
+reports/*.md
+reports/*.png
+!reports/.gitkeep
+site/*.html
+site/*.png
+!site/.gitkeep
+
+# Local environment
+.env
+.venv/
+venv/
+

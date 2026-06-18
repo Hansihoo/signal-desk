@@ -1,0 +1,71 @@
+{
+  "project": {
+    "name": "housing-watch",
+    "timezone": "Asia/Seoul",
+    "database_path": "data/housing_watch.sqlite"
+  },
+  "interest": {
+    "keywords": [
+      "청년",
+      "행복주택",
+      "청년안심주택",
+      "역세권",
+      "서울",
+      "경기",
+      "인천",
+      "매입임대",
+      "전세임대",
+      "공공임대"
+    ],
+    "regions": ["서울", "서울특별시", "경기", "경기도"],
+    "preferred_statuses": ["모집중", "접수중", "공고중", "정정공고중"]
+  },
+  "sources": [
+    {
+      "id": "seoul_lh_public_lease_seoul",
+      "enabled": true,
+      "kind": "seoul_housing_table",
+      "layout": "lh",
+      "agency": "LH",
+      "name": "서울주거포털 LH 공공임대 서울",
+      "url": "https://housing.seoul.go.kr/site/main/lh/publicLease/list",
+      "params": {
+        "cnpCdNm": "seoul"
+      },
+      "collect_details": true
+    },
+    {
+      "id": "seoul_lh_public_lease_gyeonggi",
+      "enabled": true,
+      "kind": "seoul_housing_table",
+      "layout": "lh",
+      "agency": "LH",
+      "name": "서울주거포털 LH 공공임대 경기",
+      "url": "https://housing.seoul.go.kr/site/main/lh/publicLease/list",
+      "params": {
+        "cnpCdNm": "gg"
+      },
+      "collect_details": true
+    },
+    {
+      "id": "seoul_sh_public_lease",
+      "enabled": true,
+      "kind": "seoul_housing_table",
+      "layout": "sh",
+      "agency": "SH",
+      "name": "서울주거포털 SH 공공임대",
+      "region": "서울",
+      "url": "https://housing.seoul.go.kr/site/main/sh/publicLease/07/list",
+      "collect_details": true
+    },
+    {
+      "id": "lh_openapi_lease_notice",
+      "enabled": false,
+      "kind": "lh_openapi",
+      "agency": "LH",
+      "name": "공공데이터포털 LH 분양임대공고문 조회",
+      "requires_env": "DATA_GO_KR_SERVICE_KEY",
+      "url": "http://apis.data.go.kr/B552555/lhLeaseNoticeInfo1/getLeaseNoticeInfo1"
+    }
+  ]
+}
