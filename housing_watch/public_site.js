@@ -242,12 +242,12 @@
 
   $('brand-link').href = data.prefix + 'index.html';
   $('home-link').href = data.prefix + 'index.html';
-  $('archive-link').href = requestedReport ? homeUrl + '#archive' : '#archive';
+  $('archive-link').href = requestedReport || isOpportunity ? homeUrl + '#archive' : '#archive';
   $('updated').textContent = (data.archived ? '보관된 브리핑 · ' : '마지막 갱신 · ') + timestamp(data.created_at) + ' · ' + items.length + '건의 기록';
   if (topicId || requestedReport) crumb(data.archived ? '보관 메인' : '리서치 메인', homeUrl);
   else crumb(data.archived ? '보관된 브리핑' : '리서치 메인');
-  if (selectedTopic) crumb(selectedTopic.name, section || requestedReport ? route(selectedTopic) : '');
-  if (section) crumb(section, requestedReport ? route(selectedTopic, section) : '');
+  if (selectedTopic) crumb(selectedTopic.name, section || requestedReport || templateView ? route(selectedTopic) : '');
+  if (section) crumb(section, requestedReport || templateView ? route(selectedTopic, section) : '');
   if (requestedReport) crumb('개별 기록');
   if (templateView) crumb('보고서 양식');
   if (selectedTopic && !requestedReport) {
