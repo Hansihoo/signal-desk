@@ -30,6 +30,7 @@ Implemented:
 - Saramin Open API live job fetch when `SIGNAL_DESK_SARAMIN_KEY` is configured,
 - automated review command,
 - searchable public dashboard and dated briefing archive at https://hansihoo.github.io/signal-desk/,
+- multi-topic research homepage, independent topic pages, and configurable public RSS/Atom research feeds,
 - daily GitHub Actions collection and Pages deployment with durable release snapshots,
 - tests for parsers, detail extraction, rendering, and review checks.
 
@@ -42,6 +43,7 @@ Current source scope:
 Current generated output:
 
 - `site/index.html`, `site/library.json`, `site/status.json`
+- `site/topics.json` and `site/research/<topic-id>/index.html`
 - `site/archive/YYYY-MM-DD/briefing.json` and `index.html`
 - `site/brief.html`
 - `reports/brief.png`
@@ -79,6 +81,10 @@ python -m housing_watch jobs --fetch saramin --no-image
 ```
 
 ## Current Product Decisions
+
+- The public product is a main research library containing extensible topics. Existing AI/housing/news are initial examples.
+- Add topic metadata and RSS/Atom feeds in `config/research_topics.json`; see `RESEARCH_HUB.md` for the contract and hosting limits.
+- No public accounts, user-input forms, or analytics SDKs are required. The hosting provider still records security access logs.
 
 - SQLite is the source of truth.
 - Markdown/HTML/PNG are generated outputs.

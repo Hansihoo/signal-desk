@@ -1,0 +1,28 @@
+{
+  "topics": [
+    {
+      "id": "ai",
+      "name": "AI 개발",
+      "description": "모델, 개발 도구, 오픈소스와 연구 동향을 모읍니다.",
+      "collector": "ai",
+      "detail_page": "ai-news.html",
+      "limit": 120,
+      "days": 7
+    },
+    {
+      "id": "housing",
+      "name": "청약·주거",
+      "description": "서울·경기 공식 주거 공고와 모집 일정을 확인합니다.",
+      "collector": "housing",
+      "detail_page": "brief.html"
+    },
+    {
+      "id": "news",
+      "name": "주간 뉴스",
+      "description": "사회, 경제와 세계의 주요 뉴스 원문을 모읍니다.",
+      "collector": "news",
+      "limit": 40,
+      "source": "auto"
+    }
+  ]
+}

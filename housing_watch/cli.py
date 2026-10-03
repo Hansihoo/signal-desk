@@ -136,6 +136,7 @@ def main(argv=None):
     publish = sub.add_parser("publish", help="build public-source dashboard and dated archive")
     publish.add_argument("--collect", action="store_true", help="refresh public sources before building")
     publish.add_argument("--output", default="site", help="static site output directory")
+    publish.add_argument("--topics", help="research topic registry JSON (default: config/research_topics.json)")
 
     args = parser.parse_args(argv)
     config = load_config(args.config)
@@ -144,8 +145,10 @@ def main(argv=None):
 
     if args.command == "publish":
         try:
-            health = collect_public_data(conn, config) if args.collect else []
-            result = build_public_site(conn, args.output, health)
+            from .research_topics import load_topics
+            topics = load_topics(args.topics)
+            health = collect_public_data(conn, config, topics) if args.collect else []
+            result = build_public_site(conn, args.output, health, topics)
             print("Wrote %(path)s: %(items)d public items, %(archives)d dated briefings" % result)
             for source in health:
                 if not source["ok"]:

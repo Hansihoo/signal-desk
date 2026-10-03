@@ -49,7 +49,7 @@ def collect_weekly_news(
     if not result:
         raise NewsFetchError("no news source returned items")
 
-    stats = upsert_news_items(conn, result["items"])
+    stats = upsert_news_items(conn, result["items"], source_ids=["gdelt_weekly", "google_news_top_ko", "google_news_world_ko"])
     record_snapshot(conn, result["source_id"], result["raw_path"], len(result["items"]))
     conn.commit()
     return {

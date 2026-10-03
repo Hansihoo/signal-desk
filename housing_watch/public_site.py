@@ -4,7 +4,6 @@ import html
 import json
 import re
 from pathlib import Path
-from urllib.parse import urlsplit
 
 from .ai_brief import render_ai_news_html
 from .ai_news import AINewsFetchError, collect_ai_news
@@ -12,13 +11,16 @@ from .config import enabled_sources
 from .db import all_items, record_snapshot, upsert_items
 from .news import NewsFetchError, collect_weekly_news
 from .render import render_brief_html
+from .research_topics import collect_topic_feeds, load_topics, public_url, topic_for_item
 from .sources import fetch_source
 from .timeutil import iso_utc, now_kst
 
 
-def collect_public_data(conn, config):
+def collect_public_data(conn, config, topics=None):
+    topics = topics if topics is not None else load_topics()
     health = []
-    for source in enabled_sources(config):
+    housing = next((topic for topic in topics if topic["collector"] == "housing"), None)
+    for source in enabled_sources(config) if housing else []:
         try:
             result = fetch_source(source)
             stats = upsert_items(conn, result["items"], config.get("interest", {}))
@@ -28,12 +30,17 @@ def collect_public_data(conn, config):
             print("%s: fetched=%d inserted=%d updated=%d" % (source["id"], len(result["items"]), stats["inserted"], stats["updated"]))
         except (OSError, ValueError, RuntimeError) as exc:
             health.append({"source": source["name"], "ok": False, "message": str(exc)})
-    for name, collector, options in [
-        ("AI 개발 소식", collect_ai_news, {"limit": 120, "days": 7}),
-        ("주간 뉴스", collect_weekly_news, {"source": "auto", "limit": 40}),
-    ]:
+    for topic in topics:
+        name = topic["name"]
+        if topic["collector"] == "housing":
+            continue
         try:
-            result = collector(conn, **options)
+            if topic["collector"] == "ai":
+                result = collect_ai_news(conn, limit=topic.get("limit", 120), days=topic.get("days", 7))
+            elif topic["collector"] == "news":
+                result = collect_weekly_news(conn, source=topic.get("source", "auto"), limit=topic.get("limit", 40))
+            else:
+                result = collect_topic_feeds(conn, topic)
             health.append({"source": name, "ok": True, "count": result["fetched"], "warnings": result["failures"]})
             print("%s: fetched=%d warnings=%d" % (name, result["fetched"], len(result["failures"])))
         except (OSError, ValueError, RuntimeError, AINewsFetchError, NewsFetchError) as exc:
@@ -41,7 +48,8 @@ def collect_public_data(conn, config):
     return health
 
 
-def public_library(conn):
+def public_library(conn, topics=None):
+    topics = topics if topics is not None else load_topics()
     entries = []
     for row in conn.execute("SELECT * FROM news_items ORDER BY published_at DESC, id DESC"):
         item = dict(row)
@@ -51,9 +59,12 @@ def public_library(conn):
             payload = {}
         if not isinstance(payload, dict):
             payload = {}
+        topic = topic_for_item(topics, item["source_id"])
+        if topic is None:
+            continue
         entries.append({
             "id": "news-%s" % item["id"],
-            "topic": "AI 개발" if item["source_id"].startswith("ai_") else "주간 뉴스",
+            "topic": topic["name"], "topic_id": topic["id"],
             "title": item.get("title_ko") or item["title"],
             "summary": str(payload.get("detail") or item.get("summary_ko") or "")[:400],
             "url": _public_url(item["url"]),
@@ -65,8 +76,11 @@ def public_library(conn):
             "basis": "공식 출처" if payload.get("source_tier") == "official" else "피드·원문 링크",
         })
     for item in all_items(conn):
+        topic = topic_for_item(topics, item["source_id"], housing=True)
+        if topic is None:
+            continue
         entries.append({
-            "id": "housing-%s" % item["id"], "topic": "청약·주거",
+            "id": "housing-%s" % item["id"], "topic": topic["name"], "topic_id": topic["id"],
             "title": item["title"], "summary": (item.get("detail_summary") or item.get("summary") or "")[:400],
             "url": _public_url(item["url"]), "source": item.get("agency") or item["source_id"],
             "category": item.get("category") or "", "published_at": item.get("published_at") or "",
@@ -77,17 +91,14 @@ def public_library(conn):
 
 
 def _public_url(value):
-    try:
-        parsed = urlsplit(value or "")
-        return value if parsed.scheme in ("https", "http") and parsed.netloc and not parsed.username and not parsed.password else ""
-    except ValueError:
-        return ""
+    return public_url(value)
 
 
-def build_public_site(conn, output_path="site", health=None):
+def build_public_site(conn, output_path="site", health=None, topics=None):
+    topics = topics if topics is not None else load_topics()
     output = Path(output_path)
     output.mkdir(parents=True, exist_ok=True)
-    entries = public_library(conn)
+    entries = public_library(conn, topics)
     if not entries:
         raise ValueError("No public data is available; refusing to publish an empty site.")
     created_at = iso_utc()
@@ -98,7 +109,8 @@ def build_public_site(conn, output_path="site", health=None):
     history = json.loads(archive_index.read_text(encoding="utf-8")) if archive_index.exists() else []
     if not isinstance(history, list) or any(not isinstance(entry, dict) or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", entry.get("date", "")) for entry in history):
         raise ValueError("Invalid archive index; existing archive must be repaired before publishing.")
-    snapshot = {"date": date, "created_at": created_at, "items": entries, "health": health or []}
+    catalog = _topic_catalog(topics, entries)
+    snapshot = {"date": date, "created_at": created_at, "items": entries, "health": health or [], "topics": catalog}
     daily = archive / date
     if not (daily / "briefing.json").exists():
         daily.mkdir(exist_ok=True)
@@ -108,8 +120,14 @@ def build_public_site(conn, output_path="site", health=None):
     history.sort(key=lambda entry: entry["date"], reverse=True)
     _write_json(archive_index, history)
     _write_json(output / "library.json", entries)
+    _write_json(output / "topics.json", catalog)
     _write_json(output / "status.json", {"generated_at": created_at, "count": len(entries), "health": health or []})
     _write_page(output / "index.html", snapshot, history)
+    for topic in catalog:
+        topic_path = output / "research" / topic["id"]
+        topic_path.mkdir(parents=True, exist_ok=True)
+        selected = dict(snapshot, items=[item for item in entries if item["topic_id"] == topic["id"]])
+        _write_page(topic_path / "index.html", selected, history, "../../", selected_topic=topic["id"])
     # Each dated page is rebuilt from its saved snapshot, never from today's rows.
     for entry in history:
         saved = archive / entry["date"] / "briefing.json"
@@ -127,11 +145,32 @@ def _write_json(path, value):
     path.write_text(json.dumps(value, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
-def _write_page(path, snapshot, history, prefix="", archived=False):
+def _topic_catalog(topics, entries):
+    catalog = []
+    for topic in topics:
+        items = [item for item in entries if item["topic_id"] == topic["id"]]
+        catalog.append({"id": topic["id"], "name": topic["name"], "description": topic.get("description", ""),
+                        "detail_page": topic.get("detail_page", ""), "count": len(items),
+                        "latest": max((item["published_at"] or item["first_seen_at"] for item in items), default="")})
+    return catalog
+
+
+def _write_page(path, snapshot, history, prefix="", archived=False, selected_topic=""):
     template = Path(__file__).with_name("public_site.html").read_text(encoding="utf-8")
-    data = dict(snapshot, history=history, prefix=prefix, archived=archived)
+    data = dict(snapshot, history=history, prefix=prefix, archived=archived, selected_topic=selected_topic)
+    if "topics" not in data:
+        # Older saved JSON remains unchanged; infer its own original topic labels.
+        known = {topic["name"]: topic for topic in load_topics()}
+        labels = list(dict.fromkeys(item["topic"] for item in data["items"]))
+        data["topics"] = [{"id": known[label]["id"] if label in known else "legacy-%d" % index,
+                            "name": label, "description": "", "count": sum(item["topic"] == label for item in data["items"])}
+                           for index, label in enumerate(labels)]
     serialized = json.dumps(data, ensure_ascii=False).replace("<", "\\u003c").replace("\u2028", "\\u2028").replace("\u2029", "\\u2029")
     content = template.replace("__BRIEFING_DATA__", serialized)
+    topic = next((topic for topic in data["topics"] if topic["id"] == selected_topic), None)
+    title = topic["name"] + " 리서치" if topic else "리서치 아카이브"
+    description = topic.get("description") if topic else "여러 분야의 자료와 원문을 모으고, 주제별 리서치와 지난 브리핑을 찾아봅니다."
+    content = content.replace("__PAGE_TITLE__", html.escape(title)).replace("__PAGE_DESCRIPTION__", html.escape(description or "", quote=True))
     # A static preview remains readable if JavaScript is unavailable.
     preview = "".join('<li><a href="%s">%s</a></li>' % (html.escape(item["url"], quote=True), html.escape(item["title"])) for item in snapshot["items"][:10])
     content = content.replace("__NOSCRIPT_ITEMS__", preview)

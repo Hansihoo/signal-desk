@@ -12,6 +12,10 @@ Public site: [Signal Desk](https://hansihoo.github.io/signal-desk/).
 GitHub Actions refreshes public sources daily at approximately 08:17 Asia/Seoul;
 accumulated data and dated briefings are retained between runs. See [publishing operations](docs/PUBLISHING.md).
 
+The public homepage is a multi-topic research library. Each topic has its own page;
+add research areas and public RSS/Atom feeds in `config/research_topics.json`.
+See [research hub and free hosting scope](docs/RESEARCH_HUB.md).
+
 Future domains:
 
 - jobs and hiring notices

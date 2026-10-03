@@ -17,6 +17,7 @@ site/*.png
 site/*.json
 site/.nojekyll
 site/archive/
+site/research/
 !site/.gitkeep
 
 # Local environment

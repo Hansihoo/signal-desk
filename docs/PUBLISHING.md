@@ -28,6 +28,8 @@ The second command renders existing local data without fetching sources.
 ## Public experience
 
 - `site/index.html`: recent updates, keyword search, topic filtering, and full collected library.
+- `site/research/<topic-id>/index.html`: independent research topic pages.
+- `site/topics.json`: topic metadata, counts, and latest publication dates.
 - `site/library.json`: selected public fields from AI/news/housing records.
 - `site/status.json`: generation time and source health.
 - `site/archive/index.json`: dated briefing catalog.
@@ -42,6 +44,11 @@ are collection aids; they are not presented as independently verified research.
 The latest site can update repeatedly in a day. The first saved daily briefing is
 preserved. Historical pages are rebuilt from their saved JSON, never from today's data.
 Records accumulate from the first cloud collection; no complete historical backfill is promised.
+
+The public homepage is a research hub with all topics selected initially. Add domains and
+public feeds through `config/research_topics.json`; see `RESEARCH_HUB.md` for instructions
+and the current free-hosting envelope. Pages does not collect user submissions or run
+analytics; GitHub's hosting infrastructure still records visitor IPs for security.
 
 ## Durable state
 

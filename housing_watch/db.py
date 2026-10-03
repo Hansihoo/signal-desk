@@ -146,14 +146,22 @@ def ensure_job_schema(conn):
     conn.executescript(JOB_SCHEMA)
 
 
-def upsert_news_items(conn, items, source_prefix=None):
+def upsert_news_items(conn, items, source_prefix=None, source_ids=None):
     ensure_news_schema(conn)
     inserted = 0
     updated = 0
     for item in items:
         now = item.get("collected_at") or iso_utc()
         title_key = item.get("title_ko") or item.get("title") or ""
-        if source_prefix:
+        if source_ids:
+            placeholders = ",".join("?" for _ in source_ids)
+            existing = conn.execute(
+                "SELECT id FROM news_items WHERE (source_id = ? AND external_id = ?) "
+                "OR (source_id IN (%s) AND COALESCE(NULLIF(title_ko, ''), title) = ?) "
+                "ORDER BY id ASC LIMIT 1" % placeholders,
+                (item["source_id"], item["external_id"]) + tuple(source_ids) + (title_key,),
+            ).fetchone()
+        elif source_prefix:
             existing = conn.execute(
                 """
                 SELECT id FROM news_items
@@ -219,14 +227,22 @@ def upsert_news_items(conn, items, source_prefix=None):
                 values + (now,),
             )
             inserted += 1
-    deleted = dedupe_news_items(conn, source_prefix=source_prefix)
+    deleted = dedupe_news_items(conn, source_prefix=source_prefix, source_ids=source_ids)
     conn.commit()
     return {"inserted": inserted, "updated": updated, "deduped": deleted}
 
 
-def dedupe_news_items(conn, source_prefix=None):
+def dedupe_news_items(conn, source_prefix=None, source_ids=None):
     ensure_news_schema(conn)
-    if source_prefix:
+    if source_ids:
+        placeholders = ",".join("?" for _ in source_ids)
+        rows = conn.execute(
+            "SELECT id, source_id, title, title_ko, score, published_at, last_seen_at "
+            "FROM news_items WHERE source_id IN (%s) "
+            "ORDER BY score DESC, COALESCE(published_at, '') DESC, id DESC" % placeholders,
+            tuple(source_ids),
+        ).fetchall()
+    elif source_prefix:
         rows = conn.execute(
             """
             SELECT id, source_id, title, title_ko, score, published_at, last_seen_at

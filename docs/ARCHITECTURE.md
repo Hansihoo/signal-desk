@@ -107,6 +107,13 @@ It keeps each piece replaceable. For example, n8n can later handle collection wh
 
 ## Public publishing and persistence
 
+`research_topics.py` loads the topic registry from `config/research_topics.json` and
+dispatches existing collectors or generic RSS/Atom feeds. The homepage is an all-topic
+library; `research/<id>/index.html` provides independent topic pages. Public export uses
+stable topic IDs and labels. Generic feeds store excerpts without AI-specific interpretation.
+News deduplication uses explicit source groups to preserve repeated titles across topics.
+Daily snapshots retain their original catalog as well as records; older JSON stays unchanged.
+
 `public_site.py` adds public-source refresh and a static searchable dashboard. Only
 selected AI/news/housing fields enter the public library; local job/profile data is excluded.
 Daily JSON briefing snapshots under `site/archive/` preserve the first successful briefing

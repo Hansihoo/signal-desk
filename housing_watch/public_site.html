@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="AI 개발 소식과 주거 공고를 모으고, 날짜별 브리핑과 원문 근거를 검색하는 Signal Desk.">
-  <title>Signal Desk · 리서치 브리핑</title>
+  <meta name="description" content="__PAGE_DESCRIPTION__">
+  <title>Signal Desk · __PAGE_TITLE__</title>
   <style>
     :root { color-scheme: light; --ink:#17202a; --muted:#667085; --line:#dce2e8; --accent:#174c45; --paper:#f5f5f2; }
     * { box-sizing:border-box; } body { margin:0; background:var(--paper); color:var(--ink); font:15px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif; }
@@ -23,21 +23,28 @@
     .archive { margin-top:35px; padding-top:22px; border-top:2px solid var(--ink); } .archive-list { display:flex; flex-wrap:wrap; gap:10px; margin-top:14px; }
     .archive-list a { padding:7px 12px; background:white; border:1px solid var(--line); border-radius:4px; font-size:13px; } .notice { padding:12px 15px; border-left:3px solid #b68537; background:#fff8eb; font-size:13px; margin:18px 0; }
     footer { border-top:1px solid var(--line); padding-top:18px; margin-top:30px; font-size:12px; color:var(--muted); } .more { display:block; padding:10px 20px; margin:20px auto; border:1px solid var(--accent); color:var(--accent); background:white; border-radius:4px; cursor:pointer; }
+    .topic-section { padding:25px 0 5px; } .topic-section > p { margin:6px 0 18px; }
+    .topic-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); border-top:1px solid var(--line); gap:0 24px; }
+    .topic-card { padding:18px 0; min-width:0; } .topic-card h3 { margin:0 0 8px; font-size:18px; }
+    .topic-card h3 a { color:var(--accent); text-decoration:underline; } .topic-card p { font-size:13px; margin:6px 0; }
+    .topic-card .topic-count { font-size:12px; color:var(--muted); } .topic-card .detail-link { font-size:12px; display:inline-block; margin-top:8px; }
     @media(max-width:600px) { main { padding:22px 18px 45px; } h1 { font-size:28px; } article h3 { font-size:18px; } .stats { gap:23px; } .section-head { display:block; } input { width:100%; } }
+    @media(max-width:600px) { .topic-grid { grid-template-columns:1fr; } .stats { gap:18px; flex-wrap:wrap; } .topic-card { padding:15px 0; } }
   </style>
 </head>
 <body><main>
-  <header><div class="label">SIGNAL DESK / PERSONAL RESEARCH</div><h1>계속 쌓이는 리서치 브리핑</h1>
-    <p class="description">AI 개발 소식과 주거 공고를 모으고, 이전 브리핑과 원문을 함께 찾아봅니다.</p>
-    <p id="updated" class="meta"></p><nav><a id="home-link" href="index.html">최신 브리핑</a><a id="ai-link" href="ai-news.html">AI 개발 상세</a><a id="housing-link" href="brief.html">청약·주거 상세</a><a href="#archive">지난 브리핑</a></nav>
+  <header><div class="label">SIGNAL DESK / RESEARCH LIBRARY</div><h1>__PAGE_TITLE__</h1>
+    <p class="description">__PAGE_DESCRIPTION__</p>
+    <p id="updated" class="meta"></p><nav><a id="home-link" href="index.html">리서치 홈</a><a id="topics-link" href="#topics">리서치 분야</a><a href="#library">자료 검색</a><a href="#archive">지난 브리핑</a><a id="topic-detail" hidden>상세 브리핑</a></nav>
   </header>
-  <div class="stats"><div><strong id="total">—</strong><span>누적 자료</span></div><div><strong id="week">—</strong><span>최근 7일</span></div><div><strong id="days">—</strong><span>저장된 브리핑</span></div></div>
+  <div class="stats"><div><strong id="total">—</strong><span>누적 자료</span></div><div><strong id="week">—</strong><span>최근 7일</span></div><div><strong id="days">—</strong><span>보관 날짜</span></div><div><strong id="topic-count">—</strong><span>리서치 분야</span></div></div>
+  <section id="topics" class="topic-section" aria-label="리서치 분야"><h2>리서치 분야</h2><p class="muted">관심 있는 주제를 열어 수집 자료와 원문을 확인하세요.</p><div id="topic-list" class="topic-grid"></div></section>
   <div id="health"></div>
-  <div class="toolbar"><input id="search" type="search" aria-label="자료 검색" placeholder="제목, 출처, 키워드로 검색"><select id="topic" aria-label="분야 선택"><option value="">모든 분야</option><option selected>AI 개발</option><option>청약·주거</option><option>주간 뉴스</option></select></div>
+  <div id="library" class="toolbar"><input id="search" type="search" aria-label="자료 검색" placeholder="제목, 출처, 키워드로 검색"><select id="topic" aria-label="분야 선택"><option value="">모든 분야</option></select></div>
   <div class="tabs" aria-label="자료 범위"><button id="recent" aria-pressed="true">최근 7일</button><button id="all" aria-pressed="false">전체 자료</button></div>
   <div class="section-head"><h2 id="list-title">최근 업데이트</h2><span id="count" class="muted" aria-live="polite"></span></div><section id="items" aria-label="수집 자료"></section><button id="more" class="more" hidden>자료 더 보기</button>
   <section id="archive" class="archive"><h2>지난 브리핑</h2><p class="muted">날짜별 첫 브리핑을 보존합니다. 당시 수집한 내용을 다시 확인할 수 있습니다.</p><div id="archive-list" class="archive-list"></div></section>
-  <footer>매일 오전 8:17 한국시간 수집 예정 · 출처 장애나 실행 대기에 따라 갱신이 늦어질 수 있습니다.<br>피드 발췌와 원문 링크를 제공합니다. 심층 검증·분석은 별도 리서치로 보강합니다.</footer>
+  <footer>매일 오전 8:17 한국시간 수집 예정 · 출처 장애나 실행 대기에 따라 갱신이 늦어질 수 있습니다.<br>피드 발췌와 원문 링크를 제공합니다. 심층 검증·분석은 별도 리서치로 보강합니다.<br>회원가입·입력 폼·방문 분석 도구 없이 공개 자료를 제공합니다.</footer>
   <noscript><p>검색을 사용하려면 JavaScript를 활성화하세요.</p><ul>__NOSCRIPT_ITEMS__</ul></noscript>
 </main><script id="briefing-data" type="application/json">__BRIEFING_DATA__</script><script>
   const data=JSON.parse(document.getElementById('briefing-data').textContent);
@@ -47,14 +54,26 @@
   const safeUrl=url=>{try{const u=new URL(url);return ['http:','https:'].includes(u.protocol)&&!u.username&&!u.password?u.href:'';}catch{return '';}};
   function node(tag,text,cls){const el=document.createElement(tag);if(text)el.textContent=text;if(cls)el.className=cls;return el;}
   $('updated').textContent=(data.archived?'보관된 브리핑 · ':'마지막 갱신 · ')+new Date(data.created_at).toLocaleString('ko-KR',{timeZone:'Asia/Seoul'})+' KST';
-  $('home-link').href=data.prefix+'index.html';$('ai-link').href=data.prefix+'ai-news.html';$('housing-link').href=data.prefix+'brief.html';
+  $('home-link').href=data.prefix+'index.html';
+  const topics=data.topics||[]; const selectedTopic=topics.find(topic=>topic.id===data.selected_topic);
+  $('topic-count').textContent=selectedTopic?'1':topics.length;
+  for(const topic of topics){const option=node('option',topic.name);option.value=topic.id;$('topic').append(option);
+    const card=node('article',null,'topic-card'),heading=node('h3'),link=node('a',topic.name+' 리서치');
+    link.href=data.prefix+'research/'+topic.id+'/index.html';heading.append(link);card.append(heading,node('p',topic.description||''));
+    card.append(node('div',topic.count+'건'+(topic.latest?' · 최근 게시 '+topic.latest.slice(0,10):''),'topic-count'));
+    if(topic.detail_page){const detail=node('a','상세 브리핑 보기','detail-link');detail.href=data.prefix+topic.detail_page;card.append(detail);}
+    $('topic-list').append(card);}
+  if(selectedTopic){$('topic').value=selectedTopic.id;$('topic').hidden=true;$('topics').hidden=true;$('topics-link').href=data.prefix+'index.html#topics';
+    if(selectedTopic.detail_page){$('topic-detail').href=data.prefix+selectedTopic.detail_page;$('topic-detail').hidden=false;}}
+  if(data.archived){$('topics').hidden=true;$('topics-link').href=data.prefix+'index.html#topics';}
   $('total').textContent=data.items.length;$('week').textContent=data.items.filter(recent).length;$('days').textContent=data.history.length;
   const failures=data.health.filter(item=>!item.ok||(item.warnings||[]).length);
   if(failures.length){const box=node('details',null,'notice');box.append(node('summary','일부 출처 수집에 문제가 있어 저장된 자료를 함께 표시합니다.'));
     failures.forEach(item=>box.append(node('p',item.source+' · '+(!item.ok?'이번 수집 실패':item.warnings.length+'개 출처 경고'))));$('health').append(box);}
   for(const entry of data.history){const a=node('a',entry.date+' · '+entry.count+'건');a.href=data.prefix+'archive/'+entry.date+'/index.html';$('archive-list').append(a);}
   function render(){const query=$('search').value.trim().toLowerCase(),topic=$('topic').value;
-    const selected=data.items.filter(item=>(mode==='all'||query||recent(item))&&(!topic||item.topic===topic)&&(!query||[item.title,item.summary,item.source,item.category].join(' ').toLowerCase().includes(query)));
+    const topicName=topics.find(entry=>entry.id===topic)?.name;
+    const selected=data.items.filter(item=>(mode==='all'||query||recent(item))&&(!topic||item.topic_id===topic||(!item.topic_id&&item.topic===topicName))&&(!query||[item.title,item.summary,item.source,item.category].join(' ').toLowerCase().includes(query)));
     selected.sort((a,b)=>((b.published_at||b.first_seen_at).localeCompare(a.published_at||a.first_seen_at))||(b.score-a.score));
     $('items').replaceChildren();$('count').textContent=selected.length+'건';$('list-title').textContent=query?'검색 결과':mode==='all'?'누적 자료':'최근 업데이트';
     if(!selected.length)$('items').append(node('p','해당하는 자료가 없습니다. 전체 자료를 선택하거나 검색어를 바꿔보세요.','empty'));
