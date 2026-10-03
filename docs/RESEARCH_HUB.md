@@ -27,7 +27,7 @@ original source, publication date, basis, and first collection time.
 
 Existing record categories supply the initial subtopics. The outline previews four recent
 records per category and links to the complete list; a selected older record stays visible.
-On a topic page, other topic branches lead to their own pages; they load their records when opened.
+On a topic page, other topic branches provide overview links; their records load on navigation to that topic page.
 
 Individual documents have summary, evidence, review, and conclusion sections. Current
 data supplies source excerpts and metadata only. Review and conclusion are explicitly
@@ -115,6 +115,16 @@ both restored state and deployed successfully. Public records accumulated to 230
 the original daily briefing retained its 165 records and 12:27:29 KST timestamp.
 All three topic routes, keyword search, historical filtering, and 430px mobile layout
 were checked in the live browser. Brief/desk images and `review` were checked locally.
+
+The report/tree scaffold deployed successfully in
+[run 37115050077](https://github.com/Hansihoo/signal-desk/actions/runs/37115050077).
+46 unit tests, JS syntax, compileall, publish/brief/desk/review, and briefing image checks
+passed. The live main -> AI topic -> LLM category -> individual document path, original
+source link, document contents anchors, and archived report routes were checked.
+430px mobile outline toggling, Enter-key control, search/topic filtering, and lack of
+horizontal overflow were verified. No browser console errors were captured.
+Live records reached 245; the original cloud archive stayed at 165 records and
+12:27:29 KST. Local archive HTML separately matched its own original saved JSON.
 
 Sources: [Pages limits](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits),
 [Actions billing](https://docs.github.com/en/billing/concepts/product-billing/github-actions),
