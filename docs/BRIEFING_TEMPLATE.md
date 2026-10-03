@@ -21,7 +21,7 @@ collected recommendations are not reused. Empty fields never invent analysis.
 
 The report follows the requested order: **title/topic -> outline summary -> visual
 data -> results -> references**. Copy uses brief factual or interpretive statements.
-Navigation consists of topics, contents, and a return link. Essential scope, date,
+Navigation consists of topics, contents, and a return link. Main/report mobile body copy stays at 14px. Essential scope, date,
 assumptions, and citations stay visible; implementation status belongs in these docs.
 
 ## Published outputs examined
@@ -62,8 +62,14 @@ Sources: `housing_watch/briefing_preview_home.html`, `briefing_preview_report.ht
 under ignored `site/preview/`. No new runtime dependency, account, form, or tracker.
 
 51 tests, compileall, publish, brief, summary desk, and review pass. Existing briefing
-and desk images inspected. Updated public navigation, desktop/mobile layout, chart
-proportions, disclosure keyboard behavior, and publication are awaiting final checks.
+and desk images inspected. 40 local links/assets/anchors pass. [Initial reader revision deployment](https://github.com/Hansihoo/signal-desk/actions/runs/37124680126) and [final deployment](https://github.com/Hansihoo/signal-desk/actions/runs/37125006248) succeeded. Final source commit cc80637; both pages load CSS hash 48b427a85c86.
+
+Public main -> report -> official Pages document/back and an existing AI record were
+opened successfully. Desktop and 390/430px layouts inspected; no horizontal overflow.
+The final narrow-screen body uses 14px type. Native calculation disclosure works with
+the keyboard. No console errors observed. Temporary viewport overrides were reset.
+Both publication tabs are retained. Final home/report screenshots are preserved under
+the registered thread verification root; earlier captures remain retained.
 
 Expand this format only after Theo reviews the pair. Weekly changed-only review
 requires separate collection/editing work; it is not part of this revision.
