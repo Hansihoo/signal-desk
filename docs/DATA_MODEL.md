@@ -1,5 +1,14 @@
 # Data Model
 
+## Authored research reports
+
+`research_reports`: stable ID, current revision, content hash, JSON document, UTC
+update time. `research_report_revisions`: report ID/revision key, hash, immutable
+document, saved time. Identical imports leave both unchanged; edits add a revision.
+Generated `data/research.json` and `site/research-data.json` export current public
+sources and reports under version 1. SQLite remains canonical. See
+[research data contract](RESEARCH_DATA.md).
+
 ## SQLite
 
 Default path:

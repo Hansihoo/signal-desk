@@ -15,6 +15,8 @@ Implemented:
 - official-source housing collector,
 - raw HTML snapshot storage,
 - SQLite normalized storage,
+- validated authored research and changed-only revisions in SQLite,
+- `research-data` JSON-only collection/import/export independent of rendering,
 - detail-page enrichment,
 - optional local-profile housing filtering,
 - local search/context output,
@@ -45,6 +47,7 @@ Current source scope:
 Current generated output:
 
 - `site/index.html`, `site/library.json`, `site/status.json`
+- `data/research.json` (data-only), `site/research-data.json` (public export)
 - `site/topics.json` and `site/research/<topic-id>/index.html`
 - `site/public_site.css` and `site/public_site.js` (shared report/tree assets)
 - `site/archive/YYYY-MM-DD/briefing.json` and `index.html`
@@ -143,6 +146,10 @@ public outline label, source-note pages, and daily workflow remain as described 
 - AI source feeds are pragmatic RSS/Atom inputs. If OpenAI, Hugging Face, GitHub, or Google News changes feed shape, update `housing_watch/ai_news.py` and `tests/test_ai_news.py`.
 
 ## Next Best Work
+
+For data/design separation, read `RESEARCH_DATA.md`. Import reviewed JSON into SQLite
+before publishing. Generated JSON edits alone will be overwritten. Initial seeding
+never replaces existing database edits. Weekly development review is still pending.
 
 1. Add PDF extraction for official notice attachments.
 2. Add a source adapter for MyHome or 청년안심주택.

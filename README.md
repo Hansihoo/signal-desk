@@ -31,6 +31,11 @@ and [representative report](https://hansihoo.github.io/signal-desk/preview/repor
 are available for template review. Only this pair receives the new layout; see the
 [template contract](docs/BRIEFING_TEMPLATE.md).
 
+Research content is independent of web design. `research-data --collect` refreshes
+public sources and writes `data/research.json` without rendering webpages. Authored
+reports are imported into SQLite with changed-only revisions; the representative
+pair renders this structured content. See [data contract and workflow](docs/RESEARCH_DATA.md).
+
 Future domains:
 
 - jobs and hiring notices

@@ -137,6 +137,15 @@ public sources, runs validation, saves a new immutable state asset, and deploys 
 `cloud_state.py` validates restore paths, backs up SQLite consistently, and records monthly
 successful operations. Generated data never enters source commits. See `PUBLISHING.md`.
 
+## Research content and presentation
+
+`research_data.py` adds an independent content layer: authored report validation,
+SQLite current documents/revisions, and versioned JSON export. `research-data`
+collects/imports/exports without rendering or dated archive generation. Publishing
+writes `site/research-data.json` and renders the representative pair from its selected
+report; templates/CSS own presentation. Collected records remain distinct from
+reviewed conclusions. Full cloud DB backups preserve revisions. See `RESEARCH_DATA.md`.
+
 ## Naming Note
 
 The repo is `signal-desk`, but the current Python package is still `housing_watch` because the first MVP domain was housing. Jobs, weekly news, and AI news now share that package. Rename or generalize it only when the import/CLI churn is worth the cleanup.

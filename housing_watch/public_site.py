@@ -14,6 +14,7 @@ from .db import all_items, record_snapshot, upsert_items
 from .news import NewsFetchError, collect_weekly_news
 from .render import render_brief_html
 from .research_topics import collect_topic_feeds, load_topics, opportunity_outline, public_url, topic_for_item
+from .research_data import build_research_data, write_research_data
 from .sources import fetch_source
 from .timeutil import iso_utc, now_kst
 
@@ -146,7 +147,10 @@ def build_public_site(conn, output_path="site", health=None, topics=None):
     # Explicitly omit private profile filtering from the public housing page.
     render_brief_html(conn, str(output / "brief.html"), hide_profile_excluded=False, use_profile=False)
     (output / ".nojekyll").write_text("", encoding="utf-8")
-    build_briefing_preview(output, snapshot)
+    research_data = build_research_data(conn, entries, topics, health)
+    write_research_data(output / "research-data.json", research_data)
+    report = next(report for report in research_data["reports"] if report["id"] == research_data["featured_report_id"])
+    build_briefing_preview(output, snapshot, report)
     return {"path": str(output / "index.html"), "items": len(entries), "archives": len(history), "health": health or []}
 
 

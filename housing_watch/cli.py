@@ -138,10 +138,39 @@ def main(argv=None):
     publish.add_argument("--output", default="site", help="static site output directory")
     publish.add_argument("--topics", help="research topic registry JSON (default: config/research_topics.json)")
 
+    research_data = sub.add_parser("research-data", help="collect/import/export research JSON without rendering webpages")
+    research_data.add_argument("--collect", action="store_true", help="refresh configured public sources")
+    research_data.add_argument("--input", help="structured report JSON to import into SQLite")
+    research_data.add_argument("--output", default="data/research.json", help="JSON-only export path")
+    research_data.add_argument("--topics", help="research topic registry JSON")
+
     args = parser.parse_args(argv)
     config = load_config(args.config)
     conn = connect(database_path(config))
     init_db(conn)
+
+    if args.command == "research-data":
+        try:
+            from .public_site import public_library
+            from .research_data import build_research_data, import_reports, load_report_input, write_research_data
+            from .research_topics import load_topics
+            topics = load_topics(args.topics)
+            if args.input:
+                print("Report import: %s" % import_reports(conn, load_report_input(args.input)))
+            health = collect_public_data(conn, config, topics) if args.collect else []
+            document = build_research_data(conn, public_library(conn, topics), topics, health)
+            path = write_research_data(args.output, document)
+            print("Wrote %s: %d source records, %d reviewed reports" %
+                  (path, len(document["source_records"]), len(document["reports"])))
+            for source in health:
+                if not source["ok"] or source.get("warnings"):
+                    print("source warning: %s: %s" % (source["source"], source.get("message") or source["warnings"]), file=sys.stderr)
+            return 0
+        except (OSError, ValueError, RuntimeError) as exc:
+            print("research-data: failed: %s" % exc, file=sys.stderr)
+            return 1
+        finally:
+            conn.close()
 
     if args.command == "publish":
         try:

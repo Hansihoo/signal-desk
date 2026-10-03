@@ -2,7 +2,8 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from housing_watch.briefing_preview import build_briefing_preview, storage_scenarios
+from housing_watch.briefing_preview import build_briefing_preview
+from housing_watch.research_data import load_report_input, storage_scenarios
 
 
 class BriefingPreviewTests(unittest.TestCase):
@@ -11,7 +12,7 @@ class BriefingPreviewTests(unittest.TestCase):
         self.assertEqual([row[2] for row in storage_scenarios(years=5)], [130, 260, 2600])
         self.assertEqual([row[2] for row in storage_scenarios()], [260, 520, 5200])
         with tempfile.TemporaryDirectory() as temp:
-            root = build_briefing_preview(temp, {"items": [], "topics": []})
+            root = build_briefing_preview(temp, {"items": [], "topics": []}, load_report_input()[0])
             report = (root / "report.html").read_text(encoding="utf-8")
             self.assertIn("260 MB", report)
             self.assertIn("520 MB", report)
@@ -31,7 +32,7 @@ class BriefingPreviewTests(unittest.TestCase):
             {"id": "unsafe", "topic_id": "ai", "title": "Unsafe record",
              "url": "javascript:alert(1)", "published_at": "2026-10-04"}]}
         with tempfile.TemporaryDirectory() as temp:
-            root = build_briefing_preview(temp, snapshot)
+            root = build_briefing_preview(temp, snapshot, load_report_input()[0])
             home = (root / "index.html").read_text(encoding="utf-8")
             self.assertNotIn('<script>', home)
             self.assertNotIn("Unsafe record", home)

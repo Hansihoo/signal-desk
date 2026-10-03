@@ -58,7 +58,10 @@ Actions execution/storage, and paid external services are distinct resources.
 ## Generation and verification
 
 Sources: `housing_watch/briefing_preview_home.html`, `briefing_preview_report.html`,
-`briefing_preview.css`, `briefing_preview.py`. The public exporter generates the pair
+`briefing_preview.css`, `briefing_preview.py`. Research content is now separate in
+SQLite and the [versioned JSON contract](RESEARCH_DATA.md), seeded from the authored
+`config/research_reports.example.json`. Templates contain no report-specific facts;
+chart geometry is computed from numeric rows and threshold. The public exporter generates the pair
 under ignored `site/preview/`. No new runtime dependency, account, form, or tracker.
 
 51 tests, compileall, publish, brief, summary desk, and review pass. Existing briefing

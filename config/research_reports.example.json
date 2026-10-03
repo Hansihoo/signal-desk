@@ -1,0 +1,161 @@
+{
+  "schema_version": 1,
+  "reports": [
+    {
+      "id": "github-pages-storage",
+      "topic_id": "development",
+      "topic_path": [
+        "개발 관련 정보",
+        "운영·배포"
+      ],
+      "title": "무료 보관, 파일 크기가 누적 용량을 가른다",
+      "description": "GitHub Pages 무료 보관 범위. 보고서 크기별 10년 누적 용량과 본문·첨부파일 보관 전략.",
+      "checked_on": "2026-10-03",
+      "scope": "GitHub Free 공개 저장소 기준",
+      "deck": "10개 분야·주 1회·건당 100 KB·각 1회 보관 시, 10년 누적 약 520 MB.",
+      "highlights": [
+        "GitHub Pages 게시 사이트 상한 1 GB.",
+        "10개 분야·주 1회·건당 100 KB·각 1회 보관 시, 10년 누적 약 520 MB.",
+        "건당 1 MB면 같은 기간 5.2 GB. 이미지·PDF 보관 여부가 주요 변수."
+      ],
+      "source_note": "GitHub 공식 문서 · 용량 추정",
+      "summary": [
+        {
+          "kind": "fact",
+          "label": "무료 운영 조건",
+          "text": "공개 저장소의 Pages 사용 및 표준 Actions 실행 무료. 별도 저장·외부 API 비용은 구분 필요.",
+          "source_ids": [
+            "pages-overview",
+            "actions-billing"
+          ]
+        },
+        {
+          "kind": "fact",
+          "label": "게시 용량 상한",
+          "text": "사이트 최대 1 GB. 월 전송량 100 GB는 소프트 한도.",
+          "source_ids": [
+            "pages-limits"
+          ]
+        },
+        {
+          "kind": "judgment",
+          "label": "보관량의 변수",
+          "text": "건당 크기, 첨부파일, 중복 복사. 발행 주기만으로 사용 가능 기간 확정 불가.",
+          "source_ids": []
+        }
+      ],
+      "metrics": [
+        {
+          "label": "게시 사이트 상한",
+          "value": 1,
+          "unit": "GB",
+          "qualifier": "",
+          "source_ids": [
+            "pages-limits"
+          ]
+        },
+        {
+          "label": "전송량 소프트 한도",
+          "value": 100,
+          "unit": "GB / 월",
+          "qualifier": "soft_limit",
+          "source_ids": [
+            "pages-limits"
+          ]
+        }
+      ],
+      "datasets": [
+        {
+          "id": "storage-ten-years",
+          "title": "보고서 크기별 10년 누적량",
+          "kind": "estimate",
+          "unit": "MB",
+          "assumptions": [
+            "10개 분야 × 주 1건 × 52주 × 10년 = 5,200건 · 각 1회 보관"
+          ],
+          "rows": [
+            {
+              "label": "50 KB / 건",
+              "value": 260,
+              "source_ids": []
+            },
+            {
+              "label": "100 KB / 건",
+              "value": 520,
+              "source_ids": []
+            },
+            {
+              "label": "1 MB / 건",
+              "value": 5200,
+              "source_ids": []
+            }
+          ],
+          "threshold": {
+            "label": "Pages 상한",
+            "value": 1000,
+            "source_ids": [
+              "pages-limits"
+            ]
+          },
+          "note": "건당 크기는 비교 가정. 첨부파일·공통 파일·누적 스냅샷 복제 용량 제외.",
+          "method": [
+            "누적량 = 분야 수 × 주당 발행 수 × 52주 × 연수 × 건당 크기. 1 KB = 1,000 B, 1 MB = 1,000 KB로 계산. 공식 1 GB 한도는 비교상 약 1,000 MB로 표시.",
+            "매주 모든 분야에 신규 내용이 있는 경우를 가정. 실제 건당 크기를 측정한 값이 아니며, 각 보고서를 한 번만 보관할 때의 본문 누적량. Signal Desk의 일별 보관본은 누적 자료를 재복사하므로 이 단일 보관 가정과 다름. 사이트 전체 사용 기간을 보장하는 계산은 아님."
+          ],
+          "source_ids": []
+        }
+      ],
+      "result": {
+        "title": "본문·링크 중심으로 보관, 첨부파일은 선택적으로",
+        "points": [
+          {
+            "kind": "judgment",
+            "label": "본문 중복 최소화",
+            "text": "주간 목록에서 보고서와 당시 버전을 연결. 전체 자료의 반복 복사는 별도 용량 산정.",
+            "source_ids": []
+          },
+          {
+            "kind": "judgment",
+            "label": "원문 링크 우선",
+            "text": "PDF·이미지는 보존이 필요한 자료만 복사하고, 파일 크기를 함께 기록.",
+            "source_ids": []
+          },
+          {
+            "kind": "judgment",
+            "label": "변경 시 발행",
+            "text": "신규·변경 내용이 있는 주에만 추가. 수정된 보고서는 변경 이력 보관.",
+            "source_ids": []
+          }
+        ]
+      },
+      "references": [
+        {
+          "id": "pages-limits",
+          "title": "GitHub — Pages limits",
+          "url": "https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits",
+          "description": "게시 용량·전송량·이용 범위"
+        },
+        {
+          "id": "pages-overview",
+          "title": "GitHub — What is GitHub Pages?",
+          "url": "https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages",
+          "description": "공개 저장소·정적 사이트"
+        },
+        {
+          "id": "actions-billing",
+          "title": "GitHub — Actions billing",
+          "url": "https://docs.github.com/en/billing/concepts/product-billing/github-actions",
+          "description": "표준 실행 무료 조건·저장·대형 실행기 과금"
+        }
+      ],
+      "caveats": [
+        {
+          "text": "거래·상업용 SaaS 제공은 Pages 이용 범위 제약. AI API·유료 데이터 비용 별도.",
+          "source_ids": [
+            "pages-limits"
+          ]
+        }
+      ]
+    }
+  ]
+}
