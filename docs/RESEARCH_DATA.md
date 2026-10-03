@@ -78,8 +78,8 @@ Input: `schema_version: 1` and `reports: [...]`. Exported JSON can also be re-im
 only `reports` are imported; `source_records`/metadata are not ingestion instructions.
 Report fields are required. Arrays may be empty except topic labels, highlights,
 and dataset rows. Unknown/missing report fields, duplicate IDs, invalid dates/URLs,
-dangling source references, invalid numeric values, unsupported versions, facts
-without sources, and estimates without assumptions are rejected. All documents
+dangling source references, invalid numeric values, unsupported versions, factual
+points/metrics/data without sources, and estimated datasets without assumptions are rejected. All documents
 validate before a transactional import. The renderer escapes plain text.
 
 ## Revisions and editing
@@ -100,3 +100,17 @@ Presentation sources: `briefing_preview_home.html`, `briefing_preview_report.htm
 text, date, numbers, citations, and thresholds come from data. Legacy source library
 and dated snapshots retain their existing format. No new collectors or weekly
 automation are introduced by this separation.
+
+## Verification on 2026-10-03
+
+59 tests and compileall pass, including idempotence, revision retention, invalid batch
+rejection, database-error rollback, citation/number validation, escaped data rendering,
+and data-only CLI isolation. Actual data-only refresh exports 325 local source records
+and the existing authored report while all 29 website files remain byte-identical.
+GDELT 429 falls back with a recorded warning. Publish/brief/summary desk/review, images,
+and 40 local links pass. [Deployment](https://github.com/Hansihoo/signal-desk/actions/runs/37126426967)
+succeeds; public JSON contains 339 accumulated source records and the identical report.
+390/430px overflow, data-driven chart ratios/threshold, keyboard disclosure, main/report
+navigation and console checks pass. Published CSS matches committed LF source bytes,
+hash `60797995360d`; local CRLF checkout bytes have a different hash. Generated outputs
+are retained outside Git. Main/report layout approval and weekly review remain separate.
