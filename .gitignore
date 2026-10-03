@@ -20,6 +20,7 @@ site/*.js
 site/.nojekyll
 site/archive/
 site/research/
+site/preview/
 !site/.gitkeep
 
 # Local environment
