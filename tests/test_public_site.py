@@ -103,7 +103,11 @@ class PublicSiteTests(unittest.TestCase):
             restore_archive(archive, restored)
             conn = connect(restored / "data/housing_watch.sqlite")
             self.assertEqual(conn.execute("SELECT COUNT(*) FROM news_items").fetchone()[0], 1)
+            self.assertEqual(conn.execute("SELECT COUNT(*) FROM research_import_batches").fetchone()[0], 1)
+            report_count = conn.execute("SELECT COUNT(*) FROM research_reports").fetchone()[0]
+            self.assertEqual(report_count, 11)
             self.assertEqual(build_public_site(conn, restored / "site")["archives"], 1)
+            self.assertEqual(conn.execute("SELECT COUNT(*) FROM research_report_revisions").fetchone()[0], report_count)
             conn.close()
 
     def test_restore_rejects_traversal_before_writing(self):

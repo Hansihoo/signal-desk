@@ -160,3 +160,12 @@ never replaces existing database edits. Weekly development review is still pendi
 7. Add optional Korean translation/summarization for non-Korean AI titles when a local or configured model is available.
 8. Generalize package naming now that housing is no longer the only domain.
 9. Move profile eligibility thresholds into a versioned config or collected official reference table.
+# Reviewed development research (2026-10-04)
+
+Read `docs/RESEARCH_DATA.md` before changing the public briefing reports. Ten reviewed
+inputs in `config/development_baseline.2026-10-04.json` and the publication manifest
+are applied once to SQLite locally and in cloud publishing. Do not overwrite the
+cloud DB with local state or edit an applied batch in place; append a new dated
+reviewed batch. The main is `/preview/index.html`, reports use stable ID filenames,
+and `report.html` aliases the featured report. The existing source library and
+daily archives remain available. Weekly deep review is not implemented yet.

@@ -23,6 +23,10 @@ class ResearchDataTests(unittest.TestCase):
         self.conn = connect(":memory:")
         init_db(self.conn)
         self.report = load_report_input()[0]
+        publication = {"featured_report_id": self.report["id"], "report_ids": [self.report["id"]]}
+        patcher = patch("housing_watch.research_data.load_publication", return_value=(publication, []))
+        patcher.start()
+        self.addCleanup(patcher.stop)
 
     def tearDown(self):
         self.conn.close()

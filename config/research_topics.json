@@ -2,8 +2,8 @@
   "topics": [
     {
       "id": "opportunities",
-      "name": "개발 수익 기회",
-      "description": "1인 개발자를 위한 해커톤, 보상, 지원금과 판매 채널을 정리합니다. 현재는 HTML 틀을 준비한 단계입니다.",
+      "name": "개발 관련 정보",
+      "description": "개발 동향, 지원·참여, 시장·사업 정보를 정리합니다. 검토된 보고서는 메인에, 프로그램 분류는 이곳에 보관합니다.",
       "collector": "planned",
       "view": "opportunities"
     },

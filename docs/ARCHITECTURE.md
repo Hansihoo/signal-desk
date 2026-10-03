@@ -142,9 +142,16 @@ successful operations. Generated data never enters source commits. See `PUBLISHI
 `research_data.py` adds an independent content layer: authored report validation,
 SQLite current documents/revisions, and versioned JSON export. `research-data`
 collects/imports/exports without rendering or dated archive generation. Publishing
-writes `site/research-data.json` and renders the representative pair from its selected
-report; templates/CSS own presentation. Collected records remain distinct from
-reviewed conclusions. Full cloud DB backups preserve revisions. See `RESEARCH_DATA.md`.
+writes `site/research-data.json` and renders the curated main and every stored report
+at `/preview/<report-id>.html`; templates/CSS own presentation. Numeric datasets and
+optional sourced comparison tables stay independent of layout. Collected records
+remain distinct from reviewed conclusions.
+
+The publication manifest orders reports and lists immutable reviewed input batches.
+Each batch and its SQLite receipt are applied atomically once, preserving later DB
+edits. New reviewed changes need a new batch ID. This deploys authored public content
+without uploading or replacing local/cloud DBs. Full cloud backups preserve report
+revisions and batch receipts. See `RESEARCH_DATA.md`.
 
 ## Naming Note
 

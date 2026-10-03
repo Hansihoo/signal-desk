@@ -1,0 +1,1309 @@
+{
+  "schema_version": 1,
+  "reports": [
+    {
+      "id": "openai-api-migration",
+      "topic_id": "ai-models",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "title": "OpenAI API 교체 일정, 2027년 종료 대상부터 점검",
+      "description": "10월 1일 종료 공지가 추가됐다. 사용 중인 모델명을 찾고, 종료일에 맞춰 교체 검증을 진행할 필요가 있다.",
+      "checked_on": "2026-10-04",
+      "scope": "OpenAI API 종료 공지",
+      "deck": "10월 1일 종료 공지가 추가됐다. 사용 중인 모델명을 찾고, 종료일에 맞춰 교체 검증을 진행할 필요가 있다.",
+      "highlights": [
+        "GPT-5.1·GPT-5.3-Codex·GPT-5.4-nano: 2027년 4월 1일 API 종료 예정.",
+        "일부 음성 합성 모델: 2027년 1월 6일 종료 예정.",
+        "교체 모델을 연결한 뒤 품질·지연·비용을 함께 비교할 필요."
+      ],
+      "source_note": "OpenAI API 종료 공지 · OpenAI 최신 모델 안내 / 2026.10.04 확인",
+      "summary": [
+        {
+          "kind": "fact",
+          "label": "변경",
+          "text": "2026년 10월 1일 공지에서 GPT-5 계열 일부와 음성 합성 모델의 종료 일정이 발표됐다.",
+          "source_ids": [
+            "deprecations"
+          ]
+        },
+        {
+          "kind": "fact",
+          "label": "시점",
+          "text": "이번 공지는 종료 예고다. 아래 모델의 종료일은 2027년이며, 지금 즉시 서비스가 중단됐다는 의미는 아니다.",
+          "source_ids": [
+            "deprecations"
+          ]
+        },
+        {
+          "kind": "judgment",
+          "label": "검토",
+          "text": "코드·환경 설정·작업 큐에 들어 있는 모델명을 먼저 찾고 교체 대상을 정리하는 편이 좋다.",
+          "source_ids": []
+        }
+      ],
+      "tables": [
+        {
+          "id": "retirement",
+          "title": "공식 종료 일정",
+          "columns": [
+            "사용 모델",
+            "권장 교체",
+            "API 종료일"
+          ],
+          "rows": [
+            {
+              "values": [
+                "gpt-5.1",
+                "gpt-6-sol",
+                "2027-04-01"
+              ],
+              "source_ids": [
+                "deprecations"
+              ]
+            },
+            {
+              "values": [
+                "gpt-5.3-codex",
+                "gpt-6-sol",
+                "2027-04-01"
+              ],
+              "source_ids": [
+                "deprecations"
+              ]
+            },
+            {
+              "values": [
+                "gpt-5.4-nano",
+                "gpt-6-luna",
+                "2027-04-01"
+              ],
+              "source_ids": [
+                "deprecations"
+              ]
+            },
+            {
+              "values": [
+                "tts-1 · tts-1-hd · gpt-4o-mini-tts의 2025-03-20 / 2025-12-15 버전",
+                "gpt-realtime-2.1-mini",
+                "2027-01-06"
+              ],
+              "source_ids": [
+                "deprecations"
+              ]
+            }
+          ],
+          "note": "교체 권고는 공식 공지 기준. 음성 API는 연결 방식도 확인해야 하며, 모델명만 바꾸면 호환된다고 가정할 수 없다."
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "result": {
+        "title": "교체 대상 목록을 만들고 작은 단위로 검증",
+        "points": [
+          {
+            "kind": "judgment",
+            "label": "권고",
+            "text": "현재 사용하는 모델 중 종료 대상만 먼저 교체한다. 대표 입력으로 응답 품질과 도구 호출을 확인한 뒤 실제 지연·비용을 측정한다.",
+            "source_ids": []
+          },
+          {
+            "kind": "fact",
+            "label": "모델 선택",
+            "text": "공식 안내는 Astra를 복잡한 추론·코딩, Sol을 균형 잡힌 작업, Luna를 빠른 대량 처리 용도로 구분한다. 실제 업무의 결과로 선택할 필요가 있다.",
+            "source_ids": [
+              "models"
+            ]
+          }
+        ]
+      },
+      "references": [
+        {
+          "id": "deprecations",
+          "title": "OpenAI API 종료 공지",
+          "url": "https://developers.openai.com/api/docs/deprecations",
+          "description": "2026-10-01 공지와 공식 교체 모델·종료일."
+        },
+        {
+          "id": "models",
+          "title": "OpenAI 최신 모델 안내",
+          "url": "https://developers.openai.com/api/docs/guides/latest-model",
+          "description": "현재 모델군의 용도 안내. 성능 우열을 자체 측정한 자료는 아님."
+        }
+      ],
+      "caveats": [
+        {
+          "text": "종료 일정과 권장 모델은 변경될 수 있으므로 교체 직전 공지를 다시 확인할 필요.",
+          "source_ids": [
+            "deprecations"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mcp-apps-workflows",
+      "topic_id": "agent-mcp",
+      "topic_path": [
+        "개발 동향",
+        "Agent·MCP"
+      ],
+      "title": "MCP Apps, 도구 응답에 업무 화면을 붙인다",
+      "description": "표·양식·차트 등 상호작용이 필요한 작업을 대화 안에서 처리하는 공식 확장이다.",
+      "checked_on": "2026-10-04",
+      "scope": "MCP 공식 사양·Apps 확장",
+      "deck": "표·양식·차트 등 상호작용이 필요한 작업을 대화 안에서 처리하는 공식 확장이다.",
+      "highlights": [
+        "도구 결과와 화면 리소스를 분리해 전달.",
+        "화면은 호스트가 제공하는 격리된 iframe에서 실행.",
+        "지원 호스트와 권한 흐름을 확인한 후 도입할 필요."
+      ],
+      "source_note": "MCP Apps 공식 발표 · MCP Apps 구조 · MCP 2026-07-28 사양 / 2026.10.04 확인",
+      "summary": [
+        {
+          "kind": "fact",
+          "label": "공식 확장",
+          "text": "MCP Apps는 2026년 1월 26일 공식 확장으로 발표됐다. 도구 응답에 대화형 화면을 연결한다.",
+          "source_ids": [
+            "announcement"
+          ]
+        },
+        {
+          "kind": "fact",
+          "label": "구조",
+          "text": "도구 데이터와 ui:// 화면 리소스가 분리되고, 호스트는 격리된 iframe에 화면을 표시한다.",
+          "source_ids": [
+            "overview"
+          ]
+        },
+        {
+          "kind": "fact",
+          "label": "기준 사양",
+          "text": "현재 latest 링크는 2026-07-28 사양으로 연결된다. 핵심 프로토콜과 선택적 확장은 구분된다.",
+          "source_ids": [
+            "spec"
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "interaction",
+          "title": "업무 방식별 구성",
+          "columns": [
+            "구성",
+            "처리 방식",
+            "확인할 조건"
+          ],
+          "rows": [
+            {
+              "values": [
+                "일반 도구",
+                "구조화된 결과를 호스트에 반환",
+                "도구 계약·권한"
+              ],
+              "source_ids": [
+                "spec"
+              ]
+            },
+            {
+              "values": [
+                "MCP Apps",
+                "도구 결과와 UI 리소스 연결",
+                "호스트의 Apps 지원·iframe 통신"
+              ],
+              "source_ids": [
+                "overview"
+              ]
+            },
+            {
+              "values": [
+                "Tasks 확장",
+                "긴 작업을 비동기로 처리",
+                "클라이언트·서버 확장 지원"
+              ],
+              "source_ids": [
+                "spec"
+              ]
+            }
+          ],
+          "note": "모든 MCP 호스트가 모든 확장을 지원하는 것은 아니다. 앱별 지원 여부는 도입 시 확인."
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "result": {
+        "title": "검토·선택·입력이 반복되는 업무부터",
+        "points": [
+          {
+            "kind": "judgment",
+            "label": "권고",
+            "text": "비교표에서 선택하거나 결과를 수정하는 업무에 먼저 적용한다. 읽기만 하는 간단한 알림에는 도입 효과가 작을 수 있다.",
+            "source_ids": []
+          },
+          {
+            "kind": "judgment",
+            "label": "설계",
+            "text": "화면을 교체해도 도구 결과를 재사용할 수 있도록 데이터 계약을 독립적으로 유지하는 편이 좋다.",
+            "source_ids": [
+              "overview"
+            ]
+          }
+        ]
+      },
+      "references": [
+        {
+          "id": "announcement",
+          "title": "MCP Apps 공식 발표",
+          "url": "https://blog.modelcontextprotocol.io/posts/2026-01-26-mcp-apps/",
+          "description": "2026-01-26 공개. 당시 지원 목록을 현재 호환성으로 단정하지 않음."
+        },
+        {
+          "id": "overview",
+          "title": "MCP Apps 구조",
+          "url": "https://apps.extensions.modelcontextprotocol.io/api/documents/overview.html",
+          "description": "도구 결과·UI 리소스·격리 화면의 역할."
+        },
+        {
+          "id": "spec",
+          "title": "MCP 2026-07-28 사양",
+          "url": "https://modelcontextprotocol.io/specification/2026-07-28",
+          "description": "핵심 프로토콜과 선택적 확장."
+        }
+      ],
+      "caveats": [
+        {
+          "text": "실제 연결 대상 호스트에서 권한 승인과 화면 동작을 확인해야 한다.",
+          "source_ids": [
+            "overview"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "openai-safety-bounty",
+      "topic_id": "security-ai-safety",
+      "topic_path": [
+        "개발 동향",
+        "보안·AI Safety"
+      ],
+      "title": "OpenAI Safety Bounty, 일반 탈옥과 보안 영향을 구분",
+      "description": "에이전트·MCP의 실제 피해로 이어지는 문제를 다루는 프로그램이다. 공격 성공만으로 보상 대상이 되는 것은 아니다.",
+      "checked_on": "2026-10-04",
+      "scope": "공개 프로그램 범위",
+      "deck": "에이전트·MCP의 실제 피해로 이어지는 문제를 다루는 프로그램이다. 공격 성공만으로 보상 대상이 되는 것은 아니다.",
+      "highlights": [
+        "Safety와 기존 Security Bounty는 별도로 운영.",
+        "실질적 보안 영향과 재현성이 핵심.",
+        "보상액은 현재 세부 규칙 확인 전 확정하지 않음."
+      ],
+      "source_note": "OpenAI Safety Bug Bounty 발표 · Safety Bounty 제출 창구 / 2026.10.04 확인",
+      "summary": [
+        {
+          "kind": "fact",
+          "label": "프로그램",
+          "text": "OpenAI는 2026년 3월 25일 Safety Bug Bounty를 공개했다. 기존 보안 취약점 프로그램을 보완하는 별도 범위다.",
+          "source_ids": [
+            "announcement"
+          ]
+        },
+        {
+          "kind": "fact",
+          "label": "관심 영역",
+          "text": "에이전트·MCP의 프롬프트 주입, 정보 유출 등 실제 보안 피해와 플랫폼 무결성 문제가 포함된다.",
+          "source_ids": [
+            "announcement"
+          ]
+        },
+        {
+          "kind": "fact",
+          "label": "제외",
+          "text": "단순한 유해 문구 생성이나 일반적인 탈옥 성공은 이 프로그램의 대상과 구분된다.",
+          "source_ids": [
+            "announcement"
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "scope",
+          "title": "대상 판단",
+          "columns": [
+            "문제 유형",
+            "확인할 근거"
+          ],
+          "rows": [
+            {
+              "values": [
+                "에이전트·MCP 보안 문제",
+                "실질적 영향과 재현 절차. 공개 안내는 50% 이상 재현 성공을 요구."
+              ],
+              "source_ids": [
+                "announcement"
+              ]
+            },
+            {
+              "values": [
+                "플랫폼 무결성 문제",
+                "계정·서비스 남용 등 프로그램 범위에 맞는 영향."
+              ],
+              "source_ids": [
+                "announcement"
+              ]
+            },
+            {
+              "values": [
+                "일반 탈옥·불쾌한 답변",
+                "그 자체만으로는 Safety Bounty 대상에 해당하지 않음."
+              ],
+              "source_ids": [
+                "announcement"
+              ]
+            },
+            {
+              "values": [
+                "보상·제출 조건",
+                "Bugcrowd의 현재 프로그램 규칙 확인. 금액은 이 보고서에서 확정하지 않음."
+              ],
+              "source_ids": [
+                "submission"
+              ]
+            }
+          ],
+          "note": "허용된 대상과 테스트 범위 내에서 검증해야 한다. 다른 회사 서비스의 조건까지 허용하는 프로그램은 아니다."
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "result": {
+        "title": "재현 가능한 영향부터 확인",
+        "points": [
+          {
+            "kind": "judgment",
+            "label": "권고",
+            "text": "새로운 공격 문구보다 영향을 입증하는 재현 자료가 우선이다. 제출 전에 범위·중복·허용 테스트 조건을 다시 확인한다.",
+            "source_ids": []
+          }
+        ]
+      },
+      "references": [
+        {
+          "id": "announcement",
+          "title": "OpenAI Safety Bug Bounty 발표",
+          "url": "https://openai.com/index/safety-bug-bounty/",
+          "description": "2026-03-25 공개. 대상·제외·재현 기준 안내."
+        },
+        {
+          "id": "submission",
+          "title": "Safety Bounty 제출 창구",
+          "url": "https://bugcrowd.com/engagements/openai-safety",
+          "description": "세부 규칙은 동적 페이지. 이번 조사에서 본문을 완전히 확인하지 못해 보상 금액을 제시하지 않음."
+        }
+      ],
+      "caveats": [
+        {
+          "text": "확인된 내용은 공식 발표 기준이며, 현재 보상 구간·세부 제출 규칙은 참가 직전 별도 확인이 필요하다.",
+          "source_ids": [
+            "submission"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "google-oss-reward-status",
+      "topic_id": "oss-rewards",
+      "topic_path": [
+        "개발 동향",
+        "OSS·패치 보상"
+      ],
+      "title": "OSS 패치 보상, 접수 중단 프로그램부터 걸러야 한다",
+      "description": "Google의 패치 기여 보상과 취약점 신고 보상은 서로 다른 프로그램이다. 오래된 소개 글만 보고 작업을 시작하면 안 된다.",
+      "checked_on": "2026-10-04",
+      "scope": "Google 공식 프로그램 목록",
+      "deck": "Google의 패치 기여 보상과 취약점 신고 보상은 서로 다른 프로그램이다. 오래된 소개 글만 보고 작업을 시작하면 안 된다.",
+      "highlights": [
+        "Tsunami·InternetCTF: 2026년 4월 9일부터 신규 요청 중단.",
+        "OSV-SCALIBR: 2026년 7월 6일부터 신규 요청 중단.",
+        "OSS VRP는 별도 대상·보상 규칙 적용."
+      ],
+      "source_note": "Google 보상 프로그램 목록 · Google OSS VRP 2026 개정 / 2026.10.04 확인",
+      "summary": [
+        {
+          "kind": "fact",
+          "label": "중단",
+          "text": "공식 프로그램 목록은 Tsunami와 InternetCTF Tsunami의 신규 요청을 4월 9일부터 중단했다고 명시한다.",
+          "source_ids": [
+            "rules"
+          ]
+        },
+        {
+          "kind": "fact",
+          "label": "추가 중단",
+          "text": "OSV-SCALIBR Patch Rewards도 7월 6일부터 신규 요청을 받지 않는다.",
+          "source_ids": [
+            "rules"
+          ]
+        },
+        {
+          "kind": "fact",
+          "label": "구분",
+          "text": "2026년 OSS VRP 개정은 프로젝트 등급과 문제 유형별 자격을 조정했다. 모든 OSS PR이 보상 대상은 아니다.",
+          "source_ids": [
+            "update"
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "status",
+          "title": "확인된 운영 상태",
+          "columns": [
+            "프로그램",
+            "상태",
+            "검토 기준"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Tsunami Patch Rewards",
+                "신규 요청 중단",
+                "2026-04-09부터"
+              ],
+              "source_ids": [
+                "rules"
+              ]
+            },
+            {
+              "values": [
+                "InternetCTF Tsunami",
+                "신규 요청 중단",
+                "2026-04-09부터"
+              ],
+              "source_ids": [
+                "rules"
+              ]
+            },
+            {
+              "values": [
+                "OSV-SCALIBR Patch Rewards",
+                "신규 요청 중단",
+                "2026-07-06부터"
+              ],
+              "source_ids": [
+                "rules"
+              ]
+            },
+            {
+              "values": [
+                "Google OSS VRP",
+                "별도 취약점 보상 규칙",
+                "프로젝트 등급·문제 유형 확인"
+              ],
+              "source_ids": [
+                "update"
+              ]
+            }
+          ],
+          "note": "중단 공지는 신규 요청 기준이다. 다른 패치 보상이나 OSS VRP 전체가 종료됐다는 의미는 아니다."
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "result": {
+        "title": "보상 조건 확인 후 기여 대상을 선택",
+        "points": [
+          {
+            "kind": "judgment",
+            "label": "권고",
+            "text": "작업 전 접수 상태, 저장소 범위, 사전 승인 여부를 확인한다. 보상 자격이 없는 기여는 학습·포트폴리오 가치로 따로 판단한다.",
+            "source_ids": []
+          }
+        ]
+      },
+      "references": [
+        {
+          "id": "rules",
+          "title": "Google 보상 프로그램 목록",
+          "url": "https://bughunters.google.com/about/rules/about-this-section",
+          "description": "공식 목록의 중단 공지. 동적 본문은 공식 페이지의 검색 색인으로 확인."
+        },
+        {
+          "id": "update",
+          "title": "Google OSS VRP 2026 개정",
+          "url": "https://bughunters.google.com/blog/ossvrp-rule-updates-2026",
+          "description": "2026-03-19 발표. 프로젝트 등급에 따른 대상·보상 조건."
+        }
+      ],
+      "caveats": [
+        {
+          "text": "중단 상태는 영구 종료와 다르다. 재개 여부는 공식 목록에서 다시 확인할 필요.",
+          "source_ids": [
+            "rules"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nlnet-restack-call",
+      "topic_id": "grants",
+      "topic_path": [
+        "지원·참여",
+        "지원금·Grant"
+      ],
+      "title": "NLnet Restack, 11월 3일 마감과 지원 범위를 확인",
+      "description": "오픈 인터넷 기반 기술에 대한 공모다. 일반적인 AI 앱·통합 개발을 지원 대상으로 해석하기 어렵다.",
+      "checked_on": "2026-10-04",
+      "scope": "Restack 1차 공모",
+      "deck": "오픈 인터넷 기반 기술에 대한 공모다. 일반적인 AI 앱·통합 개발을 지원 대상으로 해석하기 어렵다.",
+      "highlights": [
+        "마감: 2026년 11월 3일 20:00 한국시간.",
+        "제안 예산 €5,000–€50,000. 자동 지급이나 예상 수익은 아님.",
+        "일반 AI 프로젝트는 범위 제외. 공개 라이선스·지역 조건도 확인 필요."
+      ],
+      "source_note": "NLnet 11월 공모 공지 · Restack 지원 범위 · Restack 신청 자격 · NLnet GenAI 정책 / 2026.10.04 확인",
+      "summary": [
+        {
+          "kind": "fact",
+          "label": "모집",
+          "text": "Restack 첫 공모는 9월 3일 시작됐으며 11월 3일 12:00 CET에 마감한다. 한국시간으로 같은 날 20:00이다.",
+          "source_ids": [
+            "call"
+          ]
+        },
+        {
+          "kind": "fact",
+          "label": "지원 범위",
+          "text": "오픈 인터넷의 기반 기술·보안·배포 등 실질적 기여가 대상이다. AI 관련 프로젝트는 널리 사용되며 기반 스택에 직접 관련되는 예외 외에는 제외된다.",
+          "source_ids": [
+            "restack"
+          ]
+        },
+        {
+          "kind": "fact",
+          "label": "신청 조건",
+          "text": "개인도 신청할 수 있으나, 공개 라이선스와 펀드별 자격 조건을 충족해야 한다.",
+          "source_ids": [
+            "eligibility"
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "requirements",
+          "title": "신청 전 확인할 조건",
+          "columns": [
+            "항목",
+            "공식 기준"
+          ],
+          "rows": [
+            {
+              "values": [
+                "제안 규모",
+                "€5,000–€50,000. 잠재력 입증 시 확대 가능."
+              ],
+              "source_ids": [
+                "restack"
+              ]
+            },
+            {
+              "values": [
+                "성과물",
+                "인정된 자유·오픈소스 라이선스로 공개."
+              ],
+              "source_ids": [
+                "restack"
+              ]
+            },
+            {
+              "values": [
+                "AI 관련 범위",
+                "일반 AI 개발·적용·통합은 제외. 100만 명 초과의 실제 활성 사용자를 가진 기반 스택 관련 사례는 예외 조건."
+              ],
+              "source_ids": [
+                "restack"
+              ]
+            },
+            {
+              "values": [
+                "지역",
+                "동등한 제안은 EU·Horizon Europe 연계국 우선. 그 밖의 지역은 탁월한 품질·고유 전문성·명확한 유럽 기여 조건."
+              ],
+              "source_ids": [
+                "eligibility"
+              ]
+            },
+            {
+              "values": [
+                "GenAI 사용",
+                "제안 작성 지원도 공개·프롬프트 기록 필요. 9월 공지는 정책 개정을 예고."
+              ],
+              "source_ids": [
+                "policy",
+                "call"
+              ]
+            }
+          ],
+          "note": "지원 금액은 제안 범위이며 선정·지급을 보장하지 않는다. 국내 개인의 자격은 프로젝트·지역 조건에 따라 별도 판단."
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "result": {
+        "title": "AI 앱보다 오픈 기반 기술과의 적합성부터",
+        "points": [
+          {
+            "kind": "judgment",
+            "label": "권고",
+            "text": "오픈 도구·배포·보안 프로젝트라면 범위와 유럽 기여를 먼저 점검한다. LLM 중심 개발을 계획한다면 정책 개정본 확인 후 준비하는 편이 좋다.",
+            "source_ids": [
+              "call"
+            ]
+          }
+        ]
+      },
+      "references": [
+        {
+          "id": "call",
+          "title": "NLnet 11월 공모 공지",
+          "url": "https://nlnet.nl/news/2026/20260903-call.html",
+          "description": "2026-09-03 발표. 새 마감 주기·GenAI 정책 개정 예고."
+        },
+        {
+          "id": "restack",
+          "title": "Restack 지원 범위",
+          "url": "https://nlnet.nl/restack/",
+          "description": "제안 예산·AI 제외 및 예외 조건."
+        },
+        {
+          "id": "eligibility",
+          "title": "Restack 신청 자격",
+          "url": "https://nlnet.nl/restack/eligibility/",
+          "description": "개인·지역·활동 조건."
+        },
+        {
+          "id": "policy",
+          "title": "NLnet GenAI 정책",
+          "url": "https://nlnet.nl/foundation/policies/generativeAI/",
+          "description": "현재 게시된 버전은 2026-01-26. AI 사용 공개와 기록 의무."
+        }
+      ],
+      "caveats": [
+        {
+          "text": "한국시간은 CET(UTC+1)에서 KST(UTC+9)로 환산. 신청 직전 최신 공모·정책 확인 필요.",
+          "source_ids": [
+            "call"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "aws-activate-credits",
+      "topic_id": "developer-programs",
+      "topic_path": [
+        "지원·참여",
+        "개발자 프로그램"
+      ],
+      "title": "AWS Activate, 현금 대신 개발 비용을 줄이는 크레딧",
+      "description": "자체 자금으로 시작한 기업과 파트너 연계 기업의 조건이 다르다. 최대 금액을 모든 개발자의 혜택으로 볼 수 없다.",
+      "checked_on": "2026-10-04",
+      "scope": "AWS Activate",
+      "deck": "자체 자금으로 시작한 기업과 파트너 연계 기업의 조건이 다르다. 최대 금액을 모든 개발자의 혜택으로 볼 수 없다.",
+      "highlights": [
+        "Founders는 $1,000부터, 일부 선정 기업은 누적 최대 $5,000.",
+        "Portfolio 최대 $200,000은 Activate Provider 연계 조건.",
+        "AWS 사용 비용을 충당하는 크레딧. 현금 지원과 구분."
+      ],
+      "source_note": "AWS Activate 크레딧 · AWS Activate 신청 안내 / 2026.10.04 확인",
+      "summary": [
+        {
+          "kind": "fact",
+          "label": "Founders",
+          "text": "자체 자금 스타트업은 $1,000부터 시작하며, 일부 선정 기업은 시간이 지나며 최대 $5,000까지 받을 수 있다고 안내한다.",
+          "source_ids": [
+            "credits"
+          ]
+        },
+        {
+          "kind": "fact",
+          "label": "Portfolio",
+          "text": "최대 $200,000은 Activate Provider 연계 기업 대상이며 Org ID가 필요하다.",
+          "source_ids": [
+            "credits"
+          ]
+        },
+        {
+          "kind": "fact",
+          "label": "기본 자격",
+          "text": "Pre-Series B, 설립 후 10년 이내, AWS Paid Tier Plan 등 조건이 있다. 이전 크레딧 수령 이력도 검토한다.",
+          "source_ids": [
+            "credits"
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "plans",
+          "title": "신청 경로별 조건",
+          "columns": [
+            "경로",
+            "크레딧 안내",
+            "핵심 조건"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Founders",
+                "$1,000부터 / 일부 최대 $5,000",
+                "자체 자금 기업, 신청 자격 충족"
+              ],
+              "source_ids": [
+                "credits"
+              ]
+            },
+            {
+              "values": [
+                "Portfolio",
+                "최대 $200,000",
+                "Activate Provider 연계·Org ID"
+              ],
+              "source_ids": [
+                "credits"
+              ]
+            },
+            {
+              "values": [
+                "공통",
+                "AWS 비용에 적용되는 혜택",
+                "기업 정보·계정 조건·기존 수령 이력"
+              ],
+              "source_ids": [
+                "credits"
+              ]
+            }
+          ],
+          "note": "금액은 승인 가능한 혜택 안내이며 지급 보장이 아니다. 사용 가능 서비스·유효기간은 승인 조건과 약관 확인."
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "result": {
+        "title": "예상 AWS 지출과 자격을 함께 비교",
+        "points": [
+          {
+            "kind": "judgment",
+            "label": "권고",
+            "text": "이미 AWS를 사용할 계획이고 자격이 맞을 때 신청한다. 혜택을 받기 위해 불필요하게 인프라를 옮기는 비용도 따져야 한다.",
+            "source_ids": []
+          }
+        ]
+      },
+      "references": [
+        {
+          "id": "credits",
+          "title": "AWS Activate 크레딧",
+          "url": "https://aws.amazon.com/startups/credits/",
+          "description": "현재 Founders·Portfolio 금액과 공통 자격 안내."
+        },
+        {
+          "id": "guide",
+          "title": "AWS Activate 신청 안내",
+          "url": "https://aws.amazon.com/aws-startups/learn/applying-for-aws-activate-credits-a-step-by-step-guide/?lang=en-US",
+          "description": "기업 프로필·계정 연결·신청 과정."
+        }
+      ],
+      "caveats": [
+        {
+          "text": "크레딧은 매출·현금 지원이 아니다. 초과 사용료와 서비스별 적용 조건을 따로 확인해야 한다.",
+          "source_ids": [
+            "credits"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "aws-partner-hackathon",
+      "topic_id": "hackathons",
+      "topic_path": [
+        "지원·참여",
+        "해커톤·공모전"
+      ],
+      "title": "AWS 10월 AI 공모전, 파트너사 소속이 참가 조건",
+      "description": "마감은 남아 있지만 일반 개인 개발자에게 열린 공모전은 아니다. 소속 조건을 먼저 확인할 필요가 있다.",
+      "checked_on": "2026-10-04",
+      "scope": "AWS CDS Partner AI Hackathon",
+      "deck": "마감은 남아 있지만 일반 개인 개발자에게 열린 공모전은 아니다. 소속 조건을 먼저 확인할 필요가 있다.",
+      "highlights": [
+        "제출 마감: 2026년 10월 29일 05:00 한국시간.",
+        "APN 파트너 조직 소속 직원·같은 조직 팀 대상.",
+        "AWS 커뮤니케이션 서비스와 AI를 결합한 새 프로젝트 요구."
+      ],
+      "source_note": "AWS CDS Partner AI Hackathon 규칙 / 2026.10.04 확인",
+      "summary": [
+        {
+          "kind": "fact",
+          "label": "기간",
+          "text": "제출 기간은 9월 14일부터 10월 28일 13:00 PDT까지다. 한국시간 마감은 10월 29일 05:00이다.",
+          "source_ids": [
+            "rules"
+          ]
+        },
+        {
+          "kind": "fact",
+          "label": "자격",
+          "text": "등록된 AWS Partner 조직의 직원이 대상이다. 조직 도메인의 이메일을 요구하며, 팀 구성원도 같은 파트너 조직 소속이어야 한다.",
+          "source_ids": [
+            "rules"
+          ]
+        },
+        {
+          "kind": "fact",
+          "label": "과제",
+          "text": "기간 중 만든 새 프로젝트로 AWS End User Messaging 또는 SES 등 지정 서비스와 AI를 활용해야 한다.",
+          "source_ids": [
+            "rules"
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "entry",
+          "title": "참가 확인표",
+          "columns": [
+            "조건",
+            "공식 규칙"
+          ],
+          "rows": [
+            {
+              "values": [
+                "소속",
+                "AWS Partner Network에 등록되고 파트너 약관에 동의한 조직 소속."
+              ],
+              "source_ids": [
+                "rules"
+              ]
+            },
+            {
+              "values": [
+                "서비스",
+                "End User Messaging(RCS/SMS/WhatsApp) 또는 SES 등 지정 CDS 서비스 중 하나 이상."
+              ],
+              "source_ids": [
+                "rules"
+              ]
+            },
+            {
+              "values": [
+                "제출물",
+                "실행 가능한 프로젝트·코드 저장소·약 3분 데모 영상. 영어 자료 또는 번역."
+              ],
+              "source_ids": [
+                "rules"
+              ]
+            },
+            {
+              "values": [
+                "기간",
+                "2026-10-28 13:00 PDT / 2026-10-29 05:00 KST."
+              ],
+              "source_ids": [
+                "rules"
+              ]
+            }
+          ],
+          "note": "나이·국가·고용 및 이해관계 제한도 규칙에 포함된다. 파트너 소속만으로 최종 자격이 확정되는 것은 아니다."
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "result": {
+        "title": "소속 조건이 맞을 때만 과제 검토",
+        "points": [
+          {
+            "kind": "judgment",
+            "label": "권고",
+            "text": "파트너사 소속 여부와 참가 제한부터 확인한다. 해당되지 않으면 제출 준비보다 다른 공개 공모전을 찾는 편이 효율적이다.",
+            "source_ids": []
+          }
+        ]
+      },
+      "references": [
+        {
+          "id": "rules",
+          "title": "AWS CDS Partner AI Hackathon 규칙",
+          "url": "https://aws-cds-partner.devpost.com/rules",
+          "description": "참가 자격·제출 기간·서비스 및 제출물 조건."
+        }
+      ],
+      "caveats": [
+        {
+          "text": "한국시간은 PDT(UTC−7)에서 KST(UTC+9)로 환산. 상금과 개인의 참가 자격은 여기서 확정하지 않음.",
+          "source_ids": [
+            "rules"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "github-marketplace-paid-apps",
+      "topic_id": "marketplaces",
+      "topic_path": [
+        "시장·사업",
+        "마켓플레이스"
+      ],
+      "title": "GitHub Marketplace, 유료 앱은 조직·설치 실적부터",
+      "description": "유료 등록에는 조직 검증, 사용 실적, 구독 변경 처리 조건이 있다. 완성된 개인 앱을 곧바로 올려 판매하는 구조는 아니다.",
+      "checked_on": "2026-10-04",
+      "scope": "GitHub Marketplace 앱 등록",
+      "deck": "유료 등록에는 조직 검증, 사용 실적, 구독 변경 처리 조건이 있다. 완성된 개인 앱을 곧바로 올려 판매하는 구조는 아니다.",
+      "highlights": [
+        "유료 앱은 검증된 게시자 조직 소유여야 함.",
+        "GitHub App 최소 100회 설치 / OAuth 앱 최소 200명.",
+        "구매·해지·변경 이벤트와 월간·연간 구독 처리 필요."
+      ],
+      "source_note": "GitHub Marketplace 앱 등록 요건 / 2026.10.04 확인",
+      "summary": [
+        {
+          "kind": "fact",
+          "label": "소유",
+          "text": "유료 플랜을 게시하려면 검증된 게시자 조직이 앱을 소유해야 한다. 개인 소유 앱은 조직으로 이전한 뒤 검증한다.",
+          "source_ids": [
+            "requirements"
+          ]
+        },
+        {
+          "kind": "fact",
+          "label": "실적",
+          "text": "GitHub Apps는 최소 100회 설치, OAuth 앱은 최소 200명의 사용자를 요구한다.",
+          "source_ids": [
+            "requirements"
+          ]
+        },
+        {
+          "kind": "fact",
+          "label": "서비스",
+          "text": "개인정보 처리방침·지원 경로·GitHub 인증 이상의 기능 가치와 결제 변경 이벤트 처리가 필요하다.",
+          "source_ids": [
+            "requirements"
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "listing",
+          "title": "등록 준비 조건",
+          "columns": [
+            "항목",
+            "공식 요구사항"
+          ],
+          "rows": [
+            {
+              "values": [
+                "제품",
+                "공개 이용 가능. 초대 전용·공개 프리뷰 상태는 제외."
+              ],
+              "source_ids": [
+                "requirements"
+              ]
+            },
+            {
+              "values": [
+                "유료 게시자",
+                "조직 소유 앱·검증된 게시자."
+              ],
+              "source_ids": [
+                "requirements"
+              ]
+            },
+            {
+              "values": [
+                "설치 실적",
+                "GitHub App 100회 설치 / OAuth 앱 200명."
+              ],
+              "source_ids": [
+                "requirements"
+              ]
+            },
+            {
+              "values": [
+                "구독 연동",
+                "구매·업그레이드·다운그레이드·해지·체험 이벤트 처리, 월간·연간 결제 지원."
+              ],
+              "source_ids": [
+                "requirements"
+              ]
+            }
+          ],
+          "note": "GitHub Marketplace의 앱 기준이다. GitHub Actions 배포 규칙과는 구분해야 한다."
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "result": {
+        "title": "무료 사용 검증 후 유료 등록을 준비",
+        "points": [
+          {
+            "kind": "judgment",
+            "label": "권고",
+            "text": "GitHub 업무에 도움이 되는 작은 기능으로 사용 실적과 지원 체계를 먼저 확보한다. 유료화 시 조직·구독 상태 관리 비용까지 포함해 판단한다.",
+            "source_ids": []
+          }
+        ]
+      },
+      "references": [
+        {
+          "id": "requirements",
+          "title": "GitHub Marketplace 앱 등록 요건",
+          "url": "https://docs.github.com/en/apps/github-marketplace/creating-apps-for-github-marketplace/requirements-for-listing-an-app",
+          "description": "현재 무료·유료 앱 자격과 구독 연동 조건."
+        }
+      ],
+      "caveats": [
+        {
+          "text": "등록 요건 충족은 판매 성과를 보장하지 않는다.",
+          "source_ids": [
+            "requirements"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "upwork-ai-integration-demand",
+      "topic_id": "freelance-demand",
+      "topic_path": [
+        "시장·사업",
+        "프리랜스 수요"
+      ],
+      "title": "AI 통합 수요, 챗봇 개발보다 빠르게 성장",
+      "description": "미국 발주 기반 Upwork 수입 데이터에서 AI 통합의 성장률이 높았다. 기존 서비스에 AI를 연결하는 역량을 검토할 근거다.",
+      "checked_on": "2026-10-04",
+      "scope": "Upwork 2026 수요 분석",
+      "deck": "미국 발주 기반 Upwork 수입 데이터에서 AI 통합의 성장률이 높았다. 기존 서비스에 AI를 연결하는 역량을 검토할 근거다.",
+      "highlights": [
+        "AI Integration +178%, AI Chatbot Development +71%.",
+        "2025년 프리랜서 수입의 전년 대비 증가율 기준.",
+        "현재 채용 건수·개인 단가·한국 시장의 성장률과 구분."
+      ],
+      "source_note": "Upwork In-Demand Skills 2026 · Upwork 2026 분석 발표 / 2026.10.04 확인",
+      "summary": [
+        {
+          "kind": "fact",
+          "label": "관측",
+          "text": "Upwork 2026 분석의 코딩·웹 개발 분야에서 AI Integration이 +178%, AI Chatbot Development가 +71%로 제시됐다.",
+          "source_ids": [
+            "research"
+          ]
+        },
+        {
+          "kind": "fact",
+          "label": "측정",
+          "text": "분석은 미국에서 시작된 계약의 프리랜서 수입을 사용한다. 기간은 2025년 1월 1일~12월 31일이며 전년과 비교한다.",
+          "source_ids": [
+            "research"
+          ]
+        },
+        {
+          "kind": "judgment",
+          "label": "해석",
+          "text": "빠른 성장은 시장 전체의 최대 규모나 개별 개발자의 수입 증가를 뜻하지 않는다.",
+          "source_ids": []
+        }
+      ],
+      "tables": [],
+      "metrics": [],
+      "datasets": [
+        {
+          "id": "earnings-growth",
+          "title": "코딩·웹 개발 분야 수입 증가율",
+          "kind": "fact",
+          "unit": "%",
+          "rows": [
+            {
+              "label": "AI Integration",
+              "value": 178,
+              "source_ids": [
+                "research"
+              ]
+            },
+            {
+              "label": "AI Chatbot Development",
+              "value": 71,
+              "source_ids": [
+                "research"
+              ]
+            },
+            {
+              "label": "Firmware Development",
+              "value": 14,
+              "source_ids": [
+                "research"
+              ]
+            }
+          ],
+          "assumptions": [],
+          "note": "2025년 미국 발주 Upwork 계약 수입의 전년 대비 증가율. 채용 건수·평균 단가 증가율이 아님.",
+          "method": [
+            "Upwork의 2026 In-Demand Skills 분석. 대상 기간: 2025-01-01~2025-12-31.",
+            "미국 발주 완료 계약의 프리랜서 수입 기준. 분석 대상 기술은 분야별 합산 수입 기준을 충족한 항목.",
+            "성장률 비교이며 절대 계약 수·시장 크기는 이 그래프에서 알 수 없음."
+          ],
+          "source_ids": [
+            "research"
+          ]
+        }
+      ],
+      "result": {
+        "title": "기존 업무에 연결한 사례를 포트폴리오로",
+        "points": [
+          {
+            "kind": "judgment",
+            "label": "권고",
+            "text": "CRM·문서·고객 지원 등 기존 흐름에 AI를 연결한 데모를 만들고, 처리 시간·오류 감소 같은 효과를 보여주는 편이 좋다.",
+            "source_ids": []
+          }
+        ]
+      },
+      "references": [
+        {
+          "id": "research",
+          "title": "Upwork In-Demand Skills 2026",
+          "url": "https://www.upwork.com/research/in-demand-skills-2026",
+          "description": "플랫폼 자체 분석. 2025년 미국 발주 수입 데이터와 방법론."
+        },
+        {
+          "id": "release",
+          "title": "Upwork 2026 분석 발표",
+          "url": "https://investors.upwork.com/news-releases/news-release-details/upworks-demand-skills-2026-demand-top-ai-skills-more-doubles-ai",
+          "description": "2026-02-04 발표. 기술별 증가율."
+        }
+      ],
+      "caveats": [
+        {
+          "text": "플랫폼·지역·과거 기간이 제한된 자료다. 2026년 10월의 실시간 채용 수요나 한국 시장 전체로 일반화하기 어렵다.",
+          "source_ids": [
+            "research"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tally-small-saas-case",
+      "topic_id": "revenue-cases",
+      "topic_path": [
+        "시장·사업",
+        "수익 사례"
+      ],
+      "title": "Tally의 성장, 무료 제품과 지속 개선에 기반",
+      "description": "창업자가 공개한 소규모 SaaS 사례다. 매출 숫자와 함께 팀 규모·측정 시점·제품 전략을 봐야 한다.",
+      "checked_on": "2026-10-04",
+      "scope": "Tally 창업자 공개 자료",
+      "deck": "창업자가 공개한 소규모 SaaS 사례다. 매출 숫자와 함께 팀 규모·측정 시점·제품 전략을 봐야 한다.",
+      "highlights": [
+        "2026년 1월 공개 MRR $358,000. 창업자 자가 보고.",
+        "당시 팀 10명. 현재의 1인 기업 수익으로 해석할 수 없음.",
+        "2026년 방향은 매출 목표보다 품질·제품 개선."
+      ],
+      "source_note": "Tally 2026 제품 전략 · Tally 공식 변경 기록 / 2026.10.04 확인",
+      "summary": [
+        {
+          "kind": "fact",
+          "label": "공개 수치",
+          "text": "2026년 1월 14일 글은 MRR $358,000과 10명 팀을 공개했다. 외부 투자 없이 운영한다고 설명한다.",
+          "source_ids": [
+            "founder"
+          ]
+        },
+        {
+          "kind": "fact",
+          "label": "전략",
+          "text": "2026년에는 새 매출 목표보다 제품 품질·무료 제품의 가치·고객 지원을 강조했다.",
+          "source_ids": [
+            "founder"
+          ]
+        },
+        {
+          "kind": "fact",
+          "label": "최근 제품",
+          "text": "공식 변경 기록에는 2026년 9월 11일 검색 속도 개선과 대시보드 변경이 올라와 있다.",
+          "source_ids": [
+            "changelog"
+          ]
+        }
+      ],
+      "tables": [],
+      "metrics": [],
+      "datasets": [
+        {
+          "id": "mrr-history",
+          "title": "공개 시점별 월 반복 매출",
+          "kind": "fact",
+          "unit": "USD MRR",
+          "rows": [
+            {
+              "label": "2024.02",
+              "value": 100000,
+              "source_ids": [
+                "founder"
+              ]
+            },
+            {
+              "label": "2025.02",
+              "value": 175000,
+              "source_ids": [
+                "founder"
+              ]
+            },
+            {
+              "label": "2026.01",
+              "value": 358000,
+              "source_ids": [
+                "founder"
+              ]
+            }
+          ],
+          "assumptions": [],
+          "note": "창업자가 2026년 1월 공개한 과거 수치. 외부 감사 자료·순이익·2026년 10월 현재 매출이 아님.",
+          "method": [
+            "Tally 창업자 글의 공개 수치 세 시점을 선택. 시점 간격은 동일하지 않음.",
+            "MRR는 월 반복 매출이며 일회성 매출·순이익·창업자 개인 수입과 다름.",
+            "회사가 공개했다고 확인한 값으로, 독립적인 재무 검증은 수행하지 않음."
+          ],
+          "source_ids": [
+            "founder"
+          ]
+        }
+      ],
+      "result": {
+        "title": "성공 수치보다 유지되는 제품 가치에 주목",
+        "points": [
+          {
+            "kind": "judgment",
+            "label": "권고",
+            "text": "고객이 반복 사용하는 핵심 기능과 지원 품질을 먼저 확인한다. 이 사례의 매출을 개인 프로젝트의 예상 수익으로 옮겨 계산하지 않는다.",
+            "source_ids": []
+          }
+        ]
+      },
+      "references": [
+        {
+          "id": "founder",
+          "title": "Tally 2026 제품 전략",
+          "url": "https://blog.tally.so/in-2026-were-optimizing-for-quality-not-revenue/",
+          "description": "2026-01-14 창업자 글. 매출·팀 규모는 자가 보고."
+        },
+        {
+          "id": "changelog",
+          "title": "Tally 공식 변경 기록",
+          "url": "https://tally.so/changelog",
+          "description": "2026-09-11 검색·대시보드 개선 확인."
+        }
+      ],
+      "caveats": [
+        {
+          "text": "성공한 한 기업의 사례이며 전체 SaaS 성공률이나 개인의 수익 가능성을 나타내지 않는다.",
+          "source_ids": [
+            "founder"
+          ]
+        }
+      ]
+    }
+  ]
+}

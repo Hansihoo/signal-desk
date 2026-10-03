@@ -45,6 +45,7 @@ succeeded, not that every source succeeded.
 | `reports` | Reviewed/authored content using the report contract below. |
 | `report_versions` | Report ID, current revision, UTC saved time. Prior documents remain in SQLite. |
 | `featured_report_id` | Selected report for the representative pair. |
+| `publication_report_ids` | Reviewed report IDs in editorial order; independent of layout. |
 | `health` | Results/warnings for this export; empty without collection. |
 
 Public source export reuses the existing explicit allowlist and excludes private
@@ -65,6 +66,7 @@ report. It contains the existing report's content previously embedded in HTML.
 | `summary` | Points with `kind` (`fact`, `estimate`, `judgment`), label, text, and source IDs. |
 | `metrics` | Numeric values, units, labels, qualifiers, source IDs; empty when unnecessary. |
 | `datasets` | Numeric rows, shared unit, fact/estimate kind, assumptions, methodology, note, sources, optional threshold; empty when unnecessary. |
+| `tables` (optional) | Plain-text comparison columns and rows with source IDs and a scope note. No cell markup or styles. |
 | `result` | Conclusion title and points using the same point contract. |
 | `references` | Unique IDs, titles, credential-free HTTP(S) URLs, descriptions. |
 | `caveats` | Scope/uncertainty text and applicable source IDs. |
@@ -100,6 +102,39 @@ Presentation sources: `briefing_preview_home.html`, `briefing_preview_report.htm
 text, date, numbers, citations, and thresholds come from data. Legacy source library
 and dated snapshots retain their existing format. No new collectors or weekly
 automation are introduced by this separation.
+
+## Initial development research, 2026-10-04
+
+`config/development_baseline.2026-10-04.json` is reviewed authored input, not a
+generated export. Ten reports cover AI APIs, Agent/MCP, safety, OSS rewards, grants,
+developer programmes, hackathons, marketplaces, freelance demand, and a small SaaS
+case. Twenty-one distinct official/first-party URLs support the content. Raw public
+research evidence is retained under `data/raw/research/2026-10-04/` and ignored by Git.
+
+`config/research_publication.json` chooses the featured report and report order and
+lists immutable reviewed input batches. On export/publish, unapplied batches are
+validated and imported with a receipt in `research_import_batches`. Receipt and
+report changes share one SQLite transaction. Repeating publication skips an applied
+batch, preserving later database edits. Modifying an applied batch is rejected:
+add a new dated batch ID for subsequent reviewed changes. Source-controlled authored
+inputs let the cloud apply the same research without replacing its accumulated DB.
+They contain public content only; generated DB/raw/JSON/HTML/PNG remain ignored.
+
+`/preview/index.html` presents the selected reports grouped by topic. Stable report
+URLs are `/preview/<report-id>.html`; `report.html` aliases the current featured
+report. All stored reports also get an address, including the earlier storage
+report at `/preview/github-pages-storage.html`. Quantitative comparisons use bars;
+eligibility and timelines use semantic tables. Each report retains summary, data,
+result, references, evidence dates, and scope. Main-page copy leads to the reviewed
+report; the separate existing feed library/daily archives keep their routes.
+
+Evidence limits are visible: Google dynamic rules were checked through their
+official indexed content; the Bugcrowd rule body was not fully readable, so current
+reward amounts are not asserted. Upwork percentages measure 2025 US-origin contract
+earnings, not job counts. Tally values are founder-reported historical MRR, not
+audited profit or a one-person income. Eligibility and future deadlines are not
+inferred from promotional maximums. Weekly deep review/changed-only scheduling is
+still a separate, unimplemented workstream; the existing daily feed refresh continues.
 
 ## Verification on 2026-10-03
 

@@ -214,3 +214,13 @@ Saramin list results do not include full detailed duties/qualifications/preferre
 - Python 3.8+
 - Windows Edge or Chrome for image export
 - No Python package dependencies for the current MVP
+# Development research reports
+
+Reviewed development information is published at
+[Signal Desk](https://hansihoo.github.io/signal-desk/preview/index.html).
+The first collection (2026-10-04) contains ten reports across development changes,
+support/participation, and market/business information. Each links summary, sourced
+data, conclusions, and official references. Data remains independent of HTML/CSS;
+see [the content contract](docs/RESEARCH_DATA.md) for reviewed input batches and
+stable report URLs. Existing daily source collection is separate from the planned
+weekly deep review.

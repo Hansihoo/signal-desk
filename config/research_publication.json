@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "featured_report_id": "openai-api-migration",
+  "report_ids": [
+    "openai-api-migration",
+    "mcp-apps-workflows",
+    "openai-safety-bounty",
+    "google-oss-reward-status",
+    "nlnet-restack-call",
+    "aws-activate-credits",
+    "aws-partner-hackathon",
+    "github-marketplace-paid-apps",
+    "upwork-ai-integration-demand",
+    "tally-small-saas-case"
+  ],
+  "batches": [
+    {
+      "id": "development-baseline-2026-10-04",
+      "input": "development_baseline.2026-10-04.json"
+    }
+  ]
+}

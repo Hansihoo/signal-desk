@@ -50,11 +50,7 @@ def _format_value(value, unit):
 
 
 def _line_break(text):
-    words = text.split()
-    if len(words) <= 3:
-        return _escape(text)
-    middle = (len(words) + 1) // 2
-    return _escape(" ".join(words[:middle])) + "<br>" + _escape(" ".join(words[middle:]))
+    return _escape(text)
 
 
 def _citations(record, source_numbers):
@@ -102,11 +98,47 @@ def _chart(dataset, source_numbers):
         '<details class="method-note"><summary>산정 근거</summary>%s</details>' % methods if methods else "")
 
 
+def _table(table, source_numbers):
+    headers = "".join('<th scope="col">%s</th>' % _escape(text) for text in table["columns"])
+    rows = []
+    for row in table["rows"]:
+        cells = ['<th scope="row">%s</th>' % _escape(row["values"][0])]
+        cells.extend('<td>%s%s</td>' % (_escape(value), _citations(row, source_numbers)
+                     if index == len(row["values"]) - 1 else "")
+                     for index, value in enumerate(row["values"][1:], 1))
+        rows.append("<tr>%s</tr>" % "".join(cells))
+    return '<div class="report-table"><table><caption>%s</caption><thead><tr>%s</tr></thead><tbody>%s</tbody></table><p class="chart-note">%s</p></div>' % (
+        _escape(table["title"]), headers, "".join(rows), _escape(table["note"]))
+
+
+def _curated_rows(reports, featured_id=None):
+    groups = {}
+    for report in reports:
+        groups.setdefault(report["topic_path"][0], []).append(report)
+    sections = []
+    for index, (name, members) in enumerate(groups.items(), 1):
+        rows = []
+        for report in members:
+            if report["id"] == featured_id:
+                continue
+            url = _escape(report["id"] + ".html")
+            rows.append('''<article class="topic-row" id="topic-%s">
+              <div class="topic-label">%s</div><div><a class="topic-title" href="%s">%s</a>
+              <p class="report-abstract">%s</p></div><a class="row-arrow" href="%s" aria-label="%s">↗</a></article>''' % (
+                _escape(report["topic_id"]), _escape(report["topic_path"][-1]), url, _escape(report["title"]),
+                _escape(" ".join(report["highlights"][:2])), url, _escape(report["title"])))
+        sections.append('<section class="topics-section" id="group-%d" aria-labelledby="group-title-%d"><div class="section-heading"><h2 id="group-title-%d">%s</h2></div><div class="topic-list">%s</div></section>' % (
+            index, index, index, _escape(name), "".join(rows)))
+    nav = "".join('<a href="index.html#group-%d">%s</a>' % (index, _escape(name))
+                  for index, name in enumerate(groups, 1))
+    return "".join(sections), nav
+
+
 def _report_replacements(report):
     source_numbers = {source["id"]: index for index, source in enumerate(report["references"], 1)}
-    metrics = "".join('<p><strong>%s</strong><span>%s%s</span></p>' % (
+    metrics = "".join('<p><strong>%s</strong><span>%s%s</span><small>%s</small></p>' % (
         _escape(_format_value(metric["value"], metric["unit"])), _escape(metric["label"]),
-        _citations(metric, source_numbers)) for metric in report["metrics"])
+        _citations(metric, source_numbers), _escape(metric["qualifier"])) for metric in report["metrics"])
     numeric_values = {_format_value(metric["value"], metric["unit"]) for metric in report["metrics"]}
     numeric_values.update(_format_value(row["value"], dataset["unit"]) for dataset in report["datasets"] for row in dataset["rows"])
     pattern = re.compile("|".join(re.escape(_escape(value)) for value in sorted(numeric_values, key=len, reverse=True))) if numeric_values else None
@@ -127,23 +159,37 @@ def _report_replacements(report):
             "__HIGHLIGHTS__": "".join(highlights), "__SOURCE_NOTE__": _escape(report["source_note"]),
             "__SUMMARY__": _points(report["summary"], source_numbers),
             "__METRICS__": '<div class="limits-row">%s</div>' % metrics if metrics else "",
-            "__DATASETS__": "".join(_chart(dataset, source_numbers) for dataset in report["datasets"]),
+            "__DATASETS__": "".join(_chart(dataset, source_numbers) for dataset in report["datasets"])
+                            + "".join(_table(table, source_numbers) for table in report.get("tables", [])),
             "__RESULT_TITLE__": _line_break(report["result"]["title"]),
             "__RESULT_POINTS__": _points(report["result"]["points"], source_numbers),
             "__REFERENCES__": references, "__CAVEATS__": caveats}
 
 
-def build_briefing_preview(output, snapshot, report):
+def build_briefing_preview(output, snapshot, report, research_data=None):
     validate_report(report)
     destination = Path(output) / "preview"
     destination.mkdir(parents=True, exist_ok=True)
     style = Path(__file__).with_name("briefing_preview.css").read_bytes()
     (destination / "briefing.css").write_bytes(style)
     version = hashlib.sha256(style).hexdigest()[:12]
-    replacements = dict(_report_replacements(report), __STYLE_VERSION__=version, __TOPIC_ROWS__=_topic_rows(snapshot))
-    for page, template in (("index.html", "briefing_preview_home.html"),
-                           ("report.html", "briefing_preview_report.html")):
-        content = Path(__file__).with_name(template).read_text(encoding="utf-8")
-        content = re.sub(r"__[A-Z_]+__", lambda match: replacements[match.group()], content)
-        (destination / page).write_text(content, encoding="utf-8")
+    reports = research_data["reports"] if research_data else [report]
+    by_id = {item["id"]: validate_report(item) for item in reports}
+    selected = [by_id[key] for key in research_data["publication_report_ids"]] if research_data else []
+    curated, nav = _curated_rows(selected, report["id"])
+    if not nav:
+        nav = '<a href="report.html">%s</a>' % _escape(report["topic_path"][0])
+    shared = {"__STYLE_VERSION__": version, "__TOPIC_ROWS__": _topic_rows(snapshot),
+              "__CURATED_ROWS__": curated, "__PUBLICATION_NAV__": nav,
+              "__REPORT_URL__": _escape(report["id"] + ".html")}
+    home = Path(__file__).with_name("briefing_preview_home.html").read_text(encoding="utf-8")
+    replacements = dict(_report_replacements(report), **shared)
+    (destination / "index.html").write_text(re.sub(r"__[A-Z_]+__", lambda m: replacements[m.group()], home), encoding="utf-8")
+    template = Path(__file__).with_name("briefing_preview_report.html").read_text(encoding="utf-8")
+    for item in reports:
+        replacements = dict(_report_replacements(item), **shared)
+        rendered = re.sub(r"__[A-Z_]+__", lambda m: replacements[m.group()], template)
+        (destination / (item["id"] + ".html")).write_text(rendered, encoding="utf-8")
+        if item["id"] == report["id"]:
+            (destination / "report.html").write_text(rendered, encoding="utf-8")
     return destination
