@@ -16,6 +16,10 @@ The public homepage is a multi-topic research library. Each topic has its own pa
 add research areas and public RSS/Atom feeds in `config/research_topics.json`.
 See [research hub and free hosting scope](docs/RESEARCH_HUB.md).
 
+The **Developer Opportunities** topic currently provides an HTML outline with eight
+categories and a downloadable report template. Real opportunity collection and verification
+are deferred. See [scope and requirements](docs/OPPORTUNITIES.md).
+
 Future domains:
 
 - jobs and hiring notices

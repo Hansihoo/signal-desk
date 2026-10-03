@@ -49,6 +49,9 @@ The collection schedule, SQLite model, and daily snapshot format are unchanged b
 Edit `config/research_topics.json`. Stable lowercase IDs become permanent page paths.
 Each topic has a name, description, collector, and optional collection limit.
 Built-in collectors are `ai`, `housing`, and `news`; each may belong to one topic.
+`planned` topics add a clearly labelled HTML outline while skipping collection. The
+Developer Opportunities outline is configured in `config/opportunity_outline.json`;
+its source candidates and fields do not become public library records.
 The `rss` collector supports additional independent topics with public RSS/Atom feeds.
 
 Example entry (replace the placeholder URL with a verified feed):

@@ -95,6 +95,21 @@ select { max-width: 155px; }
 .report-back { margin-top: 30px; font-size: 12px; }
 .document-footer { margin-top: 35px; padding-top: 15px; border-top: 1px solid var(--line); color: var(--muted); font-size: 10px; }
 .document-footer p { margin: 4px 0; }
+.phase-note { margin: 22px 0 14px; padding: 12px 14px; border-left: 2px solid #8fa28d; background: #f4f7f1; color: #53654f; font-size: 12px; }
+.opportunity-stats { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.opportunity-stats > div { padding: 15px 8px; }
+.opportunity-stats strong { display: block; font-size: 22px; font-weight: 500; }
+.opportunity-stats span { color: var(--muted); font-size: 10px; }
+.outline-tags { display: flex; flex-wrap: wrap; gap: 7px 14px; margin-top: 14px; color: #5f6c61; font-size: 11px; }
+.outline-policy { margin-top: 24px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 14px 0; color: #68736b; font-size: 12px; }
+.outline-policy summary { cursor: pointer; color: var(--accent); }
+.outline-questions { padding-left: 22px; color: #5c6860; line-height: 2; font-size: 13px; }
+.outline-fields h3 { margin: 25px 0 10px; font-size: 14px; font-weight: 600; }
+.outline-fields table { border-collapse: collapse; width: 100%; table-layout: fixed; font-size: 12px; }
+.outline-fields th, .outline-fields td { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 10px 12px; text-align: left; overflow-wrap: anywhere; }
+.outline-fields th { width: 60%; background: #f8f9f6; font-weight: 500; }
+.outline-fields small { display: block; color: var(--muted); font-size: 10px; margin-top: 2px; }
+.outline-fields td { color: var(--muted); }
 @media (max-width: 900px) {
   .masthead { padding: 18px 24px; }
   .workspace { grid-template-columns: minmax(0, 1fr); padding: 18px 24px 40px; gap: 18px; }
@@ -128,6 +143,8 @@ select { max-width: 155px; }
   .report-meta { gap: 13px 16px; }
   .report-contents { gap: 7px 15px; }
   .report-copy { font-size: 14px; }
+  .opportunity-stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .opportunity-stats > div { padding: 12px 6px; }
 }
 @media print {
   body { background: white; }

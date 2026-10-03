@@ -120,6 +120,13 @@ and report IDs use query parameters on existing topic pages, avoiding an HTML fi
 Archived query routes render only saved items. Shared assets use relative root paths and
 content-hash cache keys. Review/conclusion document sections are pending placeholders.
 
+Topics may use `collector: planned` for an explicitly requested UI/requirements phase;
+public collection skips them. The opportunities outline is separate catalog metadata
+from `config/opportunity_outline.json`, never a collected `news_items` record. Its category
+and template query views retain the shared research tree. `opportunity_report.html` renders
+a standalone HTML download with inline shared CSS. Dedicated program storage, verification,
+deduplication, and events are deferred; see `OPPORTUNITIES.md` for the original scope.
+
 `public_site.py` adds public-source refresh and a static searchable dashboard. Only
 selected AI/news/housing fields enter the public library; local job/profile data is excluded.
 Daily JSON briefing snapshots under `site/archive/` preserve the first successful briefing

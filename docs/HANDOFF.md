@@ -32,6 +32,7 @@ Implemented:
 - searchable public dashboard and dated briefing archive at https://hansihoo.github.io/signal-desk/,
 - multi-topic research homepage, independent topic pages, and configurable public RSS/Atom research feeds,
 - report/tree HTML scaffold: main -> topic -> category -> source-note document; review/conclusion sections pending,
+- Developer Opportunities HTML outline, eight categories, planned metrics/source links, and a standalone HTML report template (no opportunity collection yet),
 - daily GitHub Actions collection and Pages deployment with durable release snapshots,
 - tests for parsers, detail extraction, rendering, and review checks.
 

@@ -12,6 +12,7 @@ from .db import record_snapshot, upsert_news_items
 
 
 DEFAULT_TOPICS = Path(__file__).resolve().parent.parent / "config/research_topics.json"
+OPPORTUNITY_OUTLINE = DEFAULT_TOPICS.with_name("opportunity_outline.json")
 SLUG = re.compile(r"[a-z][a-z0-9-]{0,47}")
 
 
@@ -36,17 +37,19 @@ def load_topics(path=None):
         collector = topic.get("collector")
         if not isinstance(name, str) or not name.strip() or topic["id"] in ids or name in names:
             raise ValueError("Research topic IDs and names must be unique and non-empty.")
-        if collector not in ("ai", "housing", "news", "rss"):
+        if collector not in ("ai", "housing", "news", "rss", "planned"):
             raise ValueError("Unknown research collector: %s" % collector)
         if not isinstance(topic.get("description", ""), str):
             raise ValueError("Research descriptions must be text.")
         if collector == "news" and topic.get("source", "auto") not in ("auto", "gdelt", "google-news"):
             raise ValueError("Unsupported news source.")
-        if collector != "rss" and collector in builtins:
+        if collector not in ("rss", "planned") and collector in builtins:
             raise ValueError("Each built-in collector may belong to only one topic.")
         ids.add(topic["id"])
         names.add(name)
         builtins.add(collector)
+        if topic.get("view") not in (None, "opportunities") or (topic.get("view") == "opportunities" and collector != "planned"):
+            raise ValueError("The opportunity outline view requires a planned collector.")
         if topic.get("detail_page") not in (None, "ai-news.html", "brief.html"):
             raise ValueError("Unsupported detail page.")
         if not isinstance(topic.get("limit", 40), int) or not 1 <= topic.get("limit", 40) <= 500:
@@ -63,6 +66,11 @@ def load_topics(path=None):
                     raise ValueError("RSS feeds require unique safe IDs and public HTTP(S) URLs.")
                 feed_ids.add(feed["id"])
     return topics
+
+
+def opportunity_outline():
+    """UI requirements only; these are never exported as collected opportunities."""
+    return json.loads(OPPORTUNITY_OUTLINE.read_text(encoding="utf-8"))
 
 
 def topic_for_item(topics, source_id, housing=False):

@@ -31,10 +31,40 @@
         <p id="description" class="description">__PAGE_DESCRIPTION__</p>
         <p id="updated" class="updated"></p>
       </header>
+      <section id="opportunity-dashboard" class="document-section" hidden aria-label="개발 수익 기회 현황">
+        <p class="phase-note"><strong>HTML 틀 준비</strong> · 실제 기회 수집과 검증은 아직 연결되지 않았습니다.</p>
+        <div class="opportunity-stats">
+          <div><strong>—</strong><span>실행 가능 기회</span></div><div><strong>—</strong><span>14일 내 마감</span></div><div><strong>—</strong><span>상시 프로그램</span></div><div><strong>—</strong><span>오늘 신규</span></div><div><strong>—</strong><span>오늘 변경</span></div>
+        </div><p class="muted">수집 대기 · 집계할 데이터가 준비되면 표시됩니다.</p>
+      </section>
       <section id="directory" class="document-section" aria-labelledby="directory-title">
         <div class="section-heading"><h2 id="directory-title">리서치 분야</h2><span id="directory-count" class="muted"></span></div>
         <div id="directory-list" class="directory-list"></div>
       </section>
+      <section id="opportunity-overview" class="document-section" hidden>
+        <div class="section-heading"><h2 id="opportunity-empty-title">기회 기록</h2><span class="muted">수집 대기</span></div>
+        <div class="pending"><p id="opportunity-empty-copy">공식 출처의 조건과 실행 링크를 확인한 기회를 이곳에 모읍니다.</p><p><a id="opportunity-template-link" href="?template=1">기회 보고서 형식 보기 →</a></p></div>
+        <section class="document-section"><h2>기술 태그</h2><div id="opportunity-tags" class="outline-tags"></div></section>
+        <details class="outline-policy"><summary>수집 기준과 예정 필터</summary>
+          <p>공식 출처 우선 · 마감·신청 불가·확인되지 않은 정보는 기본 목록에서 제외합니다. 수익 사례는 별도 보관하고 자가보고 여부를 표시합니다.</p>
+          <p>총상금과 개인 최대 보상을 구분합니다. 금액·마감·국가 제한·상태를 확인할 수 없으면 미확인으로 둡니다.</p>
+          <p><strong>금액의 의미</strong><br><span id="opportunity-reward-meanings"></span></p>
+          <p><strong>상태</strong><br><span id="opportunity-statuses"></span></p>
+          <p><strong>근거 구분</strong><br><span id="opportunity-evidence-labels"></span></p>
+          <p><strong>수집 연결 후 제공할 필터</strong><br><span id="opportunity-filters"></span></p>
+        </details>
+        <section class="document-section"><div class="section-heading"><h2>연결할 공식 출처</h2><span class="muted">초기 수집 후보</span></div><p class="muted">아래는 출처 목록입니다. 검증된 참여 기회나 보상금 목록은 아직 아닙니다.</p><div id="opportunity-sources" class="directory-list"></div></section>
+      </section>
+      <article id="opportunity-template" hidden>
+        <div class="phase-note"><strong>보고서 양식</strong> · 실제 프로그램 정보가 입력되기 전의 구조입니다.</div>
+        <nav class="report-contents" aria-label="기회 보고서 차례"><span>문서 차례</span><a href="#opp-core">01 주제 / 핵심</a><a href="#opp-summary">02 요약</a><a href="#opp-data">03 데이터</a><a href="#opp-action">04 실행</a><a href="#opp-references">05 참고자료</a></nav>
+        <section id="opp-core" class="document-section"><h2><span class="section-number">01</span>주제 / 핵심</h2><dl class="report-meta"><div><dt>프로그램명 · 운영 기관</dt><dd>기입 전</dd></div><div><dt>참여 상태</dt><dd>UNKNOWN · 확인 전</dd></div><div><dt>보상 · 원문 통화</dt><dd>확인 전</dd></div><div><dt>마감 · 시간대</dt><dd>확인 전</dd></div></dl></section>
+        <section id="opp-summary" class="document-section"><h2><span class="section-number">02</span>요약</h2><ol class="outline-questions"><li>무엇인가?</li><li>누가 참여할 수 있는가?</li><li>무엇을 제출하는가?</li><li>어떤 의미의 보상을 얼마까지 받을 수 있는가?</li><li>언제까지 참여할 수 있는가?</li></ol></section>
+        <section id="opp-data" class="document-section"><h2><span class="section-number">03</span>데이터</h2><p class="muted">확인 전 항목은 비워 두고, 원문 근거가 확보된 값을 기록합니다.</p><div id="opportunity-fields"></div></section>
+        <section id="opp-action" class="document-section"><h2><span class="section-number">04</span>실행</h2><div class="pending"><p>공식 규칙 · Scope · 참가 신청 · Submission Form · SDK Documentation</p><p>검증된 링크를 확보한 뒤 실제 실행 버튼을 연결합니다.</p></div></section>
+        <section id="opp-references" class="document-section"><h2><span class="section-number">05</span>참고자료</h2><p>원문 출처 · 근거 구분 · 마지막 검증일 · 주요 변경 내역을 기록합니다.</p><p class="muted">공식 공지, 언론 보도와 창업자 자가보고를 구분합니다.</p></section>
+        <p class="report-back"><a id="opportunity-download" download="opportunity-report-template.html">양식 HTML 다운로드 ↓</a> <span class="muted">·</span> <a id="opportunity-back">분류 화면으로 돌아가기</a></p>
+      </article>
       <div id="health"></div>
       <section id="library" class="document-section" aria-labelledby="list-title">
         <div class="section-heading"><h2 id="list-title">최근 기록</h2><span id="count" class="muted" aria-live="polite"></span></div>

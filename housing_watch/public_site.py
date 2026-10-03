@@ -12,7 +12,7 @@ from .config import enabled_sources
 from .db import all_items, record_snapshot, upsert_items
 from .news import NewsFetchError, collect_weekly_news
 from .render import render_brief_html
-from .research_topics import collect_topic_feeds, load_topics, public_url, topic_for_item
+from .research_topics import collect_topic_feeds, load_topics, opportunity_outline, public_url, topic_for_item
 from .sources import fetch_source
 from .timeutil import iso_utc, now_kst
 
@@ -33,7 +33,7 @@ def collect_public_data(conn, config, topics=None):
             health.append({"source": source["name"], "topic_id": housing["id"], "ok": False, "message": str(exc)})
     for topic in topics:
         name = topic["name"]
-        if topic["collector"] == "housing":
+        if topic["collector"] in ("housing", "planned"):
             continue
         try:
             if topic["collector"] == "ai":
@@ -133,6 +133,8 @@ def build_public_site(conn, output_path="site", health=None, topics=None):
         selected = dict(snapshot, items=[item for item in entries if item["topic_id"] == topic["id"]],
                         health=[entry for entry in snapshot["health"] if entry.get("topic_id") == topic["id"]])
         _write_page(topic_path / "index.html", selected, history, "../../", selected_topic=topic["id"])
+        if topic.get("view") == "opportunities":
+            _write_opportunity_template(topic_path / "report-template.html", opportunity_outline())
     # Each dated page is rebuilt from its saved snapshot, never from today's rows.
     for entry in history:
         saved = archive / entry["date"] / "briefing.json"
@@ -154,10 +156,27 @@ def _topic_catalog(topics, entries):
     catalog = []
     for topic in topics:
         items = [item for item in entries if item["topic_id"] == topic["id"]]
-        catalog.append({"id": topic["id"], "name": topic["name"], "description": topic.get("description", ""),
+        entry = {"id": topic["id"], "name": topic["name"], "description": topic.get("description", ""),
                         "detail_page": topic.get("detail_page", ""), "count": len(items),
-                        "latest": max((item["published_at"] or item["first_seen_at"] for item in items), default="")})
+                        "latest": max((item["published_at"] or item["first_seen_at"] for item in items), default="")}
+        if topic.get("view") == "opportunities":
+            entry.update(view="opportunities", stage="outline", outline=opportunity_outline())
+        catalog.append(entry)
     return catalog
+
+
+def _write_opportunity_template(path, outline):
+    template = Path(__file__).with_name("opportunity_report.html").read_text(encoding="utf-8")
+    tables = []
+    for group in outline["field_groups"]:
+        rows = []
+        for key, label in group["fields"]:
+            value = "UNKNOWN" if key in ("status", "verification_status") else "확인 전" if key in ("is_verified", "is_self_reported") else "—"
+            rows.append("<tr><th scope=\"row\">%s<small>%s</small></th><td>%s</td></tr>" % (html.escape(label), html.escape(key), value))
+        tables.append("<h3>%s</h3><table><tbody>%s</tbody></table>" % (html.escape(group["name"]), "".join(rows)))
+    template = template.replace("__FIELD_TABLES__", "".join(tables))
+    template = template.replace("__SHARED_CSS__", Path(__file__).with_name("public_site.css").read_text(encoding="utf-8"))
+    path.write_text(template, encoding="utf-8")
 
 
 def _write_page(path, snapshot, history, prefix="", archived=False, selected_topic=""):

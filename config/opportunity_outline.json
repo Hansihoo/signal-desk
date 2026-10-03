@@ -1,0 +1,43 @@
+{
+  "categories": [
+    {"name": "해커톤·공모전", "description": "AI·개발 해커톤, 개발 공모전과 상금형 챌린지"},
+    {"name": "보안·AI Safety", "description": "Bug Bounty, 취약점 보상과 AI Safety 프로그램"},
+    {"name": "OSS 패치 보상", "description": "오픈소스 수정·보안 패치에 대한 보상"},
+    {"name": "지원금·Grant", "description": "정부·기업 개발자 지원금과 Grant 프로그램"},
+    {"name": "개발자 프로그램", "description": "API·AI Agent·MCP·플랫폼 수익화 프로그램"},
+    {"name": "마켓플레이스·판매 채널", "description": "App·Plugin·Developer Marketplace와 새로운 배포 채널"},
+    {"name": "프리랜스 수요", "description": "AI·소프트웨어 개발의 실제 의뢰와 프로젝트 수요"},
+    {"name": "수익 사례", "description": "Micro SaaS·1인 개발자의 수익 모델, 가격, 고객 확보와 유통 경로 · 참여 기회와 별도 보관"}
+  ],
+  "tags": ["C++", "Native", "Security", "AI", "Agent", "MCP", "Spreadsheet", "Document", "Automation", "Developer Tool"],
+  "filters": ["Category", "Status", "Organization", "Reward Type", "Minimum Reward", "Deadline", "Country", "Source Type", "Technical Tags"],
+  "reward_meanings": ["개인 최대 보상", "총상금", "지원한도", "기본 보상", "공식 지급액", "MRR", "ARR", "창업자 자가보고"],
+  "statuses": ["OPEN", "ALWAYS_OPEN", "DEADLINE_SOON", "CLOSED", "UNKNOWN"],
+  "evidence_labels": ["VERIFIED", "OFFICIAL", "MEDIA REPORTED", "SELF REPORTED", "UNVERIFIED"],
+  "sources": [
+    {"name": "Microsoft / MSRC", "url": "https://www.microsoft.com/en-us/msrc/bounty", "description": "공식 프로그램·규칙·제보 경로"},
+    {"name": "Google Bug Hunters", "url": "https://bughunters.google.com/", "description": "AI·Chrome VRP와 OSS 패치 보상 출처"},
+    {"name": "OpenAI / Bugcrowd", "url": "https://openai.com/index/safety-bug-bounty/", "description": "Security·Safety 프로그램 안내와 참가 플랫폼"},
+    {"name": "Devpost", "url": "https://devpost.com/", "description": "해커톤·공모전의 참가 플랫폼"},
+    {"name": "Kaggle", "url": "https://www.kaggle.com/", "description": "데이터·AI 챌린지의 참가 플랫폼"},
+    {"name": "GitHub", "url": "https://github.com/", "description": "공식 프로그램·프로젝트·개발 문서의 출처"}
+  ],
+  "seed_candidates": ["Microsoft Bug Bounty", "Google AI VRP", "Google Chrome VRP", "Google OSS Patch Rewards", "OpenAI Security Bug Bounty", "OpenAI Safety Bug Bounty"],
+  "field_groups": [
+    {"name": "프로그램과 핵심", "fields": [
+      ["id", "고유 프로그램 ID"], ["title", "프로그램명"], ["category", "분류"], ["organization", "운영 기관"], ["status", "참여 상태"], ["description", "프로그램 설명"], ["scope", "제출·연구 범위"], ["tags", "기술 태그"]
+    ]},
+    {"name": "보상", "fields": [
+      ["reward_type", "보상의 의미"], ["reward_amount_original", "원문 보상 금액"], ["reward_currency", "원문 통화"], ["total_prize", "총상금"], ["max_individual_reward", "개인 최대 보상"]
+    ]},
+    {"name": "마감과 참가 조건", "fields": [
+      ["deadline", "마감일시"], ["deadline_timezone", "마감 시간대"], ["days_remaining", "남은 기간"], ["eligibility", "참가 조건"], ["country_restrictions", "국가·지역 제한"]
+    ]},
+    {"name": "실행 링크", "fields": [
+      ["official_url", "공식 프로그램"], ["apply_url", "참가 신청"], ["rules_url", "공식 규칙"], ["submission_url", "제출·제보"], ["documentation_url", "개발 문서"]
+    ]},
+    {"name": "출처와 검증", "fields": [
+      ["source_type", "출처 유형"], ["source_url", "근거 원문"], ["verified_at", "검증 시점"], ["last_verified_at", "마지막 성공 검증"], ["verification_status", "검증 상태"], ["is_verified", "검증 여부"], ["is_self_reported", "자가보고 여부"], ["created_at", "최초 발견"], ["updated_at", "정보 변경"]
+    ]}
+  ]
+}

@@ -108,3 +108,48 @@ class ResearchTopicTests(unittest.TestCase):
         ai.assert_not_called()
         news.assert_not_called()
         self.assertEqual(health[0]['source'], '논문')
+
+    def test_planned_topic_does_not_run_a_collector(self):
+        planned = {'id':'opportunities','name':'개발 수익 기회','collector':'planned','view':'opportunities'}
+        with patch('housing_watch.public_site.collect_topic_feeds') as rss, patch('housing_watch.public_site.collect_ai_news') as ai, patch('housing_watch.public_site.collect_weekly_news') as news:
+            self.assertEqual(collect_public_data(self.conn, {'sources':[]}, topics=[planned]), [])
+        rss.assert_not_called()
+        ai.assert_not_called()
+        news.assert_not_called()
+
+    def test_outline_does_not_become_live_data_or_change_old_snapshot(self):
+        self.collect()
+        planned = {'id':'opportunities','name':'개발 수익 기회','collector':'planned','view':'opportunities'}
+        with tempfile.TemporaryDirectory() as temp:
+            build_public_site(self.conn, temp, topics=[self.topic])
+            archive = next((Path(temp) / 'archive').glob('*/briefing.json'))
+            original = archive.read_bytes()
+            result = build_public_site(self.conn, temp, topics=[self.topic, planned])
+            self.assertEqual(result['items'], 1)
+            self.assertEqual(len(public_library(self.conn, [self.topic, planned])), 1)
+            self.assertEqual(archive.read_bytes(), original)
+            archived_html = (archive.parent / 'index.html').read_text(encoding='utf-8')
+            archived_data = json.loads(archived_html.split('<script id="briefing-data" type="application/json">')[1].split('</script>')[0])
+            self.assertEqual(len(archived_data['topics']), 1)
+            page = Path(temp) / 'research/opportunities/index.html'
+            content = page.read_text(encoding='utf-8')
+            data = json.loads(content.split('<script id="briefing-data" type="application/json">')[1].split('</script>')[0])
+            self.assertEqual(data['items'], [])
+            topic = next(topic for topic in data['topics'] if topic['id'] == 'opportunities')
+            self.assertEqual(topic['stage'], 'outline')
+            self.assertEqual(len(topic['outline']['categories']), 8)
+            self.assertEqual(topic['count'], 0)
+
+    def test_downloadable_outline_is_self_contained_and_has_required_fields(self):
+        self.collect()
+        planned = {'id':'opportunities','name':'개발 수익 기회','collector':'planned','view':'opportunities'}
+        with tempfile.TemporaryDirectory() as temp:
+            build_public_site(self.conn, temp, topics=[self.topic, planned])
+            template = (Path(temp) / 'research/opportunities/report-template.html').read_text(encoding='utf-8')
+            for key in ('max_individual_reward','total_prize','deadline_timezone','country_restrictions','submission_url','last_verified_at','verification_status','is_self_reported'):
+                self.assertIn(key, template)
+            self.assertIn('UNKNOWN', template)
+            self.assertNotIn('src=', template)
+            self.assertNotIn('rel="stylesheet"', template)
+            self.assertNotIn('__FIELD_TABLES__', template)
+            self.assertNotIn('__SHARED_CSS__', template)
