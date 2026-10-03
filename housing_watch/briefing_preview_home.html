@@ -2,45 +2,30 @@
 <html lang="ko">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="핵심 브리핑에서 보고서를 읽고 공식 근거로 이어지는 Signal Desk 메인 시안.">
-  <title>리서치 브리핑 · Signal Desk</title>
+  <meta name="description" content="개발·AI·주거·뉴스의 주요 자료와 분석. GitHub Pages 무료 보관 범위와 보고서 크기별 누적량.">
+  <title>Signal Desk</title>
   <link rel="stylesheet" href="briefing.css?v=__STYLE_VERSION__">
 </head>
 <body>
   <a class="skip-link" href="#main">본문으로 이동</a>
-  <header class="site-header"><a class="brand" href="index.html"><span class="brand-mark">S</span>Signal Desk</a>
-    <nav aria-label="주요 메뉴"><a href="index.html" aria-current="page">브리핑</a><a href="report.html">대표 보고서</a><a href="../index.html">자료실 ↗</a></nav>
-    <span class="edition">시안 01</span>
-  </header>
-  <div class="page-layout">
-    <aside class="sidebar"><p class="sidebar-label">RESEARCH DESK</p>
-      <a class="side-link active" href="#main">핵심 브리핑 <span>01</span></a>
-      <a class="side-link" href="#topics">분야별 최근 자료 <span>02</span></a>
-      <a class="side-link" href="../index.html#archive">지난 브리핑 <span>↗</span></a>
-      <div class="sidebar-bottom"><p>필요한 만큼 읽고,<br>근거까지 확인합니다.</p><span>메인 → 보고서 → 공식 자료</span></div>
-    </aside>
-    <main id="main" class="main-content">
-      <div class="page-eyebrow"><span>PERSONAL RESEARCH BRIEFING</span><span>__CHECKED_ON__</span></div>
-      <header class="page-heading"><h1>리서치 브리핑</h1><p>먼저 볼 핵심을 고르고, 한 장의 보고서로 의미를 확인하세요.</p></header>
-      <section class="lead-section" aria-labelledby="lead-title">
-        <div class="section-label"><span>01</span><h2 id="lead-title">먼저 읽을 보고서</h2><span class="status-tag">검토한 자료</span></div>
-        <article class="featured-brief">
-          <div class="brief-category"><span class="small-dot"></span>개발 관련 정보 <span class="divider">/</span> 운영·배포</div>
-          <h3><a href="report.html">리서치 아카이브의 무료 운영,<br>보관 방식부터 정하자.</a></h3>
-          <p class="brief-lead">텍스트와 링크를 중심으로 시작할 수 있습니다.<br class="desktop-only">장기 용량은 보고서 크기와 중복 보관 방식이 결정합니다.</p>
-          <dl class="brief-summary"><div><dt>확인한 사실</dt><dd>GitHub Pages 게시 사이트 최대 1 GB. <a href="report.html#references">공식 근거 [1]</a></dd></div>
-            <div><dt>계산한 가정</dt><dd>10개 분야 · 주 1회 · 100 KB/건 · 단일 보관 → 10년 약 520 MB.</dd></div>
-            <div><dt>판단할 내용</dt><dd>원문 파일과 누적 자료를 매번 복사할지, 본문과 링크 위주로 보관할지.</dd></div></dl>
-          <div class="brief-bottom"><a class="primary-link" href="report.html">한 장 보고서 읽기 <span>→</span></a><span class="muted">공식 문서 3개 · 가정 계산 포함</span></div>
-        </article>
-      </section>
-      <section id="topics" class="topics-section" aria-labelledby="topics-title">
-        <div class="section-label"><span>02</span><h2 id="topics-title">분야별 최근 자료</h2><a class="text-link" href="../index.html">전체 자료실 ↗</a></div>
-        <p class="section-intro">기존에 모은 자료로 이어집니다. 대표 보고서의 형식은 한 편에 먼저 적용했습니다.</p>
-        <div class="topic-list">__TOPIC_ROWS__</div>
-      </section>
-      <footer class="page-footer"><span>Signal Desk · 공개 자료 기반 개인 리서치</span><a href="report.html">보고서 형식 보기 →</a></footer>
-    </main>
-  </div>
+  <header class="masthead"><a class="brand" href="index.html">Signal Desk</a><time datetime="2026-10-03">__CHECKED_ON__</time></header>
+  <nav class="publication-nav" aria-label="분야"><a href="report.html">개발 관련 정보</a><a href="../research/ai/index.html">AI 개발</a><a href="../research/housing/index.html">청약·주거</a><a href="../research/news/index.html">주간 뉴스</a><a href="../index.html#archive">보관함</a></nav>
+  <main id="main" class="home-content">
+    <article class="lead-story">
+      <p class="category">개발 관련 정보 <span>／</span> 운영·배포</p>
+      <h1><a href="report.html">무료 보관, 파일 크기가<br>누적 용량을 가른다 <span class="headline-arrow" aria-hidden="true">↗</span></a></h1>
+      <ul class="lead-summary">
+        <li>GitHub Pages 게시 사이트 상한 <strong>1 GB</strong>.</li>
+        <li>10개 분야·주 1회·건당 100 KB·각 1회 보관 시, 10년 누적 <strong>약 520 MB</strong>.</li>
+        <li>건당 1 MB면 같은 기간 <strong>5.2 GB</strong>. 이미지·PDF 보관 여부가 주요 변수.</li>
+      </ul>
+      <p class="story-source">GitHub 공식 문서 · 용량 추정</p>
+    </article>
+    <section id="topics" class="topics-section" aria-labelledby="topics-title">
+      <div class="section-heading"><h2 id="topics-title">분야별 자료</h2><a href="../index.html">전체 자료 <span aria-hidden="true">↗</span></a></div>
+      <div class="topic-list">__TOPIC_ROWS__</div>
+    </section>
+    <footer class="page-footer"><a href="index.html">Signal Desk</a><a href="../index.html#archive">보관함</a></footer>
+  </main>
 </body>
 </html>

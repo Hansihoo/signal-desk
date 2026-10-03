@@ -15,7 +15,7 @@ def storage_scenarios(topics=10, weeks=52, years=10):
     """Decimal KB/MB, one stored copy per report; maximum one report/topic/week."""
     reports = topics * weeks * years
     return [(label, size_kb, reports * size_kb / 1000) for label, size_kb in (
-        ("텍스트 중심", 50), ("표·그래프 포함", 100), ("이미지 포함", 1000))]
+        ("50 KB / 건", 50), ("100 KB / 건", 100), ("1 MB / 건", 1000))]
 
 
 def _escape(value):
@@ -38,34 +38,31 @@ def _topic_rows(snapshot):
             title = _escape(latest["title"])
             source = _escape(latest.get("source") or "원문 자료")
             date = _escape((latest.get("published_at") or latest.get("first_seen_at") or "")[:10])
-            description = "최근 자료 · %s · %s" % (source, date)
+            description = "%s · %s" % (source, date)
         else:
             report_url, title = topic_url, "등록된 자료가 아직 없습니다"
-            description = "수집 자료 확인 전"
+            description = ""
         rows.append('''<article class="topic-row">
-          <div class="topic-label"><a href="%s">%s</a><span>자료실</span></div>
+          <div class="topic-label"><a href="%s">%s</a></div>
           <div><p class="topic-description">%s</p><a class="topic-title" href="%s">%s</a>
-          <p class="source-note">수집 기록 · 상세 분석 전</p></div>
-          <a class="row-arrow" href="%s" aria-label="%s 자료 읽기">↗</a>
+          </div><a class="row-arrow" href="%s" aria-label="%s">↗</a>
         </article>''' % (topic_url, _escape(topic["name"]), description, report_url,
-                       title, report_url, _escape(topic["name"])))
-    return "".join(rows) or '<p class="muted">최근 자료는 분야별 자료실에 연결됩니다.</p>'
+                       title, report_url, title))
+    return "".join(rows) or '<p class="empty-note">등록된 자료 없음</p>'
 
 
 def _chart_rows():
     rows = []
-    for index, (label, size, total) in enumerate(storage_scenarios()):
-        width = min(total / 1000 * 100, 100)
+    scenarios = storage_scenarios()
+    maximum = max(row[2] for row in scenarios)
+    for index, (label, _size, total) in enumerate(scenarios):
+        width = total / maximum * 100
         value = "%s MB" % format(total, ",.0f") if total < 1000 else "%.1f GB" % (total / 1000)
-        size_label = "%d KB / 건" % size if size < 1000 else "1 MB / 건"
         classes = "storage-fill scenario-%d" % index
-        if total > 1000:
-            classes += " over-limit"
-        rows.append('''<div class="storage-row"><div class="storage-label"><strong>%s</strong><span>%s</span></div>
+        rows.append('''<div class="storage-row"><div class="storage-label">%s</div>
           <div class="storage-track"><span class="%s" style="width:%.1f%%"></span></div>
-          <div class="storage-value">%s%s</div></div>''' % (
-            label, size_label, classes, width, value,
-            '<small>1 GB 초과</small>' if total > 1000 else ""))
+          <div class="storage-value">%s</div></div>''' % (
+            label, classes, width, value))
     return "".join(rows)
 
 

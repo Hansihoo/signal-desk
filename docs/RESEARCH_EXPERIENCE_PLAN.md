@@ -121,3 +121,12 @@ Overview는 여러 정보의 관계를 파악하는 요약 역할이고, 보고�
 현재는 전체 자료 목록·분야/분류 트리·개별 출처 기록·보고서 양식이 있다. 개발 수익 기회 분야는 HTML 틀이며 실제 수집은 없다. 기존 개별 출처 기록의 해석·검토 및 결론은 작성 대기다. 자동 핵심 선별, 여러 자료의 종합 분석, 일반화된 주장별 근거 저장, 주간 변경 시 발행은 아직 구현되지 않았다.
 
 후속 사용자 요청에 따라 메인과 대표 보고서 한 편만 `/preview/`에 시안으로 구현했다. 보고서는 제목·주제→개요식 요약→시각 데이터→결과→참고내용 순서다. [템플릿 계약](BRIEFING_TEMPLATE.md)을 참고한다. 다른 분야의 상세 보고서나 수집·보관·일정으로 확대하지 않았다.
+
+## Reader-facing revision of the two-page pair
+
+On 2026-10-03 Theo rejected implementation/tutorial language on the preview pages.
+The actual Stanford AI Index 2026 takeaway publication and Thoughtworks Radar Vol.34
+were examined. Subject-led titles, outline copy, a proportionate evidence chart,
+and concise references replace prototype labels and reading instructions. This
+changes only the homepage and one report; see BRIEFING_TEMPLATE.md for the revised
+contract. Other topic views and the weekly editorial automation remain deferred.

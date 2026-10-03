@@ -16,8 +16,12 @@ class BriefingPreviewTests(unittest.TestCase):
             self.assertIn("260 MB", report)
             self.assertIn("520 MB", report)
             self.assertIn("5.2 GB", report)
-            self.assertIn("가정 계산 · 실측 아님", report)
-            self.assertIn("단일 보관 가정과 다릅니다", report)
+            self.assertIn("건당 크기는 비교 가정", report)
+            self.assertIn("단일 보관 가정과 다름", report)
+            # All values use the same scale: 260/5200, 520/5200, 5200/5200.
+            self.assertIn('style="width:5.0%"', report)
+            self.assertIn('style="width:10.0%"', report)
+            self.assertIn('style="width:100.0%"', report)
             self.assertNotIn("__CHART_ROWS__", report)
 
     def test_preview_escapes_source_titles_and_omits_unsafe_records(self):
