@@ -85,6 +85,22 @@ python -m housing_watch jobs --fetch saramin --no-image
 
 ## Current Product Decisions
 
+The first implementation for template review is limited to two pages:
+[homepage preview](https://hansihoo.github.io/signal-desk/preview/index.html) and
+[representative report](https://hansihoo.github.io/signal-desk/preview/report.html).
+Read [the template contract](BRIEFING_TEMPLATE.md) before expanding to other topics.
+The title/topic -> summary -> visual data -> results -> references order is user-requested.
+It uses a reviewed GitHub storage report and clearly labelled assumptions; other domains
+still link to existing source-note views rather than pretending their analysis is done.
+
+Latest direction, accepted on 2026-10-03: broaden developer research to **development
+information**, with income opportunities as a subtopic. Theo requested research and
+planning before implementing an executive-style homepage -> concise report -> official
+evidence experience. Read [the delivery research and plan](RESEARCH_EXPERIENCE_PLAN.md)
+before further UI or collection work. Weekly development review with changed-only
+publishing is intended from the week of 2026-10-05, but not implemented. The current
+public outline label, source-note pages, and daily workflow remain as described below.
+
 - The public product is a main research library containing extensible topics. Existing AI/housing/news are initial examples.
 - Add topic metadata and RSS/Atom feeds in `config/research_topics.json`; see `RESEARCH_HUB.md` for the contract and hosting limits.
 - No public accounts, user-input forms, or analytics SDKs are required. The hosting provider still records security access logs.

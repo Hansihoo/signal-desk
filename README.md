@@ -20,6 +20,17 @@ The **Developer Opportunities** topic currently provides an HTML outline with ei
 categories and a downloadable report template. Real opportunity collection and verification
 are deferred. See [scope and requirements](docs/OPPORTUNITIES.md).
 
+The latest product direction broadens this to **development information**, with
+opportunities as a subtopic. A curated homepage -> one-page report -> official evidence
+experience and weekly changed-only development review are planned; the current HTML
+outline and daily workflow have not been changed. See [research delivery analysis and
+plan](docs/RESEARCH_EXPERIENCE_PLAN.md).
+
+The first paired [homepage preview](https://hansihoo.github.io/signal-desk/preview/index.html)
+and [representative report](https://hansihoo.github.io/signal-desk/preview/report.html)
+are available for template review. Only this pair receives the new layout; see the
+[template contract](docs/BRIEFING_TEMPLATE.md).
+
 Future domains:
 
 - jobs and hiring notices

@@ -8,6 +8,7 @@ from pathlib import Path
 
 from .ai_brief import render_ai_news_html
 from .ai_news import AINewsFetchError, collect_ai_news
+from .briefing_preview import build_briefing_preview
 from .config import enabled_sources
 from .db import all_items, record_snapshot, upsert_items
 from .news import NewsFetchError, collect_weekly_news
@@ -145,6 +146,7 @@ def build_public_site(conn, output_path="site", health=None, topics=None):
     # Explicitly omit private profile filtering from the public housing page.
     render_brief_html(conn, str(output / "brief.html"), hide_profile_excluded=False, use_profile=False)
     (output / ".nojekyll").write_text("", encoding="utf-8")
+    build_briefing_preview(output, snapshot)
     return {"path": str(output / "index.html"), "items": len(entries), "archives": len(history), "health": health or []}
 
 

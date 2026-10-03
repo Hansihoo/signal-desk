@@ -1,5 +1,15 @@
 # Developer opportunity research
 
+## Latest scope correction
+
+On 2026-10-03, Theo clarified that the parent domain is **development information**;
+income opportunities are one subtopic. The original attached specification below is
+retained for that subtopic. Its proposed daily timetable is superseded by the intended
+weekly development review, starting the week of 2026-10-05, with publication only for
+meaningful new information or changes. This is not yet implemented. For the broader
+briefing/report experience, read [the research and plan](RESEARCH_EXPERIENCE_PLAN.md).
+The current public HTML outline still uses the earlier name and routes.
+
 This is an additional Signal Desk research domain, not a replacement for the multi-topic homepage.
 The supplied specification is preserved verbatim in [the original requirements](ai/OPPORTUNITY_REQUIREMENTS.md).
 

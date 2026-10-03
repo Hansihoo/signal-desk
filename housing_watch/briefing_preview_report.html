@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="GitHub Pages 공식 한도와 가정에 따른 저장량을 구분한 리서치 보고서.">
+  <title>GitHub 리서치 아카이브의 무료 범위와 보관 전략 · Signal Desk</title>
+  <link rel="stylesheet" href="briefing.css?v=__STYLE_VERSION__">
+</head>
+<body class="report-page">
+  <a class="skip-link" href="#main">본문으로 이동</a>
+  <header class="site-header"><a class="brand" href="index.html"><span class="brand-mark">S</span>Signal Desk</a>
+    <nav aria-label="주요 메뉴"><a href="index.html">브리핑</a><a href="report.html" aria-current="page">대표 보고서</a><a href="../index.html">자료실 ↗</a></nav><span class="edition">시안 01</span>
+  </header>
+  <div class="page-layout">
+    <aside class="sidebar report-sidebar"><a class="back-link" href="index.html">← 메인 브리핑</a><p class="sidebar-label">REPORT CONTENTS</p>
+      <nav aria-label="보고서 차례"><a class="side-link" href="#main">주제 <span>01</span></a><a class="side-link" href="#summary">요약 <span>02</span></a><a class="side-link" href="#data">데이터 <span>03</span></a><a class="side-link" href="#result">결과 <span>04</span></a><a class="side-link" href="#references">참고내용 <span>05</span></a></nav>
+      <div class="sidebar-bottom"><span>개발 관련 정보 / 운영·배포</span><p>공식 사실과<br>계산 가정을 구분합니다.</p></div>
+    </aside>
+    <main id="main" class="main-content report-content">
+      <div class="page-eyebrow"><span>RESEARCH NOTE · 001</span><a href="index.html">브리핑으로 돌아가기 ↗</a></div>
+      <header class="report-heading"><p class="brief-category">01 주제 <span class="divider">/</span> 개발 관련 정보 · 운영·배포</p><h1>GitHub 리서치 아카이브의<br>무료 범위와 보관 전략</h1><p class="report-deck">다양한 보고서를 꾸준히 쌓을 때, 무엇이 용량을 결정하는가.</p>
+        <div class="report-byline"><span>자료 확인 __CHECKED_ON__</span><span>공식 문서 3개</span><span>공개 저장소 기준</span></div>
+      </header>
+      <nav class="mobile-contents" aria-label="빠른 차례"><a href="#summary">요약</a><a href="#data">데이터</a><a href="#result">결과</a><a href="#references">참고내용</a></nav>
+      <section id="summary" class="report-section" aria-labelledby="summary-title"><div class="section-label"><span>02</span><h2 id="summary-title">요약</h2><span class="section-caption">핵심부터 읽기</span></div>
+        <ul class="summary-list"><li><strong>시작 조건</strong><span>공개 저장소의 GitHub Free에서 Pages를 이용할 수 있습니다. 공개 저장소의 표준 Actions 실행도 무료입니다. <a class="citation" href="#ref-2">[2]</a><a class="citation" href="#ref-3">[3]</a></span></li>
+          <li><strong>확인할 한도</strong><span>게시 사이트 최대 1 GB, 월 전송량 100 GB는 소프트 한도입니다. 저장 용량과 전송량은 서로 다른 기준입니다. <a class="citation" href="#ref-1">[1]</a></span></li>
+          <li><strong>보관 판단</strong><span>본문과 링크는 작게 쌓입니다. 이미지·PDF 복사와 전체 자료의 반복 보관은 별도로 계산해야 합니다.</span></li></ul>
+      </section>
+      <section id="data" class="report-section" aria-labelledby="data-title"><div class="section-label"><span>03</span><h2 id="data-title">데이터</h2><span class="section-caption">공식 한도 + 가정 계산</span></div>
+        <div class="official-limits"><div><span class="data-kind">공식 사실 <a class="citation" href="#ref-1">[1]</a></span><strong>1 <small>GB</small></strong><span>게시 사이트 최대 크기</span></div><div><span class="data-kind">공식 사실 <a class="citation" href="#ref-1">[1]</a></span><strong>100 <small>GB / 월</small></strong><span>전송량 소프트 한도</span></div></div>
+        <figure class="storage-figure"><figcaption><div><span class="data-kind">가정 계산 · 실측 아님</span><h3>10년 동안 보고서가 얼마나 쌓이나?</h3></div><span class="figure-unit">비교 기준 1 GB ≈ 1,000 MB</span></figcaption>
+          <p class="chart-assumption">10개 분야 × 매주 1건 × 52주 × 10년 = <strong>5,200건</strong><br>매주 모든 분야에 새 내용이 있는 경우의 상한 가정입니다.</p>
+          <div class="storage-chart" role="img" aria-label="10년 단일 보관 추정: 건당 50KB는 260MB, 100KB는 520MB, 1MB는 5.2GB. 막대는 1GB에서 끝납니다.">__CHART_ROWS__</div>
+          <div class="chart-scale"><span>0</span><span>500 MB</span><span>1 GB</span></div>
+          <p class="chart-note">막대 길이는 1 GB에서 끝납니다. 초과 시 실제 계산값을 함께 표시합니다.</p>
+        </figure>
+        <div class="table-wrap"><table class="data-table"><caption>단일 보관 기준 누적량 · 계산값</caption><thead><tr><th scope="col">보고서 크기</th><th scope="col">1년</th><th scope="col">5년</th><th scope="col">10년</th></tr></thead><tbody><tr><th scope="row">50 KB</th><td>26 MB</td><td>130 MB</td><td>260 MB</td></tr><tr><th scope="row">100 KB</th><td>52 MB</td><td>260 MB</td><td>520 MB</td></tr><tr><th scope="row">1 MB</th><td>520 MB</td><td>2.6 GB</td><td>5.2 GB</td></tr></tbody></table></div>
+        <details class="method-note"><summary>계산 기준과 빠진 용량 확인</summary><p>건당 50 KB·100 KB·1 MB는 비교를 위한 가정이며 실제 보고서 크기를 측정한 값이 아닙니다. KB·MB는 계산상 십진 단위를 사용했습니다. 누적량 = 분야 수 × 주당 발행 수 × 52주 × 연수 × 건당 크기.</p><p>공통 CSS·JS, 데이터 파일, 미리보기 이미지, 복제된 보관본 등은 별도입니다. 따라서 이 표는 사이트 전체의 보장 사용 기간을 뜻하지 않습니다.</p></details>
+      </section>
+      <section id="result" class="report-section" aria-labelledby="result-title"><div class="section-label"><span>04</span><h2 id="result-title">결과</h2><span class="section-caption">자료를 바탕으로 한 판단</span></div>
+        <div class="result-callout"><span class="data-kind">운영 제안</span><h3>본문과 링크로 시작하고,<br>중복 보관을 줄이는 방향이 적절합니다.</h3><p>주 1회 검토 주기보다 건당 크기와 보관 방식이 장기 용량에 더 큰 차이를 만듭니다.</p></div>
+        <ol class="result-list"><li><strong>보고서 본문은 한 번 보관</strong><p>주간 브리핑은 필요한 보고서와 당시 버전을 연결하는 방식으로 설계합니다.</p></li><li><strong>공식 PDF·이미지는 필요할 때만 복사</strong><p>원문 링크를 기본으로 두고, 꼭 보존할 자료의 크기는 별도로 관리합니다.</p></li><li><strong>새 내용이 있을 때만 추가·수정</strong><p>변경이 없는 주에는 검토일을 남기고, 기존 보고서가 달라지면 변경 이력을 기록합니다.</p></li></ol>
+        <p class="result-limitation"><strong>현재 적용 상태</strong> · 위 보관 전략은 제안입니다. 현재 사이트는 일별 보관본에 누적 자료를 포함하므로 그래프의 단일 보관 가정과 다릅니다.</p>
+      </section>
+      <section id="references" class="report-section" aria-labelledby="references-title"><div class="section-label"><span>05</span><h2 id="references-title">참고내용</h2><span class="section-caption">공식 근거 확인</span></div>
+        <ol class="reference-list"><li id="ref-1"><span class="reference-number">[1]</span><div><a href="https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits" target="_blank" rel="noopener noreferrer">GitHub Pages limits <span>↗</span></a><p>게시 크기 · 월 전송량 · 이용 범위</p></div></li><li id="ref-2"><span class="reference-number">[2]</span><div><a href="https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages" target="_blank" rel="noopener noreferrer">What is GitHub Pages? <span>↗</span></a><p>GitHub Free 공개 저장소 · 정적 사이트</p></div></li><li id="ref-3"><span class="reference-number">[3]</span><div><a href="https://docs.github.com/en/billing/concepts/product-billing/github-actions" target="_blank" rel="noopener noreferrer">GitHub Actions billing <span>↗</span></a><p>표준 실행 무료 조건 · 별도 저장 과금 · 대형 실행기 과금</p></div></li></ol>
+        <p class="reference-note">공식 기준 확인: __CHECKED_ON__. 직접 거래·상업용 SaaS 제공은 Pages 이용 범위에 제약이 있습니다. AI API·유료 데이터 등 외부 서비스 비용은 이 보고서의 무료 조건에 포함되지 않습니다. <a class="citation" href="#ref-1">[1]</a></p>
+      </section>
+      <footer class="page-footer"><a class="primary-link" href="index.html">← 메인 브리핑으로</a><span>Signal Desk · Research Note 001</span></footer>
+    </main>
+  </div>
+</body>
+</html>
