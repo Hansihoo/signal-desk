@@ -59,5 +59,10 @@ next steps after reviewing this pair.
 
 51 unit tests and compileall pass. New checks cover scenario units, assumptions and
 single-copy limitations, source-title escaping, safe record selection, and encoded links.
-Local publish, brief, and summary desk generation completed. Browser/mobile/deployment
-verification is recorded in PROJECT_STATUS.md and docs/ai/WORK_LOG.md when complete.
+Local publish, brief, summary desk generation, review, and briefing image checks pass.
+[Initial deployment](https://github.com/Hansihoo/signal-desk/actions/runs/37119399670)
+and [final deployment](https://github.com/Hansihoo/signal-desk/actions/runs/37119684353)
+succeeded. The live homepage -> report -> official GitHub document/back flow and a
+linked existing AI record were checked. The 430px layout has no horizontal overflow;
+chart/table labels and keyboard disclosure were inspected. No console errors were
+captured. Both preview tabs and final PNG captures remain available for user review.
