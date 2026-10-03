@@ -14,6 +14,7 @@ GitHub itself logs visitor IP addresses for security; do not promise that the ho
 
 The homepage initially shows all topics. Source publication date can be older than fetch time;
 counts reflect stored records, not independently verified research reports.
+Topic pages initially show their entire accumulated library and only their own source health.
 
 ## Add a research topic
 

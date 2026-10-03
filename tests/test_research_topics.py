@@ -39,13 +39,19 @@ class ResearchTopicTests(unittest.TestCase):
         payload = json.loads(self.conn.execute('SELECT raw_payload FROM news_items').fetchone()[0])
         self.assertNotIn('developer_impact', payload)
         with tempfile.TemporaryDirectory() as temp:
-            build_public_site(self.conn, temp, topics=topics)
+            health = [{'topic_id':'news','source':'News','ok':False,'message':'Offline'}]
+            build_public_site(self.conn, temp, health=health, topics=topics)
             catalog = json.loads((Path(temp) / 'topics.json').read_text(encoding='utf-8'))
             self.assertEqual(catalog[-1]['count'], 1)
             page = (Path(temp) / 'research/papers/index.html').read_text(encoding='utf-8')
             self.assertIn('논문 리서치', page)
             self.assertIn('Original source excerpt', page)
             self.assertIn('"prefix": "../../"', page)
+            data = json.loads(page.split('<script id="briefing-data" type="application/json">')[1].split('</script>')[0])
+            self.assertEqual(data['health'], [])
+            news = (Path(temp) / 'research/news/index.html').read_text(encoding='utf-8')
+            data = json.loads(news.split('<script id="briefing-data" type="application/json">')[1].split('</script>')[0])
+            self.assertEqual(data['health'], health)
 
     def test_same_title_in_other_domains_is_not_deleted(self):
         upsert_news_items(self.conn, [{'source_id':'ai_test','external_id':'1','title':'Shared evidence',

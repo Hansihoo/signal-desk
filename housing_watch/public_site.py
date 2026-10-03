@@ -26,10 +26,10 @@ def collect_public_data(conn, config, topics=None):
             stats = upsert_items(conn, result["items"], config.get("interest", {}))
             record_snapshot(conn, source["id"], result["raw_path"], len(result["items"]))
             conn.commit()
-            health.append({"source": source["name"], "ok": True, "count": len(result["items"])})
+            health.append({"source": source["name"], "topic_id": housing["id"], "ok": True, "count": len(result["items"])})
             print("%s: fetched=%d inserted=%d updated=%d" % (source["id"], len(result["items"]), stats["inserted"], stats["updated"]))
         except (OSError, ValueError, RuntimeError) as exc:
-            health.append({"source": source["name"], "ok": False, "message": str(exc)})
+            health.append({"source": source["name"], "topic_id": housing["id"], "ok": False, "message": str(exc)})
     for topic in topics:
         name = topic["name"]
         if topic["collector"] == "housing":
@@ -41,10 +41,10 @@ def collect_public_data(conn, config, topics=None):
                 result = collect_weekly_news(conn, source=topic.get("source", "auto"), limit=topic.get("limit", 40))
             else:
                 result = collect_topic_feeds(conn, topic)
-            health.append({"source": name, "ok": True, "count": result["fetched"], "warnings": result["failures"]})
+            health.append({"source": name, "topic_id": topic["id"], "ok": True, "count": result["fetched"], "warnings": result["failures"]})
             print("%s: fetched=%d warnings=%d" % (name, result["fetched"], len(result["failures"])))
         except (OSError, ValueError, RuntimeError, AINewsFetchError, NewsFetchError) as exc:
-            health.append({"source": name, "ok": False, "message": str(exc)})
+            health.append({"source": name, "topic_id": topic["id"], "ok": False, "message": str(exc)})
     return health
 
 
@@ -126,7 +126,8 @@ def build_public_site(conn, output_path="site", health=None, topics=None):
     for topic in catalog:
         topic_path = output / "research" / topic["id"]
         topic_path.mkdir(parents=True, exist_ok=True)
-        selected = dict(snapshot, items=[item for item in entries if item["topic_id"] == topic["id"]])
+        selected = dict(snapshot, items=[item for item in entries if item["topic_id"] == topic["id"]],
+                        health=[entry for entry in snapshot["health"] if entry.get("topic_id") == topic["id"]])
         _write_page(topic_path / "index.html", selected, history, "../../", selected_topic=topic["id"])
     # Each dated page is rebuilt from its saved snapshot, never from today's rows.
     for entry in history:

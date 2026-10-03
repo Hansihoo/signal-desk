@@ -48,7 +48,7 @@
   <noscript><p>검색을 사용하려면 JavaScript를 활성화하세요.</p><ul>__NOSCRIPT_ITEMS__</ul></noscript>
 </main><script id="briefing-data" type="application/json">__BRIEFING_DATA__</script><script>
   const data=JSON.parse(document.getElementById('briefing-data').textContent);
-  const $=id=>document.getElementById(id); let mode='recent',shown=20;
+  const $=id=>document.getElementById(id); let mode=data.selected_topic?'all':'recent',shown=20;
   const reference=Date.parse(data.created_at); const cutoff=reference-7*86400000;
   const recent=item=>Date.parse(item.published_at||item.first_seen_at)>=cutoff;
   const safeUrl=url=>{try{const u=new URL(url);return ['http:','https:'].includes(u.protocol)&&!u.username&&!u.password?u.href:'';}catch{return '';}};
