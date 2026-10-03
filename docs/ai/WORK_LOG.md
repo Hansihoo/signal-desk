@@ -1,6 +1,20 @@
 | 업무 명 | 설명 | 진행상황 | 특이사항 |
 | --- | --- | --- | --- |
+| Git 기반 배포와 지속 수집 | 공개 자료 검색 화면, 날짜별 브리핑 보존, GitHub Pages 배포와 매일 수집을 연결한다. | 진행중 | unittest 39건, 실제 수집(AI 79건, 일반 뉴스 58건), search/context/report/render/brief/desk/review PASS. 이미지 확인 완료. 클라우드 첫 실행 및 상태 복원 확인 예정. |
+| AI 이슈 7일치 기본 요청 세팅 | Theo가 `이슈 뽑아줘`라고 말하면 최근 7일 AI 개발자 이슈를 수집, 3페이지 브리핑, 텍스트 요약으로 알려주도록 명령과 문서를 고정한다. | 완료 | `issues`/`issue`/`이슈` CLI 별칭, `--days 7` 필터, 요약 출력, AGENTS/README/HANDOFF/OPERATIONS/FEATURES/상태 문서 갱신. |
+| AI 개발자 브리핑 적용 | 유명 LLM, AI 개발 도구, 오픈소스 릴리스, 연구/안전 흐름을 3페이지 확장형 브리핑으로 수집·렌더링한다. | 완료 | `ai-news`, `ai_news.py`, `ai_brief.py`, `ai_%` 뉴스 분리, 문서/테스트 추가. 실제 18건 수집, 3페이지 PNG 생성, py_compile 및 unittest 31건 통과. |
 | 청약 주택 MVP 스캐폴딩 | 로컬 수집, 검색, 리포트, HTML 브리핑 기반을 구성한다. | 완료 | 서울주거포털 LH 10건, SH 8건 수집. 검색/context/report/render/export-image 및 unittest 검증 완료. |
 | MVP 목표와 검토 루프 보강 | 완료 기준, 간결 모바일 브리핑, 자동 검토 명령을 추가한다. | 완료 | `brief --width 390`, `review --width 390`, unittest 검증 완료. |
 | 서울·경기 상세 카드 개선 | 카드만 보고 판단할 수 있도록 주소, 면적, 공급, 가격, 조건 정보를 표시한다. | 완료 | 서울/경기 소스 필터, 상세 HTML 추출, 390px 모바일 카드, review 지역/라벨 검증 추가. |
 | Signal Desk 인수인계 문서화 | repo를 `signal-desk` 장기 프로젝트로 설명하고 다음 Codex가 이어받을 문서 체계를 만든다. | 완료 | README, AGENTS, HANDOFF, FEATURES, ROADMAP, OPERATIONS, DATA_MODEL, DECISIONS 문서 정리. |
+| 탭형 모바일 데스크 준비 | 중요 요약, 청약, 주간 빅뉴스를 탭으로 분리하고 선택 탭만 이미지로 추출한다. | 완료 | `desk` 명령과 탭 렌더러 추가. unittest 8건, 탭별 HTML/PNG 생성, 이미지 육안 확인 완료. |
+| 주간 빅뉴스 도구 조사 | 넓은 뉴스 수집을 직접 크롤링하기 전 사용할 오픈소스/공개 도구를 조사한다. | 완료 | GDELT, Media Cloud, Miniflux, FreshRSS, Newscope를 후보로 정리하고 `NEWS_TOOLS_RESEARCH.md` 작성. |
+| 주간 빅뉴스 수집 MVP | 빅뉴스 후보를 가져와 한국어 카드로 정리하고 모바일 탭으로 렌더링한다. | 완료 | `news --source auto` 추가. GDELT 429 fallback으로 Google News RSS 수집, 출처 표시 제거, 요약 문장 강화, unittest 11건 통과. |
+| 문서형 브리핑 디자인 적용 | 탭형 데스크를 모바일 문서 리포트처럼 읽히도록 타이포그래피와 카드 구조를 정리한다. | 완료 | 헤더, 탭, 지표, 뉴스/청약 블록을 문서형 디자인으로 변경. summary/housing/weekly-news 이미지 육안 확인. |
+| 빅뉴스 정치 비중 조정 | 정치권 뉴스 우선순위를 낮추고 주간 빅뉴스 화면에 최대 2개까지만 표시한다. | 완료 | 비정치 뉴스를 먼저 채우고 남는 슬롯에만 정치 뉴스 최대 2개 표시. 현재 HTML은 정치 0개 표시, unittest 12건 통과. |
+| 세계 빅뉴스 포함 | 한국 상위뉴스와 별도로 세계뉴스 피드를 함께 수집해 주간 빅뉴스 후보에 섞는다. | 완료 | Google News TOP+WORLD RSS 묶음 수집으로 변경. 22건 수집, 국제 뉴스 포함 이미지 확인, unittest 13건 통과. |
+| 경력 이직 공고 브리핑 | 회사명, 공고명, 하는일, 자격요건, 우대사항, 지역, 10년차 연봉, 마감일, 링크 중심의 jobs 탭을 만든다. | 완료 | `job_items`, `jobs --input`, `desk --tab jobs`, 예시 JSON, 문서 추가. unittest 18건 통과. live 수집 어댑터는 후속 작업. |
+| 사람인 채용 live 수집 | 사람인 Open API를 통해 경력직 후보를 수집하고 jobs 탭에 연결한다. | 완료 | `jobs --fetch saramin`, `config/job_sources.json`, 연봉 추정 매핑, 사람인 파서 테스트 추가. API 키 없을 때 실패 종료코드 확인, unittest 22건 통과. |
+| 탭형 데스크 모바일 폭 개선 | 브라우저에서 너무 좁게 보이는 탭형 desk 화면을 모바일 HTML 화면답게 넓힌다. | 완료 | `desk/news/jobs` 기본 폭을 645px로 조정하고 중앙 정렬, 카드 여백, 지표 블록, 본문 타이포를 개선. |
+| 프로필 기반 청약 필터 | Theo 로컬 프로필을 사용해 명확히 어려운 청약 공고를 브리핑에서 숨긴다. | 완료 | `housing_profile` 판정기, `brief`/`desk` 옵션, 테스트/문서 추가. collect, unittest 27건, review PASS, 프로필 적용 summary/housing/brief 이미지 확인 완료. |
+| 청약 탭 상세 카드화 | 청약 탭을 더 긴 문서형 카드로 바꾸고 핵심 스냅샷 정보를 넣는다. | 완료 | 위치·면적·공급·가격 스냅샷, 2열 상세 필드, 확인 포인트 추가. unittest 27건, profile housing desk 이미지, summary 이미지, brief/review 검증 완료. |

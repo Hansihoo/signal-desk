@@ -1,0 +1,21 @@
+{
+  "saramin": {
+    "enabled": true,
+    "env_key": "SIGNAL_DESK_SARAMIN_KEY",
+    "keywords": [
+      "C++ 엔진",
+      "C++ Windows",
+      "오피스 개발",
+      "스프레드시트 개발"
+    ],
+    "count": 30,
+    "minimum_fit_score": 4,
+    "salary_estimates": "config/job_salary_estimates.example.json",
+    "params": {
+      "sr": "directhire",
+      "stock": "kospi,kosdaq",
+      "sort": "pd",
+      "fields": "posting-date,expiration-date,count"
+    }
+  }
+}

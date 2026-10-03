@@ -1,0 +1,83 @@
+# GitHub Pages and continuous collection
+
+## Deployment
+
+The existing `Hansihoo/signal-desk` repository hosts the public site through GitHub Pages.
+`.github/workflows/deploy.yml` runs on main-branch pushes, manual dispatch, and daily at
+23:17 UTC (08:17 Asia/Seoul the following day). GitHub scheduling is approximate.
+
+The workflow tests the code, restores previous state, collects public sources, generates
+the site, checks the housing briefing, saves state, and deploys a Pages artifact.
+One concurrency group serializes all collection and deployment runs.
+
+```powershell
+python -m housing_watch publish --collect
+python -m housing_watch publish
+```
+
+The second command renders existing local data without fetching sources.
+
+## Public experience
+
+- `site/index.html`: recent updates, keyword search, topic filtering, and full collected library.
+- `site/library.json`: selected public fields from AI/news/housing records.
+- `site/status.json`: generation time and source health.
+- `site/archive/index.json`: dated briefing catalog.
+- `site/archive/YYYY-MM-DD/briefing.json`: immutable first successful briefing for that Korean date.
+- `site/archive/YYYY-MM-DD/index.html`: readable historical snapshot.
+- `site/ai-news.html` and `site/brief.html`: existing detail briefings.
+
+Search on the public site covers exported AI news, general news, and housing. The older
+local `search/context` commands remain housing-only. Article links and feed excerpts
+are collection aids; they are not presented as independently verified research.
+
+The latest site can update repeatedly in a day. The first saved daily briefing is
+preserved. Historical pages are rebuilt from their saved JSON, never from today's data.
+Records accumulate from the first cloud collection; no complete historical backfill is promised.
+
+## Durable state
+
+Generated databases, raw responses, HTML, and reports stay out of source commits.
+Each successful build saves a compressed snapshot as an asset on the monthly prerelease
+`signal-desk-data-YYYY-MM`. Asset names include UTC timestamp, run ID, and attempt number.
+Snapshots are retained rather than replaced. Each next run selects the newest state asset
+across months and restores SQLite, raw source responses, and the site archive.
+
+Actions artifacts are used only to deploy Pages; their expiration does not erase the
+research store. A failed release API request or invalid restore stops the run rather
+than silently starting an empty database. Tar paths and link types are checked before
+writing; SQLite integrity is checked after restore.
+
+Public GitHub schedules may disable after 60 days of repository inactivity. The first
+successful deployment each UTC month updates `docs/ai/CLOUD_STATUS.md` with an operational
+receipt. Its commit uses `[skip ci]` to avoid a recursive collection run.
+
+## Privacy and scope
+
+The repository, Pages site, and release assets are public. Cloud collection uses only
+public housing sources and AI/general news feeds. It never imports local job JSON,
+salary estimates, private profiles, cookies, or local credentials. Public-site export
+excludes jobs and raw payloads; cloud backup rejects a DB containing local job imports.
+Do not seed public cloud state from a private local database.
+
+On partial source failures, previously saved information remains available and the home
+page shows a collection-health notice. An empty first collection fails deployment.
+Use source health and the last successful workflow when checking freshness.
+
+## Operations and recovery
+
+Inspect the `Collect and publish Signal Desk` workflow for source errors or deployment failures.
+Use **Run workflow** to refresh manually. Disable that workflow to pause collection.
+The source-of-truth database can be recovered with:
+
+```powershell
+python -m housing_watch.cloud_state restore --repo Hansihoo/signal-desk --root <existing-scratch-directory>
+```
+
+Restore only into an explicitly chosen empty scratch directory, never over a private
+local DB. Raw responses and snapshots grow over time; GitHub currently limits an individual
+release asset to 2 GiB and a release to 1,000 assets. Revisit storage before those limits.
+
+References: [Pages workflows](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages),
+[scheduled events](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows),
+[release storage](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases).

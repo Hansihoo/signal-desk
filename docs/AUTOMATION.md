@@ -1,5 +1,12 @@
 # Automation Plan
 
+## Active implementation direction
+
+GitHub Actions performs daily public-source collection at 08:17 Asia/Seoul and deploys
+GitHub Pages. Release assets preserve SQLite and dated briefings between runners.
+See `PUBLISHING.md` and `PROJECT_STATUS.md` for setup and verification status. The Codex/n8n
+prompts below remain optional alternatives for separate local or deeper analysis work.
+
 This is the automation plan for Signal Desk's current housing MVP.
 
 ## MVP Manual Loop

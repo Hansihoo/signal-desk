@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="AI 개발 소식과 주거 공고를 모으고, 날짜별 브리핑과 원문 근거를 검색하는 Signal Desk.">
+  <title>Signal Desk · 리서치 브리핑</title>
+  <style>
+    :root { color-scheme: light; --ink:#17202a; --muted:#667085; --line:#dce2e8; --accent:#174c45; --paper:#f5f5f2; }
+    * { box-sizing:border-box; } body { margin:0; background:var(--paper); color:var(--ink); font:15px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif; }
+    main { max-width:960px; margin:auto; padding:30px 28px 60px; } a { color:var(--accent); text-underline-offset:3px; } a:hover { text-decoration:underline; }
+    header { border-bottom:2px solid var(--ink); padding-bottom:22px; } .label { color:var(--accent); font-size:12px; font-weight:800; letter-spacing:.14em; }
+    h1 { margin:6px 0; font-size:32px; line-height:1.25; letter-spacing:-.03em; } h2 { font-size:21px; margin:0; } .muted,.meta { color:var(--muted); font-size:13px; }
+    .description { margin:10px 0 12px; } nav { display:flex; gap:8px 18px; flex-wrap:wrap; font-size:13px; } .stats { display:flex; gap:28px; padding:20px 0; border-bottom:1px solid var(--line); }
+    .stats strong { display:block; font-size:24px; line-height:1.2; } .stats span { font-size:12px; color:var(--muted); }
+    .toolbar { display:flex; gap:10px; flex-wrap:wrap; margin:24px 0 12px; } input,select,button { font:inherit; } input,select { padding:10px 12px; border:1px solid #aab7ba; border-radius:4px; background:white; }
+    input { flex:1; min-width:160px; } input:focus,select:focus,button:focus-visible,a:focus-visible { outline:3px solid #91beb6; outline-offset:3px; }
+    .tabs { display:flex; gap:4px; margin:10px 0 20px; border-bottom:1px solid var(--line); } .tabs button { padding:10px 14px; border:0; background:transparent; color:var(--muted); cursor:pointer; border-bottom:3px solid transparent; }
+    .tabs button[aria-pressed="true"] { color:var(--ink); font-weight:700; border-color:var(--accent); } .section-head { display:flex; gap:12px; align-items:baseline; justify-content:space-between; }
+    article { padding:22px 0; border-bottom:1px solid var(--line); } .kicker { display:flex; gap:8px; flex-wrap:wrap; color:var(--accent); font-size:12px; }
+    article h3 { font-size:19px; line-height:1.45; margin:8px 0; word-break:keep-all; overflow-wrap:anywhere; } article h3 a { color:var(--ink); text-decoration:none; }
+    article p { margin:8px 0; color:#46535f; overflow-wrap:anywhere; } article .meta { margin-top:12px; } .empty { padding:35px 0; color:var(--muted); }
+    .archive { margin-top:35px; padding-top:22px; border-top:2px solid var(--ink); } .archive-list { display:flex; flex-wrap:wrap; gap:10px; margin-top:14px; }
+    .archive-list a { padding:7px 12px; background:white; border:1px solid var(--line); border-radius:4px; font-size:13px; } .notice { padding:12px 15px; border-left:3px solid #b68537; background:#fff8eb; font-size:13px; margin:18px 0; }
+    footer { border-top:1px solid var(--line); padding-top:18px; margin-top:30px; font-size:12px; color:var(--muted); } .more { display:block; padding:10px 20px; margin:20px auto; border:1px solid var(--accent); color:var(--accent); background:white; border-radius:4px; cursor:pointer; }
+    @media(max-width:600px) { main { padding:22px 18px 45px; } h1 { font-size:28px; } article h3 { font-size:18px; } .stats { gap:23px; } .section-head { display:block; } input { width:100%; } }
+  </style>
+</head>
+<body><main>
+  <header><div class="label">SIGNAL DESK / PERSONAL RESEARCH</div><h1>계속 쌓이는 리서치 브리핑</h1>
+    <p class="description">AI 개발 소식과 주거 공고를 모으고, 이전 브리핑과 원문을 함께 찾아봅니다.</p>
+    <p id="updated" class="meta"></p><nav><a id="home-link" href="index.html">최신 브리핑</a><a id="ai-link" href="ai-news.html">AI 개발 상세</a><a id="housing-link" href="brief.html">청약·주거 상세</a><a href="#archive">지난 브리핑</a></nav>
+  </header>
+  <div class="stats"><div><strong id="total">—</strong><span>누적 자료</span></div><div><strong id="week">—</strong><span>최근 7일</span></div><div><strong id="days">—</strong><span>저장된 브리핑</span></div></div>
+  <div id="health"></div>
+  <div class="toolbar"><input id="search" type="search" aria-label="자료 검색" placeholder="제목, 출처, 키워드로 검색"><select id="topic" aria-label="분야 선택"><option value="">모든 분야</option><option selected>AI 개발</option><option>청약·주거</option><option>주간 뉴스</option></select></div>
+  <div class="tabs" aria-label="자료 범위"><button id="recent" aria-pressed="true">최근 7일</button><button id="all" aria-pressed="false">전체 자료</button></div>
+  <div class="section-head"><h2 id="list-title">최근 업데이트</h2><span id="count" class="muted" aria-live="polite"></span></div><section id="items" aria-label="수집 자료"></section><button id="more" class="more" hidden>자료 더 보기</button>
+  <section id="archive" class="archive"><h2>지난 브리핑</h2><p class="muted">날짜별 첫 브리핑을 보존합니다. 당시 수집한 내용을 다시 확인할 수 있습니다.</p><div id="archive-list" class="archive-list"></div></section>
+  <footer>매일 오전 8:17 한국시간 수집 예정 · 출처 장애나 실행 대기에 따라 갱신이 늦어질 수 있습니다.<br>피드 발췌와 원문 링크를 제공합니다. 심층 검증·분석은 별도 리서치로 보강합니다.</footer>
+  <noscript><p>검색을 사용하려면 JavaScript를 활성화하세요.</p><ul>__NOSCRIPT_ITEMS__</ul></noscript>
+</main><script id="briefing-data" type="application/json">__BRIEFING_DATA__</script><script>
+  const data=JSON.parse(document.getElementById('briefing-data').textContent);
+  const $=id=>document.getElementById(id); let mode='recent',shown=20;
+  const reference=Date.parse(data.created_at); const cutoff=reference-7*86400000;
+  const recent=item=>Date.parse(item.published_at||item.first_seen_at)>=cutoff;
+  const safeUrl=url=>{try{const u=new URL(url);return ['http:','https:'].includes(u.protocol)&&!u.username&&!u.password?u.href:'';}catch{return '';}};
+  function node(tag,text,cls){const el=document.createElement(tag);if(text)el.textContent=text;if(cls)el.className=cls;return el;}
+  $('updated').textContent=(data.archived?'보관된 브리핑 · ':'마지막 갱신 · ')+new Date(data.created_at).toLocaleString('ko-KR',{timeZone:'Asia/Seoul'})+' KST';
+  $('home-link').href=data.prefix+'index.html';$('ai-link').href=data.prefix+'ai-news.html';$('housing-link').href=data.prefix+'brief.html';
+  $('total').textContent=data.items.length;$('week').textContent=data.items.filter(recent).length;$('days').textContent=data.history.length;
+  const failures=data.health.filter(item=>!item.ok||(item.warnings||[]).length);
+  if(failures.length){const box=node('details',null,'notice');box.append(node('summary','일부 출처 수집에 문제가 있어 저장된 자료를 함께 표시합니다.'));
+    failures.forEach(item=>box.append(node('p',item.source+' · '+(!item.ok?'이번 수집 실패':item.warnings.length+'개 출처 경고'))));$('health').append(box);}
+  for(const entry of data.history){const a=node('a',entry.date+' · '+entry.count+'건');a.href=data.prefix+'archive/'+entry.date+'/index.html';$('archive-list').append(a);}
+  function render(){const query=$('search').value.trim().toLowerCase(),topic=$('topic').value;
+    const selected=data.items.filter(item=>(mode==='all'||query||recent(item))&&(!topic||item.topic===topic)&&(!query||[item.title,item.summary,item.source,item.category].join(' ').toLowerCase().includes(query)));
+    selected.sort((a,b)=>((b.published_at||b.first_seen_at).localeCompare(a.published_at||a.first_seen_at))||(b.score-a.score));
+    $('items').replaceChildren();$('count').textContent=selected.length+'건';$('list-title').textContent=query?'검색 결과':mode==='all'?'누적 자료':'최근 업데이트';
+    if(!selected.length)$('items').append(node('p','해당하는 자료가 없습니다. 전체 자료를 선택하거나 검색어를 바꿔보세요.','empty'));
+    for(const item of selected.slice(0,shown)){const article=node('article');article.append(node('div',item.topic+' / '+item.category+' · '+item.basis,'kicker'));
+      const heading=node('h3'),a=node('a',item.title);a.href=safeUrl(item.url);a.target='_blank';a.rel='noopener noreferrer';heading.append(a);article.append(heading);
+      if(item.summary)article.append(node('p',item.summary));article.append(node('div',item.source+' · 게시 '+(item.published_at||'일자 미상').slice(0,10)+(item.status?' · '+item.status:''),'meta'));$('items').append(article);}
+    $('more').hidden=selected.length<=shown;$('recent').setAttribute('aria-pressed',mode==='recent');$('all').setAttribute('aria-pressed',mode==='all');
+  }
+  $('search').addEventListener('input',()=>{shown=20;render();});$('topic').addEventListener('change',()=>{shown=20;render();});
+  $('recent').addEventListener('click',()=>{mode='recent';shown=20;render();});$('all').addEventListener('click',()=>{mode='all';shown=20;render();});$('more').addEventListener('click',()=>{shown+=20;render();});render();
+</script></body></html>

@@ -1,5 +1,8 @@
 | Feature Name | Feature Description | Progress Status | Notes |
 | --- | --- | --- | --- |
+| GitHub Pages publishing | Public dashboard with search, official links, and dated briefing snapshots. | In progress | Building static output; GitHub Pages deployment and browser verification pending. |
+| Daily cloud collection | GitHub Actions refreshes public sources daily and restores accumulated state from release assets. | In progress | Default 08:17 Asia/Seoul; release backup/restore and two-run persistence verification pending. |
+| AI developer briefing | Famous LLM, AI platform, open-source release, and research news as a 3-page expandable developer brief. | Done | Added `ai-news` and `issues`; `이슈 뽑아줘` maps to latest 7-day AI issue pull. Verified live items, page PNGs, py_compile, and unittests. |
 | Housing notice MVP | 청약/공공임대 공고를 수집, 저장, 검색, 리포트화하는 첫 MVP. | Done | 서울주거포털 LH/SH 웹 소스 수집 검증 완료: LH 10건, SH 8건. |
 | Searchable local store | Codex 질문 대응을 위한 SQLite 저장소와 검색 기능. | Done | FTS5 가능 시 인덱싱하고, 표준 라이브러리 기반 semantic-lite 검색을 함께 사용. `search`와 `context` 검증 완료. |
 | Mobile visual briefing | 모바일 공유용 HTML 브리핑과 이미지 추출. | Done | `site/latest.html` 생성 및 Edge headless 기반 `reports/latest.png` 추출 검증 완료. |
@@ -9,3 +12,11 @@
 | Automated review loop | 개발 후 문제를 찾고 수정하기 위한 자체 검토 명령. | Done | `review` 명령 추가. 데이터, HTML, 카드 수, PNG 폭 제한 PASS. |
 | Seoul/Gyeonggi scoped housing cards | 서울·경기 공고만 남기고 카드에 주소, 면적, 공급, 가격, 조건을 표시. | Done | LH 서울/경기 필터 소스 분리. 상세 HTML에서 소재지, 면적, 공급, 조건, 일정 추출. 가격은 HTML에 없으면 `원문/PDF 확인`으로 표시. |
 | Codex handoff documentation | 코드를 보지 않아도 다음 Codex가 프로젝트 목표, 기능, 운영, 데이터 구조를 파악할 수 있는 문서 세트. | Done | `README.md`, `docs/HANDOFF.md`, `FEATURES.md`, `ROADMAP.md`, `OPERATIONS.md`, `DATA_MODEL.md`, `DECISIONS.md` 정리. |
+| Tabbed mobile desk | 여러 소식 도메인을 탭으로 분리하고 선택한 탭만 모바일 이미지로 추출하는 브리핑 화면. | Done | `desk` 명령 추가. `summary`, `housing`, `weekly-news` 탭과 `reports/desk-*.png` 출력 지원. 문서형 모바일 디자인으로 재정리하고 뉴스/청약/요약 이미지 확인 완료. |
+| Weekly big-news source research | 경제, 정치, 사회, 연예 등 7일간 큰 뉴스를 수집하기 위한 기존 오픈소스/도구 조사. | Done | GDELT, Media Cloud, Miniflux, FreshRSS, Newscope 후보 정리. `docs/NEWS_TOOLS_RESEARCH.md`에 기록. |
+| Weekly big-news collector | 주간 빅뉴스 후보를 실제로 수집, 중복 제거, 점수화, 요약 탭에 반영. | Done | `news --source auto` 추가. GDELT 429 시 한국어 Google News TOP+WORLD RSS 묶음으로 대체. 정치 뉴스는 비정치 뉴스 뒤로 낮추고 화면에는 최대 2개까지만 표시. unittest 13건 및 이미지 검증 완료. |
+| Career jobs briefing | 경력 이직 공고를 지정 필드로 정규화하고 모바일 jobs 탭에서 표시. | Done | `job_items`, `jobs --input`, `desk --tab jobs` 추가. 회사명/공고명/하는일/자격요건/우대사항/지역/10년차 연봉/마감일/링크 표시. unittest 18건 통과. |
+| Saramin jobs live adapter | 사람인 Open API에서 경력 이직 후보를 수집해 `job_items`로 저장. | Done | `jobs --fetch saramin` 추가. `SIGNAL_DESK_SARAMIN_KEY` 필요. 경력직/fit score 필터, 별도 연봉 추정 매핑 지원. 키 없는 실패 종료코드와 unittest 22건 통과. |
+| Wider mobile desk design | 탭형 HTML 화면을 390px에서 645px 중심의 모바일 문서 페이지로 확장. | Done | `desk/news/jobs` 기본 폭 645px, 가운데 정렬, 카드 여백/타이포/지표 블록 개선. `brief` 390px 계약은 유지. |
+| Profile-based housing filter | 로컬 프로필을 기준으로 명확히 가능성이 낮은 청약 공고를 숨긴다. | Done | `--profile`, `SIGNAL_DESK_PROFILE_PATH`, `--show-profile-excluded` 지원. unittest 27건, `collect`, `brief`, `desk --profile`, `review` PASS 및 이미지 확인 완료. |
+| Detailed housing tab cards | 청약 탭을 긴 문서형 카드로 바꾸고 위치·면적·공급·가격 스냅샷을 넣는다. | Done | desk 기본 폭 645px, 청약 스냅샷 카드, 확인 포인트 추가. unittest 27건, `desk --tab housing --profile`, `brief`, `review` PASS 및 이미지 확인 완료. |

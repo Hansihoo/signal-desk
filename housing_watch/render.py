@@ -1,11 +1,13 @@
 import html
 import os
 import subprocess
+import shutil
 from collections import Counter
 from datetime import datetime
 from pathlib import Path
 
 from .db import all_items
+from .housing_profile import apply_profile_filter, load_housing_profile
 from .timeutil import iso_utc
 
 
@@ -26,13 +28,23 @@ def render_html(conn, output_path="site/latest.html", item_limit=16):
     return str(output)
 
 
-def render_brief_html(conn, output_path="site/brief.html", item_limit=5, max_width=390):
-    items = all_items(conn)
+def render_brief_html(
+    conn,
+    output_path="site/brief.html",
+    item_limit=5,
+    max_width=390,
+    profile_path=None,
+    hide_profile_excluded=True,
+    use_profile=True,
+):
+    raw_items = all_items(conn)
+    profile = load_housing_profile(profile_path) if use_profile else None
+    items, profile_filter = apply_profile_filter(raw_items, profile, hide_profile_excluded)
     active = [item for item in items if item.get("status") in ACTIVE_STATUSES]
     source_items = active if active else items
     top_items = sorted(source_items, key=_priority)[:item_limit]
     urgent_count = sum(1 for item in active if _days_until(item.get("deadline_at")) is not None and _days_until(item.get("deadline_at")) <= 14)
-    html_text = _brief_page(items, active, top_items, urgent_count, max_width)
+    html_text = _brief_page(items, active, top_items, urgent_count, max_width, profile, profile_filter, len(raw_items))
     output = Path(output_path)
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(html_text, encoding="utf-8")
@@ -55,6 +67,8 @@ def export_image(html_path="site/latest.html", output_path="reports/latest.png",
         "--screenshot=%s" % str(output_file),
         html_file.as_uri(),
     ]
+    if os.name != "nt":
+        args[1:1] = ["--no-sandbox", "--disable-dev-shm-usage"]
     subprocess.run(args, check=True)
     return str(output_file)
 
@@ -69,6 +83,10 @@ def _find_browser():
     for candidate in candidates:
         if candidate and os.path.exists(candidate):
             return candidate
+    for name in ("google-chrome", "google-chrome-stable", "chromium", "chromium-browser"):
+        browser = shutil.which(name)
+        if browser:
+            return browser
     return None
 
 
@@ -306,9 +324,20 @@ def _page(items, active, top_items, status_counts, region_counts):
     )
 
 
-def _brief_page(items, active, top_items, urgent_count, max_width):
+def _brief_page(items, active, top_items, urgent_count, max_width, profile=None, profile_filter=None, raw_item_count=None):
     cards = "\n".join(_brief_card(item) for item in top_items)
     latest_deadline = _nearest_deadline(active)
+    profile_filter = profile_filter or {"excluded": 0}
+    raw_item_count = raw_item_count if raw_item_count is not None else len(items)
+    summary = "공식 공고에서 수집한 현재 확인용 요약입니다. 신청 전 원문 공고를 확인하세요."
+    third_value = urgent_count
+    third_label = "14일내 마감"
+    total_label = "전체"
+    if profile:
+        third_value = profile_filter.get("excluded", 0)
+        third_label = "프로필 제외"
+        total_label = "검토 공고"
+        summary = "로컬 프로필 기준으로 명확히 어려운 청약을 숨긴 요약입니다. 무주택 여부와 공고별 산정은 원문 확인이 필요합니다."
     return """<!doctype html>
 <html lang="ko">
 <head>
@@ -472,11 +501,11 @@ def _brief_page(items, active, top_items, urgent_count, max_width):
   <main class="frame">
     <div class="kicker">Housing Watch</div>
     <h1>청약 주택 요약</h1>
-    <p class="summary">공식 공고에서 수집한 현재 확인용 요약입니다. 신청 전 원문 공고를 확인하세요.</p>
+    <p class="summary">{summary}</p>
     <div class="metrics">
-      <div class="metric"><b>{total}</b><span>전체</span></div>
+      <div class="metric"><b>{total}</b><span>{total_label}</span></div>
       <div class="metric"><b>{active_count}</b><span>진행중</span></div>
-      <div class="metric"><b>{urgent_count}</b><span>14일내 마감</span></div>
+      <div class="metric"><b>{third_value}</b><span>{third_label}</span></div>
     </div>
     <div class="section-title">바로 확인할 공고</div>
     {cards}
@@ -490,9 +519,12 @@ def _brief_page(items, active, top_items, urgent_count, max_width):
 """.format(
         max_width=max_width,
         total=len(items),
+        total_label=html.escape(total_label),
+        summary=html.escape(summary),
         active_count=len(active),
-        urgent_count=urgent_count,
-        cards=cards or '<p class="summary">아직 표시할 공고가 없습니다.</p>',
+        third_value=third_value,
+        third_label=html.escape(third_label),
+        cards=cards or '<p class="summary">프로필 기준으로 남은 청약 공고가 없습니다. 제외 기준을 보려면 --show-profile-excluded 옵션으로 다시 생성하세요.</p>',
         latest_deadline=html.escape(latest_deadline or "-"),
         generated_at=html.escape(iso_utc()),
     )
@@ -501,6 +533,7 @@ def _brief_page(items, active, top_items, urgent_count, max_width):
 def _brief_card(item):
     status = item.get("status") or "-"
     dday = _deadline_label(item.get("deadline_at"))
+    profile_note = _profile_note(item)
     return """<a class="notice" href="{url}">
   <div class="topline"><span class="badge">{status}</span><span class="dday">{dday}</span></div>
   <h2>{title}</h2>
@@ -510,6 +543,7 @@ def _brief_card(item):
     <div class="fact"><b>공급</b><span>{supply}</span></div>
     <div class="fact"><b>가격</b><span>{price}</span></div>
     <div class="fact"><b>조건</b><span>{eligibility}</span></div>
+    {profile_note}
   </div>
   <div class="meta">{agency} · {category} · {region}<br>{schedule}</div>
 </a>""".format(
@@ -522,11 +556,20 @@ def _brief_card(item):
         supply=html.escape(_short_value(item.get("supply_units") or "원문 확인", 64)),
         price=html.escape(_price_label(item)),
         eligibility=html.escape(_short_value(item.get("eligibility") or "원문 확인", 54)),
+        profile_note=profile_note,
         agency=html.escape(item.get("agency") or "-"),
         category=html.escape(item.get("category") or "-"),
         region=html.escape(item.get("region") or "-"),
         schedule=html.escape(_schedule_label(item)),
     )
+
+
+def _profile_note(item):
+    label = item.get("_profile_label")
+    if not label:
+        return ""
+    reason = item.get("_profile_reason") or label
+    return '<div class="fact"><b>프로필</b><span>%s</span></div>' % html.escape(_short_value(reason, 82))
 
 
 def _pill(status, count):

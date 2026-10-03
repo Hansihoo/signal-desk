@@ -1,0 +1,19 @@
+[
+  {
+    "company_name": "예시테크",
+    "posting_title": "시니어 C++ 오피스 엔진 개발자",
+    "work_summary": "문서 편집기와 스프레드시트 엔진의 성능 개선, Windows 데스크톱 기능 개발",
+    "requirements": "C++ 개발 경력 8년 이상, 제품 코드 유지보수와 성능 최적화 경험",
+    "preferred": "오피스 제품, 문서 엔진, 리드 개발 또는 레거시 코드 개선 경험",
+    "location": "서울 또는 경기 판교",
+    "salary_10y": "7,500만~9,500만원 추정",
+    "salary_basis": "예시값. 실제 운영 시 채용 플랫폼, 연봉 리뷰, 기업 공시를 분리 조사",
+    "deadline_at": "2026-07-15",
+    "url": "https://example.com/jobs/senior-cpp-office-engine",
+    "source_name": "manual_example",
+    "company_size": "중견기업",
+    "seniority": "경력",
+    "employment_type": "정규직",
+    "published_at": "2026-06-20"
+  }
+]
