@@ -1,0 +1,59 @@
+name: Collect and publish Signal Desk
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    - cron: '17 23 * * *'
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: signal-desk-collection-and-pages
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    env:
+      GH_TOKEN: ${{ github.token }}
+      SIGNAL_DESK_PROFILE_PATH: ''
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test collectors, archive, and safe restore
+        run: python -m unittest discover -s tests
+      - name: Restore accumulated state
+        run: python -m housing_watch.cloud_state restore
+      - name: Collect public sources and build website
+        run: python -m housing_watch publish --collect
+      - name: Verify housing briefing
+        run: |
+          python -m housing_watch brief --width 390 --height 1500
+          python -m housing_watch review --width 390
+      - name: Save durable collection snapshot
+        run: python -m housing_watch.cloud_state save
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Upload website
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - name: Deploy website
+        id: deployment
+        uses: actions/deploy-pages@v4
+      - name: Record monthly operation
+        run: python -m housing_watch.cloud_state record
+
