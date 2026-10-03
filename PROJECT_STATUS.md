@@ -1,12 +1,12 @@
 | Feature Name | Feature Description | Progress Status | Notes |
 | --- | --- | --- | --- |
-| GitHub Pages publishing | Public dashboard with search, official links, and dated briefing snapshots. | In progress | Building static output; GitHub Pages deployment and browser verification pending. |
-| Daily cloud collection | GitHub Actions refreshes public sources daily and restores accumulated state from release assets. | In progress | Default 08:17 Asia/Seoul; release backup/restore and two-run persistence verification pending. |
+| GitHub Pages publishing | Public dashboard with search, official links, and dated briefing snapshots. | Done | Live at https://hansihoo.github.io/signal-desk/; search, topic filters, archive navigation, and 430px mobile layout verified. |
+| Daily cloud collection | GitHub Actions refreshes public sources daily and restores accumulated state from release assets. | Done | Daily 08:17 Asia/Seoul (approximate); two successful cloud runs, release restore/save verified, 165 to 177 public records, first daily briefing preserved. 39 tests pass. |
 | AI developer briefing | Famous LLM, AI platform, open-source release, and research news as a 3-page expandable developer brief. | Done | Added `ai-news` and `issues`; `이슈 뽑아줘` maps to latest 7-day AI issue pull. Verified live items, page PNGs, py_compile, and unittests. |
 | Housing notice MVP | 청약/공공임대 공고를 수집, 저장, 검색, 리포트화하는 첫 MVP. | Done | 서울주거포털 LH/SH 웹 소스 수집 검증 완료: LH 10건, SH 8건. |
 | Searchable local store | Codex 질문 대응을 위한 SQLite 저장소와 검색 기능. | Done | FTS5 가능 시 인덱싱하고, 표준 라이브러리 기반 semantic-lite 검색을 함께 사용. `search`와 `context` 검증 완료. |
 | Mobile visual briefing | 모바일 공유용 HTML 브리핑과 이미지 추출. | Done | `site/latest.html` 생성 및 Edge headless 기반 `reports/latest.png` 추출 검증 완료. |
-| Automation docs | Codex/n8n/changedetection 연동을 위한 운영 문서. | Done | 자동화는 문서화 먼저 완료. 실제 스케줄 등록은 사용자 승인 후 진행. |
+| Automation docs | Codex/n8n/changedetection 연동을 위한 운영 문서. | Done | GitHub Actions 일일 수집과 Pages 배포가 활성화됨. 별도 Codex/n8n 분석 자동화는 후속 선택 사항. |
 | MVP completion contract | 중간에 멈추지 않도록 목표, 완료 기준, 반복 검토 루프를 문서화. | Done | `docs/MVP_GOALS.md` 추가. 완료 기준 명령과 모바일 브리핑 규칙 정의. |
 | Concise mobile briefing | 청약 주택 소식을 390px 폭 모바일 이미지로 전달하는 간결 브리핑. | Done | `brief` 명령 추가. `site/brief.html`, `reports/brief.png` 생성 검증 완료. |
 | Automated review loop | 개발 후 문제를 찾고 수정하기 위한 자체 검토 명령. | Done | `review` 명령 추가. 데이터, HTML, 카드 수, PNG 폭 제한 PASS. |

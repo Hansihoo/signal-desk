@@ -1,6 +1,6 @@
 | 업무 명 | 설명 | 진행상황 | 특이사항 |
 | --- | --- | --- | --- |
-| Git 기반 배포와 지속 수집 | 공개 자료 검색 화면, 날짜별 브리핑 보존, GitHub Pages 배포와 매일 수집을 연결한다. | 진행중 | unittest 39건, 실제 수집(AI 79건, 일반 뉴스 58건), search/context/report/render/brief/desk/review PASS. 이미지 확인 완료. 클라우드 첫 실행 및 상태 복원 확인 예정. |
+| Git 기반 배포와 지속 수집 | 공개 자료 검색 화면, 날짜별 브리핑 보존, GitHub Pages 배포와 매일 수집을 연결한다. | 완료 | unittest 39건, 실제 수집과 search/context/report/render/brief/desk/review PASS 및 이미지 확인. 클라우드 2회 수집·배포 성공(run 37093169002, 37093390480), release 상태 복원·추가 백업, 165→177건 누적, 첫 일일 브리핑 보존 확인. 공개 사이트 검색·분야 필터·보관 페이지·430px 모바일 확인. |
 | AI 이슈 7일치 기본 요청 세팅 | Theo가 `이슈 뽑아줘`라고 말하면 최근 7일 AI 개발자 이슈를 수집, 3페이지 브리핑, 텍스트 요약으로 알려주도록 명령과 문서를 고정한다. | 완료 | `issues`/`issue`/`이슈` CLI 별칭, `--days 7` 필터, 요약 출력, AGENTS/README/HANDOFF/OPERATIONS/FEATURES/상태 문서 갱신. |
 | AI 개발자 브리핑 적용 | 유명 LLM, AI 개발 도구, 오픈소스 릴리스, 연구/안전 흐름을 3페이지 확장형 브리핑으로 수집·렌더링한다. | 완료 | `ai-news`, `ai_news.py`, `ai_brief.py`, `ai_%` 뉴스 분리, 문서/테스트 추가. 실제 18건 수집, 3페이지 PNG 생성, py_compile 및 unittest 31건 통과. |
 | 청약 주택 MVP 스캐폴딩 | 로컬 수집, 검색, 리포트, HTML 브리핑 기반을 구성한다. | 완료 | 서울주거포털 LH 10건, SH 8건 수집. 검색/context/report/render/export-image 및 unittest 검증 완료. |

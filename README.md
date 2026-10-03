@@ -1,4 +1,4 @@
-﻿# Signal Desk
+# Signal Desk
 
 Signal Desk is a local-first personal signal dashboard.
 
@@ -7,6 +7,10 @@ It collects updates Theo cares about, stores them in a searchable local database
 First MVP domain: **housing subscription and public rental notices** for Seoul and Gyeonggi.
 
 Additional MVP domains now exist for weekly big news, AI developer news, and normalized career job briefings.
+
+Public site: [Signal Desk](https://hansihoo.github.io/signal-desk/).
+GitHub Actions refreshes public sources daily at approximately 08:17 Asia/Seoul;
+accumulated data and dated briefings are retained between runs. See [publishing operations](docs/PUBLISHING.md).
 
 Future domains:
 

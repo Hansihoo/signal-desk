@@ -1,4 +1,4 @@
-﻿# Handoff
+# Handoff
 
 This document is the first stop for a future Codex agent.
 
@@ -29,6 +29,8 @@ Implemented:
 - career job JSON import, normalized `job_items`, and jobs tab rendering,
 - Saramin Open API live job fetch when `SIGNAL_DESK_SARAMIN_KEY` is configured,
 - automated review command,
+- searchable public dashboard and dated briefing archive at https://hansihoo.github.io/signal-desk/,
+- daily GitHub Actions collection and Pages deployment with durable release snapshots,
 - tests for parsers, detail extraction, rendering, and review checks.
 
 Current source scope:
@@ -39,6 +41,8 @@ Current source scope:
 
 Current generated output:
 
+- `site/index.html`, `site/library.json`, `site/status.json`
+- `site/archive/YYYY-MM-DD/briefing.json` and `index.html`
 - `site/brief.html`
 - `reports/brief.png`
 - `site/desk.html`
@@ -56,6 +60,7 @@ These are ignored by git and should be regenerated locally.
 
 ```powershell
 python -m housing_watch collect
+python -m housing_watch publish --collect
 python -m housing_watch brief --limit 5 --width 390 --height 1500
 python -m housing_watch news --source auto --limit 12 --width 645 --height 1500
 python -m housing_watch issues --days 7 --limit 18 --per-page 6 --width 645 --height 1500
@@ -103,8 +108,9 @@ python -m housing_watch jobs --fetch saramin --no-image
 - SH notices often keep address, floor plan, detailed price, and unit breakdown in attached PDF/HWP files.
 - LH pages expose useful address/area/supply data in HTML, but exact deposit/monthly rent often still requires the attached notice.
 - The search scorer is semantic-lite, not embedding-based.
-- No separate local Codex automation has been registered; daily collection is moving to GitHub Actions.
-- Daily GitHub Actions collection and Pages deployment are being configured; see `PUBLISHING.md` and `PROJECT_STATUS.md` for deployment verification.
+- Daily collection is active on GitHub Actions at approximately 08:17 Asia/Seoul; no separate local Codex automation is required.
+- Public feed collection and dated briefings are implemented; independent deep research and cross-topic analysis remain future work.
+- See `PUBLISHING.md` for state recovery, public-data boundaries, manual refresh, and pausing the workflow. Two cloud runs verified restore, accumulation, and deployment on 2026-10-03.
 - The Python package is still named `housing_watch` because the first MVP domain is housing.
 - Saramin list API does not expose full detailed responsibilities/requirements/preferred qualifications, so the adapter summarizes list fields and links to the original posting.
 - WorkNet and official company career-page adapters are not implemented yet.

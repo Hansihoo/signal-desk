@@ -3,12 +3,20 @@
 ## Deployment
 
 The existing `Hansihoo/signal-desk` repository hosts the public site through GitHub Pages.
+Live site: https://hansihoo.github.io/signal-desk/
 `.github/workflows/deploy.yml` runs on main-branch pushes, manual dispatch, and daily at
 23:17 UTC (08:17 Asia/Seoul the following day). GitHub scheduling is approximate.
 
 The workflow tests the code, restores previous state, collects public sources, generates
 the site, checks the housing briefing, saves state, and deploys a Pages artifact.
 One concurrency group serializes all collection and deployment runs.
+
+Verified on 2026-10-03: [first deployment](https://github.com/Hansihoo/signal-desk/actions/runs/37093169002)
+and [restore plus refresh](https://github.com/Hansihoo/signal-desk/actions/runs/37093390480)
+both succeeded with 39 passing tests. The second run restored the first snapshot,
+increased the public library from 165 to 177 records, kept the original daily briefing,
+and saved a second release asset. Live search, topic filtering, archive navigation,
+and the 430px mobile layout were checked in the browser.
 
 ```powershell
 python -m housing_watch publish --collect
