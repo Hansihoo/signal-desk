@@ -77,6 +77,17 @@ GitHub Pages also restricts commercial transaction/SaaS hosting. A public inform
 library fits the intended static publishing shape; selling subscriptions would require
 a separate hosting decision.
 
+## Verification
+
+On 2026-10-03, 45 unit tests passed including RSS/Atom collection, cross-topic title
+preservation, unsafe registry rejection, archive immutability, and topic-specific health.
+[Hub deployment](https://github.com/Hansihoo/signal-desk/actions/runs/37113326705)
+and [final refresh](https://github.com/Hansihoo/signal-desk/actions/runs/37113583835)
+both restored state and deployed successfully. Public records accumulated to 230 while
+the original daily briefing retained its 165 records and 12:27:29 KST timestamp.
+All three topic routes, keyword search, historical filtering, and 430px mobile layout
+were checked in the live browser. Brief/desk images and `review` were checked locally.
+
 Sources: [Pages limits](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits),
 [Actions billing](https://docs.github.com/en/billing/concepts/product-billing/github-actions),
 [Release quotas](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases),
