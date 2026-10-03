@@ -96,3 +96,19 @@ Checked on 2026-10-03 for reference discovery, not full program verification:
 - [OpenAI Safety Bug Bounty overview](https://openai.com/index/safety-bug-bounty/) links separate Safety and Security engagements on Bugcrowd.
 
 Maintain field-level source evidence and the last successful verification time during implementation.
+
+## HTML phase verification
+
+49 unit tests passed, including planned-collector isolation, no fabricated program records,
+old snapshot/catalog preservation, and required fields in the self-contained HTML template.
+JS syntax, compileall, publish/brief/desk/review, and briefing image checks passed locally.
+The attached source text and saved requirements document match without content changes.
+
+[Initial deployment](https://github.com/Hansihoo/signal-desk/actions/runs/37115938414)
+and [navigation fix deployment](https://github.com/Hansihoo/signal-desk/actions/runs/37116097035)
+both passed cloud validation and Pages publishing. Live checks covered main/category/template
+navigation, structured fields, the standalone HTML file, parent/archive links, and 430px
+mobile tables and Enter-key outline control without horizontal overflow. Browser cached
+the previous category HTML during the second deployment; reloading confirmed the corrected links.
+No browser console errors were captured. The original cloud archive remains 165 records,
+three original topics, and its 12:27:29 KST timestamp. The new opportunity domain is an outline.
