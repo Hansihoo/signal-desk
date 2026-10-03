@@ -1,5 +1,6 @@
 | Feature Name | Feature Description | Progress Status | Notes |
 | --- | --- | --- | --- |
+| Report tree scaffold | Main, research topic, subtopic, and source-note document views with a shared editable HTML/CSS/JS shell. | In progress | HTML structure first; connect existing records, preserve dated snapshots, and verify desktop/mobile navigation. Analysis sections remain explicitly pending. |
 | Multi-topic research hub | Main research library with independently addressable topics and configurable public feeds. | Done | Topic registry and RSS/Atom collection added; 45 tests pass. Two cloud refreshes/deployments verified (37113326705, 37113583835), 230 public records. Search, three topic pages, topic-specific health, accumulated defaults, preserved archive, and 430px layout checked. |
 | GitHub Pages publishing | Public dashboard with search, official links, and dated briefing snapshots. | Done | Live at https://hansihoo.github.io/signal-desk/; search, topic filters, archive navigation, and 430px mobile layout verified. |
 | Daily cloud collection | GitHub Actions refreshes public sources daily and restores accumulated state from release assets. | Done | Daily 08:17 Asia/Seoul (approximate); two successful cloud runs, release restore/save verified, 165 to 177 public records, first daily briefing preserved. 39 tests pass. |

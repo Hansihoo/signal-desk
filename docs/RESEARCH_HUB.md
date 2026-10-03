@@ -9,12 +9,40 @@ GitHub itself logs visitor IP addresses for security; do not promise that the ho
 
 - `/index.html`: topic directory, all-topic search, recent updates, and daily archive.
 - `/research/<topic-id>/index.html`: one topic's records, keyword search, and optional detail briefing.
+- `/research/<topic-id>/index.html?section=<category>`: one subtopic's records.
+- `/research/<topic-id>/index.html?section=<category>&report=<record-id>`: an individually addressable source-note document.
 - `/topics.json`: public topic metadata, record counts, and latest source publication date.
 - `/archive/YYYY-MM-DD/index.html`: the first saved briefing for that date.
 
 The homepage initially shows all topics. Source publication date can be older than fetch time;
 counts reflect stored records, not independently verified research reports.
 Topic pages initially show their entire accumulated library and only their own source health.
+
+## Report and tree scaffold
+
+The reading structure is main -> topic -> subtopic -> individual record. Desktop uses
+a left navigation outline and a right document. Mobile starts with a collapsed outline.
+Native details/summary controls remain usable with a keyboard; report links include the
+original source, publication date, basis, and first collection time.
+
+Existing record categories supply the initial subtopics. The outline previews four recent
+records per category and links to the complete list; a selected older record stays visible.
+On a topic page, other topic branches lead to their own pages; they load their records when opened.
+
+Individual documents have summary, evidence, review, and conclusion sections. Current
+data supplies source excerpts and metadata only. Review and conclusion are explicitly
+marked pending; this HTML scaffold does not claim independently researched analysis.
+
+Edit `housing_watch/public_site.html` for structure, `public_site.css` for shared visual
+tokens/layout, and `public_site.js` for navigation and rendering. Publish copies the two
+assets into `site/`; content hashes in their URLs prevent stale style/script caches.
+All inserted source text uses DOM text nodes. Public links permit only HTTP(S) URLs
+without embedded credentials.
+
+Archived documents use query routes within the original dated page, including topic,
+section, and report IDs. Their outline and report bodies are built solely from that
+saved snapshot. Updating the shared HTML layout never changes the archived JSON.
+The collection schedule, SQLite model, and daily snapshot format are unchanged by this UI phase.
 
 ## Add a research topic
 

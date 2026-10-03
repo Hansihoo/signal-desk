@@ -114,6 +114,12 @@ stable topic IDs and labels. Generic feeds store excerpts without AI-specific in
 News deduplication uses explicit source groups to preserve repeated titles across topics.
 Daily snapshots retain their original catalog as well as records; older JSON stays unchanged.
 
+The public shell is split into `public_site.html`, `public_site.css`, and `public_site.js`.
+Its left outline navigates main, topic, category, and source-note document views. Categories
+and report IDs use query parameters on existing topic pages, avoiding an HTML file per record.
+Archived query routes render only saved items. Shared assets use relative root paths and
+content-hash cache keys. Review/conclusion document sections are pending placeholders.
+
 `public_site.py` adds public-source refresh and a static searchable dashboard. Only
 selected AI/news/housing fields enter the public library; local job/profile data is excluded.
 Daily JSON briefing snapshots under `site/archive/` preserve the first successful briefing

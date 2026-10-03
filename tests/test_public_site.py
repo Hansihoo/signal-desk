@@ -1,12 +1,14 @@
 import io
 import json
 import os
+import re
 import tarfile
 import tempfile
 import unittest
 from datetime import datetime, timezone
 from pathlib import Path
 from unittest.mock import patch
+from urllib.parse import urlsplit
 
 from housing_watch.cloud_state import create_archive, latest_asset, restore_archive
 from housing_watch.db import connect, init_db, upsert_news_items
@@ -62,6 +64,25 @@ class PublicSiteTests(unittest.TestCase):
         self.assertTrue(all(not item["ok"] for item in health))
         with tempfile.TemporaryDirectory() as temp:
             self.assertEqual(build_public_site(self.conn, temp, health)["items"], 1)
+
+    def test_shared_assets_resolve_from_main_topic_and_archive(self):
+        with tempfile.TemporaryDirectory() as temp:
+            build_public_site(self.conn, temp)
+            root = Path(temp)
+            pages = [root / "index.html", root / "research/ai/index.html", *root.glob("archive/*/index.html")]
+            for page in pages:
+                content = page.read_text(encoding="utf-8")
+                references = re.findall(r'(?:href|src)="([^"]+public_site\.(?:css|js)\?v=[^"]+)"', content)
+                # The root references have no path prefix.
+                references += re.findall(r'(?:href|src)="(public_site\.(?:css|js)\?v=[^"]+)"', content)
+                self.assertEqual(len(references), 2, str(page))
+                for reference in references:
+                    asset = (page.parent / urlsplit(reference).path).resolve()
+                    self.assertEqual(asset.parent, root.resolve())
+                    self.assertTrue(asset.is_file(), str(asset))
+                    self.assertIn("v=", reference)
+                self.assertNotIn("__ASSET_", content)
+                self.assertIn('id="briefing-data" type="application/json"', content)
 
     def test_public_render_does_not_read_private_profile_environment(self):
         with tempfile.TemporaryDirectory() as temp, patch.dict(os.environ, {"SIGNAL_DESK_PROFILE_PATH": "private-do-not-read.md"}), patch("housing_watch.render.load_housing_profile") as loader:

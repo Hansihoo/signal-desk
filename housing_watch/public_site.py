@@ -1,6 +1,7 @@
 """Public-source collection and a persistent, searchable static briefing archive."""
 
 import html
+import hashlib
 import json
 import re
 from pathlib import Path
@@ -111,6 +112,9 @@ def build_public_site(conn, output_path="site", health=None, topics=None):
         raise ValueError("Invalid archive index; existing archive must be repaired before publishing.")
     catalog = _topic_catalog(topics, entries)
     snapshot = {"date": date, "created_at": created_at, "items": entries, "health": health or [], "topics": catalog}
+    for suffix in ("css", "js"):
+        asset = Path(__file__).with_name("public_site." + suffix)
+        (output / asset.name).write_bytes(asset.read_bytes())
     daily = archive / date
     if not (daily / "briefing.json").exists():
         daily.mkdir(exist_ok=True)
@@ -168,6 +172,8 @@ def _write_page(path, snapshot, history, prefix="", archived=False, selected_top
                            for index, label in enumerate(labels)]
     serialized = json.dumps(data, ensure_ascii=False).replace("<", "\\u003c").replace("\u2028", "\\u2028").replace("\u2029", "\\u2029")
     content = template.replace("__BRIEFING_DATA__", serialized)
+    assets = b"".join(Path(__file__).with_name("public_site." + suffix).read_bytes() for suffix in ("css", "js"))
+    content = content.replace("__ASSET_PREFIX__", prefix).replace("__ASSET_VERSION__", hashlib.sha256(assets).hexdigest()[:12])
     topic = next((topic for topic in data["topics"] if topic["id"] == selected_topic), None)
     title = topic["name"] + " 리서치" if topic else "리서치 아카이브"
     description = topic.get("description") if topic else "여러 분야의 자료와 원문을 모으고, 주제별 리서치와 지난 브리핑을 찾아봅니다."

@@ -31,6 +31,7 @@ Implemented:
 - automated review command,
 - searchable public dashboard and dated briefing archive at https://hansihoo.github.io/signal-desk/,
 - multi-topic research homepage, independent topic pages, and configurable public RSS/Atom research feeds,
+- report/tree HTML scaffold: main -> topic -> category -> source-note document; review/conclusion sections pending,
 - daily GitHub Actions collection and Pages deployment with durable release snapshots,
 - tests for parsers, detail extraction, rendering, and review checks.
 
@@ -44,6 +45,7 @@ Current generated output:
 
 - `site/index.html`, `site/library.json`, `site/status.json`
 - `site/topics.json` and `site/research/<topic-id>/index.html`
+- `site/public_site.css` and `site/public_site.js` (shared report/tree assets)
 - `site/archive/YYYY-MM-DD/briefing.json` and `index.html`
 - `site/brief.html`
 - `reports/brief.png`
