@@ -76,3 +76,19 @@ the registered thread verification root; earlier captures remain retained.
 
 Expand this format only after Theo reviews the pair. Weekly changed-only review
 requires separate collection/editing work; it is not part of this revision.
+
+## Applied to collected development information, 2026-10-04
+
+Theo's subsequent request asks to collect the desired information and generate
+HTML. Ten reviewed subjects now use this format: subject, outline summary, sourced
+data, result, references. A graph is used only for a comparable numeric metric;
+eligibility, terms, and timelines use semantic tables. Main rows contain the first
+two data-owned highlights so measurement period and participation limits remain
+visible. Headlines wrap naturally at the viewport rather than splitting content
+at an arbitrary word count. Data and presentation stay independent.
+
+The same `/preview/` main links to stable report-ID pages and official references.
+The earlier storage report remains addressable. All stored reports are generated;
+the manifest controls which reports lead the main. This initial researched collection
+does not add the planned weekly deep-review automation. See RESEARCH_DATA.md for
+batch persistence and the current verification/evidence limits.

@@ -130,3 +130,14 @@ were examined. Subject-led titles, outline copy, a proportionate evidence chart,
 and concise references replace prototype labels and reading instructions. This
 changes only the homepage and one report; see BRIEFING_TEMPLATE.md for the revised
 contract. Other topic views and the weekly editorial automation remain deferred.
+
+## Initial researched content, 2026-10-04
+
+The latest request authorizes collection and HTML. The same report contract now
+serves ten reviewed development subjects from 21 official/first-party URLs. The
+curated main leads directly to stable report pages, which lead to official evidence.
+Current SQLite documents, immutable revisions and once-only reviewed batches preserve
+the data independently of design. Numeric comparisons and sourced condition tables
+replace empty placeholders in these reports. The legacy feed/topic outlines remain;
+automatic synthesis and weekly change-only review are still pending. See
+[RESEARCH_DATA.md](RESEARCH_DATA.md) for the implemented contract and evidence limits.

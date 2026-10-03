@@ -128,13 +128,21 @@ eligibility and timelines use semantic tables. Each report retains summary, data
 result, references, evidence dates, and scope. Main-page copy leads to the reviewed
 report; the separate existing feed library/daily archives keep their routes.
 
-Evidence limits are visible: Google dynamic rules were checked through their
-official indexed content; the Bugcrowd rule body was not fully readable, so current
+Evidence limits are visible: Google dynamic rules were first checked through their
+official indexed content and later confirmed on the rendered official page; the Bugcrowd rule body was not fully readable, so current
 reward amounts are not asserted. Upwork percentages measure 2025 US-origin contract
 earnings, not job counts. Tally values are founder-reported historical MRR, not
 audited profit or a one-person income. Eligibility and future deadlines are not
 inferred from promotional maximums. Weekly deep review/changed-only scheduling is
 still a separate, unimplemented workstream; the existing daily feed refresh continues.
+
+Verification: 63 tests, compileall, publish, brief, summary desk and review pass.
+Existing images were inspected; 13 research pages / 271 internal links pass. All
+ten reports and the main fit 390px; 430px main, earnings and MRR views pass. Official
+Upwork navigation/back and console checks pass. [Deployment 37133263430](https://github.com/Hansihoo/signal-desk/actions/runs/37133263430)
+succeeded in 2m15s. Public JSON contains 360 accumulated source records and 11 reports;
+all ten new documents exactly match the reviewed inputs. Public CSS matches committed
+source hash `22fb84de3dc9`. Main and representative report tabs/captures are retained.
 
 ## Verification on 2026-10-03
 
