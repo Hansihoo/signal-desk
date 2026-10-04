@@ -147,6 +147,11 @@ at `/preview/<report-id>.html`; templates/CSS own presentation. Numeric datasets
 optional sourced comparison tables stay independent of layout. Collected records
 remain distinct from reviewed conclusions.
 
+Optional learning chapters store plain-text paragraphs, steps, terms and code
+examples with evidence IDs and fact/example/judgment labels. The report view uses
+independent native details/summary sections, initially collapsed, with no script or
+database schema migration. Earlier reports render without an empty learning section.
+
 The publication manifest orders reports and lists immutable reviewed input batches.
 Each batch and its SQLite receipt are applied atomically once, preserving later DB
 edits. New reviewed changes need a new batch ID. This deploys authored public content

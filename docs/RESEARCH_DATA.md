@@ -67,6 +67,7 @@ report. It contains the existing report's content previously embedded in HTML.
 | `metrics` | Numeric values, units, labels, qualifiers, source IDs; empty when unnecessary. |
 | `datasets` | Numeric rows, shared unit, fact/estimate kind, assumptions, methodology, note, sources, optional threshold; empty when unnecessary. |
 | `tables` (optional) | Plain-text comparison columns and rows with source IDs and a scope note. No cell markup or styles. |
+| `learning` (optional) | Ordered explanatory chapters with stable IDs, titles, short leads and typed plain-text blocks. Facts cite evidence; examples and recommendations are labelled. |
 | `result` | Conclusion title and points using the same point contract. |
 | `references` | Unique IDs, titles, credential-free HTTP(S) URLs, descriptions. |
 | `caveats` | Scope/uncertainty text and applicable source IDs. |
@@ -83,6 +84,27 @@ and dataset rows. Unknown/missing report fields, duplicate IDs, invalid dates/UR
 dangling source references, invalid numeric values, unsupported versions, factual
 points/metrics/data without sources, and estimated datasets without assumptions are rejected. All documents
 validate before a transactional import. The renderer escapes plain text.
+
+## Explanatory chapter contract
+
+Each optional `learning` chapter has `id`, `title`, `lead` and a nonempty
+`blocks` array. Block fields are `type`, `kind`, `title`, `source_ids` plus:
+
+- `paragraph` / `code`: nonempty `text` (code remains escaped text).
+- `steps` / `terms`: nonempty `items`, each with `label` and `text`.
+
+`kind` is `fact`, `example`, or `judgment`. Factual blocks require at least
+one existing reference; hypothetical examples and editorial recommendations are
+visibly distinguished. Duplicate chapter IDs, unknown fields/types, empty content
+and dangling evidence IDs fail validation before storage changes. IDs are local to
+the report. Version 1 remains additive: older reports omit learning entirely.
+
+The view renders independent, initially collapsed native `details`/`summary`
+sections with keyboard support. It adds the report contents link only if chapters
+exist. No JavaScript or data field controls layout, colours, or open state.
+Definitions, process steps and examples remain in SQLite/exported JSON when the
+HTML design is replaced. The time and notice examples explain MCP Apps; Signal
+Desk's static disclosures are not a running MCP App or an implemented MCP server.
 
 ## Revisions and editing
 
@@ -119,6 +141,13 @@ batch, preserving later database edits. Modifying an applied batch is rejected:
 add a new dated batch ID for subsequent reviewed changes. Source-controlled authored
 inputs let the cloud apply the same research without replacing its accumulated DB.
 They contain public content only; generated DB/raw/JSON/HTML/PNG remain ignored.
+
+`config/development_learning.2026-10-04.json` is the next immutable reviewed
+batch. It adds 26 learning chapters across the same ten reports, including seven
+MCP Apps chapters, and clearer MCP copy. It adds official MCP architecture,
+quickstart and Apps specification, GitHub app differences and Stripe MRR definition
+references. The previous baseline input is unchanged. Publishing updates each
+report revision once and preserves accumulated source records and older revisions.
 
 `/preview/index.html` presents the selected reports grouped by topic. Stable report
 URLs are `/preview/<report-id>.html`; `report.html` aliases the current featured

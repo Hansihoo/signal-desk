@@ -111,6 +111,38 @@ def _table(table, source_numbers):
         _escape(table["title"]), headers, "".join(rows), _escape(table["note"]))
 
 
+def _learning(lessons, source_numbers):
+    if not lessons:
+        return ""
+    chapters = []
+    for lesson in lessons:
+        blocks = []
+        for block in lesson["blocks"]:
+            label = {"fact": "", "example": "가상 예시", "judgment": "검토 의견"}[block["kind"]]
+            heading = '<h3>%s%s</h3>' % (_escape(block["title"]),
+                ' <span class="learning-kind">%s</span>' % label if label else "")
+            if block["type"] == "paragraph":
+                body = '<p>%s</p>' % _escape(block["text"])
+            elif block["type"] == "code":
+                body = '<pre><code>%s</code></pre>' % _escape(block["text"])
+            elif block["type"] == "steps":
+                body = '<ol class="learning-steps">%s</ol>' % "".join(
+                    '<li><strong>%s</strong><p>%s</p></li>' % (_escape(item["label"]), _escape(item["text"]))
+                    for item in block["items"])
+            else:
+                body = '<dl class="learning-terms">%s</dl>' % "".join(
+                    '<div><dt>%s</dt><dd>%s</dd></div>' % (_escape(item["label"]), _escape(item["text"]))
+                    for item in block["items"])
+            cites = _citations(block, source_numbers)
+            blocks.append('<div class="learning-block">%s%s%s</div>' % (
+                heading, body, '<p class="learning-sources">근거 %s</p>' % cites if cites else ""))
+        chapters.append('''<details class="learning-chapter" id="learning-%s">
+          <summary><span class="learning-heading">%s</span><span class="learning-toggle" aria-hidden="true"><span class="when-closed">펼치기</span><span class="when-open">접기</span></span><span class="learning-lead">%s</span></summary>
+          <div class="learning-body">%s</div></details>''' % (
+            _escape(lesson["id"]), _escape(lesson["title"]), _escape(lesson["lead"]), "".join(blocks)))
+    return '<section id="learning" class="report-section" aria-labelledby="learning-title"><h2 id="learning-title">해설</h2>%s</section>' % "".join(chapters)
+
+
 def _curated_rows(reports, featured_id=None):
     groups = {}
     for report in reports:
@@ -158,6 +190,8 @@ def _report_replacements(report):
             "__DECK__": _escape(report["deck"]), "__SCOPE__": _escape(report["scope"]),
             "__HIGHLIGHTS__": "".join(highlights), "__SOURCE_NOTE__": _escape(report["source_note"]),
             "__SUMMARY__": _points(report["summary"], source_numbers),
+            "__LEARNING_LINK__": '<a href="#learning">해설</a>' if report.get("learning") else "",
+            "__LEARNING__": _learning(report.get("learning", []), source_numbers),
             "__METRICS__": '<div class="limits-row">%s</div>' % metrics if metrics else "",
             "__DATASETS__": "".join(_chart(dataset, source_numbers) for dataset in report["datasets"])
                             + "".join(_table(table, source_numbers) for table in report.get("tables", [])),

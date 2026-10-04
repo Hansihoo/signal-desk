@@ -24,18 +24,20 @@ class ResearchPublicationTests(unittest.TestCase):
     def test_reviewed_batch_is_applied_once_and_keeps_later_edits(self):
         apply_publication(self.conn, self.publication, self.batches)
         self.assertEqual(self.conn.execute("SELECT COUNT(*) FROM research_reports").fetchone()[0], 10)
-        edited = copy.deepcopy(self.batches[0][1][0])
+        before = self.conn.execute("SELECT COUNT(*) FROM research_report_revisions").fetchone()[0]
+        edited = copy.deepcopy(self.batches[-1][1][0])
+        old_revision = self.conn.execute("SELECT revision FROM research_reports WHERE id=?", (edited["id"],)).fetchone()[0]
         edited["title"] = "후속 검토로 바뀐 제목"
         import_reports(self.conn, [edited])
         apply_publication(self.conn, self.publication, self.batches)
         row = self.conn.execute("SELECT revision, document FROM research_reports WHERE id=?", (edited["id"],)).fetchone()
-        self.assertEqual(row["revision"], 2)
+        self.assertEqual(row["revision"], old_revision + 1)
         self.assertEqual(json.loads(row["document"])["title"], edited["title"])
         altered = copy.deepcopy(self.batches)
         altered[0][1][1]["title"] = "기존 배치 수정 금지"
         with self.assertRaisesRegex(ValueError, "new batch ID"):
             apply_publication(self.conn, self.publication, altered)
-        self.assertEqual(self.conn.execute("SELECT COUNT(*) FROM research_report_revisions").fetchone()[0], 11)
+        self.assertEqual(self.conn.execute("SELECT COUNT(*) FROM research_report_revisions").fetchone()[0], before + 1)
 
     def test_missing_publication_report_rolls_back_reports_and_receipts(self):
         publication = copy.deepcopy(self.publication)

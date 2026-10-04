@@ -28,13 +28,18 @@ plan](docs/RESEARCH_EXPERIENCE_PLAN.md).
 
 The first paired [homepage preview](https://hansihoo.github.io/signal-desk/preview/index.html)
 and [representative report](https://hansihoo.github.io/signal-desk/preview/report.html)
-are available for template review. Only this pair receives the new layout; see the
+are available for template review. Ten reviewed development reports use this layout; see the
 [template contract](docs/BRIEFING_TEMPLATE.md).
 
 Research content is independent of web design. `research-data --collect` refreshes
 public sources and writes `data/research.json` without rendering webpages. Authored
 reports are imported into SQLite with changed-only revisions; the representative
 pair renders this structured content. See [data contract and workflow](docs/RESEARCH_DATA.md).
+
+Each development report now includes expandable explanations with definitions,
+processes, examples and evidence. The [MCP Apps report](https://hansihoo.github.io/signal-desk/preview/mcp-apps-workflows.html)
+has seven learning chapters. This detail is stored as report data independently of
+HTML/CSS; hypothetical examples and editorial recommendations are distinguished.
 
 Future domains:
 

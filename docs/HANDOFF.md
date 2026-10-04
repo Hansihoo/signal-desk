@@ -16,6 +16,7 @@ Implemented:
 - raw HTML snapshot storage,
 - SQLite normalized storage,
 - validated authored research and changed-only revisions in SQLite,
+- expandable learning chapters in ten development reports; MCP Apps includes seven chapters with terms, process, official example and evidence,
 - `research-data` JSON-only collection/import/export independent of rendering,
 - detail-page enrichment,
 - optional local-profile housing filtering,

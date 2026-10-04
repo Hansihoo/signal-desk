@@ -55,7 +55,7 @@ def _number(value):
 
 def validate_report(report):
     """Validate content before any database mutation; no layout or arbitrary extra fields."""
-    _object(report, REPORT_FIELDS | {"tables"}, REPORT_FIELDS)
+    _object(report, REPORT_FIELDS | {"tables", "learning"}, REPORT_FIELDS)
     for key in ("id", "topic_id"):
         _id(report[key])
     for key in ("title", "description", "checked_on", "scope", "deck", "source_note"):
@@ -164,6 +164,37 @@ def validate_report(report):
             citations(row)
             if not row["source_ids"]:
                 raise ValueError("A factual table row needs a source")
+    lesson_ids = set()
+    for lesson in _list(report.get("learning", [])):
+        _object(lesson, {"id", "title", "lead", "blocks"})
+        _id(lesson["id"])
+        if lesson["id"] in lesson_ids:
+            raise ValueError("Duplicate learning ID")
+        lesson_ids.add(lesson["id"])
+        _text(lesson["title"])
+        _text(lesson["lead"])
+        if not _list(lesson["blocks"]):
+            raise ValueError("Learning blocks cannot be empty")
+        for block in lesson["blocks"]:
+            if not isinstance(block, dict) or block.get("type") not in ("paragraph", "steps", "terms", "code"):
+                raise ValueError("Unsupported learning block type")
+            content = "text" if block["type"] in ("paragraph", "code") else "items"
+            _object(block, {"type", "kind", "title", content, "source_ids"})
+            if block["kind"] not in ("fact", "example", "judgment"):
+                raise ValueError("Learning kind must be fact, example, or judgment")
+            _text(block["title"])
+            if content == "text":
+                _text(block["text"])
+            else:
+                if not _list(block["items"]):
+                    raise ValueError("Learning items cannot be empty")
+                for item in block["items"]:
+                    _object(item, {"label", "text"})
+                    _text(item["label"])
+                    _text(item["text"])
+            citations(block)
+            if block["kind"] == "fact" and not block["source_ids"]:
+                raise ValueError("Factual learning needs a source")
     for caveat in _list(report["caveats"]):
         _object(caveat, {"text", "source_ids"})
         _text(caveat["text"])

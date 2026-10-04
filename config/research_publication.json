@@ -17,6 +17,10 @@
     {
       "id": "development-baseline-2026-10-04",
       "input": "development_baseline.2026-10-04.json"
+    },
+    {
+      "id": "development-learning-2026-10-04",
+      "input": "development_learning.2026-10-04.json"
     }
   ]
 }
