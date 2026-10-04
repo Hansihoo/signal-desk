@@ -92,3 +92,28 @@ The earlier storage report remains addressable. All stored reports are generated
 the manifest controls which reports lead the main. This initial researched collection
 does not add the planned weekly deep-review automation. See RESEARCH_DATA.md for
 batch persistence and the current verification/evidence limits.
+
+## Expandable explanations, 2026-10-04
+
+Theo requested enough detail to learn unfamiliar subjects, rather than infer their
+meaning from compressed headlines. Keep the main concise; include optional
+explanatory chapters after the report summary and before the data. The current
+ten reports contain 26 chapters; MCP Apps is the deep example with seven.
+
+For subsequent reviewed technical reports:
+
+- Define an unfamiliar concept before using its abbreviation or mechanism.
+- Explain the actors and process: who does what, what goes in, and what returns.
+- Include a concrete, clearly labelled hypothetical example where it improves
+  understanding; never present invented metrics or opportunities as observations.
+- Explain how to interpret figures, eligibility or limits, including what they
+  cannot establish. Separate official facts from editorial recommendations.
+- Cite the official learning material at the relevant block, then offer the
+  complete reference. Do not replace original evidence with a generated example.
+
+Use independent native disclosures with meaningful chapter titles and one-sentence
+leads; readers can choose the concept they need. Each chapter must contain actual
+explanation, not repeat the summary. Plain-text paragraph, process, glossary and
+code blocks live in the optional learning data contract. No layout or interface
+instruction text belongs in collected content. Old reports can omit learning, and
+nontechnical subjects need only the detail that helps interpretation.
