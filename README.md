@@ -51,6 +51,14 @@ chapters were checked on 2026-10-07; the collection now has 46 chapters. Parent
 topic filters include all descendants. Closed events and residency restrictions
 are distinguished from learning examples.
 
+Report comprehension was reviewed on 2026-10-08. The
+[content audit](docs/RESEARCH_CONTENT_REVIEW.2026-10-08.md) records concrete defects
+and each report's intended reader outcome. Future authors follow the
+[writing guide](docs/RESEARCH_WRITING_GUIDE.md) and
+[worked explanations](docs/RESEARCH_WRITING_EXAMPLES.md): write to resolve the
+reader's question before extracting summaries and tables. This audit documents
+repairs; the current published reports have not yet been rewritten to that standard.
+
 Future domains:
 
 - jobs and hiring notices

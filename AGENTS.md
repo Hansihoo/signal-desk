@@ -38,6 +38,18 @@ Then state:
 - Update `docs/ai/WORK_LOG.md` for meaningful implementation or verification work.
 - Keep docs useful for a future Codex agent that cannot inspect your memory.
 
+## Research Writing and Content Review
+
+When writing, expanding, or reviewing authored research reports:
+
+- Read `docs/RESEARCH_WRITING_GUIDE.md` first. Use `docs/RESEARCH_CONTENT_REVIEW.2026-10-08.md` for known defects and repair priorities, and `docs/RESEARCH_WRITING_EXAMPLES.md` for representative explanations. Recheck dated technical facts before reuse.
+- Define the reader's question, assumed prior knowledge, and what they should be able to explain, decide, or do afterward. Keep this editorial brief in working documentation; do not add unsupported fields to the validated report schema.
+- Write a coherent explanation and a consistent worked example before deriving the headline, summary, table, or learning blocks. Preserve the source's actors, conditions, units, and limits; do not turn an observation into a causal conclusion.
+- Keep essential concepts and decision conditions in the primary reading path. Use disclosures for optional depth, not to hide the knowledge needed to understand the headline. A fixed layout or short-copy target must not remove necessary explanation.
+- Check example inputs, tool parameters, returned fields, and expected outcomes together. Separate conceptual examples from tested tutorials.
+- Record content meaning/source review, reader-comprehension review, and technical output checks separately. Passing tests, valid source IDs, chapter counts, and responsive layout do not establish comprehension. Do not claim actual reader testing unless it was performed.
+- Preserve earlier report editions. Publish reviewed content changes using a new immutable batch and the existing report ID, with applicable rendering and link checks.
+
 ## Common Commands
 
 ```powershell

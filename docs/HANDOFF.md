@@ -2,6 +2,40 @@
 
 This document is the first stop for a future Codex agent.
 
+## Latest work: research comprehension audit, 2026-10-08
+
+Theo said summaries and structure were replacing actual understanding. All sixteen
+current SQLite reports / forty-six learning chapters, their summaries/tables/results
+and the renderer/validators were reviewed. The authoring baseline is now
+`docs/RESEARCH_WRITING_GUIDE.md`, routed from AGENTS.md. The dated content audit
+contains a reader outcome and repair for every report; `RESEARCH_WRITING_EXAMPLES.md`
+contains coherent MCP Apps and function-calling explanations plus an A2A connection
+example. Drafts have consistent inputs/outputs and transfer questions, but are not
+executed SDK tutorials or evidence of actual reader testing.
+
+Concrete issues: the MCP hero table reverses the HTML-reading actor; the hackathon
+query example has no date parameter/result despite a date-filtered question; the
+Tally headline implies causality beyond the stored evidence. Preserve useful
+existing explanation and source limitations. Do not claim the 72 tests or 46 chapters
+prove comprehension. Official teaching guidance and selected technical docs were
+checked October8; all program eligibility/financial/model details were not refreshed.
+
+This is a documentation/content-review change. Current authored report hashes,
+revisions, publication configuration, HTML/CSS and SQLite remain unchanged. The
+prose drafts were not imported/deployed as report revisions. The known content
+corrections and full report rewrites remain the next content workstream; begin with
+MCP Apps and hackathon/RAG/evaluation. Recheck primary sources, keep the report ID,
+use a new immutable batch and verify the actual rendered reading path. No chooser
+or new design is needed solely for content corrections.
+
+Documentation verification:39 local links resolve; all16 audit IDs/revisions match
+SQLite. Two conceptual JSON objects and three fixture rows agree with the SeoulA
+and GyeonggiB expected outcomes. The sorted ID/revision/content-hash fingerprint
+is unchanged (`e845174aa74161f2f8709bd6c01d445c8e2489f4980e6577fd91895755a3a771`).
+No product build/collector/browser run was needed for these documentation-only
+changes. PROJECT_STATUS.md and WORK_LOG.md distinguish the completed audit from
+unapplied report rewrites.
+
 ## Latest work: key technical research and hackathon learning, 2026-10-07
 
 Five new authored reports / twenty learning chapters are in the immutable
@@ -29,8 +63,8 @@ official deprecations page and the Promptfoo migration guide.
 Local checks: 72 tests, compileall, publish, brief/desk/review, image inspection,
 1531 internal references; new reports and all twenty expanded chapters at actual
 320/390px pass without horizontal overflow. Enter/Space disclosures, parent
-filter and direct child navigation pass; no report-console errors. The public
-local source refresh exported 468 records; GDELT 429 fell back to Google News RSS.
+filter and direct child navigation pass; no report-console errors. The local
+source refresh exported 468 records; GDELT 429 fell back to Google News RSS.
 
 Source commit `6b9dc30` deployed successfully in run `37639214281` (2m34s).
 The public export has 855 source records / 16 reports / 26 revisions / 46 chapters.

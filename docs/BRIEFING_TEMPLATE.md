@@ -1,8 +1,24 @@
 # Homepage and report contract
 
+## Reader purpose before layout, 2026-10-08
+
+The [writing guide](RESEARCH_WRITING_GUIDE.md) now governs research copy. The
+selected Editorial shell remains the visual basis. Brief main-page copy and
+outline summaries must not become a length constraint on explanatory body text.
+Write the reader's purpose and full explanation before mapping it to data blocks.
+Essential definitions, reasoning and decision conditions belong in the primary
+reading path; disclosures hold optional depth. The current renderer still puts
+learning after results, so this rule is an authoring requirement and a recorded
+rendering gap, not a claim that all published pages already satisfy it.
+
+See the [all-report audit](RESEARCH_CONTENT_REVIEW.2026-10-08.md) and
+[representative revised prose](RESEARCH_WRITING_EXAMPLES.md). Later wording
+requirements take precedence over the historical brief-copy descriptions below.
+
 2026-10-07: The user chose **HTML5 UP Editorial** and explicitly asked to apply it
 to each research report and keep new reports accumulating like board posts. The
-main and all 11 current reports now use the actual template source. Earlier scope
+main and the initial 11 reports use the actual template source; five later reports
+bring the current total to 16. Earlier scope
 of only the main and one report is superseded. Collectors, daily source archives
 and weekly deep-review scheduling are separate workstreams.
 

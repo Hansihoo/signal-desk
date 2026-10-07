@@ -1,5 +1,20 @@
 # Research data contract
 
+## Content authoring quality, 2026-10-08
+
+Read the [writing guide](RESEARCH_WRITING_GUIDE.md) before authoring or revising
+reports. Reader question, prior knowledge and intended outcome are editorial
+working metadata in documentation; schema v1 is unchanged. The complete explanation
+comes before the summary/table representation. Required fields and citation IDs
+validate structure, not meaning, source entailment or reader comprehension.
+
+The [content audit](RESEARCH_CONTENT_REVIEW.2026-10-08.md) inspected the sixteen
+current SQLite documents and forty-six chapters. It includes specific role and
+example inconsistencies plus a per-report repair plan. Representative improvements
+are in [the prose examples](RESEARCH_WRITING_EXAMPLES.md); they have not been
+imported or published. A future reviewed correction needs a new immutable batch,
+not an edit to an already-applied batch or silent replacement of history.
+
 ## Reviewed expansion, 2026-10-07
 
 `config/development_updates.2026-10-07.json` adds five reviewed reports and twenty
