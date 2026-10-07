@@ -30,8 +30,20 @@ Local checks: 72 tests, compileall, publish, brief/desk/review, image inspection
 1531 internal references; new reports and all twenty expanded chapters at actual
 320/390px pass without horizontal overflow. Enter/Space disclosures, parent
 filter and direct child navigation pass; no report-console errors. The public
-source refresh exported 468 records; GDELT 429 fell back to Google News RSS.
-Deployment verification will be recorded after the run completes.
+local source refresh exported 468 records; GDELT 429 fell back to Google News RSS.
+
+Source commit `6b9dc30` deployed successfully in run `37639214281` (2m34s).
+The public export has 855 source records / 16 reports / 26 revisions / 46 chapters.
+All sixteen authored documents match the local export; five new public pages and
+normalized CSS `de2fc07102be` match. Live main featured the hackathon report and
+its parent filter showed two accumulated reports. The published learning report
+has eight disclosures and thirteen official references; Enter opens chapter two,
+chapter seven shows the seven-day plan, and no console errors were reported.
+Public screenshots were taken at actual1280px. The requested390px override stayed
+at1280px; public narrow checks are therefore not claimed. Matching production
+output was tested locally at actual320/390px. The viewport override was reset.
+Main/report tabs are retained as deliverables; prior selection/review tabs remain
+handoffs. Captures and deployment/browser receipts are inside the registered root.
 
 Retain `C:/Users/Theo/AppData/Local/Temp/signal-desk-01a0ff9d/research-expansion.2026-10-07/`
 and its standalone/production previews, checks and captures. Raw evidence root
@@ -55,7 +67,7 @@ Implemented:
 - raw HTML snapshot storage,
 - SQLite normalized storage,
 - validated authored research and changed-only revisions in SQLite,
-- expandable learning chapters in ten development reports; MCP Apps includes seven chapters with terms, process, official example and evidence,
+- forty-six expandable learning chapters across fifteen development reports; MCP Apps includes seven and hackathon preparation includes eight, with terms, process, examples and evidence,
 - `research-data` JSON-only collection/import/export independent of rendering,
 - detail-page enrichment,
 - optional local-profile housing filtering,
