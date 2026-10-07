@@ -37,7 +37,7 @@
   page = Math.max(1, parseInt(params.get('page'), 10) || 1);
   function render(updateUrl = false) {
     const words = query.value.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
-    const matches = rows.filter(row => (!topic.value || row.dataset.topic === topic.value || row.dataset.path === topic.value) && words.every(word => row.dataset.search.includes(word)));
+    const matches = rows.filter(row => (!topic.value || row.dataset.topic === topic.value || row.dataset.path === topic.value || row.dataset.path.startsWith(topic.value + ' / ')) && words.every(word => row.dataset.search.includes(word)));
     const pages = Math.max(1, Math.ceil(matches.length / size));
     page = Math.min(page, pages);
     rows.forEach(row => row.hidden = true);

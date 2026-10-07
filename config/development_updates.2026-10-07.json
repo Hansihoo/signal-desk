@@ -1,0 +1,1834 @@
+{
+  "schema_version": 1,
+  "reports": [
+    {
+      "id": "hackathon-tech-roadmap",
+      "topic_id": "hackathons",
+      "topic_path": [
+        "지원·참여",
+        "해커톤·공모전",
+        "기술 학습"
+      ],
+      "title": "AI 해커톤 준비, 검색과 도구 실행부터 완성하기",
+      "description": "먼저 근거를 찾고 작업을 끝내는 작은 앱을 만든다. 음성·멀티모달·에이전트 연결은 해결할 문제에 맞춰 추가한다.",
+      "checked_on": "2026-10-07",
+      "scope": "2026년 대회 3개 사례와 현재 공식 개발 문서; 초급~중급 1인 개발자",
+      "deck": "먼저 근거를 찾고 작업을 끝내는 작은 앱을 만든다. 음성·멀티모달·에이전트 연결은 해결할 문제에 맞춰 추가한다.",
+      "highlights": [
+        "우선 학습: API·JSON → 도구 호출 → 근거 검색 → 평가·데모.",
+        "심화 선택: 음성·영상, MCP, A2A. 과제에 필요한 것만 추가.",
+        "7일 연습 계획과 실습 완료 기준을 상세 해설에 정리."
+      ],
+      "source_note": "공식 문서·주최자 규정 / 2026.10.07 확인",
+      "summary": [
+        {
+          "kind": "fact",
+          "label": "대회에서 확인",
+          "text": "Google 대회는 비동기 작업을 하는 에이전트를, Elastic 대회는 실제 데이터와 근거 인용을 요구했다. IBM Bob 대회는 기존 코드 이해·개선과 기술 실행을 심사한다.",
+          "source_ids": [
+            "google-event",
+            "elastic-rules",
+            "ibm-bob"
+          ]
+        },
+        {
+          "kind": "judgment",
+          "label": "흐름 해석",
+          "text": "이 세 사례에서는 모델 이름보다 실제 문제를 끝까지 해결하는 능력이 두드러진다. 전체 해커톤의 인기 순위나 수상 확률을 측정한 결과는 아니다.",
+          "source_ids": [
+            "google-event",
+            "elastic-rules",
+            "ibm-bob"
+          ]
+        },
+        {
+          "kind": "judgment",
+          "label": "학습 순서",
+          "text": "기초 API 연결, 한 가지 도구 실행, 문서 근거 검색, 실패 검증을 먼저 완성한다. 이후 하나의 특화 기능을 선택하는 편이 현실적이다.",
+          "source_ids": []
+        },
+        {
+          "kind": "fact",
+          "label": "일정 구분",
+          "text": "Google 대회의 10월 8일은 수상자 발표 예정일이며 접수는 8월 31일에 끝났다. IBM Bob 대회는 10월 18일까지 진행되지만 미국 거주자 대상이다.",
+          "source_ids": [
+            "google-rules",
+            "ibm-bob"
+          ]
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "tables": [
+        {
+          "id": "event-evidence",
+          "title": "대회 요구사항에서 확인한 기술 방향",
+          "columns": [
+            "대회·기준",
+            "요구한 결과",
+            "학습 연결"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Google · 접수 종료",
+                "비동기 에이전트, 상태·오류 처리, 아키텍처·코드·데모",
+                "도구 호출과 실행 상태 관리"
+              ],
+              "source_ids": [
+                "google-event",
+                "google-rules"
+              ]
+            },
+            {
+              "values": [
+                "Elastic · 7월 대회 종료",
+                "실제 데이터, 답변 근거, 검색·정제, 작동하는 데모",
+                "RAG와 데이터 처리"
+              ],
+              "source_ids": [
+                "elastic-event",
+                "elastic-rules"
+              ]
+            },
+            {
+              "values": [
+                "IBM Bob · 미국 거주자 대상",
+                "코드 이해·수정, 테스트, 실행 가능한 배포·데모",
+                "AI 코딩 결과의 검증"
+              ],
+              "source_ids": [
+                "ibm-bob"
+              ]
+            }
+          ],
+          "note": "해외 주최자가 공개한 2026년 사례 3개를 목적에 맞게 골랐다. 모집 중인 국내 대회 목록이나 시장 점유율 조사가 아니다."
+        },
+        {
+          "id": "technology-roles",
+          "title": "기술별로 실제 하는 일",
+          "columns": [
+            "기술",
+            "하는 일",
+            "먼저 알아둘 점"
+          ],
+          "rows": [
+            {
+              "values": [
+                "도구 호출",
+                "모델이 함수명·인자를 제안; 앱이 실행하고 결과 반환",
+                "호출 제안과 실행 성공은 다름"
+              ],
+              "source_ids": [
+                "functions"
+              ]
+            },
+            {
+              "values": [
+                "구조화 출력",
+                "정해진 필드의 JSON 응답 생성",
+                "형식이 맞아도 값이 틀릴 수 있음"
+              ],
+              "source_ids": [
+                "structured"
+              ]
+            },
+            {
+              "values": [
+                "RAG·File Search",
+                "문서에서 관련 내용을 찾아 답변의 근거로 제공",
+                "검색과 정답 검증은 별도"
+              ],
+              "source_ids": [
+                "gemini-rag"
+              ]
+            },
+            {
+              "values": [
+                "실시간 음성·영상",
+                "연속 입력을 처리하고 말로 응답; 대화 중 도구 사용",
+                "연결 상태·끼어들기까지 구현"
+              ],
+              "source_ids": [
+                "gemini-live"
+              ]
+            },
+            {
+              "values": [
+                "MCP / A2A",
+                "MCP는 도구·자료 연결; A2A는 원격 에이전트 통신",
+                "서로 다른 연결 계층"
+              ],
+              "source_ids": [
+                "mcp",
+                "a2a"
+              ]
+            },
+            {
+              "values": [
+                "에이전트 평가",
+                "최종 답과 도구 선택·실행 경로를 비교",
+                "데모 한 번 성공만으로 신뢰성 판단 불가"
+              ],
+              "source_ids": [
+                "adk-eval"
+              ]
+            }
+          ],
+          "note": "기능 설명은 공식 문서 기준. 아래 학습 순서와 실습 목표는 편집자의 권고다."
+        }
+      ],
+      "learning": [
+        {
+          "id": "start",
+          "title": "1. API·JSON으로 한 번 왕복하기",
+          "lead": "모델을 바꾸기 전에 입력과 응답을 확인하는 작은 앱부터 만든다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "선행 지식",
+              "text": "Python 또는 JavaScript 중 익숙한 언어 하나를 고른다. HTTP 요청, JSON 객체, 비동기 응답, 환경 변수, 오류 메시지를 읽을 수 있으면 첫 실습을 시작할 수 있다. 새 프레임워크 여러 개를 동시에 배우지는 않는다.",
+              "source_ids": []
+            },
+            {
+              "type": "steps",
+              "kind": "example",
+              "title": "실습 완료 기준",
+              "items": [
+                {
+                  "label": "입력",
+                  "text": "사용자가 입력한 한 문장을 서버가 받는다."
+                },
+                {
+                  "label": "응답",
+                  "text": "모델의 답을 화면에 표시하고 응답 시간을 기록한다."
+                },
+                {
+                  "label": "실패",
+                  "text": "키가 없거나 연결이 끊겼을 때 성공처럼 표시하지 않는다. 오류와 재시도 동작을 확인한다."
+                }
+              ],
+              "source_ids": []
+            },
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "공식 자료",
+              "text": "첫 에이전트까지 이어가려면 ADK의 언어별 시작 안내를 사용한다. 문서의 설치·실행 예제를 그대로 한 번 실행한 뒤 자신의 입력과 도구로 바꾼다.",
+              "source_ids": [
+                "adk-start"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "tools",
+          "title": "2. 도구 호출과 구조화 출력 구분하기",
+          "lead": "말을 잘하는 것과 실제 데이터를 조회하는 것은 다르다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "두 기능의 차이",
+              "text": "도구 호출은 모델이 사용할 함수와 인자를 제안하는 기능이다. 앱이 함수를 실행하고 결과를 모델에 돌려준다. 구조화 출력은 최종 답을 정해진 JSON 필드로 받는 기능이며, 앱에서 값의 의미도 검사해야 한다.",
+              "source_ids": [
+                "functions",
+                "structured"
+              ]
+            },
+            {
+              "type": "steps",
+              "kind": "example",
+              "title": "공고 조회 앱",
+              "items": [
+                {
+                  "label": "도구 정의",
+                  "text": "find_notices(region, keyword): 저장된 공고를 찾아 ID·제목·원문 URL을 반환한다."
+                },
+                {
+                  "label": "요청",
+                  "text": "‘서울에서 이번 달 마감되는 공고’를 입력하면 지역·기간을 파악하고 조회한다."
+                },
+                {
+                  "label": "값 검사",
+                  "text": "잘못된 지역이나 날짜를 그대로 실행하지 않는다. 허용된 값과 실제 공고 존재 여부를 확인한다."
+                },
+                {
+                  "label": "완료",
+                  "text": "도구 호출 기록, 반환 데이터, 사용자가 본 답변을 함께 보여준다."
+                }
+              ],
+              "source_ids": []
+            },
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "학습 목표",
+              "text": "처음에는 조회 도구 하나만 만든다. 승인·취소가 있는 저장 작업은 조회가 안정된 뒤 추가한다. 출처: 함수 호출 공식 예제와 구조화 출력의 값 검증 안내.",
+              "source_ids": [
+                "functions",
+                "structured"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "retrieval",
+          "title": "3. RAG로 문서 근거 찾기",
+          "lead": "RAG는 모델에 문서를 외우게 하는 훈련이 아니라 답하기 전에 관련 부분을 찾는 방식이다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "처리 과정",
+              "text": "관리형 File Search는 문서를 가져와 분할·색인하고, 질문에 맞는 정보를 찾아 모델의 문맥에 넣는다. Gemini 문서에서는 파일 인용 정보도 제공한다.",
+              "source_ids": [
+                "gemini-rag"
+              ]
+            },
+            {
+              "type": "steps",
+              "kind": "example",
+              "title": "공개 공고 10개로 연습",
+              "items": [
+                {
+                  "label": "자료",
+                  "text": "사용 허용된 공식 공고와 날짜·URL을 준비한다."
+                },
+                {
+                  "label": "질문",
+                  "text": "‘신청 조건은?’, ‘마감일은?’, ‘다른 지역과 차이는?’처럼 실제 질문을 정한다."
+                },
+                {
+                  "label": "근거",
+                  "text": "답변 문장 옆에 문서명과 원문 링크를 붙인다."
+                },
+                {
+                  "label": "빈 결과",
+                  "text": "문서에 없는 내용을 물으면 ‘확인할 근거가 없다’고 응답한다."
+                }
+              ],
+              "source_ids": []
+            },
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "완료 기준",
+              "text": "요약이 그럴듯한지만 보지 않는다. 답을 지지하는 원문이 실제로 존재하는지 사람이 확인한다. 문서 검색 보고서에 더 자세한 실습과 제한을 정리했다.",
+              "source_ids": []
+            }
+          ]
+        },
+        {
+          "id": "reliability",
+          "title": "4. 실행 상태와 평가 함께 익히기",
+          "lead": "중간에 끊긴 작업을 어떻게 보여주고 다시 시작할지 생각한다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "평가할 대상",
+              "text": "ADK 평가 문서는 최종 답의 품질과 도구 사용 경로를 별도로 다룬다. 어떤 도구를 어떤 순서로 선택했는지도 평가 대상이다.",
+              "source_ids": [
+                "adk-eval"
+              ]
+            },
+            {
+              "type": "steps",
+              "kind": "example",
+              "title": "작업 상태 예시",
+              "items": [
+                {
+                  "label": "대기·실행",
+                  "text": "job_id와 상태를 저장하고 화면에 진행 중임을 표시한다."
+                },
+                {
+                  "label": "실패·재시도",
+                  "text": "검색 서비스가 실패하면 원인을 보관하고 다시 조회한다."
+                },
+                {
+                  "label": "중복 방지",
+                  "text": "저장 버튼을 두 번 누르거나 재시도해도 같은 결과가 두 번 생성되지 않는지 확인한다."
+                }
+              ],
+              "source_ids": []
+            },
+            {
+              "type": "steps",
+              "kind": "judgment",
+              "title": "최소 평가 세트",
+              "items": [
+                {
+                  "label": "정상",
+                  "text": "대표 질문을 근거와 함께 처리하는지 확인."
+                },
+                {
+                  "label": "정보 없음",
+                  "text": "존재하지 않는 자료를 만들지 않는지 확인."
+                },
+                {
+                  "label": "오류",
+                  "text": "외부 API 실패·시간 초과를 성공으로 오인하지 않는지 확인."
+                },
+                {
+                  "label": "변경 비교",
+                  "text": "프롬프트나 모델을 바꾸면 같은 질문으로 다시 실행."
+                }
+              ],
+              "source_ids": [
+                "adk-eval"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "specialization",
+          "title": "5. 음성·영상은 사용 장면이 있을 때 선택하기",
+          "lead": "손을 쓰기 어렵거나 화면 자체가 입력인 문제에 적합하다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "현재 제공 기능",
+              "text": "Gemini Live API는 음성·이미지·텍스트 스트림을 처리하고, 사용자 끼어들기와 도구 사용을 지원한다.",
+              "source_ids": [
+                "gemini-live"
+              ]
+            },
+            {
+              "type": "steps",
+              "kind": "judgment",
+              "title": "선택 기준",
+              "items": [
+                {
+                  "label": "음성",
+                  "text": "면접 연습·말로 하는 제품 검색처럼 대화가 핵심이면 음성을 선택한다."
+                },
+                {
+                  "label": "영상",
+                  "text": "화면·현장을 설명해야 하는 문제라면 이미지 입력을 검토한다."
+                },
+                {
+                  "label": "텍스트 유지",
+                  "text": "공고 비교나 서류 검색이라면 먼저 텍스트 화면에서 정확도를 만든다."
+                }
+              ],
+              "source_ids": []
+            },
+            {
+              "type": "steps",
+              "kind": "example",
+              "title": "음성 시연 확인",
+              "items": [
+                {
+                  "label": "끼어들기",
+                  "text": "사용자가 중간에 말을 바꾸면 기존 응답 재생을 멈추고 새 요청을 처리."
+                },
+                {
+                  "label": "도구 결과",
+                  "text": "실제 조회 결과를 받은 뒤 답하도록 만들기."
+                },
+                {
+                  "label": "끊김",
+                  "text": "마이크 권한 거부·네트워크 끊김에서도 재연결 또는 안내 제공."
+                }
+              ],
+              "source_ids": []
+            }
+          ]
+        },
+        {
+          "id": "protocols",
+          "title": "6. MCP·A2A를 언제 공부할까",
+          "lead": "연결할 대상이 도구인지 다른 에이전트인지 먼저 구분한다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "역할",
+              "text": "MCP는 AI 앱이 외부 도구·자료를 발견하고 호출하는 연결 규칙이다. A2A는 별도 시스템의 에이전트를 발견하고 작업을 요청하는 통신 규칙이다.",
+              "source_ids": [
+                "mcp",
+                "a2a"
+              ]
+            },
+            {
+              "type": "steps",
+              "kind": "judgment",
+              "title": "도입 순서",
+              "items": [
+                {
+                  "label": "직접 함수",
+                  "text": "자신의 앱에 조회 도구 하나를 붙일 때 먼저 직접 함수 호출로 이해한다."
+                },
+                {
+                  "label": "MCP",
+                  "text": "같은 도구를 여러 AI 앱에서 재사용하거나 MCP 서버와 연결해야 할 때 배운다."
+                },
+                {
+                  "label": "A2A",
+                  "text": "독립 운영되는 원격 에이전트에 작업을 맡겨야 할 때 배운다. 단일 앱의 첫 데모라면 후순위다."
+                }
+              ],
+              "source_ids": []
+            },
+            {
+              "type": "paragraph",
+              "kind": "example",
+              "title": "하나의 프로젝트에서",
+              "text": "공고 검색은 도구이므로 함수나 MCP로 연결할 수 있다. 다른 조직이 운영하는 서류 검토 에이전트에 별도 작업을 맡기는 상황이라면 A2A를 검토한다. 에이전트를 여러 개 만든다는 이유만으로 A2A가 필요한 것은 아니다.",
+              "source_ids": []
+            }
+          ]
+        },
+        {
+          "id": "practice-week",
+          "title": "7. 7일 연습 계획",
+          "lead": "하루 학습량은 숙련도에 따라 조정하고, 기능마다 완료 결과를 남긴다.",
+          "blocks": [
+            {
+              "type": "steps",
+              "kind": "judgment",
+              "title": "권장 순서",
+              "items": [
+                {
+                  "label": "1일 · 기초 연결",
+                  "text": "입력→서버→모델→화면까지 왕복. 오류도 표시한다."
+                },
+                {
+                  "label": "2일 · 도구 하나",
+                  "text": "조회 함수를 붙이고 인자·결과·실패 로그를 확인한다."
+                },
+                {
+                  "label": "3일 · 문서 근거",
+                  "text": "공개 문서로 질문에 답하고 원문 URL을 연결한다."
+                },
+                {
+                  "label": "4일 · 평가",
+                  "text": "정상·빈 결과·잘못된 입력·외부 실패 질문을 모아 반복한다."
+                },
+                {
+                  "label": "5일 · 특화 기능",
+                  "text": "음성, 이미지, 외부 도구 연결 중 문제에 필요한 하나만 추가한다."
+                },
+                {
+                  "label": "6일 · 실행 재현",
+                  "text": "새 환경에서 README를 따라 실행하고 테스트한다."
+                },
+                {
+                  "label": "7일 · 데모",
+                  "text": "문제→실제 실행→근거→효과→제한 순서로 짧은 영상과 설명을 만든다."
+                }
+              ],
+              "source_ids": []
+            },
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "범위",
+              "text": "이 일정은 API를 처음 쓰는 사람의 숙련 기간을 보장하지 않는다. 어려운 단계는 기간을 늘린다. 완성된 연습 프로젝트를 제출할 수 있는지는 대회 규정에 따라 다르다.",
+              "source_ids": []
+            },
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "사전 제작 규정 비교",
+              "text": "Elastic 대회는 상당 부분 미리 만든 프로젝트를 금지하고 자신의 라이브러리·기본 틀 재사용을 허용했다. IBM Bob은 기존 프로젝트 개선을 허용하되 대회 기간의 작업을 밝히도록 했다.",
+              "source_ids": [
+                "elastic-rules",
+                "ibm-bob"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "demo",
+          "title": "8. 심사자가 검증할 수 있는 데모 만들기",
+          "lead": "기술 이름 대신 실제 실행과 근거를 보여준다.",
+          "blocks": [
+            {
+              "type": "steps",
+              "kind": "judgment",
+              "title": "시연 구성",
+              "items": [
+                {
+                  "label": "문제",
+                  "text": "누가 어떤 반복 작업 때문에 시간을 쓰는지 한 문장으로 설명한다."
+                },
+                {
+                  "label": "실제 입력",
+                  "text": "미리 정한 질문을 입력하고 조회·실행 과정을 보여준다."
+                },
+                {
+                  "label": "증거",
+                  "text": "원문과 실행 기록을 열어 결과가 맞는지 확인한다."
+                },
+                {
+                  "label": "비교",
+                  "text": "수작업과 실제 측정한 결과를 비교한다. 측정하지 않은 절약 시간을 숫자로 쓰지 않는다."
+                },
+                {
+                  "label": "재현",
+                  "text": "코드·설정 방법·테스트·알려진 제한을 README에 남긴다."
+                }
+              ],
+              "source_ids": []
+            },
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "제출물 사례",
+              "text": "Google 대회는 코드 저장소·아키텍처 그림·약 4분 데모를 요구했다. IBM Bob은 GitHub 저장소·실행 링크·최대 3분 영상을 요구한다. 참가하는 대회의 분량과 필수 스택을 다시 확인해야 한다.",
+              "source_ids": [
+                "google-event",
+                "ibm-bob"
+              ]
+            }
+          ]
+        }
+      ],
+      "result": {
+        "title": "작은 업무 한 가지를 끝내는 앱으로 시작",
+        "points": [
+          {
+            "kind": "judgment",
+            "label": "기본 과제",
+            "text": "공개 공고 검색→조건 비교→근거 표시 앱을 추천한다. 조회 도구·구조화 출력·문서 검색·평가를 한 번에 연습할 수 있다.",
+            "source_ids": []
+          },
+          {
+            "kind": "judgment",
+            "label": "심화 기준",
+            "text": "그 앱의 문제를 해결하는 데 필요한 경우에만 음성·MCP·A2A를 더한다. 기능 수보다 정상·실패 상황에서 실제로 작동하는 결과를 목표로 한다.",
+            "source_ids": []
+          },
+          {
+            "kind": "judgment",
+            "label": "다음 단계",
+            "text": "대회를 고른 뒤 참가 지역, 사전 제작 규정, 필수 기술, 제출 형식부터 확인하고 학습 계획을 조정한다.",
+            "source_ids": [
+              "google-rules",
+              "elastic-rules",
+              "ibm-bob"
+            ]
+          }
+        ]
+      },
+      "references": [
+        {
+          "id": "google-event",
+          "title": "Google — All Things Agentic Hackathon",
+          "url": "https://allthingsagentichackathon.devpost.com/",
+          "description": "기술 요구사항, 심사 기준, 제출물. 접수 상태는 별도 공식 규정으로 확인."
+        },
+        {
+          "id": "google-rules",
+          "title": "Google 해커톤 공식 규정",
+          "url": "https://allthingsagentichackathon.devpost.com/rules",
+          "description": "접수는 2026.08.31 종료. 10.08은 수상자 발표 예정일."
+        },
+        {
+          "id": "elastic-event",
+          "title": "Elastic — New Delhi 대회 개요",
+          "url": "https://hackathon-elk-gcp.devpost.com/",
+          "description": "2026.07.18 개최, 종료된 대회. 학습 기준 사례로만 활용."
+        },
+        {
+          "id": "elastic-rules",
+          "title": "Elastic × GDG Cloud New Delhi — 공식 규정",
+          "url": "https://hackathon-elk-gcp.devpost.com/rules",
+          "description": "실제 데이터·근거 인용·작동하는 결과·사전 제작 제한."
+        },
+        {
+          "id": "ibm-bob",
+          "title": "AngelHack — Building with IBM Bob",
+          "url": "https://hackathon.angelhack.com/web/events/building-with-ibm-bob",
+          "description": "2026.09.28–10.18, 미국 거주자 대상. 코드 개선·테스트·데모 요구."
+        },
+        {
+          "id": "functions",
+          "title": "Gemini API — Function calling",
+          "url": "https://ai.google.dev/gemini-api/docs/function-calling",
+          "description": "모델이 함수와 인자를 제안하고 앱이 실제 도구를 실행하는 흐름."
+        },
+        {
+          "id": "structured",
+          "title": "Gemini API — Structured outputs",
+          "url": "https://ai.google.dev/gemini-api/docs/structured-output",
+          "description": "JSON Schema 기반 출력, 값 검증 필요, 함수 호출과의 차이."
+        },
+        {
+          "id": "gemini-rag",
+          "title": "Gemini API — File Search",
+          "url": "https://ai.google.dev/gemini-api/docs/file-search",
+          "description": "파일 분할·색인·검색, 인용, 과금과 기능 조합 제한. 2026.09.23 갱신."
+        },
+        {
+          "id": "gemini-live",
+          "title": "Gemini API — Live API",
+          "url": "https://ai.google.dev/gemini-api/docs/live-api",
+          "description": "음성·영상 스트림, 끼어들기, 도구 호출, WebSocket. 2026.10.06 갱신."
+        },
+        {
+          "id": "adk-eval",
+          "title": "Google ADK — Why evaluate agents",
+          "url": "https://adk.dev/evaluate/",
+          "description": "최종 답뿐 아니라 도구 사용 경로를 평가하고 평가 세트를 만드는 방법."
+        },
+        {
+          "id": "a2a",
+          "title": "A2A Protocol — What is A2A?",
+          "url": "https://a2a-protocol.org/latest/topics/what-is-a2a/",
+          "description": "서로 다른 시스템의 에이전트 간 통신과 MCP의 역할 구분."
+        },
+        {
+          "id": "mcp",
+          "title": "MCP — Architecture overview",
+          "url": "https://modelcontextprotocol.io/docs/2026-07-28/learn/architecture",
+          "description": "호스트·클라이언트·서버 및 도구 탐색·호출의 역할."
+        },
+        {
+          "id": "adk-start",
+          "title": "Google ADK — Get started",
+          "url": "https://adk.dev/get-started/",
+          "description": "언어별 첫 에이전트 제작을 시작하는 공식 안내."
+        }
+      ],
+      "caveats": [
+        {
+          "text": "이번 ‘기술 방향’은 선택한 해외 대회 3개와 공식 문서의 관찰·해석이다. 국내 대회 전수 조사, 취업 수요 순위, 수상 가능성 추정이 아니다.",
+          "source_ids": []
+        },
+        {
+          "text": "접수 종료된 대회는 학습 사례로 보관한다. IBM Bob은 미국 거주자 대상이며 한국 거주자의 참가 가능 대회로 추천하지 않는다.",
+          "source_ids": [
+            "google-rules",
+            "elastic-event",
+            "ibm-bob"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "document-rag-grounding",
+      "topic_id": "agent-mcp",
+      "topic_path": [
+        "개발 동향",
+        "Agent·MCP",
+        "문서 검색"
+      ],
+      "title": "문서 검색 AI, 답변마다 근거를 연결하기",
+      "description": "RAG는 질문에 필요한 문서 부분을 찾아 답변에 붙이는 방식이다. 관리형 검색으로 시작할 수 있지만, 최신성·인용·오답 검증은 앱에서 설계해야 한다.",
+      "checked_on": "2026-10-07",
+      "scope": "공식 문서 기반 RAG 구현 선택과 실습",
+      "deck": "RAG는 질문에 필요한 문서 부분을 찾아 답변에 붙이는 방식이다. 관리형 검색으로 시작할 수 있지만, 최신성·인용·오답 검증은 앱에서 설계해야 한다.",
+      "highlights": [
+        "Gemini·OpenAI 모두 관리형 파일 검색 제공. 직접 벡터 DB 구축이 항상 필요한 것은 아님.",
+        "인용이 있어도 답변이 맞는지 별도 검증 필요.",
+        "Gemini File Search는 Live API 미지원; 검색·음성 조합을 그대로 가정하면 안 됨."
+      ],
+      "source_note": "공식 문서·주최자 규정 / 2026.10.07 확인",
+      "summary": [
+        {
+          "kind": "fact",
+          "label": "기능",
+          "text": "Gemini는 파일 분할·색인·검색을 제공한다. OpenAI Responses API의 File search는 업로드한 지식 기반에 의미 검색과 키워드 검색을 적용하는 관리형 도구다.",
+          "source_ids": [
+            "gemini-rag",
+            "openai-rag"
+          ]
+        },
+        {
+          "kind": "judgment",
+          "label": "적합한 문제",
+          "text": "공고·제품 설명서·지원 조건처럼 범위가 정해진 문서의 질문에 적합하다. 최신 웹 전체를 알아서 수집하는 기능으로 이해하면 안 된다.",
+          "source_ids": []
+        },
+        {
+          "kind": "fact",
+          "label": "제약",
+          "text": "Gemini File Search는 Live API에서 지원하지 않고, Google Search나 URL Context 같은 다른 기본 grounding 도구와 같은 요청에서 조합하는 데 제한이 있다.",
+          "source_ids": [
+            "gemini-rag"
+          ]
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "tables": [
+        {
+          "id": "retrieval-options",
+          "title": "관리형 문서 검색 비교",
+          "columns": [
+            "항목",
+            "Gemini File Search",
+            "OpenAI File search"
+          ],
+          "rows": [
+            {
+              "values": [
+                "입력·검색",
+                "파일 가져오기·분할·색인, 질문에 맞는 부분 검색",
+                "Vector store에 업로드한 파일의 의미·키워드 검색"
+              ],
+              "source_ids": [
+                "gemini-rag",
+                "openai-rag"
+              ]
+            },
+            {
+              "values": [
+                "답변 근거",
+                "파일 인용 제공",
+                "응답의 파일 인용 제공"
+              ],
+              "source_ids": [
+                "gemini-rag",
+                "openai-rag"
+              ]
+            },
+            {
+              "values": [
+                "구현 경계",
+                "앱이 자료 선택·갱신·답변 검증 담당",
+                "앱이 지식 기반 준비·검증 담당"
+              ],
+              "source_ids": [
+                "gemini-rag",
+                "openai-rag"
+              ]
+            },
+            {
+              "values": [
+                "특별히 확인",
+                "Live API 미지원; 기본 grounding 도구 조합 제한",
+                "사용 모델·파일 형식·검색 결과 포함 설정 확인"
+              ],
+              "source_ids": [
+                "gemini-rag",
+                "openai-rag"
+              ]
+            }
+          ],
+          "note": "기능 비교이며 품질 순위가 아니다. 실제 자료와 질문으로 비교해야 한다."
+        }
+      ],
+      "learning": [
+        {
+          "id": "rag-basics",
+          "title": "1. RAG의 입력·처리·출력",
+          "lead": "Retrieval Augmented Generation: 찾은 자료를 근거로 답을 만드는 방식.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "문서가 연결되는 과정",
+              "text": "문서를 검색 가능한 단위로 준비한다. 질문에 관련된 부분을 찾아 모델에 주고, 답과 인용 정보를 받는다. 관리형 File Search는 이 처리의 상당 부분을 서비스가 수행한다.",
+              "source_ids": [
+                "gemini-rag",
+                "openai-rag"
+              ]
+            },
+            {
+              "type": "steps",
+              "kind": "example",
+              "title": "지원 공고 질문",
+              "items": [
+                {
+                  "label": "입력",
+                  "text": "‘이 지원금은 개인 개발자도 신청할 수 있어?’"
+                },
+                {
+                  "label": "찾기",
+                  "text": "현재 회차의 신청 자격 문단을 찾아 문서 날짜·URL과 함께 전달."
+                },
+                {
+                  "label": "출력",
+                  "text": "가능 여부와 조건을 답하되 근거가 없으면 미확인으로 표시."
+                }
+              ],
+              "source_ids": []
+            },
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "구분",
+              "text": "자료를 못 찾은 실패와, 자료를 찾았지만 잘못 해석한 실패를 따로 기록한다. 모델만 교체하면 해결될 문제인지 검색·자료 문제인지 구분할 수 있다.",
+              "source_ids": []
+            }
+          ]
+        },
+        {
+          "id": "rag-tests",
+          "title": "2. 답변·검색·인용을 따로 평가하기",
+          "lead": "근거 링크가 존재하는 것과 그 링크가 답을 지지하는 것은 다르다.",
+          "blocks": [
+            {
+              "type": "steps",
+              "kind": "judgment",
+              "title": "권장 확인",
+              "items": [
+                {
+                  "label": "검색",
+                  "text": "정답 문단이 검색 결과에 들어왔는지 확인."
+                },
+                {
+                  "label": "답변",
+                  "text": "질문에 필요한 조건·예외를 빠뜨렸는지 확인."
+                },
+                {
+                  "label": "인용",
+                  "text": "표시한 원문이 실제 주장과 연결되는지 읽어 확인."
+                },
+                {
+                  "label": "날짜",
+                  "text": "이전 회차 자료를 이번 회차로 오인하지 않았는지 확인."
+                },
+                {
+                  "label": "모름",
+                  "text": "문서에 없는 질문에서 확답을 만들지 않는지 확인."
+                }
+              ],
+              "source_ids": [
+                "adk-eval"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "example",
+              "title": "최소 연습 세트",
+              "text": "공개 문서 10개, 정상 질문 10개와 ‘문서에 없음’ 질문 5개를 준비한다. 이 수량은 제안이며 서비스 정확도를 보장하는 통계 표본이 아니다. 문서 ID·원문 위치·기대 답을 같이 남긴다.",
+              "source_ids": []
+            }
+          ]
+        },
+        {
+          "id": "rag-cost",
+          "title": "3. 작은 자료로 시작하고 기능 제한 확인하기",
+          "lead": "무료 저장과 무료 AI 응답은 다르다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "Gemini 비용 구조",
+              "text": "Gemini File Search 문서상 저장·질의 시 임베딩은 무료이고 최초 색인 임베딩과 모델의 입력·출력 사용량은 과금된다. 검색된 문서 토큰도 문맥 토큰으로 계산된다.",
+              "source_ids": [
+                "gemini-rag"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "실습 방법",
+              "text": "최소 자료로 검색과 근거 검증을 먼저 만든다. 파일 재색인, 긴 검색 결과, 반복 질문의 사용량을 따로 기록한다. 계정 한도와 가격은 구현 직전에 공식 요금표에서 다시 확인한다.",
+              "source_ids": []
+            },
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "음성 연결",
+              "text": "Live API와 File Search를 직접 함께 쓸 수 있다고 가정하지 않는다. 음성 도구 호출→서버의 별도 검색→결과 반환 같은 설계를 작은 시제품에서 검증한다.",
+              "source_ids": [
+                "gemini-rag"
+              ]
+            }
+          ]
+        }
+      ],
+      "result": {
+        "title": "문서 수보다 검증 가능한 답변을 먼저",
+        "points": [
+          {
+            "kind": "judgment",
+            "label": "첫 구현",
+            "text": "관리형 파일 검색으로 작은 지식 기반을 만든다. 문서 ID·확인일·원문 URL을 유지한다.",
+            "source_ids": []
+          },
+          {
+            "kind": "judgment",
+            "label": "완료 기준",
+            "text": "대표 질문·자료 없음·이전 회차 혼동을 테스트하고, 근거 문장이 맞는지 확인한 뒤 자료를 늘린다.",
+            "source_ids": []
+          }
+        ]
+      },
+      "references": [
+        {
+          "id": "gemini-rag",
+          "title": "Gemini API — File Search",
+          "url": "https://ai.google.dev/gemini-api/docs/file-search",
+          "description": "파일 분할·색인·검색, 인용, 과금과 기능 조합 제한. 2026.09.23 갱신."
+        },
+        {
+          "id": "openai-rag",
+          "title": "OpenAI API — File search",
+          "url": "https://developers.openai.com/api/docs/guides/tools-file-search",
+          "description": "Responses API의 관리형 의미·키워드 검색과 파일 인용."
+        },
+        {
+          "id": "structured",
+          "title": "Gemini API — Structured outputs",
+          "url": "https://ai.google.dev/gemini-api/docs/structured-output",
+          "description": "JSON Schema 기반 출력, 값 검증 필요, 함수 호출과의 차이."
+        },
+        {
+          "id": "adk-eval",
+          "title": "Google ADK — Why evaluate agents",
+          "url": "https://adk.dev/evaluate/",
+          "description": "최종 답뿐 아니라 도구 사용 경로를 평가하고 평가 세트를 만드는 방법."
+        }
+      ],
+      "caveats": [
+        {
+          "text": "관리형 검색의 정확도나 공급자 간 우열을 직접 측정하지 않았다. 자료 구성·질문·사용 모델에 따라 결과가 달라진다.",
+          "source_ids": []
+        },
+        {
+          "text": "기능 조합과 지원 형식은 변경될 수 있다. 2026.10.07 공식 문서를 확인한 기준이다.",
+          "source_ids": [
+            "gemini-rag",
+            "openai-rag"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "voice-agent-architectures",
+      "topic_id": "ai-models",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API",
+        "음성·멀티모달"
+      ],
+      "title": "음성 AI, 대화와 업무 실행의 구조 고르기",
+      "description": "실시간 대화, 하나의 음성 세션, 단계별 음성 처리에는 다른 구조가 필요하다. 먼저 기존 업무를 어떤 방식으로 말과 연결할지 결정한다.",
+      "checked_on": "2026-10-07",
+      "scope": "Gemini Live API와 OpenAI 음성 에이전트 공식 가이드",
+      "deck": "실시간 대화, 하나의 음성 세션, 단계별 음성 처리에는 다른 구조가 필요하다. 먼저 기존 업무를 어떤 방식으로 말과 연결할지 결정한다.",
+      "highlights": [
+        "Gemini Live API: 음성·이미지·텍스트 스트림, 끼어들기, 도구 사용.",
+        "OpenAI: GPT-Live·Realtime·단계별 파이프라인 세 구조를 안내.",
+        "학습 과제: 중간 발화 변경·조회 실패·재연결까지 동작 확인."
+      ],
+      "source_note": "공식 문서·주최자 규정 / 2026.10.07 확인",
+      "summary": [
+        {
+          "kind": "fact",
+          "label": "최근 확인",
+          "text": "Gemini Live 개요는 10월 6일 갱신됐으며, 연속 음성·이미지·텍스트 입력과 사용자 끼어들기·도구 사용을 안내한다.",
+          "source_ids": [
+            "gemini-live"
+          ]
+        },
+        {
+          "kind": "fact",
+          "label": "구조 선택",
+          "text": "OpenAI 공식 가이드는 별도 업무 백엔드를 사용하는 GPT-Live, 음성·추론·도구를 한 세션에서 처리하는 Realtime, STT→업무→TTS 방식으로 구분한다.",
+          "source_ids": [
+            "openai-voice"
+          ]
+        },
+        {
+          "kind": "judgment",
+          "label": "학습 초점",
+          "text": "말이 자연스럽다는 이유만으로 업무가 정확히 실행된 것은 아니다. 실제 도구 결과, 발화 변경, 연결 실패를 함께 보여주는 작은 데모로 시작한다.",
+          "source_ids": []
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "tables": [
+        {
+          "id": "voice-choices",
+          "title": "음성과 업무를 연결하는 구조",
+          "columns": [
+            "방식",
+            "역할 분담",
+            "선택 판단"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Gemini Live",
+                "지속 WebSocket 연결에서 음성·시각 입력과 응답·도구 사용",
+                "Gemini 기반 실시간 멀티모달 대화 검토"
+              ],
+              "source_ids": [
+                "gemini-live"
+              ]
+            },
+            {
+              "values": [
+                "GPT-Live",
+                "듣고 말하는 대화 계층이 별도 백엔드에 추론·도구 작업 위임",
+                "기존 텍스트 업무 흐름에 음성 연결 검토"
+              ],
+              "source_ids": [
+                "openai-voice"
+              ]
+            },
+            {
+              "values": [
+                "Realtime",
+                "한 세션에서 음성 이해·추론·도구·말하기",
+                "단일 세션 중심의 음성 에이전트 검토"
+              ],
+              "source_ids": [
+                "openai-voice"
+              ]
+            },
+            {
+              "values": [
+                "단계별 파이프라인",
+                "STT → 에이전트 → TTS",
+                "중간 텍스트를 검사·수정하거나 구성요소 교체"
+              ],
+              "source_ids": [
+                "openai-voice"
+              ]
+            }
+          ],
+          "note": "역할은 공식 문서, 선택 판단은 그 역할에 따른 해석이다. 속도·한국어 품질·비용 우열을 측정한 표는 아니다."
+        }
+      ],
+      "learning": [
+        {
+          "id": "voice-terms",
+          "title": "1. 음성 인식·합성·실시간 대화 이해하기",
+          "lead": "입력, 업무 처리, 출력이 어디에서 일어나는지 구분한다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "단계별 구조",
+              "text": "STT는 말을 텍스트로 바꾸고, 에이전트가 업무를 처리하고, TTS가 답을 음성으로 바꾼다. OpenAI 가이드는 이 중간 텍스트를 확인·변환해야 할 때 단계별 파이프라인을 제시한다.",
+              "source_ids": [
+                "openai-voice"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "실시간 구조",
+              "text": "Gemini Live는 연결을 유지하며 입력을 받는다. 사용자가 말하는 중 끼어들기와 도구 사용을 지원한다. GPT-Live는 듣고 말하기를 동시에 하며 별도 백엔드에 업무를 맡기는 구조다.",
+              "source_ids": [
+                "gemini-live",
+                "openai-voice"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "example",
+              "title": "어떤 차이가 생길까",
+              "text": "공고를 읽어 달라는 요청은 단계별 방식으로도 가능하다. 듣는 중 ‘그 공고 말고 다른 지역’이라고 바꾸는 자연스러운 대화를 만들려면 중단·상태 변경·새 조회까지 설계해야 한다.",
+              "source_ids": []
+            }
+          ]
+        },
+        {
+          "id": "voice-tool-demo",
+          "title": "2. 말로 조회하는 앱 실습",
+          "lead": "조회가 성공한 뒤 결과를 말하는 흐름을 만든다.",
+          "blocks": [
+            {
+              "type": "steps",
+              "kind": "example",
+              "title": "실습",
+              "items": [
+                {
+                  "label": "입력",
+                  "text": "‘서울의 마감 임박 공고를 찾아줘’라는 발화를 받는다."
+                },
+                {
+                  "label": "도구",
+                  "text": "지역·기간 인자를 확인하고 실제 공고 목록을 조회한다."
+                },
+                {
+                  "label": "응답",
+                  "text": "조회한 제목과 날짜를 읽고 화면에 근거 링크를 남긴다."
+                },
+                {
+                  "label": "발화 변경",
+                  "text": "사용자가 경기도로 바꾸면 이전 응답·조회 상태를 처리한다."
+                },
+                {
+                  "label": "오류",
+                  "text": "결과가 없거나 조회가 실패하면 그 상태를 그대로 말한다."
+                }
+              ],
+              "source_ids": []
+            },
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "완료 기준",
+              "text": "한국어 날짜·고유명사 인식, 끼어들기, 두 번 말하기, 네트워크 끊김을 직접 시험한다. 공급자의 다국어 지원과 자기 앱의 한국어 품질을 동일하게 보지 않는다.",
+              "source_ids": []
+            }
+          ]
+        },
+        {
+          "id": "voice-auth",
+          "title": "3. 브라우저 연결과 임시 토큰",
+          "lead": "정적 화면과 인증·도구 실행 백엔드를 구분한다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "인증 방식",
+              "text": "Gemini는 브라우저 직접 연결에서 표준 API 키 대신 ephemeral token을 권고한다. 이 토큰은 백엔드에서 발급해 클라이언트에 전달하는 짧은 수명의 인증 수단이다.",
+              "source_ids": [
+                "gemini-live",
+                "ephemeral"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "실습 구조",
+              "text": "화면→자신의 백엔드에서 임시 토큰 요청→실시간 연결 순서로 만들고, 실제 도구 작업은 백엔드의 권한 검사와 연결한다. GitHub Pages의 정적 HTML만으로 키 발급과 업무 실행을 모두 처리하려고 하지 않는다.",
+              "source_ids": []
+            },
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "측정",
+              "text": "첫 응답까지 시간, 말하기 중단 반영, 조회 성공 여부, 한 세션 사용량을 기록한다. 본 보고서는 실시간 통신 앱을 구현한 결과가 아니라 공식 구조 조사와 학습 지침이다.",
+              "source_ids": []
+            }
+          ]
+        }
+      ],
+      "result": {
+        "title": "사용 장면에 맞춰 한 구조부터 시험",
+        "points": [
+          {
+            "kind": "judgment",
+            "label": "기존 업무가 있을 때",
+            "text": "이미 텍스트 기반 검색·업무 앱이 있다면 음성 계층을 붙이는 구조나 단계별 파이프라인부터 비교한다.",
+            "source_ids": []
+          },
+          {
+            "kind": "judgment",
+            "label": "실시간 대화가 핵심일 때",
+            "text": "Live·Realtime 계열을 검토하되 끼어들기와 실제 도구 실행을 포함한 데모로 확인한다.",
+            "source_ids": []
+          }
+        ]
+      },
+      "references": [
+        {
+          "id": "gemini-live",
+          "title": "Gemini API — Live API",
+          "url": "https://ai.google.dev/gemini-api/docs/live-api",
+          "description": "음성·영상 스트림, 끼어들기, 도구 호출, WebSocket. 2026.10.06 갱신."
+        },
+        {
+          "id": "ephemeral",
+          "title": "Gemini API — Ephemeral tokens",
+          "url": "https://ai.google.dev/gemini-api/docs/live-api/ephemeral-tokens",
+          "description": "브라우저 직접 연결에서 짧게 유효한 인증 토큰 사용."
+        },
+        {
+          "id": "openai-voice",
+          "title": "OpenAI API — Voice agents",
+          "url": "https://developers.openai.com/api/docs/guides/voice-agents",
+          "description": "GPT-Live·Realtime·음성 인식→에이전트→합성의 세 구조 비교."
+        },
+        {
+          "id": "functions",
+          "title": "Gemini API — Function calling",
+          "url": "https://ai.google.dev/gemini-api/docs/function-calling",
+          "description": "모델이 함수와 인자를 제안하고 앱이 실제 도구를 실행하는 흐름."
+        }
+      ],
+      "caveats": [
+        {
+          "text": "한국어 품질·응답 속도·요금을 직접 비교한 실험은 없다. 계정별 사용 가능 모델·제한·가격을 구현 전에 확인해야 한다.",
+          "source_ids": []
+        },
+        {
+          "text": "이 자료는 로컬 Voice Codex의 동작이나 과금 방식을 변경하지 않는다.",
+          "source_ids": []
+        }
+      ]
+    },
+    {
+      "id": "agent-evaluation-checklist",
+      "topic_id": "agent-mcp",
+      "topic_path": [
+        "개발 동향",
+        "Agent·MCP",
+        "평가·신뢰성"
+      ],
+      "title": "에이전트 평가, 최종 답과 실행 과정을 함께 확인",
+      "description": "답변이 맞더라도 도구를 잘못 호출하거나 작업을 중복 실행할 수 있다. 대표 질문·실패 상황·실행 기록을 기준으로 변경 전후를 비교한다.",
+      "checked_on": "2026-10-07",
+      "scope": "AI 앱 개발·해커톤 데모의 평가 준비와 OpenAI Evals 전환",
+      "deck": "답변이 맞더라도 도구를 잘못 호출하거나 작업을 중복 실행할 수 있다. 대표 질문·실패 상황·실행 기록을 기준으로 변경 전후를 비교한다.",
+      "highlights": [
+        "최종 답변과 도구 사용 경로를 분리해 평가.",
+        "OpenAI Evals: 10월 31일 읽기 전용, 11월 30일 종료 예정.",
+        "자신의 평가 질문·기대 결과·로그를 코드와 함께 보관."
+      ],
+      "source_note": "공식 문서·주최자 규정 / 2026.10.07 확인",
+      "summary": [
+        {
+          "kind": "fact",
+          "label": "평가 범위",
+          "text": "ADK는 도구 사용 경로와 최종 응답을 별도 평가 대상으로 제시한다. OpenAI의 trace 안내는 모델·도구 호출·분기 등을 한 실행의 기록으로 살펴보도록 한다.",
+          "source_ids": [
+            "adk-eval",
+            "openai-trace"
+          ]
+        },
+        {
+          "kind": "fact",
+          "label": "시점",
+          "text": "OpenAI Evals 대시보드·API는 종료 예고 상태다. 2026년 10월 31일 기존 평가가 읽기 전용이 되고, 11월 30일 종료될 예정이다.",
+          "source_ids": [
+            "openai-deprecations"
+          ]
+        },
+        {
+          "kind": "judgment",
+          "label": "준비",
+          "text": "새 프로젝트의 평가 자료를 종료 예정 대시보드에만 의존해 만들지 않는다. 질문·기대 결과·판정 기준을 별도로 보관하고 코드 기반 비교를 준비한다.",
+          "source_ids": []
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "tables": [
+        {
+          "id": "eval-methods",
+          "title": "무엇을 평가할 수 있는가",
+          "columns": [
+            "방법·자료",
+            "확인 대상",
+            "한계·시점"
+          ],
+          "rows": [
+            {
+              "values": [
+                "ADK 평가",
+                "최종 답과 도구 사용 경로",
+                "성공 기준·평가 세트를 먼저 정의"
+              ],
+              "source_ids": [
+                "adk-eval"
+              ]
+            },
+            {
+              "values": [
+                "실행 trace",
+                "모델·도구·분기 기록과 실패 지점",
+                "실행 기록 자체가 성공 판정은 아님"
+              ],
+              "source_ids": [
+                "openai-trace"
+              ]
+            },
+            {
+              "values": [
+                "Promptfoo",
+                "프롬프트·모델 출력 비교와 자동 평가",
+                "프로젝트의 기준과 테스트 구성 필요"
+              ],
+              "source_ids": [
+                "promptfoo",
+                "eval-migration"
+              ]
+            },
+            {
+              "values": [
+                "OpenAI Evals 기존 서비스",
+                "평가 자료를 옮기기 전 현재 설정 확인",
+                "10.31 읽기 전용 / 11.30 종료 예정"
+              ],
+              "source_ids": [
+                "openai-deprecations"
+              ]
+            }
+          ],
+          "note": "평가 도구의 성능 순위가 아니다. 특정 SDK·서비스에 종속되지 않게 질문과 기준을 보관한다."
+        }
+      ],
+      "learning": [
+        {
+          "id": "eval-basics",
+          "title": "1. 답변 평가와 도구 경로 평가",
+          "lead": "실행 과정을 평가한다는 말을 실제 사례로 이해한다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "두 평가 축",
+              "text": "ADK는 최종 응답의 정확성·적합성과, 해결 과정에서 선택한 도구·순서·효율을 구분한다. 기대 경로와 실제 경로를 비교하는 평가도 제공한다.",
+              "source_ids": [
+                "adk-eval"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "example",
+              "title": "결과만 보면 놓치는 오류",
+              "text": "마감일 답변은 맞지만 검색 없이 이전 대화의 날짜를 재사용했다면 새 공고에 취약하다. 저장 완료라고 답했어도 실제 저장 도구가 실패했다면 작업 성공으로 처리하면 안 된다.",
+              "source_ids": []
+            },
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "경로 검사 범위",
+              "text": "모든 도구 순서를 하나로 고정하면 다른 유효한 해결 경로를 오답으로 볼 수 있다. 반드시 지켜야 할 조회·승인·중복 방지와 허용 가능한 대안을 먼저 구분한다.",
+              "source_ids": []
+            }
+          ]
+        },
+        {
+          "id": "eval-set",
+          "title": "2. 작은 평가 세트 직접 만들기",
+          "lead": "입력과 기대 결과가 있어야 수정 전후를 비교할 수 있다.",
+          "blocks": [
+            {
+              "type": "steps",
+              "kind": "judgment",
+              "title": "저장할 항목",
+              "items": [
+                {
+                  "label": "입력",
+                  "text": "사용자의 실제 대표 질문과 필요한 자료 버전."
+                },
+                {
+                  "label": "기대 결과",
+                  "text": "정답·원문 근거 또는 수행해야 할 작업."
+                },
+                {
+                  "label": "금지 결과",
+                  "text": "근거 없는 확답·중복 저장·실패를 성공으로 표시."
+                },
+                {
+                  "label": "실행 결과",
+                  "text": "최종 답, 선택 도구·인자·반환값, 시간·사용량."
+                },
+                {
+                  "label": "판정",
+                  "text": "통과·실패·사람 검토와 이유."
+                }
+              ],
+              "source_ids": []
+            },
+            {
+              "type": "steps",
+              "kind": "example",
+              "title": "공고 비교 앱",
+              "items": [
+                {
+                  "label": "정상",
+                  "text": "현재 문서에서 마감일을 찾아 근거를 표시."
+                },
+                {
+                  "label": "함정",
+                  "text": "이전 회차와 새 회차가 같은 제목일 때 새 자료 선택."
+                },
+                {
+                  "label": "정보 없음",
+                  "text": "해당 자료가 없는 질문에는 미확인 응답."
+                },
+                {
+                  "label": "실행 실패",
+                  "text": "검색 도구 시간 초과를 안내하고 재시도."
+                },
+                {
+                  "label": "중복",
+                  "text": "같은 저장 요청 두 번에서 결과 한 개만 생성."
+                }
+              ],
+              "source_ids": []
+            },
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "처음 수량",
+              "text": "대표 질문 10개와 실패 질문 5개부터 권한다. 이 제안은 품질을 보장하는 통계 표본 수가 아니다. 실제 실패를 발견할 때마다 사례를 추가한다.",
+              "source_ids": []
+            }
+          ]
+        },
+        {
+          "id": "eval-move",
+          "title": "3. 평가 데이터와 도구를 함께 옮기기",
+          "lead": "평가 개념은 계속 필요하지만 개별 서비스의 일정은 따로 확인한다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "전환 자료",
+              "text": "OpenAI는 Evals 종료 일정과 함께 Promptfoo로 옮기는 공식 Cookbook을 안내한다. Promptfoo는 설정·테스트를 이용해 프롬프트와 모델 출력을 비교하는 도구다.",
+              "source_ids": [
+                "openai-deprecations",
+                "eval-migration",
+                "promptfoo"
+              ]
+            },
+            {
+              "type": "steps",
+              "kind": "judgment",
+              "title": "전환 순서",
+              "items": [
+                {
+                  "label": "보관",
+                  "text": "현재 평가 질문·기대 결과·판정 기준·모델 설정을 확보."
+                },
+                {
+                  "label": "재구성",
+                  "text": "새 도구에서 같은 질문을 실행하고 판정 규칙을 맞춘다."
+                },
+                {
+                  "label": "비교",
+                  "text": "점수 값이 같다는 이유만으로 동일하다고 보지 말고 실패 사례를 읽는다."
+                },
+                {
+                  "label": "반복",
+                  "text": "프롬프트·도구·모델을 바꿀 때 동일 세트로 재평가."
+                }
+              ],
+              "source_ids": []
+            },
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "판정 주의",
+              "text": "LLM이 채점한 결과도 틀릴 수 있다. 숫자 일치나 실제 저장 성공처럼 프로그램으로 확인 가능한 항목은 직접 검사하고, 의미 판단은 근거와 함께 사람이 샘플을 검토한다.",
+              "source_ids": []
+            }
+          ]
+        }
+      ],
+      "result": {
+        "title": "데모 전에 대표 실패를 한 번씩 재현",
+        "points": [
+          {
+            "kind": "judgment",
+            "label": "우선 작업",
+            "text": "정상 답만 시연하지 말고 자료 없음·외부 API 오류·중복 요청을 검사한다.",
+            "source_ids": []
+          },
+          {
+            "kind": "judgment",
+            "label": "보관 방식",
+            "text": "평가 데이터·기준·실행 결과를 별도로 쌓아 어느 변경에서 품질이 달라졌는지 확인한다.",
+            "source_ids": []
+          },
+          {
+            "kind": "fact",
+            "label": "종료 일정",
+            "text": "OpenAI Evals 기존 사용자는 10월 31일 이전부터 자료 전환을 준비해야 할 일정이다.",
+            "source_ids": [
+              "openai-deprecations"
+            ]
+          }
+        ]
+      },
+      "references": [
+        {
+          "id": "adk-eval",
+          "title": "Google ADK — Why evaluate agents",
+          "url": "https://adk.dev/evaluate/",
+          "description": "최종 답뿐 아니라 도구 사용 경로를 평가하고 평가 세트를 만드는 방법."
+        },
+        {
+          "id": "openai-trace",
+          "title": "OpenAI API — Evaluate agent workflows",
+          "url": "https://developers.openai.com/api/docs/guides/agent-evals",
+          "description": "도구 호출·모델 호출·분기 등의 실행 기록을 살펴보는 평가 방법."
+        },
+        {
+          "id": "openai-deprecations",
+          "title": "OpenAI API — Deprecations",
+          "url": "https://developers.openai.com/api/docs/deprecations",
+          "description": "Evals: 2026.10.31 읽기 전용, 11.30 대시보드·API 종료 예정."
+        },
+        {
+          "id": "eval-migration",
+          "title": "OpenAI Cookbook — Moving from Evals to Promptfoo",
+          "url": "https://developers.openai.com/cookbook/examples/evaluation/moving-from-openai-evals-to-promptfoo",
+          "description": "평가 데이터·평가 기준을 코드 기반 도구로 옮기는 공식 예제."
+        },
+        {
+          "id": "promptfoo",
+          "title": "Promptfoo — Introduction",
+          "url": "https://www.promptfoo.dev/docs/intro/",
+          "description": "프롬프트·모델 비교와 자동 평가를 위한 공식 시작 자료."
+        }
+      ],
+      "caveats": [
+        {
+          "text": "다른 도구의 점수는 같은 척도라고 가정할 수 없다. 본 보고서는 실제 앱 평가 결과나 공급자 품질 순위가 아니다.",
+          "source_ids": []
+        },
+        {
+          "text": "OpenAI Evals 개별 서비스 종료와 에이전트 평가라는 개발 방법의 필요성은 구분해야 한다.",
+          "source_ids": [
+            "openai-deprecations"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a2a-cli-agent-connections",
+      "topic_id": "agent-mcp",
+      "topic_path": [
+        "개발 동향",
+        "Agent·MCP",
+        "에이전트 연결"
+      ],
+      "title": "A2A 공식 CLI 등장, MCP와 연결 대상을 구분",
+      "description": "10월 1일 발표된 A2A CLI는 터미널에서 원격 에이전트를 발견하고 작업을 요청하게 한다. MCP와 A2A의 역할을 이해한 뒤 필요한 연결에만 적용한다.",
+      "checked_on": "2026-10-07",
+      "scope": "2026.10.01 A2A CLI 발표와 공식 프로토콜 문서",
+      "deck": "10월 1일 발표된 A2A CLI는 터미널에서 원격 에이전트를 발견하고 작업을 요청하게 한다. MCP와 A2A의 역할을 이해한 뒤 필요한 연결에만 적용한다.",
+      "highlights": [
+        "새 공식 CLI로 Agent Card 조회·요청·스트리밍 가능.",
+        "MCP: 도구·자료 연결. A2A: 독립 에이전트 사이 통신.",
+        "첫 단일 앱은 직접 함수부터; 외부 에이전트가 필요할 때 심화."
+      ],
+      "source_note": "공식 문서·주최자 규정 / 2026.10.07 확인",
+      "summary": [
+        {
+          "kind": "fact",
+          "label": "신규",
+          "text": "A2A 프로젝트는 2026년 10월 1일 공식 명령행 클라이언트를 발표했다. 터미널·스크립트에서 에이전트 능력 조회, 요청, 스트리밍을 제공하며 A2A v1.0을 사용한다고 안내한다.",
+          "source_ids": [
+            "a2a-cli"
+          ]
+        },
+        {
+          "kind": "fact",
+          "label": "역할 구분",
+          "text": "A2A는 서로 다른 프레임워크·조직의 에이전트 간 통신을 다룬다. MCP는 AI 앱이 도구·자료에 접근하는 연결을 다룬다.",
+          "source_ids": [
+            "a2a",
+            "mcp"
+          ]
+        },
+        {
+          "kind": "judgment",
+          "label": "도입 판단",
+          "text": "단일 앱의 조회 함수를 구현하려고 A2A까지 시작할 필요는 적다. 독립 운영되는 원격 에이전트에 작업을 맡기는 요구가 생겼을 때 배우는 편이 좋다.",
+          "source_ids": []
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "tables": [
+        {
+          "id": "connection-layers",
+          "title": "연결 계층 비교",
+          "columns": [
+            "대상",
+            "역할",
+            "확인할 정보"
+          ],
+          "rows": [
+            {
+              "values": [
+                "MCP 서버",
+                "AI 앱에 도구·자료·프롬프트 제공",
+                "도구 목록, 입력 스키마, 호출 결과"
+              ],
+              "source_ids": [
+                "mcp"
+              ]
+            },
+            {
+              "values": [
+                "A2A 원격 에이전트",
+                "능력 발견, 작업 요청, 결과·상태 교환",
+                "Agent Card, 인증, 응답·작업 상태"
+              ],
+              "source_ids": [
+                "a2a"
+              ]
+            },
+            {
+              "values": [
+                "A2A 공식 CLI",
+                "터미널·스크립트에서 표준 에이전트 접근",
+                "조회·요청·스트리밍 명령"
+              ],
+              "source_ids": [
+                "a2a-cli"
+              ]
+            }
+          ],
+          "note": "두 프로토콜은 서로 다른 요구를 다룬다. 둘 다 도입해야 하는 고정 스택은 아니다."
+        }
+      ],
+      "learning": [
+        {
+          "id": "connection-basics",
+          "title": "1. 도구와 독립 에이전트의 차이",
+          "lead": "같은 ‘AI 연결’이라도 상대에게 맡기는 책임이 다르다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "프로토콜 역할",
+              "text": "MCP는 도구 목록을 발견하고 스키마에 맞는 인자로 호출할 수 있게 한다. A2A는 원격 에이전트의 능력을 발견하고 메시지·작업을 교환하는 공통 언어다.",
+              "source_ids": [
+                "mcp",
+                "a2a"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "example",
+              "title": "공고 서비스",
+              "text": "날짜로 공고를 검색하는 함수는 도구다. 다른 팀이 운영하고 자기 상태와 판단 흐름을 가진 서류 검토 서비스를 에이전트로 호출한다면 A2A 같은 연결을 검토할 수 있다.",
+              "source_ids": []
+            },
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "설계 판단",
+              "text": "프로토콜은 결과의 정확성이나 권한을 자동으로 보장하지 않는다. 앱이 요청 가능한 범위와 결과 검증을 정하고, 상대의 독립 운영 여부를 보고 연결 방식을 선택한다.",
+              "source_ids": []
+            }
+          ]
+        },
+        {
+          "id": "agent-card",
+          "title": "2. Agent Card에서 능력부터 확인",
+          "lead": "원격 에이전트에 무엇을 요청할 수 있는지 먼저 읽는다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "발견·요청 흐름",
+              "text": "A2A 클라이언트는 Agent Card를 읽어 능력과 주소를 알아내고 인증한 뒤 요청한다. 즉시 응답하거나 긴 작업의 상태를 전달하는 방식이 있다.",
+              "source_ids": [
+                "a2a"
+              ]
+            },
+            {
+              "type": "steps",
+              "kind": "example",
+              "title": "설계 연습",
+              "items": [
+                {
+                  "label": "능력",
+                  "text": "공고 번역·문서 비교 중 상대가 지원하는 작업을 확인."
+                },
+                {
+                  "label": "입력",
+                  "text": "문서 ID·언어·작업 범위를 명시."
+                },
+                {
+                  "label": "진행",
+                  "text": "진행 중·완료·실패·추가 입력 요청을 자신의 화면에 연결."
+                },
+                {
+                  "label": "결과",
+                  "text": "반환 자료의 근거와 형식을 검사하고 사용자에게 표시."
+                }
+              ],
+              "source_ids": []
+            },
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "학습 순서",
+              "text": "Agent Card와 요청·응답부터 익힌다. 복잡한 협업·장기 작업은 단순 요청을 이해한 뒤 늘린다.",
+              "source_ids": []
+            }
+          ]
+        },
+        {
+          "id": "cli-practice",
+          "title": "3. CLI로 작게 왕복해 보기",
+          "lead": "전체 서비스를 만들기 전에 연결 동작을 확인한다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "새 공식 클라이언트",
+              "text": "발표 문서는 카드 조회, 메시지 요청, 스트리밍 예제를 제공한다. 공식 예제의 로컬 echo 서버부터 연결을 시험할 수 있다.",
+              "source_ids": [
+                "a2a-cli"
+              ]
+            },
+            {
+              "type": "code",
+              "kind": "example",
+              "title": "설치 후, 자신의 로컬 테스트 서버가 준비된 경우",
+              "text": "a2a card get -a http://localhost:8080\na2a send -a http://localhost:8080 \"공고 비교 가능 여부를 알려줘\"\na2a send -a http://localhost:8080 --stream \"테스트 문서의 핵심을 설명해줘\"",
+              "source_ids": [
+                "a2a-cli"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "확인할 것",
+              "text": "카드 조회, 정상 응답, 스트리밍 종료, 서버 미실행 때 오류를 관찰한다. 위 명령을 이 사이트에서 실행한 것은 아니며, 실제 설치·서버 준비는 공식 안내에 따른다.",
+              "source_ids": []
+            }
+          ]
+        }
+      ],
+      "result": {
+        "title": "연결 필요에 맞춰 프로토콜을 선택",
+        "points": [
+          {
+            "kind": "judgment",
+            "label": "도구 재사용",
+            "text": "AI 앱에 검색·계산 같은 도구를 제공해야 하면 함수 호출과 MCP를 먼저 검토한다.",
+            "source_ids": []
+          },
+          {
+            "kind": "judgment",
+            "label": "외부 업무 위임",
+            "text": "다른 시스템의 독립 에이전트에 작업을 맡겨야 하면 A2A의 발견·인증·작업 상태를 공부한다.",
+            "source_ids": []
+          },
+          {
+            "kind": "judgment",
+            "label": "해커톤 적용",
+            "text": "단일 문제의 실행과 근거 검증을 먼저 완성하고, 필요한 경우에만 원격 연결을 더한다.",
+            "source_ids": []
+          }
+        ]
+      },
+      "references": [
+        {
+          "id": "a2a-cli",
+          "title": "A2A 공식 CLI 발표 — 2026.10.01",
+          "url": "https://a2a-protocol.org/latest/blog/2026/10/01/introducing-a2a-cli/",
+          "description": "터미널에서 Agent Card 조회, 요청, 스트리밍을 다루는 새 공식 클라이언트."
+        },
+        {
+          "id": "a2a",
+          "title": "A2A Protocol — What is A2A?",
+          "url": "https://a2a-protocol.org/latest/topics/what-is-a2a/",
+          "description": "서로 다른 시스템의 에이전트 간 통신과 MCP의 역할 구분."
+        },
+        {
+          "id": "mcp",
+          "title": "MCP — Architecture overview",
+          "url": "https://modelcontextprotocol.io/docs/2026-07-28/learn/architecture",
+          "description": "호스트·클라이언트·서버 및 도구 탐색·호출의 역할."
+        }
+      ],
+      "caveats": [
+        {
+          "text": "A2A CLI가 발표됐다는 사실은 보편적인 업계 채택률이나 취업 수요를 뜻하지 않는다. 프로토콜 버전·상대 서버 지원을 구현 때 확인한다.",
+          "source_ids": [
+            "a2a-cli"
+          ]
+        }
+      ]
+    }
+  ]
+}

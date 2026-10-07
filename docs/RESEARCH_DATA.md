@@ -1,5 +1,33 @@
 # Research data contract
 
+## Reviewed expansion, 2026-10-07
+
+`config/development_updates.2026-10-07.json` adds five reviewed reports and twenty
+learning chapters in a new once-only batch. Earlier batches and eleven documents
+are unchanged. Current total: sixteen reports, twenty-six stored revisions,
+forty-six chapters. The featured report is `hackathon-tech-roadmap`.
+
+The hackathon learning page lives under
+`["지원·참여", "해커톤·공모전", "기술 학습"]`. Topic paths remain content labels;
+the renderer builds a nested tree, links a single deep leaf directly to its report,
+and includes descendants when filtering a parent. No schema/layout fields were
+added. Tests exercise four levels, escaping, relative history paths and counts.
+
+Research covers organizer requirements in three selected 2026 events and current
+official technical documentation. The trend interpretation and suggested study
+sequence are editorial judgments, not measured industry popularity. Google
+submission ended August 31; October 8 is the planned winner announcement.
+Elastic's July event ended. IBM Bob is restricted to US residents. Tables carry
+sources and limitations; study exercises and time plans are visibly examples or
+recommendations. No invented popularity scores, benchmark results or savings
+claims are used.
+
+Twenty-one primary-source responses and hash receipts are retained under ignored
+`data/raw/research/2026-10-07-expansion/`. Existing public feeds were separately
+refreshed; their excerpts are not automatically treated as reviewed conclusions.
+The five reports are manual research additions; weekly changed-only deep review
+remains planned.
+
 Research content and web presentation are independent. SQLite is the authoritative
 store; JSON is an exchange/export format, and HTML/CSS is a replaceable view.
 

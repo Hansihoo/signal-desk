@@ -8,7 +8,7 @@ from pathlib import Path
 from housing_watch.briefing_preview import build_briefing_preview
 from housing_watch.db import connect, init_db
 from housing_watch.research_data import (
-    apply_publication, build_research_data, import_reports, load_publication, validate_report,
+    apply_publication, build_research_data, import_reports, load_publication, load_report_input, validate_report,
 )
 
 
@@ -17,13 +17,14 @@ class ResearchPublicationTests(unittest.TestCase):
         self.conn = connect(":memory:")
         init_db(self.conn)
         self.publication, self.batches = load_publication()
+        self.reviewed_ids = {report["id"] for _, reports in self.batches for report in reports}
 
     def tearDown(self):
         self.conn.close()
 
     def test_reviewed_batch_is_applied_once_and_keeps_later_edits(self):
         apply_publication(self.conn, self.publication, self.batches)
-        self.assertEqual(self.conn.execute("SELECT COUNT(*) FROM research_reports").fetchone()[0], 10)
+        self.assertEqual(self.conn.execute("SELECT COUNT(*) FROM research_reports").fetchone()[0], len(self.reviewed_ids))
         before = self.conn.execute("SELECT COUNT(*) FROM research_report_revisions").fetchone()[0]
         edited = copy.deepcopy(self.batches[-1][1][0])
         old_revision = self.conn.execute("SELECT revision FROM research_reports WHERE id=?", (edited["id"],)).fetchone()[0]
@@ -59,7 +60,7 @@ class ResearchPublicationTests(unittest.TestCase):
 
     def test_all_selected_reports_render_and_citations_resolve(self):
         data = build_research_data(self.conn, [], [])
-        self.assertEqual(len(data["reports"]), 11)
+        self.assertEqual({report["id"] for report in data["reports"]}, self.reviewed_ids | {report["id"] for report in load_report_input()})
         featured = next(r for r in data["reports"] if r["id"] == data["featured_report_id"])
         with tempfile.TemporaryDirectory() as temp:
             root = build_briefing_preview(temp, {"items": [], "topics": []}, featured, data)

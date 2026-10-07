@@ -98,6 +98,7 @@ class PublicSiteTests(unittest.TestCase):
             build_public_site(conn, root / "site")
             batch_count = conn.execute("SELECT COUNT(*) FROM research_import_batches").fetchone()[0]
             revision_count = conn.execute("SELECT COUNT(*) FROM research_report_revisions").fetchone()[0]
+            original_report_count = conn.execute("SELECT COUNT(*) FROM research_reports").fetchone()[0]
             conn.close()
             archive = Path(temp) / "state.tar.gz"
             create_archive(root, archive)
@@ -107,7 +108,7 @@ class PublicSiteTests(unittest.TestCase):
             self.assertEqual(conn.execute("SELECT COUNT(*) FROM news_items").fetchone()[0], 1)
             self.assertEqual(conn.execute("SELECT COUNT(*) FROM research_import_batches").fetchone()[0], batch_count)
             report_count = conn.execute("SELECT COUNT(*) FROM research_reports").fetchone()[0]
-            self.assertEqual(report_count, 11)
+            self.assertEqual(report_count, original_report_count)
             self.assertEqual(build_public_site(conn, restored / "site")["archives"], 1)
             self.assertEqual(conn.execute("SELECT COUNT(*) FROM research_report_revisions").fetchone()[0], revision_count)
             conn.close()

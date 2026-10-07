@@ -27,7 +27,7 @@ the existing daily source refresh continues. See [research delivery analysis and
 plan](docs/RESEARCH_EXPERIENCE_PLAN.md).
 
 The [research homepage](https://hansihoo.github.io/signal-desk/preview/index.html)
-and all 11 stored reports use the user-selected **HTML5 UP Editorial** design.
+and all 16 stored reports use the user-selected **HTML5 UP Editorial** design.
 The main shows recent findings and an accumulating, searchable topic board. New
 reviewed reports appear on publication; earlier documents remain addressable in
 the [report history](https://hansihoo.github.io/signal-desk/preview/history/index.html).
@@ -42,6 +42,14 @@ Each development report now includes expandable explanations with definitions,
 processes, examples and evidence. The [MCP Apps report](https://hansihoo.github.io/signal-desk/preview/mcp-apps-workflows.html)
 has seven learning chapters. This detail is stored as report data independently of
 HTML/CSS; hypothetical examples and editorial recommendations are distinguished.
+
+The [hackathon learning report](https://hansihoo.github.io/signal-desk/preview/hackathon-tech-roadmap.html)
+is nested under hackathons and contains eight chapters, a seven-day practice plan,
+and official event evidence. Four further technical reports cover document RAG,
+voice architectures, agent evaluation, and A2A connections. Five reports / twenty
+chapters were checked on 2026-10-07; the collection now has 46 chapters. Parent
+topic filters include all descendants. Closed events and residency restrictions
+are distinguished from learning examples.
 
 Future domains:
 

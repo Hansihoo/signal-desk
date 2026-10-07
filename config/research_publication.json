@@ -1,7 +1,12 @@
 {
   "schema_version": 1,
-  "featured_report_id": "openai-api-migration",
+  "featured_report_id": "hackathon-tech-roadmap",
   "report_ids": [
+    "hackathon-tech-roadmap",
+    "document-rag-grounding",
+    "voice-agent-architectures",
+    "agent-evaluation-checklist",
+    "a2a-cli-agent-connections",
     "openai-api-migration",
     "mcp-apps-workflows",
     "openai-safety-bounty",
@@ -21,6 +26,10 @@
     {
       "id": "development-learning-2026-10-04",
       "input": "development_learning.2026-10-04.json"
+    },
+    {
+      "id": "development-updates-2026-10-07",
+      "input": "development_updates.2026-10-07.json"
     }
   ]
 }

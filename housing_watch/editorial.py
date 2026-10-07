@@ -50,11 +50,30 @@ def _tree(reports, prefix, active=None):
     for name, members in _groups(reports).items():
         categories = {}
         for item in members:
-            categories.setdefault(" / ".join(item["topic_path"]), []).append(item)
-        links = "".join('<li><a href="%sindex.html?%s#board"%s>%s <small>%d</small></a></li>' % (
-            prefix, _escape(urlencode({"topic": category})),
-            ' aria-current="page"' if any(item["id"] == active for item in items) else "",
-            '<span class="tree-label">%s</span>' % _escape(items[0]["topic_path"][-1]), len(items)) for category, items in categories.items())
+            children = categories
+            for label in item["topic_path"][1:]:
+                node = children.setdefault(label, {"members": [], "children": {}})
+                node["members"].append(item)
+                children = node["children"]
+
+        def branch(nodes, path):
+            links = []
+            for label, node in nodes.items():
+                current_path = path + [label]
+                items = node["members"]
+                # A single deep leaf is a report page; its parent remains the
+                # board containing both direct reports and all descendants.
+                target = (prefix + items[0]["id"] + ".html" if len(current_path) > 2
+                          and len(items) == 1 and not node["children"] else
+                          prefix + "index.html?" + urlencode({"topic": " / ".join(current_path)}) + "#board")
+                children_html = ('<ul class="tree-children">%s</ul>' % branch(node["children"], current_path)
+                                 if node["children"] else "")
+                links.append('<li><a href="%s"%s><span class="tree-label">%s</span> <small>%d</small></a>%s</li>' % (
+                    _escape(target), ' aria-current="page"' if any(item["id"] == active for item in items) else "",
+                    _escape(label), len(items), children_html))
+            return "".join(links)
+
+        links = branch(categories, [name])
         parts.append('<li><details class="tree-group" open><summary><span class="tree-label">%s</span><small>%d</small></summary><ul>%s</ul></details></li>' % (
             _escape(name), len(members), links))
     return "".join(parts) + "</ul>"
@@ -63,8 +82,9 @@ def _tree(reports, prefix, active=None):
 def _board_tools(reports):
     options = []
     for name, members in _groups(reports).items():
-        paths = list(dict.fromkeys(" / ".join(item["topic_path"]) for item in members))
-        children = "".join('<option value="%s">%s</option>' % (_escape(path), _escape(path.split(" / ")[-1])) for path in paths)
+        paths = list(dict.fromkeys(" / ".join(item["topic_path"][:depth])
+                                   for item in members for depth in range(2, len(item["topic_path"]) + 1)))
+        children = "".join('<option value="%s">%s</option>' % (_escape(path), _escape(" / ".join(path.split(" / ")[1:]))) for path in paths)
         options.append('<optgroup label="%s"><option value="%s">%s 전체</option>%s</optgroup>' % (_escape(name), _escape(name), _escape(name), children))
     return '''<form class="board-tools" action="index.html" method="get">
       <div class="board-query"><label class="sr-only" for="report-query">보고서 검색</label><input type="search" id="report-query" name="q" placeholder="주제·내용 검색"></div>

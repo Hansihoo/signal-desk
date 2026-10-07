@@ -2,6 +2,45 @@
 
 This document is the first stop for a future Codex agent.
 
+## Latest work: key technical research and hackathon learning, 2026-10-07
+
+Five new authored reports / twenty learning chapters are in the immutable
+`development-updates-2026-10-07` batch. Sixteen current reports / twenty-six
+revisions / forty-six chapters now render from SQLite. Earlier eleven documents
+match the previous export. The representative report is `hackathon-tech-roadmap`.
+Its eight chapters explain prerequisites, function calling/structured output,
+RAG, evaluation, multimodal choices, MCP/A2A, seven-day practice and a verifiable
+demo. Other additions cover document RAG, voice architecture, agent evaluation
+and the October 1 official A2A CLI announcement.
+
+The topic tree now preserves arbitrary-depth paths. Parent filters include all
+descendants; a single deep leaf opens its report directly. Runtime hackathon
+parent filtering showed both the old AWS notice and new learning report. Keep
+the selected Editorial CSS and compact typography; this work adds content and
+hierarchical navigation rather than a new design.
+
+Official evidence is checked on October 7. Google event reception ended August 31
+(October 8 is winner announcement), Elastic's July event ended, and IBM Bob is
+US-residents-only. These are learning examples, not a domestic active-event list.
+The study sequence is editorial advice; no industry popularity ranking was
+measured. OpenAI Evals read-only/shutdown dates were checked in the current
+official deprecations page and the Promptfoo migration guide.
+
+Local checks: 72 tests, compileall, publish, brief/desk/review, image inspection,
+1531 internal references; new reports and all twenty expanded chapters at actual
+320/390px pass without horizontal overflow. Enter/Space disclosures, parent
+filter and direct child navigation pass; no report-console errors. The public
+source refresh exported 468 records; GDELT 429 fell back to Google News RSS.
+Deployment verification will be recorded after the run completes.
+
+Retain `C:/Users/Theo/AppData/Local/Temp/signal-desk-01a0ff9d/research-expansion.2026-10-07/`
+and its standalone/production previews, checks and captures. Raw evidence root
+is ignored and registered separately. The existing loopback server PID 25120
+on 45427 remains in use. A failed pre-fix restore test left
+`F:/CodexTemp/tmp4371ant8` after a SQLite lock; it is registered, preserved and
+excluded from deliverables. Later tests passed. Do not delete thread artifacts
+without the user's cleanup request. Weekly deep-review automation is still pending.
+
 ## Project Summary
 
 Signal Desk is a local-first update collection and briefing system.

@@ -20,6 +20,43 @@ class EditorialTests(unittest.TestCase):
         self.addCleanup(patcher.stop)
         self.addCleanup(self.conn.close)
 
+    def test_deep_topics_remain_under_parent_and_link_to_their_report(self):
+        from housing_watch.editorial import _tree, _board_tools
+        from html.parser import HTMLParser
+
+        parent = copy.deepcopy(self.report)
+        parent.update(id="hackathon-notice", topic_path=["지원·참여", "해커톤·공모전"])
+        child = copy.deepcopy(self.report)
+        child.update(id="hackathon-learning", topic_path=["지원·참여", "해커톤·공모전", "기술 학습"])
+        other = copy.deepcopy(self.report)
+        other.update(id="hackathon-advanced", topic_path=["지원·참여", "해커톤·공모전", "기술 학습", "심화 <자료>"])
+
+        class TreeParser(HTMLParser):
+            def __init__(self):
+                super().__init__()
+                self.depth, self.links = 0, []
+            def handle_starttag(self, tag, attrs):
+                if tag == "ul":
+                    self.depth += 1
+                if tag == "a":
+                    self.links.append((self.depth, dict(attrs)["href"]))
+            def handle_endtag(self, tag):
+                if tag == "ul":
+                    self.depth -= 1
+
+        tree = _tree([parent, child, other], "../", other["id"])
+        parser = TreeParser()
+        parser.feed(tree)
+        self.assertEqual([depth for depth, _ in parser.links], [2, 3, 4])
+        self.assertEqual(parser.links[-1][1], "../hackathon-advanced.html")
+        self.assertIn("&lt;자료&gt;", tree)
+        self.assertIn("<small>3</small>", tree)
+        self.assertEqual(tree.count('aria-current="page"'), 3)
+        options = _board_tools([other])
+        self.assertIn('value="지원·참여">지원·참여 전체', options)
+        self.assertIn('해커톤·공모전 / 기술 학습 / 심화 &lt;자료&gt;', options)
+        self.assertIn('value="지원·참여 / 해커톤·공모전"', options)
+
     def test_new_reports_accumulate_even_without_changing_curated_manifest(self):
         import_reports(self.conn, [self.report])
         with tempfile.TemporaryDirectory() as temp:
