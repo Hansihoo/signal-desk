@@ -109,6 +109,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
 .report-table {margin:0 0 3em;overflow-x:auto;max-width:100%;overscroll-behavior-x:contain}
 /* Preserve readable columns; scroll only the table on a narrow screen. */
 .report-table table {width:100%;min-width:28rem;table-layout:auto}
+.report-table .table-token {white-space:nowrap}
 .report-table caption {font-family:"Roboto Slab","Noto Serif KR",serif;text-align:left;color:#3d4449;font-size:1.25em;font-weight:700;padding-bottom:1em}
 .report-table th,.report-table td {vertical-align:top;line-height:1.8;padding:1em .8em;overflow-wrap:anywhere;word-break:keep-all}
 .report-table th {font-weight:600;color:#3d4449}

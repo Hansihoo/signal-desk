@@ -196,7 +196,7 @@ also at 768/1280/1440px. Authored data and stored revisions are unchanged. New
 review outputs live under the registered retained temp root
 `editorial-readability.2026-10-07/`, with `review.html` and self-contained
 `offline/preview/` alongside the production-format pages. CSS version
-`39a010cab8ea`; public deployment is pending the refinement commit.
+`de2fc07102be`; public deployment is pending the table-token refinement commit.
 
 The user explicitly chose `html5up-editorial` in the PC gallery and said to fit the
 design to **each research item** with accumulating board posts. This supersedes

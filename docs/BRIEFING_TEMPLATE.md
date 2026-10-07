@@ -133,6 +133,8 @@ Tables use content-sensitive column widths and a 448px minimum. They scroll with
 their own named, keyboard-focusable region on narrow screens. At 1440px the MCP
 hero table fits without scrolling; at 390px ArrowRight moves the table, not the
 whole document. The mobile drawer and toggle also stay within a 320px viewport.
+Short dates and joined identifiers (up to 24 characters) stay together inside
+table cells; long descriptions remain wrappable rather than being cut off.
 
 Verification covers actual 320/390/768/1280/1440px main and MCP pages, all 11
 reports with 26 expanded chapters at 320px and 390px, native menu Enter/Escape,

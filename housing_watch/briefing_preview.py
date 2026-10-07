@@ -95,12 +95,21 @@ def _chart(dataset, source_numbers):
         '<details class="method-note"><summary>산정 근거</summary>%s</details>' % methods if methods else "")
 
 
+def _table_text(text):
+    # Keep short dates/identifiers legible without making long source text
+    # unbreakable. Escape every fragment before adding presentation markup.
+    parts = re.split(r"(\S*[-·/]\S*)", text)
+    return "".join('<span class="table-token">%s</span>' % _escape(part)
+                   if index % 2 and len(part) <= 24 else _escape(part)
+                   for index, part in enumerate(parts))
+
+
 def _table(table, source_numbers):
     headers = "".join('<th scope="col">%s</th>' % _escape(text) for text in table["columns"])
     rows = []
     for row in table["rows"]:
-        cells = ['<th scope="row">%s</th>' % _escape(row["values"][0])]
-        cells.extend('<td>%s%s</td>' % (_escape(value), _citations(row, source_numbers)
+        cells = ['<th scope="row">%s</th>' % _table_text(row["values"][0])]
+        cells.extend('<td>%s%s</td>' % (_table_text(value), _citations(row, source_numbers)
                      if index == len(row["values"]) - 1 else "")
                      for index, value in enumerate(row["values"][1:], 1))
         rows.append("<tr>%s</tr>" % "".join(cells))
