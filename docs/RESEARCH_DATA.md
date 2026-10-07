@@ -26,8 +26,9 @@ python -m housing_watch publish
 ```
 
 Default data-only output: `data/research.json`. Publishing writes the same contract
-to `site/research-data.json` and renders the representative pair from its selected
-report. These JSON files are ignored generated outputs; `--output` takes a JSON path.
+to `site/research-data.json` and renders the Editorial main, every stored report,
+and previous editions. These JSON files are ignored generated outputs; `--output`
+takes a JSON path.
 
 Data-only collection may update SQLite/raw-source snapshots; it never generates
 HTML/CSS/PNG or changes dated website archives. Partial failures retain earlier
@@ -44,6 +45,7 @@ succeeded, not that every source succeeded.
 | `source_records` | Public source IDs, topic/category, title, excerpt, URL/name, publication/first-seen dates, existing score/basis. Collected records, not reviewed conclusions. |
 | `reports` | Reviewed/authored content using the report contract below. |
 | `report_versions` | Report ID, current revision, UTC saved time. Prior documents remain in SQLite. |
+| `report_history` | Additive v1 field: all stored revisions with ID, revision, UTC saved time and validated plain-content document. No presentation fields. |
 | `featured_report_id` | Selected report for the representative pair. |
 | `publication_report_ids` | Reviewed report IDs in editorial order; independent of layout. |
 | `health` | Results/warnings for this export; empty without collection. |
@@ -119,9 +121,11 @@ Editing the example file alone therefore does not update an existing report:
 explicitly import, then publish. Editing generated JSON alone is not persistent;
 import reviewed changes into SQLite before exporting again.
 
-Presentation sources: `briefing_preview_home.html`, `briefing_preview_report.html`,
-`briefing_preview.css`, `briefing_preview.py`. Templates own layout/navigation; report
-text, date, numbers, citations, and thresholds come from data. Legacy source library
+Presentation sources: `editorial_shell.html`, `editorial_home.html`,
+`editorial_report.html`, `editorial.css`, `editorial.js`, `editorial.py` and the content
+helpers in `briefing_preview.py`. Actual template CSS/fonts/licenses live in
+`housing_watch/assets/editorial/`. Templates own layout/navigation; report text,
+date, numbers, citations, and thresholds come from data. Legacy source library
 and dated snapshots retain their existing format. No new collectors or weekly
 automation are introduced by this separation.
 
@@ -149,7 +153,10 @@ quickstart and Apps specification, GitHub app differences and Stripe MRR definit
 references. The previous baseline input is unchanged. Publishing updates each
 report revision once and preserves accumulated source records and older revisions.
 
-`/preview/index.html` presents the selected reports grouped by topic. Stable report
+`/preview/index.html` presents **all stored reports**, grouped by topic, with text
+search, category filters and eight entries per page. The curated manifest still
+chooses the lead report; adding a report does not require changing the manifest to
+appear on the board. Stable report
 URLs are `/preview/<report-id>.html`; `report.html` aliases the current featured
 report. All stored reports also get an address, including the earlier storage
 report at `/preview/github-pages-storage.html`. Quantitative comparisons use bars;
@@ -164,6 +171,39 @@ earnings, not job counts. Tally values are founder-reported historical MRR, not
 audited profit or a one-person income. Eligibility and future deadlines are not
 inferred from promotional maximums. Weekly deep review/changed-only scheduling is
 still a separate, unimplemented workstream; the existing daily feed refresh continues.
+
+## Editorial accumulation and report history, 2026-10-07
+
+The user explicitly selected `html5up-editorial` and expanded scope to every
+research report. `publish` renders the main and all validated current reports,
+sorted by evidence check date descending, then stable ID. Categories are derived
+from `topic_path`; sidebar children lead to filtered lists. Reports in the same
+category accumulate on that list instead of creating duplicate tree entries.
+
+New reviewed subjects need a new stable report ID. Revising the same subject keeps
+its current URL and creates a SQLite revision. Every earlier revision is rendered
+at `/preview/history/<report-id>-r<revision>.html` using its own stored document;
+`/preview/history/index.html` and the report sidebar link those editions. Identical
+imports do not create new editions. A design-only publication changes neither the
+authored text nor evidence dates/revisions. These HTML documents are generated
+outputs and remain outside source commits.
+
+Design-review mode embeds CSS/scripts/licensed font subsets in a standalone HTML
+document. Production uses one cache-versioned local stylesheet containing the
+fonts, with parent-relative history links; scripts remain embedded. Neither mode
+requests remote fonts or scripts. The original Latin fonts are packaged with a
+Korean heading subset and local serif fallback. Measured local standalone preview
+is about 9.5 MB; the shared-style production preview is about 0.89 MB for 11 current
+reports, 10 older editions, main/history/license and CSS. A current MCP HTML report
+is about 30.5 KB and the shared font/CSS file about 344 KB. These are measured
+outputs, not a lifetime guarantee. Stored data remains independent of either mode.
+
+Verification: 71 tests, compileall, JS syntax check, publish/brief/summary desk and
+housing review pass. Existing briefing PNGs inspected. 1,067 local internal links/stylesheets
+resolve; mobile width 390 verified on main and all 11 reports with all 26 chapters
+expanded, 14px body and no horizontal overflow. Search, empty/reset, top/subtopic
+filters, pagination, previous/current edition navigation and Enter/Space native
+disclosure were exercised in the browser. Weekly deep research remains unimplemented.
 
 Verification: 63 tests, compileall, publish, brief, summary desk and review pass.
 Existing images were inspected; 13 research pages / 271 internal links pass. All

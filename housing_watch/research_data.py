@@ -321,10 +321,14 @@ def build_research_data(conn, records, topics, health=None):
     for report in reports:
         if not any(topic["id"] == report["topic_id"] for topic in catalog):
             catalog.append({"id": report["topic_id"], "name": report["topic_path"][-1], "description": ""})
+    history = [{"id": row["report_id"], "revision": row["revision"], "saved_at": row["saved_at"],
+                "document": validate_report(json.loads(row["document"]))}
+               for row in conn.execute("SELECT * FROM research_report_revisions ORDER BY report_id, revision")]
     return {"schema_version": SCHEMA_VERSION, "generated_at": iso_utc(),
             "featured_report_id": publication["featured_report_id"],
             "publication_report_ids": publication["report_ids"], "topics": catalog,
-            "source_records": records, "reports": reports, "report_versions": versions, "health": health or []}
+            "source_records": records, "reports": reports, "report_versions": versions,
+            "report_history": history, "health": health or []}
 
 
 def write_research_data(path, document):

@@ -158,6 +158,18 @@ edits. New reviewed changes need a new batch ID. This deploys authored public co
 without uploading or replacing local/cloud DBs. Full cloud backups preserve report
 revisions and batch receipts. See `RESEARCH_DATA.md`.
 
+The user-selected Editorial presentation (`editorial.py`, `.css`, `.js`, and HTML
+templates) reuses actual HTML5 UP vendor CSS, packaged font subsets and required
+license notices. It builds an accumulating board from **all** stored authored
+reports, with search/topic filters and client-side pagination. The publication
+manifest controls the featured report independently of the board.
+
+The additive JSON `report_history` exports existing immutable SQLite revisions.
+The renderer validates them before writing and generates addressable prior-edition
+pages under `preview/history/`; each uses its own content rather than the latest
+document. Rendering never imports or mutates a revision. Native learning
+disclosures retain their independent state and citations across current editions.
+
 ## Naming Note
 
 The repo is `signal-desk`, but the current Python package is still `housing_watch` because the first MVP domain was housing. Jobs, weekly news, and AI news now share that package. Rename or generalize it only when the import/CLI churn is worth the cleanup.

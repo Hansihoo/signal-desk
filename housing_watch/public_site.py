@@ -150,7 +150,7 @@ def build_public_site(conn, output_path="site", health=None, topics=None):
     research_data = build_research_data(conn, entries, topics, health)
     write_research_data(output / "research-data.json", research_data)
     report = next(report for report in research_data["reports"] if report["id"] == research_data["featured_report_id"])
-    build_briefing_preview(output, snapshot, report, research_data)
+    build_briefing_preview(output, snapshot, report, research_data, standalone=False)
     return {"path": str(output / "index.html"), "items": len(entries), "archives": len(history), "health": health or []}
 
 

@@ -1,7 +1,10 @@
 # Homepage and report contract
 
-2026-10-03: Only the homepage and one report are in scope. Other topic layouts,
-collectors, daily archive format, and weekly review automation remain unchanged.
+2026-10-07: The user chose **HTML5 UP Editorial** and explicitly asked to apply it
+to each research report and keep new reports accumulating like board posts. The
+main and all 11 current reports now use the actual template source. Earlier scope
+of only the main and one report is superseded. Collectors, daily source archives
+and weekly deep-review scheduling are separate workstreams.
 
 - [Homepage](https://hansihoo.github.io/signal-desk/preview/index.html)
 - [Report](https://hansihoo.github.io/signal-desk/preview/report.html)
@@ -57,8 +60,10 @@ Actions execution/storage, and paid external services are distinct resources.
 
 ## Generation and verification
 
-Sources: `housing_watch/briefing_preview_home.html`, `briefing_preview_report.html`,
-`briefing_preview.css`, `briefing_preview.py`. Research content is now separate in
+Current sources: `housing_watch/editorial_shell.html`, `editorial_home.html`,
+`editorial_report.html`, `editorial.css`, `editorial.js`, `editorial.py` and
+`briefing_preview.py`. Original CSS/fonts/licenses are in `assets/editorial/`.
+Research content is separate in
 SQLite and the [versioned JSON contract](RESEARCH_DATA.md), seeded from the authored
 `config/research_reports.example.json`. Templates contain no report-specific facts;
 chart geometry is computed from numeric rows and threshold. The public exporter generates the pair
@@ -76,6 +81,39 @@ the registered thread verification root; earlier captures remain retained.
 
 Expand this format only after Theo reviews the pair. Weekly changed-only review
 requires separate collection/editing work; it is not part of this revision.
+
+## Applied Editorial template, 2026-10-07
+
+Explicit user selection and production request authorize the actual Editorial
+implementation; this is no longer a direction chooser. Main: subject-led featured
+report, evidence table/chart, recent findings by field, searchable accumulating
+board, and source-library links. Report: title/topic, outline summary, data,
+result, optional collapsed teaching chapters, and references. Scope/evidence dates,
+assumptions, numeric geometry, and citations retain the authored data.
+
+The official CSS is stored unmodified. The renderer removes remote imports and
+packages licensed fonts; native JavaScript replaces template jQuery menu handling.
+SVG replaces Font Awesome, Korean body stays at least 14px, and portrait layouts
+put the title before the evidence panel. Stock photography is replaced by actual
+source-derived tables/charts; no invented numeric decorations. The footer gives
+HTML5 UP credit and links the full licenses and modification notice.
+
+Review mode remains an offline standalone HTML with embedded CSS/JS/fonts. Public
+pages share one local cache-versioned stylesheet, keeping report accumulation
+small; there is no remote runtime dependency. Both use the same content/template.
+
+| Observed area | Original Editorial | Adapted report/main | Remaining difference |
+| --- | --- | --- | --- |
+| First screen | Serif title, left copy/right image, coral rule | Same shell/banner and serif title, right factual evidence | Longer Korean titles use 3em desktop / 2em narrow; no decorative photo |
+| Body | Underlined section headings, separated posts/features | Same section hierarchy with sourced tables, concise findings and report posts | More text than the demo; visible learning chapters supply depth |
+| Navigation | Gray sidebar, menu and search | Gray sidebar, grouped subject tree, report search and history | Native accessible SVG toggle; report categories lead to the board |
+| Narrow screen | Single column, sidebar toggle | Title first, evidence below, 14px body, native details | Original portrait image-first order is intentionally changed for reading |
+
+Functional verification and rendered visual comparison are complete; user feedback
+on the finished layout remains welcome. This records actual source reuse and screen
+comparison, not a claim of pixel identity or that the user already approved every
+adapted detail. The earlier rejected custom designs and original template captures
+are preserved as comparison references.
 
 ## Applied to collected development information, 2026-10-04
 

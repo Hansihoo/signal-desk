@@ -170,3 +170,49 @@ cloud DB with local state or edit an applied batch in place; append a new dated
 reviewed batch. The main is `/preview/index.html`, reports use stable ID filenames,
 and `report.html` aliases the featured report. The existing source library and
 daily archives remain available. Weekly deep review is not implemented yet.
+
+## Mobile template selection (2026-10-06)
+
+Read [MOBILE_TEMPLATE_SELECTION.md](MOBILE_TEMPLATE_SELECTION.md) before continuing
+the mobile-selection workstream. The authenticated bridge was verified on loopback
+port 45428 and saves only template preferences in the thread scratch; recheck its
+process before resuming. The prior process is no longer running on 2026-10-07.
+Local button/save/restore/reset/conflict/reconnect checks and166 shared-tool tests
+pass. The Cloudflare tunnel launch was rejected by automatic approval review with
+`blocked by policy`; no public URL exists and no alternate launch was attempted.
+Phone/Remote device verification remains pending. Test preferences were cleared.
+Do not treat its cleared test preference as the later user's explicit PC selection.
+
+## Selected Editorial implementation (2026-10-07)
+
+The user explicitly chose `html5up-editorial` in the PC gallery and said to fit the
+design to **each research item** with accumulating board posts. This supersedes
+the earlier main-plus-one-report scope and the mobile test's empty selection.
+The scratch selection record was updated to revision 6 after scope/source-hash
+validation. The 2026-10-05 baseline is preserved, with an additional pre-Editorial
+copy. No further selection/confirmation is required to use this chosen template.
+
+Actual original template CSS, Google font subsets and licenses live in
+`housing_watch/assets/editorial/`. `editorial_shell/home/report.html`,
+`editorial.css`, `editorial.js`, and `editorial.py` own presentation. Shared content
+helpers stay in `briefing_preview.py`; the superseded preview templates/CSS were
+removed to avoid editing unused files. Reports remain SQLite-authored content.
+
+Main: all 11 stored reports, top/subtopic filters, full authored-text search,
+eight posts per page, field/latest highlights and source-library links. New IDs
+appear automatically at publication even if absent from the curated lead manifest.
+Changed IDs retain their URL and all older SQLite editions render under
+`/preview/history/<id>-r<N>.html`; existing 10 older editions are linked. The JSON
+envelope adds presentation-free `report_history` without a schema migration.
+
+Tests 70, compileall, JS syntax, publish/brief/desk/review and briefing image checks
+pass. Actual 390px main/all 11 reports and all 26 expanded chapters have no horizontal
+overflow. Search/empty/reset/subtopic filters/pagination, keyboard Enter/Space and
+previous/current edition links pass; 1,067 internal links/stylesheets resolve. The selected
+template capture was compared with the result. See `BRIEFING_TEMPLATE.md` for the
+source reuse and adaptation details. Weekly deep review remains a separate task.
+
+Current review environment: loopback port 45427, PID 25120, serving the preserved
+thread scratch; validate liveness before using. New rendered outputs are under
+`editorial-preview.2026-10-07/`; the MCP selectable review is
+`editorial-mcp-review.2026-10-07.html`. Both are retained until cleanup is requested.

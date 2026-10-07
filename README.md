@@ -21,15 +21,17 @@ categories and a downloadable report template. Real opportunity collection and v
 are deferred. See [scope and requirements](docs/OPPORTUNITIES.md).
 
 The latest product direction broadens this to **development information**, with
-opportunities as a subtopic. A curated homepage -> one-page report -> official evidence
-experience and weekly changed-only development review are planned; the current HTML
-outline and daily workflow have not been changed. See [research delivery analysis and
+opportunities as a subtopic. The curated homepage -> report -> official evidence
+experience is implemented. Weekly changed-only development review remains planned;
+the existing daily source refresh continues. See [research delivery analysis and
 plan](docs/RESEARCH_EXPERIENCE_PLAN.md).
 
-The first paired [homepage preview](https://hansihoo.github.io/signal-desk/preview/index.html)
-and [representative report](https://hansihoo.github.io/signal-desk/preview/report.html)
-are available for template review. Ten reviewed development reports use this layout; see the
-[template contract](docs/BRIEFING_TEMPLATE.md).
+The [research homepage](https://hansihoo.github.io/signal-desk/preview/index.html)
+and all 11 stored reports use the user-selected **HTML5 UP Editorial** design.
+The main shows recent findings and an accumulating, searchable topic board. New
+reviewed reports appear on publication; earlier documents remain addressable in
+the [report history](https://hansihoo.github.io/signal-desk/preview/history/index.html).
+See the [template contract](docs/BRIEFING_TEMPLATE.md).
 
 Research content is independent of web design. `research-data --collect` refreshes
 public sources and writes `data/research.json` without rendering webpages. Authored
