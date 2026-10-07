@@ -216,3 +216,12 @@ Current review environment: loopback port 45427, PID 25120, serving the preserve
 thread scratch; validate liveness before using. New rendered outputs are under
 `editorial-preview.2026-10-07/`; the MCP selectable review is
 `editorial-mcp-review.2026-10-07.html`. Both are retained until cleanup is requested.
+
+Deployment [37628018293](https://github.com/Hansihoo/signal-desk/actions/runs/37628018293)
+succeeded in 1m28s for source commit `bf11f7d`. Live export has 776 source records,
+11 current reports and 21 stored editions. Current and prior authored documents
+match the local reviewed inputs; saved timestamps legitimately differ between
+local/cloud imports. Published CSS normalized text matches Git and renderer hash
+`171be08edf65` (Windows output bytes have CRLF). All 25 live pages use that version.
+Public main→MCP, all seven chapters at 390px, official quickstart/back and console
+pass. Public main/report tabs and the offline selectable review are retained.

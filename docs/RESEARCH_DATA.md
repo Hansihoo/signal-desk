@@ -226,3 +226,11 @@ succeeds; public JSON contains 339 accumulated source records and the identical 
 navigation and console checks pass. Published CSS matches committed LF source bytes,
 hash `60797995360d`; local CRLF checkout bytes have a different hash. Generated outputs
 are retained outside Git. Main/report layout approval and weekly review remain separate.
+
+Editorial publication [37628018293](https://github.com/Hansihoo/signal-desk/actions/runs/37628018293)
+succeeded in 1m28s. Live export: 776 source records, 11 current reports, 21 stored
+revisions. Current and older authored documents match; local/cloud saved timestamps
+are intentionally distinct. All 25 public pages use `171be08edf65`, the normalized
+CSS content hash; Windows filesystem bytes differ by line endings. Native public
+main→MCP navigation, seven expanded chapters at 390px, official quickstart/back and
+console pass. Main/report and local selectable review remain available.
