@@ -196,7 +196,16 @@ also at 768/1280/1440px. Authored data and stored revisions are unchanged. New
 review outputs live under the registered retained temp root
 `editorial-readability.2026-10-07/`, with `review.html` and self-contained
 `offline/preview/` alongside the production-format pages. CSS version
-`de2fc07102be`; public deployment is pending the table-token refinement commit.
+`de2fc07102be`; final deployment 37634625748 succeeded in 1m29s from source
+commit `aa571c0`. Public main/report use this exact CSS and updated reader labels;
+11 current and 21 stored authored documents match the preserved inputs. Public
+desktop captures were checked at actual 1440px. The final public 390px request
+remained at 1440px in the browser tool, so it is not counted as a narrow-screen
+check. Actual 320/390px checks above are from the equivalent local generated
+pages, with their measurements retained in `browser-checks.json`. The selectable
+review has its own wrapper MutationObserver error while its source hash/selection
+state loads; public report console has no errors. Treat its static selection
+preview separately from runtime verification.
 
 The user explicitly chose `html5up-editorial` in the PC gallery and said to fit the
 design to **each research item** with accumulating board posts. This supersedes
