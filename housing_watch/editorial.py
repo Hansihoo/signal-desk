@@ -30,6 +30,14 @@ def _fill(template, values):
     return re.sub(r"__[A-Z][A-Z_]*?__", lambda match: values[match.group()], template)
 
 
+def _headline(text):
+    # Keep short joined terms (e.g. 표·버튼·입력) together. Very long terms can
+    # still wrap inside their capped inline block, rather than overflowing.
+    parts = re.split(r"(\S*[·/]\S*)", text)
+    return "".join('<span class="title-term">%s</span>' % _escape(part)
+                   if index % 2 else _escape(part) for index, part in enumerate(parts))
+
+
 def _groups(reports):
     groups = {}
     for report in reports:
@@ -46,8 +54,8 @@ def _tree(reports, prefix, active=None):
         links = "".join('<li><a href="%sindex.html?%s#board"%s>%s <small>%d</small></a></li>' % (
             prefix, _escape(urlencode({"topic": category})),
             ' aria-current="page"' if any(item["id"] == active for item in items) else "",
-            _escape(items[0]["topic_path"][-1]), len(items)) for category, items in categories.items())
-        parts.append('<li><details class="tree-group" open><summary>%s<small>%d</small></summary><ul>%s</ul></details></li>' % (
+            '<span class="tree-label">%s</span>' % _escape(items[0]["topic_path"][-1]), len(items)) for category, items in categories.items())
+        parts.append('<li><details class="tree-group" open><summary><span class="tree-label">%s</span><small>%d</small></summary><ul>%s</ul></details></li>' % (
             _escape(name), len(members), links))
     return "".join(parts) + "</ul>"
 
@@ -60,7 +68,7 @@ def _board_tools(reports):
         options.append('<optgroup label="%s"><option value="%s">%s 전체</option>%s</optgroup>' % (_escape(name), _escape(name), _escape(name), children))
     return '''<form class="board-tools" action="index.html" method="get">
       <div class="board-query"><label class="sr-only" for="report-query">보고서 검색</label><input type="search" id="report-query" name="q" placeholder="주제·내용 검색"></div>
-      <div><label class="sr-only" for="report-topic">리서치 분야</label><select id="report-topic" name="topic"><option value="">전체 분야</option>%s</select></div>
+      <div><label class="sr-only" for="report-topic">보고서 분야</label><select id="report-topic" name="topic"><option value="">전체 분야</option>%s</select></div>
       <button type="submit">검색</button></form>''' % "".join(options)
 
 
@@ -85,7 +93,7 @@ def _post(report, url, edition=None):
       <div class="post-meta"><span>%s</span><time datetime="%s">%s</time></div>
       <h3><a href="%s">%s</a></h3><p>%s</p><a class="post-link" href="%s">보고서 읽기 <span aria-hidden="true">↗</span></a></article>''' % (
         _escape(report["topic_path"][0]), _escape(" / ".join(report["topic_path"])), search, _escape(label), report["checked_on"],
-        report["checked_on"].replace("-", "."), _escape(url), _escape(report["title"]),
+        report["checked_on"].replace("-", "."), _escape(url), _headline(report["title"]),
         _escape(" ".join(report["highlights"][:2])), _escape(url))
 
 
@@ -97,7 +105,7 @@ def _topic_features(reports):
         parts.append('''<article><span class="topic-mark" aria-hidden="true">%02d</span><div class="content">
           <h3><a href="%s">%s</a><small>%d건</small></h3><a class="latest-title" href="%s.html">%s</a>
           <time class="latest-date" datetime="%s">%s</time></div></article>''' % (
-            index, _escape(url), _escape(name), len(members), _escape(latest["id"]), _escape(latest["title"]),
+            index, _escape(url), _escape(name), len(members), _escape(latest["id"]), _headline(latest["title"]),
             latest["checked_on"], latest["checked_on"].replace("-", ".")))
     return "".join(parts)
 
@@ -162,15 +170,17 @@ def render_editorial(output, snapshot, featured, research_data=None, standalone=
             "__STYLE_BLOCK__": style_block, "__SCRIPT__": script, "__CONTENT__": content, "__PREFIX__": prefix,
             "__TREE__": _tree(reports, prefix, active), "__CONTENTS_NAV__": contents, "__EDITION_NAV__": editions})
     values = dict(_report_replacements(featured), __REPORT_URL__=_escape(featured["id"] + ".html"),
+        __HEADLINE__=_headline(featured["title"]),
         __HERO_VISUAL__=_hero(featured, featured["id"] + ".html"), __TOPIC_FEATURES__=_topic_features(reports),
         __REPORT_COUNT__=str(len(reports)), __BOARD_TOOLS__=_board_tools(reports),
         __BOARD_ROWS__="".join(_post(item, item["id"] + ".html") for item in reports), __TOPIC_ROWS__=_topic_rows(snapshot))
     content = _fill((ROOT / "editorial_home.html").read_text(encoding="utf-8"), values)
-    (destination / "index.html").write_text(page("리서치 기록", "개발 동향, 사업 기회와 운영 자료", content), encoding="utf-8")
+    (destination / "index.html").write_text(page("최근 동향", "개발 동향, 사업 기회와 운영 자료", content), encoding="utf-8")
     template = (ROOT / "editorial_report.html").read_text(encoding="utf-8")
     def report_page(item, edition=None):
         prefix = "../" if edition else ""
         values = _report_replacements(item)
+        values["__HEADLINE__"] = _headline(item["title"])
         values.update(__HERO_VISUAL__=_hero(item), __EDITION_NOTICE__=(
             '<p class="edition-notice">이전 기록 · %d차 · <a href="../%s.html">현재 보고서</a></p>' % (edition, _escape(item["id"])) if edition else ""))
         content = _fill(template, values)
@@ -189,5 +199,5 @@ def render_editorial(output, snapshot, featured, research_data=None, standalone=
         len(history), _board_tools(reports), old_rows, '<p>이전 기록이 없습니다.</p>' if not history else "")
     (history_root / "index.html").write_text(page("이전 기록", "이전 판의 보고서", archive, "../"), encoding="utf-8")
     notices = "".join('<h2>%s</h2><pre class="license-text">%s</pre>' % (_escape(path.stem), _escape(path.read_text(encoding="utf-8"))) for path in sorted(ASSETS.glob("*LICENSE.txt")))
-    (destination / "licenses.html").write_text(page("디자인 라이선스", "Editorial 및 포함 서체의 라이선스", '<section><h1>디자인 라이선스</h1><p>HTML5 UP Editorial 원본을 리서치 목록·한국어 보고서·기록 탐색에 맞춰 수정했습니다. 기본 레이아웃, 색, 서체와 여백은 원본을 따릅니다. 아이콘과 메뉴 동작은 SVG와 기본 JavaScript로 변경했습니다.</p>' + notices + '</section>'), encoding="utf-8")
+    (destination / "licenses.html").write_text(page("디자인 라이선스", "Editorial 및 포함 서체의 라이선스", '<section><h1>디자인 라이선스</h1><p>HTML5 UP Editorial 원본을 보고서 목록·한국어 보고서·기록 탐색에 맞춰 수정했습니다. 원본의 기본 레이아웃과 색을 유지하고, 한국어 글자와 탐색 간격을 조정했습니다. 아이콘과 메뉴 동작은 SVG와 기본 JavaScript로 변경했습니다.</p>' + notices + '</section>'), encoding="utf-8")
     return destination

@@ -107,13 +107,40 @@ small; there is no remote runtime dependency. Both use the same content/template
 | First screen | Serif title, left copy/right image, coral rule | Same shell/banner and serif title, right factual evidence | Longer Korean titles use 3em desktop / 2em narrow; no decorative photo |
 | Body | Underlined section headings, separated posts/features | Same section hierarchy with sourced tables, concise findings and report posts | More text than the demo; visible learning chapters supply depth |
 | Navigation | Gray sidebar, menu and search | Gray sidebar, grouped subject tree, report search and history | Native accessible SVG toggle; report categories lead to the board |
-| Narrow screen | Single column, sidebar toggle | Title first, evidence below, 14px body, native details | Original portrait image-first order is intentionally changed for reading |
+| Narrow screen | Single column, sidebar toggle | Title first, evidence below, 15px body, native details | Original portrait image-first order is intentionally changed for reading |
 
 Functional verification and rendered visual comparison are complete; user feedback
 on the finished layout remains welcome. This records actual source reuse and screen
 comparison, not a claim of pixel identity or that the user already approved every
 adapted detail. The earlier rejected custom designs and original template captures
 are preserved as comparison references.
+
+## Reader wording and type refinement, 2026-10-07
+
+Theo requested reader-facing labels, less navigation spacing and fewer awkward
+line breaks. The shared shell now uses `분야`, `전체 보고서`, and a `최근 동향`
+page title; the `/ Research` brand suffix is removed. Subject headings stay data-owned.
+Nested menu/link padding is no longer compounded. The actual expanded menu height
+fell from 889px to 622px while links increased to 14px; main body text is 15px.
+
+Shared CSS sizes the hero heading by its available column, with a viewport-based
+fallback. Korean words stay together where possible and headings use balanced
+wrapping. Joined headline terms such as `표·버튼·입력` stay together unless the
+term itself exceeds the available width. Nothing is clamped, hidden or truncated
+to make it fit. Long tokens retain an emergency wrap for overflow protection.
+
+Tables use content-sensitive column widths and a 448px minimum. They scroll within
+their own named, keyboard-focusable region on narrow screens. At 1440px the MCP
+hero table fits without scrolling; at 390px ArrowRight moves the table, not the
+whole document. The mobile drawer and toggle also stay within a 320px viewport.
+
+Verification covers actual 320/390/768/1280/1440px main and MCP pages, all 11
+reports with 26 expanded chapters at 320px and 390px, native menu Enter/Escape,
+disclosure Enter/Space and table keyboard scrolling. Responsive rules are shared
+by future generated reports. Reading quality still requires checking the actual
+new text; CSS is not a substitute for reviewing meaning or source accuracy.
+See the primary references for [Korean word breaking](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/word-break)
+and [balanced headings](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/text-wrap).
 
 ## Applied to collected development information, 2026-10-04
 

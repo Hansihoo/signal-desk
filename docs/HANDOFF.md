@@ -185,6 +185,19 @@ Do not treat its cleared test preference as the later user's explicit PC selecti
 
 ## Selected Editorial implementation (2026-10-07)
 
+Latest refinement: reader wording (`분야`, `전체 보고서`, `최근 동향`) replaces
+generic research labels in the curated shell. Navigation has compact non-duplicated
+padding and 14px links. Shared 15px body, column-based title sizing, Korean word
+grouping and balanced headings avoid unnecessary splits. Tables use natural
+column widths and keyboard-accessible contained scrolling. Refer to the updated
+template contract before changing these rules. Local verification: 71 tests,
+brief/desk/review/images, all 11 reports/26 chapters at 320 and 390px, main/MCP
+also at 768/1280/1440px. Authored data and stored revisions are unchanged. New
+review outputs live under the registered retained temp root
+`editorial-readability.2026-10-07/`, with `review.html` and self-contained
+`offline/preview/` alongside the production-format pages. CSS version
+`39a010cab8ea`; public deployment is pending the refinement commit.
+
 The user explicitly chose `html5up-editorial` in the PC gallery and said to fit the
 design to **each research item** with accumulating board posts. This supersedes
 the earlier main-plus-one-report scope and the mobile test's empty selection.

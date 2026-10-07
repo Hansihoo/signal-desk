@@ -104,8 +104,8 @@ def _table(table, source_numbers):
                      if index == len(row["values"]) - 1 else "")
                      for index, value in enumerate(row["values"][1:], 1))
         rows.append("<tr>%s</tr>" % "".join(cells))
-    return '<div class="report-table"><table><caption>%s</caption><thead><tr>%s</tr></thead><tbody>%s</tbody></table><p class="chart-note">%s</p></div>' % (
-        _escape(table["title"]), headers, "".join(rows), _escape(table["note"]))
+    return '<div class="report-table" role="region" aria-label="%s" tabindex="0"><table><caption>%s</caption><thead><tr>%s</tr></thead><tbody>%s</tbody></table><p class="chart-note">%s</p></div>' % (
+        _escape(table["title"]), _escape(table["title"]), headers, "".join(rows), _escape(table["note"]))
 
 
 def _learning(lessons, source_numbers):
