@@ -17,7 +17,13 @@ checks35 page/width combinations, actual brand hit tests, Enter/Space, close,
 Escape/outside click, search/empty/reset and single-line metadata. Local390/768/
 1440px images are retained under ignored reports/header-fixed-*.png. Read
 [the responsive contract](BRIEFING_TEMPLATE.md); generated HTML/PNG stay ignored.
-Public deployment verification follows after the source push.
+Public sourcec1fc546 deployed successfully in
+[Actions37738799969](https://github.com/Hansihoo/signal-desk/actions/runs/37738799969).
+Cloud99 tests and housing review passed. The same35 browser checks also passed
+against the live site, including metadata/search states and actual logo clicks.
+Live390/768/1440px screenshots remain in ignored reports/header-live/. All owned
+browser/test scratch was cleaned. Local housing review still fails only its
+0-active-notice check; the other11 checks pass.
 
 ## Latest work: full model documents and daily new-model publishing, 2026-10-08
 
