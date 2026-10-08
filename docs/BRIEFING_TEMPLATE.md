@@ -1,5 +1,23 @@
 # Homepage and report contract
 
+## Header and model-library responsive repair, 2026-10-08
+
+Keep the menu button in the header's normal flex layout beside the brand. The
+former absolute sidebar toggle overlapped the brand at768px and covered its link
+hit area at wider sizes. Both header menu and sidebar close controls have44px
+targets. The sidebar owns a separate close button; closing restores header-button
+focus. Outside clicks exclude the header button. At480px and below, auxiliary
+header links use their own line. All Editorial report/library/history pages share
+this shell; do not restore the old floating toggle offsets.
+
+Model-library metadata stays on readable, unbroken lines. Below600px, each table
+row groups the document title/description, category, and two labelled dates; wider
+screens retain the comparison table. Search and category filtering still hide the
+whole row. `scripts/check_editorial_header.cjs` checks five representative page
+types at320/390/736/768/980/1280/1440px, logo hit testing, menu keyboard/pointer
+actions and readable library metadata. Supply Playwright/browser paths; use the
+owned scratch runner for the browser profile and optionally retain screenshots.
+
 ## First applied reader-purpose example, 2026-10-08
 
 The main features MCP Apps through a concrete notice-comparison use case, not

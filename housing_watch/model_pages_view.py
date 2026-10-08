@@ -15,7 +15,7 @@ def library_content(pages, prefix=""):
     for row in sorted(pages["pages"], key=lambda row: (row["document"]["updated_on"], row["slug"]), reverse=True):
         doc = row["document"]
         searchable = " ".join([doc["title"], doc["description"], doc["category"], *doc["tags"]])
-        rows.append('<tr data-category="%s" data-search="%s"><td><a href="%smodel-guides/%s.html">%s</a><p>%s</p></td><td>%s</td><td>%s</td><td>%s</td></tr>' % tuple(escape(str(value), quote=True) for value in (
+        rows.append('<tr data-category="%s" data-search="%s"><td><a href="%smodel-guides/%s.html">%s</a><p>%s</p></td><td data-label="분야">%s</td><td data-label="자료 수정일">%s</td><td data-label="원자료 기준일">%s</td></tr>' % tuple(escape(str(value), quote=True) for value in (
             doc["category"], searchable.casefold(), prefix, row["slug"], doc["title"], doc["description"],
             doc["category"], doc["updated_on"] or "미표기", doc["reference_date"] or "미표기")))
     categories = sorted({row["document"]["category"] for row in pages["pages"]})

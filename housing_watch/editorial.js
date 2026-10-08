@@ -1,7 +1,8 @@
 /* Editorial adaptation: native menu and a progressively enhanced report board. */
 (() => {
   const sidebar = document.getElementById('sidebar');
-  const toggle = sidebar.querySelector('.toggle');
+  const toggle = document.querySelector('#header .menu-toggle');
+  const close = sidebar.querySelector('.sidebar-close');
   const narrow = matchMedia('(max-width: 1280px)');
   function menu(open) {
     sidebar.classList.toggle('inactive', !open);
@@ -12,11 +13,12 @@
   menu(!narrow.matches);
   narrow.addEventListener('change', () => menu(!narrow.matches));
   toggle.addEventListener('click', () => menu(sidebar.classList.contains('inactive')));
+  close.addEventListener('click', () => { menu(false); toggle.focus(); });
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && !sidebar.classList.contains('inactive')) { menu(false); toggle.focus(); }
   });
   document.addEventListener('click', e => {
-    if (narrow.matches && !sidebar.contains(e.target)) menu(false);
+    if (narrow.matches && !sidebar.contains(e.target) && !toggle.contains(e.target)) menu(false);
   });
   document.querySelectorAll('.citation').forEach(link => link.addEventListener('click', () => {
     const target = document.getElementById(link.hash.slice(1));

@@ -2,6 +2,23 @@
 
 This document is the first stop for a future Codex agent.
 
+## Latest work: header overlap and model-library mobile layout, 2026-10-08
+
+Theo reported the menu/Signal Desk brand overlap. The live768px baseline confirms
+icon overlap and wider button hit-area interception. The common Editorial shell
+now places a44px menu control in the header, with a separate sidebar close control
+and focus restoration; outside clicks do not immediately close a newly opened
+menu. Small-screen auxiliary links wrap onto their own line. The model library's
+narrow date/category columns also wrapped characters vertically; mobile rows now
+group all metadata and wider screens keep readable table columns.
+
+99 tests passed, followed by6 affected model-page tests. The browser regression
+checks35 page/width combinations, actual brand hit tests, Enter/Space, close,
+Escape/outside click, search/empty/reset and single-line metadata. Local390/768/
+1440px images are retained under ignored reports/header-fixed-*.png. Read
+[the responsive contract](BRIEFING_TEMPLATE.md); generated HTML/PNG stay ignored.
+Public deployment verification follows after the source push.
+
 ## Latest work: full model documents and daily new-model publishing, 2026-10-08
 
 Theo requested public-site application, copying other model pages, and replacing weekly comparison review with daily05:00 new-model checks and detailed page additions. Read [AI model operations](AI_MODEL_RESEARCH.md). `model-pages --collect` fetched all14 in-scope documents without failures, preserving original HTML/body/controls and same-site dependencies in SQLite. Immutable editions include shared asset changes; failed or absent documents retain prior content. `preview/ai-model-guides.html` searches model documents; `preview/model-guides/<slug>.html` shows isolated original interactive content and edition links. The original comprehensive table and its additional filters are available as a source document; native789 observations remain separate.
