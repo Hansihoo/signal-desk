@@ -166,6 +166,7 @@ def _learning(lessons, source_numbers):
 
 
 def _report_replacements(report):
+    has_data = bool(report["metrics"] or report["datasets"] or report.get("tables"))
     source_numbers = {source["id"]: index for index, source in enumerate(report["references"], 1)}
     metrics = "".join('<p><strong>%s</strong><span>%s%s</span><small>%s</small></p>' % (
         _escape(_format_value(metric["value"], metric["unit"])), _escape(metric["label"]),
@@ -189,6 +190,8 @@ def _report_replacements(report):
             "__DECK__": _escape(report["deck"]), "__SCOPE__": _escape(report["scope"]),
             "__HIGHLIGHTS__": "".join(highlights), "__SOURCE_NOTE__": _escape(report["source_note"]),
             "__SUMMARY__": _points(report["summary"], source_numbers),
+            "__DATA_LINK__": '<a href="#data">데이터</a>' if has_data else "",
+            "__DATA_HIDDEN__": "" if has_data else "hidden",
             "__EXPLANATION_LINK__": '<a href="#explanation">본문</a>' if report.get("explanation") else "",
             "__EXPLANATION__": _explanation(report.get("explanation", []), source_numbers),
             "__LEARNING_LINK__": '<a href="#learning">해설</a>' if report.get("learning") else "",

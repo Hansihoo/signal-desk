@@ -89,6 +89,20 @@ class ResearchPublicationTests(unittest.TestCase):
             self.assertIn("&lt;script&gt;", report)
             self.assertNotIn("<script>", report)
 
+    def test_empty_data_section_does_not_create_a_navigation_destination(self):
+        report = copy.deepcopy(self.batches[0][1][0])
+        with tempfile.TemporaryDirectory() as temp:
+            root = build_briefing_preview(temp, {"items": [], "topics": []}, report)
+            with_data = (root / (report["id"] + ".html")).read_text(encoding="utf-8")
+            self.assertIn('href="#data"', with_data)
+            report.update(metrics=[], datasets=[], tables=[])
+            build_briefing_preview(temp, {"items": [], "topics": []}, report)
+            without_data = (root / (report["id"] + ".html")).read_text(encoding="utf-8")
+            self.assertNotIn('href="#data"', without_data)
+            # Preserve old incoming anchors while omitting the empty heading
+            # from the reading and accessibility paths.
+            self.assertRegex(without_data, r'<section id="data"[^>]* hidden>')
+
 
 if __name__ == "__main__":
     unittest.main()

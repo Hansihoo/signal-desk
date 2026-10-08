@@ -26,6 +26,15 @@ or account-specific Apps connectivity test was performed. Older prose's technica
 publication is not user acceptance of comprehension; other reports need this renewed
 editorial review as they are revised. Broad new collectors/schedules remain unimplemented.
 
+Follow-up output cleanup hides the empty data section/navigation while retaining its
+incoming anchor. Final107 tests,126 HTML/5084 refs and three-width interaction checks
+pass. Pages run37804406384 failed on missing artifact metadata; its job retry failed
+on duplicate same-name outputs. Matching run_attempt names were evaluated but the
+workflow edit was withdrawn after GitHub denied the push for missing workflow scope.
+Use a fresh existing-workflow run; do not change accounts or widen credentials implicitly.
+See [publishing recovery](PUBLISHING.md). New deployment/public-content verification
+will be recorded after completion. No raw sources or generated files are committed.
+
 ## Latest work: broad AI research agent documentation, 2026-10-09
 
 Before continuing AI/development/market/workforce research, read

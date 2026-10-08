@@ -25,6 +25,22 @@ python -m housing_watch publish
 
 The second command renders existing local data without fetching sources.
 
+Deployment recovery on 2026-10-09: run37804406384 initially could not find its
+uploaded artifact; rerunning the job left two same-name artifacts, which the
+deployment action rejected. Use a fresh workflow run instead of rerunning that
+job; this creates a distinct run's output without deleting the earlier artifacts.
+The initial artifact-visibility failure's underlying service cause is unconfirmed.
+
+Matching attempt-specific upload/deployment names were evaluated and YAML-checked,
+but GitHub refused that workflow edit because the current Hansihoo OAuth credential
+lacks the workflow scope. The unpublished edit was withdrawn; the existing workflow,
+permissions, durable release state and site paths remain unchanged. A future workflow
+change requires an authorized workflow-capable credential rather than switching accounts.
+[Upload's name input](https://github.com/actions/upload-pages-artifact/blob/v5.0.0/action.yml)
+and [deployment's artifact_name input](https://github.com/actions/deploy-pages/blob/v5.0.1/action.yml)
+support the matching names; [metadata selection](https://github.com/actions/deploy-pages/blob/v5.0.1/src/internal/api-client.js)
+requires exactly one matching artifact.
+
 ## Public experience
 
 - `site/index.html`: recent updates, keyword search, topic filtering, and full collected library.

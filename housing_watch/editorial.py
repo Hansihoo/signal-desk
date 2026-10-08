@@ -250,7 +250,7 @@ def render_editorial(output, snapshot, featured, research_data=None, standalone=
         content = _fill(template, values)
         if item["id"] == "llm-model-comparison" and not edition and model_links:
             content = model_link + content
-        contents = '<nav class="sidebar-contents" aria-label="이 보고서 차례"><header class="major"><h2>차례</h2></header><a href="#summary">요약</a>%s<a href="#data">데이터</a><a href="#result">결과</a>%s<a href="#references">참고내용</a></nav>' % (values["__EXPLANATION_LINK__"], values["__LEARNING_LINK__"])
+        contents = '<nav class="sidebar-contents" aria-label="이 보고서 차례"><header class="major"><h2>차례</h2></header><a href="#summary">요약</a>%s%s<a href="#result">결과</a>%s<a href="#references">참고내용</a></nav>' % (values["__EXPLANATION_LINK__"], values["__DATA_LINK__"], values["__LEARNING_LINK__"])
         return page(item["title"], item["description"], content, prefix, item["id"], contents, _edition_nav(item, history, prefix))
     for item in reports:
         rendered = report_page(item)

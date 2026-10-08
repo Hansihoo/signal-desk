@@ -14,6 +14,7 @@ data/raw/*
 # Generated reports and rendered output
 reports/*.md
 reports/**/*.png
+reports/research-teaching-2026-10-09/
 !reports/.gitkeep
 site/*.html
 site/*.png
