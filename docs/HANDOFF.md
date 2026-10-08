@@ -24,7 +24,15 @@ Enter/Space disclosures, full-text search of optional prose and parent filter
 (two hackathon posts) pass. Primary explanation is outside all disclosures.
 Retain the registered `reader-purpose-main.2026-10-08` root (production/offline
 outputs, receipts and screenshots) below the existing temp parent. Server25120
-on127.0.0.1:45427 remains used. Final deployment results are recorded after release.
+on127.0.0.1:45427 remains used.
+
+Source1c3119a deployed in run37720532179 (success,1m39s). Public967 source records,
+16 reports/27 revisions, all authored documents/revision numbers match local;
+CSS66e51886df96 matches. Public main/report click-through,5 visible primary
+chapters/3 disclosures, Enter and console checks pass. Public old MCP r2 matches.
+Captures are actual1280px. Requested public390px stayed1280px; narrow checks use
+matching output locally at actual320/390px. Override reset. Main/report retained
+as deliverables; previous chooser/review tabs retained for continuing work.
 
 ## Previous work: research comprehension audit, 2026-10-08
 
