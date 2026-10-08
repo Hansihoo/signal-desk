@@ -16,7 +16,11 @@ recorded separately. Python date filtering/state checks and arithmetic were run;
 paid APIs, A2A CLI, SDK integration and actual reader testing were not. Government
 candidate attachments and company eligibility remain unconfirmed; original model
 documents and private business data were not rewritten. New facts must be checked
-before reuse. Public deployment details will be recorded after verification.
+before reuse. Content f1c7ad7 / Pages 37785743562 and code display 4c5e2f8 / Pages 37786834025
+succeeded. All 20 public reports equal the local reviewed data, all 32 earlier hashes
+remain intact across 52 editions, and normalized shared CSS matches. Public main search,
+MCP detail/disclosure/exercise and console checks pass; screenshots are retained in
+the registered research-repair preview root. See the repair record for limits.
 
 ## Latest work: model navigation counts, 2026-10-08
 

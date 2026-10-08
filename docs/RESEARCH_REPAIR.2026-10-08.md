@@ -10,26 +10,26 @@
 
 | 보고서 | 독자가 끝낼 수 있어야 하는 일 | 보강할 사례 | 상태 |
 | --- | --- | --- | --- |
-| mcp-apps-workflows | AI 조회 결과를 화면에서 선택하고 후속 질문으로 연결 | A/B/C 목록 → B 상세 → 대화 문맥 | Done locally |
-| hackathon-tech-roadmap | 작은 AI 앱의 준비·제작·검증 순서 선택 | 날짜가 포함된 조회 함수와 결과 A | Done locally |
-| document-rag-grounding | 문서에서 찾은 답의 근거·버전·해석 검증 | 현재/이전 공고와 소득 조건 | Done locally |
-| agent-evaluation-checklist | 답변과 실제 실행의 성공을 따로 판정 | 저장 실패를 성공이라고 한 실행 | Done locally |
-| voice-agent-architectures | 음성 입력부터 조회·음성 출력까지 추적 | 서울 → 경기로 발화 변경 | Done locally |
-| a2a-cli-agent-connections | 원격 에이전트 연결의 필요와 첫 왕복 이해 | echo 연결과 실제 작업 결과 구분 | Done locally |
-| openai-api-migration | 종료 대상 탐색·교체·비교·복구 계획 작성 | 모델/endpoint 별 분류 요청 이전 | Done locally |
-| llm-model-comparison | 비교표 조건을 자기 작업의 평가로 연결 | 같은 질문의 정답/비용/재시도 비교 | Done locally |
-| github-pages-storage | 자기 발행 주기와 파일 크기로 보관량 계산 | 주 1/2회와 누적 스냅샷 복제 | Done locally |
-| github-marketplace-paid-apps | 제품·설치·구독 상태를 구분해 출시 준비 | PR 앱 설치와 유료 권한 변경 | Done locally |
-| aws-activate-credits | 신청 경로와 지원 후 현금 비용 산정 | 대상/비대상 비용·잔액·유효기간 | Done locally |
-| aws-partner-hackathon | 소속/권한/제출 자격과 데모 범위 판단 | 배송 변경 입력 → AI 문안 → SES 결과 | Done locally |
-| nlnet-restack-call | 프로젝트·지역·AI 정책의 적합성 판단 | 공개 서명 검증 도구의 마일스톤 | Done locally |
-| google-oss-reward-status | 기여와 지급 자격·접수 상태 구분 | OSV PR 병합과 새 보상 접수 | Done locally |
-| openai-safety-bounty | 일반 탈옥과 재현 가능한 권한 침범 구분 | 가짜 자료의 명령과 도구 로그 | Done locally |
-| upwork-ai-integration-demand | 수입 성장률을 읽고 납품 가능한 업무 정의 | 문의 → 분류 → 담당자 → 사람 검토 | Done locally |
-| tally-small-saas-case | MRR/이익/운영 전략을 구분해 실험 설계 | 무료 사용·유료 전환·이탈의 계산 | Done locally |
-| polaris-government-opportunities | 지원/R&D/공급/조달 역할에 맞춰 공고 선별 | 제조 과제 컨소시엄 조건 | Done locally |
-| polaris-sales-opportunities | 제품 기능을 구매 문제·검증·다음 행동으로 연결 | 문서 표 추출의 정답·실패·도입 판단 | Done locally |
-| office-business-directions | 발표/제공/도입/성과를 구분해 경쟁 변화 해석 | 같은 고객 업무를 네 기업 관점으로 비교 | Done locally |
+| mcp-apps-workflows | AI 조회 결과를 화면에서 선택하고 후속 질문으로 연결 | A/B/C 목록 → B 상세 → 대화 문맥 | Published |
+| hackathon-tech-roadmap | 작은 AI 앱의 준비·제작·검증 순서 선택 | 날짜가 포함된 조회 함수와 결과 A | Published |
+| document-rag-grounding | 문서에서 찾은 답의 근거·버전·해석 검증 | 현재/이전 공고와 소득 조건 | Published |
+| agent-evaluation-checklist | 답변과 실제 실행의 성공을 따로 판정 | 저장 실패를 성공이라고 한 실행 | Published |
+| voice-agent-architectures | 음성 입력부터 조회·음성 출력까지 추적 | 서울 → 경기로 발화 변경 | Published |
+| a2a-cli-agent-connections | 원격 에이전트 연결의 필요와 첫 왕복 이해 | echo 연결과 실제 작업 결과 구분 | Published |
+| openai-api-migration | 종료 대상 탐색·교체·비교·복구 계획 작성 | 모델/endpoint 별 분류 요청 이전 | Published |
+| llm-model-comparison | 비교표 조건을 자기 작업의 평가로 연결 | 같은 질문의 정답/비용/재시도 비교 | Published |
+| github-pages-storage | 자기 발행 주기와 파일 크기로 보관량 계산 | 주 1/2회와 누적 스냅샷 복제 | Published |
+| github-marketplace-paid-apps | 제품·설치·구독 상태를 구분해 출시 준비 | PR 앱 설치와 유료 권한 변경 | Published |
+| aws-activate-credits | 신청 경로와 지원 후 현금 비용 산정 | 대상/비대상 비용·잔액·유효기간 | Published |
+| aws-partner-hackathon | 소속/권한/제출 자격과 데모 범위 판단 | 배송 변경 입력 → AI 문안 → SES 결과 | Published |
+| nlnet-restack-call | 프로젝트·지역·AI 정책의 적합성 판단 | 공개 서명 검증 도구의 마일스톤 | Published |
+| google-oss-reward-status | 기여와 지급 자격·접수 상태 구분 | OSV PR 병합과 새 보상 접수 | Published |
+| openai-safety-bounty | 일반 탈옥과 재현 가능한 권한 침범 구분 | 가짜 자료의 명령과 도구 로그 | Published |
+| upwork-ai-integration-demand | 수입 성장률을 읽고 납품 가능한 업무 정의 | 문의 → 분류 → 담당자 → 사람 검토 | Published |
+| tally-small-saas-case | MRR/이익/운영 전략을 구분해 실험 설계 | 무료 사용·유료 전환·이탈의 계산 | Published |
+| polaris-government-opportunities | 지원/R&D/공급/조달 역할에 맞춰 공고 선별 | 제조 과제 컨소시엄 조건 | Published |
+| polaris-sales-opportunities | 제품 기능을 구매 문제·검증·다음 행동으로 연결 | 문서 표 추출의 정답·실패·도입 판단 | Published |
+| office-business-directions | 발표/제공/도입/성과를 구분해 경쟁 변화 해석 | 같은 고객 업무를 네 기업 관점으로 비교 | Published |
 
 ## 확인 중 발견한 의미 수정
 
@@ -126,4 +126,21 @@ SDK 연결·유료 모델·제품 구매·고객 시스템 연동은 실행한 �
   수정했다. 코드 줄은 보존하고 코드 영역만 가로 스크롤하며 이름 있는 키보드
   접근 영역으로 렌더한다. 내용 JSON과 이전 판의 데이터는 바뀌지 않는다.
 
-공개 반영 결과는 배포 후 이어서 기록한다.
+## 공개 반영
+
+- 본문 source `f1c7ad7`, [Pages 37785743562](https://github.com/Hansihoo/signal-desk/actions/runs/37785743562)
+  성공. 코드 여백 수정 source `4c5e2f8`, [Pages 37786834025](https://github.com/Hansihoo/signal-desk/actions/runs/37786834025)
+  성공. 두 클라우드 실행의 106개 시험과 housing review가 통과했다.
+- 공개 JSON의 현재 20편은 로컬 검토 입력과 모두 같고, 종전 32판의 hash도 같으며
+  총 52판이다. 원본 모델 14문서가 유지됐다. 20개 보고서 URL과 본문/학습 anchor,
+  메인 20건·이전 기록·MCP 3판·사업 경로를 확인했다.
+- 공개 공통 CSS는 Windows/Linux 줄 끝만 정규화하여 로컬과 일치한다. 최종 지문은
+  `a298db5c2de7`이다. 화면에 맞는 코드에도 생기던 여백 6px의 스크롤을 제거했다.
+- 실제 공개 브라우저에서 메인 검색→MCP 보고서→뒤로/검색 초기화,
+  MCP 기초·A/B/C 데이터·B의 상세 왕복·Enter 펼치기/변형 풀이·콘솔 오류 0건을 확인했다.
+  최종 코드가 들어맞는 넓이에서는 가로 스크롤이 없고 줄/들여쓰기가 유지된다.
+- 공개 메인/MCP 캡처와 320/390px 예제 캡처는 등록한 임시 검토 root에 보존한다.
+  생성 HTML·SQLite·원문 근거·PNG를 Git에 넣지 않았다. 정리는 요청하지 않았다.
+
+[메인](https://hansihoo.github.io/signal-desk/preview/index.html?v=4c5e2f8)에서 20편을
+탐색할 수 있다. 새 판의 이해도는 집필자의 자체검토이며 실제 독자 시험은 미실시다.
