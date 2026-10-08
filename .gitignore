@@ -13,7 +13,7 @@ data/raw/*
 
 # Generated reports and rendered output
 reports/*.md
-reports/*.png
+reports/**/*.png
 !reports/.gitkeep
 site/*.html
 site/*.png
