@@ -2,6 +2,9 @@
   "schema_version": 1,
   "featured_report_id": "mcp-apps-workflows",
   "report_ids": [
+    "claude-haiku-5-5-model-guide",
+    "mistral-large-4-model-guide",
+    "gemini-nano-banana-2-1-model-guide",
     "polaris-government-opportunities",
     "polaris-sales-opportunities",
     "office-business-directions",
@@ -102,6 +105,10 @@
       "id": "ai-practical-guides-2026-10-09",
       "input": "ai_practical_guides.2026-10-09.json",
       "quality": "ai_practical_guides.2026-10-09.quality.json"
+    },
+    {
+      "id": "ai-model-guides-2026-10-09",
+      "input": "ai_model_guides.2026-10-09.json"
     }
   ]
 }

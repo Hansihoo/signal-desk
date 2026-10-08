@@ -276,7 +276,7 @@ def render_editorial(output, snapshot, featured, research_data=None, standalone=
         model_content.replace('href="ai-model-guides.html"', 'href="../../../preview/ai-model-guides.html"'), "../../../preview/", active="ai-models"), encoding="utf-8")
     render_model_pages(destination, model_pages, page, reports)
     (models_root / "guides.html").write_text(page("모델별 자료", "모델별 가이드·비용·평가 자료",
-        library_content(model_pages, "../../../preview/"), "../../../preview/", active="ai-model-guides"), encoding="utf-8")
+        library_content(model_pages, "../../../preview/", reports), "../../../preview/", active="ai-model-guides"), encoding="utf-8")
     old_rows = "".join(_post(row["document"], "%s-r%d.html" % (row["id"], row["revision"]), row["revision"])
                        for row in sorted(history, key=lambda row: (row["saved_at"], row["id"], row["revision"]), reverse=True))
     archive = '<section class="history-heading"><header><h1>이전 기록</h1></header></section><section id="board"><div class="section-title"><header class="major"><h2>보고서 기록</h2></header><span class="record-total">%d건</span></div>%s<div class="posts research-posts">%s</div><p class="board-empty" hidden>검색 결과가 없습니다.</p><nav class="board-pagination" aria-label="목록 페이지" hidden><button type="button" data-page="previous">이전</button><span class="page-status" aria-live="polite"></span><button type="button" data-page="next">다음</button></nav>%s</section>' % (

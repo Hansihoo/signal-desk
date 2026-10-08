@@ -1,4 +1,9 @@
 {
   "schema_version": 1,
-  "batches": []
+  "batches": [
+    {
+      "id": "ai-model-facts-2026-10-09",
+      "path": "ai_model_facts.2026-10-09.json"
+    }
+  ]
 }

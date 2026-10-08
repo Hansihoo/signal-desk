@@ -141,3 +141,20 @@ class ModelPagesTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError,'immutable batch'):apply_model_publication(self.conn,path)
             self.assertEqual(self.conn.execute('SELECT COUNT(*) FROM model_observation_revisions').fetchone()[0],1)
 
+    def test_official_guides_join_source_library_with_correct_relative_links(self):
+        upsert_pages(self.conn,[page()])
+        source=export_model_pages(self.conn)
+        guide={'id':'new-model-guide','topic_path':['개발 동향','AI 모델·API','New'],
+               'title':'New & model','description':'Official <facts>', 'checked_on':'2026-10-09'}
+        unrelated=dict(guide,id='unrelated-model-guide',topic_path=['사업','영업'])
+        html=library_content(source,'../../../preview/',[guide,unrelated])
+        self.assertIn('href="../../../preview/new-model-guide.html"',html)
+        self.assertIn('New &amp; model',html);self.assertIn('Official &lt;facts&gt;',html)
+        self.assertIn('data-label="공식 원문 확인일">2026-10-09',html)
+        self.assertIn('model-guides/aster.html',html)
+        self.assertNotIn('unrelated-model-guide.html',html)
+        with tempfile.TemporaryDirectory() as root:
+            render_model_pages(root,source,lambda title,description,content,*args,**kwargs:content,[guide])
+            rendered=Path(root,'ai-model-guides.html').read_text(encoding='utf-8')
+            self.assertIn('href="new-model-guide.html"',rendered)
+
