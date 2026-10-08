@@ -128,7 +128,8 @@ def _authored_blocks(blocks, source_numbers, heading_tag="h3"):
         if block["type"] == "paragraph":
             body = "".join('<p>%s</p>' % _escape(paragraph) for paragraph in block["text"].split("\n\n"))
         elif block["type"] == "code":
-            body = '<pre><code>%s</code></pre>' % _escape(block["text"])
+            body = '<pre tabindex="0" role="region" aria-label="%s"><code>%s</code></pre>' % (
+                _escape(block["title"]), _escape(block["text"]))
         elif block["type"] == "steps":
             body = '<ol class="learning-steps">%s</ol>' % "".join(
                 '<li><strong>%s</strong><p>%s</p></li>' % (_escape(item["label"]), _escape(item["text"]))

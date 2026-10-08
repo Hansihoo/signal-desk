@@ -1,5 +1,23 @@
 # Handoff
 
+## Latest work: practical explanations for all authored reports, 2026-10-08
+
+Read [the repair record](RESEARCH_REPAIR.2026-10-08.md) and
+[the writing guide](RESEARCH_WRITING_GUIDE.md) before continuing authored content.
+`config/research_comprehension.2026-10-08.json` adds one immutable batch with20
+same-ID report revisions; prior32 editions remain intact, total52. The existing
+Editorial main and reports use the new prose; data and presentation remain separate.
+Essential concepts, a consistent worked example, first steps and failure analysis
+are visible; optional disclosures hold solved transfer exercises. Code lines and
+indentation remain intact in a labelled keyboard-scrollable region.
+
+Source/meaning review, reader-comprehension self-review and output checks are
+recorded separately. Python date filtering/state checks and arithmetic were run;
+paid APIs, A2A CLI, SDK integration and actual reader testing were not. Government
+candidate attachments and company eligibility remain unconfirmed; original model
+documents and private business data were not rewritten. New facts must be checked
+before reuse. Public deployment details will be recorded after verification.
+
 ## Latest work: model navigation counts, 2026-10-08
 
 The main and sidebar count document pages rather than model/settings rows. The

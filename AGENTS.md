@@ -56,6 +56,7 @@ model maintenance only as report links or new-news cards.
 
 When writing, expanding, or reviewing authored research reports:
 
+- Development-trend content serves practical AI use. Define the reader's concrete task and resulting artifact, then teach the necessary concepts through a complete worked example and application exercise. Distinguish using an existing tool from implementing a new one. Treat role descriptions as intermediate learning, not the final reader outcome. Follow the authoring and evidence-based review steps in `docs/RESEARCH_WRITING_GUIDE.md`. The earlier MCP Apps 3rd edition was rejected as a textbook standard; use `docs/RESEARCH_REPAIR.2026-10-08.md` for the latest20-report repair scope and verification limits, without claiming reader approval.
 - Read `docs/RESEARCH_WRITING_GUIDE.md` first. Use `docs/RESEARCH_CONTENT_REVIEW.2026-10-08.md` for known defects and repair priorities, and `docs/RESEARCH_WRITING_EXAMPLES.md` for representative explanations. Recheck dated technical facts before reuse.
 - Define the reader's question, assumed prior knowledge, and what they should be able to explain, decide, or do afterward. Keep this editorial brief in working documentation; do not add unsupported fields to the validated report schema.
 - Write a coherent explanation and a consistent worked example before deriving the headline, summary, table, or learning blocks. Preserve the source's actors, conditions, units, and limits; do not turn an observation into a causal conclusion.

@@ -20,7 +20,8 @@
     "aws-partner-hackathon",
     "github-marketplace-paid-apps",
     "upwork-ai-integration-demand",
-    "tally-small-saas-case"
+    "tally-small-saas-case",
+    "github-pages-storage"
   ],
   "batches": [
     {
@@ -50,6 +51,10 @@
     {
       "id": "business-updates-2026-10-08",
       "input": "business_updates.2026-10-08.json"
+    },
+    {
+      "id": "research-comprehension-2026-10-08",
+      "input": "research_comprehension.2026-10-08.json"
     }
   ]
 }

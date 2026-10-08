@@ -16,11 +16,14 @@ class DisclosureParser(HTMLParser):
     def __init__(self):
         super().__init__()
         self.chapters = []
+        self.code_regions = []
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
         if tag == "details" and attrs.get("class") == "learning-chapter":
             self.chapters.append(attrs)
+        if tag == "pre":
+            self.code_regions.append(attrs)
 
 
 class ResearchLearningTests(unittest.TestCase):
@@ -62,6 +65,7 @@ class ResearchLearningTests(unittest.TestCase):
         report["learning"][0]["blocks"][0]["text"] = '<img src=x onerror="alert(1)">'
         code_block = next(b for l in report["learning"] for b in l["blocks"] if b["type"] == "code")
         code_block["text"] = "<script>danger()</script>\nsecond line"
+        code_block["title"] = 'Code " onfocus="alert(1)'
         import_reports(conn, [report])
         data = build_research_data(conn, [], [])
         stored = next(r for r in data["reports"] if r["id"] == report["id"])
@@ -77,7 +81,12 @@ class ResearchLearningTests(unittest.TestCase):
         self.assertEqual(len({d["id"] for d in parser.chapters}), len(parser.chapters))
         self.assertIn("<dl ", html)
         self.assertIn("<ol ", html)
-        self.assertIn("<pre><code>&lt;script&gt;danger()", html)
+        self.assertIn("<code>&lt;script&gt;danger()", html)
+        code_region = next(region for region in parser.code_regions
+                           if region.get("aria-label") == code_block["title"])
+        self.assertEqual(code_region.get("tabindex"), "0")
+        self.assertEqual(code_region.get("role"), "region")
+        self.assertNotIn("onfocus", code_region)
         self.assertIn("\nsecond line", html)
         self.assertIn("&lt;img src=x", html)
         self.assertNotIn("<script>", html)

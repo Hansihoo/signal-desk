@@ -154,7 +154,10 @@ details[open] .when-closed {display:none}
 .learning-terms > div {display:grid;grid-template-columns:10em 1fr;gap:1.5em;border-bottom:1px solid #e7e9ea;padding:1em 0;line-height:1.9}
 .learning-terms dt {font-weight:600;color:#3d4449}
 .learning-terms dd {margin:0}
-pre {white-space:pre-wrap;overflow-wrap:anywhere}
+/* Code lines and indentation carry meaning; scroll inside the example. */
+.learning-block pre {max-width:100%;overflow-x:auto;white-space:pre;overflow-wrap:normal;word-break:normal;tab-size:4}
+.learning-block pre code {width:max-content;min-width:100%;box-sizing:border-box;overflow:visible;white-space:inherit;overflow-wrap:normal;word-break:normal}
+.learning-block pre:focus-visible {outline:2px solid #f56a6a;outline-offset:4px}
 .reference-list {list-style:none;padding:0;margin:0}
 .reference-list li {display:grid;grid-template-columns:2.5em 1fr;gap:.75em;line-height:1.9;margin-bottom:1.6em;scroll-margin-top:2em}
 .reference-list li > span {color:#f56a6a;font-size:.8em}
