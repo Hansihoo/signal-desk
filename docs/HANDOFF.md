@@ -9,6 +9,12 @@ topic totals include these additional pages. Row counts inside the comparison
 explorer retain their original meaning. Regenerate with `publish`; no DB migration
 or authored report revision is needed. See [the count contract](AI_MODEL_RESEARCH.md).
 
+Source7897844 deployed in [run37769497305](https://github.com/Hansihoo/signal-desk/actions/runs/37769497305)
+(1m42s). Local106 tests plus13 affected checks, publish/brief/desk/review,67 generated
+navigation pages and2585 internal references pass. Local390px menu and public
+main/report counters were inspected; browser console has no errors. Retained
+captures are in the registered local-sync preview root; generated data stays ignored.
+
 ## Business planning (2026-10-08)
 
 Read [BUSINESS_PLANNING.md](BUSINESS_PLANNING.md) for public/private boundaries,
