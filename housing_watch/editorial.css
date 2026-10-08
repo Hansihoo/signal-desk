@@ -156,7 +156,7 @@ details[open] .when-closed {display:none}
 .learning-terms dd {margin:0}
 /* Code lines and indentation carry meaning; scroll inside the example. */
 .learning-block pre {max-width:100%;overflow-x:auto;white-space:pre;overflow-wrap:normal;word-break:normal;tab-size:4}
-.learning-block pre code {width:max-content;min-width:100%;box-sizing:border-box;overflow:visible;white-space:inherit;overflow-wrap:normal;word-break:normal}
+.learning-block pre code {width:max-content;min-width:100%;box-sizing:border-box;margin:0;overflow:visible;white-space:inherit;overflow-wrap:normal;word-break:normal}
 .learning-block pre:focus-visible {outline:2px solid #f56a6a;outline-offset:4px}
 .reference-list {list-style:none;padding:0;margin:0}
 .reference-list li {display:grid;grid-template-columns:2.5em 1fr;gap:.75em;line-height:1.9;margin-bottom:1.6em;scroll-margin-top:2em}
