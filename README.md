@@ -9,6 +9,11 @@ First MVP domain: **housing subscription and public rental notices** for Seoul a
 Additional MVP domains now exist for weekly big news, AI developer news, and normalized career job briefings.
 
 Public site: [Signal Desk](https://hansihoo.github.io/signal-desk/).
+
+The [curated main](https://hansihoo.github.io/signal-desk/preview/index.html)
+now features the first reader-purpose revision, MCP Apps. Concrete comparison and
+selection examples lead to visible explanatory prose, optional deeper study, and
+official evidence. [Application and verification](docs/READER_PURPOSE_APPLICATION.2026-10-08.md).
 GitHub Actions refreshes public sources daily at approximately 08:17 Asia/Seoul;
 accumulated data and dated briefings are retained between runs. See [publishing operations](docs/PUBLISHING.md).
 

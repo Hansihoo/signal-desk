@@ -113,8 +113,41 @@ def _table(table, source_numbers):
                      if index == len(row["values"]) - 1 else "")
                      for index, value in enumerate(row["values"][1:], 1))
         rows.append("<tr>%s</tr>" % "".join(cells))
-    return '<div class="report-table" role="region" aria-label="%s" tabindex="0"><table><caption>%s</caption><thead><tr>%s</tr></thead><tbody>%s</tbody></table><p class="chart-note">%s</p></div>' % (
-        _escape(table["title"]), _escape(table["title"]), headers, "".join(rows), _escape(table["note"]))
+    return '<div class="report-table%s" role="region" aria-label="%s" tabindex="0"><table><caption>%s</caption><thead><tr>%s</tr></thead><tbody>%s</tbody></table><p class="chart-note">%s</p></div>' % (
+        " two-column" if len(table["columns"]) == 2 else "", _escape(table["title"]), _escape(table["title"]), headers, "".join(rows), _escape(table["note"]))
+
+
+def _authored_blocks(blocks, source_numbers, heading_tag="h3"):
+    rendered = []
+    for block in blocks:
+        label = {"fact": "", "example": "가상 예시", "judgment": "검토 의견"}[block["kind"]]
+        heading = '<%s>%s%s</%s>' % (heading_tag, _escape(block["title"]),
+            ' <span class="learning-kind">%s</span>' % label if label else "", heading_tag)
+        if block["type"] == "paragraph":
+            body = "".join('<p>%s</p>' % _escape(paragraph) for paragraph in block["text"].split("\n\n"))
+        elif block["type"] == "code":
+            body = '<pre><code>%s</code></pre>' % _escape(block["text"])
+        elif block["type"] == "steps":
+            body = '<ol class="learning-steps">%s</ol>' % "".join(
+                '<li><strong>%s</strong><p>%s</p></li>' % (_escape(item["label"]), _escape(item["text"]))
+                for item in block["items"])
+        else:
+            body = '<dl class="learning-terms">%s</dl>' % "".join(
+                '<div><dt>%s</dt><dd>%s</dd></div>' % (_escape(item["label"]), _escape(item["text"]))
+                for item in block["items"])
+        cites = _citations(block, source_numbers)
+        rendered.append('<div class="learning-block">%s%s%s</div>' % (
+            heading, body, '<p class="learning-sources">근거 %s</p>' % cites if cites else ""))
+    return "".join(rendered)
+
+
+def _explanation(chapters, source_numbers):
+    if not chapters:
+        return ""
+    prose = "".join('<section class="explanation-chapter" id="explanation-%s"><h3>%s</h3><p class="explanation-lead">%s</p>%s</section>' % (
+        _escape(chapter["id"]), _escape(chapter["title"]), _escape(chapter["lead"]),
+        _authored_blocks(chapter["blocks"], source_numbers, "h4")) for chapter in chapters)
+    return '<section id="explanation" class="report-section" aria-labelledby="explanation-title"><header class="major"><h2 id="explanation-title">본문</h2></header><div class="report-prose">%s</div></section>' % prose
 
 
 def _learning(lessons, source_numbers):
@@ -122,30 +155,10 @@ def _learning(lessons, source_numbers):
         return ""
     chapters = []
     for lesson in lessons:
-        blocks = []
-        for block in lesson["blocks"]:
-            label = {"fact": "", "example": "가상 예시", "judgment": "검토 의견"}[block["kind"]]
-            heading = '<h3>%s%s</h3>' % (_escape(block["title"]),
-                ' <span class="learning-kind">%s</span>' % label if label else "")
-            if block["type"] == "paragraph":
-                body = '<p>%s</p>' % _escape(block["text"])
-            elif block["type"] == "code":
-                body = '<pre><code>%s</code></pre>' % _escape(block["text"])
-            elif block["type"] == "steps":
-                body = '<ol class="learning-steps">%s</ol>' % "".join(
-                    '<li><strong>%s</strong><p>%s</p></li>' % (_escape(item["label"]), _escape(item["text"]))
-                    for item in block["items"])
-            else:
-                body = '<dl class="learning-terms">%s</dl>' % "".join(
-                    '<div><dt>%s</dt><dd>%s</dd></div>' % (_escape(item["label"]), _escape(item["text"]))
-                    for item in block["items"])
-            cites = _citations(block, source_numbers)
-            blocks.append('<div class="learning-block">%s%s%s</div>' % (
-                heading, body, '<p class="learning-sources">근거 %s</p>' % cites if cites else ""))
         chapters.append('''<details class="learning-chapter" id="learning-%s">
           <summary><span class="learning-heading">%s</span><span class="learning-toggle" aria-hidden="true"><span class="when-closed">펼치기</span><span class="when-open">접기</span></span><span class="learning-lead">%s</span></summary>
           <div class="learning-body">%s</div></details>''' % (
-            _escape(lesson["id"]), _escape(lesson["title"]), _escape(lesson["lead"]), "".join(blocks)))
+            _escape(lesson["id"]), _escape(lesson["title"]), _escape(lesson["lead"]), _authored_blocks(lesson["blocks"], source_numbers)))
     return '<section id="learning" class="report-section" aria-labelledby="learning-title"><h2 id="learning-title">해설</h2>%s</section>' % "".join(chapters)
 
 
@@ -173,6 +186,8 @@ def _report_replacements(report):
             "__DECK__": _escape(report["deck"]), "__SCOPE__": _escape(report["scope"]),
             "__HIGHLIGHTS__": "".join(highlights), "__SOURCE_NOTE__": _escape(report["source_note"]),
             "__SUMMARY__": _points(report["summary"], source_numbers),
+            "__EXPLANATION_LINK__": '<a href="#explanation">본문</a>' if report.get("explanation") else "",
+            "__EXPLANATION__": _explanation(report.get("explanation", []), source_numbers),
             "__LEARNING_LINK__": '<a href="#learning">해설</a>' if report.get("learning") else "",
             "__LEARNING__": _learning(report.get("learning", []), source_numbers),
             "__METRICS__": '<div class="limits-row">%s</div>' % metrics if metrics else "",

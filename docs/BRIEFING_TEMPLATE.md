@@ -1,5 +1,14 @@
 # Homepage and report contract
 
+## First applied reader-purpose example, 2026-10-08
+
+The main features MCP Apps through a concrete notice-comparison use case, not
+an unexplained capability label. Latest-topic panels and board rows show the
+report's `deck`. MCP Apps' essential `explanation` is visible between summary
+and data; three optional `learning` disclosures retain deeper study.
+The Editorial design remains selected. Other report prose is unchanged.
+See [the editorial brief and separate reviews](READER_PURPOSE_APPLICATION.2026-10-08.md).
+
 ## Reader purpose before layout, 2026-10-08
 
 The [writing guide](RESEARCH_WRITING_GUIDE.md) now governs research copy. The
@@ -7,9 +16,10 @@ selected Editorial shell remains the visual basis. Brief main-page copy and
 outline summaries must not become a length constraint on explanatory body text.
 Write the reader's purpose and full explanation before mapping it to data blocks.
 Essential definitions, reasoning and decision conditions belong in the primary
-reading path; disclosures hold optional depth. The current renderer still puts
-learning after results, so this rule is an authoring requirement and a recorded
-rendering gap, not a claim that all published pages already satisfy it.
+reading path; disclosures hold optional depth. The renderer supports visible
+`explanation` before data/result; MCP Apps is the first applied case. Existing
+`learning` remains after results. Other reports still need content review and
+must not be assumed to meet the new comprehension standard automatically.
 
 See the [all-report audit](RESEARCH_CONTENT_REVIEW.2026-10-08.md) and
 [representative revised prose](RESEARCH_WRITING_EXAMPLES.md). Later wording

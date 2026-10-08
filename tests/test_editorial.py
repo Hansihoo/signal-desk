@@ -20,6 +20,57 @@ class EditorialTests(unittest.TestCase):
         self.addCleanup(patcher.stop)
         self.addCleanup(self.conn.close)
 
+    def test_essential_explanation_is_visible_before_data_and_optional_depth_stays_collapsed(self):
+        from html.parser import HTMLParser
+        report = copy.deepcopy(self.report)
+        report['deck'] = '후보의 조건을 비교한 뒤 하나를 선택하는 이유를 설명한다.'
+        report['explanation'] = [{
+            'id': 'roles', 'title': '역할 이해', 'lead': '조회와 표시를 구분한다.',
+            'blocks': [{'type': 'paragraph', 'kind': 'fact', 'title': '읽는 주체',
+                        'text': '<서버>가 HTML을 제공한다.\n\n호스트가 읽고 결과를 표시한다.',
+                        'source_ids': [report['references'][0]['id']]}]}]
+        report['learning'] = [{
+            'id': 'roles', 'title': '추가 연습', 'lead': '다른 업무에 적용한다.',
+            'blocks': [{'type': 'paragraph', 'kind': 'example', 'title': '가상 연습',
+                        'text': '매출 표의 날짜를 바꿔 보자.', 'source_ids': []}]}]
+        import_reports(self.conn, [report])
+        data = build_research_data(self.conn, [], [])
+        with tempfile.TemporaryDirectory() as temp:
+            output = build_briefing_preview(temp, {'topics': [], 'items': []}, report, data)
+            html = (output / (report['id'] + '.html')).read_text(encoding='utf-8')
+            self.assertLess(html.index('id="explanation"'), html.index('id="data"'))
+            self.assertIn('<p>&lt;서버&gt;가 HTML을 제공한다.</p><p>호스트가 읽고 결과를 표시한다.</p>', html)
+            self.assertIn('href="#explanation">본문</a>', html)
+            self.assertIn('href="#ref-1"', html)
+            class ReadingPath(HTMLParser):
+                depth = 0
+                essential_depth = None
+                optional_open = None
+                def handle_starttag(self, tag, attrs):
+                    attrs = dict(attrs)
+                    if tag == 'details':
+                        self.depth += 1
+                    if attrs.get('id') == 'explanation-roles':
+                        self.essential_depth = self.depth
+                    if attrs.get('id') == 'learning-roles':
+                        self.optional_open = 'open' in attrs
+                def handle_endtag(self, tag):
+                    if tag == 'details':
+                        self.depth -= 1
+            reading = ReadingPath(); reading.feed(html)
+            self.assertEqual(reading.essential_depth, 0)
+            self.assertFalse(reading.optional_open)
+            main = (output / 'index.html').read_text(encoding='utf-8')
+            self.assertIn('<h3><a href="%s.html">' % report['id'], main)
+            self.assertIn('<p>%s</p>' % report['deck'], main)
+            legacy = copy.deepcopy(report); del legacy['explanation']
+            import_reports(self.conn, [legacy])
+            data = build_research_data(self.conn, [], [])
+            build_briefing_preview(temp, {'topics': [], 'items': []}, legacy, data)
+            html = (output / (legacy['id'] + '.html')).read_text(encoding='utf-8')
+            self.assertNotIn('href="#explanation"', html)
+            self.assertNotIn('id="explanation"', html)
+
     def test_deep_topics_remain_under_parent_and_link_to_their_report(self):
         from housing_watch.editorial import _tree, _board_tools
         from html.parser import HTMLParser

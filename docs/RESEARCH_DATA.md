@@ -4,16 +4,33 @@
 
 Read the [writing guide](RESEARCH_WRITING_GUIDE.md) before authoring or revising
 reports. Reader question, prior knowledge and intended outcome are editorial
-working metadata in documentation; schema v1 is unchanged. The complete explanation
+working metadata in documentation. The complete explanation
 comes before the summary/table representation. Required fields and citation IDs
 validate structure, not meaning, source entailment or reader comprehension.
 
 The [content audit](RESEARCH_CONTENT_REVIEW.2026-10-08.md) inspected the sixteen
 current SQLite documents and forty-six chapters. It includes specific role and
 example inconsistencies plus a per-report repair plan. Representative improvements
-are in [the prose examples](RESEARCH_WRITING_EXAMPLES.md); they have not been
-imported or published. A future reviewed correction needs a new immutable batch,
+are in [the prose examples](RESEARCH_WRITING_EXAMPLES.md). The MCP Apps example is
+now applied in a new batch; the function-calling draft remains unpublished.
+A reviewed correction needs a new immutable batch,
 not an edit to an already-applied batch or silent replacement of history.
+
+## Reader-purpose main and report, 2026-10-08
+
+`config/development_reader_purpose.2026-10-08.json` revises only MCP Apps (3rd
+edition); the other fifteen current documents and earlier editions are unchanged.
+It is the featured report. The main board and latest-topic panels display `deck`
+sentences, retaining full-text search and accumulating report IDs.
+
+Optional v1 `explanation` uses the same `{id,title,lead,blocks}` content contract
+as `learning`. Blocks are paragraph/steps/terms/code with validated source IDs.
+These primary chapters render visibly before data/result. `learning` remains
+optional disclosure depth. Chapter IDs are unique within each collection and
+anchors have separate prefixes. Empty/absent explanation emits no section or
+navigation link. Plain text is escaped; blank lines form separate paragraphs.
+No presentation fields or reader-brief metadata are stored in report data.
+See [the application record](READER_PURPOSE_APPLICATION.2026-10-08.md).
 
 ## Reviewed expansion, 2026-10-07
 

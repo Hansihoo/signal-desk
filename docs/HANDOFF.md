@@ -2,7 +2,31 @@
 
 This document is the first stop for a future Codex agent.
 
-## Latest work: research comprehension audit, 2026-10-08
+## Latest work: first reader-purpose main and MCP Apps, 2026-10-08
+
+Theo requested actual application on the main so the result can be assessed.
+The Editorial main now features MCP Apps through a notice-comparison scenario.
+Topic panels and board rows show `deck` sentences. Only MCP's authored document
+changed: stable ID, new immutable batch, revision3. Other fifteen documents and
+old MCP editions compare equal to the pre-change snapshot.
+
+Optional v1 `explanation` reuses validated chapter/blocks, renders visibly before
+data/result and has separate anchors. Five primary MCP chapters explain roles,
+the same A/B/C example, data versus HTML, and click versus conversation updates.
+Three optional chapters cover the official time example, preparation and transfer.
+See `docs/READER_PURPOSE_APPLICATION.2026-10-08.md` for the editorial brief,
+source/meaning review and comprehension self-review. No actual reader study or
+SDK execution is claimed. Other reports remain in the dated repair backlog.
+
+Local checks:74 tests, compileall, JS syntax, publish/brief/desk/review and images,
+40 generated HTML pages /1693 internal links; actual320/390px main/report fit.
+Enter/Space disclosures, full-text search of optional prose and parent filter
+(two hackathon posts) pass. Primary explanation is outside all disclosures.
+Retain the registered `reader-purpose-main.2026-10-08` root (production/offline
+outputs, receipts and screenshots) below the existing temp parent. Server25120
+on127.0.0.1:45427 remains used. Final deployment results are recorded after release.
+
+## Previous work: research comprehension audit, 2026-10-08
 
 Theo said summaries and structure were replacing actual understanding. All sixteen
 current SQLite reports / forty-six learning chapters, their summaries/tables/results

@@ -80,6 +80,34 @@ class ResearchDataTests(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     validate_report(report)
 
+    def test_primary_explanation_is_validated_persisted_and_revised_independently(self):
+        old = copy.deepcopy(self.report)
+        import_reports(self.conn, [old])
+        revised = copy.deepcopy(old)
+        revised['explanation'] = [{
+            'id': 'roles', 'title': '역할', 'lead': '데이터를 제공하는 곳과 읽는 곳을 구분한다.',
+            'blocks': [{'type': 'paragraph', 'kind': 'fact', 'title': '호스트가 읽는다',
+                        'text': '서버가 HTML을 제공하고 호스트가 읽는다.',
+                        'source_ids': [old['references'][0]['id']]}]}]
+        self.assertEqual(import_reports(self.conn, [revised])['updated'], 1)
+        self.assertEqual(import_reports(self.conn, [revised])['unchanged'], 1)
+        document = build_research_data(self.conn, [], [])
+        self.assertEqual(document['reports'][0], revised)
+        self.assertEqual(document['report_history'][0]['document'], old)
+        for mutation in ('bad-source', 'duplicate-id', 'bad-type', 'non-list'):
+            bad = copy.deepcopy(revised)
+            if mutation == 'bad-source':
+                bad['explanation'][0]['blocks'][0]['source_ids'] = ['missing']
+            elif mutation == 'duplicate-id':
+                bad['explanation'].append(copy.deepcopy(bad['explanation'][0]))
+            elif mutation == 'bad-type':
+                bad['explanation'][0]['blocks'][0]['type'] = 'html'
+            else:
+                bad['explanation'] = {}
+            with self.subTest(mutation=mutation), self.assertRaises(ValueError):
+                import_reports(self.conn, [bad])
+        self.assertEqual(self.conn.execute('SELECT revision FROM research_reports').fetchone()[0], 2)
+
     def test_database_failure_rolls_back_all_reports_and_revisions(self):
         import_reports(self.conn, [self.report])
         self.conn.execute("CREATE TRIGGER reject_second BEFORE INSERT ON research_reports WHEN NEW.id='second' BEGIN SELECT RAISE(ABORT, 'test failure'); END")

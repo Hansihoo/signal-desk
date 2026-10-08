@@ -114,7 +114,7 @@ def _post(report, url, edition=None):
       <h3><a href="%s">%s</a></h3><p>%s</p><a class="post-link" href="%s">보고서 읽기 <span aria-hidden="true">↗</span></a></article>''' % (
         _escape(report["topic_path"][0]), _escape(" / ".join(report["topic_path"])), search, _escape(label), report["checked_on"],
         report["checked_on"].replace("-", "."), _escape(url), _headline(report["title"]),
-        _escape(" ".join(report["highlights"][:2])), _escape(url))
+        _escape(report["deck"]), _escape(url))
 
 
 def _topic_features(reports):
@@ -124,9 +124,9 @@ def _topic_features(reports):
         url = "index.html?" + urlencode({"topic": name}) + "#board"
         parts.append('''<article><span class="topic-mark" aria-hidden="true">%02d</span><div class="content">
           <h3><a href="%s">%s</a><small>%d건</small></h3><a class="latest-title" href="%s.html">%s</a>
-          <time class="latest-date" datetime="%s">%s</time></div></article>''' % (
+          <p class="latest-deck">%s</p><time class="latest-date" datetime="%s">%s</time></div></article>''' % (
             index, _escape(url), _escape(name), len(members), _escape(latest["id"]), _headline(latest["title"]),
-            latest["checked_on"], latest["checked_on"].replace("-", ".")))
+            _escape(latest["deck"]), latest["checked_on"], latest["checked_on"].replace("-", ".")))
     return "".join(parts)
 
 
@@ -204,7 +204,7 @@ def render_editorial(output, snapshot, featured, research_data=None, standalone=
         values.update(__HERO_VISUAL__=_hero(item), __EDITION_NOTICE__=(
             '<p class="edition-notice">이전 기록 · %d차 · <a href="../%s.html">현재 보고서</a></p>' % (edition, _escape(item["id"])) if edition else ""))
         content = _fill(template, values)
-        contents = '<nav class="sidebar-contents" aria-label="이 보고서 차례"><header class="major"><h2>차례</h2></header><a href="#summary">요약</a><a href="#data">데이터</a><a href="#result">결과</a>%s<a href="#references">참고내용</a></nav>' % values["__LEARNING_LINK__"]
+        contents = '<nav class="sidebar-contents" aria-label="이 보고서 차례"><header class="major"><h2>차례</h2></header><a href="#summary">요약</a>%s<a href="#data">데이터</a><a href="#result">결과</a>%s<a href="#references">참고내용</a></nav>' % (values["__EXPLANATION_LINK__"], values["__LEARNING_LINK__"])
         return page(item["title"], item["description"], content, prefix, item["id"], contents, _edition_nav(item, history, prefix))
     for item in reports:
         rendered = report_page(item)

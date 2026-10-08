@@ -8,7 +8,7 @@ from html.parser import HTMLParser
 from housing_watch.briefing_preview import build_briefing_preview
 from housing_watch.db import connect, init_db
 from housing_watch.research_data import (
-    build_research_data, import_reports, load_publication, load_report_input, validate_report,
+    build_research_data, import_reports, load_report_input, validate_report,
 )
 
 
@@ -25,9 +25,10 @@ class DisclosureParser(HTMLParser):
 
 class ResearchLearningTests(unittest.TestCase):
     def setUp(self):
-        _, batches = load_publication()
-        self.report = next(copy.deepcopy(r) for _, reports in reversed(batches)
-                           for r in reports if r["id"] == "mcp-apps-workflows")
+        # Exercise every block type with a fixed immutable fixture. A newer
+        # editorial revision may legitimately use a different selection of blocks.
+        self.report = next(copy.deepcopy(r) for r in load_report_input(
+            'config/development_learning.2026-10-04.json') if r['id'] == 'mcp-apps-workflows')
 
     def test_rejects_invalid_learning_before_mutating_storage(self):
         conn = connect(":memory:")

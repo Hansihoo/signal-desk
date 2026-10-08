@@ -34,6 +34,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
 .hero-points li {padding-left:.35em;margin:.6em 0}
 .evidence-panel h3,.evidence-panel caption {font-size:1.1em;color:#3d4449;font-family:"Roboto Slab","Noto Serif KR",serif;line-height:1.7;font-weight:700;text-align:left;margin:0 0 1.5em}
 .evidence-panel .report-table table {font-size:14px;margin-bottom:1.3em}
+.evidence-panel .two-column table {min-width:0}
 .evidence-panel .report-table th,.evidence-panel .report-table td {padding:1.1em .65em}
 .evidence-panel .storage-figure {margin:0}
 .evidence-panel .storage-row {grid-template-columns:1fr;gap:.5em;margin:1.3em 0}
@@ -56,6 +57,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
 .topic-features .content h3 small {font-family:"Open Sans",sans-serif;font-size:.65em;font-weight:400;color:#7f888f;margin-left:.8em}
 .topic-features .latest-title {display:block;color:#3d4449;font-size:.94em;line-height:1.8;border:0}
 .topic-features .latest-date {display:block;margin-top:.5em;font-size:.75em;color:#7f888f}
+.topic-features .latest-deck {font-size:.9em;line-height:1.85;margin:.6em 0}
 .section-title {display:flex;justify-content:space-between;align-items:baseline;gap:1em}
 .record-total {font-size:.85em;color:#7f888f;white-space:nowrap}
 .board-tools {display:grid;grid-template-columns:minmax(12em,1fr) minmax(10em,16em) auto;gap:1em;margin-bottom:3em}
@@ -117,6 +119,11 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
 .report-table tbody tr {border-bottom:1px solid #d2d7d9}
 .report-table tbody tr:nth-child(2n+1) {background:rgba(230,235,237,.3)}
 .conclusion {font-size:1.5em;line-height:1.8;max-width:45em}
+.report-prose {max-width:48em;color:#454e55}
+.explanation-chapter {margin:0 0 3em;scroll-margin-top:2em}
+.explanation-chapter > h3 {font-size:1.25em;line-height:1.65;margin:0 0 1em}
+.explanation-lead {font-size:1em;line-height:1.95;margin:0 0 1.5em}
+.report-prose .learning-block h4 {font-size:1em;line-height:1.7;margin:1.5em 0 .75em}
 .learning-chapter {border-top:1px solid #d2d7d9}
 .learning-chapter:last-child {border-bottom:1px solid #d2d7d9}
 .learning-chapter > summary {display:grid;grid-template-columns:1fr auto;gap:.5em 1.5em;cursor:pointer;padding:1.8em 0;list-style:none}

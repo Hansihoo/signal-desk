@@ -55,7 +55,7 @@ def _number(value):
 
 def validate_report(report):
     """Validate content before any database mutation; no layout or arbitrary extra fields."""
-    _object(report, REPORT_FIELDS | {"tables", "learning"}, REPORT_FIELDS)
+    _object(report, REPORT_FIELDS | {"tables", "learning", "explanation"}, REPORT_FIELDS)
     for key in ("id", "topic_id"):
         _id(report[key])
     for key in ("title", "description", "checked_on", "scope", "deck", "source_note"):
@@ -165,12 +165,17 @@ def validate_report(report):
             if not row["source_ids"]:
                 raise ValueError("A factual table row needs a source")
     lesson_ids = set()
-    for lesson in _list(report.get("learning", [])):
+    # Essential explanation shares the authored block contract with optional
+    # learning, but is rendered in the primary reading path. Prefixes keep
+    # chapter anchors unique between the two independent content collections.
+    chapters = [(field, lesson) for field in ("explanation", "learning")
+                for lesson in _list(report.get(field, []))]
+    for field, lesson in chapters:
         _object(lesson, {"id", "title", "lead", "blocks"})
         _id(lesson["id"])
-        if lesson["id"] in lesson_ids:
+        if (field, lesson["id"]) in lesson_ids:
             raise ValueError("Duplicate learning ID")
-        lesson_ids.add(lesson["id"])
+        lesson_ids.add((field, lesson["id"]))
         _text(lesson["title"])
         _text(lesson["lead"])
         if not _list(lesson["blocks"]):
