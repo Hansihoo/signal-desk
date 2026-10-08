@@ -6,6 +6,10 @@ Signal Desk is Theo's local-first personal signal dashboard.
 
 It collects important updates in advance, keeps them searchable for Codex, and renders concise mobile briefings. The first MVP domain is housing subscription/public rental notices for Seoul and Gyeonggi.
 
+AI research also serves developers and managers who need to learn, adopt and operate
+AI, and understand changes to products, organizations and the labor market. Discover
+important missing topics proactively rather than waiting for the user to name them.
+
 ## Before Changing Code
 
 Read these files first:
@@ -38,6 +42,22 @@ Then state:
 - Update `docs/ai/WORK_LOG.md` for meaningful implementation or verification work.
 - Keep docs useful for a future Codex agent that cannot inspect your memory.
 
+## AI Research Discovery and Freshness
+
+Before planning, collecting, expanding or reviewing AI/development/market/workforce
+research, read [AI research operations](docs/AI_RESEARCH_OPERATIONS.md),
+[the source catalog](docs/AI_RESEARCH_SOURCES.md) and
+[the review log](docs/ai/AI_RESEARCH_REVIEW_LOG.md).
+
+- Cover models/tools, knowledge/data, execution/operations, enterprise adoption and roles, products/business, labor/skills, security/responsibility and industry applications. Ontology, knowledge bases and FDE are explicit subjects; the list is a coverage map, not a keyword-only filter.
+- Define the developer's or manager's question. Check coverage gaps and discover new topics through official technical sources, implementation cases, hiring and market evidence. Record selection, deferral, counterevidence and missing conditions.
+- Distinguish a documented source from a connected collector or a scheduled run. Check original pages and actual retrieval outcomes; a feed entry does not establish a full content review.
+- Record acquisition dates. Preserve first collection, latest successful collection, actual content review, original publication/update and measurement/effective periods separately. Failed retrieval and HTML regeneration do not refresh evidence dates. Do not invent missing original dates or backfill first collection with today.
+- Report new, changed, unchanged, collection failed and review not performed separately, including partial coverage. Unread originals/attachments and failed sources cannot be called unchanged.
+- Initial knowledge mapping is not limited to seven days. Use daily discovery and weekly deep review as the broad operating direction while preserving existing daily model and weekly business scopes. This documentation does not create or change automations; broad connections/execution remain tracked in PROJECT_STATUS.md.
+- The common provenance fields are implementation requirements, not additions to report schema v1. Until compatible storage/export/render contracts exist, keep exact original URLs, dates, actual check scope and gaps in the review log. Do not inject unsupported fields into validated JSON.
+- Follow the writing guide below. Preserve editions and separate source/meaning review, comprehension self-review, output checks and actual reader testing.
+
 ## Research Writing and Content Review
 
 For PolarisOffice government programs, sales opportunities or peer business direction,
@@ -56,6 +76,7 @@ model maintenance only as report links or new-news cards.
 
 When writing, expanding, or reviewing authored research reports:
 
+- Apply the project [research-teaching skill](skills/research-teaching/SKILL.md). The 2026-10-09 user feedback still rejects the prose as hard to learn from. Define prerequisite concepts and gather missing evidence; review title/summary alone before reviewing the whole explanation. Record where the draft fails and revise it. The dated [skill analysis](docs/RESEARCH_TEACHING_SKILL.2026-10-09.md) explains the adopted methods; passing format/output checks is not reader approval.
 - Development-trend content serves practical AI use. Define the reader's concrete task and resulting artifact, then teach the necessary concepts through a complete worked example and application exercise. Distinguish using an existing tool from implementing a new one. Treat role descriptions as intermediate learning, not the final reader outcome. Follow the authoring and evidence-based review steps in `docs/RESEARCH_WRITING_GUIDE.md`. The earlier MCP Apps 3rd edition was rejected as a textbook standard; use `docs/RESEARCH_REPAIR.2026-10-08.md` for the latest20-report repair scope and verification limits, without claiming reader approval.
 - Read `docs/RESEARCH_WRITING_GUIDE.md` first. Use `docs/RESEARCH_CONTENT_REVIEW.2026-10-08.md` for known defects and repair priorities, and `docs/RESEARCH_WRITING_EXAMPLES.md` for representative explanations. Recheck dated technical facts before reuse.
 - Define the reader's question, assumed prior knowledge, and what they should be able to explain, decide, or do afterward. Keep this editorial brief in working documentation; do not add unsupported fields to the validated report schema.

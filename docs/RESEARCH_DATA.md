@@ -1,5 +1,17 @@
 # Research data contract
 
+## Broad AI research provenance policy, 2026-10-09
+
+[Research operations](AI_RESEARCH_OPERATIONS.md) defines required provenance meanings:
+original publication/update, first/latest successful acquisition, actual content
+review, measurement/effective periods and next checks. These are future common
+contract requirements, not an extension of the validated report schema v1.
+Existing `checked_on`, revision/storage and export generation dates keep their
+current meanings. References still accept only `id`, `title`, `url`, `description`.
+Until storage/export/render compatibility and failure retention are implemented,
+record actual original URLs, dates, check scope and gaps in
+[the review log](ai/AI_RESEARCH_REVIEW_LOG.md). A generated page is not new evidence.
+
 ## Accumulating AI model ledger, 2026-10-08
 
 `model_ledger` is an additive export property containing `schema_version: 1`,

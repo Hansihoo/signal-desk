@@ -1,5 +1,50 @@
 # Handoff
 
+## Latest work: research teaching skill and MCP Apps revision, 2026-10-09
+
+The user still found the 2026-10-08 prose difficult and its title/summary uninformative.
+Read [the teaching skill](../skills/research-teaching/SKILL.md) and
+[the comparison/application record](RESEARCH_TEACHING_SKILL.2026-10-09.md) before authoring.
+The same skill is installed at `C:/Users/Theo/.codex/skills/research-teaching`;
+project AGENTS routes directly to the source without depending on automatic discovery.
+Keep project source and personal installation synchronized. It is available for skill
+selection on a subsequent turn; this turn applied the installed instructions explicitly.
+
+`config/research_teaching.2026-10-09.json` is the new immutable batch, MCP revision5.
+It defines the technology in the title/summary, introduces concepts before jargon,
+and traces the same notice through lookup, display, selection and later AI answers.
+Other19 current reports and prior52 editions are preserved, now53 editions total.
+The Editorial design and strict report schema remain unchanged. Six official technical
+sources were rechecked; acquisition timestamps/hash receipts and output checks are retained
+under `data/raw/research_teaching_2026_10_09/` and `reports/research-teaching-2026-10-09/`.
+
+Skill checks,106 tests/compileall,126 HTML/5094 internal refs, actual1280/390/320px
+main/report/expanded detail, search to report, native disclosure keys, brief/desk PNGs
+and housing `review` pass. Source/meaning review and title-only/body self-review are
+recorded separately. No human-reader trial, independent agent review, SDK execution
+or account-specific Apps connectivity test was performed. Older prose's technical
+publication is not user acceptance of comprehension; other reports need this renewed
+editorial review as they are revised. Broad new collectors/schedules remain unimplemented.
+
+## Latest work: broad AI research agent documentation, 2026-10-09
+
+Before continuing AI/development/market/workforce research, read
+[research operations](AI_RESEARCH_OPERATIONS.md), [the source catalog](AI_RESEARCH_SOURCES.md)
+and [the review log](ai/AI_RESEARCH_REVIEW_LOG.md). AGENTS.md routes agents to them.
+The scope serves developers and managers: models/tools, knowledge/data, execution,
+enterprise adoption/FDE, products, labor/skills, security and industry applications.
+Discover unknown topics and coverage gaps rather than waiting for named keywords.
+Explain concepts and complete cases for the reader's question using the writing guide.
+
+First acquisition, latest successful acquisition, content review, original publication
+and measurement/effective periods have different meanings. Failure, unread originals
+and unperformed review cannot be reported as unchanged. Until compatible provenance
+storage/export exists, record actual source checks in the manual review log; keep the
+strict report v1 reference contract. No new source adapters, metadata fields, HTML,
+data or schedules were implemented in this documentation turn. Preserve existing
+daily model and weekly business scopes. Broad connections and recurring execution
+are Not started in PROJECT_STATUS.md, not implied by the source list.
+
 ## Latest work: practical explanations for all authored reports, 2026-10-08
 
 Read [the repair record](RESEARCH_REPAIR.2026-10-08.md) and

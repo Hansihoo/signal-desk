@@ -11,6 +11,13 @@ export integration. Public state backup refuses private business tables. See
 
 ## Intent
 
+Broad AI research scope, source discovery and provenance meanings are defined in
+[research operations](AI_RESEARCH_OPERATIONS.md) and [the source catalog](AI_RESEARCH_SOURCES.md).
+These are agent documentation, not collector configuration. Existing normalized
+SQLite storage and report v1 remain unchanged. Common per-source collection/review
+metadata requires a compatible storage/export/render change before implementation;
+manual checks currently belong in [the review log](ai/AI_RESEARCH_REVIEW_LOG.md).
+
 Signal Desk is a local-first research pipeline. It prepares important updates before Theo asks Codex questions.
 
 The first implemented domain is housing notices. The architecture should stay broad enough for jobs, IT news, stocks, and policy updates.

@@ -1,5 +1,10 @@
 # Sources
 
+For AI/development/market/workforce research, also read the
+[AI source catalog](AI_RESEARCH_SOURCES.md) and [research operations](AI_RESEARCH_OPERATIONS.md).
+The catalog records discovery routes and evidence limits, not newly connected
+collectors. Actual connection/execution status stays in PROJECT_STATUS.md and run records.
+
 ## Enabled in MVP
 
 ### Seoul Housing Portal - LH public lease list

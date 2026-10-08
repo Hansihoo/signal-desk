@@ -15,10 +15,17 @@ Additional MVP domains now exist for weekly big news, AI developer news, and nor
 
 Public site: [Signal Desk](https://hansihoo.github.io/signal-desk/).
 
+AI research serves developers and managers learning to use AI and assessing changes
+to products, organizations and the labor market. Agents follow [research operations](docs/AI_RESEARCH_OPERATIONS.md),
+[the source catalog](docs/AI_RESEARCH_SOURCES.md) and [the review log](docs/ai/AI_RESEARCH_REVIEW_LOG.md).
+These define proactive topic discovery, coverage gaps, source limits and separate
+collection/review/publication dates. Broad source connections, common freshness
+metadata and broad recurring execution remain implementation work; see [project status](PROJECT_STATUS.md).
+
 The [curated main](https://hansihoo.github.io/signal-desk/preview/index.html)
-now features the first reader-purpose revision, MCP Apps. Concrete comparison and
-selection examples lead to visible explanatory prose, optional deeper study, and
-official evidence. [Application and verification](docs/READER_PURPOSE_APPLICATION.2026-10-08.md).
+now uses the 2026-10-08 revisions of all 20 authored reports. Essential concepts,
+consistent worked cases and first steps are visible; optional disclosures hold
+deeper exercises and official evidence supports the claims. [Repair and verification limits](docs/RESEARCH_REPAIR.2026-10-08.md).
 GitHub Actions refreshes public sources daily at approximately 05:00 Asia/Seoul;
 accumulated data and dated briefings are retained between runs. See [publishing operations](docs/PUBLISHING.md).
 
@@ -37,7 +44,7 @@ the existing daily source refresh continues. See [research delivery analysis and
 plan](docs/RESEARCH_EXPERIENCE_PLAN.md).
 
 The [research homepage](https://hansihoo.github.io/signal-desk/preview/index.html)
-and all 16 stored reports use the user-selected **HTML5 UP Editorial** design.
+and authored reports use the user-selected **HTML5 UP Editorial** design.
 The main shows recent findings and an accumulating, searchable topic board. New
 reviewed reports appear on publication; earlier documents remain addressable in
 the [report history](https://hansihoo.github.io/signal-desk/preview/history/index.html).
@@ -48,26 +55,34 @@ public sources and writes `data/research.json` without rendering webpages. Autho
 reports are imported into SQLite with changed-only revisions; the representative
 pair renders this structured content. See [data contract and workflow](docs/RESEARCH_DATA.md).
 
-Each development report now includes expandable explanations with definitions,
-processes, examples and evidence. The [MCP Apps report](https://hansihoo.github.io/signal-desk/preview/mcp-apps-workflows.html)
-has seven learning chapters. This detail is stored as report data independently of
-HTML/CSS; hypothetical examples and editorial recommendations are distinguished.
+Development reports explain definitions, processes, examples and evidence in the
+primary reading path, with optional deeper exercises in disclosures. The
+[MCP Apps report](https://hansihoo.github.io/signal-desk/preview/mcp-apps-workflows.html)
+connects the same comparison task across input, tool result and screen interaction.
+This detail is stored as report data independently of HTML/CSS; conceptual examples
+and editorial recommendations are distinguished from tested integrations.
 
 The [hackathon learning report](https://hansihoo.github.io/signal-desk/preview/hackathon-tech-roadmap.html)
-is nested under hackathons and contains eight chapters, a seven-day practice plan,
-and official event evidence. Four further technical reports cover document RAG,
-voice architectures, agent evaluation, and A2A connections. Five reports / twenty
-chapters were checked on 2026-10-07; the collection now has 46 chapters. Parent
-topic filters include all descendants. Closed events and residency restrictions
-are distinguished from learning examples.
+is nested under hackathons and includes a practice plan, a consistent date-filtering
+example and official event evidence. Further technical reports cover document RAG,
+voice architectures, agent evaluation and A2A connections. Parent topic filters
+include all descendants. Closed events and residency restrictions are distinguished
+from learning examples; dated conditions must be rechecked before participation.
 
 Report comprehension was reviewed on 2026-10-08. The
 [content audit](docs/RESEARCH_CONTENT_REVIEW.2026-10-08.md) records concrete defects
 and each report's intended reader outcome. Future authors follow the
 [writing guide](docs/RESEARCH_WRITING_GUIDE.md) and
 [worked explanations](docs/RESEARCH_WRITING_EXAMPLES.md): write to resolve the
-reader's question before extracting summaries and tables. This audit documents
-repairs; the current published reports have not yet been rewritten to that standard.
+reader's question before extracting summaries and tables. The audit records the
+earlier defects; [the subsequent repair](docs/RESEARCH_REPAIR.2026-10-08.md) records
+the 20 revised editions and verification. Comprehension self-review is complete;
+actual reader testing has not been performed.
+
+The 2026-10-09 feedback still finds the prose difficult to learn from. Authors now
+apply the project [research-teaching skill](skills/research-teaching/SKILL.md),
+including prerequisite concepts, missing-evidence research and separate title/summary
+and full-explanation reviews. [Skill comparison and application](docs/RESEARCH_TEACHING_SKILL.2026-10-09.md).
 
 Future domains:
 

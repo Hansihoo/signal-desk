@@ -75,7 +75,15 @@ class ResearchPublicationTests(unittest.TestCase):
                     self.assertIn('id="%s"' % section, report)
             self.assertIn("178 %", (root / "upwork-ai-integration-demand.html").read_text(encoding="utf-8"))
             self.assertNotIn('role="img"', (root / "aws-partner-hackathon.html").read_text(encoding="utf-8"))
-            featured["tables"][0]["rows"][0]["values"][0] = '<script>alert(1)</script>'
+            # Reports may explain concepts without a table. Keep the escaping
+            # check independent of the current featured report's editorial form.
+            featured["tables"] = [{
+                "id": "escaping-fixture", "title": "Escaping check",
+                "columns": ["Input", "Expected handling"],
+                "rows": [{"values": ['<script>alert(1)</script>', "Escaped text"],
+                          "source_ids": [featured["references"][0]["id"]]}],
+                "note": "Test fixture",
+            }]
             build_briefing_preview(temp, {"items": [], "topics": []}, featured, data)
             report = (root / (featured["id"] + ".html")).read_text(encoding="utf-8")
             self.assertIn("&lt;script&gt;", report)

@@ -1,0 +1,4 @@
+interface:
+  display_name: "이해하며 배우는 리서치"
+  short_description: "낯선 기술과 시장 정보를 독자가 이해하고 활용하는 글로 작성합니다"
+  default_prompt: "$research-teaching으로 이 보고서의 제목, 요약과 본문을 처음 읽는 사람도 배울 수 있게 보강해줘."

@@ -1,5 +1,16 @@
 ﻿# Operations
 
+## Broad AI research
+
+Use [research operations](AI_RESEARCH_OPERATIONS.md), [the source catalog](AI_RESEARCH_SOURCES.md)
+and [the review log](ai/AI_RESEARCH_REVIEW_LOG.md) for AI learning, enterprise adoption,
+organization and labor-market requests. A seven-day issue pull alone does not cover
+this scope. Initial knowledge mapping includes older relevant sources; repeated
+review also checks corrections and coverage gaps. Source failures/unread content
+are separate from unchanged results. The common provenance contract and broad
+source connections/recurring execution are documented requirements, not implemented
+by these instructions. Preserve the existing model and business operating schedules.
+
 ## Manual Refresh
 
 Run this when Theo asks for fresh housing updates:

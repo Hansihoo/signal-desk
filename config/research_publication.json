@@ -55,6 +55,10 @@
     {
       "id": "research-comprehension-2026-10-08",
       "input": "research_comprehension.2026-10-08.json"
+    },
+    {
+      "id": "research-teaching-2026-10-09",
+      "input": "research_teaching.2026-10-09.json"
     }
   ]
 }
