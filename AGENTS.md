@@ -40,6 +40,15 @@ Then state:
 
 ## Research Writing and Content Review
 
+For AI/LLM model lists, comparisons, new releases, availability, costs or benchmarks,
+read `docs/AI_MODEL_RESEARCH.md` first. It owns the research scope, Theo's existing
+source mapping, accumulating model ledger, collection commands and official-fact import procedure.
+Keep source update/check dates and model/evaluation conditions; source collection
+does not establish independent fact verification or actual workload performance.
+Use `ai-models --collect` for the full comparison and `ai-models --input` for reviewed
+official additions; preserve original observations and revisions. Do not implement
+model maintenance only as report links or new-news cards.
+
 When writing, expanding, or reviewing authored research reports:
 
 - Read `docs/RESEARCH_WRITING_GUIDE.md` first. Use `docs/RESEARCH_CONTENT_REVIEW.2026-10-08.md` for known defects and repair priorities, and `docs/RESEARCH_WRITING_EXAMPLES.md` for representative explanations. Recheck dated technical facts before reuse.

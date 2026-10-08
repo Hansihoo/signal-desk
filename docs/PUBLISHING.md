@@ -5,7 +5,7 @@
 The existing `Hansihoo/signal-desk` repository hosts the public site through GitHub Pages.
 Live site: https://hansihoo.github.io/signal-desk/
 `.github/workflows/deploy.yml` runs on main-branch pushes, manual dispatch, and daily at
-23:17 UTC (08:17 Asia/Seoul the following day). GitHub scheduling is approximate.
+20:00 UTC (05:00 Asia/Seoul the following day). GitHub scheduling is approximate.
 
 The workflow tests the code, restores previous state, collects public sources, generates
 the site, checks the housing briefing, saves state, and deploys a Pages artifact.
@@ -96,3 +96,7 @@ release asset to 2 GiB and a release to 1,000 assets. Revisit storage before tho
 References: [Pages workflows](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages),
 [scheduled events](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows),
 [release storage](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases).
+
+## Model documents and reviewed facts
+
+As requested on2026-10-08, the daily source schedule moved to05:00 Asia/Seoul. `publish --collect` imports complete model documents and shared assets, along with the accumulating model ledger. New in-scope Theo catalog documents create native library entries and isolated interactive document pages automatically. Full SQLite snapshots preserve model document and observation revisions. Reviewed official additions deploy through immutable config/ai_model_publication.json batches; new researched model reports use the existing research publication manifest. The separate local Codex daily05:00 heartbeat creates new detailed reports after official-source review and is authorized to commit/push only related Signal Desk model changes. See [scope and controls](AI_MODEL_RESEARCH.md).

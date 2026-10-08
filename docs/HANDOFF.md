@@ -2,6 +2,71 @@
 
 This document is the first stop for a future Codex agent.
 
+## Latest work: full model documents and daily new-model publishing, 2026-10-08
+
+Theo requested public-site application, copying other model pages, and replacing weekly comparison review with daily05:00 new-model checks and detailed page additions. Read [AI model operations](AI_MODEL_RESEARCH.md). `model-pages --collect` fetched all14 in-scope documents without failures, preserving original HTML/body/controls and same-site dependencies in SQLite. Immutable editions include shared asset changes; failed or absent documents retain prior content. `preview/ai-model-guides.html` searches model documents; `preview/model-guides/<slug>.html` shows isolated original interactive content and edition links. The original comprehensive table and its additional filters are available as a source document; native789 observations remain separate.
+
+New officially reviewed model facts can deploy with immutable `config/ai_model_publication.json` batches. New official model reports use existing immutable report publication inputs, stable IDs and AI model topic paths. Do not commit generated databases/HTML/raw evidence. The user now authorizes related normal commit/push and Pages publication; verify Hansihoo identity/root/fetch+actual push before every write. Theo upstream remains read-only. Existing weekly heartbeat was deleted; the replacement ID ai is ACTIVE daily05:00 Asia/Seoul. Source-only GitHub Actions scheduling moved to the same Korean time, independent of the local agent's availability.
+
+Local verification:99 tests;14 actual pages with no page errors or mobile root overflow;89 generated HTML pages /2048 local references /0 missing targets. New-page navigation, controls and public deployment verification are recorded after completion below. Source meaning is preserved as Theo-authored material; independent official rechecking of every old table or actual model execution was not performed.
+
+## Latest work: accumulating complete model comparison, 2026-10-08
+
+Theo clarified that the requested outcome is the actual comprehensive model
+table maintained inside research, rather than only links and a comparison guide.
+Read [AI model operations](AI_MODEL_RESEARCH.md). `ai-models --collect` reads the
+original HTML, generated guide JSON and five independent JSON snapshots. It imports
+789 observations: 274 specifications, 283 AA model configurations, 31 coding-agent
+configurations, 63 Cursor configurations, 24 availability entries and 114 earlier
+evaluations. The second real refresh inserted/updated zero and retained 789 identical
+observations and 789 immutable first editions. AA model, Agent and Cursor values,
+settings, fallback, units and check dates remain separate; absent rows are retained.
+
+The native research subpage is `site/preview/ai-models.html`, also addressable as
+`site/research/ai/models/index.html`. Main and AI model tree links open it. It supports
+search, presets, provider/effort/harness/source filters, columns, sorting, CSV,
+original evidence and per-observation history. Earlier evaluations are optional.
+`ai-models --input` adds officially reviewed facts without overwriting upstream
+observations. Optional `candidate_ids` closes the matching news review candidates.
+The complete ledger is also part of `research-data` JSON. The existing daily
+`publish --collect` and full SQLite cloud backups include it after source deployment.
+
+All changes remain local and uncommitted. No upstream repository changes or
+independent re-evaluation of every model were performed. Theo selected weekly agent
+review at that stage: the earlier heartbeat `AI 모델 비교표 주간 검토` (ID `ai`) was active
+Monday09:00 Asia/Seoul, checking official sources and adding changed-only reviewed
+facts locally. It does not authorize commits, pushes or public deployment. The
+automatic collector follows upstream data updates and gathers candidates. Housing's existing active-notice
+review limitation remains separate from model data quality.
+
+## Earlier work: model references and new-model discovery, 2026-10-08
+
+Theo requested that his existing GitHub LLM materials and new-model information
+belong to the AI model area. Read [AI model research operations](AI_MODEL_RESEARCH.md)
+for the authoritative scope, upstream catalog mapping, commands and review rules.
+The source is public `theo-s-han/research-analysis`; only Signal Desk was modified.
+`collect_ai_news` now imports 13 model-related catalog references and a dedicated
+model-update news search. Original dates/hashes and authored-versus-official source
+types are preserved. Canonical slugs survive title changes and same-title records.
+
+The new `llm-model-comparison` report is under development/AI models/API. Its new
+immutable batch adds four visible explanation chapters, preserving all 16 earlier
+documents; the local export has 17 current reports / 28 stored revisions. The MCP
+featured report stays selected. This is reference integration and comparison
+guidance, not a fresh verification of every model specification/price/benchmark.
+
+Local checks: 83 tests, actual collection (117 AI / 194 total records), publishing,
+report/render/search/context/brief/desk, 43 HTML pages / 1782 internal references,
+320/390px report fit, main search/navigation, model-library search and three-page
+AI briefing with no page errors. Images remain under ignored `reports/` and fetched
+catalog evidence under `data/raw/ai_news/model_research/`; owned scratch was removed.
+Housing review fails only its active-notice check (0 of 8). LH lists returned zero;
+GDELT 429 used the existing fallback. The CLI Edge exporter wrote a PNG but stayed
+running; its owned process was stopped and isolated Playwright/Edge completed QA.
+Source changes are local, uncommitted and not deployed. Weekly deep review remains
+planned at that point. That first catalog-only phase did not monitor shared benchmark assets;
+the accumulating ledger above supersedes this limitation.
+
 ## Latest work: first reader-purpose main and MCP Apps, 2026-10-08
 
 Theo requested actual application on the main so the result can be assessed.

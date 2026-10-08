@@ -14,7 +14,7 @@ The [curated main](https://hansihoo.github.io/signal-desk/preview/index.html)
 now features the first reader-purpose revision, MCP Apps. Concrete comparison and
 selection examples lead to visible explanatory prose, optional deeper study, and
 official evidence. [Application and verification](docs/READER_PURPOSE_APPLICATION.2026-10-08.md).
-GitHub Actions refreshes public sources daily at approximately 08:17 Asia/Seoul;
+GitHub Actions refreshes public sources daily at approximately 05:00 Asia/Seoul;
 accumulated data and dated briefings are retained between runs. See [publishing operations](docs/PUBLISHING.md).
 
 The public homepage is a multi-topic research library. Each topic has its own page;
@@ -135,6 +135,8 @@ Generated local outputs:
 - AI developer briefing HTML: `site/ai-news.html`
 - AI developer briefing images: `reports/ai-news-page1.png`, `reports/ai-news-page2.png`, `reports/ai-news-page3.png`
 - AI developer news raw snapshots: `data/raw/ai_news/`
+- cumulative model comparison: `site/preview/ai-models.html` and `site/research/ai/models/index.html`
+- model ledger JSON: `data/ai-models.json` (`python -m housing_watch ai-models --collect`)
 - imported jobs raw snapshots: `data/raw/jobs/`
 
 Generated files are ignored by git. Recreate them with the commands above.
@@ -162,6 +164,8 @@ site/.gitkeep            Placeholder for local HTML output
 ```
 
 ## Documentation Index
+
+- [AI model research](docs/AI_MODEL_RESEARCH.md): complete accumulating model comparison, changed-only refresh, official additions, new-model discovery and review rules.
 
 - [Publishing and continuous collection](docs/PUBLISHING.md): GitHub Pages, daily refresh, archive, privacy, and recovery.
 
@@ -252,3 +256,5 @@ data, conclusions, and official references. Data remains independent of HTML/CSS
 see [the content contract](docs/RESEARCH_DATA.md) for reviewed input batches and
 stable report URLs. Existing daily source collection is separate from the planned
 weekly deep review.
+
+Model documents are accumulated in full, with source table controls and immutable editions. `model-pages --collect` discovers additional Theo model documents; daily05:00 source collection adds their pages. A current-chat daily05:00 agent checks official new models and writes/publishes new detailed research pages. See [AI model operations](docs/AI_MODEL_RESEARCH.md).

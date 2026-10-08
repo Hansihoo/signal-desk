@@ -1,5 +1,32 @@
 # Research data contract
 
+## Accumulating AI model ledger, 2026-10-08
+
+`model_ledger` is an additive export property containing `schema_version: 1`,
+`records`, immutable `history`, and the latest twenty `runs`. It is separate from
+the authored report schema and source-news catalog. Each observation preserves
+model/provider, source kind, original fields, units/conditions, source URL and
+original date (verified/observed/measured according to source kind); runtime
+metadata adds revision/change/retention state. The UI names this `원자료 날짜`.
+SQLite tables are `model_observations`, `model_observation_revisions` and
+`model_sync_runs`. Refreshes import all seven upstream files atomically and
+change only new/different observations. Missing rows and old suites remain.
+`ai-models --input` accepts officially reviewed partial additions; the complete
+upstream refresh never overwrites them. See [AI model operations](AI_MODEL_RESEARCH.md).
+The research subpage is generated from this ledger, with filters, CSV, original
+evidence and per-record revisions. It does not replace immutable report editions.
+
+## AI model reference connection, 2026-10-08
+
+Theo's model research catalog is collected as `AI 개발 / LLM 모델` source records;
+the source tier is authored research, with original update/check dates and hashes.
+These references do not become independently reviewed reports automatically.
+The new immutable `ai-model-connection-2026-10-08` batch adds `llm-model-comparison`
+under development/AI models/API, without changing earlier documents or the featured
+MCP report. See [AI model operations](AI_MODEL_RESEARCH.md) for collection/review
+scope and limits. Local total: 17 current reports / 28 revisions; public deployment
+has not been performed for this change.
+
 ## Content authoring quality, 2026-10-08
 
 Read the [writing guide](RESEARCH_WRITING_GUIDE.md) before authoring or revising
@@ -294,3 +321,5 @@ are intentionally distinct. All 25 public pages use `171be08edf65`, the normaliz
 CSS content hash; Windows filesystem bytes differ by line endings. Native public
 main→MCP navigation, seven expanded chapters at 390px, official quickstart/back and
 console pass. Main/report and local selectable review remain available.
+
+The independent `model_pages` export contains complete source documents/assets/current editions/history/sync results. It does not add fields to the authored report schema. Reviewed official model observations can deploy through config/ai_model_publication.json immutable batches; rendering/export applies these facts once and refuses modified applied batches.

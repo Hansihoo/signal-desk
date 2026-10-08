@@ -235,4 +235,5 @@ pre {white-space:pre-wrap;overflow-wrap:anywhere}
   #sidebar .toggle {height:4.2em;width:5.5em;background:#eff1f2;border-radius:0 0 .4em 0}
 }
 @media (prefers-reduced-motion:reduce) {*,*:before,*:after {scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+.model-ledger-link{padding:1.3em 0!important}.model-ledger-link p{margin:.6em 0 0}.model-ledger-link a{font-weight:600;font-size:1.1em}.model-ledger-link small{display:block;color:#737e85;margin-top:.4em}
 @media print {#sidebar,.header-links,.report-contents,.page-footer,.board-tools,.board-pagination {display:none!important} #main > .inner {padding:0} #header {padding-top:0} #banner h1 {font-size:2em} details {break-inside:avoid} .evidence-panel {break-inside:avoid} a {color:#3d4449}}

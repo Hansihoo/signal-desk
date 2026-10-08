@@ -1,6 +1,8 @@
 import argparse
+import json
 import os
 import sys
+from pathlib import Path
 
 from .ai_brief import format_ai_issue_summary, render_ai_news_html
 from .ai_news import AINewsFetchError, collect_ai_news
@@ -144,10 +146,52 @@ def main(argv=None):
     research_data.add_argument("--output", default="data/research.json", help="JSON-only export path")
     research_data.add_argument("--topics", help="research topic registry JSON")
 
+    models = sub.add_parser("ai-models", help="refresh or import reviewed model observations and export the accumulating ledger")
+    models.add_argument("--collect", action="store_true", help="refresh the complete public model comparison sources")
+    models.add_argument("--input", help="JSON of officially reviewed model observations")
+    models.add_argument("--output", default="data/ai-models.json", help="model ledger JSON output")
+    pages = sub.add_parser("model-pages", help="collect and export complete model research documents")
+    pages.add_argument("--collect", action="store_true")
+    pages.add_argument("--output", default="data/ai-model-pages.json")
+
     args = parser.parse_args(argv)
     config = load_config(args.config)
     conn = connect(database_path(config))
     init_db(conn)
+
+    if args.command == "model-pages":
+        from .model_pages import collect_model_pages, export_model_pages
+        try:
+            if args.collect:
+                result = collect_model_pages(conn)
+                print("Model pages: %s" % result)
+                if result["failures"]:
+                    return 1
+            Path(args.output).write_text(json.dumps(export_model_pages(conn), ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+            print("Wrote %s" % args.output)
+            return 0
+        except (OSError, ValueError) as exc:
+            print("model-pages: failed: %s" % exc, file=sys.stderr)
+            return 1
+        finally:
+            conn.close()
+    if args.command == "ai-models":
+        try:
+            from .model_ledger import collect_model_ledger, export_model_ledger, import_reviewed_models
+            from .research_data import write_research_data
+            if args.collect:
+                print("Model refresh: %s" % collect_model_ledger(conn))
+            if args.input:
+                print("Reviewed model import: %s" % import_reviewed_models(conn, json.loads(Path(args.input).read_text(encoding="utf-8-sig"))))
+            document = export_model_ledger(conn)
+            path = write_research_data(args.output, document)
+            print("Wrote %s: %d model/settings observations, %d revisions" % (path, len(document["records"]), len(document["history"])))
+            return 0
+        except (OSError, ValueError, RuntimeError) as exc:
+            print("ai-models: failed: %s" % exc, file=sys.stderr)
+            return 1
+        finally:
+            conn.close()
 
     if args.command == "research-data":
         try:

@@ -1,0 +1,14 @@
+{
+  "catalog_url": "https://theo-s-han.github.io/research-analysis/catalog.json",
+  "site_url": "https://theo-s-han.github.io/research-analysis/",
+  "repository_url": "https://github.com/theo-s-han/research-analysis",
+  "categories": ["모델 리서치", "벤치마크"],
+  "additional_slugs": [
+    "windows-codex-max-guide",
+    "codex-claude-200usd-capacity-report",
+    "codex-6-model-guide",
+    "codex-model-guide-20260909",
+    "model-cost-performance",
+    "codex-model-comparison"
+  ]
+}

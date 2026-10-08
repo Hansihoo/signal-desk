@@ -12,6 +12,9 @@ from html.parser import HTMLParser
 from pathlib import Path
 
 from .db import record_snapshot, upsert_news_items
+from .model_research import collect_model_research
+from .model_ledger import collect_model_ledger
+from .model_pages import collect_model_pages
 from .timeutil import compact_timestamp, iso_utc, now_utc
 
 
@@ -121,7 +124,7 @@ class AINewsFetchError(Exception):
 def collect_ai_news(conn, limit=24, raw_dir="data/raw/ai_news", days=7):
     limit = max(1, int(limit or 1))
     days = max(1, int(days or 1))
-    sources = AI_FEEDS + [_google_news_source(days)]
+    sources = AI_FEEDS + [_google_news_source(days), _model_news_source(days)]
     raw_feeds = []
     failures = []
     items = []
@@ -144,8 +147,24 @@ def collect_ai_news(conn, limit=24, raw_dir="data/raw/ai_news", days=7):
             failures.append("%s: %s" % (source["id"], exc))
 
     items = _rank_items(_dedupe_items(items))[:limit]
-    if not items:
-        raise AINewsFetchError("no AI news source returned items")
+    model_result = None
+    try:
+        model_result = collect_model_research(conn, raw_dir=str(Path(raw_dir) / "model_research"))
+    except (OSError, ValueError, urllib.error.URLError) as exc:
+        failures.append("ai_theo_model_research: %s" % exc)
+    ledger_result = None
+    try:
+        ledger_result = collect_model_ledger(conn, raw_dir=str(Path(raw_dir) / "model_ledger"))
+    except (OSError, ValueError, urllib.error.URLError) as exc:
+        failures.append("ai_model_ledger: %s" % exc)
+    pages_result = None
+    try:
+        pages_result = collect_model_pages(conn, raw_dir=str(Path(raw_dir) / "model_pages"))
+        failures.extend("ai_model_pages: " + failure for failure in pages_result["failures"])
+    except (OSError, ValueError, urllib.error.URLError) as exc:
+        failures.append("ai_model_pages: %s" % exc)
+    if not items and not model_result and not ledger_result and not pages_result:
+        raise AINewsFetchError("no AI news source returned items: " + "; ".join(failures))
 
     raw_data = json.dumps(
         {
@@ -159,18 +178,21 @@ def collect_ai_news(conn, limit=24, raw_dir="data/raw/ai_news", days=7):
         sort_keys=True,
     ).encode("utf-8")
     raw_path = _write_raw(raw_dir, "ai_news_bundle", raw_data, ".json")
-    stats = upsert_news_items(conn, items, source_prefix="ai_%")
+    stats = upsert_news_items(conn, items, source_ids=[source["id"] for source in sources])
     record_snapshot(conn, "ai_news_bundle", raw_path, len(items))
     conn.commit()
     return {
         "source_id": "ai_news_bundle",
         "raw_path": raw_path,
-        "fetched": len(items),
+        "fetched": len(items) + (model_result["fetched"] if model_result else 0),
         "days": days,
-        "inserted": stats["inserted"],
-        "updated": stats["updated"],
+        "inserted": stats["inserted"] + (model_result["inserted"] if model_result else 0),
+        "updated": stats["updated"] + (model_result["updated"] if model_result else 0),
         "deduped": stats.get("deduped", 0),
         "failures": failures,
+        "model_research": model_result,
+        "model_ledger": ledger_result,
+        "model_pages": pages_result,
     }
 
 
@@ -395,6 +417,18 @@ def _google_news_source(days=7):
         "home_url": "https://news.google.com/",
         "tier": "news-search",
         "score_base": 105,
+    }
+
+
+def _model_news_source(days=7):
+    query = ('(OpenAI OR Anthropic OR Google OR DeepMind OR Mistral OR DeepSeek OR xAI OR Qwen OR Meta) '
+             '("new model" OR "model release" OR "model launch" OR "model update") when:%dd' % max(1, int(days or 1)))
+    params = {"q": query, "hl": "en-US", "gl": "US", "ceid": "US:en"}
+    return {
+        "id": "ai_google_news_model_updates", "name": "Google News model updates",
+        "feed_url": "https://news.google.com/rss/search?" + urllib.parse.urlencode(params),
+        "home_url": "https://news.google.com/", "tier": "news-search",
+        "category_hint": "LLM 모델", "score_base": 125,
     }
 
 

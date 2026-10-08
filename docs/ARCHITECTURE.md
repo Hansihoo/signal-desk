@@ -30,6 +30,8 @@ Current adapter:
 - `seoul_housing_table`: parses Seoul Housing Portal table pages for LH/SH notices.
 - `weekly_news`: tries GDELT DOC 2.0, then falls back to Korean Google News RSS for weekly big-news candidates.
 - `ai_news`: collects AI developer news from RSS/Atom feeds and a Google News AI search fallback.
+- `model_research`: imports Theo's public model catalog into AI source records, preserving source dates/hashes and canonical slugs. Collection is separate from authored-report review; see `AI_MODEL_RESEARCH.md`.
+- `model_ledger`: imports the full comparison table and seven shared data assets into current observations, immutable revisions and sync runs. Independent suites/settings stay separate; changed-only upserts retain absent records. Officially reviewed additions survive upstream refreshes. `model_ledger_view` renders the native research explorer from SQLite exports.
 - `manual_jobs_json`: imports normalized career job candidates from JSON until API/company adapters are added.
 - `jobs_saramin`: fetches senior career job candidates from Saramin Open API when `SIGNAL_DESK_SARAMIN_KEY` is configured.
 
@@ -173,3 +175,5 @@ disclosures retain their independent state and citations across current editions
 ## Naming Note
 
 The repo is `signal-desk`, but the current Python package is still `housing_watch` because the first MVP domain was housing. Jobs, weekly news, and AI news now share that package. Rename or generalize it only when the import/CLI churn is worth the cleanup.
+
+`model_pages` imports full hash-verified source documents and same-directory dependencies into model_pages/model_page_revisions/model_page_runs. Independent sandboxed source renderings preserve original interactive tables; the native Editorial library and edition pages own navigation. `model_publication` applies immutable reviewed official fact batches on local/cloud builds, without seeding a generated DB.

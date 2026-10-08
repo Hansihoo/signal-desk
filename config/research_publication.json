@@ -2,6 +2,7 @@
   "schema_version": 1,
   "featured_report_id": "mcp-apps-workflows",
   "report_ids": [
+    "llm-model-comparison",
     "hackathon-tech-roadmap",
     "document-rag-grounding",
     "voice-agent-architectures",
@@ -34,6 +35,10 @@
     {
       "id": "development-reader-purpose-2026-10-08",
       "input": "development_reader_purpose.2026-10-08.json"
+    },
+    {
+      "id": "ai-model-connection-2026-10-08",
+      "input": "ai_model_connection.2026-10-08.json"
     }
   ]
 }

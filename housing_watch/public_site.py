@@ -76,7 +76,7 @@ def public_library(conn, topics=None):
             "published_at": item.get("published_at") or "",
             "first_seen_at": item["first_seen_at"],
             "score": item.get("score") or 0,
-            "basis": "공식 출처" if payload.get("source_tier") == "official" else "피드·원문 링크",
+            "basis": "Theo 정리 자료 · 공식 원문 재확인 필요" if payload.get("source_tier") == "authored-research" else "공식 출처" if payload.get("source_tier") == "official" else "피드·원문 링크",
         })
     for item in all_items(conn):
         topic = topic_for_item(topics, item["source_id"], housing=True)

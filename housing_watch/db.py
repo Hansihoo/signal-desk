@@ -146,14 +146,19 @@ def ensure_job_schema(conn):
     conn.executescript(JOB_SCHEMA)
 
 
-def upsert_news_items(conn, items, source_prefix=None, source_ids=None):
+def upsert_news_items(conn, items, source_prefix=None, source_ids=None, dedupe_by_title=True):
     ensure_news_schema(conn)
     inserted = 0
     updated = 0
     for item in items:
         now = item.get("collected_at") or iso_utc()
         title_key = item.get("title_ko") or item.get("title") or ""
-        if source_ids:
+        if not dedupe_by_title:
+            existing = conn.execute(
+                "SELECT id FROM news_items WHERE source_id=? AND external_id=?",
+                (item["source_id"], item["external_id"]),
+            ).fetchone()
+        elif source_ids:
             placeholders = ",".join("?" for _ in source_ids)
             existing = conn.execute(
                 "SELECT id FROM news_items WHERE (source_id = ? AND external_id = ?) "
@@ -227,7 +232,7 @@ def upsert_news_items(conn, items, source_prefix=None, source_ids=None):
                 values + (now,),
             )
             inserted += 1
-    deleted = dedupe_news_items(conn, source_prefix=source_prefix, source_ids=source_ids)
+    deleted = dedupe_news_items(conn, source_prefix=source_prefix, source_ids=source_ids) if dedupe_by_title else 0
     conn.commit()
     return {"inserted": inserted, "updated": updated, "deduped": deleted}
 

@@ -52,6 +52,19 @@
 
 ### AI developer news feeds
 
+Theo's public `research-analysis` model catalog and a dedicated new-model news
+search are also collected in the `LLM 모델` category. The catalog is authored
+research; the search is candidate discovery. See [AI model operations](AI_MODEL_RESEARCH.md)
+for exact inclusion scope, preserved dates, source limits and review rules.
+
+The complete model comparison is separately imported from the original HTML,
+generated guide data and availability/model/agent/Cursor/workload JSON files.
+Shared JSON changes are detected independently of catalog changes. The seven
+raw assets are content-addressed under `data/raw/ai_news/model_ledger/`; current
+observations, immutable revisions and failures are stored in SQLite and rendered
+in the native AI model research subpage. News candidates require official source
+review before facts are added with `ai-models --input`.
+
 Implemented as:
 
 ```powershell

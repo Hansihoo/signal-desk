@@ -6,6 +6,8 @@ __pycache__/
 data/*.sqlite
 data/*.sqlite-*
 data/research.json
+data/ai-models.json
+data/ai-model-pages.json
 data/raw/*
 !data/raw/.gitkeep
 

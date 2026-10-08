@@ -1,0 +1,43 @@
+<style>__MODEL_STYLE__</style>
+<section class="model-heading">
+  <p class="model-eyebrow">리서치 / 개발 동향 / AI 모델·API</p>
+  <h1>주요 LLM 모델 통합 비교</h1>
+  <p>모델 사양부터 코딩 평가까지 누적해서 비교합니다. 모델·추론 설정·실행 도구·평가판이 같을 때 수치를 비교하세요.</p>
+  <div class="model-status" id="model-status" role="status"></div>
+  <nav class="model-jump" aria-label="모델 리서치 차례"><a href="#model-table-section">전체 비교표</a><a href="#model-changes">변경 기록</a><a href="#model-candidates">새 소식</a></nav>
+</section>
+<section id="model-table-section" class="model-explorer" aria-labelledby="model-table-title">
+  <h2 id="model-table-title">전체 모델 비교표</h2>
+  <div class="model-presets" aria-label="비교 항목 선택">
+    <button type="button" data-preset="integrated" aria-pressed="true">통합 비교</button>
+    <button type="button" data-preset="spec" aria-pressed="false">사양·로컬</button>
+    <button type="button" data-preset="model" aria-pressed="false">AA 모델 평가</button>
+    <button type="button" data-preset="agent" aria-pressed="false">코딩 에이전트</button>
+    <button type="button" data-preset="cursor" aria-pressed="false">Cursor 평가</button>
+  </div>
+  <form class="model-filters" id="model-filters">
+    <label class="model-query">모델·조건 검색<input type="search" id="model-query" placeholder="예: GPT-6.1, fallback, 4-bit"></label>
+    <label>개발사<select id="model-provider"><option value="">전체 개발사</option></select></label>
+    <label>추론 설정<select id="model-effort"><option value="">전체 설정</option></select></label>
+    <label>실행 도구<select id="model-harness"><option value="">전체 도구</option></select></label>
+    <label>자료 구분<select id="model-kind"><option value="">전체 자료</option><option value="spec">모델 사양</option><option value="availability">도구 제공 목록</option><option value="model">AA 모델 평가</option><option value="agent">코딩 에이전트 평가</option><option value="cursor">Cursor 평가</option><option value="workload">실사용 측정</option><option value="reviewed">공식 근거 검토 자료</option><option value="legacy">이전 평가</option></select></label>
+    <label>이용 방식<select id="model-access"><option value="">전체 방식</option></select></label>
+    <label>제공 상태<select id="model-state"><option value="">전체 상태</option></select></label>
+    <label>원본 상대 구간<select id="model-tier"><option value="">전체 구간</option></select></label>
+    <label class="model-check"><input type="checkbox" id="model-local"> 원자료에서 로컬 실행으로 표시된 기록</label>
+    <label class="model-check"><input type="checkbox" id="model-aa"> AA 평가 기록</label>
+    <label class="model-check"><input type="checkbox" id="model-older"> 이전 평가·원본에서 빠진 기록 포함</label>
+  </form>
+  <div class="model-actions"><span id="model-count" role="status"></span><div><button type="button" id="model-reset">초기화</button><button type="button" id="model-csv">CSV 저장</button></div></div>
+  <details class="model-columns"><summary>표시할 항목 선택 <span id="model-column-count"></span></summary><fieldset id="model-columns"><legend>모델 이름은 항상 표시합니다.</legend></fieldset></details>
+  <p class="model-table-hint">가로로 이동해 항목을 비교하고, 모델 이름을 눌러 전체 정보·출처·이전 값을 확인하세요. —는 미공개·미측정·해당 없음이며 0점과 다릅니다.</p>
+  <div class="model-scroll" tabindex="0" role="region" aria-label="모델 비교표, 가로 및 세로 스크롤 가능"><table id="model-table"><caption class="sr-only">누적 모델 정보. 각 행은 사양 또는 한 평가 환경의 모델·설정 기록입니다.</caption><thead></thead><tbody></tbody></table></div>
+  <p id="model-empty" hidden>조건에 맞는 기록이 없습니다. 검색 조건을 바꾸거나 이전 평가를 포함하세요.</p>
+  <nav class="model-pagination" aria-label="모델 목록 페이지"><button type="button" id="model-prev">이전</button><span id="model-page"></span><button type="button" id="model-next">다음</button></nav>
+  <details class="model-method"><summary>평가 항목과 비교 조건</summary><p>AA Intelligence는 모델 평가입니다. Coding Agent Index는 Agent/Harness를 포함한 코딩 평가이며, CursorBench는 Cursor 환경에서 측정합니다. 점수·비용·토큰을 서로 다른 환경 사이에서 합치지 않습니다. Context는 수용량이고 저장소 이해나 무개입 완료율을 뜻하지 않습니다.</p><p>비율은 % 단위, 비용은 USD입니다. 최신 AA 모델의 파라미터 수는 B(10억) 단위입니다. 원본 표의 Q4/Q8/FP16 메모리는 추정치이며 KV cache·실행 환경 조건을 메모에서 확인하세요. SciCode는 원본에서 재검토 중인 평가입니다. 실제 작업의 무개입 완료율·회귀 없는 성공률·성공당 비용은 실측 자료가 있을 때만 표시합니다.</p><p>Theo의 공개 정리 자료를 가져온 기록입니다. 원자료 날짜는 최신 평가·제공 목록의 확인일, 이전 가이드의 기준일, 실사용 기록의 측정일입니다. 상세 정보에서 날짜의 종류를 확인하세요. 동기화 시각은 가져오기 시각입니다. 평가 실행일이 없는 경우 추정하지 않습니다.</p><a href="https://theo-s-han.github.io/research-analysis/materials/%EC%A3%BC%EC%9A%94%20LLM%20%EB%AA%A8%EB%8D%B8.html">Theo 원본 통합표</a></details>
+</section>
+<section id="model-changes"><header class="major"><h2>변경 기록</h2></header><p>최초 가져오기는 기준 자료로 저장합니다. 이후 새 기록과 바뀐 항목을 여기서 확인할 수 있습니다.</p><div id="model-change-list"></div></section>
+<section id="model-candidates"><header class="major"><h2>새 모델 소식 · 검토 대기</h2></header><p>출시·변경 소식은 수집 후 이곳에 모읍니다. 공식 원문에서 모델 ID·사양·조건을 확인한 자료가 비교표에 반영됩니다.</p><div id="model-candidate-list"></div></section>
+<dialog id="model-detail" aria-labelledby="model-detail-title"><div class="model-detail-header"><h2 id="model-detail-title"></h2><button type="button" id="model-detail-close" aria-label="모델 상세 닫기">닫기</button></div><div id="model-detail-body"></div></dialog>
+<script type="application/json" id="model-ledger-data">__MODEL_DATA__</script>
+<script>__MODEL_SCRIPT__</script>

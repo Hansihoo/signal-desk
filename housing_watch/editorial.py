@@ -45,7 +45,7 @@ def _groups(reports):
     return groups
 
 
-def _tree(reports, prefix, active=None):
+def _tree(reports, prefix, active=None, model_count=0):
     parts = ['<ul class="research-tree">']
     for name, members in _groups(reports).items():
         categories = {}
@@ -66,8 +66,11 @@ def _tree(reports, prefix, active=None):
                 target = (prefix + items[0]["id"] + ".html" if len(current_path) > 2
                           and len(items) == 1 and not node["children"] else
                           prefix + "index.html?" + urlencode({"topic": " / ".join(current_path)}) + "#board")
-                children_html = ('<ul class="tree-children">%s</ul>' % branch(node["children"], current_path)
-                                 if node["children"] else "")
+                child_links = branch(node["children"], current_path) if node["children"] else ""
+                if model_count and current_path[-1] == "AI 모델·API":
+                    child_links = '<li><a href="%sai-models.html"%s><span class="tree-label">전체 모델 비교표</span><small>%d</small></a></li><li><a href="%sai-model-guides.html">모델별 가이드·평가 자료</a></li>' % (
+                        prefix, ' aria-current="page"' if active == "ai-models" else "", model_count, prefix) + child_links
+                children_html = '<ul class="tree-children">%s</ul>' % child_links if child_links else ""
                 links.append('<li><a href="%s"%s><span class="tree-label">%s</span> <small>%d</small></a>%s</li>' % (
                     _escape(target), ' aria-current="page"' if any(item["id"] == active for item in items) else "",
                     _escape(label), len(items), children_html))
@@ -154,6 +157,8 @@ def _edition_nav(item, history, prefix):
 
 
 def render_editorial(output, snapshot, featured, research_data=None, standalone=True):
+    from .model_ledger_view import model_ledger_content
+    from .model_pages_view import render_model_pages, library_content
     reports = [validate_report(item) for item in research_data["reports"]] if research_data else [validate_report(featured)]
     reports = sorted(reports, key=lambda item: (item["checked_on"], item["id"]), reverse=True)
     by_id = {item["id"]: item for item in reports}
@@ -183,18 +188,24 @@ def render_editorial(output, snapshot, featured, research_data=None, standalone=
     (destination / "briefing.css").write_text(style, encoding="utf-8")
     style_version = hashlib.sha256(style.encode("utf-8")).hexdigest()[:12]
     shell = (ROOT / "editorial_shell.html").read_text(encoding="utf-8")
+    ledger = (research_data or {}).get("model_ledger", {"records": [], "history": [], "runs": []})
+    model_count = len(ledger["records"])
+    model_pages = (research_data or {}).get("model_pages", {"pages": [], "history": [], "runs": []})
     def page(title, description, content, prefix="", active=None, contents="", editions=""):
         style_block = ('<style id="editorial-style">%s</style>' % style if standalone else
                        '<link rel="stylesheet" href="%sbriefing.css?v=%s">' % (prefix, style_version))
         return _fill(shell, {"__PAGE_TITLE__": _escape(title), "__DESCRIPTION__": _escape(description),
             "__STYLE_BLOCK__": style_block, "__SCRIPT__": script, "__CONTENT__": content, "__PREFIX__": prefix,
-            "__TREE__": _tree(reports, prefix, active), "__CONTENTS_NAV__": contents, "__EDITION_NAV__": editions})
+            "__TREE__": _tree(reports, prefix, active, model_count), "__CONTENTS_NAV__": contents, "__EDITION_NAV__": editions})
     values = dict(_report_replacements(featured), __REPORT_URL__=_escape(featured["id"] + ".html"),
         __HEADLINE__=_headline(featured["title"]),
         __HERO_VISUAL__=_hero(featured, featured["id"] + ".html"), __TOPIC_FEATURES__=_topic_features(reports),
         __REPORT_COUNT__=str(len(reports)), __BOARD_TOOLS__=_board_tools(reports),
         __BOARD_ROWS__="".join(_post(item, item["id"] + ".html") for item in reports), __TOPIC_ROWS__=_topic_rows(snapshot))
     content = _fill((ROOT / "editorial_home.html").read_text(encoding="utf-8"), values)
+    model_link = '<section class="model-ledger-link"><a href="ai-models.html">주요 LLM 모델 통합 비교 ↗</a><p>사양·제공 상태·AA·코딩 에이전트·Cursor 평가와 변경 기록</p><a href="ai-model-guides.html">모델별 가이드·비용·평가 자료 ↗</a><small>누적 %d개 모델·설정 기록</small></section>' % model_count
+    if model_count:
+        content = content.replace('<section id="board">', model_link + '<section id="board">')
     (destination / "index.html").write_text(page("최근 동향", "개발 동향, 사업 기회와 운영 자료", content), encoding="utf-8")
     template = (ROOT / "editorial_report.html").read_text(encoding="utf-8")
     def report_page(item, edition=None):
@@ -204,6 +215,8 @@ def render_editorial(output, snapshot, featured, research_data=None, standalone=
         values.update(__HERO_VISUAL__=_hero(item), __EDITION_NOTICE__=(
             '<p class="edition-notice">이전 기록 · %d차 · <a href="../%s.html">현재 보고서</a></p>' % (edition, _escape(item["id"])) if edition else ""))
         content = _fill(template, values)
+        if item["id"] == "llm-model-comparison" and not edition and model_count:
+            content = model_link + content
         contents = '<nav class="sidebar-contents" aria-label="이 보고서 차례"><header class="major"><h2>차례</h2></header><a href="#summary">요약</a>%s<a href="#data">데이터</a><a href="#result">결과</a>%s<a href="#references">참고내용</a></nav>' % (values["__EXPLANATION_LINK__"], values["__LEARNING_LINK__"])
         return page(item["title"], item["description"], content, prefix, item["id"], contents, _edition_nav(item, history, prefix))
     for item in reports:
@@ -213,6 +226,24 @@ def render_editorial(output, snapshot, featured, research_data=None, standalone=
             (destination / "report.html").write_text(rendered, encoding="utf-8")
     for row in history:
         (history_root / (row["id"] + "-r%d.html" % row["revision"])).write_text(report_page(row["document"], row["revision"]), encoding="utf-8")
+    reviewed_candidates = {candidate_id for row in ledger["records"] if row["source_kind"] == "reviewed"
+                           for candidate_id in row["original"].get("candidate_ids", [])}
+    candidates = [{"title": item["title"], "url": item["url"], "source": item["source"],
+                   "published_at": item["published_at"], "summary": item["summary"]}
+                  for item in snapshot.get("items", []) if item.get("topic_id") == "ai" and item.get("category") == "LLM 모델"
+                  and item.get("source") != "Theo 모델 리서치" and item["id"] not in reviewed_candidates]
+    candidates.sort(key=lambda item: item["published_at"], reverse=True)
+    model_content = model_ledger_content(ledger, candidates[:30])
+    model_content = '<p><a href="ai-model-guides.html">모델별 분석·선택 가이드·원본 표</a></p>' + model_content
+    (destination / "ai-models.html").write_text(page("주요 LLM 모델 통합 비교", "전체 모델 정보와 신규·변경 기록", model_content,
+        active="ai-models"), encoding="utf-8")
+    models_root = Path(output) / "research" / "ai" / "models"
+    models_root.mkdir(parents=True, exist_ok=True)
+    (models_root / "index.html").write_text(page("주요 LLM 모델 통합 비교", "전체 모델 정보와 신규·변경 기록",
+        model_content.replace('href="ai-model-guides.html"', 'href="../../../preview/ai-model-guides.html"'), "../../../preview/", active="ai-models"), encoding="utf-8")
+    render_model_pages(destination, model_pages, page)
+    (models_root / "guides.html").write_text(page("모델 리서치 자료", "모델별 가이드·비용·평가 자료",
+        library_content(model_pages, "../../../preview/"), "../../../preview/", active="ai-model-guides"), encoding="utf-8")
     old_rows = "".join(_post(row["document"], "%s-r%d.html" % (row["id"], row["revision"]), row["revision"])
                        for row in sorted(history, key=lambda row: (row["saved_at"], row["id"], row["revision"]), reverse=True))
     archive = '<section class="history-heading"><header><h1>이전 기록</h1></header></section><section id="board"><div class="section-title"><header class="major"><h2>보고서 기록</h2></header><span class="record-total">%d건</span></div>%s<div class="posts research-posts">%s</div><p class="board-empty" hidden>검색 결과가 없습니다.</p><nav class="board-pagination" aria-label="목록 페이지" hidden><button type="button" data-page="previous">이전</button><span class="page-status" aria-live="polite"></span><button type="button" data-page="next">다음</button></nav>%s</section>' % (

@@ -315,6 +315,10 @@ def ensure_example_report(conn):
 
 
 def build_research_data(conn, records, topics, health=None):
+    from .model_ledger import export_model_ledger
+    from .model_pages import export_model_pages
+    from .model_publication import apply_model_publication
+    apply_model_publication(conn)
     ensure_example_report(conn)
     publication, batches = load_publication()
     apply_publication(conn, publication, batches)
@@ -333,7 +337,8 @@ def build_research_data(conn, records, topics, health=None):
             "featured_report_id": publication["featured_report_id"],
             "publication_report_ids": publication["report_ids"], "topics": catalog,
             "source_records": records, "reports": reports, "report_versions": versions,
-            "report_history": history, "health": health or []}
+            "report_history": history, "health": health or [], "model_ledger": export_model_ledger(conn),
+            "model_pages": export_model_pages(conn)}
 
 
 def write_research_data(path, document):
