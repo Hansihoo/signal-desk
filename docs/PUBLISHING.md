@@ -41,6 +41,18 @@ and [deployment's artifact_name input](https://github.com/actions/deploy-pages/b
 support the matching names; [metadata selection](https://github.com/actions/deploy-pages/blob/v5.0.1/src/internal/api-client.js)
 requires exactly one matching artifact.
 
+Recovery completed: source422d896 deployed in
+[run37805827869](https://github.com/Hansihoo/signal-desk/actions/runs/37805827869),
+created16:03:51Z and completed16:05:42Z on2026-10-08 (01:03–01:05 KST on2026-10-09).
+CI tests, housing briefing/review, save and deployment succeeded. HTTP checks at
+16:06:59Z confirmed the live main/new MCP/previous MCP-r4/data/CSS routes return200.
+MCP revision5 exactly matches the reviewed input; other19 current documents and
+all prior52 editions retain their hashes,53 editions total. CSS matches local output,
+the empty data section/navigation is hidden, and teaching/citation anchors resolve.
+Actual rendering/interactions were verified locally at1280/390/320px; public-browser
+interaction was not retested because the in-app bridge was unavailable. Existing
+workflow configuration and credentials were preserved.
+
 ## Public experience
 
 - `site/index.html`: recent updates, keyword search, topic filtering, and full collected library.

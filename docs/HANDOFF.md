@@ -32,8 +32,12 @@ pass. Pages run37804406384 failed on missing artifact metadata; its job retry fa
 on duplicate same-name outputs. Matching run_attempt names were evaluated but the
 workflow edit was withdrawn after GitHub denied the push for missing workflow scope.
 Use a fresh existing-workflow run; do not change accounts or widen credentials implicitly.
-See [publishing recovery](PUBLISHING.md). New deployment/public-content verification
-will be recorded after completion. No raw sources or generated files are committed.
+See [publishing recovery](PUBLISHING.md). Source422d896 deployed successfully in
+run37805827869 (16:03:51Z–16:05:42Z on2026-10-08). Public HTTP/JSON checks at16:06:59Z
+confirm the new MCP equals reviewed input, other19 reports/prior52 editions remain,
+and main/current/previous/data/CSS routes are200 with teaching anchors and hidden empty
+data navigation. Actual interactions/rendering were checked locally, not through
+the unavailable in-app browser bridge. No raw sources or generated files are committed.
 
 ## Latest work: broad AI research agent documentation, 2026-10-09
 
