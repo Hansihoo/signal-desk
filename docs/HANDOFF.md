@@ -10,7 +10,11 @@ New officially reviewed model facts can deploy with immutable `config/ai_model_p
 
 Local verification:99 tests;14 actual pages with no page errors or mobile root overflow;89 generated HTML pages /2048 local references /0 missing targets. New-page navigation, controls and public deployment verification are recorded after completion below. Source meaning is preserved as Theo-authored material; independent official rechecking of every old table or actual model execution was not performed.
 
-## Latest work: accumulating complete model comparison, 2026-10-08
+Public deployment: commit55c71fc, [Actions37736392889](https://github.com/Hansihoo/signal-desk/actions/runs/37736392889) completed successfully (95s). Cloud99 tests and housing review passed. Public export contains1041 source records,17 authored reports/28 editions,789 model observations and14 complete model pages. All18 checked model routes returned200; every imported source document/assets matches the local validated input. The local0-active housing limitation does not describe cloud results. Normal push preserved the prior MCP public-verification commits; only the overlapping worklog row required reconciliation, retaining both records.
+
+Live browser verification: at390px, public main → model library → GPT-6.1 document displays the full body; original source tool filtering returns89 rows, native local filtering166 records, and native Opus search17 observations. Root width/scroll width are both390; page errors0. Public screenshots remain in ignored reports/model-*-live-mobile.png paths. The source popup regression test, library category/empty states, added native facets and latest brief/desk images were also verified locally. All owned scratch was cleaned.
+
+## Earlier work: accumulating complete model comparison, 2026-10-08
 
 Theo clarified that the requested outcome is the actual comprehensive model
 table maintained inside research, rather than only links and a comparison guide.

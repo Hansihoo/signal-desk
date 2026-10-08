@@ -220,3 +220,7 @@ JSON 파일명이다. 이미 적용한 배치 수정은 거부한다. 로컬/클
 ### 본문 표 제어 회귀 검사
 
 고정 위치 메뉴는 source window의 viewport로 위치를 계산한다. 문서 전체 높이로 늘어나는 iframe은 필터링 중 viewport가 변하고 메뉴가 이동하므로, llm-table-controls 기반 표는 실제 고정 viewport와 내부 스크롤을 제공한다. 일반 설명 문서는 본문에 맞춰 늘어난다. 원문 데이터·필터 스크립트를 바꾸는 대신 실행 환경의 계약을 맞췄다. `scripts/check_model_frames.cjs`는 실제 브라우저의 5개 필터, 빈 결과/선택 결과, 열린 메뉴의 viewport 불변, Escape/초기화를 검증한다. Playwright 모듈 경로, 브라우저 실행 파일, 선택적 source 출력 루트를 인자로 받는다. 브라우저 프로필·다운로드는 owned scratch 안에서 실행하고 종료 후 정리한다.
+
+### 2026-10-08 공식 공개 적용
+
+커밋55c71fc의 [배포37736392889](https://github.com/Hansihoo/signal-desk/actions/runs/37736392889)가 성공했다. 클라우드99시험과 주택review PASS. 공개1041자료/17보고서/28판, 모델789관측/14문서의 원본 내용이 로컬 검증본과 동일하고 모델 경로18개가200으로 응답했다. 공개 [누적표](https://hansihoo.github.io/signal-desk/preview/ai-models.html)와 [모델 문서](https://hansihoo.github.io/signal-desk/preview/ai-model-guides.html)에 적용되었다. 주간 예약은 삭제되었고 현재 ai는 daily05:00 한국시간 신규 모델 확인·페이지 추가 heartbeat다.
