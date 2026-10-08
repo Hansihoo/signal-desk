@@ -1,5 +1,16 @@
 # Homepage and report contract
 
+## Display names, 2026-10-08
+
+Theo requested removal of the product name “리서치”. Use “메인”, “목차”, “분야”,
+“자료 모음” and “모델별 자료” in page titles, navigation, accessible labels and
+descriptions. The displayed source category is “모델 분석”; its upstream value
+remains “모델 리서치” for collection/filter identity. Public source-note labels
+map “Theo 모델 리서치” to “Theo 모델 자료” at render time. Older category URLs
+remain accepted. Source facts, immutable documents and stored snapshots keep their
+original values. The public collection-time caption matches the existing05:00
+Asia/Seoul schedule.
+
 ## Header and model-library responsive repair, 2026-10-08
 
 Keep the menu button in the header's normal flex layout beside the brand. The

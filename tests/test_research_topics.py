@@ -44,7 +44,7 @@ class ResearchTopicTests(unittest.TestCase):
             catalog = json.loads((Path(temp) / 'topics.json').read_text(encoding='utf-8'))
             self.assertEqual(catalog[-1]['count'], 1)
             page = (Path(temp) / 'research/papers/index.html').read_text(encoding='utf-8')
-            self.assertIn('논문 리서치', page)
+            self.assertIn('<title>Signal Desk · 논문</title>', page)
             self.assertIn('Original source excerpt', page)
             self.assertIn('"prefix": "../../"', page)
             data = json.loads(page.split('<script id="briefing-data" type="application/json">')[1].split('</script>')[0])

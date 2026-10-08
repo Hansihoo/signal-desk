@@ -13,8 +13,9 @@
   const selectedTopic = topics.find(topic => topic.id === topicId);
   const isOpportunity = selectedTopic?.view === 'opportunities';
   const templateView = isOpportunity && params.get('template') === '1';
-  const categoryOf = item => item.category || '기타';
-  const section = report ? categoryOf(report) : (selectedTopic ? params.get('section') || '' : '');
+  const displayLabel = value => value === '모델 리서치' ? '모델 분석' : value === 'Theo 모델 리서치' ? 'Theo 모델 자료' : value;
+  const categoryOf = item => displayLabel(item.category || '기타');
+  const section = report ? categoryOf(report) : (selectedTopic ? displayLabel(params.get('section') || '') : '');
   const topicItems = topic => items.filter(item => topicOf(item)?.id === topic.id);
   const groups = topic => {
     const categories = topic.outline?.categories || [];
@@ -68,7 +69,7 @@
   function renderTree() {
     const root = node('ul');
     const home = node('li');
-    home.append(link(data.archived ? '보관된 브리핑 메인' : '리서치 메인', homeUrl, !topicId && !requestedReport, 'tree-home'));
+    home.append(link(data.archived ? '보관된 브리핑 메인' : '메인', homeUrl, !topicId && !requestedReport, 'tree-home'));
     root.append(home);
     for (const [index, topic] of topics.entries()) {
       const row = node('li'), branch = node('details', '', 'tree-topic'), heading = node('summary', topic.name);
@@ -131,7 +132,7 @@
     } else {
       $('directory-count').textContent = topics.length + '개 분야';
       for (const [index, topic] of topics.entries()) {
-        $('directory-list').append(directoryRow(index, topic.name + ' 리서치', topic.description || '', route(topic), topic.stage === 'outline' ? 'HTML 틀' : topic.count || 0));
+        $('directory-list').append(directoryRow(index, topic.name, topic.description || '', route(topic), topic.stage === 'outline' ? 'HTML 틀' : topic.count || 0));
       }
     }
   }
@@ -156,13 +157,13 @@
     $('eyebrow').textContent = 'SOURCE NOTE / 수집 기록';
     $('page-title').textContent = report.title;
     $('description').textContent = [selectedTopic?.name, categoryOf(report)].filter(Boolean).join(' · ');
-    const fields = [['출처', report.source], ['발행일', date(report.published_at)], ['자료 유형', report.basis || '원문 링크'], ['최초 수집', timestamp(report.first_seen_at)]];
+    const fields = [['출처', displayLabel(report.source)], ['발행일', date(report.published_at)], ['자료 유형', report.basis || '원문 링크'], ['최초 수집', timestamp(report.first_seen_at)]];
     if (report.status) fields.push(['공고 상태', report.status]);
     for (const [label, value] of fields) {
       const field = node('div'); field.append(node('dt', label), node('dd', value)); $('report-meta').append(field);
     }
     $('report-summary').textContent = report.summary || '수집된 요약문이 없습니다. 아래 원문에서 내용을 확인해 주세요.';
-    $('report-evidence').append(node('p', report.source + ' · ' + (report.basis || '원문 링크')));
+    $('report-evidence').append(node('p', displayLabel(report.source) + ' · ' + (report.basis || '원문 링크')));
     const url = safeUrl(report.url);
     if (url) {
       const source = link('원문 자료 열기 ↗', url);
@@ -233,7 +234,7 @@
     $('all').setAttribute('aria-pressed', String(mode === 'all'));
     for (const item of rows.slice(0, shown)) {
       const row = node('article', '', 'record-row'), kicker = node('div', '', 'record-kicker'), heading = node('h3');
-      kicker.append(node('span', item.topic + ' / ' + categoryOf(item), 'record-topic'), node('span', date(item.published_at || item.first_seen_at)), node('span', item.source));
+      kicker.append(node('span', item.topic + ' / ' + categoryOf(item), 'record-topic'), node('span', date(item.published_at || item.first_seen_at)), node('span', displayLabel(item.source)));
       heading.append(link(item.title, recordUrl(item))); row.append(kicker, heading); $('items').append(row);
     }
     if (!rows.length) $('items').append(node('p', '조건에 맞는 기록이 없습니다. 검색어 또는 자료 범위를 바꿔 주세요.', 'empty'));
@@ -244,19 +245,19 @@
   $('home-link').href = data.prefix + 'index.html';
   $('archive-link').href = requestedReport || isOpportunity ? homeUrl + '#archive' : '#archive';
   $('updated').textContent = (data.archived ? '보관된 브리핑 · ' : '마지막 갱신 · ') + timestamp(data.created_at) + ' · ' + items.length + '건의 기록';
-  if (topicId || requestedReport) crumb(data.archived ? '보관 메인' : '리서치 메인', homeUrl);
-  else crumb(data.archived ? '보관된 브리핑' : '리서치 메인');
+  if (topicId || requestedReport) crumb(data.archived ? '보관 메인' : '메인', homeUrl);
+  else crumb(data.archived ? '보관된 브리핑' : '메인');
   if (selectedTopic) crumb(selectedTopic.name, section || requestedReport || templateView ? route(selectedTopic) : '');
   if (section) crumb(section, requestedReport || templateView ? route(selectedTopic, section) : '');
   if (requestedReport) crumb('개별 기록');
   if (templateView) crumb('보고서 양식');
   if (selectedTopic && !requestedReport) {
-    $('eyebrow').textContent = section ? 'RESEARCH SUBJECT' : 'RESEARCH TOPIC';
-    $('page-title').textContent = section || selectedTopic.name + ' 리서치';
+    $('eyebrow').textContent = section ? '주제별 자료' : '분야별 자료';
+    $('page-title').textContent = section || selectedTopic.name;
     $('description').textContent = section ? selectedTopic.name + ' 분야의 ' + section + ' 자료를 모읍니다.' : selectedTopic.description || '이 분야의 수집 기록을 모읍니다.';
   } else if (!requestedReport) {
-    $('page-title').textContent = data.archived ? data.date + ' 브리핑' : '리서치 메인';
-    $('description').textContent = '분야별 자료를 모으고, 주제를 따라 기록을 읽는 리서치 아카이브입니다.';
+    $('page-title').textContent = data.archived ? data.date + ' 브리핑' : '메인';
+    $('description').textContent = '분야별 자료를 모으고, 주제를 따라 기록을 읽는 자료 모음입니다.';
   }
   renderTree(); renderDirectory(); renderHealth();
   const invalidTopic = Boolean(topicId && !selectedTopic);

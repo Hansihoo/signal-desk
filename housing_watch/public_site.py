@@ -200,8 +200,8 @@ def _write_page(path, snapshot, history, prefix="", archived=False, selected_top
     assets = b"".join(Path(__file__).with_name("public_site." + suffix).read_bytes() for suffix in ("css", "js"))
     content = content.replace("__ASSET_PREFIX__", prefix).replace("__ASSET_VERSION__", hashlib.sha256(assets).hexdigest()[:12])
     topic = next((topic for topic in data["topics"] if topic["id"] == selected_topic), None)
-    title = topic["name"] + " 리서치" if topic else "리서치 아카이브"
-    description = topic.get("description") if topic else "여러 분야의 자료와 원문을 모으고, 주제별 리서치와 지난 브리핑을 찾아봅니다."
+    title = topic["name"] if topic else "자료 모음"
+    description = topic.get("description") if topic else "여러 분야의 자료와 원문을 모으고, 주제별 자료와 지난 브리핑을 찾아봅니다."
     content = content.replace("__PAGE_TITLE__", html.escape(title)).replace("__PAGE_DESCRIPTION__", html.escape(description or "", quote=True))
     # A static preview remains readable if JavaScript is unavailable.
     preview = "".join('<li><a href="%s">%s</a></li>' % (html.escape(item["url"], quote=True), html.escape(item["title"])) for item in snapshot["items"][:10])

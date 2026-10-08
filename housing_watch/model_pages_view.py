@@ -10,6 +10,10 @@ from urllib.parse import unquote, urljoin, urlparse
 ROOT = Path(__file__).parent
 
 
+def _category_label(value):
+    return "모델 분석" if value == "모델 리서치" else value
+
+
 def library_content(pages, prefix=""):
     rows = []
     for row in sorted(pages["pages"], key=lambda row: (row["document"]["updated_on"], row["slug"]), reverse=True):
@@ -17,12 +21,12 @@ def library_content(pages, prefix=""):
         searchable = " ".join([doc["title"], doc["description"], doc["category"], *doc["tags"]])
         rows.append('<tr data-category="%s" data-search="%s"><td><a href="%smodel-guides/%s.html">%s</a><p>%s</p></td><td data-label="분야">%s</td><td data-label="자료 수정일">%s</td><td data-label="원자료 기준일">%s</td></tr>' % tuple(escape(str(value), quote=True) for value in (
             doc["category"], searchable.casefold(), prefix, row["slug"], doc["title"], doc["description"],
-            doc["category"], doc["updated_on"] or "미표기", doc["reference_date"] or "미표기")))
+            _category_label(doc["category"]), doc["updated_on"] or "미표기", doc["reference_date"] or "미표기")))
     categories = sorted({row["document"]["category"] for row in pages["pages"]})
-    options = ''.join('<option>%s</option>' % escape(value) for value in categories)
+    options = ''.join('<option value="%s">%s</option>' % (escape(value, quote=True), escape(_category_label(value))) for value in categories)
     warnings = (pages.get("runs") or [{}])[0].get("failures", [])
     notice = '<p role="status">일부 원문을 갱신하지 못해 이전 자료를 보존했습니다.</p>' if warnings else ""
-    return '<style>%s</style><section class="model-document-library" data-ui-id="model-library"><header><h1>모델 리서치 자료</h1></header><p>Theo의 모델 분석·선택 가이드·비용 비교·벤치마크 해설입니다. 원자료의 수정일·기준일을 보존하며, 가져온 날짜를 독립적인 사실 확인일로 표시하지 않습니다.</p><p><a href="%sai-models.html">전체 모델 비교표</a></p>%s<div class="model-library-tools"><label>자료 검색<input id="model-page-query" type="search" placeholder="모델 이름, 비용, 벤치마크"></label><label>자료 분야<select id="model-page-category"><option value="">전체</option>%s</select></label></div><div class="table-wrapper"><table><thead><tr><th>자료</th><th>분야</th><th>자료 수정일</th><th>원자료 기준일</th></tr></thead><tbody id="model-page-rows">%s</tbody></table></div><p id="model-page-empty" hidden>검색 결과가 없습니다.</p><p id="model-page-count" role="status"></p></section><script>%s</script>' % (
+    return '<style>%s</style><section class="model-document-library" data-ui-id="model-library"><header><h1>모델별 자료</h1></header><p>Theo의 모델 분석·선택 가이드·비용 비교·벤치마크 해설입니다. 원자료의 수정일·기준일을 보존하며, 가져온 날짜를 독립적인 사실 확인일로 표시하지 않습니다.</p><p><a href="%sai-models.html">전체 모델 비교표</a></p>%s<div class="model-library-tools"><label>자료 검색<input id="model-page-query" type="search" placeholder="모델 이름, 비용, 벤치마크"></label><label>자료 분야<select id="model-page-category"><option value="">전체</option>%s</select></label></div><div class="table-wrapper"><table><thead><tr><th>자료</th><th>분야</th><th>자료 수정일</th><th>원자료 기준일</th></tr></thead><tbody id="model-page-rows">%s</tbody></table></div><p id="model-page-empty" hidden>검색 결과가 없습니다.</p><p id="model-page-count" role="status"></p></section><script>%s</script>' % (
         (ROOT / "model_pages.css").read_text(encoding="utf-8"), escape(prefix), notice, options, ''.join(rows),
         (ROOT / "model_pages.js").read_text(encoding="utf-8"))
 
@@ -74,7 +78,7 @@ def page_content(row, all_pages, edition=False):
     viewport = ' data-fixed-viewport="true"' if 'llm-table-controls.js' in doc['assets'] else ''
     editions = [item for item in all_pages["history"] if item["slug"] == slug]
     links = ''.join('<a href="%s-r%d.html">%d차</a> ' % (slug, item['revision'], item['revision']) for item in sorted(editions, key=lambda item:item['revision'], reverse=True))
-    return '<style>%s</style><section class="model-source-heading" data-ui-id="model-source"><header><h1>%s</h1></header><p><a href="../ai-model-guides.html">모델 리서치 자료</a> · <a href="../ai-models.html">전체 모델 비교표</a> · <a href="%s" target="_blank" rel="noopener">Theo 원문</a></p><p>자료 수정일 %s · 원자료 기준일 %s · Theo 작성 자료</p>%s<p class="model-source-editions">이전 기록: %s</p></section><iframe class="model-source-frame"%s title="%s 본문" src="content/%s-r%d.html" sandbox="allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox"></iframe><script>%s</script>' % (
+    return '<style>%s</style><section class="model-source-heading" data-ui-id="model-source"><header><h1>%s</h1></header><p><a href="../ai-model-guides.html">모델별 자료</a> · <a href="../ai-models.html">전체 모델 비교표</a> · <a href="%s" target="_blank" rel="noopener">Theo 원문</a></p><p>자료 수정일 %s · 원자료 기준일 %s · Theo 작성 자료</p>%s<p class="model-source-editions">이전 기록: %s</p></section><iframe class="model-source-frame"%s title="%s 본문" src="content/%s-r%d.html" sandbox="allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox"></iframe><script>%s</script>' % (
         (ROOT / 'model_pages.css').read_text(encoding='utf-8'), escape(doc['title']), escape(doc['source_url'],quote=True),
         escape(doc['updated_on'] or '미표기'), escape(doc['reference_date'] or '미표기'),
         '<p>이전 판 · <a href="%s.html">현재 자료</a></p>' % slug if edition else '', links, viewport, escape(doc['title'],quote=True), slug, revision,
@@ -95,4 +99,4 @@ def render_model_pages(destination, pages, page):
     for row in pages['pages']:
         doc = row['document']
         (root / (row['slug']+'.html')).write_text(page(doc['title'],doc['description'],page_content(row,pages),'../',active='ai-model-guides'),encoding='utf-8')
-    (destination / 'ai-model-guides.html').write_text(page('모델 리서치 자료','모델별 가이드·비용·평가 자료',library_content(pages),active='ai-model-guides'),encoding='utf-8')
+    (destination / 'ai-model-guides.html').write_text(page('모델별 자료','모델별 가이드·비용·평가 자료',library_content(pages),active='ai-model-guides'),encoding='utf-8')
