@@ -1,5 +1,14 @@
 # Handoff
 
+## Latest work: model navigation counts, 2026-10-08
+
+The main and sidebar count document pages rather than model/settings rows. The
+native comparison explorer is1 page; model guides count current `model_pages.pages`
+documents (currently14), excluding earlier editions and route aliases. Parent
+topic totals include these additional pages. Row counts inside the comparison
+explorer retain their original meaning. Regenerate with `publish`; no DB migration
+or authored report revision is needed. See [the count contract](AI_MODEL_RESEARCH.md).
+
 ## Business planning (2026-10-08)
 
 Read [BUSINESS_PLANNING.md](BUSINESS_PLANNING.md) for public/private boundaries,
