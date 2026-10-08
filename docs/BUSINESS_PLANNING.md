@@ -105,3 +105,10 @@ python -m housing_watch business-private --input "D:\3_codex_docs\SignalDesk\Bus
 - 기존 수집/주거 검토: 일반 AI/뉴스 피드 수집에는 경고3건이 있었고 사업 공식 원문 검토와
   구분했다. 로컬 주거review는8건 중 모집중0건으로 해당 항목만 실패했다(나머지11항목 PASS).
   배포 환경의 누적 상태 복원 후 CI 결과와 공개 사업 화면은 별도 확인한다.
+
+공개 배포 영수증: 소스 `6a3d9bd`, Pages 실행 `37745311399` 성공.
+CI106시험·주거review PASS(모집중1건), 누적 원문1100건/보고서20편.
+공개 사업20/기존 헤더35 페이지·화면폭 조합, 검색·분야·빈 결과·복귀·상세/공식 경로,
+공개 JSON의 사업3편·국책사업2차·사내표식 부재와 CSS 소스 일치 PASS.
+공개390px 화면을 `reports/business-live-mobile.png`로 확인했다. 사내 DB/JSON/HTML은
+외부 로컬 폴더에만 유지하며 공개 배포하지 않았다. 소유한 임시 scratch는 정리했다.
