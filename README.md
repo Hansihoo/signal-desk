@@ -1,5 +1,10 @@
 # Signal Desk
 
+사업기획 영역은 공개 공식 자료와 사내 작업 자료를 분리한다.
+공개 목록은 `preview/business.html`, 사내 화면은 저장소 밖
+`D:/3_codex_docs/SignalDesk/BusinessPlanning/index.html`이다.
+조사 항목·주간 검토·입력 명령은 [사업기획 운영](docs/BUSINESS_PLANNING.md)을 참고한다.
+
 Signal Desk is a local-first personal signal dashboard.
 
 It collects updates Theo cares about, stores them in a searchable local database, and turns them into concise mobile briefings that Codex can explain later.

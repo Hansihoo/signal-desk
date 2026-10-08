@@ -1,5 +1,14 @@
 # Architecture
 
+## Business working-data boundary
+
+Public business reports follow the existing validated report → SQLite revisions →
+Editorial Pages pipeline. `business-private` branches before public config/DB setup,
+using an external non-Git workspace, separate `business.sqlite3` and local HTML.
+Confidential records have a different schema, changed-only revisions, and no public
+export integration. Public state backup refuses private business tables. See
+[BUSINESS_PLANNING.md](BUSINESS_PLANNING.md) for the operational source of truth.
+
 ## Intent
 
 Signal Desk is a local-first research pipeline. It prepares important updates before Theo asks Codex questions.

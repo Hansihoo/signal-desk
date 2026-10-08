@@ -40,6 +40,11 @@ Then state:
 
 ## Research Writing and Content Review
 
+For PolarisOffice government programs, sales opportunities or peer business direction,
+read `docs/BUSINESS_PLANNING.md` first. Keep confidential customer, pricing, proposal
+and internal engine/UI evidence outside this public Git repository and its DB/site/
+release backups. Use `business-private` for the separate external working store.
+
 For AI/LLM model lists, comparisons, new releases, availability, costs or benchmarks,
 read `docs/AI_MODEL_RESEARCH.md` first. It owns the research scope, Theo's existing
 source mapping, accumulating model ledger, collection commands and official-fact import procedure.

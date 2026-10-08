@@ -1,5 +1,14 @@
 # Handoff
 
+## Business planning (2026-10-08)
+
+Read [BUSINESS_PLANNING.md](BUSINESS_PLANNING.md) for public/private boundaries,
+weekly official-source review, product evidence rules and commands. Public business
+reports render at `preview/business.html` and `research/business/index.html`.
+Confidential data stays outside Git in `D:/3_codex_docs/SignalDesk/BusinessPlanning`;
+`business-private` uses its own SQLite and HTML, never the public DB/export pipeline.
+Initial reports are a planning baseline, not validated eligibility or actual leads.
+
 This document is the first stop for a future Codex agent.
 
 ## Latest work: header overlap and model-library mobile layout, 2026-10-08

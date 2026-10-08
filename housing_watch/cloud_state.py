@@ -42,6 +42,8 @@ def create_archive(root, destination):
         raise ValueError("A collected database and briefing archive are required for backup.")
     with closing(sqlite3.connect(str(database))) as source:
         tables = {row[0] for row in source.execute("SELECT name FROM sqlite_master WHERE type='table'")}
+        if tables & {"business_records", "business_revisions"}:
+            raise ValueError("Public cloud backup refuses private business tables.")
         if "job_items" in tables and source.execute("SELECT COUNT(*) FROM job_items").fetchone()[0]:
             raise ValueError("Public cloud backup refuses databases containing local/private job imports.")
         with tempfile.TemporaryDirectory() as temp:

@@ -77,6 +77,8 @@ def _tree(reports, prefix, active=None, model_count=0):
             return "".join(links)
 
         links = branch(categories, [name])
+        if any(item["topic_id"] == "business" for item in members):
+            links = '<li><a href="%sbusiness.html">사업 전체 자료</a></li>' % prefix + links
         parts.append('<li><details class="tree-group" open><summary><span class="tree-label">%s</span><small>%d</small></summary><ul>%s</ul></details></li>' % (
             _escape(name), len(members), links))
     return "".join(parts) + "</ul>"
@@ -196,7 +198,8 @@ def render_editorial(output, snapshot, featured, research_data=None, standalone=
                        '<link rel="stylesheet" href="%sbriefing.css?v=%s">' % (prefix, style_version))
         return _fill(shell, {"__PAGE_TITLE__": _escape(title), "__DESCRIPTION__": _escape(description),
             "__STYLE_BLOCK__": style_block, "__SCRIPT__": script, "__CONTENT__": content, "__PREFIX__": prefix,
-            "__TREE__": _tree(reports, prefix, active, model_count), "__CONTENTS_NAV__": contents, "__EDITION_NAV__": editions})
+            "__TREE__": _tree(reports, prefix, active, model_count), "__CONTENTS_NAV__": contents, "__EDITION_NAV__": editions,
+            "__BUSINESS_LINK__": '<a href="%sbusiness.html">사업</a>' % prefix if any(item["topic_id"] == "business" for item in reports) else ""})
     values = dict(_report_replacements(featured), __REPORT_URL__=_escape(featured["id"] + ".html"),
         __HEADLINE__=_headline(featured["title"]),
         __HERO_VISUAL__=_hero(featured, featured["id"] + ".html"), __TOPIC_FEATURES__=_topic_features(reports),
@@ -207,6 +210,18 @@ def render_editorial(output, snapshot, featured, research_data=None, standalone=
     if model_count:
         content = content.replace('<section id="board">', model_link + '<section id="board">')
     (destination / "index.html").write_text(page("최근 동향", "개발 동향, 사업 기회와 운영 자료", content), encoding="utf-8")
+    business = [item for item in reports if item["topic_id"] == "business"]
+    if business:
+        def business_page(prefix=""):
+            values = {"__BUSINESS_DATE__": _escape(max(item["checked_on"] for item in business)),
+                "__REPORT_COUNT__": str(len(business)), "__BOARD_TOOLS__": _board_tools(business),
+                "__BOARD_ROWS__": "".join(_post(item, prefix + item["id"] + ".html") for item in business)}
+            return page("사업기획", "폴라리스오피스 국책사업·영업 기회·경쟁사 동향", _fill(
+                (ROOT / "editorial_business.html").read_text(encoding="utf-8"), values), prefix, "business")
+        (destination / "business.html").write_text(business_page(), encoding="utf-8")
+        formal = Path(output) / "research" / "business"
+        formal.mkdir(parents=True, exist_ok=True)
+        (formal / "index.html").write_text(business_page("../../preview/"), encoding="utf-8")
     template = (ROOT / "editorial_report.html").read_text(encoding="utf-8")
     def report_page(item, edition=None):
         prefix = "../" if edition else ""

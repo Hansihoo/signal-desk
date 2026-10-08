@@ -1,6 +1,12 @@
 {
   "topics": [
     {
+      "id": "business",
+      "name": "사업",
+      "description": "폴라리스오피스의 국책사업, 영업 기회와 경쟁사·시장 방향을 공식 자료로 검토합니다.",
+      "collector": "planned"
+    },
+    {
       "id": "opportunities",
       "name": "개발 관련 정보",
       "description": "개발 동향, 지원·참여, 시장·사업 정보를 정리합니다. 검토된 보고서는 메인에, 프로그램 분류는 이곳에 보관합니다.",

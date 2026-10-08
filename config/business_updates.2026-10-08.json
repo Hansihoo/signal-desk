@@ -1,0 +1,280 @@
+{
+  "schema_version": 1,
+  "reports": [
+    {
+      "id": "polaris-government-opportunities",
+      "topic_id": "business",
+      "topic_path": [
+        "사업",
+        "국책사업"
+      ],
+      "title": "국책사업, 지원금·공급기업·조달을 먼저 구분하기",
+      "description": "같은 AI·문서 사업이라도 돈을 받는 역할과 준비 서류가 다릅니다. 모집 상태와 참여 자격을 확인한 뒤 후보를 검토합니다.",
+      "checked_on": "2026-10-08",
+      "scope": "공개 공식 자료를 바탕으로 한 사업 검토 기준. 계약·참여 자격·실제 고객 수요는 별도 확인.",
+      "deck": "같은 AI·문서 사업이라도 돈을 받는 역할과 준비 서류가 다릅니다. 모집 상태와 참여 자격을 확인한 뒤 후보를 검토합니다.",
+      "highlights": [
+        "연구개발 과제·AI 공급기업·공공 조달은 서로 다른 참여 경로",
+        "2026 AI바우처 모집은 종료: 현재 신청 기회로 제시하지 않음",
+        "문서 구조화·업무 AI는 검토 주제이며 회사 참여 자격은 확인 전"
+      ],
+      "source_note": "2026-10-08 공식 원문 확인. 제품·전략은 각 회사의 설명이며 독립 성능 검증이 아니다.",
+      "summary": [
+        {
+          "kind": "fact",
+          "label": "역할",
+          "text": "NIPA AI바우처는 AI 도입 수요기업의 구매와 자체 솔루션을 가진 공급기업의 판매를 연결한다.",
+          "source_ids": [
+            "nipa-program"
+          ]
+        },
+        {
+          "kind": "fact",
+          "label": "모집 상태",
+          "text": "2026 AI바우처 수정 모집은 3월 30일 15시에 마감했고 공고 목록에서 종료로 표시된다.",
+          "source_ids": [
+            "nipa-closed"
+          ]
+        },
+        {
+          "kind": "judgment",
+          "label": "우선 판단",
+          "text": "사업명에 AI가 있어도 자격·역할·마감·제품 적합성 중 하나가 확인되지 않으면 신청 후보로 확정하지 않는다.",
+          "source_ids": []
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "result": {
+        "title": "다음 검토",
+        "points": [
+          {
+            "kind": "judgment",
+            "label": "이번 기준선",
+            "text": "AI바우처는 종료된 참고 사례로 유지하고 신규 모집의 공식 발표를 관찰한다.",
+            "source_ids": []
+          },
+          {
+            "kind": "judgment",
+            "label": "사내 확인",
+            "text": "사업기획 담당자가 회사 자격·재무 부담·제품 공급 조건을 확인해야 참여 결정을 내릴 수 있다.",
+            "source_ids": []
+          },
+          {
+            "kind": "judgment",
+            "label": "10월 확인 후보",
+            "text": "제조 Multi AI Agent 공고는 첨부·회사 자격·제조 업무 적합성을 확인하기 전까지 확인 필요 상태로 유지한다.",
+            "source_ids": []
+          }
+        ]
+      },
+      "references": [
+        {
+          "id": "nipa-program",
+          "title": "NIPA 2026 AI바우처 사업 안내",
+          "url": "https://www.nipa.kr/home/bsnsAll/3/detail?bsnsDtlsIemNo=580&tab=1",
+          "description": "수요기업·공급기업과 컨소시엄의 역할을 설명한다."
+        },
+        {
+          "id": "nipa-closed",
+          "title": "NIPA AI바우처 공고 목록",
+          "url": "https://www.nipa.kr/home/bsnsAll/0/nttList?bbsNo=4&bsnsDtlsIemNo=580&tab=2",
+          "description": "2026 수정 모집 3월 30일 15시 마감, 목록에서 종료 표시 확인."
+        },
+        {
+          "id": "iris",
+          "title": "IRIS 사업공고",
+          "url": "https://www.iris.go.kr/contents/retrieveBsnsAncmBtinSituListView.do",
+          "description": "범부처 공고 탐색 출발점. 개별 공고·첨부 요건까지 읽어야 한다."
+        },
+        {
+          "id": "bizinfo",
+          "title": "기업마당 지원사업 공고",
+          "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200View.do",
+          "description": "지원 공고 탐색 출발점. 공고 기관 원문과 교차 확인한다."
+        },
+        {
+          "id": "polaris-data",
+          "title": "PolarisOffice AI DataInsight",
+          "url": "https://www.polarisoffice.com/ko/solution/datainsight",
+          "description": "문서 객체 구조화 제품 설명. 추출 정확도나 고객 ROI의 독립 검증 자료는 아니다."
+        },
+        {
+          "id": "manufacturing-agent",
+          "title": "기업마당: 중소제조 특화 Multi AI Agent 점프업 Track",
+          "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000125978",
+          "description": "2026-08-31 목록 공고. 신청기간 10월 1~30일, 중소 공급기업·제조 수요기업 컨소시엄 요건. 원 주관기관 페이지·첨부는 이번에 열람 실패."
+        }
+      ],
+      "caveats": [
+        {
+          "text": "현재 신청 가능한 공고 전체를 조사한 목록이 아니다. 폴라리스오피스의 공급기업 풀 등록·수요기업 자격·인증 보유 여부는 확인하지 않았다.",
+          "source_ids": [
+            "nipa-closed"
+          ]
+        },
+        {
+          "text": "나라장터는 브라우저 접근 안내가 반환되어 이번에 개별 입찰·첨부를 검토하지 못했다. 조회 실패를 공고 없음으로 해석하지 않는다.",
+          "source_ids": []
+        },
+        {
+          "text": "제조 Multi AI Agent 공고의 원 주관기관 링크는 조회 실패, 첨부는 웹 도구가 지원하지 않는 형식으로 반환됐다. 기업마당 목록만 확인했으며 정확한 마감 시각·추가 조건을 검증하지 않았다.",
+          "source_ids": [
+            "manufacturing-agent"
+          ]
+        }
+      ],
+      "explanation": [
+        {
+          "id": "roles",
+          "title": "어느 역할로 참여하는지부터 결정한다",
+          "lead": "연구개발비 지원, 제품 판매 지원, 발주기관의 구매는 서로 다른 사업 활동이다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "연구개발 과제",
+              "text": "새 기술과 성과 목표를 제안하는 경로다. 주관·공동 기관 자격, 기업 규모, 정부지원 비율과 현금 부담, 기술료·지식재산 조건, 연구 인력과 과제 중복 여부를 해당 공고에서 확인한다. 회사 규모나 계열 관계를 추정해 자격을 통과시키지 않는다.",
+              "source_ids": []
+            },
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "AI 공급기업 참여",
+              "text": "AI바우처는 수요·공급 컨소시엄의 솔루션 적용 방안과 사업 가치를 검토하는 구조다. 공급기업 풀 등록과 수요기업 매칭은 별도로 확인해야 한다.",
+              "source_ids": [
+                "nipa-program"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "공공 조달",
+              "text": "발주기관이 필요한 소프트웨어나 서비스를 구매하는 경로다. 입찰 참가·제품 등록·인증·실적·수행 범위는 제안요청서와 공고에 따라 판단한다. 지원금 공고와 조달 기회를 한 상태로 합치지 않는다.",
+              "source_ids": []
+            }
+          ]
+        },
+        {
+          "id": "fit",
+          "title": "폴라리스 제품을 공고의 문제와 연결한다",
+          "lead": "문서 처리 기술을 보유했다는 이유만으로 모든 AI 공고에 적합한 것은 아니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "공개 제품 근거",
+              "text": "AI DataInsight는 문서의 텍스트·표·이미지 등 객체를 AI 활용에 맞게 구조화하는 제품으로 소개된다.",
+              "source_ids": [
+                "polaris-data"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "example",
+              "title": "가상 검토 사례",
+              "text": "공고가 ‘행정 문서 기반 질의응답의 근거 추적’을 요구한다고 가정한다. 먼저 문서 구조화 결과에 원문 위치가 남는지, 권한을 유지하는지, 표의 의미가 보존되는지를 검증할 과제로 정한다. 문서 추출과 최종 답변 품질을 별도로 측정한다. 이 사례는 실제 공고나 제안 확정이 아니다.",
+              "source_ids": []
+            },
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "이번 확인 결과",
+              "text": "2026 AI바우처는 사업 구조를 이해하는 참고 사례로 보관한다. 신규 모집·추가 모집을 공식 원문에서 확인하기 전에는 신청 가능한 항목으로 전환하지 않는다.",
+              "source_ids": []
+            }
+          ]
+        },
+        {
+          "id": "current-candidate",
+          "title": "10월 공고도 자격과 업무를 먼저 걸러 본다",
+          "lead": "기업마당에서 현재 날짜가 신청기간에 포함되는 공고 한 건을 찾았다. 목록의 기간 확인과 회사의 참여 가능 확인은 다른 단계다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "목록에서 확인한 조건",
+              "text": "중소제조 특화 Multi AI Agent 개발(R&D) 점프업 Track은 목록상 신청기간이 2026년 10월 1~30일이다. 중소기업인 공급기업과 제조기업인 수요기업의 컨소시엄 참여를 요구한다.",
+              "source_ids": [
+                "manufacturing-agent"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "폴라리스의 판단은 확인 필요",
+              "text": "문서 기반 업무 AI가 제조 현장의 요구와 직접 연결되는지, 회사가 공급기업 자격을 충족하는지, 어떤 파트너 역할이 허용되는지 먼저 확인해야 한다. 원 주관기관 페이지와 첨부가 열리지 않아 정확한 마감 시각·추가 자격·지원 조건을 아직 확인하지 못했다. 참여 가능한 과제로 확정하거나 지원 금액을 사업 계획에 반영하지 않는다.",
+              "source_ids": []
+            }
+          ]
+        },
+        {
+          "id": "weekly",
+          "title": "주간 검토에서 남길 기록",
+          "lead": "검색 결과를 읽은 뒤 팀이 다음 행동을 결정할 수 있어야 한다.",
+          "blocks": [
+            {
+              "type": "steps",
+              "kind": "judgment",
+              "title": "원문부터 후보 판단까지",
+              "source_ids": [],
+              "items": [
+                {
+                  "label": "공고 확인",
+                  "text": "IRIS·NIPA·기업마당에서 새 공고와 정정 공고를 찾고 실제 주관 기관 원문·첨부를 연다."
+                },
+                {
+                  "label": "조건 기록",
+                  "text": "공고명·역할·기간·한국 시간 마감·지원 방식·기업 자격·컨소시엄·제품 요건·확인일을 기록한다. 첨부 미확인은 확인 필요로 둔다."
+                },
+                {
+                  "label": "분리 검토",
+                  "text": "공개 자료에는 공고 사실과 일반 검토 기준을, 사내 작업 공간에는 담당자·기술 확인·비용·파트너·참여 결정을 기록한다."
+                },
+                {
+                  "label": "다음 행동",
+                  "text": "누가 어떤 조건을 언제까지 확인할지 정한다. 마감 경과·정정·종료도 변경으로 보존한다."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "program-checks",
+          "title": "모집 상태와 참여 가능성을 구분한 초기 확인",
+          "columns": [
+            "공고",
+            "원문 목록의 기간·상태",
+            "참여 역할·다음 확인"
+          ],
+          "rows": [
+            {
+              "values": [
+                "NIPA AI바우처 2026",
+                "3월 30일 15시 마감 · 종료",
+                "AI 공급·수요 컨소시엄. 신규 모집을 관찰"
+              ],
+              "source_ids": [
+                "nipa-closed",
+                "nipa-program"
+              ]
+            },
+            {
+              "values": [
+                "중소제조 Multi AI Agent · 점프업",
+                "10월 1~30일 · 목록상 기간 내",
+                "중소 공급기업+제조 수요기업. 첨부·자사 자격 확인 필요"
+              ],
+              "source_ids": [
+                "manufacturing-agent"
+              ]
+            }
+          ],
+          "note": "2026-10-08 확인. 둘째 행은 기업마당 목록의 조건만 확인한 후보다. 주관기관 원문·첨부, 정확한 마감 시각과 폴라리스의 참여 자격은 미확인. 다음 확인은 편집 판단."
+        }
+      ]
+    }
+  ]
+}

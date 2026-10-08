@@ -19,6 +19,8 @@ def _topic_rows(snapshot):
         items = [item for item in snapshot.get("items", [])
                  if item.get("topic_id") == topic["id"] and public_url(item.get("url"))]
         items.sort(key=lambda item: (item.get("published_at") or "", item.get("first_seen_at") or ""), reverse=True)
+        if topic["id"] == "business" and not items:
+            continue  # Authored business reports have their own board, not a feed archive.
         topic_url = "../research/%s/index.html" % _escape(topic["id"])
         if items:
             latest = items[0]

@@ -1,6 +1,7 @@
 import argparse
 import json
 import os
+import sqlite3
 import sys
 from pathlib import Path
 
@@ -154,7 +155,20 @@ def main(argv=None):
     pages.add_argument("--collect", action="store_true")
     pages.add_argument("--output", default="data/ai-model-pages.json")
 
+    private = sub.add_parser("business-private", help="maintain business working data outside Git and the public database")
+    private.add_argument("--root", default="D:/3_codex_docs/SignalDesk/BusinessPlanning", help="external private workspace")
+    private.add_argument("--input", help="external private business JSON")
+
     args = parser.parse_args(argv)
+    if args.command == "business-private":
+        from .business_private import run_private
+        try:
+            result = run_private(args.root, args.input)
+            print("Private business: %s; %s" % (result["stats"], result["path"]))
+            return 0
+        except (OSError, ValueError, sqlite3.Error) as exc:
+            print("business-private: failed: %s" % exc, file=sys.stderr)
+            return 1
     config = load_config(args.config)
     conn = connect(database_path(config))
     init_db(conn)
