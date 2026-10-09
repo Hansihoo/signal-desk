@@ -99,3 +99,39 @@ Haiku 가격 경계 보완은 `ai_model_facts.2026-10-10.json`의 같은2관측 
   정리했다. 필요한 PNG/검증 JSON/raw 영수증은 ignored 경로에 보존한다.
 
 Pages Actions와 실제 공개 데이터·브라우저 결과는 배포 후 아래에 기록한다.
+
+### 공개 발행 영수증
+
+- 정확한 checkout/원격 fetch·push/프로젝트 Hansihoo 신원을 매번 guard로 확인하고
+  origin main에 일반 push했다. 원본 Theo 저장소·기본 인증·전역 자격 설정은 바꾸지 않았다.
+- 사이트 소스: ccd70bbc4b7e59b0f83d60d7960e8aa9bc624ecc.
+  [Pages Actions37987444452](https://github.com/Hansihoo/signal-desk/actions/runs/37987444452)
+  성공,2026-10-09T20:30:28Z–20:33:47Z(10일05:30:28–05:33:47 KST,3분19초).
+  클라우드131시험은9.709초에 통과했고 수집/누적 상태 저장/주거review/배포가 성공했다.
+  AI126건 warnings0, 일반뉴스67건 GDELT HTTP429 경고1은 대체 수집과 함께 별도 보존했다.
+  Python Element truth-value/Node punycode deprecation 경고는 테스트·배포 실패가 아니다.
+- 공개 JSON HTTP200 확인:2026-10-09T20:34:14.128434+00:00(10일05:34:14 KST).
+  공개40보고서/136판, 모델797관측/799판, Theo 원문14편.
+  reports/ai-models-oct10-live/public-after.json과 public-preservation.json에 실제
+  응답·UTC·SHA-256과12개 보존검사를 보관했다. 응답 지문:
+  2e732d4cfd2ac8b728a57b4dcaf61fbb006237cfb541718cd9fd60532ee4dc8f.
+- 기존37현재 보고서와127이전 판 문서, Theo14원문과789원관측의 사실은 정확히 보존했다.
+  현재40보고서는 로컬 입력과 같고 새3편 revision3/이전1·2판, 캐시 경계2관측
+  revision2/10일 확인일이 공개 JSON에 있다. 세계 모든 모델 수를797개라고 세지 않는다.
+- 실제 공개 브라우저19검사/페이지 오류0:3본문320/390/768/1440px,
+  목록17페이지/공식3 검색·분야/초기화, 전체 비교표8공식 관측/effort·출처·날짜·
+  이력/CSV, 정식·preview 내부 연결, 메인 메뉴 계수를 확인했다.
+  가이드3편·비교표의 공개 PNG도 눈으로 확인했으며 검증 JSON은 같은 ignored 폴더에 있다.
+  local/live scratch 소비자는 종료했고 실행기가 일회성 파일을 정리했다.
+- 공개 링크:
+  [Claude Haiku5.5](https://hansihoo.github.io/signal-desk/preview/claude-haiku-5-5-model-guide.html),
+  [Mistral Large4](https://hansihoo.github.io/signal-desk/preview/mistral-large-4-model-guide.html),
+  [Nano Banana2.1](https://hansihoo.github.io/signal-desk/preview/gemini-nano-banana-2-1-model-guide.html),
+  [모델별 자료](https://hansihoo.github.io/signal-desk/preview/ai-model-guides.html),
+  [전체 비교표](https://hansihoo.github.io/signal-desk/preview/ai-models.html).
+
+소스 확보·공식 조건 의미 검토, 독립 첫 화면/본문 Pass, 기술 출력/공개 검증은
+각각의 범위로 기록했다. 실제 모델·SDK 실행, 평가 Harness 재현, 사람의 학습 검증은
+수행하지 않았다. 미검토 후보·수명주기/설정 변경을 신규 모델로 바꾸지 않는다.
+생성 SQLite/HTML/PNG/원문 raw/개인정보는 commit에 포함하지 않았다.
+이후 발행 영수증만 기록하는 문서 커밋은 [skip ci]로 중복 배포를 피한다.
