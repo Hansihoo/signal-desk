@@ -16,7 +16,12 @@ Current34 reports/88 editions; other33/prior87 documents/model14 preserved.
 Independent education and official8-source reviews pass after actual repairs.
 Local109 tests + publication5,161HTML/7474refs,18 actual1280/390/320px browser
 checks, brief/desk/review/PNG and project/installed skill checks pass.
-Public deployment and final receipts are pending in the repair document.
+Source66b3c8b deployed successfully in Pages37885324722 (04:44:58–04:46:48 UTC).
+Public34/88 input/history, other33/prior87 rows/model14 rows exactly match;
+6 routes/CSS and6 actual390px search/reading/disclosure/history checks pass.
+Public screenshots inspected. This repairs one article and the instructions;
+it is not human learning approval or reapproval of all34. Final details and
+source/date/failed-check scopes are in the repair document.
 
 ## Latest work: all-report teaching reinforcement and independent review, 2026-10-09
 
