@@ -28,7 +28,13 @@ approval. HTTP collector: Azure/Anthropic success, Upwork403 failure; market pil
 uses actual web-tool original sections with failure/scope/date receipts recorded
 in [the review log](ai/AI_RESEARCH_REVIEW_LOG.md). Registered raw/review roots retained.
 App-browser native bridge was unavailable; standalone Edge performed actual viewport checks.
-Public deployment verification is recorded below when complete.
+Sourcecd180e1/Pages37897626574 succeeded (1m55s); CI128tests and housing review PASS.
+Public8 exact preservation checks and8 actual390px navigation/current-body/prior-edition
+checks pass; Upwork first screen and RAG body PNG inspected. Public34/124editions,
+other32/all122prior/model14/order/CSS match.96 local document links resolve.
+General news warning1 and optional host-root favicon404 are separately recorded;
+neither is presented as successful collection. Public receipts/captures are retained
+in the registered roots. The app open request was queued, not confirmed visible.
 
 ## Latest work: Korean/Latin font consistency, 2026-10-09
 
