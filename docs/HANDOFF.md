@@ -9,7 +9,7 @@ is disabled. All modern Hangul/Latin sample glyphs use that face. Existing vendo
 layout and imported model originals stay intact. See [typography contract](BRIEFING_TEMPLATE.md).
 Local109tests,96 font/representative checks and253 all-report three-width checks,
 195HTML/9676refs, brief/desk/review/PNG and exact authored data preservation pass.
-Public deployment/font parity verification is pending.
+Source4f95635/Pages37891501551 succeeded. Public34 reports/122documents/model14 rows/order/CSS/license match;36 actual390px font/coverage/menu/search/disclosure checks pass. Public Upwork/title and main PNG inspected. Evidence/scratch retained in existing registered roots; optional favicon404 separate.
 
 ## Latest work: complete prose refinement, 2026-10-09
 

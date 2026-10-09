@@ -30,7 +30,19 @@ and before/after captures are retained under the existing registered research
 review roots. App browser connection failed, so visual tests used standalone
 Playwright/Edge. Optional host/favicon404 remains separately recorded.
 
-Publication and actual public font verification are pending.
+Source `4f956357646c12ca8972edb61826f2a6ad2072b2` deployed successfully through
+[Pages37891501551](https://github.com/Hansihoo/signal-desk/actions/runs/37891501551).
+Public checks at2026-10-09 06:04:56.544319 UTC confirm exact34 current reports,
+122 edition documents,14 original model rows and publication order, matching
+local CSS (normalized SHA256 `5f48bd5bff11375877f7b14fea252e3becd3f87dd8f46795d5e2f8b6bc9ba7fc`),
+one active font face and the original published license. Actual390px public
+font/coverage/representative-route/search/disclosure/menu checks all36 pass at
+06:05:03.752 UTC; inspected public title/main screenshots match the intended
+uniform weights. Optional host favicon404 is separate from content errors.
+App opening returned queued; this is not proof that the user viewed the page.
+The retained public receipts are `font-weight-public-data-checks.json` and
+`font-weight-public-checks.json`; no reader preference/learning approval claimed.
+
 
 ## Display names, 2026-10-08
 
