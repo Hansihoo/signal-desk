@@ -1,5 +1,23 @@
 # Handoff
 
+## Latest work: voice article reader-facing repair, 2026-10-09
+
+The user rejected the voice article's first screen from source38f473b after the
+previous agent Pass. Do not treat that verdict as human comprehension or user
+approval. One voice article is being repaired with the same ID; the other33
+current reports and14 model originals stay preserved. See
+[reader purpose, defects and verification scope](VOICE_REPORT_REPAIR.2026-10-09.md).
+The writing skill/guide now require an actual title-only reading before body
+review, complete introductions and a consistent comparison axis. The first
+independent reading caught a vague replacement introduction; the body reading
+caught a misleading contrast between existing-code reuse and Realtime.
+The final voice batch33cf73c8 is already applied locally: do not edit it in place.
+Current34 reports/88 editions; other33/prior87 documents/model14 preserved.
+Independent education and official8-source reviews pass after actual repairs.
+Local109 tests + publication5,161HTML/7474refs,18 actual1280/390/320px browser
+checks, brief/desk/review/PNG and project/installed skill checks pass.
+Public deployment and final receipts are pending in the repair document.
+
 ## Latest work: all-report teaching reinforcement and independent review, 2026-10-09
 
 The user requested actionable agent documentation, reinforcement of every current

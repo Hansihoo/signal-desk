@@ -81,6 +81,10 @@
     {
       "id": "model-reading-guides-2026-10-09",
       "input": "model_reading_guides.2026-10-09.json"
+    },
+    {
+      "id": "voice-explanation-2026-10-09",
+      "input": "voice_explanation.2026-10-09.json"
     }
   ]
 }
