@@ -76,8 +76,9 @@ def _category_label(value):
 
 def official_guides(reports):
     return [report for report in (reports or [])
-                if report['id'].endswith('-model-guide')
-                and report['topic_path'][:2] == ['개발 동향', 'AI 모델·API']]
+            if report['id'].endswith('-model-guide')
+            and not report['id'].startswith('model-reading-')
+            and report['topic_path'][:2] == ['개발 동향', 'AI 모델·API']]
 
 
 def library_content(pages, prefix="", reports=None):

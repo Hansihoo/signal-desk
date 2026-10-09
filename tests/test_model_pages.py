@@ -147,12 +147,14 @@ class ModelPagesTests(unittest.TestCase):
         guide={'id':'new-model-guide','topic_path':['개발 동향','AI 모델·API','New'],
                'title':'New & model','description':'Official <facts>', 'checked_on':'2026-10-09'}
         unrelated=dict(guide,id='unrelated-model-guide',topic_path=['사업','영업'])
-        html=library_content(source,'../../../preview/',[guide,unrelated])
+        companion=dict(guide,id='model-reading-opus-model-guide')
+        html=library_content(source,'../../../preview/',[guide,unrelated,companion])
         self.assertIn('href="../../../preview/new-model-guide.html"',html)
         self.assertIn('New &amp; model',html);self.assertIn('Official &lt;facts&gt;',html)
         self.assertIn('data-label="공식 원문 확인일">2026-10-09',html)
         self.assertIn('model-guides/aster.html',html)
         self.assertNotIn('unrelated-model-guide.html',html)
+        self.assertNotIn('model-reading-opus-model-guide.html',html)
         with tempfile.TemporaryDirectory() as root:
             render_model_pages(root,source,lambda title,description,content,*args,**kwargs:content,[guide])
             rendered=Path(root,'ai-model-guides.html').read_text(encoding='utf-8')

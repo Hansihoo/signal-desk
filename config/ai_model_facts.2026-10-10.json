@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "id": "haiku-5-5-price-short",
+      "model": "Claude Haiku 5.5",
+      "provider": "Anthropic",
+      "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+      "checked_on": "2026-10-10",
+      "fields": {
+        "kind": "공식 API 가격",
+        "suite": "Claude API 기본 가격",
+        "condition": "입력 프롬프트 ≤100,000토큰 / USD·100만 토큰당 / 기본 요율 / 2026-10-09. Batch·지역·도구·세금·파트너 가격 별도. 요청 길이는 캐시 읽기·쓰기를 포함한 모든 입력 토큰으로 정한다(2026-10-10 공식 가격 재확인).",
+        "access": "API",
+        "status": "Active",
+        "basis": "제공자 공식 가격",
+        "note": "입력 프롬프트 ≤100,000토큰. 입력 $0.1, 출력 $0.5, 캐시 쓰기5분 $0.125, 쓰기1시간 $0.2, 읽기 $0.01 / 100만 토큰. 개별 요청의 프롬프트 길이로 구간 선택. Batch 입력/출력50%, US-only inference1.1배. 구독 가격·실사용 비용 아님. 새 입력20,000+캐시 읽기90,000=110,000토큰이면 긴 구간 적용. 캐시 부분의 낮은 읽기 요율과 구간 판정은 별개다.",
+        "입력 USD / 100만 토큰": 0.1,
+        "출력 USD / 100만 토큰": 0.5,
+        "캐시 쓰기 5분 USD / 100만 토큰": 0.125,
+        "캐시 쓰기 1시간 USD / 100만 토큰": 0.2,
+        "캐시 읽기 USD / 100만 토큰": 0.01,
+        "references": [
+          "https://platform.claude.com/docs/en/about-claude/pricing",
+          "https://platform.claude.com/docs/en/models/haiku-5-5/overview"
+        ]
+      },
+      "candidate_ids": []
+    },
+    {
+      "id": "haiku-5-5-price-long",
+      "model": "Claude Haiku 5.5",
+      "provider": "Anthropic",
+      "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+      "checked_on": "2026-10-10",
+      "fields": {
+        "kind": "공식 API 가격",
+        "suite": "Claude API 기본 가격",
+        "condition": "입력 프롬프트 >100,000토큰 / USD·100만 토큰당 / 기본 요율 / 2026-10-09. Batch·지역·도구·세금·파트너 가격 별도. 요청 길이는 캐시 읽기·쓰기를 포함한 모든 입력 토큰으로 정한다(2026-10-10 공식 가격 재확인).",
+        "access": "API",
+        "status": "Active",
+        "basis": "제공자 공식 가격",
+        "note": "입력 프롬프트 >100,000토큰. 입력 $0.5, 출력 $2.5, 캐시 쓰기5분 $0.625, 쓰기1시간 $1, 읽기 $0.05 / 100만 토큰. 개별 요청의 프롬프트 길이로 구간 선택. Batch 입력/출력50%, US-only inference1.1배. 구독 가격·실사용 비용 아님. 새 입력20,000+캐시 읽기90,000=110,000토큰이면 긴 구간 적용. 캐시 부분의 낮은 읽기 요율과 구간 판정은 별개다.",
+        "입력 USD / 100만 토큰": 0.5,
+        "출력 USD / 100만 토큰": 2.5,
+        "캐시 쓰기 5분 USD / 100만 토큰": 0.625,
+        "캐시 쓰기 1시간 USD / 100만 토큰": 1,
+        "캐시 읽기 USD / 100만 토큰": 0.05,
+        "references": [
+          "https://platform.claude.com/docs/en/about-claude/pricing",
+          "https://platform.claude.com/docs/en/models/haiku-5-5/overview"
+        ]
+      },
+      "candidate_ids": []
+    }
+  ]
+}
