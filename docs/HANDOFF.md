@@ -9,7 +9,7 @@ Preserve all88 prior editions and14 original model documents. See
 [reader questions, defects and review scope](RESEARCH_REFINEMENT.2026-10-09.md).
 Separate independent first-screen reading from body review and output checks;
 human learning approval and SDK/API execution remain untested. Independent
-post-change reviews all pass in their bounded scopes (8 technology/12 business/14 models; separate34 first screens). Local34/122-edition preservation,109 tests + publication5,195HTML/9676refs, brief/desk/review and inspected PNG checks pass. Final local253 browser checks at actual1280/390/320px pass (one observed optional browser-icon404 separately recorded). Public verification/deployment are pending.
+post-change reviews all pass in their bounded scopes (8 technology/12 business/14 models; separate34 first screens). Local34/122-edition preservation,109 tests + publication5,195HTML/9676refs, brief/desk/review and inspected PNG checks pass. Final local253 browser checks at actual1280/390/320px pass (one observed optional browser-icon404 separately recorded). Source99a5fa2/Pages37888632157 succeeded. Public34 inputs/122editions and all prior88/model14 rows exactly match;39routes/CSS and85 actual390px browser checks pass. Public main/voice/RAG screenshots inspected; optional host-root favicon404 recorded separately. All receipts remain in the two preserved roots.
 
 ## Latest work: voice article reader-facing repair, 2026-10-09
 
