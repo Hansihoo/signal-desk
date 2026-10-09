@@ -20,6 +20,7 @@ from .research_data import validate_report
 from .timeutil import iso_utc
 
 VERSION = "question-research-1"
+CACHE_VERSION = VERSION + "-application-dates"
 PROFILES = {
     "technology": {
         "question": "어떤 문제를 어떻게 해결하며, 다른 조건에서는 언제 실패하는가?",
@@ -453,7 +454,7 @@ def run_research(conn, request, provider, raw_root, limits=None, fetcher=fetch_o
 
     def generate(stage, payload):
         identity = nonempty(provider.identity)
-        key = digest({"version": VERSION, "provider": identity, "stage": stage, "input": payload,
+        key = digest({"version": CACHE_VERSION, "provider": identity, "stage": stage, "input": payload,
                       "max_output_tokens": limits["output_tokens"]})
         cached = conn.execute("SELECT document FROM research_generation_cache WHERE cache_key=?", (key,)).fetchone()
         if cached:
@@ -470,6 +471,10 @@ def run_research(conn, request, provider, raw_root, limits=None, fetcher=fetch_o
         document = response["document"]
         if not isinstance(document, dict):
             raise ValueError("Provider output must be a JSON object")
+        if stage == "write" and isinstance(document.get("report"), dict):
+            # The application knows when this draft was actually authored/reviewed;
+            # a model must not guess the evidence-check date. Cache hits retain it.
+            document["report"]["checked_on"] = iso_utc()[:10]
         conn.execute("INSERT OR REPLACE INTO research_generation_cache VALUES (?, ?)", (key, canonical(document)))
         conn.commit()
         return document

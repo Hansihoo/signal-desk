@@ -36,6 +36,12 @@ General news warning1 and optional host-root favicon404 are separately recorded;
 neither is presented as successful collection. Public receipts/captures are retained
 in the registered roots. The app open request was queued, not confirmed visible.
 
+Follow-up makes checked_on application-owned at initial draft creation (UTC), and
+retains that date on cache hits. A distinct cache version excludes older guessed-date
+results without changing immutable report/quality contracts. Local129tests/compileall
+pass, including wrong model dates and unchanged re-fetch/cache reuse. Pilot content,
+sidecars and design are unchanged; final follow-up deployment is pending.
+
 ## Latest work: Korean/Latin font consistency, 2026-10-09
 
 User screenshot exposed three actual font families inside one Upwork title.

@@ -134,6 +134,24 @@ class ResearchWorkflowTests(unittest.TestCase):
         self.assertEqual(len(searches), 1)
         verify_release([package["draft"]["report"]], [package])
 
+    def test_check_date_is_application_owned_and_cached_review_keeps_date(self):
+        class WrongDateProvider(FakeProvider):
+            def generate(self, stage, payload, max_output_tokens):
+                response = super().generate(stage, payload, max_output_tokens)
+                if stage == "write":
+                    response["document"]["report"]["checked_on"] = "1999-01-01"
+                return response
+        with patch("housing_watch.research_workflow.iso_utc", return_value="2026-10-09T00:00:00Z"):
+            first = self.run_workflow(WrongDateProvider())
+        self.assertEqual(first["status"], "ready", first["issues"])
+        self.assertEqual(first["draft"]["report"]["checked_on"], "2026-10-09")
+        with patch("housing_watch.research_workflow.iso_utc", return_value="2026-10-10T00:00:00Z"):
+            second = self.run_workflow(WrongDateProvider(), limits={"max_age_hours": 0})
+        self.assertEqual(second["status"], "ready", second["issues"])
+        self.assertEqual(second["usage"]["calls"], 0)
+        self.assertEqual(second["sources"][0]["last_successful_collection"], "2026-10-10T00:00:00Z")
+        self.assertEqual(second["draft"]["report"]["checked_on"], "2026-10-09")
+
     def test_repair_routes_to_analysis_or_writing(self):
         for stage in ("analysis", "writing"):
             with self.subTest(stage=stage):
