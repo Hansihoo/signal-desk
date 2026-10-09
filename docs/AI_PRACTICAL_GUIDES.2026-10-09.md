@@ -32,4 +32,4 @@
 
 일반 수집은 AI127개·뉴스64개, SH8개를 가져왔다. GDELT HTTP429 경고1건은 성공한 다른 수집과 구분한다. CoAuthor SSL 실패와 선택 favicon404도 별도다. 주거 search/context/report/render/brief/desk/review는 실행됐고 review는 PASS지만 이 검사는 공고 내용의 현재 유효성·검색 관련성 심사를 대신하지 않는다.
 
-현재 상태: 로컬 검증 완료, 공개 배포 대기. 배포 결과는 완료 후 갱신한다. 원본·검증 산출물은 소유 스레드 원장에 기록하며 사용자 정리 요청 전에는 삭제하지 않는다.
+공개 배포: 소스651e300의 [Pages37920945741](https://github.com/Hansihoo/signal-desk/actions/runs/37920945741)가2분18초에 성공했다. 실제 공개 데이터는37편/127판이며 새3편·기존34편/124판·모델14·기존 순서·CSS의8보존 검사와 실제390px 검색·탐색·요약/본문/출처·분류10검사가 통과했다. 공개 PNG도 직접 확인했다. 페이지는 preview/practical-ai-workflows.html, preview/ai-assisted-writing.html, preview/ai-game-creation.html이다. 원본·검증 산출물은 소유 스레드 원장에 기록하며 사용자 정리 요청 전에는 삭제하지 않는다.

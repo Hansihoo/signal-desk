@@ -1,6 +1,10 @@
 # Handoff
 
-## Latest work: question-led research production, 2026-10-09
+## Latest work: AI practical guides, 2026-10-09
+
+Three new pages are live under 개발 동향/AI 활용. Source651e300 deployed in [Pages37920945741](https://github.com/Hansihoo/signal-desk/actions/runs/37920945741),2m18s; public37reports/127editions, preservation8/actual390px10/PNG pass. IDs: practical-ai-workflows, ai-assisted-writing, ai-game-creation. See [scope and evidence](AI_PRACTICAL_GUIDES.2026-10-09.md). Originals/review artifacts retained in the owning thread ledger; no actual game/model execution or human learning trial.
+
+## Previous work: question-led research production, 2026-10-09
 
 The user rejected wording-only repair and requested executable research quality.
 The old system collected sources but imported separately authored report JSON;
@@ -729,4 +733,4 @@ Public main→MCP, all seven chapters at 390px, official quickstart/back and con
 pass. Public main/report tabs and the offline selectable review are retained.
 # 2026-10-09 AI 활용·집필·게임 제작의 새 연구 페이지
 
-Theo requested key answers first and three separate pages in the existing research site. New immutable batch `ai-practical-guides-2026-10-09` binds `config/ai_practical_guides.2026-10-09.json` and its `.quality.json`. IDs: practical-ai-workflows, ai-assisted-writing, ai-game-creation; path: 개발 동향/AI 활용. Read [authoring and checks](AI_PRACTICAL_GUIDES.2026-10-09.md). Local37reports/127editions preserve prior34reports/124editions/model14/order/CSS exactly. Independent first-screen/body repairs and research-check pass; audit5gated/32legacy.129tests,200HTML/10827local references,30 actual browser checks across3widths, brief/desk/review/PNG pass. Raw56/57 retained; CoAuthorSSL/GDELT429/favicon404 separate. Public deployment pending. Conceptual examples, no tool installations/game execution/human reader trial.
+Theo requested key answers first and three separate pages in the existing research site. New immutable batch `ai-practical-guides-2026-10-09` binds `config/ai_practical_guides.2026-10-09.json` and its `.quality.json`. IDs: practical-ai-workflows, ai-assisted-writing, ai-game-creation; path: 개발 동향/AI 활용. Read [authoring and checks](AI_PRACTICAL_GUIDES.2026-10-09.md). Local37reports/127editions preserve prior34reports/124editions/model14/order/CSS exactly. Independent first-screen/body repairs and research-check pass; audit5gated/32legacy.129tests,200HTML/10827local references,30 actual browser checks across3widths, brief/desk/review/PNG pass. Raw56/57 retained; CoAuthorSSL/GDELT429/favicon404 separate. Public source651e300/Pages37920945741 success; preservation8/mobile10/PNG pass. Conceptual examples, no tool installations/game execution/human reader trial.
