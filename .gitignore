@@ -15,6 +15,7 @@ data/raw/*
 reports/*.md
 reports/**/*.png
 reports/research-teaching-2026-10-09/
+reports/ai-writing-games-2026-10-09/
 !reports/.gitkeep
 site/*.html
 site/*.png

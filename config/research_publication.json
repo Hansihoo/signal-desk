@@ -35,7 +35,10 @@
     "model-reading-llm-coding-benchmark-reference-company-v6",
     "model-reading-llm-models",
     "model-reading-model-cost-performance",
-    "model-reading-windows-codex-max-guide"
+    "model-reading-windows-codex-max-guide",
+    "practical-ai-workflows",
+    "ai-assisted-writing",
+    "ai-game-creation"
   ],
   "batches": [
     {
@@ -94,6 +97,11 @@
       "id": "question-led-pilots-2026-10-09",
       "input": "research_quality_pilot.2026-10-09.json",
       "quality": "research_quality_pilot.2026-10-09.quality.json"
+    },
+    {
+      "id": "ai-practical-guides-2026-10-09",
+      "input": "ai_practical_guides.2026-10-09.json",
+      "quality": "ai_practical_guides.2026-10-09.quality.json"
     }
   ]
 }

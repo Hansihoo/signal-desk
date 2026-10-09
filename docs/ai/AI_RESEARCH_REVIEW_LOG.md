@@ -246,3 +246,115 @@ HTTP/JSON 비교에서 MCP 입력 일치·다른19편/이전52판 보존·전체
 변경 후 독립 재독은 기술8·사업12·모델14 모두 필수 수정0건이다. 별도 첫 화면 전용 검토의 실제15 Revise를 수정해34 Pass가 됐으며 본문과 별도 기록한다. 이전88판·모델14원문 보존/입력34정확일치·총122판을 로컬 확인했다. 실제 재조회는 위 OpenAI3문서의 특정 절이며 다른 출처 전수 최신 검토로 확대하지 않는다.
 
 공개 source99a5fa2/Pages37888632157 성공.05:29:34.122259 UTC의 자료 확인에서34최종입력/122판·이전88행/모델14원문행 전체 일치·39주소200/CSS 일치를 확인했고 실제390px85출력검사도 통과했다. 이것은 원문의 새 내용 수집/사실 검토나 사람의 이해 승인을 대신하지 않는다. 실패/성공/편집 지적/최종 원고 지문은 기존 보존 root에 남겼다.
+
+## 2026-10-09 AI 활용·글쓰기·게임 제작 수동 조사
+
+요청: 세 분야별 전문가의 사용 방법, 관련 Agent Skills, 공개 소프트웨어와 초보자의 활용 경로를 넓게 조사해 채팅으로 설명한다. 사용자는 게임 구현·스킬 설치·HTML 제작·공개 발행을 요청하지 않았다.
+
+방법: 공식 문서와 개발 주체의 저장소로 기능·요건을 확인하고, 연구기관의 실험·작가의 직접 인터뷰·게임사의 연구 사례로 작업 방식을 비교했다. 전문 글쓰기 실험을 소설가 전체의 생산성으로, 특정 시기 코딩 실험을 현재 모든 도구의 성능으로 일반화하지 않는다. 기술 명세/README 확인은 설치·실행 평가가 아니다.
+
+편집 질문과 답변 경로:
+
+| 분야 | 독자 질문·선행 지식 | 확보한 답과 설명 사례 | 남은 범위 |
+| --- | --- | --- | --- |
+| AI 활용 | 챗봇을 써본 초보자가 무엇을 어떤 순서로 맡기는가? | 입력 자료·산출물·완료 기준을 먼저 고정; 가상 회의 메모를 담당/기한/미정 항목으로 바꾸고 반복 업무만 자동화 | 실제 개인 업무의 시간/오류 비교, 로컬 모델의 PC별 성능 미측정 |
+| 글쓰기 | AI로 정보 가치와 자기 표현을 살리려면? | 독자 질문→근거→초안→구조/문장 편집; 가상 게임 입문 안내의 일반 문장을 조건·동작·관찰로 고침. 소설은 인물·갈등·선택의 장면 지시와 인간 편집을 구분 | 한국어 독자 시험·문학 품질의 독립 평가·도구별 성능 비교 미실시 |
+| 게임 제작 | 비개발자와 개발자는 어떤 도구/스킬로 첫 작품을 끝내는가? | 엔진끼리 선택 기준을 비교하고 MCP 연결 도구와 스킬은 별도 설명. 30초 별 수집 게임의 이동→수집→타이머→종료→재시작 및 예상 상태 | 게임/엔진/스킬 실행, 에셋 생성·배포·플레이테스트 미실시 |
+
+날짜: 이번 수동 확보·관련 내용 검토일은 2026-10-09 Asia/Seoul. 도구가 원문별 정확한 확보 시각을 반환하지 않아 시각을 소급 생성하지 않는다. 작업 중 확인한 실제 시계는 2026-10-09 10:17:40 UTC이며 개별 원문 발표/측정 시각이 아니다. 프로젝트의 과거 최초 수집일은 미확인으로 보존한다. 아래 원문 날짜의 `미확인`은 오늘로 채우지 않는다. 웹 도구의 읽은 절을 근거로 하며 별도 로컬 전체 원문 스냅샷은 보관하지 않았다. 기존 수집기/SQLite/report-v1/공개 판에는 반영하지 않는다.
+
+### AI 활용: 확보한 원문과 확인 범위
+
+| 원문 URL | 원문 날짜/측정 조건 | 실제 읽은 범위·해석 제한 |
+| --- | --- | --- |
+| https://www.anthropic.com/engineering/building-effective-agents | 2024-12-19; 현재 글에는 옛 도구 설명의 변경 주의가 있음 | workflow/agent 구분, 단순한 구성부터 시작, 도구 피드백. 최신 제품 우열의 근거로 쓰지 않음 |
+| https://www.anthropic.com/research/how-ai-is-transforming-work-at-anthropic | 발표 2025-12-02; 조사 2025-08, 직원132명/심층53명 | 디버깅·코드 이해·작은 위임, 자기보고 생산성/감독·학습 우려; 독립 인과 실험과 구분 |
+| https://metr.org/blog/2026-02-24-uplift-update/ | 2026-02-24; 초기 실험2025-02~06와 후속2025-08부터 구분 | 초기19% 시간 증가와 후속 선택 편향/신뢰구간. 현재19% 느리다는 주장이나 후속 확정 가속 수치로 재사용하지 않음 |
+| https://learn.chatgpt.com/docs/build-skills | 원문 발표/수정일 미확인 | OpenAI Docs MCP 본문: SKILL.md/참고자료/스크립트·선택 로딩·설치와 배포 구분 |
+| https://agentskills.io/specification | 원문 발표/수정일 미확인 | 필수 name/description, SKILL.md와 선택 디렉터리, 호스트별 호환성 |
+| https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro | 버전 경로2026-07-28; 별도 발표일 미확인 | 외부 도구/데이터 연결 개념. 스킬 지침만으로 도구가 연결되는 것은 아님 |
+| https://developers.openai.com/api/docs/guides/evaluation-best-practices | 원문 발표/수정일 미확인 | OpenAI Docs MCP: 과업별 성공 기준/데이터/사람 피드백. Evals 플랫폼 종료 안내가 있어 신규 플랫폼 도입을 추천하지 않음 |
+| https://github.com/ollama/ollama | README/라이선스의 원문 날짜 미확인 | 로컬 실행/모델 공급자, MIT 프로그램과 모델별 조건 구분. 클라우드 경로도 있어 로컬 설정 확인 필요 |
+| https://github.com/Mintplex-Labs/anything-llm | README/라이선스의 원문 날짜 미확인 | 문서 대화, 데스크톱, Ollama/원격 공급자/임베더 목록, MIT. 모든 설정이 로컬이라는 보장 아님 |
+| https://github.com/langchain-ai/langgraph | 원문 날짜 미확인 | 상태를 가진 장기 실행 에이전트 프레임워크, MIT. 초보자의 첫 사용에 필수 아님 |
+| https://github.com/promptfoo/promptfoo | 원문 날짜 미확인 | CLI 기반 프롬프트/에이전트/RAG 평가, MIT, 공급자 API 키 요건. 유료 모델 호출 비용 별도 |
+| https://github.com/langgenius/dify | 원문 날짜 미확인 | 시각적 AI 워크플로/RAG. 기능 소개와 효과 측정 분리 |
+| https://raw.githubusercontent.com/langgenius/dify/main/LICENSE | 표기 ©2025; 개정일 미확인 | Apache2.0 수정 라이선스: 다중 tenant 서비스와 frontend 표시 조건. 일반 Apache2.0으로 표기하지 않음 |
+| https://github.com/n8n-io/n8n | 원문 날짜 미확인 | 시각적 자동화, fair-code 표기. 일반 OSI 오픈소스와 구분 |
+| https://raw.githubusercontent.com/n8n-io/n8n/master/LICENSE.md | Sustainable Use License1.0; 발표/수정일 미확인 | 내부 업무/비상업적 이용 범위와 Enterprise 예외. 자유로운 재판매 가능으로 요약하지 않음 |
+| https://raw.githubusercontent.com/anthropics/skills/main/README.md | 원문 날짜 미확인 | 예제 다수 Apache2.0; docx/pdf/pptx/xlsx는 source-available 별도 조건, 저장소 전부 오픈소스라는 주장 배제 |
+| https://raw.githubusercontent.com/anthropics/skills/main/skills/mcp-builder/SKILL.md | 원문 날짜 미확인 | MCP 서버 제작 절차. 기존 연결 도구를 사용하는 스킬과 직접 서버를 만드는 스킬 구분 |
+| https://raw.githubusercontent.com/anthropics/skills/main/skills/webapp-testing/SKILL.md | 원문 날짜 미확인 | Playwright 기반 상호작용/스크린샷/로그 확인. 게임의 재미를 자동 입증하지 않음 |
+
+### 글쓰기: 확보한 원문과 확인 범위
+
+| 원문 URL | 원문 날짜/측정 조건 | 실제 읽은 범위·해석 제한 |
+| --- | --- | --- |
+| https://news.mit.edu/2023/study-finds-chatgpt-boosts-worker-productivity-writing-0714 | 2023-07-14; 전문직453명, ChatGPT3.5, 짧은 직업별 과제 | 시간40% 감소/평가품질18% 증가. 사실검증·기업 고유 문맥 미포함이라는 연구진 제한을 함께 보존 |
+| https://discovery.ucl.ac.uk/id/eprint/10195027/ | Science Advances2024,10(28),eadn5290 | 초록의 짧은 이야기 아이디어 실험: 개별 창의성/평가 향상과 이야기 간 유사성 증가. 한국어·전문 소설가·현재 모델 효과의 직접 증거 아님 |
+| https://aiinstitute.hbs.edu/back-to-the-beginnings-of-ai-at-work/ | 2026-04-09 회고; June2023 GPT4 실험, 758 BCG컨설턴트 | peer-reviewed 판 소개의 과업별 효과/오신뢰. 옛2023 소개의40%와 새 소개32%를 같은 결과로 혼합하지 않음 |
+| https://coauthor.stanford.edu/ | 2022논문 링크; 영어63명/1445세션, GPT3 | 제안 수용·거절·수정의 상호작용 기록. 참가자는 crowd workers이며 전문 소설가 표본으로 부르지 않음 |
+| https://github.com/stanford-oval/storm | 연구2024; README에는2025-01 통합 소식 | 관점별 질문→검색→개요→인용 원고, MIT, Python/검색·모델 설정 필요. README도 발행 전 편집 필요를 명시 |
+| https://aclanthology.org/2024.naacl-long.347/ | NAACL2024-06 | 초록의 STORM 사전 집필 설계와 Wikipedia 편집자 평가; 전체 PDF/현재 한국어 성능 재현은 미실시 |
+| https://aclanthology.org/2023.emnlp-main.398/ | EMNLP2023-12 | 초록의 유창성/정확성/인용품질 분리. 2023ELI5결과를 현재 모든 모델 오류율로 일반화하지 않음 |
+| https://developers.google.com/tech-writing/one | Last updated2025-03-28 UTC | 독자 지식, 능동태, 문단 하나의 주제, 용어 일관성. 영어 교육 과정이며 한국어 효과 실험 아님 |
+| https://diataxis.fr/ | 원문 발표/수정일 미확인 | 튜토리얼/목적별 방법/참조/설명의 독자 필요 구분. 모든 글을 같은 형식으로 강제하지 않음 |
+| https://raw.githubusercontent.com/anthropics/skills/main/skills/doc-coauthoring/SKILL.md | 원문 날짜 미확인 | 문맥 수집→구조/수정→새 문맥의 Reader Claude. AI 독해 검사를 실제 사람 시험과 구분; 이번에는 연구 자료로만 읽음 |
+| https://github.com/languagetool-org/languagetool | 원문 날짜 미확인 | 영어 등 교정, core LGPL2.1; 한국어 지원/교정품질 근거는 이번에 확보하지 못함 |
+| https://quarto.org/docs/authoring/markdown-basics.html | 원문 날짜 미확인 | Markdown 기반 구조화 집필/출력 문서. 글쓰기용 언어모델 자체와 구분 |
+| https://raw.githubusercontent.com/quarto-dev/quarto-cli/main/COPYING.md | Copyright2020~2024; 개정일 미확인 | Quarto CLI MIT. 의존 구성요소 조건과 별개 |
+| https://www.thecreativepenn.com/2024/06/21/collaborative-writing-with-ai-with-rachelle-ayala/ | 2024-06-21 인터뷰 | 작가의 브레인스토밍→장면 행동/갈등/선택 지시→상호 수정. 본인 경험이며 도구별 당시 취향·기술 설명을 현재 사실로 복제하지 않음 |
+
+### 게임 제작: 확보한 원문과 확인 범위
+
+| 원문 URL | 원문 날짜/적용 조건 | 실제 읽은 범위·해석 제한 |
+| --- | --- | --- |
+| https://www.ubisoft.com/en-us/company/how-we-make-games/technology | 원문 날짜 미확인 | Ghostwriter는 barks 초안, NeoNPC/Teammates는 실험/연구. 사용 가능 범용 제품·상용 전면 도입·성과 측정으로 확대하지 않음 |
+| https://www.ubisoft.com/en-us/studio/laforge/news/7CCHPeIseXSW1P49L4XZ7l/generating-video-game-scripts-with-style | 2023-11-27 | 기존 캐릭터 대사를 검색하는 스타일 모듈과 생성 모듈 결합,23게임 데이터. 연구용 사내 데이터는 공개 초보자 도구가 아님 |
+| https://github.com/godotengine/godot | 원문 날짜 미확인 | 2D/3D 엔진, MIT; 별도 모델/API 불필요한 엔진과 AI보조 연결 구분 |
+| https://docs.godotengine.org/en/stable/getting_started/first_2d_game/index.html | stable가변 경로, 원문 날짜 미확인 | 첫 완결2D게임 과정과 프로그래밍 선행 경험 요건. 완전 코딩 초보용 즉시 실습으로 약속하지 않음 |
+| https://github.com/phaserjs/phaser | 원문 날짜 미확인 | 2D 브라우저 게임 프레임워크, MIT; 작성 언어/웹 도구 학습 별도 |
+| https://phaser.io/tutorials/making-your-first-phaser-3-game/part1 | Phaser3튜토리얼; 게시/수정일 미확인 | 첫 웹게임의 출발 과정. 현행 모든 버전에 그대로 재현 검증한 것은 아님 |
+| https://github.com/4ian/GDevelop | 원문 날짜 미확인 | 이벤트/행동 기반 엔진; Core/GDJS/newIDE/Extensions MIT, 상표/온라인 서비스 분리 |
+| https://gdevelop.io/blog/make-games-with-ai-agent-gdevelop-automated-prompt | 원문 표기9.10.2025를 그대로 보존 | 객체/이벤트 수정, 작은 요청/반복/검토, AI credit 조건. 현행 화면의 위치·요금·크레딧 수는 미검증 |
+| https://wiki.gdevelop.io/gdevelop5/tutorials/platform-game/ | 원문 날짜 미확인 | 플랫폼 게임/수집 요소 튜토리얼의 도입 범위; 전체 실습 실행 미실시 |
+| https://github.com/inkle/ink | 원문 날짜 미확인 | 분기 서사 언어, Inky와 초보자 튜토리얼 링크, MIT. 범용 물리/렌더링 엔진 아님 |
+| https://github.com/renpy/renpy | 원문 날짜 미확인 | 비주얼 노벨 엔진과 라이선스 원문 연결 |
+| https://www.renpy.org/doc/html/license.html | 문서8.5.4표시; 게시/수정일 미확인 | 대부분 MIT, LGPL유래 부분과 동봉 구성요소 별도. 전체 배포물을 단일 MIT로 표시하지 않음 |
+| https://github.com/CoplayDev/unity-mcp | 원문 README에2026-10-04 v10.3.0; 이번 릴리스 전체 감사 아님 | 에셋/씬/C#·테스트·빌드 도구, Unity2021.3LTS~6.x/Python3.10+, MIT. Unity공식 제품으로 부르지 않음 |
+| https://raw.githubusercontent.com/CoplayDev/unity-mcp/main/unity-mcp-skill/SKILL.md | 원문 날짜 미확인 | 실제 name=unity-mcp-orchestrator; 상태/대상 확인→작업→컴파일·콘솔·이미지 검증. beta도 읽었으나 설명은 main에 근거 |
+| https://github.com/Coding-Solo/godot-mcp | 원문 날짜 미확인 | 실행/로그/씬/노드/리소스, Godot+Node18+MCP클라이언트, MIT. 엔진 공식 연결로 오인하지 않음 |
+| https://raw.githubusercontent.com/openai/plugins/main/plugins/game-studio/.codex-plugin/plugin.json | manifest0.1.2; 발표/수정일 미확인 | 공개 Game Studio plugin의 OpenAI저자/MIT/스킬 경로. 이 계정의 설치·제공 여부는 별개 |
+| https://raw.githubusercontent.com/openai/plugins/main/plugins/game-studio/skills/game-studio/SKILL.md | 원문 날짜 미확인 | 게임 목적/반복 규칙/실행 경로/아트/플레이테스트의 분기; 브라우저게임 대상 |
+| https://raw.githubusercontent.com/openai/plugins/main/plugins/game-studio/skills/web-game-foundations/SKILL.md | 원문 날짜 미확인 | 규칙 상태와 렌더링 분리, 입력·저장·성능 경계. 모든 엔진의 필수 구조로 일반화하지 않음 |
+| https://raw.githubusercontent.com/openai/plugins/main/plugins/game-studio/skills/phaser-2d-game/SKILL.md | 원문 날짜 미확인 | Phaser+TS+Vite, 씬과 규칙 분리, HUD/에셋 구성 |
+| https://raw.githubusercontent.com/openai/plugins/main/plugins/game-studio/skills/three-webgl-game/SKILL.md | 원문 날짜 미확인 | 명시적3D루프/Three.js, GLB, Rapier, DOM UI |
+| https://raw.githubusercontent.com/openai/plugins/main/plugins/game-studio/skills/react-three-fiber-game/SKILL.md | 원문 날짜 미확인 | 기존React내3D, pmndrs, 고빈도 상태와 UI 경계 |
+| https://raw.githubusercontent.com/openai/plugins/main/plugins/game-studio/skills/game-ui-frontend/SKILL.md | 원문 날짜 미확인 | HUD/메뉴 가독성, 플레이 영역·카메라 입력 보호 |
+| https://raw.githubusercontent.com/openai/plugins/main/plugins/game-studio/skills/sprite-pipeline/SKILL.md | 원문 날짜 미확인 | 기준 프레임→전체 strip생성→크기/앵커 정규화→미리보기/엔진 확인. imagegen 의존, 실행/생성 미실시 |
+| https://raw.githubusercontent.com/openai/plugins/main/plugins/game-studio/skills/game-playtest/SKILL.md | 원문 날짜 미확인 | 실제 입력/화면/로그를 통한 QA,재현 절차; 초보자 사람의 재미 평가와 별개 |
+| https://raw.githubusercontent.com/openai/plugins/main/plugins/game-studio/references/playtest-checklist.md | 원문 날짜 미확인 | 시작/입력/종료/복구·화면 크기·카메라/메뉴 확인과 심각도별 재현 보고 |
+
+### 실패·부분 검토·보류
+
+- NBER논문 소개 URL은 웹 도구 Internal Error로 확보 실패. 검색에 나온14%/34%를 이번 채팅의 확인된 수치로 사용하지 않는다.
+- MIT ORC중계 페이지는502; MIT News의 연구기관 원문으로 대체했다. 대체 성공이 원 URL의 성공은 아니다.
+- GitHub game-studio목록은 Internal Error, README와 옛 develop-web-game 및 phaser-game 추측 경로는404. 확인된 plugin manifest와 실제 세부 SKILL.md로 범위를 확정했다. 옛 스킬을 현재 설치 후보로 안내하지 않는다.
+- Ubisoft Ghostwriter newsroom상세는 Internal Error. 공식 Technology본문의 실제 요약과 La Forge별도 연구 원문만 확인 근거로 쓴다. 전체 상세 원문 검토 완료로 표기하지 않는다.
+- GDevelop /page/ai,/features/ai-agent는 실패. wiki AI/chat은 Redirecting1줄뿐이므로 내용 검토 실패. 실제 확보된 공식 AI Agent블로그/엔진README로 기능을 설명하며 최신 UI 조작 재현은 주장하지 않는다.
+- n8n옛 sustainable-use-license경로는 Page Not Found; 실제 저장소 LICENSE.md로 조건을 확인했다.
+- 한국어 LanguageTool품질, 한국어 모델 간 순위, 상용AI가격, AI에셋의 개별 권리, 게임의 수익/제작시간은 미측정·보류. 기능문서를 성과보장으로 바꾸지 않는다.
+- 새 수집기 연결·자동 조사·예약·보고서v1/quality sidecar·불변 판 발행은 이번 요청 범위가 아니다. research-check/research-audit의 신규 발행 승인으로 기록하지 않는다.
+
+자체 검토: 제목·요약에서는 대상/사용 목적/시작 조건을 먼저 설명하고 SKILL.md와 MCP를 풀어 쓴다. 본문에서는 도구 추천을 조건에 따른 편집 판단으로 표시하고, 엔진·MCP서버·스킬을 같은 비교행으로 섞지 않는다. 가상 회의 입력의 미정 담당자, 게임 점수/타이머/재시작 값, 집필 전후 문장의 학습 정보가 이어지는지 확인했다. 모델 자기평가를 실제 독자 시험으로 부르지 않는다. 이번 작업은 자체 의미·이해 검토이며 독립 에이전트 검토/실제 독자 시험/설치 실행은 하지 않았다.
+
+## 2026-10-09 후속 요청: AI 활용·글쓰기·게임 제작 3개 페이지 발행
+
+사용자가 핵심을 먼저 보여 주고 기존 리서치에 각각 페이지를 추가하도록 요청했다. 위 채팅 조사 단계의 미발행·자체검토 상태와 구분한 후속 작업이다. 세 글의 ID는 practical-ai-workflows, ai-assisted-writing, ai-game-creation이며 개발 동향/AI 활용 아래에 배치한다. [작성·검토 기록](../AI_PRACTICAL_GUIDES.2026-10-09.md)에 독자 질문·예제·검증 범위를 연결했다.
+
+- 실제 새 원본 수집: 57개 기존 URL 중56개 성공, CoAuthor1개 SSL 인증서 확인 실패. 우회하지 않았다. 원본 바이트·추출문·성공/실패 시각·해시는 ignored data/raw/research/2026-10-09-ai-writing-games/receipts.json에 보존했다. 최종 참고문헌은55개 고유 URL이며 HBS와 CoAuthor는 새 글에서 채택하지 않았다.
+- 과거 최초 웹 확보의 정확한 시각은 여전히 미확인이다. 이번 실제 로컬 재수집 성공 시각을 최초 수집일로 소급하지 않는다. 원문 날짜·측정 기간은 위 기존 기록을 유지한다. quality source의 first_collected는null, last_successful_collection은 실제 영수증 시각이다.
+- 첫 화면 독립 검토는 게임 스킬 정의를 수정한 뒤3편 통과했다. 본문 독립 검토는 회의 의존 관계 추측, 공개/로컬 스킬 혼합, Dify·n8n 조건, 소설 결과 장면과 수정 전후, 부적합한 원문 발췌를 수정한 뒤3편 재판정했다. 실제 최신 JSON 입력 지문과 리뷰를 연결했다. 관련 원문 절의 의미 검토와 짧은 발췌·형식 검사를 분리했다.
+- 신규 report-v1/quality sidecar를 ai-practical-guides-2026-10-09 불변 배치로 연결했다. research-check3편 통과. audit5 gated/32 needs_substantive_review이며 기존32편을 이번에 승인하지 않았다. 유료 모델 호출0회, 새로운 예약/수집기 연결 없음.
+- 로컬 검증:129시험,37편/127판, 기존34편/124판·모델14·기존 발행 순서·CSS 보존8항목 통과.200 HTML/10,827개 로컬 참조 누락0, 실제3화면폭30검사와 PNG 확인. 일반 수집의 GDELT429 경고1·CoAuthor SSL 실패·favicon404를 별도 기록한다. 공개 배포·확인은 진행 중이다.
+- 가상 기대 표·장면·게임은 저자 설계다. 스킬/엔진 설치·실제 게임 실행·모델별 성능·한국어 독자 시험·효과 측정은 하지 않았다. 독립 에이전트 Pass를 실제 사람의 이해나 사용자 승인으로 쓰지 않는다.
