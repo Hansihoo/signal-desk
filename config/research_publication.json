@@ -85,6 +85,10 @@
     {
       "id": "voice-explanation-2026-10-09",
       "input": "voice_explanation.2026-10-09.json"
+    },
+    {
+      "id": "reader-refinement-2026-10-09",
+      "input": "reader_refinement.2026-10-09.json"
     }
   ]
 }
