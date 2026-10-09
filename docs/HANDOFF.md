@@ -40,7 +40,10 @@ Follow-up makes checked_on application-owned at initial draft creation (UTC), an
 retains that date on cache hits. A distinct cache version excludes older guessed-date
 results without changing immutable report/quality contracts. Local129tests/compileall
 pass, including wrong model dates and unchanged re-fetch/cache reuse. Pilot content,
-sidecars and design are unchanged; final follow-up deployment is pending.
+sidecars and design are unchanged. Final source0137f3d/Pages37898299171 succeeded
+(1m56s); CI129tests/housing review PASS. Final public8preservation/8actual390px
+checks and PNG pass. Earlier sourcecd180e1 public receipts/captures were copied
+under their commit prefix before final verification, and remain retained.
 
 ## Latest work: Korean/Latin font consistency, 2026-10-09
 
