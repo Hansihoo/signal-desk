@@ -109,6 +109,10 @@
     {
       "id": "ai-model-guides-2026-10-09",
       "input": "ai_model_guides.2026-10-09.json"
+    },
+    {
+      "id": "ai-model-guides-learning-2026-10-09",
+      "input": "ai_model_guides_learning.2026-10-09.json"
     }
   ]
 }

@@ -34,7 +34,7 @@
 | [MistralLarge4](https://mistral.ai/news/mistral-large-4/) | [카드](https://docs.mistral.ai/models/mistral-large-4) / [변경 이력](https://docs.mistral.ai/resources/changelogs) | Public Preview·mistral-large-4·총1.05T/활성52B·1M. 카드의 USD 할인/일반 요율, 2주50% 할인. 정확한 할인 종료 시각·라이선스·출력한도·지식기준·메모리 미확인. 가중치 공개는 월말 계획, 다운로드 완료 아님. |
 | [NanoBanana2.1](https://ai.google.dev/gemini-api/docs/models/gemini-nano-banana-2.1) | [출시](https://ai.google.dev/gemini-api/docs/changelog) / [가격](https://ai.google.dev/gemini-api/docs/pricing) / [사용](https://ai.google.dev/gemini-api/docs/image-generation) | stable GA·gemini-nano-banana-2.1·131072입력/32768출력. 이미지·텍스트/추론·검색 요금 분리. 1K/2K/4K 정사각형 장당 출력 상당 가격; 전체 요청 가격 아님. 이전 ID deprecation·종료일 미정. 문자/반복 편집 개선은 제공자 설명. |
 
-12개 원문 HTML을 `data/raw/ai_news/official/2026-10-09/`에 URL·확인 UTC·
+14개 원문 HTML을 `data/raw/ai_news/official/2026-10-09/`에 URL·확인 UTC·
 최종 URL·SHA-256과 함께 저장했다(모두 성공). 모델 실행을 하지 않아 실사용·
 AA·Agent·Cursor 점수를 추가하지 않았다. 제공자 평가판·도구 유무의 구분과
 미확인 설정을 본문에 설명했다. 비공개 엔진/UI·고객·계약 정보를 사용하지 않았다.
@@ -55,6 +55,27 @@ Haiku는 문의 분류→요청 길이별 비용→4.5 이전→동일 문의 �
   않았다. 의미상 기대 분류와 JSON 보장 여부를 구분했다. Nano는 사용 버전에 따라
   확인해야 하는 인자를 가짜 SDK 튜토리얼로 만들지 않았다.
 
+### 현행 집필 기준 적용과 두 가지 읽기
+
+원격의 research-teaching 기준을 통합한 뒤 첫 원고를 다시 읽었다. 제목·요약만
+읽으면 작업과 산출물은 보이지만 API·토큰·캐시·effort·가중치·GA를 처음 접하는
+독자가 본문을 따라가기 어렵고, 본문에는 일부 예시의 실제 입력·기대 출력과
+조건을 바꾼 연습이 부족했다. 이 판정은 집필자의 자체검토이며 독립 독자의 평가가 아니다.
+
+적용한 첫 배치를 고치지 않고 `ai_model_guides_learning.2026-10-09.json`으로
+같은 ID의 revision2를 추가했다. 제목·요약만 읽어 모델별 할 일과 한계를 설명하는지,
+본문을 읽어 같은 예시의 산출물을 만들고 조건 변화에 대응하는지 나누어 검토했다.
+Haiku는 가상 문의3개의 분류와 제품명 null 조건, Mistral은 가상 설명서의25mm·
+쪽2·도면A 근거와25/30mm 충돌, Nano는 제품 이미지 생성/편집과 재시도 비용을
+입력·기대 산출물·오답 조건·변형 문제 및 풀이로 연결했다. 캐시/effort 선행 개념은
+05:36 KST에 추가 확보한 공식 두 문서와 대조했다. 가상 출력은 실제 모델 응답이 아니다.
+
+2026-10-09 05:43 KST 기준, 최초12원문의 실제 확보는05:13:16–05:13:28 KST,
+추가2원문은05:36:47 KST다. 전체 최초 수집일이나 원문 수정일을 이 시각으로
+소급하지 않는다. 정확한 URL·UTC·해시는 receipt.json과 AI_RESEARCH_REVIEW_LOG에
+연결한다. 현재 공개20보고서/53판은 내려받은 public-before.json과 내용 단위로
+대조했고 모두 보존했다. 최종 통합 상태는23보고서/59판이다.
+
 ## 불변 입력·탐색
 
 - 보고서3편: `config/ai_model_guides.2026-10-09.json`, stable ID는
@@ -64,12 +85,24 @@ Haiku는 문의 분류→요청 길이별 비용→4.5 이전→동일 문의 �
   Haiku 사양/2요금구간, Mistral 사양/요금, Nano 사양/요금, Sonnet 캐시 변경.
   `ai-models --input`과 모델 publication manifest로 클라우드에도 유지한다.
 - 이미 적용된 JSON은 수정하지 않는다. 이전 모델·보고서·원본은 보존한다.
+- 학습 보강은 별도 불변 배치로 등록해 각 가이드 revision1과 revision2를 모두
+  보존한다. 기존20개 보고서의 발행본·이전 판은 수정하지 않는다.
 - `-model-guide` stable ID와 AI 모델·API 경로를 가진 검토된 보고서는 모델별 자료
   목록의 공식 모델 가이드로 자동 포함한다. 원문 확인일 표시, 기존 검색/분야 필터와
   정식/preview 상대 링크를 사용한다. Theo 원자료 날짜와 sandbox 본문은 유지한다.
 
 ## 기술·공개 검증
 
-검증과 배포 결과는 작업 완료 후 아래에 기록한다. 원문·의미 검토와 이해 자체검토는
-기술 시험 통과와 별개의 확인이다. 주택 모집중0건인 기존 로컬 review 제한도
-모델 기능 실패와 구분한다.
+원문·의미 검토와 이해 자체검토는 기술 시험 통과와 별개의 확인이다. 원격 통합 후
+전체108시험, 목차 집계 추가 후 영향20시험 통과. 최종 로컬123HTML의3908내부
+참조에 누락0. 실제 브라우저19검사에서3가이드×320/390/768/1440px의 본문·
+날짜·출처·이전 판과 자료17페이지의 검색/분야/초기화·날짜 폭, 비교표8추가관측의
+검색·effort·상세 출처/날짜/이력·CSV를 확인했다. 원본 Theo sandbox의5필터·
+비어 있는 결과·초기화·Escape도 별도 통과했다. 콘솔 오류·화면 가로 넘침0,
+브리핑/데스크/모델 페이지 PNG를 육안 확인했다.
+
+증거는 무시된 reports/ai-models-oct9-local/에 보존한다. 일회용 Edge 프로필과
+검사 스크립트는 소유 scratch runner로 정리했다. 주택 review는11PASS/1FAIL로,
+기존 로컬 모집중0건만 실패했다. 모델 기능 실패와 구분한다. API·SDK·모델 실행,
+사람/독립 에이전트의 독해 시험과 독립 벤치마크 재현은 미실시다. Pages Actions와
+실제 공개 페이지 검증 결과는 배포 후 추가한다.

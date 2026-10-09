@@ -45,7 +45,8 @@ def _groups(reports):
     return groups
 
 
-def _tree(reports, prefix, active=None, has_model_ledger=False, model_page_count=0):
+def _tree(reports, prefix, active=None, has_model_ledger=False, model_page_count=0, model_library_count=None):
+    guide_count = model_page_count if model_library_count is None else model_library_count
     parts = ['<ul class="research-tree">']
     for name, members in _groups(reports).items():
         categories = {}
@@ -72,9 +73,9 @@ def _tree(reports, prefix, active=None, has_model_ledger=False, model_page_count
                     if has_model_ledger:
                         model_links.append('<li><a href="%sai-models.html"%s><span class="tree-label">전체 모델 비교표</span><small>1</small></a></li>' % (
                             prefix, ' aria-current="page"' if active == "ai-models" else ""))
-                    if model_page_count:
+                    if guide_count:
                         model_links.append('<li><a href="%sai-model-guides.html"%s><span class="tree-label">모델별 가이드·평가 자료</span><small>%d</small></a></li>' % (
-                            prefix, ' aria-current="page"' if active == "ai-model-guides" else "", model_page_count))
+                            prefix, ' aria-current="page"' if active == "ai-model-guides" else "", guide_count))
                     child_links = "".join(model_links) + child_links
                 children_html = '<ul class="tree-children">%s</ul>' % child_links if child_links else ""
                 page_count = len(items)
@@ -172,7 +173,7 @@ def _edition_nav(item, history, prefix):
 
 def render_editorial(output, snapshot, featured, research_data=None, standalone=True):
     from .model_ledger_view import model_ledger_content
-    from .model_pages_view import render_model_pages, library_content
+    from .model_pages_view import render_model_pages, library_content, official_guides
     reports = [validate_report(item) for item in research_data["reports"]] if research_data else [validate_report(featured)]
     reports = sorted(reports, key=lambda item: (item["checked_on"], item["id"]), reverse=True)
     by_id = {item["id"]: item for item in reports}
@@ -206,12 +207,13 @@ def render_editorial(output, snapshot, featured, research_data=None, standalone=
     has_model_ledger = bool(ledger["records"])
     model_pages = (research_data or {}).get("model_pages", {"pages": [], "history": [], "runs": []})
     model_page_count = len(model_pages["pages"])
+    model_library_count = model_page_count + len(official_guides(reports))
     def page(title, description, content, prefix="", active=None, contents="", editions=""):
         style_block = ('<style id="editorial-style">%s</style>' % style if standalone else
                        '<link rel="stylesheet" href="%sbriefing.css?v=%s">' % (prefix, style_version))
         return _fill(shell, {"__PAGE_TITLE__": _escape(title), "__DESCRIPTION__": _escape(description),
             "__STYLE_BLOCK__": style_block, "__SCRIPT__": script, "__CONTENT__": content, "__PREFIX__": prefix,
-            "__TREE__": _tree(reports, prefix, active, has_model_ledger, model_page_count), "__CONTENTS_NAV__": contents, "__EDITION_NAV__": editions,
+            "__TREE__": _tree(reports, prefix, active, has_model_ledger, model_page_count, model_library_count), "__CONTENTS_NAV__": contents, "__EDITION_NAV__": editions,
             "__BUSINESS_LINK__": '<a href="%sbusiness.html">사업</a>' % prefix if any(item["topic_id"] == "business" for item in reports) else ""})
     values = dict(_report_replacements(featured), __REPORT_URL__=_escape(featured["id"] + ".html"),
         __HEADLINE__=_headline(featured["title"]),
@@ -222,8 +224,8 @@ def render_editorial(output, snapshot, featured, research_data=None, standalone=
     model_links = []
     if has_model_ledger:
         model_links.append('<a href="ai-models.html">주요 LLM 모델 통합 비교 ↗</a><small>1페이지</small><p>사양·제공 상태·AA·코딩 에이전트·Cursor 평가와 변경 기록</p>')
-    if model_page_count:
-        model_links.append('<a href="ai-model-guides.html">모델별 가이드·비용·평가 자료 ↗</a><small>%d페이지</small>' % model_page_count)
+    if model_library_count:
+        model_links.append('<a href="ai-model-guides.html">모델별 가이드·비용·평가 자료 ↗</a><small>%d페이지</small>' % model_library_count)
     model_link = '<section class="model-ledger-link">%s</section>' % "".join(model_links)
     if model_links:
         content = content.replace('<section id="board">', model_link + '<section id="board">')

@@ -158,3 +158,11 @@ class ModelPagesTests(unittest.TestCase):
             rendered=Path(root,'ai-model-guides.html').read_text(encoding='utf-8')
             self.assertIn('href="new-model-guide.html"',rendered)
 
+    def test_library_count_includes_official_guides_without_double_counting_topic(self):
+        from housing_watch.editorial import _tree
+        guide={'id':'new-model-guide','topic_id':'opportunities',
+               'topic_path':['개발 동향','AI 모델·API','New']}
+        html=_tree([guide],'',has_model_ledger=True,model_page_count=14,model_library_count=15)
+        self.assertIn('모델별 가이드·평가 자료</span><small>15</small>',html)
+        self.assertIn('AI 모델·API</span> <small>16</small>',html)
+

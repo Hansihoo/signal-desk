@@ -74,11 +74,15 @@ def _category_label(value):
     return "모델 분석" if value == "모델 리서치" else value
 
 
-def library_content(pages, prefix="", reports=None):
-    rows = []
-    official = [report for report in (reports or [])
+def official_guides(reports):
+    return [report for report in (reports or [])
                 if report['id'].endswith('-model-guide')
                 and report['topic_path'][:2] == ['개발 동향', 'AI 모델·API']]
+
+
+def library_content(pages, prefix="", reports=None):
+    rows = []
+    official = official_guides(reports)
     for report in sorted(official, key=lambda report: (report['checked_on'], report['id']), reverse=True):
         searchable = ' '.join([report['title'], report['description'], *report['topic_path']])
         rows.append('<tr data-category="공식 모델 가이드" data-search="%s"><td><a href="%s%s.html">%s</a><p>%s</p></td><td data-label="분야">공식 모델 가이드</td><td data-label="자료 수정일">%s</td><td data-label="공식 원문 확인일">%s</td></tr>' % tuple(escape(str(value), quote=True) for value in (
