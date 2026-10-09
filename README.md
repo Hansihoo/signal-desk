@@ -23,9 +23,12 @@ collection/review/publication dates. Broad source connections, common freshness
 metadata and broad recurring execution remain implementation work; see [project status](PROJECT_STATUS.md).
 
 The [curated main](https://hansihoo.github.io/signal-desk/preview/index.html)
-now uses the 2026-10-08 revisions of all 20 authored reports. Essential concepts,
-consistent worked cases and first steps are visible; optional disclosures hold
-deeper exercises and official evidence supports the claims. [Repair and verification limits](docs/RESEARCH_REPAIR.2026-10-08.md).
+now uses the 2026-10-09 reinforced editions of all20 authored reports and14 separate
+model reading guides. Each explains a reader question, mechanisms or conditions,
+a complete case and an application exercise. Independent agents read the changed
+drafts, found substantive defects and rechecked the repairs. Imported model originals
+stay preserved; each guide is pinned to the original document, assets and metadata.
+[Repair, individual verdicts and verification limits](docs/RESEARCH_AUTHORING_REPAIR.2026-10-09.md).
 GitHub Actions refreshes public sources daily at approximately 05:00 Asia/Seoul;
 accumulated data and dated briefings are retained between runs. See [publishing operations](docs/PUBLISHING.md).
 

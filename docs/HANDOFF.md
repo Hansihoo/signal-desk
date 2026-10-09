@@ -1,5 +1,79 @@
 # Handoff
 
+## Latest work: all-report teaching reinforcement and independent review, 2026-10-09
+
+The user requested actionable agent documentation, reinforcement of every current
+article and review by different agents after changes. The project research-teaching
+skill now requires question-to-evidence planning, task-specific mechanisms/calculations,
+complete cases and type-specific judgments. Source and installed skill are synchronized
+and validated; AGENTS/writing guide route to its substantive-review reference.
+
+`config/research_authoring.2026-10-09.json` replaces the same20 current IDs through a new
+immutable batch, SHA256 `17c0d1b6e2285849232d99f680fdca2cb128568c97f2e49ddb1b517c9bcd4144`.
+`config/model_reading_guides.2026-10-09.json` adds14 distinct reading guides, SHA256
+`9a0ae0b06d61aaf3f31436cab64968be5585eec3270caee8f3de66f63edd5140`. Both batches have
+already been applied locally: do not edit them in place. The publication manifest now
+contains34 IDs. Source/meaning review and separate title/summary/full-body agent readings
+caught and repaired real conditions, unit, code/value and explanation defects. Final
+independent verdicts are20+14 bounded Pass;13 reports' key official evidence and the
+whole-document companion connection were separately rechecked. Individual scopes,
+initial failures and actual repairs: [authoring repair](RESEARCH_AUTHORING_REPAIR.2026-10-09.md).
+
+`model_learning_links.json` binds each guide to the original whole document hash, shared
+assets and metadata included. Current matching wrappers show the guide before the
+unchanged isolated original. Changed originals show a stale notice/history link; historical
+wrappers only link matching guides. Preserve original collection dates and empty catalog
+reference dates. Guide pages count as pages, not789 model observations.
+
+Local34 reports/87 editions and14 model originals/789 observations are rendered. All53
+baseline authored documents and all14 original documents/assets/metadata match.109 tests,
+compileall,7377 references,209 actual1280/390/320px browser checks, a runnable Python
+example and9 illustrative calculations pass. The Windows default-encoding defect was
+fixed and the8 affected tests also pass without `-X utf8`; independent implementation
+review closed. Brief/desk/review and PNG inspection completed. Public deployment and
+exact previous53 public rows need final confirmation. Actual people reading/testing,
+paid API/SDK integrations and every current provider/model specification were not tested.
+
+Earlier audit and research sections below are dated history. Their “unchanged/pending”
+statements describe those earlier turns; this section and the repair ledger govern current work.
+
+## Latest work: substantive AI writing research, 2026-10-09
+
+The user distinguished awkward Korean from information that does not help the reader.
+[The research analysis](AI_WRITING_RESEARCH.2026-10-09.md) connects six primary sources
+(STORM, ALCE, WritingBench, DeepResearch Bench, cross-lingual summarization and IES)
+with the current educational-value audit. Selected methods, evaluation setup and limits
+were read; full appendices, underlying studies and benchmark reproduction were not.
+Translation loss is possible, but an English draft/translation comparison has not been
+performed for these reports. Missing mechanisms, implementation steps and market evidence
+require substantive research rather than language polishing alone.
+
+The proposed authoring procedure maps each reader question to evidence and a complete
+explanation before deriving the title/summary. It is a research-informed proposal, not a
+tested prompt or a new report-schema contract. Acquisition dates, selected review scope,
+URLs and hashes are retained in the existing raw research root and manual review log.
+Report prose, design, collectors and installed skills were not changed by this analysis.
+The next proposed application is one RAG report, with actual retrieval examples and reader
+comprehension testing kept separate from self-review and output checks.
+
+## Latest work: complete educational value audit, 2026-10-09
+
+The user requested an honest reading-based judgment of all current writings.
+[The educational value review](EDUCATIONAL_VALUE_REVIEW.2026-10-09.md) records34
+individual assessments:20 authored current reports and14 imported model documents.
+All report bodies and learning disclosures, model bodies/tooltips/dynamic explanations,
+main and native comparison guidance were read. This is a prose review, not human
+reader testing or renewed verification of every benchmark cell or external source article.
+
+Verdicts for authored reports are9 bounded learning materials,5 needing core additions
+and6 reference briefings. Do not treat these as approval of a complete textbook course.
+Model documents have reference value; uncertain quota estimates, an unconfirmed plan
+in the $200 comparison and benchmark-to-work-role recommendations need priority work.
+RAG retrieval mechanisms and actual end-to-end app exercises remain incomplete.
+Ontology, knowledge-base design, FDE and workforce-change lessons remain absent despite
+their registration in the source/discovery policy. Reports, data, code, design and
+publication were not changed by this review. Preserve previous editions when repairing.
+
 ## Latest work: research teaching skill and MCP Apps revision, 2026-10-09
 
 The user still found the 2026-10-08 prose difficult and its title/summary uninformative.

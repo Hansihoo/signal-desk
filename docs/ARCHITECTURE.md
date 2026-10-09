@@ -1,5 +1,19 @@
 # Architecture
 
+## Model reading guides bound to original editions
+
+The14 learning companions are ordinary validated report v1 documents imported by
+the publication manifest into SQLite report revisions. `config/model_learning_links.json`
+only maps source slug, report ID and original content hash; it does not store a second
+copy of research prose. `model_pages_view` matches the same whole-document hash used by
+`model_pages.upsert_pages` (HTML, shared assets and metadata) before showing an inline
+companion in the original wrapper. Mismatched current originals show a stale notice
+and the guide's historical original link where available. Historical wrappers only
+link the matching guide, and missing guides generate no broken link. Source documents,
+their dates and sandboxed iframe behavior stay intact. Additional authored guide pages
+count as pages; model observations and historical editions do not. See
+[the authoring repair record](RESEARCH_AUTHORING_REPAIR.2026-10-09.md).
+
 ## Business working-data boundary
 
 Public business reports follow the existing validated report → SQLite revisions →

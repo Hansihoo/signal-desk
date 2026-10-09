@@ -8,7 +8,8 @@ from unittest.mock import patch
 
 from housing_watch.db import connect, init_db
 from housing_watch.model_pages import load_page, upsert_pages, export_model_pages, collect_model_pages
-from housing_watch.model_pages_view import source_document, library_content, render_model_pages
+from housing_watch.model_pages_view import source_document, library_content, render_model_pages, document_hash, load_learning_links
+from housing_watch.research_data import load_report_input
 from housing_watch.model_publication import apply_model_publication
 
 
@@ -73,11 +74,61 @@ class ModelPagesTests(unittest.TestCase):
         self.assertIn('Aster',library_content(result))
         with tempfile.TemporaryDirectory() as root:
             render_model_pages(root,result,lambda title,description,content,*args,**kwargs:content)
-            old=Path(root,'model-guides/content/aster-r1.html').read_text()
-            current=Path(root,'model-guides/content/aster-r2.html').read_text()
+            old=Path(root,'model-guides/content/aster-r1.html').read_text(encoding='utf-8')
+            current=Path(root,'model-guides/content/aster-r2.html').read_text(encoding='utf-8')
             self.assertIn('<td>60</td>',old);self.assertIn('<td>61</td>',current)
-            wrapper=Path(root,'model-guides/aster.html').read_text()
+            wrapper=Path(root,'model-guides/aster.html').read_text(encoding='utf-8')
             self.assertIn('sandbox="allow-scripts',wrapper);self.assertNotIn('allow-same-origin',wrapper)
+
+    def test_learning_companion_is_bound_to_whole_source_edition(self):
+        doc = page(); upsert_pages(self.conn, [doc])
+        guide = copy.deepcopy(load_report_input()[0])
+        guide['id'] = 'model-reading-aster'
+        guide['title'] = 'Distinct learning explanation'
+        guide['explanation'] = [{'id':'meaning','title':'Meaning','lead':'Read the unit',
+            'blocks':[{'type':'paragraph','kind':'example','title':'Case','text':'Companion example only','source_ids':[]}]}]
+        links = {'aster':{'source_slug':'aster','report_id':guide['id'],'source_document_hash':document_hash(doc)}}
+        stored_hash = self.conn.execute('SELECT content_hash FROM model_pages WHERE slug=?', ('aster',)).fetchone()[0]
+        self.assertEqual(stored_hash, document_hash(doc))
+        before = copy.deepcopy(doc)
+        with tempfile.TemporaryDirectory() as root:
+            result = export_model_pages(self.conn)
+            render_model_pages(root, result, lambda title,description,content,*a,**kw:content, [guide], links)
+            current = Path(root,'model-guides/aster.html').read_text(encoding='utf-8')
+            historical = Path(root,'model-guides/aster-r1.html').read_text(encoding='utf-8')
+            self.assertIn('Companion example only',current)
+            self.assertIn('../model-reading-aster.html',current)
+            self.assertIn('id="model-original"',current)
+            self.assertNotIn('Companion example only',historical)
+            self.assertIn('이 판의 별도 해설',historical)
+            self.assertEqual(doc,before)
+            # Shared JS changes alter the source edition even if HTML is unchanged.
+            changed = copy.deepcopy(doc); changed['assets']['guide.js']='window.ready=2;'
+            upsert_pages(self.conn,[changed])
+            render_model_pages(root,export_model_pages(self.conn),lambda t,d,c,*a,**kw:c,[guide],links)
+            stale = Path(root,'model-guides/aster.html').read_text(encoding='utf-8')
+            self.assertNotIn('Companion example only',stale)
+            self.assertIn('model-learning-stale',stale)
+            self.assertIn('aster-r1.html',stale)
+            original = Path(root,'model-guides/content/aster-r2.html').read_text(encoding='utf-8')
+            self.assertIn('window.ready=2;',original)
+            self.assertNotIn('Distinct learning explanation',original)
+            # An absent guide must not create a broken publication link.
+            render_model_pages(root,export_model_pages(self.conn),lambda t,d,c,*a,**kw:c,[],links)
+            missing = Path(root,'model-guides/aster.html').read_text(encoding='utf-8')
+            self.assertNotIn('../model-reading-aster.html',missing)
+
+    def test_learning_mapping_rejects_traversal_and_duplicate_sources(self):
+        entry={'source_slug':'aster','report_id':'model-reading-aster','source_document_hash':'a'*64}
+        with tempfile.TemporaryDirectory() as root:
+            path = Path(root,'links.json')
+            path.write_text(json.dumps({'schema_version':1,'links':[entry]}),encoding='utf-8')
+            self.assertEqual(load_learning_links(path)['aster'],entry)
+            path.write_text(json.dumps({'schema_version':1,'links':[entry,entry]}),encoding='utf-8')
+            with self.assertRaisesRegex(ValueError,'Duplicate'):load_learning_links(path)
+            entry['report_id']='../../escape'
+            path.write_text(json.dumps({'schema_version':1,'links':[entry]}),encoding='utf-8')
+            with self.assertRaisesRegex(ValueError,'identifiers'):load_learning_links(path)
 
     def test_reviewed_facts_publication_persists_once_and_rejects_mutation(self):
         facts={'schema_version':1,'records':[{'id':'aster','model':'Aster','provider':'Example','source_url':'https://example.org/aster','checked_on':'2026-10-08','fields':{'kind':'사양','suite':'official-release','condition':'Direct API','context':128000}}]}

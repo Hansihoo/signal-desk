@@ -21,7 +21,21 @@
     "github-marketplace-paid-apps",
     "upwork-ai-integration-demand",
     "tally-small-saas-case",
-    "github-pages-storage"
+    "github-pages-storage",
+    "model-reading-claude-opus-5-5-model-guide",
+    "model-reading-codex-6-model-guide",
+    "model-reading-codex-claude-200usd-capacity-report",
+    "model-reading-codex-model-comparison",
+    "model-reading-codex-model-guide-20260909",
+    "model-reading-coding-agent-index",
+    "model-reading-coding-agent-index-v1-4",
+    "model-reading-gemini-4-argon-model-guide",
+    "model-reading-gpt-6-1-sol-model-guide",
+    "model-reading-grok-4-7-report",
+    "model-reading-llm-coding-benchmark-reference-company-v6",
+    "model-reading-llm-models",
+    "model-reading-model-cost-performance",
+    "model-reading-windows-codex-max-guide"
   ],
   "batches": [
     {
@@ -59,6 +73,14 @@
     {
       "id": "research-teaching-2026-10-09",
       "input": "research_teaching.2026-10-09.json"
+    },
+    {
+      "id": "research-authoring-2026-10-09",
+      "input": "research_authoring.2026-10-09.json"
+    },
+    {
+      "id": "model-reading-guides-2026-10-09",
+      "input": "model_reading_guides.2026-10-09.json"
     }
   ]
 }

@@ -1,5 +1,6 @@
 """Model document library and isolated, interactive copies of source pages."""
 
+import hashlib
 import json
 import re
 from html import escape
@@ -8,6 +9,65 @@ from urllib.parse import unquote, urljoin, urlparse
 
 
 ROOT = Path(__file__).parent
+LEARNING_LINKS = ROOT.parent / 'config' / 'model_learning_links.json'
+
+
+def document_hash(doc):
+    """Match model_pages.upsert_pages: HTML, assets and metadata form one edition."""
+    return hashlib.sha256(json.dumps(doc, ensure_ascii=False, sort_keys=True,
+                                     allow_nan=False).encode()).hexdigest()
+
+
+def load_learning_links(path=LEARNING_LINKS):
+    if not Path(path).exists():
+        return {}
+    data = json.loads(Path(path).read_text(encoding='utf-8'))
+    if set(data) != {'schema_version', 'links'} or type(data['schema_version']) is not int or data['schema_version'] != 1:
+        raise ValueError('Unsupported model learning links')
+    result = {}
+    for entry in data['links']:
+        if set(entry) != {'source_slug', 'report_id', 'source_document_hash'}:
+            raise ValueError('Invalid model learning link fields')
+        if any(not isinstance(entry[key], str) for key in entry):
+            raise ValueError('Invalid model learning link values')
+        if (not re.fullmatch(r'[a-z0-9][a-z0-9-]{0,79}', entry['source_slug']) or
+                not re.fullmatch(r'[a-z0-9][a-z0-9-]{0,79}', entry['report_id']) or
+                not re.fullmatch(r'[a-f0-9]{64}', entry['source_document_hash'])):
+            raise ValueError('Invalid model learning link identifiers')
+        if entry['source_slug'] in result:
+            raise ValueError('Duplicate model learning source')
+        result[entry['source_slug']] = entry
+    return result
+
+
+def companion_content(row, pages, reports, links, edition=False):
+    """Explain a pinned source edition without editing imported source content."""
+    link = links.get(row['slug'])
+    report = next((item for item in reports if link and item['id'] == link['report_id']), None)
+    if report is None:
+        return ''
+    href = '../' + report['id'] + '.html'
+    matched = document_hash(row['document']) == link['source_document_hash']
+    if edition:
+        return ('<p><a href="%s">이 판의 별도 해설</a></p>' % escape(href, quote=True)) if matched else ''
+    if not matched:
+        old = next((item for item in pages['history'] if item['slug'] == row['slug'] and
+                    document_hash(item['document']) == link['source_document_hash']), None)
+        source_link = '<a href="%s-r%d.html">해설이 다룬 원자료 판</a> · ' % (row['slug'], old['revision']) if old else ''
+        return '<aside class="model-learning-stale" role="status"><p>원자료가 해설 검토 뒤 바뀌었습니다. 아래는 현재 원문입니다.</p><p>%s<a href="%s">이전 자료의 해설</a></p></aside>' % (source_link, escape(href, quote=True))
+    from .briefing_preview import _report_replacements
+    from .research_data import validate_report
+    values = _report_replacements(validate_report(report))
+    return ('<article id="model-learning" class="model-learning-companion">'
+            '<header><h2>%s</h2></header><p class="report-deck">%s</p>'
+            '<p>해설 검토 <time datetime="%s">%s</time> · 원문과 별도의 학습 설명</p>'
+            '<p><a href="#model-original">원자료 보기</a> · <a href="%s">해설 페이지</a></p>'
+            '<section id="summary" class="report-section"><h2>요약</h2><ul class="outline-list">%s</ul></section>'
+            '%s%s<section id="references" class="report-section references"><h2>해설 참고내용</h2>'
+            '<ol class="reference-list">%s</ol><p class="reference-note">%s</p></section></article>') % (
+                escape(report['title']), values['__DECK__'], escape(report['checked_on']), escape(report['checked_on']),
+                escape(href, quote=True), values['__SUMMARY__'], values['__EXPLANATION__'], values['__LEARNING__'],
+                values['__REFERENCES__'], values['__CAVEATS__'])
 
 
 def _category_label(value):
@@ -69,7 +129,7 @@ def source_document(doc, file_slugs, token):
     return re.sub(r'</body>', lambda m: bridge + m.group(0), text, count=1, flags=re.I)
 
 
-def page_content(row, all_pages, edition=False):
+def page_content(row, all_pages, edition=False, reports=(), links=None):
     doc, slug, revision = row["document"], row["slug"], row["revision"]
     token = slug + '-r' + str(revision)
     # Fixed-position menus measure window.innerHeight. For a table application,
@@ -77,26 +137,28 @@ def page_content(row, all_pages, edition=False):
     # height changes whenever filtering hides rows. Long articles still expand.
     viewport = ' data-fixed-viewport="true"' if 'llm-table-controls.js' in doc['assets'] else ''
     editions = [item for item in all_pages["history"] if item["slug"] == slug]
-    links = ''.join('<a href="%s-r%d.html">%d차</a> ' % (slug, item['revision'], item['revision']) for item in sorted(editions, key=lambda item:item['revision'], reverse=True))
-    return '<style>%s</style><section class="model-source-heading" data-ui-id="model-source"><header><h1>%s</h1></header><p><a href="../ai-model-guides.html">모델별 자료</a> · <a href="../ai-models.html">전체 모델 비교표</a> · <a href="%s" target="_blank" rel="noopener">Theo 원문</a></p><p>자료 수정일 %s · 원자료 기준일 %s · Theo 작성 자료</p>%s<p class="model-source-editions">이전 기록: %s</p></section><iframe class="model-source-frame"%s title="%s 본문" src="content/%s-r%d.html" sandbox="allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox"></iframe><script>%s</script>' % (
+    edition_links = ''.join('<a href="%s-r%d.html">%d차</a> ' % (slug, item['revision'], item['revision']) for item in sorted(editions, key=lambda item:item['revision'], reverse=True))
+    companion = companion_content(row, all_pages, reports, links or {}, edition)
+    return '<style>%s</style><section class="model-source-heading" data-ui-id="model-source"><header><h1>%s</h1></header><p><a href="../ai-model-guides.html">모델별 자료</a> · <a href="../ai-models.html">전체 모델 비교표</a> · <a href="%s" target="_blank" rel="noopener">Theo 원문</a></p><p>자료 수정일 %s · 원자료 기준일 %s · Theo 작성 자료</p>%s<p class="model-source-editions">이전 기록: %s</p></section>%s<section id="model-original" class="model-original"><h2>원자료</h2><iframe class="model-source-frame"%s title="%s 본문" src="content/%s-r%d.html" sandbox="allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox"></iframe></section><script>%s</script>' % (
         (ROOT / 'model_pages.css').read_text(encoding='utf-8'), escape(doc['title']), escape(doc['source_url'],quote=True),
         escape(doc['updated_on'] or '미표기'), escape(doc['reference_date'] or '미표기'),
-        '<p>이전 판 · <a href="%s.html">현재 자료</a></p>' % slug if edition else '', links, viewport, escape(doc['title'],quote=True), slug, revision,
+        '<p>이전 판 · <a href="%s.html">현재 자료</a></p>' % slug if edition else '', edition_links, companion, viewport, escape(doc['title'],quote=True), slug, revision,
         """(()=>{const frame=document.querySelector('.model-source-frame');window.addEventListener('message',event=>{const d=event.data;if(!frame.dataset.fixedViewport&&event.source===frame.contentWindow&&d?.type==='signal-model-height'&&d.token===TOKEN&&Number.isFinite(d.height)&&d.height>=600&&d.height<=200000){frame.style.height=d.height+'px'}})})();""".replace('TOKEN',json.dumps(token)))
 
 
-def render_model_pages(destination, pages, page):
+def render_model_pages(destination, pages, page, reports=(), learning_links=None):
     destination = Path(destination)
     root = destination / 'model-guides'
     content_root = root / 'content'
     content_root.mkdir(parents=True, exist_ok=True)
     file_slugs = {row['document']['file']:row['slug'] for row in pages['pages']}
+    learning_links = load_learning_links() if learning_links is None else learning_links
     for row in pages['history']:
         doc = row['document']
         token = row['slug']+'-r'+str(row['revision'])
         (content_root / (token+'.html')).write_text(source_document(doc,file_slugs,token),encoding='utf-8')
-        (root / (token+'.html')).write_text(page(doc['title'],doc['description'],page_content(row,pages,True),'../',active='ai-model-guides'),encoding='utf-8')
+        (root / (token+'.html')).write_text(page(doc['title'],doc['description'],page_content(row,pages,True,reports,learning_links),'../',active='ai-model-guides'),encoding='utf-8')
     for row in pages['pages']:
         doc = row['document']
-        (root / (row['slug']+'.html')).write_text(page(doc['title'],doc['description'],page_content(row,pages),'../',active='ai-model-guides'),encoding='utf-8')
+        (root / (row['slug']+'.html')).write_text(page(doc['title'],doc['description'],page_content(row,pages,False,reports,learning_links),'../',active='ai-model-guides'),encoding='utf-8')
     (destination / 'ai-model-guides.html').write_text(page('모델별 자료','모델별 가이드·비용·평가 자료',library_content(pages),active='ai-model-guides'),encoding='utf-8')

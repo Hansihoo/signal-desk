@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "links": [
+    {
+      "source_slug": "claude-opus-5-5-model-guide",
+      "report_id": "model-reading-claude-opus-5-5-model-guide",
+      "source_document_hash": "4c16b45071c897e965a08f0887ad8c2c88e3206eeeab550409539322002c163a"
+    },
+    {
+      "source_slug": "codex-6-model-guide",
+      "report_id": "model-reading-codex-6-model-guide",
+      "source_document_hash": "0588ae80404578db741ab03158c6e04c94e9e8649e8ac36118c2c1195ccb1a59"
+    },
+    {
+      "source_slug": "codex-claude-200usd-capacity-report",
+      "report_id": "model-reading-codex-claude-200usd-capacity-report",
+      "source_document_hash": "1e6304a7979cb980eef42fe0a13b42150b40adccdaab8c4992651ef526901c61"
+    },
+    {
+      "source_slug": "codex-model-comparison",
+      "report_id": "model-reading-codex-model-comparison",
+      "source_document_hash": "e3b6631cd6f096d82f6accfc5ebf2ea50bcd45b4da347789bcf0ebb500fd4a9c"
+    },
+    {
+      "source_slug": "codex-model-guide-20260909",
+      "report_id": "model-reading-codex-model-guide-20260909",
+      "source_document_hash": "85ca83ca6fe0f43caa87147cbf4872a9e717b3eb8e3f1f03ac1282ca7ee13ed1"
+    },
+    {
+      "source_slug": "coding-agent-index",
+      "report_id": "model-reading-coding-agent-index",
+      "source_document_hash": "523d385814b0df9f55595a8485ff5b787f0dd97039f0afbeb77355a51591f951"
+    },
+    {
+      "source_slug": "coding-agent-index-v1-4",
+      "report_id": "model-reading-coding-agent-index-v1-4",
+      "source_document_hash": "f4b5177e6aa640e63149a7ba2bb3e47bb9aad36ba8810f3294e415adc7b995ca"
+    },
+    {
+      "source_slug": "gemini-4-argon-model-guide",
+      "report_id": "model-reading-gemini-4-argon-model-guide",
+      "source_document_hash": "a9a95468c588b3e31fa4f0a967eef6665cb5010424cde678fca62ad870dfc874"
+    },
+    {
+      "source_slug": "gpt-6-1-sol-model-guide",
+      "report_id": "model-reading-gpt-6-1-sol-model-guide",
+      "source_document_hash": "5c6b8c1a090423e48be81cf2f21b89e10d4f7fca9507370b26fbe4784f2b88c7"
+    },
+    {
+      "source_slug": "grok-4-7-report",
+      "report_id": "model-reading-grok-4-7-report",
+      "source_document_hash": "455529185c6a1059aa82151c4568ed0169aceaedb8ab9e844a1add9df46ef500"
+    },
+    {
+      "source_slug": "llm-coding-benchmark-reference-company-v6",
+      "report_id": "model-reading-llm-coding-benchmark-reference-company-v6",
+      "source_document_hash": "d5518662a96cd73730cb80656be6bbcebe83d3a3c0d8b0f44bb2e252f641114f"
+    },
+    {
+      "source_slug": "llm-models",
+      "report_id": "model-reading-llm-models",
+      "source_document_hash": "90320eaf62141614a2d0cab7d058f14446500247d8ce1b00a9c44d6c1c8c03ba"
+    },
+    {
+      "source_slug": "model-cost-performance",
+      "report_id": "model-reading-model-cost-performance",
+      "source_document_hash": "f89153d47d737877a097790f9deef29c9ab800d92585ddd88f5beef8ea7d8f43"
+    },
+    {
+      "source_slug": "windows-codex-max-guide",
+      "report_id": "model-reading-windows-codex-max-guide",
+      "source_document_hash": "afcb57f30bc80998634bedb65668b316e1585d8d65e029a9a368e3d01230f5f2"
+    }
+  ]
+}

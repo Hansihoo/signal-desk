@@ -59,3 +59,85 @@
 공개 기술 확인: source422d896 / Pages37805827869 성공. 2026-10-09 01:06:59 KST의
 HTTP/JSON 비교에서 MCP 입력 일치·다른19편/이전52판 보존·전체20편/53판을 확인했다.
 참고/학습 주소와 CSS·빈 데이터 비표시도 확인했다. 공개 조작 검사를 직접 수행한 것은 아니다.
+
+## AI 집필의 정보 가치와 번역 영향 조사 2026-10-09
+
+독자 질문: AI가 자연스러운 요약을 넘어 개발자·관리자에게 배울 내용이 있는 글을 쓰게 하려면 어떻게 해야 하는가?
+
+결과는 신규 수동 분석이다. 6개 원문을 확보하여 방법·평가·해당 한계를 선택해 읽고 기존 34개 글 검토와 대조했다. 영어 초안과 한국어 번역의 직접 비교, 실제 독자 시험, 논문 재현, 보고서 재작성은 수행하지 않았다. 수집기 연결·정규화 DB 입력·반복 자동화 완료를 뜻하지 않는다.
+
+| 정확한 원문 URL | 발표·수정일과 근거·정밀도 | 실제 최초 수집 | 최근 성공 수집 | 실제 내용 검토 시각·확인 범위 | 측정 기간·적용일 | 상태·다음 확인 |
+| --- | --- | --- | --- | --- | --- | --- |
+| https://aclanthology.org/2024.naacl-long.347.pdf | 2024-06: NAACL 표지·월 단위 | 전체 최초 미확인; 이번 snapshot 시작 2026-10-09T01:16:06.634502+00:00 | 2026-10-09T01:16:10.190395+00:00 | 2026-10-09 10:23:14 KST: 사전 질문·자료 수집, 비교 방법, 20쌍/편집자 10명의 평가와 비관련 사실 연결 한계 | 해당 논문 실험; 현재 모델 평가 아님 | 원문 확보·선택 내용 검토 성공; 모든 부록/원 코드/벤치마크 재현 미실시 |
+| https://aclanthology.org/2023.emnlp-main.398.pdf | 2023-12: EMNLP 표지·월 단위 | 전체 최초 미확인; 이번 snapshot 시작 2026-10-09T01:16:06.636503+00:00 | 2026-10-09T01:16:08.827104+00:00 | 2026-10-09 10:23:14 KST: 유창성/정확성/인용 평가 구분, 주장-근거 지원 범위와 자동 평가 한계 | 해당 논문 과제; 현재 성능으로 일반화하지 않음 | 원문 확보·선택 내용 검토 성공; 모든 부록/원 코드/벤치마크 재현 미실시 |
+| https://arxiv.org/html/2503.05244v1 | 2025-03-07: arXiv v1 제출·일 단위 | 전체 최초 미확인; 이번 snapshot 시작 2026-10-09T01:16:06.637503+00:00 | 2026-10-09T01:16:07.210038+00:00 | 2026-10-09 10:23:14 KST: 요청별 기준, 300개 사람 비교, 영어·중국어 범위, 일치율과 학습 효과 구분 | 이번에 읽은 v1; 최신 모델 순위 검토 아님 | 원문 확보·선택 내용 검토 성공; 모든 부록/원 코드/벤치마크 재현 미실시 |
+| https://arxiv.org/html/2506.11763v1 | 2025-06-13: arXiv v1 제출·일 단위 | 전체 최초 미확인; 이번 snapshot 시작 2026-10-09T01:16:06.638503+00:00 | 2026-10-09T01:16:07.043583+00:00 | 2026-10-09 10:23:14 KST: 100과제/22분야, RACE/FACT, 자동 생성 기준 보고서·평가 모델과 범위 한계 | 기준 보고서 2025-04; 평가 방법 검토 | 원문 확보·선택 내용 검토 성공; 모든 부록/원 코드/벤치마크 재현 미실시 |
+| https://arxiv.org/html/2606.01252v1 | 2026-05-31: arXiv v1 표기·일 단위 | 전체 최초 미확인; 이번 snapshot 시작 2026-10-09T01:16:06.843338+00:00 | 2026-10-09T01:16:07.280674+00:00 | 2026-10-09 10:23:14 KST: 뉴스 200개/24언어, 모델·평가 조건, 한국어 포함 방식 비교와 한계 | 이번 논문 실험; 프로젝트 번역 원인 실험 아님 | 원문 확보·선택 내용 검토 성공; 모든 부록/원 코드/벤치마크 재현 미실시 |
+| https://ies.ed.gov/ncee/wwc/Docs/PracticeGuide/20072004.pdf | 2007-09: 지침 표지·월 단위 | 전체 최초 미확인; 이번 snapshot 시작 2026-10-09T01:16:06.903051+00:00 | 2026-10-09T01:16:14.533818+00:00 | 2026-10-09 10:23:14 KST: 권고 2 풀이 사례/연습 Moderate, 권고 7 깊은 설명 Strong, 기초 지식 조건 | 여러 학습 실험 종합; AI 한국어 교재 실험 아님 | 원문 확보·선택 내용 검토 성공; 모든 부록/원 코드/벤치마크 재현 미실시 |
+
+전체 최초 수집은 미확인으로 유지한다. 이번 snapshot의 exact URL·수집 시각·원문 SHA와 선택 확인 범위는 data/raw/research_teaching_2026_10_09/ai-writing-research.2026-10-09.sources.json에 보존했다. 원문 텍스트 추출은 읽을 준비이며 전체 내용 검토와 같은 상태로 간주하지 않는다.
+
+선정: 질문을 통한 사전 조사, 주장-근거 대조, 과제에 따른 내용 평가, 풀이 사례와 깊은 설명, 언어 간 요약 손실을 프로젝트용 분석에 참고했다. 모두를 합친 프롬프트의 효과는 아직 검증하지 않았다. [연구 분석과 적용 제안](../AI_WRITING_RESEARCH.2026-10-09.md).
+
+보류·부분 확인:
+
+- https://pmc.ncbi.nlm.nih.gov/articles/PMC11244532/ : 창작 다양성 논문의 본문 열람은 캡차로 실패. 검색으로 발견했으나 이번 6개 원문 근거에는 포함하지 않았다. 실패를 변경 없음으로 기록하지 않는다.
+- https://www.science.org/doi/10.1126/science.adh2586 : 직무 글쓰기 실험은 검색의 초록·서지 범위에서 발견. 본문 검토는 미실행이며 이번 내용 평가의 근거로 사용하지 않았다.
+- https://www2.statmt.org/wmt26/papers.html : Lost in Mimicry 논문 목록은 확인했으나 원문 PDF 검토 미실행. 번역투에 관한 성능·교정 효과는 이번 결론에 포함하지 않았다.
+
+핵심 공백: 현재 원고의 생성 과정과 영문 초안이 없어 번역의 직접 원인을 확정할 수 없다. 문서 검색 AI의 실제 검색 후보/원문/선택/답변을 확보한 한 편으로 개선 전후를 비교하고 독자의 적용·설명 결과를 확인하는 것이 다음 검증이다. 기존 보고서·스킬·날짜 스키마는 이번 분석에서 수정하지 않았다.
+
+## 전수 원고 보강의 원문 의미 대조 2026-10-09
+
+독자 질문: AI 업무를 직접 구성하거나 도입을 검토하는 개발자·관리자가 이 글에서 무엇을
+이해하고 자신의 조건에 적용할 수 있는가? 요약 전에 필요한 원리·조건·수치를 다시 확인했다.
+전체20편은 새 판, 수입 모델14편은 원문을 유지한 별도 해설로 보강했다.
+[각 원고의 목적·실제 수정·독립 판정](../RESEARCH_AUTHORING_REPAIR.2026-10-09.md).
+
+날짜 기록의 한계: 아래 공식13편 핵심 대조는2026-10-09 02:47–02:57 UTC(11:47–11:57 KST)
+검토 구간에서 수행했다. URL별 정확 획득/읽기 완료 시각과 로컬 원문 파일은 미보존이다.
+구간을 각 URL의 acquired_at로 소급하지 않는다. 전체 최초 수집일도 미확인으로 유지한다.
+웹·브라우저 도구 출력은 실제 읽기 근거지만 로컬 원문 snapshot과 별개다. 추가 FDE/Upwork 대조
+뒤 clock 기록03:14:40 UTC, OSS-Fuzz 정의 추가 대조 뒤03:26:52 UTC,
+최종20편 JSON 의미 대조 뒤03:31:59 UTC. 개별 URL의 정확 획득 시각으로 바꾸지 않는다.
+
+| 정확한 URL·원문 묶음 | 원문 발표·수정일·측정 기간 | 실제 확인 범위·수집/검토 상태 | 미확인·실패·다음 확인 |
+| --- | --- | --- | --- |
+| https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits ; https://docs.github.com/en/billing/concepts/product-billing/github-actions | 원문 최종 수정일 미확인; 이번 확인 시점의 정책 본문 | 저장소 권장/게시사이트1GB·월100GB soft·빌드 조건 및 Actions 공개 저장소 조건 | 계정별 청구/트래픽 실측 없음 |
+| https://aws.amazon.com/startups/credits/ ; https://aws.amazon.com/awscredits/ | Credit Terms 표기2026-09-24; 크레딧은 실제 승인·유효기간 적용 | Founders/Portfolio·Org ID·누적 승인·유효 대상/잔액/만료와 현금 계산 조건 | 실제 신청/승인/결제 없음 |
+| https://aws-cds-partner.devpost.com/rules | 마감2026-10-28 13:00PDT →10-29 05:00KST | APN 등록 조직·제출 서비스·영상3분의 규칙, 수락/전달 구분 | 실제 참가·메일 전송 없음 |
+| https://nlnet.nl/news/2026/20260903-call.html ; https://nlnet.nl/restack/guideforapplicants/ ; https://nlnet.nl/restack/eligibility/ ; https://nlnet.nl/foundation/policies/generativeAI/ | 공고2026-09-03, 마감11-03 12CET; GenAI정책v1.1 2026-01-26 | 공개 인터넷 기반 기술·€50k 첫지원·지역/예외·제안서와 AI프로젝트 정책 구분 | 개별 지원자 자격·예외 승인 미확인; 정책 개정 예정은 완료로 쓰지 않음 |
+| https://bughunters.google.com/blog/ossvrp-rule-updates-2026 ; https://bughunters.google.com/about/rules/about-this-section | 개정글2026-03-19; 관련 프로그램4-09/7-06 적용 | OT2/OT3·Product/Other범위·비공개 목록. 웹/정적 추출·browser-client 실패 뒤 CUA 원문 성공, 직후 clock02:50:56UTC | 전체OSS중단으로 일반화 금지; 비공개OT2 전수목록 미확인 |
+| https://openai.com/index/safety-bug-bounty/ ; https://bugcrowd.com/engagements/openai-safety | Bugcrowd 수정 표기2026-08-07T18:31:30Z | 발표 성공, Bugcrowd 웹 추출 실패 뒤 CUA 성공. OpenAI-side fixability·자기계정·50% 특정 제삼자 경로 | 실제 공격·제출 없음; 제삼자MCP 자체 문제를 OpenAI적격으로 단정하지 않음 |
+| https://docs.github.com/en/apps/github-marketplace/creating-apps-for-github-marketplace/requirements-for-listing-an-app ; https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/differences-between-github-apps-and-oauth-apps ; https://docs.github.com/en/apps/github-marketplace/using-the-github-marketplace-api-in-your-app/handling-new-purchases-and-free-trials | 게시·수정일 미확인; 이번 문서 조건 | 설치 계정/저장소·100/200목록조건·구매와 기능권한 분리 | 실제 등록·구매·webhook 없음 |
+| https://www.upwork.com/research/in-demand-skills-2026 ; https://investors.upwork.com/news-releases/news-release-details/upworks-demand-skills-2026-demand-top-ai-skills-more-doubles-ai ; https://openai.com/careers/forward-deployed-software-engineer-sf-san-francisco/ | 연구 발표2026-02-04, 측정2025 미국계약 수입 vs2024; FDE 게시일 미확인 | 수입지표/완료·계약 표현차이·고객 현장 배치 역할. 추가 원문 대조 뒤clock03:14:40UTC | 개인임금·한국시장·현재 전체고용 수치 아님; 입사/납품 실행 없음 |
+| https://blog.tally.so/in-2026-were-optimizing-for-quality-not-revenue/ ; https://tally.so/pricing ; https://tally.so/changelog ; https://docs.stripe.com/billing/subscriptions/analytics | 2026년1월 자기보고MRR$358k·팀10; 변경기록7-08/8-04/9-11 | 매출·현금/월환산 정의·기능 발표 시간 순서. changelog웹 timeout후CUA성공/clock02:56:44UTC; Stripe관련절clock02:56:01UTC | 실제수익성·전환/이탈 데이터·가격 선택상태미확인, 변경기능이1월매출의 원인 아님 |
+| https://www.mss.go.kr/site/smba/ex/bbs/View.do?bcIdx=1070813&cbIdx=310&parentSeq=1070813 ; https://www.mss.go.kr/common/board/Download.do?bcIdx=1070813&cbIdx=310&streFileNm=9712229c-8781-401b-a1dc-e22d443569bc.pdf ; https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000125978 | 마감2026-10-30 18KST·사업24개월 | 웹MIME실패후PDF8쪽 메모리 다운로드/읽기. 재확보02:52:49.418035UTC·534118bytes·SHA cedbce55531ccd72ccd39384bcdd9a96b56e93bb4e37a3e273ee49cce73c67c6. 선행과제완료/60점·기관역할·성과·39억원상한/정부≤75%·기관≥25%중현금≥10% | 로컬PDF미보존,ZIP양식1~3미열람·실제회사자격미확인 |
+| https://www.nipa.kr/home/bsnsAll/0/nttList?bbsNo=4&bsnsDtlsIemNo=580&tab=2 |3-30 종료공고 | 지원·공급 역할과 지난 공고 구분 | 열린사업으로 쓰지 않음 |
+| https://www.polarisoffice.com/ko/solution/datainsight ; https://www.polarisoffice.com/business-blog/introduction-office-solutions | 게시·수정일 미확인 | 공개 문서객체구조화·RAG기능 소개와 가상 업무의 오류/수정시간 계산 | 제품성능·고객효과 실측 없음,사내기밀 사용 없음 |
+| https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview ; https://www.hancom.com/news/article/detail/13778?type=news ; https://news.adobe.com/news/2025/08/acrobat-studio-delivers-new-ai-powered-home-for-productivity-creativity | MS수정2026-09-30; 한컴7-02 beta/하반기계획; Adobe2025-08-19 발표 | 제품 연결 범위·발표/계획/제공상태, 계약추출→정책→초안/승인 사례 | 실제 계정별 이용/현재가격/고객효과 미확인 |
+| https://artificialanalysis.ai/methodology/coding-agents-benchmarking/ ; https://artificialanalysis.ai/methodology/intelligence-benchmarking ; https://github.com/theo-s-han/research-analysis#통합-모델-비교-갱신 | CodingIndexv1.5·303과제113/66/124·3시도; 원문 전체최종수정일 미확인 | 동일가중3평가·시도당비용/시간·AA-LCR/Automation·기존모델출처 운영. 약02:52–02:54 관련절,개별정확시각미보존 | 원자료표 웹접근 실패;14공급자의 모든 원전 사양·가격 전수검토 아님 |
+
+집필자가 추가 확인한 기술 원문은 아래와 같다. 실제2026-10-09 관련절을 읽었으나 정확URL별 획득
+시각/로컬snapshot은 미보존이다. 기존 최초/최근 수집을 오늘로 덮어쓰지 않았다.
+
+| 원문 URL | 확인 지식·범위 | 적용·한계 |
+| --- | --- | --- |
+| https://developers.openai.com/api/docs/guides/tools-file-search | include=file_search_call.results와 기본 인용/후보 반환 차이 | 실제유료검색요청 없이 원리 설명 |
+| https://ai.google.dev/gemini-api/docs/function-calling | Interactions steps function_call·name/arguments/id·앱실행·function_result/previous_interaction_id | 기존generate_content와섞지않음;API실행미실시 |
+| https://developers.openai.com/api/docs/guides/voice-agents | 단계형STT/업무/TTS·Realtime/GPTLive역할 | 한국어품질/지연 측정없음 |
+| https://developers.openai.com/api/docs/deprecations ; https://developers.openai.com/api/docs/guides/migrate-to-responses | 모델수명과endpoint이전·messages/items·응답파싱 | 모든새모델성능/가격검증아님 |
+| https://www.palantir.com/docs/foundry/ontology/overview | 객체·속성·관계·행동/함수의 뜻 | ontology제품구축/권한실습미실시 |
+| https://google.github.io/oss-fuzz/ ; https://google.github.io/oss-fuzz/reference/glossary/ | fuzz-target·재현입력·프로젝트편입 | 공격/퍼저실행없음 |
+| https://arxiv.org/abs/2401.04088 ; https://huggingface.co/docs/transformers/kv_cache | Mixtral2024-01-08 초록의token별전문가·47B전체/13B활성예;key/value재사용·메모리·offload관련절 | 모델 검토자도 정의대조;전체MoE모델사양/PC실행미검증 |
+
+수입 원자료14편은 기존 공개snapshot `all-education-review.public.json`에서 HTML·공유자산·날짜를
+읽어 각 해설과 전체지문을 결합했다. 이snapshot은 위 공식13편 원문파일을 보존한 자료가 아니다.
+`checked_on=2026-10-09`는 이 해설의 내용검토일이며 원자료의 공란 기준일이나 공급자 최신가격
+확인일을 소급해 채운 것이 아니다. 새지원조건/기술명만늘리는 대신 질문→원리/조건→같은값의사례→
+다른조건의풀이를 보강했다. 임금·국내고용전체/제품실측/비공개프로그램 목록은 근거가 부족해 보류했다.
+
+최종20편 배치17c0d1b6…: 별도교육20편 Pass,공식핵심13편 Pass.
+별도모델14편 배치9a0ae0b0…: 첫5Pass/9Revise 후수정·재검토14Pass.
+구현지문·원문보존·낡은해설차단·역사연결도 별도Pass. 실제사람학습·SDK·API·보상신청·공격·
+제품구매시험은 미실시. 기술출력검사는 내용판정과 구분하여 작업기록에 남긴다.

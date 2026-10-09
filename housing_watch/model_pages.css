@@ -1,5 +1,6 @@
 .model-library-tools{display:flex;gap:1.5em;margin:2em 0;flex-wrap:wrap}.model-library-tools label{flex:1;min-width:180px}.model-document-library td:first-child{min-width:230px}.model-document-library td p{font-size:.92em;margin:.5em 0;color:#637080}.model-source-heading{padding:0 0 1.5em!important}.model-source-heading h1{font-size:2.1em}.model-source-frame{display:block;width:100%;height:1200px;border:1px solid #dce1e6;background:#fff}.model-source-editions a{display:inline-block;margin-right:.75em}@media(max-width:600px){.model-source-heading h1{font-size:1.65em}.model-library-tools{gap:.75em}}
 .model-source-frame[data-fixed-viewport]{height:90vh;min-height:640px;max-height:1000px}
+.model-learning-companion{max-width:80em}.model-learning-companion>header h2{font-size:1.75em;line-height:1.35;word-break:keep-all;overflow-wrap:anywhere}.model-learning-companion .report-section{padding:1.5em 0!important}.model-original{padding-top:1.5em!important}.model-learning-stale{padding:1em;border-left:3px solid #f56a6a;background:#fff8f5}
 /* Metadata needs readable columns; on phones each document becomes one row group. */
 .model-document-library th:not(:first-child),.model-document-library td:not(:first-child){white-space:nowrap}
 @media(max-width:600px){
