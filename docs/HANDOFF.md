@@ -30,8 +30,11 @@ baseline authored documents and all14 original documents/assets/metadata match.1
 compileall,7377 references,209 actual1280/390/320px browser checks, a runnable Python
 example and9 illustrative calculations pass. The Windows default-encoding defect was
 fixed and the8 affected tests also pass without `-X utf8`; independent implementation
-review closed. Brief/desk/review and PNG inspection completed. Public deployment and
-exact previous53 public rows need final confirmation. Actual people reading/testing,
+review closed. Brief/desk/review and PNG inspection completed. Source38f473b/Pages37881082742
+succeeded. Public HTTP/JSON confirms34 inputs/87 editions, all53 previous exported rows
+and14 original rows exactly preserved,54 routes200 and page-based navigation counts.
+Actual public390px main search→RAG/disclosure and model guide→original checks pass;
+three public screenshots inspected. Panel open requests returned queued. Actual people reading/testing,
 paid API/SDK integrations and every current provider/model specification were not tested.
 
 Earlier audit and research sections below are dated history. Their “unchanged/pending”
