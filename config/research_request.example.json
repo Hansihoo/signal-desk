@@ -1,0 +1,41 @@
+{
+  "id": "upwork-ai-integration-demand",
+  "topic_id": "freelance-demand",
+  "topic_path": [
+    "시장·사업",
+    "프리랜스 수요"
+  ],
+  "reader": "AI를 활용하는 개발자와 관리자",
+  "reader_question": "기업들은 어떤 AI 개발을 외주로 맡기고 무엇을 요구하며 얼마의 예산을 제시하는가?",
+  "outcome": "공개 요구와 제시 예산을 해석하고 실제 적용 분야를 비교한다. 계약액·평균 단가·수익은 확인 불가하므로 계산하지 않는다.",
+  "research_type": "market",
+  "sources": [
+    {
+      "id": "research",
+      "title": "Upwork — In-Demand Skills 2026",
+      "url": "https://www.upwork.com/research/in-demand-skills-2026",
+      "kind": "measurement"
+    },
+    {
+      "id": "rag-posting",
+      "title": "Upwork — AI Engineer Needed to Build a Production-Ready AI Assistant / RAG Chatbot",
+      "url": "https://www.upwork.com/freelance-jobs/apply/Engineer-Needed-Build-Production-Ready-Assistant-RAG-Chatbot_~022098462316766083390/",
+      "kind": "buyer_posting"
+    },
+    {
+      "id": "thruhike",
+      "title": "Upwork — Thruhike customer story",
+      "url": "https://www.upwork.com/success-stories/thruhike",
+      "kind": "completed_case"
+    },
+    {
+      "id": "review-analysis",
+      "title": "Upwork — machine learning client projects",
+      "url": "https://www.upwork.com/success-stories/machine-learning-expert-automate-complex-tasks",
+      "kind": "completed_case"
+    }
+  ],
+  "allowed_domains": [
+    "upwork.com"
+  ]
+}

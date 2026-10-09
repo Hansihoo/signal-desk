@@ -89,6 +89,11 @@
     {
       "id": "reader-refinement-2026-10-09",
       "input": "reader_refinement.2026-10-09.json"
+    },
+    {
+      "id": "question-led-pilots-2026-10-09",
+      "input": "research_quality_pilot.2026-10-09.json",
+      "quality": "research_quality_pilot.2026-10-09.quality.json"
     }
   ]
 }

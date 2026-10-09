@@ -146,6 +146,11 @@ def main(argv=None):
     research_data.add_argument("--input", help="structured report JSON to import into SQLite")
     research_data.add_argument("--output", default="data/research.json", help="JSON-only export path")
     research_data.add_argument("--topics", help="research topic registry JSON")
+    research_data.add_argument("--quality", help="quality package JSON for every imported report")
+    research_data.add_argument("--legacy-unreviewed", action="store_true", help="explicit compatibility override: import without semantic review")
+
+    from .research_cli import add_commands
+    add_commands(sub)
 
     models = sub.add_parser("ai-models", help="refresh or import reviewed model observations and export the accumulating ledger")
     models.add_argument("--collect", action="store_true", help="refresh the complete public model comparison sources")
@@ -160,6 +165,13 @@ def main(argv=None):
     private.add_argument("--input", help="external private business JSON")
 
     args = parser.parse_args(argv)
+    if args.command in ("research-plan", "research-check", "research-audit"):
+        from .research_cli import handle
+        try:
+            return handle(args)
+        except (OSError, ValueError, KeyError, TypeError) as exc:
+            print("%s: failed: %s" % (args.command, exc), file=sys.stderr)
+            return 1
     if args.command == "business-private":
         from .business_private import run_private
         try:
@@ -172,6 +184,16 @@ def main(argv=None):
     config = load_config(args.config)
     conn = connect(database_path(config))
     init_db(conn)
+
+    if args.command == "research-run":
+        from .research_cli import handle
+        try:
+            return handle(args, conn)
+        except (OSError, ValueError, KeyError, TypeError) as exc:
+            print("research-run: failed: %s" % exc, file=sys.stderr)
+            return 1
+        finally:
+            conn.close()
 
     if args.command == "model-pages":
         from .model_pages import collect_model_pages, export_model_pages
@@ -214,7 +236,15 @@ def main(argv=None):
             from .research_topics import load_topics
             topics = load_topics(args.topics)
             if args.input:
-                print("Report import: %s" % import_reports(conn, load_report_input(args.input)))
+                reports = load_report_input(args.input)
+                if args.quality:
+                    from .research_workflow import verify_release
+                    verify_release(reports, json.loads(Path(args.quality).read_text(encoding="utf-8-sig"))["packages"])
+                elif not args.legacy_unreviewed:
+                    raise ValueError("Report import needs --quality; use --legacy-unreviewed only for an explicit unreviewed compatibility import")
+                else:
+                    print("WARNING: legacy import has no content-quality review", file=sys.stderr)
+                print("Report import: %s" % import_reports(conn, reports))
             health = collect_public_data(conn, config, topics) if args.collect else []
             document = build_research_data(conn, public_library(conn, topics), topics, health)
             path = write_research_data(args.output, document)

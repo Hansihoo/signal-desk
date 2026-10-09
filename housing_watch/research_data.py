@@ -262,6 +262,13 @@ def _upsert_reports(conn, reports, only_missing=False):
     return stats
 
 
+class ReviewedReports(list):
+    """List-compatible batch with an optional separately versioned quality dossier."""
+    def __init__(self, reports, packages=None):
+        super().__init__(reports)
+        self.quality_packages = packages
+
+
 def load_publication(path=None):
     path = Path(path or PUBLICATION_PATH)
     document = json.loads(path.read_text(encoding="utf-8-sig"))
@@ -278,13 +285,22 @@ def load_publication(path=None):
     batch_ids = set()
     batches = []
     for batch in _list(document["batches"]):
-        _object(batch, {"id", "input"})
+        _object(batch, {"id", "input", "quality"}, {"id", "input"})
         _id(batch["id"])
         _text(batch["input"])
         if batch["id"] in batch_ids or Path(batch["input"]).name != batch["input"] or not batch["input"].endswith(".json"):
             raise ValueError("Use unique batch IDs and JSON filenames in the configuration directory")
         batch_ids.add(batch["id"])
-        batches.append((batch["id"], load_report_input(path.parent / batch["input"])))
+        reports = load_report_input(path.parent / batch["input"])
+        if "quality" in batch:
+            quality = batch["quality"]
+            if not isinstance(quality, str) or Path(quality).name != quality or not quality.endswith(".json"):
+                raise ValueError("Quality package must be a JSON filename in the configuration directory")
+            from .research_workflow import verify_release
+            packages = json.loads((path.parent / quality).read_text(encoding="utf-8-sig"))["packages"]
+            verify_release(reports, packages)
+            reports = ReviewedReports(reports, packages)
+        batches.append((batch["id"], reports))
     return document, batches
 
 
@@ -294,7 +310,19 @@ def apply_publication(conn, publication, batches):
         _ensure_tables(conn)
         conn.execute("""CREATE TABLE IF NOT EXISTS research_import_batches (
             id TEXT PRIMARY KEY, content_hash TEXT NOT NULL, applied_at TEXT NOT NULL)""")
+        conn.execute("""CREATE TABLE IF NOT EXISTS research_quality_batches (
+            id TEXT PRIMARY KEY, content_hash TEXT NOT NULL, document TEXT NOT NULL, applied_at TEXT NOT NULL)""")
         for batch_id, reports in batches:
+            packages = getattr(reports, "quality_packages", None)
+            if packages is not None:
+                from .research_workflow import canonical, digest as quality_digest, verify_release
+                verify_release(reports, packages)
+                old_quality = conn.execute("SELECT content_hash FROM research_quality_batches WHERE id=?", (batch_id,)).fetchone()
+                if old_quality and old_quality["content_hash"] != quality_digest(packages):
+                    raise ValueError("A quality batch changed; add a new batch ID instead: " + batch_id)
+                if not old_quality:
+                    conn.execute("INSERT INTO research_quality_batches VALUES (?, ?, ?, ?)",
+                                 (batch_id, quality_digest(packages), canonical(packages), iso_utc()))
             digest = hashlib.sha256(json.dumps(reports, ensure_ascii=False, sort_keys=True,
                                               allow_nan=False).encode("utf-8")).hexdigest()
             old = conn.execute("SELECT content_hash FROM research_import_batches WHERE id=?", (batch_id,)).fetchone()

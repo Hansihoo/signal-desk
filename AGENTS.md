@@ -60,6 +60,14 @@ research, read [AI research operations](docs/AI_RESEARCH_OPERATIONS.md),
 
 ## Research Writing and Content Review
 
+New generated research uses [the executable quality workflow](docs/RESEARCH_PIPELINE.md).
+Define questions and necessary evidence before collection; select or explicitly narrow the
+research method. Preserve report-v1 and immutable editions. New release batches bind a quality
+sidecar; use `research-check` and `research-audit`. Legacy format checks/agent Pass records do
+not retroactively satisfy this workflow. Missing evidence returns to research, misinterpretation
+to analysis and explanation defects to writing. Never enable paid generation/discovery merely
+because an ordinary publish/collection job runs. Preserve failed acquisition and review dates.
+
 For PolarisOffice government programs, sales opportunities or peer business direction,
 read `docs/BUSINESS_PLANNING.md` first. Keep confidential customer, pricing, proposal
 and internal engine/UI evidence outside this public Git repository and its DB/site/

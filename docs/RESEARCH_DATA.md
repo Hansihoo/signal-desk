@@ -117,8 +117,8 @@ python -m housing_watch research-data
 # Refresh configured public sources, then export JSON only.
 python -m housing_watch research-data --collect
 
-# Import authored research into SQLite and export, without rendering.
-python -m housing_watch research-data --input config/research_reports.example.json
+# Import reviewed authored research into SQLite and export, without rendering.
+python -m housing_watch research-data --input config/research_quality_pilot.2026-10-09.json --quality config/research_quality_pilot.2026-10-09.quality.json
 
 # Generate the existing website when desired.
 python -m housing_watch publish
@@ -128,6 +128,13 @@ Default data-only output: `data/research.json`. Publishing writes the same contr
 to `site/research-data.json` and renders the Editorial main, every stored report,
 and previous editions. These JSON files are ignored generated outputs; `--output`
 takes a JSON path.
+
+Automatic authored research uses the separate [question/evidence workflow](RESEARCH_PIPELINE.md).
+Its plan, original excerpts, claim mappings and review receipts are a quality sidecar;
+report/export v1 remains unchanged. Imports require `--quality`, or the explicit
+`--legacy-unreviewed` compatibility override with a warning. The override preserves
+old imports but does not record substantive review. Existing immutable publication
+batches remain compatible; new sidecar-backed batches verify both documents before import.
 
 Data-only collection may update SQLite/raw-source snapshots; it never generates
 HTML/CSS/PNG or changes dated website archives. Partial failures retain earlier

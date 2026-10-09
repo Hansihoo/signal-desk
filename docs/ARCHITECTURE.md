@@ -1,5 +1,16 @@
 # Architecture
 
+## Question-led report generation and quality gates
+
+`research_workflow` adds optional method selection/question planning, bounded original
+collection, analysis, report-v1 writing, isolated first-screen/body review and issue-based
+research/analysis/writing retries. `research_provider` supplies an opt-in Responses API
+adapter; ordinary collection/publish never calls it. Evidence/claim/review metadata lives
+outside report v1. New publication batches may bind an immutable quality sidecar, validated
+before transaction commit. Previous batches remain legacy, not retroactively approved.
+See [the executable research contract](RESEARCH_PIPELINE.md) for data tables, budgets,
+CLI compatibility, source dates and semantic verification limits.
+
 ## Model reading guides bound to original editions
 
 The14 learning companions are ordinary validated report v1 documents imported by

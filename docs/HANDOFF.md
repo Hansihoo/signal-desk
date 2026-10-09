@@ -1,5 +1,35 @@
 # Handoff
 
+## Latest work: question-led research production, 2026-10-09
+
+The user rejected wording-only repair and requested executable research quality.
+The old system collected sources but imported separately authored report JSON;
+format/briefing checks did not assess evidence sufficiency. See
+[the actual pipeline, commands and limits](RESEARCH_PIPELINE.md).
+
+New opt-in `research-run` plans questions/type-specific evidence, acquires originals,
+analyzes, writes report-v1 and separately reviews first screens and bodies. Defects
+return to research/analysis/writing, with budgets and original/stage caches. No paid
+model call is added to daily publication. Actual paid API evaluation is unperformed;
+Responses requests/refusals/discovery and orchestration are tested with fixtures.
+
+The new immutable `question-led-pilots-2026-10-09` batch binds two revised reports
+to `config/research_quality_pilot.2026-10-09.quality.json`. Do not edit either applied
+artifact in place. Upwork adds one actual buyer posting/budget and two company cases;
+RAG explains search/interpretation on a consistent fictional example. Separate
+agents required substantive corrections and re-read the final drafts. Human
+comprehension, contract outcomes and RAG API execution remain untested.
+
+Local128tests/compileall,197HTML/9838refs,24 browser checks at1280/390/320px,
+brief/desk/review/PNG and8 preservation checks pass. Current34/124editions;
+other32/current inputs, all122 older editions, model14 originals/order/CSS exact.
+`research-audit` reports2 gated and32 needing the new substantive review, not blanket
+approval. HTTP collector: Azure/Anthropic success, Upwork403 failure; market pilot
+uses actual web-tool original sections with failure/scope/date receipts recorded
+in [the review log](ai/AI_RESEARCH_REVIEW_LOG.md). Registered raw/review roots retained.
+App-browser native bridge was unavailable; standalone Edge performed actual viewport checks.
+Public deployment verification is recorded below when complete.
+
 ## Latest work: Korean/Latin font consistency, 2026-10-09
 
 User screenshot exposed three actual font families inside one Upwork title.

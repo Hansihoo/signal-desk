@@ -1,5 +1,47 @@
 # AI 조사 검토 기록
 
+## 2026-10-09 질문 기반 생산 시범: 실제 발주와 RAG
+
+내용 변경은2편이다. `upwork-ai-integration-demand`는 기업이 어떤 AI 개발을
+외주로 맡기는지와 공개 예산의 의미를, `document-rag-grounding`은 문서를
+찾는 단계와 답을 해석하는 단계의 오류 구분을 다룬다. 다른32편은 이번 원문
+내용 검토 범위가 아니며 ‘변경 없음’으로 처리하지 않는다.
+
+아래 UTC는 웹 도구에서 해당 원문 관련 절을 실제 확보한 영수증의 시각이다.
+새 원문 묶음 안의 첫 확보이며 과거 전체 시스템의 최초 수집일을 소급한 값이
+아니다. 과거 최초 수집일과 원문 발표/갱신일은 이번에 확정하지 못했다.
+정확한 URL·선택 발췌·영수증 지문·확인 절은
+[불변 품질 패키지](../../config/research_quality_pilot.2026-10-09.quality.json)에 보관한다.
+전체 도구 영수증은 등록된 `data/raw/research_teaching_2026_10_09/`에 보존한다.
+원문 전문 전수 정독이나 전체 데이터셋 다운로드를 뜻하지 않는다.
+
+| 원문 | 성공 확보 UTC | 실제 내용 확인 범위와 미확인 조건 |
+| --- | --- | --- |
+| [Upwork In-Demand Skills 2026](https://www.upwork.com/research/in-demand-skills-2026) | 06:39:32.977 | 성장 수치와 방법론.2025/2024·미국 수요·체결 계약의 수입 합계·6범주·항목별최소10만달러 조건. 공고 수/개인 단가/한국 시장으로 해석하지 않음. |
+| [상담 AI/RAG 실제 의뢰](https://www.upwork.com/freelance-jobs/apply/Engineer-Needed-Build-Production-Ready-Assistant-RAG-Chatbot_~022098462316766083390/) | 06:39:34.887 | Summary·가능 기능·요구 경력·제안 요청·US$1,500 고정 제시 예산. 상대 게시일 환산, 현재 모집 여부, 체결/완료액 미확인. |
+| [Thruhike](https://www.upwork.com/success-stories/thruhike) | 06:39:36.895 | 공개 고객의 문제·해결·이메일/데이터/내부 업무. 플랫폼 홍보성 자기 보고; 프로젝트 금액·구현 원문·독립 효과 미확인. |
+| [후기 분석 수행 사례](https://www.upwork.com/success-stories/machine-learning-expert-automate-complex-tasks) | 06:39:38.717 | 수행 업체Shapeion·익명 최종 고객·고객 후기 분석. 공급자를 발주 고객으로 바꾸지 않음. 프로젝트 금액·정확도 미확인. |
+| [Azure AI Search RAG](https://learn.microsoft.com/en-us/azure/search/retrieval-augmented-generation-overview) | 06:39:41.346 | 정의·classic RAG·준비·권한 제한. 실제 계정 실행/성능 검증 미실시. |
+| [Anthropic Contextual Retrieval](https://www.anthropic.com/engineering/contextual-retrieval) | 06:39:43.188 | 전통 RAG·문맥 손실·문맥 보강·재정렬 방법. 공급사 벤치마크 수치 재사용/직접 재현 안 함. |
+
+새 HTTP 수집 경로는07:01:06–07 UTC에 같은 Upwork 의뢰403 실패,
+Azure·Anthropic 성공을 별도로 기록했다. 실패에 옛 원문을 새로 읽은 것처럼
+제공하지 않았다. 일부 다른 의뢰는 목록 페이지로 이동해 제외했다. 검색 결과
+요약을 예산·개발 조건의 증거로 사용하지 않았다.
+
+독립 첫 화면 검토자는 제목/소개/deck만 읽었다. RAG의 구현 약속 제목과
+모호한 비교 대상을 수정 후 재확인했다. 별도 Upwork 원문/본문 검토는 가능한
+개발 범위를 확정 범위·보편적 필수 기능으로 바꾼 부분을 찾아 수정했으며,
+최종 재확인06:51:18 UTC에 해당 범위Pass를 기록했다. RAG 원문/본문 검토도
+필터 적용 전후 후보를 섞은 설명을 수정 후 재확인했다. 각 최종 파일 지문과
+판정 사유·위치는 품질 패키지와 등록된 검토 영수증에 연결했다. 단순 유효 JSON,
+형식 검사, 기존 판정으로 내용 검토를 대신하지 않았다.
+
+자료 수집, 원문 의미/본문 검토, 첫 화면 이해 검토,128개 코드 시험과 화면 검사를
+서로 구분한다. 실제 사람의 이해/학습 측정·유료 모델API·RAGAPI 실행·계약 결과와
+시장 대표성 확인은 미실시다. 자동 생산 코드는 구현했지만 이번 두 원고를 유료
+생성 API의 실계정 자동 결과라고 주장하지 않는다.
+
 ## 2026-10-09 음성 보고서의 독자 목적·구현 역할 재검토
 
 결과는 **변경 1편**이다. 현재 34편 중 `voice-agent-architectures`만 새 판으로 작성했다.

@@ -1,5 +1,10 @@
 # Signal Desk
 
+보고서 생산에 질문별 조사 계획·원문 근거·분석·집필·별도 검토가 추가됐다.
+`research-plan`, `research-run`, `research-check`, `research-audit`의 사용과 비용 상한,
+기존 문서의 검토 범위는 [보고서 생산 계약](docs/RESEARCH_PIPELINE.md)을 참고한다.
+일반 수집·Pages 배포는 유료 모델을 호출하지 않는다.
+
 사업기획 영역은 공개 공식 자료와 사내 작업 자료를 분리한다.
 공개 목록은 `preview/business.html`, 사내 화면은 저장소 밖
 `D:/3_codex_docs/SignalDesk/BusinessPlanning/index.html`이다.
