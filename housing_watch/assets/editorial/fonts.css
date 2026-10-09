@@ -1,46 +1,8 @@
+/* Pretendard v1.3.9, original full variable font; SIL OFL 1.1. */
 @font-face {
-  font-family: 'Open Sans';
+  font-family: 'Pretendard Variable';
   font-style: normal;
-  font-weight: 400;
-  font-stretch: normal;
+  font-weight: 45 920;
   font-display: swap;
-  src: url(open-sans-0.woff2) format('truetype');
-}
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 700;
-  font-stretch: normal;
-  font-display: swap;
-  src: url(open-sans-1.woff2) format('truetype');
-}
-
-@font-face {
-  font-family: 'Roboto Slab';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(roboto-slab-0.woff2) format('truetype');
-}
-@font-face {
-  font-family: 'Roboto Slab';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url(roboto-slab-1.woff2) format('truetype');
-}
-
-@font-face {
-  font-family: 'Noto Serif KR';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(noto-serif-kr-0.woff2) format('truetype');
-}
-@font-face {
-  font-family: 'Noto Serif KR';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url(noto-serif-kr-1.woff2) format('truetype');
+  src: url(pretendard-variable.woff2) format('woff2');
 }

@@ -1,5 +1,16 @@
 # Handoff
 
+## Latest work: Korean/Latin font consistency, 2026-10-09
+
+User screenshot exposed three actual font families inside one Upwork title.
+Shared Editorial typography now uses a full locally packaged Pretendard Variable
+v1.3.9 face (main headings700, subheadings/emphasis600, body400); synthetic weight
+is disabled. All modern Hangul/Latin sample glyphs use that face. Existing vendor
+layout and imported model originals stay intact. See [typography contract](BRIEFING_TEMPLATE.md).
+Local109tests,96 font/representative checks and253 all-report three-width checks,
+195HTML/9676refs, brief/desk/review/PNG and exact authored data preservation pass.
+Public deployment/font parity verification is pending.
+
 ## Latest work: complete prose refinement, 2026-10-09
 
 The user requested the voice pilot's explanation standard across all current content.

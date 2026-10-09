@@ -1,5 +1,37 @@
 # Homepage and report contract
 
+## Unified typography, 2026-10-09
+
+Use the locally packaged full Pretendard Variable v1.3.9 face for Korean, Latin,
+numbers and punctuation in the shared Editorial shell, main, authored reports,
+navigation, native model views and model reading companions. Main headings use700,
+subheadings/emphasis600 and body400. Do not restore text-specific heading subsets:
+new titles contained Korean glyphs missing from the old subset, and the reported
+Upwork heading actually used Roboto Slab, Noto Serif KR and Malgun Gothic together.
+CSS `font-synthesis:none` prevents simulated weight/style; the variable face
+provides the actual weights. Code retains its monospace family. Imported originals
+inside isolated model iframes keep their original presentation.
+
+The unmodified full font and original SIL OFL notice are in
+`housing_watch/assets/editorial/`; see its README for exact provenance/hash. The
+existing build embeds one font in the shared content-versioned stylesheet, with
+no external font request. Uncompressed CSS grows from347,313 to2,851,316 bytes;
+this is the cost of complete future Korean coverage and remains shared/cached
+across pages. Standalone exports remain self-contained.
+
+Local verification: actual browser font selection on the reported title now
+contains only Pretendard Variable. All11,172 modern Korean syllables plus sample
+Latin/digits/punctuation select the same face; actual weights700/600 are used.
+At320/390/1280px,96 font/representative-page checks and253 all34-report/model-
+companion/search/disclosure/history checks pass.109 tests,195HTML/9676 internal
+references, brief/desk/review and inspected PNG pass; report/history/model data
+and publication order exactly match the pre-change local snapshot. Receipts
+and before/after captures are retained under the existing registered research
+review roots. App browser connection failed, so visual tests used standalone
+Playwright/Edge. Optional host/favicon404 remains separately recorded.
+
+Publication and actual public font verification are pending.
+
 ## Display names, 2026-10-08
 
 Theo requested removal of the product name “리서치”. Use “메인”, “목차”, “분야”,
