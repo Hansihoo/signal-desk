@@ -10,7 +10,10 @@ dates and analysis are retained. Claims follow the revised summary. Same-agent
 separate review phases, no independent review, human trial or C++/Jenkins execution.
 Local136tests/quality gate/6-width9browser/offline4/link checks pass. Chapter lead
 uppercase/wide tracking inheritance was corrected; final checks and screenshots pass.
-Public deployment verification is pending. See DEVOPS_IMPLEMENTATION.2026-10-10.md.
+Source17aa01b deployed successfully in Pages38050641346 at2026-10-10T12:06:21Z.
+CI136tests and housing review pass. Public10preservation checks and2actual browser
+records at1440/390px pass; screenshots inspected.42reports/140editions, other41/prior139
+and model originals/order/shared CSS/guide HTML exact. See DEVOPS_IMPLEMENTATION.2026-10-10.md.
 
 ## Latest authoring rule: purpose then summary, 2026-10-10
 
