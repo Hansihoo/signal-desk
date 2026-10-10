@@ -1,5 +1,18 @@
 # Handoff
 
+## Latest content decision: beginner DevOps outline, 2026-10-10
+
+User rejected r4's information value and requested outline redesign for a first-time
+reader, while retaining the title/purpose/image+summary presentation. The new9chapter
+plan covers definition and automation, CI/CD, key practices, company cases, initial
+implementation, daily operation, adoption constraints, current research/metrics and
+study resources. See DEVOPS_BEGINNER_OUTLINE.2026-10-10.md for questions, evidence,
+worked-example design, deeper material placement and unresolved acquisition/review.
+12official web sections reviewed; direct HTTP11success/Etsy403 retained.2025 report
+and2026 ROI full PDFs were not read; no tutorial execution or human reader trial.
+This turn changes planning/docs only; r4 and all public HTML remain the prior edition.
+The earlier visual verification does not establish user approval of its content.
+
 ## Latest update: visual DevOps study format, 2026-10-10
 
 User approved the generated dialogue illustration and requested brief presentation-style
