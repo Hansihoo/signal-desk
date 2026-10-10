@@ -250,6 +250,12 @@ def render_editorial(output, snapshot, featured, research_data=None, standalone=
     template = (ROOT / "editorial_report.html").read_text(encoding="utf-8")
     def report_page(item, edition=None):
         prefix = "../" if edition else ""
+        from .study_report import uses_study, render_study
+        if uses_study(item["id"]):
+            content = render_study(item, prefix, edition)
+            rendered = page(item["title"], item["description"], content, prefix,
+                            item["id"], "", _edition_nav(item, history, prefix))
+            return rendered.replace('<body>', '<body class="study-page">', 1).replace('<html lang="ko">', '<html lang="ko" class="study-html">', 1)
         values = _report_replacements(item)
         values["__HEADLINE__"] = _headline(item["title"])
         values.update(__HERO_VISUAL__=_hero(item), __EDITION_NOTICE__=(

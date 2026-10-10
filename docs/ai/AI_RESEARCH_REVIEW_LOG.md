@@ -485,3 +485,122 @@ KEIS 원 HWPX·K-조선 포스터·대학 첨부·작품 코드와 영상 전체
 원문 의미/첫 화면 이해/본문 이해를 같은 에이전트의 별도 단계로 자체 검토했다. 압축된 API 나열, 언어·서버의 미설명 경로, 주제 공개 시점과 웹 제출 형태를 수정했다. 독립 검토·사람 독자 시험·작품 설치·성능/비용/학습 효과 측정은 수행하지 않았다. research-check/audit는 이런 검토 영수증과 계약의 결합 확인이며 실제 독자 승인으로 취급하지 않는다.
 
 원본·성공/실패 영수증은 ignored data/raw/hackathons-2026-10-10/, 출력·검토·보존 확인은 reports/hackathons-2026-10-10/에 보존하고 현재 스레드 ledger에 등록했다. 새 수집기·예약·유료 생성·기존 보고서 내용/디자인 변경은 없다.
+
+
+## 2026-10-10 DevOps 학습·팀 공유 HTML 준비
+
+새 페이지를 자신이 공부하고 팀원에게 공유하는 자료로 바꾸라는 사용자 요청. 원본 두 방향을 제시한 뒤 사용자가 둘 다 제작하도록 답하여 문서형과 발표형 HTML을 완성했다. 로컬 형식 시범이며 공개 보고서 발행은 아니다. 공식 원문8개 확보 성공, 아래 선택 절을 실제 읽고 원고와 의미를 자체 대조했다.
+
+| 원문 URL | 실제 확인 범위 | 이번 성공 수집 UTC |
+| --- | --- | --- |
+| https://aws.amazon.com/devops/what-is-devops/ | 정의·공동 책임·CI·IaC. 공급사 소개이며 성과 수치로 사용하지 않음. | 2026-10-10T04:16:00.849049+00:00 |
+| https://aws.amazon.com/devops/continuous-delivery/ | 지속적 전달과 지속적 배포의 자동화/승인 차이. | 2026-10-10T04:16:00.887892+00:00 |
+| https://dora.dev/guides/dora-metrics/ | 현행 다섯 지표·측정 맥락·개인/서비스간 경쟁의 함정. 원문 수정일 2026-01-05. | 2026-10-10T04:16:00.617182+00:00 |
+| https://dora.dev/capabilities/continuous-delivery/ | 전달 가능한 상태·검사·도입상의 함정·변경 과정 지도·DB 변경 관리. 오래된 four-key 언급은 최신 지표 정의로 사용하지 않음. | 2026-10-10T04:16:00.756333+00:00 |
+| https://sre.google/workbook/canarying-releases/ | 기능 공개·카나리·기존/신규 집단 비교·5%×20%=1% 설명 예. 실측 데이터와 구분. | 2026-10-10T04:16:00.918392+00:00 |
+| https://sre.google/sre-book/monitoring-distributed-systems/ | 지연·트래픽·오류·포화·로그/모니터링의 목적. | 2026-10-10T04:16:00.833801+00:00 |
+| https://sre.google/workbook/how-sre-relates/ | 공동 책임·DevOps와 SRE의 범위 차이. 배경 조사, 전체 책 미검토. | 2026-10-10T04:16:00.928418+00:00 |
+| https://docs.github.com/en/actions/get-started/understand-github-actions | 이벤트·workflow·job·step·runner 구성. 설치나 실제 workflow 실행 없음. | 2026-10-10T04:16:01.116242+00:00 |
+
+이번 원문 검토일2026-10-10. 정확한 시각/HTTP/해시 영수증은 ignored data/raw/devops-2026-10-10/receipts.json. 과거 최초 확보 시각과 DORA metrics 외 원문 개정일은 미확인. 미검토 첨부·전체 책·SDK 실행을 변경 없음으로 부르지 않는다. 무료배송 사례는 가상, 카나리는 교재 비율을 요청1000건으로 바꾼 계산 예. 원고/범위: [DevOps 제작 메모](../DEVOPS_PAGE.2026-10-10.md). 독립 검토·사람 독해 시험·실서비스 성과 측정은 없다. 기존 공개 페이지·DB·수집기·예약은 변경하지 않았다.
+
+제작 후 제목/요약만의 선택 입력과 전체 설명을 별도 자체 검토했다.8장 문서/17장 발표의 공식 정의·두CD 비교·카나리 분모·현행DORA5지표를 원고와 대조했다. 원본 코드/테마는 Quarto 생성Bootstrap5.1 CSS와 reveal.js6.0.2(MIT), 내장 글꼴은 Pretendard1.3.9(OFL)이며 전문 고지를 보존한다. HTML 재생성·기술 검사는 위 원문 수집일을 새로 갱신하지 않는다.
+
+실제 Edge 오프라인1440/768/390/320px의 두 파일, 목차/표 키보드/해설/발표 조작/모바일 도표/읽기 전환/직접 링크를 확인했고, 인쇄6/17쪽과 렌더링 PNG를 자체 확인했다. 단계별 실패와 수정, 원본 화면 대비 차이, 검토 도구2MiB 제한 및 시스템 글꼴 정적 미리보기의 범위는 제작 메모에 구분했다. 결과는 reports/devops-2026-10-10/ 아래 보존한다. 이 기술 검사와 자체 설명 검토는 사람의 학습 수용이나 미래 기본 템플릿 승인이 아니다.
+
+### DevOps 후속 형식 선택 · 시각적 학습 문서 2판
+
+사용자가 요약→간단한 목차→전체 설명 순서의 공부 문서와 슬라이드식 시각 자료를 선택했다. 기존 두 시범은 보존하고 `devops-study-v2.html`을 새로 생성했다. 네 질문 목차와 8장 설명을 연결하고, 기존 주요 문단/표·가상 사례·DORA 다섯 지표·출처를 보존했다. 신규 시각 자료는 원고의 상태/경계값/두CD/운영 신호를 재표현하며 새로운 측정 데이터가 아니다.
+
+이번에는 원문 재수집이나 새 사실 검증을 하지 않았다. 위 성공 수집·원문 검토 날짜를 유지한다. 제목/요약/목차 자체 검토와 전체 설명 대조, 오프라인5폭 Edge·목차/키보드/모바일 도표/해설/인쇄 스타일·JS 없는 읽기와 캡처 검토를 구분한다. 독립 에이전트·사람 이해도 시험·실서비스/배포 실습은 수행하지 않았다. 기존 HTML 보존 해시, 본문 비교와 최종 출력 기록은 `learning-v2-manifest.json`/`learning-v2-checks.json`, 자세한 변경은 [제작 메모](../DEVOPS_PAGE.2026-10-10.md)에 있다. 형식 선택이 새 판의 내용 수용이나 학습 효과 검증을 의미하지 않는다.
+
+
+## 2026-10-10 DevOps 구축 실무 가이드
+
+독자 질문: 기존 Jenkins 검증을 보존하면서 무엇을 재사용하고 어떤 규칙·문서를 직접 작성할까?
+공식 선택 절/라이선스/저장소 메타데이터69개를 검토했다. HTTP72개 중70개 성공, ReportPortal403과
+잘못된 Shared Library license404는 실패로 남기고 웹 원문·실제 플러그인 라이선스로 보완했다.
+원문 최초 수집 시각은 미확인(null)이며 성공 수집과 선택 절 검토 날짜를 분리했다.
+SSDF1.1 최종2022-02-03/1.2초안2025-12-17은 공개 목록에서 확인; PDF 전체 미검토.
+Spotify 발표2020-03-16은 raw HTML 메타데이터에서 확인; ReportPortal 원문 수정2026-08-13.
+DORA metrics 원문 수정2026-01-05. 그 외 모르는 원문 개정일은 오늘로 채우지 않았다.
+저장소 pushed_at은 정식 릴리스·호환성·지원 품질의 보증이 아니다.
+
+| 원문 URL | 이번 성공 수집 UTC | 실제 검토 UTC | 확인 범위 |
+| --- | --- | --- | --- |
+| https://dora.dev/guides/dora-metrics/ | 2026-10-10T09:29:27.846837+00:00 | 2026-10-10T10:06:25.104620+00:00 | 지표는 다섯 개이며 전달 속도와 불안정성을 함께 본다. 제품 맥락과 동일 애플리케이션 개선에 사용한다. |
+| https://dora.dev/capabilities/continuous-delivery/ | 2026-10-10T09:29:27.849859+00:00 | 2026-10-10T10:06:25.104620+00:00 | 지속적 전달은 안전하게 배포 가능한 상태와 자동 검사·작은 변경을 다룬다. 실제 배포 자동 실행과 구별한다. |
+| https://tag-app-delivery.cncf.io/whitepapers/platform-eng-maturity-model/ | 2026-10-10T09:29:28.402645+00:00 | 2026-10-10T10:06:25.104620+00:00 | 플랫폼 성숙도는 사람·업무·정책·기술과 투자 조건을 다룬다. 모든 축의 최고 단계가 목표가 아니다. |
+| https://csrc.nist.gov/projects/ssdf | 2026-10-10T09:29:28.799856+00:00 | 2026-10-10T10:06:25.104620+00:00 | 보안 개발 작업의 네 그룹을 정의한다. CI 제품이나 자동 인증으로 해석하지 않는다. |
+| https://sre.google/workbook/implementing-slos/ | 2026-10-10T09:29:28.188824+00:00 | 2026-10-10T10:06:25.104620+00:00 | SLO와 오류 예산을 사용자 서비스 신뢰성 및 개선 결정에 사용한다. |
+| https://sre.google/workbook/postmortem-culture/ | 2026-10-10T09:29:28.254868+00:00 | 2026-10-10T10:06:25.104620+00:00 | 사후 분석은 영향·시간선·원인·후속 작업과 비난하지 않는 검토를 다룬다. |
+| https://www.jenkins.io/doc/book/pipeline/ | 2026-10-10T09:29:28.900042+00:00 | 2026-10-10T10:06:25.104620+00:00 | Pipeline/Jenkinsfile로 작업을 코드로 정의하며 기존 플러그인·실행 환경을 활용한다. |
+| https://www.jenkins.io/doc/book/pipeline/syntax/ | 2026-10-10T09:29:29.238247+00:00 | 2026-10-10T10:06:25.104620+00:00 | Declarative Pipeline의 실패·post/always·동시 실행·UNSTABLE 이후 단계 옵션 의미를 확인한다. |
+| https://www.jenkins.io/doc/book/scaling/architecting-for-scale/ | 2026-10-10T09:29:29.514997+00:00 | 2026-10-10T10:06:25.104620+00:00 | 컨트롤러의 조정과 실행기의 빌드 실행·격리를 구분한다. |
+| https://www.jenkins.io/doc/book/pipeline/shared-libraries/ | 2026-10-10T09:29:29.435772+00:00 | 2026-10-10T10:06:25.104620+00:00 | vars 기반 공통 함수와 버전 지정, trusted library의 높은 권한을 확인한다. |
+| https://www.jenkins.io/doc/book/managing/casc/ | 2026-10-10T09:29:29.435772+00:00 | 2026-10-10T10:06:25.104620+00:00 | 컨트롤러의 YAML 설정이다. 플러그인 설치·비밀값·백업을 전부 대신하는 기능이 아니다. |
+| https://plugins.jenkins.io/junit/ | 2026-10-10T09:29:30.005935+00:00 | 2026-10-10T10:06:25.104620+00:00 | JUnit XML 수집과 UNSTABLE 처리, 빈 결과 기본 차단과 설정 옵션을 확인한다. |
+| https://docs.github.com/en/actions/get-started/understand-github-actions | 2026-10-10T09:29:29.791499+00:00 | 2026-10-10T10:06:25.104620+00:00 | GitHub 이벤트·YAML workflow·hosted/self-hosted runner의 역할을 확인한다. |
+| https://docs.github.com/en/actions/reference/security/secure-use | 2026-10-10T09:29:29.368510+00:00 | 2026-10-10T10:06:25.104620+00:00 | 외부 코드와 자격 증명·self-hosted runner 권한 위험을 구분한다. |
+| https://docs.github.com/en/billing/concepts/product-billing/github-actions | 2026-10-10T09:29:29.713263+00:00 | 2026-10-10T10:06:25.104620+00:00 | 비공개 호스팅 실행·저장·캐시 과금 조건을 확인한다. 고정 가격·총비용 추정은 하지 않는다. |
+| https://docs.gitlab.com/ci/ | 2026-10-10T09:29:29.937838+00:00 | 2026-10-10T10:06:25.104620+00:00 | GitLab YAML·Runner·파이프라인/산출물의 역할을 확인한다. |
+| https://docs.gitlab.com/development/licensing/ | 2026-10-10T09:29:29.864604+00:00 | 2026-10-10T10:06:25.104620+00:00 | 공식 저장소의 라이선스 원문과 SPDX 식별자를 확인했다. 서비스·상용판·별도 플러그인/제3자 전체 조건으로 확장하지 않는다. |
+| https://cmake.org/cmake/help/latest/manual/cmake-presets.7.html | 2026-10-10T09:29:31.069437+00:00 | 2026-10-10T10:06:25.104620+00:00 | 공유/개인 preset과 구성·빌드·검사 필드 및 schema 지원 버전을 확인한다. |
+| https://cmake.org/cmake/help/latest/manual/ctest.1.html | 2026-10-10T09:29:31.362708+00:00 | 2026-10-10T10:06:25.104620+00:00 | JUnit 출력의3.21 도입과 검사0건 실패·실패 출력 옵션을 확인한다. |
+| https://google.github.io/googletest/quickstart-cmake.html | 2026-10-10T09:29:30.230598+00:00 | 2026-10-10T10:06:25.104620+00:00 | 공식 CMake 통합, Windows CRT 옵션, 테스트 등록 및 C++ 지원 조건을 확인한다. |
+| https://backstage.io/docs/features/software-catalog/ | 2026-10-10T09:29:30.739270+00:00 | 2026-10-10T10:06:25.104620+00:00 | 소유권·소프트웨어 메타데이터 카탈로그와 플러그인 중심 포털이다. |
+| https://backstage.io/blog/2020/03/16/announcing-backstage/ | 2026-10-10T09:29:30.739270+00:00 | 2026-10-10T10:06:25.104620+00:00 | 2020-03-16 Spotify의 실제 Backstage 공개 사례다. 구축 효과 수치나 현재 소규모팀 도입 필요성의 증거는 아니다. |
+| https://prometheus.io/docs/introduction/overview/ | 2026-10-10T09:29:31.443146+00:00 | 2026-10-10T10:06:25.104620+00:00 | 시간별 수치·라벨·조회·알림의 기반이며 로그/덤프 분석 제품과 다르다. |
+| https://grafana.com/docs/grafana/latest/introduction/ | 2026-10-10T09:29:31.208459+00:00 | 2026-10-10T10:06:25.104620+00:00 | 데이터 원본을 조회해 대시보드로 표시한다. 모든 원본의 수집·저장 제품을 대체하지 않는다. |
+| https://chromium.googlesource.com/crashpad/crashpad/+/HEAD/README.md | 2026-10-10T09:29:32.265137+00:00 | 2026-10-10T10:06:25.104620+00:00 | 네이티브 충돌 수집·보고 기반이며 전체 분석 UI·이슈 운영까지 제공하는 서비스가 아니다. |
+| https://chromium.googlesource.com/crashpad/crashpad/+/HEAD/LICENSE | 2026-10-10T09:29:32.043640+00:00 | 2026-10-10T10:06:25.104620+00:00 | Crashpad의 Apache2 라이선스와 제3자 조건을 확인한다. |
+| https://google.github.io/osv-scanner/ | 2026-10-10T09:29:31.441149+00:00 | 2026-10-10T10:06:25.104620+00:00 | 지원 의존성 입력을 알려진 취약점과 대조한다. 모든 C++ 정적 의존성 탐지 보장은 없다. |
+| https://github.com/anchore/syft | 2026-10-10T09:29:32.027640+00:00 | 2026-10-10T10:06:25.104620+00:00 | SBOM을 생성하며 SPDX/CycloneDX 등을 지원한다. 취약점 판정기는 아니다. |
+| https://agents.md/ | 2026-10-10T09:29:31.699641+00:00 | 2026-10-10T10:06:25.104620+00:00 | 코딩 에이전트용 프로젝트 지침 형식과 명령·프로젝트 맥락 제공 역할을 확인한다. |
+| https://learn.chatgpt.com/docs/agent-configuration/agents-md | 2026-10-10T09:29:31.796640+00:00 | 2026-10-10T10:06:25.104620+00:00 | Codex의 전역·프로젝트·가까운 경로 지침과 override 순서를 확인한다. |
+| https://learn.chatgpt.com/docs/build-skills | 2026-10-10T09:29:31.799640+00:00 | 2026-10-10T10:06:25.104620+00:00 | SKILL.md·선택 스크립트/참고자료와 점진적 로딩 및 현재 .agents/skills 경로를 확인한다. |
+| https://www.jenkins.io/doc/book/pipeline/jenkinsfile/#handling-credentials | 2026-10-10T09:29:33.220548+00:00 | 2026-10-10T10:06:25.104620+00:00 | 자격 증명 ID 주입과 로그 마스킹의 한계 및 권한 분리를 확인한다. |
+| https://docs.github.com/en/actions/using-workflows/caching-dependencies-to-speed-up-workflows | 2026-10-10T09:29:33.091545+00:00 | 2026-10-10T10:06:25.104620+00:00 | 캐시 키·restore prefix와 보안/범위를 확인한다. 캐시는 필수 테스트 생략 근거가 아니다. |
+| https://api.github.com/repos/jenkinsci/jenkins | 2026-10-10T09:29:32.658495+00:00 | 2026-10-10T10:06:25.104620+00:00 | 공식 저장소 메타데이터의 archived/disabled/pushed_at을 확인했다. push 시각은 정식 릴리스·지원 품질·호환성의 보증이 아니다. |
+| https://api.github.com/repos/jenkinsci/jenkins/license | 2026-10-10T09:29:32.589011+00:00 | 2026-10-10T10:06:25.104620+00:00 | 공식 저장소의 라이선스 원문과 SPDX 식별자를 확인했다. 서비스·상용판·별도 플러그인/제3자 전체 조건으로 확장하지 않는다. |
+| https://api.github.com/repos/jenkinsci/configuration-as-code-plugin | 2026-10-10T09:29:33.217549+00:00 | 2026-10-10T10:06:25.104620+00:00 | 공식 저장소 메타데이터의 archived/disabled/pushed_at을 확인했다. push 시각은 정식 릴리스·지원 품질·호환성의 보증이 아니다. |
+| https://api.github.com/repos/jenkinsci/configuration-as-code-plugin/license | 2026-10-10T09:29:33.198548+00:00 | 2026-10-10T10:06:25.104620+00:00 | 공식 저장소의 라이선스 원문과 SPDX 식별자를 확인했다. 서비스·상용판·별도 플러그인/제3자 전체 조건으로 확장하지 않는다. |
+| https://api.github.com/repos/jenkinsci/junit-plugin | 2026-10-10T09:29:33.627711+00:00 | 2026-10-10T10:06:25.104620+00:00 | 공식 저장소 메타데이터의 archived/disabled/pushed_at을 확인했다. push 시각은 정식 릴리스·지원 품질·호환성의 보증이 아니다. |
+| https://api.github.com/repos/jenkinsci/junit-plugin/license | 2026-10-10T09:29:33.935349+00:00 | 2026-10-10T10:06:25.104620+00:00 | 공식 저장소의 라이선스 원문과 SPDX 식별자를 확인했다. 서비스·상용판·별도 플러그인/제3자 전체 조건으로 확장하지 않는다. |
+| https://api.github.com/repos/actions/runner | 2026-10-10T09:29:33.997465+00:00 | 2026-10-10T10:06:25.104620+00:00 | 공식 저장소 메타데이터의 archived/disabled/pushed_at을 확인했다. push 시각은 정식 릴리스·지원 품질·호환성의 보증이 아니다. |
+| https://api.github.com/repos/actions/runner/license | 2026-10-10T09:29:33.995472+00:00 | 2026-10-10T10:06:25.104620+00:00 | 공식 저장소의 라이선스 원문과 SPDX 식별자를 확인했다. 서비스·상용판·별도 플러그인/제3자 전체 조건으로 확장하지 않는다. |
+| https://api.github.com/repos/Kitware/CMake | 2026-10-10T09:29:34.004443+00:00 | 2026-10-10T10:06:25.104620+00:00 | 공식 저장소 메타데이터의 archived/disabled/pushed_at을 확인했다. push 시각은 정식 릴리스·지원 품질·호환성의 보증이 아니다. |
+| https://api.github.com/repos/Kitware/CMake/license | 2026-10-10T09:29:34.000464+00:00 | 2026-10-10T10:06:25.104620+00:00 | 공식 저장소의 라이선스 원문과 SPDX 식별자를 확인했다. 서비스·상용판·별도 플러그인/제3자 전체 조건으로 확장하지 않는다. |
+| https://api.github.com/repos/google/googletest | 2026-10-10T09:29:34.007443+00:00 | 2026-10-10T10:06:25.104620+00:00 | 공식 저장소 메타데이터의 archived/disabled/pushed_at을 확인했다. push 시각은 정식 릴리스·지원 품질·호환성의 보증이 아니다. |
+| https://api.github.com/repos/google/googletest/license | 2026-10-10T09:29:34.354725+00:00 | 2026-10-10T10:06:25.104620+00:00 | 공식 저장소의 라이선스 원문과 SPDX 식별자를 확인했다. 서비스·상용판·별도 플러그인/제3자 전체 조건으로 확장하지 않는다. |
+| https://api.github.com/repos/reportportal/reportportal | 2026-10-10T09:29:34.594525+00:00 | 2026-10-10T10:06:25.104620+00:00 | 공식 저장소 메타데이터의 archived/disabled/pushed_at을 확인했다. push 시각은 정식 릴리스·지원 품질·호환성의 보증이 아니다. |
+| https://api.github.com/repos/reportportal/reportportal/license | 2026-10-10T09:29:34.599503+00:00 | 2026-10-10T10:06:25.104620+00:00 | 공식 저장소의 라이선스 원문과 SPDX 식별자를 확인했다. 서비스·상용판·별도 플러그인/제3자 전체 조건으로 확장하지 않는다. |
+| https://api.github.com/repos/backstage/backstage | 2026-10-10T09:29:34.595503+00:00 | 2026-10-10T10:06:25.104620+00:00 | 공식 저장소 메타데이터의 archived/disabled/pushed_at을 확인했다. push 시각은 정식 릴리스·지원 품질·호환성의 보증이 아니다. |
+| https://api.github.com/repos/backstage/backstage/license | 2026-10-10T09:29:34.520905+00:00 | 2026-10-10T10:06:25.104620+00:00 | 공식 저장소의 라이선스 원문과 SPDX 식별자를 확인했다. 서비스·상용판·별도 플러그인/제3자 전체 조건으로 확장하지 않는다. |
+| https://api.github.com/repos/prometheus/prometheus | 2026-10-10T09:29:34.591530+00:00 | 2026-10-10T10:06:25.104620+00:00 | 공식 저장소 메타데이터의 archived/disabled/pushed_at을 확인했다. push 시각은 정식 릴리스·지원 품질·호환성의 보증이 아니다. |
+| https://api.github.com/repos/prometheus/prometheus/license | 2026-10-10T09:29:34.772863+00:00 | 2026-10-10T10:06:25.104620+00:00 | 공식 저장소의 라이선스 원문과 SPDX 식별자를 확인했다. 서비스·상용판·별도 플러그인/제3자 전체 조건으로 확장하지 않는다. |
+| https://api.github.com/repos/grafana/grafana | 2026-10-10T09:29:35.023487+00:00 | 2026-10-10T10:06:25.104620+00:00 | 공식 저장소 메타데이터의 archived/disabled/pushed_at을 확인했다. push 시각은 정식 릴리스·지원 품질·호환성의 보증이 아니다. |
+| https://api.github.com/repos/grafana/grafana/license | 2026-10-10T09:29:35.119284+00:00 | 2026-10-10T10:06:25.104620+00:00 | 공식 저장소의 라이선스 원문과 SPDX 식별자를 확인했다. 서비스·상용판·별도 플러그인/제3자 전체 조건으로 확장하지 않는다. |
+| https://api.github.com/repos/google/osv-scanner | 2026-10-10T09:29:35.157946+00:00 | 2026-10-10T10:06:25.104620+00:00 | 공식 저장소 메타데이터의 archived/disabled/pushed_at을 확인했다. push 시각은 정식 릴리스·지원 품질·호환성의 보증이 아니다. |
+| https://api.github.com/repos/google/osv-scanner/license | 2026-10-10T09:29:35.135936+00:00 | 2026-10-10T10:06:25.104620+00:00 | 공식 저장소의 라이선스 원문과 SPDX 식별자를 확인했다. 서비스·상용판·별도 플러그인/제3자 전체 조건으로 확장하지 않는다. |
+| https://api.github.com/repos/anchore/syft | 2026-10-10T09:29:35.135936+00:00 | 2026-10-10T10:06:25.104620+00:00 | 공식 저장소 메타데이터의 archived/disabled/pushed_at을 확인했다. push 시각은 정식 릴리스·지원 품질·호환성의 보증이 아니다. |
+| https://api.github.com/repos/anchore/syft/license | 2026-10-10T09:29:35.151843+00:00 | 2026-10-10T10:06:25.104620+00:00 | 공식 저장소의 라이선스 원문과 SPDX 식별자를 확인했다. 서비스·상용판·별도 플러그인/제3자 전체 조건으로 확장하지 않는다. |
+| https://csrc.nist.gov/projects/ssdf/publications | 2026-10-10T09:31:11.024304+00:00 | 2026-10-10T10:06:25.104620+00:00 | NIST 출판 목록의 최종1.1/초안1.2 상태와 날짜를 확인한다. PDF 전체 내용 검토는 하지 않았다. |
+| https://plugins.jenkins.io/pipeline-groovy-lib/ | 2026-10-10T09:31:11.002306+00:00 | 2026-10-10T10:06:25.104620+00:00 | 실제 Groovy Libraries 플러그인 링크와 MIT 라이선스를 확인한다. |
+| https://api.github.com/repos/jenkinsci/pipeline-groovy-lib-plugin/license | 2026-10-10T09:31:10.142504+00:00 | 2026-10-10T10:06:25.104620+00:00 | 공식 저장소의 라이선스 원문과 SPDX 식별자를 확인했다. 서비스·상용판·별도 플러그인/제3자 전체 조건으로 확장하지 않는다. |
+| https://api.github.com/repos/jenkinsci/pipeline-groovy-lib-plugin | 2026-10-10T09:31:10.146511+00:00 | 2026-10-10T10:06:25.104620+00:00 | 공식 저장소 메타데이터의 archived/disabled/pushed_at을 확인했다. push 시각은 정식 릴리스·지원 품질·호환성의 보증이 아니다. |
+| https://www.jenkins.io/doc/pipeline/steps/junit/ | 2026-10-10T10:03:01.485950+00:00 | 2026-10-10T10:06:25.104620+00:00 | allowEmptyResults와 skipMarkingBuildUnstable의 실제 Pipeline 인자 이름 및 기본 동작을 확인한다. |
+| https://raw.githubusercontent.com/jenkinsci/configuration-as-code-plugin/master/README.md | 2026-10-10T10:03:00.822290+00:00 | 2026-10-10T10:06:25.104620+00:00 | JCasC의 플러그인 설치 범위를 README에서 확인한다. 플러그인 설치/버전 관리는 별도다. |
+| https://raw.githubusercontent.com/jenkinsci/configuration-as-code-plugin/master/docs/features/secrets.adoc | 2026-10-10T10:03:00.772592+00:00 | 2026-10-10T10:06:25.104620+00:00 | JCasC는 provider·변수·암호화 문자열 방식으로 비밀값을 공급할 수 있다. 본문은 평문 저장을 피하도록 권고한다. |
+| https://google.github.io/osv-scanner/supported-languages-and-lockfiles/ | 2026-10-10T10:03:00.760591+00:00 | 2026-10-10T10:06:25.104620+00:00 | C/C++ conan.lock 및 commit 기반 submodule/vendored 지원과 누락/버전 추정 한계를 확인한다. |
+| https://google.github.io/osv-scanner/usage/scan-source | 2026-10-10T10:03:00.822290+00:00 | 2026-10-10T10:06:25.104620+00:00 | lockfile·SBOM·Git 검색과 SPDX/CycloneDX Package URL 조건을 확인한다. |
+| https://chromium.googlesource.com/crashpad/crashpad/+/HEAD/doc/overview_design.md | 2026-10-10T10:03:01.002781+00:00 | 2026-10-10T10:06:25.104620+00:00 | 별도 handler와 client의 수집·업로드 역할, 심볼 분석 별도 체계와 사용자 동의 조건을 확인한다. |
+| https://backstage.io/docs/features/software-catalog/descriptor-format/ | 2026-10-10T10:03:01.437319+00:00 | 2026-10-10T10:06:25.104620+00:00 | catalog-info.yaml 예시명과 YAML descriptor 필드의 역할을 확인한다. |
+| https://reportportal.io/docs/ | 2026-10-10T09:40:50.193498+00:00 | 2026-10-10T10:06:25.104620+00:00 | TestOps 분석·Jenkins 연결·Apache2와 Quality Gates/SCIM 유료 premium 조건을 확인한다. |
+
+정확한 해시/발췌/질문·주장 위치와 첫 화면/본문 자체 검토는
+config/devops_implementation.2026-10-10.quality.json에 결합했다. 본문은 정본report-v1을 유지한다.
+기능 사실과 편집 권고를 구분하고 CI 비교표·실행 예제·Windows CRT·0건/누락 처리·심층 근거를 보완했다.
+실제 CI·도구 설치·C++ 컴파일·총비용/성능·독자 학습 효과는 미측정이며 독립 검토·사람 시험은 없다.
+원문/영수증은 ignored data/raw/devops-2026-10-10/implementation, 검증/공유본은 기존 등록 reports/devops-2026-10-10에 보존한다.
+새 수집기·예약·유료 호출은 추가하지 않았다. HTML 재생성은 증거 수집일 갱신이 아니다.

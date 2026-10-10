@@ -2,6 +2,7 @@
   "schema_version": 1,
   "featured_report_id": "mcp-apps-workflows",
   "report_ids": [
+    "devops-implementation-guide",
     "claude-haiku-5-5-model-guide",
     "mistral-large-4-model-guide",
     "gemini-nano-banana-2-1-model-guide",
@@ -124,6 +125,11 @@
       "id": "ai-hackathons-2026-10-10",
       "input": "ai_hackathons.2026-10-10.json",
       "quality": "ai_hackathons.2026-10-10.quality.json"
+    },
+    {
+      "id": "devops-implementation-2026-10-10",
+      "input": "devops_implementation.2026-10-10.json",
+      "quality": "devops_implementation.2026-10-10.quality.json"
     }
   ]
 }

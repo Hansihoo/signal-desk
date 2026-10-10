@@ -1,6 +1,19 @@
 # Handoff
 
-## Latest work: two-level topic menu, 2026-10-10
+## Latest work: practical DevOps guide and future study style, 2026-10-10
+
+User selected the local study-document style for future pages and supplied a13-topic practical brief.
+New report ID devops-implementation-guide lives under 개발 동향/개발·운영/DevOps 구축.
+13chapters/15tools/12tips/69official sources, Windows/C++/Jenkins examples, source/licensing conditions,
+search/field/tier filters/selected comparison and AGENTS.md/docs/Skill/request examples are integrated.
+New IDs use study_report.py/.css/.js;41legacy IDs keep Editorial. Old editions never receive a mismatched catalog.
+Top TOC and history return remain separate from the research sidebar. See [scope and receipts](DEVOPS_IMPLEMENTATION.2026-10-10.md).
+Local42reports/138editions preserve prior41/137/models/shared CSS/acceptedv2 exactly.136tests, quality1/audit10gated32legacy,
+212HTML/13086references,6-width9actual browser records plus4offline/static-review records,brief/desk/review/PNGs pass.
+Reviews are separate phases by the same agent; C++/Jenkins execution, independent review and human reader trials unperformed.
+No collector/automation/paid generation changes. Public deployment verification is pending.
+
+## Previous work: two-level topic menu, 2026-10-10
 
 The shared 분야 menu now initially shows only top-level fields and their immediate
 categories. Deeper branches start closed; +/− or Enter/Space on the summary toggles
