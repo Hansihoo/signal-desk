@@ -4,7 +4,7 @@ import re
 import unittest
 from pathlib import Path
 from unittest.mock import patch
-from housing_watch.study_report import render_study, uses_study, catalog_for
+from housing_watch.study_report import render_study, uses_study, catalog_for, visuals_for
 from housing_watch.research_workflow import digest
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -69,3 +69,31 @@ class StudyReportTests(unittest.TestCase):
         self.assertNotIn('<script>', payload)
         self.assertEqual(json.loads(payload), catalog['tools'])
         self.assertIn('&lt;/script&gt;', text)
+
+    def test_visuals_bind_to_edition_and_keypoints_precede_full_explanation(self):
+        guide = visuals_for(self.report)
+        self.assertEqual(len(guide['images']), 4)
+        previous = copy.deepcopy(self.report)
+        previous['deck'] += ' 이전 판'
+        self.assertIsNone(visuals_for(previous))
+        self.assertNotIn('class="study-visual"', render_study(previous))
+        rendered = render_study(self.report)
+        self.assertEqual(rendered.count('class="chapter-keypoints"'), 13)
+        self.assertEqual(rendered.count('class="study-visual"'), 4)
+        ci = rendered.split('id="chapter-ci"', 1)[1].split('id="chapter-quality"', 1)[0]
+        self.assertLess(ci.index('class="chapter-keypoints"'), ci.index('id="visual-ci"'))
+        self.assertLess(ci.index('id="visual-ci"'), ci.index('class="chapter-lead"'))
+        self.assertIn('aria-labelledby="study-image-title"', rendered)
+        self.assertIn('data:image/png;base64,', rendered)
+
+    def test_visual_asset_traversal_and_changed_bytes_are_rejected(self):
+        filename = json.loads((ROOT/'config/study_pages.json').read_text(encoding='utf-8'))['visual_guides'][self.report['id']]
+        guide = json.loads((ROOT/'config'/filename).read_text(encoding='utf-8'))
+        guide['images']['summary']['asset'] = '../outside.png'
+        with patch('housing_watch.study_report.settings', return_value={'visual_guides':{self.report['id']:filename}}):
+            with patch('housing_watch.study_report.json.loads', return_value=guide):
+                with self.assertRaisesRegex(ValueError, 'asset filename'):
+                    visuals_for(self.report)
+        with patch('housing_watch.study_report.Path.read_bytes', return_value=b'changed'):
+            with self.assertRaisesRegex(ValueError, 'reviewed bytes'):
+                visuals_for(self.report)

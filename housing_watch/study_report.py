@@ -3,6 +3,8 @@
 Existing report IDs keep Editorial. Future reports use the selected study style;
 optional interactive catalog data is bound to the exact report content hash.
 """
+import base64
+import hashlib
 import json
 from pathlib import Path
 from .briefing_preview import _escape as esc, _authored_blocks, _citations, _table, _chart
@@ -60,6 +62,47 @@ def catalog_for(report):
     return catalog
 
 
+def visuals_for(report):
+    filename = settings().get('visual_guides', {}).get(report['id'])
+    if not filename:
+        return None
+    if Path(filename).name != filename:
+        raise ValueError('Visual guide must use a config filename')
+    guide = json.loads((CONFIG / filename).read_text(encoding='utf-8'))
+    if guide.get('schema_version') != 1 or guide.get('report_id') != report['id']:
+        raise ValueError('Visual guide identity mismatch')
+    if guide.get('report_hash') != digest(report):
+        return None
+    for chapter in report['explanation']:
+        first = chapter['blocks'][0]
+        if first['type'] != 'terms' or first['title'] != '핵심 정리':
+            raise ValueError('Visual study chapter needs reviewed key points')
+    allowed = {'summary'} | {c['id'] for c in report['explanation']}
+    for place, visual in guide['images'].items():
+        if place not in allowed or Path(visual['asset']).name != visual['asset']:
+            raise ValueError('Invalid visual location or asset filename')
+        data = (ROOT / 'assets' / 'editorial' / visual['asset']).read_bytes()
+        if not data.startswith(b'\x89PNG\r\n\x1a\n') or hashlib.sha256(data).hexdigest() != visual['sha256']:
+            raise ValueError('Visual asset does not match reviewed bytes')
+    return guide
+
+
+def _visual_figure(visual, place):
+    data = (ROOT / 'assets' / 'editorial' / visual['asset']).read_bytes()
+    source = 'data:image/png;base64,' + base64.b64encode(data).decode('ascii')
+    return ('<figure class="study-visual" id="visual-%s"><img src="%s" alt="%s" '
+            'width="%d" height="%d" decoding="async"><figcaption><span>%s</span>'
+            '<button type="button" class="visual-open" hidden aria-haspopup="dialog">'
+            '이미지 크게 보기</button></figcaption></figure>') % (
+                esc(place), source, esc(visual['alt']), visual['width'], visual['height'], esc(visual['caption']))
+
+
+def _key_points(block, numbers):
+    return '<div class="chapter-keypoints" aria-label="핵심 정리"><ol>%s</ol><p class="keypoint-sources">%s</p></div>' % (
+        ''.join('<li><strong>%s</strong><p>%s</p></li>' % (esc(i['label']), esc(i['text'])) for i in block['items']),
+        _citations(block, numbers))
+
+
 def _catalog(catalog, numbers):
     fields = sorted({t['field'] for t in catalog['tools']})
     options = ''.join('<option>%s</option>' % esc(f) for f in fields)
@@ -87,6 +130,8 @@ def render_study(report, prefix='', edition=None):
     validate_report(report)
     numbers = {s['id']:i for i,s in enumerate(report['references'],1)}
     catalog = catalog_for(report)
+    visual_guide = visuals_for(report)
+    images = visual_guide['images'] if visual_guide else {}
     chapters = report.get('explanation', [])
     inline_tables = {'frameworks':'framework-comparison','ci':'ci-comparison'}
     tables = {t['id']:t for t in report.get('tables',[])}
@@ -106,10 +151,19 @@ def render_study(report, prefix='', edition=None):
     parts = [toolbar,'<article class="study-document" id="study-document">',
         '<header class="study-title"><p class="study-eyebrow">%s</p><h1>%s</h1><p class="study-deck">%s</p><p class="study-byline">자료 확인 %s</p>%s</header>' % (esc(' / '.join(report['topic_path']).replace('개발·운영','개발과 운영')),esc(report['title']),esc(report['description']),esc(report['checked_on']),'<p class="study-notice">이전 기록 (%s차)</p>' % edition if edition else '')]
     parts.append('<section id="summary" class="study-summary"><h2>요약</h2><p class="study-summary-deck">%s</p><dl>%s</dl></section>' % (esc(report['deck']),''.join('<div><dt>%s</dt><dd>%s %s</dd></div>' % (esc(p['label']),esc(p['text']),_citations(p,numbers)) for p in report['summary'])))
+    if 'summary' in images:
+        parts.append(_visual_figure(images['summary'], 'summary'))
     parts.append('<section class="study-outline" id="outline"><h2>목차</h2><ol>%s</ol></section>' % ''.join('<li><a href="#chapter-%s"><span>%02d</span><b>%s</b></a></li>' % (esc(ch['id']),i,esc(ch['title'].split('. ',1)[-1])) for i,ch in enumerate(chapters,1)))
     for index,ch in enumerate(chapters,1):
-        parts.append('<section class="study-chapter" id="chapter-%s"><header><p class="chapter-number">%02d</p><h2>%s</h2><p class="chapter-lead">%s</p></header>' % (esc(ch['id']),index,esc(ch['title'].split('. ',1)[-1]),esc(ch['lead'])))
+        lead = '<p class="chapter-lead">%s</p>' % esc(ch['lead'])
+        parts.append('<section class="study-chapter" id="chapter-%s"><header><p class="chapter-number">%02d</p><h2>%s</h2>%s</header>' % (esc(ch['id']),index,esc(ch['title'].split('. ',1)[-1]),'' if visual_guide else lead))
         blocks = ch['blocks']
+        if visual_guide:
+            parts.append(_key_points(blocks[0], numbers))
+            blocks = blocks[1:]
+            if ch['id'] in images:
+                parts.append(_visual_figure(images[ch['id']], ch['id']))
+            parts.append(lead)
         if ch['id']=='catalog' and catalog:
             parts.append(_authored_blocks(blocks[:1],numbers));parts.append(_catalog(catalog,numbers))
         else:
@@ -140,4 +194,6 @@ def render_study(report, prefix='', edition=None):
         payload = payload.replace(char, chr(92) + 'u' + code)
     css = (ROOT/'study_report.css').read_text(encoding='utf-8')
     js = (ROOT/'study_report.js').read_text(encoding='utf-8')
+    if visual_guide:
+        parts.append('<dialog id="study-image-dialog" aria-labelledby="study-image-title"><form method="dialog"><h2 id="study-image-title">이미지 크게 보기</h2><button aria-label="이미지 확대 보기 닫기">닫기</button></form><p class="image-help">확대해서 가로로 움직이며 읽을 수 있습니다.</p><div class="image-pan" tabindex="0" role="region" aria-label="확대한 이미지"><img alt=""></div></dialog>')
     return '<style>%s</style><div class="study-reader">%s</div><script type="application/json" id="study-tools">%s</script><script>%s</script>' % (css,''.join(parts),payload,js)

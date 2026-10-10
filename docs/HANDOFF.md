@@ -1,5 +1,20 @@
 # Handoff
 
+## Latest update: visual DevOps study format, 2026-10-10
+
+User approved the generated dialogue illustration and requested brief presentation-style
+points followed by explanatory paragraphs. Immutable r4 adds three key points to each
+of13chapters, preserves all prior chapter leads/blocks/code/tables and69source evidence
+records, and simplifies the front summary. Four approved illustrations are bound to the
+exact report hash and asset SHA256; earlier editions receive no later illustration set.
+The renderer embeds them for offline reading and provides a keyboard-accessible image
+dialog with horizontal panning on mobile. No generation runs during normal publication.
+Local138tests, quality1/audit10+32,215HTML/14212references,6-width9navigation records,
+4-width5image records and4offline/static-review records pass. Screenshots inspected.
+Sources and analysis retain prior evidence dates; same-agent separate review phases,
+no human reader trial or C++/Jenkins execution. Public deployment verification pending.
+See DEVOPS_IMPLEMENTATION.2026-10-10.md.
+
 ## Latest revision: DevOps explanatory prose, 2026-10-10
 
 User rejected r2's awkward instruction-like prose and requested a rewrite. Immutable

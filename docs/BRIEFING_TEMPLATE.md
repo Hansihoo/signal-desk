@@ -1,5 +1,19 @@
 # Homepage and report contract
 
+## Brief points, illustrations and explanatory prose, 2026-10-10
+
+The user selected dialogue-style illustrations and requested concise presentation-style
+points followed by full sentences explaining the topic. Keep the purpose → summary
+opening order. Within a study chapter, show the key point first, use a meaningful
+diagram where it explains a relationship, then retain the reasons, conditions and
+examples in prose. Do not turn the whole report into short slide fragments.
+The DevOps r4 example has13three-point introductions and4illustrations; those counts
+are not a universal template. It provides image alt text, keyboard enlargement and
+mobile horizontal panning. User-requested product illustrations are source assets,
+distinct from generated report screenshots and HTML outputs; publication only embeds
+the reviewed bytes and never calls image generation. Asset hashes and report hashes
+prevent historical editions from receiving a later illustration set.
+
 ## Opening order for new shared pages, 2026-10-10
 
 Only the opening order is fixed: title, a brief statement of the document's purpose,

@@ -45,6 +45,27 @@
   addEventListener('beforeprint',()=>{openBeforePrint=[...root.querySelectorAll('details')].map(d=>[d,d.open]);openBeforePrint.forEach(([d])=>{if(d!==menu)d.open=true;});});
   addEventListener('afterprint',()=>openBeforePrint.forEach(([d,open])=>d.open=open));
 
+  const imageDialog=root.querySelector('#study-image-dialog');
+  if(imageDialog && typeof imageDialog.showModal==='function'){
+    let imageTrigger=null;
+    root.querySelectorAll('.visual-open').forEach(button=>{
+      button.hidden=false;
+      button.addEventListener('click',()=>{
+        imageTrigger=button;
+        const original=button.closest('figure').querySelector('img');
+        const enlarged=imageDialog.querySelector('img');
+        enlarged.src=original.src;enlarged.alt=original.alt;
+        imageDialog.showModal();
+        imageDialog.querySelector('.image-pan').scrollTo(0,0);
+      });
+    });
+    imageDialog.addEventListener('click',e=>{if(e.target===imageDialog)imageDialog.close();});
+    imageDialog.addEventListener('close',()=>{
+      imageDialog.querySelector('img').removeAttribute('src');
+      imageTrigger?.focus({preventScroll:true});
+    });
+  }
+
   const tools=JSON.parse(root.parentElement.querySelector('#study-tools').textContent);
   if(!tools.length)return;
   const byId=new Map(tools.map(t=>[t.id,t]));

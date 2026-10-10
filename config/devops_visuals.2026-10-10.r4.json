@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "report_id": "devops-implementation-guide",
+  "report_hash": "78c06448525e0ca05689e8f45e2b93425bfec41718b2cb5ded3a3a0215a52ce4",
+  "images": {
+    "summary": {
+      "asset": "devops-summary.2026-10-10.r1.png",
+      "sha256": "95f79bb5016bc5060f561f0c892d02a5bee16518edeafa34234988501f135928",
+      "width": 1536,
+      "height": 1024,
+      "caption": "코드 수정부터 배포 후 확인까지",
+      "alt": "개발자, Jenkins, QA, 운영 담당자의 코드 수정부터 배포 후 확인까지의 역할과 보관할 기록을 보여주는 대화형 흐름도."
+    },
+    "ci": {
+      "asset": "devops-ci.2026-10-10.r1.png",
+      "sha256": "90bac7d1a4f5c04de0ce7523a891d01e603c9b6b3aba2b26ebb6b395b42e3c09",
+      "width": 1536,
+      "height": 1024,
+      "caption": "Jenkins 설정의 역할 구분",
+      "alt": "Jenkinsfile은 제품별 작업 순서, Shared Library는 공통 함수, JCasC는 서버 설정을 관리한다. 비밀값은 설정 파일에 직접 넣지 않는다."
+    },
+    "quality": {
+      "asset": "devops-quality.2026-10-10.r1.png",
+      "sha256": "c4eff5596b20999c3f0cdf1c772328f1e5d7a6777fb2dc1bd03d8357c4f1e501",
+      "width": 1536,
+      "height": 1024,
+      "caption": "테스트 결과를 판단하는 조건",
+      "alt": "테스트 통과와 결과 파일 수집을 함께 확인한다. 0건이나 파일 누락은 통과시키지 않고, 재실행에서 통과해도 첫 실패 결과를 보관한다."
+    },
+    "release": {
+      "asset": "devops-release.2026-10-10.r1.png",
+      "sha256": "e9f60819820bd3b2a962789fd561b78cde11e193bc583f94aac4d2e6798b7aa8",
+      "width": 1536,
+      "height": 1024,
+      "caption": "검사한 파일과 배포한 파일의 관계",
+      "alt": "빌드 결과 A를 QA가 확인한 후 승인해 배포한다. 다시 만든 B는 검증 관계를 다시 확인하고, 서명으로 파일이 바뀌면 변경 전후의 관계를 남긴다."
+    }
+  },
+  "provenance": "User-approved generated illustrations, retained as product source assets. Built-in image_gen; no external paid API call during publish."
+}
