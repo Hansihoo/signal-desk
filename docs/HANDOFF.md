@@ -1,5 +1,16 @@
 # Handoff
 
+## Latest update: readable DevOps wording, 2026-10-10
+
+User rejected middle-dot word/action lists. The current DevOps guide uses full action
+sentences, readable commas/conjunctions and labelled tool metadata. Writing guide and
+template contract persist this preference. New immutable r2 report/catalog/quality
+batch keeps the same report ID and unchanged source evidence dates and analysis.
+Local136tests, quality gate and6-width9browser records pass. Other41 current reports,
+prior138 editions, models, shared CSS and accepted v2 remain unchanged;139 editions total.
+Standalone HTML and static review regenerated with previous copies retained. Public
+deployment verification is pending. See [copy scope](DEVOPS_IMPLEMENTATION.2026-10-10.md).
+
 ## Latest work: practical DevOps guide and future study style, 2026-10-10
 
 User selected the local study-document style for future pages and supplied a13-topic practical brief.

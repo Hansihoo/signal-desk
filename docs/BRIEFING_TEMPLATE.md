@@ -1,5 +1,13 @@
 # Homepage and report contract
 
+## Readable Korean copy, 2026-10-10
+
+Do not join authored words or actions with the Korean middle dot. Use commas and
+natural conjunctions for parallel items. Explain actions with actors, objects and
+sequence instead of replacing the dot with spaces. Tool metadata uses explicitly
+labelled lines. Preserve source code, URLs and existing category identifiers.
+See [the writing rule](RESEARCH_WRITING_GUIDE.md).
+
 ## Topic menu disclosure, 2026-10-10
 
 The shared 분야 menu initially shows only the top-level fields and their immediate

@@ -64,7 +64,7 @@ def _catalog(catalog, numbers):
     fields = sorted({t['field'] for t in catalog['tools']})
     options = ''.join('<option>%s</option>' % esc(f) for f in fields)
     result = ['''<div class="catalog-controls" hidden>
-      <label>기술 검색<input id="tool-search" type="search" placeholder="이름·기능·상황 검색"></label>
+      <label>기술 검색<input id="tool-search" type="search" placeholder="이름, 기능 또는 상황 검색"></label>
       <label>분야<select id="tool-field"><option value="">전체</option>%s</select></label>
       <label>추천 범위<select id="tool-tier"><option value="">전체</option><option>필수 기반</option><option>상황별 권장</option><option>대규모 환경에서 고려</option></select></label>
       <button id="tool-reset" type="button">초기화</button></div>
@@ -74,12 +74,12 @@ def _catalog(catalog, numbers):
     for t in catalog['tools']:
         search = ' '.join(str(v) for v in t.values()).lower()
         result.append('<article class="tool" data-tool="%s" data-field="%s" data-tier="%s" data-search="%s">' % tuple(esc(v) for v in (t['id'],t['field'],t['tier'],search)))
-        result.append('<p class="tool-meta">%s · %s · %s</p><h3>%s</h3><p>%s</p><p class="tool-fit"><strong>도입 조건</strong> %s</p><label class="tool-select" hidden><input type="checkbox" value="%s">비교 선택</label>' % tuple(esc(v) for v in (t['field'],t['tier'],t['kind'],t['name'],t['purpose'],t['fit'],t['id'])))
+        result.append('<p class="tool-meta">분야: %s<br>추천 범위: %s<br>유형: %s</p><h3>%s</h3><p>%s</p><p class="tool-fit"><strong>도입 조건</strong> %s</p><label class="tool-select" hidden><input type="checkbox" value="%s">비교 선택</label>' % tuple(esc(v) for v in (t['field'],t['tier'],t['kind'],t['name'],t['purpose'],t['fit'],t['id'])))
         result.append('<details><summary>상세 정보</summary><dl>')
-        for label,key in [('활용 예시','use'),('대신 구현하는 기능','reuse'),('기존 Jenkins에 추가할 가치','jenkins'),('주의사항·운영 비용','limits'),('대체 기술','alternatives'),('라이선스','license'),('유지보수 확인','maintenance')]:
+        for label,key in [('활용 예시','use'),('대신 구현하는 기능','reuse'),('기존 Jenkins에 추가할 가치','jenkins'),('주의사항과 운영 비용','limits'),('대체 기술','alternatives'),('라이선스','license'),('유지보수 확인','maintenance')]:
             result.append('<div><dt>%s</dt><dd>%s</dd></div>' % (label,esc(t[key])))
         result.append('</dl><p class="tool-links"><a href="%s">공식 문서 ↗</a><a href="%s">저장소 ↗</a><a href="%s">라이선스 ↗</a></p>%s</details></article>' % (esc(t['docs']),esc(t['repo']),esc(t['license_url']),_citations(t,numbers)))
-    result.append('</div><p id="tool-empty" hidden>검색 조건에 맞는 기술이 없습니다.</p><section id="tool-comparison" hidden><h3>선택한 기술 비교</h3><p>기능이 다른 도구는 대체 관계가 아닐 수 있습니다. 기존 Jenkins에서 필요한 역할을 기준으로 읽으십시오.</p><div class="study-table" tabindex="0" role="region" aria-label="선택한 기술 비교"><table><thead><tr><th scope="col">기술</th><th scope="col">기능·재사용</th><th scope="col">Jenkins 추가 가치</th><th scope="col">조건·주의사항</th><th scope="col">라이선스</th></tr></thead><tbody></tbody></table></div><button id="clear-comparison" type="button">비교 해제</button></section>')
+    result.append('</div><p id="tool-empty" hidden>검색 조건에 맞는 기술이 없습니다.</p><section id="tool-comparison" hidden><h3>선택한 기술 비교</h3><p>기능이 다른 도구는 대체 관계가 아닐 수 있습니다. 기존 Jenkins에서 필요한 역할을 기준으로 읽으십시오.</p><div class="study-table" tabindex="0" role="region" aria-label="선택한 기술 비교"><table><thead><tr><th scope="col">기술</th><th scope="col">기능과 재사용 범위</th><th scope="col">Jenkins 추가 가치</th><th scope="col">조건과 주의사항</th><th scope="col">라이선스</th></tr></thead><tbody></tbody></table></div><button id="clear-comparison" type="button">비교 해제</button></section>')
     return ''.join(result)
 
 
@@ -104,7 +104,7 @@ def render_study(report, prefix='', edition=None):
     shortnav = ''.join('<a data-section-link href="#chapter-%s">%s</a>' % (esc(id),label) for label,id in quick)
     toolbar = '<div class="study-toolbar"><div class="study-toolbar-inner"><a id="document-back" href="%sindex.html">← 리서치 목록</a><nav class="study-quick" aria-label="주요 목차">%s</nav><details id="document-menu"><summary>목차 <span id="document-current"></span><span aria-hidden="true">▾</span></summary><nav aria-label="문서 목차">%s</nav></details><button id="study-print" type="button">인쇄</button></div></div>' % (prefix,shortnav,nav)
     parts = [toolbar,'<article class="study-document" id="study-document">',
-        '<header class="study-title"><p class="study-eyebrow">%s</p><h1>%s</h1><p class="study-deck">%s</p><p class="study-byline">자료 확인 %s</p>%s</header>' % (esc(' / '.join(report['topic_path'])),esc(report['title']),esc(report['description']),esc(report['checked_on']),'<p class="study-notice">이전 기록 · %s차</p>' % edition if edition else '')]
+        '<header class="study-title"><p class="study-eyebrow">%s</p><h1>%s</h1><p class="study-deck">%s</p><p class="study-byline">자료 확인 %s</p>%s</header>' % (esc(' / '.join(report['topic_path']).replace('개발·운영','개발과 운영')),esc(report['title']),esc(report['description']),esc(report['checked_on']),'<p class="study-notice">이전 기록 (%s차)</p>' % edition if edition else '')]
     parts.append('<section id="summary" class="study-summary"><h2>요약</h2><p class="study-summary-deck">%s</p><dl>%s</dl></section>' % (esc(report['deck']),''.join('<div><dt>%s</dt><dd>%s %s</dd></div>' % (esc(p['label']),esc(p['text']),_citations(p,numbers)) for p in report['summary'])))
     parts.append('<section class="study-outline" id="outline"><h2>목차</h2><ol>%s</ol></section>' % ''.join('<li><a href="#chapter-%s"><span>%02d</span><b>%s</b></a></li>' % (esc(ch['id']),i,esc(ch['title'].split('. ',1)[-1])) for i,ch in enumerate(chapters,1)))
     for index,ch in enumerate(chapters,1):

@@ -12,7 +12,14 @@ ROOT = Path(__file__).resolve().parents[1]
 
 class StudyReportTests(unittest.TestCase):
     def setUp(self):
-        self.report = json.loads((ROOT/'config/devops_implementation.2026-10-10.json').read_text(encoding='utf-8'))['reports'][0]
+        manifest = json.loads((ROOT/'config/research_publication.json').read_text(encoding='utf-8'))
+        for batch in reversed(manifest['batches']):
+            reports = json.loads((ROOT/'config'/batch['input']).read_text(encoding='utf-8'))['reports']
+            current = next((r for r in reports if r['id'] == 'devops-implementation-guide'), None)
+            if current:
+                self.report = current
+                break
+        self.catalog_file = json.loads((ROOT/'config/study_pages.json').read_text(encoding='utf-8'))['catalogs'][self.report['id']]
 
     def test_existing_report_ids_keep_their_layout_and_future_reports_use_study(self):
         legacy = json.loads((ROOT/'config/study_pages.json').read_text(encoding='utf-8'))['legacy_report_ids']
@@ -41,9 +48,9 @@ class StudyReportTests(unittest.TestCase):
         self.assertIn('id="data"', rendered)
 
     def test_catalog_copy_drift_and_unsafe_links_are_rejected(self):
-        original = json.loads((ROOT/'config/devops_tools.2026-10-10.json').read_text(encoding='utf-8'))
+        original = json.loads((ROOT/'config'/self.catalog_file).read_text(encoding='utf-8'))
         with patch('housing_watch.study_report.json.loads', return_value=original):
-            with patch('housing_watch.study_report.settings', return_value={'catalogs':{self.report['id']:'devops_tools.2026-10-10.json'}}):
+            with patch('housing_watch.study_report.settings', return_value={'catalogs':{self.report['id']:self.catalog_file}}):
                 altered = copy.deepcopy(original)
                 altered['tools'][0]['reuse'] = 'unreviewed new factual copy'
                 with patch('housing_watch.study_report.json.loads', return_value=altered):
