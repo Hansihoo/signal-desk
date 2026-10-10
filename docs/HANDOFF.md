@@ -1,5 +1,17 @@
 # Handoff
 
+## Latest work: two-level topic menu, 2026-10-10
+
+The shared 분야 menu now initially shows only top-level fields and their immediate
+categories. Deeper branches start closed; +/− or Enter/Space on the summary toggles
+them. Category text keeps its original board/report link and page count. Source
+505480f deployed in [Pages38022228181](https://github.com/Hansihoo/signal-desk/actions/runs/38022228181),2m6s.
+131 local tests, CI tests/brief-review and24 local+24 public browser checks across
+6page types at320/390/1440px pass; public mobile PNG inspected. Public41 reports,
+137 saved editions,14 model originals, publication order and featured report remain
+exact. Receipts/captures retained in the owning thread ledger. See the topic menu
+contract in [BRIEFING_TEMPLATE.md](BRIEFING_TEMPLATE.md).
+
 ## Latest work: AI hackathons, 2026-10-10
 
 New report `ai-hackathons-2026` is live under 지원·참여/해커톤·공모전. [Read the page](https://hansihoo.github.io/signal-desk/preview/ai-hackathons-2026.html). It compares20 officially sourced events (18past schedules,2future domestic announcements),35source pages,10chapters and a beginner4-week plan. The complete conceptual quiz app preserves R1/R2→question→evidence→JSON→feedback and R3 adaptation. See [scope, gaps and review](AI_HACKATHONS.2026-10-10.md).
