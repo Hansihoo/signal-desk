@@ -2,9 +2,9 @@
 
 ## Latest work: AI hackathons, 2026-10-10
 
-New report `ai-hackathons-2026` is locally published under 지원·참여/해커톤·공모전. It compares20 officially sourced events (18past schedules,2future domestic announcements),35source pages,10chapters and a beginner4-week plan. The complete conceptual quiz app preserves R1/R2→question→evidence→JSON→feedback and R3 adaptation. See [scope, gaps and review](AI_HACKATHONS.2026-10-10.md).
+New report `ai-hackathons-2026` is live under 지원·참여/해커톤·공모전. [Read the page](https://hansihoo.github.io/signal-desk/preview/ai-hackathons-2026.html). It compares20 officially sourced events (18past schedules,2future domestic announcements),35source pages,10chapters and a beginner4-week plan. The complete conceptual quiz app preserves R1/R2→question→evidence→JSON→feedback and R3 adaptation. See [scope, gaps and review](AI_HACKATHONS.2026-10-10.md).
 
-New immutable config/ai_hackathons.2026-10-10.json and matching quality sidecar bind question/evidence/claim locations and separate same-agent first-screen/body reviews. No independent reviewer, human learning trial, app installation/performance measurement, collector, schedule or paid generation. research-check/audit6gated32legacy/129tests,202HTML11198refs,preservation8,brief/desk/review pass; mobile/public verification in progress. Existing37reports/127editions,14model originals,publication order and CSS remain exact; local38/128.
+The immutable input and quality sidecar bind question/evidence/claim locations and separate same-agent first-screen/body reviews. No independent reviewer, human learning trial, app installation/performance measurement, collector, schedule or paid generation. Sourceb7626f1 deployed in [Pages38019904643](https://github.com/Hansihoo/signal-desk/actions/runs/38019904643),1m50s. Integrated131tests, research-check/audit9gated32legacy,211localHTML12409refs,3-width12browser checks,brief/desk/review/PNGs pass. Public8preservation/390px4browser checks and inspected PNGs pass:41reports/137editions,prior40reports/136editions/model originals/order/CSS exact. Separate remote model work was preserved; it was not substantively re-reviewed in this task. Originals/review receipts are retained in the owning thread ledger.
 
 ## Previous work: AI practical guides, 2026-10-09
 
