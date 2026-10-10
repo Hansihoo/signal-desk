@@ -31,7 +31,16 @@ brief PNG를 직접 읽었다. 캡처 전 이미지 decode와 화면 그리기�
 정적 검토본은 크기 제한 때문에 시스템 글꼴과 그림 대체 설명을 사용하며 이를
 화면에 명시한다. 실제 그림은 결과 HTML에서 별도로 검증했다. 다른41보고서와
 이전140개 판, 모델 원문, 공통 CSS, 기존 v2가 보존됐고 총141개 판이다.
-공개 반영 결과는 별도로 기록한다.
+공개 반영: source `8930b80ef9111a92567c6b0606896fe5b26dd88f`의
+[Pages38054626540](https://github.com/Hansihoo/signal-desk/actions/runs/38054626540)이
+2026-10-10T13:11:19Z에 성공했다. CI138개 테스트와 주거 브리핑 review도 통과했다.
+[공개 페이지](https://hansihoo.github.io/signal-desk/preview/devops-implementation-guide.html?v=visual-r4)의
+다른41편, 이전140판, 모델 원문, 발행 순서, 공통 CSS, 새 원고와 HTML 등
+보존10항목이 통과했다. 총42보고서와141판이다. 실제 공개1440/390px와
+스크립트 비활성3기록에서 그림4장, 핵심39항목, 확대와 닫기, 초점 및 읽기 위치
+복귀를 확인했다. 공개 PC 그림과 모바일 확대 PNG도 직접 읽었다.
+`reports/devops-2026-10-10/visual-completion.json`에 발행과 검증 결과를 묶었다.
+사람 독자 시험과 C++/Jenkins 실행, 새 기술 원문 수집은 수행하지 않았다.
 
 ## 대화형 요약 이미지 시안
 
