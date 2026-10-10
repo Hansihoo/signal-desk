@@ -1,5 +1,17 @@
 # Homepage and report contract
 
+## Opening order for new shared pages, 2026-10-10
+
+Only the opening order is fixed: title, a brief statement of the document's purpose,
+then `요약`. The purpose explains why the document was made and which reader task it
+supports. The summary states its key findings and conclusions rather than repeating
+the introduction. After the summary, choose the outline, prose, tables, diagrams,
+examples and other sections to suit the topic. The DevOps chapter count and catalog
+are examples, not a mandatory body template. This supersedes any earlier suggestion
+that every new document must use the same outline and body order. Existing pages
+are not retrospectively rewritten by this authoring rule. Evidence and review
+requirements continue to apply. See [the writing rule](RESEARCH_WRITING_GUIDE.md).
+
 ## Readable Korean copy, 2026-10-10
 
 Do not join authored words or actions with the Korean middle dot. Use commas and
@@ -339,7 +351,10 @@ nontechnical subjects need only the detail that helps interpretation.
 사용자 “앞으로는 이러한 스타일로” 요청을 실제 생성기에 적용했다. `config/study_pages.json`의
 default_layout=study가 새 보고서 ID에 적용된다. 현재까지의41개 ID는 legacy_report_ids로 보존한다.
 기존 보고서의 새 판도 같은 ID면 기존 형식이며, 사용자가 별도로 변경을 요청할 때만 이행한다.
-`housing_watch/study_report.py/.css/.js`가 공통 연구 sidebar 안에 요약·목차·전체 설명을 만든다.
+`housing_watch/study_report.py/.css/.js`가 공통 연구 sidebar 안에 문서를 만든다.
+현재 기본 출력은 작성 목적을 설명하는 소개, 요약, 목차와 전체 설명이다.
+작성 규칙으로 고정하는 부분은 작성 목적 다음에 요약이 오는 앞부분이며,
+이후 목차와 본문 구성은 주제별로 조정할 수 있다.
 문서 목차/현재 장/뒤로가기는 상단, 좁은 화면은 접힘 메뉴다. 필수 설명은 본문에 유지하고
 코드·세부 도구 정보·선택형 참고만 접는다. 기존 수치·표·출처 계약을 유지한다.
 

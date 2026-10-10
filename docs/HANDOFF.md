@@ -1,5 +1,13 @@
 # Handoff
 
+## Latest authoring rule: purpose then summary, 2026-10-10
+
+New shared pages begin with the title, a short statement explaining why the document
+was made, then `요약`. Only that opening order is fixed; the outline and subsequent
+body sections should suit the topic and reader. AGENTS.md, RESEARCH_WRITING_GUIDE.md
+and BRIEFING_TEMPLATE.md record the same rule. This is a documentation update;
+it does not revise existing reports or change renderer/data contracts.
+
 ## Latest update: readable DevOps wording, 2026-10-10
 
 User rejected middle-dot word/action lists. The current DevOps guide uses full action
