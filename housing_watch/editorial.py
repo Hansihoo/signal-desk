@@ -77,13 +77,18 @@ def _tree(reports, prefix, active=None, has_model_ledger=False, model_page_count
                         model_links.append('<li><a href="%sai-model-guides.html"%s><span class="tree-label">모델별 가이드·평가 자료</span><small>%d</small></a></li>' % (
                             prefix, ' aria-current="page"' if active == "ai-model-guides" else "", guide_count))
                     child_links = "".join(model_links) + child_links
-                children_html = '<ul class="tree-children">%s</ul>' % child_links if child_links else ""
                 page_count = len(items)
                 if label == "AI 모델·API":
                     page_count += int(has_model_ledger) + model_page_count
-                links.append('<li><a href="%s"%s><span class="tree-label">%s</span> <small>%d</small></a>%s</li>' % (
+                link = '<a href="%s"%s><span class="tree-label">%s</span> <small>%d</small></a>' % (
                     _escape(target), ' aria-current="page"' if any(item["id"] == active for item in items) else "",
-                    _escape(label), page_count, children_html))
+                    _escape(label), page_count)
+                # Keep levels one and two visible. Deeper topics (including
+                # model links) require an explicit disclosure at each branch.
+                if child_links:
+                    link = '<details class="tree-group tree-subgroup"><summary aria-label="%s 하위 분야 펼치기·접기">%s</summary><ul class="tree-children">%s</ul></details>' % (
+                        _escape(label), link, child_links)
+                links.append('<li>%s</li>' % link)
             return "".join(links)
 
         links = branch(categories, [name])

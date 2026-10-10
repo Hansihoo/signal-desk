@@ -1,5 +1,15 @@
 # Homepage and report contract
 
+## Topic menu disclosure, 2026-10-10
+
+The shared 분야 menu initially shows only the top-level fields and their immediate
+categories. Each category with deeper topics uses a closed native details/summary;
+its + control (or Enter/Space on the summary) reveals its children. Nested branches
+also start closed. Category text remains a separate working board/report link,
+with existing counts, current-page markers and model comparison/library links.
+An open ancestor must not change a closed descendant's + indicator to −.
+This applies to the main, reports, history, business and native model views.
+
 ## Unified typography, 2026-10-09
 
 Use the locally packaged full Pretendard Variable v1.3.9 face for Korean, Latin,

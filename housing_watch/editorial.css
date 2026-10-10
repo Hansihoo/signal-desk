@@ -187,7 +187,10 @@ details[open] .when-closed {display:none}
 .tree-group {border:0;padding:0}
 .tree-group summary {cursor:pointer;font-weight:600;color:#3d4449;font-size:14px;padding:.15em 0;display:flex;align-items:baseline;gap:.5em;line-height:1.6;letter-spacing:0;text-transform:none}
 .tree-group summary:after {content:"+";color:#7f888f}
-.tree-group[open] summary:after {content:"−"}
+.tree-group[open] > summary:after {content:"−"}
+.tree-subgroup > summary {font-weight:400;align-items:center}
+.tree-subgroup > summary:after {flex:none;min-width:28px;text-align:center}
+#menu .tree-subgroup > summary > a {flex:1;min-width:0}
 .tree-group summary small {font-family:var(--desk-font);font-weight:400;color:#7f888f;margin-left:auto;flex:none}
 #menu .tree-group ul {list-style:none;padding:.25em 0 0 .65em;margin:0;letter-spacing:0}
 #menu .tree-group li {padding:0;font-size:14px;line-height:1.6}
