@@ -16,6 +16,7 @@ reports/*.md
 reports/**/*.png
 reports/research-teaching-2026-10-09/
 reports/ai-writing-games-2026-10-09/
+reports/hackathons-2026-10-10/
 !reports/.gitkeep
 site/*.html
 site/*.png

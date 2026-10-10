@@ -1,6 +1,12 @@
 # Handoff
 
-## Latest work: AI practical guides, 2026-10-09
+## Latest work: AI hackathons, 2026-10-10
+
+New report `ai-hackathons-2026` is locally published under 지원·참여/해커톤·공모전. It compares20 officially sourced events (18past schedules,2future domestic announcements),35source pages,10chapters and a beginner4-week plan. The complete conceptual quiz app preserves R1/R2→question→evidence→JSON→feedback and R3 adaptation. See [scope, gaps and review](AI_HACKATHONS.2026-10-10.md).
+
+New immutable config/ai_hackathons.2026-10-10.json and matching quality sidecar bind question/evidence/claim locations and separate same-agent first-screen/body reviews. No independent reviewer, human learning trial, app installation/performance measurement, collector, schedule or paid generation. research-check/audit6gated32legacy/129tests,202HTML11198refs,preservation8,brief/desk/review pass; mobile/public verification in progress. Existing37reports/127editions,14model originals,publication order and CSS remain exact; local38/128.
+
+## Previous work: AI practical guides, 2026-10-09
 
 Three new pages are live under 개발 동향/AI 활용. Source651e300 deployed in [Pages37920945741](https://github.com/Hansihoo/signal-desk/actions/runs/37920945741),2m18s; public37reports/127editions, preservation8/actual390px10/PNG pass. IDs: practical-ai-workflows, ai-assisted-writing, ai-game-creation. See [scope and evidence](AI_PRACTICAL_GUIDES.2026-10-09.md). Originals/review artifacts retained in the owning thread ledger; no actual game/model execution or human learning trial.
 

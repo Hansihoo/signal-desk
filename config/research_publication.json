@@ -41,7 +41,8 @@
     "model-reading-windows-codex-max-guide",
     "practical-ai-workflows",
     "ai-assisted-writing",
-    "ai-game-creation"
+    "ai-game-creation",
+    "ai-hackathons-2026"
   ],
   "batches": [
     {
@@ -118,6 +119,11 @@
       "id": "ai-model-guides-release-2026-10-10",
       "input": "ai_model_guides_release.2026-10-10.json",
       "quality": "ai_model_guides_release.2026-10-10.quality.json"
+    },
+    {
+      "id": "ai-hackathons-2026-10-10",
+      "input": "ai_hackathons.2026-10-10.json",
+      "quality": "ai_hackathons.2026-10-10.quality.json"
     }
   ]
 }
