@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "id": "qwen-image-2-1-turbo-specs",
+      "model": "Qwen-Image-2.1-Turbo",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/Qwen/Qwen-Image-2.1-Turbo",
+      "checked_on": "2026-10-11",
+      "fields": {
+        "kind": "공식 이미지 모델 사양",
+        "suite": "Qwen 공식 모델 카드",
+        "condition": "2026-10-09 공개. 시각 생성 구조 7B, 저장된 8단계 일정. 로컬과 API 제공을 구분한다.",
+        "access": "API / 내려받아 실행",
+        "status": "공개",
+        "basis": "제공자 공식 모델 카드와 출시 기록",
+        "note": "텍스트와 이미지 입력, 이미지 생성과 편집. 로컬 ID Qwen/Qwen-Image-2.1-Turbo, API ID qwen-image-2.1-turbo. 7B는 시각 생성 부분이다. 1:1 권장 2048×2048. num_inference_steps만으로 저장 일정은 교체되지 않는다. Qwen Research License의 비상업 연구와 평가 목적 허용, 상업 목적 별도 라이선스 요구. GPU 시간과 전체 VRAM, 독립 벤치마크 미측정.",
+        "발표일": "2026-10-09",
+        "시각 생성 파라미터 B": 7,
+        "권장 생성 단계": 8,
+        "라이선스": "Qwen Research License",
+        "references": [
+          "https://github.com/QwenLM/Qwen-Image-2.1",
+          "https://huggingface.co/Qwen/Qwen-Image-2.1-Turbo",
+          "https://huggingface.co/Qwen/Qwen-Image-2.1-Turbo/raw/main/LICENSE",
+          "https://github.com/huggingface/diffusers/pull/14950"
+        ]
+      },
+      "candidate_ids": []
+    },
+    {
+      "id": "qwen-image-2-1-turbo-price-sg",
+      "model": "Qwen-Image-2.1-Turbo",
+      "provider": "Qwen",
+      "source_url": "https://www.alibabacloud.com/help/en/model-studio/qwen-image-2-1-turbo",
+      "checked_on": "2026-10-11",
+      "fields": {
+        "kind": "공식 이미지 API 가격",
+        "suite": "Alibaba Cloud Model Studio 기본 요금",
+        "condition": "싱가포르. International. USD / 생성 이미지 한 장. 프로모션 제외. 공식 모델 정보 2026-10-11 갱신.",
+        "access": "API",
+        "status": "공개",
+        "basis": "제공자 공식 요금",
+        "note": "성공 생성 출력 과금. 품질 탈락 출력과 실패 요청은 구별한다. 전체 가격 안내는 실패 요청 무과금. 실제 계정 청구와 계약은 미확인. 입력 길이와 Context 미표기를 0으로 채우지 않는다.",
+        "출력 USD / 이미지": 0.016,
+        "리전": "싱가포르",
+        "references": [
+          "https://www.alibabacloud.com/help/en/model-studio/qwen-image-2-1-turbo",
+          "https://www.alibabacloud.com/help/en/model-studio/model-pricing"
+        ]
+      },
+      "candidate_ids": []
+    },
+    {
+      "id": "qwen-image-2-1-turbo-price-global",
+      "model": "Qwen-Image-2.1-Turbo",
+      "provider": "Qwen",
+      "source_url": "https://www.alibabacloud.com/help/en/model-studio/qwen-image-2-1-turbo",
+      "checked_on": "2026-10-11",
+      "fields": {
+        "kind": "공식 이미지 API 가격",
+        "suite": "Alibaba Cloud Model Studio 기본 요금",
+        "condition": "베이징, 미국 버지니아, 독일 프랑크푸르트, 일본 도쿄, 홍콩. Global (전체 가격 문서 기준). USD / 생성 이미지 한 장. 프로모션 제외. 공식 모델 정보 2026-10-11 갱신.",
+        "access": "API",
+        "status": "공개",
+        "basis": "제공자 공식 요금",
+        "note": "성공 생성 출력 과금. 품질 탈락 출력과 실패 요청은 구별한다. 전체 가격 안내는 실패 요청 무과금. 실제 계정 청구와 계약은 미확인. 입력 길이와 Context 미표기를 0으로 채우지 않는다.",
+        "출력 USD / 이미지": 0.014133,
+        "리전": "베이징, 미국 버지니아, 독일 프랑크푸르트, 일본 도쿄, 홍콩",
+        "references": [
+          "https://www.alibabacloud.com/help/en/model-studio/qwen-image-2-1-turbo",
+          "https://www.alibabacloud.com/help/en/model-studio/model-pricing"
+        ]
+      },
+      "candidate_ids": []
+    },
+    {
+      "id": "gemini-3-7-flash-lifecycle",
+      "model": "Gemini 3.7 Flash",
+      "provider": "Google",
+      "source_url": "https://ai.google.dev/gemini-api/docs/changelog",
+      "checked_on": "2026-10-11",
+      "fields": {
+        "kind": "공식 모델 제공 상태",
+        "suite": "Gemini API 수명주기",
+        "condition": "2026-10-08 발표. 2026-10-11 변경 이력과 종료 목록 확인. 기존 평가 관측은 보존.",
+        "access": "API",
+        "status": "Deprecated / 자동 연결",
+        "basis": "제공자 공식 변경 이력",
+        "note": "gemini-3.7-flash 요청이 gemini-3.8-flash로 자동 연결된다. Google은 모델 문자열 갱신을 안내한다. 종료일은 미발표. 과거 원 모델 평가를 현재 연결된 모델 결과로 해석하지 않는다.",
+        "기존 모델 ID": "gemini-3.7-flash",
+        "자동 연결 모델 ID": "gemini-3.8-flash",
+        "발표일": "2026-10-08",
+        "종료일": "미발표",
+        "references": [
+          "https://ai.google.dev/gemini-api/docs/changelog",
+          "https://ai.google.dev/gemini-api/docs/deprecations"
+        ]
+      },
+      "candidate_ids": []
+    },
+    {
+      "id": "gemini-3-5-flash-lifecycle",
+      "model": "Gemini 3.5 Flash",
+      "provider": "Google",
+      "source_url": "https://ai.google.dev/gemini-api/docs/changelog",
+      "checked_on": "2026-10-11",
+      "fields": {
+        "kind": "공식 모델 제공 상태",
+        "suite": "Gemini API 수명주기",
+        "condition": "2026-10-08 발표. 2026-10-11 변경 이력과 종료 목록 확인. 기존 평가 관측은 보존.",
+        "access": "API",
+        "status": "Deprecated / 자동 연결",
+        "basis": "제공자 공식 변경 이력",
+        "note": "gemini-3.5-flash 요청이 gemini-3.6-flash로 자동 연결된다. Google은 모델 문자열 갱신을 안내한다. 종료일은 미발표. 과거 원 모델 평가를 현재 연결된 모델 결과로 해석하지 않는다.",
+        "기존 모델 ID": "gemini-3.5-flash",
+        "자동 연결 모델 ID": "gemini-3.6-flash",
+        "발표일": "2026-10-08",
+        "종료일": "미발표",
+        "references": [
+          "https://ai.google.dev/gemini-api/docs/changelog",
+          "https://ai.google.dev/gemini-api/docs/deprecations"
+        ]
+      },
+      "candidate_ids": []
+    }
+  ]
+}

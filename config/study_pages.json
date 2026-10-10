@@ -42,7 +42,8 @@
     "practical-ai-workflows",
     "ai-assisted-writing",
     "ai-game-creation",
-    "ai-hackathons-2026"
+    "ai-hackathons-2026",
+    "qwen-image-2-1-turbo-model-guide"
   ],
   "catalogs": {
     "devops-implementation-guide": "devops_tools.2026-10-10.r4.json"
