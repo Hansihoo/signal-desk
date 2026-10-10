@@ -836,3 +836,14 @@ pass. Public main/report tabs and the offline selectable review are retained.
 # 2026-10-09 AI 활용·집필·게임 제작의 새 연구 페이지
 
 Theo requested key answers first and three separate pages in the existing research site. New immutable batch `ai-practical-guides-2026-10-09` binds `config/ai_practical_guides.2026-10-09.json` and its `.quality.json`. IDs: practical-ai-workflows, ai-assisted-writing, ai-game-creation; path: 개발 동향/AI 활용. Read [authoring and checks](AI_PRACTICAL_GUIDES.2026-10-09.md). Local37reports/127editions preserve prior34reports/124editions/model14/order/CSS exactly. Independent first-screen/body repairs and research-check pass; audit5gated/32legacy.129tests,200HTML/10827local references,30 actual browser checks across3widths, brief/desk/review/PNG pass. Raw56/57 retained; CoAuthorSSL/GDELT429/favicon404 separate. Public source651e300/Pages37920945741 success; preservation8/mobile10/PNG pass. Conceptual examples, no tool installations/game execution/human reader trial.
+
+## 2026-10-11 model publication
+
+Qwen-Image-2.1-Turbo is published with official9October release/8-step schedule,
+product-image editing example, regional per-image prices and research-weight
+license conditions. Gemini3.7/3.5 automatic routing is accumulated in2 separate
+reviewed observations; older benchmark rows remain intact. New immutable guide
+and quality plus5fact inputs are registered. source7b497f3/Pages38084103110 succeeded.
+Public43reports/142editions,802observations/804revisions,Theo14 and library18 verified
+with CI138tests,12preservation and22live browser checks. Old42/141/797/799 preserved.
+[Actual review, limits and operational receipts](AI_MODEL_REVIEW.2026-10-11.md).

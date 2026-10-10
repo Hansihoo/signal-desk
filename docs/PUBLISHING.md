@@ -128,3 +128,13 @@ References: [Pages workflows](https://docs.github.com/en/pages/getting-started-w
 ## Model documents and reviewed facts
 
 As requested on2026-10-08, the daily source schedule moved to05:00 Asia/Seoul. `publish --collect` imports complete model documents and shared assets, along with the accumulating model ledger. New in-scope Theo catalog documents create native library entries and isolated interactive document pages automatically. Full SQLite snapshots preserve model document and observation revisions. Reviewed official additions deploy through immutable config/ai_model_publication.json batches; new researched model reports use the existing research publication manifest. The separate local Codex daily05:00 heartbeat creates new detailed reports after official-source review and is authorized to commit/push only related Signal Desk model changes. See [scope and controls](AI_MODEL_RESEARCH.md).
+
+## 2026-10-11 reviewed model addition
+
+Source7b497f3 and [Pages38084103110](https://github.com/Hansihoo/signal-desk/actions/runs/38084103110)
+published Qwen-Image-2.1-Turbo and5 official comparison observations. CI138tests and
+housing review passed. Public43reports/142editions,802observations/804revisions,
+Theo14documents and18model-library pages verified. Eight routes,12preservation
+checks and22actual browser checks passed; inspected PNGs retained outside Git.
+The Qwen ID explicitly uses existing model-guide Editorial while the general study
+default is preserved. [Evidence, limits and failed-check history](AI_MODEL_REVIEW.2026-10-11.md).

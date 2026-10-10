@@ -122,3 +122,37 @@ brief와 summary desk는 생성했고 PNG가 있다. 주거 review는11Pass/1Fai
   reports/ai-models-oct11-local에 두며 DB/HTML/PNG/raw는 소스에 넣지 않는다.
 - 최종 원격 main과0/0 상태이며 다른 사용자의 미커밋 변경은 없었다.
   생성물이 포함되지 않는 정확한10개 관련 입력/문서/레이아웃 설정만 커밋한다.
+
+### 공개 발행 영수증
+
+- 소스7b497f369bd5be38569f8452ea5ef6f0173062ff를 origin main에 일반 push했다.
+  [Pages Actions38084103110](https://github.com/Hansihoo/signal-desk/actions/runs/38084103110)
+  성공:2026-10-10T20:31:46Z 생성,20:33:57Z 완료 상태 확인.
+  한국시간11일05:31~05:33이며2분11초다. 클라우드138시험19.670초,
+  수집과 기존 상태 복원, 주거review, 누적 snapshot 저장과 배포가 성공했다.
+  AI125건 warnings0, 일반 뉴스65건 warnings1은 별도 범위다.
+- 공개 JSON은2026-10-10T20:34:48.620054+00:00에HTTP200이었다.
+  SHA-256:1b1aff174b6dc140629f3a15502eea7997b5d849cb125d94f6cf7e5486abbca4.
+  공개43보고서/142판,802관측/804판,Theo14원문,모델 자료18페이지다.
+  기존42현재 글과141이전 문서,797관측과799이전 관측 판은 정확히 보존했다.
+  새 가이드와5검토 행, 발행 순서도 입력과 같다.
+- 8주소HTTP200을 포함한12보존 검사를 확인했다.
+  CSS의 원시 바이트 비교는 처음 실패했다. 로컬 Windows3018개CRLF와
+  배포 Linux LF 차이뿐임을 실제 비교했고, 줄 끝 정규화 SHA-256
+  7dc84ad4529b1b13c8c5415f9366f66770e08c1c71056159d8a0261fb3cb448d가 같다.
+  원시 불일치 사실과 원인을 public-preservation.json에 남긴다.
+- 실제 공개 브라우저22검사/페이지 오류0: 새 본문4폭, 모델 목록18/공식4,
+  정식/preview 비교표13공식 행, 검색/개발사/초기화/키보드/CSV/출처/확인일과
+  기존3가이드, 원본 표의5필터와 팝업/빈 결과/선택 결과/Escape를 통과했다.
+  새 가이드390/1440px와 공개 목록/비교표PNG도 눈으로 확인했다.
+- 필요한 HTTP 응답, raw 수집 원문, Actions 로그와 PNG를 ignored 경로에
+  보존했다. 공개 검증은 reports/ai-models-oct11-live,
+  로컬 검증은 reports/ai-models-oct11-local이다.
+  일회성 테스트 DB와 브라우저 프로필은 owned scratch 종료 후 정리했다.
+  영구 결과를 임시 cleanup 대상으로 등록하지 않았다.
+- 모델 설치/추론, 계정별 이용과 계약, 실제 청구, 사람의 독해 시험은 미실시다.
+  자동 배포 성공이나 agent Pass를 해당 실행의 증거로 확대하지 않는다.
+
+공개 페이지:
+[제품 사진 편집과 사용 비용](https://hansihoo.github.io/signal-desk/preview/qwen-image-2-1-turbo-model-guide.html),
+[누적 모델 비교표](https://hansihoo.github.io/signal-desk/preview/ai-models.html).
