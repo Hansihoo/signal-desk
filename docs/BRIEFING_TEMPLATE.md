@@ -14,6 +14,12 @@ requirements continue to apply. See [the writing rule](RESEARCH_WRITING_GUIDE.md
 
 ## Readable Korean copy, 2026-10-10
 
+Narrative prose explains the situation, the reason a problem occurs and how the
+proposed method works. Do not substitute repeated instructions or change only the
+sentence endings. Define unfamiliar terms where first needed and use natural formal
+Korean prose. Code, agent request examples and concise table labels retain their
+functional format. The rejected DevOps r2 prose is not an approved writing example.
+
 Do not join authored words or actions with the Korean middle dot. Use commas and
 natural conjunctions for parallel items. Explain actions with actors, objects and
 sequence instead of replacing the dot with spaces. Tool metadata uses explicitly

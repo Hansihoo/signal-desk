@@ -135,6 +135,11 @@
       "id": "devops-implementation-copy-2026-10-10",
       "input": "devops_implementation.2026-10-10.r2.json",
       "quality": "devops_implementation.2026-10-10.r2.quality.json"
+    },
+    {
+      "id": "devops-implementation-prose-2026-10-10",
+      "input": "devops_implementation.2026-10-10.r3.json",
+      "quality": "devops_implementation.2026-10-10.r3.quality.json"
     }
   ]
 }

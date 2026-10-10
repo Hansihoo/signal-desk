@@ -1,5 +1,17 @@
 # Handoff
 
+## Latest revision: DevOps explanatory prose, 2026-10-10
+
+User rejected r2's awkward instruction-like prose and requested a rewrite. Immutable
+r3 rewrites purpose/summary, all13chapters,15tool descriptions and12problem cases to
+explain the situation, reason and method. Prerequisites are defined where needed.
+Code blocks and comparison tables remain exact;69source evidence records, acquisition
+dates and analysis are retained. Claims follow the revised summary. Same-agent
+separate review phases, no independent review, human trial or C++/Jenkins execution.
+Local136tests/quality gate/6-width9browser/offline4/link checks pass. Chapter lead
+uppercase/wide tracking inheritance was corrected; final checks and screenshots pass.
+Public deployment verification is pending. See DEVOPS_IMPLEMENTATION.2026-10-10.md.
+
 ## Latest authoring rule: purpose then summary, 2026-10-10
 
 New shared pages begin with the title, a short statement explaining why the document

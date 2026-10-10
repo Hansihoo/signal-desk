@@ -1,5 +1,5 @@
 /* User-selected DevOps study document. Scoped to new study pages. */
-.study-reader .study-title p{letter-spacing:normal;text-transform:none}
+.study-reader .study-title p,.study-reader .chapter-lead{letter-spacing:normal;text-transform:none}
 .study-html{scroll-padding-top:0;scroll-behavior:auto}
 body.study-page{--study-ink:#25233b;--study-muted:#6b6c83;--study-accent:#6c50b1;--study-line:#dedbe9;color:var(--study-ink)}
 .study-page #main>.inner{padding-left:0;padding-right:0}.study-page #header,.study-page .page-footer{margin-left:34px;margin-right:34px}.study-page #header{border-bottom-color:var(--study-line);padding-top:22px}.study-page #header .menu-toggle{color:var(--study-accent)}
