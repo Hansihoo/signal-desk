@@ -11,7 +11,7 @@ Top TOC and history return remain separate from the research sidebar. See [scope
 Local42reports/138editions preserve prior41/137/models/shared CSS/acceptedv2 exactly.136tests, quality1/audit10gated32legacy,
 212HTML/13086references,6-width9actual browser records plus4offline/static-review records,brief/desk/review/PNGs pass.
 Reviews are separate phases by the same agent; C++/Jenkins execution, independent review and human reader trials unperformed.
-No collector/automation/paid generation changes. Public deployment verification is pending.
+No collector/automation/paid generation changes. sourceb808091 deployed in [Pages38044404452](https://github.com/Hansihoo/signal-desk/actions/runs/38044404452): CI136tests/collection/review/save/deploy success. Public10preservation checks and6-width9actual browser records/PNGs pass;42reports/138editions, prior41/137/model14/order/CSS/guide exact. General news warning1 is separate. Retained outputs include standalone HTML and a script-disabled/system-font selectable review.
 
 ## Previous work: two-level topic menu, 2026-10-10
 

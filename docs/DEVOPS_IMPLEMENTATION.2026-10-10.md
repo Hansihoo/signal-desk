@@ -90,3 +90,21 @@ PC/모바일 첫 화면·흐름·비교표와 housing brief/desk PNG를 직접 �
 도구2MiB 입력 제한으로 내장 웹글꼴만 뺀 파생 입력을 사용했고 실제 결과/파생 해시는 manifest에 남겼다.
 검토본의 기능을 실제 검색/필터/목차 검증으로 취급하지 않는다. 스레드 등록 경로는 그대로 보존한다.
 공개 배포와 공개 보존 검증은 다음 절에 완료 상태를 기록한다.
+
+
+## 공개 반영 완료
+
+source b808091 / [Pages38044404452](https://github.com/Hansihoo/signal-desk/actions/runs/38044404452),
+2026-10-10T10:17:48Z 시작·10:19:41Z 완료 상태 success. CI136tests, 공개 원문 수집/발행,
+housing review와 durable snapshot/Pages 배포가 성공했다. 일반 뉴스 warnings1은 기존 수집 영역의
+부분 경고이며 이 가이드69원문 확인이나 배포 실패로 합치지 않는다. 브라우저의 Linux DBus 로그는
+review PASS와 함께 남았으며 제품 사용자의 경고로 표시하지 않는다.
+
+공개 보존10항목:42보고서/138판, 새 원고 exact, 이전41보고서/137판, 모델14원문,
+기존 발행 상대순서·공통CSS·새 HTML이 로컬 검토본과 일치했다. CSS는 Windows/Linux 줄바꿈을
+정규화한 비교이며 로컬 이전 원본 바이트 해시도 별도 보존했다. 실제 공개 Edge6폭9기록의
+목차/복귀/검색/결합필터/비교/키보드/no-JS 읽기를 확인했다. 공개 PC/모바일 PNG도 직접 확인했다.
+
+주소: https://hansihoo.github.io/signal-desk/preview/devops-implementation-guide.html
+기존 로컬v2와 이전 시범, 공유용 단일 HTML, 정적 검토본, raw/품질/실패/성공 영수증은 등록 경로에
+계속 보존한다. 실제 C++·Jenkins 실행과 사람 독자 시험은 이 완료 범위에 포함하지 않는다.
