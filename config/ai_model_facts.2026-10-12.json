@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "id": "microsoft-decision-1-specs",
+      "model": "Microsoft-Decision-1",
+      "provider": "Microsoft",
+      "source_url": "https://ai.azure.com/catalog/models/Microsoft-Decision-1",
+      "checked_on": "2026-10-12",
+      "fields": {
+        "kind": "공식 판별 모델 사양",
+        "suite": "Microsoft Foundry 공식 모델 카드",
+        "condition": "2026-10-09 발표. 2026-10-12 현재 카드의 GA표기와 최초 public preview를 구분. 텍스트 고정 선택지 판별이며 생성형 코딩 평가와 별도.",
+        "access": "Microsoft Foundry API",
+        "status": "GA (현재 카드 표기)",
+        "context": 32768,
+        "basis": "제공자 공식 모델 카드와 배포 문서",
+        "note": "Qwen3.5-9B 추가 학습. 텍스트/JSONstate와choice/noul/score 질문, JSON선택과확률. 설명문 생성 없음. 가중치/라이선스/실제메모리와 한국어성능 미확인. GA 전환일 미확인. 요청model에는 사용자배포명, /providers/microsoft/v1/systemone 경로. 공급사35배P50을 코딩벤치마크열로 옮기지 않는다.",
+        "발표일": "2026-10-09",
+        "기반 모델": "Qwen3.5-9B",
+        "references": [
+          "https://commandline.microsoft.com/microsoft-decision-1-model-foundry/",
+          "https://learn.microsoft.com/en-us/azure/foundry/foundry-models/how-to/use-foundry-models-microsoft-decision",
+          "https://ai.azure.com/catalog/models/Microsoft-Decision-1",
+          "https://labs.ai.azure.com/innovations/microsoft-decision-1/",
+          "https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/introducing-microsoft-decision-1-in-microsoft-foundry-for-decision-and-classific/4562742"
+        ]
+      },
+      "candidate_ids": []
+    },
+    {
+      "id": "microsoft-decision-1-price",
+      "model": "Microsoft-Decision-1",
+      "provider": "Microsoft",
+      "source_url": "https://commandline.microsoft.com/microsoft-decision-1-model-foundry/",
+      "checked_on": "2026-10-12",
+      "fields": {
+        "kind": "공식 판별 API 가격",
+        "suite": "Microsoft 공식 출시 발표의 요금",
+        "condition": "2026-10-09 발표/2026-10-12 확인. USD / 100만 입력 또는 출력 토큰. 실제계약, 세금, 리전별접근과 청구 미확인.",
+        "access": "Microsoft Foundry API",
+        "status": "공식 공개 요금",
+        "basis": "제공자 공식 요금",
+        "note": "입력0.042USD/백만토큰, 출력무료. 출력0은 명시된 무료요율이며 미확인사양을0으로 채운 것이 아니다. 가상10,000건각600토큰과금=0.252USD; 실제 사용량과 청구, 실패요청 과금규칙은 미확인. 구독비용/초당속도/벤치마크비용 아님.",
+        "입력 USD / 100만 토큰": 0.042,
+        "출력 USD / 100만 토큰": 0,
+        "references": [
+          "https://commandline.microsoft.com/microsoft-decision-1-model-foundry/",
+          "https://learn.microsoft.com/en-us/azure/foundry/foundry-models/how-to/use-foundry-models-microsoft-decision"
+        ]
+      },
+      "candidate_ids": []
+    }
+  ]
+}
