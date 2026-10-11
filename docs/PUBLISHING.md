@@ -138,3 +138,14 @@ Theo14documents and18model-library pages verified. Eight routes,12preservation
 checks and22actual browser checks passed; inspected PNGs retained outside Git.
 The Qwen ID explicitly uses existing model-guide Editorial while the general study
 default is preserved. [Evidence, limits and failed-check history](AI_MODEL_REVIEW.2026-10-11.md).
+
+## 2026-10-12 reviewed decision-model addition
+
+Source78ce32c and [Pages38172786459](https://github.com/Hansihoo/signal-desk/actions/runs/38172786459)
+published Microsoft-Decision-1 and2 official specification/pricing observations.
+CI139tests and housing review passed. Public44reports/144editions,804observations/
+806revisions,Theo14documents and19model-library pages verified. Eight HTTP200
+routes,13preservation checks and22browser checks passed; inspected PNGs retained
+outside Git. Earlier Python connection failure and one original iframe mobile filter
+timeout remain recorded separately; subsequent PC5source filters passed.
+[Actual evidence and limits](AI_MODEL_REVIEW.2026-10-12.md).

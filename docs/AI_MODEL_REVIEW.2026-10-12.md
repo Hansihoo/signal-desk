@@ -102,3 +102,45 @@ preview 설명이 있음을 대조했다. 일반 텍스트 추출이 제목만 �
   보존한다. DB/생성JSON/HTML/PNG/개인정보는 소스에 넣지 않는다.
 
 공개 발행의 소스/Actions/HTTP/실제 공개 브라우저 영수증은 다음 절에 기록한다.
+
+## 공개 발행 영수증
+
+소스78ce32cb26c13012353b1c9dcef0e454ce8d1a7a를 origin main에 일반 push했다.
+[Pages38172786459](https://github.com/Hansihoo/signal-desk/actions/runs/38172786459)는
+2026-10-11T20:34:35Z 생성/20:36:49Z 성공 완료다. 한국시간12일05:34~05:36이며
+2분14초다. CI139시험이20.025초에 통과했고 누적 상태 복원, 공식 수집, 주거
+review, 누적 snapshot 저장과 Pages 배포가 모두 성공했다. AI124건/warnings0,
+일반 뉴스55건/warnings1은 별도 범위이며 뉴스 warning을 모델 오류로 세지 않는다.
+
+- 실제 공개8주소가 HTTP200이다. 공개 JSON 확인은2026-10-11T20:43:04.357Z,
+  SHA-256은4ece7aa5826f21ecb6fd381993aa6c987026bb05eb7eb3e4fd79a1e2e6bd6106이다.
+ 44보고서/144판,804관측/806판,Theo14원문이며 새 원고와2사실은 입력과 같다.
+- 공개13보존 검사가 모두 통과했다. 이전43현재 글/143문서/802관측/804판과
+  원문14, 발행 순서 및 CSS를 보존했다. CSS는 Windows CRLF와 Linux LF를
+  정규화한 SHA-256이7dc84ad4529b1b13c8c5415f9366f66770e08c1c71056159d8a0261fb3cb448d로
+  같다. 원시 바이트 동일이라고 주장하지 않는다.
+- 첫 Python 병렬 HTTP 검사는 일부 WinError10065 연결 실패로 종료됐다.
+  순차 재시도도 대기하여 해당 소유 세션을 중단했다. 브라우저의
+  APIRequestContext로8주소의 실제 응답 바이트/상태/해시를 확보했고 위
+  대조를 완료했다. 사이트 장애나 DNS/방화벽 원인으로 확정하지 않는다.
+- 공개 브라우저17핵심 검사와 PC1440px 원본 표5필터, 총22검사/페이지 오류0이다.
+  새320/390/768/1440px, 목록19/공식5, 비교표 공식15행, Decision2사실과 기존
+  Gemini 행, 검색/분야/개발사/키보드/CSV/출처/확인일/이전 판을 확인했다.
+  공개 새390/1440px, 목록/비교표 PNG도 눈으로 읽었다.
+- 앞선 공개 모바일390px 원본 iframe 추가검사에서는 tool 필터 이후 provider
+  전체선택 해제의 visible/enabled/stable 대기가30초로 끝났다. 실제 사용자
+  동작의 원인과 재현을 확정하지 않았다. 이후 원래 scripts/check_model_frames.cjs
+  계약의 PC1440px에서 원본5필터가 모두 통과했다. 로컬390px 원본5필터도
+  통과했지만 공개 원본 표의 모바일5필터 전체 통과로 확대하지 않는다.
+  이번에 새로 추가한 모델 비교표의 모바일 필터 검증과 구분한다.
+- 필요한 Actions/HTTP/검토와 PNG 근거는 ignored reports/ai-models-oct12-live,
+  로컬은 reports/ai-models-oct12-local에 보존했다. 원문은data/raw에 있다.
+  owned scratch의 일회성 DB/브라우저 프로필은 소비자 종료 후 정리했다.
+  이 근거 폴더와 실제 입력은 임시 cleanup 대상으로 등록하지 않는다.
+
+실제 API 호출, Azure 배포, 한국어 정확도와 지연 시간, 청구와 계약 및 사람
+독해 시험은 미실시다. GA 전환일과 모든 계정의 접근 가능 여부도 미확인이다.
+
+공개 [문의 배정 가이드](https://hansihoo.github.io/signal-desk/preview/microsoft-decision-1-model-guide.html),
+[누적 비교표](https://hansihoo.github.io/signal-desk/preview/ai-models.html),
+[모델 자료 목록](https://hansihoo.github.io/signal-desk/preview/ai-model-guides.html).
