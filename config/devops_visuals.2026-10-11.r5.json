@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "report_id": "devops-implementation-guide",
+  "report_hash": "adae768c0d49740a24645cf486879e82cd59e0c54264da70d0a032807aca3586",
+  "images": {
+    "summary": {
+      "asset": "devops-summary.2026-10-11.r5.png",
+      "sha256": "e3d8686e8f58d61427c32cf211bf2c6b94f2ce23272c6a57f64026662ea827af",
+      "width": 1536,
+      "height": 1024,
+      "caption": "검색 정렬 오류의 수정부터 운영 확인까지",
+      "alt": "코드를 수정하고 자동 검사한 뒤 시험 환경에서 확인해 배포하고 운영 오류를 다음 수정에 반영한다. 자동 작업과 사람의 판단을 함께 정한다."
+    },
+    "ci": {
+      "asset": "devops-cicd.2026-10-11.r5.png",
+      "sha256": "9666f75e15e9adcb4b86461704a84dee9c776704051f67b460d4c3f8b8df4e71",
+      "width": 1536,
+      "height": 1024,
+      "caption": "CI와 지속적 전달, 지속적 배포의 구분",
+      "alt": "CI는 변경 통합과 자동 검사를 수행한다. 지속적 전달은 배포 준비 상태를 유지하며 사람이 배포 시점을 정할 수 있고 지속적 배포는 조건 통과 후 운영 배포를 자동으로 시작한다."
+    },
+    "architecture": {
+      "asset": "devops-build.2026-10-11.r5.png",
+      "sha256": "273463978df30afec6f2871f29797132545a156c99f0f4c9a4a21be3654cb953",
+      "width": 1536,
+      "height": 1024,
+      "caption": "첫 자동 검사에서 배포와 운영으로 확장하는 순서",
+      "alt": "코드와 테스트 저장, 자동 검사, 검사 결과와 연결된 배포 버전 준비, 시험 환경 확인, 운영 배포와 관찰 순서다. 자동 검사 실패는 다음 단계로 진행하지 않고 수정한다. 첫 실습은 코드와 자동 검사 구간만 다룬다."
+    }
+  },
+  "summary_image_first": true,
+  "provenance": "Built-in image_gen; three new beginner diagrams. Inspected Korean text, numbered arrows and failure branch. Original generated images retained. No paid generation during publish."
+}

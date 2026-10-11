@@ -12,13 +12,8 @@ ROOT = Path(__file__).resolve().parents[1]
 
 class StudyReportTests(unittest.TestCase):
     def setUp(self):
-        manifest = json.loads((ROOT/'config/research_publication.json').read_text(encoding='utf-8'))
-        for batch in reversed(manifest['batches']):
-            reports = json.loads((ROOT/'config'/batch['input']).read_text(encoding='utf-8'))['reports']
-            current = next((r for r in reports if r['id'] == 'devops-implementation-guide'), None)
-            if current:
-                self.report = current
-                break
+        # Preserve the contracts of the historical tool-catalog edition.
+        self.report = json.loads((ROOT/'config/devops_implementation.2026-10-10.r4.json').read_text(encoding='utf-8'))['reports'][0]
         self.catalog_file = json.loads((ROOT/'config/study_pages.json').read_text(encoding='utf-8'))['catalogs'][self.report['id']]
 
     def test_existing_report_ids_keep_their_layout_and_future_reports_use_study(self):
@@ -26,6 +21,23 @@ class StudyReportTests(unittest.TestCase):
         self.assertTrue(legacy)
         self.assertTrue(all(not uses_study(id) for id in legacy))
         self.assertTrue(uses_study('new-study-report'))
+
+    def test_beginner_evidence_is_embedded_once_with_its_chapter(self):
+        report = json.loads((ROOT/'config/devops_implementation.2026-10-11.r5.json').read_text(encoding='utf-8'))['reports'][0]
+        text = render_study(report)
+        self.assertEqual(text.count('class="chapter-keypoints"'), 9)
+        self.assertNotIn('class="tool-catalog"', text)
+        self.assertLess(text.index('id="summary"'), text.index('id="visual-summary"'))
+        self.assertLess(text.index('id="visual-summary"'), text.index('class="study-summary-deck"'))
+        for chapter, next_chapter, title in [('cases','architecture',report['datasets'][0]['title']), ('research','study',report['datasets'][1]['title']), ('ci','principles',report['tables'][0]['title'])]:
+            tag = 'caption' if chapter == 'ci' else 'h3'
+            heading = '<'+tag+'>'+title+'</'+tag+'>'
+            self.assertEqual(text.count(heading), 1)
+            self.assertLess(text.index('id="chapter-'+chapter+'"'), text.index(heading))
+            self.assertLess(text.index(heading), text.index('id="chapter-'+next_chapter+'"'))
+        ids = re.findall(r'\bid="([^"]+)"', text)
+        self.assertEqual(len(ids), len(set(ids)))
+        self.assertTrue(all(anchor in ids for anchor in re.findall(r'href="#([^"]+)"',text)))
 
     def test_catalog_is_bound_to_content_and_history_does_not_use_later_catalog(self):
         self.assertEqual(len(catalog_for(self.report)['tools']), 15)
@@ -87,7 +99,7 @@ class StudyReportTests(unittest.TestCase):
         self.assertIn('data:image/png;base64,', rendered)
 
     def test_visual_asset_traversal_and_changed_bytes_are_rejected(self):
-        filename = json.loads((ROOT/'config/study_pages.json').read_text(encoding='utf-8'))['visual_guides'][self.report['id']]
+        filename = 'devops_visuals.2026-10-10.r4.json'
         guide = json.loads((ROOT/'config'/filename).read_text(encoding='utf-8'))
         guide['images']['summary']['asset'] = '../outside.png'
         with patch('housing_watch.study_report.settings', return_value={'visual_guides':{self.report['id']:filename}}):

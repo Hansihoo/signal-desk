@@ -63,15 +63,22 @@ def catalog_for(report):
 
 
 def visuals_for(report):
-    filename = settings().get('visual_guides', {}).get(report['id'])
-    if not filename:
+    config = settings()
+    filename = config.get('visual_guides', {}).get(report['id'])
+    filenames = ([filename] if filename else []) + config.get('visual_editions', {}).get(report['id'], [])
+    if not filenames:
         return None
-    if Path(filename).name != filename:
-        raise ValueError('Visual guide must use a config filename')
-    guide = json.loads((CONFIG / filename).read_text(encoding='utf-8'))
-    if guide.get('schema_version') != 1 or guide.get('report_id') != report['id']:
-        raise ValueError('Visual guide identity mismatch')
-    if guide.get('report_hash') != digest(report):
+    guide = None
+    for candidate in filenames:
+        if Path(candidate).name != candidate:
+            raise ValueError('Visual guide must use a config filename')
+        item = json.loads((CONFIG / candidate).read_text(encoding='utf-8'))
+        if item.get('schema_version') != 1 or item.get('report_id') != report['id']:
+            raise ValueError('Visual guide identity mismatch')
+        if item.get('report_hash') == digest(report):
+            guide = item
+            break
+    if guide is None:
         return None
     for chapter in report['explanation']:
         first = chapter['blocks'][0]
@@ -135,6 +142,7 @@ def render_study(report, prefix='', edition=None):
     chapters = report.get('explanation', [])
     inline_tables = {'frameworks':'framework-comparison','ci':'ci-comparison'}
     tables = {t['id']:t for t in report.get('tables',[])}
+    used_tables, used_datasets = set(), set()
     data_anchor = False
     def data_content(html):
         nonlocal data_anchor
@@ -143,15 +151,16 @@ def render_study(report, prefix='', edition=None):
         data_anchor = True
         return '<div id="data">%s</div>' % html
     nav = ''.join('<a data-section-link href="#chapter-%s">%s</a>' % (esc(ch['id']),esc(ch['title'])) for ch in chapters)
-    quick = [('개요', chapters[0]['id'] if chapters else 'summary'),('구축','architecture'),('도구','catalog'),('AI 활용','agents')]
+    quick = [('개요', chapters[0]['id'] if chapters else 'summary'),('구축','architecture'),('운영','operations'),('학습','study'),('도구','catalog'),('AI 활용','agents')]
     available = {c['id'] for c in chapters}
     quick = [(label,id) for label,id in quick if id in available]
     shortnav = ''.join('<a data-section-link href="#chapter-%s">%s</a>' % (esc(id),label) for label,id in quick)
     toolbar = '<div class="study-toolbar"><div class="study-toolbar-inner"><a id="document-back" href="%sindex.html">← 리서치 목록</a><nav class="study-quick" aria-label="주요 목차">%s</nav><details id="document-menu"><summary>목차 <span id="document-current"></span><span aria-hidden="true">▾</span></summary><nav aria-label="문서 목차">%s</nav></details><button id="study-print" type="button">인쇄</button></div></div>' % (prefix,shortnav,nav)
     parts = [toolbar,'<article class="study-document" id="study-document">',
         '<header class="study-title"><p class="study-eyebrow">%s</p><h1>%s</h1><p class="study-deck">%s</p><p class="study-byline">자료 확인 %s</p>%s</header>' % (esc(' / '.join(report['topic_path']).replace('개발·운영','개발과 운영')),esc(report['title']),esc(report['description']),esc(report['checked_on']),'<p class="study-notice">이전 기록 (%s차)</p>' % edition if edition else '')]
-    parts.append('<section id="summary" class="study-summary"><h2>요약</h2><p class="study-summary-deck">%s</p><dl>%s</dl></section>' % (esc(report['deck']),''.join('<div><dt>%s</dt><dd>%s %s</dd></div>' % (esc(p['label']),esc(p['text']),_citations(p,numbers)) for p in report['summary'])))
-    if 'summary' in images:
+    summary_first = visual_guide and visual_guide.get('summary_image_first', False)
+    parts.append('<section id="summary" class="study-summary"><h2>요약</h2>%s<p class="study-summary-deck">%s</p><dl>%s</dl></section>' % (_visual_figure(images['summary'], 'summary') if summary_first and 'summary' in images else '',esc(report['deck']),''.join('<div><dt>%s</dt><dd>%s %s</dd></div>' % (esc(p['label']),esc(p['text']),_citations(p,numbers)) for p in report['summary'])))
+    if 'summary' in images and not summary_first:
         parts.append(_visual_figure(images['summary'], 'summary'))
     parts.append('<section class="study-outline" id="outline"><h2>목차</h2><ol>%s</ol></section>' % ''.join('<li><a href="#chapter-%s"><span>%02d</span><b>%s</b></a></li>' % (esc(ch['id']),i,esc(ch['title'].split('. ',1)[-1])) for i,ch in enumerate(chapters,1)))
     for index,ch in enumerate(chapters,1):
@@ -172,18 +181,25 @@ def render_study(report, prefix='', edition=None):
                     parts.append('<details class="study-depth"><summary>%s</summary>%s</details>' % (esc(block['title']),_authored_blocks([block],numbers)))
                 else:
                     parts.append(_authored_blocks([block],numbers))
-        if inline_tables.get(ch['id']) in tables:
-            parts.append(data_content(_table(tables[inline_tables[ch['id']]],numbers)))
+        # IDs prefixed with the chapter ID keep its evidence in the reading path.
+        for table in report.get('tables', []):
+            if table['id'] not in used_tables and (table['id'] == inline_tables.get(ch['id']) or table['id'].startswith(ch['id'] + '-')):
+                parts.append(data_content(_table(table, numbers)))
+                used_tables.add(table['id'])
+        for dataset in report['datasets']:
+            if dataset['id'].startswith(ch['id'] + '-') and dataset['id'] not in used_datasets:
+                parts.append(data_content(_chart(dataset, numbers)))
+                used_datasets.add(dataset['id'])
         parts.append('</section>')
-    remaining_tables = [t for t in report.get('tables',[]) if t['id'] not in {
-        inline_tables.get(ch['id']) for ch in chapters}]
-    if remaining_tables or report['datasets'] or report['metrics']:
+    remaining_tables = [t for t in report.get('tables',[]) if t['id'] not in used_tables]
+    remaining_datasets = [d for d in report['datasets'] if d['id'] not in used_datasets]
+    if remaining_tables or remaining_datasets or report['metrics']:
         parts.append('<section class="study-chapter" id="%s"><h2>비교 자료</h2>' % ('study-data' if data_anchor else 'data'))
         parts.extend(_table(t,numbers) for t in remaining_tables)
         parts.extend('<p><strong>%s</strong> %s %s — %s %s</p>' % (
             esc(m['label']),esc(m['value']),esc(m['unit']),esc(m['qualifier']),_citations(m,numbers))
             for m in report['metrics'])
-        parts.extend(_chart(d,numbers) for d in report['datasets'])
+        parts.extend(_chart(d,numbers) for d in remaining_datasets)
         parts.append('</section>')
     for lesson in report.get('learning',[]):
         parts.append('<details class="study-depth" id="learning-%s"><summary>%s</summary><p>%s</p>%s</details>' % (esc(lesson['id']),esc(lesson['title']),esc(lesson['lead']),_authored_blocks(lesson['blocks'],numbers)))
