@@ -57,5 +57,13 @@
       "devops_visuals.2026-10-10.r4.json",
       "devops_visuals.2026-10-11.r5.json"
     ]
+  },
+  "editorial_summary_first": {
+    "polaris-sales-opportunities": [
+      "d5073ca23b2e05f68bf33dbe7365ed7322c36d53c6bd8daee103998684be080d"
+    ],
+    "office-business-directions": [
+      "37634c7c2da601673642dd2688e3010a30b4a4e0d25f683e91af126f95cffdfc"
+    ]
   }
 }

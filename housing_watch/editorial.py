@@ -310,7 +310,8 @@ def render_editorial(output, snapshot, featured, research_data=None, standalone=
     template = (ROOT / "editorial_report.html").read_text(encoding="utf-8")
     def report_page(item, edition=None):
         prefix = "../" if edition else ""
-        from .study_report import uses_study, render_study
+        from .study_report import uses_study, render_study, settings
+        from .research_workflow import digest
         if uses_study(item["id"]):
             content = render_study(item, prefix, edition)
             rendered = page(item["title"], item["description"], content, prefix,
@@ -320,7 +321,12 @@ def render_editorial(output, snapshot, featured, research_data=None, standalone=
         values["__HEADLINE__"] = _headline(item["title"])
         values.update(__HERO_VISUAL__=_hero(item), __EDITION_NOTICE__=(
             '<p class="edition-notice">이전 기록 · %d차 · <a href="../%s.html">현재 보고서</a></p>' % (edition, _escape(item["id"])) if edition else ""))
-        content = _fill(template, values)
+        report_template = template
+        # New reviewed editions can keep Editorial while opening with purpose/summary.
+        # Match the content hash so earlier editions retain their original presentation.
+        if digest(item) in settings().get("editorial_summary_first", {}).get(item["id"], []):
+            report_template = template.replace('  <div class="image object evidence-panel">__HERO_VISUAL__</div>\n', '')
+        content = _fill(report_template, values)
         if item["id"] == "llm-model-comparison" and not edition and model_links:
             content = model_link + content
         contents = '<nav class="sidebar-contents" aria-label="이 보고서 차례"><header class="major"><h2>차례</h2></header><a href="#summary">요약</a>%s%s<a href="#result">결과</a>%s<a href="#references">참고내용</a></nav>' % (values["__EXPLANATION_LINK__"], values["__DATA_LINK__"], values["__LEARNING_LINK__"])
