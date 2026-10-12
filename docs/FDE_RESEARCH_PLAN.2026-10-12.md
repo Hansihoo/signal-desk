@@ -34,10 +34,10 @@ Theo가 FDE를 먼저 학습하고 팀원에게 공유할 수 있도록, 역할�
 
 ## 검토와 산출물
 
-현재 입력은 `config/fde_research.2026-10-12.r2.json`, 원문·분석·주장·검토 연결은 같은 이름의 quality JSON, 도식 연결은 `config/fde_visuals.2026-10-12.r2.json`이다. 새 불변 배치 `fde-learning-2026-10-12`와 안정 ID `fde-enterprise-adoption`을 사용한다. 새 수집기와 자동화는 추가하지 않는다.
+현재 입력은 `config/fde_research.2026-10-12.r2.json`, 원문·분석·주장·검토 연결은 같은 이름의 quality JSON, 도식 연결은 `config/fde_visuals.2026-10-12.r2.svg.json`이다. 새 불변 배치 `fde-learning-2026-10-12`와 안정 ID `fde-enterprise-adoption`을 사용한다. 새 수집기와 자동화는 추가하지 않는다.
 
 제목·목적·요약을 먼저 자체 검토하고 본문 의미·원문 검토를 별도로 기록한다. 단일 작성 에이전트의 검토이며 독립 리뷰나 실제 초보 독자의 이해 시험으로 부르지 않는다. 기계 품질 검사·기존 자료 보존·모바일/데스크톱 출력은 별도 확인한다.
 
-로컬 페이지는 `site/preview/fde-enterprise-adoption.html`, 공유용 단일 HTML은 `reports/fde-study-share.html`이다. r1은 보존하고 대화 의존 표현을 고친 `fde-reader-copy-2026-10-12` 배치가 현재 r2다. 공개 배포는 수행하지 않았다.
+로컬 페이지는 `site/preview/fde-enterprise-adoption.html`, 공유용 단일 HTML은 `reports/fde-study-share.html`이다. r1은 보존하고 대화 의존 표현을 고친 `fde-reader-copy-2026-10-12` 배치가 현재 r2다. 2026-10-12 공개 배포를 완료했다. 상세 검증과 제한은 FDE_DEPLOYMENT.2026-10-12.md에 기록했다.
 
 공유 파일 재생성: 먼저 로컬 `publish`로 스타일을 생성한 뒤 `python -m housing_watch.fde_share`를 실행한다. 입력·quality·출력 경로를 옵션으로 지정할 수 있다. 파일 안의 요약 복귀 링크는 공유 reader의 필수 DOM을 유지하며 사이트 목록으로 나가지 않는다. 목차·이미지·인쇄 스크립트와 글꼴·도식은 내장되어 있다. 앱 브라우저의 file:// 열기 정책과 일반 HTML 파일 생성·전달을 구분한다.

@@ -965,3 +965,8 @@ Research-check and145tests pass; browser and data preservation checks are separa
 
 
 FDE deployment source uses the `.svg.json` guides and authored vector assets. See [deployment evidence](FDE_DEPLOYMENT.2026-10-12.md). Pending DevOps editions are excluded from the FDE deployment index.
+
+
+## 2026-10-12 FDE public deployment
+
+Sourcea69379d / [Pages38211478978](https://github.com/Hansihoo/signal-desk/actions/runs/38211478978) succeeded15:15:40KST. Public45reports/152editions preserve prior44/150, models804/806 and originals14/14. DevOps remainsr9; concurrent pending source is excluded. FDEr2 and five original SVGs are published. Normal publish also builds the self-contained share file and its download link. Public390px TOC/zoom/focus and share runtime verified. A download-event wait timed out; filesystem save was not confirmed by UI automation. [Results and retained evidence](FDE_DEPLOYMENT.2026-10-12.md).
