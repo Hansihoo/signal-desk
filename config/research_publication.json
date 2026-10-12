@@ -227,6 +227,16 @@
       "id": "ai-model-guides-2026-10-13",
       "input": "ai_model_guides.2026-10-13.json",
       "quality": "ai_model_guides.2026-10-13.quality.json"
+    },
+    {
+      "id": "ai-model-introductions-2026-10-13-r2",
+      "input": "ai_model_guides.2026-10-13.r2.json",
+      "quality": "ai_model_guides.2026-10-13.r2.quality.json"
+    },
+    {
+      "id": "ai-model-introductions-2026-10-13-r3",
+      "input": "ai_model_guides.2026-10-13.r3.json",
+      "quality": "ai_model_guides.2026-10-13.r3.quality.json"
     }
   ]
 }

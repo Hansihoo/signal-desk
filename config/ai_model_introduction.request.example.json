@@ -1,0 +1,18 @@
+{
+  "id": "new-model-introduction",
+  "topic_id": "opportunities",
+  "topic_path": ["개발 동향", "AI 모델·API"],
+  "reader": "새 모델을 기존 모델과 비교하려는 개발자와 관리자",
+  "reader_question": "이 모델은 이전 모델과 경쟁 모델에 비해 무엇이 좋아졌고 어떤 약점과 제공 조건이 있는가?",
+  "outcome": "사양·성능·요금을 조건별로 비교하고 근거가 있는 장점과 단점, 제공 범위를 설명한다.",
+  "research_type": "model_introduction",
+  "plan_questions": false,
+  "sources": [
+    {
+      "id": "provider-models",
+      "title": "제공자의 공식 모델 문서 — 실제 조사에서는 출시·카드·가격·경쟁 원문을 추가",
+      "url": "https://dev.meta.ai/docs/models",
+      "kind": "official_document"
+    }
+  ]
+}

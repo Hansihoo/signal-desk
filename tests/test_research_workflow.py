@@ -95,6 +95,30 @@ class ResearchWorkflowTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "omit profile"):
             make_plan(r)
 
+    def test_model_introduction_requires_comparison_without_teaching_examples(self):
+        plan = make_plan(request("model_introduction"))
+        self.assertIn("comparison", plan["questions"][0]["requires"])
+        self.assertNotIn("worked_example", plan["questions"][0]["requires"])
+        report = report_fixture()
+        report["explanation"] = []
+        report["learning"] = []
+        report["tables"] = [{"id": "comparison", "title": "모델 비교", "note": "조건별 비교",
+            "columns": ["모델", "제공"], "rows": [{"values": ["Model A", "API"], "source_ids": ["source"]}]}]
+        def findings():
+            return {i["code"] for i in draft_issues(plan, [], {"evidence": []}, {"report": report})}
+        self.assertNotIn("model_comparison_table", findings())
+        self.assertNotIn("model_tutorial_content", findings())
+        report["tables"] = []
+        self.assertIn("model_comparison_table", findings())
+        report["learning"] = [{"id": "task", "title": "가상 업무", "lead": "실습",
+            "blocks": [{"type": "paragraph", "kind": "example", "title": "배송비",
+                "text": "가정한 배송비 오류를 고친다.", "source_ids": []}]}]
+        self.assertIn("model_tutorial_content", findings())
+        report["learning"][0]["blocks"][0].update(type="code", kind="judgment")
+        self.assertIn("model_tutorial_content", findings())
+        # The explicit genre guard does not reject separately requested teaching pages.
+        self.assertNotIn("model_tutorial_content", {i["code"] for i in draft_issues(make_plan(request()), [], {"evidence": []}, {"report": report})})
+
     def test_auto_classification_and_question_planning_precede_collection(self):
         r = request("auto")
         p = FakeProvider()

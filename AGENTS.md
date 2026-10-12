@@ -1,4 +1,4 @@
-﻿# Signal Desk Agent Instructions
+# Signal Desk Agent Instructions
 
 ## Project Goal
 
@@ -82,6 +82,12 @@ Use `ai-models --collect` for the full comparison and `ai-models --input` for re
 official additions; preserve original observations and revisions. Do not implement
 model maintenance only as report links or new-news cards.
 
+New model introductions use `research_type: model_introduction` and the
+model-introduction contract in `docs/AI_MODEL_RESEARCH.md`. Include other-model
+comparisons and sourced advantages/disadvantages. Do not apply teaching pages'
+fictional tasks, worked examples, tutorials or exercises to model introductions.
+Use descriptive section names rather than authoring steps.
+
 When writing, expanding, or reviewing authored research reports:
 
 - Begin newly authored pages with a brief statement of why the document was made, directly below the title, followed by a section labelled `요약`. Only this opening order is fixed. Choose the outline, explanations, tables, diagrams, examples and other sections after the summary to suit the topic and reader. Follow `docs/RESEARCH_WRITING_GUIDE.md`; do not impose the DevOps guide's chapter count or body structure on other documents.
@@ -89,10 +95,10 @@ When writing, expanding, or reviewing authored research reports:
 
 - Read [substantive authoring research](docs/AI_WRITING_RESEARCH.2026-10-09.md) and the skill's [question/evidence review](skills/research-teaching/references/substantive-review.md) when the user rejects information value. Map each reader question to a supported answer and a body location; acquire missing mechanisms/cases instead of repeating generic verification advice. Use task-specific criteria for explanations, tutorials, market analysis and opportunities. In the user-authorized independent review workflow, give reviewers the changed edition, repair concrete findings and request a new verdict; distinguish agent review from human reader testing. Current complete repair state is [the 2026-10-09 ledger](docs/RESEARCH_AUTHORING_REPAIR.2026-10-09.md).
 - Apply the project [research-teaching skill](skills/research-teaching/SKILL.md). The 2026-10-09 user feedback still rejects the prose as hard to learn from. Define prerequisite concepts and gather missing evidence; review title/summary alone before reviewing the whole explanation. Record where the draft fails and revise it. The dated [skill analysis](docs/RESEARCH_TEACHING_SKILL.2026-10-09.md) explains the adopted methods; passing format/output checks is not reader approval.
-- Development-trend content serves practical AI use. Define the reader's concrete task and resulting artifact, then teach the necessary concepts through a complete worked example and application exercise. Distinguish using an existing tool from implementing a new one. Treat role descriptions as intermediate learning, not the final reader outcome. Follow the authoring and evidence-based review steps in `docs/RESEARCH_WRITING_GUIDE.md`. The earlier MCP Apps 3rd edition was rejected as a textbook standard; use `docs/RESEARCH_REPAIR.2026-10-08.md` for the latest20-report repair scope and verification limits, without claiming reader approval.
+- Development-trend teaching/tutorial pages serve practical AI use. Model introductions follow the model-specific contract above. For teaching pages, define the reader's concrete task and resulting artifact, then teach the necessary concepts through a complete worked example and application exercise. Distinguish using an existing tool from implementing a new one. Treat role descriptions as intermediate learning, not the final reader outcome. Follow the authoring and evidence-based review steps in `docs/RESEARCH_WRITING_GUIDE.md`. The earlier MCP Apps 3rd edition was rejected as a textbook standard; use `docs/RESEARCH_REPAIR.2026-10-08.md` for the latest20-report repair scope and verification limits, without claiming reader approval.
 - Read `docs/RESEARCH_WRITING_GUIDE.md` first. Use `docs/RESEARCH_CONTENT_REVIEW.2026-10-08.md` for known defects and repair priorities, and `docs/RESEARCH_WRITING_EXAMPLES.md` for representative explanations. Recheck dated technical facts before reuse.
 - Define the reader's question, assumed prior knowledge, and what they should be able to explain, decide, or do afterward. Keep this editorial brief in working documentation; do not add unsupported fields to the validated report schema.
-- Write a coherent explanation and a consistent worked example before deriving the headline, summary, table, or learning blocks. Preserve the source's actors, conditions, units, and limits; do not turn an observation into a causal conclusion.
+- Write a coherent explanation before deriving the headline, summary, table, or learning blocks. Worked examples apply to teaching/tutorial pages; model introductions use sourced comparisons and tradeoff analysis. Preserve the source's actors, conditions, units, and limits; do not turn an observation into a causal conclusion.
 - Keep essential concepts and decision conditions in the primary reading path. Use disclosures for optional depth, not to hide the knowledge needed to understand the headline. A fixed layout or short-copy target must not remove necessary explanation.
 - Check example inputs, tool parameters, returned fields, and expected outcomes together. Separate conceptual examples from tested tutorials.
 - Record content meaning/source review, reader-comprehension review, and technical output checks separately. Passing tests, valid source IDs, chapter counts, and responsive layout do not establish comprehension. Do not claim actual reader testing unless it was performed.

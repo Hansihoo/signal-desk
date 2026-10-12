@@ -22,6 +22,11 @@ from .timeutil import iso_utc
 VERSION = "question-research-1"
 CACHE_VERSION = VERSION + "-application-dates"
 PROFILES = {
+    "model_introduction": {
+        "question": "새 모델은 이전 모델과 경쟁 모델에 비해 무엇이 좋아졌고 어떤 약점과 제공 조건이 있는가?",
+        "requires": ["identity", "change", "specification", "availability", "comparison", "advantages", "limitations", "price"],
+        "method": "공식 발표·모델 카드·사양·가격과 평가 원문을 대조한다. 다른 모델과의 비교표에서 평가판·추론·측정 주체·Harness·단위를 보존하고 장점과 단점을 근거로 설명한다. 활용 예시·가상 업무·실습 코드·응용 문제를 넣지 않는다.",
+    },
     "technology": {
         "question": "어떤 문제를 어떻게 해결하며, 다른 조건에서는 언제 실패하는가?",
         "requires": ["concept", "mechanism", "worked_example", "limitation"],
@@ -308,6 +313,14 @@ def draft_issues(plan, sources, analysis, draft):
     request = plan["request"]
     if report["id"] != request["id"] or report["topic_id"] != request["topic_id"]:
         issues.append(issue("writing", "report_identity", "Report changed the requested identity"))
+    if request["research_type"] == "model_introduction":
+        if not report.get("tables"):
+            issues.append(issue("writing", "model_comparison_table", "Model introductions need a sourced comparison table; semantic review checks the models and conditions"))
+        for field in ("explanation", "learning"):
+            for chapter in report.get(field, []):
+                for block in chapter["blocks"]:
+                    if block["kind"] == "example" or block["type"] == "code":
+                        issues.append(issue("writing", "model_tutorial_content", "Model introductions describe models, comparisons and tradeoffs; tutorial content belongs in a separately requested guide"))
     by_source = {s["id"]: s for s in sources}
     for ref in report["references"]:
         if ref["id"] not in by_source or ref["url"] != by_source[ref["id"]]["url"]:

@@ -327,11 +327,24 @@ def render_editorial(output, snapshot, featured, research_data=None, standalone=
         # Match the content hash so earlier editions retain their original presentation.
         if digest(item) in settings().get("editorial_summary_first", {}).get(item["id"], []):
             report_template = template.replace('  <div class="image object evidence-panel">__HERO_VISUAL__</div>\n', '')
+        model_intro = digest(item) in settings().get("model_introduction_editions", {}).get(item["id"], [])
+        if model_intro:
+            # Tables and their conditions precede interpretation only in opted-in editions.
+            data_section = report_template[report_template.index('<section id="data"'):report_template.index('<section id="result"')]
+            report_template = report_template.replace('__EXPLANATION__\n' + data_section, data_section + '__EXPLANATION__\n', 1)
+            report_template = report_template.replace('__EXPLANATION_LINK____DATA_LINK__', '__DATA_LINK____EXPLANATION_LINK__', 1)
+            report_template = report_template.replace('id="data-title">데이터', 'id="data-title">비교표', 1).replace('>결과</', '>결론</')
+            values['__DATA_LINK__'] = values['__DATA_LINK__'].replace('>데이터<', '>비교표<')
+            values['__EXPLANATION_LINK__'] = values['__EXPLANATION_LINK__'].replace('>본문<', '>모델 분석<')
+            values['__EXPLANATION__'] = values['__EXPLANATION__'].replace('id="explanation-title">본문', 'id="explanation-title">모델 분석', 1)
         content = _fill(report_template, values)
         if item["id"] == "llm-model-comparison" and not edition and model_links:
             content = model_link + content
         contents = '<nav class="sidebar-contents" aria-label="이 보고서 차례"><header class="major"><h2>차례</h2></header><a href="#summary">요약</a>%s%s<a href="#result">결과</a>%s<a href="#references">참고내용</a></nav>' % (values["__EXPLANATION_LINK__"], values["__DATA_LINK__"], values["__LEARNING_LINK__"])
-        return page(item["title"], item["description"], content, prefix, item["id"], contents, _edition_nav(item, history, prefix))
+        if model_intro:
+            contents = contents.replace(values['__EXPLANATION_LINK__'] + values['__DATA_LINK__'], values['__DATA_LINK__'] + values['__EXPLANATION_LINK__'], 1).replace('>결과<', '>결론<')
+        rendered = page(item["title"], item["description"], content, prefix, item["id"], contents, _edition_nav(item, history, prefix))
+        return rendered.replace('<body>', '<body class="model-introduction-page">', 1) if model_intro else rendered
     for item in reports:
         rendered = report_page(item)
         if item['id'] == 'fde-enterprise-adoption':

@@ -318,3 +318,13 @@ FDE 기존 배포와 작업 파일, 원문/내용 검토 날짜를 보존. 생�
 - 공개11HTTP주소200,실제공개12브라우저기록(2문서4폭/필터/상세·이력/출처/이전판/공식7가이드)과PNG/JPEG확인. CSV12행은로컬검증.
 - 다른작업변경과기존기본theo-s-han신원을보존했다. 임시tab/viewport/server/시험scratch는정리했고필요근거는D:/9_codex_temp/2026-10-13/signal-ai-models에보존.
 - docs/AI_MODEL_REVIEW.2026-10-13.md. API/청구/독립벤치·사람시험은미실시이며일반뉴스warning1은모델배포실패와분리한다.
+
+
+## 2026-10-13 모델 소개 형식 교정
+
+- 사용자 요구에 따라 Wonder/Full의 배송비 활용 예시·실습을 제거하고 사양/8성능행/표준API요금의3표와 상대 장단점으로 새r2를 작성했다.
+- 모델 소개 전용 프로필·게이트·생성/검토 프롬프트·문서/Skill/계획 템플릿을 연결했다. 매일05:00 ai 예약의 작성 지침만 갱신하고 시각/상태/인증경계를 보존했다.
+- 첫 화면2Revise 후2Pass, 본문2Revise 후2Pass. Spark1.3 음성제약/검색질의 과금/토큰·평가단위/압축문장을 보완했다. 로컬에서 임시 prose helper의 topic_path 일괄치환을 발견해 r2를 덮어쓰지 않고 r3에서 기존AI모델·API분류를 복원, 동일본문+분류교정 대조Pass.
+- 모바일 숫자 세로줄바꿈은 기존anywhere규칙과좁은7열표가원인. 해당소개판의표에만960px/정상줄바꿈과주석고정을적용, 숫자열/키보드스크롤/390·1280px실제화면을확인했다.
+- 전체154시험102.005초/관련61/새batch37/모바일11시험Pass; Skill/quality2/audit17+30/publish/brief/desk/PNG확인.232HTML19979참조누락없음.47/163,기존159판/다른45/816관측818판/Theo14원본보존. 주거0활성review11Pass1Fail은별도.
+- 실제모델API·독립벤치·청구·사람독해시험미실시. 근거는D:/9_codex_temp/2026-10-13/signal-ai-models/model-intro-repair, 운영근거docs/MODEL_INTRODUCTION_REPAIR.2026-10-13.md. 공개배포확인은후속기록한다.

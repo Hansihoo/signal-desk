@@ -80,10 +80,24 @@
       "37634c7c2da601673642dd2688e3010a30b4a4e0d25f683e91af126f95cffdfc"
     ],
     "muse-wonder-model-guide": [
-      "fce4d817eb83bcdc4e5cae851f26494d448e81cfe08b775b471b695a1a2a83d1"
+      "fce4d817eb83bcdc4e5cae851f26494d448e81cfe08b775b471b695a1a2a83d1",
+      "5097bfe72fe6ee69f5fdf0bab84a95a3529033f6a146f519e63fcee34bca6df6",
+      "5968546040b49fd30039028bd4daa7ec4c5e939da09d68c7ef5fdb7ccbb9c88b"
     ],
     "muse-wonder-full-model-guide": [
-      "fd1cc61e8425db0aaa3cc9d5aaa75f6e308a588346f4fe4f3cbd88ff0430b453"
+      "fd1cc61e8425db0aaa3cc9d5aaa75f6e308a588346f4fe4f3cbd88ff0430b453",
+      "1507ce60701d016ea8a94cac14be03eefe391ef14268044c057d07bf9bff32d5",
+      "de070d0f6481a6181ae160ee383efade2022a71bf1c37044fb020cf6f4c1469a"
+    ]
+  },
+  "model_introduction_editions": {
+    "muse-wonder-model-guide": [
+      "5097bfe72fe6ee69f5fdf0bab84a95a3529033f6a146f519e63fcee34bca6df6",
+      "5968546040b49fd30039028bd4daa7ec4c5e939da09d68c7ef5fdb7ccbb9c88b"
+    ],
+    "muse-wonder-full-model-guide": [
+      "1507ce60701d016ea8a94cac14be03eefe391ef14268044c057d07bf9bff32d5",
+      "de070d0f6481a6181ae160ee383efade2022a71bf1c37044fb020cf6f4c1469a"
     ]
   }
 }

@@ -1,0 +1,1262 @@
+{
+  "schema_version": 1,
+  "reports": [
+    {
+      "id": "muse-wonder-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델, API",
+        "Muse Wonder"
+      ],
+      "title": "Muse Wonder 모델 분석: 경쟁 모델과의 성능 및 API 요금 비교",
+      "description": "Muse Wonder의 사양과 경쟁 모델 대비 성능, 장점과 단점, API 요금과 제공 조건을 정리했습니다.",
+      "checked_on": "2026-10-13",
+      "scope": "2026-10-12 Meta 발표, 모델 카드와 2026-10-13 확인한 Meta, OpenAI, Anthropic 모델 사양, 표준 가격의 비교. 선택된 8개 평가 행을 분석했습니다. 모델 호출, 독립 성능, 한국어, 속도, 실제 청구 측정은 수행하지 않았습니다.",
+      "deck": "코드 작업과 여러 단계의 에이전트 작업을 위한 Muse Wonder를 소개합니다. 이전 Spark에서의 변화, 경쟁 모델과의 성능 비교, 장점과 단점, 공식 API 요금을 정리했습니다.",
+      "source_note": "발표일은 2026-10-12, 관련 원문 내용 검토일은 2026-10-13입니다. 운영 문서의 미표시 발행일을 추정하지 않습니다. 이전 판과 원본 자료를 보존하며 제공자 주장, 타사 측정 인용, 편집 판단을 구분합니다.",
+      "highlights": [
+        "공식 사양 및 경쟁 모델 비교",
+        "평가별 강점과 약점",
+        "표준 API 가격과 구독 제공 조건"
+      ],
+      "summary": [
+        {
+          "kind": "fact",
+          "label": "모델과 제공 범위",
+          "text": "Meta가 2026년 10월 12일 발표한 코드 및 에이전트 작업용 신규 모델입니다. API는 정식 제공 전 단계인 preview이며, 콘텐츠를 학습에 사용하지 않는 Standard mode로 제공합니다. Muse Code는 사용량 결제와 모든 플랜에서 제공합니다. Full은 별도 구독 모델이며 Wonder의 max 추론 설정과 다릅니다.",
+          "source_ids": [
+            "release",
+            "models"
+          ]
+        },
+        {
+          "kind": "judgment",
+          "label": "장점과 약점",
+          "text": "코드 과제를 첫 시도에서 해결한 비율인 DeepSWE는 Wonder 78.8%로 GPT-6 Astra 74.1%, Claude Opus 5.5 74.2%보다 높습니다. 반면 검사의 95% 이상을 통과한 실행 비율인 ProgramBench는 50.0%로 Opus 70.5%보다 낮습니다. 종합 평가 지수 AA도 52점으로 Opus 58점보다 낮습니다. 측정 주체와 도구 조건이 혼재한 카드 결과입니다.",
+          "source_ids": [
+            "card"
+          ]
+        },
+        {
+          "kind": "judgment",
+          "label": "표준 API 단가",
+          "text": "표준 API의 백만 토큰당 입력은 4달러, 출력은 20달러로 Claude Opus 5.5와 같습니다. GPT-6 Astra와 Claude Fable 5.1의 기본 입력은 10달러, 출력은 50달러여서 Wonder보다 높습니다. Spark 1.3은 입력 1.25달러, 출력 4.25달러로 Wonder보다 낮습니다. 실제 업무 비용이나 속도를 독립 측정한 결과는 아닙니다.",
+          "source_ids": [
+            "pricing",
+            "astra",
+            "claude-pricing"
+          ]
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "tables": [
+        {
+          "id": "model-specs",
+          "title": "모델 사양과 제공 범위 비교",
+          "columns": [
+            "모델 / 식별자",
+            "컨텍스트 / 최대 출력",
+            "입력 → 출력",
+            "제공 범위"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Muse Wonder / muse-wonder-1.0",
+                "1,048,576 / 최대 출력 미확인",
+                "텍스트, 이미지, 영상, 음성, PDF → 텍스트",
+                "Model API preview ,  Standard / Muse Code 모든 플랜"
+              ],
+              "source_ids": [
+                "models"
+              ]
+            },
+            {
+              "values": [
+                "Muse Wonder Full",
+                "1M (카드 표기) / Muse Code 최대 출력 미확인",
+                "텍스트, 이미지, 영상, 음성 → 텍스트 (PDF 별도 미확인)",
+                "공개 Model API 없음 / Muse Code Power, Maximum"
+              ],
+              "source_ids": [
+                "models",
+                "card"
+              ]
+            },
+            {
+              "values": [
+                "Muse Spark 1.3 / muse-spark-1.3",
+                "1,048,576 / 이번 비교에서 최대 출력 미확인",
+                "텍스트, 이미지, 영상, PDF → 텍스트; 음성 입력은 1.3에서 지원 불완전하며 품질 저하 가능",
+                "Model API / Muse Code"
+              ],
+              "source_ids": [
+                "models"
+              ]
+            },
+            {
+              "values": [
+                "Claude Fable 5.1 / claude-fable-5-1",
+                "1M / 128K",
+                "텍스트, 이미지 → 텍스트 (모델 사양 표기)",
+                "Claude API 및 공식 문서에 열거된 플랫폼"
+              ],
+              "source_ids": [
+                "fable"
+              ]
+            },
+            {
+              "values": [
+                "GPT-6 Astra / gpt-6-astra",
+                "1,050,000 / 128,000",
+                "텍스트, 이미지 → 텍스트",
+                "OpenAI API"
+              ],
+              "source_ids": [
+                "astra"
+              ]
+            },
+            {
+              "values": [
+                "Claude Opus 5.5 / claude-opus-5-5",
+                "1M / 128K (표준)",
+                "텍스트, 이미지 → 텍스트 (모델 사양 표기)",
+                "Claude API 및 공식 문서에 열거된 플랫폼"
+              ],
+              "source_ids": [
+                "opus"
+              ]
+            }
+          ],
+          "note": "2026-10-13 공식 문서 기준입니다. 컨텍스트는 요청 처리에 사용할 수 있는 문맥의 토큰 한도이고 최대 출력은 한 번에 생성할 수 있는 출력 토큰 상한입니다. 표의 K는 천, M은 백만을 뜻하며 1M과 128K는 제공자의 명목 표기입니다. Full 이름은 모델 소개용으로, 공개 API 호출 식별자를 뜻하지 않습니다. 경쟁 모델은 공식 카드의 비교군이고 Spark는 이전 계열 비교군입니다. 입력 형식은 각 모델 문서의 표기를 옮겼습니다. 표에 없는 파일 형식을 지원하지 않는다고 단정하지 않습니다."
+        },
+        {
+          "id": "model-performance",
+          "title": "공식 모델 카드의 경쟁 모델 성능 비교",
+          "columns": [
+            "평가판 / 지표",
+            "Wonder Full",
+            "Wonder",
+            "Fable 5.1",
+            "GPT-6 Astra",
+            "Opus 5.5",
+            "측정, 조건"
+          ],
+          "rows": [
+            {
+              "values": [
+                "DeepSWE 1.1 ,  pass@1 (%)",
+                "79.0",
+                "78.8",
+                "67.4",
+                "74.1",
+                "74.2",
+                "Datacurve/제공자 보고 혼재"
+              ],
+              "source_ids": [
+                "card"
+              ]
+            },
+            {
+              "values": [
+                "SWE-Marathon ,  pass@1 (%)",
+                "57.5 (xhigh)",
+                "53.1",
+                "45.6",
+                "42.5",
+                "46.3",
+                "Abundant AI ,  경쟁 제품 Harness 상이"
+              ],
+              "source_ids": [
+                "card"
+              ]
+            },
+            {
+              "values": [
+                "ProgramBench ,  기준 충족 rollout (%)",
+                "59.0",
+                "50.0",
+                "55.5",
+                "52.5",
+                "70.5",
+                "mini-swe-agent ,  테스트 ≥95% 통과"
+              ],
+              "source_ids": [
+                "card"
+              ]
+            },
+            {
+              "values": [
+                "MemoryBench ,  가중 점수",
+                "85.5",
+                "85.6",
+                "79.0",
+                "81.4",
+                "81.5",
+                "Meta 내부 ,  64K–100K ,  LLM 판정"
+              ],
+              "source_ids": [
+                "card"
+              ]
+            },
+            {
+              "values": [
+                "Terminal-Bench 4.0-AA ,  정확도 (%)",
+                "57.1",
+                "52.0",
+                "52.0",
+                "59.1",
+                "59.6",
+                "Artificial Analysis 결과 인용"
+              ],
+              "source_ids": [
+                "card"
+              ]
+            },
+            {
+              "values": [
+                "OSWorld V2.1 ,  평균 부분 점수",
+                "78.4",
+                "72.6",
+                "80.7",
+                "75.8",
+                "81.8",
+                "Meta 내부 / Opus 제공자 보고"
+              ],
+              "source_ids": [
+                "card"
+              ]
+            },
+            {
+              "values": [
+                "OSWorld V2.1 ,  완전 완료 (%)",
+                "39.4",
+                "34.3",
+                "43.1",
+                "34.3",
+                "미공개",
+                "2차 지표 ,  Opus 결측"
+              ],
+              "source_ids": [
+                "card"
+              ]
+            },
+            {
+              "values": [
+                "AA Intelligence Index v4.3 ,  지수점",
+                "56",
+                "52",
+                "53",
+                "53",
+                "58",
+                "Artificial Analysis 종합 지수"
+              ],
+              "source_ids": [
+                "card"
+              ]
+            }
+          ],
+          "note": "2026-10-12 Meta 모델 카드 p3~6에서 옮긴 결과입니다. 기본 추론 설정은 모두 max이며 SWE-Marathon의 Full만 xhigh입니다. MemoryBench와 OSWorld 부분 점수는 카드의 원 점수 스케일이고 AA는 지수점이므로 백분율 정확도와 다릅니다. 선택한 8개 행은 코드 작업, 기억, 컴퓨터 조작과 종합 평가를 보여줍니다. 전체 평가나 단일 종합 순위를 뜻하지 않습니다. Spark는 이 비교표에 없어 수치를 채우지 않았습니다. 측정 주체와 Harness 차이는 아래 성능 비교 해석에서 설명합니다. 자체 재현한 결과는 아닙니다."
+        },
+        {
+          "id": "model-prices",
+          "title": "표준 API 토큰 단가 비교",
+          "columns": [
+            "모델 / 조건",
+            "입력 USD / 1M",
+            "캐시 읽기 USD / 1M",
+            "출력 USD / 1M",
+            "가격 조건"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Muse Wonder ,  Standard",
+                "4.00",
+                "0.20",
+                "20.00",
+                "장문 할증 없음 ,  API preview"
+              ],
+              "source_ids": [
+                "pricing",
+                "models"
+              ]
+            },
+            {
+              "values": [
+                "Muse Spark 1.3 ,  Standard",
+                "1.25",
+                "0.15",
+                "4.25",
+                "Contributor 요금과 구분"
+              ],
+              "source_ids": [
+                "pricing"
+              ]
+            },
+            {
+              "values": [
+                "Claude Fable 5.1 ,  표준",
+                "10.00",
+                "0.25",
+                "50.00",
+                "직접 API 기본 global routing"
+              ],
+              "source_ids": [
+                "claude-pricing",
+                "fable"
+              ]
+            },
+            {
+              "values": [
+                "GPT-6 Astra ,  입력 ≤272K",
+                "10.00",
+                "1.00",
+                "50.00",
+                "Standard"
+              ],
+              "source_ids": [
+                "astra"
+              ]
+            },
+            {
+              "values": [
+                "GPT-6 Astra ,  입력 >272K",
+                "20.00",
+                "2.00",
+                "75.00",
+                "전체 요청 입력, 캐시 2배 / 출력 1.5배"
+              ],
+              "source_ids": [
+                "astra"
+              ]
+            },
+            {
+              "values": [
+                "Claude Opus 5.5 ,  표준",
+                "4.00",
+                "0.20",
+                "20.00",
+                "직접 API 기본 global routing"
+              ],
+              "source_ids": [
+                "claude-pricing",
+                "opus"
+              ]
+            },
+            {
+              "values": [
+                "Muse Wonder Full",
+                "해당 없음",
+                "해당 없음",
+                "해당 없음",
+                "공개 API 없음 ,  월 구독료는 별도"
+              ],
+              "source_ids": [
+                "models"
+              ]
+            }
+          ],
+          "note": "2026-10-13 확인한 USD / 백만 토큰 요금입니다. 캐시 열은 읽기 요금으로, 쓰기 요금과 구분했습니다. 5분과 1시간 캐시 쓰기 요금은 Fable이 각각 12.50달러와 20달러, Opus가 5달러와 8달러입니다. Astra의 기본 캐시 쓰기는 12.50달러입니다. Claude 두 모델의 기본 1M 문맥에는 장문 할증이 없고 US-only 추론은 1.1배입니다. Batch, Flex, Fast, 지역 및 파트너 가격, 도구 요금은 별도입니다. Full의 월 구독료는 Power 50달러, Maximum 200달러이며 토큰 단가와 직접 비교할 수 없습니다. 실제 청구액은 추론, 캐시, 도구, 사용량에 따라 달라집니다."
+        }
+      ],
+      "explanation": [
+        {
+          "id": "model-overview",
+          "title": "모델 개요와 이전 계열에서의 변화",
+          "lead": "Wonder 계열은 Spark의 단순한 이름 변경이 아니라 새 기반 모델 계열로 발표됐습니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "Spark에서 Wonder로",
+              "text": "Meta는 Spark에서 구축한 학습, 확장 기반 위에 더 강한 모델을 만들고 긴 작업, 기억과 집중을 학습했다고 설명합니다. 공식 모델 목록은 Spark와 Wonder를 별도 모델로 제공합니다. 이전 계열 대비 정확한 개선율을 계산할 공통 Spark 평가 행은 이번 카드에 없으므로 경쟁 표에 임의 수치를 채우지 않았습니다.",
+              "source_ids": [
+                "release",
+                "research",
+                "models"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "Active Memory와 Active Focus",
+              "text": "Active Memory는 대화에서 중요한 정보를 다시 찾아 유지하는 능력, Active Focus는 긴 작업 중 새 정보에 맞추어 접근을 조정하고 진행을 이어가는 능력이라는 Meta의 설명입니다. 학습 방향과 제공자의 기능 설명이며 외부 영구 데이터베이스나 무오류 실행을 보장하지 않습니다. Wonder는 API 모델, Muse Code는 이를 사용하는 개발 제품이고 Full은 그 제품의 일부 구독에서 제공하는 별도 상위 모델입니다.",
+              "source_ids": [
+                "research",
+                "models"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "benchmark-conditions",
+          "title": "성능 비교 해석",
+          "lead": "동일 이름의 평가라도 측정 주체와 작업 환경이 다르면 점수 차이를 그대로 모델의 우열로 해석하기 어렵습니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "코드 평가의 측정 주체와 도구",
+              "text": "DeepSWE 1.1은 91개 저장소, 5개 언어의 113개 작업에서 기능, 회귀 테스트를 평가하는 pass@1, 즉 첫 시도의 성공 비율입니다. 카드에서 Wonder 계열과 Opus는 Datacurve 측정, Astra는 OpenAI 자체 보고, Fable은 Anthropic 시스템 카드에서 가져옵니다. SWE-Marathon은 Abundant AI 결과를 인용하며 경쟁 모델에 Codex, Claude Code가 사용됐으므로 공통 Harness 비교가 아닙니다. Harness는 모델에 도구와 실행, 평가 환경을 연결하는 틀입니다. 이 행의 Full은 xhigh로 다른 max 결과와 설정도 다릅니다.",
+              "source_ids": [
+                "card"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "프로그램 재구성과 기억 평가의 의미",
+              "text": "ProgramBench는 준비 후 네트워크를 끄고 mini-swe-agent로 프로그램을 재구성합니다. 수치는 숨겨진 테스트의 95% 이상을 통과한 rollout의 비율이며 모든 테스트의 통과율을 뜻하지 않습니다. MemoryBench는 Meta 내부 평가로 64,000~100,000 토큰 길이의 대화에 방해 정보와 갱신된 사실을 섞고 LLM이 가중 기준으로 판정합니다. 백만 토큰 문맥 전체나 영구 기억을 검증한 점수가 아닙니다.",
+              "source_ids": [
+                "card"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "컴퓨터 조작과 종합 지표",
+              "text": "OSWorld V2.1은 108개 Ubuntu 데스크톱 작업을 평가합니다. 평균 부분 점수와 완전 완료율은 별개이며 Opus는 제공자 보고 부분 점수만 있어 완료율을 미공개로 남겼습니다. Terminal-Bench와 AA Intelligence Index는 카드가 인용한 Artificial Analysis 결과입니다. AA 지수는 여러 평가를 묶은 점수이고 정답률이 아닙니다. 원 실행 기록 전체를 독립 대조한 것은 아닙니다. 카드 자체도 가능한 타사, 제공자 결과를 활용하고 그 외에는 내부, 자체 보고, 공식 순위 중 높은 검증 결과를 선택한다고 설명합니다.",
+              "source_ids": [
+                "card"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "advantages",
+          "title": "장점",
+          "lead": "평가 결과와 제공 조건에서 확인되는 상대적 강점을 정리했습니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "일부 장기 코드, 기억 평가의 강점",
+              "text": "코드 과제 첫 시도 성공률인 DeepSWE에서 Wonder는 78.8%로 Astra 74.1%, Opus 74.2%, Fable 67.4%보다 높습니다. 장기 프로젝트 성공률인 SWE-Marathon도 Wonder 53.1%로 Astra 42.5%, Opus 46.3%, Fable 45.6%보다 높습니다. MemoryBench 가중 점수는 Wonder 85.6으로 Full 85.5와 경쟁군의 79.0~81.5보다 높습니다. 장기 코드 작업과 대화 정보 유지에 강점이 나타난 근거지만, 각 행의 측정 조건과 Meta 내부 LLM 판정 한계를 함께 봐야 합니다.",
+              "source_ids": [
+                "card"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "API 제공과 상대적인 가격 위치",
+              "text": "Full과 달리 공개 API가 있고 텍스트 외 이미지, 영상, 음성, PDF를 입력할 수 있습니다. 백만 토큰당 표준 입력 4달러, 출력 20달러는 Astra와 Fable의 기본 입력 10달러, 출력 50달러보다 낮으며 장문 할증도 없습니다. 다만 Opus와 토큰 단가는 같고 Spark보다 높으므로 최저가 모델이라 부를 수는 없습니다.",
+              "source_ids": [
+                "models",
+                "pricing",
+                "astra",
+                "claude-pricing"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "limitations",
+          "title": "단점과 한계",
+          "lead": "반대 결과와 접근 제약도 모델 선택의 근거에 포함했습니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "코드, 컴퓨터 조작, 종합 지표의 약점",
+              "text": "ProgramBench의 기준 충족 실행 비율은 Wonder 50.0%로 Opus 70.5%, Fable 55.5%, Astra 52.5%보다 낮습니다. Terminal-Bench 정확도도 Wonder 52.0%로 Astra 59.1%, Opus 59.6%보다 낮고 Fable 52.0%와 같습니다. OSWorld 부분 점수는 Wonder 72.6으로 경쟁군의 75.8~81.8보다 낮습니다. AA 종합 지수는 Wonder 52점으로 Full 56점, Opus 58점, Fable과 Astra의 53점보다 낮아 일부 강점만으로 전반적 우위라 말할 수 없습니다.",
+              "source_ids": [
+                "card"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "제공 상태와 확인되지 않은 성능",
+              "text": "API는 preview이며 지역별 제공 조건과 개별 계정 접근은 별도입니다. 최대 출력 토큰을 이번 공식 문서 검토에서 확인하지 못했습니다. 모델 카드도 새로운 상황의 여러 단계 추론 오류,3D 공간 이해와 언어별 평가 공백을 명시합니다. 한국어 성능, 응답 속도, 실제 개발 업무의 비용 절감은 이 표로 증명되지 않습니다.",
+              "source_ids": [
+                "models",
+                "card"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pricing-availability",
+          "title": "가격과 제공 조건",
+          "lead": "표준 토큰 단가와 구독 플랜은 서로 다른 결제 단위입니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "Wonder와 경쟁 API의 가격 차이",
+              "text": "Wonder의 백만 토큰당 표준 입력 요금은 4달러, 출력 요금은 20달러로 Opus 5.5와 같습니다. Astra와 Fable의 기본 입력 10달러, 출력 50달러보다 낮지만 이전 Spark 1.3의 입력 1.25달러, 출력 4.25달러보다는 높습니다. 이는 해당 요금 항목의 비교이며 특정 작업이 같은 토큰량이나 같은 정확도로 끝난다는 뜻은 아닙니다. Astra는 입력이 272K 토큰을 초과하면 전체 요청의 입력과 캐시 요금을 2배, 출력 요금을 1.5배로 과금합니다. Meta에는 장문 할증이 없고 Fable과 Opus의 기본 1M 토큰 문맥도 장문 할증이 없습니다.",
+              "source_ids": [
+                "pricing",
+                "astra",
+                "claude-pricing"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "추론과 도구 과금",
+              "text": "Wonder의 내부 추론 토큰도 출력 요금에 포함됩니다. Meta 웹 검색은 검색 질의 1,000개당 2.50달러를 별도 청구합니다. 캐시 읽기 단가는 입력 전체에 적용되는 할인율이 아니며 캐시에서 실제 재사용한 부분에만 적용됩니다. 가격표의 출력 단가만으로 실제 답변 길이, 추론량, 검색량과 실행 시간을 알 수 없습니다.",
+              "source_ids": [
+                "reasoning",
+                "pricing"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "Full 구독과 데이터 사용",
+              "text": "Full은 Muse Code의 Power 플랜에서 월 50달러, Maximum 플랜에서 월 200달러에 제공합니다. Everyday 플랜 대비 Power는 20배, Maximum은 80배의 사용량을 제공하며, 이는 모델 성능 배수나 고정 토큰 수, 무제한 사용량을 뜻하지 않습니다. 구독은 Contributor mode가 기본으로 켜져 있어 더 많은 사용량을 받는 대신 프롬프트, 코드, 파일, 문맥, 응답을 향후 Meta 모델 학습에 사용할 수 있습니다. 끄면 이후 콘텐츠를 이 용도로 사용하지 않으며 과거 콘텐츠의 소급 삭제를 보장하는 설명은 아닙니다. Standard mode 콘텐츠는 학습에 사용하지 않는다고 명시합니다. 구독 전용 자격과 추가 PAYG 키의 청구는 분리되며 추가 키가 Full API 접근을 열지는 않습니다.",
+              "source_ids": [
+                "model",
+                "models",
+                "subscription"
+              ]
+            }
+          ]
+        }
+      ],
+      "learning": [],
+      "result": {
+        "title": "일부 코드, 기억 평가와 API 가격에 강점이 있으나 전반적 우위는 아닙니다",
+        "points": [
+          {
+            "kind": "judgment",
+            "label": "성능의 위치",
+            "text": "Wonder는 DeepSWE, SWE-Marathon, MemoryBench에 강점이 있고 ProgramBench, Terminal-Bench, OSWorld, AA에서 뒤지는 항목이 있습니다.",
+            "source_ids": [
+              "card"
+            ]
+          },
+          {
+            "kind": "judgment",
+            "label": "선택 조건",
+            "text": "멀티모달 입력과 공개 API, 해당 표준 요금이 필요한 경우의 후보입니다. Opus와 같은 토큰 단가이므로 표의 유리한 행과 불리한 행을 함께 비교할 근거가 있습니다.",
+            "source_ids": [
+              "models",
+              "pricing",
+              "claude-pricing"
+            ]
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "이 자료는 공식 소개, 사양, 가격과 카드의 평가 원문을 비교한 분석입니다. 모델 실행이나 독립 평가를 수행하지 않았으며 전체 벤치마크, 안전성 부록, 지역 접근, 실제 청구를 모두 확인한 것은 아닙니다.",
+          "source_ids": [
+            "card"
+          ]
+        },
+        {
+          "text": "가중치 공개, 매개변수 수, 로컬 실행 메모리와 별도 배포 라이선스는 이번 범위에서 확인하지 않았습니다. 다른 Meta 모델의 조건을 그대로 적용하지 않습니다.",
+          "source_ids": []
+        }
+      ],
+      "references": [
+        {
+          "id": "release",
+          "title": "Meta: Muse Wonder 두 모델 출시 발표",
+          "url": "https://about.fb.com/news/2026/10/introducing-muse-wonder-models/",
+          "description": "기존 원본의 신규 두 모델 발표 및 내부 추론 출력 과금 절을 재검토. 재수집 시각은 바꾸지 않음. 내용 확인 2026-10-13."
+        },
+        {
+          "id": "model",
+          "title": "Muse Wonder 공식 모델 소개",
+          "url": "https://dev.meta.ai/models/muse-wonder",
+          "description": "모델 소개 비교에 필요한 사양, 접근, 표준 요금, 기억/집중 설명 관련 절. 운영 문서의 원 발행일을 추정하지 않음. 내용 확인 2026-10-13."
+        },
+        {
+          "id": "models",
+          "title": "Meta 공식 모델 목록",
+          "url": "https://dev.meta.ai/docs/models",
+          "description": "모델 소개 비교에 필요한 사양, 접근, 표준 요금, 기억/집중 설명 관련 절. 운영 문서의 원 발행일을 추정하지 않음. 내용 확인 2026-10-13."
+        },
+        {
+          "id": "pricing",
+          "title": "Meta 공식 가격, 요청 한도",
+          "url": "https://dev.meta.ai/docs/pricing-rate-limits",
+          "description": "모델 소개 비교에 필요한 사양, 접근, 표준 요금, 기억/집중 설명 관련 절. 운영 문서의 원 발행일을 추정하지 않음. 내용 확인 2026-10-13."
+        },
+        {
+          "id": "reasoning",
+          "title": "Meta Model API: 추론 수준과 출력 과금",
+          "url": "https://dev.meta.ai/docs/reasoning",
+          "description": "기존 원본의 신규 두 모델 발표 및 내부 추론 출력 과금 절을 재검토. 재수집 시각은 바꾸지 않음. 내용 확인 2026-10-13."
+        },
+        {
+          "id": "subscription",
+          "title": "Muse Code 공식 구독 조건",
+          "url": "https://dev.meta.ai/docs/muse-code/subscriptions",
+          "description": "모델 소개 비교에 필요한 사양, 접근, 표준 요금, 기억/집중 설명 관련 절. 운영 문서의 원 발행일을 추정하지 않음. 내용 확인 2026-10-13."
+        },
+        {
+          "id": "research",
+          "title": "Meta Research: Muse Wonder",
+          "url": "https://research.meta.ai/blog/muse-wonder",
+          "description": "모델 소개 비교에 필요한 사양, 접근, 표준 요금, 기억/집중 설명 관련 절. 운영 문서의 원 발행일을 추정하지 않음. 내용 확인 2026-10-13."
+        },
+        {
+          "id": "card",
+          "title": "Muse Wonder 공식 모델 카드 (PDF, 2026-10-12)",
+          "url": "https://research.meta.ai/static/muse-wonder-model-card",
+          "description": "모델 카드 p1 사양, p3 그림의 8개 비교 행을 시각 대조해 전사, p4–6 방법론, p11–12 한계. PDF 원본 해시 및 이전 수집일 보존. 전체 안전성 부록 심층검토나 자체 성능 재현은 아님. 내용 확인 2026-10-13."
+        },
+        {
+          "id": "astra",
+          "title": "OpenAI GPT-6 Astra 공식 모델 사양, 가격",
+          "url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+          "description": "모델 소개 비교에 필요한 사양, 접근, 표준 요금, 기억/집중 설명 관련 절. 운영 문서의 원 발행일을 추정하지 않음. 내용 확인 2026-10-13."
+        },
+        {
+          "id": "claude-pricing",
+          "title": "Anthropic 공식 API 가격",
+          "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+          "description": "모델 소개 비교에 필요한 사양, 접근, 표준 요금, 기억/집중 설명 관련 절. 운영 문서의 원 발행일을 추정하지 않음. 내용 확인 2026-10-13."
+        },
+        {
+          "id": "fable",
+          "title": "Claude Fable 5.1 공식 모델 사양",
+          "url": "https://platform.claude.com/docs/en/models/fable-5-1/overview",
+          "description": "모델 소개 비교에 필요한 사양, 접근, 표준 요금, 기억/집중 설명 관련 절. 운영 문서의 원 발행일을 추정하지 않음. 내용 확인 2026-10-13."
+        },
+        {
+          "id": "opus",
+          "title": "Claude Opus 5.5 공식 모델 사양",
+          "url": "https://platform.claude.com/docs/en/models/opus-5-5/overview",
+          "description": "모델 소개 비교에 필요한 사양, 접근, 표준 요금, 기억/집중 설명 관련 절. 운영 문서의 원 발행일을 추정하지 않음. 내용 확인 2026-10-13."
+        }
+      ]
+    },
+    {
+      "id": "muse-wonder-full-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델, API",
+        "Muse Wonder Full"
+      ],
+      "title": "Muse Wonder Full 모델 분석: Wonder와 경쟁 모델의 성능 비교",
+      "description": "Muse Wonder Full의 사양과 경쟁 모델 대비 성능, 장점과 단점, 구독료와 제공 조건을 정리했습니다.",
+      "checked_on": "2026-10-13",
+      "scope": "2026-10-12 Meta 발표, 모델 카드와 2026-10-13 확인한 Meta, OpenAI, Anthropic 모델 사양, 표준 가격의 비교. 선택된 8개 평가 행을 분석했습니다. 모델 호출, 독립 성능, 한국어, 속도, 실제 청구 측정은 수행하지 않았습니다.",
+      "deck": "Muse Code에서 긴 코드 및 에이전트 작업에 쓰는 상위 모델 Muse Wonder Full을 소개합니다. 일반 Wonder 및 경쟁 모델과의 성능 비교, 장점과 단점, API 부재와 구독 조건을 정리했습니다.",
+      "source_note": "발표일은 2026-10-12, 관련 원문 내용 검토일은 2026-10-13입니다. 운영 문서의 미표시 발행일을 추정하지 않습니다. 이전 판과 원본 자료를 보존하며 제공자 주장, 타사 측정 인용, 편집 판단을 구분합니다.",
+      "highlights": [
+        "공식 사양 및 경쟁 모델 비교",
+        "평가별 강점과 약점",
+        "표준 API 가격과 구독 제공 조건"
+      ],
+      "summary": [
+        {
+          "kind": "fact",
+          "label": "모델과 제공 범위",
+          "text": "Meta가 2026년 10월 12일 발표한 코드 및 에이전트 작업용 별도 상위 모델입니다. Muse Code Power는 월 50달러, Maximum은 월 200달러이며 공개 Model API는 없습니다. 일반 Wonder의 max 추론 설정으로 Full을 선택할 수 없습니다.",
+          "source_ids": [
+            "release",
+            "models",
+            "model"
+          ]
+        },
+        {
+          "kind": "judgment",
+          "label": "장점과 약점",
+          "text": "코드 과제를 첫 시도에서 해결한 비율인 DeepSWE는 Full 79.0%, Wonder 78.8%입니다. 장기 프로젝트 성공률 SWE-Marathon은 57.5%(xhigh) 대 53.1%(max)로 추론 설정도 다릅니다. 반면 검사의 95% 이상을 통과한 실행 비율인 ProgramBench는 59.0%로 Claude Opus 5.5의 70.5%보다 낮습니다. AA 종합 지수도 56점으로 Opus 58점보다 낮아 모든 항목에서 상위는 아닙니다.",
+          "source_ids": [
+            "card"
+          ]
+        },
+        {
+          "kind": "fact",
+          "label": "비용 비교의 범위",
+          "text": "월 구독료와 API 토큰 단가는 서로 다른 단위여서 직접 비교할 수 없습니다. Everyday 플랜 대비 Power는 20배, Maximum은 80배의 사용량을 제공하며, 이는 성능 배수나 고정 토큰량을 뜻하지 않습니다.",
+          "source_ids": [
+            "models",
+            "model",
+            "subscription"
+          ]
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "tables": [
+        {
+          "id": "model-specs",
+          "title": "모델 사양과 제공 범위 비교",
+          "columns": [
+            "모델 / 식별자",
+            "컨텍스트 / 최대 출력",
+            "입력 → 출력",
+            "제공 범위"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Muse Wonder / muse-wonder-1.0",
+                "1,048,576 / 최대 출력 미확인",
+                "텍스트, 이미지, 영상, 음성, PDF → 텍스트",
+                "Model API preview ,  Standard / Muse Code 모든 플랜"
+              ],
+              "source_ids": [
+                "models"
+              ]
+            },
+            {
+              "values": [
+                "Muse Wonder Full",
+                "1M (카드 표기) / Muse Code 최대 출력 미확인",
+                "텍스트, 이미지, 영상, 음성 → 텍스트 (PDF 별도 미확인)",
+                "공개 Model API 없음 / Muse Code Power, Maximum"
+              ],
+              "source_ids": [
+                "models",
+                "card"
+              ]
+            },
+            {
+              "values": [
+                "Muse Spark 1.3 / muse-spark-1.3",
+                "1,048,576 / 이번 비교에서 최대 출력 미확인",
+                "텍스트, 이미지, 영상, PDF → 텍스트; 음성 입력은 1.3에서 지원 불완전하며 품질 저하 가능",
+                "Model API / Muse Code"
+              ],
+              "source_ids": [
+                "models"
+              ]
+            },
+            {
+              "values": [
+                "Claude Fable 5.1 / claude-fable-5-1",
+                "1M / 128K",
+                "텍스트, 이미지 → 텍스트 (모델 사양 표기)",
+                "Claude API 및 공식 문서에 열거된 플랫폼"
+              ],
+              "source_ids": [
+                "fable"
+              ]
+            },
+            {
+              "values": [
+                "GPT-6 Astra / gpt-6-astra",
+                "1,050,000 / 128,000",
+                "텍스트, 이미지 → 텍스트",
+                "OpenAI API"
+              ],
+              "source_ids": [
+                "astra"
+              ]
+            },
+            {
+              "values": [
+                "Claude Opus 5.5 / claude-opus-5-5",
+                "1M / 128K (표준)",
+                "텍스트, 이미지 → 텍스트 (모델 사양 표기)",
+                "Claude API 및 공식 문서에 열거된 플랫폼"
+              ],
+              "source_ids": [
+                "opus"
+              ]
+            }
+          ],
+          "note": "2026-10-13 공식 문서 기준입니다. 컨텍스트는 요청 처리에 사용할 수 있는 문맥의 토큰 한도이고 최대 출력은 한 번에 생성할 수 있는 출력 토큰 상한입니다. 표의 K는 천, M은 백만을 뜻하며 1M과 128K는 제공자의 명목 표기입니다. Full 이름은 모델 소개용으로, 공개 API 호출 식별자를 뜻하지 않습니다. 경쟁 모델은 공식 카드의 비교군이고 Spark는 이전 계열 비교군입니다. 입력 형식은 각 모델 문서의 표기를 옮겼습니다. 표에 없는 파일 형식을 지원하지 않는다고 단정하지 않습니다."
+        },
+        {
+          "id": "model-performance",
+          "title": "공식 모델 카드의 경쟁 모델 성능 비교",
+          "columns": [
+            "평가판 / 지표",
+            "Wonder Full",
+            "Wonder",
+            "Fable 5.1",
+            "GPT-6 Astra",
+            "Opus 5.5",
+            "측정, 조건"
+          ],
+          "rows": [
+            {
+              "values": [
+                "DeepSWE 1.1 ,  pass@1 (%)",
+                "79.0",
+                "78.8",
+                "67.4",
+                "74.1",
+                "74.2",
+                "Datacurve/제공자 보고 혼재"
+              ],
+              "source_ids": [
+                "card"
+              ]
+            },
+            {
+              "values": [
+                "SWE-Marathon ,  pass@1 (%)",
+                "57.5 (xhigh)",
+                "53.1",
+                "45.6",
+                "42.5",
+                "46.3",
+                "Abundant AI ,  경쟁 제품 Harness 상이"
+              ],
+              "source_ids": [
+                "card"
+              ]
+            },
+            {
+              "values": [
+                "ProgramBench ,  기준 충족 rollout (%)",
+                "59.0",
+                "50.0",
+                "55.5",
+                "52.5",
+                "70.5",
+                "mini-swe-agent ,  테스트 ≥95% 통과"
+              ],
+              "source_ids": [
+                "card"
+              ]
+            },
+            {
+              "values": [
+                "MemoryBench ,  가중 점수",
+                "85.5",
+                "85.6",
+                "79.0",
+                "81.4",
+                "81.5",
+                "Meta 내부 ,  64K–100K ,  LLM 판정"
+              ],
+              "source_ids": [
+                "card"
+              ]
+            },
+            {
+              "values": [
+                "Terminal-Bench 4.0-AA ,  정확도 (%)",
+                "57.1",
+                "52.0",
+                "52.0",
+                "59.1",
+                "59.6",
+                "Artificial Analysis 결과 인용"
+              ],
+              "source_ids": [
+                "card"
+              ]
+            },
+            {
+              "values": [
+                "OSWorld V2.1 ,  평균 부분 점수",
+                "78.4",
+                "72.6",
+                "80.7",
+                "75.8",
+                "81.8",
+                "Meta 내부 / Opus 제공자 보고"
+              ],
+              "source_ids": [
+                "card"
+              ]
+            },
+            {
+              "values": [
+                "OSWorld V2.1 ,  완전 완료 (%)",
+                "39.4",
+                "34.3",
+                "43.1",
+                "34.3",
+                "미공개",
+                "2차 지표 ,  Opus 결측"
+              ],
+              "source_ids": [
+                "card"
+              ]
+            },
+            {
+              "values": [
+                "AA Intelligence Index v4.3 ,  지수점",
+                "56",
+                "52",
+                "53",
+                "53",
+                "58",
+                "Artificial Analysis 종합 지수"
+              ],
+              "source_ids": [
+                "card"
+              ]
+            }
+          ],
+          "note": "2026-10-12 Meta 모델 카드 p3~6에서 옮긴 결과입니다. 기본 추론 설정은 모두 max이며 SWE-Marathon의 Full만 xhigh입니다. MemoryBench와 OSWorld 부분 점수는 카드의 원 점수 스케일이고 AA는 지수점이므로 백분율 정확도와 다릅니다. 선택한 8개 행은 코드 작업, 기억, 컴퓨터 조작과 종합 평가를 보여줍니다. 전체 평가나 단일 종합 순위를 뜻하지 않습니다. Spark는 이 비교표에 없어 수치를 채우지 않았습니다. 측정 주체와 Harness 차이는 아래 성능 비교 해석에서 설명합니다. 자체 재현한 결과는 아닙니다."
+        },
+        {
+          "id": "model-prices",
+          "title": "표준 API 토큰 단가 비교",
+          "columns": [
+            "모델 / 조건",
+            "입력 USD / 1M",
+            "캐시 읽기 USD / 1M",
+            "출력 USD / 1M",
+            "가격 조건"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Muse Wonder ,  Standard",
+                "4.00",
+                "0.20",
+                "20.00",
+                "장문 할증 없음 ,  API preview"
+              ],
+              "source_ids": [
+                "pricing",
+                "models"
+              ]
+            },
+            {
+              "values": [
+                "Muse Spark 1.3 ,  Standard",
+                "1.25",
+                "0.15",
+                "4.25",
+                "Contributor 요금과 구분"
+              ],
+              "source_ids": [
+                "pricing"
+              ]
+            },
+            {
+              "values": [
+                "Claude Fable 5.1 ,  표준",
+                "10.00",
+                "0.25",
+                "50.00",
+                "직접 API 기본 global routing"
+              ],
+              "source_ids": [
+                "claude-pricing",
+                "fable"
+              ]
+            },
+            {
+              "values": [
+                "GPT-6 Astra ,  입력 ≤272K",
+                "10.00",
+                "1.00",
+                "50.00",
+                "Standard"
+              ],
+              "source_ids": [
+                "astra"
+              ]
+            },
+            {
+              "values": [
+                "GPT-6 Astra ,  입력 >272K",
+                "20.00",
+                "2.00",
+                "75.00",
+                "전체 요청 입력, 캐시 2배 / 출력 1.5배"
+              ],
+              "source_ids": [
+                "astra"
+              ]
+            },
+            {
+              "values": [
+                "Claude Opus 5.5 ,  표준",
+                "4.00",
+                "0.20",
+                "20.00",
+                "직접 API 기본 global routing"
+              ],
+              "source_ids": [
+                "claude-pricing",
+                "opus"
+              ]
+            },
+            {
+              "values": [
+                "Muse Wonder Full",
+                "해당 없음",
+                "해당 없음",
+                "해당 없음",
+                "공개 API 없음 ,  월 구독료는 별도"
+              ],
+              "source_ids": [
+                "models"
+              ]
+            }
+          ],
+          "note": "2026-10-13 확인한 USD / 백만 토큰 요금입니다. 캐시 열은 읽기 요금으로, 쓰기 요금과 구분했습니다. 5분과 1시간 캐시 쓰기 요금은 Fable이 각각 12.50달러와 20달러, Opus가 5달러와 8달러입니다. Astra의 기본 캐시 쓰기는 12.50달러입니다. Claude 두 모델의 기본 1M 문맥에는 장문 할증이 없고 US-only 추론은 1.1배입니다. Batch, Flex, Fast, 지역 및 파트너 가격, 도구 요금은 별도입니다. Full의 월 구독료는 Power 50달러, Maximum 200달러이며 토큰 단가와 직접 비교할 수 없습니다. 실제 청구액은 추론, 캐시, 도구, 사용량에 따라 달라집니다."
+        }
+      ],
+      "explanation": [
+        {
+          "id": "model-overview",
+          "title": "모델 개요와 이전 계열에서의 변화",
+          "lead": "Wonder 계열은 Spark의 단순한 이름 변경이 아니라 새 기반 모델 계열로 발표됐습니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "Spark에서 Wonder로",
+              "text": "Meta는 Spark에서 구축한 학습, 확장 기반 위에 더 강한 모델을 만들고 긴 작업, 기억과 집중을 학습했다고 설명합니다. 공식 모델 목록은 Spark와 Wonder를 별도 모델로 제공합니다. 이전 계열 대비 정확한 개선율을 계산할 공통 Spark 평가 행은 이번 카드에 없으므로 경쟁 표에 임의 수치를 채우지 않았습니다.",
+              "source_ids": [
+                "release",
+                "research",
+                "models"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "Active Memory와 Active Focus",
+              "text": "Active Memory는 대화에서 중요한 정보를 다시 찾아 유지하는 능력, Active Focus는 긴 작업 중 새 정보에 맞추어 접근을 조정하고 진행을 이어가는 능력이라는 Meta의 설명입니다. 학습 방향과 제공자의 기능 설명이며 외부 영구 데이터베이스나 무오류 실행을 보장하지 않습니다. Wonder는 API 모델, Muse Code는 이를 사용하는 개발 제품이고 Full은 그 제품의 일부 구독에서 제공하는 별도 상위 모델입니다.",
+              "source_ids": [
+                "research",
+                "models"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "benchmark-conditions",
+          "title": "성능 비교 해석",
+          "lead": "동일 이름의 평가라도 측정 주체와 작업 환경이 다르면 점수 차이를 그대로 모델의 우열로 해석하기 어렵습니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "코드 평가의 측정 주체와 도구",
+              "text": "DeepSWE 1.1은 91개 저장소, 5개 언어의 113개 작업에서 기능, 회귀 테스트를 평가하는 pass@1, 즉 첫 시도의 성공 비율입니다. 카드에서 Wonder 계열과 Opus는 Datacurve 측정, Astra는 OpenAI 자체 보고, Fable은 Anthropic 시스템 카드에서 가져옵니다. SWE-Marathon은 Abundant AI 결과를 인용하며 경쟁 모델에 Codex, Claude Code가 사용됐으므로 공통 Harness 비교가 아닙니다. Harness는 모델에 도구와 실행, 평가 환경을 연결하는 틀입니다. 이 행의 Full은 xhigh로 다른 max 결과와 설정도 다릅니다.",
+              "source_ids": [
+                "card"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "프로그램 재구성과 기억 평가의 의미",
+              "text": "ProgramBench는 준비 후 네트워크를 끄고 mini-swe-agent로 프로그램을 재구성합니다. 수치는 숨겨진 테스트의 95% 이상을 통과한 rollout의 비율이며 모든 테스트의 통과율을 뜻하지 않습니다. MemoryBench는 Meta 내부 평가로 64,000~100,000 토큰 길이의 대화에 방해 정보와 갱신된 사실을 섞고 LLM이 가중 기준으로 판정합니다. 백만 토큰 문맥 전체나 영구 기억을 검증한 점수가 아닙니다.",
+              "source_ids": [
+                "card"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "컴퓨터 조작과 종합 지표",
+              "text": "OSWorld V2.1은 108개 Ubuntu 데스크톱 작업을 평가합니다. 평균 부분 점수와 완전 완료율은 별개이며 Opus는 제공자 보고 부분 점수만 있어 완료율을 미공개로 남겼습니다. Terminal-Bench와 AA Intelligence Index는 카드가 인용한 Artificial Analysis 결과입니다. AA 지수는 여러 평가를 묶은 점수이고 정답률이 아닙니다. 원 실행 기록 전체를 독립 대조한 것은 아닙니다. 카드 자체도 가능한 타사, 제공자 결과를 활용하고 그 외에는 내부, 자체 보고, 공식 순위 중 높은 검증 결과를 선택한다고 설명합니다.",
+              "source_ids": [
+                "card"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "advantages",
+          "title": "장점",
+          "lead": "평가 결과와 제공 조건에서 확인되는 상대적 강점을 정리했습니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "장기 코드 평가에서 높은 수치",
+              "text": "선택한 카드 비교군에서 Full의 DeepSWE 성공률 79.0%와 SWE-Marathon 성공률 57.5%는 가장 높습니다. 일반 Wonder보다 각각 0.2%포인트와 4.4%포인트 높아 긴 코드 작업을 강조하는 출시 방향과 부합합니다. 다만 전자는 출처가 혼재하고 후자는 xhigh 예외와 경쟁 제품 Harness 차이가 있으므로 두 차이를 동일 설정에서 입증한 개선 폭으로 단정하지 않습니다.",
+              "source_ids": [
+                "card"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "일반 Wonder보다 넓어진 강점",
+              "text": "ProgramBench 기준 충족 실행 비율은 Full 59.0%로 Wonder 50.0%, Astra 52.5%, Fable 55.5%보다 높습니다. Terminal-Bench 정확도도 Full 57.1%로 Wonder 52.0%보다 높습니다. 상위 모델의 개선을 보여주는 항목이지만 Opus의 70.5%와 59.6%보다 낮아 코드 작업 전체의 최우수라는 결론은 나오지 않습니다.",
+              "source_ids": [
+                "card"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "limitations",
+          "title": "단점과 한계",
+          "lead": "반대 결과와 접근 제약도 모델 선택의 근거에 포함했습니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "상위 모델이 항상 더 높지는 않음",
+              "text": "MemoryBench 가중 점수는 Full 85.5로 Wonder 85.6보다 낮습니다. AA 지수 56점은 Opus 58점보다 낮고 OSWorld 부분 점수 78.4도 Fable 80.7과 Opus 81.8보다 낮습니다. Full의 OSWorld 완전 완료율 39.4% 역시 Fable 43.1%보다 낮습니다. DeepSWE의 0.2%포인트 차이는 표만으로 통계적 유의성이나 실제 프로젝트 개선을 입증하지 못합니다.",
+              "source_ids": [
+                "card"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "API 접근과 비용 비교의 제약",
+              "text": "공개 Model API가 없으므로 API 시스템에 직접 넣을 후보로 일반 Wonder와 같은 조건으로 볼 수 없습니다. 월 구독료에는 사용량, 제품 접근 조건이 묶여 있어 API 토큰 가격으로 환산할 근거가 부족합니다. Full의 Muse Code 최대 출력과 별도 PDF 지원도 이번 확인 범위에서는 명시된 수치를 찾지 못했습니다.",
+              "source_ids": [
+                "models",
+                "model",
+                "card"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pricing-availability",
+          "title": "가격과 제공 조건",
+          "lead": "표준 토큰 단가와 구독 플랜은 서로 다른 결제 단위입니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "Wonder와 경쟁 API의 가격 차이",
+              "text": "Wonder의 백만 토큰당 표준 입력 요금은 4달러, 출력 요금은 20달러로 Opus 5.5와 같습니다. Astra와 Fable의 기본 입력 10달러, 출력 50달러보다 낮지만 이전 Spark 1.3의 입력 1.25달러, 출력 4.25달러보다는 높습니다. 이는 해당 요금 항목의 비교이며 특정 작업이 같은 토큰량이나 같은 정확도로 끝난다는 뜻은 아닙니다. Astra는 입력이 272K 토큰을 초과하면 전체 요청의 입력과 캐시 요금을 2배, 출력 요금을 1.5배로 과금합니다. Meta에는 장문 할증이 없고 Fable과 Opus의 기본 1M 토큰 문맥도 장문 할증이 없습니다.",
+              "source_ids": [
+                "pricing",
+                "astra",
+                "claude-pricing"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "추론과 도구 과금",
+              "text": "Wonder의 내부 추론 토큰도 출력 요금에 포함됩니다. Meta 웹 검색은 검색 질의 1,000개당 2.50달러를 별도 청구합니다. 캐시 읽기 단가는 입력 전체에 적용되는 할인율이 아니며 캐시에서 실제 재사용한 부분에만 적용됩니다. 가격표의 출력 단가만으로 실제 답변 길이, 추론량, 검색량과 실행 시간을 알 수 없습니다.",
+              "source_ids": [
+                "reasoning",
+                "pricing"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "Full 구독과 데이터 사용",
+              "text": "Full은 Muse Code의 Power 플랜에서 월 50달러, Maximum 플랜에서 월 200달러에 제공합니다. Everyday 플랜 대비 Power는 20배, Maximum은 80배의 사용량을 제공하며, 이는 모델 성능 배수나 고정 토큰 수, 무제한 사용량을 뜻하지 않습니다. 구독은 Contributor mode가 기본으로 켜져 있어 더 많은 사용량을 받는 대신 프롬프트, 코드, 파일, 문맥, 응답을 향후 Meta 모델 학습에 사용할 수 있습니다. 끄면 이후 콘텐츠를 이 용도로 사용하지 않으며 과거 콘텐츠의 소급 삭제를 보장하는 설명은 아닙니다. Standard mode 콘텐츠는 학습에 사용하지 않는다고 명시합니다. 구독 전용 자격과 추가 PAYG 키의 청구는 분리되며 추가 키가 Full API 접근을 열지는 않습니다.",
+              "source_ids": [
+                "model",
+                "models",
+                "subscription"
+              ]
+            }
+          ]
+        }
+      ],
+      "learning": [],
+      "result": {
+        "title": "장기 코드 평가의 상위 후보이지만 API, 종합 성능에서는 조건이 남습니다",
+        "points": [
+          {
+            "kind": "judgment",
+            "label": "성능의 위치",
+            "text": "Full은 일반 Wonder보다 여러 코드 평가에서 높지만 ProgramBench, AA, 컴퓨터 조작에서는 Opus, Fable에 뒤지는 항목이 있습니다.",
+            "source_ids": [
+              "card"
+            ]
+          },
+          {
+            "kind": "judgment",
+            "label": "선택 조건",
+            "text": "Muse Code의 Full 접근과 구독 조건이 필요한 경우에 검토할 후보입니다. API가 필요한 경우 공개 API를 제공하는 Wonder, 경쟁 모델과 별도로 판단해야 합니다.",
+            "source_ids": [
+              "models",
+              "pricing",
+              "claude-pricing"
+            ]
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "이 자료는 공식 소개, 사양, 가격과 카드의 평가 원문을 비교한 분석입니다. 모델 실행이나 독립 평가를 수행하지 않았으며 전체 벤치마크, 안전성 부록, 지역 접근, 실제 청구를 모두 확인한 것은 아닙니다.",
+          "source_ids": [
+            "card"
+          ]
+        },
+        {
+          "text": "가중치 공개, 매개변수 수, 로컬 실행 메모리와 별도 배포 라이선스는 이번 범위에서 확인하지 않았습니다. 다른 Meta 모델의 조건을 그대로 적용하지 않습니다.",
+          "source_ids": []
+        }
+      ],
+      "references": [
+        {
+          "id": "release",
+          "title": "Meta: Muse Wonder 두 모델 출시 발표",
+          "url": "https://about.fb.com/news/2026/10/introducing-muse-wonder-models/",
+          "description": "기존 원본의 신규 두 모델 발표 및 내부 추론 출력 과금 절을 재검토. 재수집 시각은 바꾸지 않음. 내용 확인 2026-10-13."
+        },
+        {
+          "id": "model",
+          "title": "Muse Wonder 공식 모델 소개",
+          "url": "https://dev.meta.ai/models/muse-wonder",
+          "description": "모델 소개 비교에 필요한 사양, 접근, 표준 요금, 기억/집중 설명 관련 절. 운영 문서의 원 발행일을 추정하지 않음. 내용 확인 2026-10-13."
+        },
+        {
+          "id": "models",
+          "title": "Meta 공식 모델 목록",
+          "url": "https://dev.meta.ai/docs/models",
+          "description": "모델 소개 비교에 필요한 사양, 접근, 표준 요금, 기억/집중 설명 관련 절. 운영 문서의 원 발행일을 추정하지 않음. 내용 확인 2026-10-13."
+        },
+        {
+          "id": "pricing",
+          "title": "Meta 공식 가격, 요청 한도",
+          "url": "https://dev.meta.ai/docs/pricing-rate-limits",
+          "description": "모델 소개 비교에 필요한 사양, 접근, 표준 요금, 기억/집중 설명 관련 절. 운영 문서의 원 발행일을 추정하지 않음. 내용 확인 2026-10-13."
+        },
+        {
+          "id": "reasoning",
+          "title": "Meta Model API: 추론 수준과 출력 과금",
+          "url": "https://dev.meta.ai/docs/reasoning",
+          "description": "기존 원본의 신규 두 모델 발표 및 내부 추론 출력 과금 절을 재검토. 재수집 시각은 바꾸지 않음. 내용 확인 2026-10-13."
+        },
+        {
+          "id": "subscription",
+          "title": "Muse Code 공식 구독 조건",
+          "url": "https://dev.meta.ai/docs/muse-code/subscriptions",
+          "description": "모델 소개 비교에 필요한 사양, 접근, 표준 요금, 기억/집중 설명 관련 절. 운영 문서의 원 발행일을 추정하지 않음. 내용 확인 2026-10-13."
+        },
+        {
+          "id": "research",
+          "title": "Meta Research: Muse Wonder",
+          "url": "https://research.meta.ai/blog/muse-wonder",
+          "description": "모델 소개 비교에 필요한 사양, 접근, 표준 요금, 기억/집중 설명 관련 절. 운영 문서의 원 발행일을 추정하지 않음. 내용 확인 2026-10-13."
+        },
+        {
+          "id": "card",
+          "title": "Muse Wonder 공식 모델 카드 (PDF, 2026-10-12)",
+          "url": "https://research.meta.ai/static/muse-wonder-model-card",
+          "description": "모델 카드 p1 사양, p3 그림의 8개 비교 행을 시각 대조해 전사, p4–6 방법론, p11–12 한계. PDF 원본 해시 및 이전 수집일 보존. 전체 안전성 부록 심층검토나 자체 성능 재현은 아님. 내용 확인 2026-10-13."
+        },
+        {
+          "id": "astra",
+          "title": "OpenAI GPT-6 Astra 공식 모델 사양, 가격",
+          "url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+          "description": "모델 소개 비교에 필요한 사양, 접근, 표준 요금, 기억/집중 설명 관련 절. 운영 문서의 원 발행일을 추정하지 않음. 내용 확인 2026-10-13."
+        },
+        {
+          "id": "claude-pricing",
+          "title": "Anthropic 공식 API 가격",
+          "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+          "description": "모델 소개 비교에 필요한 사양, 접근, 표준 요금, 기억/집중 설명 관련 절. 운영 문서의 원 발행일을 추정하지 않음. 내용 확인 2026-10-13."
+        },
+        {
+          "id": "fable",
+          "title": "Claude Fable 5.1 공식 모델 사양",
+          "url": "https://platform.claude.com/docs/en/models/fable-5-1/overview",
+          "description": "모델 소개 비교에 필요한 사양, 접근, 표준 요금, 기억/집중 설명 관련 절. 운영 문서의 원 발행일을 추정하지 않음. 내용 확인 2026-10-13."
+        },
+        {
+          "id": "opus",
+          "title": "Claude Opus 5.5 공식 모델 사양",
+          "url": "https://platform.claude.com/docs/en/models/opus-5-5/overview",
+          "description": "모델 소개 비교에 필요한 사양, 접근, 표준 요금, 기억/집중 설명 관련 절. 운영 문서의 원 발행일을 추정하지 않음. 내용 확인 2026-10-13."
+        }
+      ]
+    }
+  ]
+}

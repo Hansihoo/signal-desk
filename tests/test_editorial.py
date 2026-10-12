@@ -20,6 +20,31 @@ class EditorialTests(unittest.TestCase):
         self.addCleanup(patcher.stop)
         self.addCleanup(self.conn.close)
 
+    def test_model_intro_tables_first_is_bound_to_edition_and_preserves_history(self):
+        from housing_watch.research_workflow import digest
+        old = load_report_input("config/ai_model_guides.2026-10-13.json")[0]
+        new = copy.deepcopy(old)
+        new["title"] = "모델 비교 분석"
+        new["tables"] = [{"id": "compare", "title": "경쟁 모델", "note": "공식 조건",
+            "columns": ["모델", "제공"], "rows": [{"values": ["Wonder", "API"], "source_ids": ["models"]}]}]
+        cfg = {"default_layout": "editorial", "legacy_report_ids": [old["id"]], "model_introduction_editions": {old["id"]: [digest(new)]}}
+        import_reports(self.conn, [old])
+        import_reports(self.conn, [new])
+        data = build_research_data(self.conn, [], [])
+        with tempfile.TemporaryDirectory() as temp, patch("housing_watch.study_report.settings", return_value=cfg):
+            output = build_briefing_preview(temp, {}, new, data)
+            current = (output / (new["id"] + ".html")).read_text(encoding="utf8")
+            previous = (output / "history" / (old["id"] + "-r1.html")).read_text(encoding="utf8")
+            self.assertLess(current.index('<section id="data"'), current.index('<section id="explanation"'))
+            self.assertIn('id="data-title">비교표', current)
+            self.assertIn('href="#data">비교표</a><a href="#explanation">모델 분석', current)
+            self.assertIn('id="explanation-title">모델 분석', current)
+            self.assertIn('<body class="model-introduction-page">', current)
+            self.assertNotIn('<body class="model-introduction-page">', previous)
+            self.assertLess(previous.index('<section id="explanation"'), previous.index('<section id="data"'))
+            self.assertIn('id="data-title">데이터', previous)
+            self.assertIn('배송비', previous)
+
     def test_essential_explanation_is_visible_before_data_and_optional_depth_stays_collapsed(self):
         from html.parser import HTMLParser
         report = copy.deepcopy(self.report)
