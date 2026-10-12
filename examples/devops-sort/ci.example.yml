@@ -1,0 +1,29 @@
+name: Sorting service CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test
+        run: PYTHONPATH=src python -m unittest discover -s tests -v
+      - name: Build
+        run: python build.py "${{ github.sha }}"
+      - name: Check the built version
+        run: python smoke.py "dist/${{ github.sha }}.pyz"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sorting-${{ github.sha }}
+          path: dist/*
+          if-no-files-found: error
+          retention-days: 7

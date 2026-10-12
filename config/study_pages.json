@@ -50,7 +50,7 @@
     "devops-implementation-guide": "devops_tools.2026-10-10.r4.json"
   },
   "visual_guides": {
-    "devops-implementation-guide": "devops_visuals.2026-10-12.r9.json",
+    "devops-implementation-guide": "devops_visuals.2026-10-12.r14.json",
     "fde-enterprise-adoption": "fde_visuals.2026-10-12.r2.svg.json"
   },
   "visual_editions": {
@@ -59,7 +59,12 @@
       "devops_visuals.2026-10-11.r5.json",
       "devops_visuals.2026-10-12.r6.json",
       "devops_visuals.2026-10-12.r7.json",
-      "devops_visuals.2026-10-12.r8.json"
+      "devops_visuals.2026-10-12.r8.json",
+      "devops_visuals.2026-10-12.r9.json",
+      "devops_visuals.2026-10-12.r10.json",
+      "devops_visuals.2026-10-12.r11.json",
+      "devops_visuals.2026-10-12.r12.json",
+      "devops_visuals.2026-10-12.r13.json"
     ],
     "fde-enterprise-adoption": [
       "fde_visuals.2026-10-12.svg.json"

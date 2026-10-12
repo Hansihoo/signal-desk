@@ -242,3 +242,49 @@
 - 공개5주소200, FDEr2 exact, 이전44보고서/150판과 모델804/806·원본14/14 보존. DevOps 공개r9와 동시 작업을 구분. 실제390px 목차/확대/닫기·초점 복귀 및 공유 페이지 실행 확인.
 - Download 이벤트 자동 대기는 시간초과라 실제 저장을 확인했다고 주장하지 않음. HTTP 전체 파일과 내장 자산은 확인. 초기 분리본 변수 의존 오류18건은 커밋 전 수정 후 전체 검사 통과.
 - 새 collector/자동화/유료 생성·인간 독자 시험 없음. 배포 문서와 evidence 보존, 소유 검증 scratch 정리.
+
+## 2026-10-12 DevOps 요약과 실행 가능한 개발 경로 보강
+
+- 사용자가 지적한 `그림의 화살표` 요약을 제거했다. 같은 정렬 사례를 입력 규칙/API/12개 테스트/버전 zipapp/시험 요청/교체·복구로 실제 구현하고 전체 코드·명령·기대 결과를 본문에 넣었다.
+- 6장 운영 예시와9장 검사 범위·과제 풀이를 맞췄다. 실제 페이지 읽기에서 발견한2장의 이전 실행 범위 문장과 필수 코드의 접힘을 최종 r11에서 수정했다. r9와 중간 r10 및 과거150판은 보존한다.
+- 정상12개/의도적 정렬 오류/복원, 버전파일v1-v2-저장한v1 및 PowerShell 요청, 지문·덮어쓰기 거부, 내림차순 변형12개/결과물 요청 통과. 관련14시험35.836초와 gate1/audit14+30/로컬 생성 및 HTML 바이트·코드 일치 검증을 통과했다.
+- 다른43편/모델804+806/원문14+14와 과거150판 행 지문 exact, 최종44편/152판.3개 이미지와14코드의 기본 펼침, 실제 Chrome DOM/내부 링크/가로 넘침 확인.433px 실제 viewport와 캡처 시간 초과·타일/clip 오차를390px 시각검증 성공으로 바꾸지 않는다.
+- 주거 brief PNG 생성/육안 확인; review는 기존0활성 공고만 실패. 원격 예제 CI/운영 배포/무중단 복구/부하·보안/사람 시험과 공개 재배포·commit·push는 수행하지 않았다. 공개는 r9다.
+- 프로젝트 gh helper로 Hansihoo와 exact root/fetch/push 목적지를 확인하고 FDE 동시 문서 변경을 보존했다. 원자 scratch는 종료 후 정리했으며 로그·요청·행 지문과 재현 증거는 D:/9_codex_temp/2026-10-12/signal-desk-devops-r10/evidence/에 보관한다. [원고·검토·한계](../DEVOPS_WORKED_IMPLEMENTATION.2026-10-12.md).
+
+## 2026-10-12 DevOps 독자 본문 정리
+
+- 사용자 요청에 따라 소제목의 내부 분류68개와 반복 근거 접두어51개를 제거했다. 참고자료23개는 원문의 학습 내용으로 바꾸고 판 변경·수집·검수 과정과 사람 시험 문장을 독자 본문에서 제거했다. 기술적인 적용 조건과 사례 가정은 유지한다.
+- kind 데이터/출처 영수증을 바꾸거나 CSS로 숨기지 않고 hash에 묶인 r12 표시 설정과 공통 렌더의 선택 인자로 고쳤다. 역사 판/다른 보고서 기본 호출을 보존한다. 새 원문 수집은 하지 않았다.
+- 관련17시험38.442초, 확인일 문구 추가 정리 후 전용1시험0.124초와 gate1/build/audit14+30 통과.14코드/전 수치/23원문URL·날짜·hash exact, 다른43편/과거152판/모델804+806/원문14+14 exact,44편/153판.
+- 실제 Chrome DOM0배지/0검토문구/184출처번호/23참고자료/14펼친코드/내부링크 확인. 스크린샷은5초 시간 초과로 확보하지 못했다. 주거brief PNG 생성·육안 확인; review는 기존0활성 공고만 실패.
+- 프로젝트 helper로 Hansihoo/exact root/fetch/push 검증, FDE와 이전DevOps 동시 변경 보존. 원자시험 scratch 정리; D:/9_codex_temp/2026-10-12/signal-desk-devops-reader/evidence/에 필요한 로그/보존/재현 근거를 남겼다. 공개 재배포·commit/push/사람 시험은 미실시. [원고와 한계](../DEVOPS_READER_COPY.2026-10-12.md).
+
+## 2026-10-12 DevOps 주제·세부 목차·페이지 제작 방식 분석
+
+- 사용자가 반복/곁가지와 목적 이탈, 세부 목차의 시각 구분 부족을 지적해 r12의9개 장/72개 소주제·코드 제목과 공통 렌더를 읽었다. 정의·필요성·협업 원칙의 중복, 기업/AI 연구/학습 순서의 분산, 정렬 API 구현 코드가 DevOps 연결 실습을 압도하는 문제를 분석했다.
+- 목표는 DevOps 이해와 기존 작은 서비스에 검사·빌드·배포·운영 관찰을 연결하는 것이다. 개념3/구성2/구축4/운영3의12개 세부 목차 초안을 제안하고 각각의 독자 질문과 넣을 내용을 묶는다. 기업 회고/전체 앱 코드/심화 지표는 보조 자료, AI 사용률 연구는 다른 글 후보로 판단한다.
+- 실제 Chrome DOM과 CSS: 장30px/소주제23px이지만 소주제 anchor·목차 링크가 없고, 구현 장의 파일명/명령 제목도 모두 h3다. 장/번호 있는 소주제/본문 요점/파일 캡션을 구분하고 하위 목차와 현재 위치 표시를 연결하는 개선안을 제안한다. 현재 모양/데이터를 수정하지 않았다.
+- research-teaching과 web-design-builder를 적용했다. Google Technical Writing Documents/Audience, W3C WAI headings, Diataxis tutorials의 관련 절을 공식 웹 원문으로 확인했다(2026-10-12). URL: https://developers.google.com/tech-writing/one/documents, https://developers.google.com/tech-writing/one/audience, https://www.w3.org/WAI/tutorials/page-structure/headings/, https://diataxis.fr/tutorials/. 이 선별 확인을 보고서의 전체 원문 수집/갱신이나 학습 효과 실험으로 부르지 않는다.
+- 페이지 제작은 독자 결과와 일관된 사례 → 질문/한줄답을 함께 둔 목차 → 필수/중복/심화 선별 → 개념의 요점+설명과 실습의 행동+명령+예상 결과 → 제목 계층 렌더 → 대표 소주제/읽기·실행 확인을 순서로 제안한다. 장 수와 모든3요점을 강제하는 새 범용 틀은 만들지 않는다.
+- 분석/제안 단계다. 원고/quality/manifest/DB/HTML/CSS/스킬/예약/배포를 변경하거나 시험을 실행하지 않았다. 독립·사람 독해 시험 및 원격 CI/CD도 미실행이다. 프로젝트 gh helper로 Hansihoo/exact root/fetch/push를 검증하고 현재 worklog만 append했다. FDE/기존DevOps 변경은 보존한다.
+
+### 2026-10-12 DevOps r13 구조와 실습 재작성
+
+- 사용자가 승인한 이해/구성/구축/운영의4장12세부 주제로 전체 원고를 재작성했다. 추상 반복과 기업/AI 곁가지를 제외하고 요점 뒤 설명, 필수 명령과 기대 결과를 배치했다. 전체 앱 코드는 선택 영역과9파일 다운로드로 옮겼다.
+- report-v1을 유지하고 정확한 원고 hash의 topic_sections로 묶었다. H2장/H3번호 세부 주제/파일 캡션, 하위 목차와 현재 장+주제 표시를 연결했다. ZIP은 리뷰된 선택 코드의 바이트로 생성하며 현재 examples/의 후속 수정과 분리한다. 역사 판과 생성 출력의 Git 제외를 보존한다.
+- 첫 화면만 별도 읽고 본문/근거를 재독했다. API/JSON 선행 설명과 실제 YAML의 단계 지칭을 고쳤다.18개 기존 원문 영수증/날짜/hash를 그대로 유지했고 공식 웹4관련 절만 선별 재확인했다. 자체 검토이며 독립 리뷰/인간 독해 시험이 아니다.
+- 다운로드 예제의12테스트/의도적 문자 정렬 실패/복원과 원고 PowerShell 명령을 실제 실행했다. 8001시험,8002v1-v2-저장한 같은v1, HTTPhealth/가격순서/id순서, 지문 변조와 같은버전 거부 통과. 생성 파일/소유 서버는 원자 scratch 종료 때 정리했다.
+- renderer/briefing/publication19테스트27.742s, gate1/local publish/audit15gated30legacy 통과. data anchor 회귀는 숨긴 anchor로 수정했다. 실제 Chrome12주제/현재위치/32-24-14px을 확인했고 좁은 실제477px(요청430과 다름) 목차의 왼쪽 넘침을 border-box로 수정/재확인했다. viewport 해제, 최종 로컬문서 탭 보존. CDP PNG 캡처는5초 timeout으로 미확보다.
+- 기존154판/model804+806/original14+14 그대로. 별도 동시 작업FDEr2를 원고와 대조해 보존하고 나머지43현재 행도 동일하다. 최종45보고서/156판. 기존 dirty 파일을 일괄 stage/되돌리지 않았다. brief PNG 확인, housing review는 기존 활성0건만 실패(다른11항목 통과).
+- docs/DEVOPS_STRUCTURE.2026-10-12.md와 작성 가이드/템플릿/상태/handoff 연결. 원고 r13/quality/visual guide/manifest는 로컬만 반영했다. Hansihoo/root/정확한fetch/push를 프로젝트 helper로 검증했다. commit/push/공개배포/원격예제CI/공개운영서버/새자동화/유료생성은 수행하지 않았다.
+- 증거: D:/9_codex_temp/2026-10-12/signal-desk-devops-rewrite/evidence/는 검증 로그와 영수증을 위해 유지한다. disposable scratch는 제거됐다.
+
+
+### 2026-10-12 DevOps r14 선택 시각 자료 보강
+
+- 사용자가 승인한 방법으로 1.3에CI/CD자동화범위/운영배포시점 비교표1개,2.1에검사한같은v1.pyz의 전달 도식,4.2에v1-v2-같은v1의 파일 경로 복구 도식을 추가했다.4장12소주제와 요약/본문/모든실습코드는 유지했다. 장별 이미지/표 개수를 강제하지 않는다.
+- 정본tables/steps에서 모든 표시 문구를 직접 렌더한다. 정확한원고hash의topic_tables/block_visuals는 경로와표시선택만 보관한다. 성공경로/실패중단, 로컬수동배포,같은파일복구와정지시간을 대조했다.18기존원문 영수증/hash/날짜를 보존하고 AWS CI/CD,DORA전달,SRE릴리스 공식웹 관련절만선별 재확인했다. 첫화면불변이므로r13별도검토유지, 추가표/8노드/실패문단 자체검토. 독립/인간시험없음.
+- 관련21테스트27.644s,gate1/publish/audit15gated30legacy 통과. 실습코드/ZIPbytes 동일,다른44현재/기존156판/model804+806/original14+14 정확보존:45보고서157판. 생성기기능에만수정하고FDE/기존dirty변경을 보존했다. commit/push/공개배포/새자동화/유료모델은 실행하지 않았다.
+- 실제Chrome2071px에서5/3열,실제477px(요청430과다름)에서1열도식과표의415/600px영역을 확인했다. 화살표6개의 노드연결과버전경로,1.3/2.1/4.2배치를 대조했다. 부분 desktopPNG는 확인했으나 mobilePNGtimeout/빈화면으로 완전한캡처검증을 주장하지 않는다. 빈캡처제거,필요한부분PNG/DOM영수증은 D:/9_codex_temp/2026-10-12/signal-desk-devops-visuals/evidence/에 보관했다. 테스트scratch는 제거됐다.
+- brief/390x1500PNG 확인. housingreview는 기존활성0건만FAIL(다른11항목PASS). 새주택수집없음. docs/DEVOPS_VISUAL_SUPPORT.2026-10-12.md,작성가이드/템플릿/상태/handoff에선택기준과검증한계를 기록했다. 프로젝트helper로Hansihoo와정확한root/fetch/push를검증하고 기존공개r9를 변경하지 않았다.

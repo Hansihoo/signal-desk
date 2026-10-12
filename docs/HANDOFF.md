@@ -1,5 +1,56 @@
 # Handoff
 
+## Latest local DevOps visual support, 2026-10-12
+
+r14 keeps4chapters/12subtopics and adds one CI/CD comparison table at1.3 and two
+responsive process figures at2.1/4.2. Canonical tables/steps supply every label;
+hash-bound topic_tables/block_visuals only select presentation. All code, first
+screen,18source receipts and frozen ZIP bytes remain.21tests27.644s/gate1/build/audit15+30
+pass; actual2071/477px DOM and partial desktopPNG verified, mobilePNG unreliable.
+Final45reports/157editions: other44/current old156/model804+806/original14+14 exact.
+Housing review still0active fail; no commit/push/public deployment/human trial.
+See [visual support](DEVOPS_VISUAL_SUPPORT.2026-10-12.md).
+
+## Latest local DevOps rewrite: structure and practice, 2026-10-12
+
+r13 replaces9chapters/72block-and-code titles with4chapters/12actual subtopics.
+Each subtopic presents key points then explanation and commands/expected results.
+Numbered H2/H3, nested TOC/current chapter+topic and small file captions separate
+the hierarchy. App code is optional and9reviewed files form an immutable practice
+download. Source18receipts/old editions remain. Tests19/27.742s, gate1/build/audit15+30,
+downloaded sample12tests/failure/restoration and8001staging/8002v1-v2-originalv1 pass.
+Chrome DOM navigation/fonts and actual477px responsive boundary verified; screenshot
+timed out. Housing review still fails for0active notices. Final45reports/156editions:
+old154/model804+806/original14+14 exact, concurrent FDEr2 preserved, other43current exact.
+Public remainsr9; no commit/push/remote example CI/production/human trial.
+See [structure repair](DEVOPS_STRUCTURE.2026-10-12.md).
+
+## Latest local DevOps repair: reader-facing copy, 2026-10-12
+
+r12 removes68internal category badges and51repeated source prefixes. References
+explain what originals teach; editing/collection/review receipts stay in the quality
+package and logs. Technical assumptions/limits,14code blocks, all numeric data,
+23source URLs/date/hash receipts remain. Hash-bound reader_content_only preserves
+older display behavior.17tests38.442s plus final regression1/gate1/build/audit14+30
+pass. Other43/all152prior/model804+806/original14+14 exact:44reports/153editions.
+Actual Chrome DOM shows0badges/184citation links/23references/14expanded codes;
+screenshot acquisition timed out. Public remainsr9; no push/deployment/human trial.
+See [reader copy repair](DEVOPS_READER_COPY.2026-10-12.md).
+
+## Latest local DevOps repair: executed implementation path, 2026-10-12
+
+The user rejected the diagram-arrow summary point and missing development steps.
+Local final r11 removes that point and implements the same sorting example as an
+HTTP API with12tests, versioned zipapp artifacts, actual requests and v1/v2/original
+v1 recovery. Remote CI remains a configuration example. A stale chapter2 scope
+sentence found in r10 was repaired in r11; both immutable local batches retained.
+Essential chapter5 code is expanded by its hash-bound visual guide; old editions
+keep their presentation.14affected tests/gate/render pass, other43/all150prior
+editions/model804+806/14+14 preserved:44reports/152editions. Actual Chrome DOM and
+PowerShell requests verified; screenshot/390px override limitations recorded.
+Public latest is still r9/f35cde2; no commit/push/redeployment or human reader trial.
+Concurrent FDE docs preserved. See [repair and evidence](DEVOPS_WORKED_IMPLEMENTATION.2026-10-12.md).
+
 ## Latest publication: revised DevOps r9, 2026-10-12
 
 At the user's explicit request, source f35cde2 deployed through

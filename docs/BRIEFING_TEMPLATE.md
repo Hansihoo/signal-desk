@@ -1,5 +1,25 @@
 # Homepage and report contract
 
+## Optional teaching visuals, 2026-10-12
+
+DevOps r14 places one canonical comparison table at1.3 and two responsive HTML process
+figures at2.1/4.2. The exact-hash guide's `topic_tables` and `block_visuals` select reviewed
+tables and steps; display metadata introduces no factual copy. Original explanations,
+commands and source links remain. Earlier editions keep their layout. Choose visuals
+for a reader question instead of requiring images/tables in every report or chapter.
+See [visual support and its validation](DEVOPS_VISUAL_SUPPORT.2026-10-12.md).
+
+## DevOps topic hierarchy, 2026-10-12
+
+The r13 edition uses four chapters and twelve genuine subtopics. A content-hash-bound
+`topic_sections` sidecar groups canonical report-v1 blocks without changing its schema.
+Numbered H3 headings, nested contents and the current chapter/subtopic share anchors.
+File and command titles are captions; essential commands stay visible. Optional code
+is exported as a deterministic practice ZIP from the reviewed edition's exact text,
+never the mutable example folder. Historical layouts remain bound to their own hashes.
+Counts and this structure are specific to DevOps, not a universal authoring template.
+See [the rewrite and its verification](DEVOPS_STRUCTURE.2026-10-12.md).
+
 ## Home and recent updates, 2026-10-12
 
 The common header and sidebar provide a **Home** link to `preview/index.html`.
@@ -412,7 +432,13 @@ default_layout=study가 새 보고서 ID에 적용된다. 현재까지의41개 I
 작성 규칙으로 고정하는 부분은 작성 목적 다음에 요약이 오는 앞부분이며,
 이후 목차와 본문 구성은 주제별로 조정할 수 있다.
 문서 목차/현재 장/뒤로가기는 상단, 좁은 화면은 접힘 메뉴다. 필수 설명은 본문에 유지하고
-코드·세부 도구 정보·선택형 참고만 접는다. 기존 수치·표·출처 계약을 유지한다.
+세부 도구 정보·선택형 참고와 일반 코드 예시는 접는다. 따라 하는 실습의 필수 코드와
+명령은 해당 판의 visual guide에 `expanded_code_chapters`를 지정해 기본 펼침으로
+읽을 수 있게 한다. 설정은 보고서 hash가 일치할 때만 적용해 다른 판의 표시를 바꾸지
+않는다. 기존 수치·표·출처 계약을 유지한다.
+DevOps r12의 `reader_content_only` 설정은 내부 분류 배지와 반복 근거 접두어를
+출력하지 않으며 출처 링크는 유지한다. 편집 기록 대신 기술 범위와 조건을 본문에
+쓴다. 이 설정도 정확한 보고서 hash에 연결되어 과거 판과 다른 보고서에 번지지 않는다.
 
 현재 적용 문서는 `devops-implementation-guide`다. 도구 데이터는 정확한 정본 해시로 묶고,
 해시가 다른 이전 판에는 그 판의 정본 설명을 표시한다. 검색·분야/추천 등급 필터·선택 비교와

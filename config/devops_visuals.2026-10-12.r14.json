@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "report_id": "devops-implementation-guide",
+  "report_hash": "cd5bd35ab4375dac5b26983e8bfbfc3e5c21b9b7aae0bddbe2788e3f861f1ce4",
+  "images": {},
+  "reader_content_only": true,
+  "topic_sections": {
+    "overview": [
+      {
+        "id": "definition",
+        "start": 0
+      },
+      {
+        "id": "need",
+        "start": 3
+      },
+      {
+        "id": "cicd",
+        "start": 6
+      }
+    ],
+    "system": [
+      {
+        "id": "flow",
+        "start": 0
+      },
+      {
+        "id": "tools",
+        "start": 5
+      }
+    ],
+    "architecture": [
+      {
+        "id": "prepare",
+        "start": 0
+      },
+      {
+        "id": "automation",
+        "start": 6
+      },
+      {
+        "id": "artifact",
+        "start": 11
+      },
+      {
+        "id": "deploy",
+        "start": 17
+      }
+    ],
+    "operations": [
+      {
+        "id": "observe",
+        "start": 0
+      },
+      {
+        "id": "recover",
+        "start": 3
+      },
+      {
+        "id": "improve",
+        "start": 10
+      }
+    ]
+  },
+  "practice_bundle": {
+    "filename": "devops-sort-r13.zip",
+    "lesson_id": "practice-files",
+    "topic_id": "prepare",
+    "files": [
+      {
+        "block": 0,
+        "path": "devops-sort/src/sorting.py"
+      },
+      {
+        "block": 1,
+        "path": "devops-sort/src/version.py"
+      },
+      {
+        "block": 2,
+        "path": "devops-sort/src/app.py"
+      },
+      {
+        "block": 3,
+        "path": "devops-sort/tests/test_service.py"
+      },
+      {
+        "block": 4,
+        "path": "devops-sort/build.py"
+      },
+      {
+        "block": 5,
+        "path": "devops-sort/smoke.py"
+      },
+      {
+        "block": 6,
+        "path": "devops-sort/ci.example.yml"
+      },
+      {
+        "block": 7,
+        "path": "devops-sort/.gitignore"
+      },
+      {
+        "block": 8,
+        "path": "devops-sort/README.md"
+      }
+    ]
+  },
+  "provenance": "r14 adds a canonical CI/CD comparison table and two responsive HTML process diagrams at the relevant subtopics. All visible diagram text comes from reviewed report-v1 steps; the guide stores only presentation IDs and paths. r13 content, source receipts, tutorial code and practice ZIP bytes are preserved.",
+  "block_visuals": [
+    {
+      "id": "visual-change-flow",
+      "path": "/explanation/1/blocks/1",
+      "kind": "flow"
+    },
+    {
+      "id": "visual-version-recovery",
+      "path": "/explanation/3/blocks/4",
+      "kind": "recovery"
+    }
+  ],
+  "topic_tables": {
+    "cicd": [
+      "overview-cicd"
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "report_id": "devops-implementation-guide",
+  "report_hash": "2b999dbeba4d0d43bb0977a3021e5a80c88494bc241b945f6fa178d47fdff281",
+  "images": {
+    "summary": {
+      "asset": "devops-summary.2026-10-12.r6.png",
+      "sha256": "303e663ba12e28ae6c2f0c4eb8e9dc40765006b55c0932f53cdbc2264d29ebfa",
+      "width": 1536,
+      "height": 1024,
+      "caption": "개발과 운영이 함께 계획하고, 자동화와 실제 서비스의 피드백으로 개선하는 DevOps의 예",
+      "alt": "개발과 운영이 목표와 정보, 책임을 공유한다. ① 함께 계획에서 ② 개발하고 검사로 변경을 전달하고, ②에서 ③ 배포하고 운영으로 검사한 버전을 전달한다. ③에서 ④ 결과로 개선으로 운영 결과를 전달하며, ④에서 ①로 다음 계획을 돌려보낸다. 네 연결은 각 출발 상자와 도착 상자의 경계에 붙어 있고 단계마다 여러 역할이 참여한다."
+    },
+    "ci": {
+      "asset": "devops-cicd.2026-10-11.r5.png",
+      "sha256": "9666f75e15e9adcb4b86461704a84dee9c776704051f67b460d4c3f8b8df4e71",
+      "width": 1536,
+      "height": 1024,
+      "caption": "CI와 지속적 전달, 지속적 배포의 구분",
+      "alt": "CI는 변경 통합과 자동 검사를 수행한다. 지속적 전달은 배포 준비 상태를 유지하며 사람이 배포 시점을 정할 수 있고 지속적 배포는 조건 통과 후 운영 배포를 자동으로 시작한다."
+    },
+    "architecture": {
+      "asset": "devops-build.2026-10-11.r5.png",
+      "sha256": "273463978df30afec6f2871f29797132545a156c99f0f4c9a4a21be3654cb953",
+      "width": 1536,
+      "height": 1024,
+      "caption": "첫 자동 검사에서 배포와 운영으로 확장하는 순서",
+      "alt": "코드와 테스트 저장, 자동 검사, 검사한 배포 버전 준비, 시험 환경 확인, 운영 배포와 관찰 순서다. 자동 검사 실패는 다음 단계로 진행하지 않고 수정한다. r10 실습은 로컬 API의 검사와 버전 파일 시험, 교체 및 복구를 다루며 원격 CI는 설정 예시다."
+    }
+  },
+  "summary_image_first": true,
+  "provenance": "r10 removes the diagram-reading summary point and adds the executed local HTTP/test/build/version/recovery example. Exact previous image bytes reused; architecture accessible description updated to the current practice scope. No image generation/editing; all older bindings preserved."
+}

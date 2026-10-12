@@ -310,9 +310,10 @@ def render_editorial(output, snapshot, featured, research_data=None, standalone=
     template = (ROOT / "editorial_report.html").read_text(encoding="utf-8")
     def report_page(item, edition=None):
         prefix = "../" if edition else ""
-        from .study_report import uses_study, render_study, settings
+        from .study_report import uses_study, render_study, settings, write_practice_bundle
         from .research_workflow import digest
         if uses_study(item["id"]):
+            write_practice_bundle(item, destination)
             content = render_study(item, prefix, edition)
             rendered = page(item["title"], item["description"], content, prefix,
                             item["id"], "", _edition_nav(item, history, prefix))

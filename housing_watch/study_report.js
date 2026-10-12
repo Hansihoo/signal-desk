@@ -5,6 +5,7 @@
   const menu = root.querySelector('#document-menu');
   const back = root.querySelector('#document-back');
   const chapters = [...root.querySelectorAll('.study-chapter[id^="chapter-"]')];
+  const topics = [...root.querySelectorAll('.study-topic')];
   const links = [...root.querySelectorAll('[data-section-link]')];
   const sameDocument = () => location.href.split('#')[0];
   const canBack = () => typeof window.navigation?.canGoBack === 'boolean' ? navigation.canGoBack : history.length > 1;
@@ -31,9 +32,13 @@
   let frame=false;
   function current(){
     frame=false;let active=null;const line=bar.getBoundingClientRect().height+38;
+    if(topics.length)root.style.setProperty('--study-anchor-offset',(bar.getBoundingClientRect().height+30)+'px');
     for(const ch of chapters)if(ch.getBoundingClientRect().top<=line)active=ch.id;
-    for(const a of links){const on=a.hash==='#'+active;a.classList.toggle('active',on);if(on)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');}
-    root.querySelector('#document-current').textContent=active ? chapters.find(c=>c.id===active).querySelector('h2').textContent : '';
+    let topic=null;
+    for(const section of topics)if(section.dataset.chapter===active&&section.getBoundingClientRect().top<=line)topic=section;
+    for(const a of links){const on=a.hash==='#'+active||a.hash==='#'+topic?.id;a.classList.toggle('active',on);if(on)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');}
+    const chapterTitle=active ? chapters.find(c=>c.id===active).querySelector('h2').textContent : '';
+    root.querySelector('#document-current').textContent=chapterTitle+(topic ? ' › '+topic.querySelector('h3').textContent : '');
   }
   function schedule(){if(!frame){frame=true;requestAnimationFrame(current);}}
   addEventListener('scroll',schedule,{passive:true});addEventListener('resize',schedule);

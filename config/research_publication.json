@@ -189,6 +189,21 @@
       "quality": "devops_implementation.2026-10-12.r9.quality.json"
     },
     {
+      "id": "devops-worked-implementation-2026-10-12",
+      "input": "devops_implementation.2026-10-12.r10.json",
+      "quality": "devops_implementation.2026-10-12.r10.quality.json"
+    },
+    {
+      "id": "devops-worked-reading-2026-10-12",
+      "input": "devops_implementation.2026-10-12.r11.json",
+      "quality": "devops_implementation.2026-10-12.r11.quality.json"
+    },
+    {
+      "id": "devops-reader-content-2026-10-12",
+      "input": "devops_implementation.2026-10-12.r12.json",
+      "quality": "devops_implementation.2026-10-12.r12.quality.json"
+    },
+    {
       "id": "fde-learning-2026-10-12",
       "input": "fde_research.2026-10-12.json",
       "quality": "fde_research.2026-10-12.quality.json"
@@ -197,6 +212,16 @@
       "id": "fde-reader-copy-2026-10-12",
       "input": "fde_research.2026-10-12.r2.json",
       "quality": "fde_research.2026-10-12.r2.quality.json"
+    },
+    {
+      "id": "devops-structured-2026-10-12",
+      "input": "devops_implementation.2026-10-12.r13.json",
+      "quality": "devops_implementation.2026-10-12.r13.quality.json"
+    },
+    {
+      "id": "devops-visual-support-2026-10-12",
+      "input": "devops_implementation.2026-10-12.r14.json",
+      "quality": "devops_implementation.2026-10-12.r14.quality.json"
     }
   ]
 }

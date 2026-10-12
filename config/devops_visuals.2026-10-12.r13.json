@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "report_id": "devops-implementation-guide",
+  "report_hash": "aa70b063e2be60f38074c815b667a012a18be19ceeefa169c5b1a0e5f16f906a",
+  "images": {},
+  "reader_content_only": true,
+  "topic_sections": {
+    "overview": [
+      {
+        "id": "definition",
+        "start": 0
+      },
+      {
+        "id": "need",
+        "start": 3
+      },
+      {
+        "id": "cicd",
+        "start": 6
+      }
+    ],
+    "system": [
+      {
+        "id": "flow",
+        "start": 0
+      },
+      {
+        "id": "tools",
+        "start": 3
+      }
+    ],
+    "architecture": [
+      {
+        "id": "prepare",
+        "start": 0
+      },
+      {
+        "id": "automation",
+        "start": 6
+      },
+      {
+        "id": "artifact",
+        "start": 11
+      },
+      {
+        "id": "deploy",
+        "start": 17
+      }
+    ],
+    "operations": [
+      {
+        "id": "observe",
+        "start": 0
+      },
+      {
+        "id": "recover",
+        "start": 3
+      },
+      {
+        "id": "improve",
+        "start": 9
+      }
+    ]
+  },
+  "practice_bundle": {
+    "filename": "devops-sort-r13.zip",
+    "lesson_id": "practice-files",
+    "topic_id": "prepare",
+    "files": [
+      {
+        "block": 0,
+        "path": "devops-sort/src/sorting.py"
+      },
+      {
+        "block": 1,
+        "path": "devops-sort/src/version.py"
+      },
+      {
+        "block": 2,
+        "path": "devops-sort/src/app.py"
+      },
+      {
+        "block": 3,
+        "path": "devops-sort/tests/test_service.py"
+      },
+      {
+        "block": 4,
+        "path": "devops-sort/build.py"
+      },
+      {
+        "block": 5,
+        "path": "devops-sort/smoke.py"
+      },
+      {
+        "block": 6,
+        "path": "devops-sort/ci.example.yml"
+      },
+      {
+        "block": 7,
+        "path": "devops-sort/.gitignore"
+      },
+      {
+        "block": 8,
+        "path": "devops-sort/README.md"
+      }
+    ]
+  },
+  "provenance": "r13 uses four chapters and twelve numbered subtopics. File and command titles are captions. Practice files are frozen in reviewed optional report code and exported from these exact bytes. Earlier visuals and editions remain bound to their own content hashes."
+}
