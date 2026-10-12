@@ -79,7 +79,11 @@ Everyday 대비 사용량 분모를 보완한 뒤 두 편이 Pass를 받았다.
 
 실제 브라우저에서 두 소개를390px 모바일과1280px PC로 확인했다. 비교표는 요약 다음이며 표가 페이지 밖으로 넘치지 않는다. 모바일에서7열 표의 숫자가 한 글자씩 줄바꿈되는 기존 CSS의 overflow-wrap:anywhere 영향을 발견해, 해시로 선택된 모델 소개에만960px 최소 너비와 정상 단어 줄바꿈을 적용했다. 숫자 열은 약69~102px, 키보드 가로 스크롤이 동작하고 표 주석은 가로 이동 중에도 읽을 수 있도록 고정했다. r1 및 다른 화면의 표 규칙은 그대로다. 모델 자료 검색/공식 가이드 분류에서 두 현재 소개로 연결된다.
 
-현재 공개 배포 확인 전이다. 생성 DB/JSON/HTML/이미지는
+공개 배포 완료: source `43a7076`, [Pages38323945504](https://github.com/Hansihoo/signal-desk/actions/runs/38323945504), 2026-10-13 08:49:31 KST success. CI154시험32.265초와 클라우드 주거 review가 통과했다. 일반 뉴스 수집warning1과 런타임 폐기 경고는 모델 소개/배포 실패가 아니다.
+
+공개9주소HTTP200,19개 내용/이력 보존 검사가 통과했다. 다른45현재 문서,159이전 판과 기존 원격 receipt시각,816관측/818판,Theo14원본/14판이 정확히 같고 새현재두판은 r3 입력과 일치한다. 공개 두 문서의390px/1280px 화면, 3표와 순서, 숫자열 및 키보드스크롤/주석고정, 목록 검색·공식 가이드 연결을 5개 브라우저 기록으로 확인했다. viewport를 초기화하고 작업 탭을 닫았으며 사용자의 기존 서버와 탭을 보존했다. 기본 GitHub CLI는theo-s-han active임을 다시 확인했다.
+
+[Wonder 소개](https://hansihoo.github.io/signal-desk/preview/muse-wonder-model-guide.html), [Full 소개](https://hansihoo.github.io/signal-desk/preview/muse-wonder-full-model-guide.html). 생성 DB/JSON/HTML/이미지는
 Git에 넣지 않으며 기존 다른 작업의 변경을 포함하지 않는다.
 실제 API 호출·독립 벤치마크·한국어 성능·실제 청구·전체 안전성 검토는 수행하지 않았다.
 원문은 data/raw, 필요한 검토/시험/화면 근거는

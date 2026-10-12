@@ -328,3 +328,11 @@ FDE 기존 배포와 작업 파일, 원문/내용 검토 날짜를 보존. 생�
 - 모바일 숫자 세로줄바꿈은 기존anywhere규칙과좁은7열표가원인. 해당소개판의표에만960px/정상줄바꿈과주석고정을적용, 숫자열/키보드스크롤/390·1280px실제화면을확인했다.
 - 전체154시험102.005초/관련61/새batch37/모바일11시험Pass; Skill/quality2/audit17+30/publish/brief/desk/PNG확인.232HTML19979참조누락없음.47/163,기존159판/다른45/816관측818판/Theo14원본보존. 주거0활성review11Pass1Fail은별도.
 - 실제모델API·독립벤치·청구·사람독해시험미실시. 근거는D:/9_codex_temp/2026-10-13/signal-ai-models/model-intro-repair, 운영근거docs/MODEL_INTRODUCTION_REPAIR.2026-10-13.md. 공개배포확인은후속기록한다.
+
+
+### 2026-10-13 모델 소개 형식 공개 반영 완료
+
+- source43a7076/Pages38323945504 success08:49:31KST. CI154시험32.265초와cloud주거reviewPass.
+- 공개9주소200/19내용보존검사(159판과기존원격receipt시각,다른45/816관측818판/Theo14포함)/5실제브라우저기록Pass. 두소개는검토r3와같고3비교표·장단점·390/1280px·숫자/키보드스크롤·주석고정·목록검색연결을확인했다.
+- 매일05:00ai작성지침에모델소개기준을적용했다. 기본theo-s-han active/기존다른작업변경과사용자탭·서버보존. 자체viewport/탭정리,필수근거D:/9_codex_temp/2026-10-13/signal-ai-models/model-intro-repair보존.
+- 실제모델실행·독립벤치·청구·사람독해시험은미수행. 일반뉴스warning1은별도. docs/MODEL_INTRODUCTION_REPAIR.2026-10-13.md.
