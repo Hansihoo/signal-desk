@@ -3,11 +3,13 @@
 import base64
 import hashlib
 import re
+from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import urlencode
 
 from .briefing_preview import _escape, _report_replacements, _topic_rows, _chart, _table
 from .research_data import validate_report
+from .timeutil import KST
 
 
 ROOT = Path(__file__).parent
@@ -153,6 +155,63 @@ def _topic_features(reports):
     return "".join(parts)
 
 
+def _recent_updates(reports, research_data=None, limit=6):
+    """Current content changes, never export time or a successful re-fetch."""
+    data = research_data or {}
+    versions = {row["id"]: row for row in data.get("report_versions", [])}
+    updates = []
+
+    def timestamp(value):
+        if not isinstance(value, str) or not value:
+            return None
+        try:
+            parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+        except ValueError:
+            return None
+        # Date-only check dates and legacy naive values use the site's KST.
+        return (parsed.replace(tzinfo=KST) if parsed.tzinfo is None else parsed).astimezone(timezone.utc)
+
+    for report in reports:
+        version = versions.get(report["id"], {})
+        changed = timestamp(version.get("updated_at"))
+        revision = version.get("revision", 0)
+        action = "수정" if revision > 1 else "등록"
+        status = "수정" if revision > 1 else "신규"
+        if changed is None:
+            changed = timestamp(report["checked_on"])
+            action, status = "내용 검토", "보고서"
+        updates.append({"at": changed, "timed": action != "내용 검토", "action": action,
+                        "status": status, "title": report["title"], "deck": report["deck"],
+                        "category": " / ".join(report["topic_path"]), "url": report["id"] + ".html",
+                        "checked_on": report["checked_on"]})
+
+    records = data.get("model_ledger", {}).get("records", [])
+    changed_records = [(timestamp(row.get("changed_at")), row) for row in records]
+    changed_records = [(at, row) for at, row in changed_records if at is not None]
+    if changed_records:
+        latest = max(at for at, _ in changed_records)
+        day = latest.astimezone(KST).date()
+        daily = [row for at, row in changed_records if at.astimezone(KST).date() == day]
+        names = sorted({row["model"] for row in daily})
+        changed_count = sum(row.get("revision", 1) > 1 for row in daily)
+        updates.append({"at": latest, "timed": True, "action": "데이터 반영", "status": "비교표",
+                        "title": "주요 LLM 모델 통합 비교", "category": "개발 동향 / AI 모델·API",
+                        "deck": "%s%s의 관측 %d건 등록, %d건 수정. 사양, 가격과 평가 조건을 비교할 수 있습니다." % (
+                            ", ".join(names[:3]), " 외 %d개 모델" % (len(names) - 3) if len(names) > 3 else "",
+                            len(daily) - changed_count, changed_count), "url": "ai-models.html"})
+    updates.sort(key=lambda row: (row["at"], row["url"]), reverse=True)
+    rows = []
+    for update in updates[:limit]:
+        local = update["at"].astimezone(KST)
+        date = local.strftime("%Y.%m.%d %H:%M KST" if update["timed"] else "%Y.%m.%d")
+        checked = '<span class="update-reviewed">내용 검토 %s</span>' % _escape(update["checked_on"].replace("-", ".")) if update.get("checked_on") and update["timed"] else ""
+        rows.append('''<li class="update-item"><div class="update-meta"><span class="update-status">%s</span><span>%s</span></div>
+          <h2><a href="%s">%s</a></h2><p>%s</p><div class="update-date"><span>%s <time datetime="%s">%s</time></span>%s</div></li>''' % (
+            _escape(update["status"]), _escape(update["category"]), _escape(update["url"]), _headline(update["title"]),
+            _escape(update["deck"]), update["action"], local.isoformat(), date, checked))
+    return "".join(rows) or '<li class="updates-empty">아직 등록된 보고서가 없습니다. 새 자료가 등록되면 여기에 표시됩니다.</li>'
+
+
 def _hero(report, target=None):
     numbers = {source["id"]: index for index, source in enumerate(report["references"], 1)}
     if report["datasets"]:
@@ -219,9 +278,10 @@ def render_editorial(output, snapshot, featured, research_data=None, standalone=
         return _fill(shell, {"__PAGE_TITLE__": _escape(title), "__DESCRIPTION__": _escape(description),
             "__STYLE_BLOCK__": style_block, "__SCRIPT__": script, "__CONTENT__": content, "__PREFIX__": prefix,
             "__TREE__": _tree(reports, prefix, active, has_model_ledger, model_page_count, model_library_count), "__CONTENTS_NAV__": contents, "__EDITION_NAV__": editions,
-            "__BUSINESS_LINK__": '<a href="%sbusiness.html">사업</a>' % prefix if any(item["topic_id"] == "business" for item in reports) else ""})
+            "__BUSINESS_LINK__": '<a href="%sbusiness.html">사업</a>' % prefix if any(item["topic_id"] == "business" for item in reports) else "",
+            "__HOME_CURRENT__": ' aria-current="page"' if active == "home" else ""})
     values = dict(_report_replacements(featured), __REPORT_URL__=_escape(featured["id"] + ".html"),
-        __HEADLINE__=_headline(featured["title"]),
+        __HEADLINE__=_headline(featured["title"]), __RECENT_UPDATES__=_recent_updates(reports, research_data),
         __HERO_VISUAL__=_hero(featured, featured["id"] + ".html"), __TOPIC_FEATURES__=_topic_features(reports),
         __REPORT_COUNT__=str(len(reports)), __BOARD_TOOLS__=_board_tools(reports),
         __BOARD_ROWS__="".join(_post(item, item["id"] + ".html") for item in reports), __TOPIC_ROWS__=_topic_rows(snapshot))
@@ -234,7 +294,7 @@ def render_editorial(output, snapshot, featured, research_data=None, standalone=
     model_link = '<section class="model-ledger-link">%s</section>' % "".join(model_links)
     if model_links:
         content = content.replace('<section id="board">', model_link + '<section id="board">')
-    (destination / "index.html").write_text(page("최근 동향", "개발 동향, 사업 기회와 운영 자료", content), encoding="utf-8")
+    (destination / "index.html").write_text(page("Home · 최근 업데이트", "새로 등록하거나 수정한 보고서와 모델 비교표", content, active="home"), encoding="utf-8")
     business = [item for item in reports if item["topic_id"] == "business"]
     if business:
         def business_page(prefix=""):

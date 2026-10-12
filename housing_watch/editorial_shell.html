@@ -14,7 +14,7 @@
       <header id="header">
         <button class="menu-toggle" type="button" aria-label="목차 열기" aria-expanded="false" aria-controls="sidebar-inner"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
         <a href="__PREFIX__index.html" class="logo"><strong>Signal Desk</strong></a>
-        <nav class="header-links" aria-label="기록">__BUSINESS_LINK__<a href="__PREFIX__history/index.html">이전 기록</a><a href="__PREFIX__../index.html">원문 자료</a></nav>
+        <nav class="header-links" aria-label="기록"><a class="home-link" href="__PREFIX__index.html"__HOME_CURRENT__>Home</a>__BUSINESS_LINK__<a href="__PREFIX__history/index.html">이전 기록</a><a href="__PREFIX__../index.html">원문 자료</a></nav>
       </header>
       __CONTENT__
       <footer class="page-footer"><a href="__PREFIX__index.html">전체 목록</a><span>Design: <a href="https://html5up.net/editorial">HTML5 UP Editorial</a> · <a href="__PREFIX__licenses.html">CC BY 3.0 · adapted</a></span></footer>
@@ -22,6 +22,7 @@
     <aside id="sidebar" class="inactive" aria-label="보고서 탐색">
       <div class="inner" id="sidebar-inner">
         <section class="alt"><div class="sidebar-heading"><a class="sidebar-brand" href="__PREFIX__index.html">Signal Desk</a><button class="sidebar-close" type="button" aria-label="목차 닫기" aria-controls="sidebar-inner"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></svg></button></div><form action="__PREFIX__index.html" class="sidebar-search"><label class="sr-only" for="sidebar-query">전체 보고서 검색</label><input id="sidebar-query" name="q" type="search" placeholder="보고서 검색"><button type="submit" aria-label="검색"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/></svg></button></form></section>
+        <nav class="main-menu" aria-label="메인 메뉴"><a class="home-link" href="__PREFIX__index.html"__HOME_CURRENT__><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7M5 9v12h14V9M9 21v-8h6v8"/></svg><span>Home<small>최근 업데이트</small></span></a><a href="__PREFIX__index.html#board">전체 보고서</a></nav>
         <nav id="menu" aria-label="분야별 보고서"><header class="major"><h2>분야</h2></header>__TREE__</nav>
         __CONTENTS_NAV__
         __EDITION_NAV__

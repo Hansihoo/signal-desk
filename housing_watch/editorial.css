@@ -24,6 +24,28 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
 #header .header-links {text-align:right;font-size:13px;display:flex;justify-content:flex-end;gap:1.2em;align-items:center;flex-wrap:wrap;min-width:0}
 #header .header-links a {white-space:nowrap}
 #header .header-links a {color:#7f888f;border:0}
+#header .header-links a[aria-current="page"] {color:#c54242;font-weight:600}
+.main-menu {display:grid;gap:.5em}
+.main-menu a {display:flex;align-items:center;gap:.8em;border:0;padding:.8em 1em;font-size:14px;color:#3d4449;border-radius:.25em;line-height:1.5}
+.main-menu a:hover {background:#e9ecee}
+.main-menu a[aria-current="page"] {background:#fff;color:#c54242;box-shadow:inset 3px 0 #f56a6a}
+.main-menu svg {width:22px;height:22px;stroke:currentColor;stroke-width:1.7;fill:none;flex:none}
+.main-menu small {display:block;font-size:12px;font-weight:400;color:#5c656c;margin-top:.25em}
+#recent-updates .eyebrow {margin-bottom:.6em}
+#updates-title {font-size:2em;line-height:1.5;margin-bottom:.5em}
+.updates-intro {margin-bottom:1.5em;line-height:1.8}
+.update-list {list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 2.5em}
+.update-list .update-item {padding:1.5em 0;min-width:0;border-top:1px solid #d2d7d9}
+.update-meta {display:flex;align-items:baseline;flex-wrap:wrap;gap:.6em;font-size:12px;line-height:1.7;color:#5c656c;margin-bottom:.7em}
+.update-status {font-weight:600;color:#a33737;background:#fff0f0;padding:.1em .6em;white-space:nowrap;border-radius:.2em}
+.update-item h2 {font-size:1.1em;line-height:1.65;margin:0 0 .6em;text-wrap:wrap}
+.update-item h2 a {border:0;color:#3d4449}
+.update-item h2 a:hover {color:#c54242}
+.update-item p {font-size:14px;line-height:1.85;margin:0 0 .8em}
+.update-date {display:flex;flex-wrap:wrap;gap:.3em 1.2em;font-size:12px;line-height:1.7;color:#5c656c;font-variant-numeric:tabular-nums}
+.updates-more {margin:1em 0 0;font-size:14px}
+.updates-empty {grid-column:1/-1;padding:1em 0}
+#banner .featured-title {font-size:1.8em;line-height:1.5}
 /* Keep the menu hit target in the header's layout, clear of the brand link. */
 #header .menu-toggle,.sidebar-close {display:inline-flex;align-items:center;justify-content:center;flex:0 0 44px;width:44px;height:44px;padding:0;line-height:1;box-shadow:none;border:0;background:transparent;color:#f56a6a;border-radius:.25em}
 #header .menu-toggle:hover,.sidebar-close:hover {background:#eff1f2}
@@ -211,6 +233,8 @@ details[open] .when-closed {display:none}
   #banner .evidence-panel .storage-row {grid-template-columns:minmax(7em,1fr) 2fr auto}
 }
 @media (max-width:736px) {
+  .update-list {grid-template-columns:1fr}
+  #updates-title {font-size:1.7em}
   #sidebar {width:min(24em,calc(100vw - 1rem))}
   #sidebar > .inner {width:100%}
   #sidebar.inactive {margin-left:calc(0px - min(24em,calc(100vw - 1rem)))}

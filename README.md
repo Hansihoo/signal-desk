@@ -41,6 +41,13 @@ The public homepage is a multi-topic research library. Each topic has its own pa
 add research areas and public RSS/Atom feeds in `config/research_topics.json`.
 See [research hub and free hosting scope](docs/RESEARCH_HUB.md).
 
+The research Home at `preview/index.html` starts with six recently registered or
+modified reports and model-comparison data. Shared Home links return there from
+reports, model documents and earlier editions. Registration/modification times
+and content-review dates remain separate; rebuilding HTML does not refresh them.
+See [the Home contract](docs/BRIEFING_TEMPLATE.md). This addition is locally verified
+and has not yet been deployed to the public site.
+
 The **Developer Opportunities** topic currently provides an HTML outline with eight
 categories and a downloadable report template. Real opportunity collection and verification
 are deferred. See [scope and requirements](docs/OPPORTUNITIES.md).

@@ -50,11 +50,12 @@
     "devops-implementation-guide": "devops_tools.2026-10-10.r4.json"
   },
   "visual_guides": {
-    "devops-implementation-guide": "devops_visuals.2026-10-11.r5.json"
+    "devops-implementation-guide": "devops_visuals.2026-10-12.r6.json"
   },
   "visual_editions": {
     "devops-implementation-guide": [
-      "devops_visuals.2026-10-10.r4.json"
+      "devops_visuals.2026-10-10.r4.json",
+      "devops_visuals.2026-10-11.r5.json"
     ]
   }
 }

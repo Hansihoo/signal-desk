@@ -1,5 +1,38 @@
 # Homepage and report contract
 
+## Home and recent updates, 2026-10-12
+
+The common header and sidebar provide a **Home** link to `preview/index.html`.
+The sidebar places Home and the whole-report board before the existing field tree.
+Every nested edition, model and formal research route resolves these links back to
+the same main; Home has a current-page marker on the main. The source library's
+header also links to Home.
+
+Home begins with the latest six current report/comparison updates, then preserves
+the featured report, topic panels and searchable accumulating board. Report order
+uses `report_versions.updated_at`, with registration/revision labels and a separate
+`checked_on` content-review date. Missing version metadata falls back to the report's
+check date labelled **내용 검토**, without claiming registration or modification.
+The model comparison contributes one entry using the latest actual `changed_at`;
+its counts summarize current observations changed on that Korean calendar day.
+These are Signal Desk content/data changes, not original publication dates or
+independent model performance verification. Generation time, sync-run time and
+unchanged successful retrievals do not refresh this list. Imported model originals
+and source feed entries are not in this report/comparison list.
+
+Times display in Asia/Seoul; sorting compares actual instants across time zones.
+The list renders as HTML without JavaScript, in two columns on desktop and one
+on mobile. Report search/filter/pagination continue to operate on the whole board.
+No report-v1 schema, revision or publication-manifest change is required.
+
+Local verification:142 full tests and50 browser records at320/390/768/1440px pass,
+including keyboard Home navigation from12 route types, recent links, board search,
+empty/reset/pagination and no-JavaScript reading. Actual desktop/mobile captures
+inspected; all six research/model tables, dates and originals exactly preserved.
+Housing review passes11checks but retains the existing0-active-notice failure.
+Evidence: `D:/9_codex_temp/2026-10-12/signal-desk-home/evidence/`.
+Source changes are local; no commit, push or public deployment was requested.
+
 ## Brief points, illustrations and explanatory prose, 2026-10-10
 
 The user selected dialogue-style illustrations and requested concise presentation-style

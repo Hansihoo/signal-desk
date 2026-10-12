@@ -161,6 +161,11 @@
       "id": "ai-model-guides-2026-10-12",
       "input": "ai_model_guides.2026-10-12.json",
       "quality": "ai_model_guides.2026-10-12.quality.json"
+    },
+    {
+      "id": "devops-definition-2026-10-12",
+      "input": "devops_implementation.2026-10-12.r6.json",
+      "quality": "devops_implementation.2026-10-12.r6.quality.json"
     }
   ]
 }

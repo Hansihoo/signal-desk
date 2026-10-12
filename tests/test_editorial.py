@@ -157,6 +157,73 @@ class EditorialTests(unittest.TestCase):
                 build_briefing_preview(temp, {}, self.report, data)
             self.assertEqual(list(Path(temp).iterdir()), [])
 
+    def test_home_updates_use_actual_changes_and_do_not_refresh_on_rebuild(self):
+        from housing_watch.editorial import _recent_updates
+        older = copy.deepcopy(self.report)
+        older.update(id="older-check-new-change", checked_on="2026-10-01", title="수정된 보고서")
+        newer = copy.deepcopy(self.report)
+        newer.update(id="newer-check-old-change", checked_on="2026-10-12", title="먼저 등록된 보고서")
+        with patch("housing_watch.research_data.iso_utc", return_value="2026-10-10T15:30:00Z"):
+            import_reports(self.conn, [older, newer])
+        older["deck"] = "내용을 수정한 시각으로 정렬한다."
+        with patch("housing_watch.research_data.iso_utc", return_value="2026-10-11T23:00:00Z"):
+            import_reports(self.conn, [older])
+        data = build_research_data(self.conn, [], [])
+        rows = _recent_updates([newer, older], data)
+        self.assertLess(rows.index("수정된 보고서"), rows.index("먼저 등록된 보고서"))
+        self.assertIn("수정 <time", rows)
+        self.assertIn("2026.10.12 08:00 KST", rows)
+        self.assertIn("내용 검토 2026.10.01", rows)
+        self.assertIn("2026.10.11 00:30 KST", rows)
+        with patch("housing_watch.research_data.iso_utc", return_value="2026-10-20T00:00:00Z"):
+            import_reports(self.conn, [older, newer])
+            after = build_research_data(self.conn, [], [])
+        self.assertEqual(_recent_updates([newer, older], after), rows)
+        self.assertEqual(_recent_updates([], {}), '<li class="updates-empty">아직 등록된 보고서가 없습니다. 새 자료가 등록되면 여기에 표시됩니다.</li>')
+
+    def test_home_aggregates_model_changes_with_kst_dates_and_handles_missing_versions(self):
+        from housing_watch.editorial import _recent_updates
+        report = copy.deepcopy(self.report)
+        report.update(title="근거 날짜만 있는 보고서", checked_on="2026-10-10")
+        data = {"generated_at": "2026-10-30T00:00:00Z", "model_ledger": {"records": [
+            {"model": "A <model>", "changed_at": "2026-10-11T15:01:00Z", "revision": 1},
+            {"model": "A <model>", "changed_at": "2026-10-12T01:00:00+09:00", "revision": 2},
+            {"model": "B", "changed_at": "2026-10-11T14:59:00Z", "revision": 1},
+            {"model": "Failed", "changed_at": "", "revision": 1}]}}
+        rows = _recent_updates([report], data)
+        self.assertLess(rows.index("주요 LLM 모델 통합 비교"), rows.index("근거 날짜만 있는 보고서"))
+        self.assertEqual(rows.count('href="ai-models.html"'), 1)
+        self.assertIn("A &lt;model&gt;의 관측 1건 등록, 1건 수정", rows)
+        self.assertIn("데이터 반영 <time", rows)
+        self.assertIn("내용 검토 <time", rows)
+        self.assertNotIn("2026.10.30", rows)
+        self.assertNotIn("Failed", rows)
+        self.assertEqual(_recent_updates([report], data, limit=1).count('class="update-item"'), 1)
+
+    def test_shared_home_menu_resolves_from_current_history_and_model_routes(self):
+        import_reports(self.conn, [self.report])
+        changed = copy.deepcopy(self.report)
+        changed["title"] = "수정된 판"
+        import_reports(self.conn, [changed])
+        with tempfile.TemporaryDirectory() as temp:
+            root = build_briefing_preview(temp, {}, changed, build_research_data(self.conn, [], []), standalone=False)
+            for route, prefix in [("index.html", ""), ("report.html", ""),
+                                  ("ai-models.html", ""), ("ai-model-guides.html", ""),
+                                  ("history/index.html", "../"),
+                                  ("history/%s-r1.html" % changed["id"], "../")]:
+                html = (root / route).read_text(encoding="utf-8")
+                self.assertIn('aria-label="메인 메뉴"', html)
+                self.assertIn('class="home-link" href="%sindex.html"' % prefix, html)
+                self.assertIn('href="%sindex.html#board">전체 보고서' % prefix, html)
+                current = 'class="home-link" href="%sindex.html" aria-current="page"' % prefix
+                if route == "index.html":
+                    self.assertIn(current, html)
+                else:
+                    self.assertNotIn(current, html)
+            home = (root / "index.html").read_text(encoding="utf-8")
+            self.assertLess(home.index('id="recent-updates"'), home.index('id="banner"'))
+            self.assertEqual(home.count("<h1"), 1)
+
     def test_standalone_pages_have_embedded_design_fonts_and_local_evidence_links(self):
         with tempfile.TemporaryDirectory() as temp:
             root = build_briefing_preview(temp, {}, self.report)
