@@ -154,3 +154,12 @@
 ## 적용 판
 
 [r9 원고](../config/devops_implementation.2026-10-12.r9.json), [품질 패키지](../config/devops_implementation.2026-10-12.r9.quality.json), [기존 이미지의 판 연결](../config/devops_visuals.2026-10-12.r9.json). 같은 보고서 ID의 새 불변 배치이며 r8과 모든 이전 판을 보존한다.
+
+
+## 요청에 따른 r9 공개 배포와 Chrome 확인
+
+2026-10-12 사용자가 수정본의 배포와 Chrome 열기를 요청했다. 위의 로컬 단계 이후 source `f35cde208e49bfc8bc94a625f9a96f9531406743`를 정상 main commit/push했고, [Pages38191602612](https://github.com/Hansihoo/signal-desk/actions/runs/38191602612)이10:24:29 KST에 성공으로 완료됐다. 전체143시험(28.883초)과 클라우드 주거 review가 통과했다. 실행2분31초, 게시 job2분26초다.
+
+공개 r9 원고가 검토한 입력과 정확히 일치한다. 다른43편과 기존147판의 내용 및 다른 보고서 변경 시각을 보존하고 r7/r8/r9의3개 판을 추가해 현재44편/150판이다. 모델804관측/806판과14원문/14이력도 같고,3개 이미지의 바이트를 확인했다. [공개 문서](https://hansihoo.github.io/signal-desk/preview/devops-implementation-guide.html?v=f35cde2#outline)를 실제 Chrome에서 열어 새9개 목차와 협업 원칙 소제목을 확인하고 요청한 탭을 유지했다.
+
+소스 수집의 주간 뉴스 경고1건은 게시 성공과 구분한다. 사이트 CI의 실제 실행은 보고서 속 정렬 예제의 원격 CI/CD 실행 확인을 뜻하지 않으며, 사람 독해 시험도 여전히 수행하지 않았다. 배포 로그, 공개 전후 JSON과10개 보존/반영 확인, 실행 영수증 및 Chrome PNG는 기존 근거 폴더의 `deployment/`에 보존했다. DB와 생성 HTML, raw 및 캡처는 Git에서 제외했다.

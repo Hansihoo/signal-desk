@@ -1,5 +1,19 @@
 # Handoff
 
+## Latest publication: revised DevOps r9, 2026-10-12
+
+At the user's explicit request, source f35cde2 deployed through
+[Pages38191602612](https://github.com/Hansihoo/signal-desk/actions/runs/38191602612),
+completed10:24:29KST (workflow2m31s/job2m26s). CI143tests28.883s/housing review pass.
+Public r9 equals reviewed input; other43/all147prior editions/update times exact.
+Three intermediate/final editions added:44reports/150editions. Model804/806 and
+14originals/14history exact; three inline image byte hashes match. Actual Chrome
+opens the live updated9chapter outline and shared-goal heading; requested tab kept.
+Weekly-news warning1 is separate from deployment success. Same-agent learning
+reviews remain distinct from site CI and human reader testing. Illustrative remote
+CI/CD was not executed. Run/public/PNG receipts under the existing heading-review
+root's deployment/ folder. See [review and publication](DEVOPS_HEADING_REVIEW.2026-10-12.md).
+
 ## Latest local review: every DevOps heading and its answer, 2026-10-12
 
 User asked to recheck all chapter/subtopic content. r8's9chapters/51subtopics and

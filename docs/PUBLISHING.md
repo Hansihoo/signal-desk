@@ -157,3 +157,15 @@ routes,13preservation checks and22browser checks passed; inspected PNGs retained
 outside Git. Earlier Python connection failure and one original iframe mobile filter
 timeout remain recorded separately; subsequent PC5source filters passed.
 [Actual evidence and limits](AI_MODEL_REVIEW.2026-10-12.md).
+
+
+## 2026-10-12 revised DevOps publication
+
+User-requested sourcef35cde2/[Pages38191602612](https://github.com/Hansihoo/signal-desk/actions/runs/38191602612)
+published the reviewed DevOps r9 and preserved r7/r8 history. Completed10:24:29KST,
+workflow2m31s/job2m26s; CI143tests28.883s and housing review pass. Public44/150,
+other43/all147previous editions and update times/model804+806/14originals+14history
+exact. Three inline image hashes match. Actual Chrome opens the changed9chapter
+outline and shared-goal heading; requested tab kept. Weekly-news warning1 remains
+separate from deployment success, and illustrative remoteCI/CD/human learning trial
+remain unperformed. [Content and publication receipts](DEVOPS_HEADING_REVIEW.2026-10-12.md).
