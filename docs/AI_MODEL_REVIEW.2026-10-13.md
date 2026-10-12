@@ -100,3 +100,41 @@ Wonder는 API연결/추론/비용, Full은 장기작업/구독/데이터 조건�
   목적/요약의큰빈칸을채운시각물이나신규공통디자인을추가하지않았다.
 
 공개배포완료는Actions성공과실제URL확인후다음절에기록한다.
+
+## 공개 발행 영수증
+
+소스5ff5e17659b12479f4d8b87a07cbbf32b4a8edbd를origin main에일반push했다.
+[Pages38306040222](https://github.com/Hansihoo/signal-desk/actions/runs/38306040222)는
+2026-10-12T20:43:17Z에생성되어20:45:54Z에success로완료됐다.
+한국시간13일05:43~05:45이며publish job은2분34초다.
+CI152시험이41.251초에통과했고누적상태복원·수집·생성·주거review·
+durable snapshot 저장·Pages배포가모두성공했다.
+AI125자료/warnings0과일반뉴스70자료/warnings1은서로다른수집범위다.
+
+- 공개11주소HTTP200. JSON획득은2026-10-12T20:49:01.116Z,
+  SHA-256은780fc46584705ab290657888df1132307b76849c61468571da1d052951043460이다.
+- 공개15보존/내용검사통과:47보고서159판과816관측818판,새2원고·12관측이
+  검토입력과같다. 이전45현재보고서와157판,804관측806판과Theo14본문14판,
+  발행순서및원격기존updated_at/saved_at/first_seen_at/changed_at까지정확히보존됐다.
+  CSS는Windows CRLF/Linux LF를정규화하면같고원시바이트일치로확대하지않는다.
+- 실제공개브라우저12검증기록/페이지오류0:두가이드각320/390/768/1440px,
+  요약→본문과8출처,Meta공식관측12행,xhigh1행의57.5·SWE-Marathon·
+  원문확인일·1차기록과닫기,기존Haiku1차판,공식7가이드/Muse검색2개를확인했다.
+  공개Full390px와새2자료목록1440px화면을눈으로읽었다.
+  실제CSV12행다운로드는로컬에서검증했으며공개에서다시다운로드한것으로표시하지않는다.
+- 최초HTTP탐색에서현재1차문서에history URL을가정해404를받았다.
+  renderer가현재판은정식문서URL,이전판만history에생성하는계약임을확인하고
+  실제링크가있는Haiku이전판과history목록으로고쳤다. 수정11주소검사는모두200이다.
+  신규문서나보존실패로판정하지않는다. 선택적로컬favicon404도콘텐츠실패와분리한다.
+- 브라우저임시tab과viewport override,소유localhost8873서버를종료했다.
+  일회성시험scratch는정리했고필요원문·검토/Actions/HTTP/CSV/이미지근거는
+  data/raw와D:/9_codex_temp/2026-10-13/signal-ai-models에보존한다.
+  이혼합근거폴더는disposable완료cleanup대상으로등록하지않는다.
+  DB·생성HTML/JSON/PNG·개인정보를소스에포함하지않았다.
+
+공개 [Muse Wonder](https://hansihoo.github.io/signal-desk/preview/muse-wonder-model-guide.html),
+[Muse Wonder Full](https://hansihoo.github.io/signal-desk/preview/muse-wonder-full-model-guide.html),
+[누적비교표](https://hansihoo.github.io/signal-desk/preview/ai-models.html),
+[모델자료목록](https://hansihoo.github.io/signal-desk/preview/ai-model-guides.html).
+
+실제API/CLI호출·구독/청구·지역/계정접근·한국어성능·독립벤치마크·사람독해시험은미실시다.
