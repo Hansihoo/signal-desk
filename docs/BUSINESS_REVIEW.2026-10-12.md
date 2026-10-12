@@ -102,4 +102,23 @@ CUA 브라우저에서320/390/768/1440px 목록·두 보고서12개 레이아웃
 14원문/원문 이력, 기존145문서 및 DevOps를 제외한41편 정확 보존을 확인했다.
 수집 시각·실행 기록은 로컬과 클라우드가 서로 다르므로 그대로 보존하고 합치지 않는다.
 동시 DevOps r7/r8 초안으로 로컬은44편/149판이다. 해당 변경은 이번 커밋에 포함하지 않는다.
-소스와 공개 배포 검증 중.
+
+소스 [8f64a7e](https://github.com/Hansihoo/signal-desk/commit/8f64a7e66eeee8b98ad23041f1ffd65ae49d0e4d)의
+[Pages38189407665](https://github.com/Hansihoo/signal-desk/actions/runs/38189407665)는 성공했다.
+CI143시험(29.986초)과 클라우드 주거review는 통과했다.
+일반뉴스 수집 warnings1과 runner/deprecation 안내는 별도로 기록하며
+모든 원문 획득·검토가 성공했다는 뜻으로 합산하지 않는다.
+
+실제 공개8주소는 HTTP200이고 검토한 두 원고가 공개 JSON과 정확히 일치한다.
+공개44편/147판, 사업 두 판 이외42편, 기존145판, 모델804관측/806판,
+14원문과 이력·발행 순서·공통CSS를18검사로 확인했다.
+최초 inline CSS 검사 가정을 수정해 HTML이 실제 참조하는 linked CSS를 받아 비교했다.
+공식 사이트320/390/768/1440px과 분야·검색·빈 결과·목록 복귀, 상세 이동,
+요약 우선 순서·참고·이전 판을20실제 브라우저 기록으로 검증하고 PNG/JPEG를 확인했다.
+사업 새 판에 영향을 주는 다른 사용자 변경은 커밋하지 않았고 작업 트리에 보존했다.
+
+[사업 목록](https://hansihoo.github.io/signal-desk/preview/business.html),
+[영업 검토 새 판](https://hansihoo.github.io/signal-desk/preview/polaris-sales-opportunities.html),
+[문서 AI 제공 조건 새 판](https://hansihoo.github.io/signal-desk/preview/office-business-directions.html).
+실제 회사 자격·확정 비용·하노이Word 양식/정확한 시각·나라장터 첨부/발주기관 원문,
+계정별 제공·제품 성능·사람 독해 시험은 확인 필요로 남긴다.
