@@ -1,6 +1,6 @@
 # DevOps의 정의와 요약 그림 보강
 
-DevOps를 공부하는 독자가 협업과 자동화, 운영에서 얻은 피드백의 관계를 설명할 수 있도록, 사용자에게 거부된 r5 요약과 첫 개념 장을 보강했다. 현재 수정은 로컬 r6이며 공개 사이트에는 배포하지 않았다.
+DevOps를 공부하는 독자가 협업과 자동화, 운영에서 얻은 피드백의 관계를 설명할 수 있도록, 사용자에게 거부된 r5 요약과 첫 개념 장을 보강했다. 사용자의 후속 배포 요청에 따라 r6을 공개 사이트에 게시했고 Chrome에서 확인했다.
 
 ## 요약
 
@@ -49,7 +49,15 @@ DevOps는 소프트웨어를 개발하는 사람과 서비스를 운영하는 �
 
 전체142시험, `research-check` 1편, `research-audit` 12gated/32legacy와 `publish`가 통과했다. 브라우저320/390/768/1024/1440px 및 JavaScript 미사용 읽기6기록에서 새/이전 그림 지문, 이미지 확대와 가로 이동, Escape와 초점 복원, 목차와 Home 검색, 페이지 넘침을 확인했다. 실제 PC와 모바일 PNG를 읽었다. 첫 실행의 숨겨진 모바일 빠른 목차 클릭 시간 초과는 검사 대상을 보이는 본문 목차로 고친 뒤 재검증했고 실패 로그도 보존했다.
 
-다른43편과 이전144판은 저장된 행과 시각까지 동일하다. 새 DevOps 판1개로 현재44편/145판이며 모델804관측/806판, 원본14문서와 이력도 정확히 보존했다. 검증 근거는 기존 작업 폴더 `D:/9_codex_temp/2026-10-12/signal-desk-home/evidence/devops-repair/`에 남겼고 임시 실행 폴더는 정리했다. 원격 CI, 실제 서비스 배포, 사람 독자 시험, commit/push와 공개 배포를 새로 수행하지 않았다.
+다른43편과 이전144판은 저장된 행과 시각까지 동일하다. 새 DevOps 판1개로 현재44편/145판이며 모델804관측/806판, 원본14문서와 이력도 정확히 보존했다. 검증 근거는 기존 작업 폴더 `D:/9_codex_temp/2026-10-12/signal-desk-home/evidence/devops-repair/`에 남겼고 임시 실행 폴더는 정리했다. 위의 초기 로컬 검증에서는 공개 배포를 하지 않았으며, 이후 사용자의 요청으로 아래 배포를 수행했다. 예제의 실제 CI/CD와 사람 독자 시험은 여전히 수행하지 않았다.
+
+## 공개 배포와 Chrome 확인
+
+source `b031c7d4b643b891349c50feb2011d681faa2ea9`를 정상 commit/push했고 [Pages38187510657](https://github.com/Hansihoo/signal-desk/actions/runs/38187510657)이2026-10-12 09:20:56 KST에 성공으로 완료됐다(2분18초). 사이트 CI142시험과 실제 클라우드 주거 review가 통과했다. 주간 뉴스 수집의 경고1건은 배포 성공과 구분하며 전체 출처의 최신 검증 완료로 부르지 않는다.
+
+공개 JSON에서 수정 DevOps 원고가 로컬 입력과 정확히 일치하고 다른43편과 이전144판, 모델804관측/806판, 원본14문서와 이력이 같음을 확인했다. 새/이전 요약 이미지와 공유 CSS도 로컬 출력과 일치한다. Home의 실제 변경6건을 확인했고 [공개 문서](https://hansihoo.github.io/signal-desk/preview/devops-implementation-guide.html?v=b031c7d#summary)를 Chrome에서 열어 새 정의, 그림과 Home 메뉴를 확인했다. 요청한 탭은 유지했다.
+
+배포 결과와 로그, 공개 전후 JSON, 보존 확인 및 실제 Chrome PNG는 위 근거 폴더의 `deployment.json`, `deployment-log.txt`, `public-before.json`, `public-after.json`, `public-preservation.json`, `public-summary-chrome.png`에 보존했다.
 
 ## 이미지 제작 프롬프트
 

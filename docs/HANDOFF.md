@@ -1,15 +1,29 @@
 # Handoff
 
+## Latest publication: Home and DevOps r6, 2026-10-12
+
+At the user's explicit deployment request, source `b031c7d` was committed/pushed
+normally on main. [Pages38187510657](https://github.com/Hansihoo/signal-desk/actions/runs/38187510657)
+succeeded in2m18s; CI142tests and housing review pass. Public44reports/145editions,
+other43/all144prior exact; models804/806 and14original pages/history exact. The
+live new/old summary images and normalized shared CSS equal local output. Home
+has six real changes. Actual Chrome opens the corrected summary with new Home
+navigation and is retained as the requested deliverable. PNG/public receipts and
+the full run log remain under `evidence/devops-repair/` below the retained root.
+Weekly-news collection has one warning; this is not complete source freshness or
+a human learning trial. Illustrative remote CI/CD examples were not executed.
+
 ## Latest content repair: DevOps definition and diagram, 2026-10-12
 
-User rejected r5's summary image and its explanation of DevOps. Local immutable r6
+User rejected r5's summary image and its explanation of DevOps. Immutable r6
 adds shared goals/responsibility, automation and operational feedback to the summary
 and overview. A new image fixes the four attached/labelled edges; r5 and r4 image
 bindings remain available. Five official originals checked; other dates and eight
 remaining chapters' content retain their earlier scope (CI lead only updated).
 142tests, gate1/audit12+32, five-width/no-JS6browser records and inspected PNG pass.
 Other43 reports/all144prior editions/model originals and dates exact. Same-agent
-review only; user understanding/remote execution/public deployment unperformed.
+review only; user understanding/illustrative remote execution unperformed.
+Public deployment subsequently completed as recorded above.
 See [repair and prompts](DEVOPS_DIAGRAM_REPAIR.2026-10-12.md). Retained evidence:
 `D:/9_codex_temp/2026-10-12/signal-desk-home/evidence/devops-repair/`.
 
@@ -22,7 +36,7 @@ report, field tree and full-text board stay available. Read the Home contract in
 [BRIEFING_TEMPLATE.md](BRIEFING_TEMPLATE.md) before changing its scope or dates.
 142 full tests/50 browser records/four widths/PNG inspection and exact six-table
 preservation pass. Housing review retains the existing0-active failure (11pass).
-Local changes only; no commit/push/deployment. Loopback preview on127.0.0.1:45431,
+Subsequently published by sourceb031c7d/Pages38187510657. Loopback preview on127.0.0.1:45431,
 PID16960, serves `site/`; verify liveness before reuse. Evidence remains under
 `D:/9_codex_temp/2026-10-12/signal-desk-home/evidence/`.
 

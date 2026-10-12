@@ -45,8 +45,8 @@ The research Home at `preview/index.html` starts with six recently registered or
 modified reports and model-comparison data. Shared Home links return there from
 reports, model documents and earlier editions. Registration/modification times
 and content-review dates remain separate; rebuilding HTML does not refresh them.
-See [the Home contract](docs/BRIEFING_TEMPLATE.md). This addition is locally verified
-and has not yet been deployed to the public site.
+See [the Home contract](docs/BRIEFING_TEMPLATE.md). Home and the corrected DevOps
+edition were published on2026-10-12 through [Pages38187510657](https://github.com/Hansihoo/signal-desk/actions/runs/38187510657).
 
 The **Developer Opportunities** topic currently provides an HTML outline with eight
 categories and a downloadable report template. Real opportunity collection and verification

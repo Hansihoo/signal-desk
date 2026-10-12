@@ -31,7 +31,10 @@ empty/reset/pagination and no-JavaScript reading. Actual desktop/mobile captures
 inspected; all six research/model tables, dates and originals exactly preserved.
 Housing review passes11checks but retains the existing0-active-notice failure.
 Evidence: `D:/9_codex_temp/2026-10-12/signal-desk-home/evidence/`.
-Source changes are local; no commit, push or public deployment was requested.
+Home was subsequently published at the user's request with source `b031c7d` and
+[Pages38187510657](https://github.com/Hansihoo/signal-desk/actions/runs/38187510657).
+Cloud142tests/housing review pass. The live Home has six updates, and the actual
+Chrome document shows the new Home navigation and corrected DevOps summary.
 
 ## Brief points, illustrations and explanatory prose, 2026-10-10
 

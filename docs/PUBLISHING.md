@@ -109,6 +109,14 @@ Use source health and the last successful workflow when checking freshness.
 
 ## Operations and recovery
 
+On2026-10-12, the user requested publication of Home and the corrected DevOps r6.
+Source `b031c7d` deployed through [Pages38187510657](https://github.com/Hansihoo/signal-desk/actions/runs/38187510657)
+in2m18s. CI142tests/housing review pass. Public44reports/145editions preserve the
+other43 reports/all144prior editions/model804+806/14original pages exactly. New/old
+image hashes and shared CSS match local output; live Home shows six updates and
+the corrected document is visibly open in Chrome. Collection warning1 remains
+separate from deployment success. [Publication receipts](DEVOPS_DIAGRAM_REPAIR.2026-10-12.md).
+
 Inspect the `Collect and publish Signal Desk` workflow for source errors or deployment failures.
 Use **Run workflow** to refresh manually. Disable that workflow to pause collection.
 The source-of-truth database can be recovered with:
