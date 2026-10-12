@@ -1,5 +1,33 @@
 # Handoff
 
+## Latest local review: every DevOps heading and its answer, 2026-10-12
+
+User asked to recheck all chapter/subtopic content. r8's9chapters/51subtopics and
+code blocks were read; local immutable r9 now has55 specific heading/answer checks.
+Chapters2/7 remain exact. Seven chapters repair missing shared goals/ordinary
+operations, corporate retrospective vs SRE textbook classification, first-check
+practice scope/preparation, AI research relevance and four matched exercise answers.
+First screen, four code blocks, numerical datasets and source dates preserved.
+13 affected tests38.446s, quality1/audit14+30, rendered heading/table/chart/image/anchor
+placements and live loopback exact; example normal5/intentional failure1/restored5
+and calculations pass. Other43/all149prior/model804+806/14originals+14history exact.
+Same-agent review only; no new public redeployment/independent or human reader trial.
+See [all heading answers and limits](DEVOPS_HEADING_REVIEW.2026-10-12.md). Evidence:
+`D:/9_codex_temp/2026-10-12/signal-desk-home/evidence/devops-heading-r9/`.
+
+## Latest local repair: DevOps definition and need, 2026-10-12
+
+User rejected the abrupt sorting-error and joint-resolution examples in r6 chapter1.
+Local r8 now explains roles, ongoing change and reliable use, information gaps,
+collaboration, automation and feedback before examples. Summary adds the reason.
+The retained CI/CD example introduces its purpose and hypothetical service inside
+chapter2; seven other chapters/code/tables/image bytes remain exact. r7 was already
+applied locally, so r8 is a new immutable batch. All older editions/bindings remain.
+42 research/study tests, r8 gate/render and actual Chrome reading/capture pass.
+r8 changes only current DevOps/adds one edition; other43/all148prior/model804+806/
+14originals+14history exact. Separate commit/push/public redeployment and human
+learning trial were not performed. See [repair](DEVOPS_EXPLANATION_REPAIR.2026-10-12.md).
+
 ## Latest publication: Home and DevOps r6, 2026-10-12
 
 At the user's explicit deployment request, source `b031c7d` was committed/pushed

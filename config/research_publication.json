@@ -171,6 +171,21 @@
       "id": "business-review-2026-10-12",
       "input": "business_review.2026-10-12.json",
       "quality": "business_review.2026-10-12.quality.json"
+    },
+    {
+      "id": "devops-need-2026-10-12",
+      "input": "devops_implementation.2026-10-12.r7.json",
+      "quality": "devops_implementation.2026-10-12.r7.quality.json"
+    },
+    {
+      "id": "devops-example-context-2026-10-12",
+      "input": "devops_implementation.2026-10-12.r8.json",
+      "quality": "devops_implementation.2026-10-12.r8.quality.json"
+    },
+    {
+      "id": "devops-heading-review-2026-10-12",
+      "input": "devops_implementation.2026-10-12.r9.json",
+      "quality": "devops_implementation.2026-10-12.r9.quality.json"
     }
   ]
 }
