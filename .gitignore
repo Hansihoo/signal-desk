@@ -13,6 +13,7 @@ data/raw/*
 
 # Generated reports and rendered output
 reports/*.md
+reports/fde-study-share.html
 reports/**/*.png
 reports/research-teaching-2026-10-09/
 reports/ai-writing-games-2026-10-09/
@@ -34,3 +35,6 @@ site/preview/
 .env
 .venv/
 venv/
+
+# Raster previews of authored FDE vector illustrations
+housing_watch/assets/editorial/fde-*.png

@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "report_id": "fde-enterprise-adoption",
+  "report_hash": "62f0421137f111024a2558ca2b1db3979a29aa89644850a3bc6038ba9f6d8db5",
+  "images": {
+    "summary": {
+      "asset": "fde-summary.2026-10-12.svg",
+      "sha256": "0a9fd15514caee0f0c20dc8ff4f342fec4b5ce42d862a1ebd9819d45d3824816",
+      "width": 1536,
+      "height": 960,
+      "caption": "FDE를 이해하는 네 가지 질문",
+      "alt": "역할, 기업 AI 도입의 필요성, 해결할 문제, 문서 기업의 적용 가능성을 네 영역으로 정리한 그림"
+    },
+    "role": {
+      "asset": "fde-role.2026-10-12.svg",
+      "sha256": "49f241f02f5d970b8c74e4692d68e306499eb81150b19a7677067d19731a6e8a",
+      "width": 1536,
+      "height": 960,
+      "caption": "고객 문제에서 구현과 제품 개선으로 이어지는 흐름",
+      "alt": "고객 업무에서 FDE의 연결 구현을 거쳐 작동하는 해결책으로 이어지고 반복 요구가 공통 제품 개선으로 돌아가는 그림"
+    },
+    "why-now": {
+      "asset": "fde-why-now.2026-10-12.svg",
+      "sha256": "a498e27300d63dec65fd4787d38f5d9a87bbd8ef11c668348a8850c90c7679f3",
+      "width": 1536,
+      "height": 960,
+      "caption": "제품 기능과 고객 업무 사이에 필요한 연결",
+      "alt": "문서 읽기·초안·추출·양식 기능과 고객별 데이터·규칙·프로그램·완료 조건을 구분한 그림"
+    },
+    "problems": {
+      "asset": "fde-problems.2026-10-12.svg",
+      "sha256": "fc094f31f7d9b478709271056884e4117b40b3332c0626ba4c9f764f08cd0297",
+      "width": 1536,
+      "height": 960,
+      "caption": "사례별 업무 대상과 결과",
+      "alt": "Expedia 콘텐츠 운영과 NFL 팬 서비스는 FDE 적용 사례이며 Amwins 문서 추출의 FDE 파견은 미확인임을 표시한 비교 그림"
+    },
+    "documents": {
+      "asset": "fde-documents.2026-10-12.svg",
+      "sha256": "a192ab68ed8ea61dd729f66a9a55d2367e19c68dc1ccf8cdb26c0c44b7c94805",
+      "width": 1536,
+      "height": 960,
+      "caption": "가상 견적서 예제: 주문 값부터 승인된 PDF와 기록까지",
+      "alt": "주문 O1001의 밸브 A 10개와 확정 단가 50,000원으로 500,000원 초안을 만들고 검토 승인 후 PDF와 주문 기록에 연결하는 가상 예제"
+    }
+  },
+  "summary_image_first": false,
+  "reader_content_only": true,
+  "expanded_code_chapters": [],
+  "provenance": "Authored SVG sources, bound to the reviewed report; not a market growth or measured-effect chart."
+}

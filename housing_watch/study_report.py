@@ -11,6 +11,7 @@ from .briefing_preview import _escape as esc, _authored_blocks, _citations, _tab
 from .research_data import validate_report
 from .research_topics import public_url
 from .research_workflow import digest
+from .study_visual import reviewed_asset
 
 ROOT = Path(__file__).parent
 CONFIG = ROOT.parent / 'config'
@@ -88,15 +89,13 @@ def visuals_for(report):
     for place, visual in guide['images'].items():
         if place not in allowed or Path(visual['asset']).name != visual['asset']:
             raise ValueError('Invalid visual location or asset filename')
-        data = (ROOT / 'assets' / 'editorial' / visual['asset']).read_bytes()
-        if not data.startswith(b'\x89PNG\r\n\x1a\n') or hashlib.sha256(data).hexdigest() != visual['sha256']:
-            raise ValueError('Visual asset does not match reviewed bytes')
+        reviewed_asset(visual, ROOT / 'assets' / 'editorial')
     return guide
 
 
 def _visual_figure(visual, place):
-    data = (ROOT / 'assets' / 'editorial' / visual['asset']).read_bytes()
-    source = 'data:image/png;base64,' + base64.b64encode(data).decode('ascii')
+    mime, data = reviewed_asset(visual, ROOT / 'assets' / 'editorial')
+    source = 'data:' + mime + ';base64,' + base64.b64encode(data).decode('ascii')
     return ('<figure class="study-visual" id="visual-%s"><img src="%s" alt="%s" '
             'width="%d" height="%d" decoding="async"><figcaption><span>%s</span>'
             '<button type="button" class="visual-open" hidden aria-haspopup="dialog">'
@@ -139,6 +138,7 @@ def render_study(report, prefix='', edition=None):
     catalog = catalog_for(report)
     visual_guide = visuals_for(report)
     images = visual_guide['images'] if visual_guide else {}
+    reader_content_only = visual_guide.get('reader_content_only', False) if visual_guide else False
     chapters = report.get('explanation', [])
     inline_tables = {'frameworks':'framework-comparison','ci':'ci-comparison'}
     tables = {t['id']:t for t in report.get('tables',[])}
@@ -174,13 +174,13 @@ def render_study(report, prefix='', edition=None):
                 parts.append(_visual_figure(images[ch['id']], ch['id']))
             parts.append(lead)
         if ch['id']=='catalog' and catalog:
-            parts.append(_authored_blocks(blocks[:1],numbers));parts.append(_catalog(catalog,numbers))
+            parts.append(_authored_blocks(blocks[:1],numbers,show_editorial_labels=not reader_content_only));parts.append(_catalog(catalog,numbers))
         else:
             for bi,block in enumerate(blocks):
                 if block['type']=='code' or (ch['id']=='tips' and bi>0):
-                    parts.append('<details class="study-depth"><summary>%s</summary>%s</details>' % (esc(block['title']),_authored_blocks([block],numbers)))
+                    parts.append('<details class="study-depth"><summary>%s</summary>%s</details>' % (esc(block['title']),_authored_blocks([block],numbers,show_editorial_labels=not reader_content_only)))
                 else:
-                    parts.append(_authored_blocks([block],numbers))
+                    parts.append(_authored_blocks([block],numbers,show_editorial_labels=not reader_content_only))
         # IDs prefixed with the chapter ID keep its evidence in the reading path.
         for table in report.get('tables', []):
             if table['id'] not in used_tables and (table['id'] == inline_tables.get(ch['id']) or table['id'].startswith(ch['id'] + '-')):
@@ -202,9 +202,11 @@ def render_study(report, prefix='', edition=None):
         parts.extend(_chart(d,numbers) for d in remaining_datasets)
         parts.append('</section>')
     for lesson in report.get('learning',[]):
-        parts.append('<details class="study-depth" id="learning-%s"><summary>%s</summary><p>%s</p>%s</details>' % (esc(lesson['id']),esc(lesson['title']),esc(lesson['lead']),_authored_blocks(lesson['blocks'],numbers)))
+        parts.append('<details class="study-depth" id="learning-%s"><summary>%s</summary><p>%s</p>%s</details>' % (esc(lesson['id']),esc(lesson['title']),esc(lesson['lead']),_authored_blocks(lesson['blocks'],numbers,show_editorial_labels=not reader_content_only)))
     parts.append('<section class="study-chapter" id="result"><h2>%s</h2>%s</section>' % (esc(report['result']['title']),''.join('<h3>%s</h3><p>%s %s</p>' % (esc(p['label']),esc(p['text']),_citations(p,numbers)) for p in report['result']['points'])))
-    parts.append('<section class="study-chapter study-references" id="references"><h2>참고자료</h2><p>%s</p><ol>%s</ol><h3>검토 범위</h3><p>%s</p>%s</section></article>' % (esc(report['source_note']),''.join('<li id="ref-%d"><a href="%s">%s ↗</a><p>%s</p></li>' % (i,esc(s['url']),esc(s['title']),esc(s['description'])) for i,s in enumerate(report['references'],1)),esc(report['scope']),''.join('<p>%s %s</p>' % (esc(c['text']),_citations(c,numbers)) for c in report['caveats'])))
+    reference_intro = '' if reader_content_only else '<p>%s</p>' % esc(report['source_note'])
+    scope_heading = '적용 범위와 한계' if reader_content_only else '검토 범위'
+    parts.append('<section class="study-chapter study-references" id="references"><h2>참고자료</h2>%s<ol>%s</ol><h3>%s</h3><p>%s</p>%s</section></article>' % (reference_intro,''.join('<li id="ref-%d"><a href="%s">%s ↗</a><p>%s</p></li>' % (i,esc(s['url']),esc(s['title']),esc(s['description'])) for i,s in enumerate(report['references'],1)),scope_heading,esc(report['scope']),''.join('<p>%s %s</p>' % (esc(c['text']),_citations(c,numbers)) for c in report['caveats'])))
     payload = json.dumps(catalog['tools'] if catalog else [],ensure_ascii=False)
     for char, code in (('<','003c'), ('>','003e'), ('&','0026')):
         payload = payload.replace(char, chr(92) + 'u' + code)

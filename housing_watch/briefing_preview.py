@@ -119,10 +119,10 @@ def _table(table, source_numbers):
         " two-column" if len(table["columns"]) == 2 else "", _escape(table["title"]), _escape(table["title"]), headers, "".join(rows), _escape(table["note"]))
 
 
-def _authored_blocks(blocks, source_numbers, heading_tag="h3"):
+def _authored_blocks(blocks, source_numbers, heading_tag="h3", show_editorial_labels=True):
     rendered = []
     for block in blocks:
-        label = {"fact": "", "example": "가상 예시", "judgment": "검토 의견"}[block["kind"]]
+        label = {"fact": "", "example": "가상 예시", "judgment": "검토 의견"}[block["kind"]] if show_editorial_labels else ""
         heading = '<%s>%s%s</%s>' % (heading_tag, _escape(block["title"]),
             ' <span class="learning-kind">%s</span>' % label if label else "", heading_tag)
         if block["type"] == "paragraph":
@@ -140,7 +140,7 @@ def _authored_blocks(blocks, source_numbers, heading_tag="h3"):
                 for item in block["items"])
         cites = _citations(block, source_numbers)
         rendered.append('<div class="learning-block">%s%s%s</div>' % (
-            heading, body, '<p class="learning-sources">근거 %s</p>' % cites if cites else ""))
+            heading, body, '<p class="learning-sources">%s%s</p>' % ("근거 " if show_editorial_labels else "", cites) if cites else ""))
     return "".join(rendered)
 
 

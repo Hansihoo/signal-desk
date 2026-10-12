@@ -951,3 +951,17 @@ and quality plus5fact inputs are registered. source7b497f3/Pages38084103110 succ
 Public43reports/142editions,802observations/804revisions,Theo14 and library18 verified
 with CI138tests,12preservation and22live browser checks. Old42/141/797/799 preserved.
 [Actual review, limits and operational receipts](AI_MODEL_REVIEW.2026-10-11.md).
+
+
+## 2026-10-12 FDE learning and team sharing (local)
+
+`fde-enterprise-adoption` is now a four-chapter study page: role, enterprise AI adoption need, actual problems, document-company applications. Read [the narrowed outline](FDE_RESEARCH_PLAN.2026-10-12.md) and [the review log](ai/AI_RESEARCH_REVIEW_LOG.md) before changing it. Five diagrams and one capability table supplement the prose; the quote example is conceptual.
+
+Latest immutable input/quality: `config/fde_research.2026-10-12.r2.json` and `.r2.quality.json`; visual binding: `config/fde_visuals.2026-10-12.r2.json`. SVG source and matching PNG assets use the `fde-` prefix under `housing_watch/assets/editorial/`. r1 is preserved. Local page `site/preview/fde-enterprise-adoption.html`; portable single-file share copy `reports/fde-study-share.html` embeds fonts/CSS/JS/diagrams and is ignored generated output. Regenerate the share copy from the same report/study renderer if content changes.
+
+Research-check and145tests pass; browser and data preservation checks are separate from single-author semantic self-review. No independent/human reader trial, customer execution or ROI measurement. Housing review still fails due0active notices; rendering brief/desk was a regression check using local data. No collector/automation, commit/push/public deployment. Preserve concurrent DevOps changes; do not commit all dirty files together as FDE work.
+
+공유 파일 재생성: 먼저 로컬 `publish`로 스타일을 생성한 뒤 `python -m housing_watch.fde_share`를 실행한다. 입력·quality·출력 경로를 옵션으로 지정할 수 있다. 파일 안의 요약 복귀 링크는 공유 reader의 필수 DOM을 유지하며 사이트 목록으로 나가지 않는다. 목차·이미지·인쇄 스크립트와 글꼴·도식은 내장되어 있다. 앱 브라우저의 file:// 열기 정책과 일반 HTML 파일 생성·전달을 구분한다.
+
+
+FDE deployment source uses the `.svg.json` guides and authored vector assets. See [deployment evidence](FDE_DEPLOYMENT.2026-10-12.md). Pending DevOps editions are excluded from the FDE deployment index.

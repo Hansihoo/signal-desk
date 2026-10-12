@@ -70,3 +70,26 @@ FDE, AI 엔지니어, 데이터·도메인 역할은 관련 회사의 공식 채
 위의 문서용 ID는 기존 수집기의 source ID를 임의로 바꾸라는 지시가 아니다.
 연결 완료는 원문·날짜 추출, 반복 수집 무변경, 수정 반영, 실패 시 보존을 확인한 뒤 표시한다.
 월간 점검에서 범위의 균형과 끊어진 경로를 검토하고 [검토 기록](ai/AI_RESEARCH_REVIEW_LOG.md)에 공백을 남긴다.
+
+### FDE 후속 조사 출처 2026년 10월 12일
+
+FDE 독립 보고서의 [조사와 집필 계획](FDE_RESEARCH_PLAN.2026-10-12.md)에 사용할 추가 공개 경로다. 기존 개별 출처의 최초 수집일을 바꾸지 않으며 아래 경로의 원문 관련 절을 2026년 10월 12일에 확인했다. 원문별 날짜와 실제 확인 범위는 [검토 기록](ai/AI_RESEARCH_REVIEW_LOG.md)에 남긴다. 표의 주간 확인은 조사 목표이며 수집기나 예약 연결을 뜻하지 않는다.
+
+| 출처 ID와 원문 | 조사할 질문 | 읽을 때의 제한 | 목표 점검 |
+| --- | --- | --- | --- |
+| `palantir-fdse-history` [2020년 FDSE 직무 소개](https://blog.palantir.com/a-day-in-the-life-of-a-palantir-forward-deployed-software-engineer-45ef2de257b1) | 기존 FDE 역할은 무엇을 맡았는가 | 2020년 11월 2일 공식 인터뷰. 당시 존재한 역할의 직접 근거다. 최초 탄생 연도나 현재 근무 및 출장 조건으로 확대하지 않는다. | 역할 설명 재사용 시 |
+| `openai-fde-deployco` [DeployCo 발표](https://openai.com/index/openai-launches-the-deployment-company/) | 고객 과제 선정부터 실제 시스템 구현까지 어떻게 연결하는가 | 2026년 5월 11일 발표. 인수 계약, 종결 조건 및 예정 인력의 범위를 보존한다. | 주간 및 후속 발표 |
+| `aws-fde` [AWS FDE 설명](https://www.aboutamazon.com/news/aws/aws-1-billion-forward-deployed-ai-engineers) | 운영 가능한 시스템과 고객의 운영 역량을 어떻게 남기는가 | 회사의 투자 및 성과 주장. 명시적 원문 발표일은 미확인이다. | 주간 및 개정 |
+| `adobe-document-generation` [문서 생성 개요](https://developer.adobe.com/document-services/docs/overview/document-generation-api/) | 양식과 업무 데이터가 어떻게 문서가 되는가 | 기능 원리이며 고객별 구현 및 효과를 확인한 자료는 아니다. | 관련 기능 조사 |
+| `adobe-regeneron` [Regeneron 도입 사례](https://business.adobe.com/uk/customer-success-stories/regeneron-case-study.html) | 양식과 서명 및 업무 시스템을 어떻게 연결했는가 | 공급사 고객 사례. 고객 내부 팀이 등장하며 FDE 배치는 미확인이다. cardDate와 원문 게시일을 구분한다. | 주간 및 관련 사례 |
+| `upstage-amwins` [Amwins 문서 추출 사례](https://www.upstage.ai/blog/en/benefits-underwriting-document-extraction) | 다양한 문서에서 필요한 데이터를 추출해 기존 업무에 어떻게 적용했는가 | 2025년 11월 24일 공개 사례의 자기보고. FDE 직함과 독립 효과는 미확인이다. | 주간 및 관련 사례 |
+| `a16z-fde-services` [서비스 기반 도입 관점](https://a16z.com/services-led-growth/) | 구현 서비스와 제품 사업은 어떤 관계인가 | 2025년 6월 4일 투자자 의견. 과거 채용 및 재무 수치를 현재 통계로 사용하지 않는다. | 주간 및 새 논점 |
+| `a16z-fde-limits` [맞춤 구현의 한계](https://a16z.com/the-palantirization-of-everything/) | 고객별 구현은 언제 유지 및 확장 부담이 되는가 | 2026년 1월 16일 투자자 의견. 재인용 채용 증가율의 원측정은 별도 확인해야 한다. | 주간 및 새 논점 |
+
+### FDE 문서 적용의 기능 근거
+
+| 출처 ID·공식 경로 | 찾을 내용 | 근거를 읽을 때의 제한 | 목표 점검 |
+| --- | --- | --- | --- |
+| `upstage-logistics` [물류 문서 자동화](https://www.upstage.ai/blog/en/studio-logistics) | 읽기·분류·추출과 공통 항목 및 API 연결 | 2026-02-19 제품 튜토리얼. 처리 시간·정확도 보장이나 완료된 고객 사례로 바꾸지 않는다. | 관련 기능 조사 |
+| `adobe-sign-flow` [서명 전후 업무 연결](https://blog.adobe.com/en/publish/2023/05/23/low-code-end-to-end-e-signature-workflow-automation-within-adobe-acrobat-sign) | 서명 완료 후 파일 저장·알림으로 연결하는 원리 | 2023-05-23 가상 HR 제품 예시. 완료된 고객 사례·현재 가격·라이선스·법적 효력을 확정하지 않는다. | 관련 기능 조사 |
+

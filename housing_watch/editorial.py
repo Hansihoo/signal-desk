@@ -333,6 +333,10 @@ def render_editorial(output, snapshot, featured, research_data=None, standalone=
         return page(item["title"], item["description"], content, prefix, item["id"], contents, _edition_nav(item, history, prefix))
     for item in reports:
         rendered = report_page(item)
+        if item['id'] == 'fde-enterprise-adoption':
+            from .fde_share import portable_html
+            (destination / 'fde-study-share.html').write_text(portable_html(item, style), encoding='utf-8')
+            rendered = rendered.replace('<button id="study-print"', '<a href="fde-study-share.html" download>공유용 파일</a><button id="study-print"', 1)
         (destination / (item["id"] + ".html")).write_text(rendered, encoding="utf-8")
         if item["id"] == featured["id"]:
             (destination / "report.html").write_text(rendered, encoding="utf-8")

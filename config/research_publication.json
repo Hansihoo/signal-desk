@@ -2,6 +2,7 @@
   "schema_version": 1,
   "featured_report_id": "mcp-apps-workflows",
   "report_ids": [
+    "fde-enterprise-adoption",
     "devops-implementation-guide",
     "qwen-image-2-1-turbo-model-guide",
     "claude-haiku-5-5-model-guide",
@@ -186,6 +187,16 @@
       "id": "devops-heading-review-2026-10-12",
       "input": "devops_implementation.2026-10-12.r9.json",
       "quality": "devops_implementation.2026-10-12.r9.quality.json"
+    },
+    {
+      "id": "fde-learning-2026-10-12",
+      "input": "fde_research.2026-10-12.json",
+      "quality": "fde_research.2026-10-12.quality.json"
+    },
+    {
+      "id": "fde-reader-copy-2026-10-12",
+      "input": "fde_research.2026-10-12.r2.json",
+      "quality": "fde_research.2026-10-12.r2.quality.json"
     }
   ]
 }
