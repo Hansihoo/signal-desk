@@ -44,7 +44,9 @@
     "ai-game-creation",
     "ai-hackathons-2026",
     "qwen-image-2-1-turbo-model-guide",
-    "microsoft-decision-1-model-guide"
+    "microsoft-decision-1-model-guide",
+    "muse-wonder-model-guide",
+    "muse-wonder-full-model-guide"
   ],
   "catalogs": {
     "devops-implementation-guide": "devops_tools.2026-10-10.r4.json"
@@ -76,6 +78,12 @@
     ],
     "office-business-directions": [
       "37634c7c2da601673642dd2688e3010a30b4a4e0d25f683e91af126f95cffdfc"
+    ],
+    "muse-wonder-model-guide": [
+      "fce4d817eb83bcdc4e5cae851f26494d448e81cfe08b775b471b695a1a2a83d1"
+    ],
+    "muse-wonder-full-model-guide": [
+      "fd1cc61e8425db0aaa3cc9d5aaa75f6e308a588346f4fe4f3cbd88ff0430b453"
     ]
   }
 }

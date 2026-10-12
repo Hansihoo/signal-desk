@@ -222,6 +222,11 @@
       "id": "devops-visual-support-2026-10-12",
       "input": "devops_implementation.2026-10-12.r14.json",
       "quality": "devops_implementation.2026-10-12.r14.quality.json"
+    },
+    {
+      "id": "ai-model-guides-2026-10-13",
+      "input": "ai_model_guides.2026-10-13.json",
+      "quality": "ai_model_guides.2026-10-13.quality.json"
     }
   ]
 }

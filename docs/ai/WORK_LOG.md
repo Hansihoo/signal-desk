@@ -300,3 +300,13 @@ ZIP 생성OS 메타데이터는 플랫폼별로 다르나9파일 내용은 정�
 모바일은 기존 로컬 DOM 범위, 예제 원격CI/운영 서버/사람 학습 시험은 미수행.
 FDE 기존 배포와 작업 파일, 원문/내용 검토 날짜를 보존. 생성 출력/workflow/권한 변경 없음.
 자세한 결과와 증거: docs/DEVOPS_PUBLICATION.2026-10-12.md.
+
+## 2026-10-13 Muse Wonder 신규 모델 가이드
+
+- daily ai: Theo14문서/789원본관측과 공식 후보를 확인해 Meta10월12일 Wonder/Full을 신규로 선정했다.
+- API preview/Standard와 Full구독전용, 추론출력과금·캐시/검색료, 기본Contributor 및 구독전용인증/추가키PAYG를 분리했다.
+- 두 충분한 가이드와12공식관측을 불변배치로등록했다. 첫화면/본문 독립Revise를 실제수정후2Pass; source/meaning과 이해검토, 출력검증을 분리했다.
+- quality2/audit17+30;152시험의Win32정리4오류 후 해당4포함33영향시험Pass. publish/brief/desk/PNG,14내용보존/228HTML19465참조,8개반응형관측/가이드필터/모델12행·xhigh상세/CSV12행/출처/날짜/이력 확인.
+- 47보고서159판,816관측818판,Theo14/14. 주거0활성공고의review11Pass/1Fail은별도다. API실행·실측청구·독립벤치·사람독해시험미실시.
+- 원문 data/raw와 필요한 D:/9_codex_temp/2026-10-13/signal-ai-models 근거는보존, disposable시험scratch는정리됐다. 기존다른작업변경을포함하지않는다.
+- 조사/검토/배포영수증: docs/AI_MODEL_REVIEW.2026-10-13.md. 공개배포는후속결과로기록한다.
