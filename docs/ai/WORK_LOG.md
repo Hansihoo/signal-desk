@@ -288,3 +288,15 @@
 - 관련21테스트27.644s,gate1/publish/audit15gated30legacy 통과. 실습코드/ZIPbytes 동일,다른44현재/기존156판/model804+806/original14+14 정확보존:45보고서157판. 생성기기능에만수정하고FDE/기존dirty변경을 보존했다. commit/push/공개배포/새자동화/유료모델은 실행하지 않았다.
 - 실제Chrome2071px에서5/3열,실제477px(요청430과다름)에서1열도식과표의415/600px영역을 확인했다. 화살표6개의 노드연결과버전경로,1.3/2.1/4.2배치를 대조했다. 부분 desktopPNG는 확인했으나 mobilePNGtimeout/빈화면으로 완전한캡처검증을 주장하지 않는다. 빈캡처제거,필요한부분PNG/DOM영수증은 D:/9_codex_temp/2026-10-12/signal-desk-devops-visuals/evidence/에 보관했다. 테스트scratch는 제거됐다.
 - brief/390x1500PNG 확인. housingreview는 기존활성0건만FAIL(다른11항목PASS). 새주택수집없음. docs/DEVOPS_VISUAL_SUPPORT.2026-10-12.md,작성가이드/템플릿/상태/handoff에선택기준과검증한계를 기록했다. 프로젝트helper로Hansihoo와정확한root/fetch/push를검증하고 기존공개r9를 변경하지 않았다.
+
+## 2026-10-12 DevOps r14 배포 완료
+
+소스1d17b18/[Pages38214660351](https://github.com/Hansihoo/signal-desk/actions/runs/38214660351)
+success15:54:40KST. 공개r14 원고/4장12목차/CI-CD표/전달과 복구2도식/실습9파일이 반영됐다.
+45문서/157판, 다른44현재/기존152판/모델804+806/원본14+14 정확히 보존.
+로컬152시험/제출tree품질-발행-brief-review/CI152시험39.788s와 cloud review 통과.
+Home/원고/ZIP/r1-r13 HTTP 및 anchor, Chrome1864px 표/전달 PNG/복구3단계와 목차 이동 확인.
+ZIP 생성OS 메타데이터는 플랫폼별로 다르나9파일 내용은 정확히 같음.
+모바일은 기존 로컬 DOM 범위, 예제 원격CI/운영 서버/사람 학습 시험은 미수행.
+FDE 기존 배포와 작업 파일, 원문/내용 검토 날짜를 보존. 생성 출력/workflow/권한 변경 없음.
+자세한 결과와 증거: docs/DEVOPS_PUBLICATION.2026-10-12.md.
