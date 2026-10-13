@@ -329,6 +329,7 @@ def render_editorial(output, snapshot, featured, research_data=None, standalone=
             report_template = template.replace('  <div class="image object evidence-panel">__HERO_VISUAL__</div>\n', '')
         model_intro = digest(item) in settings().get("model_introduction_editions", {}).get(item["id"], [])
         if model_intro:
+            values['__EDITION_NOTICE__'] += '<p class="model-comparison-links"><a href="%sai-models.html">전체 모델 비교표</a> / <a href="%sai-model-guides.html">모델별 자료</a></p>' % (prefix, prefix)
             # Tables and their conditions precede interpretation only in opted-in editions.
             data_section = report_template[report_template.index('<section id="data"'):report_template.index('<section id="result"')]
             report_template = report_template.replace('__EXPLANATION__\n' + data_section, data_section + '__EXPLANATION__\n', 1)

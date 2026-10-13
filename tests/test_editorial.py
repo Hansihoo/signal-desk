@@ -40,6 +40,8 @@ class EditorialTests(unittest.TestCase):
             self.assertIn('href="#data">비교표</a><a href="#explanation">모델 분석', current)
             self.assertIn('id="explanation-title">모델 분석', current)
             self.assertIn('<body class="model-introduction-page">', current)
+            self.assertIn('href="ai-models.html">전체 모델 비교표', current)
+            self.assertIn('href="ai-model-guides.html">모델별 자료', current)
             self.assertNotIn('<body class="model-introduction-page">', previous)
             self.assertLess(previous.index('<section id="explanation"'), previous.index('<section id="data"'))
             self.assertIn('id="data-title">데이터', previous)

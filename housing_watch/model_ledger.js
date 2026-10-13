@@ -2,6 +2,14 @@
   'use strict';
   const data = JSON.parse(document.getElementById('model-ledger-data').textContent);
   const $ = id => document.getElementById(id);
+  // Reviewed values retain their own units and suites rather than becoming AA scores.
+  const corePrices = ['입력 USD / 100만 토큰', '캐시 읽기 USD / 100만 토큰', '캐시 입력 USD / 100만 토큰', '출력 USD / 100만 토큰'];
+  const priceFields = [...new Set(data.records.filter(row=>row.source_kind==='reviewed')
+    .flatMap(row=>Object.keys(row.fields).filter(key=>key.includes('USD /'))))];
+  const officialFields = new Map([['official_score','평가 점수'],
+    ...[...corePrices, ...priceFields.filter(key=>!corePrices.includes(key)).sort((a,b)=>a.localeCompare(b,'ko'))]
+      .map(key=>['official:'+key,key])]);
+  const officialColumns = [...officialFields].map(([key,field])=>[key,key==='official_score'?'공식 평가값 (원문 단위)':field]);
   const columns = [
     ['model','모델 / 설정'],['provider','개발사'],['kind','자료 구분'],['effort','추론 설정'],['release','출시'],['status','제공 상태'],['access','이용 방식'],
     ['context','Context (토큰)'],['parameters','총 Params'],['active_parameters','활성 Params (B)'],['harness','Agent / Harness'],['harness_version','Harness 버전'],
@@ -10,13 +18,16 @@
     ['intelligence','AA Intelligence ↑'],['briefcase','AA-Briefcase (Elo) ↑'],['automation','Automation (%) ↑'],['model_terminal','AA Terminal (%) ↑'],['scicode','SciCode (%) ↑'],
     ['model_cost','AA USD / task'],['lcr','AA-LCR (%) ↑'],['cursor_score','CursorBench (%) ↑'],['cursor_cost','Cursor USD / task'],['cursor_tokens','Cursor 토큰 / task'],['cursor_steps','Cursor Steps / task'],
     ['public_coding','공개 코딩 실측'],['q4_load','Q4 모델 로드'],['q4_ram','Q4 권장 RAM'],['q8_load','Q8 모델 로드'],['fp16_load','FP16/BF16 로드'],
-    ['unassisted','무개입 완료율 (%)'],['regression_free','회귀 없는 성공률 (%)'],['success_cost','성공당 총비용 (USD)'],['condition','평가 조건'],['checked_on','원자료 날짜'],['note','설명 / 주의'],['suite','평가판'],['basis','근거 수준'],['tier','원본 상대 구간']
+    ['unassisted','무개입 완료율 (%)'],['regression_free','회귀 없는 성공률 (%)'],['success_cost','성공당 총비용 (USD)'],['condition','평가 조건'],['checked_on','원자료 날짜'],['note','설명 / 주의'],['basis','근거 수준'],['tier','원본 상대 구간']
   ];
+  columns.splice(9,0,['suite','평가판'],...officialColumns);
   const labels = Object.fromEntries(columns);
   Object.assign(labels, {benchmark_versions:'평가 항목별 버전',harness_versions:'평가별 Harness 버전 범위',
     estimated_intelligence:'추정 AA Intelligence · 실측 제외',fallback_models:'대체 모델 (fallback)',retained_attempts:'평가 시도 수'});
   const presets = {
-    integrated: ['model','provider','kind','effort','context','harness','intelligence','agent_index','cursor_score','condition','checked_on'],
+    integrated: ['model','provider','kind','effort','context','harness','intelligence','agent_index','cursor_score','suite','official_score',
+      ...corePrices.map(key=>'official:'+key),'condition','checked_on'],
+    official: ['model','provider','kind','status','access','context','effort','harness','suite',...officialFields.keys(),'condition','checked_on'],
     spec: ['model','provider','release','kind','status','access','parameters','context','q4_load','q4_ram','q8_load','fp16_load','note','checked_on'],
     model: ['model','provider','effort','context','intelligence','briefcase','automation','model_terminal','scicode','model_cost','lcr','condition','checked_on'],
     agent: ['model','provider','effort','harness','agent_index','deep_swe','agent_terminal','swe_atlas','agent_tokens','agent_minutes','agent_turns','agent_cost','condition','checked_on'],
@@ -24,14 +35,15 @@
   };
   const numeric = new Set(['agent_index','deep_swe','agent_terminal','swe_atlas','agent_tokens','agent_minutes','agent_turns','agent_cost','intelligence','briefcase','automation','model_terminal','scicode','model_cost','lcr','cursor_score','cursor_cost','cursor_tokens','cursor_steps','unassisted','regression_free','success_cost']);
   const percent = new Set(['deep_swe','agent_terminal','swe_atlas','automation','model_terminal','scicode','lcr','cursor_score','unassisted','regression_free']);
-  const costs = new Set(['agent_cost','model_cost','cursor_cost','success_cost']);
+  const costs = new Set(['agent_cost','model_cost','cursor_cost','success_cost',...officialFields.keys()].filter(key=>key!=='official_score'));
   const searchFields = ['label','kind','effort','harness','condition','suite','note','access','status','fallback_models'];
   let visible = new Set(presets.integrated), page = 1, sortKey = 'model', direction = 1, filtered = [];
   const pageSize = 25;
   const records = data.records;
   const harnessName = value => ({codex:'Codex','claude-code':'Claude Code'}[value] || value);
   const modelLabel = row => row.fields.label || row.model + (row.fields.effort?' ('+row.fields.effort+')':'');
-  const get = (row,key) => ['model','provider','checked_on'].includes(key) ? row[key] : key==='modelLabel' ? modelLabel(row) : key==='harness' ? harnessName(row.fields.harness) : key==='effort' ? row.fields.effort?.toLowerCase() : row.fields[key];
+  const get = (row,key) => officialFields.has(key) ? (row.source_kind==='reviewed'?row.fields[officialFields.get(key)]:undefined) :
+    ['model','provider','checked_on'].includes(key) ? row[key] : key==='modelLabel' ? modelLabel(row) : key==='harness' ? harnessName(row.fields.harness) : key==='effort' ? row.fields.effort?.toLowerCase() : row.fields[key];
   const missing = value => value == null || value === '' || /^(—|미확인|미측정|미공개)$/.test(String(value));
   function display(value, key) {
     if (missing(value)) return value && value !== '—' ? value : '—';
@@ -41,7 +53,7 @@
     if (typeof value !== 'number') return String(value);
     if (key==='context' || key.includes('tokens')) return value.toLocaleString('en-US',{maximumFractionDigits:0});
     if (key==='parameters' || key==='active_parameters') return value.toLocaleString('en-US') + 'B';
-    return (costs.has(key)?'$':'') + value.toLocaleString('en-US',{maximumFractionDigits:2}) + (percent.has(key)?'%':'');
+    return (costs.has(key)?'$':'') + value.toLocaleString('en-US',{maximumFractionDigits:officialFields.has(key)?20:2}) + (percent.has(key)?'%':'');
   }
   function node(tag, text, className) {
     const item = document.createElement(tag);
@@ -174,6 +186,7 @@
     document.querySelectorAll('[data-preset]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.preset===name)));
     $('model-kind').value=['model','agent','cursor'].includes(name)?name:'';
     if(name==='spec')$('model-kind').value='spec';
+    if(name==='official')$('model-kind').value='reviewed';
     renderColumns();filter();
   }
   document.querySelectorAll('[data-preset]').forEach(button=>button.addEventListener('click',()=>preset(button.dataset.preset)));
