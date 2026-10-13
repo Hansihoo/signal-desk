@@ -2,6 +2,13 @@
   "schema_version": 1,
   "featured_report_id": "mcp-apps-workflows",
   "report_ids": [
+    "agent-skills-guide",
+    "agent-context-knowledge-guide",
+    "agent-tools-mcp-guide",
+    "agent-workflow-multi-agent-guide",
+    "agent-harness-checkpoints-guide",
+    "agent-a2a-guide",
+    "agent-evaluation-traces-guide",
     "fde-enterprise-adoption",
     "devops-implementation-guide",
     "qwen-image-2-1-turbo-model-guide",
@@ -237,6 +244,11 @@
       "id": "ai-model-introductions-2026-10-13-r3",
       "input": "ai_model_guides.2026-10-13.r3.json",
       "quality": "ai_model_guides.2026-10-13.r3.quality.json"
+    },
+    {
+      "id": "agent-tech-plans-2026-10-13",
+      "input": "agent_tech_plans.2026-10-13.json",
+      "quality": "agent_tech_plans.2026-10-13.quality.json"
     }
   ]
 }

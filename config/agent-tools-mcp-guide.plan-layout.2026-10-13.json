@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "report_id": "agent-tools-mcp-guide",
+  "report_hash": "0672f6274875eb488e3635fe3ad3cc18b9220fe9c942a9667b593398cae4d142",
+  "reader_content_only": true,
+  "images": {},
+  "topic_sections": {
+    "chapter-1": [
+      {
+        "id": "ch1-topic1",
+        "start": 0
+      },
+      {
+        "id": "ch1-topic2",
+        "start": 1
+      },
+      {
+        "id": "ch1-topic3",
+        "start": 2
+      }
+    ],
+    "chapter-2": [
+      {
+        "id": "ch2-topic1",
+        "start": 0
+      },
+      {
+        "id": "ch2-topic2",
+        "start": 1
+      },
+      {
+        "id": "ch2-topic3",
+        "start": 2
+      }
+    ],
+    "chapter-3": [
+      {
+        "id": "ch3-topic1",
+        "start": 0
+      },
+      {
+        "id": "ch3-topic2",
+        "start": 1
+      },
+      {
+        "id": "ch3-topic3",
+        "start": 2
+      }
+    ],
+    "chapter-4": [
+      {
+        "id": "ch4-topic1",
+        "start": 0
+      },
+      {
+        "id": "ch4-topic2",
+        "start": 1
+      },
+      {
+        "id": "ch4-topic3",
+        "start": 2
+      }
+    ]
+  }
+}

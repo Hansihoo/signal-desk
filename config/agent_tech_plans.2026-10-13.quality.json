@@ -1,0 +1,4680 @@
+{
+  "packages": [
+    {
+      "version": "question-research-1",
+      "plan": {
+        "version": "question-research-1",
+        "request": {
+          "id": "agent-skills-guide",
+          "topic_id": "development",
+          "topic_path": [
+            "AI 개발",
+            "에이전트 활용 기술",
+            "스킬"
+          ],
+          "reader": "준비된 에이전트 도구로 업무를 수행하는 개발자와 관리자",
+          "reader_question": "스킬의 리서치 페이지에서 어떤 질문과 세부 내용을 조사해야 업무 활용에 도움이 되는가?",
+          "outcome": "반복 업무 하나를 골라 스킬에 넣을 절차·자료·완료 기준을 정하고 기존 스킬을 적용하거나 수정할 수 있습니다.",
+          "research_type": "custom",
+          "custom_profile": {
+            "method": "사용자가 지정한 기술 한 행에 대해 목차·조사 계획만 등록한다. 공식 관련 절로 개념을 확인하고 업무 활용자의 질문을 장·세부 질문·예정 사례로 연결한다. 상세 조사 완료, 실행된 튜토리얼과 성능 검증으로 표시하지 않는다.",
+            "requires": [
+              "concept"
+            ]
+          },
+          "questions": [
+            {
+              "id": "concept",
+              "question": "스킬은 어떤 역할을 하는가?",
+              "requires": [
+                "concept"
+              ]
+            },
+            {
+              "id": "outline",
+              "question": "업무 활용자를 위해 무엇을 조사하고 어떤 사례로 확인할 것인가?",
+              "requires": [
+                "concept"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "id": "skills",
+              "title": "Agent Skills specification",
+              "url": "https://agentskills.io/specification",
+              "kind": "official_document"
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "concept",
+            "question": "스킬은 어떤 역할을 하는가?",
+            "requires": [
+              "concept"
+            ]
+          },
+          {
+            "id": "outline",
+            "question": "업무 활용자를 위해 무엇을 조사하고 어떤 사례로 확인할 것인가?",
+            "requires": [
+              "concept"
+            ]
+          }
+        ],
+        "method": "사용자가 지정한 기술 한 행에 대해 목차·조사 계획만 등록한다. 공식 관련 절로 개념을 확인하고 업무 활용자의 질문을 장·세부 질문·예정 사례로 연결한다. 상세 조사 완료, 실행된 튜토리얼과 성능 검증으로 표시하지 않는다."
+      },
+      "sources": [
+        {
+          "id": "skills",
+          "title": "Agent Skills specification",
+          "url": "https://agentskills.io/specification",
+          "kind": "official_document",
+          "status": "imported_original",
+          "transport": "retained_http_original_related_excerpt",
+          "content_hash": "784098b8797e0086707c4dbf5128dd138511b7189104cd4ee813a9fc988d7e1b",
+          "text": "A skill is a directory containing, at minimum, a SKILL.md file:",
+          "text_hash": "75ea57668e7cfcd345b93c6375c03d4f63e13845bd6d76d1ec4140c23e432802",
+          "first_collected": null,
+          "last_successful_collection": "2026-10-13T04:59:28.171736+00:00",
+          "published_on": null,
+          "reviewed_at": "2026-10-13T05:09:58.694749+00:00",
+          "review_scope": "SKILL.md/resources, progressive disclosure, experimental allowed-tools support.",
+          "raw_path": "C:\\Engine\\signal-desk\\data\\raw\\agent-usage-2026-10-13\\skills.html"
+        }
+      ],
+      "analysis": {
+        "evidence": [
+          {
+            "id": "e-skills",
+            "source_id": "skills",
+            "source_hash": "784098b8797e0086707c4dbf5128dd138511b7189104cd4ee813a9fc988d7e1b",
+            "quote": "A skill is a directory containing, at minimum, a SKILL.md file:",
+            "meaning": "SKILL.md/resources, progressive disclosure, experimental allowed-tools support.",
+            "limits": "공식 원문의 관련 절은 개념과 조사 범위를 뒷받침한다. 제품별 설정·실행 결과와 실제 독자 이해를 입증하는 근거는 아니다.",
+            "supports": [
+              "concept"
+            ]
+          }
+        ],
+        "answers": [
+          {
+            "question_id": "concept",
+            "answer": "스킬은 특정 업무의 지침과 참고자료, 필요하면 실행 스크립트를 묶어 에이전트가 재사용할 수 있게 한 구성입니다.",
+            "reasoning": "공식 문서의 관련 절에서 역할과 연결 구조를 확인했다.",
+            "limits": "상세 사용법·제품별 지원과 성과는 현재 계획의 후속 조사다.",
+            "evidence_ids": [
+              "e-skills"
+            ]
+          },
+          {
+            "question_id": "outline",
+            "answer": "1. 스킬은 무엇이며 어떤 업무에 필요한가; 2. 기존 스킬을 찾아 적용하는 방법; 3. 자신의 업무에 맞는 스킬을 작성하는 방법; 4. 업무 사례와 스킬 유지보수",
+            "reasoning": "역할을 이해한 뒤 준비·사용·결과 확인·실패·업무 적용을 질문으로 나눴다. 사용자 요청의 기술 범위와 목차 계획 등록 단계에 맞춘 편집 판단이다.",
+            "limits": "각 세부 질문의 상세 답과 실행 사례는 아직 작성하지 않았다.",
+            "evidence_ids": [
+              "e-skills"
+            ]
+          }
+        ],
+        "gaps": []
+      },
+      "draft": {
+        "report": {
+          "id": "agent-skills-guide",
+          "topic_id": "development",
+          "topic_path": [
+            "AI 개발",
+            "에이전트 활용 기술",
+            "스킬"
+          ],
+          "title": "스킬: 에이전트의 반복 업무 절차를 재사용하는 방법 — 조사 계획",
+          "description": "스킬을 업무에 활용하려는 사용자를 위해 조사할 질문과 세부 목차를 정리했습니다.",
+          "checked_on": "2026-10-13",
+          "scope": "목차와 조사 계획 등록 단계입니다. 아래 활용 절차·환경별 설정·사례의 상세 본문은 후속 조사로 작성합니다.",
+          "deck": "조사 계획 · 매주 공식 제품 발표를 비교하는 보고서 작성 절차를 스킬로 정리하는 사례를 통해 역할·활용 절차·확인 기준을 조사합니다.",
+          "highlights": [
+            "스킬의 역할과 필요한 이유",
+            "업무에 적용하는 방법과 완료 기준",
+            "매주 공식 제품 발표를 비교하는 보고서 작성 절차를 스킬로 정리하는 사례"
+          ],
+          "source_note": "공식 기술 문서의 관련 절로 조사 범위를 정했습니다. 이번 판은 조사 계획이며 실제 도구 실행이나 제품별 효과 평가가 아닙니다.",
+          "summary": [
+            {
+              "kind": "fact",
+              "label": "기술의 역할",
+              "text": "스킬은 특정 업무의 지침과 참고자료, 필요하면 실행 스크립트를 묶어 에이전트가 재사용할 수 있게 한 구성입니다.",
+              "source_ids": [
+                "skills"
+              ]
+            },
+            {
+              "kind": "judgment",
+              "label": "조사 목표",
+              "text": "반복 업무 하나를 골라 스킬에 넣을 절차·자료·완료 기준을 정하고 기존 스킬을 적용하거나 수정할 수 있습니다.",
+              "source_ids": [
+                "skills"
+              ]
+            },
+            {
+              "kind": "judgment",
+              "label": "예정 사례",
+              "text": "매주 공식 제품 발표를 비교하는 보고서 작성 절차를 스킬로 정리하는 사례를 입력부터 결과까지 조사합니다. 현재는 사례 구성 계획입니다.",
+              "source_ids": [
+                "skills"
+              ]
+            }
+          ],
+          "metrics": [],
+          "datasets": [],
+          "explanation": [
+            {
+              "id": "chapter-1",
+              "title": "1. 스킬은 무엇이며 어떤 업무에 필요한가",
+              "lead": "스킬이 담당하는 역할과 반복 업무에서 필요한 이유를 조사합니다.",
+              "blocks": [
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "요청문·프로젝트 지침·스킬의 역할",
+                  "source_ids": [
+                    "skills"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "한 번의 요청, 프로젝트의 공통 규칙, 특정 업무의 재사용 절차를 어떤 기준으로 나누는가?"
+                    }
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "스킬을 적용하기 좋은 반복 업무",
+                  "source_ids": [
+                    "skills"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "조사·문서 작성·자료 분석·검사 중 어떤 절차를 묶을 때 도움이 되는가?"
+                    }
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "지침·참고자료·스크립트의 구성",
+                  "source_ids": [
+                    "skills"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "각 파일이 어떤 정보를 담고 에이전트는 언제 필요한 내용을 읽는가?"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "chapter-2",
+              "title": "2. 기존 스킬을 찾아 적용하는 방법",
+              "lead": "스킬을 찾고 선택하고 실제로 사용됐는지 확인하는 과정을 조사합니다.",
+              "blocks": [
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "사용 환경과 스킬 설치 조건",
+                  "source_ids": [
+                    "skills"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "내 에이전트 도구가 어떤 형식과 설치 위치를 지원하며 필요한 권한은 무엇인가?"
+                    }
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "스킬 선택과 적용 요청",
+                  "source_ids": [
+                    "skills"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "이름·설명·사용 조건으로 스킬을 선택하고 현재 업무에 적용하려면 어떻게 요청하는가?"
+                    }
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "적용 결과의 확인",
+                  "source_ids": [
+                    "skills"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "스킬을 읽은 사실과 업무 절차를 실제로 수행한 결과를 무엇으로 구분하는가?"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "chapter-3",
+              "title": "3. 자신의 업무에 맞는 스킬을 작성하는 방법",
+              "lead": "재사용할 절차를 업무의 입력과 결과에 맞춰 구성하는 방법을 조사합니다.",
+              "blocks": [
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "입력·결과물·완료 기준 정하기",
+                  "source_ids": [
+                    "skills"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "스킬이 받을 자료, 만들어야 할 결과와 작업을 끝낼 조건을 어떻게 작성하는가?"
+                    }
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "지침과 보조 자료 나누기",
+                  "source_ids": [
+                    "skills"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "항상 필요한 절차와 업무에 따라 읽을 예제·템플릿·스크립트를 어떻게 분리하는가?"
+                    }
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "적용 범위와 예외 처리",
+                  "source_ids": [
+                    "skills"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "자료 부족·권한 부족·예상하지 못한 입력에서는 어떤 정보를 반환하고 어디서 멈추는가?"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "chapter-4",
+              "title": "4. 업무 사례와 스킬 유지보수",
+              "lead": "한 업무에 적용하고 다음 실행에서 재사용할 수 있도록 개선하는 방법을 조사합니다.",
+              "blocks": [
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "주간 비교 보고서 사례",
+                  "source_ids": [
+                    "skills"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "자료 선택에서 비교표와 근거 확인까지 어떤 절차를 스킬로 남기는가?"
+                    }
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "잘못 적용되거나 낡은 스킬 고치기",
+                  "source_ids": [
+                    "skills"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "발동 조건·도구 변경·자료 형식 변경 중 무엇이 실패 원인이었는지 어떻게 찾는가?"
+                    }
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "팀 공유와 버전 관리",
+                  "source_ids": [
+                    "skills"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "같은 스킬을 공유할 때 변경 이력과 환경별 차이를 어떻게 관리하는가?"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "learning": [],
+          "result": {
+            "title": "후속 조사에서 완성할 내용",
+            "points": [
+              {
+                "kind": "judgment",
+                "label": "활용 안내",
+                "text": "각 세부 질문에 공식 근거와 구체적인 사용 절차를 연결하고, 매주 공식 제품 발표를 비교하는 보고서 작성 절차를 스킬로 정리하는 사례의 정상 결과·실패·수정 과정을 정리할 계획입니다.",
+                "source_ids": [
+                  "skills"
+                ]
+              }
+            ]
+          },
+          "references": [
+            {
+              "id": "skills",
+              "title": "Agent Skills specification",
+              "url": "https://agentskills.io/specification",
+              "description": "스킬 파일·참고자료·스크립트와 필요한 내용을 단계적으로 읽는 형식입니다."
+            }
+          ],
+          "caveats": [
+            {
+              "text": "현재 등록 내용은 목차와 조사 계획입니다. 제품별 사용 조건·설치·실행 결과와 비용·효과는 후속 조사에서 확인할 항목입니다.",
+              "source_ids": []
+            }
+          ]
+        },
+        "claims": [
+          {
+            "path": "/summary/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-skills"
+            ]
+          },
+          {
+            "path": "/summary/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-skills"
+            ]
+          },
+          {
+            "path": "/summary/2",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-skills"
+            ]
+          },
+          {
+            "path": "/explanation/0/blocks/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-skills"
+            ]
+          },
+          {
+            "path": "/explanation/0/blocks/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-skills"
+            ]
+          },
+          {
+            "path": "/explanation/0/blocks/2",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-skills"
+            ]
+          },
+          {
+            "path": "/explanation/1/blocks/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-skills"
+            ]
+          },
+          {
+            "path": "/explanation/1/blocks/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-skills"
+            ]
+          },
+          {
+            "path": "/explanation/1/blocks/2",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-skills"
+            ]
+          },
+          {
+            "path": "/explanation/2/blocks/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-skills"
+            ]
+          },
+          {
+            "path": "/explanation/2/blocks/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-skills"
+            ]
+          },
+          {
+            "path": "/explanation/2/blocks/2",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-skills"
+            ]
+          },
+          {
+            "path": "/explanation/3/blocks/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-skills"
+            ]
+          },
+          {
+            "path": "/explanation/3/blocks/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-skills"
+            ]
+          },
+          {
+            "path": "/explanation/3/blocks/2",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-skills"
+            ]
+          },
+          {
+            "path": "/result/points/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-skills"
+            ]
+          },
+          {
+            "path": "/caveats/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-skills"
+            ]
+          }
+        ],
+        "answer_paths": {
+          "concept": [
+            "/summary/0"
+          ],
+          "outline": [
+            "/explanation",
+            "/result"
+          ]
+        }
+      },
+      "first_screen_review": {
+        "input_hash": "de6ac42f006435d0354474870d44f8f75e06582f0abb6754ebc90cb71ba44e28",
+        "reviewer": "author_self_review; title/description/deck-only editorial input",
+        "reviewed_at": "2026-10-13T05:30:38.510141+00:00",
+        "checks": {
+          "readability": {
+            "passed": true,
+            "reason": "제목과 소개에 기술 이름·업무 활용 목적·조사 계획 단계가 명시된다.",
+            "locations": [
+              "/title",
+              "/description"
+            ]
+          },
+          "question_answered": {
+            "passed": true,
+            "reason": "해당 기술 한 행의 목차 계획이라는 범위를 첫 화면에서 알 수 있다.",
+            "locations": [
+              "/title",
+              "/deck"
+            ]
+          },
+          "reader_outcome": {
+            "passed": true,
+            "reason": "반복 업무 하나를 골라 스킬에 넣을 절차·자료·완료 기준을 정하고 기존 스킬을 적용하거나 수정할 수 있습니다.",
+            "locations": [
+              "/deck"
+            ]
+          }
+        },
+        "issues": []
+      },
+      "body_review": {
+        "input_hash": "c16e4b6eeab275a1044985c90cf9b1de1c6341641c405c8117cd51a4d467ab94",
+        "reviewer": "author_self_review; source/meaning/body stage",
+        "reviewed_at": "2026-10-13T05:30:38.510141+00:00",
+        "checks": {
+          "question_answered": {
+            "passed": true,
+            "reason": "개념과 목차 계획 두 질문을 요약과 실제 장·세부 질문·예정 결과에 연결했다.",
+            "locations": [
+              "/summary/0",
+              "/explanation"
+            ]
+          },
+          "analysis": {
+            "passed": true,
+            "reason": "확인한 개념과 예정 조사 질문을 사실/편집 판단으로 구분했다. 계획에 대한 등록 검토이며 기술 상세 조사 완료의 판정이 아니다.",
+            "locations": [
+              "/analysis/answers",
+              "/draft/report/scope"
+            ]
+          },
+          "evidence": {
+            "passed": true,
+            "reason": "보존 원문의 해시와 관련 발췌를 대조했고 원문 확보·검토 날짜를 렌더링 날짜로 대체하지 않았다.",
+            "locations": [
+              "/sources",
+              "/analysis/evidence"
+            ]
+          },
+          "readability": {
+            "passed": true,
+            "reason": "큰 목차와 번호가 있는 세부 질문을 실제 읽고 중복·역할 혼동을 점검했다. 현재 본문을 미래의 조사 항목으로 표현한다.",
+            "locations": [
+              "/explanation"
+            ]
+          },
+          "factuality": {
+            "passed": true,
+            "reason": "개념만 공식 관련 절로 확인했고 제품별 실습·비용·효과는 미확인 후속 범위로 남겼다.",
+            "locations": [
+              "/summary/0",
+              "/caveats"
+            ]
+          },
+          "reader_outcome": {
+            "passed": true,
+            "reason": "독자는 무엇을 조사할지와 예정 사례를 알 수 있다. 실제 기술을 사용하는 완성 교재는 후속 조사다.",
+            "locations": [
+              "/explanation",
+              "/result"
+            ]
+          }
+        },
+        "issues": []
+      },
+      "review_limitations": "단일 작성자의 개념·범위 및 계획 원고 자체 검토. 독립 에이전트·실제 독자 시험·유료 API·제품 실행을 수행하지 않았다. ready는 목차·조사계획판의 기계·편집 준비이며 상세 리서치 완료가 아니다."
+    },
+    {
+      "version": "question-research-1",
+      "plan": {
+        "version": "question-research-1",
+        "request": {
+          "id": "agent-context-knowledge-guide",
+          "topic_id": "development",
+          "topic_path": [
+            "AI 개발",
+            "에이전트 활용 기술",
+            "문맥 관리·지식 검색"
+          ],
+          "reader": "준비된 에이전트 도구로 업무를 수행하는 개발자와 관리자",
+          "reader_question": "문맥 관리·지식 검색의 리서치 페이지에서 어떤 질문과 세부 내용을 조사해야 업무 활용에 도움이 되는가?",
+          "outcome": "업무에 필요한 자료와 진행 상태를 구분해 제공하고, 잘못된 자료 선택·정보 누락·오래된 근거를 진단할 수 있습니다.",
+          "research_type": "custom",
+          "custom_profile": {
+            "method": "사용자가 지정한 기술 한 행에 대해 목차·조사 계획만 등록한다. 공식 관련 절로 개념을 확인하고 업무 활용자의 질문을 장·세부 질문·예정 사례로 연결한다. 상세 조사 완료, 실행된 튜토리얼과 성능 검증으로 표시하지 않는다.",
+            "requires": [
+              "concept"
+            ]
+          },
+          "questions": [
+            {
+              "id": "concept",
+              "question": "문맥 관리·지식 검색은 어떤 역할을 하는가?",
+              "requires": [
+                "concept"
+              ]
+            },
+            {
+              "id": "outline",
+              "question": "업무 활용자를 위해 무엇을 조사하고 어떤 사례로 확인할 것인가?",
+              "requires": [
+                "concept"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "id": "context",
+              "title": "Anthropic context engineering",
+              "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+              "kind": "official_document"
+            },
+            {
+              "id": "persistence",
+              "title": "LangGraph persistence",
+              "url": "https://docs.langchain.com/oss/python/langgraph/persistence",
+              "kind": "official_document"
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "concept",
+            "question": "문맥 관리·지식 검색은 어떤 역할을 하는가?",
+            "requires": [
+              "concept"
+            ]
+          },
+          {
+            "id": "outline",
+            "question": "업무 활용자를 위해 무엇을 조사하고 어떤 사례로 확인할 것인가?",
+            "requires": [
+              "concept"
+            ]
+          }
+        ],
+        "method": "사용자가 지정한 기술 한 행에 대해 목차·조사 계획만 등록한다. 공식 관련 절로 개념을 확인하고 업무 활용자의 질문을 장·세부 질문·예정 사례로 연결한다. 상세 조사 완료, 실행된 튜토리얼과 성능 검증으로 표시하지 않는다."
+      },
+      "sources": [
+        {
+          "id": "context",
+          "title": "Anthropic context engineering",
+          "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+          "kind": "official_document",
+          "status": "imported_original",
+          "transport": "retained_http_original_related_excerpt",
+          "content_hash": "47761e62a738262bc602bc4ad18d6332cebfe45f6a6608ff7faa127b8968772d",
+          "text": "Context engineering refers to the set of strategies for curating and maintaining the optimal set of tokens",
+          "text_hash": "fe88ca3f878047150b1f9ccee8a3492ef8f43da0d220da00ee5f50ae12d816b8",
+          "first_collected": null,
+          "last_successful_collection": "2026-10-13T04:59:27.729817+00:00",
+          "published_on": "2025-09-29",
+          "reviewed_at": "2026-10-13T05:09:58.694749+00:00",
+          "review_scope": "Context definition, just-in-time retrieval, compaction, notes and subagent context.",
+          "raw_path": "C:\\Engine\\signal-desk\\data\\raw\\agent-usage-2026-10-13\\context.html"
+        },
+        {
+          "id": "persistence",
+          "title": "LangGraph persistence",
+          "url": "https://docs.langchain.com/oss/python/langgraph/persistence",
+          "kind": "official_document",
+          "status": "imported_original",
+          "transport": "retained_http_original_related_excerpt",
+          "content_hash": "bbfbfbf367edd2ed8c9768f87e25c1debc686f25713a35e12c0b25f16dd2df9a",
+          "text": "Checkpointers persist a thread’s graph state as checkpoints.",
+          "text_hash": "5163e9ae2094a6cec69c35481d39d794fe77ef0cfbb66ce4abbc1a15acea6144",
+          "first_collected": null,
+          "last_successful_collection": "2026-10-13T04:59:29.270271+00:00",
+          "published_on": null,
+          "reviewed_at": "2026-10-13T05:09:58.694749+00:00",
+          "review_scope": "Thread checkpoints vs cross-thread Stores.",
+          "raw_path": "C:\\Engine\\signal-desk\\data\\raw\\agent-usage-2026-10-13\\persistence.html"
+        }
+      ],
+      "analysis": {
+        "evidence": [
+          {
+            "id": "e-context",
+            "source_id": "context",
+            "source_hash": "47761e62a738262bc602bc4ad18d6332cebfe45f6a6608ff7faa127b8968772d",
+            "quote": "Context engineering refers to the set of strategies for curating and maintaining the optimal set of tokens",
+            "meaning": "Context definition, just-in-time retrieval, compaction, notes and subagent context.",
+            "limits": "공식 원문의 관련 절은 개념과 조사 범위를 뒷받침한다. 제품별 설정·실행 결과와 실제 독자 이해를 입증하는 근거는 아니다.",
+            "supports": [
+              "concept"
+            ]
+          },
+          {
+            "id": "e-persistence",
+            "source_id": "persistence",
+            "source_hash": "bbfbfbf367edd2ed8c9768f87e25c1debc686f25713a35e12c0b25f16dd2df9a",
+            "quote": "Checkpointers persist a thread’s graph state as checkpoints.",
+            "meaning": "Thread checkpoints vs cross-thread Stores.",
+            "limits": "공식 원문의 관련 절은 개념과 조사 범위를 뒷받침한다. 제품별 설정·실행 결과와 실제 독자 이해를 입증하는 근거는 아니다.",
+            "supports": [
+              "concept"
+            ]
+          }
+        ],
+        "answers": [
+          {
+            "question_id": "concept",
+            "answer": "문맥 관리는 모델의 다음 판단에 전달할 지시·자료·대화·도구 결과를 선택하고 갱신하는 일입니다. 지식 검색은 필요한 자료를 찾아 그 판단에 제공하는 역할을 합니다.",
+            "reasoning": "공식 문서의 관련 절에서 역할과 연결 구조를 확인했다.",
+            "limits": "상세 사용법·제품별 지원과 성과는 현재 계획의 후속 조사다.",
+            "evidence_ids": [
+              "e-context",
+              "e-persistence"
+            ]
+          },
+          {
+            "question_id": "outline",
+            "answer": "1. 문맥·지식·작업 상태의 역할; 2. 업무 자료를 준비하고 전달하는 방법; 3. 지식 검색과 RAG를 활용하는 방법; 4. 긴 작업의 문맥을 유지하는 방법",
+            "reasoning": "역할을 이해한 뒤 준비·사용·결과 확인·실패·업무 적용을 질문으로 나눴다. 사용자 요청의 기술 범위와 목차 계획 등록 단계에 맞춘 편집 판단이다.",
+            "limits": "각 세부 질문의 상세 답과 실행 사례는 아직 작성하지 않았다.",
+            "evidence_ids": [
+              "e-context",
+              "e-persistence"
+            ]
+          }
+        ],
+        "gaps": []
+      },
+      "draft": {
+        "report": {
+          "id": "agent-context-knowledge-guide",
+          "topic_id": "development",
+          "topic_path": [
+            "AI 개발",
+            "에이전트 활용 기술",
+            "문맥 관리·지식 검색"
+          ],
+          "title": "문맥 관리와 지식 검색: 에이전트에 필요한 자료를 제공하는 방법 — 조사 계획",
+          "description": "문맥 관리·지식 검색을 업무에 활용하려는 사용자를 위해 조사할 질문과 세부 목차를 정리했습니다.",
+          "checked_on": "2026-10-13",
+          "scope": "목차와 조사 계획 등록 단계입니다. 아래 활용 절차·환경별 설정·사례의 상세 본문은 후속 조사로 작성합니다.",
+          "deck": "조사 계획 · 여러 버전의 제품 문서에서 현재 지원 조건을 찾아 비교 보고서를 만드는 사례를 통해 역할·활용 절차·확인 기준을 조사합니다.",
+          "highlights": [
+            "문맥 관리·지식 검색의 역할과 필요한 이유",
+            "업무에 적용하는 방법과 완료 기준",
+            "여러 버전의 제품 문서에서 현재 지원 조건을 찾아 비교 보고서를 만드는 사례"
+          ],
+          "source_note": "공식 기술 문서의 관련 절로 조사 범위를 정했습니다. 이번 판은 조사 계획이며 실제 도구 실행이나 제품별 효과 평가가 아닙니다.",
+          "summary": [
+            {
+              "kind": "fact",
+              "label": "기술의 역할",
+              "text": "문맥 관리는 모델의 다음 판단에 전달할 지시·자료·대화·도구 결과를 선택하고 갱신하는 일입니다. 지식 검색은 필요한 자료를 찾아 그 판단에 제공하는 역할을 합니다.",
+              "source_ids": [
+                "context",
+                "persistence"
+              ]
+            },
+            {
+              "kind": "judgment",
+              "label": "조사 목표",
+              "text": "업무에 필요한 자료와 진행 상태를 구분해 제공하고, 잘못된 자료 선택·정보 누락·오래된 근거를 진단할 수 있습니다.",
+              "source_ids": [
+                "context",
+                "persistence"
+              ]
+            },
+            {
+              "kind": "judgment",
+              "label": "예정 사례",
+              "text": "여러 버전의 제품 문서에서 현재 지원 조건을 찾아 비교 보고서를 만드는 사례를 입력부터 결과까지 조사합니다. 현재는 사례 구성 계획입니다.",
+              "source_ids": [
+                "context",
+                "persistence"
+              ]
+            }
+          ],
+          "metrics": [],
+          "datasets": [],
+          "explanation": [
+            {
+              "id": "chapter-1",
+              "title": "1. 문맥·지식·작업 상태의 역할",
+              "lead": "에이전트가 판단하는 자료와 작업의 진행 기록을 구분하는 기준을 조사합니다.",
+              "blocks": [
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "모델이 지금 읽을 수 있는 정보",
+                  "source_ids": [
+                    "context"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "요청·대화·첨부·도구 결과 중 어떤 정보가 현재 판단에 들어가는가?"
+                    }
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "문서 지식과 진행 상태",
+                  "source_ids": [
+                    "context"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "업무 규정 같은 근거와 수정한 파일·남은 작업 같은 상태를 왜 구분하는가?"
+                    }
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "문맥과 저장된 메모리",
+                  "source_ids": [
+                    "context"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "대화에 보이는 정보와 외부에 보관한 기록은 언제 다시 읽고 어떻게 확인하는가?"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "chapter-2",
+              "title": "2. 업무 자료를 준비하고 전달하는 방법",
+              "lead": "에이전트가 필요한 원문을 찾고 해석할 수 있는 자료 준비를 조사합니다.",
+              "blocks": [
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "파일·폴더·링크 제공",
+                  "source_ids": [
+                    "context"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "자료 전체를 첨부할 때와 위치·목록을 주고 필요한 부분을 읽게 할 때의 조건은 무엇인가?"
+                    }
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "문서의 버전·날짜·권한",
+                  "source_ids": [
+                    "context"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "최신판, 적용 기간과 접근 가능한 자료를 어떻게 식별하는가?"
+                    }
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "관련 부분 선택과 요약",
+                  "source_ids": [
+                    "context"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "요약에 남길 조건과 원문에서 다시 확인할 내용을 어떻게 구분하는가?"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "chapter-3",
+              "title": "3. 지식 검색과 RAG를 활용하는 방법",
+              "lead": "질문에서 근거 자료를 찾고 답변에 연결하는 과정을 조사합니다.",
+              "blocks": [
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "질문과 검색 대상 정하기",
+                  "source_ids": [
+                    "context"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "업무 질문을 어떤 검색어와 자료 범위로 바꾸는가?"
+                    }
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "검색·선택·추가 탐색",
+                  "source_ids": [
+                    "context"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "검색된 자료가 답에 필요한 근거인지 판단하고 부족하면 어떤 탐색을 추가하는가?"
+                    }
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "원문 위치와 답변 연결",
+                  "source_ids": [
+                    "context"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "답변의 주장·조건을 실제 원문 문장과 어떻게 대조하는가?"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "chapter-4",
+              "title": "4. 긴 작업의 문맥을 유지하는 방법",
+              "lead": "대화가 길어지거나 작업을 이어받을 때 필요한 기록을 조사합니다.",
+              "blocks": [
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "압축과 인수인계 메모",
+                  "source_ids": [
+                    "context"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "목표·결정·실패·미완료 작업 중 무엇을 보존해야 다음 작업을 이어갈 수 있는가?"
+                    }
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "자료 변경과 재확인",
+                  "source_ids": [
+                    "context"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "원문이 수정됐을 때 과거 답과 현재 근거를 어떻게 구분하는가?"
+                    }
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "누락·오검색의 진단 사례",
+                  "source_ids": [
+                    "context"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "틀린 문서, 검색 실패와 문맥 전달 실패를 관찰 결과로 어떻게 구분하는가?"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "learning": [],
+          "result": {
+            "title": "후속 조사에서 완성할 내용",
+            "points": [
+              {
+                "kind": "judgment",
+                "label": "활용 안내",
+                "text": "각 세부 질문에 공식 근거와 구체적인 사용 절차를 연결하고, 여러 버전의 제품 문서에서 현재 지원 조건을 찾아 비교 보고서를 만드는 사례의 정상 결과·실패·수정 과정을 정리할 계획입니다.",
+                "source_ids": [
+                  "context",
+                  "persistence"
+                ]
+              }
+            ]
+          },
+          "references": [
+            {
+              "id": "context",
+              "title": "Anthropic context engineering",
+              "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+              "description": "필요한 정보를 선택해 읽고 긴 작업에서 압축·메모를 사용하는 설계 설명입니다."
+            },
+            {
+              "id": "persistence",
+              "title": "LangGraph persistence",
+              "url": "https://docs.langchain.com/oss/python/langgraph/persistence",
+              "description": "작업별 상태 저장과 여러 작업에 걸친 자료 저장을 구분하는 설명입니다."
+            }
+          ],
+          "caveats": [
+            {
+              "text": "현재 등록 내용은 목차와 조사 계획입니다. 제품별 사용 조건·설치·실행 결과와 비용·효과는 후속 조사에서 확인할 항목입니다.",
+              "source_ids": []
+            }
+          ]
+        },
+        "claims": [
+          {
+            "path": "/summary/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-context",
+              "e-persistence"
+            ]
+          },
+          {
+            "path": "/summary/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-context",
+              "e-persistence"
+            ]
+          },
+          {
+            "path": "/summary/2",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-context",
+              "e-persistence"
+            ]
+          },
+          {
+            "path": "/explanation/0/blocks/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-context",
+              "e-persistence"
+            ]
+          },
+          {
+            "path": "/explanation/0/blocks/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-context",
+              "e-persistence"
+            ]
+          },
+          {
+            "path": "/explanation/0/blocks/2",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-context",
+              "e-persistence"
+            ]
+          },
+          {
+            "path": "/explanation/1/blocks/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-context",
+              "e-persistence"
+            ]
+          },
+          {
+            "path": "/explanation/1/blocks/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-context",
+              "e-persistence"
+            ]
+          },
+          {
+            "path": "/explanation/1/blocks/2",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-context",
+              "e-persistence"
+            ]
+          },
+          {
+            "path": "/explanation/2/blocks/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-context",
+              "e-persistence"
+            ]
+          },
+          {
+            "path": "/explanation/2/blocks/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-context",
+              "e-persistence"
+            ]
+          },
+          {
+            "path": "/explanation/2/blocks/2",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-context",
+              "e-persistence"
+            ]
+          },
+          {
+            "path": "/explanation/3/blocks/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-context",
+              "e-persistence"
+            ]
+          },
+          {
+            "path": "/explanation/3/blocks/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-context",
+              "e-persistence"
+            ]
+          },
+          {
+            "path": "/explanation/3/blocks/2",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-context",
+              "e-persistence"
+            ]
+          },
+          {
+            "path": "/result/points/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-context",
+              "e-persistence"
+            ]
+          },
+          {
+            "path": "/caveats/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-context",
+              "e-persistence"
+            ]
+          }
+        ],
+        "answer_paths": {
+          "concept": [
+            "/summary/0"
+          ],
+          "outline": [
+            "/explanation",
+            "/result"
+          ]
+        }
+      },
+      "first_screen_review": {
+        "input_hash": "a5a4e024ad9510dbae810668aa36cfa52fc361c00b81ebbce7095255884fd0b8",
+        "reviewer": "author_self_review; title/description/deck-only editorial input",
+        "reviewed_at": "2026-10-13T05:30:38.510141+00:00",
+        "checks": {
+          "readability": {
+            "passed": true,
+            "reason": "제목과 소개에 기술 이름·업무 활용 목적·조사 계획 단계가 명시된다.",
+            "locations": [
+              "/title",
+              "/description"
+            ]
+          },
+          "question_answered": {
+            "passed": true,
+            "reason": "해당 기술 한 행의 목차 계획이라는 범위를 첫 화면에서 알 수 있다.",
+            "locations": [
+              "/title",
+              "/deck"
+            ]
+          },
+          "reader_outcome": {
+            "passed": true,
+            "reason": "업무에 필요한 자료와 진행 상태를 구분해 제공하고, 잘못된 자료 선택·정보 누락·오래된 근거를 진단할 수 있습니다.",
+            "locations": [
+              "/deck"
+            ]
+          }
+        },
+        "issues": []
+      },
+      "body_review": {
+        "input_hash": "0ec9ee96e31b5e5f0449fc2d66239b3cd973c61f3790d1c7e99c88765c749e9d",
+        "reviewer": "author_self_review; source/meaning/body stage",
+        "reviewed_at": "2026-10-13T05:30:38.510141+00:00",
+        "checks": {
+          "question_answered": {
+            "passed": true,
+            "reason": "개념과 목차 계획 두 질문을 요약과 실제 장·세부 질문·예정 결과에 연결했다.",
+            "locations": [
+              "/summary/0",
+              "/explanation"
+            ]
+          },
+          "analysis": {
+            "passed": true,
+            "reason": "확인한 개념과 예정 조사 질문을 사실/편집 판단으로 구분했다. 계획에 대한 등록 검토이며 기술 상세 조사 완료의 판정이 아니다.",
+            "locations": [
+              "/analysis/answers",
+              "/draft/report/scope"
+            ]
+          },
+          "evidence": {
+            "passed": true,
+            "reason": "보존 원문의 해시와 관련 발췌를 대조했고 원문 확보·검토 날짜를 렌더링 날짜로 대체하지 않았다.",
+            "locations": [
+              "/sources",
+              "/analysis/evidence"
+            ]
+          },
+          "readability": {
+            "passed": true,
+            "reason": "큰 목차와 번호가 있는 세부 질문을 실제 읽고 중복·역할 혼동을 점검했다. 현재 본문을 미래의 조사 항목으로 표현한다.",
+            "locations": [
+              "/explanation"
+            ]
+          },
+          "factuality": {
+            "passed": true,
+            "reason": "개념만 공식 관련 절로 확인했고 제품별 실습·비용·효과는 미확인 후속 범위로 남겼다.",
+            "locations": [
+              "/summary/0",
+              "/caveats"
+            ]
+          },
+          "reader_outcome": {
+            "passed": true,
+            "reason": "독자는 무엇을 조사할지와 예정 사례를 알 수 있다. 실제 기술을 사용하는 완성 교재는 후속 조사다.",
+            "locations": [
+              "/explanation",
+              "/result"
+            ]
+          }
+        },
+        "issues": []
+      },
+      "review_limitations": "단일 작성자의 개념·범위 및 계획 원고 자체 검토. 독립 에이전트·실제 독자 시험·유료 API·제품 실행을 수행하지 않았다. ready는 목차·조사계획판의 기계·편집 준비이며 상세 리서치 완료가 아니다."
+    },
+    {
+      "version": "question-research-1",
+      "plan": {
+        "version": "question-research-1",
+        "request": {
+          "id": "agent-tools-mcp-guide",
+          "topic_id": "development",
+          "topic_path": [
+            "AI 개발",
+            "에이전트 활용 기술",
+            "도구 호출·MCP"
+          ],
+          "reader": "준비된 에이전트 도구로 업무를 수행하는 개발자와 관리자",
+          "reader_question": "도구 호출·MCP의 리서치 페이지에서 어떤 질문과 세부 내용을 조사해야 업무 활용에 도움이 되는가?",
+          "outcome": "연결할 도구와 권한을 정하고 모델의 요청·실제 실행·반환 결과를 구분해 작업 완료와 실패를 확인할 수 있습니다.",
+          "research_type": "custom",
+          "custom_profile": {
+            "method": "사용자가 지정한 기술 한 행에 대해 목차·조사 계획만 등록한다. 공식 관련 절로 개념을 확인하고 업무 활용자의 질문을 장·세부 질문·예정 사례로 연결한다. 상세 조사 완료, 실행된 튜토리얼과 성능 검증으로 표시하지 않는다.",
+            "requires": [
+              "concept"
+            ]
+          },
+          "questions": [
+            {
+              "id": "concept",
+              "question": "도구 호출·MCP은 어떤 역할을 하는가?",
+              "requires": [
+                "concept"
+              ]
+            },
+            {
+              "id": "outline",
+              "question": "업무 활용자를 위해 무엇을 조사하고 어떤 사례로 확인할 것인가?",
+              "requires": [
+                "concept"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "id": "mcp-tools",
+              "title": "MCP Tools 2026-07-28",
+              "url": "https://modelcontextprotocol.io/specification/2026-07-28/server/tools",
+              "kind": "official_document"
+            },
+            {
+              "id": "function-calling",
+              "title": "OpenAI Function calling",
+              "url": "https://developers.openai.com/api/docs/guides/function-calling",
+              "kind": "official_document"
+            },
+            {
+              "id": "mcp-hints",
+              "title": "MCP tool annotations",
+              "url": "https://blog.modelcontextprotocol.io/posts/2026-03-16-tool-annotations/",
+              "kind": "official_document"
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "concept",
+            "question": "도구 호출·MCP은 어떤 역할을 하는가?",
+            "requires": [
+              "concept"
+            ]
+          },
+          {
+            "id": "outline",
+            "question": "업무 활용자를 위해 무엇을 조사하고 어떤 사례로 확인할 것인가?",
+            "requires": [
+              "concept"
+            ]
+          }
+        ],
+        "method": "사용자가 지정한 기술 한 행에 대해 목차·조사 계획만 등록한다. 공식 관련 절로 개념을 확인하고 업무 활용자의 질문을 장·세부 질문·예정 사례로 연결한다. 상세 조사 완료, 실행된 튜토리얼과 성능 검증으로 표시하지 않는다."
+      },
+      "sources": [
+        {
+          "id": "mcp-tools",
+          "title": "MCP Tools 2026-07-28",
+          "url": "https://modelcontextprotocol.io/specification/2026-07-28/server/tools",
+          "kind": "official_document",
+          "status": "imported_original",
+          "transport": "retained_http_original_related_excerpt",
+          "content_hash": "65d0ab5ca80621d278b99fb2a52736956fbe3861fe7f561f797c3af573bd2cf5",
+          "text": "The Model Context Protocol (MCP) allows servers to expose tools that can be invoked by language models.",
+          "text_hash": "af4cb38bae14c6a4d9fc16959cfd75d5bcbdb28f7b160aa417fbc87afda16b63",
+          "first_collected": null,
+          "last_successful_collection": "2026-10-13T04:59:28.542267+00:00",
+          "published_on": null,
+          "reviewed_at": "2026-10-13T05:09:58.694749+00:00",
+          "review_scope": "Tool discovery/call/schema; annotations untrusted unless trusted server; dated protocol path.",
+          "raw_path": "C:\\Engine\\signal-desk\\data\\raw\\agent-usage-2026-10-13\\mcp-tools.html"
+        },
+        {
+          "id": "function-calling",
+          "title": "OpenAI Function calling",
+          "url": "https://developers.openai.com/api/docs/guides/function-calling",
+          "kind": "official_document",
+          "status": "imported_original",
+          "transport": "retained_http_original_related_excerpt",
+          "content_hash": "cd591d7b2588074c8838a1c86baafe70227263e7d70a6e4601d3cb9d02265ae7",
+          "text": "Execute code on the application side",
+          "text_hash": "5d2848ec1c0296e27683c10701553d657cb3e9a233d110543e57b7396cdb58ca",
+          "first_collected": null,
+          "last_successful_collection": "2026-10-13T04:59:27.902308+00:00",
+          "published_on": null,
+          "reviewed_at": "2026-10-13T05:09:58.694749+00:00",
+          "review_scope": "Function definition/call/result flow; app executes function; strict validates argument shape.",
+          "raw_path": "C:\\Engine\\signal-desk\\data\\raw\\agent-usage-2026-10-13\\function-calling.html"
+        },
+        {
+          "id": "mcp-hints",
+          "title": "MCP tool annotations",
+          "url": "https://blog.modelcontextprotocol.io/posts/2026-03-16-tool-annotations/",
+          "kind": "official_document",
+          "status": "imported_original",
+          "transport": "retained_http_original_related_excerpt",
+          "content_hash": "82888044d831c3bd18f03d87a846ce5d27e028bd67a095edc04ba377fc622163",
+          "text": "Every property is a hint",
+          "text_hash": "3153557c18e7874eb382fe673ecd24794df37b5df0401cf513c0a051424cb2e8",
+          "first_collected": null,
+          "last_successful_collection": "2026-10-13T04:59:28.525974+00:00",
+          "published_on": "2026-03-16",
+          "reviewed_at": "2026-10-13T05:09:58.694749+00:00",
+          "review_scope": "Annotations are hints; idempotence/read-only/destructive/open-world semantics; publication metadata.",
+          "raw_path": "C:\\Engine\\signal-desk\\data\\raw\\agent-usage-2026-10-13\\mcp-hints.html"
+        }
+      ],
+      "analysis": {
+        "evidence": [
+          {
+            "id": "e-mcp-tools",
+            "source_id": "mcp-tools",
+            "source_hash": "65d0ab5ca80621d278b99fb2a52736956fbe3861fe7f561f797c3af573bd2cf5",
+            "quote": "The Model Context Protocol (MCP) allows servers to expose tools that can be invoked by language models.",
+            "meaning": "Tool discovery/call/schema; annotations untrusted unless trusted server; dated protocol path.",
+            "limits": "공식 원문의 관련 절은 개념과 조사 범위를 뒷받침한다. 제품별 설정·실행 결과와 실제 독자 이해를 입증하는 근거는 아니다.",
+            "supports": [
+              "concept"
+            ]
+          },
+          {
+            "id": "e-function-calling",
+            "source_id": "function-calling",
+            "source_hash": "cd591d7b2588074c8838a1c86baafe70227263e7d70a6e4601d3cb9d02265ae7",
+            "quote": "Execute code on the application side",
+            "meaning": "Function definition/call/result flow; app executes function; strict validates argument shape.",
+            "limits": "공식 원문의 관련 절은 개념과 조사 범위를 뒷받침한다. 제품별 설정·실행 결과와 실제 독자 이해를 입증하는 근거는 아니다.",
+            "supports": [
+              "concept"
+            ]
+          },
+          {
+            "id": "e-mcp-hints",
+            "source_id": "mcp-hints",
+            "source_hash": "82888044d831c3bd18f03d87a846ce5d27e028bd67a095edc04ba377fc622163",
+            "quote": "Every property is a hint",
+            "meaning": "Annotations are hints; idempotence/read-only/destructive/open-world semantics; publication metadata.",
+            "limits": "공식 원문의 관련 절은 개념과 조사 범위를 뒷받침한다. 제품별 설정·실행 결과와 실제 독자 이해를 입증하는 근거는 아니다.",
+            "supports": [
+              "concept"
+            ]
+          }
+        ],
+        "answers": [
+          {
+            "question_id": "concept",
+            "answer": "도구 호출은 모델의 실행 요청을 실제 프로그램의 기능과 연결합니다. MCP는 서버가 도구 이름과 입력 형식 등을 알리고 클라이언트가 도구를 조회·호출하도록 하는 규약입니다.",
+            "reasoning": "공식 문서의 관련 절에서 역할과 연결 구조를 확인했다.",
+            "limits": "상세 사용법·제품별 지원과 성과는 현재 계획의 후속 조사다.",
+            "evidence_ids": [
+              "e-mcp-tools",
+              "e-function-calling",
+              "e-mcp-hints"
+            ]
+          },
+          {
+            "question_id": "outline",
+            "answer": "1. 도구 호출과 MCP의 역할; 2. 필요한 도구를 찾고 연결하는 방법; 3. 도구 요청과 결과를 확인하는 방법; 4. 적용 사례와 연결 유지보수",
+            "reasoning": "역할을 이해한 뒤 준비·사용·결과 확인·실패·업무 적용을 질문으로 나눴다. 사용자 요청의 기술 범위와 목차 계획 등록 단계에 맞춘 편집 판단이다.",
+            "limits": "각 세부 질문의 상세 답과 실행 사례는 아직 작성하지 않았다.",
+            "evidence_ids": [
+              "e-mcp-tools",
+              "e-function-calling",
+              "e-mcp-hints"
+            ]
+          }
+        ],
+        "gaps": []
+      },
+      "draft": {
+        "report": {
+          "id": "agent-tools-mcp-guide",
+          "topic_id": "development",
+          "topic_path": [
+            "AI 개발",
+            "에이전트 활용 기술",
+            "도구 호출·MCP"
+          ],
+          "title": "도구 호출과 MCP: 에이전트를 업무 프로그램에 연결하는 방법 — 조사 계획",
+          "description": "도구 호출·MCP을 업무에 활용하려는 사용자를 위해 조사할 질문과 세부 목차를 정리했습니다.",
+          "checked_on": "2026-10-13",
+          "scope": "목차와 조사 계획 등록 단계입니다. 아래 활용 절차·환경별 설정·사례의 상세 본문은 후속 조사로 작성합니다.",
+          "deck": "조사 계획 · 제품 문서를 조회하고 비교표 파일을 저장하는 도구를 연결하는 사례를 통해 역할·활용 절차·확인 기준을 조사합니다.",
+          "highlights": [
+            "도구 호출·MCP의 역할과 필요한 이유",
+            "업무에 적용하는 방법과 완료 기준",
+            "제품 문서를 조회하고 비교표 파일을 저장하는 도구를 연결하는 사례"
+          ],
+          "source_note": "공식 기술 문서의 관련 절로 조사 범위를 정했습니다. 이번 판은 조사 계획이며 실제 도구 실행이나 제품별 효과 평가가 아닙니다.",
+          "summary": [
+            {
+              "kind": "fact",
+              "label": "기술의 역할",
+              "text": "도구 호출은 모델의 실행 요청을 실제 프로그램의 기능과 연결합니다. MCP는 서버가 도구 이름과 입력 형식 등을 알리고 클라이언트가 도구를 조회·호출하도록 하는 규약입니다.",
+              "source_ids": [
+                "mcp-tools",
+                "function-calling",
+                "mcp-hints"
+              ]
+            },
+            {
+              "kind": "judgment",
+              "label": "조사 목표",
+              "text": "연결할 도구와 권한을 정하고 모델의 요청·실제 실행·반환 결과를 구분해 작업 완료와 실패를 확인할 수 있습니다.",
+              "source_ids": [
+                "mcp-tools",
+                "function-calling",
+                "mcp-hints"
+              ]
+            },
+            {
+              "kind": "judgment",
+              "label": "예정 사례",
+              "text": "제품 문서를 조회하고 비교표 파일을 저장하는 도구를 연결하는 사례를 입력부터 결과까지 조사합니다. 현재는 사례 구성 계획입니다.",
+              "source_ids": [
+                "mcp-tools",
+                "function-calling",
+                "mcp-hints"
+              ]
+            }
+          ],
+          "metrics": [],
+          "datasets": [],
+          "explanation": [
+            {
+              "id": "chapter-1",
+              "title": "1. 도구 호출과 MCP의 역할",
+              "lead": "모델의 요청이 실제 업무 시스템의 실행으로 이어지는 관계를 조사합니다.",
+              "blocks": [
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "모델 요청·앱 실행·결과 반환",
+                  "source_ids": [
+                    "mcp-tools"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "누가 함수와 인자를 정하고 실제 행동을 수행하며 어떤 결과를 돌려주는가?"
+                    }
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "직접 함수 연결과 MCP",
+                  "source_ids": [
+                    "mcp-tools"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "자체 함수와 공통 연결 규약은 어떤 역할을 맡고 어느 조건에서 사용하는가?"
+                    }
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "파일·API·브라우저 도구",
+                  "source_ids": [
+                    "mcp-tools"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "같은 업무에 어떤 실행 경로를 선택할 수 있고 완료를 어떻게 관찰하는가?"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "chapter-2",
+              "title": "2. 필요한 도구를 찾고 연결하는 방법",
+              "lead": "사용하는 앱에서 도구를 선택하고 연결 조건을 확인하는 절차를 조사합니다.",
+              "blocks": [
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "도구의 기능과 지원 환경",
+                  "source_ids": [
+                    "mcp-tools"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "도구 설명·입력·출력·클라이언트 지원을 어디에서 확인하는가?"
+                    }
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "계정 연결과 접근 범위",
+                  "source_ids": [
+                    "mcp-tools"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "어떤 자료와 기능에 접근하며 읽기와 변경 권한은 어떻게 구분하는가?"
+                    }
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "연결 시험과 실제 업무 시험",
+                  "source_ids": [
+                    "mcp-tools"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "접속 성공, 호출 성공과 원하는 결과 완성을 어떤 관찰로 구분하는가?"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "chapter-3",
+              "title": "3. 도구 요청과 결과를 확인하는 방법",
+              "lead": "실행 대상과 반환 정보를 확인하고 잘못된 동작을 진단하는 방법을 조사합니다.",
+              "blocks": [
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "입력 형식과 업무 대상",
+                  "source_ids": [
+                    "mcp-tools"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "형식이 맞는 요청과 업무상 올바른 대상에 대한 요청은 어떻게 다르게 확인하는가?"
+                    }
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "성공·오류·불완전 결과",
+                  "source_ids": [
+                    "mcp-tools"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "오류 메시지와 반환 필드에서 어떤 정보를 읽고 다음 행동을 정하는가?"
+                    }
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "변경 작업과 사용자 확인",
+                  "source_ids": [
+                    "mcp-tools"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "파일 저장·외부 등록 같은 변경에서 대상·내용·권한을 언제 확인하는가?"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "chapter-4",
+              "title": "4. 적용 사례와 연결 유지보수",
+              "lead": "작은 업무를 연결하고 도구나 자료가 바뀔 때 점검할 항목을 조사합니다.",
+              "blocks": [
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "문서 조회와 비교표 저장 사례",
+                  "source_ids": [
+                    "mcp-tools"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "요청에서 조회 결과와 저장된 파일까지 각 도구의 입력·출력을 어떻게 연결하는가?"
+                    }
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "힌트와 실제 동작의 차이",
+                  "source_ids": [
+                    "mcp-tools"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "읽기 전용·멱등 등의 표시를 실제 동작·권한 확인과 어떻게 구분하는가?"
+                    }
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "도구 변경과 연결 오류",
+                  "source_ids": [
+                    "mcp-tools"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "인증 만료·형식 변경·도구 부재가 생겼을 때 어떤 순서로 원인을 찾는가?"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "learning": [],
+          "result": {
+            "title": "후속 조사에서 완성할 내용",
+            "points": [
+              {
+                "kind": "judgment",
+                "label": "활용 안내",
+                "text": "각 세부 질문에 공식 근거와 구체적인 사용 절차를 연결하고, 제품 문서를 조회하고 비교표 파일을 저장하는 도구를 연결하는 사례의 정상 결과·실패·수정 과정을 정리할 계획입니다.",
+                "source_ids": [
+                  "mcp-tools",
+                  "function-calling",
+                  "mcp-hints"
+                ]
+              }
+            ]
+          },
+          "references": [
+            {
+              "id": "mcp-tools",
+              "title": "MCP Tools 2026-07-28",
+              "url": "https://modelcontextprotocol.io/specification/2026-07-28/server/tools",
+              "description": "도구의 발견·입력 형식·호출과 반환 결과를 정의하는 규격입니다."
+            },
+            {
+              "id": "function-calling",
+              "title": "OpenAI Function calling",
+              "url": "https://developers.openai.com/api/docs/guides/function-calling",
+              "description": "모델의 호출 요청과 앱의 실제 실행·결과 반환을 연결하는 설명입니다."
+            },
+            {
+              "id": "mcp-hints",
+              "title": "MCP tool annotations",
+              "url": "https://blog.modelcontextprotocol.io/posts/2026-03-16-tool-annotations/",
+              "description": "도구 행동에 관한 힌트와 실제 권한·동작 보장을 구분하는 설명입니다."
+            }
+          ],
+          "caveats": [
+            {
+              "text": "현재 등록 내용은 목차와 조사 계획입니다. 제품별 사용 조건·설치·실행 결과와 비용·효과는 후속 조사에서 확인할 항목입니다.",
+              "source_ids": []
+            }
+          ]
+        },
+        "claims": [
+          {
+            "path": "/summary/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-mcp-tools",
+              "e-function-calling",
+              "e-mcp-hints"
+            ]
+          },
+          {
+            "path": "/summary/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-mcp-tools",
+              "e-function-calling",
+              "e-mcp-hints"
+            ]
+          },
+          {
+            "path": "/summary/2",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-mcp-tools",
+              "e-function-calling",
+              "e-mcp-hints"
+            ]
+          },
+          {
+            "path": "/explanation/0/blocks/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-mcp-tools",
+              "e-function-calling",
+              "e-mcp-hints"
+            ]
+          },
+          {
+            "path": "/explanation/0/blocks/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-mcp-tools",
+              "e-function-calling",
+              "e-mcp-hints"
+            ]
+          },
+          {
+            "path": "/explanation/0/blocks/2",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-mcp-tools",
+              "e-function-calling",
+              "e-mcp-hints"
+            ]
+          },
+          {
+            "path": "/explanation/1/blocks/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-mcp-tools",
+              "e-function-calling",
+              "e-mcp-hints"
+            ]
+          },
+          {
+            "path": "/explanation/1/blocks/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-mcp-tools",
+              "e-function-calling",
+              "e-mcp-hints"
+            ]
+          },
+          {
+            "path": "/explanation/1/blocks/2",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-mcp-tools",
+              "e-function-calling",
+              "e-mcp-hints"
+            ]
+          },
+          {
+            "path": "/explanation/2/blocks/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-mcp-tools",
+              "e-function-calling",
+              "e-mcp-hints"
+            ]
+          },
+          {
+            "path": "/explanation/2/blocks/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-mcp-tools",
+              "e-function-calling",
+              "e-mcp-hints"
+            ]
+          },
+          {
+            "path": "/explanation/2/blocks/2",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-mcp-tools",
+              "e-function-calling",
+              "e-mcp-hints"
+            ]
+          },
+          {
+            "path": "/explanation/3/blocks/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-mcp-tools",
+              "e-function-calling",
+              "e-mcp-hints"
+            ]
+          },
+          {
+            "path": "/explanation/3/blocks/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-mcp-tools",
+              "e-function-calling",
+              "e-mcp-hints"
+            ]
+          },
+          {
+            "path": "/explanation/3/blocks/2",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-mcp-tools",
+              "e-function-calling",
+              "e-mcp-hints"
+            ]
+          },
+          {
+            "path": "/result/points/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-mcp-tools",
+              "e-function-calling",
+              "e-mcp-hints"
+            ]
+          },
+          {
+            "path": "/caveats/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-mcp-tools",
+              "e-function-calling",
+              "e-mcp-hints"
+            ]
+          }
+        ],
+        "answer_paths": {
+          "concept": [
+            "/summary/0"
+          ],
+          "outline": [
+            "/explanation",
+            "/result"
+          ]
+        }
+      },
+      "first_screen_review": {
+        "input_hash": "1be1d5d2023e08ed48530d12647943c5d55018a3f29cf22118ffd1332cbe1e6e",
+        "reviewer": "author_self_review; title/description/deck-only editorial input",
+        "reviewed_at": "2026-10-13T05:30:38.510141+00:00",
+        "checks": {
+          "readability": {
+            "passed": true,
+            "reason": "제목과 소개에 기술 이름·업무 활용 목적·조사 계획 단계가 명시된다.",
+            "locations": [
+              "/title",
+              "/description"
+            ]
+          },
+          "question_answered": {
+            "passed": true,
+            "reason": "해당 기술 한 행의 목차 계획이라는 범위를 첫 화면에서 알 수 있다.",
+            "locations": [
+              "/title",
+              "/deck"
+            ]
+          },
+          "reader_outcome": {
+            "passed": true,
+            "reason": "연결할 도구와 권한을 정하고 모델의 요청·실제 실행·반환 결과를 구분해 작업 완료와 실패를 확인할 수 있습니다.",
+            "locations": [
+              "/deck"
+            ]
+          }
+        },
+        "issues": []
+      },
+      "body_review": {
+        "input_hash": "7e8fea3fe0adb6f0145202220654680ffec976adbb9ac940fd2e053dd18c4328",
+        "reviewer": "author_self_review; source/meaning/body stage",
+        "reviewed_at": "2026-10-13T05:30:38.510141+00:00",
+        "checks": {
+          "question_answered": {
+            "passed": true,
+            "reason": "개념과 목차 계획 두 질문을 요약과 실제 장·세부 질문·예정 결과에 연결했다.",
+            "locations": [
+              "/summary/0",
+              "/explanation"
+            ]
+          },
+          "analysis": {
+            "passed": true,
+            "reason": "확인한 개념과 예정 조사 질문을 사실/편집 판단으로 구분했다. 계획에 대한 등록 검토이며 기술 상세 조사 완료의 판정이 아니다.",
+            "locations": [
+              "/analysis/answers",
+              "/draft/report/scope"
+            ]
+          },
+          "evidence": {
+            "passed": true,
+            "reason": "보존 원문의 해시와 관련 발췌를 대조했고 원문 확보·검토 날짜를 렌더링 날짜로 대체하지 않았다.",
+            "locations": [
+              "/sources",
+              "/analysis/evidence"
+            ]
+          },
+          "readability": {
+            "passed": true,
+            "reason": "큰 목차와 번호가 있는 세부 질문을 실제 읽고 중복·역할 혼동을 점검했다. 현재 본문을 미래의 조사 항목으로 표현한다.",
+            "locations": [
+              "/explanation"
+            ]
+          },
+          "factuality": {
+            "passed": true,
+            "reason": "개념만 공식 관련 절로 확인했고 제품별 실습·비용·효과는 미확인 후속 범위로 남겼다.",
+            "locations": [
+              "/summary/0",
+              "/caveats"
+            ]
+          },
+          "reader_outcome": {
+            "passed": true,
+            "reason": "독자는 무엇을 조사할지와 예정 사례를 알 수 있다. 실제 기술을 사용하는 완성 교재는 후속 조사다.",
+            "locations": [
+              "/explanation",
+              "/result"
+            ]
+          }
+        },
+        "issues": []
+      },
+      "review_limitations": "단일 작성자의 개념·범위 및 계획 원고 자체 검토. 독립 에이전트·실제 독자 시험·유료 API·제품 실행을 수행하지 않았다. ready는 목차·조사계획판의 기계·편집 준비이며 상세 리서치 완료가 아니다."
+    },
+    {
+      "version": "question-research-1",
+      "plan": {
+        "version": "question-research-1",
+        "request": {
+          "id": "agent-workflow-multi-agent-guide",
+          "topic_id": "development",
+          "topic_path": [
+            "AI 개발",
+            "에이전트 활용 기술",
+            "작업 흐름·멀티 에이전트"
+          ],
+          "reader": "준비된 에이전트 도구로 업무를 수행하는 개발자와 관리자",
+          "reader_question": "작업 흐름·멀티 에이전트의 리서치 페이지에서 어떤 질문과 세부 내용을 조사해야 업무 활용에 도움이 되는가?",
+          "outcome": "업무의 의존 관계를 그려 단계 연결·병렬 분담을 선택하고 중복 작업과 결과 충돌을 줄이는 위임 요청을 만들 수 있습니다.",
+          "research_type": "custom",
+          "custom_profile": {
+            "method": "사용자가 지정한 기술 한 행에 대해 목차·조사 계획만 등록한다. 공식 관련 절로 개념을 확인하고 업무 활용자의 질문을 장·세부 질문·예정 사례로 연결한다. 상세 조사 완료, 실행된 튜토리얼과 성능 검증으로 표시하지 않는다.",
+            "requires": [
+              "concept"
+            ]
+          },
+          "questions": [
+            {
+              "id": "concept",
+              "question": "작업 흐름·멀티 에이전트은 어떤 역할을 하는가?",
+              "requires": [
+                "concept"
+              ]
+            },
+            {
+              "id": "outline",
+              "question": "업무 활용자를 위해 무엇을 조사하고 어떤 사례로 확인할 것인가?",
+              "requires": [
+                "concept"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "id": "patterns",
+              "title": "Anthropic Building effective agents",
+              "url": "https://www.anthropic.com/engineering/building-effective-agents",
+              "kind": "official_document"
+            },
+            {
+              "id": "multi-agent",
+              "title": "Anthropic multi-agent research system",
+              "url": "https://www.anthropic.com/engineering/multi-agent-research-system",
+              "kind": "official_document"
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "concept",
+            "question": "작업 흐름·멀티 에이전트은 어떤 역할을 하는가?",
+            "requires": [
+              "concept"
+            ]
+          },
+          {
+            "id": "outline",
+            "question": "업무 활용자를 위해 무엇을 조사하고 어떤 사례로 확인할 것인가?",
+            "requires": [
+              "concept"
+            ]
+          }
+        ],
+        "method": "사용자가 지정한 기술 한 행에 대해 목차·조사 계획만 등록한다. 공식 관련 절로 개념을 확인하고 업무 활용자의 질문을 장·세부 질문·예정 사례로 연결한다. 상세 조사 완료, 실행된 튜토리얼과 성능 검증으로 표시하지 않는다."
+      },
+      "sources": [
+        {
+          "id": "patterns",
+          "title": "Anthropic Building effective agents",
+          "url": "https://www.anthropic.com/engineering/building-effective-agents",
+          "kind": "official_document",
+          "status": "imported_original",
+          "transport": "retained_http_original_related_excerpt",
+          "content_hash": "5ecf9cd3a4fd6b11f17998d6aff61971cd06b9efe37b75c1889998fdb3c86db9",
+          "text": "Workflows are systems where LLMs and tools are orchestrated through predefined code paths.",
+          "text_hash": "228649aa52bcb4e265c2d32ab91c78fe05560ff0118fc5da3c065867afde3ef0",
+          "first_collected": null,
+          "last_successful_collection": "2026-10-13T04:59:27.686597+00:00",
+          "published_on": "2024-12-19",
+          "reviewed_at": "2026-10-13T05:09:58.694749+00:00",
+          "review_scope": "Workflow/agent definitions; chaining/routing/parallel/orchestrator/evaluator patterns; environment feedback and stop conditions; current-tools caveat.",
+          "raw_path": "C:\\Engine\\signal-desk\\data\\raw\\agent-usage-2026-10-13\\patterns.html"
+        },
+        {
+          "id": "multi-agent",
+          "title": "Anthropic multi-agent research system",
+          "url": "https://www.anthropic.com/engineering/multi-agent-research-system",
+          "kind": "official_document",
+          "status": "imported_original",
+          "transport": "retained_http_original_related_excerpt",
+          "content_hash": "908a2e329e735d1da50e6a84bbed7dccac72974440fdd0d0f072b690001842b3",
+          "text": "Each subagent needs an objective, an output format, guidance on the tools and sources to use, and clear task boundaries.",
+          "text_hash": "cb359e49c64e286b5e5274154d384f30e9de0ec9b95e185d02f21ee4b1ef69d9",
+          "first_collected": null,
+          "last_successful_collection": "2026-10-13T04:59:27.687028+00:00",
+          "published_on": "2025-06-13",
+          "reviewed_at": "2026-10-13T05:09:58.694749+00:00",
+          "review_scope": "Delegation scope and output contracts; independent search; internal evaluation and chat-token cost baseline; coding/context-dependency limits.",
+          "raw_path": "C:\\Engine\\signal-desk\\data\\raw\\agent-usage-2026-10-13\\multi-agent.html"
+        }
+      ],
+      "analysis": {
+        "evidence": [
+          {
+            "id": "e-patterns",
+            "source_id": "patterns",
+            "source_hash": "5ecf9cd3a4fd6b11f17998d6aff61971cd06b9efe37b75c1889998fdb3c86db9",
+            "quote": "Workflows are systems where LLMs and tools are orchestrated through predefined code paths.",
+            "meaning": "Workflow/agent definitions; chaining/routing/parallel/orchestrator/evaluator patterns; environment feedback and stop conditions; current-tools caveat.",
+            "limits": "공식 원문의 관련 절은 개념과 조사 범위를 뒷받침한다. 제품별 설정·실행 결과와 실제 독자 이해를 입증하는 근거는 아니다.",
+            "supports": [
+              "concept"
+            ]
+          },
+          {
+            "id": "e-multi-agent",
+            "source_id": "multi-agent",
+            "source_hash": "908a2e329e735d1da50e6a84bbed7dccac72974440fdd0d0f072b690001842b3",
+            "quote": "Each subagent needs an objective, an output format, guidance on the tools and sources to use, and clear task boundaries.",
+            "meaning": "Delegation scope and output contracts; independent search; internal evaluation and chat-token cost baseline; coding/context-dependency limits.",
+            "limits": "공식 원문의 관련 절은 개념과 조사 범위를 뒷받침한다. 제품별 설정·실행 결과와 실제 독자 이해를 입증하는 근거는 아니다.",
+            "supports": [
+              "concept"
+            ]
+          }
+        ],
+        "answers": [
+          {
+            "question_id": "concept",
+            "answer": "작업 흐름은 단계의 순서와 분기·결과 전달을 구성합니다. 여러 에이전트를 활용할 때는 담당할 과제와 전달 결과를 나누고 전체 작업의 완료를 조정합니다.",
+            "reasoning": "공식 문서의 관련 절에서 역할과 연결 구조를 확인했다.",
+            "limits": "상세 사용법·제품별 지원과 성과는 현재 계획의 후속 조사다.",
+            "evidence_ids": [
+              "e-patterns",
+              "e-multi-agent"
+            ]
+          },
+          {
+            "question_id": "outline",
+            "answer": "1. 업무 단계와 의존 관계를 나누는 방법; 2. 담당별 요청과 전달 형식 정하기; 3. 결과 통합과 검토를 수행하는 방법; 4. 분담 사례와 효과 비교",
+            "reasoning": "역할을 이해한 뒤 준비·사용·결과 확인·실패·업무 적용을 질문으로 나눴다. 사용자 요청의 기술 범위와 목차 계획 등록 단계에 맞춘 편집 판단이다.",
+            "limits": "각 세부 질문의 상세 답과 실행 사례는 아직 작성하지 않았다.",
+            "evidence_ids": [
+              "e-patterns",
+              "e-multi-agent"
+            ]
+          }
+        ],
+        "gaps": []
+      },
+      "draft": {
+        "report": {
+          "id": "agent-workflow-multi-agent-guide",
+          "topic_id": "development",
+          "topic_path": [
+            "AI 개발",
+            "에이전트 활용 기술",
+            "작업 흐름·멀티 에이전트"
+          ],
+          "title": "작업 흐름과 멀티 에이전트: 업무를 나누고 결과를 합치는 방법 — 조사 계획",
+          "description": "작업 흐름·멀티 에이전트을 업무에 활용하려는 사용자를 위해 조사할 질문과 세부 목차를 정리했습니다.",
+          "checked_on": "2026-10-13",
+          "scope": "목차와 조사 계획 등록 단계입니다. 아래 활용 절차·환경별 설정·사례의 상세 본문은 후속 조사로 작성합니다.",
+          "deck": "조사 계획 · 세 공급사의 공식 문서를 분담 조사한 뒤 같은 기준의 비교 보고서로 합치는 사례를 통해 역할·활용 절차·확인 기준을 조사합니다.",
+          "highlights": [
+            "작업 흐름·멀티 에이전트의 역할과 필요한 이유",
+            "업무에 적용하는 방법과 완료 기준",
+            "세 공급사의 공식 문서를 분담 조사한 뒤 같은 기준의 비교 보고서로 합치는 사례"
+          ],
+          "source_note": "공식 기술 문서의 관련 절로 조사 범위를 정했습니다. 이번 판은 조사 계획이며 실제 도구 실행이나 제품별 효과 평가가 아닙니다.",
+          "summary": [
+            {
+              "kind": "fact",
+              "label": "기술의 역할",
+              "text": "작업 흐름은 단계의 순서와 분기·결과 전달을 구성합니다. 여러 에이전트를 활용할 때는 담당할 과제와 전달 결과를 나누고 전체 작업의 완료를 조정합니다.",
+              "source_ids": [
+                "patterns",
+                "multi-agent"
+              ]
+            },
+            {
+              "kind": "judgment",
+              "label": "조사 목표",
+              "text": "업무의 의존 관계를 그려 단계 연결·병렬 분담을 선택하고 중복 작업과 결과 충돌을 줄이는 위임 요청을 만들 수 있습니다.",
+              "source_ids": [
+                "patterns",
+                "multi-agent"
+              ]
+            },
+            {
+              "kind": "judgment",
+              "label": "예정 사례",
+              "text": "세 공급사의 공식 문서를 분담 조사한 뒤 같은 기준의 비교 보고서로 합치는 사례를 입력부터 결과까지 조사합니다. 현재는 사례 구성 계획입니다.",
+              "source_ids": [
+                "patterns",
+                "multi-agent"
+              ]
+            }
+          ],
+          "metrics": [],
+          "datasets": [],
+          "explanation": [
+            {
+              "id": "chapter-1",
+              "title": "1. 업무 단계와 의존 관계를 나누는 방법",
+              "lead": "단계의 순서와 독립 작업을 구분하는 기준을 조사합니다.",
+              "blocks": [
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "고정된 순서와 결과에 따른 분기",
+                  "source_ids": [
+                    "patterns"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "자료 수집·분류·작성 중 어떤 순서를 정하고 어떤 판단을 에이전트에게 맡기는가?"
+                    }
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "한 담당과 여러 담당의 선택",
+                  "source_ids": [
+                    "patterns"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "자료·수정 대상·결과가 독립적인지 어떤 기준으로 판단하는가?"
+                    }
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "순차 작업과 병렬 작업",
+                  "source_ids": [
+                    "patterns"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "앞 단계의 결과가 필요한 작업과 동시에 진행할 수 있는 작업을 어떻게 나누는가?"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "chapter-2",
+              "title": "2. 담당별 요청과 전달 형식 정하기",
+              "lead": "분담 요청에 빠지면 안 되는 정보와 결과를 합칠 기준을 조사합니다.",
+              "blocks": [
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "목표·자료·작업 범위",
+                  "source_ids": [
+                    "patterns"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "각 담당이 조사하거나 수정할 대상과 다른 담당과의 경계를 어떻게 지정하는가?"
+                    }
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "결과물·근거·미해결 사항",
+                  "source_ids": [
+                    "patterns"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "담당이 무엇을 반환해야 전체 보고서나 최종 작업을 완성할 수 있는가?"
+                    }
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "진행 확인과 추가 위임",
+                  "source_ids": [
+                    "patterns"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "불필요한 재조사와 누락을 막으면서 후속 과제를 어떻게 정하는가?"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "chapter-3",
+              "title": "3. 결과 통합과 검토를 수행하는 방법",
+              "lead": "서로 다른 결과를 통합하고 충돌이나 잘못된 완료 판단을 찾는 방법을 조사합니다.",
+              "blocks": [
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "같은 기준으로 결과 합치기",
+                  "source_ids": [
+                    "patterns"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "서로 다른 조건·단위·자료 시점을 어떻게 맞추고 비교 불가 항목을 남기는가?"
+                    }
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "같은 파일과 상태의 충돌",
+                  "source_ids": [
+                    "patterns"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "동시 수정이 필요한 경우 담당과 통합 순서를 어떻게 정하는가?"
+                    }
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "작성과 검토의 역할 분담",
+                  "source_ids": [
+                    "patterns"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "최종 버전 자체를 검토하게 하고 지적된 문제를 수정·재확인하려면 무엇을 전달하는가?"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "chapter-4",
+              "title": "4. 분담 사례와 효과 비교",
+              "lead": "분담 적용 사례에서 완료 결과와 조율 비용을 함께 조사합니다.",
+              "blocks": [
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "공급사 비교 보고서 사례",
+                  "source_ids": [
+                    "patterns"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "자료 분담에서 결과 취합·누락 확인·최종 비교까지 어떻게 진행하는가?"
+                    }
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "시간·비용·품질 비교",
+                  "source_ids": [
+                    "patterns"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "같은 업무에서 추가 호출과 통합 시간을 포함해 분담 효과를 어떻게 측정하는가?"
+                    }
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "중복·누락·과도한 분담 진단",
+                  "source_ids": [
+                    "patterns"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "담당을 늘려도 결과가 좋아지지 않을 때 어느 실패 경로를 확인하는가?"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "learning": [],
+          "result": {
+            "title": "후속 조사에서 완성할 내용",
+            "points": [
+              {
+                "kind": "judgment",
+                "label": "활용 안내",
+                "text": "각 세부 질문에 공식 근거와 구체적인 사용 절차를 연결하고, 세 공급사의 공식 문서를 분담 조사한 뒤 같은 기준의 비교 보고서로 합치는 사례의 정상 결과·실패·수정 과정을 정리할 계획입니다.",
+                "source_ids": [
+                  "patterns",
+                  "multi-agent"
+                ]
+              }
+            ]
+          },
+          "references": [
+            {
+              "id": "patterns",
+              "title": "Anthropic Building effective agents",
+              "url": "https://www.anthropic.com/engineering/building-effective-agents",
+              "description": "단계 연결·분기·병렬·작업 분담·평가 반복의 설계 설명입니다."
+            },
+            {
+              "id": "multi-agent",
+              "title": "Anthropic multi-agent research system",
+              "url": "https://www.anthropic.com/engineering/multi-agent-research-system",
+              "description": "독립 조사 분담과 결과 통합의 구현 사례 및 비용·의존성의 제한입니다."
+            }
+          ],
+          "caveats": [
+            {
+              "text": "현재 등록 내용은 목차와 조사 계획입니다. 제품별 사용 조건·설치·실행 결과와 비용·효과는 후속 조사에서 확인할 항목입니다.",
+              "source_ids": []
+            }
+          ]
+        },
+        "claims": [
+          {
+            "path": "/summary/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-patterns",
+              "e-multi-agent"
+            ]
+          },
+          {
+            "path": "/summary/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-patterns",
+              "e-multi-agent"
+            ]
+          },
+          {
+            "path": "/summary/2",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-patterns",
+              "e-multi-agent"
+            ]
+          },
+          {
+            "path": "/explanation/0/blocks/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-patterns",
+              "e-multi-agent"
+            ]
+          },
+          {
+            "path": "/explanation/0/blocks/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-patterns",
+              "e-multi-agent"
+            ]
+          },
+          {
+            "path": "/explanation/0/blocks/2",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-patterns",
+              "e-multi-agent"
+            ]
+          },
+          {
+            "path": "/explanation/1/blocks/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-patterns",
+              "e-multi-agent"
+            ]
+          },
+          {
+            "path": "/explanation/1/blocks/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-patterns",
+              "e-multi-agent"
+            ]
+          },
+          {
+            "path": "/explanation/1/blocks/2",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-patterns",
+              "e-multi-agent"
+            ]
+          },
+          {
+            "path": "/explanation/2/blocks/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-patterns",
+              "e-multi-agent"
+            ]
+          },
+          {
+            "path": "/explanation/2/blocks/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-patterns",
+              "e-multi-agent"
+            ]
+          },
+          {
+            "path": "/explanation/2/blocks/2",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-patterns",
+              "e-multi-agent"
+            ]
+          },
+          {
+            "path": "/explanation/3/blocks/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-patterns",
+              "e-multi-agent"
+            ]
+          },
+          {
+            "path": "/explanation/3/blocks/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-patterns",
+              "e-multi-agent"
+            ]
+          },
+          {
+            "path": "/explanation/3/blocks/2",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-patterns",
+              "e-multi-agent"
+            ]
+          },
+          {
+            "path": "/result/points/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-patterns",
+              "e-multi-agent"
+            ]
+          },
+          {
+            "path": "/caveats/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-patterns",
+              "e-multi-agent"
+            ]
+          }
+        ],
+        "answer_paths": {
+          "concept": [
+            "/summary/0"
+          ],
+          "outline": [
+            "/explanation",
+            "/result"
+          ]
+        }
+      },
+      "first_screen_review": {
+        "input_hash": "1cec39b6242053f5e4d5485809d6fcb88afab9ce50674e3679ba5d4b14938a38",
+        "reviewer": "author_self_review; title/description/deck-only editorial input",
+        "reviewed_at": "2026-10-13T05:30:38.510141+00:00",
+        "checks": {
+          "readability": {
+            "passed": true,
+            "reason": "제목과 소개에 기술 이름·업무 활용 목적·조사 계획 단계가 명시된다.",
+            "locations": [
+              "/title",
+              "/description"
+            ]
+          },
+          "question_answered": {
+            "passed": true,
+            "reason": "해당 기술 한 행의 목차 계획이라는 범위를 첫 화면에서 알 수 있다.",
+            "locations": [
+              "/title",
+              "/deck"
+            ]
+          },
+          "reader_outcome": {
+            "passed": true,
+            "reason": "업무의 의존 관계를 그려 단계 연결·병렬 분담을 선택하고 중복 작업과 결과 충돌을 줄이는 위임 요청을 만들 수 있습니다.",
+            "locations": [
+              "/deck"
+            ]
+          }
+        },
+        "issues": []
+      },
+      "body_review": {
+        "input_hash": "ebc499795929b6eafe34d0ce28bb8f3433c5fd7410b1d523ebe650b72b8888f9",
+        "reviewer": "author_self_review; source/meaning/body stage",
+        "reviewed_at": "2026-10-13T05:30:38.510141+00:00",
+        "checks": {
+          "question_answered": {
+            "passed": true,
+            "reason": "개념과 목차 계획 두 질문을 요약과 실제 장·세부 질문·예정 결과에 연결했다.",
+            "locations": [
+              "/summary/0",
+              "/explanation"
+            ]
+          },
+          "analysis": {
+            "passed": true,
+            "reason": "확인한 개념과 예정 조사 질문을 사실/편집 판단으로 구분했다. 계획에 대한 등록 검토이며 기술 상세 조사 완료의 판정이 아니다.",
+            "locations": [
+              "/analysis/answers",
+              "/draft/report/scope"
+            ]
+          },
+          "evidence": {
+            "passed": true,
+            "reason": "보존 원문의 해시와 관련 발췌를 대조했고 원문 확보·검토 날짜를 렌더링 날짜로 대체하지 않았다.",
+            "locations": [
+              "/sources",
+              "/analysis/evidence"
+            ]
+          },
+          "readability": {
+            "passed": true,
+            "reason": "큰 목차와 번호가 있는 세부 질문을 실제 읽고 중복·역할 혼동을 점검했다. 현재 본문을 미래의 조사 항목으로 표현한다.",
+            "locations": [
+              "/explanation"
+            ]
+          },
+          "factuality": {
+            "passed": true,
+            "reason": "개념만 공식 관련 절로 확인했고 제품별 실습·비용·효과는 미확인 후속 범위로 남겼다.",
+            "locations": [
+              "/summary/0",
+              "/caveats"
+            ]
+          },
+          "reader_outcome": {
+            "passed": true,
+            "reason": "독자는 무엇을 조사할지와 예정 사례를 알 수 있다. 실제 기술을 사용하는 완성 교재는 후속 조사다.",
+            "locations": [
+              "/explanation",
+              "/result"
+            ]
+          }
+        },
+        "issues": []
+      },
+      "review_limitations": "단일 작성자의 개념·범위 및 계획 원고 자체 검토. 독립 에이전트·실제 독자 시험·유료 API·제품 실행을 수행하지 않았다. ready는 목차·조사계획판의 기계·편집 준비이며 상세 리서치 완료가 아니다."
+    },
+    {
+      "version": "question-research-1",
+      "plan": {
+        "version": "question-research-1",
+        "request": {
+          "id": "agent-harness-checkpoints-guide",
+          "topic_id": "development",
+          "topic_path": [
+            "AI 개발",
+            "에이전트 활용 기술",
+            "하네스·체크포인트"
+          ],
+          "reader": "준비된 에이전트 도구로 업무를 수행하는 개발자와 관리자",
+          "reader_question": "하네스·체크포인트의 리서치 페이지에서 어떤 질문과 세부 내용을 조사해야 업무 활용에 도움이 되는가?",
+          "outcome": "긴 작업에서 저장해야 할 상태와 승인·재개 지점을 정하고, 재시도에 따른 중복 실행과 상태 유실을 진단할 수 있습니다.",
+          "research_type": "custom",
+          "custom_profile": {
+            "method": "사용자가 지정한 기술 한 행에 대해 목차·조사 계획만 등록한다. 공식 관련 절로 개념을 확인하고 업무 활용자의 질문을 장·세부 질문·예정 사례로 연결한다. 상세 조사 완료, 실행된 튜토리얼과 성능 검증으로 표시하지 않는다.",
+            "requires": [
+              "concept"
+            ]
+          },
+          "questions": [
+            {
+              "id": "concept",
+              "question": "하네스·체크포인트은 어떤 역할을 하는가?",
+              "requires": [
+                "concept"
+              ]
+            },
+            {
+              "id": "outline",
+              "question": "업무 활용자를 위해 무엇을 조사하고 어떤 사례로 확인할 것인가?",
+              "requires": [
+                "concept"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "id": "managed",
+              "title": "Anthropic Managed Agents architecture",
+              "url": "https://www.anthropic.com/engineering/managed-agents",
+              "kind": "official_document"
+            },
+            {
+              "id": "interrupts",
+              "title": "LangGraph interrupts",
+              "url": "https://docs.langchain.com/oss/python/langgraph/interrupts",
+              "kind": "official_document"
+            },
+            {
+              "id": "checkpointers",
+              "title": "LangGraph checkpointers",
+              "url": "https://docs.langchain.com/oss/python/langgraph/checkpointers",
+              "kind": "official_document"
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "concept",
+            "question": "하네스·체크포인트은 어떤 역할을 하는가?",
+            "requires": [
+              "concept"
+            ]
+          },
+          {
+            "id": "outline",
+            "question": "업무 활용자를 위해 무엇을 조사하고 어떤 사례로 확인할 것인가?",
+            "requires": [
+              "concept"
+            ]
+          }
+        ],
+        "method": "사용자가 지정한 기술 한 행에 대해 목차·조사 계획만 등록한다. 공식 관련 절로 개념을 확인하고 업무 활용자의 질문을 장·세부 질문·예정 사례로 연결한다. 상세 조사 완료, 실행된 튜토리얼과 성능 검증으로 표시하지 않는다."
+      },
+      "sources": [
+        {
+          "id": "managed",
+          "title": "Anthropic Managed Agents architecture",
+          "url": "https://www.anthropic.com/engineering/managed-agents",
+          "kind": "official_document",
+          "status": "imported_original",
+          "transport": "retained_http_original_related_excerpt",
+          "content_hash": "90090a935cd887d81df4d7aa18b240da0390d0de82faf511a192385cc41b434f",
+          "text": "We virtualized the components of an agent",
+          "text_hash": "435b1a7ae7b8e7c9976ae22f1c6e7732c7a97527faa45782fdb8056af7fd1cd4",
+          "first_collected": null,
+          "last_successful_collection": "2026-10-13T04:59:27.689472+00:00",
+          "published_on": "2026-04-08",
+          "reviewed_at": "2026-10-13T05:09:58.694749+00:00",
+          "review_scope": "Session/harness/sandbox separation; failure recovery; credential boundary; durable session vs context.",
+          "raw_path": "C:\\Engine\\signal-desk\\data\\raw\\agent-usage-2026-10-13\\managed.html"
+        },
+        {
+          "id": "interrupts",
+          "title": "LangGraph interrupts",
+          "url": "https://docs.langchain.com/oss/python/langgraph/interrupts",
+          "kind": "official_document",
+          "status": "imported_original",
+          "transport": "retained_http_original_related_excerpt",
+          "content_hash": "764340c67f00d738d76333820f8ff9de31ab3d7fab3d40b08255aeb40acf421d",
+          "text": "Because interrupts work by re-running the nodes they were called from",
+          "text_hash": "1cd6f4c999dff3c57fa37827c2038e2d43b34110f6406f30655dc81110b5a1b4",
+          "first_collected": null,
+          "last_successful_collection": "2026-10-13T04:59:29.411246+00:00",
+          "published_on": null,
+          "reviewed_at": "2026-10-13T05:09:58.694749+00:00",
+          "review_scope": "Durable checkpointer/thread ID; pause/resume; rerun node and pre-interrupt side-effect idempotence.",
+          "raw_path": "C:\\Engine\\signal-desk\\data\\raw\\agent-usage-2026-10-13\\interrupts.html"
+        },
+        {
+          "id": "checkpointers",
+          "title": "LangGraph checkpointers",
+          "url": "https://docs.langchain.com/oss/python/langgraph/checkpointers",
+          "kind": "official_document",
+          "status": "imported_original",
+          "transport": "retained_http_original_related_excerpt",
+          "content_hash": "5f0397bb8ee00a00401a7d6ace7e1d0aa856cdd058dd64ca622c5f1060d67911",
+          "text": "The checkpointer uses thread_id as the primary key for storing and retrieving checkpoints.",
+          "text_hash": "c7dcb1e8092e481dba4ddb90ba996b5fc0bbbeacc1dcd0f5ccd03e2f935349cc",
+          "first_collected": null,
+          "last_successful_collection": "2026-10-13T04:59:29.373034+00:00",
+          "published_on": null,
+          "reviewed_at": "2026-10-13T05:09:58.694749+00:00",
+          "review_scope": "thread_id, snapshot checkpoints, retrieval and replay related paragraphs.",
+          "raw_path": "C:\\Engine\\signal-desk\\data\\raw\\agent-usage-2026-10-13\\checkpointers.html"
+        }
+      ],
+      "analysis": {
+        "evidence": [
+          {
+            "id": "e-managed",
+            "source_id": "managed",
+            "source_hash": "90090a935cd887d81df4d7aa18b240da0390d0de82faf511a192385cc41b434f",
+            "quote": "We virtualized the components of an agent",
+            "meaning": "Session/harness/sandbox separation; failure recovery; credential boundary; durable session vs context.",
+            "limits": "공식 원문의 관련 절은 개념과 조사 범위를 뒷받침한다. 제품별 설정·실행 결과와 실제 독자 이해를 입증하는 근거는 아니다.",
+            "supports": [
+              "concept"
+            ]
+          },
+          {
+            "id": "e-interrupts",
+            "source_id": "interrupts",
+            "source_hash": "764340c67f00d738d76333820f8ff9de31ab3d7fab3d40b08255aeb40acf421d",
+            "quote": "Because interrupts work by re-running the nodes they were called from",
+            "meaning": "Durable checkpointer/thread ID; pause/resume; rerun node and pre-interrupt side-effect idempotence.",
+            "limits": "공식 원문의 관련 절은 개념과 조사 범위를 뒷받침한다. 제품별 설정·실행 결과와 실제 독자 이해를 입증하는 근거는 아니다.",
+            "supports": [
+              "concept"
+            ]
+          },
+          {
+            "id": "e-checkpointers",
+            "source_id": "checkpointers",
+            "source_hash": "5f0397bb8ee00a00401a7d6ace7e1d0aa856cdd058dd64ca622c5f1060d67911",
+            "quote": "The checkpointer uses thread_id as the primary key for storing and retrieving checkpoints.",
+            "meaning": "thread_id, snapshot checkpoints, retrieval and replay related paragraphs.",
+            "limits": "공식 원문의 관련 절은 개념과 조사 범위를 뒷받침한다. 제품별 설정·실행 결과와 실제 독자 이해를 입증하는 근거는 아니다.",
+            "supports": [
+              "concept"
+            ]
+          }
+        ],
+        "answers": [
+          {
+            "question_id": "concept",
+            "answer": "하네스는 모델 호출과 도구 실행·이력을 연결하는 실행 기반입니다. 체크포인트는 진행 상태를 저장해 작업을 중단한 뒤 재개하는 데 사용합니다.",
+            "reasoning": "공식 문서의 관련 절에서 역할과 연결 구조를 확인했다.",
+            "limits": "상세 사용법·제품별 지원과 성과는 현재 계획의 후속 조사다.",
+            "evidence_ids": [
+              "e-managed",
+              "e-interrupts",
+              "e-checkpointers"
+            ]
+          },
+          {
+            "question_id": "outline",
+            "answer": "1. 실행 기반과 상태 저장의 역할; 2. 중단과 재개를 설계하는 방법; 3. 복구와 중복 실행을 다루는 방법; 4. 활용 환경과 업무 사례",
+            "reasoning": "역할을 이해한 뒤 준비·사용·결과 확인·실패·업무 적용을 질문으로 나눴다. 사용자 요청의 기술 범위와 목차 계획 등록 단계에 맞춘 편집 판단이다.",
+            "limits": "각 세부 질문의 상세 답과 실행 사례는 아직 작성하지 않았다.",
+            "evidence_ids": [
+              "e-managed",
+              "e-interrupts",
+              "e-checkpointers"
+            ]
+          }
+        ],
+        "gaps": []
+      },
+      "draft": {
+        "report": {
+          "id": "agent-harness-checkpoints-guide",
+          "topic_id": "development",
+          "topic_path": [
+            "AI 개발",
+            "에이전트 활용 기술",
+            "하네스·체크포인트"
+          ],
+          "title": "하네스와 체크포인트: 긴 업무를 중단하고 다시 이어가는 방법 — 조사 계획",
+          "description": "하네스·체크포인트을 업무에 활용하려는 사용자를 위해 조사할 질문과 세부 목차를 정리했습니다.",
+          "checked_on": "2026-10-13",
+          "scope": "목차와 조사 계획 등록 단계입니다. 아래 활용 절차·환경별 설정·사례의 상세 본문은 후속 조사로 작성합니다.",
+          "deck": "조사 계획 · 비교 보고서를 작성하다 자료 확인을 기다린 뒤 같은 작업을 재개하는 사례를 통해 역할·활용 절차·확인 기준을 조사합니다.",
+          "highlights": [
+            "하네스·체크포인트의 역할과 필요한 이유",
+            "업무에 적용하는 방법과 완료 기준",
+            "비교 보고서를 작성하다 자료 확인을 기다린 뒤 같은 작업을 재개하는 사례"
+          ],
+          "source_note": "공식 기술 문서의 관련 절로 조사 범위를 정했습니다. 이번 판은 조사 계획이며 실제 도구 실행이나 제품별 효과 평가가 아닙니다.",
+          "summary": [
+            {
+              "kind": "fact",
+              "label": "기술의 역할",
+              "text": "하네스는 모델 호출과 도구 실행·이력을 연결하는 실행 기반입니다. 체크포인트는 진행 상태를 저장해 작업을 중단한 뒤 재개하는 데 사용합니다.",
+              "source_ids": [
+                "managed",
+                "interrupts",
+                "checkpointers"
+              ]
+            },
+            {
+              "kind": "judgment",
+              "label": "조사 목표",
+              "text": "긴 작업에서 저장해야 할 상태와 승인·재개 지점을 정하고, 재시도에 따른 중복 실행과 상태 유실을 진단할 수 있습니다.",
+              "source_ids": [
+                "managed",
+                "interrupts",
+                "checkpointers"
+              ]
+            },
+            {
+              "kind": "judgment",
+              "label": "예정 사례",
+              "text": "비교 보고서를 작성하다 자료 확인을 기다린 뒤 같은 작업을 재개하는 사례를 입력부터 결과까지 조사합니다. 현재는 사례 구성 계획입니다.",
+              "source_ids": [
+                "managed",
+                "interrupts",
+                "checkpointers"
+              ]
+            }
+          ],
+          "metrics": [],
+          "datasets": [],
+          "explanation": [
+            {
+              "id": "chapter-1",
+              "title": "1. 실행 기반과 상태 저장의 역할",
+              "lead": "긴 업무를 이어가기 위해 모델 밖에서 관리하는 요소를 조사합니다.",
+              "blocks": [
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "모델·도구 실행·작업 이력",
+                  "source_ids": [
+                    "managed"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "어느 구성 요소가 판단·행동·기록을 담당하며 장애가 나면 무엇이 남는가?"
+                    }
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "대화 메모와 체크포인트",
+                  "source_ids": [
+                    "managed"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "요약을 읽는 것과 실행 상태를 저장해 이어가는 것은 어떻게 다른가?"
+                    }
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "작업 ID와 저장 대상",
+                  "source_ids": [
+                    "managed"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "목표·입력·결과·대기 상태를 어떤 작업에 묶어 보관하는가?"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "chapter-2",
+              "title": "2. 중단과 재개를 설계하는 방법",
+              "lead": "업무 단계에 맞는 저장과 외부 입력 대기·재개를 조사합니다.",
+              "blocks": [
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "상태를 저장할 지점",
+                  "source_ids": [
+                    "managed"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "단계 시작·완료·외부 변경 중 언제 무엇을 저장해야 하는가?"
+                    }
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "자료·승인·외부 결과 대기",
+                  "source_ids": [
+                    "managed"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "어떤 입력이 올 때까지 기다리고 재개할 때 그 입력을 어떻게 연결하는가?"
+                    }
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "재개 전 상태 확인",
+                  "source_ids": [
+                    "managed"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "자료나 대상 파일이 바뀌었을 때 이전 작업 결과를 어떻게 재확인하는가?"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "chapter-3",
+              "title": "3. 복구와 중복 실행을 다루는 방법",
+              "lead": "실패한 구성 요소와 외부 부작용을 구분해 복구하는 방법을 조사합니다.",
+              "blocks": [
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "모델·도구·실행 환경의 실패",
+                  "source_ids": [
+                    "managed"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "어느 단계가 실패했는지 어떤 이력으로 확인하고 복구하는가?"
+                    }
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "재실행과 멱등성",
+                  "source_ids": [
+                    "managed"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "같은 저장·등록·전송을 반복할 때 추가 효과를 막으려면 무엇이 필요한가?"
+                    }
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "응답 유실과 원격 상태 조회",
+                  "source_ids": [
+                    "managed"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "실행 여부가 불명확할 때 다시 실행하기 전에 어떤 상태를 확인하는가?"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "chapter-4",
+              "title": "4. 활용 환경과 업무 사례",
+              "lead": "사용자가 설정할 기능과 직접 구현이 필요한 기능을 조사합니다.",
+              "blocks": [
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "제공되는 재개 기능 확인",
+                  "source_ids": [
+                    "managed"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "사용 중인 도구가 저장·중단·재개를 어디까지 제공하고 사용자는 무엇을 준비하는가?"
+                    }
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "보고서 작성 중단·재개 사례",
+                  "source_ids": [
+                    "managed"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "자료 확인 대기 전후의 상태와 같은 작업의 최종 파일을 어떻게 연결하는가?"
+                    }
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "기록 보존과 작업 종료",
+                  "source_ids": [
+                    "managed"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "이력·결과·임시 실행 환경을 어떤 기준으로 남기고 정리하는가?"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "learning": [],
+          "result": {
+            "title": "후속 조사에서 완성할 내용",
+            "points": [
+              {
+                "kind": "judgment",
+                "label": "활용 안내",
+                "text": "각 세부 질문에 공식 근거와 구체적인 사용 절차를 연결하고, 비교 보고서를 작성하다 자료 확인을 기다린 뒤 같은 작업을 재개하는 사례의 정상 결과·실패·수정 과정을 정리할 계획입니다.",
+                "source_ids": [
+                  "managed",
+                  "interrupts",
+                  "checkpointers"
+                ]
+              }
+            ]
+          },
+          "references": [
+            {
+              "id": "managed",
+              "title": "Anthropic Managed Agents architecture",
+              "url": "https://www.anthropic.com/engineering/managed-agents",
+              "description": "세션·실행 반복·실행 환경을 분리하고 상태와 장애를 관리하는 사례입니다."
+            },
+            {
+              "id": "interrupts",
+              "title": "LangGraph interrupts",
+              "url": "https://docs.langchain.com/oss/python/langgraph/interrupts",
+              "description": "외부 입력 대기와 상태 재개, 노드 재실행에 따른 중복 효과의 설명입니다."
+            },
+            {
+              "id": "checkpointers",
+              "title": "LangGraph checkpointers",
+              "url": "https://docs.langchain.com/oss/python/langgraph/checkpointers",
+              "description": "작업 ID와 상태 스냅샷으로 저장·조회·재개하는 설명입니다."
+            }
+          ],
+          "caveats": [
+            {
+              "text": "현재 등록 내용은 목차와 조사 계획입니다. 제품별 사용 조건·설치·실행 결과와 비용·효과는 후속 조사에서 확인할 항목입니다.",
+              "source_ids": []
+            }
+          ]
+        },
+        "claims": [
+          {
+            "path": "/summary/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-managed",
+              "e-interrupts",
+              "e-checkpointers"
+            ]
+          },
+          {
+            "path": "/summary/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-managed",
+              "e-interrupts",
+              "e-checkpointers"
+            ]
+          },
+          {
+            "path": "/summary/2",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-managed",
+              "e-interrupts",
+              "e-checkpointers"
+            ]
+          },
+          {
+            "path": "/explanation/0/blocks/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-managed",
+              "e-interrupts",
+              "e-checkpointers"
+            ]
+          },
+          {
+            "path": "/explanation/0/blocks/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-managed",
+              "e-interrupts",
+              "e-checkpointers"
+            ]
+          },
+          {
+            "path": "/explanation/0/blocks/2",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-managed",
+              "e-interrupts",
+              "e-checkpointers"
+            ]
+          },
+          {
+            "path": "/explanation/1/blocks/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-managed",
+              "e-interrupts",
+              "e-checkpointers"
+            ]
+          },
+          {
+            "path": "/explanation/1/blocks/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-managed",
+              "e-interrupts",
+              "e-checkpointers"
+            ]
+          },
+          {
+            "path": "/explanation/1/blocks/2",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-managed",
+              "e-interrupts",
+              "e-checkpointers"
+            ]
+          },
+          {
+            "path": "/explanation/2/blocks/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-managed",
+              "e-interrupts",
+              "e-checkpointers"
+            ]
+          },
+          {
+            "path": "/explanation/2/blocks/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-managed",
+              "e-interrupts",
+              "e-checkpointers"
+            ]
+          },
+          {
+            "path": "/explanation/2/blocks/2",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-managed",
+              "e-interrupts",
+              "e-checkpointers"
+            ]
+          },
+          {
+            "path": "/explanation/3/blocks/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-managed",
+              "e-interrupts",
+              "e-checkpointers"
+            ]
+          },
+          {
+            "path": "/explanation/3/blocks/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-managed",
+              "e-interrupts",
+              "e-checkpointers"
+            ]
+          },
+          {
+            "path": "/explanation/3/blocks/2",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-managed",
+              "e-interrupts",
+              "e-checkpointers"
+            ]
+          },
+          {
+            "path": "/result/points/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-managed",
+              "e-interrupts",
+              "e-checkpointers"
+            ]
+          },
+          {
+            "path": "/caveats/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-managed",
+              "e-interrupts",
+              "e-checkpointers"
+            ]
+          }
+        ],
+        "answer_paths": {
+          "concept": [
+            "/summary/0"
+          ],
+          "outline": [
+            "/explanation",
+            "/result"
+          ]
+        }
+      },
+      "first_screen_review": {
+        "input_hash": "14aa5f79555880777e5cd28f71a4f6f4731ab06aeb8dcc766f16d85d428fccf2",
+        "reviewer": "author_self_review; title/description/deck-only editorial input",
+        "reviewed_at": "2026-10-13T05:30:38.510141+00:00",
+        "checks": {
+          "readability": {
+            "passed": true,
+            "reason": "제목과 소개에 기술 이름·업무 활용 목적·조사 계획 단계가 명시된다.",
+            "locations": [
+              "/title",
+              "/description"
+            ]
+          },
+          "question_answered": {
+            "passed": true,
+            "reason": "해당 기술 한 행의 목차 계획이라는 범위를 첫 화면에서 알 수 있다.",
+            "locations": [
+              "/title",
+              "/deck"
+            ]
+          },
+          "reader_outcome": {
+            "passed": true,
+            "reason": "긴 작업에서 저장해야 할 상태와 승인·재개 지점을 정하고, 재시도에 따른 중복 실행과 상태 유실을 진단할 수 있습니다.",
+            "locations": [
+              "/deck"
+            ]
+          }
+        },
+        "issues": []
+      },
+      "body_review": {
+        "input_hash": "5222a6bb86e567a260a1bc46cbed262dfdffbedb0a6302d9106cbcf5c8f754a2",
+        "reviewer": "author_self_review; source/meaning/body stage",
+        "reviewed_at": "2026-10-13T05:30:38.510141+00:00",
+        "checks": {
+          "question_answered": {
+            "passed": true,
+            "reason": "개념과 목차 계획 두 질문을 요약과 실제 장·세부 질문·예정 결과에 연결했다.",
+            "locations": [
+              "/summary/0",
+              "/explanation"
+            ]
+          },
+          "analysis": {
+            "passed": true,
+            "reason": "확인한 개념과 예정 조사 질문을 사실/편집 판단으로 구분했다. 계획에 대한 등록 검토이며 기술 상세 조사 완료의 판정이 아니다.",
+            "locations": [
+              "/analysis/answers",
+              "/draft/report/scope"
+            ]
+          },
+          "evidence": {
+            "passed": true,
+            "reason": "보존 원문의 해시와 관련 발췌를 대조했고 원문 확보·검토 날짜를 렌더링 날짜로 대체하지 않았다.",
+            "locations": [
+              "/sources",
+              "/analysis/evidence"
+            ]
+          },
+          "readability": {
+            "passed": true,
+            "reason": "큰 목차와 번호가 있는 세부 질문을 실제 읽고 중복·역할 혼동을 점검했다. 현재 본문을 미래의 조사 항목으로 표현한다.",
+            "locations": [
+              "/explanation"
+            ]
+          },
+          "factuality": {
+            "passed": true,
+            "reason": "개념만 공식 관련 절로 확인했고 제품별 실습·비용·효과는 미확인 후속 범위로 남겼다.",
+            "locations": [
+              "/summary/0",
+              "/caveats"
+            ]
+          },
+          "reader_outcome": {
+            "passed": true,
+            "reason": "독자는 무엇을 조사할지와 예정 사례를 알 수 있다. 실제 기술을 사용하는 완성 교재는 후속 조사다.",
+            "locations": [
+              "/explanation",
+              "/result"
+            ]
+          }
+        },
+        "issues": []
+      },
+      "review_limitations": "단일 작성자의 개념·범위 및 계획 원고 자체 검토. 독립 에이전트·실제 독자 시험·유료 API·제품 실행을 수행하지 않았다. ready는 목차·조사계획판의 기계·편집 준비이며 상세 리서치 완료가 아니다."
+    },
+    {
+      "version": "question-research-1",
+      "plan": {
+        "version": "question-research-1",
+        "request": {
+          "id": "agent-a2a-guide",
+          "topic_id": "development",
+          "topic_path": [
+            "AI 개발",
+            "에이전트 활용 기술",
+            "A2A"
+          ],
+          "reader": "준비된 에이전트 도구로 업무를 수행하는 개발자와 관리자",
+          "reader_question": "A2A의 리서치 페이지에서 어떤 질문과 세부 내용을 조사해야 업무 활용에 도움이 되는가?",
+          "outcome": "다른 에이전트 서비스에 맡길 작업의 조건과 결과 형식을 정하고 지원 능력·작업 상태·반환 결과를 확인할 수 있습니다.",
+          "research_type": "custom",
+          "custom_profile": {
+            "method": "사용자가 지정한 기술 한 행에 대해 목차·조사 계획만 등록한다. 공식 관련 절로 개념을 확인하고 업무 활용자의 질문을 장·세부 질문·예정 사례로 연결한다. 상세 조사 완료, 실행된 튜토리얼과 성능 검증으로 표시하지 않는다.",
+            "requires": [
+              "concept"
+            ]
+          },
+          "questions": [
+            {
+              "id": "concept",
+              "question": "A2A은 어떤 역할을 하는가?",
+              "requires": [
+                "concept"
+              ]
+            },
+            {
+              "id": "outline",
+              "question": "업무 활용자를 위해 무엇을 조사하고 어떤 사례로 확인할 것인가?",
+              "requires": [
+                "concept"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "id": "a2a",
+              "title": "A2A 1.0.0 specification",
+              "url": "https://a2a-protocol.org/v1.0.0/specification/",
+              "kind": "official_document"
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "concept",
+            "question": "A2A은 어떤 역할을 하는가?",
+            "requires": [
+              "concept"
+            ]
+          },
+          {
+            "id": "outline",
+            "question": "업무 활용자를 위해 무엇을 조사하고 어떤 사례로 확인할 것인가?",
+            "requires": [
+              "concept"
+            ]
+          }
+        ],
+        "method": "사용자가 지정한 기술 한 행에 대해 목차·조사 계획만 등록한다. 공식 관련 절로 개념을 확인하고 업무 활용자의 질문을 장·세부 질문·예정 사례로 연결한다. 상세 조사 완료, 실행된 튜토리얼과 성능 검증으로 표시하지 않는다."
+      },
+      "sources": [
+        {
+          "id": "a2a",
+          "title": "A2A 1.0.0 specification",
+          "url": "https://a2a-protocol.org/v1.0.0/specification/",
+          "kind": "official_document",
+          "status": "imported_original",
+          "transport": "retained_http_original_related_excerpt",
+          "content_hash": "f5d15f00006b7e25b8a3a2766b309b661fff36dbd4330933ed61bfc8d435f05b",
+          "text": "Task is the core unit of action for A2A.",
+          "text_hash": "74b402d5b6b608ff279ecd01b7166adbcb4e6608e48266fd7b2c7c13669da9af",
+          "first_collected": null,
+          "last_successful_collection": "2026-10-13T04:59:28.981322+00:00",
+          "published_on": null,
+          "reviewed_at": "2026-10-13T05:09:58.694749+00:00",
+          "review_scope": "1.0.0 AgentCard/Task/Artifact, authorization responsibilities, MCP relationship, message-format migration.",
+          "raw_path": "C:\\Engine\\signal-desk\\data\\raw\\agent-usage-2026-10-13\\a2a.html"
+        }
+      ],
+      "analysis": {
+        "evidence": [
+          {
+            "id": "e-a2a",
+            "source_id": "a2a",
+            "source_hash": "f5d15f00006b7e25b8a3a2766b309b661fff36dbd4330933ed61bfc8d435f05b",
+            "quote": "Task is the core unit of action for A2A.",
+            "meaning": "1.0.0 AgentCard/Task/Artifact, authorization responsibilities, MCP relationship, message-format migration.",
+            "limits": "공식 원문의 관련 절은 개념과 조사 범위를 뒷받침한다. 제품별 설정·실행 결과와 실제 독자 이해를 입증하는 근거는 아니다.",
+            "supports": [
+              "concept"
+            ]
+          }
+        ],
+        "answers": [
+          {
+            "question_id": "concept",
+            "answer": "A2A는 독립된 에이전트 시스템이 능력을 알리고 작업 요청·진행 상태·결과물을 교환하도록 하는 통신 규약입니다.",
+            "reasoning": "공식 문서의 관련 절에서 역할과 연결 구조를 확인했다.",
+            "limits": "상세 사용법·제품별 지원과 성과는 현재 계획의 후속 조사다.",
+            "evidence_ids": [
+              "e-a2a"
+            ]
+          },
+          {
+            "question_id": "outline",
+            "answer": "1. A2A의 역할과 적용 조건; 2. 능력·작업·결과를 표현하는 방법; 3. 작업 요청과 권한을 구성하는 방법; 4. 문서 번역 사례와 결과 검증",
+            "reasoning": "역할을 이해한 뒤 준비·사용·결과 확인·실패·업무 적용을 질문으로 나눴다. 사용자 요청의 기술 범위와 목차 계획 등록 단계에 맞춘 편집 판단이다.",
+            "limits": "각 세부 질문의 상세 답과 실행 사례는 아직 작성하지 않았다.",
+            "evidence_ids": [
+              "e-a2a"
+            ]
+          }
+        ],
+        "gaps": []
+      },
+      "draft": {
+        "report": {
+          "id": "agent-a2a-guide",
+          "topic_id": "development",
+          "topic_path": [
+            "AI 개발",
+            "에이전트 활용 기술",
+            "A2A"
+          ],
+          "title": "A2A: 다른 에이전트 서비스에 업무를 맡기는 방법 — 조사 계획",
+          "description": "A2A을 업무에 활용하려는 사용자를 위해 조사할 질문과 세부 목차를 정리했습니다.",
+          "checked_on": "2026-10-13",
+          "scope": "목차와 조사 계획 등록 단계입니다. 아래 활용 절차·환경별 설정·사례의 상세 본문은 후속 조사로 작성합니다.",
+          "deck": "조사 계획 · 문서 번역을 다른 에이전트 서비스에 요청하고 번역 파일을 돌려받는 사례를 통해 역할·활용 절차·확인 기준을 조사합니다.",
+          "highlights": [
+            "A2A의 역할과 필요한 이유",
+            "업무에 적용하는 방법과 완료 기준",
+            "문서 번역을 다른 에이전트 서비스에 요청하고 번역 파일을 돌려받는 사례"
+          ],
+          "source_note": "공식 기술 문서의 관련 절로 조사 범위를 정했습니다. 이번 판은 조사 계획이며 실제 도구 실행이나 제품별 효과 평가가 아닙니다.",
+          "summary": [
+            {
+              "kind": "fact",
+              "label": "기술의 역할",
+              "text": "A2A는 독립된 에이전트 시스템이 능력을 알리고 작업 요청·진행 상태·결과물을 교환하도록 하는 통신 규약입니다.",
+              "source_ids": [
+                "a2a"
+              ]
+            },
+            {
+              "kind": "judgment",
+              "label": "조사 목표",
+              "text": "다른 에이전트 서비스에 맡길 작업의 조건과 결과 형식을 정하고 지원 능력·작업 상태·반환 결과를 확인할 수 있습니다.",
+              "source_ids": [
+                "a2a"
+              ]
+            },
+            {
+              "kind": "judgment",
+              "label": "예정 사례",
+              "text": "문서 번역을 다른 에이전트 서비스에 요청하고 번역 파일을 돌려받는 사례를 입력부터 결과까지 조사합니다. 현재는 사례 구성 계획입니다.",
+              "source_ids": [
+                "a2a"
+              ]
+            }
+          ],
+          "metrics": [],
+          "datasets": [],
+          "explanation": [
+            {
+              "id": "chapter-1",
+              "title": "1. A2A의 역할과 적용 조건",
+              "lead": "독립된 에이전트 서비스끼리 업무를 주고받는 관계를 조사합니다.",
+              "blocks": [
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "다른 서비스에 작업을 맡기는 상황",
+                  "source_ids": [
+                    "a2a"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "자신의 앱에서 처리할 기능과 다른 서비스가 맡을 업무를 어떻게 구분하는가?"
+                    }
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "MCP·내부 하위 에이전트·A2A",
+                  "source_ids": [
+                    "a2a"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "도구 호출, 앱 내부 분담과 독립 서비스 간 협력은 어떤 기준으로 나누는가?"
+                    }
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "지원 버전과 연결 조건",
+                  "source_ids": [
+                    "a2a"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "클라이언트·서버가 어떤 규격과 기능을 지원하는지 어디에서 확인하는가?"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "chapter-2",
+              "title": "2. 능력·작업·결과를 표현하는 방법",
+              "lead": "Agent Card·Task·Artifact의 의미와 전달 정보를 조사합니다.",
+              "blocks": [
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "Agent Card로 능력 확인",
+                  "source_ids": [
+                    "a2a"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "가능한 업무·입출력·접속 주소·인증 조건은 어떻게 알 수 있는가?"
+                    }
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "Task로 진행 상태 확인",
+                  "source_ids": [
+                    "a2a"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "접수·진행·추가 입력·완료·실패 상태를 어떻게 읽고 다음 행동을 정하는가?"
+                    }
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "Artifact로 결과 받기",
+                  "source_ids": [
+                    "a2a"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "최종 문장·파일·구조화된 결과를 요청한 산출물과 어떻게 대조하는가?"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "chapter-3",
+              "title": "3. 작업 요청과 권한을 구성하는 방법",
+              "lead": "실제 연결에 필요한 입력과 인증·후속 동작을 조사합니다.",
+              "blocks": [
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "맡길 업무와 입력 자료",
+                  "source_ids": [
+                    "a2a"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "어떤 요청과 문서·조건을 보내고 반환 결과를 어떻게 지정하는가?"
+                    }
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "인증과 자료 접근 범위",
+                  "source_ids": [
+                    "a2a"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "요청자와 수행 서비스가 어떤 자원에 접근하도록 구성하는가?"
+                    }
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "추가 입력·실패·취소 대응",
+                  "source_ids": [
+                    "a2a"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "작업이 끝나지 않았을 때 후속 입력·상태 조회·취소를 어떻게 처리하는가?"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "chapter-4",
+              "title": "4. 문서 번역 사례와 결과 검증",
+              "lead": "연결 성공과 실제 업무 완료를 구분하는 사례를 조사합니다.",
+              "blocks": [
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "문서 접수에서 번역 파일까지",
+                  "source_ids": [
+                    "a2a"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "같은 요청이 어떤 작업 상태를 거쳐 결과 파일로 돌아오는가?"
+                    }
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "반환 문서의 내용 확인",
+                  "source_ids": [
+                    "a2a"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "번역 범위·누락·원문 버전·파일 형식을 무엇과 대조하는가?"
+                    }
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "지연·중복 요청·형식 변경 진단",
+                  "source_ids": [
+                    "a2a"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "서비스 응답이 늦거나 규격이 달라질 때 어떤 기록으로 원인을 찾는가?"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "learning": [],
+          "result": {
+            "title": "후속 조사에서 완성할 내용",
+            "points": [
+              {
+                "kind": "judgment",
+                "label": "활용 안내",
+                "text": "각 세부 질문에 공식 근거와 구체적인 사용 절차를 연결하고, 문서 번역을 다른 에이전트 서비스에 요청하고 번역 파일을 돌려받는 사례의 정상 결과·실패·수정 과정을 정리할 계획입니다.",
+                "source_ids": [
+                  "a2a"
+                ]
+              }
+            ]
+          },
+          "references": [
+            {
+              "id": "a2a",
+              "title": "A2A 1.0.0 specification",
+              "url": "https://a2a-protocol.org/v1.0.0/specification/",
+              "description": "능력 소개, 작업 요청·진행 상태·결과물 교환을 정의한 규격입니다."
+            }
+          ],
+          "caveats": [
+            {
+              "text": "현재 등록 내용은 목차와 조사 계획입니다. 제품별 사용 조건·설치·실행 결과와 비용·효과는 후속 조사에서 확인할 항목입니다.",
+              "source_ids": []
+            }
+          ]
+        },
+        "claims": [
+          {
+            "path": "/summary/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-a2a"
+            ]
+          },
+          {
+            "path": "/summary/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-a2a"
+            ]
+          },
+          {
+            "path": "/summary/2",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-a2a"
+            ]
+          },
+          {
+            "path": "/explanation/0/blocks/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-a2a"
+            ]
+          },
+          {
+            "path": "/explanation/0/blocks/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-a2a"
+            ]
+          },
+          {
+            "path": "/explanation/0/blocks/2",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-a2a"
+            ]
+          },
+          {
+            "path": "/explanation/1/blocks/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-a2a"
+            ]
+          },
+          {
+            "path": "/explanation/1/blocks/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-a2a"
+            ]
+          },
+          {
+            "path": "/explanation/1/blocks/2",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-a2a"
+            ]
+          },
+          {
+            "path": "/explanation/2/blocks/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-a2a"
+            ]
+          },
+          {
+            "path": "/explanation/2/blocks/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-a2a"
+            ]
+          },
+          {
+            "path": "/explanation/2/blocks/2",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-a2a"
+            ]
+          },
+          {
+            "path": "/explanation/3/blocks/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-a2a"
+            ]
+          },
+          {
+            "path": "/explanation/3/blocks/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-a2a"
+            ]
+          },
+          {
+            "path": "/explanation/3/blocks/2",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-a2a"
+            ]
+          },
+          {
+            "path": "/result/points/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-a2a"
+            ]
+          },
+          {
+            "path": "/caveats/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-a2a"
+            ]
+          }
+        ],
+        "answer_paths": {
+          "concept": [
+            "/summary/0"
+          ],
+          "outline": [
+            "/explanation",
+            "/result"
+          ]
+        }
+      },
+      "first_screen_review": {
+        "input_hash": "1c2d6d833b8b5c1981c501e9de583b9b648f654e54c8c2c67e459437f9ee55a7",
+        "reviewer": "author_self_review; title/description/deck-only editorial input",
+        "reviewed_at": "2026-10-13T05:30:38.510141+00:00",
+        "checks": {
+          "readability": {
+            "passed": true,
+            "reason": "제목과 소개에 기술 이름·업무 활용 목적·조사 계획 단계가 명시된다.",
+            "locations": [
+              "/title",
+              "/description"
+            ]
+          },
+          "question_answered": {
+            "passed": true,
+            "reason": "해당 기술 한 행의 목차 계획이라는 범위를 첫 화면에서 알 수 있다.",
+            "locations": [
+              "/title",
+              "/deck"
+            ]
+          },
+          "reader_outcome": {
+            "passed": true,
+            "reason": "다른 에이전트 서비스에 맡길 작업의 조건과 결과 형식을 정하고 지원 능력·작업 상태·반환 결과를 확인할 수 있습니다.",
+            "locations": [
+              "/deck"
+            ]
+          }
+        },
+        "issues": []
+      },
+      "body_review": {
+        "input_hash": "78885ec0a59e195ddf376cf28d1be95134dc1806a4df51f8472938fe12dcff80",
+        "reviewer": "author_self_review; source/meaning/body stage",
+        "reviewed_at": "2026-10-13T05:30:38.510141+00:00",
+        "checks": {
+          "question_answered": {
+            "passed": true,
+            "reason": "개념과 목차 계획 두 질문을 요약과 실제 장·세부 질문·예정 결과에 연결했다.",
+            "locations": [
+              "/summary/0",
+              "/explanation"
+            ]
+          },
+          "analysis": {
+            "passed": true,
+            "reason": "확인한 개념과 예정 조사 질문을 사실/편집 판단으로 구분했다. 계획에 대한 등록 검토이며 기술 상세 조사 완료의 판정이 아니다.",
+            "locations": [
+              "/analysis/answers",
+              "/draft/report/scope"
+            ]
+          },
+          "evidence": {
+            "passed": true,
+            "reason": "보존 원문의 해시와 관련 발췌를 대조했고 원문 확보·검토 날짜를 렌더링 날짜로 대체하지 않았다.",
+            "locations": [
+              "/sources",
+              "/analysis/evidence"
+            ]
+          },
+          "readability": {
+            "passed": true,
+            "reason": "큰 목차와 번호가 있는 세부 질문을 실제 읽고 중복·역할 혼동을 점검했다. 현재 본문을 미래의 조사 항목으로 표현한다.",
+            "locations": [
+              "/explanation"
+            ]
+          },
+          "factuality": {
+            "passed": true,
+            "reason": "개념만 공식 관련 절로 확인했고 제품별 실습·비용·효과는 미확인 후속 범위로 남겼다.",
+            "locations": [
+              "/summary/0",
+              "/caveats"
+            ]
+          },
+          "reader_outcome": {
+            "passed": true,
+            "reason": "독자는 무엇을 조사할지와 예정 사례를 알 수 있다. 실제 기술을 사용하는 완성 교재는 후속 조사다.",
+            "locations": [
+              "/explanation",
+              "/result"
+            ]
+          }
+        },
+        "issues": []
+      },
+      "review_limitations": "단일 작성자의 개념·범위 및 계획 원고 자체 검토. 독립 에이전트·실제 독자 시험·유료 API·제품 실행을 수행하지 않았다. ready는 목차·조사계획판의 기계·편집 준비이며 상세 리서치 완료가 아니다."
+    },
+    {
+      "version": "question-research-1",
+      "plan": {
+        "version": "question-research-1",
+        "request": {
+          "id": "agent-evaluation-traces-guide",
+          "topic_id": "development",
+          "topic_path": [
+            "AI 개발",
+            "에이전트 활용 기술",
+            "평가·실행 기록"
+          ],
+          "reader": "준비된 에이전트 도구로 업무를 수행하는 개발자와 관리자",
+          "reader_question": "평가·실행 기록의 리서치 페이지에서 어떤 질문과 세부 내용을 조사해야 업무 활용에 도움이 되는가?",
+          "outcome": "업무별 완료 기준과 평가 입력을 정하고 결과·실행 기록을 함께 읽어 품질과 실패 원인을 확인할 수 있습니다.",
+          "research_type": "custom",
+          "custom_profile": {
+            "method": "사용자가 지정한 기술 한 행에 대해 목차·조사 계획만 등록한다. 공식 관련 절로 개념을 확인하고 업무 활용자의 질문을 장·세부 질문·예정 사례로 연결한다. 상세 조사 완료, 실행된 튜토리얼과 성능 검증으로 표시하지 않는다.",
+            "requires": [
+              "concept"
+            ]
+          },
+          "questions": [
+            {
+              "id": "concept",
+              "question": "평가·실행 기록은 어떤 역할을 하는가?",
+              "requires": [
+                "concept"
+              ]
+            },
+            {
+              "id": "outline",
+              "question": "업무 활용자를 위해 무엇을 조사하고 어떤 사례로 확인할 것인가?",
+              "requires": [
+                "concept"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "id": "evals",
+              "title": "Anthropic agent evals",
+              "url": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents",
+              "kind": "official_document"
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "concept",
+            "question": "평가·실행 기록은 어떤 역할을 하는가?",
+            "requires": [
+              "concept"
+            ]
+          },
+          {
+            "id": "outline",
+            "question": "업무 활용자를 위해 무엇을 조사하고 어떤 사례로 확인할 것인가?",
+            "requires": [
+              "concept"
+            ]
+          }
+        ],
+        "method": "사용자가 지정한 기술 한 행에 대해 목차·조사 계획만 등록한다. 공식 관련 절로 개념을 확인하고 업무 활용자의 질문을 장·세부 질문·예정 사례로 연결한다. 상세 조사 완료, 실행된 튜토리얼과 성능 검증으로 표시하지 않는다."
+      },
+      "sources": [
+        {
+          "id": "evals",
+          "title": "Anthropic agent evals",
+          "url": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents",
+          "kind": "official_document",
+          "status": "imported_original",
+          "transport": "retained_http_original_related_excerpt",
+          "content_hash": "1bf063a5518854cba5187a1825402e6cdab46913f1b25ed9bacc773a7c97e1b9",
+          "text": "The outcome is the final state in the environment at the end of the trial.",
+          "text_hash": "8f9706494b49e88538dc62645fbd4a51c2054666fb9a2cc6b1f7cb06254eea61",
+          "first_collected": null,
+          "last_successful_collection": "2026-10-13T04:59:28.299024+00:00",
+          "published_on": "2026-01-09",
+          "reviewed_at": "2026-10-13T05:09:58.694749+00:00",
+          "review_scope": "Task/trial/trace/outcome; environment state vs final response; pass@k/pass^k interpretation.",
+          "raw_path": "C:\\Engine\\signal-desk\\data\\raw\\agent-usage-2026-10-13\\evals.html"
+        }
+      ],
+      "analysis": {
+        "evidence": [
+          {
+            "id": "e-evals",
+            "source_id": "evals",
+            "source_hash": "1bf063a5518854cba5187a1825402e6cdab46913f1b25ed9bacc773a7c97e1b9",
+            "quote": "The outcome is the final state in the environment at the end of the trial.",
+            "meaning": "Task/trial/trace/outcome; environment state vs final response; pass@k/pass^k interpretation.",
+            "limits": "공식 원문의 관련 절은 개념과 조사 범위를 뒷받침한다. 제품별 설정·실행 결과와 실제 독자 이해를 입증하는 근거는 아니다.",
+            "supports": [
+              "concept"
+            ]
+          }
+        ],
+        "answers": [
+          {
+            "question_id": "concept",
+            "answer": "에이전트 평가는 요청한 결과를 기준과 비교하는 과정입니다. 실행 기록은 도구 요청·반환값·중간 결과를 남겨 실제 환경의 결과와 실패 경로를 확인하는 데 사용합니다.",
+            "reasoning": "공식 문서의 관련 절에서 역할과 연결 구조를 확인했다.",
+            "limits": "상세 사용법·제품별 지원과 성과는 현재 계획의 후속 조사다.",
+            "evidence_ids": [
+              "e-evals"
+            ]
+          },
+          {
+            "question_id": "outline",
+            "answer": "1. 무엇을 성공으로 평가할 것인가; 2. 실행 기록을 남기고 읽는 방법; 3. 평가 방법과 반복 비교; 4. 보고서 평가와 원인 수정 사례",
+            "reasoning": "역할을 이해한 뒤 준비·사용·결과 확인·실패·업무 적용을 질문으로 나눴다. 사용자 요청의 기술 범위와 목차 계획 등록 단계에 맞춘 편집 판단이다.",
+            "limits": "각 세부 질문의 상세 답과 실행 사례는 아직 작성하지 않았다.",
+            "evidence_ids": [
+              "e-evals"
+            ]
+          }
+        ],
+        "gaps": []
+      },
+      "draft": {
+        "report": {
+          "id": "agent-evaluation-traces-guide",
+          "topic_id": "development",
+          "topic_path": [
+            "AI 개발",
+            "에이전트 활용 기술",
+            "평가·실행 기록"
+          ],
+          "title": "에이전트 평가와 실행 기록: 업무 결과와 실패 원인을 확인하는 방법 — 조사 계획",
+          "description": "평가·실행 기록을 업무에 활용하려는 사용자를 위해 조사할 질문과 세부 목차를 정리했습니다.",
+          "checked_on": "2026-10-13",
+          "scope": "목차와 조사 계획 등록 단계입니다. 아래 활용 절차·환경별 설정·사례의 상세 본문은 후속 조사로 작성합니다.",
+          "deck": "조사 계획 · 공식 문서 비교 보고서의 주장·근거·파일 결과를 평가하고 누락 원인을 찾는 사례를 통해 역할·활용 절차·확인 기준을 조사합니다.",
+          "highlights": [
+            "평가·실행 기록의 역할과 필요한 이유",
+            "업무에 적용하는 방법과 완료 기준",
+            "공식 문서 비교 보고서의 주장·근거·파일 결과를 평가하고 누락 원인을 찾는 사례"
+          ],
+          "source_note": "공식 기술 문서의 관련 절로 조사 범위를 정했습니다. 이번 판은 조사 계획이며 실제 도구 실행이나 제품별 효과 평가가 아닙니다.",
+          "summary": [
+            {
+              "kind": "fact",
+              "label": "기술의 역할",
+              "text": "에이전트 평가는 요청한 결과를 기준과 비교하는 과정입니다. 실행 기록은 도구 요청·반환값·중간 결과를 남겨 실제 환경의 결과와 실패 경로를 확인하는 데 사용합니다.",
+              "source_ids": [
+                "evals"
+              ]
+            },
+            {
+              "kind": "judgment",
+              "label": "조사 목표",
+              "text": "업무별 완료 기준과 평가 입력을 정하고 결과·실행 기록을 함께 읽어 품질과 실패 원인을 확인할 수 있습니다.",
+              "source_ids": [
+                "evals"
+              ]
+            },
+            {
+              "kind": "judgment",
+              "label": "예정 사례",
+              "text": "공식 문서 비교 보고서의 주장·근거·파일 결과를 평가하고 누락 원인을 찾는 사례를 입력부터 결과까지 조사합니다. 현재는 사례 구성 계획입니다.",
+              "source_ids": [
+                "evals"
+              ]
+            }
+          ],
+          "metrics": [],
+          "datasets": [],
+          "explanation": [
+            {
+              "id": "chapter-1",
+              "title": "1. 무엇을 성공으로 평가할 것인가",
+              "lead": "업무별 결과와 기대 조건을 구체적으로 정의하는 방법을 조사합니다.",
+              "blocks": [
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "답변·도구 실행·업무 결과",
+                  "source_ids": [
+                    "evals"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "잘 쓴 답, 성공한 호출과 요청한 결과의 완성은 어떻게 다르게 확인하는가?"
+                    }
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "사실·완전성·사용 가능성",
+                  "source_ids": [
+                    "evals"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "정확한 근거, 필요한 항목과 실제 쓸 수 있는 결과물에 어떤 기준을 두는가?"
+                    }
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "정상·실패·부분 완료",
+                  "source_ids": [
+                    "evals"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "자료 부족이나 실행 실패가 있을 때 어느 상태로 판정하는가?"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "chapter-2",
+              "title": "2. 실행 기록을 남기고 읽는 방법",
+              "lead": "실패를 확인하는 데 필요한 입력·호출·결과의 연결을 조사합니다.",
+              "blocks": [
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "기록할 입력과 결과",
+                  "source_ids": [
+                    "evals"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "요청·도구 인자·반환값·대상 버전 중 어떤 정보를 남기는가?"
+                    }
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "판단 오류와 도구·환경 오류",
+                  "source_ids": [
+                    "evals"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "틀린 선택, 잘못된 반환값과 실행 환경의 실패를 어떻게 구분하는가?"
+                    }
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "근거·원문·최종 파일 대조",
+                  "source_ids": [
+                    "evals"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "결과에 표시된 완료와 실제 저장 상태가 같은지 무엇을 확인하는가?"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "chapter-3",
+              "title": "3. 평가 방법과 반복 비교",
+              "lead": "업무의 성격에 맞는 검사와 반복 평가의 해석을 조사합니다.",
+              "blocks": [
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "자동 검사·모델 검토·사람 검토",
+                  "source_ids": [
+                    "evals"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "어떤 항목을 프로그램·모델·사용자가 확인하고 서로의 공백을 어떻게 보완하는가?"
+                    }
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "평가 자료와 실패 사례",
+                  "source_ids": [
+                    "evals"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "업무 입력과 기대 결과를 어떻게 고정하고 실제 실패를 다음 평가에 추가하는가?"
+                    }
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "반복 성공과 성공당 비용",
+                  "source_ids": [
+                    "evals"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "한 번의 성공·반복 신뢰성·재시도 비용을 같은 조건에서 어떻게 비교하는가?"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "chapter-4",
+              "title": "4. 보고서 평가와 원인 수정 사례",
+              "lead": "기준에 따라 결과를 평가하고 실패한 부분을 수정하는 과정을 조사합니다.",
+              "blocks": [
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "주장과 근거의 대응",
+                  "source_ids": [
+                    "evals"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "제품 지원 조건에 관한 문장이 원문의 대상·기간·조건과 일치하는가?"
+                    }
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "누락 발견과 원인 위치",
+                  "source_ids": [
+                    "evals"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "검색 누락·원문 오독·작성 누락 중 어느 단계에서 문제가 처음 생겼는가?"
+                    }
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "수정 후 재평가와 한계 보고",
+                  "source_ids": [
+                    "evals"
+                  ],
+                  "items": [
+                    {
+                      "label": "조사 질문",
+                      "text": "최종 결과를 다시 확인하고 수행하지 않은 검사나 미해결 항목을 어떻게 남기는가?"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "learning": [],
+          "result": {
+            "title": "후속 조사에서 완성할 내용",
+            "points": [
+              {
+                "kind": "judgment",
+                "label": "활용 안내",
+                "text": "각 세부 질문에 공식 근거와 구체적인 사용 절차를 연결하고, 공식 문서 비교 보고서의 주장·근거·파일 결과를 평가하고 누락 원인을 찾는 사례의 정상 결과·실패·수정 과정을 정리할 계획입니다.",
+                "source_ids": [
+                  "evals"
+                ]
+              }
+            ]
+          },
+          "references": [
+            {
+              "id": "evals",
+              "title": "Anthropic agent evals",
+              "url": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents",
+              "description": "평가 입력·실행 기록·실제 결과와 반복 신뢰성을 구분하는 설명입니다."
+            }
+          ],
+          "caveats": [
+            {
+              "text": "현재 등록 내용은 목차와 조사 계획입니다. 제품별 사용 조건·설치·실행 결과와 비용·효과는 후속 조사에서 확인할 항목입니다.",
+              "source_ids": []
+            }
+          ]
+        },
+        "claims": [
+          {
+            "path": "/summary/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-evals"
+            ]
+          },
+          {
+            "path": "/summary/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-evals"
+            ]
+          },
+          {
+            "path": "/summary/2",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-evals"
+            ]
+          },
+          {
+            "path": "/explanation/0/blocks/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-evals"
+            ]
+          },
+          {
+            "path": "/explanation/0/blocks/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-evals"
+            ]
+          },
+          {
+            "path": "/explanation/0/blocks/2",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-evals"
+            ]
+          },
+          {
+            "path": "/explanation/1/blocks/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-evals"
+            ]
+          },
+          {
+            "path": "/explanation/1/blocks/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-evals"
+            ]
+          },
+          {
+            "path": "/explanation/1/blocks/2",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-evals"
+            ]
+          },
+          {
+            "path": "/explanation/2/blocks/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-evals"
+            ]
+          },
+          {
+            "path": "/explanation/2/blocks/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-evals"
+            ]
+          },
+          {
+            "path": "/explanation/2/blocks/2",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-evals"
+            ]
+          },
+          {
+            "path": "/explanation/3/blocks/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-evals"
+            ]
+          },
+          {
+            "path": "/explanation/3/blocks/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-evals"
+            ]
+          },
+          {
+            "path": "/explanation/3/blocks/2",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-evals"
+            ]
+          },
+          {
+            "path": "/result/points/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-evals"
+            ]
+          },
+          {
+            "path": "/caveats/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-evals"
+            ]
+          }
+        ],
+        "answer_paths": {
+          "concept": [
+            "/summary/0"
+          ],
+          "outline": [
+            "/explanation",
+            "/result"
+          ]
+        }
+      },
+      "first_screen_review": {
+        "input_hash": "e6f56172dba0bc9556bc41592dd81936fcd25b1eeda23a0a8b2c4490f2c287c7",
+        "reviewer": "author_self_review; title/description/deck-only editorial input",
+        "reviewed_at": "2026-10-13T05:30:38.510141+00:00",
+        "checks": {
+          "readability": {
+            "passed": true,
+            "reason": "제목과 소개에 기술 이름·업무 활용 목적·조사 계획 단계가 명시된다.",
+            "locations": [
+              "/title",
+              "/description"
+            ]
+          },
+          "question_answered": {
+            "passed": true,
+            "reason": "해당 기술 한 행의 목차 계획이라는 범위를 첫 화면에서 알 수 있다.",
+            "locations": [
+              "/title",
+              "/deck"
+            ]
+          },
+          "reader_outcome": {
+            "passed": true,
+            "reason": "업무별 완료 기준과 평가 입력을 정하고 결과·실행 기록을 함께 읽어 품질과 실패 원인을 확인할 수 있습니다.",
+            "locations": [
+              "/deck"
+            ]
+          }
+        },
+        "issues": []
+      },
+      "body_review": {
+        "input_hash": "d9f2db840a168354f0e4e325d12c793e62d2d95606399d7203ae60b03802d92b",
+        "reviewer": "author_self_review; source/meaning/body stage",
+        "reviewed_at": "2026-10-13T05:30:38.510141+00:00",
+        "checks": {
+          "question_answered": {
+            "passed": true,
+            "reason": "개념과 목차 계획 두 질문을 요약과 실제 장·세부 질문·예정 결과에 연결했다.",
+            "locations": [
+              "/summary/0",
+              "/explanation"
+            ]
+          },
+          "analysis": {
+            "passed": true,
+            "reason": "확인한 개념과 예정 조사 질문을 사실/편집 판단으로 구분했다. 계획에 대한 등록 검토이며 기술 상세 조사 완료의 판정이 아니다.",
+            "locations": [
+              "/analysis/answers",
+              "/draft/report/scope"
+            ]
+          },
+          "evidence": {
+            "passed": true,
+            "reason": "보존 원문의 해시와 관련 발췌를 대조했고 원문 확보·검토 날짜를 렌더링 날짜로 대체하지 않았다.",
+            "locations": [
+              "/sources",
+              "/analysis/evidence"
+            ]
+          },
+          "readability": {
+            "passed": true,
+            "reason": "큰 목차와 번호가 있는 세부 질문을 실제 읽고 중복·역할 혼동을 점검했다. 현재 본문을 미래의 조사 항목으로 표현한다.",
+            "locations": [
+              "/explanation"
+            ]
+          },
+          "factuality": {
+            "passed": true,
+            "reason": "개념만 공식 관련 절로 확인했고 제품별 실습·비용·효과는 미확인 후속 범위로 남겼다.",
+            "locations": [
+              "/summary/0",
+              "/caveats"
+            ]
+          },
+          "reader_outcome": {
+            "passed": true,
+            "reason": "독자는 무엇을 조사할지와 예정 사례를 알 수 있다. 실제 기술을 사용하는 완성 교재는 후속 조사다.",
+            "locations": [
+              "/explanation",
+              "/result"
+            ]
+          }
+        },
+        "issues": []
+      },
+      "review_limitations": "단일 작성자의 개념·범위 및 계획 원고 자체 검토. 독립 에이전트·실제 독자 시험·유료 API·제품 실행을 수행하지 않았다. ready는 목차·조사계획판의 기계·편집 준비이며 상세 리서치 완료가 아니다."
+    }
+  ]
+}

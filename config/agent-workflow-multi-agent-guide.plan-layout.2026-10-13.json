@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "report_id": "agent-workflow-multi-agent-guide",
+  "report_hash": "b1718ac77b9dcbbed222c6b22caeab1d4994d2eadbfe72c5f9efe73ddea1351e",
+  "reader_content_only": true,
+  "images": {},
+  "topic_sections": {
+    "chapter-1": [
+      {
+        "id": "ch1-topic1",
+        "start": 0
+      },
+      {
+        "id": "ch1-topic2",
+        "start": 1
+      },
+      {
+        "id": "ch1-topic3",
+        "start": 2
+      }
+    ],
+    "chapter-2": [
+      {
+        "id": "ch2-topic1",
+        "start": 0
+      },
+      {
+        "id": "ch2-topic2",
+        "start": 1
+      },
+      {
+        "id": "ch2-topic3",
+        "start": 2
+      }
+    ],
+    "chapter-3": [
+      {
+        "id": "ch3-topic1",
+        "start": 0
+      },
+      {
+        "id": "ch3-topic2",
+        "start": 1
+      },
+      {
+        "id": "ch3-topic3",
+        "start": 2
+      }
+    ],
+    "chapter-4": [
+      {
+        "id": "ch4-topic1",
+        "start": 0
+      },
+      {
+        "id": "ch4-topic2",
+        "start": 1
+      },
+      {
+        "id": "ch4-topic3",
+        "start": 2
+      }
+    ]
+  }
+}

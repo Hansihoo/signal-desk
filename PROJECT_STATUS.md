@@ -103,3 +103,8 @@
 | Wider mobile desk design | 탭형 HTML 화면을 390px에서 645px 중심의 모바일 문서 페이지로 확장. | Done | `desk/news/jobs` 기본 폭 645px, 가운데 정렬, 카드 여백/타이포/지표 블록 개선. `brief` 390px 계약은 유지. |
 | Profile-based housing filter | 로컬 프로필을 기준으로 명확히 가능성이 낮은 청약 공고를 숨긴다. | Done | `--profile`, `SIGNAL_DESK_PROFILE_PATH`, `--show-profile-excluded` 지원. unittest 27건, `collect`, `brief`, `desk --profile`, `review` PASS 및 이미지 확인 완료. |
 | Detailed housing tab cards | 청약 탭을 긴 문서형 카드로 바꾸고 위치·면적·공급·가격 스냅샷을 넣는다. | Done | desk 기본 폭 645px, 청약 스냅샷 카드, 확인 포인트 추가. unittest 27건, `desk --tab housing --profile`, `brief`, `review` PASS 및 이미지 확인 완료. |
+
+
+## 에이전트 활용 기술 7개 조사 계획 페이지 — 2026-10-13
+
+사용자가 지정한7개 기술을 각1페이지로 등록: 새7ID, 총28큰목차/84세부질문. 현재목차·조사계획 단계이며 상세리서치·환경별설정·실행사례는후속작성이다. 로컬54보고서/170판, 기존47/163·모델·원문보존,154시험/7품질검사·실제390/1280px14페이지 검증. 공개반영은완료기록을따른다. [기술별페이지와운영계약](docs/AGENT_TECH_PAGES_PLAN.2026-10-13.md).

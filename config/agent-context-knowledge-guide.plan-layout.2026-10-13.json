@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "report_id": "agent-context-knowledge-guide",
+  "report_hash": "7ba402c68caed63fb703906e22b6ea1b9d717923ef98a9f4dc847539ee824c0d",
+  "reader_content_only": true,
+  "images": {},
+  "topic_sections": {
+    "chapter-1": [
+      {
+        "id": "ch1-topic1",
+        "start": 0
+      },
+      {
+        "id": "ch1-topic2",
+        "start": 1
+      },
+      {
+        "id": "ch1-topic3",
+        "start": 2
+      }
+    ],
+    "chapter-2": [
+      {
+        "id": "ch2-topic1",
+        "start": 0
+      },
+      {
+        "id": "ch2-topic2",
+        "start": 1
+      },
+      {
+        "id": "ch2-topic3",
+        "start": 2
+      }
+    ],
+    "chapter-3": [
+      {
+        "id": "ch3-topic1",
+        "start": 0
+      },
+      {
+        "id": "ch3-topic2",
+        "start": 1
+      },
+      {
+        "id": "ch3-topic3",
+        "start": 2
+      }
+    ],
+    "chapter-4": [
+      {
+        "id": "ch4-topic1",
+        "start": 0
+      },
+      {
+        "id": "ch4-topic2",
+        "start": 1
+      },
+      {
+        "id": "ch4-topic3",
+        "start": 2
+      }
+    ]
+  }
+}
