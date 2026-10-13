@@ -344,3 +344,10 @@ FDE 기존 배포와 작업 파일, 원문/내용 검토 날짜를 보존. 생�
 - 총7편/28장/84세부질문을 새 안정ID·불변배치·quality와 해시별 목차에 연결했다. 사례는 계획이며 상세본문·설치·실습·효과 검증을 완료한 것으로 표시하지 않는다.
 - quality7/전체154시험129.356초/audit24+30, 기존47/163과모델816/818·원문14/14의행·시각 보존, 84anchor·168목차링크·실제390/1280px14페이지·현재위치/메뉴 검증. Edge390PNG캡처폭 차이는 실제browser390으로 확인했다. 기존주거review는활성공고0으로11Pass1Fail이다.
 - 계획/운영/보존: docs/AGENT_TECH_PAGES_PLAN.2026-10-13.md. 원문·필수근거data/raw/agent-usage-2026-10-13/plan-pages 및 D:/9_codex_temp/2026-10-13/signal-agent-plans/evidence 보존. owned시험/렌더profile scratch는정리됐다. 공개반영은후속결과로 기록한다.
+
+
+### 2026-10-13 에이전트 기술 7개 계획 공개 등록 완료
+
+- source5aadc78/Pages38353077798 success14:48:21KST/job2m22s. CI시험·수집·주거review·저장·배포Pass. 공개54/170,새7계획입력동일·이전47문서/저장시각163판·공개모델820/822·원문15/16정확히보존.
+- 공개9HTTP200과실제홈분류7편/스킬390px·12세부질문·첫화면확인. 로컬14viewport/822참조확인. CI전체로그획득실패는API단계success와구분.
+- 임시탭·viewport·8793서버와owned scratch정리. 필수근거보존경로와후속범위는docs/AGENT_TECH_PAGES_PLAN.2026-10-13.md. 사용자기존변경은따로유지했고조사계획을상세본문/실습완료로표시하지않는다.
