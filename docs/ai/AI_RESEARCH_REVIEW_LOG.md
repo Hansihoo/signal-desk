@@ -1094,3 +1094,10 @@ source5aadc78/[Pages38353077798](https://github.com/Hansihoo/signal-desk/actions
 - 현행 공식 API/카드/5쪽 방법서와 가격을 읽고, 이전Pro 및 Astra/Fable/Opus 사양,8평가와기간별요금,장점/반대결과를 모델 소개로 작성했다. 가상업무/SDK실습/응용문제 없음. Astra272K 경계는 독립검토의 반대근거로 실제 원문 재확인·수정했다.
 - 첫화면 수정판과 본문6기준 및 facts11행 독립Pass,quality1편 통과. 사람독해시험이나 사용자승인 아님. 원문 취득일/확인일/9월방법범위/10월카드결과와 미확인 실행일·스냅샷을 분리했다.
 - 새 모델 출시가 확인되지 않은 Levy1과 연결전9월DeepSeek V4.1 누락 후보는 심층 검토로 보류했다. 모든 기사/모델을 unchanged로 판정하지 않는다. 상세범위와 근거: docs/AI_MODEL_REVIEW.2026-10-14.md. 원격/공개 결과는 후속기록.
+
+
+### 2026-10-14 Argon 모델 소개 공개 확인 완료
+
+- sourcee3fbb32를origin main에 일반push,Pages38466300945 success05:55:45KST/job2m52s. 공개9HTTP200과검토입력정확일치,55/171보고서·831/833관측·15/16원문을 확인했다. 이전54/170과820/822의내용·저장시각 및전체원문판 보존.
+- 공개1280/390px소개/3표,390px공식11기록필터,넘침/콘솔오류0. HTML/CSS비교는Windows/Linux줄끝차이를정규화했고본문·데이터불변계약을별도로검증했다. 모델실행·사람독해시험 아님.
+- 검증탭/viewport,owned시험fixture와일회성보조스크립트·텍스트중간본 정리. 원문raw와필수근거 D:/9_codex_temp/2026-10-14/signal-ai-models 보존. 기본theo-s-han인증과사용자기존변경/탭/서버 보존. 상세 docs/AI_MODEL_REVIEW.2026-10-14.md.

@@ -80,4 +80,18 @@ OSWorld2.0은 오프라인 부분 점수·Argon3회 중 최대이며 Anthropic �
 불변 보고서/quality와 사실 입력을 각각 publication manifest에 연결했다.
 기존 Editorial과 해시별 모델 소개 설정을 재사용했다. 생성DB/HTML/PNG와raw는
 소스에 포함하지 않는다. 다른 작업의 미커밋 파일과 로그 변경은 이번 발행에 포함하지 않는다.
-원격 반영과 Pages 성공 및 실제 공개 확인은 후속 결과로 남긴다.
+소스e3fbb32를origin main에 일반push했다.
+[Pages38466300945](https://github.com/Hansihoo/signal-desk/actions/runs/38466300945)는
+2026-10-13T20:55:45Z(10월14일05:55:45KST)에success,job2분52초다.
+공개9경로HTTP200, 소개HTML/CSS는Windows/Linux줄끝만 정규화하면 로컬과 동일하다.
+공개55보고서/171판,831관측/833판,15원문/16판이며 검토된 소개입력과 정확히 일치한다.
+이전54편/170판과820관측/822판의 문서·저장시각,15원문/16판을 공개JSON에서 보존했다.
+공개1280/390px 소개와3표,390px공식11기록필터,넘침/콘솔오류0을 실제 확인했다.
+새 [소개](https://hansihoo.github.io/signal-desk/preview/gemini-4-argon-model-guide.html)와
+[누적표](https://hansihoo.github.io/signal-desk/preview/ai-models.html)에 반영됐다.
+
+임시 검증 탭과viewport를 정리했고 기존 사용자탭/서버는 보존했다. 시험fixture는
+owned scratch에서 종료 즉시 정리했고 직접 만든 일회성작성/수집/검증보조스크립트와
+텍스트중간본도 종료했다. 필요한 기준선JSON,검토판정,시험/수집/배포로그와화면은
+`D:/9_codex_temp/2026-10-14/signal-ai-models`에 보존하므로 폴더전체를Disposable로
+등록하지 않는다. 기본GitHub 신원theo-s-han은 유지됐고 프로젝트쓰기는Hansihoo로 검증했다.
