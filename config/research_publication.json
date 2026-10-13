@@ -249,6 +249,11 @@
       "id": "agent-tech-plans-2026-10-13",
       "input": "agent_tech_plans.2026-10-13.json",
       "quality": "agent_tech_plans.2026-10-13.quality.json"
+    },
+    {
+      "id": "ai-model-introductions-2026-10-14",
+      "input": "ai_model_guides.2026-10-14.json",
+      "quality": "ai_model_guides.2026-10-14.quality.json"
     }
   ]
 }

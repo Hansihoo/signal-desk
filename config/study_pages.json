@@ -46,7 +46,8 @@
     "qwen-image-2-1-turbo-model-guide",
     "microsoft-decision-1-model-guide",
     "muse-wonder-model-guide",
-    "muse-wonder-full-model-guide"
+    "muse-wonder-full-model-guide",
+    "gemini-4-argon-model-guide"
   ],
   "catalogs": {
     "devops-implementation-guide": "devops_tools.2026-10-10.r4.json"
@@ -95,6 +96,9 @@
       "fd1cc61e8425db0aaa3cc9d5aaa75f6e308a588346f4fe4f3cbd88ff0430b453",
       "1507ce60701d016ea8a94cac14be03eefe391ef14268044c057d07bf9bff32d5",
       "de070d0f6481a6181ae160ee383efade2022a71bf1c37044fb020cf6f4c1469a"
+    ],
+    "gemini-4-argon-model-guide": [
+      "9d598f3cb862e18f5cddca85c457c0262fffaf807c6605ff3a36300ac191e936"
     ]
   },
   "model_introduction_editions": {
@@ -105,6 +109,9 @@
     "muse-wonder-full-model-guide": [
       "1507ce60701d016ea8a94cac14be03eefe391ef14268044c057d07bf9bff32d5",
       "de070d0f6481a6181ae160ee383efade2022a71bf1c37044fb020cf6f4c1469a"
+    ],
+    "gemini-4-argon-model-guide": [
+      "9d598f3cb862e18f5cddca85c457c0262fffaf807c6605ff3a36300ac191e936"
     ]
   }
 }

@@ -1,0 +1,267 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "id": "gemini-4-argon-public-api-spec",
+      "model": "Gemini 4 Argon",
+      "provider": "Google",
+      "source_url": "https://ai.google.dev/gemini-api/docs/models/gemini-4-argon",
+      "checked_on": "2026-10-14",
+      "fields": {
+        "kind": "공식 모델 사양",
+        "suite": "공식 모델 사양",
+        "condition": "2026-10-13 공개 확대 / 2026-10-14 KST 확인. 기존 Argon의 동일 모델 ID. 공식 지원이며 계정·지역별 접근 및 실제 실행 미검증.",
+        "status": "Stable",
+        "access": "Gemini API 유료 등급; 앱 Pro/Ultra; Antigravity Ultra",
+        "effort": "low / medium / high",
+        "harness": "미측정",
+        "basis": "Google API 문서와 공개 확대 발표",
+        "context": 1048576,
+        "입출력 문맥 정의": "입력+출력 통합 상한",
+        "기본 동기 최대 출력 토큰": 65536,
+        "long decode 최대 출력 토큰": 1048576,
+        "공개 확대 발표일": "2026-10-13",
+        "note": "텍스트·이미지·영상·음성·PDF→텍스트. 최대출력은 입력과 합쳐 통합 상한 내. 캐시 implicit만(explicit미지원). 컴퓨터 사용Preview; 음성/이미지 생성·Live API미지원. 최초 모델 발표일을 다시 지정하지 않음.",
+        "references": [
+          "https://ai.google.dev/gemini-api/docs/models/gemini-4-argon",
+          "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/"
+        ]
+      },
+      "candidate_ids": []
+    },
+    {
+      "id": "gemini-4-argon-standard-promo",
+      "model": "Gemini 4 Argon",
+      "provider": "Google",
+      "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
+      "checked_on": "2026-10-14",
+      "fields": {
+        "kind": "공식 API 가격",
+        "suite": "Gemini API Standard",
+        "condition": "2026-11-30까지 / USD·100만토큰당 / 2026-10-14 확인. Standard 유료 API; 구독·Batch/Flex/Priority·도구·세금·파트너 요금 별도.",
+        "status": "Stable",
+        "access": "Gemini API 유료",
+        "harness": "미측정",
+        "basis": "Google 공식 요금",
+        "입력 USD / 100만 토큰": 2,
+        "캐시 읽기 USD / 100만 토큰": 0.1,
+        "출력 USD / 100만 토큰": 10,
+        "note": "출력은thinking포함. implicit캐시만, explicit미지원. 실제작업비용아님. 무료API미제공. API Pro미제공과 앱Pro제공은 다른 경로.",
+        "references": [
+          "https://ai.google.dev/gemini-api/docs/pricing",
+          "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/"
+        ]
+      },
+      "candidate_ids": []
+    },
+    {
+      "id": "gemini-4-argon-standard-regular",
+      "model": "Gemini 4 Argon",
+      "provider": "Google",
+      "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
+      "checked_on": "2026-10-14",
+      "fields": {
+        "kind": "공식 API 가격",
+        "suite": "Gemini API Standard",
+        "condition": "2026-12-01부터 / USD·100만토큰당 / 2026-10-14 확인. Standard 유료 API; 구독·Batch/Flex/Priority·도구·세금·파트너 요금 별도.",
+        "status": "Stable",
+        "access": "Gemini API 유료",
+        "harness": "미측정",
+        "basis": "Google 공식 요금",
+        "입력 USD / 100만 토큰": 4,
+        "캐시 읽기 USD / 100만 토큰": 0.2,
+        "출력 USD / 100만 토큰": 20,
+        "note": "출력은thinking포함. implicit캐시만, explicit미지원. 실제작업비용아님. 무료API미제공. API Pro미제공과 앱Pro제공은 다른 경로.",
+        "references": [
+          "https://ai.google.dev/gemini-api/docs/pricing",
+          "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/"
+        ]
+      },
+      "candidate_ids": []
+    },
+    {
+      "id": "gemini-4-argon-google-card-vals-index",
+      "model": "Gemini 4 Argon",
+      "provider": "Google",
+      "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+      "checked_on": "2026-10-14",
+      "fields": {
+        "kind": "조건부 공식 카드 평가",
+        "suite": "Vals Index",
+        "condition": "2026-10-13 카드 / 2026-10-14 확인. 지식 업무 지수 (%). 카드결과2026-10, 방법서범위2026-09. 정확한 실행일·API스냅샷 미확인.",
+        "effort": "최고 thinking (공식 방법서)",
+        "harness": "공개 리더보드의 실행 환경; 세부 Harness 미확인",
+        "basis": "Vals AI 결과 (Google 카드 인용)",
+        "평가 점수": 68.9,
+        "측정 주체": "Vals AI 결과 (Google 카드 인용)",
+        "note": "Astra63.1 / Fable65.8 / Opus67.0. 기본pass@1, 각평가 예외 유지. OSWorld는 전체성공률 아님. 같은suite의 AA/Meta/다른 Harness 관측과 합치지 않음. 독립 공통환경 재현이나 실사용 측정 아님.",
+        "references": [
+          "https://deepmind.google/models/model-cards/gemini-4-argon/",
+          "https://deepmind.google/models/evals-methodology/gemini-4-argon/"
+        ]
+      },
+      "candidate_ids": []
+    },
+    {
+      "id": "gemini-4-argon-google-card-automation",
+      "model": "Gemini 4 Argon",
+      "provider": "Google",
+      "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+      "checked_on": "2026-10-14",
+      "fields": {
+        "kind": "조건부 공식 카드 평가",
+        "suite": "AutomationBench",
+        "condition": "2026-10-13 카드 / 2026-10-14 확인. score (%). 카드결과2026-10, 방법서범위2026-09. 정확한 실행일·API스냅샷 미확인.",
+        "effort": "최고 thinking (공식 방법서)",
+        "harness": "Zapier 비공개 세트; 세부 Harness 미확인",
+        "basis": "Zapier 공식 리더보드 (Google 카드 인용)",
+        "평가 점수": 51.3,
+        "측정 주체": "Zapier 공식 리더보드 (Google 카드 인용)",
+        "note": "Astra41.4 / Fable31.4 / Opus42.5. 기본pass@1, 각평가 예외 유지. OSWorld는 전체성공률 아님. 같은suite의 AA/Meta/다른 Harness 관측과 합치지 않음. 독립 공통환경 재현이나 실사용 측정 아님.",
+        "references": [
+          "https://deepmind.google/models/model-cards/gemini-4-argon/",
+          "https://deepmind.google/models/evals-methodology/gemini-4-argon/"
+        ]
+      },
+      "candidate_ids": []
+    },
+    {
+      "id": "gemini-4-argon-google-card-deepswe",
+      "model": "Gemini 4 Argon",
+      "provider": "Google",
+      "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+      "checked_on": "2026-10-14",
+      "fields": {
+        "kind": "조건부 공식 카드 평가",
+        "suite": "DeepSWE v1.1",
+        "condition": "2026-10-13 카드 / 2026-10-14 확인. 단일시도 pass@1 (%). 카드결과2026-10, 방법서범위2026-09. 정확한 실행일·API스냅샷 미확인.",
+        "effort": "최고 thinking (공식 방법서)",
+        "harness": "mini-swe-agent",
+        "basis": "Google 자체측정",
+        "평가 점수": 77.9,
+        "측정 주체": "Google 자체측정",
+        "note": "Astra74.1 / Fable67.4 / Opus74.2; 타 모델은 리더보드·카드. 기본pass@1, 각평가 예외 유지. OSWorld는 전체성공률 아님. 같은suite의 AA/Meta/다른 Harness 관측과 합치지 않음. 독립 공통환경 재현이나 실사용 측정 아님.",
+        "references": [
+          "https://deepmind.google/models/model-cards/gemini-4-argon/",
+          "https://deepmind.google/models/evals-methodology/gemini-4-argon/"
+        ]
+      },
+      "candidate_ids": []
+    },
+    {
+      "id": "gemini-4-argon-google-card-frontierswe",
+      "model": "Gemini 4 Argon",
+      "provider": "Google",
+      "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+      "checked_on": "2026-10-14",
+      "fields": {
+        "kind": "조건부 공식 카드 평가",
+        "suite": "FrontierSWE v2",
+        "condition": "2026-10-13 카드 / 2026-10-14 확인. 카드 점수 (%). 카드결과2026-10, 방법서범위2026-09. 정확한 실행일·API스냅샷 미확인.",
+        "effort": "최고 thinking (공식 방법서)",
+        "harness": "Proximal 평가 환경; 세부 Harness 미확인",
+        "basis": "Proximal 공식 리더보드 (Google 카드 인용)",
+        "평가 점수": 55.0,
+        "측정 주체": "Proximal 공식 리더보드 (Google 카드 인용)",
+        "note": "Astra65.5 / Fable56.3 / Opus62.3. 기본pass@1, 각평가 예외 유지. OSWorld는 전체성공률 아님. 같은suite의 AA/Meta/다른 Harness 관측과 합치지 않음. 독립 공통환경 재현이나 실사용 측정 아님.",
+        "references": [
+          "https://deepmind.google/models/model-cards/gemini-4-argon/",
+          "https://deepmind.google/models/evals-methodology/gemini-4-argon/"
+        ]
+      },
+      "candidate_ids": []
+    },
+    {
+      "id": "gemini-4-argon-google-card-terminal",
+      "model": "Gemini 4 Argon",
+      "provider": "Google",
+      "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+      "checked_on": "2026-10-14",
+      "fields": {
+        "kind": "조건부 공식 카드 평가",
+        "suite": "Terminal-Bench 4.0",
+        "condition": "2026-10-13 카드 / 2026-10-14 확인. 단일시도 pass@1 (%). 카드결과2026-10, 방법서범위2026-09. 정확한 실행일·API스냅샷 미확인.",
+        "effort": "최고 thinking (공식 방법서)",
+        "harness": "카드 방법서에서 세부 Harness명 미확인",
+        "basis": "Google 자체측정",
+        "평가 점수": 57.4,
+        "측정 주체": "Google 자체측정",
+        "note": "Astra58.2 / Fable57.9 / Opus66.4; 타 모델은 리더보드. 기본pass@1, 각평가 예외 유지. OSWorld는 전체성공률 아님. 같은suite의 AA/Meta/다른 Harness 관측과 합치지 않음. 독립 공통환경 재현이나 실사용 측정 아님.",
+        "references": [
+          "https://deepmind.google/models/model-cards/gemini-4-argon/",
+          "https://deepmind.google/models/evals-methodology/gemini-4-argon/"
+        ]
+      },
+      "candidate_ids": []
+    },
+    {
+      "id": "gemini-4-argon-google-card-graphwalks",
+      "model": "Gemini 4 Argon",
+      "provider": "Google",
+      "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+      "checked_on": "2026-10-14",
+      "fields": {
+        "kind": "조건부 공식 카드 평가",
+        "suite": "GraphWalks 256K–1M BFS",
+        "condition": "2026-10-13 카드 / 2026-10-14 확인. F1 (%). 카드결과2026-10, 방법서범위2026-09. 정확한 실행일·API스냅샷 미확인.",
+        "effort": "최고 thinking (공식 방법서)",
+        "harness": "GraphWalks 긴 문맥 200문제",
+        "basis": "Google 자체측정",
+        "평가 점수": 84.2,
+        "측정 주체": "Google 자체측정",
+        "note": "Astra71.8 / Fable65.0 / Opus66.8. 기본pass@1, 각평가 예외 유지. OSWorld는 전체성공률 아님. 같은suite의 AA/Meta/다른 Harness 관측과 합치지 않음. 독립 공통환경 재현이나 실사용 측정 아님.",
+        "references": [
+          "https://deepmind.google/models/model-cards/gemini-4-argon/",
+          "https://deepmind.google/models/evals-methodology/gemini-4-argon/"
+        ]
+      },
+      "candidate_ids": []
+    },
+    {
+      "id": "gemini-4-argon-google-card-posttrain",
+      "model": "Gemini 4 Argon",
+      "provider": "Google",
+      "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+      "checked_on": "2026-10-14",
+      "fields": {
+        "kind": "조건부 공식 카드 평가",
+        "suite": "PostTrainBench v1.1",
+        "condition": "2026-10-13 카드 / 2026-10-14 확인. 4기반모델·7평가 가중 종합 (%). 카드결과2026-10, 방법서범위2026-09. 정확한 실행일·API스냅샷 미확인.",
+        "effort": "최고 thinking (공식 방법서)",
+        "harness": "OpenCode / 10시간 / 단일 NVIDIA H100",
+        "basis": "Google 자체측정",
+        "평가 점수": 45.3,
+        "측정 주체": "Google 자체측정",
+        "note": "Astra44.3 / Fable40.2 / Opus49.3. 기본pass@1, 각평가 예외 유지. OSWorld는 전체성공률 아님. 같은suite의 AA/Meta/다른 Harness 관측과 합치지 않음. 독립 공통환경 재현이나 실사용 측정 아님.",
+        "references": [
+          "https://deepmind.google/models/model-cards/gemini-4-argon/",
+          "https://deepmind.google/models/evals-methodology/gemini-4-argon/"
+        ]
+      },
+      "candidate_ids": []
+    },
+    {
+      "id": "gemini-4-argon-google-card-osworld",
+      "model": "Gemini 4 Argon",
+      "provider": "Google",
+      "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+      "checked_on": "2026-10-14",
+      "fields": {
+        "kind": "조건부 공식 카드 평가",
+        "suite": "OSWorld 2.0 오프라인",
+        "condition": "2026-10-13 카드 / 2026-10-14 확인. 오프라인 부분 점수 (%). 카드결과2026-10, 방법서범위2026-09. 정확한 실행일·API스냅샷 미확인.",
+        "effort": "최고 thinking (공식 방법서)",
+        "harness": "Gemini CUA Harness /1080p /최대500step /공식08.08patch /3회 중 최대",
+        "basis": "Google 자체측정",
+        "평가 점수": 69.2,
+        "측정 주체": "Google 자체측정",
+        "note": "Astra72.6(공식 발표) / Fable·Opus 미제공. 기본pass@1, 각평가 예외 유지. OSWorld는 전체성공률 아님. 같은suite의 AA/Meta/다른 Harness 관측과 합치지 않음. 독립 공통환경 재현이나 실사용 측정 아님.",
+        "references": [
+          "https://deepmind.google/models/model-cards/gemini-4-argon/",
+          "https://deepmind.google/models/evals-methodology/gemini-4-argon/"
+        ]
+      },
+      "candidate_ids": []
+    }
+  ]
+}

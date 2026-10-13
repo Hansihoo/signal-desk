@@ -1,0 +1,1582 @@
+{
+  "packages": [
+    {
+      "version": "question-research-1",
+      "status": "ready",
+      "plan": {
+        "version": "question-research-1",
+        "request": {
+          "id": "gemini-4-argon-model-guide",
+          "topic_id": "opportunities",
+          "topic_path": [
+            "개발 동향",
+            "AI 모델·API",
+            "Gemini 4 Argon"
+          ],
+          "research_type": "model_introduction",
+          "reader": "유료 API 모델을 비교하는 개발자와 관리자. 문맥 창·평가 점수·구독과 API의 차이를 본문에서 설명한다.",
+          "reader_question": "기존 Gemini 4 Argon의 공개 확대 후 무엇이 달라졌고, Gemini 3.1 Pro와 Astra·Fable·Opus에 비해 어떤 장점·단점과 비용 조건이 있는가?",
+          "outcome": "통합 출력 한도와 평가별 우열, 할인 종료 및 제공 경로를 구분해 Argon의 비교 위치를 설명한다.",
+          "sources": [
+            {
+              "id": "argon-launch",
+              "title": "Argon 공개 확대 발표",
+              "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/",
+              "kind": "official_document"
+            },
+            {
+              "id": "argon-oct1",
+              "title": "Argon 단계적 제공 발표",
+              "url": "https://blog.google/intl/en-mena/company-news/technology/gemini-4-argon-our-next-era-of-frontier-intelligence/",
+              "kind": "official_document"
+            },
+            {
+              "id": "argon-api",
+              "title": "Argon API 모델 사양",
+              "url": "https://ai.google.dev/gemini-api/docs/models/gemini-4-argon",
+              "kind": "official_document"
+            },
+            {
+              "id": "argon-card",
+              "title": "Argon 공식 모델 카드",
+              "url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+              "kind": "official_document"
+            },
+            {
+              "id": "argon-method",
+              "title": "Argon 평가 방법서",
+              "url": "https://deepmind.google/models/evals-methodology/gemini-4-argon/",
+              "kind": "official_document"
+            },
+            {
+              "id": "google-prices",
+              "title": "Gemini API 요금",
+              "url": "https://ai.google.dev/gemini-api/docs/pricing",
+              "kind": "official_document"
+            },
+            {
+              "id": "gemini-31",
+              "title": "Gemini 3.1 Pro Preview 사양",
+              "url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.1-pro-preview",
+              "kind": "official_document"
+            },
+            {
+              "id": "astra-api",
+              "title": "GPT-6 Astra 사양",
+              "url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+              "kind": "official_document"
+            },
+            {
+              "id": "openai-prices",
+              "title": "OpenAI API 요금",
+              "url": "https://developers.openai.com/api/docs/pricing",
+              "kind": "official_document"
+            },
+            {
+              "id": "claude-models",
+              "title": "Claude 모델 목록과 사양",
+              "url": "https://platform.claude.com/docs/en/models/overview",
+              "kind": "official_document"
+            },
+            {
+              "id": "claude-prices",
+              "title": "Claude API 요금",
+              "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+              "kind": "official_document"
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "core",
+            "question": "기존 Gemini 4 Argon의 공개 확대 후 무엇이 달라졌고, Gemini 3.1 Pro와 Astra·Fable·Opus에 비해 어떤 장점·단점과 비용 조건이 있는가?",
+            "requires": [
+              "identity",
+              "change",
+              "specification",
+              "availability",
+              "comparison",
+              "advantages",
+              "limitations",
+              "price"
+            ]
+          }
+        ],
+        "method": "공식 발표·모델 카드·사양·가격과 평가 원문을 대조한다. 다른 모델과의 비교표에서 평가판·추론·측정 주체·Harness·단위를 보존하고 장점과 단점을 근거로 설명한다. 활용 예시·가상 업무·실습 코드·응용 문제를 넣지 않는다."
+      },
+      "sources": [
+        {
+          "id": "argon-launch",
+          "title": "Argon 공개 확대 발표",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "6a9215671721d49b14e444eea265f082c4b9a7e5e8b5260cd2e65802f8f9643f",
+          "text": "Gemini 4 Argon is now globally available today for developers and enterprises",
+          "text_hash": "102f6a52ccf342cd4d33e81c304752d349b83266f4874e1cd1b09900baa08a9e",
+          "published_on": "2026-10-13",
+          "first_collected_at": null,
+          "last_successful_collection": "2026-10-13T20:16:52+00:00",
+          "reviewed_at": "2026-10-14",
+          "raw_path": "data/raw/ai_news/official/2026-10-14/argon-launch.html",
+          "review_scope": "API 사양·요금·카드의 비교표와 평가 방법을 원문으로 대조했다. 공개 text는 짧은 증거 발췌이며 전체 원문은 raw_path에 보존한다. 프로젝트 전체의 최초 취득일은 미확인으로 남긴다. 자체 모델 실행·평가 재측정·안전성 보고서 전체 검토는 수행하지 않았다."
+        },
+        {
+          "id": "argon-oct1",
+          "title": "Argon 단계적 제공 발표",
+          "url": "https://blog.google/intl/en-mena/company-news/technology/gemini-4-argon-our-next-era-of-frontier-intelligence/",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "41461046ddf7ca4c57ff3d717b175b251a1ce2ffeaf5603442829519a58f62dd",
+          "text": "trusted cyber defenders through our Fairwind Program",
+          "text_hash": "806913a8defdf110e0c46b1dbf4bea7ff1eac74bb999779b89cffb5d46442407",
+          "published_on": "2026-10-01",
+          "first_collected_at": null,
+          "last_successful_collection": "2026-10-13T20:16:11+00:00",
+          "reviewed_at": "2026-10-14",
+          "raw_path": "data/raw/ai_news/official/2026-10-14/argon-oct1.html",
+          "review_scope": "API 사양·요금·카드의 비교표와 평가 방법을 원문으로 대조했다. 공개 text는 짧은 증거 발췌이며 전체 원문은 raw_path에 보존한다. 프로젝트 전체의 최초 취득일은 미확인으로 남긴다. 자체 모델 실행·평가 재측정·안전성 보고서 전체 검토는 수행하지 않았다."
+        },
+        {
+          "id": "argon-api",
+          "title": "Argon API 모델 사양",
+          "url": "https://ai.google.dev/gemini-api/docs/models/gemini-4-argon",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "1533dab4104bbe0493c64f66bf76b737eb7faa62ef3701aec0c474f9b43ccb91",
+          "text": "Context window (unified input and output token limit) 1,048,576 Max output 65,536 (default synchronous) / up to 1,048,576 (with long decode )",
+          "text_hash": "9a9c306ed11f6c7b735fe7108c32d994907da328d71563b5b627b76eebdd2d4a",
+          "published_on": null,
+          "first_collected_at": null,
+          "last_successful_collection": "2026-10-13T20:16:12+00:00",
+          "reviewed_at": "2026-10-14",
+          "raw_path": "data/raw/ai_news/official/2026-10-14/argon-api.html",
+          "review_scope": "API 사양·요금·카드의 비교표와 평가 방법을 원문으로 대조했다. 공개 text는 짧은 증거 발췌이며 전체 원문은 raw_path에 보존한다. 프로젝트 전체의 최초 취득일은 미확인으로 남긴다. 자체 모델 실행·평가 재측정·안전성 보고서 전체 검토는 수행하지 않았다."
+        },
+        {
+          "id": "argon-card",
+          "title": "Argon 공식 모델 카드",
+          "url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "fe5d46d6870125fd6743ae61669f69788e617acefcd3e16f86233d151b71c552",
+          "text": "FrontierSWE v2 55.0% 65.5% 56.3% 62.3%",
+          "text_hash": "b83895275918ed614216d7d90388b75a6deee3cff7b8821aebef4f173a9f3e8e",
+          "published_on": "2026-10-13",
+          "first_collected_at": null,
+          "last_successful_collection": "2026-10-13T20:16:11+00:00",
+          "reviewed_at": "2026-10-14",
+          "raw_path": "data/raw/ai_news/official/2026-10-14/argon-card.html",
+          "review_scope": "API 사양·요금·카드의 비교표와 평가 방법을 원문으로 대조했다. 공개 text는 짧은 증거 발췌이며 전체 원문은 raw_path에 보존한다. 프로젝트 전체의 최초 취득일은 미확인으로 남긴다. 자체 모델 실행·평가 재측정·안전성 보고서 전체 검토는 수행하지 않았다."
+        },
+        {
+          "id": "argon-method",
+          "title": "Argon 평가 방법서",
+          "url": "https://deepmind.google/models/evals-methodology/gemini-4-argon/",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "ff1df6bdeddc4c0f48840c09a8a7813b10ae7ad9e053892da68dabf64f09bff7",
+          "text": "using a mini-swe agent harness",
+          "text_hash": "0c1e5673fc3be1f2ecc1d75ecd7fbfaa71e94244144a0f8ccc52b370933579dc",
+          "published_on": null,
+          "first_collected_at": null,
+          "last_successful_collection": "2026-10-13T20:16:11+00:00",
+          "reviewed_at": "2026-10-14",
+          "raw_path": "data/raw/ai_news/official/2026-10-14/argon-method.pdf",
+          "review_scope": "API 사양·요금·카드의 비교표와 평가 방법을 원문으로 대조했다. 공개 text는 짧은 증거 발췌이며 전체 원문은 raw_path에 보존한다. 프로젝트 전체의 최초 취득일은 미확인으로 남긴다. 자체 모델 실행·평가 재측정·안전성 보고서 전체 검토는 수행하지 않았다."
+        },
+        {
+          "id": "google-prices",
+          "title": "Gemini API 요금",
+          "url": "https://ai.google.dev/gemini-api/docs/pricing",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "23f02380062b1168b376257e30d78c7c3d512db4b488e51c55fbbfd8f5071097",
+          "text": "$2.00 through November 30, 2026. $4.00 starting December 1, 2026.",
+          "text_hash": "972218f18a22c6df0898cebcab928a48abee5e2346475b85b698e15315c70c0f",
+          "published_on": null,
+          "first_collected_at": null,
+          "last_successful_collection": "2026-10-13T20:16:11+00:00",
+          "reviewed_at": "2026-10-14",
+          "raw_path": "data/raw/ai_news/official/2026-10-14/google-prices.html",
+          "review_scope": "API 사양·요금·카드의 비교표와 평가 방법을 원문으로 대조했다. 공개 text는 짧은 증거 발췌이며 전체 원문은 raw_path에 보존한다. 프로젝트 전체의 최초 취득일은 미확인으로 남긴다. 자체 모델 실행·평가 재측정·안전성 보고서 전체 검토는 수행하지 않았다."
+        },
+        {
+          "id": "gemini-31",
+          "title": "Gemini 3.1 Pro Preview 사양",
+          "url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.1-pro-preview",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "10629279d451e4dd440fa998cba3a9a3b69efd79373c46891d4978450d453144",
+          "text": "Input token limit 1,048,576 Output token limit 65,536",
+          "text_hash": "af57d5e230cafd6ce5d18549c684b6360283014b2b131d5311ded7de7f65753b",
+          "published_on": null,
+          "first_collected_at": null,
+          "last_successful_collection": "2026-10-13T20:16:12+00:00",
+          "reviewed_at": "2026-10-14",
+          "raw_path": "data/raw/ai_news/official/2026-10-14/gemini-31.html",
+          "review_scope": "API 사양·요금·카드의 비교표와 평가 방법을 원문으로 대조했다. 공개 text는 짧은 증거 발췌이며 전체 원문은 raw_path에 보존한다. 프로젝트 전체의 최초 취득일은 미확인으로 남긴다. 자체 모델 실행·평가 재측정·안전성 보고서 전체 검토는 수행하지 않았다."
+        },
+        {
+          "id": "astra-api",
+          "title": "GPT-6 Astra 사양",
+          "url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "98abb142116f31e023d57fbd1afd853fbf5c3ee52b3fddae60b7f93ed70947c7",
+          "text": "Prompts with more than 272K input tokens are priced at 2x input and cache rates and 1.5x output for the full request.",
+          "text_hash": "7e9d4d5102b71a9b5e23d8be79f69a9acd872f992e7d6ea3bdb9e530d5605a42",
+          "published_on": null,
+          "first_collected_at": null,
+          "last_successful_collection": "2026-10-13T20:16:11+00:00",
+          "reviewed_at": "2026-10-14",
+          "raw_path": "data/raw/ai_news/official/2026-10-14/astra-api.html",
+          "review_scope": "API 사양·요금·카드의 비교표와 평가 방법을 원문으로 대조했다. 공개 text는 짧은 증거 발췌이며 전체 원문은 raw_path에 보존한다. 프로젝트 전체의 최초 취득일은 미확인으로 남긴다. 자체 모델 실행·평가 재측정·안전성 보고서 전체 검토는 수행하지 않았다."
+        },
+        {
+          "id": "openai-prices",
+          "title": "OpenAI API 요금",
+          "url": "https://developers.openai.com/api/docs/pricing",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "9ddd3674cde2084f5c0635ee0b5885cd1e5af300341c49c2e87fba08663f215f",
+          "text": "gpt-6-astra $10.00 $1.00 $12.50 $50.00 $20.00 $2.00 $25.00 $75.00",
+          "text_hash": "eb7f926bd7d81280f5d9ce02d801eba0d8e6e920acaf9b027e21ac5ad36f1192",
+          "published_on": null,
+          "first_collected_at": null,
+          "last_successful_collection": "2026-10-13T20:16:10+00:00",
+          "reviewed_at": "2026-10-14",
+          "raw_path": "data/raw/ai_news/official/2026-10-14/openai-prices.html",
+          "review_scope": "API 사양·요금·카드의 비교표와 평가 방법을 원문으로 대조했다. 공개 text는 짧은 증거 발췌이며 전체 원문은 raw_path에 보존한다. 프로젝트 전체의 최초 취득일은 미확인으로 남긴다. 자체 모델 실행·평가 재측정·안전성 보고서 전체 검토는 수행하지 않았다."
+        },
+        {
+          "id": "claude-models",
+          "title": "Claude 모델 목록과 사양",
+          "url": "https://platform.claude.com/docs/en/models/overview",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "895fa1ea5abc726548b1520d312318ea89aa84e66c8d3aeea9302d9293cf0985",
+          "text": "Context window 1M tokens 1M tokens 1M tokens 1M tokens Max output 128K tokens",
+          "text_hash": "64250133d5e15790cec94b83393b4984439899dd5b400d254588431172468e0d",
+          "published_on": null,
+          "first_collected_at": null,
+          "last_successful_collection": "2026-10-13T20:16:11+00:00",
+          "reviewed_at": "2026-10-14",
+          "raw_path": "data/raw/ai_news/official/2026-10-14/claude-models.html",
+          "review_scope": "API 사양·요금·카드의 비교표와 평가 방법을 원문으로 대조했다. 공개 text는 짧은 증거 발췌이며 전체 원문은 raw_path에 보존한다. 프로젝트 전체의 최초 취득일은 미확인으로 남긴다. 자체 모델 실행·평가 재측정·안전성 보고서 전체 검토는 수행하지 않았다."
+        },
+        {
+          "id": "claude-prices",
+          "title": "Claude API 요금",
+          "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "a8bb25e08243b55c0cd69638b4e810e2c4f0fd0bcf6231ef1812302fd157fc7c",
+          "text": "Claude Opus 5.5 For long-running agentic coding and knowledge work $4 / MTok $20 / MTok",
+          "text_hash": "e2f01046230f988b0fb855dac27f12281cf6935232766d66c2439dae4519a5dc",
+          "published_on": null,
+          "first_collected_at": null,
+          "last_successful_collection": "2026-10-13T20:16:11+00:00",
+          "reviewed_at": "2026-10-14",
+          "raw_path": "data/raw/ai_news/official/2026-10-14/claude-prices.html",
+          "review_scope": "API 사양·요금·카드의 비교표와 평가 방법을 원문으로 대조했다. 공개 text는 짧은 증거 발췌이며 전체 원문은 raw_path에 보존한다. 프로젝트 전체의 최초 취득일은 미확인으로 남긴다. 자체 모델 실행·평가 재측정·안전성 보고서 전체 검토는 수행하지 않았다."
+        }
+      ],
+      "analysis": {
+        "evidence": [
+          {
+            "id": "e-argon-launch",
+            "source_id": "argon-launch",
+            "quote": "Gemini 4 Argon is now globally available today for developers and enterprises",
+            "source_hash": "6a9215671721d49b14e444eea265f082c4b9a7e5e8b5260cd2e65802f8f9643f",
+            "meaning": "10월13일 발표는 기존 모델의 공개 확대이다. API는 유료, 앱은 Pro·Ultra, Antigravity는 Ultra 경로이며 실제 계정 접근 시험은 수행하지 않았다.",
+            "limits": "발표, 사양, 요금과 원문 평가의 확인 범위이다. 실제 작업 성공률, 지연, 총비용 및 계정 제공을 추정하지 않는다.",
+            "supports": [
+              "identity",
+              "availability",
+              "change"
+            ]
+          },
+          {
+            "id": "e-argon-oct1",
+            "source_id": "argon-oct1",
+            "quote": "trusted cyber defenders through our Fairwind Program",
+            "source_hash": "41461046ddf7ca4c57ff3d717b175b251a1ce2ffeaf5603442829519a58f62dd",
+            "meaning": "10월1일 지역 공식 발표의 Fairwind 단계적 접근과 현재 공개 확대를 구분한다. 최초 발표일을10월13일로 다시 쓰지 않는다.",
+            "limits": "발표, 사양, 요금과 원문 평가의 확인 범위이다. 실제 작업 성공률, 지연, 총비용 및 계정 제공을 추정하지 않는다.",
+            "supports": [
+              "change"
+            ]
+          },
+          {
+            "id": "e-argon-api",
+            "source_id": "argon-api",
+            "quote": "Context window (unified input and output token limit) 1,048,576 Max output 65,536 (default synchronous) / up to 1,048,576 (with long decode )",
+            "source_hash": "1533dab4104bbe0493c64f66bf76b737eb7faa62ef3701aec0c474f9b43ccb91",
+            "meaning": "Stable ID·텍스트/이미지/영상/음성/PDF 입력과 텍스트 출력, 통합1,048,576토큰 및 기본65,536/long decode상한, implicit-only 캐시와 Preview컴퓨터사용을 실제 사양표에서 확인했다.",
+            "limits": "발표, 사양, 요금과 원문 평가의 확인 범위이다. 실제 작업 성공률, 지연, 총비용 및 계정 제공을 추정하지 않는다.",
+            "supports": [
+              "specification",
+              "availability",
+              "limitations"
+            ]
+          },
+          {
+            "id": "e-argon-card",
+            "source_id": "argon-card",
+            "quote": "FrontierSWE v2 55.0% 65.5% 56.3% 62.3%",
+            "source_hash": "fe5d46d6870125fd6743ae61669f69788e617acefcd3e16f86233d151b71c552",
+            "meaning": "원문 비교표 열은 Argon/Astra/Fable5.1/Opus5.5. 선택한8평가 수치와 반대 결과, 카드의 환각·지연 한계를 확인했다. Google 제공표이지 공통환경에서 실행한 독립 측정은 아니다.",
+            "limits": "발표, 사양, 요금과 원문 평가의 확인 범위이다. 실제 작업 성공률, 지연, 총비용 및 계정 제공을 추정하지 않는다.",
+            "supports": [
+              "comparison",
+              "advantages",
+              "limitations"
+            ]
+          },
+          {
+            "id": "e-argon-method",
+            "source_id": "argon-method",
+            "quote": "using a mini-swe agent harness",
+            "source_hash": "ff1df6bdeddc4c0f48840c09a8a7813b10ae7ad9e053892da68dabf64f09bff7",
+            "meaning": "5쪽 PDF에서 DeepSWE mini-swe-agent, Frontier Proximal리더보드, Terminal Argon자체평가/경쟁모델리더보드, GraphWalks자체200문제 F1, PostTrain1.1공통OpenCode10시간/H100을 확인했다. 높은추론·단일시도 기본과 9월/10월 표기차를 유지한다.",
+            "limits": "발표, 사양, 요금과 원문 평가의 확인 범위이다. 실제 작업 성공률, 지연, 총비용 및 계정 제공을 추정하지 않는다.",
+            "supports": [
+              "comparison",
+              "advantages",
+              "limitations"
+            ]
+          },
+          {
+            "id": "e-google-prices",
+            "source_id": "google-prices",
+            "quote": "$2.00 through November 30, 2026. $4.00 starting December 1, 2026.",
+            "source_hash": "23f02380062b1168b376257e30d78c7c3d512db4b488e51c55fbbfd8f5071097",
+            "meaning": "Argon Standard 2/0.10/10→12월1일4/0.20/20 USD100만토큰, Batch/Flex/Priority와 검색별도, 3.1Pro 입력≤200K2/0.20/12·>200K4/0.40/18을 요금표에서 확인했다.",
+            "limits": "발표, 사양, 요금과 원문 평가의 확인 범위이다. 실제 작업 성공률, 지연, 총비용 및 계정 제공을 추정하지 않는다.",
+            "supports": [
+              "price",
+              "limitations"
+            ],
+            "price_type": "product_price"
+          },
+          {
+            "id": "e-gemini-31",
+            "source_id": "gemini-31",
+            "quote": "Input token limit 1,048,576 Output token limit 65,536",
+            "source_hash": "10629279d451e4dd440fa998cba3a9a3b69efd79373c46891d4978450d453144",
+            "meaning": "3.1Pro Preview는 입력1,048,576과 출력65,536을 별도 표기한다. Argon의 통합한도를 더 큰 입력창으로 오해하지 않는다. 동등평가판의 직접 성능배율은 확보하지 않았다.",
+            "limits": "발표, 사양, 요금과 원문 평가의 확인 범위이다. 실제 작업 성공률, 지연, 총비용 및 계정 제공을 추정하지 않는다.",
+            "supports": [
+              "change",
+              "specification",
+              "comparison"
+            ]
+          },
+          {
+            "id": "e-astra-api",
+            "source_id": "astra-api",
+            "quote": "Prompts with more than 272K input tokens are priced at 2x input and cache rates and 1.5x output for the full request.",
+            "source_hash": "98abb142116f31e023d57fbd1afd853fbf5c3ee52b3fddae60b7f93ed70947c7",
+            "meaning": "Astra 입력텍스트/이미지→텍스트, 문맥1,050,000/출력128,000; 네이티브음성·영상 미지원. 현행 Pricing절에서 입력272K초과면 요청 전체 입력·캐시2배,출력1.5배를 확인했다. 도구의 이미지생성 지원과 기본모델출력을 구분했다.",
+            "limits": "발표, 사양, 요금과 원문 평가의 확인 범위이다. 실제 작업 성공률, 지연, 총비용 및 계정 제공을 추정하지 않는다.",
+            "supports": [
+              "specification",
+              "comparison",
+              "price"
+            ],
+            "price_type": "product_price"
+          },
+          {
+            "id": "e-openai-prices",
+            "source_id": "openai-prices",
+            "quote": "gpt-6-astra $10.00 $1.00 $12.50 $50.00 $20.00 $2.00 $25.00 $75.00",
+            "source_hash": "9ddd3674cde2084f5c0635ee0b5885cd1e5af300341c49c2e87fba08663f215f",
+            "meaning": "Astra Standard 짧은문맥10/1/50·긴문맥20/2/75를 확인했다. 가격 페이지 단독에는 경계 숫자가 없으나 함께 취득한 현행 astra-api의 Pricing절에서272K초과 조건을 확인했다.",
+            "limits": "발표, 사양, 요금과 원문 평가의 확인 범위이다. 실제 작업 성공률, 지연, 총비용 및 계정 제공을 추정하지 않는다.",
+            "supports": [
+              "price",
+              "comparison"
+            ],
+            "price_type": "product_price"
+          },
+          {
+            "id": "e-claude-models",
+            "source_id": "claude-models",
+            "quote": "Context window 1M tokens 1M tokens 1M tokens 1M tokens Max output 128K tokens",
+            "source_hash": "895fa1ea5abc726548b1520d312318ea89aa84e66c8d3aeea9302d9293cf0985",
+            "meaning": "Fable/Opus 텍스트·이미지→텍스트, 문맥1M/출력128K와 ClaudeAPI 및 파트너 경로를 확인했다.",
+            "limits": "발표, 사양, 요금과 원문 평가의 확인 범위이다. 실제 작업 성공률, 지연, 총비용 및 계정 제공을 추정하지 않는다.",
+            "supports": [
+              "specification",
+              "comparison",
+              "availability"
+            ]
+          },
+          {
+            "id": "e-claude-prices",
+            "source_id": "claude-prices",
+            "quote": "Claude Opus 5.5 For long-running agentic coding and knowledge work $4 / MTok $20 / MTok",
+            "source_hash": "a8bb25e08243b55c0cd69638b4e810e2c4f0fd0bcf6231ef1812302fd157fc7c",
+            "meaning": "Fable10/0.25/50,Opus4/0.20/20 USD100만토큰 기본 입력/캐시읽기/출력. 캐시쓰기·도구·Batch·지역 처리 요금은 따로다.",
+            "limits": "발표, 사양, 요금과 원문 평가의 확인 범위이다. 실제 작업 성공률, 지연, 총비용 및 계정 제공을 추정하지 않는다.",
+            "supports": [
+              "price",
+              "comparison"
+            ],
+            "price_type": "product_price"
+          }
+        ],
+        "answers": [
+          {
+            "question_id": "core",
+            "answer": "기존 Argon의10월13일 공개 확대를 별도 모델로 세지 않는다. long decode와 긴문맥평가가 특징이고, FrontierSWE·Terminal에서 Astra/Opus에 뒤지므로 만능코딩우위는 아니다. 할인후Standard4/20과 통합입출력조건으로 비교한다.",
+            "reasoning": "이전 단계적 접근과 현재 공개 발표를 대조하고, 사양·요금표 및 카드의 유리/불리한 결과를 평가방법별로 읽는다.",
+            "limits": "3.1Pro 대비 동일조건 성능배율, 실사용 비용과 속도 및 계정접근 미검증.",
+            "evidence_ids": [
+              "e-argon-launch",
+              "e-argon-oct1",
+              "e-argon-api",
+              "e-argon-card",
+              "e-argon-method",
+              "e-google-prices",
+              "e-gemini-31",
+              "e-astra-api",
+              "e-openai-prices",
+              "e-claude-models",
+              "e-claude-prices"
+            ]
+          }
+        ],
+        "gaps": []
+      },
+      "draft": {
+        "report": {
+          "id": "gemini-4-argon-model-guide",
+          "topic_id": "opportunities",
+          "topic_path": [
+            "개발 동향",
+            "AI 모델·API",
+            "Gemini 4 Argon"
+          ],
+          "checked_on": "2026-10-14",
+          "title": "Gemini 4 Argon 모델 소개: 공개 확대와 경쟁 모델 비교",
+          "description": "유료 API와 구독 서비스로 제공 범위가 넓어진 Gemini 4 Argon을 이전 모델 및 경쟁 모델과 비교하기 위해 작성했습니다.",
+          "scope": "기존 모델의 공개 확대와 공식 비교 자료. 2026-10-14 KST 확인; 자체 모델 실행, 실사용 비용 측정 없음.",
+          "deck": "Google의 고난도 추론 모델인 Gemini 4 Argon을 소개합니다. 공개 확대 이후의 제공 조건과 경쟁 모델 대비 강점과 약점을 사양, 평가, 요금 비교로 판단할 수 있도록 작성했습니다.",
+          "source_note": "Google, OpenAI, Anthropic의 공식 원문을 대조했습니다. 평가표는 Google 모델 카드가 모은 결과이며 측정 주체와 실행 환경이 섞여 있습니다. 모든 모델을 같은 환경에서 직접 측정한 순위가 아닙니다.",
+          "highlights": [
+            "기존 Argon의 공개 확대",
+            "입출력 통합 한도",
+            "평가별 강점과 약점",
+            "11월 말 할인 종료"
+          ],
+          "summary": [
+            {
+              "kind": "fact",
+              "label": "무엇이 달라졌나",
+              "text": "10월 13일 발표에서 유료 Gemini API와 구독 서비스로 제공 범위가 넓어졌습니다. API는 프로그램에서 온라인 모델을 호출하는 방식입니다. 이전에는 신뢰된 사이버 방어자를 대상으로 단계적으로 제공했으며, 이번 공개 확대를 별도의 새 모델로 세지 않습니다.",
+              "source_ids": [
+                "argon-launch",
+                "argon-oct1"
+              ]
+            },
+            {
+              "kind": "judgment",
+              "label": "다른 모델과의 위치",
+              "text": "Google 공식 비교표에서 Argon은 긴 입력에 있는 관계를 따라 답을 찾는 평가에서 GPT-6 Astra, Claude Fable 5.1, Claude Opus 5.5보다 높습니다. 코드 수정과 터미널 작업은 평가에 따라 결과가 뒤집힙니다. 일부 우수한 점수가 코딩 전체의 우위를 뜻하지는 않습니다.",
+              "source_ids": [
+                "argon-card",
+                "argon-method"
+              ]
+            },
+            {
+              "kind": "fact",
+              "label": "한도와 비용",
+              "text": "입력과 답변 출력을 합친 한도는 최대 1,048,576토큰이고 기본 방식의 출력 상한은 65,536토큰입니다. 더 긴 생성에는 별도 출력 방식이 필요합니다. Standard API는 100만토큰당 입력 2달러, 출력 10달러이며, 12월 1일부터 입력 4달러, 출력 20달러입니다. 이는 구독료나 작업 한 건의 실제 비용이 아닙니다.",
+              "source_ids": [
+                "argon-api",
+                "google-prices"
+              ]
+            }
+          ],
+          "metrics": [],
+          "datasets": [],
+          "learning": [],
+          "tables": [
+            {
+              "id": "specs",
+              "title": "이전 Pro와 경쟁 모델의 API 사양",
+              "columns": [
+                "항목",
+                "Gemini 4 Argon",
+                "Gemini 3.1 Pro Preview",
+                "GPT-6 Astra",
+                "Claude Fable 5.1 / Opus 5.5"
+              ],
+              "rows": [
+                {
+                  "values": [
+                    "입력→출력",
+                    "텍스트, 이미지, 영상, 음성, PDF→텍스트",
+                    "텍스트, 이미지, 영상, 음성, PDF→텍스트",
+                    "텍스트, 이미지→텍스트",
+                    "텍스트, 이미지→텍스트"
+                  ],
+                  "source_ids": [
+                    "argon-api",
+                    "gemini-31",
+                    "astra-api",
+                    "claude-models"
+                  ]
+                },
+                {
+                  "values": [
+                    "문맥 한도 (토큰)",
+                    "1,048,576: 입력+출력 합계",
+                    "입력1,048,576 별도 표기",
+                    "문맥1,050,000",
+                    "문맥1M (공식 표기)"
+                  ],
+                  "source_ids": [
+                    "argon-api",
+                    "gemini-31",
+                    "astra-api",
+                    "claude-models"
+                  ]
+                },
+                {
+                  "values": [
+                    "최대 출력 (토큰)",
+                    "기본65,536 / long decode상한1,048,576; 통합 한도 내",
+                    "65,536",
+                    "128,000",
+                    "128K (공식 표기)"
+                  ],
+                  "source_ids": [
+                    "argon-api",
+                    "gemini-31",
+                    "astra-api",
+                    "claude-models"
+                  ]
+                },
+                {
+                  "values": [
+                    "제공 범위",
+                    "Stable 유료Gemini API; 앱Pro, Ultra, Antigravity Ultra",
+                    "Preview Gemini API",
+                    "OpenAI API / ChatGPT, Codex 범위 별도",
+                    "Claude API 및 Bedrock, Google Cloud, Foundry 등"
+                  ],
+                  "source_ids": [
+                    "argon-api",
+                    "argon-launch",
+                    "gemini-31",
+                    "astra-api",
+                    "claude-models"
+                  ]
+                }
+              ],
+              "note": "2026-10-14 공식 문서 확인. 토큰은 모델이 문장을 처리할 때 나누는 단위로 글자 수와 같지 않습니다. K와 M은 천 또는 백만 규모를 줄여 쓴 원문 표기이며 정확한 한도는 제공자의 정의에 따릅니다. 문맥 창은 한 번의 처리에 들어가는 토큰 범위이고 출력 한도는 생성 답변의 상한입니다. 제공자마다 한도 정의가 다릅니다. 계정 및 지역 접근은 시험하지 않았습니다."
+            },
+            {
+              "id": "benchmarks",
+              "title": "평가별 경쟁 모델 비교",
+              "columns": [
+                "평가, 단위",
+                "Argon",
+                "Astra",
+                "Fable 5.1",
+                "Opus 5.5",
+                "측정 주체, 조건"
+              ],
+              "rows": [
+                {
+                  "values": [
+                    "Vals Index (%)",
+                    "68.9",
+                    "63.1",
+                    "65.8",
+                    "67.0",
+                    "Vals AI 결과를 Google 카드가 인용"
+                  ],
+                  "source_ids": [
+                    "argon-card",
+                    "argon-method"
+                  ]
+                },
+                {
+                  "values": [
+                    "AutomationBench score (%)",
+                    "51.3",
+                    "41.4",
+                    "31.4",
+                    "42.5",
+                    "Zapier 비공개 세트, 공개 리더보드 인용"
+                  ],
+                  "source_ids": [
+                    "argon-card",
+                    "argon-method"
+                  ]
+                },
+                {
+                  "values": [
+                    "DeepSWE v1.1 (%)",
+                    "77.9",
+                    "74.1",
+                    "67.4",
+                    "74.2",
+                    "Argon 자체측정 mini-swe-agent; 타 모델은 리더보드/카드"
+                  ],
+                  "source_ids": [
+                    "argon-card",
+                    "argon-method"
+                  ]
+                },
+                {
+                  "values": [
+                    "FrontierSWE v2 (%)",
+                    "55.0",
+                    "65.5",
+                    "56.3",
+                    "62.3",
+                    "Proximal 공식 리더보드 인용"
+                  ],
+                  "source_ids": [
+                    "argon-card",
+                    "argon-method"
+                  ]
+                },
+                {
+                  "values": [
+                    "Terminal-Bench4.0 (%)",
+                    "57.4",
+                    "58.2",
+                    "57.9",
+                    "66.4",
+                    "Argon 자체측정; 타 모델은 공식 리더보드"
+                  ],
+                  "source_ids": [
+                    "argon-card",
+                    "argon-method"
+                  ]
+                },
+                {
+                  "values": [
+                    "GraphWalks256K–1M BFS F1 (%)",
+                    "84.2",
+                    "71.8",
+                    "65.0",
+                    "66.8",
+                    "Google 자체측정; 긴 문맥200문제"
+                  ],
+                  "source_ids": [
+                    "argon-card",
+                    "argon-method"
+                  ]
+                },
+                {
+                  "values": [
+                    "PostTrainBench v1.1 가중 종합 (%)",
+                    "45.3",
+                    "44.3",
+                    "40.2",
+                    "49.3",
+                    "Google 자체측정; 공통OpenCode, 10시간, 단일H100"
+                  ],
+                  "source_ids": [
+                    "argon-card",
+                    "argon-method"
+                  ]
+                },
+                {
+                  "values": [
+                    "OSWorld2.0 오프라인 부분 점수 (%)",
+                    "69.2",
+                    "72.6",
+                    "미제공",
+                    "미제공",
+                    "Argon 자체측정3회 중 최대; Astra 공식 발표"
+                  ],
+                  "source_ids": [
+                    "argon-card",
+                    "argon-method"
+                  ]
+                }
+              ],
+              "note": "Google의 2026-10-13 카드 비교 열 순서 그대로. 기본은 Argon 최고 thinking, pass@1(단일 시도), 경쟁 모델은 최대/최선 공개 추론 결과; 예외는 각 평가 방법에 따릅니다. 정확한 API 스냅샷, 실행일은 표에 없어 미확인입니다. 방법서의 범위는2026-09, 카드 결과는2026-10로 표기되어 같은 측정일로 맞추지 않았습니다. 점수 간 평균이나 전체 순위를 만들지 않습니다."
+            },
+            {
+              "id": "prices",
+              "title": "Standard API 가격과 할인 종료",
+              "columns": [
+                "모델, 적용 조건",
+                "입력 USD/100만토큰",
+                "캐시 읽기 USD/100만토큰",
+                "출력 USD/100만토큰"
+              ],
+              "rows": [
+                {
+                  "values": [
+                    "Argon: 2026-11-30까지",
+                    "2",
+                    "0.10 (implicit만)",
+                    "10 (thinking포함)"
+                  ],
+                  "source_ids": [
+                    "google-prices"
+                  ]
+                },
+                {
+                  "values": [
+                    "Argon: 2026-12-01부터",
+                    "4",
+                    "0.20 (implicit만)",
+                    "20 (thinking포함)"
+                  ],
+                  "source_ids": [
+                    "google-prices"
+                  ]
+                },
+                {
+                  "values": [
+                    "3.1Pro: 입력≤200K / >200K",
+                    "2 / 4",
+                    "0.20 / 0.40",
+                    "12 / 18 (thinking포함)"
+                  ],
+                  "source_ids": [
+                    "google-prices"
+                  ]
+                },
+                {
+                  "values": [
+                    "Astra: 입력 ≤272K / >272K (요청 전체)",
+                    "10 / 20",
+                    "1 / 2",
+                    "50 / 75"
+                  ],
+                  "source_ids": [
+                    "openai-prices",
+                    "astra-api"
+                  ]
+                },
+                {
+                  "values": [
+                    "Fable 5.1: 기본",
+                    "10",
+                    "0.25",
+                    "50"
+                  ],
+                  "source_ids": [
+                    "claude-prices"
+                  ]
+                },
+                {
+                  "values": [
+                    "Opus 5.5: 기본",
+                    "4",
+                    "0.20",
+                    "20"
+                  ],
+                  "source_ids": [
+                    "claude-prices"
+                  ]
+                }
+              ],
+              "note": "2026-10-14 확인. API 토큰 단가이며 구독료나 실제 작업 비용이 아닙니다. Astra는 현행 모델 사양의 Pricing절에 따라 입력272K토큰 초과 시 요청 전체 입력과 캐시 요율2배, 출력1.5배를 적용합니다. 캐시 쓰기와 보관, 도구, Batch/Flex, 우선 처리, 지역/파트너 요금과 세금은 별도입니다."
+            }
+          ],
+          "explanation": [
+            {
+              "id": "overview",
+              "title": "모델 개요와 공개 확대",
+              "lead": "고난도 추론 모델의 제공 범위가 넓어졌습니다.",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "kind": "fact",
+                  "title": "기존 모델의 새 제공 단계",
+                  "text": "Argon은 복잡한 코드 작업과 지식 업무를 겨냥한 Google 모델입니다. 10월1일 지역 공식 발표에서는 Fairwind의 신뢰된 사이버 방어자부터 단계적으로 제공했습니다. 10월13일 발표는 유료 API와 일반 구독 서비스로의 공개 확대입니다. 기존 모델 식별자를 유지하므로 모델 목록에서 두 개로 세지 않습니다.",
+                  "source_ids": [
+                    "argon-launch",
+                    "argon-oct1"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "kind": "fact",
+                  "title": "구조와 공개 사양의 범위",
+                  "text": "공식 카드는 텍스트, 시각, 음성 입력을 함께 처리하는 Transformer 기반의 희소 MoE 구조로 설명합니다. MoE는 여러 전문 처리 부분 중 일부를 선택해 계산하는 구조입니다. 전체, 활성 매개변수 수와 로컬 실행용 가중치의 공개 조건은 이번 자료에서 확인하지 못했습니다. 구조 이름만으로 필요한 메모리나 처리 속도를 계산하지 않습니다.",
+                  "source_ids": [
+                    "argon-card"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "kind": "fact",
+                  "title": "API와 앱의 이용 조건",
+                  "text": "발표에 따르면 Gemini API는 유료 등급, Antigravity는 Ultra, Gemini 앱과 Search AI Mode는 Pro, Ultra 경로입니다. API 요금 페이지의 “Pro 미제공”은 API/AI Studio 쪽 조건이며 앱 Pro 제공 발표와 구분해야 합니다. 공개 확대 발표가 개별 계정의 접근이나 같은 사용량 한도를 보장하지는 않습니다.",
+                  "source_ids": [
+                    "argon-launch",
+                    "google-prices"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "previous",
+              "title": "Gemini 3.1 Pro 대비 사양 변화",
+              "lead": "긴 출력을 지원하지만 입력과 출력은 같은 예산을 나눠 씁니다.",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "kind": "fact",
+                  "title": "출력 한도의 변화",
+                  "text": "3.1Pro Preview는 입력1,048,576, 출력65,536토큰을 별도 표기합니다. Argon의 기본 동기 출력도65,536이지만 long decode에서는 더 긴 생성이 가능합니다. 이때 입력과 출력의 합계가1,048,576을 넘을 수 없습니다. 따라서1M 입력을 넣은 뒤1M 답변을 추가 생성할 수 있다는 뜻이 아닙니다. 긴 출력은 별도 처리 조건을 가진 기능이며 길이가 정확도를 보장하지 않습니다.",
+                  "source_ids": [
+                    "argon-api",
+                    "gemini-31"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "kind": "fact",
+                  "title": "직접 성능 비교의 범위",
+                  "text": "현재 Argon 카드의 비교표에는3.1Pro가 없습니다. 서로 다른 시기의 평가 점수를 붙여 “이전 모델보다 몇 배 좋다”고 계산하지 않습니다. 이 글에서 이전 Pro와 직접 비교하는 것은 공식 사양과 현재 요금이며, 성능 비교는 카드에 함께 실린 Astra, Fable, Opus를 대상으로 합니다.",
+                  "source_ids": [
+                    "argon-card",
+                    "gemini-31",
+                    "google-prices"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "strengths",
+              "title": "장점: 긴 문맥 평가와 일부 코드 작업",
+              "lead": "모든 코딩 평가가 같은 능력을 측정하지는 않습니다.",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "kind": "judgment",
+                  "title": "긴 문맥에서 관계 찾기",
+                  "text": "GraphWalks는 긴 입력에 있는 그래프 관계를 따라 답을 찾는 평가입니다. BFS는 너비 우선 탐색, F1은 찾은 답의 정확성과 빠뜨리지 않은 정도를 함께 보는 지표입니다.256K–1M 구간에서 Argon84.2는 비교 모델71.8, 65.0, 66.8보다 높습니다. 긴 관계를 추적하는 강점의 근거지만 모든 문서 질문에서84.2% 정답률이라는 뜻은 아닙니다.",
+                  "source_ids": [
+                    "argon-card",
+                    "argon-method"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "kind": "judgment",
+                  "title": "코드 수정과 지식 업무 평가",
+                  "text": "DeepSWE77.9는 세 경쟁 모델보다 높고 Vals Index68.9도 앞섭니다. 다만 DeepSWE의 Argon은 mini-swe-agent라는 실행 보조 환경(Harness)에서 Google이 측정했고 다른 열은 공개 리더보드, 카드에서 가져왔습니다. 모델 자체의 능력과 도구, 설정 효과가 섞여 있어 동일 실행 환경의 우위로 단정할 수 없습니다.",
+                  "source_ids": [
+                    "argon-card",
+                    "argon-method"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "weaknesses",
+              "title": "단점: 평가의 반대 결과와 기능 제약",
+              "lead": "유리한 결과만 고르면 모델의 비교 위치가 왜곡됩니다.",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "kind": "judgment",
+                  "title": "코딩과 컴퓨터 사용의 반대 결과",
+                  "text": "FrontierSWE에서는 Argon55.0이 Astra65.5, Opus 62.3보다 낮고, Terminal-Bench에서도57.4가 Opus 66.4보다 낮습니다. 공통OpenCode 조건의 PostTrainBench도 Opus 49.3이 Argon45.3보다 높습니다. OSWorld2.0은 오프라인 부분 점수이고 Argon은3회 중 최대값이며 Anthropic 열이 빠져 있습니다. 서로 다른 전체/부분 점수를 연결해 빈칸을 채울 수 없습니다.",
+                  "source_ids": [
+                    "argon-card",
+                    "argon-method"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "kind": "fact",
+                  "title": "출력, 캐시, 응답의 제약",
+                  "text": "Argon은 음성, 영상 입력을 이해하지만 출력은 텍스트이고, 음성 생성, 이미지 생성, Live API는 지원하지 않습니다. 컴퓨터 사용은 Preview입니다. 캐시는 자동 재사용 방식인 implicit만 지원하므로 명시적으로 생성하고 관리하는 explicit 캐시를 그대로 옮길 수 없습니다. 공식 카드도 환각과 간헐적 지연, 시간 초과를 한계로 남깁니다. 카드의 지식 기준은 2026년 3월이며 일부 분야는 그보다 덜 최신일 수 있습니다. 출시일이 지식의 최신 날짜라는 뜻은 아닙니다.",
+                  "source_ids": [
+                    "argon-api",
+                    "argon-card"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "billing",
+              "title": "가격과 제공 조건",
+              "lead": "할인 단가와 할인 종료 뒤 단가를 따로 비교해야 합니다.",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "kind": "judgment",
+                  "title": "할인 종료 후의 비교",
+                  "text": "11월30일까지 Argon Standard2/10은 Opus 4/20보다 낮습니다.12월1일에는4/20으로 Opus와 같아집니다.3.1Pro의 짧은 입력2/12와 비교하면 할인 중에는 Argon 출력 단가가 낮지만, 할인 후에는4/20이 됩니다. 단가가 같거나 낮아도 추론 토큰, 반복 호출, 캐시 적중량이 달라 실제 작업 비용의 우열은 별도입니다.",
+                  "source_ids": [
+                    "google-prices",
+                    "claude-prices"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "kind": "fact",
+                  "title": "다른 처리 방식과 도구 비용",
+                  "text": "Argon Batch, Flex의 입력/출력은 할인 중1/5,12월부터2/10이고 Priority는3.60/18에서7.20/36으로 바뀝니다. 검색 grounding은 모델 답변을 외부 검색 결과로 보완하는 기능입니다. 월5,000 무료 검색 요청을 Gemini3이상 모델끼리 공유한 뒤1000단위14달러가 붙으며, 한 사용자 요청이 여러 검색 질의를 만들면 각 질의가 과금된다고 명시합니다. 토큰 가격만으로 총비용을 계산하면 이 항목을 빠뜨립니다.",
+                  "source_ids": [
+                    "google-prices"
+                  ]
+                }
+              ]
+            }
+          ],
+          "result": {
+            "title": "결론: 긴 출력과 평가별 강점이 선택 이유",
+            "points": [
+              {
+                "kind": "judgment",
+                "label": "Argon의 비교 위치",
+                "text": "긴 출력과 긴 문맥의 관계 추적을 중요하게 보면 Argon을 후보로 올릴 이유가 있습니다. 코드 수정, 터미널, 후학습 작업은 평가별 반대 결과가 있어 Astra, Opus와 함께 비교해야 합니다.",
+                "source_ids": [
+                  "argon-api",
+                  "argon-card",
+                  "argon-method"
+                ]
+              },
+              {
+                "kind": "judgment",
+                "label": "비용과 제공 범위",
+                "text": "단가 비교는11월 할인과12월 이후를 나눠 봐야 합니다. 긴 생성은 통합 한도를 소비하며, 앱 구독 권한과 유료 API 요금은 별개입니다.",
+                "source_ids": [
+                  "argon-api",
+                  "argon-launch",
+                  "google-prices"
+                ]
+              }
+            ]
+          },
+          "caveats": [
+            {
+              "text": "직접 모델 실행, 실제 작업의 성공률, 지연과 총비용 및 계정별 접근을 측정하지 않았습니다. 정확한 평가 스냅샷과 실행일, 일부 평가 Harness는 미확인입니다.",
+              "source_ids": [
+                "argon-method",
+                "openai-prices"
+              ]
+            },
+            {
+              "text": "API, 가격, 카드의 확인일은2026-10-14 KST입니다. 문서 최신 갱신일과 모델 발표일, 평가 기간은 다르며, 카드 전체의 안전성 검증을 수행한 것으로 볼 수 없습니다.",
+              "source_ids": [
+                "argon-api",
+                "argon-card",
+                "argon-method"
+              ]
+            }
+          ],
+          "references": [
+            {
+              "id": "argon-launch",
+              "title": "Argon 공개 확대 발표",
+              "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/",
+              "description": "10월13일 발표는 기존 모델의 공개 확대이다. API는 유료, 앱은 Pro, Ultra, Antigravity는 Ultra 경로이며 실제 계정 접근 시험은 수행하지 않았다."
+            },
+            {
+              "id": "argon-oct1",
+              "title": "Argon 단계적 제공 발표",
+              "url": "https://blog.google/intl/en-mena/company-news/technology/gemini-4-argon-our-next-era-of-frontier-intelligence/",
+              "description": "10월1일 지역 공식 발표의 Fairwind 단계적 접근과 현재 공개 확대를 구분한다. 최초 발표일을10월13일로 다시 쓰지 않는다."
+            },
+            {
+              "id": "argon-api",
+              "title": "Argon API 모델 사양",
+              "url": "https://ai.google.dev/gemini-api/docs/models/gemini-4-argon",
+              "description": "Stable ID, 텍스트/이미지/영상/음성/PDF 입력과 텍스트 출력, 통합1,048,576토큰 및 기본65,536/long decode상한, implicit-only 캐시와 Preview컴퓨터사용을 실제 사양표에서 확인했다."
+            },
+            {
+              "id": "argon-card",
+              "title": "Argon 공식 모델 카드",
+              "url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+              "description": "원문 비교표 열은 Argon/Astra/Fable 5.1/Opus 5.5. 선택한8평가 수치와 반대 결과, 카드의 환각, 지연 한계를 확인했다. Google 제공표이지 공통환경에서 실행한 독립 측정은 아니다."
+            },
+            {
+              "id": "argon-method",
+              "title": "Argon 평가 방법서",
+              "url": "https://deepmind.google/models/evals-methodology/gemini-4-argon/",
+              "description": "5쪽 PDF에서 DeepSWE mini-swe-agent, Frontier Proximal리더보드, Terminal Argon자체평가/경쟁모델리더보드, GraphWalks자체200문제 F1, PostTrain1.1공통OpenCode10시간/H100을 확인했다. 높은추론, 단일시도 기본과 9월/10월 표기차를 유지한다."
+            },
+            {
+              "id": "google-prices",
+              "title": "Gemini API 요금",
+              "url": "https://ai.google.dev/gemini-api/docs/pricing",
+              "description": "Argon Standard 2/0.10/10→12월1일4/0.20/20 USD100만토큰, Batch/Flex/Priority와 검색별도, 3.1Pro 입력≤200K2/0.20/12, >200K4/0.40/18을 요금표에서 확인했다."
+            },
+            {
+              "id": "gemini-31",
+              "title": "Gemini 3.1 Pro Preview 사양",
+              "url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.1-pro-preview",
+              "description": "3.1Pro Preview는 입력1,048,576과 출력65,536을 별도 표기한다. Argon의 통합한도를 더 큰 입력창으로 오해하지 않는다. 동등평가판의 직접 성능배율은 확보하지 않았다."
+            },
+            {
+              "id": "astra-api",
+              "title": "GPT-6 Astra 사양",
+              "url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+              "description": "Astra 입력텍스트/이미지→텍스트, 문맥1,050,000/출력128,000; 네이티브음성, 영상 미지원. 현행 Pricing절에서 입력272K초과면 요청 전체 입력, 캐시2배,출력1.5배를 확인했다. 도구의 이미지생성 지원과 기본모델출력을 구분했다."
+            },
+            {
+              "id": "openai-prices",
+              "title": "OpenAI API 요금",
+              "url": "https://developers.openai.com/api/docs/pricing",
+              "description": "Astra Standard 짧은문맥10/1/50, 긴문맥20/2/75를 확인했다. 가격 페이지 단독에는 경계 숫자가 없으나 함께 취득한 현행 astra-api의 Pricing절에서272K초과 조건을 확인했다."
+            },
+            {
+              "id": "claude-models",
+              "title": "Claude 모델 목록과 사양",
+              "url": "https://platform.claude.com/docs/en/models/overview",
+              "description": "Fable/Opus 텍스트, 이미지→텍스트, 문맥1M/출력128K와 ClaudeAPI 및 파트너 경로를 확인했다."
+            },
+            {
+              "id": "claude-prices",
+              "title": "Claude API 요금",
+              "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+              "description": "Fable 10/0.25/50,Opus 4/0.20/20 USD100만토큰 기본 입력/캐시읽기/출력. 캐시쓰기, 도구, Batch, 지역 처리 요금은 따로다."
+            }
+          ]
+        },
+        "claims": [
+          {
+            "path": "/summary/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-argon-launch",
+              "e-argon-oct1"
+            ]
+          },
+          {
+            "path": "/summary/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-argon-card",
+              "e-argon-method"
+            ]
+          },
+          {
+            "path": "/summary/2",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-argon-api",
+              "e-google-prices"
+            ]
+          },
+          {
+            "path": "/tables/0/rows/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-argon-api",
+              "e-gemini-31",
+              "e-astra-api",
+              "e-claude-models"
+            ]
+          },
+          {
+            "path": "/tables/0/rows/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-argon-api",
+              "e-gemini-31",
+              "e-astra-api",
+              "e-claude-models"
+            ]
+          },
+          {
+            "path": "/tables/0/rows/2",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-argon-api",
+              "e-gemini-31",
+              "e-astra-api",
+              "e-claude-models"
+            ]
+          },
+          {
+            "path": "/tables/0/rows/3",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-argon-api",
+              "e-argon-launch",
+              "e-gemini-31",
+              "e-astra-api",
+              "e-claude-models"
+            ]
+          },
+          {
+            "path": "/tables/1/rows/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-argon-card",
+              "e-argon-method"
+            ]
+          },
+          {
+            "path": "/tables/1/rows/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-argon-card",
+              "e-argon-method"
+            ]
+          },
+          {
+            "path": "/tables/1/rows/2",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-argon-card",
+              "e-argon-method"
+            ]
+          },
+          {
+            "path": "/tables/1/rows/3",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-argon-card",
+              "e-argon-method"
+            ]
+          },
+          {
+            "path": "/tables/1/rows/4",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-argon-card",
+              "e-argon-method"
+            ]
+          },
+          {
+            "path": "/tables/1/rows/5",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-argon-card",
+              "e-argon-method"
+            ]
+          },
+          {
+            "path": "/tables/1/rows/6",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-argon-card",
+              "e-argon-method"
+            ]
+          },
+          {
+            "path": "/tables/1/rows/7",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-argon-card",
+              "e-argon-method"
+            ]
+          },
+          {
+            "path": "/tables/2/rows/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-google-prices"
+            ]
+          },
+          {
+            "path": "/tables/2/rows/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-google-prices"
+            ]
+          },
+          {
+            "path": "/tables/2/rows/2",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-google-prices"
+            ]
+          },
+          {
+            "path": "/tables/2/rows/3",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-openai-prices",
+              "e-astra-api"
+            ]
+          },
+          {
+            "path": "/tables/2/rows/4",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-claude-prices"
+            ]
+          },
+          {
+            "path": "/tables/2/rows/5",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-claude-prices"
+            ]
+          },
+          {
+            "path": "/explanation/0/blocks/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-argon-launch",
+              "e-argon-oct1"
+            ]
+          },
+          {
+            "path": "/explanation/0/blocks/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-argon-card"
+            ]
+          },
+          {
+            "path": "/explanation/0/blocks/2",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-argon-launch",
+              "e-google-prices"
+            ]
+          },
+          {
+            "path": "/explanation/1/blocks/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-argon-api",
+              "e-gemini-31"
+            ]
+          },
+          {
+            "path": "/explanation/1/blocks/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-argon-card",
+              "e-gemini-31",
+              "e-google-prices"
+            ]
+          },
+          {
+            "path": "/explanation/2/blocks/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-argon-card",
+              "e-argon-method"
+            ]
+          },
+          {
+            "path": "/explanation/2/blocks/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-argon-card",
+              "e-argon-method"
+            ]
+          },
+          {
+            "path": "/explanation/3/blocks/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-argon-card",
+              "e-argon-method"
+            ]
+          },
+          {
+            "path": "/explanation/3/blocks/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-argon-api",
+              "e-argon-card"
+            ]
+          },
+          {
+            "path": "/explanation/4/blocks/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-google-prices",
+              "e-claude-prices"
+            ]
+          },
+          {
+            "path": "/explanation/4/blocks/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-google-prices"
+            ]
+          },
+          {
+            "path": "/result/points/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-argon-api",
+              "e-argon-card",
+              "e-argon-method"
+            ]
+          },
+          {
+            "path": "/result/points/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-argon-api",
+              "e-argon-launch",
+              "e-google-prices"
+            ]
+          },
+          {
+            "path": "/caveats/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-argon-method",
+              "e-openai-prices"
+            ]
+          },
+          {
+            "path": "/caveats/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-argon-api",
+              "e-argon-card",
+              "e-argon-method"
+            ]
+          }
+        ],
+        "answer_paths": {
+          "core": [
+            "/summary",
+            "/tables",
+            "/explanation",
+            "/result"
+          ]
+        }
+      },
+      "issues": [],
+      "first_screen_review": {
+        "input_hash": "fe5e8e8ab7952a4af19df8ace3bd6749854fe60b766d92dd13b42b8a8b0e39cf",
+        "verdict": "Pass",
+        "checks": {
+          "readability": {
+            "passed": true,
+            "reason": "목적 두 문장으로 Google의 Argon과 공개 확대 이후 비교 범위를 설명하고 강점과 약점의 나열도 자연스럽게 풀었습니다. 첫 화면에서 지목했던 압축 표현과 생소한 이름, 한도 및 가격 항목의 이해 결함은 해소됐습니다.",
+            "locations": [
+              "/title",
+              "/description",
+              "/deck"
+            ]
+          },
+          "question_answered": {
+            "passed": true,
+            "reason": "기존 Argon의 유료 API 및 구독 제공 확대와 이전 모델 및 경쟁 모델 대비 장단점이라는 질문을 소개와 목적에서 직접 알 수 있습니다. 사양과 평가 및 요금은 같은 모델 비교의 구분된 조건으로 제시됩니다.",
+            "locations": [
+              "/title",
+              "/description",
+              "/deck"
+            ]
+          },
+          "reader_outcome": {
+            "passed": true,
+            "reason": "제공 조건과 경쟁 모델 대비 강점 및 약점을 판단한다는 결과가 deck에 명시됩니다. 가상 활용 과제를 요구하거나 실제 업무의 성능 및 비용 절감을 보장하지 않습니다.",
+            "locations": [
+              "/description",
+              "/deck"
+            ]
+          }
+        },
+        "issues": []
+      },
+      "first_screen_summary_review": {
+        "verdict": "Pass",
+        "meaning_review_passed": true,
+        "reason": "프로그램이 온라인 모델을 호출하는 API와 이전 단계적 제공 대상을 설명하고, 경쟁 모델 전체 이름과 판을 밝혔습니다. 입력과 출력의 통합 한도, 기본 출력 상한과 별도 출력 조건, 기간별 입력 및 출력 단가가 구분됩니다. 공급사 평가의 일부 강점을 코딩 전체의 우위로 일반화하지 않으며 구독료 또는 작업당 실측 비용과도 구분합니다.",
+        "locations": [
+          "/summary/0/text",
+          "/summary/1/text",
+          "/summary/2/text"
+        ],
+        "issues": []
+      },
+      "body_review": {
+        "version": "independent-review-1",
+        "id": "gemini-4-argon-model-guide",
+        "input_hash": "0ce022423b11fb960f723dac256e1f60126bdd4ec23523a72a911d4ee7409d9e",
+        "verdict": "Pass",
+        "checks": {
+          "question_answered": {
+            "passed": true,
+            "reason": "기존 Argon의 공개 확대와 이전 Gemini 3.1 Pro 대비 사양 및 요금, 경쟁 모델 대비 상대 강점과 약점을 실제 3개 표와 설명으로 답합니다. 같은 조건의 Pro 성능표가 없다는 범위를 밝히고 공개 확대를 최초 모델 출시 또는 별도 모델로 재분류하지 않습니다. 활용 교재나 가상 업무로 바뀌지 않았습니다.",
+            "locations": [
+              "/explanation/0",
+              "/explanation/1",
+              "/tables/0",
+              "/tables/1",
+              "/tables/2",
+              "/result"
+            ]
+          },
+          "analysis": {
+            "passed": true,
+            "reason": "GraphWalks와 DeepSWE의 유리한 값과 FrontierSWE, Terminal-Bench 및 PostTrainBench의 반대 결과를 함께 해석합니다. 측정자 및 Harness 혼합, 최고/최선 추론의 기본과 예외, OSWorld 오프라인 부분 점수 및 3회 최대를 보존합니다. 방법서의 9월 범위와 카드의 10월 결과를 동일 실행일로 맞추지 않았고 단가 비교를 실사용 비용 우위로 확대하지 않습니다.",
+            "locations": [
+              "/tables/1/note",
+              "/tables/1/rows/7",
+              "/explanation/2",
+              "/explanation/3/blocks/0",
+              "/explanation/4",
+              "/result"
+            ]
+          },
+          "evidence": {
+            "passed": true,
+            "reason": "11개 source의 전체 raw 파일 해시를 대조하고 필요한 HTML 원문 절과 5쪽 방법서의 방법론 부분을 실제 읽었습니다. 카드 HTML의 8개 선택 행은 숫자와 열 순서 및 결측을 대조했습니다. 공개 sidecar의 짧은 발췌를 전체 의미의 증명으로 간주하지 않았습니다. Astra 경계는 이번 raw 모델 문서의 Pricing에 명시된 272K 조건으로 새로 확인했습니다. 36개 주장 위치와 근거 ID 및 원본 해시 연결도 유효합니다.",
+            "locations": [
+              "/references",
+              "/tables/1",
+              "/tables/2/rows/3",
+              "/tables/2/note",
+              "/explanation/0",
+              "/explanation/3",
+              "/explanation/4"
+            ]
+          },
+          "readability": {
+            "passed": true,
+            "reason": "내용형 소제목과 비교표로 사양, 평가 및 기간 가격을 구분하고 BFS, F1, MoE와 실행 환경 및 캐시의 뜻을 설명합니다. 보강된 사양표 주석은 토큰과 K/M, 문맥 및 출력 상한을 구분합니다. 긴 출력이 통합 한도를 소비한다는 설명과 가격표의 입력/캐시/출력 열을 함께 읽으면 비교 조건을 해석할 수 있습니다. 이번 범위에서 추가 필수 독해 장애를 발견하지 못했습니다.",
+            "locations": [
+              "/tables/0/note",
+              "/tables/1",
+              "/tables/2",
+              "/explanation/0/blocks/1",
+              "/explanation/1/blocks/0",
+              "/explanation/2/blocks/0",
+              "/explanation/3/blocks/1",
+              "/explanation/4"
+            ]
+          },
+          "factuality": {
+            "passed": true,
+            "reason": "통합 1,048,576토큰 및 기본 65,536과 long decode 상한, Stable 및 지원 형식/캐시 제한은 API 원문에 일치합니다. 앱 Pro/Ultra와 API 문서의 Pro 미제공을 제공 경로별로 구분합니다. 8개 평가 값과 방법론 및 Argon 할인 전후 단가, 기타 처리 방식과 검색 조건이 원문에 부합합니다. Astra의 272K 초과 조건을 현행 공식 모델 문서에 연결했으며 과거 숫자로 추정하지 않았습니다.",
+            "locations": [
+              "/tables/0",
+              "/tables/1",
+              "/tables/2",
+              "/explanation/0/blocks/2",
+              "/explanation/1/blocks/0",
+              "/explanation/3/blocks/1",
+              "/explanation/4",
+              "/caveats"
+            ]
+          },
+          "reader_outcome": {
+            "passed": true,
+            "reason": "독자는 공개 확대와 최초 모델 출시를 구분하고, Pro와의 입출력 예산 및 기간 단가 차이, 경쟁 모델의 평가별 강점과 반대 결과를 설명할 수 있는 자료를 갖습니다. 긴 출력이 별도 조건과 통합 한도에 묶인다는 점, 구독 권한과 API 과금의 차이를 판단할 수 있게 설명합니다. 실제 작업의 성공률이나 총비용 및 속도를 측정한 것으로 주장하지 않습니다.",
+            "locations": [
+              "/explanation/0",
+              "/explanation/1",
+              "/explanation/2",
+              "/explanation/3",
+              "/explanation/4",
+              "/result",
+              "/caveats"
+            ]
+          }
+        },
+        "issues": []
+      },
+      "facts_review": {
+        "verdict": "Pass",
+        "record_count": 11,
+        "records": [
+          {
+            "id": "gemini-4-argon-public-api-spec",
+            "passed": true,
+            "reason": "API의 Stable 사양, 통합 한도와 기본/long decode 출력 상한, 추론 수준 및 기능 제약과 공개 확대 경로가 raw 원문에 부합합니다. 최초 모델 발표일 필드를 10월 13일로 다시 쓰지 않습니다.",
+            "locations": [
+              "/records/0/fields"
+            ]
+          },
+          {
+            "id": "gemini-4-argon-standard-promo",
+            "passed": true,
+            "reason": "Standard의 적용 기간, USD/백만 토큰 입력/캐시 읽기/출력 단가와 thinking 및 implicit 조건이 공식 요금 표와 일치합니다. 구독이나 실제 작업 비용과 구분합니다.",
+            "locations": [
+              "/records/1/fields"
+            ]
+          },
+          {
+            "id": "gemini-4-argon-standard-regular",
+            "passed": true,
+            "reason": "Standard의 적용 기간, USD/백만 토큰 입력/캐시 읽기/출력 단가와 thinking 및 implicit 조건이 공식 요금 표와 일치합니다. 구독이나 실제 작업 비용과 구분합니다.",
+            "locations": [
+              "/records/2/fields"
+            ]
+          },
+          {
+            "id": "gemini-4-argon-google-card-vals-index",
+            "passed": true,
+            "reason": "선택된 Google 카드의 Argon 수치와 비교군 값, PDF 방법서의 측정 주체 및 Harness/추론/지표 조건을 유지합니다. 9월 방법서 범위와 10월 카드 결과, 정확한 실행일 및 API 스냅샷 미확인을 구분하고 다른 측정 관측과 합치지 않습니다.",
+            "locations": [
+              "/records/3/fields"
+            ]
+          },
+          {
+            "id": "gemini-4-argon-google-card-automation",
+            "passed": true,
+            "reason": "선택된 Google 카드의 Argon 수치와 비교군 값, PDF 방법서의 측정 주체 및 Harness/추론/지표 조건을 유지합니다. 9월 방법서 범위와 10월 카드 결과, 정확한 실행일 및 API 스냅샷 미확인을 구분하고 다른 측정 관측과 합치지 않습니다.",
+            "locations": [
+              "/records/4/fields"
+            ]
+          },
+          {
+            "id": "gemini-4-argon-google-card-deepswe",
+            "passed": true,
+            "reason": "선택된 Google 카드의 Argon 수치와 비교군 값, PDF 방법서의 측정 주체 및 Harness/추론/지표 조건을 유지합니다. 9월 방법서 범위와 10월 카드 결과, 정확한 실행일 및 API 스냅샷 미확인을 구분하고 다른 측정 관측과 합치지 않습니다.",
+            "locations": [
+              "/records/5/fields"
+            ]
+          },
+          {
+            "id": "gemini-4-argon-google-card-frontierswe",
+            "passed": true,
+            "reason": "선택된 Google 카드의 Argon 수치와 비교군 값, PDF 방법서의 측정 주체 및 Harness/추론/지표 조건을 유지합니다. 9월 방법서 범위와 10월 카드 결과, 정확한 실행일 및 API 스냅샷 미확인을 구분하고 다른 측정 관측과 합치지 않습니다.",
+            "locations": [
+              "/records/6/fields"
+            ]
+          },
+          {
+            "id": "gemini-4-argon-google-card-terminal",
+            "passed": true,
+            "reason": "선택된 Google 카드의 Argon 수치와 비교군 값, PDF 방법서의 측정 주체 및 Harness/추론/지표 조건을 유지합니다. 9월 방법서 범위와 10월 카드 결과, 정확한 실행일 및 API 스냅샷 미확인을 구분하고 다른 측정 관측과 합치지 않습니다.",
+            "locations": [
+              "/records/7/fields"
+            ]
+          },
+          {
+            "id": "gemini-4-argon-google-card-graphwalks",
+            "passed": true,
+            "reason": "선택된 Google 카드의 Argon 수치와 비교군 값, PDF 방법서의 측정 주체 및 Harness/추론/지표 조건을 유지합니다. 9월 방법서 범위와 10월 카드 결과, 정확한 실행일 및 API 스냅샷 미확인을 구분하고 다른 측정 관측과 합치지 않습니다.",
+            "locations": [
+              "/records/8/fields"
+            ]
+          },
+          {
+            "id": "gemini-4-argon-google-card-posttrain",
+            "passed": true,
+            "reason": "선택된 Google 카드의 Argon 수치와 비교군 값, PDF 방법서의 측정 주체 및 Harness/추론/지표 조건을 유지합니다. 9월 방법서 범위와 10월 카드 결과, 정확한 실행일 및 API 스냅샷 미확인을 구분하고 다른 측정 관측과 합치지 않습니다.",
+            "locations": [
+              "/records/9/fields"
+            ]
+          },
+          {
+            "id": "gemini-4-argon-google-card-osworld",
+            "passed": true,
+            "reason": "선택된 Google 카드의 Argon 수치와 비교군 값, PDF 방법서의 측정 주체 및 Harness/추론/지표 조건을 유지합니다. 9월 방법서 범위와 10월 카드 결과, 정확한 실행일 및 API 스냅샷 미확인을 구분하고 다른 측정 관측과 합치지 않습니다.",
+            "locations": [
+              "/records/10/fields"
+            ]
+          }
+        ],
+        "issues": [],
+        "limits": "기록의 공식 문서 의미와 조건만 확인했습니다. DB 반영, 기존 canonical ID 연결 구현 및 실제 모델 실행은 검토하지 않았습니다."
+      }
+    }
+  ]
+}
