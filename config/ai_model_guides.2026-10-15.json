@@ -1,0 +1,744 @@
+{
+  "schema_version": 1,
+  "reports": [
+    {
+      "id": "lfm-2-5-24b-a2b-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API",
+        "LFM2.5-24B-A2B"
+      ],
+      "checked_on": "2026-10-15",
+      "title": "LFM2.5-24B-A2B 모델 소개: 로컬 추론과 경쟁 모델 비교",
+      "description": "Liquid AI가 10월 13일 출시한 모델을 이전 LFM2와 다른 로컬 모델에 비교해, 성능의 장점과 약점 및 이용 조건을 설명하기 위해 작성했습니다.",
+      "scope": "2026년 10월 13일 출시된 모델을 10월 15일에 처음 등재했습니다. Base와 후학습 체크포인트를 분리했으며 직접 실행과 독립 재측정은 수행하지 않았습니다.",
+      "deck": "LFM2.5-24B-A2B는 자신의 기기에서 실행할 수 있는 텍스트 추론 모델입니다. 모델 파일을 내려받는 방식과 Liquid AI의 유료 API가 제공됩니다. 필요한 외부 기능을 선택하고 호출 요청을 만드는 도구 호출 능력과, 코드를 수정하는 능력을 다른 로컬 모델들과 비교합니다.",
+      "source_note": "Liquid AI의 공식 발표와 가중치 카드, 라이선스 및 경쟁 모델 카드를 확인했습니다. 성능표는 Liquid AI의 자체 비교이고 계정 접근과 실제 기기 실행은 검증하지 않았습니다.",
+      "highlights": [
+        "10월 13일 신규 출시",
+        "131,072토큰 문맥",
+        "활성 사양 2.45B",
+        "도구 호출과 코딩의 차이"
+      ],
+      "summary": [
+        {
+          "kind": "fact",
+          "label": "새 모델과 이전 모델의 차이",
+          "text": "10월 13일 출시된 LFM2.5-24B-A2B는 이전 LFM2-24B-A2B의 이름 변경이 아닙니다. 답변 전에 추론하는 방식이며, 문맥 한도는 32,768에서 131,072토큰으로 늘었습니다. 토큰은 모델이 글을 처리하는 단위이며 문맥 한도는 한 번에 다룰 수 있는 글의 양을 제한합니다.",
+          "source_ids": [
+            "lfm-launch",
+            "lfm-card",
+            "lfm-old"
+          ]
+        },
+        {
+          "kind": "judgment",
+          "label": "경쟁 모델 대비 장점과 약점",
+          "text": "Liquid AI의 공식 비교표에서 도구 호출 관련 평가 일부는 Qwen3.6-35B-A3B보다 높지만, 코드 수정과 전문 지식 평가는 낮습니다. 이는 공급사의 측정 결과이며 실제 업무 성공률이나 모든 로컬 모델의 순위가 아닙니다.",
+          "source_ids": [
+            "lfm-launch"
+          ]
+        },
+        {
+          "kind": "fact",
+          "label": "비용과 상업 이용",
+          "text": "공식 발표의 API 요금은 100만 토큰당 입력 0.10달러, 캐시 입력 0.05달러, 출력 1달러입니다. 가중치는 공개됐지만 Apache 2.0과 다른 라이선스입니다. 연매출 1천만 달러를 초과하는 법인은 상업 이용에 별도 라이선스가 필요하며, 매출 집계 범위와 정확한 경계는 계약 확인이 필요합니다.",
+          "source_ids": [
+            "lfm-launch",
+            "lfm-license"
+          ]
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "tables": [
+        {
+          "id": "specs",
+          "title": "이전 모델과 경쟁 로컬 모델의 사양",
+          "columns": [
+            "항목",
+            "LFM2-24B-A2B",
+            "LFM2.5-24B-A2B",
+            "Qwen3.6-35B-A3B",
+            "Gemma 4 26B A4B-it"
+          ],
+          "rows": [
+            {
+              "values": [
+                "전체 / 활성 파라미터",
+                "24B / 2.3B",
+                "24.0B / 2.45B",
+                "35B / 3B",
+                "25.2B / 3.8B"
+              ],
+              "source_ids": [
+                "lfm-old",
+                "lfm-card",
+                "qwen-card",
+                "gemma-card"
+              ]
+            },
+            {
+              "values": [
+                "문맥 한도",
+                "32,768토큰",
+                "131,072토큰",
+                "262,144토큰; 확장 조건 별도",
+                "256K토큰 (원문 표기, 정확한 환산 미확인)"
+              ],
+              "source_ids": [
+                "lfm-old",
+                "lfm-card",
+                "qwen-card",
+                "gemma-card"
+              ]
+            },
+            {
+              "values": [
+                "입력 → 출력",
+                "텍스트 → 텍스트",
+                "텍스트 → 텍스트",
+                "텍스트 또는 이미지 → 텍스트",
+                "텍스트 또는 이미지 → 텍스트"
+              ],
+              "source_ids": [
+                "lfm-old",
+                "lfm-card",
+                "qwen-card",
+                "gemma-card"
+              ]
+            },
+            {
+              "values": [
+                "추론 방식",
+                "추론 흔적 없는 instruct",
+                "항상 추론 후 응답",
+                "추론 / 비추론 모드",
+                "thinking 선택"
+              ],
+              "source_ids": [
+                "lfm-old",
+                "lfm-card",
+                "qwen-card",
+                "gemma-card"
+              ]
+            },
+            {
+              "values": [
+                "가중치 라이선스",
+                "LFM Open License",
+                "LFM Open License v1.0",
+                "Apache 2.0",
+                "Apache 2.0"
+              ],
+              "source_ids": [
+                "lfm-old",
+                "lfm-license",
+                "qwen-card",
+                "gemma-card"
+              ]
+            }
+          ],
+          "note": "B는 10억 개 파라미터를 뜻합니다. 파라미터는 학습된 수치이며 활성 개수는 한 토큰을 계산할 때 쓰는 부분입니다. MoE는 일부 전문가만 선택하는 구조입니다. 전체 가중치와 문맥 캐시를 담을 메모리가 별도로 필요하므로 활성 2.45B를 2.45GB RAM 요구량으로 해석하지 않습니다. A2B와 26B A4B라는 이름은 대략적 명칭이며 사양은 카드 수치를 사용했습니다. K는 천 단위 규모의 약칭이며 Gemma 문맥은 원문의 256K 표기를 보존했습니다. 정확한 토큰 수는 제공자 정의를 따르며 확장 문맥이 기본 제공된다는 뜻은 아닙니다."
+        },
+        {
+          "id": "benchmarks",
+          "title": "Liquid AI가 공개한 16개 성능 평가",
+          "columns": [
+            "평가판",
+            "LFM2.5-24B-A2B",
+            "Qwen3.6-35B-A3B",
+            "Gemma 4 26B A4B-it",
+            "Nemotron 3.5 Lightning (30B-A3B)"
+          ],
+          "rows": [
+            {
+              "values": [
+                "AutomationBench",
+                "27.69",
+                "8.72",
+                "5.46",
+                "2.61"
+              ],
+              "source_ids": [
+                "lfm-launch",
+                "lfm-card"
+              ]
+            },
+            {
+              "values": [
+                "BFCLv4",
+                "65.01",
+                "65.00",
+                "57.09",
+                "53.78"
+              ],
+              "source_ids": [
+                "lfm-launch"
+              ]
+            },
+            {
+              "values": [
+                "ToolSandbox",
+                "80.71",
+                "75.02",
+                "72.09",
+                "75.13"
+              ],
+              "source_ids": [
+                "lfm-launch"
+              ]
+            },
+            {
+              "values": [
+                "LiveClaw",
+                "48.09",
+                "38.19",
+                "41.25",
+                "37.72"
+              ],
+              "source_ids": [
+                "lfm-launch"
+              ]
+            },
+            {
+              "values": [
+                "PinchBench",
+                "83.18",
+                "89.93",
+                "77.12",
+                "84.20"
+              ],
+              "source_ids": [
+                "lfm-launch"
+              ]
+            },
+            {
+              "values": [
+                "τ³-Bench Banking",
+                "8.04",
+                "7.63",
+                "4.54",
+                "7.01"
+              ],
+              "source_ids": [
+                "lfm-launch"
+              ]
+            },
+            {
+              "values": [
+                "WebArena Verified",
+                "26.75",
+                "37.62",
+                "25.62",
+                "28.69"
+              ],
+              "source_ids": [
+                "lfm-launch"
+              ]
+            },
+            {
+              "values": [
+                "GPQA Diamond",
+                "74.42",
+                "83.69",
+                "74.90",
+                "72.42"
+              ],
+              "source_ids": [
+                "lfm-launch"
+              ]
+            },
+            {
+              "values": [
+                "AA-Omniscience",
+                "-24.90",
+                "-24.35",
+                "-59.39",
+                "-3.58"
+              ],
+              "source_ids": [
+                "lfm-launch"
+              ]
+            },
+            {
+              "values": [
+                "HLE",
+                "7.40",
+                "7.69",
+                "8.57",
+                "5.65"
+              ],
+              "source_ids": [
+                "lfm-launch"
+              ]
+            },
+            {
+              "values": [
+                "IFEval",
+                "96.75",
+                "93.06",
+                "92.00",
+                "94.19"
+              ],
+              "source_ids": [
+                "lfm-launch"
+              ]
+            },
+            {
+              "values": [
+                "IFBench",
+                "74.69",
+                "64.21",
+                "47.44",
+                "71.67"
+              ],
+              "source_ids": [
+                "lfm-launch"
+              ]
+            },
+            {
+              "values": [
+                "Multi-IF",
+                "84.38",
+                "81.53",
+                "82.19",
+                "82.34"
+              ],
+              "source_ids": [
+                "lfm-launch"
+              ]
+            },
+            {
+              "values": [
+                "MATH-500",
+                "96.04",
+                "96.73",
+                "95.66",
+                "96.40"
+              ],
+              "source_ids": [
+                "lfm-launch"
+              ]
+            },
+            {
+              "values": [
+                "SWE-Bench Verified (OpenCode)",
+                "51.00",
+                "66.20",
+                "25.80",
+                "53.40"
+              ],
+              "source_ids": [
+                "lfm-launch"
+              ]
+            },
+            {
+              "values": [
+                "SciCode",
+                "32.71",
+                "37.35",
+                "35.42",
+                "27.78"
+              ],
+              "source_ids": [
+                "lfm-launch"
+              ]
+            }
+          ],
+          "note": "2026-10-13 공식 표의 원문 점수입니다. 표에는 지표 단위가 별도로 명시되지 않아 모두 %로 바꾸지 않았습니다. 평가마다 범위와 척도가 달라 평균이나 종합 순위를 만들지 않습니다. 모든 모델은 vLLM으로 평가했다고 명시하지만 정확한 모델 스냅샷과 vLLM 버전, 비교 모델의 thinking 선택은 미명시입니다. SWE-Bench의 Harness는 OpenCode입니다. Nemotron 열은 Liquid AI가 보고한 결과이며 해당 NVIDIA 가중치 카드의 직접 열람은 실패했습니다. 이전 LFM2와 같은 조건의 성능표는 없어 성능 향상 배수를 계산하지 않습니다."
+        },
+        {
+          "id": "evaluation-conditions",
+          "title": "성능표의 생성 설정과 실행 조건",
+          "columns": [
+            "평가",
+            "공식 방법 주석"
+          ],
+          "rows": [
+            {
+              "values": [
+                "AutomationBench",
+                "temperature 0.6, top_p 0.95, 최대 50턴, 출력 상한은 문맥 한도"
+              ],
+              "source_ids": [
+                "lfm-launch",
+                "lfm-card"
+              ]
+            },
+            {
+              "values": [
+                "BFCLv4",
+                "temperature 0.001, 최대 출력 4,096토큰"
+              ],
+              "source_ids": [
+                "lfm-launch"
+              ]
+            },
+            {
+              "values": [
+                "ToolSandbox",
+                "temperature 0, 최대 출력 1,024토큰, 사용자 모델 GPT-4o-2024-08-06도 동일 설정"
+              ],
+              "source_ids": [
+                "lfm-launch"
+              ]
+            },
+            {
+              "values": [
+                "LiveClaw",
+                "temperature 1.0 (vLLM 기본값), 최대 출력 8,192토큰"
+              ],
+              "source_ids": [
+                "lfm-launch"
+              ]
+            },
+            {
+              "values": [
+                "τ³-Bench Banking",
+                "사용자 모델 GPT-5.2 low, BM25 검색, temperature 0, 턴당 최대 출력 16,384토큰"
+              ],
+              "source_ids": [
+                "lfm-launch"
+              ]
+            },
+            {
+              "values": [
+                "WebArena Verified",
+                "temperature 0.6, top_p 0.95, 브라우저 행동 최대 40회, 출력 상한은 문맥 한도"
+              ],
+              "source_ids": [
+                "lfm-launch"
+              ]
+            },
+            {
+              "values": [
+                "나머지 평가",
+                "temperature 0.6, 최대 출력 32,768토큰. 평가별 Harness 세부 버전 미명시"
+              ],
+              "source_ids": [
+                "lfm-launch"
+              ]
+            }
+          ],
+          "note": "온도(temperature)는 출력 선택의 무작위성을 조절합니다. 최대 출력은 허용 토큰 수이며 실제 소요 토큰이나 시간과 다릅니다. 도구를 실행하고 결과를 모델에 돌려주는 프로그램인 Harness와 가상 사용자 모델이 점수에 영향을 줄 수 있습니다. AutomationBench의 최대 50턴 제한은 모델 카드의 방법 주석에 명시되어 있습니다."
+        },
+        {
+          "id": "speed",
+          "title": "공급사의 기기별 출력 속도 발표",
+          "columns": [
+            "기기 / 측정",
+            "공개 수치",
+            "확인한 조건과 한계"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Apple M5 Max / 디코딩",
+                "184토큰/초",
+                "Pipette에서 llama.cpp, Q4_K_M 양자화, 4K토큰 입력 문맥으로 측정. 동시성과 반복 횟수 미명시"
+              ],
+              "source_ids": [
+                "lfm-launch",
+                "lfm-card"
+              ]
+            },
+            {
+              "values": [
+                "AMD Ryzen AI Max+395 / 디코딩",
+                "114토큰/초",
+                "Pipette에서 llama.cpp, Q4_K_M 양자화, 4K토큰 입력 문맥으로 측정. 동시성과 반복 횟수 미명시"
+              ],
+              "source_ids": [
+                "lfm-launch",
+                "lfm-card"
+              ]
+            },
+            {
+              "values": [
+                "단일 NVIDIA B300 / 전체 출력 처리량",
+                "21,000토큰/초 초과",
+                "SGLang 0.5.22, BF16, 입력 1,024토큰, 최대 출력 256토큰. 지속 부하와 높은 동시성의 합산 처리량"
+              ],
+              "source_ids": [
+                "lfm-launch"
+              ]
+            }
+          ],
+          "note": "디코딩은 답변 토큰을 생성하는 단계입니다. K는 천 단위 규모의 약칭입니다. 입력 문맥은 원문의 4K 표기를 보존했으며 정확한 토큰 수 환산은 확인하지 않았습니다. Q4_K_M은 가중치를 압축하는 양자화 형식이고 BF16은 다른 수치 표현 형식입니다. GPU 수치는 여러 요청의 출력 합계를 실제 경과시간으로 나눈 처리량입니다. 초당 21,000토큰을 한 사용자 응답의 속도로 읽거나 184와 나눠 기기 성능 배율을 만들지 않습니다. 공급사가 발표한 최대 1.7배는 특정 비교 조건의 결과입니다. 첫 응답 지연, 추론을 포함한 총시간, 한국어 속도와 메모리 사용량은 직접 측정하지 않았습니다."
+        },
+        {
+          "id": "costs",
+          "title": "API 요금과 직접 실행의 비용 조건",
+          "columns": [
+            "제공 방식",
+            "입력 USD / 100만토큰",
+            "캐시 입력 USD / 100만토큰",
+            "출력 USD / 100만토큰",
+            "추가 조건"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Liquid Console API (발표요금)",
+                "0.10",
+                "0.05",
+                "1.00",
+                "2026년 10월 13일 발표, 10월 15일 확인. 캐시 인정 조건과 추론 과금 상세 미확인"
+              ],
+              "source_ids": [
+                "lfm-launch"
+              ]
+            },
+            {
+              "values": [
+                "LFM2.5 가중치 직접 실행",
+                "API 단가 적용 대상 아님",
+                "API 단가 적용 대상 아님",
+                "API 단가 적용 대상 아님",
+                "기기, 전력, 운영 비용과 상업 라이선스 조건 별도"
+              ],
+              "source_ids": [
+                "lfm-card",
+                "lfm-license"
+              ]
+            },
+            {
+              "values": [
+                "Qwen / Gemma 가중치 직접 실행",
+                "API 단가 적용 대상 아님",
+                "API 단가 적용 대상 아님",
+                "API 단가 적용 대상 아님",
+                "직접 호스팅 비용 별도; 서비스별 공식 API 단가는 이번 검토에서 미확인"
+              ],
+              "source_ids": [
+                "qwen-card",
+                "gemma-card"
+              ]
+            }
+          ],
+          "note": "100만 토큰은 100만 글자나 작업 100만 건이 아닙니다. 캐시는 이전 입력을 재사용하는 요금 항목입니다. 내려받을 수 있다는 사실을 무료 운영이나 무제한 상업 사용으로 바꾸지 않습니다. Base 모델의 Liquid Console API 제공과 단가는 확인하지 않았습니다."
+        }
+      ],
+      "explanation": [
+        {
+          "id": "overview",
+          "title": "모델 개요와 두 체크포인트",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "text": "10월 13일 출시된 후학습 모델과 Base는 별도의 가중치 저장소를 갖습니다. 이전 LFM2의 가중치를 이름만 바꾼 업데이트로 세지 않습니다. Base는 추가 학습용이고, 공식 에이전트 성능표는 후학습 모델을 대상으로 합니다.",
+              "source_ids": [
+                "lfm-launch",
+                "lfm-base"
+              ],
+              "title": "새 출시의 의미"
+            },
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "text": "텍스트를 입력받아 텍스트로 응답하는 모델이며, 카드에 한국어를 포함한 16개 언어가 표시됩니다. 한국어가 목록에 있는 것과 한국어 업무 성능이 측정됐다는 것은 다릅니다. 이미지 입력이 필요한 경우 Qwen과 Gemma의 제공 형식은 별도로 비교할 요소입니다.",
+              "source_ids": [
+                "lfm-card",
+                "qwen-card",
+                "gemma-card"
+              ],
+              "title": "모델의 범위"
+            }
+          ],
+          "lead": "후학습 모델과 학습용 Base는 같은 목적으로 쓰는 모델이 아닙니다."
+        },
+        {
+          "id": "changes",
+          "title": "이전 LFM2 대비 변화",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "text": "문맥은 32,768에서 131,072토큰으로 늘었습니다. 전체 파라미터는 24B 수준을 유지하지만 카드의 활성 수치는 2.3B에서 2.45B로 달라졌습니다. 작은 활성 경로는 계산량을 줄이는 구조이며 전체 24B의 메모리가 필요 없어진다는 뜻은 아닙니다.",
+              "source_ids": [
+                "lfm-old",
+                "lfm-card"
+              ],
+              "title": "문맥과 활성 개수"
+            },
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "text": "새 후학습 모델은 응답 전에 추론하도록 설정되어 있습니다. 직접 실행의 최대 출력 예산에는 최종 답변뿐 아니라 추론을 위한 여유도 필요합니다. Base 카드의 사전학습 33조 토큰과 후학습 카드의 총학습 예산 36조 토큰 표기는 단계가 다르므로 같은 숫자로 덮어쓰지 않습니다.",
+              "source_ids": [
+                "lfm-base",
+                "lfm-card",
+                "lfm-docs"
+              ],
+              "title": "추론과 Base"
+            }
+          ],
+          "lead": "기본 구조를 유지하면서 문맥과 학습, 답변 방식을 바꿨습니다."
+        },
+        {
+          "id": "advantages",
+          "title": "도구 호출과 지시 준수의 강점",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "text": "Liquid AI 표의 AutomationBench와 LiveClaw는 Qwen보다 높고 ToolSandbox도 앞섭니다. BFCLv4는 65.01 대 65.00으로 사실상 근접한 결과입니다. 이 차이를 모든 도구 작업의 큰 우위로 해석하지 않습니다.",
+              "source_ids": [
+                "lfm-launch"
+              ],
+              "title": "도구 평가"
+            },
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "text": "IFEval, IFBench, Multi-IF에서 비교군보다 높은 값을 보고했습니다. 이 표는 공급사가 같은 발표에서 모은 결과이며 독립적으로 재현한 평가가 아닙니다. 공개된 조건의 차이를 남긴 상태로 후보를 비교하는 근거입니다.",
+              "source_ids": [
+                "lfm-launch"
+              ],
+              "title": "지시 준수"
+            }
+          ],
+          "lead": "공식 비교의 강점은 평가별로 읽을 수 있습니다."
+        },
+        {
+          "id": "limitations",
+          "title": "코딩과 지식 평가의 약점",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "text": "SWE-Bench Verified는 51.00으로 Qwen 66.20과 Nemotron 53.40보다 낮습니다. GPQA Diamond도 74.42로 Qwen 83.69보다 낮고, PinchBench와 WebArena에서는 Qwen이 앞섭니다. 특정 도구 평가의 높은 점수를 코드 수정이나 전문 지식 전체의 우위로 일반화하지 않습니다.",
+              "source_ids": [
+                "lfm-launch"
+              ],
+              "title": "코딩과 지식"
+            },
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "text": "모델 카드는 지식 중심 과제를 단독으로 처리하는 데 권장하지 않고 검색과 결합할 것을 제안합니다. 이번에는 검색 품질, 보안성, 실사용 성공률을 검증하지 않았습니다. 로컬 실행도 Harness가 외부 도구를 호출하면 데이터가 기기 밖으로 나갈 수 있어 전체 시스템의 정보 흐름은 별도입니다.",
+              "source_ids": [
+                "lfm-card"
+              ],
+              "title": "한계의 범위"
+            }
+          ],
+          "lead": "강점과 반대되는 결과도 선택에 반영해야 합니다."
+        },
+        {
+          "id": "availability",
+          "title": "제공 형식과 비용",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "text": "원본 가중치와 GGUF, MLX, ONNX 등의 형식이 공식 카드에 연결돼 있습니다. 문서는 MLX 형식 모델을 실행하는 mlx-lm 패키지 0.32.0 이상을 요구하고 이전 판은 전문가 경로를 잘못 처리한다고 명시합니다. DSpark 초안 모델은 카드에서 예정으로 표시되므로 현재 공개된 배포판으로 세지 않습니다.",
+              "source_ids": [
+                "lfm-card",
+                "lfm-docs"
+              ],
+              "title": "지원 조건"
+            },
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "text": "API 발표 단가는 입력 0.10, 캐시 입력 0.05, 출력 1.00달러입니다. LFM Open License는 연매출 1천만 달러 기준으로 무료 상업 사용권을 제한합니다. 법인 정의에는 지배 관계의 법인도 포함됩니다. Threshold 정의의 “이상”과 상업 제한 조항의 “초과” 표현이 달라 정확한 매출 경계는 계약 확인이 필요합니다. Apache 2.0과 같은 조건으로 제품에 포함할 수 있다고 단정하지 않습니다.",
+              "source_ids": [
+                "lfm-launch",
+                "lfm-license"
+              ],
+              "title": "요금과 라이선스"
+            }
+          ],
+          "lead": "가중치 공개와 유료 API는 비용 및 준비 조건이 다릅니다."
+        }
+      ],
+      "result": {
+        "title": "결론: 도구 호출 중심의 로컬 추론 후보",
+        "points": [
+          {
+            "kind": "judgment",
+            "label": "비교 위치",
+            "text": "LFM2.5는 텍스트와 도구 호출을 중심으로 로컬에서 추론할 모델을 찾을 때 비교할 후보입니다. 코드 수정과 전문 지식, 이미지 입력 및 상업 라이선스 조건을 우선하면 Qwen과 Gemma의 다른 강점도 함께 고려해야 합니다. 특정 기기의 토큰 속도만으로 기다림과 비용의 우열을 정하지 않습니다.",
+            "source_ids": [
+              "lfm-card",
+              "lfm-launch",
+              "lfm-license",
+              "qwen-card",
+              "gemma-card"
+            ]
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "출시일인 10월 13일과 최초 등재 및 검토일인 10월 15일을 구분했습니다. 직접 모델 실행, 독립 공통환경 재평가, API 계정 접근과 사람을 대상으로 한 독해 시험은 수행하지 않았습니다.",
+          "source_ids": [
+            "lfm-launch"
+          ]
+        },
+        {
+          "text": "GPU 최고 처리량의 정확한 동시성과 기기별 실제 메모리 사용량, 평가 시각과 모델 스냅샷, NVIDIA 카드 직접 검증 및 API 과금 상세는 미확인입니다. 원문이 명시하지 않은 날짜나 단위를 채우지 않았습니다.",
+          "source_ids": [
+            "lfm-launch",
+            "lfm-card"
+          ]
+        }
+      ],
+      "references": [
+        {
+          "id": "lfm-launch",
+          "title": "LFM2.5 출시와 공식 비교 및 요금",
+          "url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+          "description": "후학습 모델과 Base 공개, 16개 평가의 점수와 생성 조건, 속도 및 API 요금을 제공합니다. 성능은 Liquid AI의 자체 측정입니다."
+        },
+        {
+          "id": "lfm-card",
+          "title": "LFM2.5 후학습 모델 카드",
+          "url": "https://huggingface.co/LiquidAI/LFM2.5-24B-A2B",
+          "description": "전체 24.0B와 활성 2.45B, 131,072토큰 문맥 및 배포 형식을 설명합니다. 기기 속도의 Q4_K_M 양자화와 4K 입력 조건, AutomationBench의 최대 50턴 제한도 명시합니다."
+        },
+        {
+          "id": "lfm-base",
+          "title": "LFM2.5 Base 모델 카드",
+          "url": "https://huggingface.co/LiquidAI/LFM2.5-24B-A2B-Base",
+          "description": "추가 학습용 Base의 사양과 학습 정보를 제공합니다. 후학습 모델의 평가 점수는 Base 성능을 뜻하지 않습니다."
+        },
+        {
+          "id": "lfm-old",
+          "title": "이전 LFM2 모델 카드",
+          "url": "https://huggingface.co/LiquidAI/LFM2-24B-A2B",
+          "description": "이전 24B 모델의 활성 2.3B와 32,768토큰 문맥, 추론 흔적을 출력하지 않는 응답 방식을 설명합니다."
+        },
+        {
+          "id": "lfm-docs",
+          "title": "실행 지원과 추론 조건",
+          "url": "https://docs.liquid.ai/lfm/models/lfm25-24b-a2b",
+          "description": "추론 토큰 예산과 실행 지원 조건을 설명합니다. MLX 형식 실행에는 mlx-lm 패키지 0.32.0 이상이 필요합니다."
+        },
+        {
+          "id": "lfm-license",
+          "title": "해당 가중치의 LFM Open License v1.0",
+          "url": "https://huggingface.co/LiquidAI/LFM2.5-24B-A2B/blob/main/LICENSE",
+          "description": "연매출에 따른 상업 사용 제한과 재배포 고지를 규정합니다. 개별 법인의 자격과 유상 계약 조건은 별도 확인이 필요합니다."
+        },
+        {
+          "id": "qwen-card",
+          "title": "Qwen3.6-35B-A3B 공식 카드",
+          "url": "https://huggingface.co/Qwen/Qwen3.6-35B-A3B",
+          "description": "전체 35B와 활성 3B, 텍스트 또는 이미지 입력, 문맥 한도 및 Apache 2.0 조건을 제공합니다."
+        },
+        {
+          "id": "gemma-card",
+          "title": "Gemma 4 26B A4B 공식 카드",
+          "url": "https://huggingface.co/google/gemma-4-26B-A4B-it",
+          "description": "전체 25.2B와 활성 3.8B, 256K 문맥, 텍스트 또는 이미지 입력 및 Apache 2.0 조건을 제공합니다. 모델 이름의 26B와 A4B는 정확한 사양과 구분됩니다."
+        }
+      ]
+    }
+  ]
+}

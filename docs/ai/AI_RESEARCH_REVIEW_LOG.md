@@ -1101,3 +1101,10 @@ source5aadc78/[Pages38353077798](https://github.com/Hansihoo/signal-desk/actions
 - sourcee3fbb32를origin main에 일반push,Pages38466300945 success05:55:45KST/job2m52s. 공개9HTTP200과검토입력정확일치,55/171보고서·831/833관측·15/16원문을 확인했다. 이전54/170과820/822의내용·저장시각 및전체원문판 보존.
 - 공개1280/390px소개/3표,390px공식11기록필터,넘침/콘솔오류0. HTML/CSS비교는Windows/Linux줄끝차이를정규화했고본문·데이터불변계약을별도로검증했다. 모델실행·사람독해시험 아님.
 - 검증탭/viewport,owned시험fixture와일회성보조스크립트·텍스트중간본 정리. 원문raw와필수근거 D:/9_codex_temp/2026-10-14/signal-ai-models 보존. 기본theo-s-han인증과사용자기존변경/탭/서버 보존. 상세 docs/AI_MODEL_REVIEW.2026-10-14.md.
+
+
+## 2026-10-15 LFM2.5 신규 모델 검토
+
+선정 질문은 LFM2.5-24B-A2B의 이전 및 경쟁 로컬 모델 대비 사양, 성능과 이용 조건이다. 공식 발표 https://www.liquid.ai/blog/lfm2-5-24b-a2b 의 출시일은 10월 13일이며 최초 등록 및 실제 내용 검토일은 10월 15일 KST이다. 카드의 미명시 원문 날짜와 이전 최초 수집일은 추정하지 않았다. 실제 획득 UTC 시각, 최종 URL, 상태와 SHA는 data/raw/ai_news/official/2026-10-15/receipts.json에 보존한다. 공개 quality 배치에 8개 근거별 획득 시각과 검토 범위, 원문 URL 및 제한을 분리했다.
+
+공식 16평가와 4모델의 수치 64개, 사양 2개 및 API 요금 1개를 직접 대조했다. mlx-lm 버전, 학습 단계, Q4_K_M 및 4K 입력 속도 조건과 AutomationBench 50턴 제한을 보완했다. API 계정 조건, 한국어 작업 성능 및 독립 실행은 미검토다. NVIDIA 카드 https://huggingface.co/nvidia/Nemotron-3.5-Lightning-30B-A3B/raw/main/README.md 요청은 401로 실패했으므로 Liquid의 비교 열만 제공자 자체 보고로 사용한다. 고객 사례, 기존 모델 제공 확대와 출시 루머는 새 모델로 발행하지 않았다. 이 부분 목록 검토를 전체 모델 출시 부재로 일반화하지 않는다. 독립 첫 화면/본문/67facts 검토와 출력 검증은 사람 독해 시험과 분리한다. 구체 범위 및 결과 docs/AI_MODEL_REVIEW.2026-10-15.md.

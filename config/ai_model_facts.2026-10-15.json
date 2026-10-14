@@ -1,0 +1,1250 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "id": "lfm25-24b-a2b-agent-spec",
+      "model": "LFM2.5-24B-A2B",
+      "provider": "Liquid AI",
+      "source_url": "https://huggingface.co/LiquidAI/LFM2.5-24B-A2B",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공식 모델 사양",
+        "suite": "2026-10-13 공개 체크포인트 / agent",
+        "condition": "2026-10-13 출시 / 2026-10-15 원문 확인. 카드의 정확 사양; 가중치 다운로드와 계정 접근,실행 미검증.",
+        "release": "2026-10-13",
+        "parameters": 24.0,
+        "active_parameters": 2.45,
+        "context": 131072,
+        "effort": "reasoning",
+        "access": "오픈웨이트 + API",
+        "status": "공개 가중치",
+        "local": true,
+        "basis": "공식 모델 카드",
+        "note": "이름 A2B의 요약2B와 카드의 활성2.45B를 구분. 전체24B메모리와문맥cache 별도. Base에 후학습 성능을 적용하지 않음.",
+        "입력 형식": "텍스트",
+        "출력 형식": "텍스트",
+        "라이선스": "LFM Open License v1.0; 연매출1천만달러기준 상업사용제한/별도라이선스; 정확경계계약확인",
+        "references": [
+          "https://huggingface.co/LiquidAI/LFM2.5-24B-A2B",
+          "https://huggingface.co/LiquidAI/LFM2.5-24B-A2B/blob/main/LICENSE"
+        ]
+      }
+    },
+    {
+      "id": "lfm25-24b-a2b-base-spec",
+      "model": "LFM2.5-24B-A2B-Base",
+      "provider": "Liquid AI",
+      "source_url": "https://huggingface.co/LiquidAI/LFM2.5-24B-A2B-Base",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공식 모델 사양",
+        "suite": "2026-10-13 공개 체크포인트 / base",
+        "condition": "2026-10-13 출시 / 2026-10-15 원문 확인. 카드의 정확 사양; 가중치 다운로드와 계정 접근,실행 미검증.",
+        "release": "2026-10-13",
+        "parameters": 24.0,
+        "active_parameters": 2.45,
+        "context": 131072,
+        "effort": "추가 학습용 Base",
+        "access": "오픈웨이트",
+        "status": "공개 가중치",
+        "local": true,
+        "basis": "공식 모델 카드",
+        "note": "이름 A2B의 요약2B와 카드의 활성2.45B를 구분. 전체24B메모리와문맥cache 별도. Base에 후학습 성능을 적용하지 않음.",
+        "입력 형식": "텍스트",
+        "출력 형식": "텍스트",
+        "라이선스": "LFM Open License v1.0; 연매출1천만달러기준 상업사용제한/별도라이선스; 정확경계계약확인",
+        "references": [
+          "https://huggingface.co/LiquidAI/LFM2.5-24B-A2B-Base",
+          "https://huggingface.co/LiquidAI/LFM2.5-24B-A2B/blob/main/LICENSE"
+        ]
+      }
+    },
+    {
+      "id": "lfm25-24b-a2b-liquid-console-price",
+      "model": "LFM2.5-24B-A2B",
+      "provider": "Liquid AI",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공식 발표 API 가격",
+        "suite": "Liquid Console API 출시 요금",
+        "condition": "2026-10-13 발표 / 2026-10-15 확인. USD·100만토큰당; 캐시 인정·추론 과금 상세·세금·계정조건 미확인.",
+        "입력 USD / 100만 토큰": 0.1,
+        "캐시 입력 USD / 100만 토큰": 0.05,
+        "출력 USD / 100만 토큰": 1.0,
+        "access": "Liquid Console API",
+        "status": "공식 발표 요금",
+        "basis": "Liquid AI 공식 출시 발표",
+        "note": "Base API단가로 적용하지 않음. 로컬실행의 기기/전력/운영비와 상업라이선스비용을 포함하지 않음."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-lfm25-24b-a2b-automation",
+      "model": "LFM2.5-24B-A2B",
+      "provider": "Liquid AI",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / AutomationBench",
+        "effort": "reasoning (예산 미명시)",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026년 10월 13일 공식 표, 10월 15일 확인. temperature 0.6, top_p 0.95, 최대 50턴, 출력 상한은 문맥 한도. 원문 점수이며 단위 별도 미명시. 정확한 측정일과 모델 스냅샷은 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 27.69,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님.",
+        "references": [
+          "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+          "https://huggingface.co/LiquidAI/LFM2.5-24B-A2B"
+        ]
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-qwen36-35b-a3b-automation",
+      "model": "Qwen3.6-35B-A3B",
+      "provider": "Alibaba / Qwen",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / AutomationBench",
+        "effort": "선택 상태 미명시",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026년 10월 13일 공식 표, 10월 15일 확인. temperature 0.6, top_p 0.95, 최대 50턴, 출력 상한은 문맥 한도. 원문 점수이며 단위 별도 미명시. 정확한 측정일과 모델 스냅샷은 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 8.72,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님.",
+        "references": [
+          "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+          "https://huggingface.co/LiquidAI/LFM2.5-24B-A2B"
+        ]
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-gemma4-26b-a4b-it-automation",
+      "model": "Gemma 4 26B A4B-it",
+      "provider": "Google",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / AutomationBench",
+        "effort": "선택 상태 미명시",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026년 10월 13일 공식 표, 10월 15일 확인. temperature 0.6, top_p 0.95, 최대 50턴, 출력 상한은 문맥 한도. 원문 점수이며 단위 별도 미명시. 정확한 측정일과 모델 스냅샷은 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 5.46,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님.",
+        "references": [
+          "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+          "https://huggingface.co/LiquidAI/LFM2.5-24B-A2B"
+        ]
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-nemotron35-lightning-30b-a3b-automation",
+      "model": "Nemotron 3.5 Lightning (30B-A3B)",
+      "provider": "NVIDIA",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / AutomationBench",
+        "effort": "선택 상태 미명시",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026년 10월 13일 공식 표, 10월 15일 확인. temperature 0.6, top_p 0.95, 최대 50턴, 출력 상한은 문맥 한도. 원문 점수이며 단위 별도 미명시. 정확한 측정일과 모델 스냅샷은 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 2.61,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님.",
+        "references": [
+          "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+          "https://huggingface.co/LiquidAI/LFM2.5-24B-A2B"
+        ]
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-lfm25-24b-a2b-bfcl-v4",
+      "model": "LFM2.5-24B-A2B",
+      "provider": "Liquid AI",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / BFCLv4",
+        "effort": "reasoning (예산 미명시)",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. temperature0.001 / 최대출력4096. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 65.01,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-qwen36-35b-a3b-bfcl-v4",
+      "model": "Qwen3.6-35B-A3B",
+      "provider": "Alibaba / Qwen",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / BFCLv4",
+        "effort": "선택 상태 미명시",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. temperature0.001 / 최대출력4096. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 65.0,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-gemma4-26b-a4b-it-bfcl-v4",
+      "model": "Gemma 4 26B A4B-it",
+      "provider": "Google",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / BFCLv4",
+        "effort": "선택 상태 미명시",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. temperature0.001 / 최대출력4096. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 57.09,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-nemotron35-lightning-30b-a3b-bfcl-v4",
+      "model": "Nemotron 3.5 Lightning (30B-A3B)",
+      "provider": "NVIDIA",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / BFCLv4",
+        "effort": "선택 상태 미명시",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. temperature0.001 / 최대출력4096. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 53.78,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-lfm25-24b-a2b-tool-sandbox",
+      "model": "LFM2.5-24B-A2B",
+      "provider": "Liquid AI",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / ToolSandbox",
+        "effort": "reasoning (예산 미명시)",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. temperature0 / 최대출력1024 / 사용자GPT-4o-2024-08-06 동일설정. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 80.71,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-qwen36-35b-a3b-tool-sandbox",
+      "model": "Qwen3.6-35B-A3B",
+      "provider": "Alibaba / Qwen",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / ToolSandbox",
+        "effort": "선택 상태 미명시",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. temperature0 / 최대출력1024 / 사용자GPT-4o-2024-08-06 동일설정. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 75.02,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-gemma4-26b-a4b-it-tool-sandbox",
+      "model": "Gemma 4 26B A4B-it",
+      "provider": "Google",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / ToolSandbox",
+        "effort": "선택 상태 미명시",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. temperature0 / 최대출력1024 / 사용자GPT-4o-2024-08-06 동일설정. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 72.09,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-nemotron35-lightning-30b-a3b-tool-sandbox",
+      "model": "Nemotron 3.5 Lightning (30B-A3B)",
+      "provider": "NVIDIA",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / ToolSandbox",
+        "effort": "선택 상태 미명시",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. temperature0 / 최대출력1024 / 사용자GPT-4o-2024-08-06 동일설정. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 75.13,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-lfm25-24b-a2b-liveclaw",
+      "model": "LFM2.5-24B-A2B",
+      "provider": "Liquid AI",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / LiveClaw",
+        "effort": "reasoning (예산 미명시)",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. temperature1.0(vLLM기본값) / 최대출력8192. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 48.09,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-qwen36-35b-a3b-liveclaw",
+      "model": "Qwen3.6-35B-A3B",
+      "provider": "Alibaba / Qwen",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / LiveClaw",
+        "effort": "선택 상태 미명시",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. temperature1.0(vLLM기본값) / 최대출력8192. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 38.19,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-gemma4-26b-a4b-it-liveclaw",
+      "model": "Gemma 4 26B A4B-it",
+      "provider": "Google",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / LiveClaw",
+        "effort": "선택 상태 미명시",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. temperature1.0(vLLM기본값) / 최대출력8192. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 41.25,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-nemotron35-lightning-30b-a3b-liveclaw",
+      "model": "Nemotron 3.5 Lightning (30B-A3B)",
+      "provider": "NVIDIA",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / LiveClaw",
+        "effort": "선택 상태 미명시",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. temperature1.0(vLLM기본값) / 최대출력8192. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 37.72,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-lfm25-24b-a2b-pinchbench",
+      "model": "LFM2.5-24B-A2B",
+      "provider": "Liquid AI",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / PinchBench",
+        "effort": "reasoning (예산 미명시)",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. temperature0.6 / 최대출력32768. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 83.18,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-qwen36-35b-a3b-pinchbench",
+      "model": "Qwen3.6-35B-A3B",
+      "provider": "Alibaba / Qwen",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / PinchBench",
+        "effort": "선택 상태 미명시",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. temperature0.6 / 최대출력32768. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 89.93,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-gemma4-26b-a4b-it-pinchbench",
+      "model": "Gemma 4 26B A4B-it",
+      "provider": "Google",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / PinchBench",
+        "effort": "선택 상태 미명시",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. temperature0.6 / 최대출력32768. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 77.12,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-nemotron35-lightning-30b-a3b-pinchbench",
+      "model": "Nemotron 3.5 Lightning (30B-A3B)",
+      "provider": "NVIDIA",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / PinchBench",
+        "effort": "선택 상태 미명시",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. temperature0.6 / 최대출력32768. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 84.2,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-lfm25-24b-a2b-tau3-banking",
+      "model": "LFM2.5-24B-A2B",
+      "provider": "Liquid AI",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / τ³-Bench Banking",
+        "effort": "reasoning (예산 미명시)",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. 사용자GPT-5.2 low / BM25 / temperature0 / 턴당출력16384. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 8.04,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-qwen36-35b-a3b-tau3-banking",
+      "model": "Qwen3.6-35B-A3B",
+      "provider": "Alibaba / Qwen",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / τ³-Bench Banking",
+        "effort": "선택 상태 미명시",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. 사용자GPT-5.2 low / BM25 / temperature0 / 턴당출력16384. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 7.63,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-gemma4-26b-a4b-it-tau3-banking",
+      "model": "Gemma 4 26B A4B-it",
+      "provider": "Google",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / τ³-Bench Banking",
+        "effort": "선택 상태 미명시",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. 사용자GPT-5.2 low / BM25 / temperature0 / 턴당출력16384. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 4.54,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-nemotron35-lightning-30b-a3b-tau3-banking",
+      "model": "Nemotron 3.5 Lightning (30B-A3B)",
+      "provider": "NVIDIA",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / τ³-Bench Banking",
+        "effort": "선택 상태 미명시",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. 사용자GPT-5.2 low / BM25 / temperature0 / 턴당출력16384. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 7.01,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-lfm25-24b-a2b-webarena-verified",
+      "model": "LFM2.5-24B-A2B",
+      "provider": "Liquid AI",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / WebArena Verified",
+        "effort": "reasoning (예산 미명시)",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. temperature0.6 / top_p0.95 / 최대40행동 / 출력상한은문맥한도. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 26.75,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-qwen36-35b-a3b-webarena-verified",
+      "model": "Qwen3.6-35B-A3B",
+      "provider": "Alibaba / Qwen",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / WebArena Verified",
+        "effort": "선택 상태 미명시",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. temperature0.6 / top_p0.95 / 최대40행동 / 출력상한은문맥한도. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 37.62,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-gemma4-26b-a4b-it-webarena-verified",
+      "model": "Gemma 4 26B A4B-it",
+      "provider": "Google",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / WebArena Verified",
+        "effort": "선택 상태 미명시",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. temperature0.6 / top_p0.95 / 최대40행동 / 출력상한은문맥한도. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 25.62,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-nemotron35-lightning-30b-a3b-webarena-verified",
+      "model": "Nemotron 3.5 Lightning (30B-A3B)",
+      "provider": "NVIDIA",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / WebArena Verified",
+        "effort": "선택 상태 미명시",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. temperature0.6 / top_p0.95 / 최대40행동 / 출력상한은문맥한도. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 28.69,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-lfm25-24b-a2b-gpqa-diamond",
+      "model": "LFM2.5-24B-A2B",
+      "provider": "Liquid AI",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / GPQA Diamond",
+        "effort": "reasoning (예산 미명시)",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. temperature0.6 / 최대출력32768. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 74.42,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-qwen36-35b-a3b-gpqa-diamond",
+      "model": "Qwen3.6-35B-A3B",
+      "provider": "Alibaba / Qwen",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / GPQA Diamond",
+        "effort": "선택 상태 미명시",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. temperature0.6 / 최대출력32768. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 83.69,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-gemma4-26b-a4b-it-gpqa-diamond",
+      "model": "Gemma 4 26B A4B-it",
+      "provider": "Google",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / GPQA Diamond",
+        "effort": "선택 상태 미명시",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. temperature0.6 / 최대출력32768. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 74.9,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-nemotron35-lightning-30b-a3b-gpqa-diamond",
+      "model": "Nemotron 3.5 Lightning (30B-A3B)",
+      "provider": "NVIDIA",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / GPQA Diamond",
+        "effort": "선택 상태 미명시",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. temperature0.6 / 최대출력32768. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 72.42,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-lfm25-24b-a2b-aa-omniscience",
+      "model": "LFM2.5-24B-A2B",
+      "provider": "Liquid AI",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / AA-Omniscience",
+        "effort": "reasoning (예산 미명시)",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. temperature0.6 / 최대출력32768. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": -24.9,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-qwen36-35b-a3b-aa-omniscience",
+      "model": "Qwen3.6-35B-A3B",
+      "provider": "Alibaba / Qwen",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / AA-Omniscience",
+        "effort": "선택 상태 미명시",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. temperature0.6 / 최대출력32768. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": -24.35,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-gemma4-26b-a4b-it-aa-omniscience",
+      "model": "Gemma 4 26B A4B-it",
+      "provider": "Google",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / AA-Omniscience",
+        "effort": "선택 상태 미명시",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. temperature0.6 / 최대출력32768. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": -59.39,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-nemotron35-lightning-30b-a3b-aa-omniscience",
+      "model": "Nemotron 3.5 Lightning (30B-A3B)",
+      "provider": "NVIDIA",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / AA-Omniscience",
+        "effort": "선택 상태 미명시",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. temperature0.6 / 최대출력32768. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": -3.58,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-lfm25-24b-a2b-hle",
+      "model": "LFM2.5-24B-A2B",
+      "provider": "Liquid AI",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / HLE",
+        "effort": "reasoning (예산 미명시)",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. temperature0.6 / 최대출력32768. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 7.4,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-qwen36-35b-a3b-hle",
+      "model": "Qwen3.6-35B-A3B",
+      "provider": "Alibaba / Qwen",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / HLE",
+        "effort": "선택 상태 미명시",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. temperature0.6 / 최대출력32768. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 7.69,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-gemma4-26b-a4b-it-hle",
+      "model": "Gemma 4 26B A4B-it",
+      "provider": "Google",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / HLE",
+        "effort": "선택 상태 미명시",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. temperature0.6 / 최대출력32768. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 8.57,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-nemotron35-lightning-30b-a3b-hle",
+      "model": "Nemotron 3.5 Lightning (30B-A3B)",
+      "provider": "NVIDIA",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / HLE",
+        "effort": "선택 상태 미명시",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. temperature0.6 / 최대출력32768. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 5.65,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-lfm25-24b-a2b-ifeval",
+      "model": "LFM2.5-24B-A2B",
+      "provider": "Liquid AI",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / IFEval",
+        "effort": "reasoning (예산 미명시)",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. temperature0.6 / 최대출력32768. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 96.75,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-qwen36-35b-a3b-ifeval",
+      "model": "Qwen3.6-35B-A3B",
+      "provider": "Alibaba / Qwen",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / IFEval",
+        "effort": "선택 상태 미명시",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. temperature0.6 / 최대출력32768. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 93.06,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-gemma4-26b-a4b-it-ifeval",
+      "model": "Gemma 4 26B A4B-it",
+      "provider": "Google",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / IFEval",
+        "effort": "선택 상태 미명시",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. temperature0.6 / 최대출력32768. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 92.0,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-nemotron35-lightning-30b-a3b-ifeval",
+      "model": "Nemotron 3.5 Lightning (30B-A3B)",
+      "provider": "NVIDIA",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / IFEval",
+        "effort": "선택 상태 미명시",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. temperature0.6 / 최대출력32768. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 94.19,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-lfm25-24b-a2b-ifbench",
+      "model": "LFM2.5-24B-A2B",
+      "provider": "Liquid AI",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / IFBench",
+        "effort": "reasoning (예산 미명시)",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. temperature0.6 / 최대출력32768. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 74.69,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-qwen36-35b-a3b-ifbench",
+      "model": "Qwen3.6-35B-A3B",
+      "provider": "Alibaba / Qwen",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / IFBench",
+        "effort": "선택 상태 미명시",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. temperature0.6 / 최대출력32768. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 64.21,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-gemma4-26b-a4b-it-ifbench",
+      "model": "Gemma 4 26B A4B-it",
+      "provider": "Google",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / IFBench",
+        "effort": "선택 상태 미명시",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. temperature0.6 / 최대출력32768. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 47.44,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-nemotron35-lightning-30b-a3b-ifbench",
+      "model": "Nemotron 3.5 Lightning (30B-A3B)",
+      "provider": "NVIDIA",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / IFBench",
+        "effort": "선택 상태 미명시",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. temperature0.6 / 최대출력32768. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 71.67,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-lfm25-24b-a2b-multi-if",
+      "model": "LFM2.5-24B-A2B",
+      "provider": "Liquid AI",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / Multi-IF",
+        "effort": "reasoning (예산 미명시)",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. temperature0.6 / 최대출력32768. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 84.38,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-qwen36-35b-a3b-multi-if",
+      "model": "Qwen3.6-35B-A3B",
+      "provider": "Alibaba / Qwen",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / Multi-IF",
+        "effort": "선택 상태 미명시",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. temperature0.6 / 최대출력32768. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 81.53,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-gemma4-26b-a4b-it-multi-if",
+      "model": "Gemma 4 26B A4B-it",
+      "provider": "Google",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / Multi-IF",
+        "effort": "선택 상태 미명시",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. temperature0.6 / 최대출력32768. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 82.19,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-nemotron35-lightning-30b-a3b-multi-if",
+      "model": "Nemotron 3.5 Lightning (30B-A3B)",
+      "provider": "NVIDIA",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / Multi-IF",
+        "effort": "선택 상태 미명시",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. temperature0.6 / 최대출력32768. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 82.34,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-lfm25-24b-a2b-math-500",
+      "model": "LFM2.5-24B-A2B",
+      "provider": "Liquid AI",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / MATH-500",
+        "effort": "reasoning (예산 미명시)",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. temperature0.6 / 최대출력32768. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 96.04,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-qwen36-35b-a3b-math-500",
+      "model": "Qwen3.6-35B-A3B",
+      "provider": "Alibaba / Qwen",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / MATH-500",
+        "effort": "선택 상태 미명시",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. temperature0.6 / 최대출력32768. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 96.73,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-gemma4-26b-a4b-it-math-500",
+      "model": "Gemma 4 26B A4B-it",
+      "provider": "Google",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / MATH-500",
+        "effort": "선택 상태 미명시",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. temperature0.6 / 최대출력32768. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 95.66,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-nemotron35-lightning-30b-a3b-math-500",
+      "model": "Nemotron 3.5 Lightning (30B-A3B)",
+      "provider": "NVIDIA",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / MATH-500",
+        "effort": "선택 상태 미명시",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. temperature0.6 / 최대출력32768. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 96.4,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-lfm25-24b-a2b-swe-bench-verified-opencode",
+      "model": "LFM2.5-24B-A2B",
+      "provider": "Liquid AI",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / SWE-Bench Verified (OpenCode)",
+        "effort": "reasoning (예산 미명시)",
+        "harness": "OpenCode / vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. temperature0.6 / 최대출력32768. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 51.0,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-qwen36-35b-a3b-swe-bench-verified-opencode",
+      "model": "Qwen3.6-35B-A3B",
+      "provider": "Alibaba / Qwen",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / SWE-Bench Verified (OpenCode)",
+        "effort": "선택 상태 미명시",
+        "harness": "OpenCode / vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. temperature0.6 / 최대출력32768. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 66.2,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-gemma4-26b-a4b-it-swe-bench-verified-opencode",
+      "model": "Gemma 4 26B A4B-it",
+      "provider": "Google",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / SWE-Bench Verified (OpenCode)",
+        "effort": "선택 상태 미명시",
+        "harness": "OpenCode / vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. temperature0.6 / 최대출력32768. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 25.8,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-nemotron35-lightning-30b-a3b-swe-bench-verified-opencode",
+      "model": "Nemotron 3.5 Lightning (30B-A3B)",
+      "provider": "NVIDIA",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / SWE-Bench Verified (OpenCode)",
+        "effort": "선택 상태 미명시",
+        "harness": "OpenCode / vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. temperature0.6 / 최대출력32768. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 53.4,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-lfm25-24b-a2b-scicode",
+      "model": "LFM2.5-24B-A2B",
+      "provider": "Liquid AI",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / SciCode",
+        "effort": "reasoning (예산 미명시)",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. temperature0.6 / 최대출력32768. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 32.71,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-qwen36-35b-a3b-scicode",
+      "model": "Qwen3.6-35B-A3B",
+      "provider": "Alibaba / Qwen",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / SciCode",
+        "effort": "선택 상태 미명시",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. temperature0.6 / 최대출력32768. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 37.35,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-gemma4-26b-a4b-it-scicode",
+      "model": "Gemma 4 26B A4B-it",
+      "provider": "Google",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / SciCode",
+        "effort": "선택 상태 미명시",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. temperature0.6 / 최대출력32768. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 35.42,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    },
+    {
+      "id": "liquid-2026-10-13-nemotron35-lightning-30b-a3b-scicode",
+      "model": "Nemotron 3.5 Lightning (30B-A3B)",
+      "provider": "NVIDIA",
+      "source_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "checked_on": "2026-10-15",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Liquid AI 2026-10-13 / SciCode",
+        "effort": "선택 상태 미명시",
+        "harness": "vLLM (버전 미명시)",
+        "condition": "2026-10-13 공식표 / 2026-10-15 확인. temperature0.6 / 최대출력32768. 원문점수(단위 별도 미명시). 정확 측정일·스냅샷·일부 Harness 미확인.",
+        "측정 주체": "Liquid AI",
+        "평가 점수": 27.78,
+        "basis": "Liquid AI 자체측정·비교 발표",
+        "note": "다른 공급사/AA의 동일 이름 평가와 합치지 않음. NVIDIA 카드 직접열람실패. 우리 실사용/독립재평가 아님."
+      }
+    }
+  ]
+}

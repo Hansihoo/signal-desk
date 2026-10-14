@@ -25,9 +25,11 @@ class EditorialTests(unittest.TestCase):
         old = load_report_input("config/ai_model_guides.2026-10-13.json")[0]
         new = copy.deepcopy(old)
         new["title"] = "모델 비교 분석"
+        new["description"] = "<도구 호출>과 코딩 능력을 비교하려고 작성했습니다."
         new["tables"] = [{"id": "compare", "title": "경쟁 모델", "note": "공식 조건",
             "columns": ["모델", "제공"], "rows": [{"values": ["Wonder", "API"], "source_ids": ["models"]}]}]
         cfg = {"default_layout": "editorial", "legacy_report_ids": [old["id"]], "model_introduction_editions": {old["id"]: [digest(new)]}}
+        cfg["model_introduction_purpose_editions"] = {old["id"]: [digest(new)]}
         import_reports(self.conn, [old])
         import_reports(self.conn, [new])
         data = build_research_data(self.conn, [], [])
@@ -42,6 +44,11 @@ class EditorialTests(unittest.TestCase):
             self.assertIn('<body class="model-introduction-page">', current)
             self.assertIn('href="ai-models.html">전체 모델 비교표', current)
             self.assertIn('href="ai-model-guides.html">모델별 자료', current)
+            purpose = '<p class="report-purpose">&lt;도구 호출&gt;과 코딩 능력을 비교하려고 작성했습니다.</p>'
+            self.assertIn(purpose, current)
+            self.assertLess(current.index('</h1></header>'), current.index(purpose))
+            self.assertLess(current.index(purpose), current.index('<p class="report-deck">'))
+            self.assertNotIn('class="report-purpose"', previous)
             self.assertNotIn('<body class="model-introduction-page">', previous)
             self.assertLess(previous.index('<section id="explanation"'), previous.index('<section id="data"'))
             self.assertIn('id="data-title">데이터', previous)

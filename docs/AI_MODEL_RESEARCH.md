@@ -61,7 +61,9 @@ Agent/Harness, 모델 제공 여부와 성능, 공개 벤치마크와 실제 작
   새 소개의 report ID를 `config/study_pages.json`의 `legacy_report_ids`에 넣어
   기존 모델 소개와 같은 Editorial을 사용한다. 해당 판의 `digest(report)`를
   `editorial_summary_first`와 `model_introduction_editions`에 등록하면
-  목적·요약 다음에 비교표, 모델 분석, 결론이 표시된다. 내용 해시에 묶어
+  목적·요약 다음에 비교표, 모델 분석, 결론이 표시된다. 새 소개판은 같은 해시를
+  `model_introduction_purpose_editions`에도 등록해 `description`의 작성 목적을
+  제목 바로 아래 표시한다. 기존 판의 표시 형식은 보존한다. 내용 해시에 묶어
   이전 판의 표시 순서는 보존한다.
   문장 표기 교정은 본문 필드에 한정한다. 안정적인 ID, `topic_path`의
   `개발 동향 / AI 모델·API`, 출처 ID와 URL은 나열 문장처럼 일괄 치환하지 않는다.
