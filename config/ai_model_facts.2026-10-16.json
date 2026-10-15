@@ -1,0 +1,2079 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "id": "nemotron35-super-vl-bf16",
+      "model": "Nemotron 3.5 Super VL BF16",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공식 모델 사양",
+        "suite": "2026-10-15 공개 가중치 / BF16",
+        "condition": "10월 15일 공개, 10월 16일 원문 확인. 가중치 실행과 계정 API 호출 미검증. 정확한 1,048,576 한도는 NIM 프로필 기준이며 카드의 1M과 서버 설정을 구분. 학습 문서의 전체 모듈 포함 124.453B와 기본 120B 표기 구분.",
+        "release": "2026-10-15",
+        "parameters": 120,
+        "active_parameters": 12,
+        "context": 1048576,
+        "access": "오픈웨이트",
+        "status": "공개 가중치",
+        "local": true,
+        "effort": "선택 상태 미명시",
+        "basis": "제공자 공식 문서",
+        "note": "정확한 1,048,576 한도는 NIM 프로필 기준이며 카드의 1M과 서버 설정을 구분. 학습 문서의 전체 모듈 포함 124.453B와 기본 120B 표기 구분.",
+        "정밀도": "BF16",
+        "라이선스": "OpenMDW 1.1",
+        "입력 형식": "텍스트, 이미지, 동영상",
+        "출력 형식": "텍스트",
+        "표준 API 단가": "미확인; 가중치와 서비스 요금은 별도",
+        "references": [
+          "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+          "https://docs.nvidia.com/nim/large-language-models/latest/get-started/advanced/get-started-nemotron-3.5-super-vl.html",
+          "https://docs.nvidia.com/nemotron/latest/nemotron/super35/README.html"
+        ]
+      }
+    },
+    {
+      "id": "nemotron35-super-vl-nvfp4",
+      "model": "Nemotron 3.5 Super VL NVFP4",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-NVFP4",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공식 모델 사양",
+        "suite": "2026-10-15 공개 가중치 / NVFP4",
+        "condition": "10월 15일 공개, 10월 16일 원문 확인. 가중치 실행과 계정 API 호출 미검증. 서버 프로필과 하드웨어에 따라 입력 범위와 실제 문맥이 달라짐. BF16과 성능 손실 여부를 평가별로 구분.",
+        "release": "2026-10-15",
+        "parameters": 120,
+        "active_parameters": 12,
+        "context": "1M",
+        "access": "오픈웨이트",
+        "status": "공개 가중치",
+        "local": true,
+        "effort": "선택 상태 미명시",
+        "basis": "제공자 공식 문서",
+        "note": "서버 프로필과 하드웨어에 따라 입력 범위와 실제 문맥이 달라짐. BF16과 성능 손실 여부를 평가별로 구분.",
+        "정밀도": "NVFP4",
+        "라이선스": "OpenMDW 1.1",
+        "입력 형식": "텍스트, 이미지, 동영상",
+        "출력 형식": "텍스트",
+        "표준 API 단가": "미확인; 가중치와 서비스 요금은 별도"
+      }
+    },
+    {
+      "id": "nemotron35-bolt-74b-a9b-iq2",
+      "model": "Nemotron 3.5 Bolt 74B-A9B 24GB",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공식 모델 사양",
+        "suite": "2026-10-15 공개 가중치 / IQ2 및 혼합 정밀도",
+        "condition": "10월 15일 공개, 10월 16일 원문 확인. 가중치 실행과 계정 API 호출 미검증. 24GB 설계는 batch 1 및 128K 문맥 목표. 최대 256K와 동시 요청에서 24GB 보장 아님. 전문가 IQ2_XXS, 일부 층 NVFP4/Q8_0.",
+        "release": "2026-10-15",
+        "parameters": 74,
+        "active_parameters": 9,
+        "context": "256K",
+        "access": "오픈웨이트",
+        "status": "공개 가중치",
+        "local": true,
+        "effort": "선택 상태 미명시",
+        "basis": "제공자 공식 문서",
+        "note": "24GB 설계는 batch 1 및 128K 문맥 목표. 최대 256K와 동시 요청에서 24GB 보장 아님. 전문가 IQ2_XXS, 일부 층 NVFP4/Q8_0.",
+        "정밀도": "IQ2 및 혼합 정밀도",
+        "라이선스": "OpenMDW 1.1",
+        "입력 형식": "텍스트, 이미지, 동영상",
+        "출력 형식": "텍스트",
+        "표준 API 단가": "미확인; 가중치와 서비스 요금은 별도"
+      }
+    },
+    {
+      "id": "muse-spark-open-bf16",
+      "model": "Muse Spark Open BF16",
+      "provider": "Meta",
+      "source_url": "https://dev.meta.ai/docs/muse-spark-open",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공식 모델 사양",
+        "suite": "2026-10-15 공개 가중치 / BF16",
+        "condition": "10월 15일 공개, 10월 16일 원문 확인. 가중치 실행과 계정 API 호출 미검증. Spark의 공개 가중치 판. Glimmer와 다른 조건. BF16 약1.65TB, NVFP4 약537GB 가중치이며 실행 메모리 별도. HF 카드/라이선스 요청401로 세부 조건 미확인.",
+        "release": "2026-10-15",
+        "parameters": 816,
+        "active_parameters": 42,
+        "context": 1048576,
+        "access": "오픈웨이트",
+        "status": "공개 가중치",
+        "local": true,
+        "effort": "선택 상태 미명시",
+        "basis": "제공자 공식 문서",
+        "note": "Spark의 공개 가중치 판. Glimmer와 다른 조건. BF16 약1.65TB, NVFP4 약537GB 가중치이며 실행 메모리 별도. HF 카드/라이선스 요청401로 세부 조건 미확인.",
+        "정밀도": "BF16",
+        "라이선스": "Muse Model License 및 이용 정책",
+        "입력 형식": "텍스트, 이미지, 음성, 동영상",
+        "출력 형식": "텍스트",
+        "표준 API 단가": "미확인; 가중치와 서비스 요금은 별도",
+        "references": [
+          "https://dev.meta.ai/docs/muse-spark-open",
+          "https://dev.meta.ai/docs/muse-spark-open/get-the-model"
+        ]
+      }
+    },
+    {
+      "id": "muse-spark-open-nvfp4",
+      "model": "Muse Spark Open NVFP4",
+      "provider": "Meta",
+      "source_url": "https://dev.meta.ai/docs/muse-spark-open",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공식 모델 사양",
+        "suite": "2026-10-15 공개 가중치 / NVFP4",
+        "condition": "10월 15일 공개, 10월 16일 원문 확인. 가중치 실행과 계정 API 호출 미검증. Spark의 공개 가중치 판. Glimmer와 다른 조건. BF16 약1.65TB, NVFP4 약537GB 가중치이며 실행 메모리 별도. HF 카드/라이선스 요청401로 세부 조건 미확인.",
+        "release": "2026-10-15",
+        "parameters": 816,
+        "active_parameters": 42,
+        "context": 1048576,
+        "access": "오픈웨이트",
+        "status": "공개 가중치",
+        "local": true,
+        "effort": "선택 상태 미명시",
+        "basis": "제공자 공식 문서",
+        "note": "Spark의 공개 가중치 판. Glimmer와 다른 조건. BF16 약1.65TB, NVFP4 약537GB 가중치이며 실행 메모리 별도. HF 카드/라이선스 요청401로 세부 조건 미확인.",
+        "정밀도": "NVFP4",
+        "라이선스": "Muse Model License 및 이용 정책",
+        "입력 형식": "텍스트, 이미지, 음성, 동영상",
+        "출력 형식": "텍스트",
+        "표준 API 단가": "미확인; 가중치와 서비스 요금은 별도",
+        "references": [
+          "https://dev.meta.ai/docs/muse-spark-open",
+          "https://dev.meta.ai/docs/muse-spark-open/get-the-model"
+        ]
+      }
+    },
+    {
+      "id": "nvidia-super-vl-2026-10-15-benchmarks-gpqa-diamond-nemotron-3-5-super-vl-bf16",
+      "model": "Nemotron 3.5 Super VL BF16",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Super VL 2026-10-15 / GPQA-Diamond",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. Super BF16 공개 재현 경로는 vLLM0.30.0 및4GB200, 기본262144문맥, GraphWalks1048576. 공통 추론 켜기/temperature1.0/top_p0.95이며 과제 설정 우선. SWE는 OpenCode, OCR은 별도 구현. 비교 모델 세부 예산/스냅샷은 미확인.",
+        "effort": "공급사 과제별 설정",
+        "harness": "NeMo Gym / 과제별 별도 실행 경로",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 89.52,
+        "references": [
+          "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+          "https://raw.githubusercontent.com/NVIDIA-NeMo/Gym/main/nemotron_recipes/super-3.5/reproducibility.md"
+        ]
+      }
+    },
+    {
+      "id": "nvidia-super-vl-2026-10-15-benchmarks-gpqa-diamond-qwen3-5-122b-a10b",
+      "model": "Qwen3.5-122B-A10B",
+      "provider": "Alibaba / Qwen",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Super VL 2026-10-15 / GPQA-Diamond",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. Super BF16 공개 재현 경로는 vLLM0.30.0 및4GB200, 기본262144문맥, GraphWalks1048576. 공통 추론 켜기/temperature1.0/top_p0.95이며 과제 설정 우선. SWE는 OpenCode, OCR은 별도 구현. 비교 모델 세부 예산/스냅샷은 미확인.",
+        "effort": "공급사 과제별 설정",
+        "harness": "NeMo Gym / 과제별 별도 실행 경로",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 86.7,
+        "references": [
+          "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+          "https://raw.githubusercontent.com/NVIDIA-NeMo/Gym/main/nemotron_recipes/super-3.5/reproducibility.md"
+        ]
+      }
+    },
+    {
+      "id": "nvidia-super-vl-2026-10-15-benchmarks-gpqa-diamond-qwen3-8-flash-next",
+      "model": "Qwen3.8-Flash-Next",
+      "provider": "Alibaba / Qwen",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Super VL 2026-10-15 / GPQA-Diamond",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. Super BF16 공개 재현 경로는 vLLM0.30.0 및4GB200, 기본262144문맥, GraphWalks1048576. 공통 추론 켜기/temperature1.0/top_p0.95이며 과제 설정 우선. SWE는 OpenCode, OCR은 별도 구현. 비교 모델 세부 예산/스냅샷은 미확인.",
+        "effort": "공급사 과제별 설정",
+        "harness": "NeMo Gym / 과제별 별도 실행 경로",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 92.7,
+        "references": [
+          "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+          "https://raw.githubusercontent.com/NVIDIA-NeMo/Gym/main/nemotron_recipes/super-3.5/reproducibility.md"
+        ]
+      }
+    },
+    {
+      "id": "nvidia-super-vl-2026-10-15-benchmarks-gpqa-diamond-deepseek-v4-flash0731",
+      "model": "DeepSeek-V4-Flash0731",
+      "provider": "DeepSeek",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Super VL 2026-10-15 / GPQA-Diamond",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. Super BF16 공개 재현 경로는 vLLM0.30.0 및4GB200, 기본262144문맥, GraphWalks1048576. 공통 추론 켜기/temperature1.0/top_p0.95이며 과제 설정 우선. SWE는 OpenCode, OCR은 별도 구현. 비교 모델 세부 예산/스냅샷은 미확인.",
+        "effort": "공급사 과제별 설정",
+        "harness": "NeMo Gym / 과제별 별도 실행 경로",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 89.6,
+        "references": [
+          "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+          "https://raw.githubusercontent.com/NVIDIA-NeMo/Gym/main/nemotron_recipes/super-3.5/reproducibility.md"
+        ]
+      }
+    },
+    {
+      "id": "nvidia-super-vl-2026-10-15-benchmarks-aa-lcr-v1-1-nemotron-3-5-super-vl-bf16",
+      "model": "Nemotron 3.5 Super VL BF16",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Super VL 2026-10-15 / AA-LCR v1.1",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. Super BF16 공개 재현 경로는 vLLM0.30.0 및4GB200, 기본262144문맥, GraphWalks1048576. 공통 추론 켜기/temperature1.0/top_p0.95이며 과제 설정 우선. SWE는 OpenCode, OCR은 별도 구현. 비교 모델 세부 예산/스냅샷은 미확인.",
+        "effort": "공급사 과제별 설정",
+        "harness": "NeMo Gym / 과제별 별도 실행 경로",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 68.62,
+        "references": [
+          "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+          "https://raw.githubusercontent.com/NVIDIA-NeMo/Gym/main/nemotron_recipes/super-3.5/reproducibility.md"
+        ]
+      }
+    },
+    {
+      "id": "nvidia-super-vl-2026-10-15-benchmarks-aa-lcr-v1-1-qwen3-5-122b-a10b",
+      "model": "Qwen3.5-122B-A10B",
+      "provider": "Alibaba / Qwen",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Super VL 2026-10-15 / AA-LCR v1.1",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. Super BF16 공개 재현 경로는 vLLM0.30.0 및4GB200, 기본262144문맥, GraphWalks1048576. 공통 추론 켜기/temperature1.0/top_p0.95이며 과제 설정 우선. SWE는 OpenCode, OCR은 별도 구현. 비교 모델 세부 예산/스냅샷은 미확인.",
+        "effort": "공급사 과제별 설정",
+        "harness": "NeMo Gym / 과제별 별도 실행 경로",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 75.1,
+        "references": [
+          "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+          "https://raw.githubusercontent.com/NVIDIA-NeMo/Gym/main/nemotron_recipes/super-3.5/reproducibility.md"
+        ]
+      }
+    },
+    {
+      "id": "nvidia-super-vl-2026-10-15-benchmarks-aa-lcr-v1-1-qwen3-8-flash-next",
+      "model": "Qwen3.8-Flash-Next",
+      "provider": "Alibaba / Qwen",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Super VL 2026-10-15 / AA-LCR v1.1",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. Super BF16 공개 재현 경로는 vLLM0.30.0 및4GB200, 기본262144문맥, GraphWalks1048576. 공통 추론 켜기/temperature1.0/top_p0.95이며 과제 설정 우선. SWE는 OpenCode, OCR은 별도 구현. 비교 모델 세부 예산/스냅샷은 미확인.",
+        "effort": "공급사 과제별 설정",
+        "harness": "NeMo Gym / 과제별 별도 실행 경로",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 78.4,
+        "references": [
+          "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+          "https://raw.githubusercontent.com/NVIDIA-NeMo/Gym/main/nemotron_recipes/super-3.5/reproducibility.md"
+        ]
+      }
+    },
+    {
+      "id": "nvidia-super-vl-2026-10-15-benchmarks-aa-lcr-v1-1-deepseek-v4-flash0731",
+      "model": "DeepSeek-V4-Flash0731",
+      "provider": "DeepSeek",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Super VL 2026-10-15 / AA-LCR v1.1",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. Super BF16 공개 재현 경로는 vLLM0.30.0 및4GB200, 기본262144문맥, GraphWalks1048576. 공통 추론 켜기/temperature1.0/top_p0.95이며 과제 설정 우선. SWE는 OpenCode, OCR은 별도 구현. 비교 모델 세부 예산/스냅샷은 미확인.",
+        "effort": "공급사 과제별 설정",
+        "harness": "NeMo Gym / 과제별 별도 실행 경로",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 79.7,
+        "references": [
+          "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+          "https://raw.githubusercontent.com/NVIDIA-NeMo/Gym/main/nemotron_recipes/super-3.5/reproducibility.md"
+        ]
+      }
+    },
+    {
+      "id": "nvidia-super-vl-2026-10-15-benchmarks-graphwalks-nemotron-3-5-super-vl-bf16",
+      "model": "Nemotron 3.5 Super VL BF16",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Super VL 2026-10-15 / GraphWalks",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. Super BF16 공개 재현 경로는 vLLM0.30.0 및4GB200, 기본262144문맥, GraphWalks1048576. 공통 추론 켜기/temperature1.0/top_p0.95이며 과제 설정 우선. SWE는 OpenCode, OCR은 별도 구현. 비교 모델 세부 예산/스냅샷은 미확인.",
+        "effort": "공급사 과제별 설정",
+        "harness": "NeMo Gym / 과제별 별도 실행 경로",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 89.71,
+        "references": [
+          "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+          "https://raw.githubusercontent.com/NVIDIA-NeMo/Gym/main/nemotron_recipes/super-3.5/reproducibility.md"
+        ]
+      }
+    },
+    {
+      "id": "nvidia-super-vl-2026-10-15-benchmarks-graphwalks-qwen3-5-122b-a10b",
+      "model": "Qwen3.5-122B-A10B",
+      "provider": "Alibaba / Qwen",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Super VL 2026-10-15 / GraphWalks",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. Super BF16 공개 재현 경로는 vLLM0.30.0 및4GB200, 기본262144문맥, GraphWalks1048576. 공통 추론 켜기/temperature1.0/top_p0.95이며 과제 설정 우선. SWE는 OpenCode, OCR은 별도 구현. 비교 모델 세부 예산/스냅샷은 미확인.",
+        "effort": "공급사 과제별 설정",
+        "harness": "NeMo Gym / 과제별 별도 실행 경로",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 86.1,
+        "references": [
+          "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+          "https://raw.githubusercontent.com/NVIDIA-NeMo/Gym/main/nemotron_recipes/super-3.5/reproducibility.md"
+        ]
+      }
+    },
+    {
+      "id": "nvidia-super-vl-2026-10-15-benchmarks-graphwalks-qwen3-8-flash-next",
+      "model": "Qwen3.8-Flash-Next",
+      "provider": "Alibaba / Qwen",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Super VL 2026-10-15 / GraphWalks",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. Super BF16 공개 재현 경로는 vLLM0.30.0 및4GB200, 기본262144문맥, GraphWalks1048576. 공통 추론 켜기/temperature1.0/top_p0.95이며 과제 설정 우선. SWE는 OpenCode, OCR은 별도 구현. 비교 모델 세부 예산/스냅샷은 미확인.",
+        "effort": "공급사 과제별 설정",
+        "harness": "NeMo Gym / 과제별 별도 실행 경로",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 76.1,
+        "references": [
+          "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+          "https://raw.githubusercontent.com/NVIDIA-NeMo/Gym/main/nemotron_recipes/super-3.5/reproducibility.md"
+        ]
+      }
+    },
+    {
+      "id": "nvidia-super-vl-2026-10-15-benchmarks-graphwalks-deepseek-v4-flash0731",
+      "model": "DeepSeek-V4-Flash0731",
+      "provider": "DeepSeek",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Super VL 2026-10-15 / GraphWalks",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. Super BF16 공개 재현 경로는 vLLM0.30.0 및4GB200, 기본262144문맥, GraphWalks1048576. 공통 추론 켜기/temperature1.0/top_p0.95이며 과제 설정 우선. SWE는 OpenCode, OCR은 별도 구현. 비교 모델 세부 예산/스냅샷은 미확인.",
+        "effort": "공급사 과제별 설정",
+        "harness": "NeMo Gym / 과제별 별도 실행 경로",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 65.4,
+        "references": [
+          "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+          "https://raw.githubusercontent.com/NVIDIA-NeMo/Gym/main/nemotron_recipes/super-3.5/reproducibility.md"
+        ]
+      }
+    },
+    {
+      "id": "nvidia-super-vl-2026-10-15-benchmarks-ifbench-nemotron-3-5-super-vl-bf16",
+      "model": "Nemotron 3.5 Super VL BF16",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Super VL 2026-10-15 / IFBench",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. Super BF16 공개 재현 경로는 vLLM0.30.0 및4GB200, 기본262144문맥, GraphWalks1048576. 공통 추론 켜기/temperature1.0/top_p0.95이며 과제 설정 우선. SWE는 OpenCode, OCR은 별도 구현. 비교 모델 세부 예산/스냅샷은 미확인.",
+        "effort": "공급사 과제별 설정",
+        "harness": "NeMo Gym / 과제별 별도 실행 경로",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 70.86,
+        "references": [
+          "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+          "https://raw.githubusercontent.com/NVIDIA-NeMo/Gym/main/nemotron_recipes/super-3.5/reproducibility.md"
+        ]
+      }
+    },
+    {
+      "id": "nvidia-super-vl-2026-10-15-benchmarks-ifbench-qwen3-5-122b-a10b",
+      "model": "Qwen3.5-122B-A10B",
+      "provider": "Alibaba / Qwen",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Super VL 2026-10-15 / IFBench",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. Super BF16 공개 재현 경로는 vLLM0.30.0 및4GB200, 기본262144문맥, GraphWalks1048576. 공통 추론 켜기/temperature1.0/top_p0.95이며 과제 설정 우선. SWE는 OpenCode, OCR은 별도 구현. 비교 모델 세부 예산/스냅샷은 미확인.",
+        "effort": "공급사 과제별 설정",
+        "harness": "NeMo Gym / 과제별 별도 실행 경로",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 67.6,
+        "references": [
+          "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+          "https://raw.githubusercontent.com/NVIDIA-NeMo/Gym/main/nemotron_recipes/super-3.5/reproducibility.md"
+        ]
+      }
+    },
+    {
+      "id": "nvidia-super-vl-2026-10-15-benchmarks-ifbench-qwen3-8-flash-next",
+      "model": "Qwen3.8-Flash-Next",
+      "provider": "Alibaba / Qwen",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Super VL 2026-10-15 / IFBench",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. Super BF16 공개 재현 경로는 vLLM0.30.0 및4GB200, 기본262144문맥, GraphWalks1048576. 공통 추론 켜기/temperature1.0/top_p0.95이며 과제 설정 우선. SWE는 OpenCode, OCR은 별도 구현. 비교 모델 세부 예산/스냅샷은 미확인.",
+        "effort": "공급사 과제별 설정",
+        "harness": "NeMo Gym / 과제별 별도 실행 경로",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 75.6,
+        "references": [
+          "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+          "https://raw.githubusercontent.com/NVIDIA-NeMo/Gym/main/nemotron_recipes/super-3.5/reproducibility.md"
+        ]
+      }
+    },
+    {
+      "id": "nvidia-super-vl-2026-10-15-benchmarks-ifbench-deepseek-v4-flash0731",
+      "model": "DeepSeek-V4-Flash0731",
+      "provider": "DeepSeek",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Super VL 2026-10-15 / IFBench",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. Super BF16 공개 재현 경로는 vLLM0.30.0 및4GB200, 기본262144문맥, GraphWalks1048576. 공통 추론 켜기/temperature1.0/top_p0.95이며 과제 설정 우선. SWE는 OpenCode, OCR은 별도 구현. 비교 모델 세부 예산/스냅샷은 미확인.",
+        "effort": "공급사 과제별 설정",
+        "harness": "NeMo Gym / 과제별 별도 실행 경로",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 76.2,
+        "references": [
+          "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+          "https://raw.githubusercontent.com/NVIDIA-NeMo/Gym/main/nemotron_recipes/super-3.5/reproducibility.md"
+        ]
+      }
+    },
+    {
+      "id": "nvidia-super-vl-2026-10-15-benchmarks-swe-bench-verified-nemotron-3-5-super-vl-bf16",
+      "model": "Nemotron 3.5 Super VL BF16",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Super VL 2026-10-15 / SWE-bench Verified",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. Super BF16 공개 재현 경로는 vLLM0.30.0 및4GB200, 기본262144문맥, GraphWalks1048576. 공통 추론 켜기/temperature1.0/top_p0.95이며 과제 설정 우선. SWE는 OpenCode, OCR은 별도 구현. 비교 모델 세부 예산/스냅샷은 미확인.",
+        "effort": "공급사 과제별 설정",
+        "harness": "NeMo Gym / 과제별 별도 실행 경로",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 71.1,
+        "references": [
+          "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+          "https://raw.githubusercontent.com/NVIDIA-NeMo/Gym/main/nemotron_recipes/super-3.5/reproducibility.md"
+        ]
+      }
+    },
+    {
+      "id": "nvidia-super-vl-2026-10-15-benchmarks-swe-bench-verified-qwen3-5-122b-a10b",
+      "model": "Qwen3.5-122B-A10B",
+      "provider": "Alibaba / Qwen",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Super VL 2026-10-15 / SWE-bench Verified",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. Super BF16 공개 재현 경로는 vLLM0.30.0 및4GB200, 기본262144문맥, GraphWalks1048576. 공통 추론 켜기/temperature1.0/top_p0.95이며 과제 설정 우선. SWE는 OpenCode, OCR은 별도 구현. 비교 모델 세부 예산/스냅샷은 미확인.",
+        "effort": "공급사 과제별 설정",
+        "harness": "NeMo Gym / 과제별 별도 실행 경로",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 71.9,
+        "references": [
+          "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+          "https://raw.githubusercontent.com/NVIDIA-NeMo/Gym/main/nemotron_recipes/super-3.5/reproducibility.md"
+        ]
+      }
+    },
+    {
+      "id": "nvidia-super-vl-2026-10-15-benchmarks-swe-bench-verified-qwen3-8-flash-next",
+      "model": "Qwen3.8-Flash-Next",
+      "provider": "Alibaba / Qwen",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Super VL 2026-10-15 / SWE-bench Verified",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. Super BF16 공개 재현 경로는 vLLM0.30.0 및4GB200, 기본262144문맥, GraphWalks1048576. 공통 추론 켜기/temperature1.0/top_p0.95이며 과제 설정 우선. SWE는 OpenCode, OCR은 별도 구현. 비교 모델 세부 예산/스냅샷은 미확인.",
+        "effort": "공급사 과제별 설정",
+        "harness": "NeMo Gym / 과제별 별도 실행 경로",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 78.7,
+        "references": [
+          "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+          "https://raw.githubusercontent.com/NVIDIA-NeMo/Gym/main/nemotron_recipes/super-3.5/reproducibility.md"
+        ]
+      }
+    },
+    {
+      "id": "nvidia-super-vl-2026-10-15-benchmarks-swe-bench-verified-deepseek-v4-flash0731",
+      "model": "DeepSeek-V4-Flash0731",
+      "provider": "DeepSeek",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Super VL 2026-10-15 / SWE-bench Verified",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. Super BF16 공개 재현 경로는 vLLM0.30.0 및4GB200, 기본262144문맥, GraphWalks1048576. 공통 추론 켜기/temperature1.0/top_p0.95이며 과제 설정 우선. SWE는 OpenCode, OCR은 별도 구현. 비교 모델 세부 예산/스냅샷은 미확인.",
+        "effort": "공급사 과제별 설정",
+        "harness": "NeMo Gym / 과제별 별도 실행 경로",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 75.4,
+        "references": [
+          "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+          "https://raw.githubusercontent.com/NVIDIA-NeMo/Gym/main/nemotron_recipes/super-3.5/reproducibility.md"
+        ]
+      }
+    },
+    {
+      "id": "nvidia-super-vl-2026-10-15-benchmarks-swe-bench-pro-nemotron-3-5-super-vl-bf16",
+      "model": "Nemotron 3.5 Super VL BF16",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Super VL 2026-10-15 / SWE-bench Pro",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. Super BF16 공개 재현 경로는 vLLM0.30.0 및4GB200, 기본262144문맥, GraphWalks1048576. 공통 추론 켜기/temperature1.0/top_p0.95이며 과제 설정 우선. SWE는 OpenCode, OCR은 별도 구현. 비교 모델 세부 예산/스냅샷은 미확인.",
+        "effort": "공급사 과제별 설정",
+        "harness": "NeMo Gym / 과제별 별도 실행 경로",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 51.78,
+        "references": [
+          "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+          "https://raw.githubusercontent.com/NVIDIA-NeMo/Gym/main/nemotron_recipes/super-3.5/reproducibility.md"
+        ]
+      }
+    },
+    {
+      "id": "nvidia-super-vl-2026-10-15-benchmarks-swe-bench-pro-qwen3-5-122b-a10b",
+      "model": "Qwen3.5-122B-A10B",
+      "provider": "Alibaba / Qwen",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Super VL 2026-10-15 / SWE-bench Pro",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. Super BF16 공개 재현 경로는 vLLM0.30.0 및4GB200, 기본262144문맥, GraphWalks1048576. 공통 추론 켜기/temperature1.0/top_p0.95이며 과제 설정 우선. SWE는 OpenCode, OCR은 별도 구현. 비교 모델 세부 예산/스냅샷은 미확인.",
+        "effort": "공급사 과제별 설정",
+        "harness": "NeMo Gym / 과제별 별도 실행 경로",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 44.9,
+        "references": [
+          "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+          "https://raw.githubusercontent.com/NVIDIA-NeMo/Gym/main/nemotron_recipes/super-3.5/reproducibility.md"
+        ]
+      }
+    },
+    {
+      "id": "nvidia-super-vl-2026-10-15-benchmarks-swe-bench-pro-qwen3-8-flash-next",
+      "model": "Qwen3.8-Flash-Next",
+      "provider": "Alibaba / Qwen",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Super VL 2026-10-15 / SWE-bench Pro",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. Super BF16 공개 재현 경로는 vLLM0.30.0 및4GB200, 기본262144문맥, GraphWalks1048576. 공통 추론 켜기/temperature1.0/top_p0.95이며 과제 설정 우선. SWE는 OpenCode, OCR은 별도 구현. 비교 모델 세부 예산/스냅샷은 미확인.",
+        "effort": "공급사 과제별 설정",
+        "harness": "NeMo Gym / 과제별 별도 실행 경로",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 60.37,
+        "references": [
+          "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+          "https://raw.githubusercontent.com/NVIDIA-NeMo/Gym/main/nemotron_recipes/super-3.5/reproducibility.md"
+        ]
+      }
+    },
+    {
+      "id": "nvidia-super-vl-2026-10-15-benchmarks-swe-bench-pro-deepseek-v4-flash0731",
+      "model": "DeepSeek-V4-Flash0731",
+      "provider": "DeepSeek",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Super VL 2026-10-15 / SWE-bench Pro",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. Super BF16 공개 재현 경로는 vLLM0.30.0 및4GB200, 기본262144문맥, GraphWalks1048576. 공통 추론 켜기/temperature1.0/top_p0.95이며 과제 설정 우선. SWE는 OpenCode, OCR은 별도 구현. 비교 모델 세부 예산/스냅샷은 미확인.",
+        "effort": "공급사 과제별 설정",
+        "harness": "NeMo Gym / 과제별 별도 실행 경로",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 56.91,
+        "references": [
+          "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+          "https://raw.githubusercontent.com/NVIDIA-NeMo/Gym/main/nemotron_recipes/super-3.5/reproducibility.md"
+        ]
+      }
+    },
+    {
+      "id": "nvidia-super-vl-2026-10-15-benchmarks-terminal-bench-2-1-nemotron-3-5-super-vl-bf16",
+      "model": "Nemotron 3.5 Super VL BF16",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Super VL 2026-10-15 / Terminal-Bench 2.1",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. Super BF16 공개 재현 경로는 vLLM0.30.0 및4GB200, 기본262144문맥, GraphWalks1048576. 공통 추론 켜기/temperature1.0/top_p0.95이며 과제 설정 우선. SWE는 OpenCode, OCR은 별도 구현. 비교 모델 세부 예산/스냅샷은 미확인.",
+        "effort": "공급사 과제별 설정",
+        "harness": "NeMo Gym / 과제별 별도 실행 경로",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 66.7,
+        "references": [
+          "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+          "https://raw.githubusercontent.com/NVIDIA-NeMo/Gym/main/nemotron_recipes/super-3.5/reproducibility.md"
+        ]
+      }
+    },
+    {
+      "id": "nvidia-super-vl-2026-10-15-benchmarks-terminal-bench-2-1-qwen3-5-122b-a10b",
+      "model": "Qwen3.5-122B-A10B",
+      "provider": "Alibaba / Qwen",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Super VL 2026-10-15 / Terminal-Bench 2.1",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. Super BF16 공개 재현 경로는 vLLM0.30.0 및4GB200, 기본262144문맥, GraphWalks1048576. 공통 추론 켜기/temperature1.0/top_p0.95이며 과제 설정 우선. SWE는 OpenCode, OCR은 별도 구현. 비교 모델 세부 예산/스냅샷은 미확인.",
+        "effort": "공급사 과제별 설정",
+        "harness": "NeMo Gym / 과제별 별도 실행 경로",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 48.7,
+        "references": [
+          "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+          "https://raw.githubusercontent.com/NVIDIA-NeMo/Gym/main/nemotron_recipes/super-3.5/reproducibility.md"
+        ]
+      }
+    },
+    {
+      "id": "nvidia-super-vl-2026-10-15-benchmarks-terminal-bench-2-1-qwen3-8-flash-next",
+      "model": "Qwen3.8-Flash-Next",
+      "provider": "Alibaba / Qwen",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Super VL 2026-10-15 / Terminal-Bench 2.1",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. Super BF16 공개 재현 경로는 vLLM0.30.0 및4GB200, 기본262144문맥, GraphWalks1048576. 공통 추론 켜기/temperature1.0/top_p0.95이며 과제 설정 우선. SWE는 OpenCode, OCR은 별도 구현. 비교 모델 세부 예산/스냅샷은 미확인.",
+        "effort": "공급사 과제별 설정",
+        "harness": "NeMo Gym / 과제별 별도 실행 경로",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 85.8,
+        "references": [
+          "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+          "https://raw.githubusercontent.com/NVIDIA-NeMo/Gym/main/nemotron_recipes/super-3.5/reproducibility.md"
+        ]
+      }
+    },
+    {
+      "id": "nvidia-super-vl-2026-10-15-benchmarks-terminal-bench-2-1-deepseek-v4-flash0731",
+      "model": "DeepSeek-V4-Flash0731",
+      "provider": "DeepSeek",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Super VL 2026-10-15 / Terminal-Bench 2.1",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. Super BF16 공개 재현 경로는 vLLM0.30.0 및4GB200, 기본262144문맥, GraphWalks1048576. 공통 추론 켜기/temperature1.0/top_p0.95이며 과제 설정 우선. SWE는 OpenCode, OCR은 별도 구현. 비교 모델 세부 예산/스냅샷은 미확인.",
+        "effort": "공급사 과제별 설정",
+        "harness": "NeMo Gym / 과제별 별도 실행 경로",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 76.8,
+        "references": [
+          "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+          "https://raw.githubusercontent.com/NVIDIA-NeMo/Gym/main/nemotron_recipes/super-3.5/reproducibility.md"
+        ]
+      }
+    },
+    {
+      "id": "nvidia-super-vl-2026-10-15-benchmarks-ocr-reasoning-nemotron-3-5-super-vl-bf16",
+      "model": "Nemotron 3.5 Super VL BF16",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Super VL 2026-10-15 / OCR-Reasoning",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. Super BF16 공개 재현 경로는 vLLM0.30.0 및4GB200, 기본262144문맥, GraphWalks1048576. 공통 추론 켜기/temperature1.0/top_p0.95이며 과제 설정 우선. SWE는 OpenCode, OCR은 별도 구현. 비교 모델 세부 예산/스냅샷은 미확인.",
+        "effort": "공급사 과제별 설정",
+        "harness": "NeMo Gym / 과제별 별도 실행 경로",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 65.08,
+        "references": [
+          "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+          "https://raw.githubusercontent.com/NVIDIA-NeMo/Gym/main/nemotron_recipes/super-3.5/reproducibility.md"
+        ]
+      }
+    },
+    {
+      "id": "nvidia-super-vl-2026-10-15-benchmarks-ocr-reasoning-qwen3-5-122b-a10b",
+      "model": "Qwen3.5-122B-A10B",
+      "provider": "Alibaba / Qwen",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Super VL 2026-10-15 / OCR-Reasoning",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. Super BF16 공개 재현 경로는 vLLM0.30.0 및4GB200, 기본262144문맥, GraphWalks1048576. 공통 추론 켜기/temperature1.0/top_p0.95이며 과제 설정 우선. SWE는 OpenCode, OCR은 별도 구현. 비교 모델 세부 예산/스냅샷은 미확인.",
+        "effort": "공급사 과제별 설정",
+        "harness": "NeMo Gym / 과제별 별도 실행 경로",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 64.3,
+        "references": [
+          "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+          "https://raw.githubusercontent.com/NVIDIA-NeMo/Gym/main/nemotron_recipes/super-3.5/reproducibility.md"
+        ]
+      }
+    },
+    {
+      "id": "nvidia-super-vl-2026-10-15-benchmarks-ocr-reasoning-qwen3-8-flash-next",
+      "model": "Qwen3.8-Flash-Next",
+      "provider": "Alibaba / Qwen",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Super VL 2026-10-15 / OCR-Reasoning",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. Super BF16 공개 재현 경로는 vLLM0.30.0 및4GB200, 기본262144문맥, GraphWalks1048576. 공통 추론 켜기/temperature1.0/top_p0.95이며 과제 설정 우선. SWE는 OpenCode, OCR은 별도 구현. 비교 모델 세부 예산/스냅샷은 미확인.",
+        "effort": "공급사 과제별 설정",
+        "harness": "NeMo Gym / 과제별 별도 실행 경로",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 67.1,
+        "references": [
+          "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+          "https://raw.githubusercontent.com/NVIDIA-NeMo/Gym/main/nemotron_recipes/super-3.5/reproducibility.md"
+        ]
+      }
+    },
+    {
+      "id": "nvidia-super-vl-precision-2026-10-15-quantization-gpqa-diamond-nemotron-3-5-super-vl-bf16",
+      "model": "Nemotron 3.5 Super VL BF16",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-NVFP4",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Super VL precision 2026-10-15 / GPQA-Diamond",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA는 모델 외의 설정과 Harness를 고정했다고 명시. BF16/NVFP4 체크포인트를 분리. offline 표기는 온라인 실제 실행 아님.",
+        "effort": "동일 조건 비교, 상세 예산 미명시",
+        "harness": "NVIDIA 공개 정밀도 비교",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 89.52
+      }
+    },
+    {
+      "id": "nvidia-super-vl-precision-2026-10-15-quantization-gpqa-diamond-nemotron-3-5-super-vl-nvfp4",
+      "model": "Nemotron 3.5 Super VL NVFP4",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-NVFP4",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Super VL precision 2026-10-15 / GPQA-Diamond",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA는 모델 외의 설정과 Harness를 고정했다고 명시. BF16/NVFP4 체크포인트를 분리. offline 표기는 온라인 실제 실행 아님.",
+        "effort": "동일 조건 비교, 상세 예산 미명시",
+        "harness": "NVIDIA 공개 정밀도 비교",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 89.9
+      }
+    },
+    {
+      "id": "nvidia-super-vl-precision-2026-10-15-quantization-mmlu-prox-nemotron-3-5-super-vl-bf16",
+      "model": "Nemotron 3.5 Super VL BF16",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-NVFP4",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Super VL precision 2026-10-15 / MMLU-ProX",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA는 모델 외의 설정과 Harness를 고정했다고 명시. BF16/NVFP4 체크포인트를 분리. offline 표기는 온라인 실제 실행 아님.",
+        "effort": "동일 조건 비교, 상세 예산 미명시",
+        "harness": "NVIDIA 공개 정밀도 비교",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 76.91
+      }
+    },
+    {
+      "id": "nvidia-super-vl-precision-2026-10-15-quantization-mmlu-prox-nemotron-3-5-super-vl-nvfp4",
+      "model": "Nemotron 3.5 Super VL NVFP4",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-NVFP4",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Super VL precision 2026-10-15 / MMLU-ProX",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA는 모델 외의 설정과 Harness를 고정했다고 명시. BF16/NVFP4 체크포인트를 분리. offline 표기는 온라인 실제 실행 아님.",
+        "effort": "동일 조건 비교, 상세 예산 미명시",
+        "harness": "NVIDIA 공개 정밀도 비교",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 73.76
+      }
+    },
+    {
+      "id": "nvidia-super-vl-precision-2026-10-15-quantization-terminal-bench-2-1-nemotron-3-5-super-vl-bf16",
+      "model": "Nemotron 3.5 Super VL BF16",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-NVFP4",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Super VL precision 2026-10-15 / Terminal-Bench 2.1",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA는 모델 외의 설정과 Harness를 고정했다고 명시. BF16/NVFP4 체크포인트를 분리. offline 표기는 온라인 실제 실행 아님.",
+        "effort": "동일 조건 비교, 상세 예산 미명시",
+        "harness": "NVIDIA 공개 정밀도 비교",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 66.7
+      }
+    },
+    {
+      "id": "nvidia-super-vl-precision-2026-10-15-quantization-terminal-bench-2-1-nemotron-3-5-super-vl-nvfp4",
+      "model": "Nemotron 3.5 Super VL NVFP4",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-NVFP4",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Super VL precision 2026-10-15 / Terminal-Bench 2.1",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA는 모델 외의 설정과 Harness를 고정했다고 명시. BF16/NVFP4 체크포인트를 분리. offline 표기는 온라인 실제 실행 아님.",
+        "effort": "동일 조건 비교, 상세 예산 미명시",
+        "harness": "NVIDIA 공개 정밀도 비교",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 60.8
+      }
+    },
+    {
+      "id": "nvidia-super-vl-precision-2026-10-15-quantization-webvoyager-offline-nemotron-3-5-super-vl-bf16",
+      "model": "Nemotron 3.5 Super VL BF16",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-NVFP4",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Super VL precision 2026-10-15 / WebVoyager [offline]",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA는 모델 외의 설정과 Harness를 고정했다고 명시. BF16/NVFP4 체크포인트를 분리. offline 표기는 온라인 실제 실행 아님.",
+        "effort": "동일 조건 비교, 상세 예산 미명시",
+        "harness": "NVIDIA 공개 정밀도 비교",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 77.72
+      }
+    },
+    {
+      "id": "nvidia-super-vl-precision-2026-10-15-quantization-webvoyager-offline-nemotron-3-5-super-vl-nvfp4",
+      "model": "Nemotron 3.5 Super VL NVFP4",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-NVFP4",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Super VL precision 2026-10-15 / WebVoyager [offline]",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA는 모델 외의 설정과 Harness를 고정했다고 명시. BF16/NVFP4 체크포인트를 분리. offline 표기는 온라인 실제 실행 아님.",
+        "effort": "동일 조건 비교, 상세 예산 미명시",
+        "harness": "NVIDIA 공개 정밀도 비교",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 66.31
+      }
+    },
+    {
+      "id": "nvidia-bolt-2026-10-15-benchmarks-gdpval-aa-v2-qwen3-6-35b-a3b-bf16",
+      "model": "Qwen3.6-35B-A3B BF16",
+      "provider": "Alibaba / Qwen",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Bolt 2026-10-15 / GDPVal-AA-V2",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA 자체 평가표. BF16 비교 모델과 Bolt IQ2의 정밀도 차이. MCP-Atlas Qwen51.20은 공개500과제 측정으로 reported62.8과 구분. 각 과제의 전체 Harness/측정일 미확인.",
+        "effort": "측정 선택/예산 미명시",
+        "harness": "과제별 Harness 세부 미확인",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 25.75
+      }
+    },
+    {
+      "id": "nvidia-bolt-2026-10-15-benchmarks-gdpval-aa-v2-gemma4-26b-a4b-bf16",
+      "model": "Gemma4 26B-A4B BF16",
+      "provider": "Google",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Bolt 2026-10-15 / GDPVal-AA-V2",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA 자체 평가표. BF16 비교 모델과 Bolt IQ2의 정밀도 차이. MCP-Atlas Qwen51.20은 공개500과제 측정으로 reported62.8과 구분. 각 과제의 전체 Harness/측정일 미확인.",
+        "effort": "측정 선택/예산 미명시",
+        "harness": "과제별 Harness 세부 미확인",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 15.33
+      }
+    },
+    {
+      "id": "nvidia-bolt-2026-10-15-benchmarks-gdpval-aa-v2-nemotron-3-5-lightning-30b-a3b-bf16",
+      "model": "Nemotron 3.5 Lightning 30B-A3B BF16",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Bolt 2026-10-15 / GDPVal-AA-V2",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA 자체 평가표. BF16 비교 모델과 Bolt IQ2의 정밀도 차이. MCP-Atlas Qwen51.20은 공개500과제 측정으로 reported62.8과 구분. 각 과제의 전체 Harness/측정일 미확인.",
+        "effort": "측정 선택/예산 미명시",
+        "harness": "과제별 Harness 세부 미확인",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 18.26
+      }
+    },
+    {
+      "id": "nvidia-bolt-2026-10-15-benchmarks-gdpval-aa-v2-nemotron-3-5-bolt-74b-a9b-24gb",
+      "model": "Nemotron 3.5 Bolt 74B-A9B 24GB",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Bolt 2026-10-15 / GDPVal-AA-V2",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA 자체 평가표. BF16 비교 모델과 Bolt IQ2의 정밀도 차이. MCP-Atlas Qwen51.20은 공개500과제 측정으로 reported62.8과 구분. 각 과제의 전체 Harness/측정일 미확인.",
+        "effort": "측정 선택/예산 미명시",
+        "harness": "과제별 Harness 세부 미확인",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 28.47
+      }
+    },
+    {
+      "id": "nvidia-bolt-2026-10-15-benchmarks-terminal-bench-2-1-qwen3-6-35b-a3b-bf16",
+      "model": "Qwen3.6-35B-A3B BF16",
+      "provider": "Alibaba / Qwen",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Bolt 2026-10-15 / Terminal-Bench 2.1",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA 자체 평가표. BF16 비교 모델과 Bolt IQ2의 정밀도 차이. MCP-Atlas Qwen51.20은 공개500과제 측정으로 reported62.8과 구분. 각 과제의 전체 Harness/측정일 미확인.",
+        "effort": "측정 선택/예산 미명시",
+        "harness": "과제별 Harness 세부 미확인",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 44.38
+      }
+    },
+    {
+      "id": "nvidia-bolt-2026-10-15-benchmarks-terminal-bench-2-1-gemma4-26b-a4b-bf16",
+      "model": "Gemma4 26B-A4B BF16",
+      "provider": "Google",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Bolt 2026-10-15 / Terminal-Bench 2.1",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA 자체 평가표. BF16 비교 모델과 Bolt IQ2의 정밀도 차이. MCP-Atlas Qwen51.20은 공개500과제 측정으로 reported62.8과 구분. 각 과제의 전체 Harness/측정일 미확인.",
+        "effort": "측정 선택/예산 미명시",
+        "harness": "과제별 Harness 세부 미확인",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 37.22
+      }
+    },
+    {
+      "id": "nvidia-bolt-2026-10-15-benchmarks-terminal-bench-2-1-nemotron-3-5-lightning-30b-a3b-bf16",
+      "model": "Nemotron 3.5 Lightning 30B-A3B BF16",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Bolt 2026-10-15 / Terminal-Bench 2.1",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA 자체 평가표. BF16 비교 모델과 Bolt IQ2의 정밀도 차이. MCP-Atlas Qwen51.20은 공개500과제 측정으로 reported62.8과 구분. 각 과제의 전체 Harness/측정일 미확인.",
+        "effort": "측정 선택/예산 미명시",
+        "harness": "과제별 Harness 세부 미확인",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 23.46
+      }
+    },
+    {
+      "id": "nvidia-bolt-2026-10-15-benchmarks-terminal-bench-2-1-nemotron-3-5-bolt-74b-a9b-24gb",
+      "model": "Nemotron 3.5 Bolt 74B-A9B 24GB",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Bolt 2026-10-15 / Terminal-Bench 2.1",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA 자체 평가표. BF16 비교 모델과 Bolt IQ2의 정밀도 차이. MCP-Atlas Qwen51.20은 공개500과제 측정으로 reported62.8과 구분. 각 과제의 전체 Harness/측정일 미확인.",
+        "effort": "측정 선택/예산 미명시",
+        "harness": "과제별 Harness 세부 미확인",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 50.98
+      }
+    },
+    {
+      "id": "nvidia-bolt-2026-10-15-benchmarks-tau3-banking-qwen3-6-35b-a3b-bf16",
+      "model": "Qwen3.6-35B-A3B BF16",
+      "provider": "Alibaba / Qwen",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Bolt 2026-10-15 / Tau3 Banking",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA 자체 평가표. BF16 비교 모델과 Bolt IQ2의 정밀도 차이. MCP-Atlas Qwen51.20은 공개500과제 측정으로 reported62.8과 구분. 각 과제의 전체 Harness/측정일 미확인.",
+        "effort": "측정 선택/예산 미명시",
+        "harness": "과제별 Harness 세부 미확인",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 10.52
+      }
+    },
+    {
+      "id": "nvidia-bolt-2026-10-15-benchmarks-tau3-banking-gemma4-26b-a4b-bf16",
+      "model": "Gemma4 26B-A4B BF16",
+      "provider": "Google",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Bolt 2026-10-15 / Tau3 Banking",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA 자체 평가표. BF16 비교 모델과 Bolt IQ2의 정밀도 차이. MCP-Atlas Qwen51.20은 공개500과제 측정으로 reported62.8과 구분. 각 과제의 전체 Harness/측정일 미확인.",
+        "effort": "측정 선택/예산 미명시",
+        "harness": "과제별 Harness 세부 미확인",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 14.02
+      }
+    },
+    {
+      "id": "nvidia-bolt-2026-10-15-benchmarks-tau3-banking-nemotron-3-5-lightning-30b-a3b-bf16",
+      "model": "Nemotron 3.5 Lightning 30B-A3B BF16",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Bolt 2026-10-15 / Tau3 Banking",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA 자체 평가표. BF16 비교 모델과 Bolt IQ2의 정밀도 차이. MCP-Atlas Qwen51.20은 공개500과제 측정으로 reported62.8과 구분. 각 과제의 전체 Harness/측정일 미확인.",
+        "effort": "측정 선택/예산 미명시",
+        "harness": "과제별 Harness 세부 미확인",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 9.48
+      }
+    },
+    {
+      "id": "nvidia-bolt-2026-10-15-benchmarks-tau3-banking-nemotron-3-5-bolt-74b-a9b-24gb",
+      "model": "Nemotron 3.5 Bolt 74B-A9B 24GB",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Bolt 2026-10-15 / Tau3 Banking",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA 자체 평가표. BF16 비교 모델과 Bolt IQ2의 정밀도 차이. MCP-Atlas Qwen51.20은 공개500과제 측정으로 reported62.8과 구분. 각 과제의 전체 Harness/측정일 미확인.",
+        "effort": "측정 선택/예산 미명시",
+        "harness": "과제별 Harness 세부 미확인",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 17.01
+      }
+    },
+    {
+      "id": "nvidia-bolt-2026-10-15-benchmarks-hle-no-tools-qwen3-6-35b-a3b-bf16",
+      "model": "Qwen3.6-35B-A3B BF16",
+      "provider": "Alibaba / Qwen",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Bolt 2026-10-15 / HLE (no tools)",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA 자체 평가표. BF16 비교 모델과 Bolt IQ2의 정밀도 차이. MCP-Atlas Qwen51.20은 공개500과제 측정으로 reported62.8과 구분. 각 과제의 전체 Harness/측정일 미확인.",
+        "effort": "측정 선택/예산 미명시",
+        "harness": "과제별 Harness 세부 미확인",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 19.56
+      }
+    },
+    {
+      "id": "nvidia-bolt-2026-10-15-benchmarks-hle-no-tools-gemma4-26b-a4b-bf16",
+      "model": "Gemma4 26B-A4B BF16",
+      "provider": "Google",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Bolt 2026-10-15 / HLE (no tools)",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA 자체 평가표. BF16 비교 모델과 Bolt IQ2의 정밀도 차이. MCP-Atlas Qwen51.20은 공개500과제 측정으로 reported62.8과 구분. 각 과제의 전체 Harness/측정일 미확인.",
+        "effort": "측정 선택/예산 미명시",
+        "harness": "과제별 Harness 세부 미확인",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 17.42
+      }
+    },
+    {
+      "id": "nvidia-bolt-2026-10-15-benchmarks-hle-no-tools-nemotron-3-5-lightning-30b-a3b-bf16",
+      "model": "Nemotron 3.5 Lightning 30B-A3B BF16",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Bolt 2026-10-15 / HLE (no tools)",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA 자체 평가표. BF16 비교 모델과 Bolt IQ2의 정밀도 차이. MCP-Atlas Qwen51.20은 공개500과제 측정으로 reported62.8과 구분. 각 과제의 전체 Harness/측정일 미확인.",
+        "effort": "측정 선택/예산 미명시",
+        "harness": "과제별 Harness 세부 미확인",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 10.47
+      }
+    },
+    {
+      "id": "nvidia-bolt-2026-10-15-benchmarks-hle-no-tools-nemotron-3-5-bolt-74b-a9b-24gb",
+      "model": "Nemotron 3.5 Bolt 74B-A9B 24GB",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Bolt 2026-10-15 / HLE (no tools)",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA 자체 평가표. BF16 비교 모델과 Bolt IQ2의 정밀도 차이. MCP-Atlas Qwen51.20은 공개500과제 측정으로 reported62.8과 구분. 각 과제의 전체 Harness/측정일 미확인.",
+        "effort": "측정 선택/예산 미명시",
+        "harness": "과제별 Harness 세부 미확인",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 25.3
+      }
+    },
+    {
+      "id": "nvidia-bolt-2026-10-15-benchmarks-aa-omniscience-accuracy-qwen3-6-35b-a3b-bf16",
+      "model": "Qwen3.6-35B-A3B BF16",
+      "provider": "Alibaba / Qwen",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Bolt 2026-10-15 / AA-Omniscience accuracy",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA 자체 평가표. BF16 비교 모델과 Bolt IQ2의 정밀도 차이. MCP-Atlas Qwen51.20은 공개500과제 측정으로 reported62.8과 구분. 각 과제의 전체 Harness/측정일 미확인.",
+        "effort": "측정 선택/예산 미명시",
+        "harness": "과제별 Harness 세부 미확인",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 19.47
+      }
+    },
+    {
+      "id": "nvidia-bolt-2026-10-15-benchmarks-aa-omniscience-accuracy-gemma4-26b-a4b-bf16",
+      "model": "Gemma4 26B-A4B BF16",
+      "provider": "Google",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Bolt 2026-10-15 / AA-Omniscience accuracy",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA 자체 평가표. BF16 비교 모델과 Bolt IQ2의 정밀도 차이. MCP-Atlas Qwen51.20은 공개500과제 측정으로 reported62.8과 구분. 각 과제의 전체 Harness/측정일 미확인.",
+        "effort": "측정 선택/예산 미명시",
+        "harness": "과제별 Harness 세부 미확인",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 22.17
+      }
+    },
+    {
+      "id": "nvidia-bolt-2026-10-15-benchmarks-aa-omniscience-accuracy-nemotron-3-5-lightning-30b-a3b-bf16",
+      "model": "Nemotron 3.5 Lightning 30B-A3B BF16",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Bolt 2026-10-15 / AA-Omniscience accuracy",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA 자체 평가표. BF16 비교 모델과 Bolt IQ2의 정밀도 차이. MCP-Atlas Qwen51.20은 공개500과제 측정으로 reported62.8과 구분. 각 과제의 전체 Harness/측정일 미확인.",
+        "effort": "측정 선택/예산 미명시",
+        "harness": "과제별 Harness 세부 미확인",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 16.63
+      }
+    },
+    {
+      "id": "nvidia-bolt-2026-10-15-benchmarks-aa-omniscience-accuracy-nemotron-3-5-bolt-74b-a9b-24gb",
+      "model": "Nemotron 3.5 Bolt 74B-A9B 24GB",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Bolt 2026-10-15 / AA-Omniscience accuracy",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA 자체 평가표. BF16 비교 모델과 Bolt IQ2의 정밀도 차이. MCP-Atlas Qwen51.20은 공개500과제 측정으로 reported62.8과 구분. 각 과제의 전체 Harness/측정일 미확인.",
+        "effort": "측정 선택/예산 미명시",
+        "harness": "과제별 Harness 세부 미확인",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 16.9
+      }
+    },
+    {
+      "id": "nvidia-bolt-2026-10-15-benchmarks-scicode-qwen3-6-35b-a3b-bf16",
+      "model": "Qwen3.6-35B-A3B BF16",
+      "provider": "Alibaba / Qwen",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Bolt 2026-10-15 / SciCode",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA 자체 평가표. BF16 비교 모델과 Bolt IQ2의 정밀도 차이. MCP-Atlas Qwen51.20은 공개500과제 측정으로 reported62.8과 구분. 각 과제의 전체 Harness/측정일 미확인.",
+        "effort": "측정 선택/예산 미명시",
+        "harness": "과제별 Harness 세부 미확인",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 35.33
+      }
+    },
+    {
+      "id": "nvidia-bolt-2026-10-15-benchmarks-scicode-gemma4-26b-a4b-bf16",
+      "model": "Gemma4 26B-A4B BF16",
+      "provider": "Google",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Bolt 2026-10-15 / SciCode",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA 자체 평가표. BF16 비교 모델과 Bolt IQ2의 정밀도 차이. MCP-Atlas Qwen51.20은 공개500과제 측정으로 reported62.8과 구분. 각 과제의 전체 Harness/측정일 미확인.",
+        "effort": "측정 선택/예산 미명시",
+        "harness": "과제별 Harness 세부 미확인",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 40.28
+      }
+    },
+    {
+      "id": "nvidia-bolt-2026-10-15-benchmarks-scicode-nemotron-3-5-lightning-30b-a3b-bf16",
+      "model": "Nemotron 3.5 Lightning 30B-A3B BF16",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Bolt 2026-10-15 / SciCode",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA 자체 평가표. BF16 비교 모델과 Bolt IQ2의 정밀도 차이. MCP-Atlas Qwen51.20은 공개500과제 측정으로 reported62.8과 구분. 각 과제의 전체 Harness/측정일 미확인.",
+        "effort": "측정 선택/예산 미명시",
+        "harness": "과제별 Harness 세부 미확인",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 31.38
+      }
+    },
+    {
+      "id": "nvidia-bolt-2026-10-15-benchmarks-scicode-nemotron-3-5-bolt-74b-a9b-24gb",
+      "model": "Nemotron 3.5 Bolt 74B-A9B 24GB",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Bolt 2026-10-15 / SciCode",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA 자체 평가표. BF16 비교 모델과 Bolt IQ2의 정밀도 차이. MCP-Atlas Qwen51.20은 공개500과제 측정으로 reported62.8과 구분. 각 과제의 전체 Harness/측정일 미확인.",
+        "effort": "측정 선택/예산 미명시",
+        "harness": "과제별 Harness 세부 미확인",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 41.02
+      }
+    },
+    {
+      "id": "nvidia-bolt-2026-10-15-benchmarks-gpqa-diamond-qwen3-6-35b-a3b-bf16",
+      "model": "Qwen3.6-35B-A3B BF16",
+      "provider": "Alibaba / Qwen",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Bolt 2026-10-15 / GPQA Diamond",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA 자체 평가표. BF16 비교 모델과 Bolt IQ2의 정밀도 차이. MCP-Atlas Qwen51.20은 공개500과제 측정으로 reported62.8과 구분. 각 과제의 전체 Harness/측정일 미확인.",
+        "effort": "측정 선택/예산 미명시",
+        "harness": "과제별 Harness 세부 미확인",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 83.4
+      }
+    },
+    {
+      "id": "nvidia-bolt-2026-10-15-benchmarks-gpqa-diamond-gemma4-26b-a4b-bf16",
+      "model": "Gemma4 26B-A4B BF16",
+      "provider": "Google",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Bolt 2026-10-15 / GPQA Diamond",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA 자체 평가표. BF16 비교 모델과 Bolt IQ2의 정밀도 차이. MCP-Atlas Qwen51.20은 공개500과제 측정으로 reported62.8과 구분. 각 과제의 전체 Harness/측정일 미확인.",
+        "effort": "측정 선택/예산 미명시",
+        "harness": "과제별 Harness 세부 미확인",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 79.61
+      }
+    },
+    {
+      "id": "nvidia-bolt-2026-10-15-benchmarks-gpqa-diamond-nemotron-3-5-lightning-30b-a3b-bf16",
+      "model": "Nemotron 3.5 Lightning 30B-A3B BF16",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Bolt 2026-10-15 / GPQA Diamond",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA 자체 평가표. BF16 비교 모델과 Bolt IQ2의 정밀도 차이. MCP-Atlas Qwen51.20은 공개500과제 측정으로 reported62.8과 구분. 각 과제의 전체 Harness/측정일 미확인.",
+        "effort": "측정 선택/예산 미명시",
+        "harness": "과제별 Harness 세부 미확인",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 75.57
+      }
+    },
+    {
+      "id": "nvidia-bolt-2026-10-15-benchmarks-gpqa-diamond-nemotron-3-5-bolt-74b-a9b-24gb",
+      "model": "Nemotron 3.5 Bolt 74B-A9B 24GB",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Bolt 2026-10-15 / GPQA Diamond",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA 자체 평가표. BF16 비교 모델과 Bolt IQ2의 정밀도 차이. MCP-Atlas Qwen51.20은 공개500과제 측정으로 reported62.8과 구분. 각 과제의 전체 Harness/측정일 미확인.",
+        "effort": "측정 선택/예산 미명시",
+        "harness": "과제별 Harness 세부 미확인",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 86.43
+      }
+    },
+    {
+      "id": "nvidia-bolt-2026-10-15-benchmarks-aa-lcr-qwen3-6-35b-a3b-bf16",
+      "model": "Qwen3.6-35B-A3B BF16",
+      "provider": "Alibaba / Qwen",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Bolt 2026-10-15 / AA-LCR",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA 자체 평가표. BF16 비교 모델과 Bolt IQ2의 정밀도 차이. MCP-Atlas Qwen51.20은 공개500과제 측정으로 reported62.8과 구분. 각 과제의 전체 Harness/측정일 미확인.",
+        "effort": "측정 선택/예산 미명시",
+        "harness": "과제별 Harness 세부 미확인",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 61.06
+      }
+    },
+    {
+      "id": "nvidia-bolt-2026-10-15-benchmarks-aa-lcr-gemma4-26b-a4b-bf16",
+      "model": "Gemma4 26B-A4B BF16",
+      "provider": "Google",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Bolt 2026-10-15 / AA-LCR",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA 자체 평가표. BF16 비교 모델과 Bolt IQ2의 정밀도 차이. MCP-Atlas Qwen51.20은 공개500과제 측정으로 reported62.8과 구분. 각 과제의 전체 Harness/측정일 미확인.",
+        "effort": "측정 선택/예산 미명시",
+        "harness": "과제별 Harness 세부 미확인",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 57.56
+      }
+    },
+    {
+      "id": "nvidia-bolt-2026-10-15-benchmarks-aa-lcr-nemotron-3-5-lightning-30b-a3b-bf16",
+      "model": "Nemotron 3.5 Lightning 30B-A3B BF16",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Bolt 2026-10-15 / AA-LCR",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA 자체 평가표. BF16 비교 모델과 Bolt IQ2의 정밀도 차이. MCP-Atlas Qwen51.20은 공개500과제 측정으로 reported62.8과 구분. 각 과제의 전체 Harness/측정일 미확인.",
+        "effort": "측정 선택/예산 미명시",
+        "harness": "과제별 Harness 세부 미확인",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 49.19
+      }
+    },
+    {
+      "id": "nvidia-bolt-2026-10-15-benchmarks-aa-lcr-nemotron-3-5-bolt-74b-a9b-24gb",
+      "model": "Nemotron 3.5 Bolt 74B-A9B 24GB",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Bolt 2026-10-15 / AA-LCR",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA 자체 평가표. BF16 비교 모델과 Bolt IQ2의 정밀도 차이. MCP-Atlas Qwen51.20은 공개500과제 측정으로 reported62.8과 구분. 각 과제의 전체 Harness/측정일 미확인.",
+        "effort": "측정 선택/예산 미명시",
+        "harness": "과제별 Harness 세부 미확인",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 64.06
+      }
+    },
+    {
+      "id": "nvidia-bolt-2026-10-15-benchmarks-aa-omniscience-non-hallucination-qwen3-6-35b-a3b-bf16",
+      "model": "Qwen3.6-35B-A3B BF16",
+      "provider": "Alibaba / Qwen",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Bolt 2026-10-15 / AA-Omniscience non-hallucination",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA 자체 평가표. BF16 비교 모델과 Bolt IQ2의 정밀도 차이. MCP-Atlas Qwen51.20은 공개500과제 측정으로 reported62.8과 구분. 각 과제의 전체 Harness/측정일 미확인.",
+        "effort": "측정 선택/예산 미명시",
+        "harness": "과제별 Harness 세부 미확인",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 65.85
+      }
+    },
+    {
+      "id": "nvidia-bolt-2026-10-15-benchmarks-aa-omniscience-non-hallucination-gemma4-26b-a4b-bf16",
+      "model": "Gemma4 26B-A4B BF16",
+      "provider": "Google",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Bolt 2026-10-15 / AA-Omniscience non-hallucination",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA 자체 평가표. BF16 비교 모델과 Bolt IQ2의 정밀도 차이. MCP-Atlas Qwen51.20은 공개500과제 측정으로 reported62.8과 구분. 각 과제의 전체 Harness/측정일 미확인.",
+        "effort": "측정 선택/예산 미명시",
+        "harness": "과제별 Harness 세부 미확인",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 14.22
+      }
+    },
+    {
+      "id": "nvidia-bolt-2026-10-15-benchmarks-aa-omniscience-non-hallucination-nemotron-3-5-lightning-30b-a3b-bf16",
+      "model": "Nemotron 3.5 Lightning 30B-A3B BF16",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Bolt 2026-10-15 / AA-Omniscience non-hallucination",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA 자체 평가표. BF16 비교 모델과 Bolt IQ2의 정밀도 차이. MCP-Atlas Qwen51.20은 공개500과제 측정으로 reported62.8과 구분. 각 과제의 전체 Harness/측정일 미확인.",
+        "effort": "측정 선택/예산 미명시",
+        "harness": "과제별 Harness 세부 미확인",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 68.81
+      }
+    },
+    {
+      "id": "nvidia-bolt-2026-10-15-benchmarks-aa-omniscience-non-hallucination-nemotron-3-5-bolt-74b-a9b-24gb",
+      "model": "Nemotron 3.5 Bolt 74B-A9B 24GB",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Bolt 2026-10-15 / AA-Omniscience non-hallucination",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA 자체 평가표. BF16 비교 모델과 Bolt IQ2의 정밀도 차이. MCP-Atlas Qwen51.20은 공개500과제 측정으로 reported62.8과 구분. 각 과제의 전체 Harness/측정일 미확인.",
+        "effort": "측정 선택/예산 미명시",
+        "harness": "과제별 Harness 세부 미확인",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 61.27
+      }
+    },
+    {
+      "id": "nvidia-bolt-2026-10-15-benchmarks-pinchbench-qwen3-6-35b-a3b-bf16",
+      "model": "Qwen3.6-35B-A3B BF16",
+      "provider": "Alibaba / Qwen",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Bolt 2026-10-15 / PinchBench",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA 자체 평가표. BF16 비교 모델과 Bolt IQ2의 정밀도 차이. MCP-Atlas Qwen51.20은 공개500과제 측정으로 reported62.8과 구분. 각 과제의 전체 Harness/측정일 미확인.",
+        "effort": "측정 선택/예산 미명시",
+        "harness": "과제별 Harness 세부 미확인",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 88.07
+      }
+    },
+    {
+      "id": "nvidia-bolt-2026-10-15-benchmarks-pinchbench-gemma4-26b-a4b-bf16",
+      "model": "Gemma4 26B-A4B BF16",
+      "provider": "Google",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Bolt 2026-10-15 / PinchBench",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA 자체 평가표. BF16 비교 모델과 Bolt IQ2의 정밀도 차이. MCP-Atlas Qwen51.20은 공개500과제 측정으로 reported62.8과 구분. 각 과제의 전체 Harness/측정일 미확인.",
+        "effort": "측정 선택/예산 미명시",
+        "harness": "과제별 Harness 세부 미확인",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 74.7
+      }
+    },
+    {
+      "id": "nvidia-bolt-2026-10-15-benchmarks-pinchbench-nemotron-3-5-lightning-30b-a3b-bf16",
+      "model": "Nemotron 3.5 Lightning 30B-A3B BF16",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Bolt 2026-10-15 / PinchBench",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA 자체 평가표. BF16 비교 모델과 Bolt IQ2의 정밀도 차이. MCP-Atlas Qwen51.20은 공개500과제 측정으로 reported62.8과 구분. 각 과제의 전체 Harness/측정일 미확인.",
+        "effort": "측정 선택/예산 미명시",
+        "harness": "과제별 Harness 세부 미확인",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 83.43
+      }
+    },
+    {
+      "id": "nvidia-bolt-2026-10-15-benchmarks-pinchbench-nemotron-3-5-bolt-74b-a9b-24gb",
+      "model": "Nemotron 3.5 Bolt 74B-A9B 24GB",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Bolt 2026-10-15 / PinchBench",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA 자체 평가표. BF16 비교 모델과 Bolt IQ2의 정밀도 차이. MCP-Atlas Qwen51.20은 공개500과제 측정으로 reported62.8과 구분. 각 과제의 전체 Harness/측정일 미확인.",
+        "effort": "측정 선택/예산 미명시",
+        "harness": "과제별 Harness 세부 미확인",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 87.82
+      }
+    },
+    {
+      "id": "nvidia-bolt-2026-10-15-benchmarks-mcp-atlas-qwen3-6-35b-a3b-bf16",
+      "model": "Qwen3.6-35B-A3B BF16",
+      "provider": "Alibaba / Qwen",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Bolt 2026-10-15 / MCP-Atlas",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA 자체 평가표. BF16 비교 모델과 Bolt IQ2의 정밀도 차이. MCP-Atlas Qwen51.20은 공개500과제 측정으로 reported62.8과 구분. 각 과제의 전체 Harness/측정일 미확인.",
+        "effort": "측정 선택/예산 미명시",
+        "harness": "과제별 Harness 세부 미확인",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 51.2
+      }
+    },
+    {
+      "id": "nvidia-bolt-2026-10-15-benchmarks-mcp-atlas-nemotron-3-5-lightning-30b-a3b-bf16",
+      "model": "Nemotron 3.5 Lightning 30B-A3B BF16",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Bolt 2026-10-15 / MCP-Atlas",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA 자체 평가표. BF16 비교 모델과 Bolt IQ2의 정밀도 차이. MCP-Atlas Qwen51.20은 공개500과제 측정으로 reported62.8과 구분. 각 과제의 전체 Harness/측정일 미확인.",
+        "effort": "측정 선택/예산 미명시",
+        "harness": "과제별 Harness 세부 미확인",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 46.4
+      }
+    },
+    {
+      "id": "nvidia-bolt-2026-10-15-benchmarks-mcp-atlas-nemotron-3-5-bolt-74b-a9b-24gb",
+      "model": "Nemotron 3.5 Bolt 74B-A9B 24GB",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Bolt 2026-10-15 / MCP-Atlas",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA 자체 평가표. BF16 비교 모델과 Bolt IQ2의 정밀도 차이. MCP-Atlas Qwen51.20은 공개500과제 측정으로 reported62.8과 구분. 각 과제의 전체 Harness/측정일 미확인.",
+        "effort": "측정 선택/예산 미명시",
+        "harness": "과제별 Harness 세부 미확인",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 52.2
+      }
+    },
+    {
+      "id": "nvidia-bolt-2026-10-15-benchmarks-browsecomp-qwen3-6-35b-a3b-bf16",
+      "model": "Qwen3.6-35B-A3B BF16",
+      "provider": "Alibaba / Qwen",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Bolt 2026-10-15 / BrowseComp",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA 자체 평가표. BF16 비교 모델과 Bolt IQ2의 정밀도 차이. MCP-Atlas Qwen51.20은 공개500과제 측정으로 reported62.8과 구분. 각 과제의 전체 Harness/측정일 미확인.",
+        "effort": "측정 선택/예산 미명시",
+        "harness": "과제별 Harness 세부 미확인",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 48.74
+      }
+    },
+    {
+      "id": "nvidia-bolt-2026-10-15-benchmarks-browsecomp-gemma4-26b-a4b-bf16",
+      "model": "Gemma4 26B-A4B BF16",
+      "provider": "Google",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Bolt 2026-10-15 / BrowseComp",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA 자체 평가표. BF16 비교 모델과 Bolt IQ2의 정밀도 차이. MCP-Atlas Qwen51.20은 공개500과제 측정으로 reported62.8과 구분. 각 과제의 전체 Harness/측정일 미확인.",
+        "effort": "측정 선택/예산 미명시",
+        "harness": "과제별 Harness 세부 미확인",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 26.3
+      }
+    },
+    {
+      "id": "nvidia-bolt-2026-10-15-benchmarks-browsecomp-nemotron-3-5-lightning-30b-a3b-bf16",
+      "model": "Nemotron 3.5 Lightning 30B-A3B BF16",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Bolt 2026-10-15 / BrowseComp",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA 자체 평가표. BF16 비교 모델과 Bolt IQ2의 정밀도 차이. MCP-Atlas Qwen51.20은 공개500과제 측정으로 reported62.8과 구분. 각 과제의 전체 Harness/측정일 미확인.",
+        "effort": "측정 선택/예산 미명시",
+        "harness": "과제별 Harness 세부 미확인",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 36.81
+      }
+    },
+    {
+      "id": "nvidia-bolt-2026-10-15-benchmarks-browsecomp-nemotron-3-5-bolt-74b-a9b-24gb",
+      "model": "Nemotron 3.5 Bolt 74B-A9B 24GB",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Bolt 2026-10-15 / BrowseComp",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA 자체 평가표. BF16 비교 모델과 Bolt IQ2의 정밀도 차이. MCP-Atlas Qwen51.20은 공개500과제 측정으로 reported62.8과 구분. 각 과제의 전체 Harness/측정일 미확인.",
+        "effort": "측정 선택/예산 미명시",
+        "harness": "과제별 Harness 세부 미확인",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 66.75
+      }
+    },
+    {
+      "id": "nvidia-bolt-2026-10-15-benchmarks-webarena-vision-qwen3-6-35b-a3b-bf16",
+      "model": "Qwen3.6-35B-A3B BF16",
+      "provider": "Alibaba / Qwen",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Bolt 2026-10-15 / WebArena (vision)",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA 자체 평가표. BF16 비교 모델과 Bolt IQ2의 정밀도 차이. MCP-Atlas Qwen51.20은 공개500과제 측정으로 reported62.8과 구분. 각 과제의 전체 Harness/측정일 미확인.",
+        "effort": "측정 선택/예산 미명시",
+        "harness": "과제별 Harness 세부 미확인",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 36.6
+      }
+    },
+    {
+      "id": "nvidia-bolt-2026-10-15-benchmarks-webarena-vision-gemma4-26b-a4b-bf16",
+      "model": "Gemma4 26B-A4B BF16",
+      "provider": "Google",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Bolt 2026-10-15 / WebArena (vision)",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA 자체 평가표. BF16 비교 모델과 Bolt IQ2의 정밀도 차이. MCP-Atlas Qwen51.20은 공개500과제 측정으로 reported62.8과 구분. 각 과제의 전체 Harness/측정일 미확인.",
+        "effort": "측정 선택/예산 미명시",
+        "harness": "과제별 Harness 세부 미확인",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 38.2
+      }
+    },
+    {
+      "id": "nvidia-bolt-2026-10-15-benchmarks-webarena-vision-nemotron-3-5-bolt-74b-a9b-24gb",
+      "model": "Nemotron 3.5 Bolt 74B-A9B 24GB",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "NVIDIA Bolt 2026-10-15 / WebArena (vision)",
+        "condition": "10월 15일 공개, 10월 16일 확인. 원문 점수, 단위 별도 미명시. NVIDIA 자체 평가표. BF16 비교 모델과 Bolt IQ2의 정밀도 차이. MCP-Atlas Qwen51.20은 공개500과제 측정으로 reported62.8과 구분. 각 과제의 전체 Harness/측정일 미확인.",
+        "effort": "측정 선택/예산 미명시",
+        "harness": "과제별 Harness 세부 미확인",
+        "basis": "NVIDIA 공식 모델 카드의 자체 비교",
+        "note": "서로 다른 측정기관/평가판/설정의 수치를 합치지 않음. 독립 실행 미검증.",
+        "측정 주체": "NVIDIA",
+        "평가 점수": 50.86
+      }
+    },
+    {
+      "id": "nvidia-bolt-speed-bolt-iq2-xxs-lilicorr",
+      "model": "Bolt IQ2_XXS + LiLiCorr",
+      "provider": "NVIDIA",
+      "source_url": "https://research.nvidia.com/labs/nemotron/Nemotron-3.5-Bolt-24GB/",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공식 기기 속도 측정",
+        "suite": "NVIDIA RTX Spark 2026-10-15 / Bolt IQ2_XXS + LiLiCorr",
+        "condition": "NVIDIA測定: llama.cpp, Windows11 ARM x64(원문 표기), Surface Laptop Ultra128GB의 RTX Spark. 정확한 커밋/전체 요청 길이 미명시. 속도와 전체 재생시간은 별도 지표.",
+        "harness": "llama.cpp / AIPerf SPEED-Bench-Coding 및 AA AgentPerf Local",
+        "basis": "NVIDIA 하드웨어 측정",
+        "effort": "원문 설정",
+        "note": "초안 모델과 정밀도 조건은 평가판 이름에 보존. 실제 업무 성공률 미측정.",
+        "생성 속도 토큰 / 초": 83.99,
+        "재생 시간 초": 600.8
+      }
+    },
+    {
+      "id": "nvidia-bolt-speed-qwen3-6-35b-a3b-ud-q4-k-m-mtp",
+      "model": "Qwen3.6 35B-A3B UD-Q4_K_M + MTP",
+      "provider": "Alibaba / Qwen",
+      "source_url": "https://research.nvidia.com/labs/nemotron/Nemotron-3.5-Bolt-24GB/",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공식 기기 속도 측정",
+        "suite": "NVIDIA RTX Spark 2026-10-15 / Qwen3.6 35B-A3B UD-Q4_K_M + MTP",
+        "condition": "NVIDIA測定: llama.cpp, Windows11 ARM x64(원문 표기), Surface Laptop Ultra128GB의 RTX Spark. 정확한 커밋/전체 요청 길이 미명시. 속도와 전체 재생시간은 별도 지표.",
+        "harness": "llama.cpp / AIPerf SPEED-Bench-Coding 및 AA AgentPerf Local",
+        "basis": "NVIDIA 하드웨어 측정",
+        "effort": "원문 설정",
+        "note": "초안 모델과 정밀도 조건은 평가판 이름에 보존. 실제 업무 성공률 미측정.",
+        "생성 속도 토큰 / 초": 96.63,
+        "재생 시간 초": 453.97
+      }
+    },
+    {
+      "id": "nvidia-bolt-speed-gemma4-26b-a4b-ud-q4-k-m-mtp",
+      "model": "Gemma4 26B-A4B UD-Q4_K_M + MTP",
+      "provider": "Google",
+      "source_url": "https://research.nvidia.com/labs/nemotron/Nemotron-3.5-Bolt-24GB/",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공식 기기 속도 측정",
+        "suite": "NVIDIA RTX Spark 2026-10-15 / Gemma4 26B-A4B UD-Q4_K_M + MTP",
+        "condition": "NVIDIA測定: llama.cpp, Windows11 ARM x64(원문 표기), Surface Laptop Ultra128GB의 RTX Spark. 정확한 커밋/전체 요청 길이 미명시. 속도와 전체 재생시간은 별도 지표.",
+        "harness": "llama.cpp / AIPerf SPEED-Bench-Coding 및 AA AgentPerf Local",
+        "basis": "NVIDIA 하드웨어 측정",
+        "effort": "원문 설정",
+        "note": "초안 모델과 정밀도 조건은 평가판 이름에 보존. 실제 업무 성공률 미측정.",
+        "생성 속도 토큰 / 초": 100.56,
+        "재생 시간 초": 480.68
+      }
+    },
+    {
+      "id": "nvidia-bolt-speed-qwen3-8-27b-ud-q4-k-m-dflash",
+      "model": "Qwen3.8 27B UD-Q4_K_M + DFlash",
+      "provider": "Alibaba / Qwen",
+      "source_url": "https://research.nvidia.com/labs/nemotron/Nemotron-3.5-Bolt-24GB/",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공식 기기 속도 측정",
+        "suite": "NVIDIA RTX Spark 2026-10-15 / Qwen3.8 27B UD-Q4_K_M + DFlash",
+        "condition": "NVIDIA測定: llama.cpp, Windows11 ARM x64(원문 표기), Surface Laptop Ultra128GB의 RTX Spark. 정확한 커밋/전체 요청 길이 미명시. 속도와 전체 재생시간은 별도 지표.",
+        "harness": "llama.cpp / AIPerf SPEED-Bench-Coding 및 AA AgentPerf Local",
+        "basis": "NVIDIA 하드웨어 측정",
+        "effort": "원문 설정",
+        "note": "초안 모델과 정밀도 조건은 평가판 이름에 보존. 실제 업무 성공률 미측정.",
+        "생성 속도 토큰 / 초": 28.26,
+        "재생 시간 초": 1043.28
+      }
+    },
+    {
+      "id": "apple-mlx-2026-10-15-muse-spark-open-nvfp4-2-m5-pipeline",
+      "model": "Muse Spark Open",
+      "provider": "Meta",
+      "source_url": "https://machinelearning.apple.com/research/mlx-distributed-inference",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공식 기기 속도 측정",
+        "suite": "Apple MLX 2026-10-15 / 2 M5 Pipeline / Muse Spark Open / NVFP4",
+        "condition": "Apple測定: M5 Ultra Mac Studio, 8192토큰 문맥/출력128/batch1, RDMA over Thunderbolt. 모델 크기와 정밀도 차이 보존. TTFT는 첫 토큰 초, 생성은 토큰/초.",
+        "harness": "mlx_lm.benchmark",
+        "basis": "Apple 하드웨어 공급사 측정",
+        "effort": "측정 예산 미명시",
+        "note": "모델 지능 평가나 단일 장비 비용 비교가 아님.",
+        "첫 토큰 시간 초": 8.4,
+        "생성 속도 토큰 / 초": 15.74
+      }
+    },
+    {
+      "id": "apple-mlx-2026-10-15-muse-spark-open-nvfp4-4-m5-tensor",
+      "model": "Muse Spark Open",
+      "provider": "Meta",
+      "source_url": "https://machinelearning.apple.com/research/mlx-distributed-inference",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공식 기기 속도 측정",
+        "suite": "Apple MLX 2026-10-15 / 4 M5 Tensor / Muse Spark Open / NVFP4",
+        "condition": "Apple測定: M5 Ultra Mac Studio, 8192토큰 문맥/출력128/batch1, RDMA over Thunderbolt. 모델 크기와 정밀도 차이 보존. TTFT는 첫 토큰 초, 생성은 토큰/초.",
+        "harness": "mlx_lm.benchmark",
+        "basis": "Apple 하드웨어 공급사 측정",
+        "effort": "측정 예산 미명시",
+        "note": "모델 지능 평가나 단일 장비 비용 비교가 아님.",
+        "첫 토큰 시간 초": 4.8,
+        "생성 속도 토큰 / 초": 36.73
+      }
+    },
+    {
+      "id": "apple-mlx-2026-10-15-mistral-medium-3-5-128b-fp8-2-m5-pipeline",
+      "model": "Mistral Medium 3.5 128B",
+      "provider": "Mistral AI",
+      "source_url": "https://machinelearning.apple.com/research/mlx-distributed-inference",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공식 기기 속도 측정",
+        "suite": "Apple MLX 2026-10-15 / 2 M5 Pipeline / Mistral Medium 3.5 128B / FP8",
+        "condition": "Apple測定: M5 Ultra Mac Studio, 8192토큰 문맥/출력128/batch1, RDMA over Thunderbolt. 모델 크기와 정밀도 차이 보존. TTFT는 첫 토큰 초, 생성은 토큰/초.",
+        "harness": "mlx_lm.benchmark",
+        "basis": "Apple 하드웨어 공급사 측정",
+        "effort": "측정 예산 미명시",
+        "note": "모델 지능 평가나 단일 장비 비용 비교가 아님.",
+        "첫 토큰 시간 초": 24.5,
+        "생성 속도 토큰 / 초": 7.7
+      }
+    },
+    {
+      "id": "apple-mlx-2026-10-15-mistral-medium-3-5-128b-fp8-4-m5-tensor",
+      "model": "Mistral Medium 3.5 128B",
+      "provider": "Mistral AI",
+      "source_url": "https://machinelearning.apple.com/research/mlx-distributed-inference",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공식 기기 속도 측정",
+        "suite": "Apple MLX 2026-10-15 / 4 M5 Tensor / Mistral Medium 3.5 128B / FP8",
+        "condition": "Apple測定: M5 Ultra Mac Studio, 8192토큰 문맥/출력128/batch1, RDMA over Thunderbolt. 모델 크기와 정밀도 차이 보존. TTFT는 첫 토큰 초, 생성은 토큰/초.",
+        "harness": "mlx_lm.benchmark",
+        "basis": "Apple 하드웨어 공급사 측정",
+        "effort": "측정 예산 미명시",
+        "note": "모델 지능 평가나 단일 장비 비용 비교가 아님.",
+        "첫 토큰 시간 초": 7.5,
+        "생성 속도 토큰 / 초": 23.37
+      }
+    },
+    {
+      "id": "apple-mlx-2026-10-15-qwen3-8-27b-bf16-2-m5-pipeline",
+      "model": "Qwen3.8 27B",
+      "provider": "Alibaba / Qwen",
+      "source_url": "https://machinelearning.apple.com/research/mlx-distributed-inference",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공식 기기 속도 측정",
+        "suite": "Apple MLX 2026-10-15 / 2 M5 Pipeline / Qwen3.8 27B / BF16",
+        "condition": "Apple測定: M5 Ultra Mac Studio, 8192토큰 문맥/출력128/batch1, RDMA over Thunderbolt. 모델 크기와 정밀도 차이 보존. TTFT는 첫 토큰 초, 생성은 토큰/초.",
+        "harness": "mlx_lm.benchmark",
+        "basis": "Apple 하드웨어 공급사 측정",
+        "effort": "측정 예산 미명시",
+        "note": "모델 지능 평가나 단일 장비 비용 비교가 아님.",
+        "첫 토큰 시간 초": 4.1,
+        "생성 속도 토큰 / 초": 19.44
+      }
+    },
+    {
+      "id": "apple-mlx-2026-10-15-qwen3-8-27b-bf16-4-m5-tensor",
+      "model": "Qwen3.8 27B",
+      "provider": "Alibaba / Qwen",
+      "source_url": "https://machinelearning.apple.com/research/mlx-distributed-inference",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공식 기기 속도 측정",
+        "suite": "Apple MLX 2026-10-15 / 4 M5 Tensor / Qwen3.8 27B / BF16",
+        "condition": "Apple測定: M5 Ultra Mac Studio, 8192토큰 문맥/출력128/batch1, RDMA over Thunderbolt. 모델 크기와 정밀도 차이 보존. TTFT는 첫 토큰 초, 생성은 토큰/초.",
+        "harness": "mlx_lm.benchmark",
+        "basis": "Apple 하드웨어 공급사 측정",
+        "effort": "측정 예산 미명시",
+        "note": "모델 지능 평가나 단일 장비 비용 비교가 아님.",
+        "첫 토큰 시간 초": 1.7,
+        "생성 속도 토큰 / 초": 50.89
+      }
+    },
+    {
+      "id": "muse-spark-open-together-price-2026-10-15",
+      "model": "Muse Spark Open",
+      "provider": "Meta",
+      "source_url": "https://www.together.ai/models/muse-spark-open",
+      "checked_on": "2026-10-16",
+      "fields": {
+        "kind": "공식 서비스 API 요금",
+        "suite": "Together AI / Muse Spark Open 2026-10-15",
+        "condition": "2026-10-16 모델 페이지 표기 확인. USD/100만토큰, 입력1.25/캐시입력0.15/출력4.25. 캐시 인정/추론/미디어 환산/세금 및 실제 계정 접근 미검증.",
+        "access": "Together AI API",
+        "status": "서비스 요금표 공개",
+        "basis": "API 운영자 Together AI의 모델 가격표",
+        "note": "Meta 전체 서비스 공통 요금 아님. 자체 운영 GPU 비용 별도.",
+        "입력 USD / 100만 토큰": 1.25,
+        "캐시 입력 USD / 100만 토큰": 0.15,
+        "출력 USD / 100만 토큰": 4.25,
+        "모델 ID": "meta-models/Muse-Spark-Open-816B-A42B"
+      }
+    }
+  ]
+}

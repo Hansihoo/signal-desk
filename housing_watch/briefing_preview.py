@@ -144,12 +144,12 @@ def _authored_blocks(blocks, source_numbers, heading_tag="h3", show_editorial_la
     return "".join(rendered)
 
 
-def _explanation(chapters, source_numbers):
+def _explanation(chapters, source_numbers, show_editorial_labels=True):
     if not chapters:
         return ""
     prose = "".join('<section class="explanation-chapter" id="explanation-%s"><h3>%s</h3><p class="explanation-lead">%s</p>%s</section>' % (
         _escape(chapter["id"]), _escape(chapter["title"]), _escape(chapter["lead"]),
-        _authored_blocks(chapter["blocks"], source_numbers, "h4")) for chapter in chapters)
+        _authored_blocks(chapter["blocks"], source_numbers, "h4", show_editorial_labels)) for chapter in chapters)
     return '<section id="explanation" class="report-section" aria-labelledby="explanation-title"><header class="major"><h2 id="explanation-title">본문</h2></header><div class="report-prose">%s</div></section>' % prose
 
 

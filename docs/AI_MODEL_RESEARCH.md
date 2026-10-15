@@ -322,3 +322,17 @@ JSON 파일명이다. 이미 적용한 배치 수정은 거부한다. 로컬/클
 ### 2026-10-08 공식 공개 적용
 
 커밋55c71fc의 [배포37736392889](https://github.com/Hansihoo/signal-desk/actions/runs/37736392889)가 성공했다. 클라우드99시험과 주택review PASS. 공개1041자료/17보고서/28판, 모델789관측/14문서의 원본 내용이 로컬 검증본과 동일하고 모델 경로18개가200으로 응답했다. 공개 [누적표](https://hansihoo.github.io/signal-desk/preview/ai-models.html)와 [모델 문서](https://hansihoo.github.io/signal-desk/preview/ai-model-guides.html)에 적용되었다. 주간 예약은 삭제되었고 현재 ai는 daily05:00 한국시간 신규 모델 확인·페이지 추가 heartbeat다.
+
+## 모델 소개의 현재 표시 설정
+
+새 모델 소개를 기존 Editorial 형식으로 발행할 때 `config/study_pages.json`의
+`legacy_report_ids`와 해당 내용 해시의 `editorial_summary_first`,
+`model_introduction_editions`, `model_introduction_purpose_editions`,
+`model_introduction_reader_editions`를 함께 등록한다. 마지막 설정은 본문의 내부 편집
+분류와 출처 접두어를 숨기되 내용·출처 링크는 보존한다. 정확한 판의 해시로 적용하고
+이전 판의 설정을 추가하거나 바꾸지 않는다. `research_type: model_introduction`과
+경쟁 비교·장단점·소개/누적표 동시 반영 기준은 위 정본을 따른다.
+
+표시 코드의 변경도 로컬 작성 카탈로그가 지문으로 추적하는 경우 새 template 버전을
+등록한다. 이미 고정한 recipe나 원고 판의 연결을 덮어쓰지 않는다. 2026년 10월 16일의
+적용·원문 검토·제한과 공개 검증은 [증분 검토 기록](AI_MODEL_REVIEW.2026-10-16.md)에 있다.

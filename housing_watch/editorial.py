@@ -331,6 +331,10 @@ def render_editorial(output, snapshot, featured, research_data=None, standalone=
             report_template = template.replace('  <div class="image object evidence-panel">__HERO_VISUAL__</div>\n', '')
         model_intro = digest(item) in settings().get("model_introduction_editions", {}).get(item["id"], [])
         if model_intro:
+            if digest(item) in settings().get("model_introduction_reader_editions", {}).get(item["id"], []):
+                from .briefing_preview import _explanation
+                source_numbers = {source["id"]: index for index, source in enumerate(item["references"], 1)}
+                values['__EXPLANATION__'] = _explanation(item.get('explanation', []), source_numbers, show_editorial_labels=False)
             if digest(item) in settings().get("model_introduction_purpose_editions", {}).get(item["id"], []):
                 report_template = report_template.replace(
                     '<header><h1>__HEADLINE__</h1></header>',

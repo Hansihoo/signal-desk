@@ -48,7 +48,10 @@
     "muse-wonder-model-guide",
     "muse-wonder-full-model-guide",
     "gemini-4-argon-model-guide",
-    "lfm-2-5-24b-a2b-model-guide"
+    "lfm-2-5-24b-a2b-model-guide",
+    "nemotron-3-5-super-vl-model-guide",
+    "nemotron-3-5-bolt-model-guide",
+    "muse-spark-open-model-guide"
   ],
   "catalogs": {
     "devops-implementation-guide": "devops_tools.2026-10-10.r4.json"
@@ -103,6 +106,15 @@
     ],
     "lfm-2-5-24b-a2b-model-guide": [
       "b6853ead701aa74277846a9028b2984cfab9964380ad1f89ace79683ad1a363d"
+    ],
+    "nemotron-3-5-super-vl-model-guide": [
+      "5baf659f32bd208b29ea53cb5d62d0842b0b688339d0534119446a9214fbbaef"
+    ],
+    "nemotron-3-5-bolt-model-guide": [
+      "bbd83ec1bd7fc775ec2424a03e0bdb5ccb41272adc8fb6289782a04d1f016652"
+    ],
+    "muse-spark-open-model-guide": [
+      "2fd6126f3757eb14ed6cfecf30715f95c8e56024c5897807c7d3dae2ef1b5994"
     ]
   },
   "model_introduction_editions": {
@@ -119,11 +131,40 @@
     ],
     "lfm-2-5-24b-a2b-model-guide": [
       "b6853ead701aa74277846a9028b2984cfab9964380ad1f89ace79683ad1a363d"
+    ],
+    "nemotron-3-5-super-vl-model-guide": [
+      "5baf659f32bd208b29ea53cb5d62d0842b0b688339d0534119446a9214fbbaef"
+    ],
+    "nemotron-3-5-bolt-model-guide": [
+      "bbd83ec1bd7fc775ec2424a03e0bdb5ccb41272adc8fb6289782a04d1f016652"
+    ],
+    "muse-spark-open-model-guide": [
+      "2fd6126f3757eb14ed6cfecf30715f95c8e56024c5897807c7d3dae2ef1b5994"
     ]
   },
   "model_introduction_purpose_editions": {
     "lfm-2-5-24b-a2b-model-guide": [
       "b6853ead701aa74277846a9028b2984cfab9964380ad1f89ace79683ad1a363d"
+    ],
+    "nemotron-3-5-super-vl-model-guide": [
+      "5baf659f32bd208b29ea53cb5d62d0842b0b688339d0534119446a9214fbbaef"
+    ],
+    "nemotron-3-5-bolt-model-guide": [
+      "bbd83ec1bd7fc775ec2424a03e0bdb5ccb41272adc8fb6289782a04d1f016652"
+    ],
+    "muse-spark-open-model-guide": [
+      "2fd6126f3757eb14ed6cfecf30715f95c8e56024c5897807c7d3dae2ef1b5994"
+    ]
+  },
+  "model_introduction_reader_editions": {
+    "nemotron-3-5-super-vl-model-guide": [
+      "5baf659f32bd208b29ea53cb5d62d0842b0b688339d0534119446a9214fbbaef"
+    ],
+    "nemotron-3-5-bolt-model-guide": [
+      "bbd83ec1bd7fc775ec2424a03e0bdb5ccb41272adc8fb6289782a04d1f016652"
+    ],
+    "muse-spark-open-model-guide": [
+      "2fd6126f3757eb14ed6cfecf30715f95c8e56024c5897807c7d3dae2ef1b5994"
     ]
   }
 }

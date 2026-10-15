@@ -30,6 +30,7 @@ class EditorialTests(unittest.TestCase):
             "columns": ["모델", "제공"], "rows": [{"values": ["Wonder", "API"], "source_ids": ["models"]}]}]
         cfg = {"default_layout": "editorial", "legacy_report_ids": [old["id"]], "model_introduction_editions": {old["id"]: [digest(new)]}}
         cfg["model_introduction_purpose_editions"] = {old["id"]: [digest(new)]}
+        cfg["model_introduction_reader_editions"] = {old["id"]: [digest(new)]}
         import_reports(self.conn, [old])
         import_reports(self.conn, [new])
         data = build_research_data(self.conn, [], [])
@@ -49,6 +50,9 @@ class EditorialTests(unittest.TestCase):
             self.assertLess(current.index('</h1></header>'), current.index(purpose))
             self.assertLess(current.index(purpose), current.index('<p class="report-deck">'))
             self.assertNotIn('class="report-purpose"', previous)
+            self.assertNotIn('class="learning-kind"', current)
+            self.assertNotIn('class="learning-sources">근거 ', current)
+            self.assertIn('class="learning-kind"', previous)
             self.assertNotIn('<body class="model-introduction-page">', previous)
             self.assertLess(previous.index('<section id="explanation"'), previous.index('<section id="data"'))
             self.assertIn('id="data-title">데이터', previous)
