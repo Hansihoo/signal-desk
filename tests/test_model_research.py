@@ -109,7 +109,8 @@ class ModelResearchTests(unittest.TestCase):
 
     def test_model_catalog_failure_does_not_block_official_feed(self):
         body = b'<rss><channel><item><title>New coding model</title><link>https://openai.com/example</link></item></channel></rss>'
-        with tempfile.TemporaryDirectory() as directory, patch("housing_watch.ai_news._read_url", return_value=body), patch("housing_watch.ai_news.collect_model_research", side_effect=OSError("offline")):
+        agent_result={'fetched':0,'inserted':0,'updated':0,'failures':[],'changed':False,'sources':[]}
+        with tempfile.TemporaryDirectory() as directory, patch("housing_watch.ai_news._read_url", return_value=body), patch("housing_watch.ai_news.collect_model_research", side_effect=OSError("offline")), patch('housing_watch.agent_news.collect_agent_news',return_value=agent_result):
             result = collect_ai_news(self.conn, raw_dir=directory)
         self.assertGreater(result["fetched"], 0)
         self.assertTrue(any(SOURCE_ID in message for message in result["failures"]))
@@ -117,7 +118,8 @@ class ModelResearchTests(unittest.TestCase):
     def test_feed_and_catalog_same_title_keep_both_sources(self):
         document = catalog()
         body = '<rss><channel><item><title>모델 통합 비교</title><link>https://openai.com/example</link></item></channel></rss>'.encode()
-        with tempfile.TemporaryDirectory() as directory, patch("housing_watch.ai_news._read_url", return_value=body), patch("housing_watch.model_research._read_catalog", return_value=json.dumps(document).encode()):
+        agent_result={'fetched':0,'inserted':0,'updated':0,'failures':[],'changed':False,'sources':[]}
+        with tempfile.TemporaryDirectory() as directory, patch("housing_watch.ai_news._read_url", return_value=body), patch("housing_watch.model_research._read_catalog", return_value=json.dumps(document).encode()), patch('housing_watch.agent_news.collect_agent_news',return_value=agent_result):
             collect_ai_news(self.conn, raw_dir=directory)
             collect_ai_news(self.conn, raw_dir=directory)
         source_ids = {row[0] for row in self.conn.execute("SELECT source_id FROM news_items")}

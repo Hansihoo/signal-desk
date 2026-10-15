@@ -93,3 +93,11 @@ FDE 독립 보고서의 [조사와 집필 계획](FDE_RESEARCH_PLAN.2026-10-12.m
 | `upstage-logistics` [물류 문서 자동화](https://www.upstage.ai/blog/en/studio-logistics) | 읽기·분류·추출과 공통 항목 및 API 연결 | 2026-02-19 제품 튜토리얼. 처리 시간·정확도 보장이나 완료된 고객 사례로 바꾸지 않는다. | 관련 기능 조사 |
 | `adobe-sign-flow` [서명 전후 업무 연결](https://blog.adobe.com/en/publish/2023/05/23/low-code-end-to-end-e-signature-workflow-automation-within-adobe-acrobat-sign) | 서명 완료 후 파일 저장·알림으로 연결하는 원리 | 2023-05-23 가상 HR 제품 예시. 완료된 고객 사례·현재 가격·라이선스·법적 효력을 확정하지 않는다. | 관련 기능 조사 |
 
+
+## 2026-10-14 에이전트 기업과 AI Witness의 실제 탐지 연결
+
+config/agent_news_sources.json의 14개 경로를 새 agent-news 수집기에 연결했다. OpenAI News, Anthropic News/Engineering, Google DeepMind, Cursor Changelog, Cognition Blog, LangChain Blog, Claude Code/Codex/Microsoft Agent Framework/Deep Agents 릴리즈, Langfuse Changelog, A2A Blog, AI Witness다. 공식 13경로와 발견용 1경로이며 ‘기업 14곳’이라는 의미는 아니다. AI Witness에서는 기사·위클리·릴리즈 링크를 탐지한다.
+
+실제 로컬 실행에서 14/14 목록 수집 성공, 116개 최근/날짜 미확인 항목을 확인했다. 저장된 출처별 목록 수와 30일 필터 이후의 후보 수는 다르다. 첫 실행의 LangChain 파서 실패와 잘못 읽은 페이지 이동 항목, 제목 누락은 원인과 회귀 시험을 남기고 수정했다. 실패 이력을 성공으로 치환하지 않았다. 발표일 미확인 자료는 수집일을 발표일로 만들지 않는다. 목록·피드·일부 날짜 메타데이터 확인이며 모든 원문 완독이 아니다.
+
+기존 AI 뉴스의 전체 점수 상한과 별도로 출처별 항목을 저장해 주요 기업의 후보가 밀려 사라지지 않게 했다. 공개 소식은 원문 발췌와 링크이고 실제로 원문을 읽어 쓴 기사만 별도로 표시한다. 수집기의 연결과 공개 운영은 구분한다. 1시간 주기의 변경 시 수집/반영 워크플로는 로컬 파일로 준비했고 아직 commit/push/배포하거나 원격 예약을 활성화하지 않았다. [뉴스룸 계약과 명령](NEWSROOM.md).

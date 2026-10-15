@@ -77,6 +77,9 @@ def public_library(conn, topics=None):
             "first_seen_at": item["first_seen_at"],
             "score": item.get("score") or 0,
             "basis": "Theo 정리 자료 · 공식 원문 재확인 필요" if payload.get("source_tier") == "authored-research" else "공식 출처" if payload.get("source_tier") == "official" else "피드·원문 링크",
+            "publisher": payload.get("publisher", ""),
+            "news_kind": payload.get("news_kind", ""),
+            "news_tier": payload.get("source_tier", ""),
         })
     for item in all_items(conn):
         topic = topic_for_item(topics, item["source_id"], housing=True)
@@ -113,7 +116,11 @@ def build_public_site(conn, output_path="site", health=None, topics=None):
     if not isinstance(history, list) or any(not isinstance(entry, dict) or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", entry.get("date", "")) for entry in history):
         raise ValueError("Invalid archive index; existing archive must be repaired before publishing.")
     catalog = _topic_catalog(topics, entries)
-    snapshot = {"date": date, "created_at": created_at, "items": entries, "health": health or [], "topics": catalog}
+    from .newsroom import export_newsroom, import_articles, ARTICLES
+    if ARTICLES.is_file():
+        import_articles(conn)
+    snapshot = {"date": date, "created_at": created_at, "items": entries, "health": health or [], "topics": catalog,
+                "newsroom": export_newsroom(conn)}
     for suffix in ("css", "js"):
         asset = Path(__file__).with_name("public_site." + suffix)
         (output / asset.name).write_bytes(asset.read_bytes())

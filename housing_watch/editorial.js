@@ -10,8 +10,9 @@
     toggle.setAttribute('aria-label', open ? '목차 닫기' : '목차 열기');
     sidebar.querySelector('.inner').inert = !open;
   }
-  menu(!narrow.matches);
-  narrow.addEventListener('change', () => menu(!narrow.matches));
+  const newsroom = document.body.classList.contains('newsroom-page');
+  menu(!narrow.matches && !newsroom);
+  narrow.addEventListener('change', () => menu(!narrow.matches && !newsroom));
   toggle.addEventListener('click', () => menu(sidebar.classList.contains('inactive')));
   close.addEventListener('click', () => { menu(false); toggle.focus(); });
   document.addEventListener('keydown', e => {
@@ -24,6 +25,52 @@
     const target = document.getElementById(link.hash.slice(1));
     if (target) { target.setAttribute('tabindex', '-1'); requestAnimationFrame(() => target.focus({preventScroll: true})); }
   }));
+  const newsIndex = document.getElementById('news-index');
+  const explore = document.querySelector('.home-explore');
+  if (explore) {
+    const wideHome = matchMedia('(min-width: 1600px)');
+    const expandExplore = () => explore.querySelectorAll('details').forEach(group => group.open = wideHome.matches);
+    expandExplore();
+    wideHome.addEventListener('change', expandExplore);
+  }
+  if (newsIndex) {
+    const form = newsIndex.querySelector('form');
+    const query = form.elements['news-query'];
+    const kind = form.elements['news-kind'];
+    const publisher = form.elements['news-publisher'];
+    const stories = [...newsIndex.querySelectorAll('.news-index-item')];
+    const newsPages = newsIndex.querySelector('.news-pagination');
+    let newsPage = 1;
+    const state = new URLSearchParams(location.search);
+    kind.value = ['article','release','weekly'].includes(state.get('kind')) ? state.get('kind') : '';
+    query.value = state.get('q') || '';
+    publisher.value = [...publisher.options].some(o => o.value === state.get('publisher')) ? state.get('publisher') : '';
+    function filterNews(reset = false) {
+      if (reset === true) newsPage = 1;
+      const words = query.value.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
+      const matches = stories.filter(story => (!kind.value || story.dataset.kind === kind.value) &&
+        (!publisher.value || story.dataset.publisher === publisher.value) && words.every(word => story.dataset.newsSearch.includes(word)));
+      const totalPages = Math.max(1,Math.ceil(matches.length / 20));
+      newsPage = Math.min(newsPage,totalPages);
+      stories.forEach(story => story.hidden = true);
+      matches.slice((newsPage-1)*20,newsPage*20).forEach(story => story.hidden = false);
+      newsIndex.querySelector('.news-empty').hidden = matches.length > 0;
+      newsPages.hidden = matches.length <= 20;
+      newsPages.querySelector('span').textContent = `${newsPage} / ${totalPages}`;
+      newsPages.querySelector('[data-news-page="previous"]').disabled = newsPage === 1;
+      newsPages.querySelector('[data-news-page="next"]').disabled = newsPage === totalPages;
+      const url = new URL(location.href);
+      [['kind',kind.value],['q',query.value.trim()],['publisher',publisher.value]].forEach(([key,value]) => value ? url.searchParams.set(key,value) : url.searchParams.delete(key));
+      history.replaceState(null, '', url);
+    }
+    [query,kind,publisher].forEach(control => control.addEventListener('input',() => filterNews(true)));
+    form.addEventListener('submit',e => {e.preventDefault();filterNews(true);});
+    newsPages.querySelectorAll('button').forEach(button => button.addEventListener('click',() => {
+      newsPage += button.dataset.newsPage === 'next' ? 1 : -1;
+      filterNews();newsIndex.scrollIntoView({block:'start'});
+    }));
+    filterNews();
+  }
   const board = document.getElementById('board');
   if (!board) return;
   const rows = [...board.querySelectorAll('.research-post')];

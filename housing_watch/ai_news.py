@@ -163,7 +163,10 @@ def collect_ai_news(conn, limit=24, raw_dir="data/raw/ai_news", days=7):
         failures.extend("ai_model_pages: " + failure for failure in pages_result["failures"])
     except (OSError, ValueError, urllib.error.URLError) as exc:
         failures.append("ai_model_pages: %s" % exc)
-    if not items and not model_result and not ledger_result and not pages_result:
+    from .agent_news import collect_agent_news
+    agent_result = collect_agent_news(conn, raw_dir=str(Path(raw_dir) / 'agents'))
+    failures.extend(agent_result['failures'])
+    if not items and not model_result and not ledger_result and not pages_result and not agent_result['fetched']:
         raise AINewsFetchError("no AI news source returned items: " + "; ".join(failures))
 
     raw_data = json.dumps(
@@ -184,15 +187,16 @@ def collect_ai_news(conn, limit=24, raw_dir="data/raw/ai_news", days=7):
     return {
         "source_id": "ai_news_bundle",
         "raw_path": raw_path,
-        "fetched": len(items) + (model_result["fetched"] if model_result else 0),
+        "fetched": len(items) + (model_result["fetched"] if model_result else 0) + agent_result['fetched'],
         "days": days,
-        "inserted": stats["inserted"] + (model_result["inserted"] if model_result else 0),
-        "updated": stats["updated"] + (model_result["updated"] if model_result else 0),
+        "inserted": stats["inserted"] + (model_result["inserted"] if model_result else 0) + agent_result['inserted'],
+        "updated": stats["updated"] + (model_result["updated"] if model_result else 0) + agent_result['updated'],
         "deduped": stats.get("deduped", 0),
         "failures": failures,
         "model_research": model_result,
         "model_ledger": ledger_result,
         "model_pages": pages_result,
+        "agent_news": agent_result,
     }
 
 

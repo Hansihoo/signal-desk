@@ -164,6 +164,13 @@ def main(argv=None):
     private.add_argument("--root", default="D:/3_codex_docs/SignalDesk/BusinessPlanning", help="external private workspace")
     private.add_argument("--input", help="external private business JSON")
 
+    agent_news = sub.add_parser('agent-news', help='watch agent companies without refreshing models or deploying')
+    agent_news.add_argument('--collect', action='store_true')
+    agent_news.add_argument('--sources', help='verified source registry JSON')
+    agent_news.add_argument('--days', type=int, default=30)
+    agent_news.add_argument('--input', help='reviewed newsroom article JSON')
+    agent_news.add_argument('--output', help='write collection result JSON for changed-only workflow')
+
     args = parser.parse_args(argv)
     if args.command in ("research-plan", "research-check", "research-audit"):
         from .research_cli import handle
@@ -256,6 +263,26 @@ def main(argv=None):
             return 0
         except (OSError, ValueError, RuntimeError) as exc:
             print("research-data: failed: %s" % exc, file=sys.stderr)
+            return 1
+        finally:
+            conn.close()
+
+    if args.command == 'agent-news':
+        from .agent_news import collect_agent_news, load_sources, export_sources
+        from .newsroom import import_articles
+        try:
+            result = collect_agent_news(conn, sources=load_sources(args.sources), days=max(1,args.days)) if args.collect else {'sources':export_sources(conn),'changed':False}
+            if args.input:
+                imported=import_articles(conn,args.input)
+                result['articles']=imported
+                result['changed'] = result['changed'] or bool(imported['inserted']+imported['updated'])
+            if args.output:
+                output=Path(args.output);output.parent.mkdir(parents=True,exist_ok=True)
+                output.write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf-8')
+            print(json.dumps(result,ensure_ascii=False,indent=2))
+            return 1 if args.collect and not any(r['ok'] for r in result['sources']) else 0
+        except (OSError,ValueError,KeyError) as exc:
+            print('agent-news: failed: '+str(exc),file=sys.stderr)
             return 1
         finally:
             conn.close()

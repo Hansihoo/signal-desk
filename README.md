@@ -41,12 +41,18 @@ The public homepage is a multi-topic research library. Each topic has its own pa
 add research areas and public RSS/Atom feeds in `config/research_topics.json`.
 See [research hub and free hosting scope](docs/RESEARCH_HUB.md).
 
-The research Home at `preview/index.html` starts with six recently registered or
-modified reports and model-comparison data. Shared Home links return there from
+The research Home at `preview/index.html` starts with reviewed news articles, compact
+tool releases and newly discovered source links. Six recent report/comparison updates
+and the searchable report board remain below them. New-news articles and quantitative
+reports have separate reading formats; see [newsroom operations](docs/NEWSROOM.md). Shared Home links return there from
 reports, model documents and earlier editions. Registration/modification times
 and content-review dates remain separate; rebuilding HTML does not refresh them.
 See [the Home contract](docs/BRIEFING_TEMPLATE.md). Home and the corrected DevOps
 edition were published on2026-10-12 through [Pages38187510657](https://github.com/Hansihoo/signal-desk/actions/runs/38187510657).
+
+The local Home now grows to 1,400px, with company/topic exploration and a latest-news
+rail on wide screens. Article readers and quantitative reports retain their existing
+widths/formats. This 2026-10-15 layout has not been deployed; see [the local Home contract](docs/NEWSROOM.md).
 
 The **Developer Opportunities** topic currently provides an HTML outline with eight
 categories and a downloadable report template. Real opportunity collection and verification

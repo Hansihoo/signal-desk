@@ -24,7 +24,7 @@ def _style():
     for path in ASSETS.glob("*.woff2"):
         fonts = fonts.replace(path.name, "data:font/woff2;base64," + base64.b64encode(path.read_bytes()).decode("ascii"))
     licenses = "\n".join(path.read_text(encoding="utf-8") for path in sorted(ASSETS.glob("*-LICENSE.txt")))
-    return "/* Embedded fonts — redistribution notices:\n" + licenses.replace("*/", "* /") + "\n*/\n" + fonts + vendor + (ROOT / "editorial.css").read_text(encoding="utf-8")
+    return "/* Embedded fonts — redistribution notices:\n" + licenses.replace("*/", "* /") + "\n*/\n" + fonts + vendor + (ROOT / "editorial.css").read_text(encoding="utf-8") + (ROOT / "newsroom.css").read_text(encoding="utf-8")
 
 
 def _fill(template, values):
@@ -280,7 +280,8 @@ def render_editorial(output, snapshot, featured, research_data=None, standalone=
             "__TREE__": _tree(reports, prefix, active, has_model_ledger, model_page_count, model_library_count), "__CONTENTS_NAV__": contents, "__EDITION_NAV__": editions,
             "__BUSINESS_LINK__": '<a href="%sbusiness.html">사업</a>' % prefix if any(item["topic_id"] == "business" for item in reports) else "",
             "__HOME_CURRENT__": ' aria-current="page"' if active == "home" else ""})
-    values = dict(_report_replacements(featured), __REPORT_URL__=_escape(featured["id"] + ".html"),
+    from .newsroom import newsroom_home, write_news_pages
+    values = dict(_report_replacements(featured), __NEWSROOM__=newsroom_home(snapshot,reports), __REPORT_URL__=_escape(featured["id"] + ".html"),
         __HEADLINE__=_headline(featured["title"]), __RECENT_UPDATES__=_recent_updates(reports, research_data),
         __HERO_VISUAL__=_hero(featured, featured["id"] + ".html"), __TOPIC_FEATURES__=_topic_features(reports),
         __REPORT_COUNT__=str(len(reports)), __BOARD_TOOLS__=_board_tools(reports),
@@ -294,7 +295,8 @@ def render_editorial(output, snapshot, featured, research_data=None, standalone=
     model_link = '<section class="model-ledger-link">%s</section>' % "".join(model_links)
     if model_links:
         content = content.replace('<section id="board">', model_link + '<section id="board">')
-    (destination / "index.html").write_text(page("Home · 최근 업데이트", "새로 등록하거나 수정한 보고서와 모델 비교표", content, active="home"), encoding="utf-8")
+    (destination / "index.html").write_text(page("AI 소식과 리서치", "주요 기업의 소식, 도구 업데이트와 리서치 보고서", content, active="home").replace('<body>', '<body class="newsroom-page news-home">', 1), encoding="utf-8")
+    write_news_pages(destination, snapshot, page)
     business = [item for item in reports if item["topic_id"] == "business"]
     if business:
         def business_page(prefix=""):

@@ -1,0 +1,65 @@
+name: Watch agent news when sources change
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '23 * * * *'
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# Share the existing state/deployment lock: never restore/save two divergent DBs.
+concurrency:
+  group: signal-desk-collection-and-pages
+  cancel-in-progress: false
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    env:
+      GH_TOKEN: ${{ github.token }}
+      SIGNAL_DESK_PROFILE_PATH: ''
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: '3.12'
+      - name: Test parsers and article preservation
+        run: python -m unittest tests.test_agent_news
+      - name: Restore accumulated public state
+        run: python -m housing_watch.cloud_state restore
+      - name: Watch agent companies and AI Witness
+        run: python -m housing_watch agent-news --collect --input config/newsroom_articles.2026-10-14.json --output reports/agent-news-result.json
+      - name: Check for new content, changed content or source health changes
+        id: changes
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          result = json.loads(Path('reports/agent-news-result.json').read_text())
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
+              output.write('changed=' + str(result['changed']).lower() + '\n')
+          print('Inserted:', result['inserted'], 'Updated:', result['updated'])
+          print('Failures:', result['failures'])
+          PY
+      - name: Build changed-only local output
+        if: steps.changes.outputs.changed == 'true'
+        run: python -m housing_watch publish
+      - name: Save accumulated state
+        if: steps.changes.outputs.changed == 'true'
+        run: python -m housing_watch.cloud_state save
+      - uses: actions/configure-pages@v6.0.0
+        if: steps.changes.outputs.changed == 'true'
+      - uses: actions/upload-pages-artifact@v5.0.0
+        if: steps.changes.outputs.changed == 'true'
+        with:
+          path: site
+      - uses: actions/deploy-pages@v5.0.1
+        if: steps.changes.outputs.changed == 'true'
+        id: deployment
