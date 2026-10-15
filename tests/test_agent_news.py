@@ -10,7 +10,7 @@ from unittest.mock import patch
 from housing_watch.agent_news import collect_agent_news, detail_metadata, parse_listing, published_date, export_sources
 from housing_watch.ai_news import collect_ai_news
 from housing_watch.db import connect, init_db
-from housing_watch.newsroom import import_articles, export_newsroom, article_body, source_body, source_rows
+from housing_watch.newsroom import import_articles, export_newsroom, article_body, source_body, source_rows, newsroom_home, write_news_pages, ARTICLES
 
 
 SOURCE={'id':'company','name':'Company News','publisher':'Company','url':'https://company.example/news',
@@ -27,6 +27,63 @@ class AgentNewsTests(unittest.TestCase):
         self.conn=connect(':memory:');init_db(self.conn)
 
     def tearDown(self):self.conn.close()
+
+    def newsroom_fixture(self):
+        article=json.loads(ARTICLES.read_text(encoding='utf-8'))['articles'][0]
+        raw={'id':'news-420','topic_id':'ai','source':'English feed','publisher':'Company',
+             'title':'English title without an article','summary':'원문 요약이 짧습니다. 링크를 열어 확인하세요.',
+             'published_at':'2026-10-15','url':article['source_url'],'news_tier':'official'}
+        return article,raw,{'items':[raw],'newsroom':{'articles':[article],'history':[],'sources':[]}}
+
+    def test_home_news_headlines_require_reviewed_korean_body(self):
+        article,raw,snapshot=self.newsroom_fixture()
+        raw['url']='https://example.com/unread'
+        body=newsroom_home(snapshot)
+        self.assertIn(article['title'],body)
+        self.assertNotIn(raw['title'],body)
+        self.assertNotIn('articles/news-420.html',body)
+        self.assertNotIn('원문 요약이 짧습니다',body)
+
+    def test_old_source_link_opens_reviewed_article_body_for_same_original(self):
+        article,raw,snapshot=self.newsroom_fixture()
+        snapshot['items'].append(dict(raw,id='news-old-alias',published_at='2026-10-01'))
+        def page(title,deck,body,*args,**kwargs):return '<html><body>'+body+'</body></html>'
+        with tempfile.TemporaryDirectory() as d:
+            write_news_pages(Path(d),snapshot,page)
+            legacy=(Path(d)/'articles/news-420.html').read_text(encoding='utf-8')
+            self.assertIn(article['title'],legacy)
+            self.assertIn(article['sections'][1]['paragraphs'][0]['text'],legacy)
+            self.assertNotIn('원문 요약이 짧습니다',legacy)
+            self.assertIn(article['title'],(Path(d)/'articles/news-old-alias.html').read_text(encoding='utf-8'))
+
+    def test_missing_feed_description_stays_missing_instead_of_creating_prose(self):
+        from housing_watch.ai_news import parse_ai_feed
+        source={'id':'example','name':'Example','tier':'official','category_hint':'도구','score_base':100}
+        items=parse_ai_feed(b'<rss><channel><item><title>Release</title><link>https://example.com/release</link></item></channel></rss>',source)
+        self.assertEqual(json.loads(items[0]['raw_payload'])['detail'],'')
+
+    def test_old_unreviewed_url_moves_to_original_instead_of_a_thin_article(self):
+        article,raw,snapshot=self.newsroom_fixture()
+        raw['url']='https://example.com/unread'
+        def page(title,deck,body,*args,**kwargs):return '<html><head></head><body>'+body+'</body></html>'
+        with tempfile.TemporaryDirectory() as d:
+            write_news_pages(Path(d),snapshot,page)
+            legacy=(Path(d)/'articles/news-420.html').read_text(encoding='utf-8')
+            self.assertIn('<meta http-equiv="refresh" content="0;url=https://example.com/unread">',legacy)
+            self.assertNotIn('원문 요약이 짧습니다',legacy)
+
+    def test_unread_sources_have_direct_links_in_separate_source_list(self):
+        article,raw,snapshot=self.newsroom_fixture()
+        raw['url']='https://example.com/unread'
+        def page(title,deck,body,*args,**kwargs):return '<html><body>'+body+'</body></html>'
+        with tempfile.TemporaryDirectory() as d:
+            write_news_pages(Path(d),snapshot,page)
+            news=(Path(d)/'news.html').read_text(encoding='utf-8')
+            self.assertNotIn(raw['title'],news)
+            sources=(Path(d)/'news-sources.html').read_text(encoding='utf-8')
+            self.assertIn('href="https://example.com/unread"',sources)
+            self.assertNotIn('articles/news-420.html',sources)
+            self.assertNotIn('원문 요약이 짧습니다',sources)
 
     def test_gzip_response_is_decoded_before_html_parsing_with_or_without_header(self):
         from housing_watch.agent_news import _fetch

@@ -69,7 +69,7 @@ def public_library(conn, topics=None):
             "id": "news-%s" % item["id"],
             "topic": topic["name"], "topic_id": topic["id"],
             "title": item.get("title_ko") or item["title"],
-            "summary": str(payload.get("detail") or item.get("summary_ko") or "")[:400],
+            "summary": str(payload.get("detail", item.get("summary_ko")) or "")[:400],
             "url": _public_url(item["url"]),
             "source": item.get("source_name") or item["source_id"],
             "category": item.get("category") or "",

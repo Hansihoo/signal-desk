@@ -377,7 +377,7 @@ def _make_item(source, title, link, guid, description, published_at, source_name
     payload = {
         "source_tier": source.get("tier", ""),
         "developer_impact": developer_impact(title, description, category, source_name),
-        "detail": detail or "원문 요약이 짧습니다. 링크를 열어 릴리스 노트와 후속 링크를 확인하세요.",
+        "detail": detail,
         "action_needed": action_needed(title, description, category),
         "feed_url": source.get("feed_url", ""),
         "home_url": source.get("home_url", ""),
