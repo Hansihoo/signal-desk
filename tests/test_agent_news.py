@@ -1,6 +1,8 @@
 import json
 import tempfile
 import unittest
+import gzip
+import io
 from datetime import datetime,timezone
 from pathlib import Path
 from unittest.mock import patch
@@ -25,6 +27,23 @@ class AgentNewsTests(unittest.TestCase):
         self.conn=connect(':memory:');init_db(self.conn)
 
     def tearDown(self):self.conn.close()
+
+    def test_gzip_response_is_decoded_before_html_parsing_with_or_without_header(self):
+        from housing_watch.agent_news import _fetch
+        for headers in ({'Content-Encoding':'gzip'},{}):
+            response=io.BytesIO(gzip.compress(BODY));response.headers=headers
+            with self.subTest(headers=headers),patch('housing_watch.agent_news.urllib.request.urlopen',return_value=response):
+                body,_,_,_=_fetch(SOURCE,{})
+                self.assertEqual(body,BODY)
+                self.assertEqual(len(parse_listing(body,SOURCE)),1)
+
+    def test_decoded_gzip_limit_and_corruption_fail_before_storage(self):
+        from housing_watch.agent_news import _fetch
+        corrupt=b'\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\xff'+b'\xff'*10
+        for data,message in ((gzip.compress(b'x'*101),'Decoded source'),(b'\x1f\x8bbroken','Invalid compressed'),(corrupt,'Invalid compressed')):
+            response=io.BytesIO(data);response.headers={'Content-Encoding':'gzip'}
+            with self.subTest(message=message),patch('housing_watch.agent_news.MAX_BYTES',100),patch('housing_watch.agent_news.urllib.request.urlopen',return_value=response):
+                with self.assertRaisesRegex(ValueError,message):_fetch(SOURCE,{})
 
     def test_html_discovery_keeps_date_precision_and_excludes_navigation_duplicates_hosts(self):
         rows=parse_listing(BODY,SOURCE)

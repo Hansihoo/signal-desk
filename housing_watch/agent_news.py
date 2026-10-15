@@ -5,11 +5,14 @@ Publication dates retain date-only precision. Failed fetches preserve saved item
 """
 
 import hashlib
+import gzip
+import io
 import json
 import re
 import urllib.error
 import urllib.request
 import xml.etree.ElementTree as ET
+import zlib
 from concurrent.futures import ThreadPoolExecutor
 from datetime import date, datetime, timedelta, timezone
 from html.parser import HTMLParser
@@ -211,6 +214,15 @@ def _fetch(source, old):
         with urllib.request.urlopen(urllib.request.Request(source['url'],headers=headers),timeout=18) as r:
             body=r.read(MAX_BYTES+1)
             if len(body)>MAX_BYTES:raise ValueError('Source exceeds bounded response size')
+            # urllib retains compressed bytes. Some publisher/CDN responses omit
+            # Content-Encoding, so also recognize the gzip wire signature.
+            if r.headers.get('Content-Encoding','').lower()=='gzip' or body.startswith(b'\x1f\x8b'):
+                try:
+                    with gzip.GzipFile(fileobj=io.BytesIO(body)) as decoded:
+                        body=decoded.read(MAX_BYTES+1)
+                except (OSError,EOFError,zlib.error) as exc:
+                    raise ValueError('Invalid compressed source response') from exc
+                if len(body)>MAX_BYTES:raise ValueError('Decoded source exceeds bounded response size')
             return body,r.headers.get('ETag',''),r.headers.get('Last-Modified',''),False
     except urllib.error.HTTPError as exc:
         exc.close()
