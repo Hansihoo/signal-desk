@@ -48,3 +48,18 @@ Meta Hugging Face 카드와 라이선스 원문 요청은 HTTP 401이었다. 우
 전체 로컬 사이트 509 HTML/43,854 내부 링크와 앵커에 누락이 없었고 기존 사용자 변경·설정 18개 보존 검사도 통과했다. 로컬 지식 검색의 새3편은 r2 검토 원장과 실제 본문 지문이 일치하며 JSON 및 텍스트 출력의 세 질문을 모두 통과했다.
 
 격리된 제출 소스와 공개 스냅샷을 사용한 publish가 성공했다. 이 빌드는 실제 공개 후보 1행을 사용하며 새 원문 수집을 수행하지 않았다.
+
+
+## 공개 반영 완료
+
+소스 `0fec28493714a78fd85a76646ff3d0f76d97bc5e`를 origin main에 정상 push했다. [Pages 38803860087](https://github.com/Hansihoo/signal-desk/actions/runs/38803860087)은 2026년 10월 16일 05:43:59 KST에 성공했다. CI175시험/47.412초, 수집·상태 복원·주거 review·상태 백업·배포가 모두 통과했다.
+
+공개 [Super VL](https://hansihoo.github.io/signal-desk/preview/nemotron-3-5-super-vl-model-guide.html), [Bolt](https://hansihoo.github.io/signal-desk/preview/nemotron-3-5-bolt-model-guide.html), [Spark Open](https://hansihoo.github.io/signal-desk/preview/muse-spark-open-model-guide.html), [전체 비교표](https://hansihoo.github.io/signal-desk/preview/ai-models.html) 및 자료 목록의 HTTP200을 확인했다. 공개 JSON은 59보고서/175판, 모델1003관측/1005판이다. 새 소개3편과 105사실의 전체 원본 입력·정규화된 수치/조건이 검토본과 같다. 검증 스크립트는 최초에 입력 ID와 저장 ID가 같다고 잘못 가정했으나, importer가 모델/설정/평가판으로 도출한 저장 ID와 original의 불변 입력 ID를 구분해 바로잡았다. 공개 데이터 수정을 요구하는 불일치는 없었다.
+
+공개 보존/일치11검사 모두 통과했다. 이전 현재 보고서56편과 저장 시각, 172보고서판, 898모델 관측/900판 및 Theo15문서/16판이 정확히 일치한다. 독립 원문 실패가 있는 부분의 검토를 완료했다고 확대하지 않는다.
+
+실제 공개 브라우저의 1280px Super 소개와 전체표, 390px 소개3편 및 표 상세를 확인했다. 표4/4/3개와 전체표 링크, 검색·공식 평가/요금 보기·정렬·원문 확인일·최초 판 원본 값 펼침·자료 목록 분야/검색 필터가 동작한다. Super 검색18행과 Bolt14행, Spark5행을 확인했고 Spark의 Together 단가는 입력1.25/캐시입력0.15/출력4.25 USD/100만 토큰이다. 검색은 조건의 단어도 찾으므로 결과를 같은 평가판으로 자동 해석하지 않는다. 페이지 가로 넘침과 콘솔 오류0건. 숨겨진 브라우저의 캡처가 이전 화면으로 남는 현상은 화면을 표시하고 새로 렌더링한 뒤 실제 제목과 PNG를 대조했다. 최종 증거는 public-super-rendered.png와 public-price-mobile.png다.
+
+기본 theo-s-han 로그인과 프로젝트 Hansihoo 인증 범위를 보존했다. 기존 사용자 변경은 커밋에 포함하지 않았으며 새로운 clone/worktree/branch를 만들지 않았다. 소유 서버와 검증 탭은 종료하고 viewport는 초기화했다.
+
+임시 local-site 및 중간 JSON을 정리하려던 명령은 자동 승인 검토에서 정책상 차단됐다. 구체적인 이유는 제공되지 않았고 우회 삭제하지 않았다. 따라서 생성물과 필수 원문/기준선/검토/시험/공개 화면 근거는 D:/9_codex_temp/2026-10-16/signal-ai-models/에 보존한다. 새로 만든 소유 scratch 검증 폴더들은 실행기 종료 시 정리됐다. 이 정리 제한은 공개 모델 발행의 실패가 아니다.

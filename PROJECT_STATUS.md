@@ -163,3 +163,6 @@ source225790a/Pages38676984996 success12:37:22KST, CI175시험33.744초와 cloud
 ## 2026-10-16 AI 모델 증분 발행
 
 공식 10월 15일 공개를 16일에 확인한 Super VL·Bolt 74B·Spark Open 소개 3편과 전체 비교표의 105사실을 같은 불변 배치로 준비했다. Spark는 기존 모델의 공개 가중치 판이며 E4B 예정·Apertus 후속 글·기존 제공 확대는 신규에서 제외했다. 작성자 자체 내용 검토/스키마/quality3/로컬 검색 갱신과 390px 소개·표 필터·요금·출처·이력을 확인했다. 주거 활성0과 Windows 시험 HTML 잠금은 별도 기록. 배포 검증 상태와 제한의 정본: [검토 기록](docs/AI_MODEL_REVIEW.2026-10-16.md).
+
+
+2026-10-16 모델 공개 확인 완료: source0fec284 / [Pages38803860087](https://github.com/Hansihoo/signal-desk/actions/runs/38803860087) success05:43:59KST. CI175/47.412초와 cloud review Pass. 공개59보고서175판/1003관측1005판, 새3소개·105사실 및 기존56/172/898/900/Theo15/16의 11보존·일치검사 통과. 공개 모바일 소개/전체표 검색·요금·출처·이력 및 목록 필터 확인. 임시 생성물 정리는 자동 승인 정책 차단으로 보존; [상세](docs/AI_MODEL_REVIEW.2026-10-16.md).
