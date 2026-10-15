@@ -1,5 +1,11 @@
 # Handoff
 
+## 2026-10-15 현재 공개 뉴스룸과 시간별 탐지
+
+1,400px Home/기업·주제/최신 소식/검토기사3편을 공개했다. source91dc2ed와gzip 수정98b5d59,최종Pages38673609116 success11:59:03KST/CI170시험·cloud review 통과. 아래10월14일~15일의‘로컬/미배포’항목은 당시 기록이다. 원격agent-news workflow는 매시23분 목표로 활성화됐고 Watch38673913846에서14/14경로,122후보/변경0/실패0과무변경배포생략을확인했다. 기존일일05:00KST는유지한다. 공개최근탐지는마지막상태반영11:57KST이며매확인시각은Actions로그에서본다.
+
+공개56/172보고서·898/900모델·15/16원본과13과거일일브리핑은정확보존. 기존미발행7기술MD/에이전트활용/FDE입력6개는변경없이배포에서제외했다. 로컬3361/session38916은별도다. [운영·검증 정본](NEWSROOM_PUBLICATION.2026-10-15.md), [공개 홈](https://hansihoo.github.io/signal-desk/preview/index.html).
+
 ## Latest local DevOps visual support, 2026-10-12
 
 r14 keeps4chapters/12subtopics and adds one CI/CD comparison table at1.3 and two

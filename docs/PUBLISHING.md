@@ -1,5 +1,9 @@
 # GitHub Pages and continuous collection
 
+## 2026-10-15 뉴스룸·넓은 Home·시간별 탐지 공개
+
+사용자 요청으로 source91dc2ed와 압축 응답 수정98b5d59를 main에 반영했다. [최종 Pages38673609116](https://github.com/Hansihoo/signal-desk/actions/runs/38673609116) 성공11:59:03KST, CI170시험과 클라우드 주거review 통과. [시간별 경로38673913846](https://github.com/Hansihoo/signal-desk/actions/runs/38673913846) 성공12:00:13KST,14/14경로/122후보/신규0·수정0·실패0이며 무변경 시 상태저장·배포가 생략됐다. workflow는 매시23분 목표로 활성화했고 기존 매일05:00KST 수집은 유지한다. 과거 workflow scope 제한은 당시 기록이며 이번 Hansihoo 프로젝트 인증은 workflow 권한을 확인했다. [공개 결과와 보존 검증 정본](NEWSROOM_PUBLICATION.2026-10-15.md).
+
 ## Deployment
 
 The existing `Hansihoo/signal-desk` repository hosts the public site through GitHub Pages.

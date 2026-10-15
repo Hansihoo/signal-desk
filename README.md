@@ -50,9 +50,10 @@ and content-review dates remain separate; rebuilding HTML does not refresh them.
 See [the Home contract](docs/BRIEFING_TEMPLATE.md). Home and the corrected DevOps
 edition were published on2026-10-12 through [Pages38187510657](https://github.com/Hansihoo/signal-desk/actions/runs/38187510657).
 
-The local Home now grows to 1,400px, with company/topic exploration and a latest-news
+The public Home now grows to 1,400px, with company/topic exploration and a latest-news
 rail on wide screens. Article readers and quantitative reports retain their existing
-widths/formats. This 2026-10-15 layout has not been deployed; see [the local Home contract](docs/NEWSROOM.md).
+widths/formats. Published on 2026-10-15; hourly changed-only source discovery is active.
+See [the publication receipt](docs/NEWSROOM_PUBLICATION.2026-10-15.md) and [newsroom operations](docs/NEWSROOM.md).
 
 The **Developer Opportunities** topic currently provides an HTML outline with eight
 categories and a downloadable report template. Real opportunity collection and verification
