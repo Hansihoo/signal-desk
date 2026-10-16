@@ -66,7 +66,8 @@
     "agent-harness-checkpoints-guide": "agent-harness-checkpoints-guide.plan-layout.2026-10-13.json",
     "agent-a2a-guide": "agent-a2a-guide.plan-layout.2026-10-13.json",
     "agent-evaluation-traces-guide": "agent-evaluation-traces-guide.plan-layout.2026-10-13.json",
-    "skills-as-knowledge-base": "skills_knowledge_visuals.2026-10-16.r2.json"
+    "skills-as-knowledge-base": "skills_knowledge_visuals.2026-10-16.r2.json",
+    "rea-ghidra-reverse-engineering": "rea_ghidra_visuals.2026-10-16.r2.json"
   },
   "visual_editions": {
     "devops-implementation-guide": [

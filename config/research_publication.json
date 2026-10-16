@@ -2,6 +2,7 @@
   "schema_version": 1,
   "featured_report_id": "mcp-apps-workflows",
   "report_ids": [
+    "rea-ghidra-reverse-engineering",
     "skills-as-knowledge-base",
     "agent-skills-guide",
     "agent-context-knowledge-guide",
@@ -275,6 +276,16 @@
       "id": "skills-as-knowledge-base-reading-2026-10-16",
       "input": "skills_knowledge_research.2026-10-16.r2.json",
       "quality": "skills_knowledge_research.2026-10-16.r2.quality.json"
+    },
+    {
+      "id": "rea-ghidra-research-2026-10-16",
+      "input": "rea_ghidra_research.2026-10-16.json",
+      "quality": "rea_ghidra_research.2026-10-16.quality.json"
+    },
+    {
+      "id": "rea-ghidra-reading-2026-10-16",
+      "input": "rea_ghidra_research.2026-10-16.r2.json",
+      "quality": "rea_ghidra_research.2026-10-16.r2.quality.json"
     }
   ]
 }

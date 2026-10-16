@@ -110,3 +110,8 @@ config/agent_news_sources.json의 14개 경로를 새 agent-news 수집기에 �
 ## 2026-10-16 스킬을 검토 지식으로 활용하는 조사
 
 Agent Skills 명세, Anthropic 문맥/스킬 운영 지침, SkillsBench·SWE-Skills-Bench·Dynamic Cheatsheet·ACE·SkillSeek와 공개 SKILL.md를 한 번 조사했다. 개발자 질문은 여러 스킬의 원문을 보관하고 현재 작업의 검토 항목으로 선별할 수 있는가이다. [원문12건·날짜·실제 확인 범위](ai/AI_RESEARCH_REVIEW_LOG.md#2026-10-16-여러-ai-스킬을-검토-지식베이스로-활용하는-타당성-조사)에 연결한다. 이 등록은 연결된 수집기나 새 예약 실행이 아니다. 전체 방식의 효과 측정, 원문 연결 파일 전수 조사와 재배포 라이선스 적합성은 남는다.
+
+
+### REA와 Ghidra — 2026-10-16 선정 조사
+
+[REA6.5.0](https://github.com/morluto/rea/tree/rea-agents-6.5.0)과 [Ghidra12.1.4](https://github.com/NationalSecurityAgency/ghidra/tree/Ghidra_12.1.4_build)의 공식 문서, [REA 공개 사례](https://rea.tools/showcase/)와 [제작자 회고](https://rea.tools/blog/touhou-reconstruction/)를 역공학 도구의 역할과 검증 범위를 위한 출처로 사용했다. 문서 등록은 수집기나 예약 연결이 아니다. 지원 버전은 사용 시 재확인하고 사례 수치를 독립 실험으로 합산하지 않는다. 원문별 날짜/이번 획득/실제 확인 범위는 [검토 원장](ai/AI_RESEARCH_REVIEW_LOG.md)의 해당 조사에 남긴다.

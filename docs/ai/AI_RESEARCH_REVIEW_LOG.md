@@ -1185,3 +1185,27 @@ SkillsBench v4의33.9→50.5%(+16.6%p) 및 개수별 서로 다른 과제 집단
 ### 2026-10-16 스킬 지식베이스 조사 공개 반영
 
 source64ce740/Pages38852495114 성공13:51:21KST. [공개2판](https://hansihoo.github.io/signal-desk/preview/skills-as-knowledge-base.html)이 검토 원고와 동일하다. 위의 로컬 전용 설명은 집필 당시 범위다. 제출/클라우드178시험, 공개 이전59글175판·모델1005판·원문16판 등11보존검사와 실제1280/390px 화면·목차·산정 근거·Home 등록을 확인했다. 원문 확인일/내용 검토일을 배포일로 갱신하지 않았다. 일반뉴스 수집경고1·독립 재현/사람 독해/새KB효과시험 미수행은 별도다. [배포와 검증 정본](../SKILLS_KNOWLEDGE_BASE_RESEARCH.2026-10-16.md#2026-10-16-공개-배포-완료).
+
+
+## 2026-10-16 REA와 Ghidra 비교 리서치
+
+독자 질문은 두 도구의 차이, 함께 작동하는 경로와 개발 업무 활용 조건이다. 공식 기능 문서와 제작자 공개 사례10건을 선정해 대조했다. 같은 대상의 속도/비용 우열을 측정한 실험은 아니다.
+
+현재 `rea-ghidra-reverse-engineering` 2판, 내용 SHA256 `b1af59dbce1a681d3b06e4bbc95d3521a6a84acdb13b31a18f257949fa692255`를 별도 quality sidecar와 작성 조합에 결합했다. 같은 작성자가 첫 화면과 본문을 별도 자체 검토했다. 독립 에이전트 검토, 사람 독해 시험, 도구 설치와 바이너리 재현은 하지 않았다.
+
+| 원문 | 원문 날짜/판 | 이번 보존 획득(UTC) | 실제 검토 범위 |
+| --- | --- | --- | --- |
+| [REA 6.5.0 README](https://raw.githubusercontent.com/morluto/rea/rea-agents-6.5.0/README.md) | 명시 발표일 미확인; URL의 고정 태그/사례 버전 보존 | 2026-10-16T05:52:45.334584+00:00 | What REA does, analysis engine requirements, local analysis and agent results. |
+| [REA 6.5.0 installation and Ghidra integration](https://raw.githubusercontent.com/morluto/rea/rea-agents-6.5.0/docs/installation.md) | 명시 발표일 미확인; URL의 고정 태그/사례 버전 보존 | 2026-10-16T05:52:45.634996+00:00 | Ghidra version, JDK, analysis scope, read-only Windows boundary and setup effects. |
+| [Ghidra 12.1.4 README](https://raw.githubusercontent.com/NationalSecurityAgency/ghidra/Ghidra_12.1.4_build/README.md) | 명시 발표일 미확인; URL의 고정 태그/사례 버전 보존 | 2026-10-16T05:52:45.875651+00:00 | Framework, analysis and scripting; release-specific JDK21 setup. |
+| [Ghidra 12.1.4 beginner course](https://raw.githubusercontent.com/NationalSecurityAgency/ghidra/Ghidra_12.1.4_build/GhidraDocs/GhidraClass/Beginner/Introduction_to_Ghidra_Student_Guide.html) | 명시 발표일 미확인; URL의 고정 태그/사례 버전 보존 | 2026-10-16T05:52:46.131979+00:00 | Auto-analysis, decompiler overview, names/types, references and call trees. |
+| [Ghidra 12.1.4 decompiler help](https://raw.githubusercontent.com/NationalSecurityAgency/ghidra/Ghidra_12.1.4_build/Ghidra/Features/Decompiler/src/main/help/help/topics/DecompilePlugin/DecompilerIntro.html) | 명시 발표일 미확인; URL의 고정 태그/사례 버전 보존 | 2026-10-16T05:52:46.480985+00:00 | Binary-to-C transformation, data flow, parameter/type inference and annotations. |
+| [Ghidra 12.1.4 debugger course](https://raw.githubusercontent.com/NationalSecurityAgency/ghidra/Ghidra_12.1.4_build/GhidraDocs/GhidraClass/Debugger/A1-GettingStarted.html) | 명시 발표일 미확인; URL의 고정 태그/사례 버전 보존 | 2026-10-16T05:52:46.918730+00:00 | Debugger launch/attach uses actual target execution, distinct from static analysis. |
+| [REA DX-Ball sound-pan case](https://rea.tools/showcase/dx-ball/) | 명시 발표일 미확인; URL의 고정 태그/사례 버전 보존 | 2026-10-16T05:52:47.222824+00:00 | Sound-pan function, arithmetic, 3205 comparisons/63 bytes, project checkpoint 2026-10-07; not full-game completion. |
+| [REA Notion clipboard case](https://rea.tools/showcase/notion/) | 명시 발표일 미확인; URL의 고정 태그/사례 버전 보존 | 2026-10-16T05:52:47.908609+00:00 | Desktop7.6.1 app.asar clipboard IPC route; web assets July13; module tests distinct from desktop UI capture. |
+| [Reverse engineerings industrial revolution](https://rea.tools/blog/touhou-reconstruction/) | 2026-10-10 | 2026-10-16T05:52:48.244197+00:00 | 2026-10-10 author retrospective, inherited work, incorrect 0 vs128 constant and validator repair. |
+| [REA FAQ](https://rea.tools/ko/faq/) | 명시 발표일 미확인; URL의 고정 태그/사례 버전 보존 | 2026-10-16T05:52:48.589332+00:00 | Local analysis/model provider data policy; MCP and skills versus CLI. |
+
+웹에서 앞서 열람한 자료의 정확한 최초 열람시각은 소급하지 않았다. 표는 이번 로컬 원문 보존의 최초/최근 성공 획득이며 내용 독해 시각은 quality sidecar에 따로 있다. 실패0/신규주제1이며 기존 원문 전체를 다시 읽고 무변경 판정한 작업은 아니다. 원본은 `data/raw/research/2026-10-16-rea-ghidra/`에 보존한다. DXBall3205입력/63바이트와Notion모듈시험을 전체앱복원이나독립재현으로표시하지않았다.
+
+[편집·출력·검색·배포 기록](../REA_GHIDRA_RESEARCH.2026-10-16.md).

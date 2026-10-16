@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "report_id": "rea-ghidra-reverse-engineering",
+  "report_hash": "b1af59dbce1a681d3b06e4bbc95d3521a6a84acdb13b31a18f257949fa692255",
+  "images": {},
+  "reader_content_only": true,
+  "topic_sections": {
+    "roles": [
+      {
+        "id": "roles-difference",
+        "start": 0
+      }
+    ],
+    "decompile": [
+      {
+        "id": "binary-to-c",
+        "start": 0
+      }
+    ],
+    "cases": [
+      {
+        "id": "notion-case",
+        "start": 0
+      },
+      {
+        "id": "dxball-case",
+        "start": 4
+      }
+    ],
+    "limits": [
+      {
+        "id": "validation-limits",
+        "start": 0
+      }
+    ],
+    "use": [
+      {
+        "id": "usage-decisions",
+        "start": 0
+      }
+    ],
+    "start": [
+      {
+        "id": "starting-conditions",
+        "start": 0
+      }
+    ]
+  },
+  "topic_tables": {
+    "roles-difference": [
+      "role-comparison"
+    ]
+  },
+  "block_visuals": [
+    {
+      "id": "visual-native-investigation-flow",
+      "path": "/explanation/0/blocks/3",
+      "kind": "flow"
+    },
+    {
+      "id": "visual-notion-clipboard-flow",
+      "path": "/explanation/2/blocks/2",
+      "kind": "flow"
+    }
+  ],
+  "quick_links": [
+    {
+      "chapter": "roles",
+      "label": "차이"
+    },
+    {
+      "chapter": "decompile",
+      "label": "분석 원리"
+    },
+    {
+      "chapter": "cases",
+      "label": "활용 사례"
+    },
+    {
+      "chapter": "use",
+      "label": "도입 판단"
+    },
+    {
+      "chapter": "start",
+      "label": "시작 조건"
+    }
+  ],
+  "provenance": "Labels are exact canonical report text. Native investigation flow applies only to the Ghidra route. Notion flow traces a recorded package, not a newly executed desktop session."
+}
