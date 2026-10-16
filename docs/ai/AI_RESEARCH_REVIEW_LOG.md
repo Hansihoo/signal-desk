@@ -1153,3 +1153,30 @@ Pages38676984996 성공 후 기사9편의 제목·문단·원문을 입력과 �
 
 
 2026-10-16 모델 검토 발행 결과: source0fec284 / Pages38803860087 success. 신규 소개3편과 전체표105사실을 동시에 공개하고 HTTP·11보존/내용 일치검사·실제 모바일/검색/출처/가격/이력/목록 필터를 확인했다. 기존 보고서·모델·Theo 판 모두 보존. 작성자 자체 검토와 실제 모델 미실행, 라이선스 원문401 및 비용/측정 조건의 제한을 유지한다. [검토 정본](../AI_MODEL_REVIEW.2026-10-16.md).
+
+## 2026-10-16 여러 AI 스킬을 검토 지식베이스로 활용하는 타당성 조사
+
+독자 질문: 공개 스킬을 모두 실행하는 대신 원문을 모아 이번 개발 작업의 빠진 고려사항을 검색·검토할 수 있는가? 연구 방법은 선정 문헌의 타당성 대조이며 체계적 문헌고찰·새 개발 성과 실험은 아니다.
+
+`skills-as-knowledge-base` 2판을 로컬 DB/페이지/knowledge에 연결했다. 1판은 보존했다. 같은 작성자가 첫 화면과 본문을 별도 검토했으며 독립 검토·실제 독자 시험은 하지 않았다. 실제 본문 검토 시각은 `2026-10-16T03:41:53.756152+00:00`이다.
+
+| 원문 | 원문 발표/판 날짜 | 첫 획득 = 최신 성공 획득(UTC) | 실제 확인 범위 |
+| --- | --- | --- | --- |
+| [Agent Skills specification](https://agentskills.io/specification) | 미확인 | 2026-10-16T03:33:33.028528+00:00 | 공식 명세. Skill structure·Progressive disclosure·File references 확인. 게시일 미확인, 2026-10-16 획득·관련 절 검토. |
+| [SkillsBench v4 — Xiangyi Li 등](https://arxiv.org/html/2602.12670v4) | 2026-06-14 | 2026-10-16T03:33:34.342607+00:00 | 2026-06-14 판. §4–6, Table 2와 Appendix F.1/Table 8의 모집단·통과율·개수별 관찰값 확인. 2026-10-16 획득·검토. 직접 재현하지 않음. |
+| [SWE-Skills-Bench v1 — Tingxu Han 등](https://arxiv.org/html/2603.15401v1) | 2026-03-16 | 2026-10-16T03:33:33.732053+00:00 | 2026-03-16 예비 연구. §3–5, Table 2의 49개 스킬·565개 과제, Haiku 4.5 조건·천장 효과·버전 충돌 확인. 2026-10-16 획득·검토. |
+| [Dynamic Cheatsheet v1 — Mirac Suzgun 등](https://arxiv.org/html/2504.07952v1) | 2025-04-10 | 2026-10-16T03:33:33.743025+00:00 | 2025-04-10. 축적 메모리·검색/통합 방식과 §5의 잘못된 요령·검색·메모리 관리 한계 확인. 2026-10-16 획득·관련 절 검토. |
+| [Agentic Context Engineering v1 — Qizheng Zhang 등](https://arxiv.org/html/2510.04618v1) | 2025-10-06 | 2026-10-16T03:33:33.707232+00:00 | 2025-10-06. §2–4의 context collapse, 생성·성찰·선별 및 증분 수정 방식 확인. AppWorld·금융 실험을 개발 검토 효과로 일반화하지 않음. 2026-10-16 획득·검토. |
+| [SkillSeek v1 — Guanqun Yang 등](https://arxiv.org/html/2609.38822v1) | 2026-09-30 | 2026-10-16T03:33:33.720549+00:00 | 2026-09-30. §3–4, Limitations의 검색·재정렬, 192/약34,000 스킬 풀·89과제와 주 실험 단일 시행 조건 확인. 인용된 구판 SkillsBench 통계는 사용하지 않음. 2026-10-16 획득·검토. |
+| [Anthropic — Effective context engineering for AI agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) | 2025-09-29 | 2026-10-16T03:33:33.804719+00:00 | 2025-09-29. 필요한 문맥을 적시에 조회하는 방식과 지연·선택 비용 확인. 공식 엔지니어링 지침이며 이 지식베이스의 효과 실험은 아님. 2026-10-16 획득·검토. |
+| [Anthropic — Skill patterns and troubleshooting](https://claude.com/resources/guides/the-complete-guide-to-building-skills-for-claude/patterns-and-troubleshooting) | 미확인 | 2026-10-16T03:33:34.872035+00:00 | Large context issues의 동시 활성 스킬 20–50개 이상 평가 권고와 선택적 활성화 안내. 최대 보관량 규정이 아님. 게시일 미확인, 2026-10-16 획득·관련 절 검토. |
+| [Matt Pocock — tdd/SKILL.md](https://raw.githubusercontent.com/mattpocock/skills/main/skills/engineering/tdd/SKILL.md) | 미확인 | 2026-10-16T03:33:33.925508+00:00 | What a good test is·Seams·Anti-patterns·Rules of the loop 확인. 연결된 tests.md·mocking.md·다른 스킬은 미검토. 가상 사례의 채택과 조정은 작성자의 해석. 게시일 미확인, 2026-10-16 획득본. |
+| [Matt Pocock — grill-me/SKILL.md](https://raw.githubusercontent.com/mattpocock/skills/main/skills/productivity/grill-me/SKILL.md) | 미확인 | 2026-10-16T03:33:33.970481+00:00 | 이름과 메타데이터 및 grilling 호출만 있는 현재 본문 확인. 별칭과 실제 내용을 구분하기 위한 사례. 게시일 미확인, 2026-10-16 획득본. |
+| [Matt Pocock — grilling/SKILL.md](https://raw.githubusercontent.com/mattpocock/skills/main/skills/productivity/grilling/SKILL.md) | 미확인 | 2026-10-16T03:33:33.988253+00:00 | 선행 결정에 따른 질문 진행과 환경에서 확인할 사실/사용자 결정의 구분 확인. 조사 자료로 읽었으며 실행하지 않음. 게시일 미확인, 2026-10-16 획득본. |
+| [Vercel — react-best-practices/SKILL.md](https://raw.githubusercontent.com/vercel-labs/agent-skills/main/skills/react-best-practices/SKILL.md) | 미확인 | 2026-10-16T03:33:33.956555+00:00 | React/Next.js 성능 지침의 적용 대상과 구성 확인. 모든 하위 규칙을 검토하거나 Python에 적용한 결과가 아님. 게시일 미확인, 2026-10-16 획득본. |
+
+연구의 실제 측정 기간은 별도로 확인하지 못했고 판의 게시일과 구분했다. 전체 바이트와 정규화 원문은 `data/raw/research/2026-10-16-skills-knowledge/`, 최초 Python 인증서/디코딩 실패와 정상 TLS curl 재획득 영수증은 아래 근거 폴더에 보존한다. 획득 성공을 첨부/참고자료 전체 독해나 독립 재현으로 표시하지 않는다.
+
+SkillsBench v4의33.9→50.5%(+16.6%p) 및 개수별 서로 다른 과제 집단, SWE v1의49스킬/565과제·89.8→91.0%(+1.2%p)·7/39/3·동일39중24개 기준100%를 대조했다. SkillSeek의 구판 SkillsBench 인용값은 옮기지 않았다. DC/ACE/SkillSeek는 인접 근거이고 전체 제안의 직접 검증은 미확인이다. 공개SKILL.md4개와 연결된 모든 파일을 읽은 것은 아니다.
+
+[범위·자체 검토·검증과 남은 한계](../SKILLS_KNOWLEDGE_BASE_RESEARCH.2026-10-16.md)에 기록했다. 로컬 전용이며 commit/push/공개 배포·스킬 설치·별도 KB 프로젝트 생성은 하지 않았다.

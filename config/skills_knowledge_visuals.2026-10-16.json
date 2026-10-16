@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "report_id": "skills-as-knowledge-base",
+  "report_hash": "968e3bb25fd126b82854baf04f4e681b6b1a1027472fea7245c4f4b06a396c1c",
+  "images": {},
+  "reader_content_only": true,
+  "topic_sections": {
+    "idea": [
+      {
+        "id": "knowledge-review",
+        "start": 0
+      },
+      {
+        "id": "three-quantities",
+        "start": 4
+      }
+    ],
+    "evidence": [
+      {
+        "id": "skillsbench-results",
+        "start": 0
+      },
+      {
+        "id": "swe-results",
+        "start": 2
+      }
+    ],
+    "prior": [
+      {
+        "id": "related-work",
+        "start": 0
+      }
+    ],
+    "example": [
+      {
+        "id": "api-review-example",
+        "start": 0
+      },
+      {
+        "id": "source-dependencies",
+        "start": 4
+      }
+    ],
+    "operate": [
+      {
+        "id": "knowledge-management",
+        "start": 0
+      }
+    ],
+    "decision": [
+      {
+        "id": "adoption-evaluation",
+        "start": 0
+      }
+    ]
+  },
+  "topic_tables": {
+    "skillsbench-results": [
+      "quantity-groups"
+    ],
+    "related-work": [
+      "related-studies"
+    ]
+  },
+  "block_visuals": [
+    {
+      "id": "visual-knowledge-review",
+      "path": "/explanation/0/blocks/2",
+      "kind": "flow"
+    },
+    {
+      "id": "visual-api-review",
+      "path": "/explanation/3/blocks/1",
+      "kind": "flow"
+    }
+  ],
+  "quick_links": [
+    {
+      "chapter": "idea",
+      "label": "구상"
+    },
+    {
+      "chapter": "evidence",
+      "label": "데이터"
+    },
+    {
+      "chapter": "prior",
+      "label": "연구"
+    },
+    {
+      "chapter": "example",
+      "label": "개발 사례"
+    },
+    {
+      "chapter": "decision",
+      "label": "도입 판단"
+    }
+  ],
+  "provenance": "All labels, tables and chart values are canonical reviewed report content. Two process figures describe a proposed design and a fictional example; neither is a measured deployment."
+}

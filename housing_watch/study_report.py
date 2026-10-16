@@ -84,6 +84,12 @@ def visuals_for(report):
             break
     if guide is None:
         return None
+    quick_links = guide.get('quick_links', [])
+    chapter_ids = {chapter['id'] for chapter in report['explanation']}
+    if not isinstance(quick_links, list) or len({link.get('chapter') for link in quick_links}) != len(quick_links):
+        raise ValueError('Quick links need unique chapters')
+    if any(link.get('chapter') not in chapter_ids or not isinstance(link.get('label'), str) or not link['label'].strip() for link in quick_links):
+        raise ValueError('Quick links must name existing chapters')
     topics = guide.get('topic_sections')
     if topics is not None:
         if set(topics) != {ch['id'] for ch in report['explanation']}:
@@ -292,6 +298,8 @@ def render_study(report, prefix='', edition=None):
     quick = [(label,id) for label,id in quick if id in available]
     if topics:
         quick = [(label,ch['id']) for label,ch in zip(('이해','구성','구축','운영'),chapters)]
+    if visual_guide and visual_guide.get('quick_links'):
+        quick = [(link['label'],link['chapter']) for link in visual_guide['quick_links']]
     shortnav = ''.join('<a data-section-link href="#chapter-%s">%s</a>' % (esc(id),label) for label,id in quick)
     toolbar = '<div class="study-toolbar"><div class="study-toolbar-inner"><a id="document-back" href="%sindex.html">← 리서치 목록</a><nav class="study-quick" aria-label="주요 목차">%s</nav><details id="document-menu"><summary>목차 <span id="document-current"></span><span aria-hidden="true">▾</span></summary><nav aria-label="문서 목차">%s</nav></details><button id="study-print" type="button">인쇄</button></div></div>' % (prefix,shortnav,nav)
     if topics:

@@ -1,0 +1,2400 @@
+{
+  "packages": [
+    {
+      "version": "question-research-1",
+      "status": "ready",
+      "plan": {
+        "version": "question-research-1",
+        "request": {
+          "id": "skills-as-knowledge-base",
+          "topic_id": "development",
+          "reader": "에이전트 스킬을 접했고 공개 스킬의 개발 방법을 지식베이스로 관리할지 판단하려는 개발자",
+          "reader_question": "여러 AI 스킬을 실행 지시로 모두 활성화하지 않고 지식베이스에 보관한 뒤, 현재 개발 작업에서 빠진 고려사항을 검토하는 데 활용할 수 있을까?",
+          "outcome": "관련 연구가 뒷받침하는 범위와 공백을 구분하고, 원문 보존·검색·프로젝트별 조정·충돌 검토·효과 평가의 작은 도입안을 판단한다.",
+          "research_type": "custom",
+          "custom_profile": {
+            "method": "개발자 의사결정을 위한 타당성 조사. 공개 논문과 공식 스킬 명세·운영 지침 및 실제 공개 SKILL.md를 대조한다. 직접 검증, 인접 연구, 작성자의 설계 제안과 가상 개발 사례를 분리한다. 체계적 문헌고찰이나 새 지식베이스의 실험 결과라고 주장하지 않는다.",
+            "requires": [
+              "concept",
+              "measurement",
+              "mechanism",
+              "limitation"
+            ]
+          },
+          "questions": [
+            {
+              "id": "idea",
+              "question": "스킬을 지식으로 모아 검토에 사용한다는 것은 무엇이며 기존 스킬 로딩과 어떻게 연결되는가?",
+              "requires": [
+                "concept",
+                "mechanism"
+              ]
+            },
+            {
+              "id": "evidence",
+              "question": "스킬의 효과와 개수에 관한 연구 데이터는 무엇을 보여주고 무엇을 증명하지 못하는가?",
+              "requires": [
+                "measurement",
+                "limitation"
+              ]
+            },
+            {
+              "id": "prior",
+              "question": "유사한 연구는 무엇이며 이 구상과의 거리는 어느 정도인가?",
+              "requires": [
+                "mechanism",
+                "limitation"
+              ]
+            },
+            {
+              "id": "example",
+              "question": "공개 스킬을 실제 개발 검토 항목으로 바꾸면 채택·조정·제외가 어떻게 달라지는가?",
+              "requires": [
+                "mechanism",
+                "limitation"
+              ]
+            },
+            {
+              "id": "operate",
+              "question": "원문, 분류·색인, 프로젝트별 조정과 충돌을 어떻게 관리하고 효과를 확인할 것인가?",
+              "requires": [
+                "mechanism",
+                "limitation"
+              ]
+            }
+          ],
+          "authoring": {
+            "profile": "custom",
+            "template": "research-study",
+            "methods": [
+              "writing-workflow",
+              "research-teaching",
+              "section-editing",
+              "korean-editing",
+              "reader-review",
+              "visual-explanation"
+            ],
+            "requirements": [
+              "제목은 여러 AI 스킬을 지식베이스로 묶어 활용할 수 있을까?로 고정한다.",
+              "배경을 짧게 설명한 뒤 조건부 조사 결론을 먼저 제시한다.",
+              "개발자 독자를 위해 과정 도식, 연구 데이터와 짧은 설명을 섞는다.",
+              "연구마다 판·모집단·모델과 비교 조건을 보존하고 서로 다른 벤치마크를 합산하지 않는다.",
+              "적은 스킬 수와 성과의 상관을 보편적인 최적 개수나 인과관계로 바꾸지 않는다.",
+              "유사 연구와 제안한 전체 검토 방식의 직접 검증을 구분한다.",
+              "공개 스킬은 조사 자료로 읽고 실행 지시나 권한으로 받아들이지 않는다.",
+              "별도 지식베이스 프로젝트 생성·스킬 설치·유료 호출·공개 배포를 포함하지 않는다.",
+              "같은 작성자의 자체 검토와 실제 독자 시험을 구분하고 로컬 검색 등록까지 마친다."
+            ],
+            "preferences": {
+              "opening": "짧은 배경과 조건부 답을 먼저 말한다.",
+              "outline": "구상, 실험 근거, 유사 연구, 개발 검토 사례, 관리와 평가를 연결한다. 실습과 응용 문제는 강제하지 않는다.",
+              "length": "긴 문단 대신 하나의 판단에 필요한 짧은 문단과 도식·표·차트를 배치한다.",
+              "visuals": "실제 측정치만 차트로 그리고 설계 흐름과 가상 검토 결과를 명시한다.",
+              "tone": "개발자가 도입 여부를 판단할 수 있는 자연스럽고 구체적인 한국어",
+              "examples": "검색 API 오류 수정의 가상 사례 하나를 입력에서 검토 결과까지 연결한다."
+            },
+            "overrides": []
+          },
+          "sources": [
+            {
+              "id": "spec",
+              "title": "Agent Skills specification",
+              "url": "https://agentskills.io/specification",
+              "kind": "official_document"
+            },
+            {
+              "id": "skillsbench",
+              "title": "SkillsBench v4 — Xiangyi Li 등",
+              "url": "https://arxiv.org/html/2602.12670v4",
+              "kind": "benchmark"
+            },
+            {
+              "id": "swe",
+              "title": "SWE-Skills-Bench v1 — Tingxu Han 등",
+              "url": "https://arxiv.org/html/2603.15401v1",
+              "kind": "benchmark"
+            },
+            {
+              "id": "dc",
+              "title": "Dynamic Cheatsheet v1 — Mirac Suzgun 등",
+              "url": "https://arxiv.org/html/2504.07952v1",
+              "kind": "official_document"
+            },
+            {
+              "id": "ace",
+              "title": "Agentic Context Engineering v1 — Qizheng Zhang 등",
+              "url": "https://arxiv.org/html/2510.04618v1",
+              "kind": "official_document"
+            },
+            {
+              "id": "skillseek",
+              "title": "SkillSeek v1 — Guanqun Yang 등",
+              "url": "https://arxiv.org/html/2609.38822v1",
+              "kind": "official_document"
+            },
+            {
+              "id": "context",
+              "title": "Anthropic — Effective context engineering for AI agents",
+              "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+              "kind": "official_document"
+            },
+            {
+              "id": "guide",
+              "title": "Anthropic — Skill patterns and troubleshooting",
+              "url": "https://claude.com/resources/guides/the-complete-guide-to-building-skills-for-claude/patterns-and-troubleshooting",
+              "kind": "official_document"
+            },
+            {
+              "id": "tdd",
+              "title": "Matt Pocock — tdd/SKILL.md",
+              "url": "https://raw.githubusercontent.com/mattpocock/skills/main/skills/engineering/tdd/SKILL.md",
+              "kind": "official_document"
+            },
+            {
+              "id": "grill-me",
+              "title": "Matt Pocock — grill-me/SKILL.md",
+              "url": "https://raw.githubusercontent.com/mattpocock/skills/main/skills/productivity/grill-me/SKILL.md",
+              "kind": "official_document"
+            },
+            {
+              "id": "grilling",
+              "title": "Matt Pocock — grilling/SKILL.md",
+              "url": "https://raw.githubusercontent.com/mattpocock/skills/main/skills/productivity/grilling/SKILL.md",
+              "kind": "official_document"
+            },
+            {
+              "id": "react",
+              "title": "Vercel — react-best-practices/SKILL.md",
+              "url": "https://raw.githubusercontent.com/vercel-labs/agent-skills/main/skills/react-best-practices/SKILL.md",
+              "kind": "official_document"
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "idea",
+            "question": "스킬을 지식으로 모아 검토에 사용한다는 것은 무엇이며 기존 스킬 로딩과 어떻게 연결되는가?",
+            "requires": [
+              "concept",
+              "mechanism"
+            ]
+          },
+          {
+            "id": "evidence",
+            "question": "스킬의 효과와 개수에 관한 연구 데이터는 무엇을 보여주고 무엇을 증명하지 못하는가?",
+            "requires": [
+              "measurement",
+              "limitation"
+            ]
+          },
+          {
+            "id": "prior",
+            "question": "유사한 연구는 무엇이며 이 구상과의 거리는 어느 정도인가?",
+            "requires": [
+              "mechanism",
+              "limitation"
+            ]
+          },
+          {
+            "id": "example",
+            "question": "공개 스킬을 실제 개발 검토 항목으로 바꾸면 채택·조정·제외가 어떻게 달라지는가?",
+            "requires": [
+              "mechanism",
+              "limitation"
+            ]
+          },
+          {
+            "id": "operate",
+            "question": "원문, 분류·색인, 프로젝트별 조정과 충돌을 어떻게 관리하고 효과를 확인할 것인가?",
+            "requires": [
+              "mechanism",
+              "limitation"
+            ]
+          }
+        ],
+        "method": "개발자 의사결정을 위한 타당성 조사. 공개 논문과 공식 스킬 명세·운영 지침 및 실제 공개 SKILL.md를 대조한다. 직접 검증, 인접 연구, 작성자의 설계 제안과 가상 개발 사례를 분리한다. 체계적 문헌고찰이나 새 지식베이스의 실험 결과라고 주장하지 않는다."
+      },
+      "sources": [
+        {
+          "id": "spec",
+          "title": "Agent Skills specification",
+          "url": "https://agentskills.io/specification",
+          "kind": "official_document",
+          "status": "imported_original",
+          "final_url": "https://agentskills.io/specification",
+          "text": "Agents load skills progressively",
+          "text_hash": "d85bbf723f04049f79a099a2385479ef5616da83a8ffbde28d0653f6eda14344",
+          "content_hash": "05fce2d257c83db541617cb7d8206f88e55597b5ad0b5345bf6c87d6a0bd2f93",
+          "first_collected": "2026-10-16T03:33:33.028528+00:00",
+          "last_successful_collection": "2026-10-16T03:33:33.028528+00:00",
+          "published_on": null,
+          "review_scope": "공식 명세. Skill structure·Progressive disclosure·File references 확인. 게시일 미확인, 2026-10-16 획득·관련 절 검토.",
+          "raw_path": "C:\\Engine\\signal-desk\\data\\raw\\research\\2026-10-16-skills-knowledge\\spec.raw"
+        },
+        {
+          "id": "skillsbench",
+          "title": "SkillsBench v4 — Xiangyi Li 등",
+          "url": "https://arxiv.org/html/2602.12670v4",
+          "kind": "benchmark",
+          "status": "imported_original",
+          "final_url": "https://arxiv.org/html/2602.12670v4",
+          "text": "Curated Skills raise the average pass rate from 33.9% to 50.5%",
+          "text_hash": "ae83a03b57dc110c129fe19dc151b8f5c976e5db68e20e36ee73696d33486a30",
+          "content_hash": "9def6d90571f74e7fba855c016c82eafdbcf8ac06345add69dcc66dcc64135ac",
+          "first_collected": "2026-10-16T03:33:34.342607+00:00",
+          "last_successful_collection": "2026-10-16T03:33:34.342607+00:00",
+          "published_on": "2026-06-14",
+          "review_scope": "2026-06-14 판. §4–6, Table 2와 Appendix F.1/Table 8의 모집단·통과율·개수별 관찰값 확인. 2026-10-16 획득·검토. 직접 재현하지 않음.",
+          "raw_path": "C:\\Engine\\signal-desk\\data\\raw\\research\\2026-10-16-skills-knowledge\\skillsbench.raw"
+        },
+        {
+          "id": "swe",
+          "title": "SWE-Skills-Bench v1 — Tingxu Han 등",
+          "url": "https://arxiv.org/html/2603.15401v1",
+          "kind": "benchmark",
+          "status": "imported_original",
+          "final_url": "https://arxiv.org/html/2603.15401v1",
+          "text": "The agent is Claude Code Anthropic (2025a) with the Claude Haiku 4.5.",
+          "text_hash": "a3ec8bc576c89e12615db28f6f0f8570fe117daeea8e1a90475396ff7c2b7de6",
+          "content_hash": "e4afb63aee141e350d5a3e2595f263280fb727832dc6265bdf7e4a87eea8f12a",
+          "first_collected": "2026-10-16T03:33:33.732053+00:00",
+          "last_successful_collection": "2026-10-16T03:33:33.732053+00:00",
+          "published_on": "2026-03-16",
+          "review_scope": "2026-03-16 예비 연구. §3–5, Table 2의 49개 스킬·565개 과제, Haiku 4.5 조건·천장 효과·버전 충돌 확인. 2026-10-16 획득·검토.",
+          "raw_path": "C:\\Engine\\signal-desk\\data\\raw\\research\\2026-10-16-skills-knowledge\\swe.raw"
+        },
+        {
+          "id": "dc",
+          "title": "Dynamic Cheatsheet v1 — Mirac Suzgun 등",
+          "url": "https://arxiv.org/html/2504.07952v1",
+          "kind": "official_document",
+          "status": "imported_original",
+          "final_url": "https://arxiv.org/html/2504.07952v1",
+          "text": "However, faulty heuristics that slip into memory can be equally amplified.",
+          "text_hash": "91811c5c88a6165263decb2206615a707af0656c909f73d929287df355145660",
+          "content_hash": "bd42e6697105cc865ccbabb0d2dee555c5ebe0337d9027c4743fe9e5debd778f",
+          "first_collected": "2026-10-16T03:33:33.743025+00:00",
+          "last_successful_collection": "2026-10-16T03:33:33.743025+00:00",
+          "published_on": "2025-04-10",
+          "review_scope": "2025-04-10. 축적 메모리·검색/통합 방식과 §5의 잘못된 요령·검색·메모리 관리 한계 확인. 2026-10-16 획득·관련 절 검토.",
+          "raw_path": "C:\\Engine\\signal-desk\\data\\raw\\research\\2026-10-16-skills-knowledge\\dc.raw"
+        },
+        {
+          "id": "ace",
+          "title": "Agentic Context Engineering v1 — Qizheng Zhang 등",
+          "url": "https://arxiv.org/html/2510.04618v1",
+          "kind": "official_document",
+          "status": "imported_original",
+          "final_url": "https://arxiv.org/html/2510.04618v1",
+          "text": "structured, incremental updates that preserve detailed knowledge",
+          "text_hash": "adb21a6b4c92b00050a09b9cd3f2570e87b48c84d05fa8c05425acbc290e7f0e",
+          "content_hash": "1d227a0ab14c907252768f633dd6da7a1d091556a2395d85e8edf967f80ff89b",
+          "first_collected": "2026-10-16T03:33:33.707232+00:00",
+          "last_successful_collection": "2026-10-16T03:33:33.707232+00:00",
+          "published_on": "2025-10-06",
+          "review_scope": "2025-10-06. §2–4의 context collapse, 생성·성찰·선별 및 증분 수정 방식 확인. AppWorld·금융 실험을 개발 검토 효과로 일반화하지 않음. 2026-10-16 획득·검토.",
+          "raw_path": "C:\\Engine\\signal-desk\\data\\raw\\research\\2026-10-16-skills-knowledge\\ace.raw"
+        },
+        {
+          "id": "skillseek",
+          "title": "SkillSeek v1 — Guanqun Yang 등",
+          "url": "https://arxiv.org/html/2609.38822v1",
+          "kind": "official_document",
+          "status": "imported_original",
+          "final_url": "https://arxiv.org/html/2609.38822v1",
+          "text": "Each main-grid setting is a single 89-task trial.",
+          "text_hash": "abac39eab7dfd0c93e999a5180d8c0c49087e6248a01048061c540a7a0cf1b36",
+          "content_hash": "d8551c4c9e499fa5d6fa6d0f0d822b6e498bc13b8b4bf6bb8ca5db40142474a9",
+          "first_collected": "2026-10-16T03:33:33.720549+00:00",
+          "last_successful_collection": "2026-10-16T03:33:33.720549+00:00",
+          "published_on": "2026-09-30",
+          "review_scope": "2026-09-30. §3–4, Limitations의 검색·재정렬, 192/약34,000 스킬 풀·89과제와 주 실험 단일 시행 조건 확인. 인용된 구판 SkillsBench 통계는 사용하지 않음. 2026-10-16 획득·검토.",
+          "raw_path": "C:\\Engine\\signal-desk\\data\\raw\\research\\2026-10-16-skills-knowledge\\skillseek.raw"
+        },
+        {
+          "id": "context",
+          "title": "Anthropic — Effective context engineering for AI agents",
+          "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+          "kind": "official_document",
+          "status": "imported_original",
+          "final_url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+          "text": "finding the smallest possible set of high-signal tokens",
+          "text_hash": "0259d3e7cfe0e1f83725ff87901bdd5c7cb5b3fe74f2bd4ef26f27dceced6be6",
+          "content_hash": "45a1f28b038a94981c63498623de15d54ff989d874f9a979ef1344554d182a51",
+          "first_collected": "2026-10-16T03:33:33.804719+00:00",
+          "last_successful_collection": "2026-10-16T03:33:33.804719+00:00",
+          "published_on": "2025-09-29",
+          "review_scope": "2025-09-29. 필요한 문맥을 적시에 조회하는 방식과 지연·선택 비용 확인. 공식 엔지니어링 지침이며 이 지식베이스의 효과 실험은 아님. 2026-10-16 획득·검토.",
+          "raw_path": "C:\\Engine\\signal-desk\\data\\raw\\research\\2026-10-16-skills-knowledge\\context.raw"
+        },
+        {
+          "id": "guide",
+          "title": "Anthropic — Skill patterns and troubleshooting",
+          "url": "https://claude.com/resources/guides/the-complete-guide-to-building-skills-for-claude/patterns-and-troubleshooting",
+          "kind": "official_document",
+          "status": "imported_original",
+          "final_url": "https://claude.com/resources/guides/the-complete-guide-to-building-skills-for-claude/patterns-and-troubleshooting",
+          "text": "Evaluate if you have more than 20 - 50 skills enabled simultaneously",
+          "text_hash": "920d94d9f0c0c6b036a58d1d991ab516a21d5d2e8425d72980c73929f631f512",
+          "content_hash": "15839d498d53a7da1ab78322b2f5e04a6ec1b50e2ea65089f80e724e3c96f559",
+          "first_collected": "2026-10-16T03:33:34.872035+00:00",
+          "last_successful_collection": "2026-10-16T03:33:34.872035+00:00",
+          "published_on": null,
+          "review_scope": "Large context issues의 동시 활성 스킬 20–50개 이상 평가 권고와 선택적 활성화 안내. 최대 보관량 규정이 아님. 게시일 미확인, 2026-10-16 획득·관련 절 검토.",
+          "raw_path": "C:\\Engine\\signal-desk\\data\\raw\\research\\2026-10-16-skills-knowledge\\guide.raw"
+        },
+        {
+          "id": "tdd",
+          "title": "Matt Pocock — tdd/SKILL.md",
+          "url": "https://raw.githubusercontent.com/mattpocock/skills/main/skills/engineering/tdd/SKILL.md",
+          "kind": "official_document",
+          "status": "imported_original",
+          "final_url": "https://raw.githubusercontent.com/mattpocock/skills/main/skills/engineering/tdd/SKILL.md",
+          "text": "Tests verify behavior through public interfaces, not implementation details.",
+          "text_hash": "de7c1ab6fe13ed5af89578c2777bc792b999a6c859d8f942fe47d4e5f973eff0",
+          "content_hash": "5505d25bbaa8fc14a79e4d20163936958992a2995b7f1dd1d6197edc9ed722e0",
+          "first_collected": "2026-10-16T03:33:33.925508+00:00",
+          "last_successful_collection": "2026-10-16T03:33:33.925508+00:00",
+          "published_on": null,
+          "review_scope": "What a good test is·Seams·Anti-patterns·Rules of the loop 확인. 연결된 tests.md·mocking.md·다른 스킬은 미검토. 가상 사례의 채택과 조정은 작성자의 해석. 게시일 미확인, 2026-10-16 획득본.",
+          "raw_path": "C:\\Engine\\signal-desk\\data\\raw\\research\\2026-10-16-skills-knowledge\\tdd.raw"
+        },
+        {
+          "id": "grill-me",
+          "title": "Matt Pocock — grill-me/SKILL.md",
+          "url": "https://raw.githubusercontent.com/mattpocock/skills/main/skills/productivity/grill-me/SKILL.md",
+          "kind": "official_document",
+          "status": "imported_original",
+          "final_url": "https://raw.githubusercontent.com/mattpocock/skills/main/skills/productivity/grill-me/SKILL.md",
+          "text": "Call the Skill tool with \"grilling\".",
+          "text_hash": "3440ff7c9bdc8cf69343231640cb5f185f3435682a7367144e623846cf1d7074",
+          "content_hash": "caaf8b8de1684f96e26b28f3c29189db5c89cce4b73e1c93d86164f66ef88637",
+          "first_collected": "2026-10-16T03:33:33.970481+00:00",
+          "last_successful_collection": "2026-10-16T03:33:33.970481+00:00",
+          "published_on": null,
+          "review_scope": "이름과 메타데이터 및 grilling 호출만 있는 현재 본문 확인. 별칭과 실제 내용을 구분하기 위한 사례. 게시일 미확인, 2026-10-16 획득본.",
+          "raw_path": "C:\\Engine\\signal-desk\\data\\raw\\research\\2026-10-16-skills-knowledge\\grill-me.raw"
+        },
+        {
+          "id": "grilling",
+          "title": "Matt Pocock — grilling/SKILL.md",
+          "url": "https://raw.githubusercontent.com/mattpocock/skills/main/skills/productivity/grilling/SKILL.md",
+          "kind": "official_document",
+          "status": "imported_original",
+          "final_url": "https://raw.githubusercontent.com/mattpocock/skills/main/skills/productivity/grilling/SKILL.md",
+          "text": "Finding _facts_ is your job, never the user's.",
+          "text_hash": "21506f076d41f935a5b05892034f5ddf674b737bb43b73e6c634df3296ba8262",
+          "content_hash": "befdff1e27a1dfe2a294d5871169ac1afe16d983911daa4f32627514a48c1e15",
+          "first_collected": "2026-10-16T03:33:33.988253+00:00",
+          "last_successful_collection": "2026-10-16T03:33:33.988253+00:00",
+          "published_on": null,
+          "review_scope": "선행 결정에 따른 질문 진행과 환경에서 확인할 사실/사용자 결정의 구분 확인. 조사 자료로 읽었으며 실행하지 않음. 게시일 미확인, 2026-10-16 획득본.",
+          "raw_path": "C:\\Engine\\signal-desk\\data\\raw\\research\\2026-10-16-skills-knowledge\\grilling.raw"
+        },
+        {
+          "id": "react",
+          "title": "Vercel — react-best-practices/SKILL.md",
+          "url": "https://raw.githubusercontent.com/vercel-labs/agent-skills/main/skills/react-best-practices/SKILL.md",
+          "kind": "official_document",
+          "status": "imported_original",
+          "final_url": "https://raw.githubusercontent.com/vercel-labs/agent-skills/main/skills/react-best-practices/SKILL.md",
+          "text": "React and Next.js performance optimization guidelines from Vercel Engineering.",
+          "text_hash": "c4e7fd827bc4615c7ce6a97204b0c4675ff397f150af65fbd8463b507fdc75cc",
+          "content_hash": "71ed7794962fa6e803ee83030517b5b93a9f70fbfeb431ec4535c5480a8d8355",
+          "first_collected": "2026-10-16T03:33:33.956555+00:00",
+          "last_successful_collection": "2026-10-16T03:33:33.956555+00:00",
+          "published_on": null,
+          "review_scope": "React/Next.js 성능 지침의 적용 대상과 구성 확인. 모든 하위 규칙을 검토하거나 Python에 적용한 결과가 아님. 게시일 미확인, 2026-10-16 획득본.",
+          "raw_path": "C:\\Engine\\signal-desk\\data\\raw\\research\\2026-10-16-skills-knowledge\\react.raw"
+        }
+      ],
+      "analysis": {
+        "evidence": [
+          {
+            "id": "e-spec",
+            "source_id": "spec",
+            "source_hash": "05fce2d257c83db541617cb7d8206f88e55597b5ad0b5345bf6c87d6a0bd2f93",
+            "quote": "Agents load skills progressively",
+            "meaning": "스킬의 구조와 연결 자료·점진적 로딩을 구분한다. 지식베이스의 보관량과 런타임 노출량·적용량은 별도로 설계할 수 있다.",
+            "limits": "공식 문서·공개 저자 지침의 해당 절만 확인했다. 제안한 KB의 실험 결과, 설치 결과나 독립 검증이 아니다.",
+            "supports": [
+              "concept",
+              "mechanism",
+              "limitation"
+            ]
+          },
+          {
+            "id": "e-skillsbench",
+            "source_id": "skillsbench",
+            "source_hash": "9def6d90571f74e7fba855c016c82eafdbcf8ac06345add69dcc66dcc64135ac",
+            "quote": "Curated Skills raise the average pass rate from 33.9% to 50.5%",
+            "meaning": "v4 Table 2는 87과제/8분야/18구성에서 33.9→50.5%를 보고한다. F.1 Table8의 1개23과제 +18.0pp, 2–3개43과제 +19.0pp, 4개이상21과제 +10.1pp는 서로 다른 과제 집단이다.",
+            "limits": "서로 다른 개수 집단은 인과 실험이 아니다. 개발만의 모집단이 아니고 우리 제안의 성능이 아니다. 저자 보고값이며 재현하지 않았다.",
+            "supports": [
+              "concept",
+              "mechanism",
+              "limitation",
+              "measurement"
+            ],
+            "measurement": {
+              "population": "87과제·8분야·18모델/실행환경 구성",
+              "period": "2026-06-14 v4 보고값; 실제 측정 기간 별도 미확인",
+              "unit": "통과율 %, 차이 %p, 개수; SWE 추가 토큰 변화 %",
+              "comparison": "동일 연구의 스킬 없음 대 스킬 제공. 개수 집단의 과제 차이·두 논문 조건 차이를 보존한다."
+            }
+          },
+          {
+            "id": "e-swe",
+            "source_id": "swe",
+            "source_hash": "e4afb63aee141e350d5a3e2595f263280fb727832dc6265bdf7e4a87eea8f12a",
+            "quote": "The agent is Claude Code Anthropic (2025a) with the Claude Haiku 4.5.",
+            "meaning": "v1 Table2/§4.1–4.3: Claude Code+Haiku4.5,49스킬/565요구사항과제. 평균89.8→91.0%,토큰+10.5%;7개상승/39개동일/3개하락. 동일39중24는기준100%. 버전과 프로젝트 문맥의 불일치를 논의한다.",
+            "limits": "예비 연구·단일 모델 구성, 선택/생성한 요구사항과 단위시험 기반이다. 천장 효과가 있고 여러 스킬 동시 충돌 실험은 아니다. 저장 위치의 기술은 §3.2와 §4.1에 차이가 있어 이 글에서는 물리 경로를 특정하지 않았다.",
+            "supports": [
+              "concept",
+              "mechanism",
+              "limitation",
+              "measurement"
+            ],
+            "measurement": {
+              "population": "49스킬·565과제·Claude Code+Claude Haiku4.5",
+              "period": "2026-03-16 v1 보고값; 실제 측정 기간 별도 미확인",
+              "unit": "통과율 %, 차이 %p, 개수; SWE 추가 토큰 변화 %",
+              "comparison": "동일 연구의 스킬 없음 대 스킬 제공. 개수 집단의 과제 차이·두 논문 조건 차이를 보존한다."
+            }
+          },
+          {
+            "id": "e-dc",
+            "source_id": "dc",
+            "source_hash": "bd42e6697105cc865ccbabb0d2dee555c5ebe0337d9027c4743fe9e5debd778f",
+            "quote": "However, faulty heuristics that slip into memory can be equally amplified.",
+            "meaning": "§2–5의 경험·해결법 축적과 검색/통합, 잘못된 요령의 증폭·검색 노이즈·긴 메모리 갱신 손실을 확인한다. 외부 구조화 DB와 모듈별 메모리 가능성을 논의한다.",
+            "limits": "문제풀이 메모리 연구이며 공개스킬 KB 개발검토 실험은 아니다. 조건별 모델 역량·검색 오류·메모리 손실을 일반화하지 않는다.",
+            "supports": [
+              "concept",
+              "mechanism",
+              "limitation"
+            ]
+          },
+          {
+            "id": "e-ace",
+            "source_id": "ace",
+            "source_hash": "1d227a0ab14c907252768f633dd6da7a1d091556a2395d85e8edf967f80ff89b",
+            "quote": "structured, incremental updates that preserve detailed knowledge",
+            "meaning": "§2–4: 짧게 만드는 편향과 전체 재작성에 따른 세부정보 손실을 문제로 본다. 생성·성찰·선별, 항목별 증분 갱신과 사용 피드백을 다룬다.",
+            "limits": "AppWorld 및 금융 등의 결과이고 공개스킬 원문 수집/팀별 적응 전체의 효과를 입증하지 않는다.",
+            "supports": [
+              "concept",
+              "mechanism",
+              "limitation"
+            ]
+          },
+          {
+            "id": "e-skillseek",
+            "source_id": "skillseek",
+            "source_hash": "d8551c4c9e499fa5d6fa6d0f0d822b6e498bc13b8b4bf6bb8ca5db40142474a9",
+            "quote": "Each main-grid setting is a single 89-task trial.",
+            "meaning": "§3–4/Limitations:192및34k풀의89과제,검색과재정렬,OpenHands조건. 주실험은조건별단일시행이고별도반복1조건으로잡음을살핀다. 개발자검토질문의적합성실험은아니다.",
+            "limits": "주실험 단일시행과89과제/OpenHands한계. 인용된SkillsBench구판수치는본기사에옮기지않았다.",
+            "supports": [
+              "concept",
+              "mechanism",
+              "limitation"
+            ]
+          },
+          {
+            "id": "e-context",
+            "source_id": "context",
+            "source_hash": "45a1f28b038a94981c63498623de15d54ff989d874f9a979ef1344554d182a51",
+            "quote": "finding the smallest possible set of high-signal tokens",
+            "meaning": "가벼운 식별자·쿼리·링크를 유지하고 실행 중 필요한 자료를 불러오는 방식, 작은 고신호 문맥과 조회 지연의 관계를 설명한다.",
+            "limits": "공식 문서·공개 저자 지침의 해당 절만 확인했다. 제안한 KB의 실험 결과, 설치 결과나 독립 검증이 아니다.",
+            "supports": [
+              "concept",
+              "mechanism",
+              "limitation"
+            ]
+          },
+          {
+            "id": "e-guide",
+            "source_id": "guide",
+            "source_hash": "15839d498d53a7da1ab78322b2f5e04a6ec1b50e2ea65089f80e724e3c96f559",
+            "quote": "Evaluate if you have more than 20 - 50 skills enabled simultaneously",
+            "meaning": "Large context issues:본문크기·동시활성·점진적로딩부재를문제로들며,동시활성20–50개이상일때평가/선택적활성화를권한다. 최대보관량이나보편최적값아님.",
+            "limits": "공식 문서·공개 저자 지침의 해당 절만 확인했다. 제안한 KB의 실험 결과, 설치 결과나 독립 검증이 아니다.",
+            "supports": [
+              "concept",
+              "mechanism",
+              "limitation"
+            ]
+          },
+          {
+            "id": "e-tdd",
+            "source_id": "tdd",
+            "source_hash": "5505d25bbaa8fc14a79e4d20163936958992a2995b7f1dd1d6197edc9ed722e0",
+            "quote": "Tests verify behavior through public interfaces, not implementation details.",
+            "meaning": "What a good test is/Seams/Anti-patterns/Rules: 공개경계 동작검증, 사용자와 경계 합의, 구현과 독립된 기대값, 최소 red→green 반복. tests.md/mocking.md/다른skill링크를 확인했다.",
+            "limits": "연결참고파일은읽지않았다. 가상개발사례의채택/조정은작성자의제안이며원저자의정책을그대로실행한것이아니다.",
+            "supports": [
+              "concept",
+              "mechanism",
+              "limitation"
+            ]
+          },
+          {
+            "id": "e-grill-me",
+            "source_id": "grill-me",
+            "source_hash": "caaf8b8de1684f96e26b28f3c29189db5c89cce4b73e1c93d86164f66ef88637",
+            "quote": "Call the Skill tool with \"grilling\".",
+            "meaning": "현재별칭본문은grilling호출만있다. 이름만이아니라연결대상을읽어야내용을판단할수있다.",
+            "limits": "공식 문서·공개 저자 지침의 해당 절만 확인했다. 제안한 KB의 실험 결과, 설치 결과나 독립 검증이 아니다.",
+            "supports": [
+              "concept",
+              "mechanism",
+              "limitation"
+            ]
+          },
+          {
+            "id": "e-grilling",
+            "source_id": "grilling",
+            "source_hash": "befdff1e27a1dfe2a294d5871169ac1afe16d983911daa4f32627514a48c1e15",
+            "quote": "Finding _facts_ is your job, never the user's.",
+            "meaning": "선행결정에따른질문진행과환경에서찾을사실/사용자가정할결정을구분한다. 원문은추가에이전트와공유이해확인을요구하나이작업의실행지시로받지않는다.",
+            "limits": "공식 문서·공개 저자 지침의 해당 절만 확인했다. 제안한 KB의 실험 결과, 설치 결과나 독립 검증이 아니다.",
+            "supports": [
+              "concept",
+              "mechanism",
+              "limitation"
+            ]
+          },
+          {
+            "id": "e-react",
+            "source_id": "react",
+            "source_hash": "71ed7794962fa6e803ee83030517b5b93a9f70fbfeb431ec4535c5480a8d8355",
+            "quote": "React and Next.js performance optimization guidelines from Vercel Engineering.",
+            "meaning": "설명/When to Apply는React및Next.js성능최적화용이다. PythonAPI기본필터수정과적용대상이다르다.",
+            "limits": "공식 문서·공개 저자 지침의 해당 절만 확인했다. 제안한 KB의 실험 결과, 설치 결과나 독립 검증이 아니다.",
+            "supports": [
+              "concept",
+              "mechanism",
+              "limitation"
+            ]
+          }
+        ],
+        "answers": [
+          {
+            "question_id": "idea",
+            "answer": "원문과참고자료를보관한뒤작업에맞는검토항목을검색·선별한다. 보관량/노출량/적용량은다르며기존명세도점진적로딩을지원한다.",
+            "reasoning": "관련 원문은 구성 요소의 가능성과 실패 조건을 뒷받침한다. 그 범위에서 설계 제안을 도출하며 측정된 수치와 가상 사례를 구분한다.",
+            "limits": "선정 원문의 관련 절 조사이며 체계적 문헌고찰·새 개발 실험·독립 재현이 아니다.",
+            "evidence_ids": [
+              "e-spec",
+              "e-context",
+              "e-tdd"
+            ]
+          },
+          {
+            "question_id": "evidence",
+            "answer": "선별스킬이도움된SkillsBench와개발평균개선이작은SWE를조건별로보인다. 개수차이는과제집단관찰이며최적개수나원인의증명이아니다.",
+            "reasoning": "관련 원문은 구성 요소의 가능성과 실패 조건을 뒷받침한다. 그 범위에서 설계 제안을 도출하며 측정된 수치와 가상 사례를 구분한다.",
+            "limits": "선정 원문의 관련 절 조사이며 체계적 문헌고찰·새 개발 실험·독립 재현이 아니다.",
+            "evidence_ids": [
+              "e-skillsbench",
+              "e-swe"
+            ]
+          },
+          {
+            "question_id": "prior",
+            "answer": "DC의경험축적,ACE의증분지침갱신,SkillSeek의검색은인접근거다. 이전체검토방식의효과는이번선정문헌에서직접확인하지못했다.",
+            "reasoning": "관련 원문은 구성 요소의 가능성과 실패 조건을 뒷받침한다. 그 범위에서 설계 제안을 도출하며 측정된 수치와 가상 사례를 구분한다.",
+            "limits": "선정 원문의 관련 절 조사이며 체계적 문헌고찰·새 개발 실험·독립 재현이 아니다.",
+            "evidence_ids": [
+              "e-dc",
+              "e-ace",
+              "e-skillseek",
+              "e-guide"
+            ]
+          },
+          {
+            "question_id": "example",
+            "answer": "PythonAPI수정가상사례에서tdd공개경계/독립기대값은채택,이미합의된경계의재승인은조정,grilling은미정결정만질문,React최적화는제외한다.",
+            "reasoning": "관련 원문은 구성 요소의 가능성과 실패 조건을 뒷받침한다. 그 범위에서 설계 제안을 도출하며 측정된 수치와 가상 사례를 구분한다.",
+            "limits": "선정 원문의 관련 절 조사이며 체계적 문헌고찰·새 개발 실험·독립 재현이 아니다.",
+            "evidence_ids": [
+              "e-tdd",
+              "e-grill-me",
+              "e-grilling",
+              "e-react",
+              "e-spec"
+            ]
+          },
+          {
+            "question_id": "operate",
+            "answer": "원문/검토항목/프로젝트조정/결과를분리하고검색누락·버전·절차·권한충돌을검토한다. A현재방식/B직접스킬/C검색검토의같은과제비교로효과와비용을측정한다.",
+            "reasoning": "관련 원문은 구성 요소의 가능성과 실패 조건을 뒷받침한다. 그 범위에서 설계 제안을 도출하며 측정된 수치와 가상 사례를 구분한다.",
+            "limits": "선정 원문의 관련 절 조사이며 체계적 문헌고찰·새 개발 실험·독립 재현이 아니다.",
+            "evidence_ids": [
+              "e-spec",
+              "e-context",
+              "e-dc",
+              "e-ace",
+              "e-skillseek",
+              "e-swe",
+              "e-skillsbench"
+            ]
+          }
+        ],
+        "gaps": []
+      },
+      "draft": {
+        "report": {
+          "id": "skills-as-knowledge-base",
+          "topic_id": "development",
+          "topic_path": [
+            "AI 개발",
+            "지식과 데이터",
+            "스킬 지식베이스"
+          ],
+          "title": "여러 AI 스킬을 지식베이스로 묶어 활용할 수 있을까?",
+          "description": "공개 AI 스킬에 담긴 개발 방법을 모아 두고, 이번 작업에서 빠진 고려사항을 찾는 데 활용하는 구상을 검토합니다. 관련 연구 데이터와 검색 API 수정 사례를 통해 기대 효과, 충돌 위험과 도입 조건을 살펴봅니다.",
+          "checked_on": "2026-10-16",
+          "scope": "공개 논문 5편, 공식 명세·운영 지침 3건과 공개 SKILL.md 4개를 대조한 타당성 조사입니다. 전체 문헌을 빠짐없이 조사한 체계적 문헌고찰은 아니며, 제안한 지식베이스의 실제 개발 성과를 측정하지 않았습니다.",
+          "deck": "활용할 수 있는 구상입니다. 여러 스킬의 원문과 참고자료를 보관하고, 현재 작업과 관련된 조언을 검색한 뒤 프로젝트 조건에 맞춰 채택·조정·제외하는 방식입니다. 스킬 검색과 경험 축적을 뒷받침하는 연구는 있지만, 이 전체 검토 방식이 개발 생산성을 높인다는 직접 실험은 이번 조사에서 확인하지 못했습니다. 핵심은 자료를 많이 모으는 것보다 필요한 조언을 고르고 실제 도움이 됐는지 확인하는 데 있습니다.",
+          "highlights": [
+            "보관할 자료와 이번 작업에 적용할 조언을 구분",
+            "서로 다른 연구의 성과와 한계를 나란히 확인",
+            "검색 API 수정 사례로 보는 채택·조정·제외"
+          ],
+          "source_note": "2026-10-16에 원문을 수집하고 관련 정의·실험 방법·결과·한계를 읽었습니다. 논문 판과 원문 위치를 출처에 표기했습니다. 연구의 보고값, 작성자의 설계 제안과 가상 사례를 구분하며 새 벤치마크를 실행한 결과로 표시하지 않습니다.",
+          "summary": [
+            {
+              "kind": "judgment",
+              "label": "조사 결론",
+              "text": "공개 스킬을 검토용 지식으로 재사용할 근거는 있습니다. 다만 검색·조정·효과 평가를 함께 설계해야 하며, 전체 방식의 효용은 프로젝트에서 따로 확인해야 합니다.",
+              "source_ids": [
+                "spec",
+                "dc",
+                "ace",
+                "skillseek"
+              ]
+            },
+            {
+              "kind": "judgment",
+              "label": "줄여야 할 대상",
+              "text": "보관한 스킬 수, 에이전트가 보는 설명 수, 이번 작업에 적용하는 본문 양은 서로 다릅니다. 많은 자료를 보관하면서 필요한 내용만 가져오는 구성이 가능합니다.",
+              "source_ids": [
+                "spec",
+                "context",
+                "guide"
+              ]
+            },
+            {
+              "kind": "judgment",
+              "label": "남는 문제",
+              "text": "관련 있어 보이는 조언도 기술 버전이나 프로젝트 목적이 다르면 방해가 됩니다. 지식베이스로 옮긴 뒤에도 충돌과 과잉 적용을 검토해야 합니다.",
+              "source_ids": [
+                "swe",
+                "skillsbench"
+              ]
+            }
+          ],
+          "metrics": [],
+          "datasets": [
+            {
+              "id": "evidence-skillsbench",
+              "title": "SkillsBench v4: 선별된 스킬을 제공했을 때의 평균 통과율",
+              "kind": "fact",
+              "unit": "%",
+              "rows": [
+                {
+                  "label": "스킬 없음",
+                  "value": 33.9,
+                  "source_ids": [
+                    "skillsbench"
+                  ]
+                },
+                {
+                  "label": "선별된 스킬 제공",
+                  "value": 50.5,
+                  "source_ids": [
+                    "skillsbench"
+                  ]
+                }
+              ],
+              "assumptions": [],
+              "note": "33.9% → 50.5%, 차이 +16.6%p. 87개 과제·8개 분야·18개 모델/실행 환경 조합. 우리 지식베이스의 성능이 아닙니다.",
+              "method": [
+                "2026-06-14 v4의 Table 2 및 평가 설명에 보고된 과제별 평균 통과율을 옮겼습니다.",
+                "같은 과제의 스킬 제공 여부를 비교한 연구입니다. 소프트웨어 개발만의 표본은 아닙니다."
+              ],
+              "source_ids": [
+                "skillsbench"
+              ]
+            },
+            {
+              "id": "evidence-swe",
+              "title": "SWE-Skills-Bench v1: 통과율 변화 방향별 스킬 수",
+              "kind": "fact",
+              "unit": "개 스킬",
+              "rows": [
+                {
+                  "label": "통과율 상승",
+                  "value": 7,
+                  "source_ids": [
+                    "swe"
+                  ]
+                },
+                {
+                  "label": "통과율 동일",
+                  "value": 39,
+                  "source_ids": [
+                    "swe"
+                  ]
+                },
+                {
+                  "label": "통과율 하락",
+                  "value": 3,
+                  "source_ids": [
+                    "swe"
+                  ]
+                }
+              ],
+              "assumptions": [],
+              "note": "전체 49개 스킬 기준. 동일한 39개 중 24개는 스킬이 없어도 통과율 100%였습니다. 동일을 모두 무용하다고 해석할 수 없습니다.",
+              "method": [
+                "2026-03-16 v1의 Table 2와 §4.3을 사용했습니다.",
+                "고정 GitHub 프로젝트의 요구사항 과제 565개, Claude Code + Claude Haiku 4.5, Docker 환경의 스킬 유무 비교입니다.",
+                "스킬 수를 센 차트이며 과제 수나 개발자 수를 센 결과가 아닙니다."
+              ],
+              "source_ids": [
+                "swe"
+              ]
+            }
+          ],
+          "tables": [
+            {
+              "id": "quantity-groups",
+              "title": "SkillsBench v4: 과제에 연결된 스킬 수에 따른 관찰값",
+              "columns": [
+                "스킬 수",
+                "과제 수",
+                "스킬 없음 → 제공",
+                "차이"
+              ],
+              "rows": [
+                {
+                  "values": [
+                    "1개",
+                    "23개",
+                    "32.2% → 50.2%",
+                    "+18.0%p"
+                  ],
+                  "source_ids": [
+                    "skillsbench"
+                  ]
+                },
+                {
+                  "values": [
+                    "2–3개",
+                    "43개",
+                    "34.4% → 53.4%",
+                    "+19.0%p"
+                  ],
+                  "source_ids": [
+                    "skillsbench"
+                  ]
+                },
+                {
+                  "values": [
+                    "4개 이상",
+                    "21개",
+                    "34.8% → 44.9%",
+                    "+10.1%p"
+                  ],
+                  "source_ids": [
+                    "skillsbench"
+                  ]
+                }
+              ],
+              "note": "Appendix F.1, Table 8. 서로 다른 과제 집단의 비교입니다. 동일 과제에 스킬 개수만 바꾼 무작위 실험이 아니므로 ‘3개가 최적’ 또는 ‘4개부터 충돌’이라는 규칙으로 사용할 수 없습니다."
+            },
+            {
+              "id": "related-studies",
+              "title": "비슷한 발상을 다룬 연구와 이번 구상과의 거리",
+              "columns": [
+                "연구·연구자",
+                "실제로 다룬 것",
+                "이 구상에 주는 단서",
+                "남는 차이"
+              ],
+              "rows": [
+                {
+                  "values": [
+                    "Dynamic Cheatsheet · Mirac Suzgun 등\n2025-04-10, v1",
+                    "추론 과정의 전략·해결 경험을 외부 메모리에 축적. 검색·통합 방식도 비교.",
+                    "이전 방법을 필요할 때 찾아 다시 사용할 수 있음.",
+                    "공개 스킬을 수집해 개발 검토에 쓰는 실험은 아님. 잘못된 요령과 검색 오류가 누적될 수 있음."
+                  ],
+                  "source_ids": [
+                    "dc"
+                  ]
+                },
+                {
+                  "values": [
+                    "ACE · Qizheng Zhang 등\n2025-10-06, v1",
+                    "생성·성찰·선별로 작업 지침을 갱신. 항목별 증분 수정과 세부 지식 보존.",
+                    "전부 한 번에 짧게 다시 쓰기보다 지식 항목과 피드백을 관리하는 접근.",
+                    "AppWorld·금융 등의 실험. 외부 스킬의 출처 관리와 프로젝트별 검토 효과까지 검증한 것은 아님."
+                  ],
+                  "source_ids": [
+                    "ace"
+                  ]
+                },
+                {
+                  "values": [
+                    "SkillSeek · Guanqun Yang 등\n2026-09-30, v1",
+                    "192개 및 약 3.4만 개 스킬 풀에서 검색·재정렬 방법을 비교.",
+                    "많은 스킬 중 관련 자료를 고르는 검색 단계를 별도로 둘 수 있음.",
+                    "89개 과제와 OpenHands 환경의 결과. 주 실험은 조건별 1회 시행이며 개발자의 조언 채택 품질을 측정하지 않음."
+                  ],
+                  "source_ids": [
+                    "skillseek"
+                  ]
+                }
+              ],
+              "note": "선정한 관련 연구 3편입니다. 완전히 같은 구현 사례나 포괄적인 문헌 목록이 아닙니다. 연구의 메모리·스킬 검색과 여기서 제안하는 검토 지식베이스를 구분합니다."
+            }
+          ],
+          "explanation": [
+            {
+              "id": "idea",
+              "title": "1. 스킬을 모아 ‘이번 작업의 고려사항’을 찾는다",
+              "lead": "좋은 개발 방법이 여러 스킬에 흩어져 있다면, 필요할 때 찾아 검토하는 자료로 관리할 수 있을까요?",
+              "blocks": [
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "원문을 보관하고 필요한 조언을 고른다",
+                  "items": [
+                    {
+                      "label": "출발점",
+                      "text": "테스트·설계 검토·성능 개선 스킬에는 서로 다른 작업 방법이 담겨 있습니다."
+                    },
+                    {
+                      "label": "이 글의 구상",
+                      "text": "현재 작업에서 빠진 고려사항을 찾아 채택·조정·제외하는 데 사용합니다."
+                    }
+                  ],
+                  "source_ids": [
+                    "spec",
+                    "tdd",
+                    "grilling",
+                    "react"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "kind": "fact",
+                  "title": "스킬이 담고 있는 것",
+                  "text": "AI 스킬은 에이전트가 특정 일을 할 때 참고하는 지침 묶음입니다. Agent Skills 명세는 SKILL.md 외에도 스크립트, 참고 문서와 자료를 함께 둘 수 있도록 합니다. 따라서 파일 본문만 복사하면 실행 도구나 연결된 설명이 빠질 수 있습니다.",
+                  "source_ids": [
+                    "spec"
+                  ]
+                },
+                {
+                  "type": "steps",
+                  "kind": "judgment",
+                  "title": "검토용 지식베이스의 제안 흐름",
+                  "items": [
+                    {
+                      "label": "원문 보관",
+                      "text": "스킬·참고자료의 판과 출처를 남깁니다."
+                    },
+                    {
+                      "label": "관련 조언 검색",
+                      "text": "현재 작업과 기술 조건으로 후보를 찾습니다."
+                    },
+                    {
+                      "label": "적합성 검토",
+                      "text": "채택·조정·제외와 그 이유를 적습니다."
+                    },
+                    {
+                      "label": "현재 작업에 적용",
+                      "text": "필요한 검토 항목만 사용합니다."
+                    },
+                    {
+                      "label": "결과 기록",
+                      "text": "실제 효과와 잘못된 조언을 다음 검토에 남깁니다."
+                    }
+                  ],
+                  "source_ids": [
+                    "spec",
+                    "context",
+                    "ace",
+                    "skillseek"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "kind": "judgment",
+                  "title": "무엇이 달라지는가",
+                  "text": "이 구상에서 검색 결과는 이번 작업을 다시 생각하게 하는 참고자료입니다. 예를 들어 “기대값을 구현 코드와 독립적으로 정했는가?”라는 질문을 가져올 수 있습니다. 원문의 실행 명령을 그대로 따르거나 모든 절차를 자동 적용하는지는 별도의 판단입니다. 위 흐름은 관련 연구를 바탕으로 제안한 설계이며 구현 완료된 시스템은 아닙니다.",
+                  "source_ids": [
+                    "tdd",
+                    "spec",
+                    "ace"
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "보관량·노출량·적용량을 구분한다",
+                  "items": [
+                    {
+                      "label": "보관량",
+                      "text": "지식베이스가 가진 원문과 과거 판의 양"
+                    },
+                    {
+                      "label": "노출량",
+                      "text": "에이전트가 처음부터 보는 이름·설명·검색 후보의 양"
+                    },
+                    {
+                      "label": "적용량",
+                      "text": "이번 작업의 판단에 실제로 사용하는 본문과 조언의 양"
+                    }
+                  ],
+                  "source_ids": [
+                    "spec",
+                    "context",
+                    "guide"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "kind": "fact",
+                  "title": "기존 스킬도 필요한 만큼 읽도록 설계된다",
+                  "text": "명세의 점진적 로딩은 처음에는 이름과 설명을, 활성화할 때는 본문을, 필요할 때는 참고자료를 읽는 구조입니다. 이미 모든 스킬 본문을 항상 넣는 방식만 존재하는 것은 아닙니다. 지식베이스를 별도로 만들 이유는 검색뿐 아니라 조언의 조건, 프로젝트별 조정과 사용 결과까지 관리할 필요가 있는지에 달려 있습니다.",
+                  "source_ids": [
+                    "spec",
+                    "context"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "evidence",
+              "title": "2. 연구는 ‘효과가 조건에 따라 다르다’고 말한다",
+              "lead": "스킬을 제공하면 좋아지는지, 많이 제공하면 나빠지는지는 서로 다른 질문입니다. 아래 수치는 각 논문의 실험 조건 안에서 읽어야 합니다.",
+              "blocks": [
+                {
+                  "type": "terms",
+                  "kind": "fact",
+                  "title": "선별된 스킬은 도움이 됐지만 최적 개수는 미확인",
+                  "items": [
+                    {
+                      "label": "SkillsBench v4",
+                      "text": "87개 과제·8개 분야·18개 모델/실행 환경 조합에서 평균 통과율이 33.9%에서 50.5%로 상승했습니다."
+                    },
+                    {
+                      "label": "개수별 결과",
+                      "text": "1개와 2–3개 집단이 4개 이상 집단보다 개선 폭이 컸습니다."
+                    }
+                  ],
+                  "source_ids": [
+                    "skillsbench"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "kind": "judgment",
+                  "title": "개수별 표에서 읽을 수 있는 범위",
+                  "text": "선별된 절차가 빠진 지식을 보완할 가능성은 확인됩니다. 다만 아래의 세 집단은 과제 자체가 다릅니다. 이 표만으로 스킬 수가 성과 차이의 원인이라고 단정하거나, 모든 개발 작업에 세 개까지만 쓰라는 규칙을 만들 수는 없습니다.",
+                  "source_ids": [
+                    "skillsbench"
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "fact",
+                  "title": "개발 과제에서는 평균 개선이 작았던 연구도 있다",
+                  "items": [
+                    {
+                      "label": "SWE-Skills-Bench v1",
+                      "text": "49개 스킬·565개 과제에서 보고한 평균 통과율은 89.8% → 91.0%, 차이 +1.2%p입니다."
+                    },
+                    {
+                      "label": "비용과 충돌",
+                      "text": "평균 토큰 사용량은 10.5% 증가했고, 3개 스킬은 통과율을 낮췄습니다. 저자들은 버전에 맞지 않는 지침과 프로젝트 문맥의 충돌을 분석했습니다."
+                    }
+                  ],
+                  "source_ids": [
+                    "swe"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "kind": "fact",
+                  "title": "이 결과를 확대하면 안 되는 이유",
+                  "text": "이 연구는 Claude Code와 Claude Haiku 4.5를 사용한 예비 연구입니다. 통과율이 동일한 39개 중 24개는 스킬을 주지 않아도 이미 100%였으므로 개선할 여지가 작았습니다. 또한 개별 스킬의 유무를 비교했기 때문에 여러 스킬을 동시에 넣었을 때의 충돌률을 측정한 결과가 아닙니다.",
+                  "source_ids": [
+                    "swe"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "kind": "judgment",
+                  "title": "두 연구를 함께 읽는 방법",
+                  "text": "두 연구는 과제와 모델, 실행 환경과 출발 통과율이 다릅니다. 개선 폭을 합치거나 어느 연구가 더 옳은지 순위를 매길 수 없습니다. 공통으로 가져올 판단은 “스킬이 있다는 사실보다 현재 작업에 부족한 지식을 보완하는가를 확인하자”입니다.",
+                  "source_ids": [
+                    "skillsbench",
+                    "swe"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "prior",
+              "title": "3. 유사한 생각은 이미 연구되고 있다",
+              "lead": "경험을 축적하는 메모리와 많은 스킬에서 필요한 것을 찾는 검색은 각각 연구돼 왔습니다. 이번 구상은 그 사이에 프로젝트 적합성 검토를 두는 접근입니다.",
+              "blocks": [
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "메모리·지침 갱신·스킬 검색에서 단서를 얻는다",
+                  "items": [
+                    {
+                      "label": "이미 연구된 부분",
+                      "text": "해결 경험의 재사용, 세부 지식의 보존과 갱신, 큰 스킬 집합의 검색"
+                    },
+                    {
+                      "label": "추가로 확인할 부분",
+                      "text": "외부 스킬을 검토 질문으로 바꾸었을 때 실제 개발 판단이 좋아지는지"
+                    }
+                  ],
+                  "source_ids": [
+                    "dc",
+                    "ace",
+                    "skillseek"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "kind": "judgment",
+                  "title": "짧게 합치는 것만으로 해결되지 않는다",
+                  "text": "ACE가 다루는 문제 중 하나는 지침을 반복해서 통째로 요약할 때 유용한 세부 지식이 사라지는 현상입니다. 반대로 Dynamic Cheatsheet는 잘못된 요령이나 부정확한 검색 결과가 이후 판단을 해칠 수 있다고 설명합니다. 따라서 원문은 보존하고, 검토용 항목은 따로 정리하며 잘못된 항목을 고칠 수 있어야 한다는 설계 방향을 얻을 수 있습니다.",
+                  "source_ids": [
+                    "ace",
+                    "dc"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "kind": "fact",
+                  "title": "스킬 수를 줄이라는 지침의 실제 범위",
+                  "text": "Anthropic의 문제 해결 가이드는 느려지거나 응답이 나빠지는 원인으로 큰 본문, 너무 많은 동시 활성 스킬과 점진적 로딩의 부재를 듭니다. 동시에 20–50개 이상을 활성화했다면 구성을 평가하고 선택적으로 켜도록 권합니다. 이는 문제 해결 지침의 검토 기준이며, 보관 가능한 스킬의 최대 개수나 실험으로 확정한 최적값은 아닙니다.",
+                  "source_ids": [
+                    "guide"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "kind": "judgment",
+                  "title": "이번 조사에서 확인하지 못한 것",
+                  "text": "선정한 연구들은 구성 요소의 가능성을 보여줍니다. 그러나 공개 스킬을 모으고, 개발 검토 질문으로 정리하고, 프로젝트 조건에 맞춰 선별한 뒤 효과를 측정하는 전체 흐름을 그대로 검증한 연구는 이번 조사에서 확인하지 못했습니다. 유사성이 있다는 사실을 이 설계의 성능 보장으로 바꾸지 않습니다.",
+                  "source_ids": [
+                    "dc",
+                    "ace",
+                    "skillseek"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "example",
+              "title": "4. 개발 업무에서는 이렇게 검토할 수 있다",
+              "lead": "다음은 설명을 위한 가상 사례입니다. 실제 저장소를 수정하거나 스킬을 실행한 결과는 아닙니다.",
+              "blocks": [
+                {
+                  "type": "terms",
+                  "kind": "example",
+                  "title": "입력: Python 검색 API의 기본 필터 오류 수정",
+                  "items": [
+                    {
+                      "label": "문제",
+                      "text": "필터를 생략하면 비공개 항목까지 검색 결과에 나타납니다."
+                    },
+                    {
+                      "label": "현재 조건",
+                      "text": "요구사항에는 기본값이 공개 항목이라고 정해져 있습니다. 응답 형식을 유지하고 기존 API 경계에서 회귀를 확인해야 합니다."
+                    }
+                  ],
+                  "source_ids": []
+                },
+                {
+                  "type": "steps",
+                  "kind": "example",
+                  "title": "작업 설명에서 검토 결과로",
+                  "items": [
+                    {
+                      "label": "검색 질문",
+                      "text": "기본 필터 오류를 고칠 때 빠뜨리기 쉬운 검토는 무엇인가?"
+                    },
+                    {
+                      "label": "후보 확인",
+                      "text": "테스트 방법, 요구사항 검토, React 성능 조언이 검색됐다고 가정합니다."
+                    },
+                    {
+                      "label": "조건 대조",
+                      "text": "API 요구사항과 테스트 경계, Python 환경과 수정 범위를 대조합니다."
+                    },
+                    {
+                      "label": "검토 결과",
+                      "text": "유효한 질문만 채택하고 맞지 않는 조언과 제외 이유를 남깁니다."
+                    }
+                  ],
+                  "source_ids": []
+                },
+                {
+                  "type": "terms",
+                  "kind": "example",
+                  "title": "채택·조정·제외의 예",
+                  "items": [
+                    {
+                      "label": "채택 · tdd",
+                      "text": "공개 API를 통해 필터 생략 전후의 동작을 확인합니다. 기대 결과는 현재 구현의 계산을 복사하지 않고 정해진 요구사항에서 가져옵니다."
+                    },
+                    {
+                      "label": "조정 · tdd",
+                      "text": "원문은 테스트 경계를 사용자와 먼저 합의하도록 요구합니다. 이 사례에서는 이미 승인된 API 경계를 사용하고, 경계 변경이 필요한 때만 추가 결정을 요청하도록 조정합니다."
+                    },
+                    {
+                      "label": "조정 · grilling",
+                      "text": "기본값이 요구사항에 있는지 먼저 자료에서 확인합니다. 이미 정해진 사실을 다시 질문하지 않고 실제로 미정인 제품 결정만 남깁니다."
+                    },
+                    {
+                      "label": "제외 · React 성능 지침",
+                      "text": "현재 작업은 Python API의 기본 필터 오류입니다. React/Next.js 렌더링 최적화 조언은 이 수정의 검토 항목에서 제외합니다."
+                    }
+                  ],
+                  "source_ids": [
+                    "tdd",
+                    "grilling",
+                    "react"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "kind": "example",
+                  "title": "개발자가 받는 짧은 검토 결과",
+                  "text": "가상의 최종 결과는 “필터 생략·공개 지정·비공개 지정의 기대 결과를 요구사항에서 정하고, 기존 API 호출로 회귀를 확인한다”입니다. 여기에 적용 근거로 tdd의 ‘What a good test is’와 ‘Anti-patterns’를 연결합니다. 테스트 경계 조정 이유와 React 조언의 제외 이유도 남깁니다. 이 질문들이 실제로 오류를 더 잘 잡는지는 별도 실행으로 확인해야 합니다.",
+                  "source_ids": [
+                    "tdd",
+                    "react"
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "fact",
+                  "title": "원문 본문과 연결 자료를 함께 확인한다",
+                  "items": [
+                    {
+                      "label": "별칭의 실제 내용",
+                      "text": "현재 grill-me의 본문은 grilling을 호출하도록 안내합니다. 이름만으로 내용을 분류하면 실제 인터뷰 방법을 놓칠 수 있습니다."
+                    },
+                    {
+                      "label": "누락될 수 있는 참고자료",
+                      "text": "tdd는 tests.md·mocking.md 및 다른 스킬을 연결합니다. 이번 사례는 읽은 SKILL.md의 해당 절만 사용하며 전체 참고자료를 검토했다고 주장하지 않습니다."
+                    }
+                  ],
+                  "source_ids": [
+                    "grill-me",
+                    "grilling",
+                    "tdd"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "kind": "judgment",
+                  "title": "검토 지식과 실행 기능의 경계",
+                  "text": "이 방식은 개발자가 놓친 질문을 찾는 데 적합한 후보입니다. 스크립트가 정확한 파일을 생성하거나 전용 도구를 조작하는 기능까지 문서 검색으로 대체하지는 못합니다. 필요한 실행 스킬과 검토용 지식을 함께 사용할 수 있고, 어느 경로를 쓸지는 실제 작업과 권한에 맞춰 결정해야 합니다.",
+                  "source_ids": [
+                    "spec",
+                    "tdd"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "operate",
+              "title": "5. 따로 관리한다면 무엇을 남겨야 할까?",
+              "lead": "원문과 프로젝트별 조정을 구분하면 다른 프로젝트에도 가져가 볼 수 있습니다. 다만 검색과 유지보수라는 새 비용이 생깁니다.",
+              "blocks": [
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "네 종류의 기록을 연결한다",
+                  "items": [
+                    {
+                      "label": "원문 보관",
+                      "text": "출처 URL·저자·판 또는 해시·획득일·이용 조건·참고자료 연결을 남깁니다."
+                    },
+                    {
+                      "label": "검토용 항목",
+                      "text": "작업 단계·기술·적용 조건·검토 질문·근거 위치·충돌 후보를 분류하고 색인합니다."
+                    },
+                    {
+                      "label": "프로젝트별 조정",
+                      "text": "현재 버전과 팀 기준, 채택·조정·제외 내용과 이유를 원문과 구분합니다."
+                    },
+                    {
+                      "label": "사용 결과",
+                      "text": "어느 작업에서 무엇을 적용했고 어떤 결과와 잘못된 조언이 나왔는지 기록합니다."
+                    }
+                  ],
+                  "source_ids": [
+                    "spec",
+                    "ace",
+                    "dc",
+                    "swe"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "kind": "judgment",
+                  "title": "검색 단위를 정하는 이유",
+                  "text": "스킬 하나에 테스트, 설계와 사용자 확인 절차가 함께 있을 수 있습니다. 파일 전체만 검색하면 지금 필요한 질문과 무관한 지시도 같이 들어옵니다. 반대로 문장을 너무 잘게 나누면 적용 조건이 사라집니다. 검토 질문과 그 조건·예외·근거 위치를 함께 가져오는 단위를 먼저 정하고 실제 질문으로 찾아지는지 확인하는 편이 타당합니다.",
+                  "source_ids": [
+                    "spec",
+                    "context",
+                    "skillseek"
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "기대 효과와 함께 감수할 비용",
+                  "items": [
+                    {
+                      "label": "재사용 ↔ 관리 비용",
+                      "text": "좋은 방법을 다시 찾기 쉬워질 수 있지만 원문 갱신·중복 정리·라이선스 확인이 필요합니다."
+                    },
+                    {
+                      "label": "선별 ↔ 검색 누락",
+                      "text": "필요한 내용만 볼 수 있지만 잘못된 분류나 검색 때문에 중요한 조언을 놓칠 수 있습니다."
+                    },
+                    {
+                      "label": "맞춤 조정 ↔ 원뜻 손실",
+                      "text": "팀에 맞게 바꿀 수 있지만 원문의 조건을 지워 잘못 일반화할 수 있습니다."
+                    },
+                    {
+                      "label": "짧은 문맥 ↔ 추가 지연",
+                      "text": "적용할 본문은 줄일 수 있지만 검색과 검토 단계가 추가됩니다. 전체 비용이 줄어드는지는 측정해야 합니다."
+                    }
+                  ],
+                  "source_ids": [
+                    "spec",
+                    "dc",
+                    "ace",
+                    "skillseek",
+                    "context"
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "충돌은 옮긴 뒤에도 검토해야 한다",
+                  "items": [
+                    {
+                      "label": "적용 조건 충돌",
+                      "text": "같은 이름의 라이브러리라도 버전과 API가 다르면 제외하거나 새 조건으로 조정합니다."
+                    },
+                    {
+                      "label": "절차 충돌",
+                      "text": "반복 인터뷰와 즉시 구현처럼 다른 작업 모드의 조언이 함께 나오면 현재 목적과 승인된 범위로 선택합니다."
+                    },
+                    {
+                      "label": "권한 혼동",
+                      "text": "검색된 문서의 실행·업로드·승인 요구를 현재 사용자의 지시나 권한으로 승격하지 않습니다."
+                    },
+                    {
+                      "label": "잘못된 성공 기록",
+                      "text": "한 번 도움이 된 결과를 보편 규칙으로 만들지 않고 실패와 부작용도 함께 남깁니다."
+                    }
+                  ],
+                  "source_ids": [
+                    "swe",
+                    "grilling",
+                    "tdd",
+                    "dc",
+                    "ace"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "kind": "judgment",
+                  "title": "별도 프로젝트가 유리한 경우",
+                  "text": "여러 저장소에서 같은 개발 방법을 반복해서 검토하고 프로젝트마다 다른 적용 기준을 유지해야 한다면 별도 관리가 유용할 수 있습니다. 반면 소수의 안정된 스킬만 쓰고 추가 분류나 피드백 관리가 필요하지 않다면 기존 스킬의 참고자료 구조를 유지하는 편이 단순합니다. 별도 프로젝트가 성립하는지는 저장 용량보다 반복되는 검색·조정 업무가 있는지로 판단할 수 있습니다.",
+                  "source_ids": [
+                    "spec",
+                    "context",
+                    "ace"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "decision",
+              "title": "6. 작은 비교로 도입 여부를 판단한다",
+              "lead": "핵심 가설은 스킬 수집량이 아니라 현재 개발 작업에서 누락을 줄이고 불필요한 조언을 걸러내는가입니다.",
+              "blocks": [
+                {
+                  "type": "terms",
+                  "kind": "example",
+                  "title": "제안하는 세 가지 비교 조건",
+                  "items": [
+                    {
+                      "label": "A · 현재 방식",
+                      "text": "추가 검토 지식 없이 기존 프로젝트 지침으로 작업합니다."
+                    },
+                    {
+                      "label": "B · 관련 스킬 직접 사용",
+                      "text": "선정한 원래 스킬을 해당 도구가 지원하는 방식으로 사용합니다."
+                    },
+                    {
+                      "label": "C · 지식베이스 검토",
+                      "text": "같은 출처에서 검색한 검토 항목을 프로젝트에 맞춰 선별해 사용합니다."
+                    }
+                  ],
+                  "source_ids": []
+                },
+                {
+                  "type": "paragraph",
+                  "kind": "judgment",
+                  "title": "같은 개발 과제에서 확인할 것",
+                  "text": "세 조건에 같은 요구사항과 코드 시작점, 모델·도구·시간 제한을 사용합니다. 몇 가지 대표 오류 수정과 기능 추가를 반복 비교하며 통과율, 누락된 요구사항, 잘못 적용한 조언, 검토·수정 시간과 토큰 사용량을 함께 기록합니다. 더 많은 체크리스트나 더 긴 답변이 나온 것을 성과로 세지 않습니다. 가능한 한 조건의 실행 순서를 바꾸고 결과 판정은 조건을 가린 채 확인합니다.",
+                  "source_ids": [
+                    "skillsbench",
+                    "swe"
+                  ]
+                },
+                {
+                  "type": "terms",
+                  "kind": "judgment",
+                  "title": "계속할 조건과 줄일 조건",
+                  "items": [
+                    {
+                      "label": "계속할 근거",
+                      "text": "중요한 누락이 줄고 실제 통과 결과가 개선되며 추가 비용을 감당할 수 있습니다."
+                    },
+                    {
+                      "label": "조정할 근거",
+                      "text": "같은 조언이 반복되거나 잘못된 버전·불필요한 질문이 늘면 분류·검색·조정 규칙을 고칩니다."
+                    },
+                    {
+                      "label": "축소할 근거",
+                      "text": "직접 스킬 사용보다 낫지 않거나 유지보수가 더 크면 해당 영역의 지식베이스 범위를 줄입니다."
+                    }
+                  ],
+                  "source_ids": [
+                    "swe",
+                    "skillsbench",
+                    "dc"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "kind": "judgment",
+                  "title": "현재 내릴 수 있는 판단",
+                  "text": "여러 AI 스킬을 원문이 추적되는 검토 지식베이스로 묶는 것은 시도할 가치가 있는 설계입니다. 특히 여러 프로젝트에서 빠진 고려사항을 점검하고 적용 기준을 다르게 관리하려는 목적과 맞습니다. 다만 설치한 스킬을 줄였다는 사실만으로 충돌이나 비용이 줄지는 않습니다. 보관·검색·적용을 구분하고 같은 개발 과제에서 실제 결과를 비교한 뒤 범위를 넓히는 것이 이번 조사에서 제안하는 도입 방향입니다.",
+                  "source_ids": [
+                    "spec",
+                    "skillseek",
+                    "ace",
+                    "swe",
+                    "skillsbench"
+                  ]
+                }
+              ]
+            }
+          ],
+          "learning": [],
+          "result": {
+            "title": "도입 판단",
+            "points": [
+              {
+                "kind": "judgment",
+                "label": "작게 시작할 후보",
+                "text": "여러 프로젝트에서 반복하는 검토 업무 하나를 골라 원문·조건·프로젝트 조정·결과를 연결합니다. 실제 개발 결과가 좋아지는지 비교한 뒤 수집 범위를 넓힙니다.",
+                "source_ids": [
+                  "spec",
+                  "ace",
+                  "skillsbench",
+                  "swe"
+                ]
+              }
+            ]
+          },
+          "caveats": [
+            {
+              "text": "이 글은 선정 문헌을 대조한 조사와 설계 제안입니다. 새 지식베이스 구축·스킬 설치·실제 개발 성과 시험을 수행하지 않았습니다.",
+              "source_ids": []
+            },
+            {
+              "text": "논문은 명시한 판의 보고값입니다. 자체 재현이나 독립 검증이 아니며, SWE-Skills-Bench v1은 예비 결과라고 밝힙니다. 과제·모델·실행 환경이 다른 수치를 합산하지 않습니다.",
+              "source_ids": [
+                "skillsbench",
+                "swe",
+                "skillseek"
+              ]
+            },
+            {
+              "text": "공개 SKILL.md는 2026-10-16 획득본입니다. 연결된 모든 참고 문서와 스크립트, 배포 이력·라이선스 적합성을 검토한 수집 목록은 아닙니다. 실제 재배포 전에는 각 자료의 이용 조건을 확인해야 합니다.",
+              "source_ids": [
+                "spec",
+                "tdd",
+                "react"
+              ]
+            },
+            {
+              "text": "원문 의미와 설명의 검토는 같은 작성자가 수행했습니다. 독립 에이전트 검토나 실제 개발자 독해 시험을 거친 결과는 아닙니다.",
+              "source_ids": []
+            }
+          ],
+          "references": [
+            {
+              "id": "spec",
+              "title": "Agent Skills specification",
+              "url": "https://agentskills.io/specification",
+              "description": "공식 명세. Skill structure·Progressive disclosure·File references 확인. 게시일 미확인, 2026-10-16 획득·관련 절 검토."
+            },
+            {
+              "id": "skillsbench",
+              "title": "SkillsBench v4 — Xiangyi Li 등",
+              "url": "https://arxiv.org/html/2602.12670v4",
+              "description": "2026-06-14 판. §4–6, Table 2와 Appendix F.1/Table 8의 모집단·통과율·개수별 관찰값 확인. 2026-10-16 획득·검토. 직접 재현하지 않음."
+            },
+            {
+              "id": "swe",
+              "title": "SWE-Skills-Bench v1 — Tingxu Han 등",
+              "url": "https://arxiv.org/html/2603.15401v1",
+              "description": "2026-03-16 예비 연구. §3–5, Table 2의 49개 스킬·565개 과제, Haiku 4.5 조건·천장 효과·버전 충돌 확인. 2026-10-16 획득·검토."
+            },
+            {
+              "id": "dc",
+              "title": "Dynamic Cheatsheet v1 — Mirac Suzgun 등",
+              "url": "https://arxiv.org/html/2504.07952v1",
+              "description": "2025-04-10. 축적 메모리·검색/통합 방식과 §5의 잘못된 요령·검색·메모리 관리 한계 확인. 2026-10-16 획득·관련 절 검토."
+            },
+            {
+              "id": "ace",
+              "title": "Agentic Context Engineering v1 — Qizheng Zhang 등",
+              "url": "https://arxiv.org/html/2510.04618v1",
+              "description": "2025-10-06. §2–4의 context collapse, 생성·성찰·선별 및 증분 수정 방식 확인. AppWorld·금융 실험을 개발 검토 효과로 일반화하지 않음. 2026-10-16 획득·검토."
+            },
+            {
+              "id": "skillseek",
+              "title": "SkillSeek v1 — Guanqun Yang 등",
+              "url": "https://arxiv.org/html/2609.38822v1",
+              "description": "2026-09-30. §3–4, Limitations의 검색·재정렬, 192/약34,000 스킬 풀·89과제와 주 실험 단일 시행 조건 확인. 인용된 구판 SkillsBench 통계는 사용하지 않음. 2026-10-16 획득·검토."
+            },
+            {
+              "id": "context",
+              "title": "Anthropic — Effective context engineering for AI agents",
+              "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+              "description": "2025-09-29. 필요한 문맥을 적시에 조회하는 방식과 지연·선택 비용 확인. 공식 엔지니어링 지침이며 이 지식베이스의 효과 실험은 아님. 2026-10-16 획득·검토."
+            },
+            {
+              "id": "guide",
+              "title": "Anthropic — Skill patterns and troubleshooting",
+              "url": "https://claude.com/resources/guides/the-complete-guide-to-building-skills-for-claude/patterns-and-troubleshooting",
+              "description": "Large context issues의 동시 활성 스킬 20–50개 이상 평가 권고와 선택적 활성화 안내. 최대 보관량 규정이 아님. 게시일 미확인, 2026-10-16 획득·관련 절 검토."
+            },
+            {
+              "id": "tdd",
+              "title": "Matt Pocock — tdd/SKILL.md",
+              "url": "https://raw.githubusercontent.com/mattpocock/skills/main/skills/engineering/tdd/SKILL.md",
+              "description": "What a good test is·Seams·Anti-patterns·Rules of the loop 확인. 연결된 tests.md·mocking.md·다른 스킬은 미검토. 가상 사례의 채택과 조정은 작성자의 해석. 게시일 미확인, 2026-10-16 획득본."
+            },
+            {
+              "id": "grill-me",
+              "title": "Matt Pocock — grill-me/SKILL.md",
+              "url": "https://raw.githubusercontent.com/mattpocock/skills/main/skills/productivity/grill-me/SKILL.md",
+              "description": "이름과 메타데이터 및 grilling 호출만 있는 현재 본문 확인. 별칭과 실제 내용을 구분하기 위한 사례. 게시일 미확인, 2026-10-16 획득본."
+            },
+            {
+              "id": "grilling",
+              "title": "Matt Pocock — grilling/SKILL.md",
+              "url": "https://raw.githubusercontent.com/mattpocock/skills/main/skills/productivity/grilling/SKILL.md",
+              "description": "선행 결정에 따른 질문 진행과 환경에서 확인할 사실/사용자 결정의 구분 확인. 조사 자료로 읽었으며 실행하지 않음. 게시일 미확인, 2026-10-16 획득본."
+            },
+            {
+              "id": "react",
+              "title": "Vercel — react-best-practices/SKILL.md",
+              "url": "https://raw.githubusercontent.com/vercel-labs/agent-skills/main/skills/react-best-practices/SKILL.md",
+              "description": "React/Next.js 성능 지침의 적용 대상과 구성 확인. 모든 하위 규칙을 검토하거나 Python에 적용한 결과가 아님. 게시일 미확인, 2026-10-16 획득본."
+            }
+          ]
+        },
+        "claims": [
+          {
+            "path": "/summary/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-spec",
+              "e-dc",
+              "e-ace",
+              "e-skillseek"
+            ]
+          },
+          {
+            "path": "/summary/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-spec",
+              "e-context",
+              "e-guide"
+            ]
+          },
+          {
+            "path": "/summary/2",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-swe",
+              "e-skillsbench"
+            ]
+          },
+          {
+            "path": "/datasets/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-skillsbench"
+            ]
+          },
+          {
+            "path": "/datasets/0/rows/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-skillsbench"
+            ]
+          },
+          {
+            "path": "/datasets/0/rows/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-skillsbench"
+            ]
+          },
+          {
+            "path": "/datasets/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-swe"
+            ]
+          },
+          {
+            "path": "/datasets/1/rows/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-swe"
+            ]
+          },
+          {
+            "path": "/datasets/1/rows/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-swe"
+            ]
+          },
+          {
+            "path": "/datasets/1/rows/2",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-swe"
+            ]
+          },
+          {
+            "path": "/tables/0/rows/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-skillsbench"
+            ]
+          },
+          {
+            "path": "/tables/0/rows/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-skillsbench"
+            ]
+          },
+          {
+            "path": "/tables/0/rows/2",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-skillsbench"
+            ]
+          },
+          {
+            "path": "/tables/1/rows/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-dc"
+            ]
+          },
+          {
+            "path": "/tables/1/rows/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-ace"
+            ]
+          },
+          {
+            "path": "/tables/1/rows/2",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-skillseek"
+            ]
+          },
+          {
+            "path": "/explanation/0/blocks/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-spec",
+              "e-tdd",
+              "e-grilling",
+              "e-react"
+            ]
+          },
+          {
+            "path": "/explanation/0/blocks/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-spec"
+            ]
+          },
+          {
+            "path": "/explanation/0/blocks/2",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-spec",
+              "e-context",
+              "e-ace",
+              "e-skillseek"
+            ]
+          },
+          {
+            "path": "/explanation/0/blocks/3",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-tdd",
+              "e-spec",
+              "e-ace"
+            ]
+          },
+          {
+            "path": "/explanation/0/blocks/4",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-spec",
+              "e-context",
+              "e-guide"
+            ]
+          },
+          {
+            "path": "/explanation/0/blocks/5",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-spec",
+              "e-context"
+            ]
+          },
+          {
+            "path": "/explanation/1/blocks/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-skillsbench"
+            ]
+          },
+          {
+            "path": "/explanation/1/blocks/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-skillsbench"
+            ]
+          },
+          {
+            "path": "/explanation/1/blocks/2",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-swe"
+            ]
+          },
+          {
+            "path": "/explanation/1/blocks/3",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-swe"
+            ]
+          },
+          {
+            "path": "/explanation/1/blocks/4",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-skillsbench",
+              "e-swe"
+            ]
+          },
+          {
+            "path": "/explanation/2/blocks/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-dc",
+              "e-ace",
+              "e-skillseek"
+            ]
+          },
+          {
+            "path": "/explanation/2/blocks/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-ace",
+              "e-dc"
+            ]
+          },
+          {
+            "path": "/explanation/2/blocks/2",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-guide"
+            ]
+          },
+          {
+            "path": "/explanation/2/blocks/3",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-dc",
+              "e-ace",
+              "e-skillseek"
+            ]
+          },
+          {
+            "path": "/explanation/3/blocks/0",
+            "kind": "example",
+            "evidence_ids": []
+          },
+          {
+            "path": "/explanation/3/blocks/1",
+            "kind": "example",
+            "evidence_ids": []
+          },
+          {
+            "path": "/explanation/3/blocks/2",
+            "kind": "example",
+            "evidence_ids": [
+              "e-tdd",
+              "e-grilling",
+              "e-react"
+            ]
+          },
+          {
+            "path": "/explanation/3/blocks/3",
+            "kind": "example",
+            "evidence_ids": [
+              "e-tdd",
+              "e-react"
+            ]
+          },
+          {
+            "path": "/explanation/3/blocks/4",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-grill-me",
+              "e-grilling",
+              "e-tdd"
+            ]
+          },
+          {
+            "path": "/explanation/3/blocks/5",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-spec",
+              "e-tdd"
+            ]
+          },
+          {
+            "path": "/explanation/4/blocks/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-spec",
+              "e-ace",
+              "e-dc",
+              "e-swe"
+            ]
+          },
+          {
+            "path": "/explanation/4/blocks/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-spec",
+              "e-context",
+              "e-skillseek"
+            ]
+          },
+          {
+            "path": "/explanation/4/blocks/2",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-spec",
+              "e-dc",
+              "e-ace",
+              "e-skillseek",
+              "e-context"
+            ]
+          },
+          {
+            "path": "/explanation/4/blocks/3",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-swe",
+              "e-grilling",
+              "e-tdd",
+              "e-dc",
+              "e-ace"
+            ]
+          },
+          {
+            "path": "/explanation/4/blocks/4",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-spec",
+              "e-context",
+              "e-ace"
+            ]
+          },
+          {
+            "path": "/explanation/5/blocks/0",
+            "kind": "example",
+            "evidence_ids": []
+          },
+          {
+            "path": "/explanation/5/blocks/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-skillsbench",
+              "e-swe"
+            ]
+          },
+          {
+            "path": "/explanation/5/blocks/2",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-swe",
+              "e-skillsbench",
+              "e-dc"
+            ]
+          },
+          {
+            "path": "/explanation/5/blocks/3",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-spec",
+              "e-skillseek",
+              "e-ace",
+              "e-swe",
+              "e-skillsbench"
+            ]
+          },
+          {
+            "path": "/result/points/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-spec",
+              "e-ace",
+              "e-skillsbench",
+              "e-swe"
+            ]
+          },
+          {
+            "path": "/caveats/0",
+            "kind": "example",
+            "evidence_ids": []
+          },
+          {
+            "path": "/caveats/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-skillsbench",
+              "e-swe",
+              "e-skillseek"
+            ]
+          },
+          {
+            "path": "/caveats/2",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-spec",
+              "e-tdd",
+              "e-react"
+            ]
+          },
+          {
+            "path": "/caveats/3",
+            "kind": "example",
+            "evidence_ids": []
+          }
+        ],
+        "answer_paths": {
+          "idea": [
+            "/explanation/0"
+          ],
+          "evidence": [
+            "/explanation/1"
+          ],
+          "prior": [
+            "/explanation/2"
+          ],
+          "example": [
+            "/explanation/3"
+          ],
+          "operate": [
+            "/explanation/4",
+            "/explanation/5"
+          ]
+        }
+      },
+      "authoring": {
+        "recipe": {
+          "version": "authoring-recipe-1",
+          "catalog_version": "1.0.2",
+          "brief": {
+            "id": "skills-as-knowledge-base",
+            "reader": "에이전트 스킬을 접했고 공개 스킬의 개발 방법을 지식베이스로 관리할지 판단하려는 개발자",
+            "reader_question": "여러 AI 스킬을 실행 지시로 모두 활성화하지 않고 지식베이스에 보관한 뒤, 현재 개발 작업에서 빠진 고려사항을 검토하는 데 활용할 수 있을까?",
+            "outcome": "관련 연구가 뒷받침하는 범위와 공백을 구분하고, 원문 보존·검색·프로젝트별 조정·충돌 검토·효과 평가의 작은 도입안을 판단한다.",
+            "profile": "custom"
+          },
+          "request_hash": "5a9dd50657765ec80c18c3ebd8396b7064362c9c76d9f0b15bb9fa5385d8c442",
+          "components": [
+            {
+              "id": "common-principles",
+              "kind": "policy",
+              "version": "1.0.0",
+              "supports": [
+                "technology",
+                "comparison",
+                "market",
+                "opportunity",
+                "model_introduction",
+                "news",
+                "custom"
+              ],
+              "stages": [
+                "analyze",
+                "write",
+                "review"
+              ],
+              "sources": [
+                {
+                  "path": "docs/authoring/common.md",
+                  "sha256": "cf56f106511609377d003f3d592937b858b2de9a999cf78cb6e6408aa0aa59f7",
+                  "text": "# 공통 작성 원칙\n\n근거와 의미 보존, 자연스러운 한국어 및 본문과 편집 기록의 구분에 적용한다. 새 소식은 유형별 기사 형식을 사용한다. 학습 글을 명시한 문장은 그 유형에만 적용한다.\n\n## 독자 본문과 편집 기록을 분리하기\n\n독자는 주제와 실제 구현 방법을 배우려는 사람이다. 소제목에 `검토 의견` 같은\n내부 분류를 붙이거나 판 변경, 수집·검수 과정과 사이트 읽기 안내로 본문을 채우지\n않는다. 원문 링크와 자료의 설명은 더 자세한 내용을 배우는 데 사용한다. 출처 설명에는\n무엇을 알 수 있는지와 필요한 자료의 조건을 쓰고, 실제 수집/검토 시각과 실패 및 편집\n기록은 품질 패키지·작업 기록에 둔다. 가상 사례의 가정, 실습 준비물과 실행 조건,\n기술 한계와 통계 해석의 조건은 본문에 남긴다. [DevOps r12 수정](../DEVOPS_READER_COPY.2026-10-12.md).\n\n## 2026-10-10: 작성 목적 다음에 요약 배치하기\n\n앞으로 새로 작성하는 공유용 리서치 보고서는 다음 순서로 시작한다. 신규 소식 기사는 2026-10-14 기사 기준과 NEWSROOM.md의 별도 형식을 따른다.\n\n1. 제목 아래에 어떤 목적으로 만든 문서인지 한두 문장으로 짧게 설명한다.\n   독자의 어떤 문제나 판단을 돕기 위한 것인지 구체적으로 쓴다.\n2. 바로 다음 본문 구역은 `요약`으로 표시하고 핵심 내용과 결론을 정리한다.\n3. 요약 이후의 구성은 주제와 독자의 필요에 맞게 정한다. 목차, 개념 설명,\n   비교표, 도해, 사례, 실습, 출처의 순서와 분량을 일률적으로 고정하지 않는다.\n\n작성 목적은 “왜 이 문서를 만들었는가”에, 요약은 “핵심 내용과 결론이 무엇인가”에\n답한다. 둘을 같은 소개 문장으로 반복하지 않는다. DevOps 문서의 장 수나\n도구 카탈로그를 다른 주제의 필수 양식으로 삼지 않는다. 기존 페이지를 일괄\n재작성하는 규칙은 아니며, 앞서 정한 출처와 검토 기준은 유지한다.\n\n예시 작성 목적: “기존 Jenkins를 사용하는 C++ 팀이 검사 결과를 보관하고,\n검사한 파일을 릴리스하는 절차를 정할 수 있도록 구축 방법을 정리했다.”\n\n검토할 때는 첫 화면만 읽어 작성 목적을 알 수 있는지, 그다음 구역이 요약인지,\n요약에서 핵심 내용과 결론을 파악할 수 있는지 각각 확인한다. 본문 구성은\n이 고정된 앞부분 이후에 필요한 설명을 충분히 제공하는지로 판단한다.\n\n## 2026-10-10: 가운데점으로 단어나 동작을 묶지 않기\n\n새로 작성하거나 수정하는 제목, 요약, 본문, 표와 도구 설명에는 가운데점으로\n단어를 압축해 나열하지 않는다. 점을 공백으로 지우는 것으로 끝내지 않는다.\n병렬 항목은 쉼표나 자연스러운 연결어로 구분하고, 동작은 누가 무엇을 어떤\n순서로 하는지 문장으로 쓴다. 원문 코드, URL과 기존 분류 식별자는 보존한다.\n\n- 피할 표현: “누가 어떤 코드와 결과물을 검사·승인·반영했는지”\n- 사용할 표현: “누가 코드를 검사했고, 어떤 결과물을 승인해 실제 환경에 반영했는지”\n- 피할 표현: “개발·QA·운영이 공동 책임”\n- 사용할 표현: “개발 담당자는 코드를 수정하고 QA는 검사한다. 운영 담당자는 승인된 파일을 배포한다.”\n\n## 글을 쓰기 전에 정할 것\n\n교재형 글은 선행 개념의 순서를 확인한다. 먼저 익숙한 상황과 값으로 문제를\n설명하고, 그 문제에서 새 개념이 하는 일을 가르친 뒤 기술 이름·구조·코드를 연결한다.\n새 약어를 풀어 쓰는 것만으로 선행 지식의 공백이 해결되지는 않는다.\n\n목적은 자료 요약, 표 생성, 제목 작성이 아니라 **독자에게 생겨야 할 변화**다.\n먼저 아래 내용을 짧은 편집 메모에 적는다. 모르는 독자의 수준은 가정임을\n밝히고, 대화에서 이미 확인한 필요를 우선한다.\n\n| 질문 | 작성할 내용 |\n| --- | --- |\n| 누가 읽는가 | 주제와의 거리, 현재 알고 있는 것, 새로 설명해야 할 것 |\n| 왜 읽는가 | 이해하려는 문제 또는 내려야 할 결정 하나 |\n| 읽은 뒤 무엇이 가능한가 | 구분·설명·선택·실행처럼 확인 가능한 결과 |\n| 무엇을 다룰 것인가 | 그 결과에 필요한 범위와 선행 개념 |\n| 어떤 근거가 필요한가 | 기능, 수치, 적용 조건, 비교를 지지할 원문 |\n| 어떻게 확인할 것인가 | 다른 사례에 적용하는 질문 또는 관찰할 실행 결과 |\n\n예: MCP Apps의 역할을 모르는 독자가 공고 후보를 비교하는 업무에 이 기술을\n쓸 이유와 시작 경로를 고르고, 설명된 사례의 입력·조회·화면 결과를 추적한 뒤\n자기 목록에 적용할 변경점을 찾도록 쓴다. 역할을 설명하는 것은 이 작업을 위한\n중간 단계다. 예시를 실제로 실행시키는 경로를 제공하려면 현재 지원 환경·준비물·\n실행 절차·예상 결과를 확인한다. 이것이 없는 원고는 원리 설명으로 상태를 남긴다.\n\n‘초급~중급 개발자’라는 범위만으로 API, JSON, 비동기 처리, MCP를 이미\n안다고 가정하지 않는다. 필요한 개념은 설명하거나 정확한 선행 학습으로 연결한다.\n\n## 목적에 맞게 글의 성격을 고르기\n\n| 독자의 질문 | 중심 내용 | 완료를 확인하는 방법 |\n| --- | --- | --- |\n| 무엇이 바뀌고 내 작업에 어떤 영향이 있나 | 이전 상태, 변화, 해당 대상, 영향, 대응 시점 | 자신의 사용 여부와 다음 점검을 정할 수 있음 |\n| 이것은 무엇이고 왜 필요한가 | 익숙한 상황, 개념, 작동 이유, 구체적 사례, 한계 | 새로운 사례의 동작을 자기 말로 설명함 |\n| 어느 대안이 내 조건에 맞나 | 같은 비교 기준, 적용 조건, 비용·제약, 선택 이유 | 주어진 조건으로 대안을 고르고 이유를 말함 |\n| 따라 하면서 익히려면 무엇을 하나 | 준비물, 순서, 입력, 예상 출력, 오류 관찰 | 실제 결과를 재현하고 어느 단계에서 틀렸는지 찾음 |\n| 신청·참여할 수 있나 | 대상, 현재 접수 상태, 자격, 제외 조건, 제출물 | 해당·비해당·추가 확인을 구분하고 준비물을 정함 |\n| 이 수치·사례는 무엇을 알려주나 | 측정 대상·기간·단위, 관찰과 해석, 적용 한계 | 수치의 의미와 이 자료로 알 수 없는 것을 구분함 |\n\n설명 글과 실습 글의 역할은 다르다. 설명은 관계와 이유를 풀어내고, 실습은\n독자가 행동한 뒤 확인할 결과를 제공한다. 하나의 보고서에 둘 다 필요하면\n단위를 나누어 연결한다. 단순히 명령어를 넣었다고 실습이 완성되는 것은 아니다.\n이 구분은 [Diátaxis의 설명](https://diataxis.fr/explanation/)과\n[튜토리얼](https://diataxis.fr/tutorials/)을 참고한 프로젝트 편집 선택이다.\n\n## 원문에서 의미를 보존하기\n\n자료를 읽을 때 제목부터 만들지 않는다. 독자의 질문에 답하는 근거를 먼저\n확보하고, 아래 항목이 필요한 주장에 함께 남긴다.\n\n- 누가 무엇을 하는가: 제공자·실행자·요청자·결과 수신자를 구분한다.\n- 언제, 누구에게 적용되는가: 확인일, 발표일, 종료일, 지역·계정·버전 조건.\n- 무엇을 측정했는가: 기간·표본·분모·단위와 출처의 자체 공개 여부.\n- 무엇을 관찰했고 무엇을 해석했는가: 공식 기능, 편집 판단, 가상 예시를 구분한다.\n- 어떤 제한이 결론을 바꾸는가: 적용 제외, 필수 준비, 비교하지 못한 부분.\n\n출처 링크가 붙어 있는 것과 그 출처가 문장을 뒷받침하는 것은 별개다.\n원문의 주어·목적어·인과관계를 요약 과정에서 바꾸지 않는다. 예를 들어\n‘서버가 화면을 제공하고 호스트가 읽는다’를 ‘서버가 읽는 화면’으로 줄이면\n구조가 바뀐다. 규격은 실제 동작의 보장, 최대 지원액은 확정 지급액,\n한 회사의 성장과 제품 전략은 검증된 성장 원인으로 바꾸지 않는다.\n\n동적 규정·모델명·가격·프로그램 상태는 보강 시 공식 자료를 다시 확인한다.\n개념 문장을 고쳤다는 이유로 재확인하지 않은 다른 표의 확인일을 올리지 않는다.\n\n## 짧은 메인과 충분한 보고서\n\n메인은 독자가 읽을 보고서를 고를 수 있게 핵심 변화·문제·대상 조건을 짧게\n전달한다. 보고서는 선택한 내용을 혼자 이해할 수 있을 만큼 풀어 쓴다.\n메인의 분량 기준을 본문에 적용하지 않는다. 고정 글자 수나 항목 수로\n필수 설명을 자르지 않는다.\n\n펼치기는 상세 절차·추가 사례·사양·선택적 심화에 사용한다. 제목을 이해하는 데\n필요한 정의, 결론의 이유, 결정적인 자격·제약은 기본 읽기 경로에 둔다.\n처음 읽는 사람이 모든 펼치기를 열어야만 첫 문장을 이해한다면 배치가 잘못됐다.\n펼친 내용은 요약의 반복이 아니라 빠진 관계와 사례를 설명해야 한다.\n\n현재 Editorial의 `요약 → 데이터 → 결과 → 해설` 순서와 블록 개수는 의미 품질을\n보장하지 않는다. 원고를 먼저 완성하고 기존 데이터 필드에 의미를 유지하며\n옮긴다. 필요한 설명을 현재 필드로 자연스럽게 표현할 수 없으면 원고를 보존하고\n렌더링 개선을 별도 작업으로 기록한다. 원고를 양식에 맞춰 다시 축약하지 않는다.\n\n## 작성 지식베이스에 남길 내용\n\n새 주제의 편집 메모는 관련 보고서·검토 문서에 아래 정보를 남긴다. 단순\n용어집, 출처 모음, 글자 수 지침만 쌓지 않는다.\n\n| 항목 | 저장할 지식 |\n| --- | --- |\n| 독자의 질문 | 해당 글이 해결할 질문과 선행 지식 가정 |\n| 개념 관계 | 기존 개념과의 차이, 역할과 데이터 이동 |\n| 의미 근거 | 주장별 원문 위치·적용 조건·확인일 |\n| 끝까지 이어지는 예시 | 입력, 중간 값, 출력, 정상·실패 이유 |\n| 발견한 실패 | 원고의 어떤 표현이 무슨 오해를 만들었는지 |\n| 개선 원고 | 실제로 고친 문단과 독자가 대답할 수 있어야 할 질문 |\n| 보강 상태 | 진단·원고·사실 확인·실행 검증·게시 중 완료한 범위 |\n\n현재 결함 기록은 [앞선 내용 검토](../RESEARCH_CONTENT_REVIEW.2026-10-08.md)에,\n20편의 목적·실제 보강·검토 범위는 [전체 보강 기록](../RESEARCH_REPAIR.2026-10-08.md)에\n남긴다. 새 판의 본문 데이터는 `config/research_comprehension.2026-10-08.json`이다.\n[앞선 개선 원고](../RESEARCH_WRITING_EXAMPLES.md)는 부분 보강의 역사로 유지한다.\n사용자가 새 판을 승인한 완성 교재라는 뜻은 아니다. 날짜가 붙은 기능·규정은\n원문을 재확인하고 재사용한다. 예시 문장은 이번 독자 목적에 맞춘 사례다.\n\n## 참고한 작성 원칙\n\n- [Google Technical Writing — Audience](https://developers.google.com/tech-writing/one/audience): 독자의 현재 지식과 목표에 필요한 지식의 차이를 설명 범위로 삼는다.\n- [Google Technical Writing — Documents](https://developers.google.com/tech-writing/one/documents): 대상 독자와 읽은 뒤 가능한 일을 정하고 그 필요에 맞춰 내용을 조직한다.\n- [Diátaxis — Explanation](https://diataxis.fr/explanation/): 이해를 위한 관계·배경 설명의 역할을 구분한다.\n- [Diátaxis — Tutorials](https://diataxis.fr/tutorials/): 행동과 관찰할 결과를 통해 배우는 실습을 구분한다.\n\n2026-10-08 원문 확인. 위 원칙의 적용 방식과 검토 질문은 이 프로젝트의\n편집 판단이며, 문서화만으로 독자 이해 개선이 검증됐다는 뜻은 아니다.\n"
+                }
+              ]
+            },
+            {
+              "id": "profile-custom",
+              "kind": "profile",
+              "version": "1.0.0",
+              "supports": [
+                "custom"
+              ],
+              "stages": [
+                "analyze",
+                "write",
+                "review"
+              ],
+              "sources": [
+                {
+                  "path": "docs/authoring/types.md",
+                  "section": "별도 목적",
+                  "sha256": "1d3ac01369c6ed985b97338bb7d5df2ee6fb3c606a1037e42595b59b4fe2cc68",
+                  "text": "## 별도 목적\n\n요청서에 독자의 질문, 결과와 조사 방법을 명시한다. 기존 유형과 섞는 이유 및 필요한 근거를 기록한다. 별도 목적이라는 이유로 모든 글에 학습 예제나 수치 차트를 강제하지 않는다.\n"
+                }
+              ]
+            },
+            {
+              "id": "writing-workflow",
+              "kind": "method",
+              "version": "2.1.0",
+              "supports": [
+                "technology",
+                "comparison",
+                "market",
+                "opportunity",
+                "model_introduction",
+                "news",
+                "custom"
+              ],
+              "stages": [
+                "write"
+              ],
+              "sources": [
+                {
+                  "path": "skills/research-teaching/SKILL.md",
+                  "sha256": "09d2dac52b42f7fd556193e005da59b29c16215a125f34dec3a55b8cc08c1227",
+                  "text": "---\nname: research-teaching\ndescription: \"Compose and revise Korean research by reader purpose. Select content/editing/presentation profiles, preserve evidence and version records, then finish local knowledge registration and query checks. Use for research explanations, comparisons and editing; models and news keep their own profiles. Does not authorize redesign, paid calls, delegation or publication.\"\nmetadata:\n  version: \"2.1.0\"\n---\n\n# 목적에 맞게 조사하고 이해할 수 있게 쓰기\n\n먼저 [작성 관리](../../docs/authoring/MANAGEMENT.md)와 현재 원고를 읽는다.\n대화에 이미 나온 독자, 목적과 요청을 사용하며 같은 질문을 다시 요구하지 않는다.\n정보가 부족하면 조사로 돌아간다. 이해의 빈칸을 문장 교정이나 목차 증가로 대신하지 않는다.\n\n## 이번 글에 적용할 기준 선택\n\n1. 독자의 질문과 끝에 가능한 설명, 판단 또는 실행을 요청서에 적는다.\n2. [공통 원칙](../../docs/authoring/common.md)을 적용하고 [목적별 유형](../../docs/authoring/types.md)을 선택한다.\n   모델 소개와 소식 기사에 학습 글의 실습, 가상 업무와 응용 문제를 강제하지 않는다.\n3. 필요한 작성 방법만 고른다. 설명 글은 [설명 방법](../../docs/authoring/explanation.md),\n   실행을 약속한 실습은 [실습 조건](../../docs/authoring/tutorial.md)을 사용한다.\n   기존 원고의 표현을 고칠 때는 [편집 방법](references/editing.md)을 사용한다.\n4. 기존 화면 계약과 개별 요청을 선택해 authoring plan으로 조합을 고정한다.\n   이 기록은 작성 지침이며 HTML 렌더러를 변경하지 않는다. 새 디자인 구현은 별도 작업이다.\n\n## 작성과 편집\n\n원문 근거에서 질문의 답을 도출하고 충분한 본문을 쓴 뒤 제목과 요약을 만든다.\n선행 개념은 주제와의 거리를 기준으로 판단한다. 개발자라는 이유로 API나 JSON을 안다고 가정하지 않는다.\n필요한 용어는 처음 나오는 자리에서 뜻과 역할을 설명한다. 기능을 쓰는 경로와 직접 구현하는 경로를 구분한다.\n설명 사례는 입력, 중간 변화와 출력의 이유가 끝까지 연결되어야 한다.\n그림과 표는 [시각 자료 기준](../../docs/authoring/visuals.md)에 따라 필요한 곳에 선택한다.\n웹 디자인은 이번 요청에 없으면 변경하지 않는다.\n\n정보 가치가 부족하다는 피드백을 받거나 여러 글을 보강하면\n[질문과 근거 검토](references/substantive-review.md)를 읽는다.\n문장 연결의 구체적인 실패는 [집필 예시](references/teaching-patterns.md)와 대조한다.\n과거 Pass를 사용자 승인이나 완성 교재의 견본으로 취급하지 않는다.\n\n## 검토와 적용 기록\n\n[내용과 독해 검토](../../docs/authoring/review.md)에 따라 첫 화면과 본문을 따로 읽는다.\n첫 화면 입력에서는 본문을 실제로 제외한다. 외부 지식으로 빠진 설명을 메우지 않는다.\n막힌 문장과 근거 위치를 기록하고 고친다. 자체 검토, 독립 에이전트 검토와 사람 시험을 구분한다.\n위임이 승인된 경우에만 다른 에이전트를 사용하고 수정된 원고 자체를 재검토하게 한다.\n실제 실행, 링크와 출력 검사도 내용 검토와 별도로 기록한다.\n\n완성한 판에 authoring record로 원고 지문과 사용한 조합을 연결한다.\n자동 생성은 품질 패키지의 authoring에 같은 정보를 남긴다.\n이 기록은 지침 선택과 사용 기록이며 사실 검토나 사람 독해 합격을 뜻하지 않는다.\n이전 판을 덮지 않는다. 기준 변경은 새 조합으로 채택하며 작업 중의 기록에 자동 반영하지 않는다.\n\n## 리서치 추가·수정 후 지식베이스 반영\n\n이 프로젝트의 리서치·모델 소개·뉴스를 추가하거나 수정하면\n[지식베이스 완료 절차](../../docs/KNOWLEDGE_BASE.md#리서치-추가수정-작업의-완료-절차)를\n같은 작업 안에서 실행한다. 실제 내용 검토를 현재 판의 지문에 연결하고 색인을 갱신한 뒤,\n독자의 질문으로 새 본문과 출처가 검색되는지 확인해야 작성 작업을 완료한 것으로 보고한다.\n사용자에게 지식베이스 갱신을 따로 요청하게 하지 않는다.\n\n이 단계는 로컬 작업을 수행하는 Codex의 책임이다. JSON을 생성하는 집필 모델이나\n수집 성공만으로 검토 완료를 선언하지 않는다. 초안은 초안으로 연결하고 실제 검토일과\n기존 판을 보존한다. 사용자의 MD 전용·미발행 범위를 지키며 별도 배포를 실행하지 않는다.\n"
+                },
+                {
+                  "path": "docs/KNOWLEDGE_BASE.md",
+                  "section": "리서치 추가·수정 작업의 완료 절차",
+                  "sha256": "ab8e0592885a8698e99d8b01cd3bcc8097bd3c1eda77c754bdaffd293fd9de03",
+                  "text": "## 리서치 추가·수정 작업의 완료 절차\n\n새 리서치를 만들거나 기존 글을 고치는 Codex는 아래 반영을 같은 작업 안에서 마친다.\n사용자는 지식베이스 갱신을 따로 요청할 필요가 없다. 보고서, 모델 소개, 뉴스에 공통으로\n적용하며 글의 목적별 작성·검토 기준은 유지한다. 색인 갱신을 새 원문 조사로 기록하지 않는다.\n\n1. **원고와 실제 저장 판을 맞춘다.** 내용·근거·독해 검토와 수정이 끝난 판을 기존 저장\n   절차로 반영하고 작성 기준의 적용 기록도 남긴다. 기존 판과 품질 부록은 보존한다.\n   사용자가 MD 파일만 요청했다면 DB 발행을 강제하지 않는다. 해당 파일만 연결 목록에\n   `kind: draft`로 등록해 미발행 상태를 유지하고 초안을 포함하는 검색으로 확인한다.\n   프로젝트 전체 폴더를 자동 수집하거나 비공개 자료를 연결하지 않는다.\n2. **현재 본문 지문을 읽는다.** DB에 저장한 글은 아래 명령의 `document`에서 실제\n   `key`, `revision`, `source_hash`, `document_digest`를 확인한다. 보고서는 `report:<id>`,\n   뉴스는 `article:<id>`다. 이 명령은 미검토 글도 명시적으로 읽을 수 있다.\n\n   ```powershell\n   python -m housing_watch knowledge --document report:<id> --json\n   ```\n\n3. **실제 검토를 현재 판에 연결한다.** `config/knowledge_sources.json`의 `review_ledger`가\n   가리키는 원장의 기존 항목을 보존하면서 이번 글의 검토 항목을 추가하거나 갱신한다.\n   `key`, `revision`, `source_hash`, `document_digest`, `reviewed_on`, `verdict`,\n   `reader_question`, `finding`, `body_locations`, `reference_urls`를 실제 원고·검토 기록에서\n   채운다. 새 파일의 등록 시각을 사실 확인일로 쓰지 않는다. `verdict`는 확인한 범위에\n   따라 정하고 계획·미완성·오래된 사실을 무조건 `usable_with_limits`로 바꾸지 않는다.\n   원문의 접근 실패와 미확인 조건은 `finding`, `advisories`, `link_check`에 해당 범위대로\n   남긴다. authoring record나 형식 검사 통과는 내용 검토의 대체물이 아니다.\n4. **검토 이력을 보존한다.** 기존 검토를 바꾸면 날짜와 작업 식별자를 붙인 새 원장\n   파일에 기존 현재 항목과 이번 항목을 함께 저장한다. 예를 들어\n   `config/content_review.<날짜>.<작업ID>.json`을 만들고 검증한 뒤 `review_ledger` 포인터를\n   옮긴다. 이전 원장을 덮거나 다른 글의 검토를 누락하지 않는다. 그 파일이 이미 있으면\n   새 판 이름을 쓴다. 신규 항목 추가도 같은 방식으로 기록한다.\n5. **색인과 실제 질의를 확인한다.** 아래 명령이 성공한 뒤 해당 글의 상태·현재 판·본문\n   지문과 출처가 맞는지 읽고, 독자가 물을 질문으로 검색한다. DB에 저장된 검토 완료 글은\n   기본 검색에서 새 본문이 나와야 한다. 미발행 MD는 `--include-drafts`로 확인하며,\n   검토하지 않은 자료를 기본 답변에 넣기 위해 제외 옵션을 풀지 않는다.\n\n   ```powershell\n   python -m housing_watch knowledge --build --status\n   python -m housing_watch knowledge --document report:<id> --json\n   python -m housing_watch knowledge \"이번 글의 구체적인 독자 질문\" --limit 5 --json\n   ```\n\n6. **반영까지 마친 뒤 완료를 보고한다.** 본문 지문이 달라 `review_outdated`로 남거나\n   검토 완료 글을 찾지 못하면 저장 판·원장·연결 목록·질문 표현을 대조해 원인을 고친다.\n   해결되지 않으면 글 저장과 검색 반영의 상태를 따로 보고하고 검색 연결 완료로 표시하지\n   않는다. 결과에는 새 글의 ID·판, 검토 범위, 검색 확인과 남은 한계를 남긴다.\n\n이 절차의 저장과 색인 갱신은 기존 저장소 계정·원격 검증 규칙을 따른다. 별도 사용자\n확인을 반복해서 요구하지 않는다. 파일 반영 권한이 확인되지 않으면 기존 가드대로 멈춘다.\n유료 생성·클라우드 업로드·예약·홈페이지 배포 권한을 추가하지 않는다. 단독 수집기 실행은\n내용 검토가 아니며 이 절차는 리서치 작성 작업의 완료 단계다.\n\n"
+                }
+              ]
+            },
+            {
+              "id": "research-teaching",
+              "kind": "method",
+              "version": "1.0.0",
+              "supports": [
+                "technology",
+                "comparison",
+                "custom"
+              ],
+              "stages": [
+                "write"
+              ],
+              "sources": [
+                {
+                  "path": "docs/authoring/explanation.md",
+                  "sha256": "0e56f1b34057218de54d4f52b6fb509e7d58773de754e42074f5d0f96fa8deaf",
+                  "text": "# 설명과 학습 글의 작성 방법\n\n기술 설명이나 학습 목적일 때 선택한다. 모델 소개나 시장 분석에 실습과 응용 문제를 강제하지 않는다.\n\n## 2026-10-12: 정의와 필요성에 답한 뒤 사례로 확인하기\n\n목차와 소제목을 검토할 때는 각 제목이 약속한 질문과 그 아래 실제 답을 한 쌍씩 적는다. 관련 단어가 있다는 이유로 적합하다고 판정하지 않는다. 설명이 빠졌으면 보강하고, 제목이 실습이나 근거의 범위보다 넓으면 그 범위에 맞춘다. 기업의 도입 회고와 교재의 운영 원칙처럼 자료의 성격이 다르면 장 제목과 비교표에서도 구분한다. 과제의 각 질문에는 대응하는 풀이가 있어야 한다. [DevOps의 장별 수정과55개 답 위치](../DEVOPS_HEADING_REVIEW.2026-10-12.md)를 참고한다.\n\n독자가 “무엇이고 왜 필요한가”를 묻는 장에서는 역할과 목적, 해결할 문제와 작동 이유를 먼저 설명한다. 세부 오류를 고치는 가상 사건이 이 설명을 대신하게 하지 않는다. 사례를 넣을 때는 앞의 어떤 개념을 확인하려는지 밝혀야 하며, 코드나 배포 절차를 배우는 사례는 해당 장에 둔다. 고정된 사례 구성 절차를 모든 개념 장의 필수 순서로 적용하지 않는다.\n\nDevOps r6은 정의 뒤에 가격 정렬 오류와 공동 해결 절차를 넣었지만 독자는 갑자기 왜 나오는지 알 수 없었다. 후속 판의 첫 장에서는 개발과 운영의 역할, 필요한 변경과 안정적인 사용을 함께 달성해야 하는 이유, 정보 단절의 문제, 협업과 자동화 및 피드백의 관계를 설명한다. 아래 2026-10-10의 ‘정의 다음 사례’ 기준은 이 선행 설명을 갖춘 뒤 적용한다. [수정 기록](../DEVOPS_EXPLANATION_REPAIR.2026-10-12.md)을 참고한다.\n\n## 2026-10-10: 지시문 나열을 설명하는 글로 바꾸기\n\n2026-10-10 추가: 사용자는 대화형 다이어그램 시안을 선택했고, PPT처럼 핵심을\n짧게 말한 뒤 아래 문장으로 설명하는 구성을 요청했다. 설명할 주제의 핵심 문구를\n먼저 보여 주고, 관계나 순서가 복잡하면 이미지나 도표를 붙인 뒤 자세한 문단을 둔다.\n요약을 짧게 만든다는 이유로 본문의 이유, 조건, 사례와 코드를 없애지 않는다.\n그림의 문구도 원고와 대조하고 테스트 실행과 통과처럼 서로 다른 상태를 구분한다.\n이미지 안의 작은 글자에만 지식을 넣지 말고 본문과 대체 설명, 모바일 확대를 제공한다.\n주제마다 같은 개수의 요점이나 그림을 강제하는 규칙은 아니다.\n\n사용자는 가운데점을 풀어 쓴 DevOps 2차 원고도 말투가 어색하다고 지적했다.\n짧은 문장과 “기록한다”, “확인한다”, “검토한다”의 반복만으로는 설명이 되지 않는다.\n본문은 어떤 상황인지, 왜 문제가 되는지, 제시한 방법이 어떻게 작동하는지 이어서 쓴다.\n필요한 기술 용어는 처음 등장하는 자리에서 뜻과 역할을 풀어 설명한다.\n\n- “실행 명령과 테스트 결과, 릴리스 파일을 연결한다”는 무엇을 어떻게 하는지 모호하다.\n  어떤 코드로 만든 파일을 테스트했고 무엇을 배포했는지 찾을 수 있도록 코드 버전과\n  테스트 결과, 실제 배포 파일의 이력을 함께 남긴다고 설명한다.\n- “CI 기반과 제품의 검사 기준이 먼저다”처럼 이유 없이 순서를 단정하지 않는다.\n  현재 테스트 목록이 있어야 변경 후 빠진 테스트를 찾을 수 있다는 이유를 함께 쓴다.\n- 문장 끝을 “합니다”로 바꾸는 것으로 교정을 끝내지 않는다. 설명문에서는 자연스러운\n  “합니다”체를 사용하되 상황과 이유, 행위자와 대상이 이어지는지 실제 문단으로 확인한다.\n  명령어, 작업 요청 예시와 간결한 표의 항목은 그 용도에 맞는 형식을 유지한다.\n\n## 2026-10-10: 추상적 정의를 구체적인 업무로 설명하기\n\n사용자는 DevOps의 정의인 “기능의 전달과 서비스의 안정성을 함께 책임지는 문화와 실천”을\n이해하기 어렵다고 지적했다. 회사 공유 보고서의 문체는 어려운 명사를 쓰는 것이 아니다.\n정의와 요약에는 누가 무엇을 하는지, 어떤 상황에서 쓰는지와 확인할 결과를 평이하게 쓴다.\n\n- “문화와 실천”, “가치 전달”, “공동 책임” 같은 표현만으로 정의를 끝내지 않는다.\n  필요하다면 코드 검사 항목·배포 절차·장애 담당자처럼 실제 결정과 행동으로 풀어 쓴다.\n- 정의와 필요한 이유를 설명한 뒤, 사례가 어떤 개념을 확인하는지 연결한다.\n  DevOps의 무료배송 기준 변경과 금액별 검사, 배포 후 주문 오류 확인 사례는\n  협업과 자동화 및 피드백의 관계를 이미 설명한 자리에서 사용할 수 있다.\n- 형용사나 명사를 다른 추상어로 바꾸는 데서 끝내지 않는다. “누가 어떤 작업을 하나?”에\n  답하지 못하는 문장은 구체적인 작업·조건·결과를 보충한다. 용어를 생략해서 의미를 왜곡하지 않는다.\n\n기술 용어 자체를 일괄 금지하는 기준은 아니다. 필요한 용어는 먼저 뜻과 작동을 설명한다.\n문장만 다듬어 원문의 범위, 근거 수준, 조건이나 수치가 달라지지 않았는지도 따로 확인한다.\n\n2026-10-09: 사용자에게 20편의 새 판도 이해하기 어렵다는 피드백을 받았다.\n[research-teaching 스킬](../../skills/research-teaching/SKILL.md)을 적용하고\n[조사·적용 기록](../RESEARCH_TEACHING_SKILL.2026-10-09.md)을 참고한다. 이전 검토가\n완료됐다는 이유로 현재 글을 승인된 교재의 기준으로 복제하지 않는다.\n\n무엇을 조사하고 새 주제를 어떻게 발견할지는 [AI 조사 운영](../AI_RESEARCH_OPERATIONS.md)과\n[출처 목록](../AI_RESEARCH_SOURCES.md)을 따른다. 독자는 개발자와 관리자다. 기술을 배우는 글뿐 아니라\n도입·조직·인력시장 판단을 돕는 글도 포함한다. 목적에 맞는 설명과 사례를 선택하며,\n모든 글에 SDK 구현을 강제하지 않는다. 실제 수집·검토 날짜와 범위는\n[검토 기록](../ai/AI_RESEARCH_REVIEW_LOG.md)에 남긴다.\n\n## 개발 동향 학습/실습 글의 목적: AI를 실제 작업에 활용하기\n\n2026-10-08 후속 사용자 요구: 개발 동향은 AI를 활용하는 방법을 계속 수집하고\n독자가 필요할 때 배워 사용하는 지식베이스다. 새 기능을 알아보거나 역할을\n설명하는 수준에서 끝나면 이 목적을 달성하지 못한다.\n\n먼저 독자가 끝낼 구체적인 작업과 그 결과물을 정한다. 예를 들어 'MCP Apps의\n호스트·서버를 구분한다'는 중간 학습 목표다. 최종 목적에는 어떤 목록을 비교하고,\n어떤 환경에서 시작하며, 자기 데이터로 어떻게 바꾸고, 성공을 무엇으로 확인하는지가\n있어야 한다. 준비된 기능을 사용하는 독자와 기능을 직접 구현하는 독자의 경로도\n구분한다. AI 활용이라는 말만으로 SDK 구현이 필요한 독자로 가정하지 않는다.\n\n기초 개념과 작동 이유를 충분히 설명하되 하나의 완성된 예제를 따라 연결한다.\n실습을 제공한다면 행동과 관찰할 결과를 따로 제시하고, 긴 원리 설명은 실습을\n읽는 흐름과 구분해 찾을 수 있게 둔다. 설명만 길게 늘리거나 매 문단에 행동을\n강제로 넣는 방식은 쓰지 않는다. 필요에 맞는 장 구성은 원고를 쓴 뒤 선택한다.\n\n이전 MCP Apps 3차와 당시 개선 원고는 사용자가 활용 교재로 부족하다고 평가했다.\n승인된 완성 교재의 문체·깊이 기준으로 복제하지 않는다. 2026-10-08에는 아래 절차를\n적용해 작성 보고서 20편의 새 판을 게시했다. [보강 기록](../RESEARCH_REPAIR.2026-10-08.md)은\n근거·이해 가능성 자체검토와 출력 검증을 구분한다. 실제 독자 승인이나 전 조사 범위의\n완료를 뜻하지 않으며, 이후 원고도 목적과 최신 근거를 다시 검토한다.\n\n## 독자의 질문 순서로 원고 쓰기\n\n개념 설명이 필요한 글에서는 독자가 겪는 상황부터 시작한다. 새 용어를\n그 상황의 구체적 역할과 연결한 뒤, 한 사례를 입력에서 결과까지 이어 쓴다.\n각 단계에서 ‘누가, 어떤 값으로, 무엇을 하고, 무엇이 달라지는지’를 밝힌다.\n필요한 이유와 대안의 차이를 설명한 후에 도입 판단을 제시한다.\n\n‘도구 호출·RAG·상태·평가’를 나열하는 대신 같은 공고 비교 앱을 따라갈 수 있다.\n조회 함수는 조건에 맞는 공고를 찾고, 문서 검색은 공고 본문에서 신청 조건의\n근거를 찾으며, 평가는 반환된 공고와 답변이 그 근거에 맞는지 확인한다.\n단계가 바뀌어도 사용자의 요청과 샘플 데이터를 유지하면 역할 차이가 드러난다.\n\n압축어가 아니라 완결된 문장으로 설명한다. 약어의 영어 원형만 제시하지 말고\n이 사례에서 그 개념이 맡는 일을 말한다. 새 개념의 정의가 또 다른 미설명\n약어에 의존하면 그 선행 개념도 보완한다. 같은 정의를 반복하는 대신 다음\n문단에서 왜 그렇게 동작하는지 또는 무엇을 확인해야 하는지 전진한다.\n\n표는 이미 설명한 기준의 비교·확인에 쓴다. 표가 처음 등장한 개념의 유일한\n설명이어서는 안 된다. 숫자에는 읽는 방법을, 흐름도에는 각 이동 값의 의미를\n붙인다. 시각 자료가 결론을 어떻게 지지하는지 본문에서 연결한다.\n"
+                },
+                {
+                  "path": "skills/research-teaching/references/teaching-patterns.md",
+                  "sha256": "d38dfe359befeec333cf5d5075c96ff3db8fc485ac22d340ab02c50f68dc0f52",
+                  "text": "# 집필·검토 예시\n\n제목·요약이 어렵거나 개념 설명이 목록으로 끝날 때 읽는다. 아래 문장은 가상의\n개념 설명이며 실제 제품의 성능·지원 조건을 검증한 사례가 아니다.\n\n## 이름을 숨기거나 이름만 남기는 제목\n\n부족한 제목: ‘AI가 찾은 목록을 화면에서 비교하고 다음 질문에 연결하기’.\n어떤 기술의 설명인지 알 수 없고 ‘연결’의 대상과 방법도 드러나지 않는다.\n\n개선 방향: ‘MCP Apps: AI 대화 안에서 표와 버튼을 사용하는 방법’.\n대상을 검색·기억할 이름과 하는 일을 함께 보여준다. 시장 보고서라면 관찰 대상과\n기간·변화를 제목에 담되 입증되지 않은 성장 원인을 제목으로 만들지 않는다.\n\n## 정의 전에 구조를 요약하는 문장\n\n부족한 요약: ‘호스트가 UI 리소스를 표시하고 선택 문맥을 갱신한다’.\n독자는 호스트·UI 리소스·문맥을 이미 알아야 한다.\n\n개선 방향: ‘MCP Apps는 AI와 대화하는 창 안에 조작 가능한 표·버튼을 붙이는\n연결 규칙이다. 조회한 목록에서 한 항목을 골라 상세 정보를 열 수 있다.\nAI도 그 선택을 바탕으로 답하게 하려면 선택한 항목의 정보가 대화에 전달되어야 한다.’\n본문에서 정의할 기술 용어를 쓰지 않아도 핵심 기능과 조건이 전달된다.\n\n## 정의에서 적용으로 건너뛰는 문단\n\n부족한 설명: ‘온톨로지는 개체와 관계를 정의한다. 기업 AI 도입에 중요하다.’\n개체·관계가 무엇인지, 그 정의가 어떤 문제를 줄이는지 빠져 있다.\n\n개선 방향: ‘고객 문의에서 주문번호를 찾았더라도 누가 그 주문을 했고 어떤\n상품이 포함되는지는 추가 자료가 필요하다. 업무 데이터에서 고객·주문·상품을\n구분하고, 주문이 어느 고객과 상품에 연결되는지를 정해 두면 이 관계를 따라\n필요한 정보를 찾을 수 있다. 이런 업무 개념과 관계를 명시하는 설계를 온톨로지와\n연결해 설명할 수 있다. 관계를 정했다고 누락·잘못된 데이터가 자동으로 고쳐지는 것은 아니다.’\n\n실제 원고에서는 온톨로지의 범위, 단순 데이터 연결과의 차이, 해당 플랫폼의 구현을\n원문으로 확인한다. 이 문단만으로 특정 플랫폼의 기능·도입 효과를 단정하지 않는다.\n\n## 사례를 사람이 읽은 뒤 표현 형식을 소개\n\n처음부터 `{\"id\":\"B\",\"deadline\":\"2026-10-30\"}`만 놓지 않는다.\n먼저 ‘B 공고의 마감일은 10월 30일이고, B라는 식별자는 같은 공고를 다시 찾는\n이름표다’라고 설명한다. 그 뒤 이 값들을 프로그램이 주고받는 형식으로 보여준다.\n새 형식이 학습 목표가 아니라면 코드 대신 표와 문장으로 충분히 설명한다.\n\n## 이유를 요구하는 변형 문제\n\n문제: 화면은 B를 보여 주는데 AI는 이전에 선택한 A를 답했다. 무엇이 빠졌을까?\n풀이: 화면에 표시한 상태와 AI가 다음 답변에 받은 선택 정보가 다를 수 있다.\nB를 선택할 때 전달한 정보와 다음 질문에 사용한 항목을 대조한다. 단순히\n‘AI가 틀렸다’고 판단하기 전에 두 경로에 같은 대상이 들어갔는지 확인한다.\n답을 위해 필요한 구분은 문제를 제시하기 전에 본문에서 가르쳐야 한다.\n\n## 검토 근거를 남기는 방법\n\n‘초보자도 이해할 수 있음’ 대신 아래처럼 기록한다.\n\n| 검토 | 원고에서 찾을 답 | 누락이면 할 일 |\n| --- | --- | --- |\n| 제목·요약만 | 대상, 기능, 구체적인 쓰임 | 이름·평이한 정의·상황을 보강 |\n| 첫 등장 용어 | 해당 사례에서 맡는 일 | 선행 개념을 설명하고 용어를 연결 |\n| 전체 사례 | 입력, 각 처리 이유, 결과 | 끊어진 값·주체·이유를 보강 |\n| 변형 문제 | 달라진 조건과 결과의 이유 | 원리 설명 또는 풀이를 보강 |\n| 적용 조건 | 쓸 때·쓰지 않을 때·확인할 조건 | 원문 조사 또는 미확인 범위 표시 |\n\n이 표는 사람이나 독립 에이전트가 실제 읽었다는 증거가 아니다.\n집필자의 자체검토 결과라면 그렇게 명시한다.\n"
+                }
+              ]
+            },
+            {
+              "id": "section-editing",
+              "kind": "method",
+              "version": "1.0.0",
+              "supports": [
+                "technology",
+                "comparison",
+                "market",
+                "opportunity",
+                "model_introduction",
+                "news",
+                "custom"
+              ],
+              "stages": [
+                "write"
+              ],
+              "sources": [
+                {
+                  "path": "skills/research-teaching/references/editing.md",
+                  "section": "절별 편집",
+                  "sha256": "6373e218756a33531f9acb90d5a399223ec984f56181558f94b2a06f550a3900",
+                  "text": "## 절별 편집\n\n각 절이 답할 독자의 질문을 찾고 실제 답의 문장을 지목한다.\n정의 전에 나온 용어, 빠진 전제와 연결 설명, 비교 축이 섞인 부분을 찾는다.\n문제를 발견하면 원문, 문제의 이유와 수정안을 함께 남긴다. 정보가 부족하면 추가 조사로 돌아간다.\n본문을 충분히 설명한 뒤 요점, 표와 제목을 실제 내용에 맞춘다.\n문체 수정을 위해 근거 없는 통계, 인용이나 저자의 경험담을 추가하지 않는다.\n\n"
+                }
+              ]
+            },
+            {
+              "id": "korean-editing",
+              "kind": "method",
+              "version": "1.0.0",
+              "supports": [
+                "technology",
+                "comparison",
+                "market",
+                "opportunity",
+                "model_introduction",
+                "news",
+                "custom"
+              ],
+              "stages": [
+                "write"
+              ],
+              "sources": [
+                {
+                  "path": "skills/research-teaching/references/editing.md",
+                  "section": "한국어 문장 편집",
+                  "sha256": "a078b16d877034b6718a0cd576ee7c8561832cffe6939ae80a1292ee5d151968",
+                  "text": "## 한국어 문장 편집\n\n번역투, 불필요한 명사화, 같은 마무리의 반복, 추상적인 단어 나열과 과장을 찾는다.\n이번 독자에게 필요한 용어와 일관된 격식은 보존한다. 특정 단어나 문장부호를 기계적으로 삭제하지 않는다.\n원문과 수정문에서 행위자, 수치와 단위, 날짜, 부정과 추정, 적용 조건 및 인과관계를 대조한다.\n추정 표현을 단정으로 바꾸거나 실제로 없던 효과를 넣은 수정은 되돌린다.\n코드, 명령, 식별자와 링크는 일반 문장 교정 대상으로 취급하지 않는다.\n첫 절에서 변경 전후와 이유를 확인한 뒤 같은 방법을 나머지 원고에 적용한다.\n\n"
+                }
+              ]
+            },
+            {
+              "id": "reader-review",
+              "kind": "method",
+              "version": "1.0.0",
+              "supports": [
+                "technology",
+                "comparison",
+                "market",
+                "opportunity",
+                "model_introduction",
+                "news",
+                "custom"
+              ],
+              "stages": [
+                "review"
+              ],
+              "sources": [
+                {
+                  "path": "docs/authoring/review.md",
+                  "sha256": "0f86c95aa64ab7b60ffd6c825a237f573a1e246c89fe0e2300b10493f4cfec7a",
+                  "text": "# 내용과 독해 검토 방법\n\n선택한 유형과 질문에 해당하는 기준으로 검토한다. 에이전트 검토와 사람 시험을 구분하며 위임 권한을 만들지 않는다.\n\n## 2026-10-12: 설명 그림의 의미와 연결을 검토하기\n\n먼저 그림이 답할 독자의 질문을 정한다. 개념의 정의를 작업 순서 그림만으로 대신하지 않는다. 관계를 설명한다면 행위자와 공유하는 목표, 정보 및 책임을 본문과 그림에 연결한다.\n\n각 화살표의 출발 상자, 도착 상자, 전달하는 입력이나 결과를 표로 적고 실제 이미지의 선과 화살촉을 대조한다. 꼬리가 출발 경계에 닿는지, 도착 방향이 맞는지, 겹침과 불필요한 순서가 생기지 않는지 확인한다. 함께 고려하는 조건에 순차 화살표를 붙이지 않는다. 실패와 성공 경로를 그렸다면 다음 행동도 일치해야 한다.\n\n도해를 단순화했다면 생략한 조건과 역할의 참여 범위를 설명한다. 그림, 대체 텍스트와 본문의 의미가 같은지 확인하며, 그림이 예쁘거나 확대 버튼이 동작한다는 사실을 의미 검토와 합산하지 않는다. [DevOps r5의 거부와 r6 수정](../DEVOPS_DIAGRAM_REPAIR.2026-10-12.md)을 참고하되 수정본의 독자 승인을 주장하지 않는다.\n\n2026-10-09 보강: [AI 집필 연구](../AI_WRITING_RESEARCH.2026-10-09.md)와\n[질문·근거·학습 결과 검토](../../skills/research-teaching/references/substantive-review.md)를 적용한다.\n독자의 핵심 질문마다 본문의 답 위치·근거·공백을 연결한다. 기술마다 고유한 원리와 실제 자료\n해석이 있어야 하며, ‘조건 확인·검증·기록’의 반복만으로 보강됐다고 판정하지 않는다.\n사용자가 승인한 독립 에이전트 검토에서는 수정 원고를 읽게 하고 지적을 고친 뒤 재판정한다.\n전체 보강의 현재 범위와 실제 검증 결과는 [작업 상태](../RESEARCH_AUTHORING_REPAIR.2026-10-09.md)에 남긴다.\n\n2026-10-08부터 Signal Desk의 리서치 작성·보강·내용 검토에 적용한다.\n이 문서는 작성 에이전트의 작업 기준이다. 독자에게 그대로 보여줄 목차나\n모든 보고서에 강제할 양식이 아니다.\n\n## 에이전트의 작성 절차와 게시 판단\n\n1. **독자 작업 정의:** 업무 문제, 기존 지식, 끝낼 작업, 확인할 결과를 작성한다.\n   'MCP 이해하기', 'RAG 알아보기'처럼 기술 이름만 쓰면 다시 구체화한다.\n2. **필요한 근거 조사:** 이 작업을 할 수 있는 현재 도구·기능, 시작 조건, 제약,\n   공식 예제를 확인한다. 원문 요약을 바로 게시용 문장으로 바꾸지 않는다.\n3. **완성된 사례 구성:** 실제 샘플 값과 중간 결과를 고정한다. 어느 입력이 어떤\n   처리를 거쳐 어떤 출력에 대응하는지 끝까지 보여주고, 필요한 개념을 그 관계로\n   설명한다. 가상 사례·개념 코드·실행 확인한 실습은 구분한다.\n4. **학습과 적용 작성:** 왜 쓰는지, 어떻게 동작하는지, 어떻게 시작하는지,\n   자기 작업으로 바꾸려면 무엇이 달라지는지 설명한다. 설명형 학습에는 풀이가\n   있는 변형 문제를, 실습에는 행동·예상 출력·정상/실패 판정을 제공한다.\n5. **검토 후 재작성:** 아래 질문에 본문 위치를 인용해 답한다. 필요한 답이\n   본문에 없으면 누락으로 기록하고 원고를 보강한다. 검토자 자신의 상식으로\n   빈칸을 메워 통과시키지 않는다. 어려운 용어의 정의만 반복해 해결하지 않는다.\n6. **표현과 게시:** 내용이 충족된 뒤 메인 요약과 HTML을 만든다. 설명 필드를\n   모두 채웠거나 테스트가 통과했다고 교재 완성으로 처리하지 않는다. 검수 결과와\n   실행 확인 범위를 기록하고, 필요한 본문은 펼치기 안에 숨기지 않는다.\n\n| 검토 질문 | 원고가 보여줘야 할 근거 |\n| --- | --- |\n| 이 방법으로 내 어떤 작업이 나아지는가 | 구체적인 문제·완성 결과·적합하지 않은 경우 |\n| 어디서 어떻게 시작하는가 | 선택한 사용/구현 경로와 확인한 환경·준비물·첫 행동 |\n| 각 부분이 왜 필요한가 | 예시 값과 연결된 개념·처리 원리·선행 지식 |\n| 한 사례의 입력부터 결과까지 따라갈 수 있는가 | 실제 샘플 값·중간 변화·출력과 그 의미 |\n| 내 자료로 바꾸려면 무엇을 바꾸는가 | 다른 입력으로의 변형 예시와 풀이·변경점 |\n| 틀렸을 때 무엇을 확인하는가 | 관찰할 증상·확인 순서·실패 조건 |\n\n이 표는 게시용 목차나 점수표가 아니다. 모든 주제에 실행 실습을 강제하지 않는다.\n개념 교재에도 끝까지 풀어 준 사례와 새로운 상황에 적용하는 설명이 필요하다.\n실습을 약속한 글은 재현 경로가 빠지면 '실습 초안'으로 남긴다. 실행해 보지 않은\n단계를 검증 완료로 표시하거나 독자 사용성 시험을 했다고 주장하지 않는다.\n\n자동화를 구성할 때는 프로젝트 AGENTS에 위 목적과 필수 읽기를 두고, 작성 스킬에는\n단계별 입력·산출물·누락 시 재작성 규칙을 둔다. 지식베이스는 출처와 기능 조건,\n끝까지 풀어 준 예제, 사용자 검토를 받은 원고, 실패한 문장의 이유를 보존한다.\n기술 정리 역할과 집필·검토 역할은 별도 작업 단계로 수행한다. 여러 에이전트를\n자동으로 만드는 규칙은 아니며, 같은 에이전트의 별도 검토 과정으로도 수행한다.\n\nGoogle의 [독자 기준](https://developers.google.com/tech-writing/one/audience)은\n업무에 필요한 지식과 독자가 이미 가진 지식의 차이를 설명 범위로 삼는다.\nDiátaxis의 [실습 기준](https://diataxis.fr/tutorials/)은 구체적인 행동과 예상 결과를\n연결한다. [OpenAI의 스킬 문서](https://developers.openai.com/codex/skills)는\n재사용할 작업 절차를 지침·참고자료로 묶고 명시적인 입력·출력으로 설계하도록\n안내한다. 세 원문의 적용 절차와 위 검토 기준은 이 프로젝트의 편집 판단이다.\n\n## 제목·요약만으로 무엇을 배우는지 알 수 있는가\n\n2026-10-09 음성 보고서의 사용자 거부는 앞선 독립 Pass가 첫 화면의 이해와 자연스러움을\n충분히 검증하지 못했음을 보여준다. [수정 기록](../VOICE_REPORT_REPAIR.2026-10-09.md)과\n[구체적인 회귀 사례](../../skills/research-teaching/references/substantive-review.md#첫-화면과-비교-기준의-회귀-사례)를 따른다.\n첫 화면 검토에서는 본문을 실제로 제외한다. 명사형 소개를 완결된 문장으로 바꾸고, 독자가\n하려는 작업과 실제 비교 대상을 먼저 밝힌다. 구현 구조와 제품명을 같은 종류의 행으로 섞지 않는다.\n성능·비용·난이도 비교를 약속할 때는 실측·문헌 근거·설계 해석을 구분한다.\n\n제목에는 기술·주제 이름과 평이한 기능·변화·문제를 함께 담는다. 이름이 빠져\n무엇에 관한 글인지 알 수 없는 제목, 낯선 이름만 나열한 제목은 보강한다.\n요약은 본문 밖에서 읽어도 대상, 하는 일, 구체적인 쓰임과 중요한 조건이 전달되어야 한다.\n그림의 번호와 화살표를 읽는 방법이나 사이트 사용 안내로 주제의 답을 대신하지 않는다.\n필요한 도해 설명은 해당 그림의 캡션·접근성 설명에 두고 요약에는 주제의 정보를 담는다.\n본문의 B·호스트·UI 리소스·문맥을 설명 없이 가져오지 않는다.\n\n본문을 읽은 지식으로 요약의 빈칸을 채우지 않는다. 제목·요약만 보고 다시 설명한 답과\n근거 문장을 남기고, 알 수 없는 부분을 실제로 고친다. 본문은 별도로 개념 순서,\n한 사례의 전체 과정과 다른 조건의 문제를 검토한다. 검사표 점수나 글자 수로 대체하지 않는다.\n\n## 내용 검토와 기술 검증을 분리해서 기록\n\n게시 전에는 원고만으로 아래 질문에 답할 수 있는지 검토한다.\n\n1. 독자가 해결할 질문에 이 글이 실제로 답했는가?\n2. 선행 지식을 모르면 어느 문장에서 막히며, 그 부분을 설명했는가?\n3. 주어·대상·조건·단위가 원문과 같은가? 인과관계를 과장하지 않았는가?\n4. 한 예시의 입력·처리·출력이 연결되고 서로 모순되지 않는가?\n5. 결론이 왜 나오는지 설명하며 적용되지 않는 조건도 구분했는가?\n6. 처음의 예시와 다른 상황에 독자가 이 개념을 적용할 수 있는가?\n7. 원문 링크는 근거 확인·심화 학습을 돕는가? 빠진 본문 설명을 대신하지 않는가?\n\n각 질문은 통과 문구를 붙이는 체크박스가 아니라 실제 원고를 고칠 기준이다.\n막힌 문장과 수정 이유를 기록한다. 새 사례에 대한 예상 답은 근거와 함께\n작성하되 실제 독자 시험을 하지 않았다면 독자 검증 완료라고 쓰지 않는다.\n\n현재 `validate_report`는 형식·출처 ID·자료 타입을, `review`는 주택 브리핑의\n운영·출력 상태를 검사한다. 테스트 통과·출처 수·학습 장 수·모바일 넘침 없음은\n독자의 이해를 증명하지 않는다. 자동 검사에는 구조적으로 확인 가능한 부분만\n맡기고 사실 의미·논리·설명 충실도는 원문과 원고를 읽어 검토한다.\n\n보고서 수정 게시 시에는 새 immutable batch와 같은 보고서 ID로 이력을\n남긴다. 앞선 판을 덮어쓰지 않는다. 렌더링·링크·모바일 검증은 내용 검토와\n함께 수행하되 각각의 결과를 구분해 기록한다.\n"
+                },
+                {
+                  "path": "skills/research-teaching/references/substantive-review.md",
+                  "sha256": "2030364c1fc5a9af175b38395fa5e7c14a9471c7a97cae427d616e8bfcbe618b",
+                  "text": "# 질문에 답하는 정보와 설명을 검토하기\n\n## 글마다 독자가 알아야 할 것이 다르다\n\n기술 설명의 독자는 입력이 어떤 과정을 거쳐 결과가 되는지, 다른 방식과 왜 다른지\n이해해야 한다. 실습의 독자는 준비부터 실행·기대 출력·실패 진단까지 따라갈 수 있어야 한다.\n시장 분석의 독자는 관측 대상·기간·단위와 비교 범위, 반대 근거를 보고 자기 판단을 좁혀야 한다.\n행사·지원 안내의 독자는 자신이 어떤 참여 역할과 필수 조건에 해당하는지 선별할 수 있어야 한다.\n원문에 없는 내용은 추가로 조사한다. 같은 목차·문단 수·SDK 코드·퀴즈를 모든 글에 강제하지 않는다.\n\n모델 소개는 [모델 소개 운영 기준](../../../docs/AI_MODEL_RESEARCH.md)에 따른다.\\n가상 활용 사례나 응용 문제를 요구하지 않고 다른 모델과의 비교 및 장단점에 답하는지 확인한다.\\n\\n## 질문과 근거의 공백을 작업 메모에서 찾는다\n\n핵심 질문마다 필요한 자료, 원문에서 확인한 답, 본문의 답 위치, 남은 공백을 연결한다.\n글의 제목이 실제보다 큰 결과를 약속하면 제목과 범위를 조정하거나 그 결과까지 보강한다.\n자료가 부족한 상태에서 익숙한 일반 조언으로 문단을 채우지 않는다.\n\n| 원고의 약속 | 실질 내용의 예 | 그 내용이 없을 때 할 일 |\n| --- | --- | --- |\n| 문서 검색 AI를 이해한다 | 원문 부분·색인·질문·후보·선택·답변의 관계와 버전·권한의 역할 | 검색 과정에 답하는 문서와 후보 출력 확보 |\n| 작은 AI 앱을 만든다 | 모델의 호출 요청, 프로그램 실행, 결과 반환, 최종 답·화면이 끝까지 연결 | 실제 연결을 제공하거나 원리·제작 계획으로 범위 조정 |\n| 비용 표로 모델을 고른다 | 토큰 단가·구독 차감·시도당 비용·성공당 비용의 정의와 계산 | 출처 없는 배율을 예산 사실처럼 쓰지 않고 계산 가능한 범위 설명 |\n| 시장 변화를 판단한다 | 표본·기간·분모·관측 단위·다른 가능한 설명·선택의 조건 | 단일 채용 공고·자가 보고·과거 수입으로 전체 시장을 단정하지 않기 |\n| 지원 기회를 선별한다 | 원문·첨부의 신청 역할, 선행 자격, 일정·재정 조건을 사례에 대입 | 첨부 미열람을 남기고 신청 가능성을 확정하지 않기 |\n\n## 번역과 요약은 의미가 유지되는지 대조한다\n\n행위자, 조건, 수치·단위, 기간, 인과관계의 강도가 보존되는지 확인한다.\n원문이 기능 존재를 말했는데 ‘업무 성과가 향상됐다’로 바꾸거나, 제한된 표본을\n전체 시장으로 확대하지 않는다. 원문 자체가 작동 과정이나 실제 효과에 답하지 않는다면\n문체를 교정할 것이 아니라 자료를 추가한다. 영문 초안과 번역을 대조하지 않았다면\n번역을 직접 원인으로 확정하지 않는다.\n\n## 제목과 요약을 독립적으로 읽는다\n\n제목·요약만 받은 독자가 대상, 하는 일, 쓰임, 중요한 조건을 자기 말로 설명할 수 있는지 본다.\n낯선 이름은 일상적인 기능 설명과 연결한다. 기술 이름을 지우고 모호한 동사만 남기지 않는다.\n‘이 보고서는 설명한다’, ‘검증해야 한다’ 같은 안내 문장을 사실·원리·비교의 대용품으로 쓰지 않는다.\n\n## 본문은 같은 사례의 과정을 추적한다\n\n첫 등장 개념을 먼저 설명하고, 사례의 입력·중간 상태·출력과 각 단계의 이유를 함께 읽는다.\n핵심 설명은 주된 읽기 경로에 둔다. 코드는 앞에서 설명한 값과 과정을 그대로 구현해야 한다.\n제품 호출을 실행하지 않았다면 개념 예시·로컬 모의 실행·실제 서비스 실행을 구분한다.\n배운 내용을 다른 조건에 적용하는 문제에서는 결론뿐 아니라 이유와 본문 근거를 확인한다.\n\n## 첫 화면과 비교 기준의 회귀 사례\n\n2026-10-09 사용자는 독립 검토를 통과한 음성 보고서의 제목과 소개를 다시 거부했다.\n이 사례의 문제는 원문 기능 자체가 없다는 것이 아니라 독자의 질문 대신 집필자의\n검토 동작을 소개하고, 서로 다른 비교 기준을 섞었다는 점이다.\n\n| 거부된 표현·구성 | 실제 실패 | 수정할 정보 |\n| --- | --- | --- |\n| 말로 AI 업무를 실행하는 세 가지 구조와 오류 찾기 | 어떤 앱의 무엇을 추가·선택하는지 모호함 | 기존 AI 앱의 음성 입력·답변·대화 기능이라는 대상과 목적 |\n| 같은 발화를 음성 인식·업무 조회·답변 재생으로 추적한다 | 독자의 필요보다 집필자의 설명 방법부터 나옴 | 키보드 대신 말로 요청하고, 답도 들을지 결정하는 상황 |\n| 이미 만든 텍스트 앱…선택 기준. | 서술어 없는 소개, 무엇을 기준으로 무엇을 고르는지 비어 있음 | 중간 문장을 확인할 필요와 대화 중 조건 변경 같은 실제 조건 |\n| 세 구조 제목 아래 Gemini Live/GPT-Live/Realtime/단계형 네 행 | 공급사 제품과 역할 분담을 같은 종류처럼 비교 | 동일한 역할 분담을 행으로 비교하고 제품 사례를 별도 연결 |\n| 속도·난이도·비용을 설명한다고 약속 | 기능 문서만으로 실측 우열을 알 수 없음 | 맡아야 할 구현 작업과 측정 항목, 실제 확보한 수치의 범위 |\n\n초기 검토는 title/deck/description/summary/highlights만 별도 입력으로 제공한다.\n검토자는 그 문장으로 알 수 있는 대상·문제·대안·쓰임과 추측해야 하는 부분을 구분한다.\n그 뒤 본문에서 제목의 약속, 비교 기준, 설명 순서와 사실 근거를 검토한다.\n이 순서를 수행해도 실제 초보 사람의 이해가 확인된 것으로 부르지 않는다.\n요약에 설명할 내용의 목록만 있고 실제로 알게 되는 정보가 없다면 추가 보강한다.\n\n음성 입력만 추가하는 범위와 STT→AI→TTS 구조는 서로 배타적인 세 구조로 분류할 수 없다.\n전자는 필요한 기능 범위이고 후자는 음성으로 답하는 구현 경로다. 원문을 확인해 비교 기준을\n정한 뒤 원고를 쓴다. '3가지'라는 제목을 유지하려고 실제 내용을 왜곡하지 않는다.\n\n## 독립 에이전트 검토의 실제 기록\n\n위임은 사용자 또는 적용 가능한 지침의 승인 범위에서만 한다. 승인됐다면 검토자에게\n수정된 원고와 필요한 원문을 제공하고, 기대 답이나 ‘통과시켜야 한다’는 압력을 주지 않는다.\n새로운 평가가 목적이면 기존 판정을 답안처럼 제공하지 않는다. 이전 결함의 재검증이면\n그 결함과 수정 범위를 제공할 수 있으며 이를 새 독자의 무정보 시험으로 부르지 않는다.\n\n검토 기록에는 읽은 보고서 ID/판 또는 정확한 파일 hash, 제목·요약 이해, 본문 막힘 위치,\n해결할 누락·과장, 수정 후 재판정을 남긴다. 출력은 Pass / Revise / Evidence gap처럼\n명확히 하되 판단 이유가 본문에 있어야 한다. 분량·구조·인용 수는 합격 근거가 아니다.\n에이전트 검토가 끝나도 실제 사람의 독해·실습 시험을 수행했다고 말하지 않는다.\n\n## 참고한 방법과 적용의 한계\n\n질문하며 자료를 찾는 사전 조사(STORM), 유창성·정확성·인용 지원의 분리(ALCE),\n과제별 내용 기준(WritingBench/DeepResearch Bench), 깊은 설명과 풀이 사례(IES)를 참고했다.\n이 절차 전체나 하나의 집필 프롬프트가 한국어 교재 품질을 보장한다는 실험 결과는 아니다.\n실제 원고의 질문·사례·근거와 검토자의 막힘으로 효과를 확인하고 필요한 지침만 수정한다.\n\n원문: https://aclanthology.org/2024.naacl-long.347/,\nhttps://aclanthology.org/2023.emnlp-main.398/,\nhttps://arxiv.org/html/2503.05244v1,\nhttps://arxiv.org/html/2506.11763v1,\nhttps://ies.ed.gov/ncee/wwc/Docs/PracticeGuide/20072004.pdf.\n"
+                }
+              ]
+            },
+            {
+              "id": "visual-explanation",
+              "kind": "method",
+              "version": "1.0.0",
+              "supports": [
+                "technology",
+                "comparison",
+                "market",
+                "opportunity",
+                "model_introduction",
+                "news",
+                "custom"
+              ],
+              "stages": [
+                "write"
+              ],
+              "sources": [
+                {
+                  "path": "docs/authoring/visuals.md",
+                  "sha256": "6066532a281e6ad13d5a18ec53cfbee8c5fd5613f5ebb07aceb93b5fb539a8cd",
+                  "text": "# 시각 자료와 내용 계층\n\n독자의 질문에 도움이 되는 시각 자료와 계층을 선택한다. 실제 데이터가 없는 수치와 모든 글에 같은 장 수를 강제하지 않는다.\n\n## 2026-10-12: 이해를 돕는 곳에 시각 자료 선택하기\n\n본문을 완성한 뒤 각 핵심 질문에서 “시각화하면 어떤 관계나 차이를 더 쉽게 알 수\n있는가?”를 검토한다. 흐름과 상태 전이는 도식, 같은 축의 차이는 비교표, 실제 수치의\n변화는 차트로 표현할 수 있다. 수치가 없는 설명에 임의의 성능/효과 수치를 만들지\n않는다. 그림이나 표가 글보다 도움이 되는 지점에만 추가하며 개수를 강제하지 않는다.\n\n시각 자료는 해당 세부 목차에 배치하고 본문의 이유와 조건을 유지한다. 화살표의\n입력과 결과, 실패/성공과 수동/자동 실행을 원문 및 실제 예제와 대조한다. 같은 파일과\n새 버전, 서로 다른 측정 조건을 모양만으로 혼동시키지 않는다. 작은 화면과 보조\n기술에서도 문구를 읽을 수 있도록 글자/목록/표의 의미 구조를 남긴다. 사이트나 도식\n읽는 법의 장황한 문단 대신 내용 자체를 설명한다.\n\n[DevOps r14의 비교표와 과정 도식](../DEVOPS_VISUAL_SUPPORT.2026-10-12.md)은 선택 적용 사례다.\n\n## 2026-10-12: 질문의 계층과 실제 내용의 계층 맞추기\n\n목차를 늘리는 것으로 정보 부족을 해결하지 않는다. 독자가 끝에 설명하거나 실행할\n결과를 정하고, 각 세부 제목에 한 질문과 그 답을 함께 적는다. 같은 답을 반복하는\n제목은 합치고, 핵심 결과에 필요한 개념/절차는 본문에 남긴다. 기업 회고와 전체 소스,\n심화 자료는 앞의 어느 질문을 보완하는지 정한 뒤 배치한다. 도구나 다른 주제의 연구가\n원래 목적을 밀어내면 다른 글로 다룰 수 있으며 기존 판의 근거를 지우지 않는다.\n\n주제의 핵심을 개요식으로 먼저 말하고, 그 아래 문단에서 무엇이 어떻게 작동하며 왜\n필요한지 설명한다. 따라 하는 절차에는 준비물, 행동, 명령/설정, 기대 결과와 실패 시\n진단이 있어야 한다. 전체 앱 소스를 보여 주는 대신 준비된 실행 예제를 제공할 수 있지만\n필수 명령과 단계의 이유는 본문에 남긴다. 요점 개수와 장 수는 주제별로 정한다.\n\nH2는 장, H3는 실제 세부 주제를 표시한다. 세부 번호와 anchor, 하위 목차와 현재 위치를\n같이 연결하고 파일명/명령은 캡션으로 표시한다. 모든 block 제목을 H3로 승격하지 않는다.\n글자 크기만 바꾸지 말고 번호, 여백과 경계로 현재 읽는 계층을 알 수 있게 한다.\n[DevOps r13의 적용과 검증](../DEVOPS_STRUCTURE.2026-10-12.md)은4장/12주제를 선택한 사례이며\n다른 보고서에 그 수나 내용 구성을 강제하는 템플릿이 아니다.\n"
+                }
+              ]
+            },
+            {
+              "id": "research-study",
+              "kind": "template",
+              "version": "1.0.1",
+              "supports": [
+                "technology",
+                "comparison",
+                "market",
+                "opportunity",
+                "model_introduction",
+                "custom"
+              ],
+              "stages": [
+                "write"
+              ],
+              "sources": [
+                {
+                  "path": "docs/authoring/presentation.md",
+                  "section": "해설형 보고서",
+                  "sha256": "f52eed09819d0b477472370a718cb6eac3be3e74f7806fe36db5a5a167b2eb48",
+                  "text": "## 해설형 보고서\n\n현재 study 렌더러의 목차, 주 읽기 경로, 선택 심화와 시각 자료를 사용한다. 정의와 판단 조건은 기본 본문에 남긴다. 장과 그림 수를 강제하지 않는다. 기존 report-v1 및 내용 지문에 묶인 시각 자료 설정을 유지한다. 전체 계약은 [보고서 화면](../BRIEFING_TEMPLATE.md)에 있다.\n\n"
+                },
+                {
+                  "path": "docs/BRIEFING_TEMPLATE.md",
+                  "section": "Optional teaching visuals, 2026-10-12",
+                  "sha256": "c5dbfc5b07ec389bd453b3c3bc58149825617a8da5ad4d5cf0638236aa4f326d",
+                  "text": "## Optional teaching visuals, 2026-10-12\n\nDevOps r14 places one canonical comparison table at1.3 and two responsive HTML process\nfigures at2.1/4.2. The exact-hash guide's `topic_tables` and `block_visuals` select reviewed\ntables and steps; display metadata introduces no factual copy. Original explanations,\ncommands and source links remain. Earlier editions keep their layout. Choose visuals\nfor a reader question instead of requiring images/tables in every report or chapter.\nSee [visual support and its validation](DEVOPS_VISUAL_SUPPORT.2026-10-12.md).\n\n"
+                },
+                {
+                  "path": "docs/BRIEFING_TEMPLATE.md",
+                  "section": "DevOps topic hierarchy, 2026-10-12",
+                  "sha256": "5c7f2c180e77f37ed778fa9daf5f5aefcb816d8ab920d831ab823f8274c9b244",
+                  "text": "## DevOps topic hierarchy, 2026-10-12\n\nThe r13 edition uses four chapters and twelve genuine subtopics. A content-hash-bound\n`topic_sections` sidecar groups canonical report-v1 blocks without changing its schema.\nNumbered H3 headings, nested contents and the current chapter/subtopic share anchors.\nFile and command titles are captions; essential commands stay visible. Optional code\nis exported as a deterministic practice ZIP from the reviewed edition's exact text,\nnever the mutable example folder. Historical layouts remain bound to their own hashes.\nCounts and this structure are specific to DevOps, not a universal authoring template.\nSee [the rewrite and its verification](DEVOPS_STRUCTURE.2026-10-12.md).\n\n"
+                },
+                {
+                  "path": "docs/BRIEFING_TEMPLATE.md",
+                  "section": "Brief points, illustrations and explanatory prose, 2026-10-10",
+                  "sha256": "bdc71e62f07a3af7bb8d712961fb1c7792a2f4ef37ad71f178dcd61c3c3aadb9",
+                  "text": "## Brief points, illustrations and explanatory prose, 2026-10-10\n\nWriting requirements are maintained in the [writing router](RESEARCH_WRITING_GUIDE.md) and its scoped references. The [authoring catalog](authoring/MANAGEMENT.md) records which writing methods and display contract apply to each edition. The historical DevOps counts are examples, not a required body template.\n\nThe DevOps r4 example has13three-point introductions and4illustrations; those counts\nare not a universal template. It provides image alt text, keyboard enlargement and\nmobile horizontal panning. User-requested product illustrations are source assets,\ndistinct from generated report screenshots and HTML outputs; publication only embeds\nthe reviewed bytes and never calls image generation. Asset hashes and report hashes\nprevent historical editions from receiving a later illustration set.\n\n"
+                }
+              ],
+              "output_kind": "report",
+              "artifacts": [
+                {
+                  "path": "housing_watch/editorial.py",
+                  "sha256": "48962242f1a249780861a02b15a0e02f23fddcf9398a69c4ce7f8f3aad33baae"
+                },
+                {
+                  "path": "housing_watch/editorial_shell.html",
+                  "sha256": "51c686c3933942a76a282c20106d211332c08d5ba59dab0a5de9adfe953842fb"
+                },
+                {
+                  "path": "housing_watch/editorial.css",
+                  "sha256": "2ffc886b1f941a55822ff0a77442c37cbda110af5b7832a35e56d01101a31b66"
+                },
+                {
+                  "path": "housing_watch/editorial.js",
+                  "sha256": "d3435dc19709427b81a9b77514c5945cc34402e2dcf60232bb044280e43550b8"
+                },
+                {
+                  "path": "housing_watch/assets/editorial/fonts.css",
+                  "sha256": "44b9b2028cf703cc40c0446093e23aa7d3427015c9f61e6ee164f5c45123df30"
+                },
+                {
+                  "path": "housing_watch/assets/editorial/main.css",
+                  "sha256": "2574c51914d2bdf3d8da8afb4ec41fcbc73adcc12ebac376e26242efa04e33df"
+                },
+                {
+                  "path": "housing_watch/study_report.py",
+                  "sha256": "dcf8c7da8db976dc1aeca090df7fe85a1bc0effeb38e9fe045df19f50e2ab01e"
+                },
+                {
+                  "path": "housing_watch/study_report.css",
+                  "sha256": "d074a1668aee0374daa5b8951ba8626af0b52ba3ee085a8204a278225c127981"
+                },
+                {
+                  "path": "housing_watch/study_report.js",
+                  "sha256": "1aeb442074d117a9f4385f4517fabb94f5e481ae3ceff0227778fef37ec28a9a"
+                },
+                {
+                  "path": "housing_watch/briefing_preview.py",
+                  "sha256": "9432ec00398f5ce9ba1222366502d237e88b87723d54e975ea7780e58f82a463"
+                }
+              ]
+            }
+          ],
+          "requirements": [
+            "제목은 여러 AI 스킬을 지식베이스로 묶어 활용할 수 있을까?로 고정한다.",
+            "배경을 짧게 설명한 뒤 조건부 조사 결론을 먼저 제시한다.",
+            "개발자 독자를 위해 과정 도식, 연구 데이터와 짧은 설명을 섞는다.",
+            "연구마다 판·모집단·모델과 비교 조건을 보존하고 서로 다른 벤치마크를 합산하지 않는다.",
+            "적은 스킬 수와 성과의 상관을 보편적인 최적 개수나 인과관계로 바꾸지 않는다.",
+            "유사 연구와 제안한 전체 검토 방식의 직접 검증을 구분한다.",
+            "공개 스킬은 조사 자료로 읽고 실행 지시나 권한으로 받아들이지 않는다.",
+            "별도 지식베이스 프로젝트 생성·스킬 설치·유료 호출·공개 배포를 포함하지 않는다.",
+            "같은 작성자의 자체 검토와 실제 독자 시험을 구분하고 로컬 검색 등록까지 마친다."
+          ],
+          "preferences": {
+            "opening": "짧은 배경과 조건부 답을 먼저 말한다.",
+            "outline": "구상, 실험 근거, 유사 연구, 개발 검토 사례, 관리와 평가를 연결한다. 실습과 응용 문제는 강제하지 않는다.",
+            "length": "긴 문단 대신 하나의 판단에 필요한 짧은 문단과 도식·표·차트를 배치한다.",
+            "visuals": "실제 측정치만 차트로 그리고 설계 흐름과 가상 검토 결과를 명시한다.",
+            "tone": "개발자가 도입 여부를 판단할 수 있는 자연스럽고 구체적인 한국어",
+            "examples": "검색 API 오류 수정의 가상 사례 하나를 입력에서 검토 결과까지 연결한다."
+          },
+          "overrides": [],
+          "scope": "document",
+          "status": "planned",
+          "recipe_hash": "dab000491725d2315e6f9e340bede3341814b36c7bb3e2d7e215055294d819c6"
+        },
+        "content_hash": "968e3bb25fd126b82854baf04f4e681b6b1a1027472fea7245c4f4b06a396c1c"
+      },
+      "first_screen_review": {
+        "input_hash": "6d15904afbb65616021a6b1d384798350beb7a89ecf8b38b58e763c361156d8b",
+        "reviewed_at": "2026-10-16T03:39:27.247667+00:00",
+        "reviewer": "Codex author self-review in separate passes; not independent-agent review or human reader testing",
+        "checks": {
+          "readability": {
+            "passed": true,
+            "reason": "제목·소개·deck의 세 필드만 따로 출력한 입력을 읽었다. 스킬 원문을 보관하고 필요한 조언을 검색·조정하는 구상과 개발자 판단 목적이 본문 없이도 드러난다.",
+            "locations": [
+              "/title",
+              "/description",
+              "/deck"
+            ]
+          },
+          "question_answered": {
+            "passed": true,
+            "reason": "제목의 질문에 조건부 가능성으로 답한다. 경험 축적/검색의 근거와 전체 방식의 직접 검증 미확인을 구분했다.",
+            "locations": [
+              "/deck"
+            ]
+          },
+          "reader_outcome": {
+            "passed": true,
+            "reason": "이번 개발 작업에서 빠진 고려사항을 찾고 도입 조건을 판단하는 범위를 밝힌다. 새 시스템 구현이나 생산성 향상을 보장하지 않는다.",
+            "locations": [
+              "/description",
+              "/deck"
+            ]
+          }
+        },
+        "issues": []
+      },
+      "body_review": {
+        "input_hash": "5f00fb8986300ba2cde8ab808e19d7768c4ac5d4b6cb5c903b07b1aa4d67ba12",
+        "reviewed_at": "2026-10-16T03:39:27.247667+00:00",
+        "reviewer": "Codex author self-review in separate passes; not independent-agent review or human reader testing",
+        "checks": {
+          "question_answered": {
+            "passed": true,
+            "reason": "6개 장에서 구상·스킬 로딩과의 관계·연구 수치·유사 연구·가상 개발 검토·관리·효과 비교에 답한다. 질문별 답 위치를 대조했다.",
+            "locations": [
+              "/draft/answer_paths",
+              "/draft/report/explanation/0"
+            ]
+          },
+          "analysis": {
+            "passed": true,
+            "reason": "SkillsBench 개수 집단은 과제가 다르므로 인과/최적개수로 일반화하지 않는다. SWE 39개 동일 중24개 기준100%와 개별스킬비교 조건, SkillSeek 주실험 단일시행을 보존했다. DC/ACE/SkillSeek의 인접 근거와 전체 방식 미검증을 분리했다.",
+            "locations": [
+              "/analysis/answers",
+              "/draft/report/tables/0/note",
+              "/draft/report/explanation/1/blocks/3"
+            ]
+          },
+          "evidence": {
+            "passed": true,
+            "reason": "원문12개의 관련 절과 획득본을 읽었다. 인용ID/URL과 품질패키지 발췌/바이트 지문을 대조했다. 5논문/3명세·지침/4SKILL.md이며 연결참고파일 전체나 벤치마크 재현을 주장하지 않는다.",
+            "locations": [
+              "/sources",
+              "/draft/claims",
+              "/draft/report/references"
+            ]
+          },
+          "readability": {
+            "passed": true,
+            "reason": "6장30블록에 짧은 설명·요점·표2개·차트2개·과정2개를 배치한다. 점진적로딩, 보관/노출/적용 구분과 가상API입력→선별→검토결과를 연결했다. 핵심 설명을 선택 펼치기에 숨기지 않는다. 화면 출력 검사는 별도로 수행한다.",
+            "locations": [
+              "/draft/report/explanation/0",
+              "/draft/report/explanation/3"
+            ]
+          },
+          "factuality": {
+            "passed": true,
+            "reason": "SkillsBench v4 33.9/50.5/+16.6pp와1·2–3·4이상 집단, SWE v1 89.8/91.0/+1.2pp·7/39/3·토큰10.5%를 원문 수치와 대조했다. 스킬 수/과제 수/퍼센트포인트를 구분하고 획득일을 발표일이나 실험기간으로 바꾸지 않았다.",
+            "locations": [
+              "/draft/report/datasets",
+              "/draft/report/tables",
+              "/analysis/evidence"
+            ]
+          },
+          "reader_outcome": {
+            "passed": true,
+            "reason": "별도프로젝트의적합조건과직접스킬방식대비평가,분류/검색/조정의구체적입출력·비용을제시한다. 실제설치·새KB개발성과·사람독해시험은미수행으로명시했다.",
+            "locations": [
+              "/draft/report/explanation/4",
+              "/draft/report/explanation/5",
+              "/draft/report/caveats"
+            ]
+          }
+        },
+        "issues": []
+      },
+      "review_notes": {
+        "scope": "Same author read selected original sections and separately reviewed first screen and body. No independent-agent approval, human trial, new skill execution or productivity experiment.",
+        "source_acquisition": "Python first attempt failed due certificate/decoder setup; preserved failure receipt. Native Windows curl with normal certificate validation succeeded for12 sources; no disabled TLS validation.",
+        "source_dates": "Version publication dates verified in original arXiv header; unverified docs/SKILL.md publication dates remain null. Acquisition/review dates distinct.",
+        "selection": "Focused feasibility sample, not systematic review. Existing generic skills plan and KB introduction kept unchanged.",
+        "remaining_limits": [
+          "TDD referenced files and all React subordinate rules unreviewed",
+          "No new KB runtime or A/B/C trial",
+          "No human reader trial",
+          "No public deployment"
+        ]
+      }
+    }
+  ]
+}

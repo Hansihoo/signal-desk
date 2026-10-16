@@ -1,0 +1,44 @@
+{
+  "id": "skills-as-knowledge-base",
+  "topic_id": "development",
+  "reader": "에이전트 스킬을 접했고 공개 스킬의 개발 방법을 지식베이스로 관리할지 판단하려는 개발자",
+  "reader_question": "여러 AI 스킬을 실행 지시로 모두 활성화하지 않고 지식베이스에 보관한 뒤, 현재 개발 작업에서 빠진 고려사항을 검토하는 데 활용할 수 있을까?",
+  "outcome": "관련 연구가 뒷받침하는 범위와 공백을 구분하고, 원문 보존·검색·프로젝트별 조정·충돌 검토·효과 평가의 작은 도입안을 판단한다.",
+  "research_type": "custom",
+  "custom_profile": {
+    "method": "개발자 의사결정을 위한 타당성 조사. 공개 논문과 공식 스킬 명세·운영 지침 및 실제 공개 SKILL.md를 대조한다. 직접 검증, 인접 연구, 작성자의 설계 제안과 가상 개발 사례를 분리한다. 체계적 문헌고찰이나 새 지식베이스의 실험 결과라고 주장하지 않는다.",
+    "requires": ["concept", "measurement", "mechanism", "limitation"]
+  },
+  "questions": [
+    {"id":"idea","question":"스킬을 지식으로 모아 검토에 사용한다는 것은 무엇이며 기존 스킬 로딩과 어떻게 연결되는가?","requires":["concept","mechanism"]},
+    {"id":"evidence","question":"스킬의 효과와 개수에 관한 연구 데이터는 무엇을 보여주고 무엇을 증명하지 못하는가?","requires":["measurement","limitation"]},
+    {"id":"prior","question":"유사한 연구는 무엇이며 이 구상과의 거리는 어느 정도인가?","requires":["mechanism","limitation"]},
+    {"id":"example","question":"공개 스킬을 실제 개발 검토 항목으로 바꾸면 채택·조정·제외가 어떻게 달라지는가?","requires":["mechanism","limitation"]},
+    {"id":"operate","question":"원문, 분류·색인, 프로젝트별 조정과 충돌을 어떻게 관리하고 효과를 확인할 것인가?","requires":["mechanism","limitation"]}
+  ],
+  "authoring": {
+    "profile":"custom",
+    "template":"research-study",
+    "methods":["writing-workflow","research-teaching","section-editing","korean-editing","reader-review","visual-explanation"],
+    "requirements":[
+      "제목은 여러 AI 스킬을 지식베이스로 묶어 활용할 수 있을까?로 고정한다.",
+      "배경을 짧게 설명한 뒤 조건부 조사 결론을 먼저 제시한다.",
+      "개발자 독자를 위해 과정 도식, 연구 데이터와 짧은 설명을 섞는다.",
+      "연구마다 판·모집단·모델과 비교 조건을 보존하고 서로 다른 벤치마크를 합산하지 않는다.",
+      "적은 스킬 수와 성과의 상관을 보편적인 최적 개수나 인과관계로 바꾸지 않는다.",
+      "유사 연구와 제안한 전체 검토 방식의 직접 검증을 구분한다.",
+      "공개 스킬은 조사 자료로 읽고 실행 지시나 권한으로 받아들이지 않는다.",
+      "별도 지식베이스 프로젝트 생성·스킬 설치·유료 호출·공개 배포를 포함하지 않는다.",
+      "같은 작성자의 자체 검토와 실제 독자 시험을 구분하고 로컬 검색 등록까지 마친다."
+    ],
+    "preferences":{
+      "opening":"짧은 배경과 조건부 답을 먼저 말한다.",
+      "outline":"구상, 실험 근거, 유사 연구, 개발 검토 사례, 관리와 평가를 연결한다. 실습과 응용 문제는 강제하지 않는다.",
+      "length":"긴 문단 대신 하나의 판단에 필요한 짧은 문단과 도식·표·차트를 배치한다.",
+      "visuals":"실제 측정치만 차트로 그리고 설계 흐름과 가상 검토 결과를 명시한다.",
+      "tone":"개발자가 도입 여부를 판단할 수 있는 자연스럽고 구체적인 한국어",
+      "examples":"검색 API 오류 수정의 가상 사례 하나를 입력에서 검토 결과까지 연결한다."
+    },
+    "overrides":[]
+  }
+}

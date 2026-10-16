@@ -395,8 +395,12 @@ def first_screen(report):
     return {key: report[key] for key in ("title", "description", "deck")}
 
 
-def body_review_input(plan, sources, analysis, draft):
-    return {"plan": plan, "sources": model_sources(sources), "analysis": analysis, "draft": draft}
+def body_review_input(plan, sources, analysis, draft, authoring=None):
+    payload = {"plan": plan, "sources": model_sources(sources), "analysis": analysis, "draft": draft}
+    if authoring is not None:
+        from .authoring import instructions
+        payload["authoring"] = instructions(authoring, "review")
+    return payload
 
 
 def model_sources(sources):
@@ -416,13 +420,29 @@ def quality_issues(package):
     make_plan(plan["request"])
     if plan != make_plan(plan["request"]):
         return [issue("analysis", "plan_binding", "Plan differs from the request/profile")]
+    authoring_problems = []
+    review_recipe = None
+    if "authoring" in package:
+        from .authoring import REQUEST_FIELDS, validate_recipe
+        try:
+            binding = package["authoring"]
+            recipe = validate_recipe(binding["recipe"])
+            review_recipe = recipe
+            if next(c for c in recipe["components"] if c["kind"] == "template").get("output_kind") != "report":
+                raise ValueError("A report quality package needs a report authoring template")
+            if binding["content_hash"] != digest(draft["report"]) or recipe["brief"]["id"] != draft["report"]["id"]:
+                raise ValueError("Authoring record differs from the released report")
+            if recipe["request_hash"] != digest({k: plan["request"].get(k) for k in REQUEST_FIELDS}):
+                raise ValueError("Authoring choices differ from this reader request")
+        except (ValueError, KeyError, TypeError) as exc:
+            authoring_problems.append(issue("writing", "authoring_binding", str(exc)))
     problems = evidence_issues(plan, sources, analysis) + draft_issues(plan, sources, analysis, draft)
     if problems:
-        return problems
+        return problems + authoring_problems
     problems += review_issues(package.get("first_screen_review", {}), digest(first_screen(draft["report"])), True, first_screen(draft["report"]))
-    body_input = body_review_input(plan, sources, analysis, draft)
+    body_input = body_review_input(plan, sources, analysis, draft, review_recipe)
     problems += review_issues(package.get("body_review", {}), digest(body_input), document=body_input)
-    return problems
+    return problems + authoring_problems
 
 
 def verify_release(reports, packages):
