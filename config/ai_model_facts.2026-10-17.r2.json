@@ -1,0 +1,238 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "id": "beam-preview-2026-10-05-updated10-08-terminal-bench-v2-1-inkling-fe9b2378",
+      "model": "Inkling",
+      "provider": "제공자 미확인 (Reflection 비교표의 모델명)",
+      "source_url": "https://reflection.ai/blog/introducing-beam",
+      "checked_on": "2026-10-17",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Beam preview 2026-10-05 updated10-08 / Terminal Bench v2.1",
+        "condition": "10월5일 제한프리뷰 발표/8일 갱신 표. 16일 공개 가중치 최종평가와 판이 다름. NR미보고, 일부 비교모델 설정 미확인. 현재 모든모델 순위로 사용하지 않음.",
+        "effort": "공식 표의 조건; 미명시 예산은 추정하지 않음",
+        "harness": "과제별 실행 조건은 설명 참조; 전체 커밋/설정 미확인",
+        "basis": "공식 원문의 비교표",
+        "측정 주체": "Reflection",
+        "평가 점수": 63.8,
+        "평가 단위": "%",
+        "평가 방향": "높을수록 좋음"
+      }
+    },
+    {
+      "id": "beam-preview-2026-10-05-updated10-08-swebench-verified-inkling-8b767362",
+      "model": "Inkling",
+      "provider": "제공자 미확인 (Reflection 비교표의 모델명)",
+      "source_url": "https://reflection.ai/blog/introducing-beam",
+      "checked_on": "2026-10-17",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Beam preview 2026-10-05 updated10-08 / SWEBench Verified",
+        "condition": "10월5일 제한프리뷰 발표/8일 갱신 표. 16일 공개 가중치 최종평가와 판이 다름. NR미보고, 일부 비교모델 설정 미확인. 현재 모든모델 순위로 사용하지 않음.",
+        "effort": "공식 표의 조건; 미명시 예산은 추정하지 않음",
+        "harness": "과제별 실행 조건은 설명 참조; 전체 커밋/설정 미확인",
+        "basis": "공식 원문의 비교표",
+        "측정 주체": "Reflection",
+        "평가 점수": 77.6,
+        "평가 단위": "%",
+        "평가 방향": "높을수록 좋음"
+      }
+    },
+    {
+      "id": "granite-decision-index-v0-3-fast-2026-10-14-granite-switch-4-1-30b-78efec27",
+      "model": "Granite Switch 4.1 30B",
+      "provider": "IBM",
+      "source_url": "https://huggingface.co/ibm-granite/granite-switch-4.1-30b",
+      "checked_on": "2026-10-17",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Granite Decision Index v0.3 fast 2026-10-14 / 전체",
+        "condition": "공개fast1068행, 고정system+상태입력 후 단일토큰 선택지softmax, hosted vLLM. 8B/30B 카드동일측정. 로컬은약0.6점이내라는공급사설명. 일반대화나한국어정확도 아님.",
+        "effort": "공식 표의 조건; 미명시 예산은 추정하지 않음",
+        "harness": "과제별 실행 조건은 설명 참조; 전체 커밋/설정 미확인",
+        "basis": "공식 원문의 비교표",
+        "측정 주체": "IBM",
+        "평가 점수": 50.1,
+        "평가 단위": "0–100",
+        "평가 방향": "높을수록 좋음",
+        "references": [
+          "https://huggingface.co/ibm-granite/granite-switch-4.1-8b",
+          "https://huggingface.co/ibm-granite/granite-switch-4.1-30b"
+        ]
+      }
+    },
+    {
+      "id": "granite-decision-index-v0-3-fast-2026-10-14-granite-switch-4-1-30b-c552caa4",
+      "model": "Granite Switch 4.1 30B",
+      "provider": "IBM",
+      "source_url": "https://huggingface.co/ibm-granite/granite-switch-4.1-30b",
+      "checked_on": "2026-10-17",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Granite Decision Index v0.3 fast 2026-10-14 / 지식",
+        "condition": "공개fast1068행, 고정system+상태입력 후 단일토큰 선택지softmax, hosted vLLM. 8B/30B 카드동일측정. 로컬은약0.6점이내라는공급사설명. 일반대화나한국어정확도 아님.",
+        "effort": "공식 표의 조건; 미명시 예산은 추정하지 않음",
+        "harness": "과제별 실행 조건은 설명 참조; 전체 커밋/설정 미확인",
+        "basis": "공식 원문의 비교표",
+        "측정 주체": "IBM",
+        "평가 점수": 32.4,
+        "평가 단위": "0–100",
+        "평가 방향": "높을수록 좋음",
+        "references": [
+          "https://huggingface.co/ibm-granite/granite-switch-4.1-8b",
+          "https://huggingface.co/ibm-granite/granite-switch-4.1-30b"
+        ]
+      }
+    },
+    {
+      "id": "granite-decision-index-v0-3-fast-2026-10-14-granite-switch-4-1-30b-d78fde10",
+      "model": "Granite Switch 4.1 30B",
+      "provider": "IBM",
+      "source_url": "https://huggingface.co/ibm-granite/granite-switch-4.1-30b",
+      "checked_on": "2026-10-17",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Granite Decision Index v0.3 fast 2026-10-14 / 언어",
+        "condition": "공개fast1068행, 고정system+상태입력 후 단일토큰 선택지softmax, hosted vLLM. 8B/30B 카드동일측정. 로컬은약0.6점이내라는공급사설명. 일반대화나한국어정확도 아님.",
+        "effort": "공식 표의 조건; 미명시 예산은 추정하지 않음",
+        "harness": "과제별 실행 조건은 설명 참조; 전체 커밋/설정 미확인",
+        "basis": "공식 원문의 비교표",
+        "측정 주체": "IBM",
+        "평가 점수": 58.6,
+        "평가 단위": "0–100",
+        "평가 방향": "높을수록 좋음",
+        "references": [
+          "https://huggingface.co/ibm-granite/granite-switch-4.1-8b",
+          "https://huggingface.co/ibm-granite/granite-switch-4.1-30b"
+        ]
+      }
+    },
+    {
+      "id": "granite-decision-index-v0-3-fast-2026-10-14-granite-switch-4-1-30b-5b644169",
+      "model": "Granite Switch 4.1 30B",
+      "provider": "IBM",
+      "source_url": "https://huggingface.co/ibm-granite/granite-switch-4.1-30b",
+      "checked_on": "2026-10-17",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Granite Decision Index v0.3 fast 2026-10-14 / 검색",
+        "condition": "공개fast1068행, 고정system+상태입력 후 단일토큰 선택지softmax, hosted vLLM. 8B/30B 카드동일측정. 로컬은약0.6점이내라는공급사설명. 일반대화나한국어정확도 아님.",
+        "effort": "공식 표의 조건; 미명시 예산은 추정하지 않음",
+        "harness": "과제별 실행 조건은 설명 참조; 전체 커밋/설정 미확인",
+        "basis": "공식 원문의 비교표",
+        "측정 주체": "IBM",
+        "평가 점수": 49.8,
+        "평가 단위": "0–100",
+        "평가 방향": "높을수록 좋음",
+        "references": [
+          "https://huggingface.co/ibm-granite/granite-switch-4.1-8b",
+          "https://huggingface.co/ibm-granite/granite-switch-4.1-30b"
+        ]
+      }
+    },
+    {
+      "id": "granite-decision-index-v0-3-fast-2026-10-14-granite-switch-4-1-30b-306b7d15",
+      "model": "Granite Switch 4.1 30B",
+      "provider": "IBM",
+      "source_url": "https://huggingface.co/ibm-granite/granite-switch-4.1-30b",
+      "checked_on": "2026-10-17",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Granite Decision Index v0.3 fast 2026-10-14 / 도구",
+        "condition": "공개fast1068행, 고정system+상태입력 후 단일토큰 선택지softmax, hosted vLLM. 8B/30B 카드동일측정. 로컬은약0.6점이내라는공급사설명. 일반대화나한국어정확도 아님.",
+        "effort": "공식 표의 조건; 미명시 예산은 추정하지 않음",
+        "harness": "과제별 실행 조건은 설명 참조; 전체 커밋/설정 미확인",
+        "basis": "공식 원문의 비교표",
+        "측정 주체": "IBM",
+        "평가 점수": 76.5,
+        "평가 단위": "0–100",
+        "평가 방향": "높을수록 좋음",
+        "references": [
+          "https://huggingface.co/ibm-granite/granite-switch-4.1-8b",
+          "https://huggingface.co/ibm-granite/granite-switch-4.1-30b"
+        ]
+      }
+    },
+    {
+      "id": "granite-decision-index-v0-3-fast-2026-10-14-granite-switch-4-1-30b-165e70e3",
+      "model": "Granite Switch 4.1 30B",
+      "provider": "IBM",
+      "source_url": "https://huggingface.co/ibm-granite/granite-switch-4.1-30b",
+      "checked_on": "2026-10-17",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "Granite Decision Index v0.3 fast 2026-10-14 / 예술",
+        "condition": "공개fast1068행, 고정system+상태입력 후 단일토큰 선택지softmax, hosted vLLM. 8B/30B 카드동일측정. 로컬은약0.6점이내라는공급사설명. 일반대화나한국어정확도 아님.",
+        "effort": "공식 표의 조건; 미명시 예산은 추정하지 않음",
+        "harness": "과제별 실행 조건은 설명 참조; 전체 커밋/설정 미확인",
+        "basis": "공식 원문의 비교표",
+        "측정 주체": "IBM",
+        "평가 점수": 26.4,
+        "평가 단위": "0–100",
+        "평가 방향": "높을수록 좋음",
+        "references": [
+          "https://huggingface.co/ibm-granite/granite-switch-4.1-8b",
+          "https://huggingface.co/ibm-granite/granite-switch-4.1-30b"
+        ]
+      }
+    },
+    {
+      "id": "ibm-guardian-comparison-2026-10-17-ood-safety-10-f1-jev-1-13-8139c0a6",
+      "model": "Jev 1.13",
+      "provider": "TypeSafe / Jev (IBM 연결 자료의 typesafe 식별자)",
+      "source_url": "https://ibm-granite-granitelib-evals.static.hf.space/data.js",
+      "checked_on": "2026-10-17",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "IBM Guardian comparison 2026-10-17 / OOD Safety: 10집합 평균 F1",
+        "condition": "IBM Guardian전문어댑터 라이브러리비교. Switch전체 end-to-end대화평가 아님. OOD10집합평균F1, LM-AggreFact/FunctionCallingReward균형정확도, 각각0–1. 서로다른지표평균금지. 카드와공개비교데이터 대조.",
+        "effort": "공식 표의 조건; 미명시 예산은 추정하지 않음",
+        "harness": "과제별 실행 조건은 설명 참조; 전체 커밋/설정 미확인",
+        "basis": "공식 원문의 비교표",
+        "측정 주체": "IBM",
+        "평가 점수": 0.779,
+        "평가 단위": "0–1",
+        "평가 방향": "높을수록 좋음"
+      }
+    },
+    {
+      "id": "ibm-guardian-comparison-2026-10-17-lm-aggrefact-jev-1-13-ece1d96c",
+      "model": "Jev 1.13",
+      "provider": "TypeSafe / Jev (IBM 연결 자료의 typesafe 식별자)",
+      "source_url": "https://ibm-granite-granitelib-evals.static.hf.space/data.js",
+      "checked_on": "2026-10-17",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "IBM Guardian comparison 2026-10-17 / LM-AggreFact: 균형 정확도",
+        "condition": "IBM Guardian전문어댑터 라이브러리비교. Switch전체 end-to-end대화평가 아님. OOD10집합평균F1, LM-AggreFact/FunctionCallingReward균형정확도, 각각0–1. 서로다른지표평균금지. 카드와공개비교데이터 대조.",
+        "effort": "공식 표의 조건; 미명시 예산은 추정하지 않음",
+        "harness": "과제별 실행 조건은 설명 참조; 전체 커밋/설정 미확인",
+        "basis": "공식 원문의 비교표",
+        "측정 주체": "IBM",
+        "평가 점수": 0.783,
+        "평가 단위": "0–1",
+        "평가 방향": "높을수록 좋음"
+      }
+    },
+    {
+      "id": "ibm-guardian-comparison-2026-10-17-function-calling-reward-jev-1-13-7e349231",
+      "model": "Jev 1.13",
+      "provider": "TypeSafe / Jev (IBM 연결 자료의 typesafe 식별자)",
+      "source_url": "https://ibm-granite-granitelib-evals.static.hf.space/data.js",
+      "checked_on": "2026-10-17",
+      "fields": {
+        "kind": "공급사 공식 비교 평가",
+        "suite": "IBM Guardian comparison 2026-10-17 / Function Calling Reward: 균형 정확도",
+        "condition": "IBM Guardian전문어댑터 라이브러리비교. Switch전체 end-to-end대화평가 아님. OOD10집합평균F1, LM-AggreFact/FunctionCallingReward균형정확도, 각각0–1. 서로다른지표평균금지. 카드와공개비교데이터 대조.",
+        "effort": "공식 표의 조건; 미명시 예산은 추정하지 않음",
+        "harness": "과제별 실행 조건은 설명 참조; 전체 커밋/설정 미확인",
+        "basis": "공식 원문의 비교표",
+        "측정 주체": "IBM",
+        "평가 점수": 0.689,
+        "평가 단위": "0–1",
+        "평가 방향": "높을수록 좋음"
+      }
+    }
+  ]
+}

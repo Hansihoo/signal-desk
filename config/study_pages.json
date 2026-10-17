@@ -51,7 +51,12 @@
     "lfm-2-5-24b-a2b-model-guide",
     "nemotron-3-5-super-vl-model-guide",
     "nemotron-3-5-bolt-model-guide",
-    "muse-spark-open-model-guide"
+    "muse-spark-open-model-guide",
+    "reflection-beam-model-guide",
+    "granite-switch-4-1-model-guide",
+    "flux-3-image-klein-model-guide",
+    "jais-3-model-guide",
+    "jais-asr-model-guide"
   ],
   "catalogs": {
     "devops-implementation-guide": "devops_tools.2026-10-10.r4.json"
@@ -120,6 +125,21 @@
     ],
     "muse-spark-open-model-guide": [
       "2fd6126f3757eb14ed6cfecf30715f95c8e56024c5897807c7d3dae2ef1b5994"
+    ],
+    "reflection-beam-model-guide": [
+      "33a337b5e91a25817b41a2befd0cdbe9a2b059b44d500ed4c22c313956a110a7"
+    ],
+    "granite-switch-4-1-model-guide": [
+      "fb6180bf685478bb24232081a0e4ab49b23c6dcefb79083c422522c5a9e1888e"
+    ],
+    "flux-3-image-klein-model-guide": [
+      "5de1c99dd3cb8825465fbc73393b6d62d7f4b43e49e0fc7e63fed5369b67f1dd"
+    ],
+    "jais-3-model-guide": [
+      "bbedb26c027ce1475355d6c21173c073b4896d5e61843dd4fa72113801026250"
+    ],
+    "jais-asr-model-guide": [
+      "8abe84f6388be92640c40ec060127dc3770e1876246b5549f2046ff603ecc860"
     ]
   },
   "model_introduction_editions": {
@@ -145,6 +165,21 @@
     ],
     "muse-spark-open-model-guide": [
       "2fd6126f3757eb14ed6cfecf30715f95c8e56024c5897807c7d3dae2ef1b5994"
+    ],
+    "reflection-beam-model-guide": [
+      "33a337b5e91a25817b41a2befd0cdbe9a2b059b44d500ed4c22c313956a110a7"
+    ],
+    "granite-switch-4-1-model-guide": [
+      "fb6180bf685478bb24232081a0e4ab49b23c6dcefb79083c422522c5a9e1888e"
+    ],
+    "flux-3-image-klein-model-guide": [
+      "5de1c99dd3cb8825465fbc73393b6d62d7f4b43e49e0fc7e63fed5369b67f1dd"
+    ],
+    "jais-3-model-guide": [
+      "bbedb26c027ce1475355d6c21173c073b4896d5e61843dd4fa72113801026250"
+    ],
+    "jais-asr-model-guide": [
+      "8abe84f6388be92640c40ec060127dc3770e1876246b5549f2046ff603ecc860"
     ]
   },
   "model_introduction_purpose_editions": {
@@ -159,6 +194,21 @@
     ],
     "muse-spark-open-model-guide": [
       "2fd6126f3757eb14ed6cfecf30715f95c8e56024c5897807c7d3dae2ef1b5994"
+    ],
+    "reflection-beam-model-guide": [
+      "33a337b5e91a25817b41a2befd0cdbe9a2b059b44d500ed4c22c313956a110a7"
+    ],
+    "granite-switch-4-1-model-guide": [
+      "fb6180bf685478bb24232081a0e4ab49b23c6dcefb79083c422522c5a9e1888e"
+    ],
+    "flux-3-image-klein-model-guide": [
+      "5de1c99dd3cb8825465fbc73393b6d62d7f4b43e49e0fc7e63fed5369b67f1dd"
+    ],
+    "jais-3-model-guide": [
+      "bbedb26c027ce1475355d6c21173c073b4896d5e61843dd4fa72113801026250"
+    ],
+    "jais-asr-model-guide": [
+      "8abe84f6388be92640c40ec060127dc3770e1876246b5549f2046ff603ecc860"
     ]
   },
   "model_introduction_reader_editions": {
@@ -170,6 +220,21 @@
     ],
     "muse-spark-open-model-guide": [
       "2fd6126f3757eb14ed6cfecf30715f95c8e56024c5897807c7d3dae2ef1b5994"
+    ],
+    "reflection-beam-model-guide": [
+      "33a337b5e91a25817b41a2befd0cdbe9a2b059b44d500ed4c22c313956a110a7"
+    ],
+    "granite-switch-4-1-model-guide": [
+      "fb6180bf685478bb24232081a0e4ab49b23c6dcefb79083c422522c5a9e1888e"
+    ],
+    "flux-3-image-klein-model-guide": [
+      "5de1c99dd3cb8825465fbc73393b6d62d7f4b43e49e0fc7e63fed5369b67f1dd"
+    ],
+    "jais-3-model-guide": [
+      "bbedb26c027ce1475355d6c21173c073b4896d5e61843dd4fa72113801026250"
+    ],
+    "jais-asr-model-guide": [
+      "8abe84f6388be92640c40ec060127dc3770e1876246b5549f2046ff603ecc860"
     ]
   }
 }

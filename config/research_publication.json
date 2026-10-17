@@ -2,6 +2,11 @@
   "schema_version": 1,
   "featured_report_id": "mcp-apps-workflows",
   "report_ids": [
+    "reflection-beam-model-guide",
+    "granite-switch-4-1-model-guide",
+    "flux-3-image-klein-model-guide",
+    "jais-3-model-guide",
+    "jais-asr-model-guide",
     "rea-ghidra-reverse-engineering",
     "skills-as-knowledge-base",
     "agent-skills-guide",
@@ -286,6 +291,11 @@
       "id": "rea-ghidra-reading-2026-10-16",
       "input": "rea_ghidra_research.2026-10-16.r2.json",
       "quality": "rea_ghidra_research.2026-10-16.r2.quality.json"
+    },
+    {
+      "id": "ai-model-introductions-2026-10-17",
+      "input": "ai_model_guides.2026-10-17.json",
+      "quality": "ai_model_guides.2026-10-17.quality.json"
     }
   ]
 }

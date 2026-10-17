@@ -1,0 +1,2117 @@
+{
+  "schema_version": 1,
+  "reports": [
+    {
+      "id": "reflection-beam-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API",
+        "Beam"
+      ],
+      "checked_on": "2026-10-17",
+      "title": "Beam 모델 소개: 공개 가중치 전환과 정밀도별 성능 비교",
+      "description": "제한 프리뷰였던 Beam의 공개 범위가 어떻게 넓어졌는지, 경쟁 모델과 비교한 능력 및 직접 운영의 제약을 판단하도록 정리했습니다.",
+      "deck": "Beam은 코딩과 긴 작업을 겨냥한 텍스트 모델입니다. 10월 5일 프리뷰 발표에 이어 16일 가중치가 공개됐으며, 큰 전체 규모와 작은 활성 계산량, 정밀도에 따른 성능 차이를 함께 봐야 합니다.",
+      "scope": "2026년 10월 17일 확인한 공식 공개 자료. 원문 발표일과 실제 제공일은 본문에서 구분합니다.",
+      "source_note": "공식 사양과 원문 측정 기준입니다. 직접 모델 실행, API 호출과 독립 재측정 및 사람 독해 시험은 수행하지 않았습니다.",
+      "highlights": [
+        "공식 모델 소개",
+        "이전 모델과 경쟁 모델 비교",
+        "평가별 장단점과 제공 조건"
+      ],
+      "summary": [
+        {
+          "kind": "fact",
+          "label": "공개의 변화",
+          "text": "10월 5일 발표는 제한 프리뷰와 향후 공개 계획이었습니다. 16일의 변화는 Apache 2.0 가중치와 실행 생태계의 공개입니다. 같은 모델 브랜드를 새로 출시한 것으로 중복 집계하지 않습니다.",
+          "source_ids": [
+            "beam-launch",
+            "beam-available"
+          ]
+        },
+        {
+          "kind": "fact",
+          "label": "규모와 한계",
+          "text": "카드의 정확한 값은 전체 501.3B, 토큰당 활성 23.4B입니다. B는 10억 개 파라미터를 뜻합니다. 이미지나 음성 입력은 없으며 작은 활성 값이 작은 전체 메모리를 뜻하지 않습니다.",
+          "source_ids": [
+            "beam-card"
+          ]
+        },
+        {
+          "kind": "judgment",
+          "label": "성능과 비용",
+          "text": "정밀도를 줄이면 일부 평가는 낮아지고 일부는 높아집니다. 토큰 효율이 좋다는 공급사 설명은 실제 청구 비용의 실측과 다릅니다. 공개 API는 베타이며 표준 토큰 단가는 이번 근거에서 확정하지 못했습니다.",
+          "source_ids": [
+            "beam-card",
+            "beam-blog",
+            "beam-available"
+          ]
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "tables": [
+        {
+          "id": "specs",
+          "title": "프리뷰와 공개 판의 제공 조건",
+          "columns": [
+            "항목",
+            "10월 5일 프리뷰",
+            "10월 16일 공개 판"
+          ],
+          "rows": [
+            {
+              "values": [
+                "이용 범위",
+                "선정된 사용자와 대기 명단",
+                "가중치, 자체 운영, 공개 API 베타"
+              ],
+              "source_ids": [
+                "beam-launch",
+                "beam-available"
+              ]
+            },
+            {
+              "values": [
+                "입력과 출력",
+                "텍스트",
+                "텍스트 → 텍스트"
+              ],
+              "source_ids": [
+                "beam-card"
+              ]
+            },
+            {
+              "values": [
+                "전체 / 활성",
+                "공칭 501B / 23B",
+                "정확한 카드 값 501.3B / 23.4B"
+              ],
+              "source_ids": [
+                "beam-launch",
+                "beam-card"
+              ]
+            },
+            {
+              "values": [
+                "문맥",
+                "1M 표기",
+                "설정 상한 1,048,576토큰"
+              ],
+              "source_ids": [
+                "beam-card",
+                "beam-card-config"
+              ]
+            },
+            {
+              "values": [
+                "가중치 / 라이선스",
+                "향후 공개 예정",
+                "BF16, FP8, NVFP4 / Apache 2.0"
+              ],
+              "source_ids": [
+                "beam-launch",
+                "beam-card"
+              ]
+            }
+          ],
+          "note": "정밀도는 수치를 저장하는 표현입니다. 활성 전문가만 계산해도 전체 가중치를 보관해야 하며 대화 캐시와 실행 메모리는 별도입니다."
+        },
+        {
+          "id": "preview-competition",
+          "title": "초기 발표의 경쟁 모델 비교",
+          "columns": [
+            "평가판",
+            "Beam 프리뷰",
+            "Inkling",
+            "Nemotron 3 Ultra",
+            "GLM 5.2"
+          ],
+          "rows": [
+            {
+              "values": [
+                "DeepSWE v1.1",
+                "44.4",
+                "NR",
+                "NR",
+                "44.0"
+              ],
+              "source_ids": [
+                "beam-launch"
+              ]
+            },
+            {
+              "values": [
+                "Terminal Bench v2.1",
+                "80.1",
+                "63.8",
+                "56.4",
+                "81.0"
+              ],
+              "source_ids": [
+                "beam-launch"
+              ]
+            },
+            {
+              "values": [
+                "SWEBench Verified",
+                "80.9",
+                "77.6",
+                "70.7",
+                "NR"
+              ],
+              "source_ids": [
+                "beam-launch"
+              ]
+            }
+          ],
+          "note": "10월 5일 발표 및 8일 갱신 표시가 있는 공급사 비교입니다. NR은 미보고입니다. 다음 최종 정밀도 표와 판이 다르며 점수를 섞어 최신 단일 순위를 만들지 않습니다."
+        },
+        {
+          "id": "final-precision",
+          "title": "최종 카드의 정밀도별 결과",
+          "columns": [
+            "평가판",
+            "BF16",
+            "FP8",
+            "NVFP4"
+          ],
+          "rows": [
+            {
+              "values": [
+                "DeepSWE v1.1",
+                "43.3%",
+                "43.0%",
+                "42.7%"
+              ],
+              "source_ids": [
+                "beam-card"
+              ]
+            },
+            {
+              "values": [
+                "SWE Bench Pro v2-Hard",
+                "76.5%",
+                "78.4%",
+                "78.6%"
+              ],
+              "source_ids": [
+                "beam-card"
+              ]
+            },
+            {
+              "values": [
+                "Terminal Bench v2.1",
+                "80.1%",
+                "78.9%",
+                "78.4%"
+              ],
+              "source_ids": [
+                "beam-card"
+              ]
+            },
+            {
+              "values": [
+                "GPQA Diamond",
+                "90.6%",
+                "90.3%",
+                "89.3%"
+              ],
+              "source_ids": [
+                "beam-card"
+              ]
+            },
+            {
+              "values": [
+                "IFBench",
+                "79.6%",
+                "80.7%",
+                "79.2%"
+              ],
+              "source_ids": [
+                "beam-card"
+              ]
+            },
+            {
+              "values": [
+                "AA Omniscience (index) - public split only",
+                "10.8",
+                "8.8",
+                "9.8"
+              ],
+              "source_ids": [
+                "beam-card"
+              ]
+            }
+          ],
+          "note": "카드의 평가 조건은 temperature 0.7, top_p 0.99입니다. 퍼센트가 있는 행은 %, Omniscience는 지수입니다. 추론 예산과 과제별 전체 Harness는 미명시입니다. NVFP4 Terminal 수치는 카드 78.4와 HF 글 78.2가 달라 카드 값을 우선하고 차이를 남깁니다."
+        },
+        {
+          "id": "availability",
+          "title": "실행과 비용의 조건",
+          "columns": [
+            "경로",
+            "확인된 상태",
+            "비용 해석"
+          ],
+          "rows": [
+            {
+              "values": [
+                "직접 실행",
+                "세 정밀도 가중치 공개",
+                "GPU와 운영 비용 별도"
+              ],
+              "source_ids": [
+                "beam-card",
+                "beam-available"
+              ]
+            },
+            {
+              "values": [
+                "Reflection API",
+                "Public beta, free to start 안내",
+                "표준 100만 토큰 단가 미확인, 0달러로 처리하지 않음"
+              ],
+              "source_ids": [
+                "beam-available"
+              ]
+            },
+            {
+              "values": [
+                "BF16 참조 실행",
+                "HF 글의 16×H200",
+                "최소 요구량이나 모든 워크로드의 비용 보장 아님"
+              ],
+              "source_ids": [
+                "beam-blog"
+              ]
+            }
+          ],
+          "note": "모델 크기, 추론 토큰 수와 호스팅 단가는 서로 다른 기준입니다."
+        }
+      ],
+      "explanation": [
+        {
+          "id": "change",
+          "title": "제한 프리뷰에서 가중치 공개로",
+          "lead": "이번 변경은 새 이름보다 접근 범위에 있습니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "발표와 실제 이용",
+              "text": "초기 글은 제한된 사용자를 대상으로 하고 그달 안에 가중치를 공개하겠다고 설명합니다. 16일 후속 글은 실제 공개를 명시합니다. 모델 저장소 생성일과 수정일 역시 공개 이용 가능일을 대신하지 않습니다.",
+              "source_ids": [
+                "beam-launch",
+                "beam-available"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "구조와 문맥",
+              "text": "52층 가운데 49층에 전문가 혼합 구조를 쓰고 토큰마다 256개 중 8개 전문가를 고릅니다. 긴 문맥은 지역 창과 전역 주의를 섞어 캐시 증가를 줄입니다. HF의 1M 문맥 캐시 계산 36.08GiB는 가중치 전체 메모리에 포함된 총합이 아닙니다.",
+              "source_ids": [
+                "beam-card",
+                "beam-blog"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "performance",
+          "title": "코딩 성능과 정밀도 선택의 장단점",
+          "lead": "프리뷰의 경쟁 표와 최종 카드의 수치를 구분합니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "경쟁 결과의 범위",
+              "text": "초기 Terminal Bench2.1에서 Beam 80.1은 Inkling 63.8과 Nemotron 56.4보다 높고 GLM 5.2의 81.0보다 낮습니다. DeepSWE 44.4는 GLM 5.2의 44.0과 가깝습니다. 특정 표의 결과이며 최종 카드와 판이 같다는 주장은 하지 않습니다.",
+              "source_ids": [
+                "beam-launch"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "양자화의 반대 결과",
+              "text": "최종 카드에서 BF16 Terminal 80.1은 NVFP4 78.4로, GPQA 90.6은 89.3으로 낮아집니다. 반대로 SWE Pro v2-Hard 76.5는 78.6, IFBench 79.6은 FP8에서 80.7입니다. 압축이 모든 과제에서 같은 손실을 낸다고 단정할 수 없습니다.",
+              "source_ids": [
+                "beam-card"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "limits",
+          "title": "직접 운영의 메모리와 근거 한계",
+          "lead": "개방된 가중치가 가벼운 모델이나 무제한 무료 서비스를 뜻하지 않습니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "메모리와 언어",
+              "text": "BF16 파일 규모는 약 1TB이며 양자화 판도 큰 장비를 요구합니다. 주 언어는 영어이고 시각 입력이 없으므로 멀티모달 모델의 대체 여부는 별도 판단입니다. 23.4B 활성이라는 값만으로 단일 소비자 GPU 실행을 보장하지 않습니다.",
+              "source_ids": [
+                "beam-card",
+                "beam-blog"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "평가와 실제 비용",
+              "text": "공급사의 추론 효율 비교는 토큰 및 계산량의 추정입니다. 클라우드의 실제 가격과 지연, 한국어 성능을 직접 측정하지 않았습니다. HF 통합 글과 카드의 작은 수치 차이도 남아 있으며 모든 실행 조건을 확인한 독립 재평가가 아닙니다.",
+              "source_ids": [
+                "beam-card",
+                "beam-blog",
+                "beam-available"
+              ]
+            }
+          ]
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "kind": "judgment",
+            "label": "판단",
+            "text": "자체 운영과 조정이 가능한 큰 코딩 모델이 필요할 때 비교할 후보입니다. 실제 선택은 메모리, 텍스트 전용 범위와 최종 정밀도별 평가를 기준으로 해야 하며 프리뷰의 점수를 현재 모든 경쟁 모델의 우위로 일반화하지 않습니다.",
+            "source_ids": [
+              "beam-card",
+              "beam-available"
+            ]
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "첫 발표 10월 5일, 가중치 공개 16일, 이번 검토와 최초 등록 17일입니다. 실제 실행과 API 청구는 미검증이며 HF의 NVFP4 Terminal 78.2와 공식 카드 78.4 차이를 보존했습니다.",
+          "source_ids": [
+            "beam-launch",
+            "beam-available",
+            "beam-card",
+            "beam-blog"
+          ]
+        }
+      ],
+      "references": [
+        {
+          "id": "beam-launch",
+          "title": "Beam의 제한 프리뷰 발표",
+          "description": "10월 5일 제한 프리뷰와 향후 가중치 공개 계획, 당시 비교 결과를 설명합니다.",
+          "url": "https://reflection.ai/blog/introducing-beam"
+        },
+        {
+          "id": "beam-available",
+          "title": "Beam의 가중치 공개 발표",
+          "description": "10월 16일 실제 가중치 공개와 제공 경로, 공개 API 베타를 설명합니다.",
+          "url": "https://reflection.ai/blog/beam-is-available"
+        },
+        {
+          "id": "beam-card",
+          "title": "Beam 최종 모델 카드",
+          "description": "정확한 파라미터 규모, 세 정밀도의 최종 평가와 사용 조건을 제공합니다.",
+          "url": "https://huggingface.co/reflection/Beam-1.0-501B-A23B"
+        },
+        {
+          "id": "beam-card-config",
+          "title": "Beam의 모델 설정",
+          "description": "최대 문맥 길이를 토큰 단위로 확인할 수 있습니다.",
+          "url": "https://huggingface.co/reflection/Beam-1.0-501B-A23B/blob/main/config.json"
+        },
+        {
+          "id": "beam-blog",
+          "title": "Hugging Face의 Beam 통합과 측정",
+          "description": "혼합 정밀도, 문맥 캐시 메모리, 실행과 평가의 참조 환경을 설명합니다.",
+          "url": "https://huggingface.co/blog/reflection-beam"
+        }
+      ]
+    },
+    {
+      "id": "granite-switch-4-1-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API",
+        "Granite Switch 4.1"
+      ],
+      "checked_on": "2026-10-17",
+      "title": "Granite Switch 4.1 모델 소개: 대화와 결정, 음성 경로 비교",
+      "description": "기존 Granite와 새 Switch의 차이, 8B와 30B 및 일반 결정 모델의 장단점을 비교해 제공 범위를 판단하도록 정리했습니다.",
+      "deck": "Granite Switch 4.1은 언어 모델에 작은 전문 어댑터와 음성 전사를 결합합니다. 하나의 엔드포인트에서 서로 다른 처리를 제공하지만 음성을 직접 이해하도록 함께 학습한 단일 모델은 아닙니다.",
+      "scope": "2026년 10월 17일 확인한 공식 공개 자료. 원문 발표일과 실제 제공일은 본문에서 구분합니다.",
+      "source_note": "공식 사양과 원문 측정 기준입니다. 직접 모델 실행, API 호출과 독립 재측정 및 사람 독해 시험은 수행하지 않았습니다.",
+      "highlights": [
+        "공식 모델 소개",
+        "이전 모델과 경쟁 모델 비교",
+        "평가별 장단점과 제공 조건"
+      ],
+      "summary": [
+        {
+          "kind": "fact",
+          "label": "기반 모델과 새 조합",
+          "text": "기존 Granite 4.1 8B는 4월 29일 공개됐고 Switch 카드의 출시일은 10월 14일입니다. 새 기본 조합은 Decision과 Guardian Core aLoRA 및 영어 음성 인코더를 포함합니다. 이전 전체 라이브러리 프리뷰에는 음성이 없습니다.",
+          "source_ids": [
+            "granite-base-8b",
+            "granite-8b",
+            "granite-preview"
+          ]
+        },
+        {
+          "kind": "fact",
+          "label": "결정 평가",
+          "text": "공개 Decision Index v0.3의 빠른 하위 집합 1,068행에서 8B는 42.9, 30B는 50.1입니다. 이 수치는 일반 대화의 정확도나 한국어 전체 성능을 뜻하지 않습니다.",
+          "source_ids": [
+            "granite-8b",
+            "granite-30b"
+          ]
+        },
+        {
+          "kind": "judgment",
+          "label": "전문가의 장단점",
+          "text": "Guardian 30B aLoRA의 안전 평가 F1은 0.81로 표의 일반 결정 모델보다 높습니다. 반면 근거 정합성을 보는 LM-AggreFact의 0.757은 Jev의 0.783과 Microsoft의 0.778보다 낮습니다. 전문화의 효과는 과제에 따라 다릅니다.",
+          "source_ids": [
+            "guardian-card",
+            "granite-eval-data"
+          ]
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "tables": [
+        {
+          "id": "composition",
+          "title": "기존 모델과 두 Switch 판",
+          "columns": [
+            "항목",
+            "기존 Granite 4.1 8B",
+            "Switch 4.1 8B",
+            "Switch 4.1 30B"
+          ],
+          "rows": [
+            {
+              "values": [
+                "기반 규모",
+                "8B",
+                "8B 기반 + 어댑터 + 470M ASR",
+                "30B 기반 + 어댑터 + 470M ASR"
+              ],
+              "source_ids": [
+                "granite-base-8b",
+                "granite-8b",
+                "granite-30b"
+              ]
+            },
+            {
+              "values": [
+                "문맥",
+                "128K 표기",
+                "설정 131,072토큰",
+                "카드 128K 표기"
+              ],
+              "source_ids": [
+                "granite-base-8b",
+                "granite-8b-config",
+                "granite-30b"
+              ]
+            },
+            {
+              "values": [
+                "기본 처리",
+                "대화와 도구 사용",
+                "대화, 결정, 안전 판단, 영어 전사",
+                "같은 구성"
+              ],
+              "source_ids": [
+                "granite-base-8b",
+                "granite-8b",
+                "granite-30b"
+              ]
+            },
+            {
+              "values": [
+                "라이선스",
+                "Apache 2.0",
+                "Apache 2.0",
+                "Apache 2.0"
+              ],
+              "source_ids": [
+                "granite-base-8b",
+                "granite-8b",
+                "granite-30b"
+              ]
+            }
+          ],
+          "note": "470M은 음성 인코더 규모입니다. 전체 메모리가 기반 모델과 정확히 같다는 뜻이 아니며 캐시와 실행 상태는 별도입니다."
+        },
+        {
+          "id": "decision",
+          "title": "공개 Decision Index v0.3 fast",
+          "columns": [
+            "분야, 0–100",
+            "Switch 8B",
+            "Switch 30B"
+          ],
+          "rows": [
+            {
+              "values": [
+                "전체",
+                "42.9",
+                "50.1"
+              ],
+              "source_ids": [
+                "granite-8b",
+                "granite-30b"
+              ]
+            },
+            {
+              "values": [
+                "지식",
+                "29.1",
+                "32.4"
+              ],
+              "source_ids": [
+                "granite-8b",
+                "granite-30b"
+              ]
+            },
+            {
+              "values": [
+                "언어",
+                "48.9",
+                "58.6"
+              ],
+              "source_ids": [
+                "granite-8b",
+                "granite-30b"
+              ]
+            },
+            {
+              "values": [
+                "검색",
+                "49.8",
+                "49.8"
+              ],
+              "source_ids": [
+                "granite-8b",
+                "granite-30b"
+              ]
+            },
+            {
+              "values": [
+                "도구",
+                "59.8",
+                "76.5"
+              ],
+              "source_ids": [
+                "granite-8b",
+                "granite-30b"
+              ]
+            },
+            {
+              "values": [
+                "예술",
+                "18.0",
+                "26.4"
+              ],
+              "source_ids": [
+                "granite-8b",
+                "granite-30b"
+              ]
+            }
+          ],
+          "note": "1068행, 고정 시스템 지시와 상태 입력 후 단일 토큰 선택지의 softmax를 읽은 공급사 측정입니다. hosted vLLM 값이며 로컬 경로와 약 0.6점 이내라는 설명이 있습니다."
+        },
+        {
+          "id": "guardian",
+          "title": "Guardian 전문 어댑터와 일반 결정 모델",
+          "columns": [
+            "평가, 0–1",
+            "30B aLoRA",
+            "8B aLoRA",
+            "Jev 1.13",
+            "Microsoft-Decision-1"
+          ],
+          "rows": [
+            {
+              "values": [
+                "OOD Safety: 10집합 평균 F1",
+                "0.81",
+                "0.80",
+                "0.779",
+                "0.787"
+              ],
+              "source_ids": [
+                "guardian-card",
+                "granite-eval-data"
+              ]
+            },
+            {
+              "values": [
+                "LM-AggreFact: 균형 정확도",
+                "0.757",
+                "0.741",
+                "0.783",
+                "0.778"
+              ],
+              "source_ids": [
+                "guardian-card",
+                "granite-eval-data"
+              ]
+            },
+            {
+              "values": [
+                "Function Calling Reward: 균형 정확도",
+                "0.78",
+                "0.76",
+                "0.689",
+                "0.741"
+              ],
+              "source_ids": [
+                "guardian-card",
+                "granite-eval-data"
+              ]
+            }
+          ],
+          "note": "IBM 전문 어댑터 카드와 비교 화면의 자료입니다. Switch의 최종 전체 대화 평가가 아니며 F1과 균형 정확도를 한 지수로 평균하지 않습니다."
+        },
+        {
+          "id": "costs",
+          "title": "제공 경로와 비용 조건",
+          "columns": [
+            "경로",
+            "확인한 범위",
+            "제한"
+          ],
+          "rows": [
+            {
+              "values": [
+                "자체 운영",
+                "가중치, Transformers와 vLLM",
+                "토큰당 표준 API 요금 미확인"
+              ],
+              "source_ids": [
+                "granite-8b",
+                "granite-30b"
+              ]
+            },
+            {
+              "values": [
+                "음성 경로",
+                "영어 ASR 전사 후 LLM 입력",
+                "Alpha, 소문자와 구두점 없는 출력, 메모리 추가"
+              ],
+              "source_ids": [
+                "granite-audio"
+              ]
+            },
+            {
+              "values": [
+                "공유 캐시",
+                "aLoRA가 기반 모델의 KV 캐시 재사용",
+                "실제 GPU 수와 처리량은 직접 미측정"
+              ],
+              "source_ids": [
+                "granite-blog"
+              ]
+            }
+          ],
+          "note": "공급사의 엔드포인트 통합과 캐시 효율 주장을 모든 장비의 비용 절감 보장으로 사용하지 않습니다."
+        }
+      ],
+      "explanation": [
+        {
+          "id": "architecture",
+          "title": "기반 모델을 교체하지 않는 기능 확장",
+          "lead": "Switch는 이미 존재하는 모델에 전문 처리를 더한 구성입니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "aLoRA와 캐시",
+              "text": "aLoRA는 특정 제어 토큰 이후에 필요한 작은 가중치 변경을 활성화합니다. 앞부분의 상태는 기반 모델로 처리해 만든 캐시를 재사용할 수 있습니다. 전문 판단을 호출할 때마다 전체 긴 문맥을 처음부터 다시 계산하는 비용을 줄이려는 설계입니다.",
+              "source_ids": [
+                "granite-blog",
+                "granite-8b"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "음성 처리의 경계",
+              "text": "음성은 470M 영어 ASR이 먼저 글로 바꾸고 그 결과를 LLM 문맥에 끼워 넣습니다. 두 모듈을 함께 학습한 연결은 아직 없고 저장소는 Alpha로 표시합니다. 전사 오류가 뒤의 요약과 결정으로 전파될 수 있으며 다른 언어의 음성까지 지원한다고 확대하지 않습니다.",
+              "source_ids": [
+                "granite-audio",
+                "granite-30b"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "comparison",
+          "title": "일반 결정 능력과 전문 판단의 차이",
+          "lead": "두 종류의 평가가 서로 다른 질문에 답합니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "8B와 30B",
+              "text": "30B의 전체 Decision Index가 더 높지만 검색 분야는 49.8로 같습니다. 모델을 키웠다고 모든 항목에서 점수가 오르는 것은 아닙니다. 점수는 1,068행의 빠른 공개 하위 집합이며 전체 비공개 평가와 같지 않습니다.",
+              "source_ids": [
+                "granite-8b",
+                "granite-30b"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "안전 분야의 반대 결과",
+              "text": "Guardian 30B는 안전 F1과 Function Calling에서 표의 일반 결정 모델보다 높지만, 근거 문장의 정합성을 보는 LM-AggreFact에서는 뒤집힙니다. 전문화의 가치는 과제별로 판단해야 하며 단일 우승 모델로 요약하지 않습니다.",
+              "source_ids": [
+                "guardian-card",
+                "granite-eval-data"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "availability",
+          "title": "실행 지원과 남은 제한",
+          "lead": "엔드포인트 하나와 운영 비용 하나는 같은 의미가 아닙니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "실행 구성",
+              "text": "모델 카드는 Transformers와 vLLM을 안내하고 발표 글은 llama.cpp도 언급합니다. 음성 경로 문서는 vLLM 0.26–0.30과 Transformers 5.16 이상을 다룹니다. 프레임워크 지원이 모든 어댑터와 음성의 동일한 호환성을 보장하지는 않습니다.",
+              "source_ids": [
+                "granite-blog",
+                "granite-audio"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "가격과 메모리",
+              "text": "어댑터가 작아도 음성 인코더 가중치와 대화 캐시를 위한 추가 메모리가 필요합니다. 표준 API 단가나 GPU 비용 절감액은 확인하지 못했고 직접 실행도 하지 않았습니다. API 제품과 다운로드 가능한 가중치의 비용을 구분해야 합니다.",
+              "source_ids": [
+                "granite-audio",
+                "granite-8b",
+                "granite-30b"
+              ]
+            }
+          ]
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "kind": "judgment",
+            "label": "판단",
+            "text": "대화와 반복되는 전문 판단을 같은 문맥에서 처리하려는 구성입니다. 작은 어댑터와 공유 캐시는 장점이지만 전문 평가의 패배 결과와 영어 전사 및 Alpha 경로를 함께 봐야 합니다.",
+            "source_ids": [
+              "granite-blog",
+              "guardian-card",
+              "granite-audio"
+            ]
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "카드 출시 14일, 발표 글 15일, 실제 검토와 최초 등록 17일입니다. 실제 서버, 한국어 음성, 처리량, 청구액은 미검증입니다. 전문 어댑터 평가를 전체 Switch 대화 능력으로 바꾸지 않았습니다.",
+          "source_ids": [
+            "granite-8b",
+            "granite-blog",
+            "granite-audio"
+          ]
+        }
+      ],
+      "references": [
+        {
+          "id": "granite-blog",
+          "title": "Granite Switch 4.1 발표",
+          "description": "기존 Granite에 결정 및 안전 어댑터와 음성 전사를 결합하는 원리를 설명합니다.",
+          "url": "https://huggingface.co/blog/ibm-granite/granite-switch-4-1"
+        },
+        {
+          "id": "granite-8b",
+          "title": "Granite Switch 4.1 8B 카드",
+          "description": "포함 구성, 출시일과 Decision Index의 측정 조건을 제공합니다.",
+          "url": "https://huggingface.co/ibm-granite/granite-switch-4.1-8b"
+        },
+        {
+          "id": "granite-30b",
+          "title": "Granite Switch 4.1 30B 카드",
+          "description": "8B와 같은 조건의 결정 평가 및 제공 형식을 비교합니다.",
+          "url": "https://huggingface.co/ibm-granite/granite-switch-4.1-30b"
+        },
+        {
+          "id": "granite-8b-config",
+          "title": "Granite Switch 8B 설정",
+          "description": "문맥 상한과 음성 구성의 실제 설정을 제공합니다.",
+          "url": "https://huggingface.co/ibm-granite/granite-switch-4.1-8b/blob/main/config.json"
+        },
+        {
+          "id": "granite-base-8b",
+          "title": "기존 Granite 4.1 8B 카드",
+          "description": "4월 29일 공개된 기반 모델과 새 Switch 조합을 구분합니다.",
+          "url": "https://huggingface.co/ibm-granite/granite-4.1-8b"
+        },
+        {
+          "id": "granite-preview",
+          "title": "기존 Granite Switch 프리뷰",
+          "description": "음성이 없는 전체 라이브러리 구성과 새 기본 구성을 구분합니다.",
+          "url": "https://huggingface.co/ibm-granite/granite-switch-4.1-30b-preview"
+        },
+        {
+          "id": "granite-audio",
+          "title": "Granite Switch 음성 경로와 제한",
+          "description": "Alpha인 전사 후 언어 모델 경로, 영어 제한과 GPU 메모리 조건을 설명합니다.",
+          "url": "https://raw.githubusercontent.com/generative-computing/granite-switch/main/docs/AUDIO.md"
+        },
+        {
+          "id": "guardian-card",
+          "title": "Guardian Core 어댑터 평가",
+          "description": "분야별 결정 모델 비교와 서로 다른 평가 지표를 제공합니다.",
+          "url": "https://huggingface.co/ibm-granite/granitelib-guardian-r1.0/raw/main/guardian-core/README.md"
+        },
+        {
+          "id": "granite-eval-data",
+          "title": "IBM의 비교 화면 공개 데이터",
+          "description": "Guardian aLoRA와 일반 결정 모델의 F1 및 균형 정확도를 원자료와 연결합니다.",
+          "url": "https://ibm-granite-granitelib-evals.static.hf.space/data.js"
+        }
+      ]
+    },
+    {
+      "id": "flux-3-image-klein-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API",
+        "FLUX 3 Image Klein"
+      ],
+      "checked_on": "2026-10-17",
+      "title": "FLUX 3 Image Klein 모델 소개: 이전 Klein과 품질, 속도와 비용 비교",
+      "description": "새 이미지 모델의 생성기 규모와 레이아웃 제어, 이전 Klein 및 경쟁 모델 대비 장단점과 가중치 및 API 조건을 비교하도록 정리했습니다.",
+      "deck": "FLUX 3 Image Klein은 글과 참조 이미지로 이미지를 만들고 편집하는 5.6B 생성기입니다. 기본 판과 빠른 증류 판이 함께 공개됐습니다. 작은 생성기와 전체 실행 메모리는 다른 기준이며 위치 제어, 속도와 이용 조건을 함께 비교해야 합니다.",
+      "scope": "2026년 10월 17일 확인한 공식 공개 자료. 원문 발표일과 실제 제공일은 본문에서 구분합니다.",
+      "source_note": "공식 사양과 원문 측정 기준입니다. 직접 모델 실행, API 호출과 독립 재측정 및 사람 독해 시험은 수행하지 않았습니다.",
+      "highlights": [
+        "공식 모델 소개",
+        "이전 모델과 경쟁 모델 비교",
+        "평가별 장단점과 제공 조건"
+      ],
+      "summary": [
+        {
+          "kind": "fact",
+          "label": "이전 모델과 변화",
+          "text": "기존 FLUX.2 Klein의 생성과 편집에 위치 상자로 구도와 변경 영역을 제어하는 기능을 더합니다. 새 생성기는 5.6B로 이전 9B 판보다 38% 작지만, 텍스트 인코더는 이 비교에서 제외됩니다.",
+          "source_ids": [
+            "flux-launch",
+            "flux-blog"
+          ]
+        },
+        {
+          "kind": "fact",
+          "label": "품질과 속도",
+          "text": "BFL의 내부 비교는 이전 9B보다 글에서 이미지 생성은 91 Elo, 편집은 70 Elo 높다고 보고합니다. HF가 H100에서 별도로 측정한 시간은 1024 정사각형 생성 1.93초, 참조 이미지 편집 3.87초입니다. 모든 기기와 API의 지연을 나타내지는 않습니다.",
+          "source_ids": [
+            "flux-launch",
+            "flux-blog"
+          ]
+        },
+        {
+          "kind": "judgment",
+          "label": "비용과 조건",
+          "text": "BFL은 1K 해상도 이미지당 0.009달러부터라고 안내합니다. 가중치는 FLUX Kommunity 라이선스입니다. 두 모델 카드의 직접 요청은 401로 실패했으며 출시 글의 무료 상용 안내와 제품의 별도 계약 안내를 확정된 동일 조건으로 합치지 않았습니다.",
+          "source_ids": [
+            "flux-launch",
+            "flux-licensing"
+          ]
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "tables": [
+        {
+          "id": "models",
+          "title": "이전 Klein과 새 판의 사양",
+          "columns": [
+            "항목",
+            "FLUX.2 Klein 4B",
+            "FLUX 3 Klein 증류 판",
+            "FLUX 3 Klein 기본 판"
+          ],
+          "rows": [
+            {
+              "values": [
+                "생성기 규모",
+                "4B",
+                "5.6B",
+                "5.6B"
+              ],
+              "source_ids": [
+                "flux2-4b",
+                "flux-launch"
+              ]
+            },
+            {
+              "values": [
+                "기본 추론 단계",
+                "4단계",
+                "16단계, CFG 없음",
+                "50단계, CFG 사용"
+              ],
+              "source_ids": [
+                "flux2-4b",
+                "flux-blog"
+              ]
+            },
+            {
+              "values": [
+                "주요 차이",
+                "빠른 생성과 편집",
+                "빠른 추론과 위치 제어",
+                "추가 학습과 연구를 위한 판"
+              ],
+              "source_ids": [
+                "flux-launch",
+                "flux-blog"
+              ]
+            },
+            {
+              "values": [
+                "가중치 라이선스",
+                "Apache 2.0",
+                "FLUX Kommunity",
+                "FLUX Kommunity"
+              ],
+              "source_ids": [
+                "flux2-4b",
+                "flux-launch"
+              ]
+            }
+          ],
+          "note": "B는 10억 개 파라미터입니다. 단계 수와 생성기 규모만으로 품질과 전체 실행 시간을 단정할 수 없습니다. CFG는 생성 방향을 조건에 맞게 유도하는 방식이며 두 판은 실행 조건이 다릅니다."
+        },
+        {
+          "id": "quality",
+          "title": "BFL이 발표한 경쟁 모델 비교의 범위",
+          "columns": [
+            "비교 대상",
+            "공급사의 비교 내용",
+            "근거의 제한"
+          ],
+          "rows": [
+            {
+              "values": [
+                "FLUX.2 Klein 9B",
+                "새 판이 생성 +91 Elo, 편집 +70 Elo",
+                "절대 점수와 표본 수는 이번 근거에서 확정하지 않음"
+              ],
+              "source_ids": [
+                "flux-launch"
+              ]
+            },
+            {
+              "values": [
+                "Qwen-Image 2.1",
+                "7B 생성기, 품질과 지연 비교 대상",
+                "텍스트 인코더 제외. 서비스와 측정 환경이 다름"
+              ],
+              "source_ids": [
+                "flux-launch"
+              ]
+            },
+            {
+              "values": [
+                "Krea 2",
+                "12.9B 생성기, 생성 품질 비교 대상",
+                "편집 미지원으로 편집 표에서 제외"
+              ],
+              "source_ids": [
+                "flux-launch"
+              ]
+            },
+            {
+              "values": [
+                "Ideogram V4.5와 FLUX.2 pro",
+                "BFL 내부 평가에서 새 판이 높다는 서술",
+                "일부 지연 비교는 서버 시간과 클라이언트 측정이 다름"
+              ],
+              "source_ids": [
+                "flux-launch"
+              ]
+            }
+          ],
+          "note": "Elo는 비교 선택 결과에서 계산하는 상대 지표입니다. 여기의 증가는 절대 점수가 아닙니다. BFL의 자체 평가를 독립 재평가나 모든 고객 작업의 성능으로 일반화하지 않습니다."
+        },
+        {
+          "id": "speed",
+          "title": "HF가 같은 H100에서 측정한 추론 속도",
+          "columns": [
+            "작업",
+            "해상도",
+            "평균 시간, 초",
+            "최대 메모리, GiB"
+          ],
+          "rows": [
+            {
+              "values": [
+                "텍스트 → 이미지",
+                "1024×1024",
+                "1.93",
+                "23.8"
+              ],
+              "source_ids": [
+                "flux-blog"
+              ]
+            },
+            {
+              "values": [
+                "참조 이미지 1개 편집",
+                "1024×1024",
+                "3.87",
+                "23.8"
+              ],
+              "source_ids": [
+                "flux-blog"
+              ]
+            },
+            {
+              "values": [
+                "위치 제어 편집",
+                "1360×768",
+                "4.10",
+                "23.8"
+              ],
+              "source_ids": [
+                "flux-blog"
+              ]
+            }
+          ],
+          "note": "H100 80GB 한 대, 증류 판 16단계, offload 없음, 기본 attention, 준비 실행 후 3회 평균입니다. 외부 API 지연과 다릅니다. 별도 정밀도 표의 15.3–20.72GiB 측정과 조건을 합치지 않습니다."
+        },
+        {
+          "id": "costs",
+          "title": "요금과 가중치의 이용 조건",
+          "columns": [
+            "항목",
+            "공개 안내",
+            "확인하지 못한 부분"
+          ],
+          "rows": [
+            {
+              "values": [
+                "BFL API",
+                "1K 해상도 이미지당 0.009 USD부터",
+                "입력 참조, 다른 해상도와 기능별 최종 청구"
+              ],
+              "source_ids": [
+                "flux-launch",
+                "flux-api"
+              ]
+            },
+            {
+              "values": [
+                "가중치",
+                "출시 글: 연매출 500만 달러 미만 무료 상용 안내",
+                "라이선스 원문과 경계 조건. 카드 요청 401"
+              ],
+              "source_ids": [
+                "flux-launch"
+              ]
+            },
+            {
+              "values": [
+                "제품과 라이선스 페이지",
+                "상용 자체 운영의 별도 계약 안내",
+                "출시 글의 Kommunity 조건과 결합되는 방식"
+              ],
+              "source_ids": [
+                "flux-product",
+                "flux-licensing"
+              ]
+            }
+          ],
+          "note": "1K는 해상도 등급이며 이미지 1,000장이 아닙니다. 시작 가격을 모든 이미지의 고정 가격으로 사용하지 않습니다."
+        }
+      ],
+      "explanation": [
+        {
+          "id": "change",
+          "title": "위치 제어와 두 가지 체크포인트",
+          "lead": "생성, 편집과 위치 제어를 한 모델에서 다룹니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "기본 판과 증류 판",
+              "text": "증류 판은 추론 단계를 줄여 빠른 생성을 목표로 하고 기본 판은 추가 학습과 연구용으로 안내됩니다. 위치 상자는 각 요소가 그려질 위치나 참조 이미지의 변경 영역을 지정합니다. 텍스트를 출력하는 LLM과는 목적과 평가가 다른 이미지 모델입니다.",
+              "source_ids": [
+                "flux-launch",
+                "flux-blog"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "가중치와 API의 차이",
+              "text": "BFL은 최대 10개 참조 이미지, 4K 출력과 영역 밖 픽셀 보존을 제품 기능으로 설명합니다. API에는 프롬프트 보강과 픽셀 복원 경로가 있으므로 가중치만 불러온 모든 실행이 같은 결과를 보장하지는 않습니다.",
+              "source_ids": [
+                "flux-launch",
+                "flux-product",
+                "flux-api"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "tradeoffs",
+          "title": "작은 생성기와 전체 메모리의 차이",
+          "lead": "생성기 규모와 실행에 필요한 GPU 메모리를 구분합니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "메모리",
+              "text": "생성기 가중치만 BF16에서 11.2GB, FP8에서 5.6GB라는 안내입니다. 텍스트 인코더와 이미지 복원기, 작업 캐시는 추가됩니다. HF의 전체 추론 시간표는 최대 23.8GiB를 보입니다. 특정 INT8 구성의 8GB 지원 주장을 BF16 전체 파이프라인으로 옮기지 않습니다.",
+              "source_ids": [
+                "flux-launch",
+                "flux-blog"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "속도와 품질",
+              "text": "참조 이미지가 늘면 함께 처리할 토큰이 늘어 편집이 느려집니다. 양자화도 지원 GPU 커널이 없으면 메모리만 줄고 속도는 빨라지지 않을 수 있습니다. 공급사의 품질 우위는 원문의 비교 방식과 측정 범위 안에서 해석해야 합니다.",
+              "source_ids": [
+                "flux-blog",
+                "flux-launch"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "terms",
+          "title": "상용 제공 조건과 남은 제한",
+          "lead": "가중치 공개와 무료 상용 사용은 서로 다른 조건입니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "라이선스",
+              "text": "출시 글은 Kommunity와 연매출 500만 달러 미만의 무료 상용 사용을 안내하지만 제품 FAQ는 상용 운영 계약을 별도로 안내합니다. 원래 라이선스 파일 요청은 401이어서 자격과 계약 세부를 확정하지 않습니다. 이전 4B의 Apache 2.0 조건을 새 판에 승계하지 않습니다.",
+              "source_ids": [
+                "flux-launch",
+                "flux-product",
+                "flux-licensing",
+                "flux2-4b"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "비용 해석",
+              "text": "API 시작 단가는 1K 이미지 출력 기준입니다. 프롬프트 보강이나 참조 이미지, 해상도 변경의 실제 계정 청구는 검증하지 않았습니다. 자체 운영에는 장비와 전력 및 모델 적재 비용이 추가됩니다.",
+              "source_ids": [
+                "flux-launch",
+                "flux-api"
+              ]
+            }
+          ]
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "kind": "judgment",
+            "label": "판단",
+            "text": "작은 생성기에서 위치 제어와 이미지 편집을 함께 원할 때 비교할 후보입니다. 품질 주장은 공급사 평가이며 실행 환경별 메모리와 속도, Kommunity의 실제 조건을 함께 봐야 합니다.",
+            "source_ids": [
+              "flux-launch",
+              "flux-blog",
+              "flux-licensing"
+            ]
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "출시일은 10월 15일, 실제 검토와 최초 등록은 17일입니다. 두 가중치 카드의 직접 요청 401을 보존했습니다. 이미지 생성과 API 호출, 독립 품질 평가는 수행하지 않았습니다. 출시 글의 상용 허용 안내와 제품의 별도 계약 안내 차이도 미해결로 남깁니다.",
+          "source_ids": [
+            "flux-launch",
+            "flux-product",
+            "flux-licensing"
+          ]
+        }
+      ],
+      "references": [
+        {
+          "id": "flux-launch",
+          "title": "FLUX 3 Image Klein 출시",
+          "description": "이전 Klein 대비 변화, 공급사 비교, 생성기 규모와 시작 요금을 설명합니다.",
+          "url": "https://bfl.ai/blog/flux-3-image-klein"
+        },
+        {
+          "id": "flux-product",
+          "title": "FLUX 3 Image Klein 제품 범위",
+          "description": "가중치와 API 기능 및 라이선스 확인 경로를 구분합니다.",
+          "url": "https://bfl.ai/models/flux-3-image-klein"
+        },
+        {
+          "id": "flux-blog",
+          "title": "Diffusers의 FLUX 3 실측",
+          "description": "같은 H100의 생성 시간과 추론 설정, 서로 다른 메모리 측정을 설명합니다.",
+          "url": "https://huggingface.co/blog/flux-3"
+        },
+        {
+          "id": "flux2-4b",
+          "title": "이전 FLUX.2 Klein 4B 카드",
+          "description": "이전 모델의 4단계 추론과 Apache 2.0 조건을 비교합니다.",
+          "url": "https://huggingface.co/black-forest-labs/FLUX.2-klein-4B"
+        },
+        {
+          "id": "flux-api",
+          "title": "BFL의 Klein API 사양",
+          "description": "해상도별 입력과 출력 설정 및 제공 범위를 설명합니다.",
+          "url": "https://docs.bfl.ai/api-reference/utility/generate-an-image-with-flux-3-klein"
+        },
+        {
+          "id": "flux-licensing",
+          "title": "BFL의 자체 운영 라이선스",
+          "description": "상용 자체 운영의 별도 계약 범위와 공개 안내의 제한을 확인합니다.",
+          "url": "https://bfl.ai/licensing"
+        }
+      ]
+    },
+    {
+      "id": "jais-3-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API",
+        "Jais 3"
+      ],
+      "checked_on": "2026-10-17",
+      "title": "Jais 3 모델 소개: 여섯 크기의 아랍어와 에이전트 성능 비교",
+      "description": "아랍어에 맞춰 후학습한 Jais 3의 여섯 모델을 기존 기반 모델 및 다른 공개 모델과 비교해, 크기별 장단점과 제공 조건을 판단하도록 정리했습니다.",
+      "deck": "Jais 3는 K2 Horizon을 바탕으로 아랍어와 방언, 도구 작업을 학습한 모델 계열입니다. 작은 모델의 상대 강점과 대형 모델의 약점이 공존합니다. 문맥의 설정 상한과 긴 입력에서의 정확도는 별도로 봐야 합니다.",
+      "scope": "2026년 10월 17일 확인한 공식 공개 자료. 원문 발표일과 실제 제공일은 본문에서 구분합니다.",
+      "source_note": "공식 사양과 원문 측정 기준입니다. 직접 모델 실행, API 호출과 독립 재측정 및 사람 독해 시험은 수행하지 않았습니다.",
+      "highlights": [
+        "공식 모델 소개",
+        "이전 모델과 경쟁 모델 비교",
+        "평가별 장단점과 제공 조건"
+      ],
+      "summary": [
+        {
+          "kind": "fact",
+          "label": "여섯규모",
+          "text": "0.9B, 3.7B, 7B, 32B의 조밀한 모델과 36B-A4B 및 375B-A23B의 전문가 혼합 모델이 있습니다. B는 10억 개 파라미터입니다. 앞의 수치는 공칭 규모이며 활성 값과 전체 가중치 메모리를 구분합니다.",
+          "source_ids": [
+            "jais-web",
+            "jais-36b",
+            "jais-375b"
+          ]
+        },
+        {
+          "kind": "judgment",
+          "label": "강점과반대결과",
+          "text": "같은 카드에서 7B의 Arabic MMLU는 85.2로 Qwen3.5-9B의 80.9보다 높지만, 아랍어 AA-LCR은 65로 Qwen의 68보다 낮습니다. 375B의 오프라인 SWE-Bench Verified 70.2는 Qwen3.8의 80.8보다 낮습니다. 강점은 평가마다 다릅니다.",
+          "source_ids": [
+            "jais-7b",
+            "jais-375b"
+          ]
+        },
+        {
+          "kind": "fact",
+          "label": "문맥과공개",
+          "text": "0.9B 설정은 131,072토큰, 7B 설정은 524,288토큰이며 다른 큰 판도 512K 문맥으로 안내됩니다. 가중치와 학습 단계별 체크포인트는 Apache 2.0입니다. 표준 API 단가와 실제 한국어 성능은 확인하지 못했습니다.",
+          "source_ids": [
+            "jais-web",
+            "jais-09b-config",
+            "jais-7b-config"
+          ]
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "tables": [
+        {
+          "id": "family",
+          "title": "모델 크기와 문맥",
+          "columns": [
+            "공칭 모델",
+            "구조",
+            "문맥 표기"
+          ],
+          "rows": [
+            {
+              "values": [
+                "0.9B",
+                "조밀",
+                "128K / 설정 131,072"
+              ],
+              "source_ids": [
+                "jais-09b"
+              ]
+            },
+            {
+              "values": [
+                "3.7B",
+                "조밀",
+                "512K"
+              ],
+              "source_ids": [
+                "jais-37b"
+              ]
+            },
+            {
+              "values": [
+                "7B",
+                "조밀",
+                "512K / 설정 524,288"
+              ],
+              "source_ids": [
+                "jais-7b"
+              ]
+            },
+            {
+              "values": [
+                "32B",
+                "조밀",
+                "512K"
+              ],
+              "source_ids": [
+                "jais-32b"
+              ]
+            },
+            {
+              "values": [
+                "36B-A4B",
+                "MoE + MoVA",
+                "512K"
+              ],
+              "source_ids": [
+                "jais-36b"
+              ]
+            },
+            {
+              "values": [
+                "375B-A23B",
+                "MoE",
+                "512K"
+              ],
+              "source_ids": [
+                "jais-375b"
+              ]
+            }
+          ],
+          "note": "각 모델의 최종 판을 비교합니다. Uno와 양자화 파일, 중간 학습 체크포인트를 별개 신규 모델로 세지 않습니다. MoE는 토큰마다 일부 전문가를 선택하는 구조입니다. 활성 값이 작아도 전체 가중치 메모리는 필요합니다."
+        },
+        {
+          "id": "small",
+          "title": "7B와 비슷한 규모의 경쟁 모델",
+          "columns": [
+            "평가, %",
+            "Jais3 7B",
+            "Gemma4 12B",
+            "Qwen3.5 9B"
+          ],
+          "rows": [
+            {
+              "values": [
+                "AraGen v3 (3C3H) 09-2025",
+                "55.0",
+                "62.8",
+                "55.7"
+              ],
+              "source_ids": [
+                "jais-7b"
+              ]
+            },
+            {
+              "values": [
+                "Arabic MMLU* Accuracy",
+                "85.2",
+                "84.1",
+                "80.9"
+              ],
+              "source_ids": [
+                "jais-7b"
+              ]
+            },
+            {
+              "values": [
+                "AA-LCR (Ar) Accuracy",
+                "65.0",
+                "49.0",
+                "68.0"
+              ],
+              "source_ids": [
+                "jais-7b"
+              ]
+            },
+            {
+              "values": [
+                "Terminal Bench 2.1 Accuracy (Avg@3)",
+                "46.4",
+                "27.3",
+                "29.2"
+              ],
+              "source_ids": [
+                "jais-7b"
+              ]
+            },
+            {
+              "values": [
+                "SWE-Bench Verified (Offline) Accuracy (Pass@1)",
+                "70.2",
+                "28.2",
+                "50.8"
+              ],
+              "source_ids": [
+                "jais-7b"
+              ]
+            }
+          ],
+          "note": "공식 카드에서 함께 평가한 결과입니다. Terminal은 Avg@3, 오프라인 SWE는 Pass@1입니다. 아랍어와 영어 과제를 같은 언어의 품질로 간주하지 않습니다."
+        },
+        {
+          "id": "large",
+          "title": "대형 모델의 같은 카드 비교",
+          "columns": [
+            "평가, %",
+            "Jais3 375B-A23B",
+            "Qwen3.5 397B-A17B",
+            "Qwen3.8 Flash Next"
+          ],
+          "rows": [
+            {
+              "values": [
+                "AraGen v3 (3C3H) 09-2025",
+                "72.4",
+                "78.9",
+                "74.9"
+              ],
+              "source_ids": [
+                "jais-375b"
+              ]
+            },
+            {
+              "values": [
+                "Arabic MMLU* Accuracy",
+                "89.3",
+                "89.1",
+                "89.3"
+              ],
+              "source_ids": [
+                "jais-375b"
+              ]
+            },
+            {
+              "values": [
+                "AA-LCR (Ar) Accuracy",
+                "77.0",
+                "78.0",
+                "74.0"
+              ],
+              "source_ids": [
+                "jais-375b"
+              ]
+            },
+            {
+              "values": [
+                "Terminal Bench 2.1 Accuracy (Avg@3)",
+                "73.8",
+                "51.3",
+                "86.1"
+              ],
+              "source_ids": [
+                "jais-375b"
+              ]
+            },
+            {
+              "values": [
+                "SWE-Bench Verified (Offline) Accuracy (Pass@1)",
+                "70.2",
+                "71.8",
+                "80.8"
+              ],
+              "source_ids": [
+                "jais-375b"
+              ]
+            }
+          ],
+          "note": "높은 추론 설정을 사용하는 카드의 결과입니다. 모든 비교 모델의 정밀도와 완전한 실행 설정은 미확인입니다. 블로그의 가중 평균과 카드의 개별 평가 점수를 섞지 않습니다."
+        },
+        {
+          "id": "costs",
+          "title": "기반 모델과 제공 조건",
+          "columns": [
+            "항목",
+            "공개 내용",
+            "제한"
+          ],
+          "rows": [
+            {
+              "values": [
+                "K2 Horizon 대비",
+                "같은 크기의 후학습 모델에서 시작해 아랍어 지속 학습과 정렬 추가",
+                "아키텍처를 처음부터 새로 만든 모델로 설명하지 않음"
+              ],
+              "source_ids": [
+                "jais-web"
+              ]
+            },
+            {
+              "values": [
+                "가중치와 학습 판",
+                "여섯 최종 모델과 5개 학습 단계, Apache 2.0",
+                "표준 API 토큰 단가 미확인"
+              ],
+              "source_ids": [
+                "jais-web"
+              ]
+            },
+            {
+              "values": [
+                "375B 실행",
+                "카드는 16×H100 또는 8×H200 구성 안내",
+                "활성 23B 가중치만 적재하는 것이 아님"
+              ],
+              "source_ids": [
+                "jais-375b"
+              ]
+            }
+          ],
+          "note": "API, 직접 운영과 추가 학습 비용은 별도입니다. 모델 가중치를 내려받거나 장비 구성을 실행하지 않았습니다."
+        }
+      ],
+      "explanation": [
+        {
+          "id": "training",
+          "title": "기존 기반 모델의 아랍어 후학습",
+          "lead": "새 언어와 작업 형식에 맞춘 적응이 핵심입니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "학습의 변화",
+              "text": "K2 Horizon의 후학습 판에서 계속 학습하고 아랍어와 방언, 도구 사용 데이터를 추가합니다. 원문은 지속 사전학습, 냉각 단계, 지도학습, 반복 방지 선호학습과 검증 가능한 보상학습을 구분합니다. 전체 학습을 처음부터 다시 수행한 것과 다릅니다.",
+              "source_ids": [
+                "jais-web"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "언어 범위",
+              "text": "모델은 아랍어와 영어를 대상으로 합니다. 지역 방언 지원이 한국어 품질을 보장하지는 않습니다. 음성은 별도 Jais-ASR과 연결하는 경로이며 Jais 3 언어 모델 자체의 음성 입력과 혼동하지 않습니다.",
+              "source_ids": [
+                "jais-web",
+                "jais-7b"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "strengths",
+          "title": "크기별 강점과 약점",
+          "lead": "같은 비교 표에서도 평가에 따라 결론이 달라집니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "소형 모델",
+              "text": "7B는 Arabic MMLU와 Terminal 및 오프라인 SWE에서 표의 비교 모델보다 높습니다. 그러나 AraGen의 55.0은 Gemma 12B의 62.8보다 낮고 긴 문맥 AA-LCR의 65.0은 Qwen의 68.0보다 낮습니다. 아랍어 종합 우승이라는 표현은 이 차이를 가립니다.",
+              "source_ids": [
+                "jais-7b"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "대형 모델",
+              "text": "375B는 Arabic MMLU 89.3으로 Qwen3.8과 같고 AA-LCR 77은 Qwen의 74보다 높습니다. 반면 Terminal 73.8은 86.1보다 낮으며 오프라인 SWE 70.2도 80.8보다 낮습니다. 소형 판의 상대 강점이 대형 판에서도 유지되는 것은 아닙니다.",
+              "source_ids": [
+                "jais-375b"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "conditions",
+          "title": "평가 방법과 직접 운영의 조건",
+          "lead": "점수의 언어와 평가 방식을 남겨야 비교에 재사용할 수 있습니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "평가 방식",
+              "text": "카드는 high 추론 설정과 SGLang 실행 경로를 안내합니다. 아랍어 추론 생성의 temperature 0.7, 영어 1.0과 top_p 0.95 등 조건이 있고 과제별 방식은 구분됩니다. 공식 발표는 일부 문항을 감사하고 생성 기반으로 채점했다고 설명하므로 과거 리더보드와 숫자를 단순 병합하지 않습니다.",
+              "source_ids": [
+                "jais-7b",
+                "jais-375b",
+                "jais-web"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "문맥과 비용",
+              "text": "설정 파일의 상한과 실제 평가한 길이는 다릅니다. 큰 문맥에서의 메모리와 정확도, 운영 장비 가격을 직접 확인하지 않았습니다. 표준 API 단가도 미확인입니다. Apache 2.0 가중치 공개를 무료 호스팅으로 설명하지 않습니다.",
+              "source_ids": [
+                "jais-09b-config",
+                "jais-7b-config",
+                "jais-web"
+              ]
+            }
+          ]
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "kind": "judgment",
+            "label": "판단",
+            "text": "아랍어와 지역 방언을 다루는 공개 모델 후보입니다. 크기별 경쟁 결과가 다르므로 언어, 문맥과 도구 평가를 분리하고 메모리와 실제 작업 조건으로 선택해야 합니다.",
+            "source_ids": [
+              "jais-web",
+              "jais-7b",
+              "jais-375b"
+            ]
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "공식 발표일은 10월 15일, 실제 검토와 최초 등록은 17일입니다. IFM 직접 요청은 403이었고 웹 원문 읽기 및 직접 성공한 공식 모델 카드와 구분해 보존했습니다. 모델 실행과 독립 재평가, API 단가 및 한국어 성능은 미검증입니다.",
+          "source_ids": [
+            "jais-web",
+            "jais-7b",
+            "jais-375b"
+          ]
+        }
+      ],
+      "references": [
+        {
+          "id": "jais-web",
+          "title": "Jais 3의 출시와 평가 방법",
+          "description": "기반 K2 Horizon, 여섯 크기, 아랍어 후학습과 평가의 범위를 설명합니다. 직접 GET403과 웹 원문 읽기를 구분합니다.",
+          "url": "https://ifm.ai/blog/jais3/"
+        },
+        {
+          "id": "jais-09b",
+          "title": "Jais 3 0.9B 공식 카드",
+          "description": "작은 판의 128K 문맥과 공개 범위를 설명합니다.",
+          "url": "https://huggingface.co/inception42/Jais-3-0.9B"
+        },
+        {
+          "id": "jais-37b",
+          "title": "Jais 3 3.7B 공식 카드",
+          "description": "소형 모델의 가중치와 추론 조건을 제공합니다.",
+          "url": "https://huggingface.co/inception42/Jais-3-3.7B"
+        },
+        {
+          "id": "jais-7b",
+          "title": "Jais 3 7B 공식 카드",
+          "description": "경쟁 모델과 아랍어 및 에이전트 평가를 같은 표에서 비교합니다.",
+          "url": "https://huggingface.co/inception42/Jais-3-7B"
+        },
+        {
+          "id": "jais-32b",
+          "title": "Jais 3 32B 공식 카드",
+          "description": "중형 모델의 사양과 평가 조건을 제공합니다.",
+          "url": "https://huggingface.co/inception42/Jais-3-32B"
+        },
+        {
+          "id": "jais-36b",
+          "title": "Jais 3 MoVA 36B-A4B 공식 카드",
+          "description": "MoE와 MoVA 구성, 활성 계산량과 문맥을 설명합니다.",
+          "url": "https://huggingface.co/inception42/Jais-3-MoVA-36B-A4B"
+        },
+        {
+          "id": "jais-375b",
+          "title": "Jais 3 375B-A23B 공식 카드",
+          "description": "대형 모델의 성능과 반대 결과, 다중 GPU 조건을 제공합니다.",
+          "url": "https://huggingface.co/inception42/Jais-3-375B-A23B"
+        },
+        {
+          "id": "jais-09b-config",
+          "title": "Jais 3 0.9B 설정",
+          "description": "128K라는 표기의 실제 위치 상한을 확인합니다.",
+          "url": "https://huggingface.co/inception42/Jais-3-0.9B/blob/main/config.json"
+        },
+        {
+          "id": "jais-7b-config",
+          "title": "Jais 3 7B 설정",
+          "description": "512K라는 표기의 실제 위치 상한을 확인합니다.",
+          "url": "https://huggingface.co/inception42/Jais-3-7B/blob/main/config.json"
+        }
+      ]
+    },
+    {
+      "id": "jais-asr-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API",
+        "Jais-ASR"
+      ],
+      "checked_on": "2026-10-17",
+      "title": "Jais-ASR 모델 소개: 아랍어 음성인식의 오류율과 경쟁 모델 비교",
+      "description": "아랍어 음성인식 모델의 평균 오류율과 방언별 반대 결과, 경쟁 모델의 제공 조건을 비교해 판단하도록 정리했습니다.",
+      "deck": "Jais-ASR은 아랍어와 19개국 방언을 전사하는 별도 음성인식 모델입니다. 여섯 공개 시험 집합의 평균 오류는 낮지만 모든 말하기 방식에서 최고는 아닙니다. 결과 길이와 언어 범위의 제약도 함께 봐야 합니다.",
+      "scope": "2026년 10월 17일 확인한 공식 공개 자료. 원문 발표일과 실제 제공일은 본문에서 구분합니다.",
+      "source_note": "공식 사양과 원문 측정 기준입니다. 직접 모델 실행, API 호출과 독립 재측정 및 사람 독해 시험은 수행하지 않았습니다.",
+      "highlights": [
+        "공식 모델 소개",
+        "이전 모델과 경쟁 모델 비교",
+        "평가별 장단점과 제공 조건"
+      ],
+      "summary": [
+        {
+          "kind": "fact",
+          "label": "별도음성모델",
+          "text": "음성을 글로 바꾸며 아랍어에 영어, 프랑스어, 스페인어와 이탈리아어가 섞이는 발화를 다룹니다. Jais 3 언어 모델과 연결할 수 있지만 다른 가중치와 작업입니다. 카드의 기반 이름 Jais-3-4B와 정확한 전체 파라미터 수는 구분합니다.",
+          "source_ids": [
+            "jais-asr-card"
+          ]
+        },
+        {
+          "kind": "judgment",
+          "label": "평균오류와예외",
+          "text": "공급사 표의 6개 집합 평균은 WER 22.85%, CER 8.37%입니다. Common Voice 18의 WER 8.56%는 Speechmatics의 5.19%보다 높고 SADA의 30.85%도 Audar의 28.92%보다 높습니다. 오류율은 낮을수록 좋습니다.",
+          "source_ids": [
+            "jais-asr-card"
+          ]
+        },
+        {
+          "kind": "fact",
+          "label": "실행과비용",
+          "text": "BF16 가중치는 11.4GB이며 카드는 대략 12GB GPU 메모리를 안내합니다. Apache 2.0과 vLLM 플러그인이 제공되지만 호스팅 분당 단가와 실제 처리 속도는 확인하지 못했습니다.",
+          "source_ids": [
+            "jais-asr-card"
+          ]
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "tables": [
+        {
+          "id": "specs",
+          "title": "처리 범위와 제공 조건",
+          "columns": [
+            "항목",
+            "확인한 내용"
+          ],
+          "rows": [
+            {
+              "values": [
+                "입출력",
+                "음성 → 글, 언어와 방언 식별"
+              ],
+              "source_ids": [
+                "jais-asr-card"
+              ]
+            },
+            {
+              "values": [
+                "언어",
+                "아랍어와 19개국 방언, 영어·프랑스어·스페인어·이탈리아어 혼합"
+              ],
+              "source_ids": [
+                "jais-asr-card"
+              ]
+            },
+            {
+              "values": [
+                "가중치와 실행",
+                "BF16 11.4GB, 대략 12GB GPU, Transformers와 vLLM 플러그인"
+              ],
+              "source_ids": [
+                "jais-asr-card"
+              ]
+            },
+            {
+              "values": [
+                "라이선스 / 요금",
+                "Apache 2.0 / 표준 호스팅 분당 단가 미확인"
+              ],
+              "source_ids": [
+                "jais-asr-card"
+              ]
+            }
+          ],
+          "note": "가중치 파일의 크기와 실제 최대 메모리는 다릅니다. BF16 파일 크기로 정확한 전체 파라미터 수를 역산하지 않습니다."
+        },
+        {
+          "id": "errors",
+          "title": "같은 공급사 표의 오류율",
+          "columns": [
+            "시험집합과지표, %",
+            "Jais-ASR",
+            "AudarTurbo",
+            "Qwen3ASR1.7B",
+            "SpeechmaticsMelia1",
+            "ElevenLabsScribev2"
+          ],
+          "rows": [
+            {
+              "values": [
+                "WER Average Macro-average, six test sets",
+                "22.85",
+                "23.17",
+                "33.36",
+                "23.51",
+                "24.54"
+              ],
+              "source_ids": [
+                "jais-asr-card"
+              ]
+            },
+            {
+              "values": [
+                "WER SADA Saudi dialectal broadcast",
+                "30.85",
+                "28.92",
+                "45.53",
+                "34.74",
+                "33.96"
+              ],
+              "source_ids": [
+                "jais-asr-card"
+              ]
+            },
+            {
+              "values": [
+                "WER Common Voice 18 MSA read speech",
+                "8.56",
+                "8.09",
+                "16.90",
+                "5.19",
+                "8.71"
+              ],
+              "source_ids": [
+                "jais-asr-card"
+              ]
+            },
+            {
+              "values": [
+                "CER Average Macro-average, six test sets",
+                "8.37",
+                "9.23",
+                "12.33",
+                "10.62",
+                "9.96"
+              ],
+              "source_ids": [
+                "jais-asr-card"
+              ]
+            },
+            {
+              "values": [
+                "CER SADA Saudi dialectal broadcast",
+                "14.33",
+                "13.40",
+                "19.90",
+                "21.21",
+                "16.48"
+              ],
+              "source_ids": [
+                "jais-asr-card"
+              ]
+            },
+            {
+              "values": [
+                "CER Common Voice 18 MSA read speech",
+                "2.70",
+                "2.46",
+                "5.06",
+                "1.62",
+                "3.00"
+              ],
+              "source_ids": [
+                "jais-asr-card"
+              ]
+            }
+          ],
+          "note": "WER은 단어 오류율, CER은 문자 오류율이며 낮을수록 좋습니다. 평균은 6개 시험 집합의 단순 평균입니다. 원문은 다른 모델 값이 리더보드 인용 또는 공급사 측정이라고 구분합니다."
+        },
+        {
+          "id": "costs",
+          "title": "공개 가중치와 경쟁 서비스의 비용 범위",
+          "columns": [
+            "경로",
+            "비교 가능한 범위",
+            "가격 확인"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Jais-ASR",
+                "공개 가중치 직접 운영",
+                "GPU와 운영 비용. 호스팅 분당 단가 미확인"
+              ],
+              "source_ids": [
+                "jais-asr-card"
+              ]
+            },
+            {
+              "values": [
+                "Audar / Qwen",
+                "같은 오류 표의 공개 가중치 비교 대상",
+                "이번 표는 요금이나 속도 비교가 아님"
+              ],
+              "source_ids": [
+                "jais-asr-card"
+              ]
+            },
+            {
+              "values": [
+                "Speechmatics / ElevenLabs",
+                "같은 오류 표의 상용 API",
+                "플랜, 지역과 분당 단가는 이번 근거에서 확정하지 않음"
+              ],
+              "source_ids": [
+                "jais-asr-card"
+              ]
+            }
+          ],
+          "note": "오류율 차이로 실제 음성 처리 비용이나 실시간 속도를 계산하지 않습니다."
+        }
+      ],
+      "explanation": [
+        {
+          "id": "model",
+          "title": "아랍어 전사와 언어 식별의 구성",
+          "lead": "대화 생성과 음성인식은 서로 다른 역할입니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "출력 형식",
+              "text": "기본 작업은 발화를 번역하는 것이 아니라 그대로 글로 옮기는 것입니다. 모음 부호와 언어 및 방언 식별을 선택할 수 있고 무음에 대한 별도 표식도 제공합니다. 이 표식이 모든 배경 잡음에서 환각을 막는다는 실제 보장은 아닙니다.",
+              "source_ids": [
+                "jais-asr-card"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "기반 모델과 차이",
+              "text": "하나의 전사 모델에서 아랍어 방언과 혼합 언어, 모음 부호 및 언어 식별을 함께 다룹니다. 카드의 기반 이름 Jais-3-4B는 음성 모듈을 포함한 정확한 전체 파라미터 수나 Jais 3 계열 모든 모델의 음성 지원을 뜻하지 않습니다.",
+              "source_ids": [
+                "jais-asr-card",
+                "jais-web"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "performance",
+          "title": "평균 강점과 집합별 약점",
+          "lead": "평균이 낮아도 모든 집합에서 오류가 가장 낮지는 않습니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "평균의 범위",
+              "text": "공급사는 읽기 음성, 방송과 대화 방언을 포함하는 6개 공개 집합에서 평균을 냅니다. WER 22.85%는 모든 실제 서비스 녹음의 오류율이나 전체 단어를 합산한 가중 평균이 아닙니다. WER과 CER의 분모도 다릅니다.",
+              "source_ids": [
+                "jais-asr-card"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "반대 결과",
+              "text": "Common Voice 18 읽기 음성에서 Jais의 8.56은 Speechmatics의 5.19와 Audar의 8.09보다 높습니다. SADA에서도 30.85는 Audar의 28.92보다 높습니다. 아랍어 평균 우위를 읽기 음성이나 특정 방언의 전면 우위로 옮기지 않습니다.",
+              "source_ids": [
+                "jais-asr-card"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "limits",
+          "title": "길이와 언어 및 운영 제한",
+          "lead": "출력 설정과 실제 녹음 조건도 전사 결과를 바꿉니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "긴 녹음",
+              "text": "출력에 truncated가 표시되면 전사가 끝나기 전에 생성이 종료된 상태입니다. 긴 녹음에는 출력 한도와 작업 분할 조건이 필요합니다. 일반 LLM의 문맥 길이를 음성 분량으로 대신 표시하지 않습니다.",
+              "source_ids": [
+                "jais-asr-card"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "실행과 가격",
+              "text": "카드의 12GB 안내는 현재 장비에서 검증한 실측이 아닙니다. 한국어 음성이나 실시간 지연, 상용 API 분당 단가와 실제 청구를 확인하지 않았습니다. 공개 라이선스와 호스팅 비용은 구분해야 합니다.",
+              "source_ids": [
+                "jais-asr-card"
+              ]
+            }
+          ]
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "kind": "judgment",
+            "label": "판단",
+            "text": "아랍어 방언과 혼합 언어를 다루는 공개 가중치 전사 후보입니다. 녹음의 말하기 방식에 따라 경쟁 모델과 결과가 달라지므로 평균과 집합별 오류를 함께 비교해야 합니다.",
+            "source_ids": [
+              "jais-asr-card"
+            ]
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "Jais 3와 함께 제공되는 별도 음성 모델을 10월 17일에 최초 등록합니다. ASR 카드 자체의 정확한 최초 발표일은 미명시이므로 검토일로 채우지 않았습니다. 직접 전사와 속도, 한국어 및 과금 검증은 수행하지 않았습니다.",
+          "source_ids": [
+            "jais-asr-card",
+            "jais-web"
+          ]
+        }
+      ],
+      "references": [
+        {
+          "id": "jais-asr-card",
+          "title": "Jais-ASR 공식 카드",
+          "description": "6개 음성 집합의 WER/CER와 언어별 강점 및 예외를 비교합니다.",
+          "url": "https://huggingface.co/IFM/Jais-ASR"
+        },
+        {
+          "id": "jais-web",
+          "title": "Jais 3의 출시와 평가 방법",
+          "description": "기반 K2 Horizon, 여섯 크기, 아랍어 후학습과 평가의 범위를 설명합니다. 직접 GET403과 웹 원문 읽기를 구분합니다.",
+          "url": "https://ifm.ai/blog/jais3/"
+        }
+      ]
+    }
+  ]
+}

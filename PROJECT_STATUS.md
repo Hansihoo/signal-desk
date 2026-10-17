@@ -168,3 +168,6 @@ source225790a/Pages38676984996 success12:37:22KST, CI175시험33.744초와 cloud
 
 
 2026-10-16 모델 공개 확인 완료: source0fec284 / [Pages38803860087](https://github.com/Hansihoo/signal-desk/actions/runs/38803860087) success05:43:59KST. CI175/47.412초와 cloud review Pass. 공개59보고서175판/1003관측1005판, 새3소개·105사실 및 기존56/172/898/900/Theo15/16의 11보존·일치검사 통과. 공개 모바일 소개/전체표 검색·요금·출처·이력 및 목록 필터 확인. 임시 생성물 정리는 자동 승인 정책 차단으로 보존; [상세](docs/AI_MODEL_REVIEW.2026-10-16.md).
+
+
+| AI model introductions and cumulative comparison, 2026-10-17 | Beam availability, Granite Switch, FLUX 3 Klein, Jais 3 and Jais-ASR introductions with 131 observations and 11 immutable corrections. | Local validation / publication pending | 5 hash-bound quality packages; prior editions preserved. Same-author review; execution, API and human tests unperformed. See docs/AI_MODEL_REVIEW.2026-10-17.md. |
