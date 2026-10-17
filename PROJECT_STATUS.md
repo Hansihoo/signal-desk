@@ -1,5 +1,6 @@
 | Feature Name | Feature Description | Progress Status | Notes |
 | --- | --- | --- | --- |
+| AI model introductions and cumulative comparison, 2026-10-17 | Beam availability, Granite Switch, FLUX 3 Klein, Jais 3 and Jais-ASR; 131 observations and 11 immutable corrections. | Published and verified | Source 2f428d8; Pages39001450984 success. Public66 reports/184 editions; 1,134 observations/1,147 editions. Official decimal precision and mobile wrapping verified. [Evidence](docs/AI_MODEL_REVIEW.2026-10-17.md). |
 | REA and Ghidra research | 역공학 도구의 역할 차이, 공개 활용 사례와 검증 한계를 정리한다. | 공개 반영·검증 완료 | sourcee319aae/Pages38859389412 성공. 6장/10원문/비교표1/과정2. 제출·CI178시험, 공개14검사·1280/390px·knowledge3질의 통과. 기존60보고서177판/모델1005판/원문16판 보존. 실제도구·바이너리재현/사람시험미수행. docs/REA_GHIDRA_RESEARCH.2026-10-16.md. |
 | Skills as review knowledge | 여러 AI 스킬을 지식베이스로 묶어 개발 검토에 활용할 수 있는지 조사한다. | 공개 반영·검증 완료 | source64ce740/Pages38852495114 성공13:51:21KST. 2판·과정2/차트2/표2/원문12, 로컬·CI178시험·공개11보존검사·1280/390px 확인. 공개60글177판, 기존59글175판·모델1005판·원문16판 보존. 다른 미배포 작업 제외. 일반뉴스경고1·사람/새KB성과시험 미수행은 별도. docs/SKILLS_KNOWLEDGE_BASE_RESEARCH.2026-10-16.md. |
 | AI model introduction genre and comparison | 모델 소개에 경쟁 비교표와 장단점을 넣고 활용 교재 규칙을 분리한다. | 공개 반영 / 검증 완료 | Oct13 Wonder/Full 소개r2+주제교정r3 불변 등록. 모델 전용 프로필·비교표/예제 거부 게이트·계획 템플릿·문서/Skill/매일05:00 지침 갱신. 첫 화면2Pass/본문2Pass/분류교정Pass; quality2/audit17+30. 관련61/전체154/발행37/모바일11시험Pass.47보고서163판, 기존159판/다른45/816관측818판/Theo14보존;232HTML19979참조Pass.390/1280px 비교표·숫자·키보드 스크롤·목록필터/PNG 확인. 기존 주거0활성review실패 별도. source43a7076/Pages38323945504 success08:49:31KST; CI154/32.265초 및 cloud review Pass. 공개9HTTP/19보존검사(원격시각포함)/5브라우저기록 Pass. 기본theo-s-han과기존사용자변경·탭·서버보존. docs/MODEL_INTRODUCTION_REPAIR.2026-10-13.md. |
@@ -168,6 +169,3 @@ source225790a/Pages38676984996 success12:37:22KST, CI175시험33.744초와 cloud
 
 
 2026-10-16 모델 공개 확인 완료: source0fec284 / [Pages38803860087](https://github.com/Hansihoo/signal-desk/actions/runs/38803860087) success05:43:59KST. CI175/47.412초와 cloud review Pass. 공개59보고서175판/1003관측1005판, 새3소개·105사실 및 기존56/172/898/900/Theo15/16의 11보존·일치검사 통과. 공개 모바일 소개/전체표 검색·요금·출처·이력 및 목록 필터 확인. 임시 생성물 정리는 자동 승인 정책 차단으로 보존; [상세](docs/AI_MODEL_REVIEW.2026-10-16.md).
-
-
-| AI model introductions and cumulative comparison, 2026-10-17 | Beam availability, Granite Switch, FLUX 3 Klein, Jais 3 and Jais-ASR introductions with 131 observations and 11 immutable corrections. | Local validation / publication pending | 5 hash-bound quality packages; prior editions preserved. Same-author review; execution, API and human tests unperformed. See docs/AI_MODEL_REVIEW.2026-10-17.md. |
