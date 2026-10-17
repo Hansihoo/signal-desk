@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "report_id": "rea-ghidra-reverse-engineering",
+  "report_hash": "baffaa1c1811553570f30a567f01dac507e539bbb5928d3b60c931feeb02efc5",
+  "images": {},
+  "reader_content_only": true,
+  "topic_sections": {
+    "roles": [
+      {
+        "id": "roles-difference",
+        "start": 0
+      },
+      {
+        "id": "role-comparison",
+        "start": 6
+      }
+    ],
+    "cases": [
+      {
+        "id": "dxball-case",
+        "start": 0
+      },
+      {
+        "id": "dxball-calculation",
+        "start": 4
+      },
+      {
+        "id": "dxball-verification",
+        "start": 9
+      }
+    ],
+    "decompile": [
+      {
+        "id": "binary-to-c",
+        "start": 0
+      }
+    ],
+    "notion": [
+      {
+        "id": "notion-case",
+        "start": 0
+      }
+    ],
+    "limits": [
+      {
+        "id": "validation-limits",
+        "start": 0
+      }
+    ],
+    "use": [
+      {
+        "id": "usage-decisions",
+        "start": 0
+      }
+    ],
+    "start": [
+      {
+        "id": "starting-conditions",
+        "start": 0
+      }
+    ]
+  },
+  "topic_tables": {
+    "role-comparison": [
+      "role-comparison"
+    ]
+  },
+  "block_visuals": [
+    {
+      "id": "visual-native-investigation-flow",
+      "path": "/explanation/0/blocks/4",
+      "kind": "flow"
+    },
+    {
+      "id": "visual-dxball-evidence-flow",
+      "path": "/explanation/1/blocks/2",
+      "kind": "flow"
+    },
+    {
+      "id": "visual-dxball-position-values",
+      "path": "/explanation/1/blocks/7",
+      "kind": "positions"
+    },
+    {
+      "id": "visual-notion-clipboard-flow",
+      "path": "/explanation/3/blocks/4",
+      "kind": "flow"
+    }
+  ],
+  "quick_links": [
+    {
+      "chapter": "roles",
+      "label": "역할 차이"
+    },
+    {
+      "chapter": "cases",
+      "label": "계산 풀이"
+    },
+    {
+      "chapter": "notion",
+      "label": "복사 경로"
+    },
+    {
+      "chapter": "use",
+      "label": "내 업무 적용"
+    },
+    {
+      "chapter": "start",
+      "label": "시작 조건"
+    }
+  ],
+  "provenance": "Canonical text and parallel input/output states. Hit-brick coordinate, not ball coordinate; demonstration inputs are not brick layout. Arrowed flows are investigation actions or actual request transfers, not a tool ranking or universal pipeline."
+}

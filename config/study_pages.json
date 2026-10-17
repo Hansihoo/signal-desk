@@ -92,6 +92,10 @@
     ],
     "skills-as-knowledge-base": [
       "skills_knowledge_visuals.2026-10-16.json"
+    ],
+    "rea-ghidra-reverse-engineering": [
+      "rea_ghidra_visuals.2026-10-17.r3.json",
+      "rea_ghidra_visuals.2026-10-17.r4.json"
     ]
   },
   "editorial_summary_first": {

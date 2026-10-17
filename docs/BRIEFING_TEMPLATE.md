@@ -456,3 +456,7 @@ Home의 상단 순서는 기사 선택 → 도구 업데이트 → 새 원문 �
 ### 2026-10-15 Home 폭과 탐색 확장 — 로컬
 
 Home만 최대1,400px로 확장하고 큰 화면에서 기업·주제 탐색 / 주요 기사 / 최신 소식의 세 영역을 사용한다. 일반 화면에서는 탐색이 접기 메뉴로 바뀐다. 기사 본문740px와 수치 보고서의 화면·표·출처 형식은 유지한다. 검색·기업·주제 이동은 실제 자료에 연결한다. 구체적 반응형 계약과 검증/제한의 정본은 [뉴스룸 운영](NEWSROOM.md#home-확장-2026-10-15--로컬)이다. 아직 공개 배포하지 않았다.
+
+## Parallel position states, 2026-10-17
+
+The optional edition-bound `positions` block visual uses canonical `terms` with exactly three items. Each item has an input label and two text lines: output value and its meaning. A decorative SVG line and dots show parallel positions; HTML labels remain available to assistive technology. These states have no sequence arrows. Keep scale, units and example conditions in adjacent canonical prose. Other visual kinds and earlier report hashes retain their contracts.

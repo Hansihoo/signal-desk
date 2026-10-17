@@ -1,0 +1,182 @@
+{
+  "id": "rea-ghidra-reverse-engineering",
+  "topic_id": "development",
+  "reader": "REA와 Ghidra를 처음 접하며 역공학 경험 없이 자신의 개발 업무에 쓸지 판단하려는 독자",
+  "reader_question": "REA와 Ghidra는 어떻게 다르고, 함께 무엇을 분석하며, 공개 사례와 제약을 바탕으로 어떤 업무에 활용할 수 있는가?",
+  "outcome": "두 도구의 역할을 자기 말로 구분하고, 조사 질문과 필요한 입력을 정하며, DX-Ball의 근거에서 계산식에 이르는 과정을 설명하고 결과의 검증 범위를 판단한다.",
+  "research_type": "custom",
+  "custom_profile": {
+    "method": "공식 기능 문서와 제작자가 공개한 사례를 대조하는 비교 해설이다. 제품의 계층이 다르므로 같은 성능 순위나 비용 우열을 매기지 않는다. 관련 절을 선정해 읽으며 전체 소프트웨어 평가나 독립 벤치마크로 일반화하지 않는다. 사례의 버전, 시험 범위와 실패를 보존하고 활용 제안은 판단으로 구분한다.",
+    "requires": [
+      "concept",
+      "capability",
+      "mechanism",
+      "worked_example",
+      "limitation"
+    ]
+  },
+  "questions": [
+    {
+      "id": "roles",
+      "question": "두 도구의 역할과 서로의 관계는 무엇인가?",
+      "requires": [
+        "concept",
+        "capability",
+        "mechanism"
+      ]
+    },
+    {
+      "id": "decompile",
+      "question": "Ghidra는 실행 파일에서 무엇을 재구성하며 원래 소스와 어떻게 다른가?",
+      "requires": [
+        "mechanism",
+        "limitation"
+      ]
+    },
+    {
+      "id": "cases",
+      "question": "공개 사례의 입력, 추적 결과와 검증은 어디까지 확인되었는가?",
+      "requires": [
+        "worked_example",
+        "limitation"
+      ]
+    },
+    {
+      "id": "use",
+      "question": "어떤 개발 업무에 적용하고 어떤 결과로 성공을 판정할 수 있는가?",
+      "requires": [
+        "capability",
+        "mechanism",
+        "limitation"
+      ]
+    },
+    {
+      "id": "start",
+      "question": "시작 조건, Windows 연결 범위와 데이터 전달 조건은 무엇인가?",
+      "requires": [
+        "capability",
+        "limitation"
+      ]
+    }
+  ],
+  "authoring": {
+    "profile": "custom",
+    "template": "research-study",
+    "methods": [
+      "writing-workflow",
+      "research-teaching",
+      "section-editing",
+      "korean-editing",
+      "reader-review",
+      "visual-explanation"
+    ],
+    "requirements": [
+      "REA와 Ghidra의 역할 차이와 함께 사용하는 경로를 먼저 설명한다.",
+      "설치 실습이나 성능 벤치마크를 약속하지 않는 비교 해설이다.",
+      "Notion과 DX-Ball 사례의 입력, 분석 결과와 실제 확인 범위를 보존한다.",
+      "제작자 사례, 실제 측정 보고와 작성자의 활용 제안을 구분한다.",
+      "Ghidra 자체 기능과 REA 연결 범위, 배포 버전과 개발 브랜치를 구분한다.",
+      "기존 보고서와 이전 판을 보존하고 내용 검토와 지식베이스 질의를 완료한다.",
+      "유료 호출이나 도구 설치를 실행하지 않는다.",
+      "MCP, CLI, 어셈블리 같은 용어를 설명 전에 비교표에 사용하지 않는다.",
+      "DX-Ball에서 불완전한 출력, 입력 발견, 호출한 곳에서 의미 확인, 상수 읽기, 수식 재구성과 검증을 연결한다.",
+      "실제 공개 사례와 설명을 위해 만든 질문 또는 값은 구분하고 원본 소스 복원을 약속하지 않는다.",
+      "첫 화면과 본문을 따로 자체 검토하고 막힌 문장을 수정한다. 실제 사람 시험과 구분한다."
+    ],
+    "preferences": {
+      "opening": "소스 없는 프로그램의 특정 동작을 알아봐야 하는 독자의 상황과 받을 답을 먼저 말한다.",
+      "outline": "활용 목적과 역할, DX-Ball의 완결된 조사 풀이, Ghidra 출력의 뜻, Notion 전달 경로, 실패와 검증, 내 업무 적용, 시작 조건 순서로 설명한다.",
+      "length": "단독으로 읽을 수 있는 충분한 해설과 짧은 문단. 요약을 본문 대신 반복하지 않는다.",
+      "visuals": "본문을 먼저 완성하고 조사 과정과 위치에서 결과로의 대응, Notion 전달 경로에 필요한 HTML 도해만 붙인다. 공이 아니라 맞은 벽돌의 위치라는 원문 의미를 보존한다.",
+      "examples": "공개 Notion IPC 경로와 DX-Ball 계산을 자세히 읽고 업무 적용 제안은 별도로 표시한다.",
+      "tone": "용어를 처음 만나는 개발자가 이해할 수 있는 구체적인 한국어"
+    },
+    "overrides": []
+  },
+  "sources": [
+    {
+      "id": "rea",
+      "title": "REA 6.5.0 README",
+      "url": "https://raw.githubusercontent.com/morluto/rea/rea-agents-6.5.0/README.md",
+      "kind": "official_document"
+    },
+    {
+      "id": "rea-install",
+      "title": "REA 6.5.0 installation and Ghidra integration",
+      "url": "https://raw.githubusercontent.com/morluto/rea/rea-agents-6.5.0/docs/installation.md",
+      "kind": "official_document"
+    },
+    {
+      "id": "ghidra",
+      "title": "Ghidra 12.1.4 README",
+      "url": "https://raw.githubusercontent.com/NationalSecurityAgency/ghidra/Ghidra_12.1.4_build/README.md",
+      "kind": "official_document"
+    },
+    {
+      "id": "ghidra-course",
+      "title": "Ghidra 12.1.4 beginner course",
+      "url": "https://raw.githubusercontent.com/NationalSecurityAgency/ghidra/Ghidra_12.1.4_build/GhidraDocs/GhidraClass/Beginner/Introduction_to_Ghidra_Student_Guide.html",
+      "kind": "official_document"
+    },
+    {
+      "id": "decompiler",
+      "title": "Ghidra 12.1.4 decompiler help",
+      "url": "https://raw.githubusercontent.com/NationalSecurityAgency/ghidra/Ghidra_12.1.4_build/Ghidra/Features/Decompiler/src/main/help/help/topics/DecompilePlugin/DecompilerIntro.html",
+      "kind": "official_document"
+    },
+    {
+      "id": "debugger",
+      "title": "Ghidra 12.1.4 debugger course",
+      "url": "https://raw.githubusercontent.com/NationalSecurityAgency/ghidra/Ghidra_12.1.4_build/GhidraDocs/GhidraClass/Debugger/A1-GettingStarted.html",
+      "kind": "official_document"
+    },
+    {
+      "id": "dxball",
+      "title": "REA DX-Ball sound-pan case",
+      "url": "https://rea.tools/showcase/dx-ball/",
+      "kind": "completed_case"
+    },
+    {
+      "id": "notion",
+      "title": "REA Notion clipboard case",
+      "url": "https://rea.tools/showcase/notion/",
+      "kind": "completed_case"
+    },
+    {
+      "id": "touhou",
+      "title": "Reverse engineerings industrial revolution",
+      "url": "https://rea.tools/blog/touhou-reconstruction/",
+      "kind": "completed_case"
+    },
+    {
+      "id": "faq",
+      "title": "REA FAQ",
+      "url": "https://rea.tools/ko/faq/",
+      "kind": "official_document"
+    },
+    {
+      "id": "dx-evidence",
+      "title": "DX-Ball gameplay investigation notes",
+      "url": "https://raw.githubusercontent.com/N0zoM1z0/dx-ball/a55dca27ec0a07018c1b2c95ae2be027f7d8c3c4/docs/GAMEPLAY_OWNER.md",
+      "kind": "completed_case"
+    },
+    {
+      "id": "dx-matching",
+      "title": "DX-Ball compiler matching notes",
+      "url": "https://raw.githubusercontent.com/N0zoM1z0/dx-ball/a55dca27ec0a07018c1b2c95ae2be027f7d8c3c4/docs/BUILD_MATCHING.md",
+      "kind": "completed_case"
+    },
+    {
+      "id": "electron-ipc",
+      "title": "Electron IPC concepts",
+      "url": "https://www.electronjs.org/docs/latest/tutorial/ipc",
+      "kind": "official_document"
+    },
+    {
+      "id": "electron-asar",
+      "title": "Electron ASAR archives",
+      "url": "https://www.electronjs.org/docs/latest/tutorial/asar-archives",
+      "kind": "official_document"
+    }
+  ]
+}

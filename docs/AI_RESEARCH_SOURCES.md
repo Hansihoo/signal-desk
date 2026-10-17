@@ -115,3 +115,7 @@ Agent Skills 명세, Anthropic 문맥/스킬 운영 지침, SkillsBench·SWE-Ski
 ### REA와 Ghidra — 2026-10-16 선정 조사
 
 [REA6.5.0](https://github.com/morluto/rea/tree/rea-agents-6.5.0)과 [Ghidra12.1.4](https://github.com/NationalSecurityAgency/ghidra/tree/Ghidra_12.1.4_build)의 공식 문서, [REA 공개 사례](https://rea.tools/showcase/)와 [제작자 회고](https://rea.tools/blog/touhou-reconstruction/)를 역공학 도구의 역할과 검증 범위를 위한 출처로 사용했다. 문서 등록은 수집기나 예약 연결이 아니다. 지원 버전은 사용 시 재확인하고 사례 수치를 독립 실험으로 합산하지 않는다. 원문별 날짜/이번 획득/실제 확인 범위는 [검토 원장](ai/AI_RESEARCH_REVIEW_LOG.md)의 해당 조사에 남긴다.
+
+### REA와 Ghidra 입문 풀이 추가 근거 — 2026-10-17
+
+고정 커밋의 [DX-Ball 조사 기록](https://raw.githubusercontent.com/N0zoM1z0/dx-ball/a55dca27ec0a07018c1b2c95ae2be027f7d8c3c4/docs/GAMEPLAY_OWNER.md)과 [컴파일 비교 기록](https://raw.githubusercontent.com/N0zoM1z0/dx-ball/a55dca27ec0a07018c1b2c95ae2be027f7d8c3c4/docs/BUILD_MATCHING.md), Electron 공식 [IPC](https://www.electronjs.org/docs/latest/tutorial/ipc)/[ASAR](https://www.electronjs.org/docs/latest/tutorial/asar-archives)의 필요한 절을 확보했다. 사례의 추론과 선행 개념을 설명할 근거이며 신규 수집기/예약이나 독립 재현이 아니다. 기존10원문의16일 획득과 이번17일 신규4건을 구분한다.

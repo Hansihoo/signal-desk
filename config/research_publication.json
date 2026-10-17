@@ -296,6 +296,21 @@
       "id": "ai-model-introductions-2026-10-17",
       "input": "ai_model_guides.2026-10-17.json",
       "quality": "ai_model_guides.2026-10-17.quality.json"
+    },
+    {
+      "id": "rea-ghidra-reader-repair-2026-10-17",
+      "input": "rea_ghidra_research.2026-10-17.r3.json",
+      "quality": "rea_ghidra_research.2026-10-17.r3.quality.json"
+    },
+    {
+      "id": "rea-ghidra-reader-final-2026-10-17",
+      "input": "rea_ghidra_research.2026-10-17.r4.json",
+      "quality": "rea_ghidra_research.2026-10-17.r4.quality.json"
+    },
+    {
+      "id": "rea-ghidra-template-attestation-2026-10-17",
+      "input": "rea_ghidra_research.2026-10-17.r4.json",
+      "quality": "rea_ghidra_research.2026-10-17.r4.attested.quality.json"
     }
   ]
 }

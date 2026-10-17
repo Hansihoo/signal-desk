@@ -129,7 +129,12 @@ def visuals_for(report):
             block = pointer(report, path)
         except (KeyError, IndexError, TypeError):
             raise ValueError('Inline visual block is missing')
-        if visual['kind'] not in ('flow', 'recovery') or block['type'] != 'steps' or not 2 <= len(block['items']) <= 6:
+        if visual['kind'] == 'positions':
+            if block['type'] != 'terms' or len(block['items']) != 3:
+                raise ValueError('Position visual needs three reviewed states')
+            if any(len(item['text'].split('\n')) != 2 or not all(item['text'].split('\n')) for item in block['items']):
+                raise ValueError('Position visual needs a value and meaning')
+        elif visual['kind'] not in ('flow', 'recovery') or block['type'] != 'steps' or not 2 <= len(block['items']) <= 6:
             raise ValueError('Inline visual needs reviewed process steps')
         visual_ids.add(visual['id']); visual_paths.add(path)
     table_ids = {table['id'] for table in report.get('tables', [])}
@@ -189,6 +194,15 @@ def write_practice_bundle(report, destination):
 
 
 def _process_figure(block, visual, numbers):
+    if visual['kind'] == 'positions':
+        states = []
+        for item in block['items']:
+            value, meaning = item['text'].split('\n')
+            states.append('<li><span class="position-input">%s</span><strong class="position-value">%s</strong><span>%s</span></li>' % (esc(item['label']),esc(value),esc(meaning)))
+        return ('<figure class="position-figure" id="%s" aria-labelledby="%s-title"><figcaption id="%s-title">%s</figcaption>'
+                '<svg viewBox="0 0 600 48" aria-hidden="true" focusable="false"><path d="M100 24H500" fill="none" stroke="currentColor" stroke-width="2"/>'
+                '<circle cx="100" cy="24" r="8"/><circle cx="300" cy="24" r="8"/><circle cx="500" cy="24" r="8"/></svg>'
+                '<ol role="list">%s</ol><p class="topic-sources">%s</p></figure>') % (esc(visual['id']),esc(visual['id']),esc(visual['id']),esc(block['title']),''.join(states),_citations(block,numbers))
     nodes = []
     for index,item in enumerate(block['items'],1):
         if visual['kind'] == 'recovery':
