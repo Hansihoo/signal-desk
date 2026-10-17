@@ -2,6 +2,7 @@
   "schema_version": 1,
   "featured_report_id": "mcp-apps-workflows",
   "report_ids": [
+    "deepseek-v4-1-flash-model-guide",
     "reflection-beam-model-guide",
     "granite-switch-4-1-model-guide",
     "flux-3-image-klein-model-guide",
@@ -311,6 +312,11 @@
       "id": "rea-ghidra-template-attestation-2026-10-17",
       "input": "rea_ghidra_research.2026-10-17.r4.json",
       "quality": "rea_ghidra_research.2026-10-17.r4.attested.quality.json"
+    },
+    {
+      "id": "ai-model-introductions-2026-10-18",
+      "input": "ai_model_guides.2026-10-18.json",
+      "quality": "ai_model_guides.2026-10-18.quality.json"
     }
   ]
 }

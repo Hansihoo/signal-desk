@@ -1,0 +1,574 @@
+{
+  "schema_version": 1,
+  "reports": [
+    {
+      "id": "deepseek-v4-1-flash-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API",
+        "DeepSeek V4.1 Flash"
+      ],
+      "checked_on": "2026-10-18",
+      "title": "DeepSeek V4.1 Flash 1017 모델 소개: 이전 판과 경쟁 모델의 성능 및 요금 비교",
+      "description": "V4.1 Flash의 10월 17일 갱신이 기존 모델과 무엇이 다른지, 경쟁 성능과 실제 제공 조건으로 선택할 수 있도록 정리했습니다.",
+      "deck": "1017은 기존 V4.1 Flash의 가중치를 갱신한 판입니다. API 단가는 유지하면서 코딩과 에이전트 평가가 개선됐지만 모든 평가에서 앞서지는 않으며, 공개 가중치의 직접 운영에도 큰 메모리가 필요합니다.",
+      "scope": "2026년 10월 18일 확인한 공식 발표, 카드, 설정, 요금 및 vLLM 실행 지원 문서.",
+      "source_note": "공급사 평가와 프레임워크의 실행 자료를 구분합니다. 직접 모델 실행, API 청구 및 독립 재측정은 수행하지 않았습니다.",
+      "highlights": [
+        "기존 계열의 10월 17일 갱신",
+        "이전 판과 경쟁 모델 비교",
+        "평가별 장점과 단점"
+      ],
+      "summary": [
+        {
+          "kind": "fact",
+          "label": "새 판의 의미",
+          "text": "기존 V4.1 Flash가 1017로 갱신됐습니다. 공식 웹, 앱과 API에 반영됐으며 deepseek-flash 이름과 토큰 단가는 유지됩니다. 새 모델 브랜드의 최초 출시와 구분해야 합니다.",
+          "source_ids": [
+            "deepseek-updates"
+          ]
+        },
+        {
+          "kind": "fact",
+          "label": "장점과 반대 결과",
+          "text": "공식 비교에서 DeepSWE v1.1은 77.0으로 Opus 5의 74.0보다 높습니다. 반대로 HLE 전체는 42.6 대 56.3, Terminal-Bench 4.0은 42.3 대 51.8로 낮습니다. 과제와 Harness에 따라 결과가 갈립니다.",
+          "source_ids": [
+            "deepseek-card"
+          ]
+        },
+        {
+          "kind": "judgment",
+          "label": "비용 판단",
+          "text": "Flash의 캐시 미적중 입력 / 출력은 비피크 0.15 / 0.60 USD, 피크 0.30 / 1.20 USD로 각각 100만 토큰 기준입니다. 실행 시간과 출력 길이 감소는 공급사 주장이며 모든 업무의 실제 비용 절감을 보장하지 않습니다.",
+          "source_ids": [
+            "deepseek-price",
+            "deepseek-updates"
+          ]
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "tables": [
+        {
+          "id": "specs",
+          "title": "이전 Flash와 현재 Flash, Pro의 제공 범위",
+          "columns": [
+            "항목",
+            "V4.1 Flash 이전 판",
+            "V4.1 Flash 1017",
+            "V4 Pro 0813"
+          ],
+          "rows": [
+            {
+              "values": [
+                "판의 관계",
+                "9월 10일 공식 출시",
+                "10월 17일 기존 계열의 가중치 갱신",
+                "8월 13일 GA 갱신"
+              ],
+              "source_ids": [
+                "deepseek-updates"
+              ]
+            },
+            {
+              "values": [
+                "API 이름",
+                "현재 별칭으로 과거 판 고정 불가",
+                "deepseek-flash",
+                "deepseek-v4-pro"
+              ],
+              "source_ids": [
+                "deepseek-updates",
+                "deepseek-price"
+              ]
+            },
+            {
+              "values": [
+                "입력 / 출력",
+                "텍스트와 이미지 / 텍스트",
+                "텍스트와 이미지 / 텍스트",
+                "텍스트 / 텍스트, Vision 미지원"
+              ],
+              "source_ids": [
+                "deepseek-updates",
+                "deepseek-price"
+              ]
+            },
+            {
+              "values": [
+                "현재 API 문맥 / 출력 상한",
+                "과거 별칭이 현재 1017로 연결",
+                "1M / 최대 384K 토큰",
+                "1M / 최대 384K 토큰"
+              ],
+              "source_ids": [
+                "deepseek-price"
+              ]
+            },
+            {
+              "values": [
+                "가중치와 라이선스",
+                "초기 체크포인트 별도 보존",
+                "MIT 공개 가중치",
+                "이번 글에서 가중치 재검토하지 않음"
+              ],
+              "source_ids": [
+                "deepseek-card",
+                "deepseek-vllm"
+              ]
+            },
+            {
+              "values": [
+                "생각 모드",
+                "초기 가중치 설정 별도",
+                "생각 / 비생각 지원, API 기본은 생각",
+                "생각 / 비생각 지원"
+              ],
+              "source_ids": [
+                "deepseek-price"
+              ]
+            }
+          ],
+          "note": "현재 API 요금표의 조건이며 앱의 출력 상한이나 과거 API의 고정 조건으로 확대하지 않습니다. 가중치 config의 최대 문맥은 1,048,576토큰입니다. API 표의 1M 및 384K는 원문 표기를 유지했습니다."
+        },
+        {
+          "id": "benchmarks",
+          "title": "DeepSeek가 보고한 이전 판 및 경쟁 모델 성능",
+          "columns": [
+            "평가판",
+            "Flash 1017",
+            "이전 Flash",
+            "K3",
+            "GLM 5.3",
+            "GPT 5.6 Sol",
+            "Opus 5"
+          ],
+          "rows": [
+            {
+              "values": [
+                "HLE w/o tools",
+                "42.6 (44.0†)",
+                "36.8 (39.1†)",
+                "43.5",
+                "42.0†",
+                "44.5",
+                "56.3"
+              ],
+              "source_ids": [
+                "deepseek-card"
+              ]
+            },
+            {
+              "values": [
+                "Terminal-Bench 4.0",
+                "42.3",
+                "31.2",
+                "12.6",
+                "37.9",
+                "39.9",
+                "51.8"
+              ],
+              "source_ids": [
+                "deepseek-card"
+              ]
+            },
+            {
+              "values": [
+                "DeepSWE v1.1",
+                "77.0",
+                "74.2",
+                "67.5",
+                "66.9",
+                "73.0",
+                "74.0"
+              ],
+              "source_ids": [
+                "deepseek-card"
+              ]
+            },
+            {
+              "values": [
+                "ProgramBench",
+                "29.1",
+                "20.3",
+                "17.5",
+                "19.0",
+                "23.0",
+                "37.0"
+              ],
+              "source_ids": [
+                "deepseek-card"
+              ]
+            },
+            {
+              "values": [
+                "NL2Repo-Bench",
+                "68.2",
+                "65.4",
+                "58.0",
+                "58.0",
+                "56.8",
+                "75.3"
+              ],
+              "source_ids": [
+                "deepseek-card"
+              ]
+            },
+            {
+              "values": [
+                "Automation-Bench v1.0.6",
+                "60.5",
+                "54.8",
+                "46.7",
+                "48.8",
+                "45.8",
+                "50.3"
+              ],
+              "source_ids": [
+                "deepseek-card"
+              ]
+            },
+            {
+              "values": [
+                "Agents’ Last Exam",
+                "35.4",
+                "31.8",
+                "27.6",
+                "28.5",
+                "26.7",
+                "28.6"
+              ],
+              "source_ids": [
+                "deepseek-card"
+              ]
+            },
+            {
+              "values": [
+                "Apex Bench v1.1",
+                "72.1",
+                "64.6",
+                "47.8",
+                "56.6",
+                "54.3",
+                "65.8"
+              ],
+              "source_ids": [
+                "deepseek-card"
+              ]
+            },
+            {
+              "values": [
+                "Chartography (w/tools)",
+                "83.0",
+                "78.9",
+                "68.1",
+                "—",
+                "79.9",
+                "84.0"
+              ],
+              "source_ids": [
+                "deepseek-card"
+              ]
+            },
+            {
+              "values": [
+                "BabyVision (w/tools)",
+                "92.5",
+                "89.6",
+                "85.7",
+                "—",
+                "88.9",
+                "94.1"
+              ],
+              "source_ids": [
+                "deepseek-card"
+              ]
+            },
+            {
+              "values": [
+                "ZeroBench-main (w/tools)",
+                "51.0",
+                "49.0",
+                "41.0",
+                "—",
+                "53.0",
+                "52.0"
+              ],
+              "source_ids": [
+                "deepseek-card"
+              ]
+            }
+          ],
+          "note": "10월 17일 공식 카드의 원문 점수입니다. †는 HLE의 텍스트 전용 부분집합이며 전체 HLE와 섞지 않습니다. Terminal-Bench 4.0은 Claude Code, DeepSWE v1.1은 Mini-SWE-V2 Harness입니다. ZeroBench-main은 공식 변경 이력의 Pass@5 조건입니다. 나머지 과제의 전체 Harness, 각 경쟁 모델의 정확한 스냅샷과 추론 예산, 측정일 및 표본 수는 이 카드에 명시되지 않았습니다. —는 미보고이며 0이 아닙니다. 공급사 비교이므로 독립 공통환경 재측정으로 해석하지 않습니다."
+        },
+        {
+          "id": "prices",
+          "title": "Flash와 Pro의 현재 API 요금 비교",
+          "columns": [
+            "USD / 100만 토큰",
+            "Flash 비피크",
+            "Flash 피크",
+            "Pro 비피크",
+            "Pro 피크"
+          ],
+          "rows": [
+            {
+              "values": [
+                "입력 캐시 적중",
+                "0.003",
+                "0.006",
+                "0.022",
+                "0.044"
+              ],
+              "source_ids": [
+                "deepseek-price"
+              ]
+            },
+            {
+              "values": [
+                "입력 캐시 미적중",
+                "0.15",
+                "0.30",
+                "0.66",
+                "1.32"
+              ],
+              "source_ids": [
+                "deepseek-price"
+              ]
+            },
+            {
+              "values": [
+                "출력",
+                "0.60",
+                "1.20",
+                "1.98",
+                "3.96"
+              ],
+              "source_ids": [
+                "deepseek-price"
+              ]
+            }
+          ],
+          "note": "10월 18일 확인한 공개 단가입니다. 1017 갱신에 따른 단가 변경은 없습니다. 피크는 중국 공휴일을 제외한 월요일부터 금요일 UTC 01:00–04:00 및 06:00–10:00, 한국시간 10:00–13:00 및 15:00–19:00입니다. 그 밖의 시간과 주말, 중국 공휴일은 비피크입니다. 캐시 적중 입력만 캐시 단가를 적용하며 출력과 검색 비용은 별도입니다. 경쟁 카드에 나온 K3, GLM, GPT, Opus의 최신 서비스별 단가는 이번 글에서 재확인하지 않았습니다."
+        }
+      ],
+      "explanation": [
+        {
+          "id": "overview",
+          "title": "모델 개요와 이전 판 대비 변화",
+          "lead": "모델 계열은 유지하면서 가중치와 API의 실제 제공 판이 바뀌었습니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "출시와 갱신의 구분",
+              "text": "V4.1 Flash의 공식 최초 출시 이력은 9월 10일이고 이번 갱신은 10월 17일입니다. vLLM의 초기 체크포인트 표에는 0909와 9월 9일이 표시됩니다. 체크포인트 표기와 공식 API 발표일을 하나로 바꾸지 않습니다. DeepSeek는 같은 계열의 작은 갱신으로 소개하며 vLLM은 구조, config와 프롬프트 형식이 같고 가중치가 바뀌었다고 설명합니다.",
+              "source_ids": [
+                "deepseek-updates",
+                "deepseek-card",
+                "deepseek-vllm"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "변경 내용",
+              "text": "공식 발표는 자기 피드백 기반 강화학습으로 프로젝트 개발 능력을 보강하고 DeepSeek Harness, CodeBuddy와 WorkBuddy에 맞춰 최적화했다고 설명합니다. Harness는 모델의 도구 사용과 작업 진행을 관리하는 실행 프로그램입니다. 공식 권장은 DeepSeek Harness 0.2.1-rc.1 이상입니다. 별도의 검색 엔진 API 공개를 새 LLM 브랜드의 출시로 세지 않습니다.",
+              "source_ids": [
+                "deepseek-release",
+                "deepseek-updates"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "구조와 규모",
+              "text": "공식 config는 40개 층, 384개 중 토큰당 6개 라우팅 전문가와 1개 공유 전문가, FP8 설정 및 FP4 전문가 가중치를 명시합니다. vLLM의 552B는 백본 규모이고 별도 Engram 기억 표 약 196.6B와 초안 생성기 등이 빠진 값입니다. B는 10억 개 파라미터를 뜻하며, 작은 활성 계산량을 전체 가중치나 메모리 크기로 읽어서는 안 됩니다.",
+              "source_ids": [
+                "deepseek-config",
+                "deepseek-vllm"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "advantages",
+          "title": "성능의 장점과 경쟁 모델 대비 약점",
+          "lead": "같은 카드 안에서도 코딩, 추론과 시각 평가의 우열은 다릅니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "이전 판에서 개선된 평가",
+              "text": "공식 카드 기준 Terminal-Bench 4.0은 31.2에서 42.3으로 11.1점, ProgramBench는 20.3에서 29.1로 8.8점, DeepSWE v1.1은 74.2에서 77.0으로 2.8점 높아졌습니다. 이는 원문 점수의 차이이며 실행 시간의 개선율이나 한국어 업무의 성공률을 뜻하지 않습니다.",
+              "source_ids": [
+                "deepseek-card"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "상대 강점",
+              "text": "DeepSWE v1.1의 77.0은 표의 다른 모델보다 높고 Automation-Bench v1.0.6의 60.5도 GPT 5.6 Sol의 45.8, Opus 5의 50.3보다 높습니다. Agents’ Last Exam 35.4와 Apex Bench v1.1 72.1도 이 표에서는 가장 높습니다. 비교 대상은 같은 카드의 이전 Flash, K3, GLM 5.3, GPT 5.6 Sol과 Opus 5로 골랐습니다. 이들이 현재 시장의 최신 판이라는 의미는 아닙니다.",
+              "source_ids": [
+                "deepseek-card"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "상대 약점",
+              "text": "Opus 5는 HLE 전체, Terminal-Bench 4.0, ProgramBench, NL2Repo-Bench, Chartography와 BabyVision에서 1017보다 높습니다. ZeroBench-main의 51.0도 GPT 5.6 Sol 53.0과 Opus 5의 52.0보다 낮습니다. HLE에서 GLM 5.3의 42.0†는 텍스트 부분집합이므로 1017 전체 42.6의 직접 상대값이 아니며 44.0†와 비교해야 합니다.",
+              "source_ids": [
+                "deepseek-card"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "conditions",
+          "title": "평가 설정과 직접 운영의 한계",
+          "lead": "카드의 권장 설정과 개별 평가가 실제 사용한 설정은 구분합니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "추론 예산과 설정 차이",
+              "text": "1017 카드는 temperature 1.0, top_p 1.0, 최대 출력 예산 256K 이상을 권장합니다. 이는 모든 경쟁 평가의 완전한 실행 기록이 아닙니다. vLLM 설명에는 기존 공개 평가 top_p 0.95와 effort 100이 나와 카드와 차이가 있습니다. 최신 카드 권장값과 초기 평가 설정을 하나로 합치지 않습니다. 추론 예산이 늘면 점수와 시간, 출력 비용이 함께 달라질 수 있습니다.",
+              "source_ids": [
+                "deepseek-card",
+                "deepseek-vllm"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "API와 로컬의 생각 단계",
+              "text": "vLLM 문서의 low / high / xhigh / max는 25 / 50 / 75 / 100으로, DeepSeek API의 low / high / max는 50 / 75 / 100으로 설명됩니다. 같은 high라는 이름이 같은 예산을 보장하지 않습니다. 기본 생각 모드에서는 출력 한도를 생각 과정이 먼저 쓰므로 실제 답변이 잘릴 수 있습니다.",
+              "source_ids": [
+                "deepseek-vllm"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "전체 실행 메모리",
+              "text": "vLLM이 설명한 체크포인트 파일은 약 511GB, 즉 476GiB입니다. 이는 GPU 메모리 총량과 같지 않습니다. 문서의 614GB 최소 메모리는 1.2배 여유율을 적용한 계산이며 실제 1017 부하 시험의 보장이 아닙니다. 같은 문서의 하드웨어 측정은 0909 초기 체크포인트에서 수행됐고 1017은 별도 재실행하지 않았다고 명시합니다.",
+              "source_ids": [
+                "deepseek-vllm"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "재현성과 이용 범위",
+              "text": "공식 API의 과거 이름 deepseek-v4-flash와 deepseek-v4-flash-vision-exp도 현재는 1017로 연결됩니다. 이름만 유지해 과거 결과를 재현할 수 없습니다. 가중치에는 Jinja 채팅 템플릿 대신 별도의 프롬프트 인코딩 구현이 제공됩니다. MIT 가중치 공개와 즉시 실행 가능한 소비자용 앱은 다른 제공 형태입니다.",
+              "source_ids": [
+                "deepseek-price",
+                "deepseek-card"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cost",
+          "title": "가격과 검색 API의 별도 과금",
+          "lead": "토큰 단가는 유지됐지만 도구 호출의 별도 요금 조건이 생겼습니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "토큰 단가의 비교",
+              "text": "같은 시간대에서 Flash의 캐시 미적중 입력 단가는 Pro의 약 22.7%, 출력 단가는 약 30.3%입니다. 그러나 전체 작업에 쓰는 입력과 출력 토큰 수가 다를 수 있어 같은 비율의 작업비 절감을 뜻하지 않습니다. 캐시 적중률, 생각 과정, 재시도와 도구 호출도 총비용을 바꿉니다.",
+              "source_ids": [
+                "deepseek-price"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "검색과 페이지 가져오기",
+              "text": "Search와 Fetch는 각각 성공 요청 1,000회당 0.75 USD의 별도 API이며 토큰당 단가가 아닙니다. 중국어 발표의 5 CNY / 1,000회와 USD 요금을 환율로 합치지 않습니다. Harness, Claude Code와 Codex의 서버 도구 경로는 현재 미과금이며 베이징시간 11월 1일 00:00, 한국시간 01:00부터 요청별 과금 예정입니다. 이 유예를 모든 독립 API 호출의 무료 조건으로 확대하지 않습니다.",
+              "source_ids": [
+                "deepseek-price",
+                "deepseek-release"
+              ]
+            }
+          ]
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "kind": "judgment",
+            "label": "채택 후보의 기준",
+            "text": "이전 Flash 사용자에게는 같은 API 단가로 공개 평가가 개선된 갱신입니다. 코딩과 일부 에이전트 평가에서 비교할 가치가 있지만 HLE와 여러 시각 과제 및 Terminal-Bench에서는 Opus 5보다 낮습니다. 최신 경쟁판과 동일한 추론 예산으로 직접 비교한 결과는 아니므로 모든 작업의 우위로 일반화하지 않습니다.",
+            "source_ids": [
+              "deepseek-card",
+              "deepseek-price"
+            ]
+          },
+          {
+            "kind": "judgment",
+            "label": "운영 판단",
+            "text": "API 사용은 별칭이 실제로 가리키는 판과 별도 검색 비용을 확인해야 합니다. 직접 운영은 공개 가중치의 큰 전체 메모리와 실행 지원 조건을 고려해야 합니다. 공급사가 말한 시간 및 비용 개선을 실제 업무 효과로 확정하기 위한 독립 실행은 남아 있습니다.",
+            "source_ids": [
+              "deepseek-vllm",
+              "deepseek-price"
+            ]
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "갱신 발표일은 2026년 10월 17일, 이번 원문 검토와 최초 등록은 18일입니다. 평가의 정확한 실행 날짜, 전체 경쟁 스냅샷과 생성 예산은 미확인입니다. 실제 모델 실행, 가중치 다운로드와 API 청구, 독립 평가 및 사람 독해 시험은 수행하지 않았습니다.",
+          "source_ids": [
+            "deepseek-card",
+            "deepseek-updates"
+          ]
+        }
+      ],
+      "references": [
+        {
+          "id": "deepseek-updates",
+          "title": "DeepSeek의 공식 변경 이력",
+          "description": "9월 10일의 V4.1 출시와 10월 17일 갱신, API 별칭과 평가 Harness를 구분합니다.",
+          "url": "https://api-docs.deepseek.com/updates/"
+        },
+        {
+          "id": "deepseek-card",
+          "title": "V4.1 Flash 1017 공식 모델 카드",
+          "description": "이전 판과 K3, GLM 5.3, GPT 5.6 Sol, Opus 5의 11개 평가와 추천 생성 설정을 비교합니다.",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017"
+        },
+        {
+          "id": "deepseek-config",
+          "title": "1017 가중치의 공식 설정",
+          "description": "문맥 길이와 MoE 전문가 선택, 시각 입력과 혼합 정밀도의 구성을 제공합니다.",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017/blob/main/config.json"
+        },
+        {
+          "id": "deepseek-price",
+          "title": "DeepSeek의 모델과 요금",
+          "description": "현재 API 모델 판, 문맥, 출력 상한과 피크 및 비피크 요금, 검색의 별도 과금을 설명합니다.",
+          "url": "https://api-docs.deepseek.com/quick_start/pricing/"
+        },
+        {
+          "id": "deepseek-release",
+          "title": "DeepSeek의 1017 공개 발표",
+          "description": "자기 피드백 기반 강화학습, 공개 가중치와 Search 및 Fetch의 제공 조건을 설명합니다.",
+          "url": "https://api-docs.deepseek.com/zh-cn/news/news261017/"
+        },
+        {
+          "id": "deepseek-vllm",
+          "title": "vLLM의 V4.1 실행 지원 문서",
+          "description": "1017과 초기 가중치의 관계, 메모리 규모, 추론 설정의 차이와 기존 실행 측정의 적용 범위를 설명합니다.",
+          "url": "https://recipes.vllm.ai/deepseek-ai/DeepSeek-V4.1-Flash"
+        }
+      ]
+    }
+  ]
+}

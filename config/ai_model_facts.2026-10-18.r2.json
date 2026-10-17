@@ -1,0 +1,1090 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "id": "deepseek-1017-bench-0-0",
+      "model": "DeepSeek V4.1 Flash 1017",
+      "provider": "DeepSeek",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "HLE w/o tools",
+        "평가판": "HLE w/o tools",
+        "단위": "원문 점수",
+        "HLE 텍스트 부분집합 점수": 44.0,
+        "평가 점수": 42.6
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-0-1",
+      "model": "DeepSeek V4.1 Flash 0910",
+      "provider": "DeepSeek",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "HLE w/o tools",
+        "평가판": "HLE w/o tools",
+        "단위": "원문 점수",
+        "HLE 텍스트 부분집합 점수": 39.1,
+        "평가 점수": 36.8
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-0-2",
+      "model": "K3",
+      "provider": "Moonshot AI",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "HLE w/o tools",
+        "평가판": "HLE w/o tools",
+        "단위": "원문 점수",
+        "평가 점수": 43.5
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-0-3",
+      "model": "GLM 5.3",
+      "provider": "Z.ai",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음. 이 GLM 행 자체가 텍스트 부분집합임.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "HLE w/o tools",
+        "평가판": "HLE w/o tools",
+        "단위": "원문 점수",
+        "평가 점수": 42.0
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-0-4",
+      "model": "GPT 5.6 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "HLE w/o tools",
+        "평가판": "HLE w/o tools",
+        "단위": "원문 점수",
+        "평가 점수": 44.5
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-0-5",
+      "model": "Opus 5",
+      "provider": "Anthropic",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "HLE w/o tools",
+        "평가판": "HLE w/o tools",
+        "단위": "원문 점수",
+        "평가 점수": 56.3
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-1-0",
+      "model": "DeepSeek V4.1 Flash 1017",
+      "provider": "DeepSeek",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "Terminal-Bench 4.0",
+        "평가판": "Terminal-Bench 4.0",
+        "단위": "원문 점수",
+        "harness": "Claude Code",
+        "평가 점수": 42.3
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-1-1",
+      "model": "DeepSeek V4.1 Flash 0910",
+      "provider": "DeepSeek",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "Terminal-Bench 4.0",
+        "평가판": "Terminal-Bench 4.0",
+        "단위": "원문 점수",
+        "harness": "Claude Code",
+        "평가 점수": 31.2
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-1-2",
+      "model": "K3",
+      "provider": "Moonshot AI",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "Terminal-Bench 4.0",
+        "평가판": "Terminal-Bench 4.0",
+        "단위": "원문 점수",
+        "harness": "Claude Code",
+        "평가 점수": 12.6
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-1-3",
+      "model": "GLM 5.3",
+      "provider": "Z.ai",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "Terminal-Bench 4.0",
+        "평가판": "Terminal-Bench 4.0",
+        "단위": "원문 점수",
+        "harness": "Claude Code",
+        "평가 점수": 37.9
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-1-4",
+      "model": "GPT 5.6 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "Terminal-Bench 4.0",
+        "평가판": "Terminal-Bench 4.0",
+        "단위": "원문 점수",
+        "harness": "Claude Code",
+        "평가 점수": 39.9
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-1-5",
+      "model": "Opus 5",
+      "provider": "Anthropic",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "Terminal-Bench 4.0",
+        "평가판": "Terminal-Bench 4.0",
+        "단위": "원문 점수",
+        "harness": "Claude Code",
+        "평가 점수": 51.8
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-2-0",
+      "model": "DeepSeek V4.1 Flash 1017",
+      "provider": "DeepSeek",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "DeepSWE v1.1",
+        "평가판": "DeepSWE v1.1",
+        "단위": "원문 점수",
+        "harness": "Mini-SWE-V2",
+        "평가 점수": 77.0
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-2-1",
+      "model": "DeepSeek V4.1 Flash 0910",
+      "provider": "DeepSeek",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "DeepSWE v1.1",
+        "평가판": "DeepSWE v1.1",
+        "단위": "원문 점수",
+        "harness": "Mini-SWE-V2",
+        "평가 점수": 74.2
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-2-2",
+      "model": "K3",
+      "provider": "Moonshot AI",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "DeepSWE v1.1",
+        "평가판": "DeepSWE v1.1",
+        "단위": "원문 점수",
+        "harness": "Mini-SWE-V2",
+        "평가 점수": 67.5
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-2-3",
+      "model": "GLM 5.3",
+      "provider": "Z.ai",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "DeepSWE v1.1",
+        "평가판": "DeepSWE v1.1",
+        "단위": "원문 점수",
+        "harness": "Mini-SWE-V2",
+        "평가 점수": 66.9
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-2-4",
+      "model": "GPT 5.6 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "DeepSWE v1.1",
+        "평가판": "DeepSWE v1.1",
+        "단위": "원문 점수",
+        "harness": "Mini-SWE-V2",
+        "평가 점수": 73.0
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-2-5",
+      "model": "Opus 5",
+      "provider": "Anthropic",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "DeepSWE v1.1",
+        "평가판": "DeepSWE v1.1",
+        "단위": "원문 점수",
+        "harness": "Mini-SWE-V2",
+        "평가 점수": 74.0
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-3-0",
+      "model": "DeepSeek V4.1 Flash 1017",
+      "provider": "DeepSeek",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "ProgramBench",
+        "평가판": "ProgramBench",
+        "단위": "원문 점수",
+        "평가 점수": 29.1
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-3-1",
+      "model": "DeepSeek V4.1 Flash 0910",
+      "provider": "DeepSeek",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "ProgramBench",
+        "평가판": "ProgramBench",
+        "단위": "원문 점수",
+        "평가 점수": 20.3
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-3-2",
+      "model": "K3",
+      "provider": "Moonshot AI",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "ProgramBench",
+        "평가판": "ProgramBench",
+        "단위": "원문 점수",
+        "평가 점수": 17.5
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-3-3",
+      "model": "GLM 5.3",
+      "provider": "Z.ai",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "ProgramBench",
+        "평가판": "ProgramBench",
+        "단위": "원문 점수",
+        "평가 점수": 19.0
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-3-4",
+      "model": "GPT 5.6 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "ProgramBench",
+        "평가판": "ProgramBench",
+        "단위": "원문 점수",
+        "평가 점수": 23.0
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-3-5",
+      "model": "Opus 5",
+      "provider": "Anthropic",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "ProgramBench",
+        "평가판": "ProgramBench",
+        "단위": "원문 점수",
+        "평가 점수": 37.0
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-4-0",
+      "model": "DeepSeek V4.1 Flash 1017",
+      "provider": "DeepSeek",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "NL2Repo-Bench",
+        "평가판": "NL2Repo-Bench",
+        "단위": "원문 점수",
+        "평가 점수": 68.2
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-4-1",
+      "model": "DeepSeek V4.1 Flash 0910",
+      "provider": "DeepSeek",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "NL2Repo-Bench",
+        "평가판": "NL2Repo-Bench",
+        "단위": "원문 점수",
+        "평가 점수": 65.4
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-4-2",
+      "model": "K3",
+      "provider": "Moonshot AI",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "NL2Repo-Bench",
+        "평가판": "NL2Repo-Bench",
+        "단위": "원문 점수",
+        "평가 점수": 58.0
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-4-3",
+      "model": "GLM 5.3",
+      "provider": "Z.ai",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "NL2Repo-Bench",
+        "평가판": "NL2Repo-Bench",
+        "단위": "원문 점수",
+        "평가 점수": 58.0
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-4-4",
+      "model": "GPT 5.6 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "NL2Repo-Bench",
+        "평가판": "NL2Repo-Bench",
+        "단위": "원문 점수",
+        "평가 점수": 56.8
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-4-5",
+      "model": "Opus 5",
+      "provider": "Anthropic",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "NL2Repo-Bench",
+        "평가판": "NL2Repo-Bench",
+        "단위": "원문 점수",
+        "평가 점수": 75.3
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-5-0",
+      "model": "DeepSeek V4.1 Flash 1017",
+      "provider": "DeepSeek",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "Automation-Bench v1.0.6",
+        "평가판": "Automation-Bench v1.0.6",
+        "단위": "원문 점수",
+        "평가 점수": 60.5
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-5-1",
+      "model": "DeepSeek V4.1 Flash 0910",
+      "provider": "DeepSeek",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "Automation-Bench v1.0.6",
+        "평가판": "Automation-Bench v1.0.6",
+        "단위": "원문 점수",
+        "평가 점수": 54.8
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-5-2",
+      "model": "K3",
+      "provider": "Moonshot AI",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "Automation-Bench v1.0.6",
+        "평가판": "Automation-Bench v1.0.6",
+        "단위": "원문 점수",
+        "평가 점수": 46.7
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-5-3",
+      "model": "GLM 5.3",
+      "provider": "Z.ai",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "Automation-Bench v1.0.6",
+        "평가판": "Automation-Bench v1.0.6",
+        "단위": "원문 점수",
+        "평가 점수": 48.8
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-5-4",
+      "model": "GPT 5.6 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "Automation-Bench v1.0.6",
+        "평가판": "Automation-Bench v1.0.6",
+        "단위": "원문 점수",
+        "평가 점수": 45.8
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-5-5",
+      "model": "Opus 5",
+      "provider": "Anthropic",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "Automation-Bench v1.0.6",
+        "평가판": "Automation-Bench v1.0.6",
+        "단위": "원문 점수",
+        "평가 점수": 50.3
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-6-0",
+      "model": "DeepSeek V4.1 Flash 1017",
+      "provider": "DeepSeek",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "Agents’ Last Exam",
+        "평가판": "Agents’ Last Exam",
+        "단위": "원문 점수",
+        "평가 점수": 35.4
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-6-1",
+      "model": "DeepSeek V4.1 Flash 0910",
+      "provider": "DeepSeek",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "Agents’ Last Exam",
+        "평가판": "Agents’ Last Exam",
+        "단위": "원문 점수",
+        "평가 점수": 31.8
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-6-2",
+      "model": "K3",
+      "provider": "Moonshot AI",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "Agents’ Last Exam",
+        "평가판": "Agents’ Last Exam",
+        "단위": "원문 점수",
+        "평가 점수": 27.6
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-6-3",
+      "model": "GLM 5.3",
+      "provider": "Z.ai",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "Agents’ Last Exam",
+        "평가판": "Agents’ Last Exam",
+        "단위": "원문 점수",
+        "평가 점수": 28.5
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-6-4",
+      "model": "GPT 5.6 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "Agents’ Last Exam",
+        "평가판": "Agents’ Last Exam",
+        "단위": "원문 점수",
+        "평가 점수": 26.7
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-6-5",
+      "model": "Opus 5",
+      "provider": "Anthropic",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "Agents’ Last Exam",
+        "평가판": "Agents’ Last Exam",
+        "단위": "원문 점수",
+        "평가 점수": 28.6
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-7-0",
+      "model": "DeepSeek V4.1 Flash 1017",
+      "provider": "DeepSeek",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "Apex Bench v1.1",
+        "평가판": "Apex Bench v1.1",
+        "단위": "원문 점수",
+        "평가 점수": 72.1
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-7-1",
+      "model": "DeepSeek V4.1 Flash 0910",
+      "provider": "DeepSeek",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "Apex Bench v1.1",
+        "평가판": "Apex Bench v1.1",
+        "단위": "원문 점수",
+        "평가 점수": 64.6
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-7-2",
+      "model": "K3",
+      "provider": "Moonshot AI",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "Apex Bench v1.1",
+        "평가판": "Apex Bench v1.1",
+        "단위": "원문 점수",
+        "평가 점수": 47.8
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-7-3",
+      "model": "GLM 5.3",
+      "provider": "Z.ai",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "Apex Bench v1.1",
+        "평가판": "Apex Bench v1.1",
+        "단위": "원문 점수",
+        "평가 점수": 56.6
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-7-4",
+      "model": "GPT 5.6 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "Apex Bench v1.1",
+        "평가판": "Apex Bench v1.1",
+        "단위": "원문 점수",
+        "평가 점수": 54.3
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-7-5",
+      "model": "Opus 5",
+      "provider": "Anthropic",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "Apex Bench v1.1",
+        "평가판": "Apex Bench v1.1",
+        "단위": "원문 점수",
+        "평가 점수": 65.8
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-8-0",
+      "model": "DeepSeek V4.1 Flash 1017",
+      "provider": "DeepSeek",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "Chartography (w/tools)",
+        "평가판": "Chartography (w/tools)",
+        "단위": "원문 점수",
+        "평가 점수": 83.0
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-8-1",
+      "model": "DeepSeek V4.1 Flash 0910",
+      "provider": "DeepSeek",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "Chartography (w/tools)",
+        "평가판": "Chartography (w/tools)",
+        "단위": "원문 점수",
+        "평가 점수": 78.9
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-8-2",
+      "model": "K3",
+      "provider": "Moonshot AI",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "Chartography (w/tools)",
+        "평가판": "Chartography (w/tools)",
+        "단위": "원문 점수",
+        "평가 점수": 68.1
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-8-4",
+      "model": "GPT 5.6 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "Chartography (w/tools)",
+        "평가판": "Chartography (w/tools)",
+        "단위": "원문 점수",
+        "평가 점수": 79.9
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-8-5",
+      "model": "Opus 5",
+      "provider": "Anthropic",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "Chartography (w/tools)",
+        "평가판": "Chartography (w/tools)",
+        "단위": "원문 점수",
+        "평가 점수": 84.0
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-9-0",
+      "model": "DeepSeek V4.1 Flash 1017",
+      "provider": "DeepSeek",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "BabyVision (w/tools)",
+        "평가판": "BabyVision (w/tools)",
+        "단위": "원문 점수",
+        "평가 점수": 92.5
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-9-1",
+      "model": "DeepSeek V4.1 Flash 0910",
+      "provider": "DeepSeek",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "BabyVision (w/tools)",
+        "평가판": "BabyVision (w/tools)",
+        "단위": "원문 점수",
+        "평가 점수": 89.6
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-9-2",
+      "model": "K3",
+      "provider": "Moonshot AI",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "BabyVision (w/tools)",
+        "평가판": "BabyVision (w/tools)",
+        "단위": "원문 점수",
+        "평가 점수": 85.7
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-9-4",
+      "model": "GPT 5.6 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "BabyVision (w/tools)",
+        "평가판": "BabyVision (w/tools)",
+        "단위": "원문 점수",
+        "평가 점수": 88.9
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-9-5",
+      "model": "Opus 5",
+      "provider": "Anthropic",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "BabyVision (w/tools)",
+        "평가판": "BabyVision (w/tools)",
+        "단위": "원문 점수",
+        "평가 점수": 94.1
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-10-0",
+      "model": "DeepSeek V4.1 Flash 1017",
+      "provider": "DeepSeek",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음. ZeroBench-main Pass@5.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "ZeroBench-main (w/tools)",
+        "평가판": "ZeroBench-main (w/tools)",
+        "단위": "원문 점수",
+        "평가 점수": 51.0
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-10-1",
+      "model": "DeepSeek V4.1 Flash 0910",
+      "provider": "DeepSeek",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음. ZeroBench-main Pass@5.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "ZeroBench-main (w/tools)",
+        "평가판": "ZeroBench-main (w/tools)",
+        "단위": "원문 점수",
+        "평가 점수": 49.0
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-10-2",
+      "model": "K3",
+      "provider": "Moonshot AI",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음. ZeroBench-main Pass@5.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "ZeroBench-main (w/tools)",
+        "평가판": "ZeroBench-main (w/tools)",
+        "단위": "원문 점수",
+        "평가 점수": 41.0
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-10-4",
+      "model": "GPT 5.6 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음. ZeroBench-main Pass@5.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "ZeroBench-main (w/tools)",
+        "평가판": "ZeroBench-main (w/tools)",
+        "단위": "원문 점수",
+        "평가 점수": 53.0
+      }
+    },
+    {
+      "id": "deepseek-1017-bench-10-5",
+      "model": "Opus 5",
+      "provider": "Anthropic",
+      "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "checked_on": "2026-10-18",
+      "fields": {
+        "basis": "DeepSeek 공식 1017 비교 카드; 공급사 평가, 독립 재측정 아님",
+        "condition": "2026-10-17 카드 원문 점수. 경쟁 모델 정확 스냅샷/추론 예산/측정일/표본수 미명시. †는 HLE 텍스트 부분집합. 현재 최신 경쟁판으로 일반화하지 않음. ZeroBench-main Pass@5.",
+        "effort": "평가별 전체 설정 미확인",
+        "kind": "공식 성능 평가",
+        "suite": "ZeroBench-main (w/tools)",
+        "평가판": "ZeroBench-main (w/tools)",
+        "단위": "원문 점수",
+        "평가 점수": 52.0
+      }
+    }
+  ]
+}

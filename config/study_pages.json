@@ -56,7 +56,8 @@
     "granite-switch-4-1-model-guide",
     "flux-3-image-klein-model-guide",
     "jais-3-model-guide",
-    "jais-asr-model-guide"
+    "jais-asr-model-guide",
+    "deepseek-v4-1-flash-model-guide"
   ],
   "catalogs": {
     "devops-implementation-guide": "devops_tools.2026-10-10.r4.json"
@@ -144,6 +145,9 @@
     ],
     "jais-asr-model-guide": [
       "8abe84f6388be92640c40ec060127dc3770e1876246b5549f2046ff603ecc860"
+    ],
+    "deepseek-v4-1-flash-model-guide": [
+      "9a6bd2aefbabe3c0e086eeea65e1b9553ef919d92ef9007971f8c19a661c837e"
     ]
   },
   "model_introduction_editions": {
@@ -184,6 +188,9 @@
     ],
     "jais-asr-model-guide": [
       "8abe84f6388be92640c40ec060127dc3770e1876246b5549f2046ff603ecc860"
+    ],
+    "deepseek-v4-1-flash-model-guide": [
+      "9a6bd2aefbabe3c0e086eeea65e1b9553ef919d92ef9007971f8c19a661c837e"
     ]
   },
   "model_introduction_purpose_editions": {
@@ -213,6 +220,9 @@
     ],
     "jais-asr-model-guide": [
       "8abe84f6388be92640c40ec060127dc3770e1876246b5549f2046ff603ecc860"
+    ],
+    "deepseek-v4-1-flash-model-guide": [
+      "9a6bd2aefbabe3c0e086eeea65e1b9553ef919d92ef9007971f8c19a661c837e"
     ]
   },
   "model_introduction_reader_editions": {
@@ -239,6 +249,9 @@
     ],
     "jais-asr-model-guide": [
       "8abe84f6388be92640c40ec060127dc3770e1876246b5549f2046ff603ecc860"
+    ],
+    "deepseek-v4-1-flash-model-guide": [
+      "9a6bd2aefbabe3c0e086eeea65e1b9553ef919d92ef9007971f8c19a661c837e"
     ]
   }
 }

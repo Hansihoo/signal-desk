@@ -169,3 +169,8 @@ source225790a/Pages38676984996 success12:37:22KST, CI175시험33.744초와 cloud
 
 
 2026-10-16 모델 공개 확인 완료: source0fec284 / [Pages38803860087](https://github.com/Hansihoo/signal-desk/actions/runs/38803860087) success05:43:59KST. CI175/47.412초와 cloud review Pass. 공개59보고서175판/1003관측1005판, 새3소개·105사실 및 기존56/172/898/900/Theo15/16의 11보존·일치검사 통과. 공개 모바일 소개/전체표 검색·요금·출처·이력 및 목록 필터 확인. 임시 생성물 정리는 자동 승인 정책 차단으로 보존; [상세](docs/AI_MODEL_REVIEW.2026-10-16.md).
+
+
+### 2026-10-18 AI 모델 갱신
+
+DeepSeek V4.1 Flash1017 기존계열갱신의소개1편과전체표68관측/63표시필드정정판을동시등록. Theo15/793동일/실패0. 자체원문검토/품질/검색/로컬publish완료,제출/공개검증결과는 docs/AI_MODEL_REVIEW.2026-10-18.md에누적한다.
