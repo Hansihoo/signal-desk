@@ -46,6 +46,8 @@
     ['model','provider','checked_on'].includes(key) ? row[key] : key==='modelLabel' ? modelLabel(row) : key==='harness' ? harnessName(row.fields.harness) : key==='effort' ? row.fields.effort?.toLowerCase() : row.fields[key];
   const missing = value => value == null || value === '' || /^(—|미확인|미측정|미공개)$/.test(String(value));
   function display(value, key) {
+    // Details and history use raw field names; tables use their display aliases.
+    key = [...officialFields].find(([alias, field]) => alias === key || field === key)?.[0] || key;
     if (missing(value)) return value && value !== '—' ? value : '—';
     if (key==='harness') value=harnessName(value);
     if (Array.isArray(value)) return value.join(', ') || '없음';
