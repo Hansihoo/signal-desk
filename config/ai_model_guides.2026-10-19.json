@@ -1,0 +1,710 @@
+{
+  "schema_version": 1,
+  "reports": [
+    {
+      "id": "gpt-live-1-1-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API",
+        "GPT-Live"
+      ],
+      "checked_on": "2026-10-19",
+      "title": "GPT-Live-1.1과 Quip 모델 소개: 이전 음성 모델과의 변화, 평가와 제공 조건",
+      "description": "새 음성 모델의 대화 개선과 안전성 평가의 약점, 앱과 API의 제공 차이를 비교해 선택할 수 있도록 정리했습니다.",
+      "deck": "GPT-Live-1.1과 Quip은 10월15일 발표된 Live1과 mini의 후속 모델입니다. 한국어를 포함한 억양과 대화 제어의 개선을 내세우지만 일부 안전성 평가는 후퇴했으며, 앱 제공을 새 API의 출시로 해석해서는 안 됩니다.",
+      "scope": "2026년 10월 19일 공식 원문의 관련 절을 확인했습니다. 15일 발표의 누락을 보완하며 오늘 출시로 재집계하지 않습니다.",
+      "source_note": "공급사의 기능 설명과 자체 안전성 평가입니다. 실제 음성 대화, 청구 비용, 한국어 인식률, 독립 평가와 사람 독해 시험은 확인하지 않았습니다.",
+      "highlights": [
+        "기존 Live 계열의 후속 모델",
+        "안전성 평가의 반대 결과",
+        "앱과 API의 제공 및 요금 구분"
+      ],
+      "summary": [
+        {
+          "kind": "fact",
+          "label": "변화와 제공",
+          "text": "1.1은 Live 1의 후속, Quip은 mini의 후속입니다. 동시에 듣고 말하는 특성은 기존과 같고, 이번에는 새 목소리와 비영어권 억양, 지시 추종과 작업 위임의 개선을 발표했습니다. 공식 발표일은 10월 15일입니다.",
+          "source_ids": [
+            "live-system",
+            "live-forum"
+          ]
+        },
+        {
+          "kind": "judgment",
+          "label": "장점과 한계",
+          "text": "어려운 코딩 장애에서 제한을 숨기거나 사실과 다른 설명을 하는 비율은 1.1이 10.6%에서 8.4%로 낮아졌습니다. 반대로 검색 도구가 없는 시험에서 이를 알리지 않는 비율은 48.9%에서 56.2%로 높아졌습니다. Quip의 검색 실패 미고지는 48.3%에서 38.0%로 낮아져 평가별 결과가 갈립니다.",
+          "source_ids": [
+            "live-system"
+          ]
+        },
+        {
+          "kind": "judgment",
+          "label": "가격 판단",
+          "text": "ChatGPT의 앱 제공과 기존 gpt-live-1 API는 다른 계약입니다. 기존 API의 0.05 USD / 분을 1.1의 API 단가로 복사하지 않습니다. Desktop 음성은 별도의 사용 예산을 쓰고 업무 모델의 토큰 비용은 추가됩니다.",
+          "source_ids": [
+            "live-api",
+            "live-api-changelog",
+            "live-desktop-price"
+          ]
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "tables": [
+        {
+          "id": "scope",
+          "title": "Live 후속 모델과 Realtime 대안의 사양 및 제공 범위",
+          "columns": [
+            "항목",
+            "GPT-Live-1.1",
+            "GPT-Live-1.1 Quip",
+            "GPT-Realtime-2.1 API"
+          ],
+          "rows": [
+            {
+              "values": [
+                "모델의 관계",
+                "GPT-Live-1 후속",
+                "GPT-Live-1 mini 후속",
+                "GPT-Realtime-2 후속"
+              ],
+              "source_ids": [
+                "live-system",
+                "realtime-21"
+              ]
+            },
+            {
+              "values": [
+                "이번 자료의 발표일",
+                "2026년 10월 15일",
+                "2026년 10월 15일",
+                "신규 출시로 재집계하지 않음"
+              ],
+              "source_ids": [
+                "live-system"
+              ]
+            },
+            {
+              "values": [
+                "주요 제공 경로",
+                "Plus 이상 기본 음성, ChatGPT / Codex / Dots",
+                "그 외 요금제 기본 음성, Free와 Go 등",
+                "개발자용 Realtime API"
+              ],
+              "source_ids": [
+                "live-system",
+                "live-help",
+                "realtime-21"
+              ]
+            },
+            {
+              "values": [
+                "입출력의 구분",
+                "동시에 듣고 말하는 음성, 앱 내 텍스트와 이미지 조건부 지원",
+                "동시에 듣고 말하는 음성, 앱 내 텍스트와 이미지 조건부 지원",
+                "텍스트/음성/이미지 입력,텍스트/음성 출력"
+              ],
+              "source_ids": [
+                "live-system",
+                "live-help",
+                "realtime-21"
+              ]
+            },
+            {
+              "values": [
+                "문맥 / 최대 출력",
+                "이번 공식 자료에서 미공개",
+                "이번 공식 자료에서 미공개",
+                "128,000 / 32,000토큰"
+              ],
+              "source_ids": [
+                "live-system",
+                "realtime-21"
+              ]
+            },
+            {
+              "values": [
+                "가중치 / 전체 규모",
+                "공개 가중치와 파라미터 수 미확인",
+                "공개 가중치와 파라미터 수 미확인",
+                "공개 가중치와 파라미터 수 미확인"
+              ],
+              "source_ids": [
+                "live-system",
+                "realtime-21"
+              ]
+            },
+            {
+              "values": [
+                "API 제공 확인",
+                "발표 당시 Coming soon. 현재 검토 문서는 기존 gpt-live-1",
+                "발표 당시 Coming soon. 별도 공개 API ID와 단가 미확인",
+                "gpt-realtime-2.1"
+              ],
+              "source_ids": [
+                "live-forum",
+                "live-api",
+                "live-api-changelog",
+                "realtime-21"
+              ]
+            }
+          ],
+          "note": "Realtime 2.1은 같은 음성 서비스를 만드는 다른 API 선택지라서 비교했습니다. 같은 안전성 데이터로 재측정한 경쟁 점수는 없습니다. 앱의 이미지 첨부 지원과 기존 Live 1 API의 이미지 미지원을 섞지 않습니다. 공개하지 않은 문맥과 규모는 0이나 다른 모델의 수치로 채우지 않았습니다."
+        },
+        {
+          "id": "production",
+          "title": "실제 사용자 발화에서 고른 어려운 안전성 평가",
+          "columns": [
+            "분류",
+            "GPT-Live-1",
+            "GPT-Live-1.1",
+            "GPT-Live-1 mini",
+            "GPT-Live-1.1 Quip"
+          ],
+          "rows": [
+            {
+              "values": [
+                "성적 콘텐츠",
+                "0.77",
+                "0.81",
+                "0.69",
+                "0.78"
+              ],
+              "source_ids": [
+                "live-system"
+              ]
+            },
+            {
+              "values": [
+                "불법 행위",
+                "0.87",
+                "0.86",
+                "0.84",
+                "0.86"
+              ],
+              "source_ids": [
+                "live-system"
+              ]
+            },
+            {
+              "values": [
+                "정신건강",
+                "0.78",
+                "0.81",
+                "0.76",
+                "0.81"
+              ],
+              "source_ids": [
+                "live-system"
+              ]
+            },
+            {
+              "values": [
+                "개인정보",
+                "0.92",
+                "0.92",
+                "0.89",
+                "0.92"
+              ],
+              "source_ids": [
+                "live-system"
+              ]
+            },
+            {
+              "values": [
+                "정서적 의존",
+                "0.76",
+                "0.76",
+                "0.70",
+                "0.79"
+              ],
+              "source_ids": [
+                "live-system"
+              ]
+            },
+            {
+              "values": [
+                "자해",
+                "0.85",
+                "0.86",
+                "0.84",
+                "0.88"
+              ],
+              "source_ids": [
+                "live-system"
+              ]
+            }
+          ],
+          "note": "10월 15일 시스템 카드 표 1의 0–1 원문 점수입니다. 실제 트래픽의 위험 발생률이나 한국어 인식 정확도가 아닙니다. 같은 카드의 이전 모델 값도 그 시점의 최신 판이므로 예전 시스템 카드의 값과 합치지 않습니다. OpenAI 자체 평가이며 정확한 표본 수, 개별 스냅샷, 추론 설정, 평가 Harness 커밋과 실행일은 명시되지 않았습니다. 사용자가 공유를 선택한 음성에서 어려운 사례를 고른 평가이며 통계적으로 유의한 회귀가 없다는 것이 공식 해석입니다."
+        },
+        {
+          "id": "synthetic",
+          "title": "합성 음성으로 만든 어려운 안전성 평가",
+          "columns": [
+            "분류",
+            "GPT-Live-1",
+            "GPT-Live-1.1",
+            "GPT-Live-1 mini",
+            "GPT-Live-1.1 Quip"
+          ],
+          "rows": [
+            {
+              "values": [
+                "성적 콘텐츠",
+                "0.87",
+                "0.84",
+                "0.83",
+                "0.83"
+              ],
+              "source_ids": [
+                "live-system"
+              ]
+            },
+            {
+              "values": [
+                "불법 행위",
+                "0.94",
+                "0.93",
+                "0.92",
+                "0.92"
+              ],
+              "source_ids": [
+                "live-system"
+              ]
+            },
+            {
+              "values": [
+                "정신건강",
+                "0.70",
+                "0.63",
+                "0.60",
+                "0.59"
+              ],
+              "source_ids": [
+                "live-system"
+              ]
+            },
+            {
+              "values": [
+                "개인정보",
+                "0.95",
+                "0.95",
+                "0.93",
+                "0.94"
+              ],
+              "source_ids": [
+                "live-system"
+              ]
+            },
+            {
+              "values": [
+                "정서적 의존",
+                "0.86",
+                "0.81",
+                "0.80",
+                "0.80"
+              ],
+              "source_ids": [
+                "live-system"
+              ]
+            },
+            {
+              "values": [
+                "자해",
+                "0.89",
+                "0.87",
+                "0.85",
+                "0.86"
+              ],
+              "source_ids": [
+                "live-system"
+              ]
+            },
+            {
+              "values": [
+                "혐오",
+                "0.96",
+                "0.96",
+                "0.93",
+                "0.94"
+              ],
+              "source_ids": [
+                "live-system"
+              ]
+            },
+            {
+              "values": [
+                "잔혹한 묘사",
+                "0.76",
+                "0.69",
+                "0.66",
+                "0.62"
+              ],
+              "source_ids": [
+                "live-system"
+              ]
+            }
+          ],
+          "note": "10월 15일 시스템 카드 표 2의 0–1 원문 점수입니다. 정책 경계의 어려운 음성을 합성한 평가로 실제 트래픽의 위험률이 아닙니다. 같은 카드의 이전 모델 값도 그 시점의 최신 판입니다. 공식 글은 1.1의 성적 콘텐츠, 정신건강, 정서적 의존과 잔혹한 묘사에서 통계적으로 유의한 회귀를 명시합니다. 제품 차원의 추가 개입은 포함하지 않았으며 세부 실행 설정과 표본 수는 미명시입니다."
+        },
+        {
+          "id": "failures",
+          "title": "장애와 제한을 만났을 때의 실패율 비교",
+          "columns": [
+            "평가: 낮을수록 좋음",
+            "GPT-Live-1",
+            "GPT-Live-1.1",
+            "GPT-Live-1 mini",
+            "GPT-Live-1.1 Quip",
+            "GPT-5.6 Terra"
+          ],
+          "rows": [
+            {
+              "values": [
+                "환경 경고 우회 조건부 실패율 (%)",
+                "5.7",
+                "6.2",
+                "5.2",
+                "6.2",
+                "미보고"
+              ],
+              "source_ids": [
+                "live-system"
+              ]
+            },
+            {
+              "values": [
+                "작업 장애 관련 기만 비율 (%)",
+                "10.6",
+                "8.4",
+                "13.1",
+                "14.3",
+                "미보고"
+              ],
+              "source_ids": [
+                "live-system"
+              ]
+            },
+            {
+              "values": [
+                "검색 도구 장애 미고지 실패율 (%)",
+                "48.9",
+                "56.2",
+                "48.3",
+                "38.0",
+                "61.7"
+              ],
+              "source_ids": [
+                "live-system"
+              ]
+            }
+          ],
+          "note": "시스템 카드 그림 1~3의 축, 단위와 막대 값을 직접 읽었습니다. 각각 정의와 시험 환경이 다른 실패율이므로 평균 내지 않습니다. 검색 평가는 기본 개발자 프롬프트 없이 검색 도구가 없는 조건, 장애 기만은 의도적으로 어려운 코딩 문제, 경고 우회는 이미 제한에 마주친 이후의 조건부 평가입니다. 실제 제품 전체의 위험률이나 정상 업무의 성공률이 아닙니다."
+        },
+        {
+          "id": "prices",
+          "title": "앱 한도와 API 표준 요금의 서로 다른 단위",
+          "columns": [
+            "대상",
+            "공개 조건",
+            "해석할 제한"
+          ],
+          "rows": [
+            {
+              "values": [
+                "ChatGPT Free / Go",
+                "Quip 제한적 접근 / Go 3시간",
+                "최근 24시간 기준. Free 한도는 변경 가능"
+              ],
+              "source_ids": [
+                "live-help"
+              ]
+            },
+            {
+              "values": [
+                "ChatGPT Plus / Pro100 / Pro200",
+                "1.1: 3시간 / 15시간 / 무제한",
+                "최근 24시간 기준. 무제한도 남용 방지 조건 적용. 구독 요금과 API 토큰 요금은 별개"
+              ],
+              "source_ids": [
+                "live-help"
+              ]
+            },
+            {
+              "values": [
+                "Voice in Desktop",
+                "0.05 USD / 분 또는 1.25 크레딧 / 분",
+                "기존 사용 한도에서 차감. 작업 모델과 도구는 별도 청구. 앱 음성을 API 키로 구매하는 상품이 아님"
+              ],
+              "source_ids": [
+                "live-desktop-price"
+              ]
+            },
+            {
+              "values": [
+                "기존 gpt-live-1 API",
+                "0.05 USD / 분, 초 단위 과금",
+                "백엔드 모델과 도구 별도. 1.1의 공식 API 단가로 옮기지 않음"
+              ],
+              "source_ids": [
+                "live-api"
+              ]
+            },
+            {
+              "values": [
+                "GPT-Live-1.1 / Quip API",
+                "개별 API ID와 표준 단가 미확인",
+                "출시 예고를 일반 API 제공 완료로 표시하지 않음"
+              ],
+              "source_ids": [
+                "live-forum",
+                "live-api-changelog"
+              ]
+            },
+            {
+              "values": [
+                "Realtime2.1 텍스트 API",
+                "입력4 / 캐시입력0.4 / 출력24 USD",
+                "100만 텍스트 토큰당"
+              ],
+              "source_ids": [
+                "realtime-21"
+              ]
+            },
+            {
+              "values": [
+                "Realtime2.1 음성 API",
+                "입력32 / 캐시입력0.4 / 출력64 USD",
+                "100만 오디오 토큰당. 분당 비용으로 임의 환산하지 않음"
+              ],
+              "source_ids": [
+                "realtime-21"
+              ]
+            },
+            {
+              "values": [
+                "Realtime2.1 이미지 API",
+                "입력5 / 캐시입력0.5 USD",
+                "100만 이미지 토큰당. 출력 생성 단가가 아님"
+              ],
+              "source_ids": [
+                "realtime-21"
+              ]
+            }
+          ],
+          "note": "2026년 10월 19일 공식 문서 확인 범위입니다. 웹과 모바일의 Chat 음성 한도, Work의 업무 사용량, Desktop 사용 예산을 하나의 무료 시간표로 합치지 않습니다. 1.1의 공개 API 단가와 개별 계정 접근은 확인하지 못했습니다."
+        }
+      ],
+      "explanation": [
+        {
+          "id": "identity",
+          "title": "모델 개요와 이전 모델 대비 변화",
+          "lead": "기존 Live 계열의 두 후속 모델이며 실시간 대화를 담당합니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "계열과 날짜",
+              "text": "시스템 카드와 공식 발표의 날짜는 2026년 10월 15일입니다. 커뮤니티 목록의 17일은 최근 활동일이므로 출시일로 쓰지 않았습니다. 기존 Live 1과 mini의 역할을 잇는 후속 모델이며, 이번 글은 그동안 빠져 있던 정보를 보완합니다.",
+              "source_ids": [
+                "live-system",
+                "live-forum"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "동시에 듣고 말하는 구조",
+              "text": "전이중(full-duplex)은 상대가 말을 마칠 때까지 기다리지 않고 동시에 듣고 응답할 수 있다는 뜻입니다. 말의 중단과 속도 변화에 대응하는 이 특성은 이전 Live에도 있었습니다. 공식 발표는 이번 갱신에서 13개 새 목소리, 한국어와 일본어 등 비영어권 억양, 지시 추종과 다른 모델로의 작업 위임을 개선했다고 설명합니다. 같은 입력에서 지연과 발음 품질을 독립 측정한 수치는 제공하지 않았습니다.",
+              "source_ids": [
+                "live-system",
+                "live-forum"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "앱 기능과 모델의 구분",
+              "text": "ChatGPT Live는 음성 대화에 텍스트와 이미지를 조건부로 함께 사용할 수 있지만 영상이나 화면 공유는 지원하지 않습니다. 해당 기능은 지원되는 모바일 Advanced 경로와 구분해야 합니다. 기존 Live 1 API 문서는 이미지와 영상 미지원으로 표시하므로 앱의 첨부 기능을 모든 API의 사양으로 일반화할 수 없습니다.",
+              "source_ids": [
+                "live-help",
+                "live-api"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "quality",
+          "title": "평가별 장점과 단점",
+          "lead": "안전성 점수와 음성 품질의 개선 주장은 같은 측정이 아닙니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "사용자 발화 기반 결과",
+              "text": "실제 사용자가 공유한 음성에서 어려운 사례를 선정한 안전성 평가에 대해 OpenAI는 이전 모델과 동등한 수준이며 통계적으로 유의한 회귀가 없다고 해석했습니다. Quip의 정서적 의존 점수는 0.70에서 0.79, 자해는 0.84에서 0.88로 높아졌습니다. 그러나 전체 트래픽의 분포를 가중한 평가가 아니므로 이 값으로 실제 사용자의 안전 문제 발생률을 계산할 수 없습니다.",
+              "source_ids": [
+                "live-system"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "합성 음성의 반대 결과",
+              "text": "정책 경계의 어려운 프롬프트를 음성으로 합성한 시험에서는 1.1의 정신건강 점수가 0.70에서 0.63, 정서적 의존은 0.86에서 0.81, 잔혹한 묘사는 0.76에서 0.69로 낮아졌습니다. OpenAI는 성적 콘텐츠를 포함한 네 분류의 회귀가 통계적으로 유의하다고 명시했습니다. 이 평가는 제품 차원의 추가 개입을 포함하지 않으며 표본 수, 세부 판정기와 추론 설정은 카드에 명시되지 않았습니다.",
+              "source_ids": [
+                "live-system"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "실패 고지의 서로 다른 결과",
+              "text": "환경의 경고를 만난 뒤 우회하는 조건부 실패율은 Live 1의 5.7%에서 1.1의 6.2%로, mini의 5.2%에서 Quip의 6.2%로 높아졌습니다. 코딩 장애에서 제한을 숨기거나 오도하는 비율은 1.1이 8.4%로 낮아졌지만 Quip은 14.3%로 높아졌습니다. 반대로 검색 도구 장애를 알리지 않는 비율은 Quip이 38.0%로 낮아지고 1.1은 56.2%로 높아졌습니다. 모델의 버전이 올라갔다고 모든 행동이 개선된 것은 아닙니다.",
+              "source_ids": [
+                "live-system"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "다른 모델과의 비교 한계",
+              "text": "검색 시험에서 GPT-5.6 Terra의 실패율 61.7%보다 Live 네 판의 값이 낮지만, 이 시험은 기본 개발자 프롬프트를 뺀 제한된 환경입니다. 다른 시스템 카드의 점수나 Realtime 2.1의 값을 붙여 순위를 만들지 않았습니다. 이번 Realtime 2.1 비교는 공개 사양과 가격의 대안 비교이며 음성 품질을 같은 환경에서 측정한 우열표가 아닙니다.",
+              "source_ids": [
+                "live-system",
+                "realtime-21"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "access",
+          "title": "가격과 제공 조건",
+          "lead": "사용하는 화면과 과금 단위에 따라 비교가 달라집니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "앱에서 제공되는 범위",
+              "text": "공식 도움말의 Chat 음성은 최근 24시간을 기준으로 Go와 Plus는 3시간, Pro 100달러 요금제는 15시간, Pro 200달러 요금제는 무제한 조건을 제공합니다. Free는 Quip에 제한적으로 접근하며 실제 표시와 한도는 계정, 지역과 워크스페이스에 따라 달라집니다. 무제한에도 남용 방지 조건이 있고 영상과 화면 공유는 Advanced의 별도 지원 조건을 따릅니다.",
+              "source_ids": [
+                "live-help"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "Desktop과 API 비용",
+              "text": "Desktop 음성의 0.05 USD / 분은 기존 Codex 사용 예산에서 차감하며 작업 모델과 도구 사용은 따로 청구합니다. 크레딧 청구의 1.25 크레딧 / 분은 USD 단가와 다른 단위입니다. 기존 Live 1 API도 0.05 USD / 분이지만 초 단위로 계산하며 백엔드 요금이 추가됩니다. 숫자가 같아도 같은 상품이거나 1.1의 API 제공을 뜻하지 않습니다.",
+              "source_ids": [
+                "live-desktop-price",
+                "live-api"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "API에서 확인한 상태",
+              "text": "15일 발표는 1.1을 앱에 순차 제공하고 API는 후속 출시할 예정이라고 설명했습니다. 19일 확인한 API 문서는 여전히 gpt-live-1을 명시합니다. 15일의 Decisions 연결과 16일의 목소리 생성 추가는 그 기존 ID의 기능 갱신입니다. 목소리 추가를 1.1 API의 출시로 바꾸지 않고 새 API의 정확한 ID와 단가는 미확인으로 남깁니다.",
+              "source_ids": [
+                "live-forum",
+                "live-api",
+                "live-api-changelog"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "judgment",
+              "title": "Realtime2.1의 대안 범위",
+              "text": "Realtime 2.1은 128,000토큰 문맥과 32,000토큰 출력 상한, 추론 설정과 도구 사용을 제공하는 별도 음성 API입니다. 표준 가격은 100만 텍스트 토큰당 입력 4 / 출력 24 USD, 100만 오디오 토큰당 입력 32 / 출력 64 USD입니다. 소리 길이와 말의 양에 따라 토큰 수가 달라지므로 임의로 분당 0.05 USD와 환산 비교하지 않습니다.",
+              "source_ids": [
+                "realtime-21"
+              ]
+            }
+          ]
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "kind": "judgment",
+            "label": "모델 판단",
+            "text": "다국어 억양과 대화 제어 개선은 선택에 유용한 변화이지만 품질 수치의 독립 측정은 없습니다. 같은 시스템 카드의 안전성과 실패 고지에는 개선과 회귀가 함께 있으므로 1.1이나 Quip이 항상 더 안전하다고 일반화하지 않습니다.",
+            "source_ids": [
+              "live-system",
+              "live-forum"
+            ]
+          },
+          {
+            "kind": "judgment",
+            "label": "제공 판단",
+            "text": "앱 사용자는 플랜과 지원 기능을, 개발자는 확인된 API ID와 가격 단위를 기준으로 비교해야 합니다. 1.1의 앱 제공, 기존 Live 1 API, Realtime 2.1 API와 Desktop의 사용 예산을 분리해서 판단할 수 있습니다.",
+            "source_ids": [
+              "live-help",
+              "live-api",
+              "realtime-21",
+              "live-desktop-price"
+            ]
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "발표는 10월 15일, 이번 확인과 보완 등록은 19일입니다. 문맥, 규모, 새로운 API의 단가와 세부 평가 설정 중 원문이 공개하지 않은 값은 추정하지 않았습니다. 실제 대화, 계정 접근, 과금, 모델 실행, 독립 평가와 사람 독해 시험은 수행하지 않았습니다.",
+          "source_ids": [
+            "live-system",
+            "live-forum",
+            "live-help"
+          ]
+        }
+      ],
+      "references": [
+        {
+          "id": "live-system",
+          "title": "GPT-Live-1.1 공식 시스템 카드",
+          "description": "10월 15일 후속 모델의 관계와 같은 카드의 안전성 표, 경고와 장애 및 검색 관련 평가를 제공합니다.",
+          "url": "https://deploymentsafety.openai.com/gpt-live-1-1"
+        },
+        {
+          "id": "live-help",
+          "title": "ChatGPT Voice의 현재 제공 범위",
+          "description": "앱의 Live, Advanced와 Standard 차이, 플랜별 한도와 영상 및 화면 공유 제약을 설명합니다.",
+          "url": "https://help.openai.com/en/articles/20001274-chatgpt-voice"
+        },
+        {
+          "id": "live-forum",
+          "title": "10월15일 Live 1.1 공식 발표",
+          "description": "새 목소리와 다국어 억양, 지시 추종과 위임 개선, API 후속 출시 예고를 확인합니다.",
+          "url": "https://community.openai.com/t/gpt-live-1-1-is-rolling-out-with-new-voices-and-better-accents/1406704"
+        },
+        {
+          "id": "live-api",
+          "title": "기존 GPT-Live 1 API 모델 문서",
+          "description": "gpt-live-1의 지원 입출력, 0.05 USD / 분 요금과 별도 백엔드 비용을 확인합니다.",
+          "url": "https://developers.openai.com/api/docs/models/gpt-live-1"
+        },
+        {
+          "id": "live-api-changelog",
+          "title": "OpenAI API 변경 이력",
+          "description": "15일의 Decisions 연결과 16일의 커스텀 음성 추가가 gpt-live-1의 기능 변경임을 구분합니다.",
+          "url": "https://developers.openai.com/api/docs/changelog"
+        },
+        {
+          "id": "realtime-21",
+          "title": "GPT-Realtime-2.1 공식 모델 문서",
+          "description": "128,000토큰 문맥, 32,000토큰 출력 상한과 모달리티별 표준 API 단가를 비교합니다.",
+          "url": "https://developers.openai.com/api/docs/models/gpt-realtime-2.1"
+        },
+        {
+          "id": "live-desktop-price",
+          "title": "ChatGPT Desktop 음성 가격",
+          "description": "Desktop 음성의 0.05 USD / 분과 1.25 크레딧 / 분, 작업 모델의 별도 청구를 구분합니다.",
+          "url": "https://learn.chatgpt.com/docs/pricing"
+        }
+      ]
+    }
+  ]
+}

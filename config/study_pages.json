@@ -57,7 +57,8 @@
     "flux-3-image-klein-model-guide",
     "jais-3-model-guide",
     "jais-asr-model-guide",
-    "deepseek-v4-1-flash-model-guide"
+    "deepseek-v4-1-flash-model-guide",
+    "gpt-live-1-1-model-guide"
   ],
   "catalogs": {
     "devops-implementation-guide": "devops_tools.2026-10-10.r4.json"
@@ -148,6 +149,9 @@
     ],
     "deepseek-v4-1-flash-model-guide": [
       "9a6bd2aefbabe3c0e086eeea65e1b9553ef919d92ef9007971f8c19a661c837e"
+    ],
+    "gpt-live-1-1-model-guide": [
+      "c48593720a0b1549980919d1205894f117a68509c1b5afa94c1a6790d22926a9"
     ]
   },
   "model_introduction_editions": {
@@ -191,6 +195,9 @@
     ],
     "deepseek-v4-1-flash-model-guide": [
       "9a6bd2aefbabe3c0e086eeea65e1b9553ef919d92ef9007971f8c19a661c837e"
+    ],
+    "gpt-live-1-1-model-guide": [
+      "c48593720a0b1549980919d1205894f117a68509c1b5afa94c1a6790d22926a9"
     ]
   },
   "model_introduction_purpose_editions": {
@@ -223,6 +230,9 @@
     ],
     "deepseek-v4-1-flash-model-guide": [
       "9a6bd2aefbabe3c0e086eeea65e1b9553ef919d92ef9007971f8c19a661c837e"
+    ],
+    "gpt-live-1-1-model-guide": [
+      "c48593720a0b1549980919d1205894f117a68509c1b5afa94c1a6790d22926a9"
     ]
   },
   "model_introduction_reader_editions": {
@@ -252,6 +262,9 @@
     ],
     "deepseek-v4-1-flash-model-guide": [
       "9a6bd2aefbabe3c0e086eeea65e1b9553ef919d92ef9007971f8c19a661c837e"
+    ],
+    "gpt-live-1-1-model-guide": [
+      "c48593720a0b1549980919d1205894f117a68509c1b5afa94c1a6790d22926a9"
     ]
   }
 }

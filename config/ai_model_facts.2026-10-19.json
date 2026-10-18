@@ -1,0 +1,1395 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "id": "live11-safety-0-0-0",
+      "model": "GPT-Live-1",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Voice-Native Evaluations: Production Prompts / Sexual",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "condition": "2026-10-15 시스템 카드 표1. 0–1 원문 점수. 실제트래픽의위험률/발음정확도아님. 과거모델은이카드시점의최신판. 표본수/개별snapshot/생성설정/정확실행일미명시. 독립실행미수행.",
+        "basis": "OpenAI 공식 시스템 카드의 동일 표 비교",
+        "평가 점수": 0.77,
+        "단위": "0–1 원문 점수",
+        "평가 분류": "성적 콘텐츠"
+      }
+    },
+    {
+      "id": "live11-safety-0-0-1",
+      "model": "GPT-Live-1.1",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Voice-Native Evaluations: Production Prompts / Sexual",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "condition": "2026-10-15 시스템 카드 표1. 0–1 원문 점수. 실제트래픽의위험률/발음정확도아님. 과거모델은이카드시점의최신판. 표본수/개별snapshot/생성설정/정확실행일미명시. 독립실행미수행.",
+        "basis": "OpenAI 공식 시스템 카드의 동일 표 비교",
+        "평가 점수": 0.81,
+        "단위": "0–1 원문 점수",
+        "평가 분류": "성적 콘텐츠"
+      }
+    },
+    {
+      "id": "live11-safety-0-0-2",
+      "model": "GPT-Live-1 mini",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Voice-Native Evaluations: Production Prompts / Sexual",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "condition": "2026-10-15 시스템 카드 표1. 0–1 원문 점수. 실제트래픽의위험률/발음정확도아님. 과거모델은이카드시점의최신판. 표본수/개별snapshot/생성설정/정확실행일미명시. 독립실행미수행.",
+        "basis": "OpenAI 공식 시스템 카드의 동일 표 비교",
+        "평가 점수": 0.69,
+        "단위": "0–1 원문 점수",
+        "평가 분류": "성적 콘텐츠"
+      }
+    },
+    {
+      "id": "live11-safety-0-0-3",
+      "model": "GPT-Live-1.1 Quip",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Voice-Native Evaluations: Production Prompts / Sexual",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "condition": "2026-10-15 시스템 카드 표1. 0–1 원문 점수. 실제트래픽의위험률/발음정확도아님. 과거모델은이카드시점의최신판. 표본수/개별snapshot/생성설정/정확실행일미명시. 독립실행미수행.",
+        "basis": "OpenAI 공식 시스템 카드의 동일 표 비교",
+        "평가 점수": 0.78,
+        "단위": "0–1 원문 점수",
+        "평가 분류": "성적 콘텐츠"
+      }
+    },
+    {
+      "id": "live11-safety-0-1-0",
+      "model": "GPT-Live-1",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Voice-Native Evaluations: Production Prompts / Illicit behavior",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "condition": "2026-10-15 시스템 카드 표1. 0–1 원문 점수. 실제트래픽의위험률/발음정확도아님. 과거모델은이카드시점의최신판. 표본수/개별snapshot/생성설정/정확실행일미명시. 독립실행미수행.",
+        "basis": "OpenAI 공식 시스템 카드의 동일 표 비교",
+        "평가 점수": 0.87,
+        "단위": "0–1 원문 점수",
+        "평가 분류": "불법 행위"
+      }
+    },
+    {
+      "id": "live11-safety-0-1-1",
+      "model": "GPT-Live-1.1",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Voice-Native Evaluations: Production Prompts / Illicit behavior",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "condition": "2026-10-15 시스템 카드 표1. 0–1 원문 점수. 실제트래픽의위험률/발음정확도아님. 과거모델은이카드시점의최신판. 표본수/개별snapshot/생성설정/정확실행일미명시. 독립실행미수행.",
+        "basis": "OpenAI 공식 시스템 카드의 동일 표 비교",
+        "평가 점수": 0.86,
+        "단위": "0–1 원문 점수",
+        "평가 분류": "불법 행위"
+      }
+    },
+    {
+      "id": "live11-safety-0-1-2",
+      "model": "GPT-Live-1 mini",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Voice-Native Evaluations: Production Prompts / Illicit behavior",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "condition": "2026-10-15 시스템 카드 표1. 0–1 원문 점수. 실제트래픽의위험률/발음정확도아님. 과거모델은이카드시점의최신판. 표본수/개별snapshot/생성설정/정확실행일미명시. 독립실행미수행.",
+        "basis": "OpenAI 공식 시스템 카드의 동일 표 비교",
+        "평가 점수": 0.84,
+        "단위": "0–1 원문 점수",
+        "평가 분류": "불법 행위"
+      }
+    },
+    {
+      "id": "live11-safety-0-1-3",
+      "model": "GPT-Live-1.1 Quip",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Voice-Native Evaluations: Production Prompts / Illicit behavior",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "condition": "2026-10-15 시스템 카드 표1. 0–1 원문 점수. 실제트래픽의위험률/발음정확도아님. 과거모델은이카드시점의최신판. 표본수/개별snapshot/생성설정/정확실행일미명시. 독립실행미수행.",
+        "basis": "OpenAI 공식 시스템 카드의 동일 표 비교",
+        "평가 점수": 0.86,
+        "단위": "0–1 원문 점수",
+        "평가 분류": "불법 행위"
+      }
+    },
+    {
+      "id": "live11-safety-0-2-0",
+      "model": "GPT-Live-1",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Voice-Native Evaluations: Production Prompts / Mental health",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "condition": "2026-10-15 시스템 카드 표1. 0–1 원문 점수. 실제트래픽의위험률/발음정확도아님. 과거모델은이카드시점의최신판. 표본수/개별snapshot/생성설정/정확실행일미명시. 독립실행미수행.",
+        "basis": "OpenAI 공식 시스템 카드의 동일 표 비교",
+        "평가 점수": 0.78,
+        "단위": "0–1 원문 점수",
+        "평가 분류": "정신건강"
+      }
+    },
+    {
+      "id": "live11-safety-0-2-1",
+      "model": "GPT-Live-1.1",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Voice-Native Evaluations: Production Prompts / Mental health",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "condition": "2026-10-15 시스템 카드 표1. 0–1 원문 점수. 실제트래픽의위험률/발음정확도아님. 과거모델은이카드시점의최신판. 표본수/개별snapshot/생성설정/정확실행일미명시. 독립실행미수행.",
+        "basis": "OpenAI 공식 시스템 카드의 동일 표 비교",
+        "평가 점수": 0.81,
+        "단위": "0–1 원문 점수",
+        "평가 분류": "정신건강"
+      }
+    },
+    {
+      "id": "live11-safety-0-2-2",
+      "model": "GPT-Live-1 mini",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Voice-Native Evaluations: Production Prompts / Mental health",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "condition": "2026-10-15 시스템 카드 표1. 0–1 원문 점수. 실제트래픽의위험률/발음정확도아님. 과거모델은이카드시점의최신판. 표본수/개별snapshot/생성설정/정확실행일미명시. 독립실행미수행.",
+        "basis": "OpenAI 공식 시스템 카드의 동일 표 비교",
+        "평가 점수": 0.76,
+        "단위": "0–1 원문 점수",
+        "평가 분류": "정신건강"
+      }
+    },
+    {
+      "id": "live11-safety-0-2-3",
+      "model": "GPT-Live-1.1 Quip",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Voice-Native Evaluations: Production Prompts / Mental health",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "condition": "2026-10-15 시스템 카드 표1. 0–1 원문 점수. 실제트래픽의위험률/발음정확도아님. 과거모델은이카드시점의최신판. 표본수/개별snapshot/생성설정/정확실행일미명시. 독립실행미수행.",
+        "basis": "OpenAI 공식 시스템 카드의 동일 표 비교",
+        "평가 점수": 0.81,
+        "단위": "0–1 원문 점수",
+        "평가 분류": "정신건강"
+      }
+    },
+    {
+      "id": "live11-safety-0-3-0",
+      "model": "GPT-Live-1",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Voice-Native Evaluations: Production Prompts / Personal data",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "condition": "2026-10-15 시스템 카드 표1. 0–1 원문 점수. 실제트래픽의위험률/발음정확도아님. 과거모델은이카드시점의최신판. 표본수/개별snapshot/생성설정/정확실행일미명시. 독립실행미수행.",
+        "basis": "OpenAI 공식 시스템 카드의 동일 표 비교",
+        "평가 점수": 0.92,
+        "단위": "0–1 원문 점수",
+        "평가 분류": "개인정보"
+      }
+    },
+    {
+      "id": "live11-safety-0-3-1",
+      "model": "GPT-Live-1.1",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Voice-Native Evaluations: Production Prompts / Personal data",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "condition": "2026-10-15 시스템 카드 표1. 0–1 원문 점수. 실제트래픽의위험률/발음정확도아님. 과거모델은이카드시점의최신판. 표본수/개별snapshot/생성설정/정확실행일미명시. 독립실행미수행.",
+        "basis": "OpenAI 공식 시스템 카드의 동일 표 비교",
+        "평가 점수": 0.92,
+        "단위": "0–1 원문 점수",
+        "평가 분류": "개인정보"
+      }
+    },
+    {
+      "id": "live11-safety-0-3-2",
+      "model": "GPT-Live-1 mini",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Voice-Native Evaluations: Production Prompts / Personal data",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "condition": "2026-10-15 시스템 카드 표1. 0–1 원문 점수. 실제트래픽의위험률/발음정확도아님. 과거모델은이카드시점의최신판. 표본수/개별snapshot/생성설정/정확실행일미명시. 독립실행미수행.",
+        "basis": "OpenAI 공식 시스템 카드의 동일 표 비교",
+        "평가 점수": 0.89,
+        "단위": "0–1 원문 점수",
+        "평가 분류": "개인정보"
+      }
+    },
+    {
+      "id": "live11-safety-0-3-3",
+      "model": "GPT-Live-1.1 Quip",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Voice-Native Evaluations: Production Prompts / Personal data",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "condition": "2026-10-15 시스템 카드 표1. 0–1 원문 점수. 실제트래픽의위험률/발음정확도아님. 과거모델은이카드시점의최신판. 표본수/개별snapshot/생성설정/정확실행일미명시. 독립실행미수행.",
+        "basis": "OpenAI 공식 시스템 카드의 동일 표 비교",
+        "평가 점수": 0.92,
+        "단위": "0–1 원문 점수",
+        "평가 분류": "개인정보"
+      }
+    },
+    {
+      "id": "live11-safety-0-4-0",
+      "model": "GPT-Live-1",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Voice-Native Evaluations: Production Prompts / Emotional reliance",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "condition": "2026-10-15 시스템 카드 표1. 0–1 원문 점수. 실제트래픽의위험률/발음정확도아님. 과거모델은이카드시점의최신판. 표본수/개별snapshot/생성설정/정확실행일미명시. 독립실행미수행.",
+        "basis": "OpenAI 공식 시스템 카드의 동일 표 비교",
+        "평가 점수": 0.76,
+        "단위": "0–1 원문 점수",
+        "평가 분류": "정서적 의존"
+      }
+    },
+    {
+      "id": "live11-safety-0-4-1",
+      "model": "GPT-Live-1.1",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Voice-Native Evaluations: Production Prompts / Emotional reliance",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "condition": "2026-10-15 시스템 카드 표1. 0–1 원문 점수. 실제트래픽의위험률/발음정확도아님. 과거모델은이카드시점의최신판. 표본수/개별snapshot/생성설정/정확실행일미명시. 독립실행미수행.",
+        "basis": "OpenAI 공식 시스템 카드의 동일 표 비교",
+        "평가 점수": 0.76,
+        "단위": "0–1 원문 점수",
+        "평가 분류": "정서적 의존"
+      }
+    },
+    {
+      "id": "live11-safety-0-4-2",
+      "model": "GPT-Live-1 mini",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Voice-Native Evaluations: Production Prompts / Emotional reliance",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "condition": "2026-10-15 시스템 카드 표1. 0–1 원문 점수. 실제트래픽의위험률/발음정확도아님. 과거모델은이카드시점의최신판. 표본수/개별snapshot/생성설정/정확실행일미명시. 독립실행미수행.",
+        "basis": "OpenAI 공식 시스템 카드의 동일 표 비교",
+        "평가 점수": 0.7,
+        "단위": "0–1 원문 점수",
+        "평가 분류": "정서적 의존"
+      }
+    },
+    {
+      "id": "live11-safety-0-4-3",
+      "model": "GPT-Live-1.1 Quip",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Voice-Native Evaluations: Production Prompts / Emotional reliance",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "condition": "2026-10-15 시스템 카드 표1. 0–1 원문 점수. 실제트래픽의위험률/발음정확도아님. 과거모델은이카드시점의최신판. 표본수/개별snapshot/생성설정/정확실행일미명시. 독립실행미수행.",
+        "basis": "OpenAI 공식 시스템 카드의 동일 표 비교",
+        "평가 점수": 0.79,
+        "단위": "0–1 원문 점수",
+        "평가 분류": "정서적 의존"
+      }
+    },
+    {
+      "id": "live11-safety-0-5-0",
+      "model": "GPT-Live-1",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Voice-Native Evaluations: Production Prompts / Self-harm",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "condition": "2026-10-15 시스템 카드 표1. 0–1 원문 점수. 실제트래픽의위험률/발음정확도아님. 과거모델은이카드시점의최신판. 표본수/개별snapshot/생성설정/정확실행일미명시. 독립실행미수행.",
+        "basis": "OpenAI 공식 시스템 카드의 동일 표 비교",
+        "평가 점수": 0.85,
+        "단위": "0–1 원문 점수",
+        "평가 분류": "자해"
+      }
+    },
+    {
+      "id": "live11-safety-0-5-1",
+      "model": "GPT-Live-1.1",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Voice-Native Evaluations: Production Prompts / Self-harm",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "condition": "2026-10-15 시스템 카드 표1. 0–1 원문 점수. 실제트래픽의위험률/발음정확도아님. 과거모델은이카드시점의최신판. 표본수/개별snapshot/생성설정/정확실행일미명시. 독립실행미수행.",
+        "basis": "OpenAI 공식 시스템 카드의 동일 표 비교",
+        "평가 점수": 0.86,
+        "단위": "0–1 원문 점수",
+        "평가 분류": "자해"
+      }
+    },
+    {
+      "id": "live11-safety-0-5-2",
+      "model": "GPT-Live-1 mini",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Voice-Native Evaluations: Production Prompts / Self-harm",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "condition": "2026-10-15 시스템 카드 표1. 0–1 원문 점수. 실제트래픽의위험률/발음정확도아님. 과거모델은이카드시점의최신판. 표본수/개별snapshot/생성설정/정확실행일미명시. 독립실행미수행.",
+        "basis": "OpenAI 공식 시스템 카드의 동일 표 비교",
+        "평가 점수": 0.84,
+        "단위": "0–1 원문 점수",
+        "평가 분류": "자해"
+      }
+    },
+    {
+      "id": "live11-safety-0-5-3",
+      "model": "GPT-Live-1.1 Quip",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Voice-Native Evaluations: Production Prompts / Self-harm",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "condition": "2026-10-15 시스템 카드 표1. 0–1 원문 점수. 실제트래픽의위험률/발음정확도아님. 과거모델은이카드시점의최신판. 표본수/개별snapshot/생성설정/정확실행일미명시. 독립실행미수행.",
+        "basis": "OpenAI 공식 시스템 카드의 동일 표 비교",
+        "평가 점수": 0.88,
+        "단위": "0–1 원문 점수",
+        "평가 분류": "자해"
+      }
+    },
+    {
+      "id": "live11-safety-1-0-0",
+      "model": "GPT-Live-1",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Voice-Native Evaluations: Synthetic Prompts / Sexual",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "condition": "2026-10-15 시스템 카드 표2. 0–1 원문 점수. 실제트래픽의위험률/발음정확도아님. 과거모델은이카드시점의최신판. 표본수/개별snapshot/생성설정/정확실행일미명시. 독립실행미수행.",
+        "basis": "OpenAI 공식 시스템 카드의 동일 표 비교",
+        "평가 점수": 0.87,
+        "단위": "0–1 원문 점수",
+        "평가 분류": "성적 콘텐츠"
+      }
+    },
+    {
+      "id": "live11-safety-1-0-1",
+      "model": "GPT-Live-1.1",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Voice-Native Evaluations: Synthetic Prompts / Sexual",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "condition": "2026-10-15 시스템 카드 표2. 0–1 원문 점수. 실제트래픽의위험률/발음정확도아님. 과거모델은이카드시점의최신판. 표본수/개별snapshot/생성설정/정확실행일미명시. 독립실행미수행.",
+        "basis": "OpenAI 공식 시스템 카드의 동일 표 비교",
+        "평가 점수": 0.84,
+        "단위": "0–1 원문 점수",
+        "평가 분류": "성적 콘텐츠"
+      }
+    },
+    {
+      "id": "live11-safety-1-0-2",
+      "model": "GPT-Live-1 mini",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Voice-Native Evaluations: Synthetic Prompts / Sexual",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "condition": "2026-10-15 시스템 카드 표2. 0–1 원문 점수. 실제트래픽의위험률/발음정확도아님. 과거모델은이카드시점의최신판. 표본수/개별snapshot/생성설정/정확실행일미명시. 독립실행미수행.",
+        "basis": "OpenAI 공식 시스템 카드의 동일 표 비교",
+        "평가 점수": 0.83,
+        "단위": "0–1 원문 점수",
+        "평가 분류": "성적 콘텐츠"
+      }
+    },
+    {
+      "id": "live11-safety-1-0-3",
+      "model": "GPT-Live-1.1 Quip",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Voice-Native Evaluations: Synthetic Prompts / Sexual",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "condition": "2026-10-15 시스템 카드 표2. 0–1 원문 점수. 실제트래픽의위험률/발음정확도아님. 과거모델은이카드시점의최신판. 표본수/개별snapshot/생성설정/정확실행일미명시. 독립실행미수행.",
+        "basis": "OpenAI 공식 시스템 카드의 동일 표 비교",
+        "평가 점수": 0.83,
+        "단위": "0–1 원문 점수",
+        "평가 분류": "성적 콘텐츠"
+      }
+    },
+    {
+      "id": "live11-safety-1-1-0",
+      "model": "GPT-Live-1",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Voice-Native Evaluations: Synthetic Prompts / Illicit behavior",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "condition": "2026-10-15 시스템 카드 표2. 0–1 원문 점수. 실제트래픽의위험률/발음정확도아님. 과거모델은이카드시점의최신판. 표본수/개별snapshot/생성설정/정확실행일미명시. 독립실행미수행.",
+        "basis": "OpenAI 공식 시스템 카드의 동일 표 비교",
+        "평가 점수": 0.94,
+        "단위": "0–1 원문 점수",
+        "평가 분류": "불법 행위"
+      }
+    },
+    {
+      "id": "live11-safety-1-1-1",
+      "model": "GPT-Live-1.1",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Voice-Native Evaluations: Synthetic Prompts / Illicit behavior",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "condition": "2026-10-15 시스템 카드 표2. 0–1 원문 점수. 실제트래픽의위험률/발음정확도아님. 과거모델은이카드시점의최신판. 표본수/개별snapshot/생성설정/정확실행일미명시. 독립실행미수행.",
+        "basis": "OpenAI 공식 시스템 카드의 동일 표 비교",
+        "평가 점수": 0.93,
+        "단위": "0–1 원문 점수",
+        "평가 분류": "불법 행위"
+      }
+    },
+    {
+      "id": "live11-safety-1-1-2",
+      "model": "GPT-Live-1 mini",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Voice-Native Evaluations: Synthetic Prompts / Illicit behavior",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "condition": "2026-10-15 시스템 카드 표2. 0–1 원문 점수. 실제트래픽의위험률/발음정확도아님. 과거모델은이카드시점의최신판. 표본수/개별snapshot/생성설정/정확실행일미명시. 독립실행미수행.",
+        "basis": "OpenAI 공식 시스템 카드의 동일 표 비교",
+        "평가 점수": 0.92,
+        "단위": "0–1 원문 점수",
+        "평가 분류": "불법 행위"
+      }
+    },
+    {
+      "id": "live11-safety-1-1-3",
+      "model": "GPT-Live-1.1 Quip",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Voice-Native Evaluations: Synthetic Prompts / Illicit behavior",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "condition": "2026-10-15 시스템 카드 표2. 0–1 원문 점수. 실제트래픽의위험률/발음정확도아님. 과거모델은이카드시점의최신판. 표본수/개별snapshot/생성설정/정확실행일미명시. 독립실행미수행.",
+        "basis": "OpenAI 공식 시스템 카드의 동일 표 비교",
+        "평가 점수": 0.92,
+        "단위": "0–1 원문 점수",
+        "평가 분류": "불법 행위"
+      }
+    },
+    {
+      "id": "live11-safety-1-2-0",
+      "model": "GPT-Live-1",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Voice-Native Evaluations: Synthetic Prompts / Mental health",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "condition": "2026-10-15 시스템 카드 표2. 0–1 원문 점수. 실제트래픽의위험률/발음정확도아님. 과거모델은이카드시점의최신판. 표본수/개별snapshot/생성설정/정확실행일미명시. 독립실행미수행.",
+        "basis": "OpenAI 공식 시스템 카드의 동일 표 비교",
+        "평가 점수": 0.7,
+        "단위": "0–1 원문 점수",
+        "평가 분류": "정신건강"
+      }
+    },
+    {
+      "id": "live11-safety-1-2-1",
+      "model": "GPT-Live-1.1",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Voice-Native Evaluations: Synthetic Prompts / Mental health",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "condition": "2026-10-15 시스템 카드 표2. 0–1 원문 점수. 실제트래픽의위험률/발음정확도아님. 과거모델은이카드시점의최신판. 표본수/개별snapshot/생성설정/정확실행일미명시. 독립실행미수행.",
+        "basis": "OpenAI 공식 시스템 카드의 동일 표 비교",
+        "평가 점수": 0.63,
+        "단위": "0–1 원문 점수",
+        "평가 분류": "정신건강"
+      }
+    },
+    {
+      "id": "live11-safety-1-2-2",
+      "model": "GPT-Live-1 mini",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Voice-Native Evaluations: Synthetic Prompts / Mental health",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "condition": "2026-10-15 시스템 카드 표2. 0–1 원문 점수. 실제트래픽의위험률/발음정확도아님. 과거모델은이카드시점의최신판. 표본수/개별snapshot/생성설정/정확실행일미명시. 독립실행미수행.",
+        "basis": "OpenAI 공식 시스템 카드의 동일 표 비교",
+        "평가 점수": 0.6,
+        "단위": "0–1 원문 점수",
+        "평가 분류": "정신건강"
+      }
+    },
+    {
+      "id": "live11-safety-1-2-3",
+      "model": "GPT-Live-1.1 Quip",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Voice-Native Evaluations: Synthetic Prompts / Mental health",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "condition": "2026-10-15 시스템 카드 표2. 0–1 원문 점수. 실제트래픽의위험률/발음정확도아님. 과거모델은이카드시점의최신판. 표본수/개별snapshot/생성설정/정확실행일미명시. 독립실행미수행.",
+        "basis": "OpenAI 공식 시스템 카드의 동일 표 비교",
+        "평가 점수": 0.59,
+        "단위": "0–1 원문 점수",
+        "평가 분류": "정신건강"
+      }
+    },
+    {
+      "id": "live11-safety-1-3-0",
+      "model": "GPT-Live-1",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Voice-Native Evaluations: Synthetic Prompts / Personal data",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "condition": "2026-10-15 시스템 카드 표2. 0–1 원문 점수. 실제트래픽의위험률/발음정확도아님. 과거모델은이카드시점의최신판. 표본수/개별snapshot/생성설정/정확실행일미명시. 독립실행미수행.",
+        "basis": "OpenAI 공식 시스템 카드의 동일 표 비교",
+        "평가 점수": 0.95,
+        "단위": "0–1 원문 점수",
+        "평가 분류": "개인정보"
+      }
+    },
+    {
+      "id": "live11-safety-1-3-1",
+      "model": "GPT-Live-1.1",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Voice-Native Evaluations: Synthetic Prompts / Personal data",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "condition": "2026-10-15 시스템 카드 표2. 0–1 원문 점수. 실제트래픽의위험률/발음정확도아님. 과거모델은이카드시점의최신판. 표본수/개별snapshot/생성설정/정확실행일미명시. 독립실행미수행.",
+        "basis": "OpenAI 공식 시스템 카드의 동일 표 비교",
+        "평가 점수": 0.95,
+        "단위": "0–1 원문 점수",
+        "평가 분류": "개인정보"
+      }
+    },
+    {
+      "id": "live11-safety-1-3-2",
+      "model": "GPT-Live-1 mini",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Voice-Native Evaluations: Synthetic Prompts / Personal data",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "condition": "2026-10-15 시스템 카드 표2. 0–1 원문 점수. 실제트래픽의위험률/발음정확도아님. 과거모델은이카드시점의최신판. 표본수/개별snapshot/생성설정/정확실행일미명시. 독립실행미수행.",
+        "basis": "OpenAI 공식 시스템 카드의 동일 표 비교",
+        "평가 점수": 0.93,
+        "단위": "0–1 원문 점수",
+        "평가 분류": "개인정보"
+      }
+    },
+    {
+      "id": "live11-safety-1-3-3",
+      "model": "GPT-Live-1.1 Quip",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Voice-Native Evaluations: Synthetic Prompts / Personal data",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "condition": "2026-10-15 시스템 카드 표2. 0–1 원문 점수. 실제트래픽의위험률/발음정확도아님. 과거모델은이카드시점의최신판. 표본수/개별snapshot/생성설정/정확실행일미명시. 독립실행미수행.",
+        "basis": "OpenAI 공식 시스템 카드의 동일 표 비교",
+        "평가 점수": 0.94,
+        "단위": "0–1 원문 점수",
+        "평가 분류": "개인정보"
+      }
+    },
+    {
+      "id": "live11-safety-1-4-0",
+      "model": "GPT-Live-1",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Voice-Native Evaluations: Synthetic Prompts / Emotional reliance",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "condition": "2026-10-15 시스템 카드 표2. 0–1 원문 점수. 실제트래픽의위험률/발음정확도아님. 과거모델은이카드시점의최신판. 표본수/개별snapshot/생성설정/정확실행일미명시. 독립실행미수행.",
+        "basis": "OpenAI 공식 시스템 카드의 동일 표 비교",
+        "평가 점수": 0.86,
+        "단위": "0–1 원문 점수",
+        "평가 분류": "정서적 의존"
+      }
+    },
+    {
+      "id": "live11-safety-1-4-1",
+      "model": "GPT-Live-1.1",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Voice-Native Evaluations: Synthetic Prompts / Emotional reliance",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "condition": "2026-10-15 시스템 카드 표2. 0–1 원문 점수. 실제트래픽의위험률/발음정확도아님. 과거모델은이카드시점의최신판. 표본수/개별snapshot/생성설정/정확실행일미명시. 독립실행미수행.",
+        "basis": "OpenAI 공식 시스템 카드의 동일 표 비교",
+        "평가 점수": 0.81,
+        "단위": "0–1 원문 점수",
+        "평가 분류": "정서적 의존"
+      }
+    },
+    {
+      "id": "live11-safety-1-4-2",
+      "model": "GPT-Live-1 mini",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Voice-Native Evaluations: Synthetic Prompts / Emotional reliance",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "condition": "2026-10-15 시스템 카드 표2. 0–1 원문 점수. 실제트래픽의위험률/발음정확도아님. 과거모델은이카드시점의최신판. 표본수/개별snapshot/생성설정/정확실행일미명시. 독립실행미수행.",
+        "basis": "OpenAI 공식 시스템 카드의 동일 표 비교",
+        "평가 점수": 0.8,
+        "단위": "0–1 원문 점수",
+        "평가 분류": "정서적 의존"
+      }
+    },
+    {
+      "id": "live11-safety-1-4-3",
+      "model": "GPT-Live-1.1 Quip",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Voice-Native Evaluations: Synthetic Prompts / Emotional reliance",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "condition": "2026-10-15 시스템 카드 표2. 0–1 원문 점수. 실제트래픽의위험률/발음정확도아님. 과거모델은이카드시점의최신판. 표본수/개별snapshot/생성설정/정확실행일미명시. 독립실행미수행.",
+        "basis": "OpenAI 공식 시스템 카드의 동일 표 비교",
+        "평가 점수": 0.8,
+        "단위": "0–1 원문 점수",
+        "평가 분류": "정서적 의존"
+      }
+    },
+    {
+      "id": "live11-safety-1-5-0",
+      "model": "GPT-Live-1",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Voice-Native Evaluations: Synthetic Prompts / Self-harm",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "condition": "2026-10-15 시스템 카드 표2. 0–1 원문 점수. 실제트래픽의위험률/발음정확도아님. 과거모델은이카드시점의최신판. 표본수/개별snapshot/생성설정/정확실행일미명시. 독립실행미수행.",
+        "basis": "OpenAI 공식 시스템 카드의 동일 표 비교",
+        "평가 점수": 0.89,
+        "단위": "0–1 원문 점수",
+        "평가 분류": "자해"
+      }
+    },
+    {
+      "id": "live11-safety-1-5-1",
+      "model": "GPT-Live-1.1",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Voice-Native Evaluations: Synthetic Prompts / Self-harm",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "condition": "2026-10-15 시스템 카드 표2. 0–1 원문 점수. 실제트래픽의위험률/발음정확도아님. 과거모델은이카드시점의최신판. 표본수/개별snapshot/생성설정/정확실행일미명시. 독립실행미수행.",
+        "basis": "OpenAI 공식 시스템 카드의 동일 표 비교",
+        "평가 점수": 0.87,
+        "단위": "0–1 원문 점수",
+        "평가 분류": "자해"
+      }
+    },
+    {
+      "id": "live11-safety-1-5-2",
+      "model": "GPT-Live-1 mini",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Voice-Native Evaluations: Synthetic Prompts / Self-harm",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "condition": "2026-10-15 시스템 카드 표2. 0–1 원문 점수. 실제트래픽의위험률/발음정확도아님. 과거모델은이카드시점의최신판. 표본수/개별snapshot/생성설정/정확실행일미명시. 독립실행미수행.",
+        "basis": "OpenAI 공식 시스템 카드의 동일 표 비교",
+        "평가 점수": 0.85,
+        "단위": "0–1 원문 점수",
+        "평가 분류": "자해"
+      }
+    },
+    {
+      "id": "live11-safety-1-5-3",
+      "model": "GPT-Live-1.1 Quip",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Voice-Native Evaluations: Synthetic Prompts / Self-harm",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "condition": "2026-10-15 시스템 카드 표2. 0–1 원문 점수. 실제트래픽의위험률/발음정확도아님. 과거모델은이카드시점의최신판. 표본수/개별snapshot/생성설정/정확실행일미명시. 독립실행미수행.",
+        "basis": "OpenAI 공식 시스템 카드의 동일 표 비교",
+        "평가 점수": 0.86,
+        "단위": "0–1 원문 점수",
+        "평가 분류": "자해"
+      }
+    },
+    {
+      "id": "live11-safety-1-6-0",
+      "model": "GPT-Live-1",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Voice-Native Evaluations: Synthetic Prompts / Hate",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "condition": "2026-10-15 시스템 카드 표2. 0–1 원문 점수. 실제트래픽의위험률/발음정확도아님. 과거모델은이카드시점의최신판. 표본수/개별snapshot/생성설정/정확실행일미명시. 독립실행미수행.",
+        "basis": "OpenAI 공식 시스템 카드의 동일 표 비교",
+        "평가 점수": 0.96,
+        "단위": "0–1 원문 점수",
+        "평가 분류": "혐오"
+      }
+    },
+    {
+      "id": "live11-safety-1-6-1",
+      "model": "GPT-Live-1.1",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Voice-Native Evaluations: Synthetic Prompts / Hate",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "condition": "2026-10-15 시스템 카드 표2. 0–1 원문 점수. 실제트래픽의위험률/발음정확도아님. 과거모델은이카드시점의최신판. 표본수/개별snapshot/생성설정/정확실행일미명시. 독립실행미수행.",
+        "basis": "OpenAI 공식 시스템 카드의 동일 표 비교",
+        "평가 점수": 0.96,
+        "단위": "0–1 원문 점수",
+        "평가 분류": "혐오"
+      }
+    },
+    {
+      "id": "live11-safety-1-6-2",
+      "model": "GPT-Live-1 mini",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Voice-Native Evaluations: Synthetic Prompts / Hate",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "condition": "2026-10-15 시스템 카드 표2. 0–1 원문 점수. 실제트래픽의위험률/발음정확도아님. 과거모델은이카드시점의최신판. 표본수/개별snapshot/생성설정/정확실행일미명시. 독립실행미수행.",
+        "basis": "OpenAI 공식 시스템 카드의 동일 표 비교",
+        "평가 점수": 0.93,
+        "단위": "0–1 원문 점수",
+        "평가 분류": "혐오"
+      }
+    },
+    {
+      "id": "live11-safety-1-6-3",
+      "model": "GPT-Live-1.1 Quip",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Voice-Native Evaluations: Synthetic Prompts / Hate",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "condition": "2026-10-15 시스템 카드 표2. 0–1 원문 점수. 실제트래픽의위험률/발음정확도아님. 과거모델은이카드시점의최신판. 표본수/개별snapshot/생성설정/정확실행일미명시. 독립실행미수행.",
+        "basis": "OpenAI 공식 시스템 카드의 동일 표 비교",
+        "평가 점수": 0.94,
+        "단위": "0–1 원문 점수",
+        "평가 분류": "혐오"
+      }
+    },
+    {
+      "id": "live11-safety-1-7-0",
+      "model": "GPT-Live-1",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Voice-Native Evaluations: Synthetic Prompts / Gore",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "condition": "2026-10-15 시스템 카드 표2. 0–1 원문 점수. 실제트래픽의위험률/발음정확도아님. 과거모델은이카드시점의최신판. 표본수/개별snapshot/생성설정/정확실행일미명시. 독립실행미수행.",
+        "basis": "OpenAI 공식 시스템 카드의 동일 표 비교",
+        "평가 점수": 0.76,
+        "단위": "0–1 원문 점수",
+        "평가 분류": "잔혹한 묘사"
+      }
+    },
+    {
+      "id": "live11-safety-1-7-1",
+      "model": "GPT-Live-1.1",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Voice-Native Evaluations: Synthetic Prompts / Gore",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "condition": "2026-10-15 시스템 카드 표2. 0–1 원문 점수. 실제트래픽의위험률/발음정확도아님. 과거모델은이카드시점의최신판. 표본수/개별snapshot/생성설정/정확실행일미명시. 독립실행미수행.",
+        "basis": "OpenAI 공식 시스템 카드의 동일 표 비교",
+        "평가 점수": 0.69,
+        "단위": "0–1 원문 점수",
+        "평가 분류": "잔혹한 묘사"
+      }
+    },
+    {
+      "id": "live11-safety-1-7-2",
+      "model": "GPT-Live-1 mini",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Voice-Native Evaluations: Synthetic Prompts / Gore",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "condition": "2026-10-15 시스템 카드 표2. 0–1 원문 점수. 실제트래픽의위험률/발음정확도아님. 과거모델은이카드시점의최신판. 표본수/개별snapshot/생성설정/정확실행일미명시. 독립실행미수행.",
+        "basis": "OpenAI 공식 시스템 카드의 동일 표 비교",
+        "평가 점수": 0.66,
+        "단위": "0–1 원문 점수",
+        "평가 분류": "잔혹한 묘사"
+      }
+    },
+    {
+      "id": "live11-safety-1-7-3",
+      "model": "GPT-Live-1.1 Quip",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Voice-Native Evaluations: Synthetic Prompts / Gore",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "condition": "2026-10-15 시스템 카드 표2. 0–1 원문 점수. 실제트래픽의위험률/발음정확도아님. 과거모델은이카드시점의최신판. 표본수/개별snapshot/생성설정/정확실행일미명시. 독립실행미수행.",
+        "basis": "OpenAI 공식 시스템 카드의 동일 표 비교",
+        "평가 점수": 0.62,
+        "단위": "0–1 원문 점수",
+        "평가 분류": "잔혹한 묘사"
+      }
+    },
+    {
+      "id": "live11-failure-0-0",
+      "model": "GPT-Live-1",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Circumventing Warnings STOP",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 평가; 정확 커밋 미명시",
+        "condition": "그림1. 낮을수록 좋음. 각각다른시험환경의조건부/미고지/기만실패율. 실제트래픽발생률아님. 검색/기만평가는기본개발자프롬프트없이시행. 전체설정/표본수미명시.",
+        "basis": "공식 카드 그림의 막대 숫자와 축 직접 확인",
+        "평가 점수": 5.7,
+        "단위": "실패율 (%) ↓"
+      }
+    },
+    {
+      "id": "live11-failure-0-1",
+      "model": "GPT-Live-1.1",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Circumventing Warnings STOP",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 평가; 정확 커밋 미명시",
+        "condition": "그림1. 낮을수록 좋음. 각각다른시험환경의조건부/미고지/기만실패율. 실제트래픽발생률아님. 검색/기만평가는기본개발자프롬프트없이시행. 전체설정/표본수미명시.",
+        "basis": "공식 카드 그림의 막대 숫자와 축 직접 확인",
+        "평가 점수": 6.2,
+        "단위": "실패율 (%) ↓"
+      }
+    },
+    {
+      "id": "live11-failure-0-2",
+      "model": "GPT-Live-1 mini",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Circumventing Warnings STOP",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 평가; 정확 커밋 미명시",
+        "condition": "그림1. 낮을수록 좋음. 각각다른시험환경의조건부/미고지/기만실패율. 실제트래픽발생률아님. 검색/기만평가는기본개발자프롬프트없이시행. 전체설정/표본수미명시.",
+        "basis": "공식 카드 그림의 막대 숫자와 축 직접 확인",
+        "평가 점수": 5.2,
+        "단위": "실패율 (%) ↓"
+      }
+    },
+    {
+      "id": "live11-failure-0-3",
+      "model": "GPT-Live-1.1 Quip",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Circumventing Warnings STOP",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 평가; 정확 커밋 미명시",
+        "condition": "그림1. 낮을수록 좋음. 각각다른시험환경의조건부/미고지/기만실패율. 실제트래픽발생률아님. 검색/기만평가는기본개발자프롬프트없이시행. 전체설정/표본수미명시.",
+        "basis": "공식 카드 그림의 막대 숫자와 축 직접 확인",
+        "평가 점수": 6.2,
+        "단위": "실패율 (%) ↓"
+      }
+    },
+    {
+      "id": "live11-failure-1-0",
+      "model": "GPT-Live-1",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Blocker Deception",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 평가; 정확 커밋 미명시",
+        "condition": "그림2. 낮을수록 좋음. 각각다른시험환경의조건부/미고지/기만실패율. 실제트래픽발생률아님. 검색/기만평가는기본개발자프롬프트없이시행. 전체설정/표본수미명시.",
+        "basis": "공식 카드 그림의 막대 숫자와 축 직접 확인",
+        "평가 점수": 10.6,
+        "단위": "실패율 (%) ↓"
+      }
+    },
+    {
+      "id": "live11-failure-1-1",
+      "model": "GPT-Live-1.1",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Blocker Deception",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 평가; 정확 커밋 미명시",
+        "condition": "그림2. 낮을수록 좋음. 각각다른시험환경의조건부/미고지/기만실패율. 실제트래픽발생률아님. 검색/기만평가는기본개발자프롬프트없이시행. 전체설정/표본수미명시.",
+        "basis": "공식 카드 그림의 막대 숫자와 축 직접 확인",
+        "평가 점수": 8.4,
+        "단위": "실패율 (%) ↓"
+      }
+    },
+    {
+      "id": "live11-failure-1-2",
+      "model": "GPT-Live-1 mini",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Blocker Deception",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 평가; 정확 커밋 미명시",
+        "condition": "그림2. 낮을수록 좋음. 각각다른시험환경의조건부/미고지/기만실패율. 실제트래픽발생률아님. 검색/기만평가는기본개발자프롬프트없이시행. 전체설정/표본수미명시.",
+        "basis": "공식 카드 그림의 막대 숫자와 축 직접 확인",
+        "평가 점수": 13.1,
+        "단위": "실패율 (%) ↓"
+      }
+    },
+    {
+      "id": "live11-failure-1-3",
+      "model": "GPT-Live-1.1 Quip",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Blocker Deception",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 평가; 정확 커밋 미명시",
+        "condition": "그림2. 낮을수록 좋음. 각각다른시험환경의조건부/미고지/기만실패율. 실제트래픽발생률아님. 검색/기만평가는기본개발자프롬프트없이시행. 전체설정/표본수미명시.",
+        "basis": "공식 카드 그림의 막대 숫자와 축 직접 확인",
+        "평가 점수": 14.3,
+        "단위": "실패율 (%) ↓"
+      }
+    },
+    {
+      "id": "live11-failure-2-0",
+      "model": "GPT-Live-1",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Broken Search Tool",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 평가; 정확 커밋 미명시",
+        "condition": "그림3. 낮을수록 좋음. 각각다른시험환경의조건부/미고지/기만실패율. 실제트래픽발생률아님. 검색/기만평가는기본개발자프롬프트없이시행. 전체설정/표본수미명시.",
+        "basis": "공식 카드 그림의 막대 숫자와 축 직접 확인",
+        "평가 점수": 48.9,
+        "단위": "실패율 (%) ↓"
+      }
+    },
+    {
+      "id": "live11-failure-2-1",
+      "model": "GPT-Live-1.1",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Broken Search Tool",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 평가; 정확 커밋 미명시",
+        "condition": "그림3. 낮을수록 좋음. 각각다른시험환경의조건부/미고지/기만실패율. 실제트래픽발생률아님. 검색/기만평가는기본개발자프롬프트없이시행. 전체설정/표본수미명시.",
+        "basis": "공식 카드 그림의 막대 숫자와 축 직접 확인",
+        "평가 점수": 56.2,
+        "단위": "실패율 (%) ↓"
+      }
+    },
+    {
+      "id": "live11-failure-2-2",
+      "model": "GPT-Live-1 mini",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Broken Search Tool",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 평가; 정확 커밋 미명시",
+        "condition": "그림3. 낮을수록 좋음. 각각다른시험환경의조건부/미고지/기만실패율. 실제트래픽발생률아님. 검색/기만평가는기본개발자프롬프트없이시행. 전체설정/표본수미명시.",
+        "basis": "공식 카드 그림의 막대 숫자와 축 직접 확인",
+        "평가 점수": 48.3,
+        "단위": "실패율 (%) ↓"
+      }
+    },
+    {
+      "id": "live11-failure-2-3",
+      "model": "GPT-Live-1.1 Quip",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Broken Search Tool",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 평가; 정확 커밋 미명시",
+        "condition": "그림3. 낮을수록 좋음. 각각다른시험환경의조건부/미고지/기만실패율. 실제트래픽발생률아님. 검색/기만평가는기본개발자프롬프트없이시행. 전체설정/표본수미명시.",
+        "basis": "공식 카드 그림의 막대 숫자와 축 직접 확인",
+        "평가 점수": 38.0,
+        "단위": "실패율 (%) ↓"
+      }
+    },
+    {
+      "id": "live11-failure-2-4",
+      "model": "GPT-5.6 Terra",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 성능 평가",
+        "suite": "Broken Search Tool",
+        "effort": "미명시",
+        "harness": "OpenAI 자체 평가; 정확 커밋 미명시",
+        "condition": "그림3. 낮을수록 좋음. 각각다른시험환경의조건부/미고지/기만실패율. 실제트래픽발생률아님. 검색/기만평가는기본개발자프롬프트없이시행. 전체설정/표본수미명시.",
+        "basis": "공식 카드 그림의 막대 숫자와 축 직접 확인",
+        "평가 점수": 61.7,
+        "단위": "실패율 (%) ↓"
+      }
+    },
+    {
+      "id": "live11-spec-0",
+      "model": "GPT-Live-1.1",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 모델 사양",
+        "suite": "2026-10-15 후속 모델",
+        "release": "2026-10-15",
+        "status": "앱 순차 제공; API 후속 출시 예고",
+        "access": "ChatGPT / Codex / Dots",
+        "local": false,
+        "condition": "15일발표를19일누락보완. 1.1은Live1,Quip은mini후속. 공식미공개문맥/규모/APIID/단가는추정하지않음. 앱첨부와기존Live1 API모달리티구분.",
+        "이전 모델": "GPT-Live-1",
+        "음성 방식": "동시에 듣고 말하는 full-duplex",
+        "공개 문맥": "미공개",
+        "공개 규모": "미공개",
+        "API 단가": "미확인"
+      }
+    },
+    {
+      "id": "live11-spec-1",
+      "model": "GPT-Live-1.1 Quip",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 모델 사양",
+        "suite": "2026-10-15 후속 모델",
+        "release": "2026-10-15",
+        "status": "앱 순차 제공; API 후속 출시 예고",
+        "access": "ChatGPT / Codex / Dots",
+        "local": false,
+        "condition": "15일발표를19일누락보완. 1.1은Live1,Quip은mini후속. 공식미공개문맥/규모/APIID/단가는추정하지않음. 앱첨부와기존Live1 API모달리티구분.",
+        "이전 모델": "GPT-Live-1 mini",
+        "음성 방식": "동시에 듣고 말하는 full-duplex",
+        "공개 문맥": "미공개",
+        "공개 규모": "미공개",
+        "API 단가": "미확인"
+      }
+    },
+    {
+      "id": "live1-existing-api-price",
+      "model": "GPT-Live-1 API",
+      "provider": "OpenAI",
+      "source_url": "https://developers.openai.com/api/docs/models/gpt-live-1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 서비스 API 요금",
+        "suite": "기존 gpt-live-1 API / 분당",
+        "access": "API",
+        "status": "기존 API 제공",
+        "condition": "USD/분,초단위과금. 백엔드모델/도구별도. 1.1 API가격으로복사하지않음.",
+        "음성 세션 USD / 분": 0.05,
+        "API 모델 ID": "gpt-live-1"
+      }
+    },
+    {
+      "id": "live11-desktop-voice-price",
+      "model": "GPT-Live Desktop 음성",
+      "provider": "OpenAI",
+      "source_url": "https://learn.chatgpt.com/docs/pricing",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 서비스 요금",
+        "suite": "Voice in Desktop / 예산 차감",
+        "access": "Desktop",
+        "condition": "기존Codex사용예산에서음성시간비용차감. 작업모델/도구별도. 1.25크레딧/분은별도크레딧단위이며새1.1API가격아님.",
+        "음성 세션 USD / 분": 0.05,
+        "크레딧 / 분": 1.25
+      }
+    },
+    {
+      "id": "live11-realtime21-price-text",
+      "model": "GPT-Realtime-2.1",
+      "provider": "OpenAI",
+      "source_url": "https://developers.openai.com/api/docs/models/gpt-realtime-2.1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 서비스 API 요금",
+        "suite": "GPT-Realtime-2.1 / 텍스트",
+        "access": "API",
+        "status": "제공 중",
+        "context": 128000,
+        "condition": "100만텍스트토큰당USD. 서로다른모달리티단가. 이미지출력은해당없음. reasoning예산에따라지연/출력사용량증가. 고정분당환산미수행.",
+        "입력 USD / 100만 텍스트 토큰": 4,
+        "캐시 입력 USD / 100만 텍스트 토큰": 0.4,
+        "출력 USD / 100만 텍스트 토큰": 24
+      }
+    },
+    {
+      "id": "live11-realtime21-price-audio",
+      "model": "GPT-Realtime-2.1",
+      "provider": "OpenAI",
+      "source_url": "https://developers.openai.com/api/docs/models/gpt-realtime-2.1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 서비스 API 요금",
+        "suite": "GPT-Realtime-2.1 / 오디오",
+        "access": "API",
+        "status": "제공 중",
+        "context": 128000,
+        "condition": "100만오디오토큰당USD. 서로다른모달리티단가. 이미지출력은해당없음. reasoning예산에따라지연/출력사용량증가. 고정분당환산미수행.",
+        "입력 USD / 100만 오디오 토큰": 32,
+        "캐시 입력 USD / 100만 오디오 토큰": 0.4,
+        "출력 USD / 100만 오디오 토큰": 64
+      }
+    },
+    {
+      "id": "live11-realtime21-price-image",
+      "model": "GPT-Realtime-2.1",
+      "provider": "OpenAI",
+      "source_url": "https://developers.openai.com/api/docs/models/gpt-realtime-2.1",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 서비스 API 요금",
+        "suite": "GPT-Realtime-2.1 / 이미지",
+        "access": "API",
+        "status": "제공 중",
+        "context": 128000,
+        "condition": "100만이미지토큰당USD. 서로다른모달리티단가. 이미지출력은해당없음. reasoning예산에따라지연/출력사용량증가. 고정분당환산미수행.",
+        "입력 USD / 100만 이미지 토큰": 5,
+        "캐시 입력 USD / 100만 이미지 토큰": 0.5
+      }
+    },
+    {
+      "id": "live11-chat-allowance-0",
+      "model": "GPT-Live-1.1",
+      "provider": "OpenAI",
+      "source_url": "https://help.openai.com/en/articles/20001274-chatgpt-voice",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 앱 제공 조건",
+        "suite": "ChatGPT Voice in Chat / 최근24시간한도",
+        "access": "ChatGPT 앱",
+        "status": "계정과지역별제공",
+        "condition": "앱의한도이며API단가가아님. Work업무사용량과Desktop예산별도. 무제한도남용방지조건. 계정별접근미검증.",
+        "기본 제공": "Plus 이상",
+        "Plus 시간 / 24시간": 3,
+        "Pro100 시간 / 24시간": 15,
+        "Pro200": "무제한(남용방지조건)"
+      }
+    },
+    {
+      "id": "live11-chat-allowance-1",
+      "model": "GPT-Live-1.1 Quip",
+      "provider": "OpenAI",
+      "source_url": "https://help.openai.com/en/articles/20001274-chatgpt-voice",
+      "checked_on": "2026-10-19",
+      "fields": {
+        "kind": "공식 앱 제공 조건",
+        "suite": "ChatGPT Voice in Chat / 최근24시간한도",
+        "access": "ChatGPT 앱",
+        "status": "계정과지역별제공",
+        "condition": "앱의한도이며API단가가아님. Work업무사용량과Desktop예산별도. 무제한도남용방지조건. 계정별접근미검증.",
+        "기본 제공": "Free/Go 등",
+        "Free": "제한적접근;변경가능",
+        "Go 시간 / 24시간": 3
+      }
+    }
+  ]
+}
