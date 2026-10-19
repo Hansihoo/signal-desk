@@ -1,0 +1,2009 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "id": "m31f-provider-0-0",
+      "model": "MiniMax-M3.1-Flash",
+      "provider": "MiniMax",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "Automation-Bench v1.0.6",
+        "effort": "모델별 미명시",
+        "harness": "공개 600과제. 세부 메인 표 Harness 미명시; 비용 그래프는 Claude Code로 명시.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. 공개 600과제. 세부 메인 표 Harness 미명시; 비용 그래프는 Claude Code로 명시.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 62.8,
+        "단위": "원문 점수",
+        "원문 모델 표기": "MiniMax-M3.1-Flash"
+      }
+    },
+    {
+      "id": "m31f-provider-0-1",
+      "model": "DeepSeek-V4.1-Flash-1017",
+      "provider": "DeepSeek",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "Automation-Bench v1.0.6",
+        "effort": "모델별 미명시",
+        "harness": "공개 600과제. 세부 메인 표 Harness 미명시; 비용 그래프는 Claude Code로 명시.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. 공개 600과제. 세부 메인 표 Harness 미명시; 비용 그래프는 Claude Code로 명시.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 60.5,
+        "단위": "원문 점수",
+        "원문 모델 표기": "DeepSeek-V4.1-Flash-1017"
+      }
+    },
+    {
+      "id": "m31f-provider-0-2",
+      "model": "DeepSeek-V4.1-Flash",
+      "provider": "DeepSeek",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "Automation-Bench v1.0.6",
+        "effort": "모델별 미명시",
+        "harness": "공개 600과제. 세부 메인 표 Harness 미명시; 비용 그래프는 Claude Code로 명시.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. 공개 600과제. 세부 메인 표 Harness 미명시; 비용 그래프는 Claude Code로 명시.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 54.8,
+        "단위": "원문 점수",
+        "원문 모델 표기": "DeepSeek-V4.1-Flash"
+      }
+    },
+    {
+      "id": "m31f-provider-0-3",
+      "model": "Kimi-K3",
+      "provider": "Moonshot AI",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "Automation-Bench v1.0.6",
+        "effort": "모델별 미명시",
+        "harness": "공개 600과제. 세부 메인 표 Harness 미명시; 비용 그래프는 Claude Code로 명시.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. 공개 600과제. 세부 메인 표 Harness 미명시; 비용 그래프는 Claude Code로 명시.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 46.7,
+        "단위": "원문 점수",
+        "원문 모델 표기": "Kimi-K3"
+      }
+    },
+    {
+      "id": "m31f-provider-0-4",
+      "model": "GLM-5.3",
+      "provider": "Z.ai",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "Automation-Bench v1.0.6",
+        "effort": "모델별 미명시",
+        "harness": "공개 600과제. 세부 메인 표 Harness 미명시; 비용 그래프는 Claude Code로 명시.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. 공개 600과제. 세부 메인 표 Harness 미명시; 비용 그래프는 Claude Code로 명시.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 48.8,
+        "단위": "원문 점수",
+        "원문 모델 표기": "GLM-5.3"
+      }
+    },
+    {
+      "id": "m31f-provider-0-5",
+      "model": "GPT-5.6 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "Automation-Bench v1.0.6",
+        "effort": "모델별 미명시",
+        "harness": "공개 600과제. 세부 메인 표 Harness 미명시; 비용 그래프는 Claude Code로 명시.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. 공개 600과제. 세부 메인 표 Harness 미명시; 비용 그래프는 Claude Code로 명시.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 45.8,
+        "단위": "원문 점수",
+        "원문 모델 표기": "GPT-5.6 Sol"
+      }
+    },
+    {
+      "id": "m31f-provider-0-6",
+      "model": "Opus 5",
+      "provider": "Anthropic",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "Automation-Bench v1.0.6",
+        "effort": "모델별 미명시",
+        "harness": "공개 600과제. 세부 메인 표 Harness 미명시; 비용 그래프는 Claude Code로 명시.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. 공개 600과제. 세부 메인 표 Harness 미명시; 비용 그래프는 Claude Code로 명시.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 50.3,
+        "단위": "원문 점수",
+        "원문 모델 표기": "Opus 5"
+      }
+    },
+    {
+      "id": "m31f-provider-1-0",
+      "model": "MiniMax-M3.1-Flash",
+      "provider": "MiniMax",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "BankerToolBench",
+        "effort": "모델별 미명시",
+        "harness": "OpenCode 1.17.18 Harness, MiniMax-M2.7 판정 모델.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. OpenCode 1.17.18 Harness, MiniMax-M2.7 판정 모델.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 76.2,
+        "단위": "원문 점수",
+        "원문 모델 표기": "MiniMax-M3.1-Flash"
+      }
+    },
+    {
+      "id": "m31f-provider-1-2",
+      "model": "DeepSeek-V4.1-Flash",
+      "provider": "DeepSeek",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "BankerToolBench",
+        "effort": "모델별 미명시",
+        "harness": "OpenCode 1.17.18 Harness, MiniMax-M2.7 판정 모델.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. OpenCode 1.17.18 Harness, MiniMax-M2.7 판정 모델.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 73.7,
+        "단위": "원문 점수",
+        "원문 모델 표기": "DeepSeek-V4.1-Flash"
+      }
+    },
+    {
+      "id": "m31f-provider-1-3",
+      "model": "Kimi-K3",
+      "provider": "Moonshot AI",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "BankerToolBench",
+        "effort": "모델별 미명시",
+        "harness": "OpenCode 1.17.18 Harness, MiniMax-M2.7 판정 모델.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. OpenCode 1.17.18 Harness, MiniMax-M2.7 판정 모델.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 69.1,
+        "단위": "원문 점수",
+        "원문 모델 표기": "Kimi-K3"
+      }
+    },
+    {
+      "id": "m31f-provider-1-4",
+      "model": "GLM-5.3",
+      "provider": "Z.ai",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "BankerToolBench",
+        "effort": "모델별 미명시",
+        "harness": "OpenCode 1.17.18 Harness, MiniMax-M2.7 판정 모델.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. OpenCode 1.17.18 Harness, MiniMax-M2.7 판정 모델.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 74.5,
+        "단위": "원문 점수",
+        "원문 모델 표기": "GLM-5.3"
+      }
+    },
+    {
+      "id": "m31f-provider-1-5",
+      "model": "GPT-5.6 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "BankerToolBench",
+        "effort": "모델별 미명시",
+        "harness": "OpenCode 1.17.18 Harness, MiniMax-M2.7 판정 모델.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. OpenCode 1.17.18 Harness, MiniMax-M2.7 판정 모델.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 74.6,
+        "단위": "원문 점수",
+        "원문 모델 표기": "GPT-5.6 Sol"
+      }
+    },
+    {
+      "id": "m31f-provider-1-6",
+      "model": "Opus 5",
+      "provider": "Anthropic",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "BankerToolBench",
+        "effort": "모델별 미명시",
+        "harness": "OpenCode 1.17.18 Harness, MiniMax-M2.7 판정 모델.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. OpenCode 1.17.18 Harness, MiniMax-M2.7 판정 모델.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 76.2,
+        "단위": "원문 점수",
+        "원문 모델 표기": "Opus 5"
+      }
+    },
+    {
+      "id": "m31f-provider-2-0",
+      "model": "MiniMax-M3.1-Flash",
+      "provider": "MiniMax",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "GDP.pdf AA",
+        "effort": "모델별 미명시",
+        "harness": "Artificial Analysis 결과를 가져온 공급사 표. 동일 시점의 전체 모델 원본 재검증은 아님.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. Artificial Analysis 결과를 가져온 공급사 표. 동일 시점의 전체 모델 원본 재검증은 아님.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 20.8,
+        "단위": "원문 점수",
+        "원문 모델 표기": "MiniMax-M3.1-Flash"
+      }
+    },
+    {
+      "id": "m31f-provider-2-2",
+      "model": "DeepSeek-V4.1-Flash",
+      "provider": "DeepSeek",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "GDP.pdf AA",
+        "effort": "모델별 미명시",
+        "harness": "Artificial Analysis 결과를 가져온 공급사 표. 동일 시점의 전체 모델 원본 재검증은 아님.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. Artificial Analysis 결과를 가져온 공급사 표. 동일 시점의 전체 모델 원본 재검증은 아님.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 12.8,
+        "단위": "원문 점수",
+        "원문 모델 표기": "DeepSeek-V4.1-Flash"
+      }
+    },
+    {
+      "id": "m31f-provider-2-3",
+      "model": "Kimi-K3",
+      "provider": "Moonshot AI",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "GDP.pdf AA",
+        "effort": "모델별 미명시",
+        "harness": "Artificial Analysis 결과를 가져온 공급사 표. 동일 시점의 전체 모델 원본 재검증은 아님.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. Artificial Analysis 결과를 가져온 공급사 표. 동일 시점의 전체 모델 원본 재검증은 아님.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 22.0,
+        "단위": "원문 점수",
+        "원문 모델 표기": "Kimi-K3"
+      }
+    },
+    {
+      "id": "m31f-provider-2-4",
+      "model": "GLM-5.3",
+      "provider": "Z.ai",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "GDP.pdf AA",
+        "effort": "모델별 미명시",
+        "harness": "Artificial Analysis 결과를 가져온 공급사 표. 동일 시점의 전체 모델 원본 재검증은 아님.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. Artificial Analysis 결과를 가져온 공급사 표. 동일 시점의 전체 모델 원본 재검증은 아님.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 11.2,
+        "단위": "원문 점수",
+        "원문 모델 표기": "GLM-5.3"
+      }
+    },
+    {
+      "id": "m31f-provider-2-5",
+      "model": "GPT-5.6 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "GDP.pdf AA",
+        "effort": "모델별 미명시",
+        "harness": "Artificial Analysis 결과를 가져온 공급사 표. 동일 시점의 전체 모델 원본 재검증은 아님.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. Artificial Analysis 결과를 가져온 공급사 표. 동일 시점의 전체 모델 원본 재검증은 아님.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 27.2,
+        "단위": "원문 점수",
+        "원문 모델 표기": "GPT-5.6 Sol"
+      }
+    },
+    {
+      "id": "m31f-provider-2-6",
+      "model": "Opus 5",
+      "provider": "Anthropic",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "GDP.pdf AA",
+        "effort": "모델별 미명시",
+        "harness": "Artificial Analysis 결과를 가져온 공급사 표. 동일 시점의 전체 모델 원본 재검증은 아님.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. Artificial Analysis 결과를 가져온 공급사 표. 동일 시점의 전체 모델 원본 재검증은 아님.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 21.6,
+        "단위": "원문 점수",
+        "원문 모델 표기": "Opus 5"
+      }
+    },
+    {
+      "id": "m31f-provider-3-0",
+      "model": "MiniMax-M3.1-Flash",
+      "provider": "MiniMax",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "Terminal Bench 4.0",
+        "effort": "모델별 미명시",
+        "harness": "Codex 0.149.1 Harness. AA의 별도 실행 결과와 합치지 않음.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. Codex 0.149.1 Harness. AA의 별도 실행 결과와 합치지 않음.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 38.1,
+        "단위": "원문 점수",
+        "원문 모델 표기": "MiniMax-M3.1-Flash"
+      }
+    },
+    {
+      "id": "m31f-provider-3-1",
+      "model": "DeepSeek-V4.1-Flash-1017",
+      "provider": "DeepSeek",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "Terminal Bench 4.0",
+        "effort": "모델별 미명시",
+        "harness": "Codex 0.149.1 Harness. AA의 별도 실행 결과와 합치지 않음.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. Codex 0.149.1 Harness. AA의 별도 실행 결과와 합치지 않음.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 42.3,
+        "단위": "원문 점수",
+        "원문 모델 표기": "DeepSeek-V4.1-Flash-1017"
+      }
+    },
+    {
+      "id": "m31f-provider-3-2",
+      "model": "DeepSeek-V4.1-Flash",
+      "provider": "DeepSeek",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "Terminal Bench 4.0",
+        "effort": "모델별 미명시",
+        "harness": "Codex 0.149.1 Harness. AA의 별도 실행 결과와 합치지 않음.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. Codex 0.149.1 Harness. AA의 별도 실행 결과와 합치지 않음.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 31.2,
+        "단위": "원문 점수",
+        "원문 모델 표기": "DeepSeek-V4.1-Flash"
+      }
+    },
+    {
+      "id": "m31f-provider-3-3",
+      "model": "Kimi-K3",
+      "provider": "Moonshot AI",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "Terminal Bench 4.0",
+        "effort": "모델별 미명시",
+        "harness": "Codex 0.149.1 Harness. AA의 별도 실행 결과와 합치지 않음.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. Codex 0.149.1 Harness. AA의 별도 실행 결과와 합치지 않음.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 12.6,
+        "단위": "원문 점수",
+        "원문 모델 표기": "Kimi-K3"
+      }
+    },
+    {
+      "id": "m31f-provider-3-4",
+      "model": "GLM-5.3",
+      "provider": "Z.ai",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "Terminal Bench 4.0",
+        "effort": "모델별 미명시",
+        "harness": "Codex 0.149.1 Harness. AA의 별도 실행 결과와 합치지 않음.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. Codex 0.149.1 Harness. AA의 별도 실행 결과와 합치지 않음.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 37.9,
+        "단위": "원문 점수",
+        "원문 모델 표기": "GLM-5.3"
+      }
+    },
+    {
+      "id": "m31f-provider-3-5",
+      "model": "GPT-5.6 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "Terminal Bench 4.0",
+        "effort": "모델별 미명시",
+        "harness": "Codex 0.149.1 Harness. AA의 별도 실행 결과와 합치지 않음.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. Codex 0.149.1 Harness. AA의 별도 실행 결과와 합치지 않음.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 39.9,
+        "단위": "원문 점수",
+        "원문 모델 표기": "GPT-5.6 Sol"
+      }
+    },
+    {
+      "id": "m31f-provider-3-6",
+      "model": "Opus 5",
+      "provider": "Anthropic",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "Terminal Bench 4.0",
+        "effort": "모델별 미명시",
+        "harness": "Codex 0.149.1 Harness. AA의 별도 실행 결과와 합치지 않음.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. Codex 0.149.1 Harness. AA의 별도 실행 결과와 합치지 않음.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 51.8,
+        "단위": "원문 점수",
+        "원문 모델 표기": "Opus 5"
+      }
+    },
+    {
+      "id": "m31f-provider-4-0",
+      "model": "MiniMax-M3.1-Flash",
+      "provider": "MiniMax",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "LOCA-Bench 256K",
+        "effort": "모델별 미명시",
+        "harness": "공식 LOCA-bench 구현, 256K 조건.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. 공식 LOCA-bench 구현, 256K 조건.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 60.3,
+        "단위": "원문 점수",
+        "원문 모델 표기": "MiniMax-M3.1-Flash"
+      }
+    },
+    {
+      "id": "m31f-provider-4-3",
+      "model": "Kimi-K3",
+      "provider": "Moonshot AI",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "LOCA-Bench 256K",
+        "effort": "모델별 미명시",
+        "harness": "공식 LOCA-bench 구현, 256K 조건.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. 공식 LOCA-bench 구현, 256K 조건.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 49.7,
+        "단위": "원문 점수",
+        "원문 모델 표기": "Kimi-K3"
+      }
+    },
+    {
+      "id": "m31f-provider-4-4",
+      "model": "GLM-5.3",
+      "provider": "Z.ai",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "LOCA-Bench 256K",
+        "effort": "모델별 미명시",
+        "harness": "공식 LOCA-bench 구현, 256K 조건.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. 공식 LOCA-bench 구현, 256K 조건.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 50.3,
+        "단위": "원문 점수",
+        "원문 모델 표기": "GLM-5.3"
+      }
+    },
+    {
+      "id": "m31f-provider-4-5",
+      "model": "GPT-5.6 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "LOCA-Bench 256K",
+        "effort": "모델별 미명시",
+        "harness": "공식 LOCA-bench 구현, 256K 조건.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. 공식 LOCA-bench 구현, 256K 조건.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 60.0,
+        "단위": "원문 점수",
+        "원문 모델 표기": "GPT-5.6 Sol"
+      }
+    },
+    {
+      "id": "m31f-provider-4-6",
+      "model": "Opus 5",
+      "provider": "Anthropic",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "LOCA-Bench 256K",
+        "effort": "모델별 미명시",
+        "harness": "공식 LOCA-bench 구현, 256K 조건.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. 공식 LOCA-bench 구현, 256K 조건.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 53.7,
+        "단위": "원문 점수",
+        "원문 모델 표기": "Opus 5"
+      }
+    },
+    {
+      "id": "m31f-provider-5-0",
+      "model": "MiniMax-M3.1-Flash",
+      "provider": "MiniMax",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "Agents’ Last Exam",
+        "effort": "모델별 미명시",
+        "harness": "공식 Overall 전체 집합 결과만 수록. CLI 또는 부분 집합 값과 직접 비교하지 않음.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. 공식 Overall 전체 집합 결과만 수록. CLI 또는 부분 집합 값과 직접 비교하지 않음.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 29.6,
+        "단위": "원문 점수",
+        "원문 모델 표기": "MiniMax-M3.1-Flash"
+      }
+    },
+    {
+      "id": "m31f-provider-5-3",
+      "model": "Kimi-K3",
+      "provider": "Moonshot AI",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "Agents’ Last Exam",
+        "effort": "모델별 미명시",
+        "harness": "공식 Overall 전체 집합 결과만 수록. CLI 또는 부분 집합 값과 직접 비교하지 않음.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. 공식 Overall 전체 집합 결과만 수록. CLI 또는 부분 집합 값과 직접 비교하지 않음.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 28.3,
+        "단위": "원문 점수",
+        "원문 모델 표기": "Kimi-K3"
+      }
+    },
+    {
+      "id": "m31f-provider-5-5",
+      "model": "GPT-5.6 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "Agents’ Last Exam",
+        "effort": "모델별 미명시",
+        "harness": "공식 Overall 전체 집합 결과만 수록. CLI 또는 부분 집합 값과 직접 비교하지 않음.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. 공식 Overall 전체 집합 결과만 수록. CLI 또는 부분 집합 값과 직접 비교하지 않음.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 30.6,
+        "단위": "원문 점수",
+        "원문 모델 표기": "GPT-5.6 Sol"
+      }
+    },
+    {
+      "id": "m31f-provider-5-6",
+      "model": "Opus 5",
+      "provider": "Anthropic",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "Agents’ Last Exam",
+        "effort": "모델별 미명시",
+        "harness": "공식 Overall 전체 집합 결과만 수록. CLI 또는 부분 집합 값과 직접 비교하지 않음.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. 공식 Overall 전체 집합 결과만 수록. CLI 또는 부분 집합 값과 직접 비교하지 않음.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 32.2,
+        "단위": "원문 점수",
+        "원문 모델 표기": "Opus 5"
+      }
+    },
+    {
+      "id": "m31f-provider-6-0",
+      "model": "MiniMax-M3.1-Flash",
+      "provider": "MiniMax",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "OSWorld 2.0",
+        "effort": "모델별 미명시",
+        "harness": "공식 0808 Full release. 각 출시 최고 보고값이며 기존 DS-V4.1은 공급사 내부 재현.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. 공식 0808 Full release. 각 출시 최고 보고값이며 기존 DS-V4.1은 공급사 내부 재현.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 61.7,
+        "단위": "원문 점수",
+        "원문 모델 표기": "MiniMax-M3.1-Flash"
+      }
+    },
+    {
+      "id": "m31f-provider-6-2",
+      "model": "DeepSeek-V4.1-Flash",
+      "provider": "DeepSeek",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "OSWorld 2.0",
+        "effort": "모델별 미명시",
+        "harness": "공식 0808 Full release. 각 출시 최고 보고값이며 기존 DS-V4.1은 공급사 내부 재현.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. 공식 0808 Full release. 각 출시 최고 보고값이며 기존 DS-V4.1은 공급사 내부 재현.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 54.3,
+        "단위": "원문 점수",
+        "원문 모델 표기": "DeepSeek-V4.1-Flash"
+      }
+    },
+    {
+      "id": "m31f-provider-6-3",
+      "model": "Kimi-K3",
+      "provider": "Moonshot AI",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "OSWorld 2.0",
+        "effort": "모델별 미명시",
+        "harness": "공식 0808 Full release. 각 출시 최고 보고값이며 기존 DS-V4.1은 공급사 내부 재현.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. 공식 0808 Full release. 각 출시 최고 보고값이며 기존 DS-V4.1은 공급사 내부 재현.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 58.3,
+        "단위": "원문 점수",
+        "원문 모델 표기": "Kimi-K3"
+      }
+    },
+    {
+      "id": "m31f-provider-6-5",
+      "model": "GPT-5.6 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "OSWorld 2.0",
+        "effort": "모델별 미명시",
+        "harness": "공식 0808 Full release. 각 출시 최고 보고값이며 기존 DS-V4.1은 공급사 내부 재현.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. 공식 0808 Full release. 각 출시 최고 보고값이며 기존 DS-V4.1은 공급사 내부 재현.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 65.7,
+        "단위": "원문 점수",
+        "원문 모델 표기": "GPT-5.6 Sol"
+      }
+    },
+    {
+      "id": "m31f-provider-6-6",
+      "model": "Opus 5",
+      "provider": "Anthropic",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "OSWorld 2.0",
+        "effort": "모델별 미명시",
+        "harness": "공식 0808 Full release. 각 출시 최고 보고값이며 기존 DS-V4.1은 공급사 내부 재현.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. 공식 0808 Full release. 각 출시 최고 보고값이며 기존 DS-V4.1은 공급사 내부 재현.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 70.6,
+        "단위": "원문 점수",
+        "원문 모델 표기": "Opus 5"
+      }
+    },
+    {
+      "id": "m31f-provider-7-0",
+      "model": "MiniMax-M3.1-Flash",
+      "provider": "MiniMax",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "PostTrain Bench v1.1",
+        "effort": "모델별 미명시",
+        "harness": "Claude Code 2.1.251, 최대 문맥 512K, 나머지 공식 평가 설정.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. Claude Code 2.1.251, 최대 문맥 512K, 나머지 공식 평가 설정.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 39.3,
+        "단위": "원문 점수",
+        "원문 모델 표기": "MiniMax-M3.1-Flash"
+      }
+    },
+    {
+      "id": "m31f-provider-7-2",
+      "model": "DeepSeek-V4.1-Flash",
+      "provider": "DeepSeek",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "PostTrain Bench v1.1",
+        "effort": "모델별 미명시",
+        "harness": "Claude Code 2.1.251, 최대 문맥 512K, 나머지 공식 평가 설정.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. Claude Code 2.1.251, 최대 문맥 512K, 나머지 공식 평가 설정.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 30.5,
+        "단위": "원문 점수",
+        "원문 모델 표기": "DeepSeek-V4.1-Flash"
+      }
+    },
+    {
+      "id": "m31f-provider-7-3",
+      "model": "Kimi-K3",
+      "provider": "Moonshot AI",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "PostTrain Bench v1.1",
+        "effort": "모델별 미명시",
+        "harness": "Claude Code 2.1.251, 최대 문맥 512K, 나머지 공식 평가 설정.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. Claude Code 2.1.251, 최대 문맥 512K, 나머지 공식 평가 설정.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 36.6,
+        "단위": "원문 점수",
+        "원문 모델 표기": "Kimi-K3"
+      }
+    },
+    {
+      "id": "m31f-provider-7-4",
+      "model": "GLM-5.3",
+      "provider": "Z.ai",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "PostTrain Bench v1.1",
+        "effort": "모델별 미명시",
+        "harness": "Claude Code 2.1.251, 최대 문맥 512K, 나머지 공식 평가 설정.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. Claude Code 2.1.251, 최대 문맥 512K, 나머지 공식 평가 설정.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 37.5,
+        "단위": "원문 점수",
+        "원문 모델 표기": "GLM-5.3"
+      }
+    },
+    {
+      "id": "m31f-provider-7-5",
+      "model": "GPT-5.6 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "PostTrain Bench v1.1",
+        "effort": "모델별 미명시",
+        "harness": "Claude Code 2.1.251, 최대 문맥 512K, 나머지 공식 평가 설정.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. Claude Code 2.1.251, 최대 문맥 512K, 나머지 공식 평가 설정.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 36.2,
+        "단위": "원문 점수",
+        "원문 모델 표기": "GPT-5.6 Sol"
+      }
+    },
+    {
+      "id": "m31f-provider-7-6",
+      "model": "Opus 5",
+      "provider": "Anthropic",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "PostTrain Bench v1.1",
+        "effort": "모델별 미명시",
+        "harness": "Claude Code 2.1.251, 최대 문맥 512K, 나머지 공식 평가 설정.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. Claude Code 2.1.251, 최대 문맥 512K, 나머지 공식 평가 설정.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 40.4,
+        "단위": "원문 점수",
+        "원문 모델 표기": "Opus 5"
+      }
+    },
+    {
+      "id": "m31f-provider-8-0",
+      "model": "MiniMax-M3.1-Flash",
+      "provider": "MiniMax",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "DeepSWE v1.1",
+        "effort": "모델별 미명시",
+        "harness": "mini-SWE-agent 2.4.5, 최대 문맥 512K.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. mini-SWE-agent 2.4.5, 최대 문맥 512K.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 73.7,
+        "단위": "원문 점수",
+        "원문 모델 표기": "MiniMax-M3.1-Flash"
+      }
+    },
+    {
+      "id": "m31f-provider-8-1",
+      "model": "DeepSeek-V4.1-Flash-1017",
+      "provider": "DeepSeek",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "DeepSWE v1.1",
+        "effort": "모델별 미명시",
+        "harness": "mini-SWE-agent 2.4.5, 최대 문맥 512K.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. mini-SWE-agent 2.4.5, 최대 문맥 512K.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 77.0,
+        "단위": "원문 점수",
+        "원문 모델 표기": "DeepSeek-V4.1-Flash-1017"
+      }
+    },
+    {
+      "id": "m31f-provider-8-2",
+      "model": "DeepSeek-V4.1-Flash",
+      "provider": "DeepSeek",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "DeepSWE v1.1",
+        "effort": "모델별 미명시",
+        "harness": "mini-SWE-agent 2.4.5, 최대 문맥 512K.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. mini-SWE-agent 2.4.5, 최대 문맥 512K.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 74.2,
+        "단위": "원문 점수",
+        "원문 모델 표기": "DeepSeek-V4.1-Flash"
+      }
+    },
+    {
+      "id": "m31f-provider-8-3",
+      "model": "Kimi-K3",
+      "provider": "Moonshot AI",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "DeepSWE v1.1",
+        "effort": "모델별 미명시",
+        "harness": "mini-SWE-agent 2.4.5, 최대 문맥 512K.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. mini-SWE-agent 2.4.5, 최대 문맥 512K.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 67.5,
+        "단위": "원문 점수",
+        "원문 모델 표기": "Kimi-K3"
+      }
+    },
+    {
+      "id": "m31f-provider-8-4",
+      "model": "GLM-5.3",
+      "provider": "Z.ai",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "DeepSWE v1.1",
+        "effort": "모델별 미명시",
+        "harness": "mini-SWE-agent 2.4.5, 최대 문맥 512K.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. mini-SWE-agent 2.4.5, 최대 문맥 512K.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 66.9,
+        "단위": "원문 점수",
+        "원문 모델 표기": "GLM-5.3"
+      }
+    },
+    {
+      "id": "m31f-provider-8-5",
+      "model": "GPT-5.6 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "DeepSWE v1.1",
+        "effort": "모델별 미명시",
+        "harness": "mini-SWE-agent 2.4.5, 최대 문맥 512K.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. mini-SWE-agent 2.4.5, 최대 문맥 512K.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 73.0,
+        "단위": "원문 점수",
+        "원문 모델 표기": "GPT-5.6 Sol"
+      }
+    },
+    {
+      "id": "m31f-provider-8-6",
+      "model": "Opus 5",
+      "provider": "Anthropic",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "DeepSWE v1.1",
+        "effort": "모델별 미명시",
+        "harness": "mini-SWE-agent 2.4.5, 최대 문맥 512K.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. mini-SWE-agent 2.4.5, 최대 문맥 512K.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 74.0,
+        "단위": "원문 점수",
+        "원문 모델 표기": "Opus 5"
+      }
+    },
+    {
+      "id": "m31f-provider-9-0",
+      "model": "MiniMax-M3.1-Flash",
+      "provider": "MiniMax",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "NL2Repo-Bench",
+        "effort": "모델별 미명시",
+        "harness": "Claude Code 2.1.233, 최대 문맥 512K. reward hacking은 0점, 사양/테스트 불일치 두 과제 수정.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. Claude Code 2.1.233, 최대 문맥 512K. reward hacking은 0점, 사양/테스트 불일치 두 과제 수정.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 61.2,
+        "단위": "원문 점수",
+        "원문 모델 표기": "MiniMax-M3.1-Flash"
+      }
+    },
+    {
+      "id": "m31f-provider-9-1",
+      "model": "DeepSeek-V4.1-Flash-1017",
+      "provider": "DeepSeek",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "NL2Repo-Bench",
+        "effort": "모델별 미명시",
+        "harness": "Claude Code 2.1.233, 최대 문맥 512K. reward hacking은 0점, 사양/테스트 불일치 두 과제 수정.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. Claude Code 2.1.233, 최대 문맥 512K. reward hacking은 0점, 사양/테스트 불일치 두 과제 수정.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 68.2,
+        "단위": "원문 점수",
+        "원문 모델 표기": "DeepSeek-V4.1-Flash-1017"
+      }
+    },
+    {
+      "id": "m31f-provider-9-2",
+      "model": "DeepSeek-V4.1-Flash",
+      "provider": "DeepSeek",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "NL2Repo-Bench",
+        "effort": "모델별 미명시",
+        "harness": "Claude Code 2.1.233, 최대 문맥 512K. reward hacking은 0점, 사양/테스트 불일치 두 과제 수정.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. Claude Code 2.1.233, 최대 문맥 512K. reward hacking은 0점, 사양/테스트 불일치 두 과제 수정.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 65.4,
+        "단위": "원문 점수",
+        "원문 모델 표기": "DeepSeek-V4.1-Flash"
+      }
+    },
+    {
+      "id": "m31f-provider-9-3",
+      "model": "Kimi-K3",
+      "provider": "Moonshot AI",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "NL2Repo-Bench",
+        "effort": "모델별 미명시",
+        "harness": "Claude Code 2.1.233, 최대 문맥 512K. reward hacking은 0점, 사양/테스트 불일치 두 과제 수정.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. Claude Code 2.1.233, 최대 문맥 512K. reward hacking은 0점, 사양/테스트 불일치 두 과제 수정.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 58.0,
+        "단위": "원문 점수",
+        "원문 모델 표기": "Kimi-K3"
+      }
+    },
+    {
+      "id": "m31f-provider-9-4",
+      "model": "GLM-5.3",
+      "provider": "Z.ai",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "NL2Repo-Bench",
+        "effort": "모델별 미명시",
+        "harness": "Claude Code 2.1.233, 최대 문맥 512K. reward hacking은 0점, 사양/테스트 불일치 두 과제 수정.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. Claude Code 2.1.233, 최대 문맥 512K. reward hacking은 0점, 사양/테스트 불일치 두 과제 수정.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 58.0,
+        "단위": "원문 점수",
+        "원문 모델 표기": "GLM-5.3"
+      }
+    },
+    {
+      "id": "m31f-provider-9-5",
+      "model": "GPT-5.6 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "NL2Repo-Bench",
+        "effort": "모델별 미명시",
+        "harness": "Claude Code 2.1.233, 최대 문맥 512K. reward hacking은 0점, 사양/테스트 불일치 두 과제 수정.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. Claude Code 2.1.233, 최대 문맥 512K. reward hacking은 0점, 사양/테스트 불일치 두 과제 수정.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 56.8,
+        "단위": "원문 점수",
+        "원문 모델 표기": "GPT-5.6 Sol"
+      }
+    },
+    {
+      "id": "m31f-provider-9-6",
+      "model": "Opus 5",
+      "provider": "Anthropic",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "NL2Repo-Bench",
+        "effort": "모델별 미명시",
+        "harness": "Claude Code 2.1.233, 최대 문맥 512K. reward hacking은 0점, 사양/테스트 불일치 두 과제 수정.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. Claude Code 2.1.233, 최대 문맥 512K. reward hacking은 0점, 사양/테스트 불일치 두 과제 수정.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 75.3,
+        "단위": "원문 점수",
+        "원문 모델 표기": "Opus 5"
+      }
+    },
+    {
+      "id": "m31f-provider-10-0",
+      "model": "MiniMax-M3.1-Flash",
+      "provider": "MiniMax",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "SWE Refactor Bench",
+        "effort": "모델별 미명시",
+        "harness": "Claude Code 2.1.220, 최대 문맥 200K, 나머지 공식 설정.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. Claude Code 2.1.220, 최대 문맥 200K, 나머지 공식 설정.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 23.0,
+        "단위": "원문 점수",
+        "원문 모델 표기": "MiniMax-M3.1-Flash"
+      }
+    },
+    {
+      "id": "m31f-provider-10-2",
+      "model": "DeepSeek-V4.1-Flash",
+      "provider": "DeepSeek",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "SWE Refactor Bench",
+        "effort": "모델별 미명시",
+        "harness": "Claude Code 2.1.220, 최대 문맥 200K, 나머지 공식 설정.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. Claude Code 2.1.220, 최대 문맥 200K, 나머지 공식 설정.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 11.8,
+        "단위": "원문 점수",
+        "원문 모델 표기": "DeepSeek-V4.1-Flash"
+      }
+    },
+    {
+      "id": "m31f-provider-10-3",
+      "model": "Kimi-K3",
+      "provider": "Moonshot AI",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "SWE Refactor Bench",
+        "effort": "모델별 미명시",
+        "harness": "Claude Code 2.1.220, 최대 문맥 200K, 나머지 공식 설정.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. Claude Code 2.1.220, 최대 문맥 200K, 나머지 공식 설정.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 19.5,
+        "단위": "원문 점수",
+        "원문 모델 표기": "Kimi-K3"
+      }
+    },
+    {
+      "id": "m31f-provider-10-4",
+      "model": "GLM-5.3",
+      "provider": "Z.ai",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "SWE Refactor Bench",
+        "effort": "모델별 미명시",
+        "harness": "Claude Code 2.1.220, 최대 문맥 200K, 나머지 공식 설정.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. Claude Code 2.1.220, 최대 문맥 200K, 나머지 공식 설정.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 10.4,
+        "단위": "원문 점수",
+        "원문 모델 표기": "GLM-5.3"
+      }
+    },
+    {
+      "id": "m31f-provider-10-5",
+      "model": "GPT-5.6 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "SWE Refactor Bench",
+        "effort": "모델별 미명시",
+        "harness": "Claude Code 2.1.220, 최대 문맥 200K, 나머지 공식 설정.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. Claude Code 2.1.220, 최대 문맥 200K, 나머지 공식 설정.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 28.5,
+        "단위": "원문 점수",
+        "원문 모델 표기": "GPT-5.6 Sol"
+      }
+    },
+    {
+      "id": "m31f-provider-10-6",
+      "model": "Opus 5",
+      "provider": "Anthropic",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "SWE Refactor Bench",
+        "effort": "모델별 미명시",
+        "harness": "Claude Code 2.1.220, 최대 문맥 200K, 나머지 공식 설정.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. Claude Code 2.1.220, 최대 문맥 200K, 나머지 공식 설정.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 31.0,
+        "단위": "원문 점수",
+        "원문 모델 표기": "Opus 5"
+      }
+    },
+    {
+      "id": "m31f-provider-11-0",
+      "model": "MiniMax-M3.1-Flash",
+      "provider": "MiniMax",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "CyberGym",
+        "effort": "모델별 미명시",
+        "harness": "Claude Code 2.1.263, 최대 문맥 1M. 발표 본문의 82%는 반올림, 표 원값은 82.2.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. Claude Code 2.1.263, 최대 문맥 1M. 발표 본문의 82%는 반올림, 표 원값은 82.2.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 82.2,
+        "단위": "원문 점수",
+        "원문 모델 표기": "MiniMax-M3.1-Flash"
+      }
+    },
+    {
+      "id": "m31f-provider-11-3",
+      "model": "Kimi-K3",
+      "provider": "Moonshot AI",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "CyberGym",
+        "effort": "모델별 미명시",
+        "harness": "Claude Code 2.1.263, 최대 문맥 1M. 발표 본문의 82%는 반올림, 표 원값은 82.2.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. Claude Code 2.1.263, 최대 문맥 1M. 발표 본문의 82%는 반올림, 표 원값은 82.2.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 80.0,
+        "단위": "원문 점수",
+        "원문 모델 표기": "Kimi-K3"
+      }
+    },
+    {
+      "id": "m31f-provider-11-4",
+      "model": "GLM-5.3",
+      "provider": "Z.ai",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "CyberGym",
+        "effort": "모델별 미명시",
+        "harness": "Claude Code 2.1.263, 최대 문맥 1M. 발표 본문의 82%는 반올림, 표 원값은 82.2.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. Claude Code 2.1.263, 최대 문맥 1M. 발표 본문의 82%는 반올림, 표 원값은 82.2.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 84.5,
+        "단위": "원문 점수",
+        "원문 모델 표기": "GLM-5.3"
+      }
+    },
+    {
+      "id": "m31f-provider-11-5",
+      "model": "GPT-5.6 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "CyberGym",
+        "effort": "모델별 미명시",
+        "harness": "Claude Code 2.1.263, 최대 문맥 1M. 발표 본문의 82%는 반올림, 표 원값은 82.2.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. Claude Code 2.1.263, 최대 문맥 1M. 발표 본문의 82%는 반올림, 표 원값은 82.2.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 83.6,
+        "단위": "원문 점수",
+        "원문 모델 표기": "GPT-5.6 Sol"
+      }
+    },
+    {
+      "id": "m31f-provider-12-0",
+      "model": "MiniMax-M3.1-Flash",
+      "provider": "MiniMax",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "BabyVision (w/tools)",
+        "effort": "모델별 미명시",
+        "harness": "Claude Code 2.1.285, 이미지 짧은 변 최소 1,500픽셀.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. Claude Code 2.1.285, 이미지 짧은 변 최소 1,500픽셀.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 91.0,
+        "단위": "원문 점수",
+        "원문 모델 표기": "MiniMax-M3.1-Flash"
+      }
+    },
+    {
+      "id": "m31f-provider-12-1",
+      "model": "DeepSeek-V4.1-Flash-1017",
+      "provider": "DeepSeek",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "BabyVision (w/tools)",
+        "effort": "모델별 미명시",
+        "harness": "Claude Code 2.1.285, 이미지 짧은 변 최소 1,500픽셀.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. Claude Code 2.1.285, 이미지 짧은 변 최소 1,500픽셀.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 92.5,
+        "단위": "원문 점수",
+        "원문 모델 표기": "DeepSeek-V4.1-Flash-1017"
+      }
+    },
+    {
+      "id": "m31f-provider-12-2",
+      "model": "DeepSeek-V4.1-Flash",
+      "provider": "DeepSeek",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "BabyVision (w/tools)",
+        "effort": "모델별 미명시",
+        "harness": "Claude Code 2.1.285, 이미지 짧은 변 최소 1,500픽셀.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. Claude Code 2.1.285, 이미지 짧은 변 최소 1,500픽셀.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 89.6,
+        "단위": "원문 점수",
+        "원문 모델 표기": "DeepSeek-V4.1-Flash"
+      }
+    },
+    {
+      "id": "m31f-provider-12-3",
+      "model": "Kimi-K3",
+      "provider": "Moonshot AI",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "BabyVision (w/tools)",
+        "effort": "모델별 미명시",
+        "harness": "Claude Code 2.1.285, 이미지 짧은 변 최소 1,500픽셀.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. Claude Code 2.1.285, 이미지 짧은 변 최소 1,500픽셀.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 85.7,
+        "단위": "원문 점수",
+        "원문 모델 표기": "Kimi-K3"
+      }
+    },
+    {
+      "id": "m31f-provider-12-5",
+      "model": "GPT-5.6 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "BabyVision (w/tools)",
+        "effort": "모델별 미명시",
+        "harness": "Claude Code 2.1.285, 이미지 짧은 변 최소 1,500픽셀.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. Claude Code 2.1.285, 이미지 짧은 변 최소 1,500픽셀.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 88.9,
+        "단위": "원문 점수",
+        "원문 모델 표기": "GPT-5.6 Sol"
+      }
+    },
+    {
+      "id": "m31f-provider-12-6",
+      "model": "Opus 5",
+      "provider": "Anthropic",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "BabyVision (w/tools)",
+        "effort": "모델별 미명시",
+        "harness": "Claude Code 2.1.285, 이미지 짧은 변 최소 1,500픽셀.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. Claude Code 2.1.285, 이미지 짧은 변 최소 1,500픽셀.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 94.1,
+        "단위": "원문 점수",
+        "원문 모델 표기": "Opus 5"
+      }
+    },
+    {
+      "id": "m31f-provider-13-0",
+      "model": "MiniMax-M3.1-Flash",
+      "provider": "MiniMax",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "HLE (w/o tools)",
+        "effort": "모델별 미명시",
+        "harness": "텍스트 전용 2,158문항 부분 집합. 전체 HLE 또는 도구 사용 결과와 구분.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. 텍스트 전용 2,158문항 부분 집합. 전체 HLE 또는 도구 사용 결과와 구분.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 43.4,
+        "단위": "원문 점수",
+        "원문 모델 표기": "MiniMax-M3.1-Flash"
+      }
+    },
+    {
+      "id": "m31f-provider-13-1",
+      "model": "DeepSeek-V4.1-Flash-1017",
+      "provider": "DeepSeek",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "HLE (w/o tools)",
+        "effort": "모델별 미명시",
+        "harness": "텍스트 전용 2,158문항 부분 집합. 전체 HLE 또는 도구 사용 결과와 구분.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. 텍스트 전용 2,158문항 부분 집합. 전체 HLE 또는 도구 사용 결과와 구분.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 44.0,
+        "단위": "원문 점수",
+        "원문 모델 표기": "DeepSeek-V4.1-Flash-1017"
+      }
+    },
+    {
+      "id": "m31f-provider-13-2",
+      "model": "DeepSeek-V4.1-Flash",
+      "provider": "DeepSeek",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "HLE (w/o tools)",
+        "effort": "모델별 미명시",
+        "harness": "텍스트 전용 2,158문항 부분 집합. 전체 HLE 또는 도구 사용 결과와 구분.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. 텍스트 전용 2,158문항 부분 집합. 전체 HLE 또는 도구 사용 결과와 구분.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 39.2,
+        "단위": "원문 점수",
+        "원문 모델 표기": "DeepSeek-V4.1-Flash"
+      }
+    },
+    {
+      "id": "m31f-provider-13-3",
+      "model": "Kimi-K3",
+      "provider": "Moonshot AI",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "HLE (w/o tools)",
+        "effort": "모델별 미명시",
+        "harness": "텍스트 전용 2,158문항 부분 집합. 전체 HLE 또는 도구 사용 결과와 구분.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. 텍스트 전용 2,158문항 부분 집합. 전체 HLE 또는 도구 사용 결과와 구분.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 43.5,
+        "단위": "원문 점수",
+        "원문 모델 표기": "Kimi-K3"
+      }
+    },
+    {
+      "id": "m31f-provider-13-4",
+      "model": "GLM-5.3",
+      "provider": "Z.ai",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "HLE (w/o tools)",
+        "effort": "모델별 미명시",
+        "harness": "텍스트 전용 2,158문항 부분 집합. 전체 HLE 또는 도구 사용 결과와 구분.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. 텍스트 전용 2,158문항 부분 집합. 전체 HLE 또는 도구 사용 결과와 구분.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 42.3,
+        "단위": "원문 점수",
+        "원문 모델 표기": "GLM-5.3"
+      }
+    },
+    {
+      "id": "m31f-provider-13-5",
+      "model": "GPT-5.6 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "HLE (w/o tools)",
+        "effort": "모델별 미명시",
+        "harness": "텍스트 전용 2,158문항 부분 집합. 전체 HLE 또는 도구 사용 결과와 구분.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. 텍스트 전용 2,158문항 부분 집합. 전체 HLE 또는 도구 사용 결과와 구분.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 49.5,
+        "단위": "원문 점수",
+        "원문 모델 표기": "GPT-5.6 Sol"
+      }
+    },
+    {
+      "id": "m31f-provider-13-6",
+      "model": "Opus 5",
+      "provider": "Anthropic",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "HLE (w/o tools)",
+        "effort": "모델별 미명시",
+        "harness": "텍스트 전용 2,158문항 부분 집합. 전체 HLE 또는 도구 사용 결과와 구분.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. 텍스트 전용 2,158문항 부분 집합. 전체 HLE 또는 도구 사용 결과와 구분.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 55.6,
+        "단위": "원문 점수",
+        "원문 모델 표기": "Opus 5"
+      }
+    },
+    {
+      "id": "m31f-provider-14-0",
+      "model": "MiniMax-M3.1-Flash",
+      "provider": "MiniMax",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "CharXiv RQ",
+        "effort": "모델별 미명시",
+        "harness": "GPT-5.5 판정 모델. 세부 prompt/판정 모델 snapshot은 미명시.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. GPT-5.5 판정 모델. 세부 prompt/판정 모델 snapshot은 미명시.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 82.5,
+        "단위": "원문 점수",
+        "원문 모델 표기": "MiniMax-M3.1-Flash"
+      }
+    },
+    {
+      "id": "m31f-provider-14-2",
+      "model": "DeepSeek-V4.1-Flash",
+      "provider": "DeepSeek",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "CharXiv RQ",
+        "effort": "모델별 미명시",
+        "harness": "GPT-5.5 판정 모델. 세부 prompt/판정 모델 snapshot은 미명시.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. GPT-5.5 판정 모델. 세부 prompt/판정 모델 snapshot은 미명시.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 69.0,
+        "단위": "원문 점수",
+        "원문 모델 표기": "DeepSeek-V4.1-Flash"
+      }
+    },
+    {
+      "id": "m31f-provider-14-3",
+      "model": "Kimi-K3",
+      "provider": "Moonshot AI",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "CharXiv RQ",
+        "effort": "모델별 미명시",
+        "harness": "GPT-5.5 판정 모델. 세부 prompt/판정 모델 snapshot은 미명시.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. GPT-5.5 판정 모델. 세부 prompt/판정 모델 snapshot은 미명시.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 84.8,
+        "단위": "원문 점수",
+        "원문 모델 표기": "Kimi-K3"
+      }
+    },
+    {
+      "id": "m31f-provider-14-5",
+      "model": "GPT-5.6 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "CharXiv RQ",
+        "effort": "모델별 미명시",
+        "harness": "GPT-5.5 판정 모델. 세부 prompt/판정 모델 snapshot은 미명시.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. GPT-5.5 판정 모델. 세부 prompt/판정 모델 snapshot은 미명시.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 85.2,
+        "단위": "원문 점수",
+        "원문 모델 표기": "GPT-5.6 Sol"
+      }
+    },
+    {
+      "id": "m31f-provider-14-6",
+      "model": "Opus 5",
+      "provider": "Anthropic",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-2-1792403273121-webp-1.m31-flash-en-2-1792403273121-webp",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "CharXiv RQ",
+        "effort": "모델별 미명시",
+        "harness": "GPT-5.5 판정 모델. 세부 prompt/판정 모델 snapshot은 미명시.",
+        "condition": "2026-10-19 MiniMax 발표 원본 표의 점수. 20일 확인. 공급사 취합/측정이며 일부는 외부 결과 인용. 각 모델 snapshot, 모델별 추론 설정, 반복 수와 정확 실행일은 전부 공개되지 않았다. 빈칸은 미보고이며 0이 아니다. GPT-5.5 판정 모델. 세부 prompt/판정 모델 snapshot은 미명시.",
+        "basis": "MiniMax 발표 표; 다른 모델 결과는 공급사 인용/재현 구분 필요",
+        "평가 점수": 83.7,
+        "단위": "원문 점수",
+        "원문 모델 표기": "Opus 5"
+      }
+    },
+    {
+      "id": "m31f-effort-0-0",
+      "model": "MiniMax-M3.1-Flash",
+      "provider": "MiniMax",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-5-1792403273121.png",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "Automation-Bench v1.0.6 / 비용 그래프",
+        "effort": "low",
+        "harness": "Claude Code; 세부판 미명시",
+        "condition": "ClaudeCode,10월18일자료,추론5단계와USD/과제로그축입니다. 점수는정확표기값,로그축의비용좌표는임의입력하지않음. 독립실행미수행.",
+        "평가 점수": 52.8,
+        "단위": "%"
+      }
+    },
+    {
+      "id": "m31f-effort-0-1",
+      "model": "MiniMax-M3.1-Flash",
+      "provider": "MiniMax",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-5-1792403273121.png",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "Automation-Bench v1.0.6 / 비용 그래프",
+        "effort": "medium",
+        "harness": "Claude Code; 세부판 미명시",
+        "condition": "ClaudeCode,10월18일자료,추론5단계와USD/과제로그축입니다. 점수는정확표기값,로그축의비용좌표는임의입력하지않음. 독립실행미수행.",
+        "평가 점수": 57.7,
+        "단위": "%"
+      }
+    },
+    {
+      "id": "m31f-effort-0-2",
+      "model": "MiniMax-M3.1-Flash",
+      "provider": "MiniMax",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-5-1792403273121.png",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "Automation-Bench v1.0.6 / 비용 그래프",
+        "effort": "high",
+        "harness": "Claude Code; 세부판 미명시",
+        "condition": "ClaudeCode,10월18일자료,추론5단계와USD/과제로그축입니다. 점수는정확표기값,로그축의비용좌표는임의입력하지않음. 독립실행미수행.",
+        "평가 점수": 59.2,
+        "단위": "%"
+      }
+    },
+    {
+      "id": "m31f-effort-0-3",
+      "model": "MiniMax-M3.1-Flash",
+      "provider": "MiniMax",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-5-1792403273121.png",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "Automation-Bench v1.0.6 / 비용 그래프",
+        "effort": "xhigh",
+        "harness": "Claude Code; 세부판 미명시",
+        "condition": "ClaudeCode,10월18일자료,추론5단계와USD/과제로그축입니다. 점수는정확표기값,로그축의비용좌표는임의입력하지않음. 독립실행미수행.",
+        "평가 점수": 61.2,
+        "단위": "%"
+      }
+    },
+    {
+      "id": "m31f-effort-0-4",
+      "model": "MiniMax-M3.1-Flash",
+      "provider": "MiniMax",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-5-1792403273121.png",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "Automation-Bench v1.0.6 / 비용 그래프",
+        "effort": "max",
+        "harness": "Claude Code; 세부판 미명시",
+        "condition": "ClaudeCode,10월18일자료,추론5단계와USD/과제로그축입니다. 점수는정확표기값,로그축의비용좌표는임의입력하지않음. 독립실행미수행.",
+        "평가 점수": 62.8,
+        "단위": "%"
+      }
+    },
+    {
+      "id": "m31f-effort-1-0",
+      "model": "MiniMax-M3.1-Flash",
+      "provider": "MiniMax",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-4-1792403273121.png",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "DeepSWE v1.1 / 비용 그래프",
+        "effort": "high",
+        "harness": "mini-swe-agent; 그래프 세부판 미명시",
+        "condition": "mini-swe-agent,9월22일비교자료,3추론단계와CNY환산조건입니다. 점수는정확표기값,로그축의비용좌표는임의입력하지않음. 독립실행미수행.",
+        "평가 점수": 68.1,
+        "단위": "%"
+      }
+    },
+    {
+      "id": "m31f-effort-1-1",
+      "model": "MiniMax-M3.1-Flash",
+      "provider": "MiniMax",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-4-1792403273121.png",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "DeepSWE v1.1 / 비용 그래프",
+        "effort": "xhigh",
+        "harness": "mini-swe-agent; 그래프 세부판 미명시",
+        "condition": "mini-swe-agent,9월22일비교자료,3추론단계와CNY환산조건입니다. 점수는정확표기값,로그축의비용좌표는임의입력하지않음. 독립실행미수행.",
+        "평가 점수": 72.1,
+        "단위": "%"
+      }
+    },
+    {
+      "id": "m31f-effort-1-2",
+      "model": "MiniMax-M3.1-Flash",
+      "provider": "MiniMax",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-4-1792403273121.png",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가",
+        "suite": "DeepSWE v1.1 / 비용 그래프",
+        "effort": "max",
+        "harness": "mini-swe-agent; 그래프 세부판 미명시",
+        "condition": "mini-swe-agent,9월22일비교자료,3추론단계와CNY환산조건입니다. 점수는정확표기값,로그축의비용좌표는임의입력하지않음. 독립실행미수행.",
+        "평가 점수": 73.7,
+        "단위": "%"
+      }
+    },
+    {
+      "id": "m31f-ale-max-cost",
+      "model": "MiniMax-M3.1-Flash",
+      "provider": "MiniMax",
+      "source_url": "https://filecdn.minimax.chat/public/m31-flash-en-3-1792403273121.png",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 발표 평가와 비용",
+        "suite": "ALE-v1 Overall / 152과제",
+        "effort": "max",
+        "harness": "Claude Code; 판 미명시",
+        "condition": "2026-10-18 공개자료를19일발표. 전체152과제 추정 총USD이며 USD/과제나API토큰단가가아님.",
+        "평가 점수": 29.6,
+        "단위": "%",
+        "추정 총 USD / 전체 152과제": 111
+      }
+    },
+    {
+      "id": "m31f-spec",
+      "model": "MiniMax-M3.1-Flash",
+      "provider": "MiniMax",
+      "source_url": "https://platform.minimax.io/docs/api-reference/text-anthropic-api",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 모델 사양",
+        "suite": "정식 MiniMax-M3.1-Flash / 2026-10-19 공개",
+        "release": "2026-10-19",
+        "context": 1000000,
+        "access": "API / M Plan / MiniMax Code",
+        "status": "API/앱 제공; 가중치 후공개 예정",
+        "local": false,
+        "effort": "low / medium / high / xhigh / max (기본)",
+        "condition": "정식 ID는 Preview와 구분합니다. 추론은 항상 켜며 끌 수 없습니다. 문서의 open-weight 표현과 출시 글의 후공개 계획이 혼재합니다. 가중치, 정확한 규모와 최대 출력은 미확인입니다. 실제 계정과 제품을 실행하지 않았습니다.",
+        "API 모델 ID": "MiniMax-M3.1-Flash",
+        "입력": "텍스트/이미지/영상",
+        "출력": "텍스트",
+        "service_tier": "지원하지 않음"
+      }
+    },
+    {
+      "id": "m31f-price",
+      "model": "MiniMax-M3.1-Flash",
+      "provider": "MiniMax",
+      "source_url": "https://platform.minimax.io/docs/pricing/overview",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 API 요금",
+        "suite": "단일 표준 요금",
+        "condition": "2026-10-20 공개 표준 요금이며 100만 토큰당 USD입니다. Priority, 구독료와 과제 총비용을 합치지 않습니다. M3는 입력 문맥 길이에 따른 구간을 구분합니다.",
+        "입력 USD / 100만 토큰": 0.15,
+        "출력 USD / 100만 토큰": 0.6,
+        "캐시 읽기 USD / 100만 토큰": 0.015
+      }
+    },
+    {
+      "id": "m31f-m3-price-short",
+      "model": "MiniMax-M3",
+      "provider": "MiniMax",
+      "source_url": "https://platform.minimax.io/docs/pricing/overview",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 API 요금",
+        "suite": "입력 ≤512K 표준",
+        "condition": "2026-10-20 공개 표준 요금이며 100만 토큰당 USD입니다. Priority, 구독료와 과제 총비용을 합치지 않습니다. M3는 입력 문맥 길이에 따른 구간을 구분합니다.",
+        "입력 USD / 100만 토큰": 0.3,
+        "출력 USD / 100만 토큰": 1.2,
+        "캐시 읽기 USD / 100만 토큰": 0.06
+      }
+    },
+    {
+      "id": "m31f-m3-price-long",
+      "model": "MiniMax-M3",
+      "provider": "MiniMax",
+      "source_url": "https://platform.minimax.io/docs/pricing/overview",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 API 요금",
+        "suite": "입력 >512K 표준",
+        "condition": "2026-10-20 공개 표준 요금이며 100만 토큰당 USD입니다. Priority, 구독료와 과제 총비용을 합치지 않습니다. M3는 입력 문맥 길이에 따른 구간을 구분합니다.",
+        "입력 USD / 100만 토큰": 0.6,
+        "출력 USD / 100만 토큰": 2.4,
+        "캐시 읽기 USD / 100만 토큰": 0.12
+      }
+    },
+    {
+      "id": "m31f-lifecycle-0",
+      "model": "MiniMax-M2.5",
+      "provider": "MiniMax",
+      "source_url": "https://platform.minimax.io/docs/faq/models",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 제공 상태 변경",
+        "suite": "2026-10-19 모델 이전 공지",
+        "status": "신규사용자제한 / 기존종량제11월18일종료 / 구독자동이전",
+        "condition": "날짜를 명시한 공지와 Retired 표의 표현을 구분합니다. 10월 19일부터 신규 사용자를 제한하며 기존 종량제는 11월 18일까지입니다. 구독 요청은 19일부터 M3.1 Flash로 전환하며 기존 ID와 할당량은 유지됩니다. 실제 계정은 확인하지 않았습니다.",
+        "변경 적용일": "2026-10-19",
+        "종량제 종료 예정일": "2026-11-18",
+        "구독 라우팅 대상": "MiniMax-M3.1-Flash"
+      }
+    },
+    {
+      "id": "m31f-lifecycle-1",
+      "model": "MiniMax-M2.5-highspeed",
+      "provider": "MiniMax",
+      "source_url": "https://platform.minimax.io/docs/faq/models",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 제공 상태 변경",
+        "suite": "2026-10-19 모델 이전 공지",
+        "status": "신규사용자제한 / 기존종량제11월18일종료 / 구독자동이전",
+        "condition": "날짜를 명시한 공지와 Retired 표의 표현을 구분합니다. 10월 19일부터 신규 사용자를 제한하며 기존 종량제는 11월 18일까지입니다. 구독 요청은 19일부터 M3.1 Flash로 전환하며 기존 ID와 할당량은 유지됩니다. 실제 계정은 확인하지 않았습니다.",
+        "변경 적용일": "2026-10-19",
+        "종량제 종료 예정일": "2026-11-18",
+        "구독 라우팅 대상": "MiniMax-M3.1-Flash"
+      }
+    },
+    {
+      "id": "m31f-lifecycle-2",
+      "model": "MiniMax-M2.7",
+      "provider": "MiniMax",
+      "source_url": "https://platform.minimax.io/docs/faq/models",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 제공 상태 변경",
+        "suite": "2026-10-19 모델 이전 공지",
+        "status": "신규사용자제한 / 기존종량제11월18일종료 / 구독자동이전",
+        "condition": "날짜를 명시한 공지와 Retired 표의 표현을 구분합니다. 10월 19일부터 신규 사용자를 제한하며 기존 종량제는 11월 18일까지입니다. 구독 요청은 19일부터 M3.1 Flash로 전환하며 기존 ID와 할당량은 유지됩니다. 실제 계정은 확인하지 않았습니다.",
+        "변경 적용일": "2026-10-19",
+        "종량제 종료 예정일": "2026-11-18",
+        "구독 라우팅 대상": "MiniMax-M3.1-Flash"
+      }
+    },
+    {
+      "id": "m31f-lifecycle-3",
+      "model": "MiniMax-M2.7-highspeed",
+      "provider": "MiniMax",
+      "source_url": "https://platform.minimax.io/docs/faq/models",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "공식 제공 상태 변경",
+        "suite": "2026-10-19 모델 이전 공지",
+        "status": "신규사용자제한 / 기존종량제11월18일종료 / 구독자동이전",
+        "condition": "날짜를 명시한 공지와 Retired 표의 표현을 구분합니다. 10월 19일부터 신규 사용자를 제한하며 기존 종량제는 11월 18일까지입니다. 구독 요청은 19일부터 M3.1 Flash로 전환하며 기존 ID와 할당량은 유지됩니다. 실제 계정은 확인하지 않았습니다.",
+        "변경 적용일": "2026-10-19",
+        "종량제 종료 예정일": "2026-11-18",
+        "구독 라우팅 대상": "MiniMax-M3.1-Flash"
+      }
+    },
+    {
+      "id": "m31f-aa-0",
+      "model": "MiniMax-M3.1-Flash",
+      "provider": "MiniMax",
+      "source_url": "https://artificialanalysis.ai/models/minimax-m3-1-flash",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "독립 평가기관 측정",
+        "suite": "Intelligence Index v4.3.2",
+        "effort": "AA 페이지의 reasoning판; 공급사max와동일조건미확인",
+        "harness": "Artificial Analysis 평가방법 v4.3.2 / 개별평가별상이",
+        "condition": "2026-10-20 AA 원문과 구조화 데이터의 값입니다. 공급사 표와 날짜, Harness 및 집계가 다르므로 합치지 않습니다. 지수, 정답률, 환각률, 부분 점수, 속도와 과제 가중평균 비용의 원문 단위를 보존합니다. 모델 snapshot과 정확한 실행 시각은 미명시입니다.",
+        "basis": "Artificial Analysis 독립 측정의 원문;Signal Desk 재실행아님",
+        "평가 점수": 42.381105,
+        "단위": "지수 / 높을수록 좋음",
+        "원본 값": 42.3811052132362
+      }
+    },
+    {
+      "id": "m31f-aa-1",
+      "model": "MiniMax-M3.1-Flash",
+      "provider": "MiniMax",
+      "source_url": "https://artificialanalysis.ai/models/minimax-m3-1-flash",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "독립 평가기관 측정",
+        "suite": "AA-Omniscience 정답률",
+        "effort": "AA 페이지의 reasoning판; 공급사max와동일조건미확인",
+        "harness": "Artificial Analysis 평가방법 v4.3.2 / 개별평가별상이",
+        "condition": "2026-10-20 AA 원문과 구조화 데이터의 값입니다. 공급사 표와 날짜, Harness 및 집계가 다르므로 합치지 않습니다. 지수, 정답률, 환각률, 부분 점수, 속도와 과제 가중평균 비용의 원문 단위를 보존합니다. 모델 snapshot과 정확한 실행 시각은 미명시입니다.",
+        "basis": "Artificial Analysis 독립 측정의 원문;Signal Desk 재실행아님",
+        "평가 점수": 56.2,
+        "단위": "% / 높을수록 좋음",
+        "원본 값": 56.2
+      }
+    },
+    {
+      "id": "m31f-aa-2",
+      "model": "MiniMax-M3.1-Flash",
+      "provider": "MiniMax",
+      "source_url": "https://artificialanalysis.ai/models/minimax-m3-1-flash",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "독립 평가기관 측정",
+        "suite": "AA-Omniscience 환각률",
+        "effort": "AA 페이지의 reasoning판; 공급사max와동일조건미확인",
+        "harness": "Artificial Analysis 평가방법 v4.3.2 / 개별평가별상이",
+        "condition": "2026-10-20 AA 원문과 구조화 데이터의 값입니다. 공급사 표와 날짜, Harness 및 집계가 다르므로 합치지 않습니다. 지수, 정답률, 환각률, 부분 점수, 속도와 과제 가중평균 비용의 원문 단위를 보존합니다. 모델 snapshot과 정확한 실행 시각은 미명시입니다.",
+        "basis": "Artificial Analysis 독립 측정의 원문;Signal Desk 재실행아님",
+        "평가 점수": 92.808219,
+        "단위": "% / 낮을수록 좋음",
+        "원본 값": 92.8082191780822
+      }
+    },
+    {
+      "id": "m31f-aa-3",
+      "model": "MiniMax-M3.1-Flash",
+      "provider": "MiniMax",
+      "source_url": "https://artificialanalysis.ai/models/minimax-m3-1-flash",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "독립 평가기관 측정",
+        "suite": "Terminal-Bench 4.0",
+        "effort": "AA 페이지의 reasoning판; 공급사max와동일조건미확인",
+        "harness": "Artificial Analysis 평가방법 v4.3.2 / 개별평가별상이",
+        "condition": "2026-10-20 AA 원문과 구조화 데이터의 값입니다. 공급사 표와 날짜, Harness 및 집계가 다르므로 합치지 않습니다. 지수, 정답률, 환각률, 부분 점수, 속도와 과제 가중평균 비용의 원문 단위를 보존합니다. 모델 snapshot과 정확한 실행 시각은 미명시입니다.",
+        "basis": "Artificial Analysis 독립 측정의 원문;Signal Desk 재실행아님",
+        "평가 점수": 25.757576,
+        "단위": "% / 높을수록 좋음",
+        "원본 값": 25.7575757575758
+      }
+    },
+    {
+      "id": "m31f-aa-4",
+      "model": "MiniMax-M3.1-Flash",
+      "provider": "MiniMax",
+      "source_url": "https://artificialanalysis.ai/models/minimax-m3-1-flash",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "독립 평가기관 측정",
+        "suite": "AutomationBench-AA",
+        "effort": "AA 페이지의 reasoning판; 공급사max와동일조건미확인",
+        "harness": "Artificial Analysis 평가방법 v4.3.2 / 개별평가별상이",
+        "condition": "2026-10-20 AA 원문과 구조화 데이터의 값입니다. 공급사 표와 날짜, Harness 및 집계가 다르므로 합치지 않습니다. 지수, 정답률, 환각률, 부분 점수, 속도와 과제 가중평균 비용의 원문 단위를 보존합니다. 모델 snapshot과 정확한 실행 시각은 미명시입니다.",
+        "basis": "Artificial Analysis 독립 측정의 원문;Signal Desk 재실행아님",
+        "평가 점수": 72.52181,
+        "단위": "% 부분 점수 / 높을수록 좋음",
+        "원본 값": 72.52180957532543
+      }
+    },
+    {
+      "id": "m31f-aa-5",
+      "model": "MiniMax-M3.1-Flash",
+      "provider": "MiniMax",
+      "source_url": "https://artificialanalysis.ai/models/minimax-m3-1-flash",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "독립 평가기관 측정",
+        "suite": "GDP.pdf All-pass",
+        "effort": "AA 페이지의 reasoning판; 공급사max와동일조건미확인",
+        "harness": "Artificial Analysis 평가방법 v4.3.2 / 개별평가별상이",
+        "condition": "2026-10-20 AA 원문과 구조화 데이터의 값입니다. 공급사 표와 날짜, Harness 및 집계가 다르므로 합치지 않습니다. 지수, 정답률, 환각률, 부분 점수, 속도와 과제 가중평균 비용의 원문 단위를 보존합니다. 모델 snapshot과 정확한 실행 시각은 미명시입니다.",
+        "basis": "Artificial Analysis 독립 측정의 원문;Signal Desk 재실행아님",
+        "평가 점수": 20.8,
+        "단위": "% / 높을수록 좋음",
+        "원본 값": 20.8
+      }
+    },
+    {
+      "id": "m31f-aa-6",
+      "model": "MiniMax-M3.1-Flash",
+      "provider": "MiniMax",
+      "source_url": "https://artificialanalysis.ai/models/minimax-m3-1-flash",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "독립 평가기관 측정",
+        "suite": "출력 속도 중위수",
+        "effort": "AA 페이지의 reasoning판; 공급사max와동일조건미확인",
+        "harness": "Artificial Analysis 평가방법 v4.3.2 / 개별평가별상이",
+        "condition": "2026-10-20 AA 원문과 구조화 데이터의 값입니다. 공급사 표와 날짜, Harness 및 집계가 다르므로 합치지 않습니다. 지수, 정답률, 환각률, 부분 점수, 속도와 과제 가중평균 비용의 원문 단위를 보존합니다. 모델 snapshot과 정확한 실행 시각은 미명시입니다.",
+        "basis": "Artificial Analysis 독립 측정의 원문;Signal Desk 재실행아님",
+        "평가 점수": 120.128402,
+        "단위": "토큰/초 / 동일 API 환경 확인 필요",
+        "원본 값": 120.128401776977
+      }
+    },
+    {
+      "id": "m31f-aa-7",
+      "model": "MiniMax-M3.1-Flash",
+      "provider": "MiniMax",
+      "source_url": "https://artificialanalysis.ai/models/minimax-m3-1-flash",
+      "checked_on": "2026-10-20",
+      "fields": {
+        "kind": "독립 평가기관 측정",
+        "suite": "Intelligence Index 과제당 비용",
+        "effort": "AA 페이지의 reasoning판; 공급사max와동일조건미확인",
+        "harness": "Artificial Analysis 평가방법 v4.3.2 / 개별평가별상이",
+        "condition": "2026-10-20 AA 원문과 구조화 데이터의 값입니다. 공급사 표와 날짜, Harness 및 집계가 다르므로 합치지 않습니다. 지수, 정답률, 환각률, 부분 점수, 속도와 과제 가중평균 비용의 원문 단위를 보존합니다. 모델 snapshot과 정확한 실행 시각은 미명시입니다.",
+        "basis": "Artificial Analysis 독립 측정의 원문;Signal Desk 재실행아님",
+        "평가 점수": 0.220114,
+        "단위": "USD/과제 / 가중평균",
+        "원본 값": 0.2201135746720313
+      }
+    }
+  ]
+}

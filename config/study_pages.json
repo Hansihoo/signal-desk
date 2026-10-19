@@ -58,7 +58,8 @@
     "jais-3-model-guide",
     "jais-asr-model-guide",
     "deepseek-v4-1-flash-model-guide",
-    "gpt-live-1-1-model-guide"
+    "gpt-live-1-1-model-guide",
+    "minimax-m3-1-flash-model-guide"
   ],
   "catalogs": {
     "devops-implementation-guide": "devops_tools.2026-10-10.r4.json"
@@ -157,6 +158,9 @@
     ],
     "polaris-government-opportunities": [
       "4c600cdbd4209cd3d02ac3787eab8b29c432b9385a0c3a28d09a1dccbb8478d7"
+    ],
+    "minimax-m3-1-flash-model-guide": [
+      "6fc188af41fb7cd2d2dcf23dee4e927381261d7da395e873d81a9c676b27e24c"
     ]
   },
   "model_introduction_editions": {
@@ -203,6 +207,9 @@
     ],
     "gpt-live-1-1-model-guide": [
       "c48593720a0b1549980919d1205894f117a68509c1b5afa94c1a6790d22926a9"
+    ],
+    "minimax-m3-1-flash-model-guide": [
+      "6fc188af41fb7cd2d2dcf23dee4e927381261d7da395e873d81a9c676b27e24c"
     ]
   },
   "model_introduction_purpose_editions": {
@@ -238,6 +245,9 @@
     ],
     "gpt-live-1-1-model-guide": [
       "c48593720a0b1549980919d1205894f117a68509c1b5afa94c1a6790d22926a9"
+    ],
+    "minimax-m3-1-flash-model-guide": [
+      "6fc188af41fb7cd2d2dcf23dee4e927381261d7da395e873d81a9c676b27e24c"
     ]
   },
   "model_introduction_reader_editions": {
@@ -270,6 +280,9 @@
     ],
     "gpt-live-1-1-model-guide": [
       "c48593720a0b1549980919d1205894f117a68509c1b5afa94c1a6790d22926a9"
+    ],
+    "minimax-m3-1-flash-model-guide": [
+      "6fc188af41fb7cd2d2dcf23dee4e927381261d7da395e873d81a9c676b27e24c"
     ]
   }
 }

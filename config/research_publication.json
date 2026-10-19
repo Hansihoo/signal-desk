@@ -2,6 +2,7 @@
   "schema_version": 1,
   "featured_report_id": "mcp-apps-workflows",
   "report_ids": [
+    "minimax-m3-1-flash-model-guide",
     "gpt-live-1-1-model-guide",
     "deepseek-v4-1-flash-model-guide",
     "reflection-beam-model-guide",
@@ -328,6 +329,11 @@
       "id": "business-review-2026-10-19",
       "input": "business_review.2026-10-19.json",
       "quality": "business_review.2026-10-19.quality.json"
+    },
+    {
+      "id": "ai-model-introductions-2026-10-20",
+      "input": "ai_model_guides.2026-10-20.json",
+      "quality": "ai_model_guides.2026-10-20.quality.json"
     }
   ]
 }
