@@ -58,3 +58,45 @@ research-study의 로컬 구현 변경 때문에 최초 기본 recipe 선택이 
 review는11항목 통과/기존 주거 모집중0건1항목 실패다. 사업 실패로 합산하지 않는다.
 제출할 소스만 별도 export해 전체182시험(172.521초), 새3편 quality gate와 publish를 통과했다. 소유한 scratch는 소비자 종료 후 정리됐다. 사내 원 필드 보존·3건/10판과 공개 DB 사내 테이블0도 확인했다. 현재3편6판의 usable_with_limits와 두 실제 검색 질의를 확인했다.
 배포 실행·실제 공개 본문/이전 판/필터/모바일/내부 링크 결과는 아래 완료 기록에 남긴다.
+
+## 2026-10-19 공개 검증 완료
+
+소스 [a5ff714](https://github.com/Hansihoo/signal-desk/commit/a5ff714c4c27ee640304a5637e5fbf87cb4127ee)의
+[Pages39180322501](https://github.com/Hansihoo/signal-desk/actions/runs/39180322501)는 성공했다.
+클라우드 시험·주거 review·상태 저장·배포가 통과했다. 로컬과 클라우드의 주거 상태를
+합쳐 보고하지 않는다. 이번 작업은 유료 생성/탐지를 켜거나 예약을 바꾸지 않았다.
+
+실제 공개 JSON과 7개 현재/이전 HTML 주소를 확인해 26검사를 통과했다. 검토한 사업
+3편은 모두6판으로 정확히 일치한다. 다른65편, 기존188판, 모델1280관측/1356판,
+Theo15원문/16판과 다른 보고서 발행 메타데이터를 정확 보존했다. 공개68편/191판이다.
+공개 데이터와 화면에서 사내 경로·테이블·실제 사내 필드 값이 없는 것도 확인했다.
+현재3개 공개 HTML의385상대 링크/앵커는 로컬 생성 대상과 대조해 누락0이었다.
+전체385주소에 HTTP를 보낸 검사는 아니며 실제 HTTP 검사는 위7개와 구분한다.
+
+공개 사업 목록과3편을390/1280px에서 확인했다. 요약 우선 순서, 페이지 넘침 없음,
+표의 내부 가로 스크롤 영역, 분야별1건/전체3건, 충주 검색1건/빈 검색0건, 실제 상세 이동과
+정부5판의 이전 본문을 확인했다. 모바일·PC JPEG와 UI 범위/위치 기록을 외부 증거 폴더에
+보존했다. 브라우저 임시 탭은 닫고 viewport를 복원했다.
+
+초기 검증기의 R&D 원문 문자열 비교는 HTML의 R&amp;D escaping을 처리하지 못해
+정부 제목 검사1건을 실패했다. 초기 영수증을 보존하고 HTML decoding 후26검사를
+통과했다. 검증 스크립트 수정 중 들여쓰기 오류도 고친 뒤 최종 실행을 확인했다.
+UI의 검색 locator는 사이드바와 중복되어 실패했고 명시적 검색창과 Enter로 제출했다.
+첫 locator 상세 클릭은 이동하지 않아 새 접근성 상태의 링크로 실제 이동을 확인했다.
+AX diff에서 변하지 않은1건이 생략돼 전체 상태/실제 DOM으로 경쟁사1건을 확정했다.
+초기 일부PC 캡처는 왼쪽 글자가 잘렸지만 실제 제목/글자 범위는 x51~940 안이고
+scrollX0, 폰트 loaded였다. 스크롤 후 다시 그린 캡처에서는 전체 제목·본문이 정상이다.
+정확한 compositor/캡처 원인은 확정하지 않았고 사이트 CSS를 임의 수정하지 않았다.
+
+필요한 원문·검증 증거는 data/raw의 ignored 경로와
+D:/9_codex_temp/2026-10-19/signal-business-weekly에 보존한다. 후자는 전부 폐기 가능한
+scratch가 아니어서 일괄 cleanup 완료 대상으로 등록하지 않았다. 일회성 소스 export와
+시험 DB는 소유 실행기가 소비자 종료 후 정리했으며 남은 scratch 경로가 없음을 확인했다.
+사내 작업은 외부 전용 폴더의 새 주간 기록/JSON/SQLite에만 존재하며 공개하지 않았다.
+
+[사업 목록](https://hansihoo.github.io/signal-desk/preview/business.html),
+[국책사업6판](https://hansihoo.github.io/signal-desk/preview/polaris-government-opportunities.html),
+[영업6판](https://hansihoo.github.io/signal-desk/preview/polaris-sales-opportunities.html),
+[문서AI 사업 방향6판](https://hansihoo.github.io/signal-desk/preview/office-business-directions.html).
+충주의 정확한 KST 접수/등록 연장, 미독 첨부, 실제 회사 자격·비용·담당자 결정,
+제품/계정 실행과 도입 성과는 미확인으로 유지한다. 신청·연락·견적은 수행하지 않았다.
