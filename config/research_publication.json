@@ -323,6 +323,11 @@
       "id": "ai-model-introductions-2026-10-19",
       "input": "ai_model_guides.2026-10-19.json",
       "quality": "ai_model_guides.2026-10-19.quality.json"
+    },
+    {
+      "id": "business-review-2026-10-19",
+      "input": "business_review.2026-10-19.json",
+      "quality": "business_review.2026-10-19.quality.json"
     }
   ]
 }
