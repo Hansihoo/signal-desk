@@ -1,0 +1,1493 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "id": "mercury3-chart-0-0",
+      "model": "Mercury 3",
+      "provider": "Inception",
+      "source_url": "https://framerusercontent.com/images/YO5OXn25zt3KJBJkUxO2kAwmS6o.png?height=1678&lossless=1&width=1364",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 발표 비교 평가",
+        "suite": "GDPval",
+        "condition": "2026-10-19 Inception 공식 발표 비교표, 21일 확인. 세 모델 모두 medium 표기. 공급사 비교이며 AA 원문 독립 재검증 또는 Signal Desk 실행이 아니다. 전체 Harness, 프롬프트, 반복 수, 정확 snapshot, 실행일과 속도 부하는 미명시. GDPval은 Elo이며 다른 행의 척도를 다른 지수로 옮기지 않는다.",
+        "effort": "medium",
+        "harness": "공식 표의 전체 Harness 미명시",
+        "basis": "Inception 공급사 비교표",
+        "평가 점수": 1237.2,
+        "단위": "Elo"
+      }
+    },
+    {
+      "id": "mercury3-chart-0-1",
+      "model": "GPT-6 Luna",
+      "provider": "OpenAI",
+      "source_url": "https://framerusercontent.com/images/YO5OXn25zt3KJBJkUxO2kAwmS6o.png?height=1678&lossless=1&width=1364",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 발표 비교 평가",
+        "suite": "GDPval",
+        "condition": "2026-10-19 Inception 공식 발표 비교표, 21일 확인. 세 모델 모두 medium 표기. 공급사 비교이며 AA 원문 독립 재검증 또는 Signal Desk 실행이 아니다. 전체 Harness, 프롬프트, 반복 수, 정확 snapshot, 실행일과 속도 부하는 미명시. GDPval은 Elo이며 다른 행의 척도를 다른 지수로 옮기지 않는다.",
+        "effort": "medium",
+        "harness": "공식 표의 전체 Harness 미명시",
+        "basis": "Inception 공급사 비교표",
+        "평가 점수": 1204.0,
+        "단위": "Elo"
+      }
+    },
+    {
+      "id": "mercury3-chart-0-2",
+      "model": "Claude Haiku 5.5",
+      "provider": "Anthropic",
+      "source_url": "https://framerusercontent.com/images/YO5OXn25zt3KJBJkUxO2kAwmS6o.png?height=1678&lossless=1&width=1364",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 발표 비교 평가",
+        "suite": "GDPval",
+        "condition": "2026-10-19 Inception 공식 발표 비교표, 21일 확인. 세 모델 모두 medium 표기. 공급사 비교이며 AA 원문 독립 재검증 또는 Signal Desk 실행이 아니다. 전체 Harness, 프롬프트, 반복 수, 정확 snapshot, 실행일과 속도 부하는 미명시. GDPval은 Elo이며 다른 행의 척도를 다른 지수로 옮기지 않는다.",
+        "effort": "medium",
+        "harness": "공식 표의 전체 Harness 미명시",
+        "basis": "Inception 공급사 비교표",
+        "평가 점수": 1225.0,
+        "단위": "Elo"
+      }
+    },
+    {
+      "id": "mercury3-chart-1-0",
+      "model": "Mercury 3",
+      "provider": "Inception",
+      "source_url": "https://framerusercontent.com/images/YO5OXn25zt3KJBJkUxO2kAwmS6o.png?height=1678&lossless=1&width=1364",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 발표 비교 평가",
+        "suite": "τ³-bench Banking",
+        "condition": "2026-10-19 Inception 공식 발표 비교표, 21일 확인. 세 모델 모두 medium 표기. 공급사 비교이며 AA 원문 독립 재검증 또는 Signal Desk 실행이 아니다. 전체 Harness, 프롬프트, 반복 수, 정확 snapshot, 실행일과 속도 부하는 미명시. GDPval은 Elo이며 다른 행의 척도를 다른 지수로 옮기지 않는다.",
+        "effort": "medium",
+        "harness": "공식 표의 전체 Harness 미명시",
+        "basis": "Inception 공급사 비교표",
+        "평가 점수": 30.24,
+        "단위": "점수 / 원문 척도"
+      }
+    },
+    {
+      "id": "mercury3-chart-1-1",
+      "model": "GPT-6 Luna",
+      "provider": "OpenAI",
+      "source_url": "https://framerusercontent.com/images/YO5OXn25zt3KJBJkUxO2kAwmS6o.png?height=1678&lossless=1&width=1364",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 발표 비교 평가",
+        "suite": "τ³-bench Banking",
+        "condition": "2026-10-19 Inception 공식 발표 비교표, 21일 확인. 세 모델 모두 medium 표기. 공급사 비교이며 AA 원문 독립 재검증 또는 Signal Desk 실행이 아니다. 전체 Harness, 프롬프트, 반복 수, 정확 snapshot, 실행일과 속도 부하는 미명시. GDPval은 Elo이며 다른 행의 척도를 다른 지수로 옮기지 않는다.",
+        "effort": "medium",
+        "harness": "공식 표의 전체 Harness 미명시",
+        "basis": "Inception 공급사 비교표",
+        "평가 점수": 23,
+        "단위": "점수 / 원문 척도"
+      }
+    },
+    {
+      "id": "mercury3-chart-1-2",
+      "model": "Claude Haiku 5.5",
+      "provider": "Anthropic",
+      "source_url": "https://framerusercontent.com/images/YO5OXn25zt3KJBJkUxO2kAwmS6o.png?height=1678&lossless=1&width=1364",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 발표 비교 평가",
+        "suite": "τ³-bench Banking",
+        "condition": "2026-10-19 Inception 공식 발표 비교표, 21일 확인. 세 모델 모두 medium 표기. 공급사 비교이며 AA 원문 독립 재검증 또는 Signal Desk 실행이 아니다. 전체 Harness, 프롬프트, 반복 수, 정확 snapshot, 실행일과 속도 부하는 미명시. GDPval은 Elo이며 다른 행의 척도를 다른 지수로 옮기지 않는다.",
+        "effort": "medium",
+        "harness": "공식 표의 전체 Harness 미명시",
+        "basis": "Inception 공급사 비교표",
+        "평가 점수": 13.06,
+        "단위": "점수 / 원문 척도"
+      }
+    },
+    {
+      "id": "mercury3-chart-2-0",
+      "model": "Mercury 3",
+      "provider": "Inception",
+      "source_url": "https://framerusercontent.com/images/YO5OXn25zt3KJBJkUxO2kAwmS6o.png?height=1678&lossless=1&width=1364",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 발표 비교 평가",
+        "suite": "MultiChallenge",
+        "condition": "2026-10-19 Inception 공식 발표 비교표, 21일 확인. 세 모델 모두 medium 표기. 공급사 비교이며 AA 원문 독립 재검증 또는 Signal Desk 실행이 아니다. 전체 Harness, 프롬프트, 반복 수, 정확 snapshot, 실행일과 속도 부하는 미명시. GDPval은 Elo이며 다른 행의 척도를 다른 지수로 옮기지 않는다.",
+        "effort": "medium",
+        "harness": "공식 표의 전체 Harness 미명시",
+        "basis": "Inception 공급사 비교표",
+        "평가 점수": 60.35,
+        "단위": "점수 / 원문 척도"
+      }
+    },
+    {
+      "id": "mercury3-chart-2-1",
+      "model": "GPT-6 Luna",
+      "provider": "OpenAI",
+      "source_url": "https://framerusercontent.com/images/YO5OXn25zt3KJBJkUxO2kAwmS6o.png?height=1678&lossless=1&width=1364",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 발표 비교 평가",
+        "suite": "MultiChallenge",
+        "condition": "2026-10-19 Inception 공식 발표 비교표, 21일 확인. 세 모델 모두 medium 표기. 공급사 비교이며 AA 원문 독립 재검증 또는 Signal Desk 실행이 아니다. 전체 Harness, 프롬프트, 반복 수, 정확 snapshot, 실행일과 속도 부하는 미명시. GDPval은 Elo이며 다른 행의 척도를 다른 지수로 옮기지 않는다.",
+        "effort": "medium",
+        "harness": "공식 표의 전체 Harness 미명시",
+        "basis": "Inception 공급사 비교표",
+        "평가 점수": 51.49,
+        "단위": "점수 / 원문 척도"
+      }
+    },
+    {
+      "id": "mercury3-chart-2-2",
+      "model": "Claude Haiku 5.5",
+      "provider": "Anthropic",
+      "source_url": "https://framerusercontent.com/images/YO5OXn25zt3KJBJkUxO2kAwmS6o.png?height=1678&lossless=1&width=1364",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 발표 비교 평가",
+        "suite": "MultiChallenge",
+        "condition": "2026-10-19 Inception 공식 발표 비교표, 21일 확인. 세 모델 모두 medium 표기. 공급사 비교이며 AA 원문 독립 재검증 또는 Signal Desk 실행이 아니다. 전체 Harness, 프롬프트, 반복 수, 정확 snapshot, 실행일과 속도 부하는 미명시. GDPval은 Elo이며 다른 행의 척도를 다른 지수로 옮기지 않는다.",
+        "effort": "medium",
+        "harness": "공식 표의 전체 Harness 미명시",
+        "basis": "Inception 공급사 비교표",
+        "평가 점수": 52.48,
+        "단위": "점수 / 원문 척도"
+      }
+    },
+    {
+      "id": "mercury3-chart-3-0",
+      "model": "Mercury 3",
+      "provider": "Inception",
+      "source_url": "https://framerusercontent.com/images/YO5OXn25zt3KJBJkUxO2kAwmS6o.png?height=1678&lossless=1&width=1364",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 발표 비교 평가",
+        "suite": "AA-Omniscience-Public Accuracy",
+        "condition": "2026-10-19 Inception 공식 발표 비교표, 21일 확인. 세 모델 모두 medium 표기. 공급사 비교이며 AA 원문 독립 재검증 또는 Signal Desk 실행이 아니다. 전체 Harness, 프롬프트, 반복 수, 정확 snapshot, 실행일과 속도 부하는 미명시. GDPval은 Elo이며 다른 행의 척도를 다른 지수로 옮기지 않는다.",
+        "effort": "medium",
+        "harness": "공식 표의 전체 Harness 미명시",
+        "basis": "Inception 공급사 비교표",
+        "평가 점수": 46.44,
+        "단위": "점수 / 원문 척도"
+      }
+    },
+    {
+      "id": "mercury3-chart-3-1",
+      "model": "GPT-6 Luna",
+      "provider": "OpenAI",
+      "source_url": "https://framerusercontent.com/images/YO5OXn25zt3KJBJkUxO2kAwmS6o.png?height=1678&lossless=1&width=1364",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 발표 비교 평가",
+        "suite": "AA-Omniscience-Public Accuracy",
+        "condition": "2026-10-19 Inception 공식 발표 비교표, 21일 확인. 세 모델 모두 medium 표기. 공급사 비교이며 AA 원문 독립 재검증 또는 Signal Desk 실행이 아니다. 전체 Harness, 프롬프트, 반복 수, 정확 snapshot, 실행일과 속도 부하는 미명시. GDPval은 Elo이며 다른 행의 척도를 다른 지수로 옮기지 않는다.",
+        "effort": "medium",
+        "harness": "공식 표의 전체 Harness 미명시",
+        "basis": "Inception 공급사 비교표",
+        "평가 점수": 46.94,
+        "단위": "점수 / 원문 척도"
+      }
+    },
+    {
+      "id": "mercury3-chart-3-2",
+      "model": "Claude Haiku 5.5",
+      "provider": "Anthropic",
+      "source_url": "https://framerusercontent.com/images/YO5OXn25zt3KJBJkUxO2kAwmS6o.png?height=1678&lossless=1&width=1364",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 발표 비교 평가",
+        "suite": "AA-Omniscience-Public Accuracy",
+        "condition": "2026-10-19 Inception 공식 발표 비교표, 21일 확인. 세 모델 모두 medium 표기. 공급사 비교이며 AA 원문 독립 재검증 또는 Signal Desk 실행이 아니다. 전체 Harness, 프롬프트, 반복 수, 정확 snapshot, 실행일과 속도 부하는 미명시. GDPval은 Elo이며 다른 행의 척도를 다른 지수로 옮기지 않는다.",
+        "effort": "medium",
+        "harness": "공식 표의 전체 Harness 미명시",
+        "basis": "Inception 공급사 비교표",
+        "평가 점수": 37.22,
+        "단위": "점수 / 원문 척도"
+      }
+    },
+    {
+      "id": "mercury3-chart-4-0",
+      "model": "Mercury 3",
+      "provider": "Inception",
+      "source_url": "https://framerusercontent.com/images/YO5OXn25zt3KJBJkUxO2kAwmS6o.png?height=1678&lossless=1&width=1364",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 발표 비교 평가",
+        "suite": "IFBench",
+        "condition": "2026-10-19 Inception 공식 발표 비교표, 21일 확인. 세 모델 모두 medium 표기. 공급사 비교이며 AA 원문 독립 재검증 또는 Signal Desk 실행이 아니다. 전체 Harness, 프롬프트, 반복 수, 정확 snapshot, 실행일과 속도 부하는 미명시. GDPval은 Elo이며 다른 행의 척도를 다른 지수로 옮기지 않는다.",
+        "effort": "medium",
+        "harness": "공식 표의 전체 Harness 미명시",
+        "basis": "Inception 공급사 비교표",
+        "평가 점수": 76.84,
+        "단위": "점수 / 원문 척도"
+      }
+    },
+    {
+      "id": "mercury3-chart-4-1",
+      "model": "GPT-6 Luna",
+      "provider": "OpenAI",
+      "source_url": "https://framerusercontent.com/images/YO5OXn25zt3KJBJkUxO2kAwmS6o.png?height=1678&lossless=1&width=1364",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 발표 비교 평가",
+        "suite": "IFBench",
+        "condition": "2026-10-19 Inception 공식 발표 비교표, 21일 확인. 세 모델 모두 medium 표기. 공급사 비교이며 AA 원문 독립 재검증 또는 Signal Desk 실행이 아니다. 전체 Harness, 프롬프트, 반복 수, 정확 snapshot, 실행일과 속도 부하는 미명시. GDPval은 Elo이며 다른 행의 척도를 다른 지수로 옮기지 않는다.",
+        "effort": "medium",
+        "harness": "공식 표의 전체 Harness 미명시",
+        "basis": "Inception 공급사 비교표",
+        "평가 점수": 61.82,
+        "단위": "점수 / 원문 척도"
+      }
+    },
+    {
+      "id": "mercury3-chart-4-2",
+      "model": "Claude Haiku 5.5",
+      "provider": "Anthropic",
+      "source_url": "https://framerusercontent.com/images/YO5OXn25zt3KJBJkUxO2kAwmS6o.png?height=1678&lossless=1&width=1364",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 발표 비교 평가",
+        "suite": "IFBench",
+        "condition": "2026-10-19 Inception 공식 발표 비교표, 21일 확인. 세 모델 모두 medium 표기. 공급사 비교이며 AA 원문 독립 재검증 또는 Signal Desk 실행이 아니다. 전체 Harness, 프롬프트, 반복 수, 정확 snapshot, 실행일과 속도 부하는 미명시. GDPval은 Elo이며 다른 행의 척도를 다른 지수로 옮기지 않는다.",
+        "effort": "medium",
+        "harness": "공식 표의 전체 Harness 미명시",
+        "basis": "Inception 공급사 비교표",
+        "평가 점수": 54.65,
+        "단위": "점수 / 원문 척도"
+      }
+    },
+    {
+      "id": "mercury3-chart-5-0",
+      "model": "Mercury 3",
+      "provider": "Inception",
+      "source_url": "https://framerusercontent.com/images/YO5OXn25zt3KJBJkUxO2kAwmS6o.png?height=1678&lossless=1&width=1364",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 발표 비교 평가",
+        "suite": "GPQA Diamond",
+        "condition": "2026-10-19 Inception 공식 발표 비교표, 21일 확인. 세 모델 모두 medium 표기. 공급사 비교이며 AA 원문 독립 재검증 또는 Signal Desk 실행이 아니다. 전체 Harness, 프롬프트, 반복 수, 정확 snapshot, 실행일과 속도 부하는 미명시. GDPval은 Elo이며 다른 행의 척도를 다른 지수로 옮기지 않는다.",
+        "effort": "medium",
+        "harness": "공식 표의 전체 Harness 미명시",
+        "basis": "Inception 공급사 비교표",
+        "평가 점수": 89.23,
+        "단위": "점수 / 원문 척도"
+      }
+    },
+    {
+      "id": "mercury3-chart-5-1",
+      "model": "GPT-6 Luna",
+      "provider": "OpenAI",
+      "source_url": "https://framerusercontent.com/images/YO5OXn25zt3KJBJkUxO2kAwmS6o.png?height=1678&lossless=1&width=1364",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 발표 비교 평가",
+        "suite": "GPQA Diamond",
+        "condition": "2026-10-19 Inception 공식 발표 비교표, 21일 확인. 세 모델 모두 medium 표기. 공급사 비교이며 AA 원문 독립 재검증 또는 Signal Desk 실행이 아니다. 전체 Harness, 프롬프트, 반복 수, 정확 snapshot, 실행일과 속도 부하는 미명시. GDPval은 Elo이며 다른 행의 척도를 다른 지수로 옮기지 않는다.",
+        "effort": "medium",
+        "harness": "공식 표의 전체 Harness 미명시",
+        "basis": "Inception 공급사 비교표",
+        "평가 점수": 86.36,
+        "단위": "점수 / 원문 척도"
+      }
+    },
+    {
+      "id": "mercury3-chart-5-2",
+      "model": "Claude Haiku 5.5",
+      "provider": "Anthropic",
+      "source_url": "https://framerusercontent.com/images/YO5OXn25zt3KJBJkUxO2kAwmS6o.png?height=1678&lossless=1&width=1364",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 발표 비교 평가",
+        "suite": "GPQA Diamond",
+        "condition": "2026-10-19 Inception 공식 발표 비교표, 21일 확인. 세 모델 모두 medium 표기. 공급사 비교이며 AA 원문 독립 재검증 또는 Signal Desk 실행이 아니다. 전체 Harness, 프롬프트, 반복 수, 정확 snapshot, 실행일과 속도 부하는 미명시. GDPval은 Elo이며 다른 행의 척도를 다른 지수로 옮기지 않는다.",
+        "effort": "medium",
+        "harness": "공식 표의 전체 Harness 미명시",
+        "basis": "Inception 공급사 비교표",
+        "평가 점수": 84.51,
+        "단위": "점수 / 원문 척도"
+      }
+    },
+    {
+      "id": "mercury3-chart-6-0",
+      "model": "Mercury 3",
+      "provider": "Inception",
+      "source_url": "https://framerusercontent.com/images/YO5OXn25zt3KJBJkUxO2kAwmS6o.png?height=1678&lossless=1&width=1364",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 발표 비교 평가",
+        "suite": "AA-LCR v1.1",
+        "condition": "2026-10-19 Inception 공식 발표 비교표, 21일 확인. 세 모델 모두 medium 표기. 공급사 비교이며 AA 원문 독립 재검증 또는 Signal Desk 실행이 아니다. 전체 Harness, 프롬프트, 반복 수, 정확 snapshot, 실행일과 속도 부하는 미명시. GDPval은 Elo이며 다른 행의 척도를 다른 지수로 옮기지 않는다.",
+        "effort": "medium",
+        "harness": "공식 표의 전체 Harness 미명시",
+        "basis": "Inception 공급사 비교표",
+        "평가 점수": 77.67,
+        "단위": "점수 / 원문 척도"
+      }
+    },
+    {
+      "id": "mercury3-chart-6-1",
+      "model": "GPT-6 Luna",
+      "provider": "OpenAI",
+      "source_url": "https://framerusercontent.com/images/YO5OXn25zt3KJBJkUxO2kAwmS6o.png?height=1678&lossless=1&width=1364",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 발표 비교 평가",
+        "suite": "AA-LCR v1.1",
+        "condition": "2026-10-19 Inception 공식 발표 비교표, 21일 확인. 세 모델 모두 medium 표기. 공급사 비교이며 AA 원문 독립 재검증 또는 Signal Desk 실행이 아니다. 전체 Harness, 프롬프트, 반복 수, 정확 snapshot, 실행일과 속도 부하는 미명시. GDPval은 Elo이며 다른 행의 척도를 다른 지수로 옮기지 않는다.",
+        "effort": "medium",
+        "harness": "공식 표의 전체 Harness 미명시",
+        "basis": "Inception 공급사 비교표",
+        "평가 점수": 78.3,
+        "단위": "점수 / 원문 척도"
+      }
+    },
+    {
+      "id": "mercury3-chart-6-2",
+      "model": "Claude Haiku 5.5",
+      "provider": "Anthropic",
+      "source_url": "https://framerusercontent.com/images/YO5OXn25zt3KJBJkUxO2kAwmS6o.png?height=1678&lossless=1&width=1364",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 발표 비교 평가",
+        "suite": "AA-LCR v1.1",
+        "condition": "2026-10-19 Inception 공식 발표 비교표, 21일 확인. 세 모델 모두 medium 표기. 공급사 비교이며 AA 원문 독립 재검증 또는 Signal Desk 실행이 아니다. 전체 Harness, 프롬프트, 반복 수, 정확 snapshot, 실행일과 속도 부하는 미명시. GDPval은 Elo이며 다른 행의 척도를 다른 지수로 옮기지 않는다.",
+        "effort": "medium",
+        "harness": "공식 표의 전체 Harness 미명시",
+        "basis": "Inception 공급사 비교표",
+        "평가 점수": 74.7,
+        "단위": "점수 / 원문 척도"
+      }
+    },
+    {
+      "id": "mercury3-chart-7-0",
+      "model": "Mercury 3",
+      "provider": "Inception",
+      "source_url": "https://framerusercontent.com/images/YO5OXn25zt3KJBJkUxO2kAwmS6o.png?height=1678&lossless=1&width=1364",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 발표 비교 평가",
+        "suite": "MRCR v2",
+        "condition": "2026-10-19 Inception 공식 발표 비교표, 21일 확인. 세 모델 모두 medium 표기. 공급사 비교이며 AA 원문 독립 재검증 또는 Signal Desk 실행이 아니다. 전체 Harness, 프롬프트, 반복 수, 정확 snapshot, 실행일과 속도 부하는 미명시. GDPval은 Elo이며 다른 행의 척도를 다른 지수로 옮기지 않는다.",
+        "effort": "medium",
+        "harness": "공식 표의 전체 Harness 미명시",
+        "basis": "Inception 공급사 비교표",
+        "평가 점수": 75.5,
+        "단위": "점수 / 원문 척도"
+      }
+    },
+    {
+      "id": "mercury3-chart-7-1",
+      "model": "GPT-6 Luna",
+      "provider": "OpenAI",
+      "source_url": "https://framerusercontent.com/images/YO5OXn25zt3KJBJkUxO2kAwmS6o.png?height=1678&lossless=1&width=1364",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 발표 비교 평가",
+        "suite": "MRCR v2",
+        "condition": "2026-10-19 Inception 공식 발표 비교표, 21일 확인. 세 모델 모두 medium 표기. 공급사 비교이며 AA 원문 독립 재검증 또는 Signal Desk 실행이 아니다. 전체 Harness, 프롬프트, 반복 수, 정확 snapshot, 실행일과 속도 부하는 미명시. GDPval은 Elo이며 다른 행의 척도를 다른 지수로 옮기지 않는다.",
+        "effort": "medium",
+        "harness": "공식 표의 전체 Harness 미명시",
+        "basis": "Inception 공급사 비교표",
+        "평가 점수": 62.72,
+        "단위": "점수 / 원문 척도"
+      }
+    },
+    {
+      "id": "mercury3-chart-7-2",
+      "model": "Claude Haiku 5.5",
+      "provider": "Anthropic",
+      "source_url": "https://framerusercontent.com/images/YO5OXn25zt3KJBJkUxO2kAwmS6o.png?height=1678&lossless=1&width=1364",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 발표 비교 평가",
+        "suite": "MRCR v2",
+        "condition": "2026-10-19 Inception 공식 발표 비교표, 21일 확인. 세 모델 모두 medium 표기. 공급사 비교이며 AA 원문 독립 재검증 또는 Signal Desk 실행이 아니다. 전체 Harness, 프롬프트, 반복 수, 정확 snapshot, 실행일과 속도 부하는 미명시. GDPval은 Elo이며 다른 행의 척도를 다른 지수로 옮기지 않는다.",
+        "effort": "medium",
+        "harness": "공식 표의 전체 Harness 미명시",
+        "basis": "Inception 공급사 비교표",
+        "평가 점수": 78.4,
+        "단위": "점수 / 원문 척도"
+      }
+    },
+    {
+      "id": "mercury3-chart-8-0",
+      "model": "Mercury 3",
+      "provider": "Inception",
+      "source_url": "https://framerusercontent.com/images/YO5OXn25zt3KJBJkUxO2kAwmS6o.png?height=1678&lossless=1&width=1364",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 발표 비교 평가",
+        "suite": "SWE-Bench Atlas",
+        "condition": "2026-10-19 Inception 공식 발표 비교표, 21일 확인. 세 모델 모두 medium 표기. 공급사 비교이며 AA 원문 독립 재검증 또는 Signal Desk 실행이 아니다. 전체 Harness, 프롬프트, 반복 수, 정확 snapshot, 실행일과 속도 부하는 미명시. GDPval은 Elo이며 다른 행의 척도를 다른 지수로 옮기지 않는다.",
+        "effort": "medium",
+        "harness": "공식 표의 전체 Harness 미명시",
+        "basis": "Inception 공급사 비교표",
+        "평가 점수": 51.08,
+        "단위": "점수 / 원문 척도"
+      }
+    },
+    {
+      "id": "mercury3-chart-8-1",
+      "model": "GPT-6 Luna",
+      "provider": "OpenAI",
+      "source_url": "https://framerusercontent.com/images/YO5OXn25zt3KJBJkUxO2kAwmS6o.png?height=1678&lossless=1&width=1364",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 발표 비교 평가",
+        "suite": "SWE-Bench Atlas",
+        "condition": "2026-10-19 Inception 공식 발표 비교표, 21일 확인. 세 모델 모두 medium 표기. 공급사 비교이며 AA 원문 독립 재검증 또는 Signal Desk 실행이 아니다. 전체 Harness, 프롬프트, 반복 수, 정확 snapshot, 실행일과 속도 부하는 미명시. GDPval은 Elo이며 다른 행의 척도를 다른 지수로 옮기지 않는다.",
+        "effort": "medium",
+        "harness": "공식 표의 전체 Harness 미명시",
+        "basis": "Inception 공급사 비교표",
+        "평가 점수": 33.33,
+        "단위": "점수 / 원문 척도"
+      }
+    },
+    {
+      "id": "mercury3-chart-8-2",
+      "model": "Claude Haiku 5.5",
+      "provider": "Anthropic",
+      "source_url": "https://framerusercontent.com/images/YO5OXn25zt3KJBJkUxO2kAwmS6o.png?height=1678&lossless=1&width=1364",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 발표 비교 평가",
+        "suite": "SWE-Bench Atlas",
+        "condition": "2026-10-19 Inception 공식 발표 비교표, 21일 확인. 세 모델 모두 medium 표기. 공급사 비교이며 AA 원문 독립 재검증 또는 Signal Desk 실행이 아니다. 전체 Harness, 프롬프트, 반복 수, 정확 snapshot, 실행일과 속도 부하는 미명시. GDPval은 Elo이며 다른 행의 척도를 다른 지수로 옮기지 않는다.",
+        "effort": "medium",
+        "harness": "공식 표의 전체 Harness 미명시",
+        "basis": "Inception 공급사 비교표",
+        "평가 점수": 32.26,
+        "단위": "점수 / 원문 척도"
+      }
+    },
+    {
+      "id": "mercury3-chart-9-0",
+      "model": "Mercury 3",
+      "provider": "Inception",
+      "source_url": "https://framerusercontent.com/images/YO5OXn25zt3KJBJkUxO2kAwmS6o.png?height=1678&lossless=1&width=1364",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 발표 비교 평가",
+        "suite": "DeepSWE v1",
+        "condition": "2026-10-19 Inception 공식 발표 비교표, 21일 확인. 세 모델 모두 medium 표기. 공급사 비교이며 AA 원문 독립 재검증 또는 Signal Desk 실행이 아니다. 전체 Harness, 프롬프트, 반복 수, 정확 snapshot, 실행일과 속도 부하는 미명시. GDPval은 Elo이며 다른 행의 척도를 다른 지수로 옮기지 않는다.",
+        "effort": "medium",
+        "harness": "공식 표의 전체 Harness 미명시",
+        "basis": "Inception 공급사 비교표",
+        "평가 점수": 46.31,
+        "단위": "점수 / 원문 척도"
+      }
+    },
+    {
+      "id": "mercury3-chart-9-1",
+      "model": "GPT-6 Luna",
+      "provider": "OpenAI",
+      "source_url": "https://framerusercontent.com/images/YO5OXn25zt3KJBJkUxO2kAwmS6o.png?height=1678&lossless=1&width=1364",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 발표 비교 평가",
+        "suite": "DeepSWE v1",
+        "condition": "2026-10-19 Inception 공식 발표 비교표, 21일 확인. 세 모델 모두 medium 표기. 공급사 비교이며 AA 원문 독립 재검증 또는 Signal Desk 실행이 아니다. 전체 Harness, 프롬프트, 반복 수, 정확 snapshot, 실행일과 속도 부하는 미명시. GDPval은 Elo이며 다른 행의 척도를 다른 지수로 옮기지 않는다.",
+        "effort": "medium",
+        "harness": "공식 표의 전체 Harness 미명시",
+        "basis": "Inception 공급사 비교표",
+        "평가 점수": 37.76,
+        "단위": "점수 / 원문 척도"
+      }
+    },
+    {
+      "id": "mercury3-chart-9-2",
+      "model": "Claude Haiku 5.5",
+      "provider": "Anthropic",
+      "source_url": "https://framerusercontent.com/images/YO5OXn25zt3KJBJkUxO2kAwmS6o.png?height=1678&lossless=1&width=1364",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 발표 비교 평가",
+        "suite": "DeepSWE v1",
+        "condition": "2026-10-19 Inception 공식 발표 비교표, 21일 확인. 세 모델 모두 medium 표기. 공급사 비교이며 AA 원문 독립 재검증 또는 Signal Desk 실행이 아니다. 전체 Harness, 프롬프트, 반복 수, 정확 snapshot, 실행일과 속도 부하는 미명시. GDPval은 Elo이며 다른 행의 척도를 다른 지수로 옮기지 않는다.",
+        "effort": "medium",
+        "harness": "공식 표의 전체 Harness 미명시",
+        "basis": "Inception 공급사 비교표",
+        "평가 점수": 51.62,
+        "단위": "점수 / 원문 척도"
+      }
+    },
+    {
+      "id": "mercury3-chart-10-0",
+      "model": "Mercury 3",
+      "provider": "Inception",
+      "source_url": "https://framerusercontent.com/images/YO5OXn25zt3KJBJkUxO2kAwmS6o.png?height=1678&lossless=1&width=1364",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 발표 비교 평가",
+        "suite": "BrowseComp+",
+        "condition": "2026-10-19 Inception 공식 발표 비교표, 21일 확인. 세 모델 모두 medium 표기. 공급사 비교이며 AA 원문 독립 재검증 또는 Signal Desk 실행이 아니다. 전체 Harness, 프롬프트, 반복 수, 정확 snapshot, 실행일과 속도 부하는 미명시. GDPval은 Elo이며 다른 행의 척도를 다른 지수로 옮기지 않는다.",
+        "effort": "medium",
+        "harness": "공식 표의 전체 Harness 미명시",
+        "basis": "Inception 공급사 비교표",
+        "평가 점수": 55.18,
+        "단위": "점수 / 원문 척도"
+      }
+    },
+    {
+      "id": "mercury3-chart-10-1",
+      "model": "GPT-6 Luna",
+      "provider": "OpenAI",
+      "source_url": "https://framerusercontent.com/images/YO5OXn25zt3KJBJkUxO2kAwmS6o.png?height=1678&lossless=1&width=1364",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 발표 비교 평가",
+        "suite": "BrowseComp+",
+        "condition": "2026-10-19 Inception 공식 발표 비교표, 21일 확인. 세 모델 모두 medium 표기. 공급사 비교이며 AA 원문 독립 재검증 또는 Signal Desk 실행이 아니다. 전체 Harness, 프롬프트, 반복 수, 정확 snapshot, 실행일과 속도 부하는 미명시. GDPval은 Elo이며 다른 행의 척도를 다른 지수로 옮기지 않는다.",
+        "effort": "medium",
+        "harness": "공식 표의 전체 Harness 미명시",
+        "basis": "Inception 공급사 비교표",
+        "평가 점수": 50.5,
+        "단위": "점수 / 원문 척도"
+      }
+    },
+    {
+      "id": "mercury3-chart-10-2",
+      "model": "Claude Haiku 5.5",
+      "provider": "Anthropic",
+      "source_url": "https://framerusercontent.com/images/YO5OXn25zt3KJBJkUxO2kAwmS6o.png?height=1678&lossless=1&width=1364",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 발표 비교 평가",
+        "suite": "BrowseComp+",
+        "condition": "2026-10-19 Inception 공식 발표 비교표, 21일 확인. 세 모델 모두 medium 표기. 공급사 비교이며 AA 원문 독립 재검증 또는 Signal Desk 실행이 아니다. 전체 Harness, 프롬프트, 반복 수, 정확 snapshot, 실행일과 속도 부하는 미명시. GDPval은 Elo이며 다른 행의 척도를 다른 지수로 옮기지 않는다.",
+        "effort": "medium",
+        "harness": "공식 표의 전체 Harness 미명시",
+        "basis": "Inception 공급사 비교표",
+        "평가 점수": 45.78,
+        "단위": "점수 / 원문 척도"
+      }
+    },
+    {
+      "id": "mercury3-chart-11-0",
+      "model": "Mercury 3",
+      "provider": "Inception",
+      "source_url": "https://framerusercontent.com/images/YO5OXn25zt3KJBJkUxO2kAwmS6o.png?height=1678&lossless=1&width=1364",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 발표 비교 평가",
+        "suite": "DeepSearchQA",
+        "condition": "2026-10-19 Inception 공식 발표 비교표, 21일 확인. 세 모델 모두 medium 표기. 공급사 비교이며 AA 원문 독립 재검증 또는 Signal Desk 실행이 아니다. 전체 Harness, 프롬프트, 반복 수, 정확 snapshot, 실행일과 속도 부하는 미명시. GDPval은 Elo이며 다른 행의 척도를 다른 지수로 옮기지 않는다.",
+        "effort": "medium",
+        "harness": "공식 표의 전체 Harness 미명시",
+        "basis": "Inception 공급사 비교표",
+        "평가 점수": 71.33,
+        "단위": "점수 / 원문 척도"
+      }
+    },
+    {
+      "id": "mercury3-chart-11-1",
+      "model": "GPT-6 Luna",
+      "provider": "OpenAI",
+      "source_url": "https://framerusercontent.com/images/YO5OXn25zt3KJBJkUxO2kAwmS6o.png?height=1678&lossless=1&width=1364",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 발표 비교 평가",
+        "suite": "DeepSearchQA",
+        "condition": "2026-10-19 Inception 공식 발표 비교표, 21일 확인. 세 모델 모두 medium 표기. 공급사 비교이며 AA 원문 독립 재검증 또는 Signal Desk 실행이 아니다. 전체 Harness, 프롬프트, 반복 수, 정확 snapshot, 실행일과 속도 부하는 미명시. GDPval은 Elo이며 다른 행의 척도를 다른 지수로 옮기지 않는다.",
+        "effort": "medium",
+        "harness": "공식 표의 전체 Harness 미명시",
+        "basis": "Inception 공급사 비교표",
+        "평가 점수": 60,
+        "단위": "점수 / 원문 척도"
+      }
+    },
+    {
+      "id": "mercury3-chart-11-2",
+      "model": "Claude Haiku 5.5",
+      "provider": "Anthropic",
+      "source_url": "https://framerusercontent.com/images/YO5OXn25zt3KJBJkUxO2kAwmS6o.png?height=1678&lossless=1&width=1364",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 발표 비교 평가",
+        "suite": "DeepSearchQA",
+        "condition": "2026-10-19 Inception 공식 발표 비교표, 21일 확인. 세 모델 모두 medium 표기. 공급사 비교이며 AA 원문 독립 재검증 또는 Signal Desk 실행이 아니다. 전체 Harness, 프롬프트, 반복 수, 정확 snapshot, 실행일과 속도 부하는 미명시. GDPval은 Elo이며 다른 행의 척도를 다른 지수로 옮기지 않는다.",
+        "effort": "medium",
+        "harness": "공식 표의 전체 Harness 미명시",
+        "basis": "Inception 공급사 비교표",
+        "평가 점수": 65.22,
+        "단위": "점수 / 원문 척도"
+      }
+    },
+    {
+      "id": "mercury3-chart-speed-0",
+      "model": "Mercury 3",
+      "provider": "Inception",
+      "source_url": "https://framerusercontent.com/images/YO5OXn25zt3KJBJkUxO2kAwmS6o.png?height=1678&lossless=1&width=1364",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 발표 속도 비교",
+        "suite": "출력 속도 / 발표표",
+        "condition": "2026-10-19 Inception 공식 발표 비교표, 21일 확인. 세 모델 모두 medium 표기. 공급사 비교이며 AA 원문 독립 재검증 또는 Signal Desk 실행이 아니다. 전체 Harness, 프롬프트, 반복 수, 정확 snapshot, 실행일과 속도 부하는 미명시. GDPval은 Elo이며 다른 행의 척도를 다른 지수로 옮기지 않는다.",
+        "effort": "medium",
+        "평가 점수": 1068,
+        "단위": "토큰/초",
+        "원본 표기": "1068",
+        "note": "출력 생성 속도이며 첫 토큰 지연이 아님. 경쟁 값은 원문 근사치."
+      }
+    },
+    {
+      "id": "mercury3-chart-speed-1",
+      "model": "GPT-6 Luna",
+      "provider": "OpenAI",
+      "source_url": "https://framerusercontent.com/images/YO5OXn25zt3KJBJkUxO2kAwmS6o.png?height=1678&lossless=1&width=1364",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 발표 속도 비교",
+        "suite": "출력 속도 / 발표표",
+        "condition": "2026-10-19 Inception 공식 발표 비교표, 21일 확인. 세 모델 모두 medium 표기. 공급사 비교이며 AA 원문 독립 재검증 또는 Signal Desk 실행이 아니다. 전체 Harness, 프롬프트, 반복 수, 정확 snapshot, 실행일과 속도 부하는 미명시. GDPval은 Elo이며 다른 행의 척도를 다른 지수로 옮기지 않는다.",
+        "effort": "medium",
+        "평가 점수": 130,
+        "단위": "토큰/초",
+        "원본 표기": "~130",
+        "note": "출력 생성 속도이며 첫 토큰 지연이 아님. 경쟁 값은 원문 근사치."
+      }
+    },
+    {
+      "id": "mercury3-chart-speed-2",
+      "model": "Claude Haiku 5.5",
+      "provider": "Anthropic",
+      "source_url": "https://framerusercontent.com/images/YO5OXn25zt3KJBJkUxO2kAwmS6o.png?height=1678&lossless=1&width=1364",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 발표 속도 비교",
+        "suite": "출력 속도 / 발표표",
+        "condition": "2026-10-19 Inception 공식 발표 비교표, 21일 확인. 세 모델 모두 medium 표기. 공급사 비교이며 AA 원문 독립 재검증 또는 Signal Desk 실행이 아니다. 전체 Harness, 프롬프트, 반복 수, 정확 snapshot, 실행일과 속도 부하는 미명시. GDPval은 Elo이며 다른 행의 척도를 다른 지수로 옮기지 않는다.",
+        "effort": "medium",
+        "평가 점수": 240,
+        "단위": "토큰/초",
+        "원본 표기": "~240",
+        "note": "출력 생성 속도이며 첫 토큰 지연이 아님. 경쟁 값은 원문 근사치."
+      }
+    },
+    {
+      "id": "mercury3-price-0",
+      "model": "Mercury 3",
+      "provider": "Inception",
+      "source_url": "https://docs.inceptionlabs.ai/get-started/models.md",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 API 요금",
+        "suite": "정상 요금",
+        "condition": "2026-10-21 공식 모델 표. 100만 토큰당 USD. 정상 요금과 출시 할인은 별도다. 할인 종료일 미명시. 추론 토큰도 출력으로 과금하며 실제 청구는 미시험.",
+        "입력 USD / 100만 토큰": 0.2,
+        "캐시 읽기 USD / 100만 토큰": 0.02,
+        "출력 USD / 100만 토큰": 0.7
+      }
+    },
+    {
+      "id": "mercury3-price-1",
+      "model": "Mercury 3",
+      "provider": "Inception",
+      "source_url": "https://docs.inceptionlabs.ai/get-started/models.md",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 API 요금",
+        "suite": "출시 50% 할인",
+        "condition": "2026-10-21 공식 모델 표. 100만 토큰당 USD. 정상 요금과 출시 할인은 별도다. 할인 종료일 미명시. 추론 토큰도 출력으로 과금하며 실제 청구는 미시험.",
+        "입력 USD / 100만 토큰": 0.1,
+        "캐시 읽기 USD / 100만 토큰": 0.01,
+        "출력 USD / 100만 토큰": 0.35
+      }
+    },
+    {
+      "id": "mercury3-price-2",
+      "model": "Mercury 2.5",
+      "provider": "Inception",
+      "source_url": "https://docs.inceptionlabs.ai/get-started/models.md",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 API 요금",
+        "suite": "문서의 현재 표준 요금",
+        "condition": "2026-10-21 공식 모델 표. 100만 토큰당 USD. 정상 요금과 출시 할인은 별도다. 할인 종료일 미명시. 추론 토큰도 출력으로 과금하며 실제 청구는 미시험.",
+        "입력 USD / 100만 토큰": 0.2,
+        "캐시 읽기 USD / 100만 토큰": 0.02,
+        "출력 USD / 100만 토큰": 0.75
+      }
+    },
+    {
+      "id": "mercury3-price-3",
+      "model": "Mercury 2",
+      "provider": "Inception",
+      "source_url": "https://docs.inceptionlabs.ai/get-started/models.md",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 API 요금",
+        "suite": "문서의 현재 표준 요금",
+        "condition": "2026-10-21 공식 모델 표. 100만 토큰당 USD. 정상 요금과 출시 할인은 별도다. 할인 종료일 미명시. 추론 토큰도 출력으로 과금하며 실제 청구는 미시험.",
+        "입력 USD / 100만 토큰": 0.25,
+        "캐시 읽기 USD / 100만 토큰": 0.025,
+        "출력 USD / 100만 토큰": 0.75
+      }
+    },
+    {
+      "id": "mercury3-spec",
+      "model": "Mercury 3",
+      "provider": "Inception",
+      "source_url": "https://docs.inceptionlabs.ai/get-started/models.md",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 모델 사양",
+        "suite": "mercury-3 / 2026-10-19 공개",
+        "condition": "텍스트 입출력. 1M 문맥, 최대 출력131072. instant/low/medium/high, 생략 시 low. 실제 API 접근/성능 미시험.",
+        "context": 1000000,
+        "access": "Inception API / 파트너 API",
+        "status": "API 제공",
+        "effort": "instant / low / medium / high",
+        "최대 출력 토큰": 131072,
+        "입력 형식": "Text",
+        "출력 형식": "Text",
+        "note": "정확한 파라미터 수와 공개 가중치 다운로드는 미확인."
+      }
+    },
+    {
+      "id": "mercury3-prior-0",
+      "model": "Mercury 2.5",
+      "provider": "Inception",
+      "source_url": "https://www.inceptionlabs.ai/models",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 모델 이전 정책",
+        "suite": "2026-10-19 신규 제한 / 2026-11-15 기존 종료",
+        "condition": "19일 이전 사용 이력이 있는 기존 고객은11월15일까지 접근. 신규 사용자는 제외, Enterprise는 계약 지원. 260K/128K는 원문 표기이며 실제 계정 허용치는 미시험.",
+        "context": 260000,
+        "status": "신규 제한 / 기존11월15일까지 / 기업계약 별도",
+        "최대 출력 토큰": 65536
+      }
+    },
+    {
+      "id": "mercury3-prior-1",
+      "model": "Mercury 2",
+      "provider": "Inception",
+      "source_url": "https://www.inceptionlabs.ai/models",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 모델 이전 정책",
+        "suite": "2026-10-19 신규 제한 / 2026-11-15 기존 종료",
+        "condition": "19일 이전 사용 이력이 있는 기존 고객은11월15일까지 접근. 신규 사용자는 제외, Enterprise는 계약 지원. 260K/128K는 원문 표기이며 실제 계정 허용치는 미시험.",
+        "context": 128000,
+        "status": "신규 제한 / 기존11월15일까지 / 기업계약 별도",
+        "최대 출력 토큰": 50000
+      }
+    },
+    {
+      "id": "sugar120b-spec",
+      "model": "Sugar Glider 120B",
+      "provider": "i14",
+      "source_url": "https://www.i14.ai/models",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 모델 사양",
+        "suite": "sugar-glider-120b / Cerbearus-120B",
+        "condition": "20일 발표를21일 확인. i14 cloud/VPC/on-prem 조기 접근은 대기 등록이며 공개 가중치/라이선스 다운로드 미확인. 모델 디렉터리의 가격은 illustrative로 명시.",
+        "context": 1000000,
+        "parameters": "120B / 12B active",
+        "access": "i14 cloud / VPC / on-prem 조기 접근",
+        "status": "대기 등록 / 조기 접근",
+        "note": "고정 크기 요청 상태의 O(1) 메모리/토큰당 계산. 전체 가중치 메모리나 입력 전체 처리시간이 O(1)이라는 의미 아님. 확정 표준 요금은 미공개."
+      }
+    },
+    {
+      "id": "sugar120b-illustrative-price",
+      "model": "Sugar Glider 120B",
+      "provider": "i14",
+      "source_url": "https://www.i14.ai/models",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 예시 가격 / 확정 요금 아님",
+        "suite": "모델 디렉터리 illustrative 표시",
+        "condition": "21일 디렉터리의 예시 가격. 실제 표준 API 요금, 구매 가능한 확정 가격이나 무료 요금으로 입력하지 않음.",
+        "설명 / 주의": "100만 토큰당 입력 $0.10, 출력 $0.40은 illustrative 표시다. 표준 요금 열에 복제하지 않음."
+      }
+    },
+    {
+      "id": "sugar120b-ruler-4000",
+      "model": "Sugar Glider 120B",
+      "provider": "i14",
+      "source_url": "https://www.i14.ai/papers/cerbearus-whitepaper.pdf",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 백서 평가",
+        "suite": "RULER-13 / 4000토큰",
+        "condition": "2026년10월 Cerbearus 백서 Figure3, 21일 확인. 공급사 RULER 전체13합성과제 평균. Sugar Glider는 본문의 Cerbearus-120B. 정확 평가 코드/커밋, 전체 prompt, 반복 수와 독립 재현 미확인. 길이별 단일 바늘 결과를 전체평가 정확도로 대체하지 않음.",
+        "context": 4000,
+        "effort": "백서 전체 설정 미명시",
+        "평가 점수": 96.2,
+        "단위": "RULER-13 평균 점수"
+      }
+    },
+    {
+      "id": "sugar120b-ruler-32000",
+      "model": "Sugar Glider 120B",
+      "provider": "i14",
+      "source_url": "https://www.i14.ai/papers/cerbearus-whitepaper.pdf",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 백서 평가",
+        "suite": "RULER-13 / 32000토큰",
+        "condition": "2026년10월 Cerbearus 백서 Figure3, 21일 확인. 공급사 RULER 전체13합성과제 평균. Sugar Glider는 본문의 Cerbearus-120B. 정확 평가 코드/커밋, 전체 prompt, 반복 수와 독립 재현 미확인. 길이별 단일 바늘 결과를 전체평가 정확도로 대체하지 않음.",
+        "context": 32000,
+        "effort": "백서 전체 설정 미명시",
+        "평가 점수": 95.7,
+        "단위": "RULER-13 평균 점수"
+      }
+    },
+    {
+      "id": "sugar120b-ruler-128000",
+      "model": "Sugar Glider 120B",
+      "provider": "i14",
+      "source_url": "https://www.i14.ai/papers/cerbearus-whitepaper.pdf",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 백서 평가",
+        "suite": "RULER-13 / 128000토큰",
+        "condition": "2026년10월 Cerbearus 백서 Figure3, 21일 확인. 공급사 RULER 전체13합성과제 평균. Sugar Glider는 본문의 Cerbearus-120B. 정확 평가 코드/커밋, 전체 prompt, 반복 수와 독립 재현 미확인. 길이별 단일 바늘 결과를 전체평가 정확도로 대체하지 않음.",
+        "context": 128000,
+        "effort": "백서 전체 설정 미명시",
+        "평가 점수": 79.9,
+        "단위": "RULER-13 평균 점수"
+      }
+    },
+    {
+      "id": "sugar120b-ruler-256000",
+      "model": "Sugar Glider 120B",
+      "provider": "i14",
+      "source_url": "https://www.i14.ai/papers/cerbearus-whitepaper.pdf",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 백서 평가",
+        "suite": "RULER-13 / 256000토큰",
+        "condition": "2026년10월 Cerbearus 백서 Figure3, 21일 확인. 공급사 RULER 전체13합성과제 평균. Sugar Glider는 본문의 Cerbearus-120B. 정확 평가 코드/커밋, 전체 prompt, 반복 수와 독립 재현 미확인. 길이별 단일 바늘 결과를 전체평가 정확도로 대체하지 않음.",
+        "context": 256000,
+        "effort": "백서 전체 설정 미명시",
+        "평가 점수": 76.5,
+        "단위": "RULER-13 평균 점수"
+      }
+    },
+    {
+      "id": "sugar120b-ruler-512000",
+      "model": "Sugar Glider 120B",
+      "provider": "i14",
+      "source_url": "https://www.i14.ai/papers/cerbearus-whitepaper.pdf",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 백서 평가",
+        "suite": "RULER-13 / 512000토큰",
+        "condition": "2026년10월 Cerbearus 백서 Figure3, 21일 확인. 공급사 RULER 전체13합성과제 평균. Sugar Glider는 본문의 Cerbearus-120B. 정확 평가 코드/커밋, 전체 prompt, 반복 수와 독립 재현 미확인. 길이별 단일 바늘 결과를 전체평가 정확도로 대체하지 않음.",
+        "context": 512000,
+        "effort": "백서 전체 설정 미명시",
+        "평가 점수": 74.1,
+        "단위": "RULER-13 평균 점수"
+      }
+    },
+    {
+      "id": "sugar120b-ruler-1000000",
+      "model": "Sugar Glider 120B",
+      "provider": "i14",
+      "source_url": "https://www.i14.ai/papers/cerbearus-whitepaper.pdf",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 백서 평가",
+        "suite": "RULER-13 / 1000000토큰",
+        "condition": "2026년10월 Cerbearus 백서 Figure3, 21일 확인. 공급사 RULER 전체13합성과제 평균. Sugar Glider는 본문의 Cerbearus-120B. 정확 평가 코드/커밋, 전체 prompt, 반복 수와 독립 재현 미확인. 길이별 단일 바늘 결과를 전체평가 정확도로 대체하지 않음.",
+        "context": 1000000,
+        "effort": "백서 전체 설정 미명시",
+        "평가 점수": 73.3,
+        "단위": "RULER-13 평균 점수"
+      }
+    },
+    {
+      "id": "sugar-parent-ruler-32000",
+      "model": "NVIDIA Nemotron 3 Super 120B-A12B",
+      "provider": "NVIDIA",
+      "source_url": "https://www.i14.ai/papers/cerbearus-whitepaper.pdf",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 백서의 기반 모델 비교",
+        "suite": "RULER-13 / 32000토큰",
+        "condition": "2026년10월 Cerbearus 백서 Figure3, 21일 확인. 공급사 RULER 전체13합성과제 평균. Sugar Glider는 본문의 Cerbearus-120B. 정확 평가 코드/커밋, 전체 prompt, 반복 수와 독립 재현 미확인. 길이별 단일 바늘 결과를 전체평가 정확도로 대체하지 않음. 32K는본문 명시값,1M은Figure3에정확표기된95.0.",
+        "context": 32000,
+        "평가 점수": 96.3,
+        "단위": "RULER-13 평균 점수"
+      }
+    },
+    {
+      "id": "sugar-parent-ruler-1000000",
+      "model": "NVIDIA Nemotron 3 Super 120B-A12B",
+      "provider": "NVIDIA",
+      "source_url": "https://www.i14.ai/papers/cerbearus-whitepaper.pdf",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 백서의 기반 모델 비교",
+        "suite": "RULER-13 / 1000000토큰",
+        "condition": "2026년10월 Cerbearus 백서 Figure3, 21일 확인. 공급사 RULER 전체13합성과제 평균. Sugar Glider는 본문의 Cerbearus-120B. 정확 평가 코드/커밋, 전체 prompt, 반복 수와 독립 재현 미확인. 길이별 단일 바늘 결과를 전체평가 정확도로 대체하지 않음. 32K는본문 명시값,1M은Figure3에정확표기된95.0.",
+        "context": 1000000,
+        "평가 점수": 95.0,
+        "단위": "RULER-13 평균 점수"
+      }
+    },
+    {
+      "id": "sugar-capacity-H200-0-0",
+      "model": "NVIDIA Nemotron 3 Super 120B-A12B",
+      "provider": "NVIDIA",
+      "source_url": "https://www.i14.ai/papers/cerbearus-whitepaper.pdf",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 백서 메모리 수용량",
+        "suite": "동시 수용량 / 4×H200 / 128000토큰",
+        "condition": "Figure2. 서버 메모리에 동시에 들어가는 요청 수, 처리량/초와 처리 속도 아님. 메모리 설정과장비/길이를구분. 예약시간/처리성능/실제비용 미검증.",
+        "context": 128000,
+        "effort": "기반 모델",
+        "harness": "4×H200",
+        "평가 점수": 109,
+        "단위": "동시 수용 요청 수 / 건"
+      }
+    },
+    {
+      "id": "sugar-capacity-H200-0-1",
+      "model": "Sugar Glider 120B",
+      "provider": "i14",
+      "source_url": "https://www.i14.ai/papers/cerbearus-whitepaper.pdf",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 백서 메모리 수용량",
+        "suite": "동시 수용량 / 4×H200 / 128000토큰",
+        "condition": "Figure2. 서버 메모리에 동시에 들어가는 요청 수, 처리량/초와 처리 속도 아님. 메모리 설정과장비/길이를구분. 예약시간/처리성능/실제비용 미검증.",
+        "context": 128000,
+        "effort": "기본 메모리",
+        "harness": "4×H200",
+        "평가 점수": 453,
+        "단위": "동시 수용 요청 수 / 건"
+      }
+    },
+    {
+      "id": "sugar-capacity-H200-0-2",
+      "model": "Sugar Glider 120B",
+      "provider": "i14",
+      "source_url": "https://www.i14.ai/papers/cerbearus-whitepaper.pdf",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 백서 메모리 수용량",
+        "suite": "동시 수용량 / 4×H200 / 128000토큰",
+        "condition": "Figure2. 서버 메모리에 동시에 들어가는 요청 수, 처리량/초와 처리 속도 아님. 메모리 설정과장비/길이를구분. 예약시간/처리성능/실제비용 미검증.",
+        "context": 128000,
+        "effort": "4배 메모리",
+        "harness": "4×H200",
+        "평가 점수": 141,
+        "단위": "동시 수용 요청 수 / 건"
+      }
+    },
+    {
+      "id": "sugar-capacity-H200-1-0",
+      "model": "NVIDIA Nemotron 3 Super 120B-A12B",
+      "provider": "NVIDIA",
+      "source_url": "https://www.i14.ai/papers/cerbearus-whitepaper.pdf",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 백서 메모리 수용량",
+        "suite": "동시 수용량 / 4×H200 / 256000토큰",
+        "condition": "Figure2. 서버 메모리에 동시에 들어가는 요청 수, 처리량/초와 처리 속도 아님. 메모리 설정과장비/길이를구분. 예약시간/처리성능/실제비용 미검증.",
+        "context": 256000,
+        "effort": "기반 모델",
+        "harness": "4×H200",
+        "평가 점수": 56,
+        "단위": "동시 수용 요청 수 / 건"
+      }
+    },
+    {
+      "id": "sugar-capacity-H200-1-1",
+      "model": "Sugar Glider 120B",
+      "provider": "i14",
+      "source_url": "https://www.i14.ai/papers/cerbearus-whitepaper.pdf",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 백서 메모리 수용량",
+        "suite": "동시 수용량 / 4×H200 / 256000토큰",
+        "condition": "Figure2. 서버 메모리에 동시에 들어가는 요청 수, 처리량/초와 처리 속도 아님. 메모리 설정과장비/길이를구분. 예약시간/처리성능/실제비용 미검증.",
+        "context": 256000,
+        "effort": "기본 메모리",
+        "harness": "4×H200",
+        "평가 점수": 453,
+        "단위": "동시 수용 요청 수 / 건"
+      }
+    },
+    {
+      "id": "sugar-capacity-H200-1-2",
+      "model": "Sugar Glider 120B",
+      "provider": "i14",
+      "source_url": "https://www.i14.ai/papers/cerbearus-whitepaper.pdf",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 백서 메모리 수용량",
+        "suite": "동시 수용량 / 4×H200 / 256000토큰",
+        "condition": "Figure2. 서버 메모리에 동시에 들어가는 요청 수, 처리량/초와 처리 속도 아님. 메모리 설정과장비/길이를구분. 예약시간/처리성능/실제비용 미검증.",
+        "context": 256000,
+        "effort": "4배 메모리",
+        "harness": "4×H200",
+        "평가 점수": 141,
+        "단위": "동시 수용 요청 수 / 건"
+      }
+    },
+    {
+      "id": "sugar-capacity-H200-2-0",
+      "model": "NVIDIA Nemotron 3 Super 120B-A12B",
+      "provider": "NVIDIA",
+      "source_url": "https://www.i14.ai/papers/cerbearus-whitepaper.pdf",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 백서 메모리 수용량",
+        "suite": "동시 수용량 / 4×H200 / 1000000토큰",
+        "condition": "Figure2. 서버 메모리에 동시에 들어가는 요청 수, 처리량/초와 처리 속도 아님. 메모리 설정과장비/길이를구분. 예약시간/처리성능/실제비용 미검증.",
+        "context": 1000000,
+        "effort": "기반 모델",
+        "harness": "4×H200",
+        "평가 점수": 14,
+        "단위": "동시 수용 요청 수 / 건"
+      }
+    },
+    {
+      "id": "sugar-capacity-H200-2-1",
+      "model": "Sugar Glider 120B",
+      "provider": "i14",
+      "source_url": "https://www.i14.ai/papers/cerbearus-whitepaper.pdf",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 백서 메모리 수용량",
+        "suite": "동시 수용량 / 4×H200 / 1000000토큰",
+        "condition": "Figure2. 서버 메모리에 동시에 들어가는 요청 수, 처리량/초와 처리 속도 아님. 메모리 설정과장비/길이를구분. 예약시간/처리성능/실제비용 미검증.",
+        "context": 1000000,
+        "effort": "기본 메모리",
+        "harness": "4×H200",
+        "평가 점수": 453,
+        "단위": "동시 수용 요청 수 / 건"
+      }
+    },
+    {
+      "id": "sugar-capacity-H200-2-2",
+      "model": "Sugar Glider 120B",
+      "provider": "i14",
+      "source_url": "https://www.i14.ai/papers/cerbearus-whitepaper.pdf",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 백서 메모리 수용량",
+        "suite": "동시 수용량 / 4×H200 / 1000000토큰",
+        "condition": "Figure2. 서버 메모리에 동시에 들어가는 요청 수, 처리량/초와 처리 속도 아님. 메모리 설정과장비/길이를구분. 예약시간/처리성능/실제비용 미검증.",
+        "context": 1000000,
+        "effort": "4배 메모리",
+        "harness": "4×H200",
+        "평가 점수": 141,
+        "단위": "동시 수용 요청 수 / 건"
+      }
+    },
+    {
+      "id": "sugar-capacity-H100-0-0",
+      "model": "NVIDIA Nemotron 3 Super 120B-A12B",
+      "provider": "NVIDIA",
+      "source_url": "https://www.i14.ai/papers/cerbearus-whitepaper.pdf",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 백서 메모리 수용량",
+        "suite": "동시 수용량 / 4×H100 / 128000토큰",
+        "condition": "Figure2. 서버 메모리에 동시에 들어가는 요청 수, 처리량/초와 처리 속도 아님. 메모리 설정과장비/길이를구분. 예약시간/처리성능/실제비용 미검증.",
+        "context": 128000,
+        "effort": "기반 모델",
+        "harness": "4×H100",
+        "평가 점수": 20,
+        "단위": "동시 수용 요청 수 / 건"
+      }
+    },
+    {
+      "id": "sugar-capacity-H100-0-1",
+      "model": "Sugar Glider 120B",
+      "provider": "i14",
+      "source_url": "https://www.i14.ai/papers/cerbearus-whitepaper.pdf",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 백서 메모리 수용량",
+        "suite": "동시 수용량 / 4×H100 / 128000토큰",
+        "condition": "Figure2. 서버 메모리에 동시에 들어가는 요청 수, 처리량/초와 처리 속도 아님. 메모리 설정과장비/길이를구분. 예약시간/처리성능/실제비용 미검증.",
+        "context": 128000,
+        "effort": "기본 메모리",
+        "harness": "4×H100",
+        "평가 점수": 73,
+        "단위": "동시 수용 요청 수 / 건"
+      }
+    },
+    {
+      "id": "sugar-capacity-H100-0-2",
+      "model": "Sugar Glider 120B",
+      "provider": "i14",
+      "source_url": "https://www.i14.ai/papers/cerbearus-whitepaper.pdf",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 백서 메모리 수용량",
+        "suite": "동시 수용량 / 4×H100 / 128000토큰",
+        "condition": "Figure2. 서버 메모리에 동시에 들어가는 요청 수, 처리량/초와 처리 속도 아님. 메모리 설정과장비/길이를구분. 예약시간/처리성능/실제비용 미검증.",
+        "context": 128000,
+        "effort": "4배 메모리",
+        "harness": "4×H100",
+        "평가 점수": 22,
+        "단위": "동시 수용 요청 수 / 건"
+      }
+    },
+    {
+      "id": "sugar-capacity-H100-1-0",
+      "model": "NVIDIA Nemotron 3 Super 120B-A12B",
+      "provider": "NVIDIA",
+      "source_url": "https://www.i14.ai/papers/cerbearus-whitepaper.pdf",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 백서 메모리 수용량",
+        "suite": "동시 수용량 / 4×H100 / 256000토큰",
+        "condition": "Figure2. 서버 메모리에 동시에 들어가는 요청 수, 처리량/초와 처리 속도 아님. 메모리 설정과장비/길이를구분. 예약시간/처리성능/실제비용 미검증.",
+        "context": 256000,
+        "effort": "기반 모델",
+        "harness": "4×H100",
+        "평가 점수": 10,
+        "단위": "동시 수용 요청 수 / 건"
+      }
+    },
+    {
+      "id": "sugar-capacity-H100-1-1",
+      "model": "Sugar Glider 120B",
+      "provider": "i14",
+      "source_url": "https://www.i14.ai/papers/cerbearus-whitepaper.pdf",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 백서 메모리 수용량",
+        "suite": "동시 수용량 / 4×H100 / 256000토큰",
+        "condition": "Figure2. 서버 메모리에 동시에 들어가는 요청 수, 처리량/초와 처리 속도 아님. 메모리 설정과장비/길이를구분. 예약시간/처리성능/실제비용 미검증.",
+        "context": 256000,
+        "effort": "기본 메모리",
+        "harness": "4×H100",
+        "평가 점수": 73,
+        "단위": "동시 수용 요청 수 / 건"
+      }
+    },
+    {
+      "id": "sugar-capacity-H100-1-2",
+      "model": "Sugar Glider 120B",
+      "provider": "i14",
+      "source_url": "https://www.i14.ai/papers/cerbearus-whitepaper.pdf",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 백서 메모리 수용량",
+        "suite": "동시 수용량 / 4×H100 / 256000토큰",
+        "condition": "Figure2. 서버 메모리에 동시에 들어가는 요청 수, 처리량/초와 처리 속도 아님. 메모리 설정과장비/길이를구분. 예약시간/처리성능/실제비용 미검증.",
+        "context": 256000,
+        "effort": "4배 메모리",
+        "harness": "4×H100",
+        "평가 점수": 22,
+        "단위": "동시 수용 요청 수 / 건"
+      }
+    },
+    {
+      "id": "sugar-capacity-H100-2-0",
+      "model": "NVIDIA Nemotron 3 Super 120B-A12B",
+      "provider": "NVIDIA",
+      "source_url": "https://www.i14.ai/papers/cerbearus-whitepaper.pdf",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 백서 메모리 수용량",
+        "suite": "동시 수용량 / 4×H100 / 1000000토큰",
+        "condition": "Figure2. 서버 메모리에 동시에 들어가는 요청 수, 처리량/초와 처리 속도 아님. 메모리 설정과장비/길이를구분. 예약시간/처리성능/실제비용 미검증.",
+        "context": 1000000,
+        "effort": "기반 모델",
+        "harness": "4×H100",
+        "평가 점수": 2,
+        "단위": "동시 수용 요청 수 / 건"
+      }
+    },
+    {
+      "id": "sugar-capacity-H100-2-1",
+      "model": "Sugar Glider 120B",
+      "provider": "i14",
+      "source_url": "https://www.i14.ai/papers/cerbearus-whitepaper.pdf",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 백서 메모리 수용량",
+        "suite": "동시 수용량 / 4×H100 / 1000000토큰",
+        "condition": "Figure2. 서버 메모리에 동시에 들어가는 요청 수, 처리량/초와 처리 속도 아님. 메모리 설정과장비/길이를구분. 예약시간/처리성능/실제비용 미검증.",
+        "context": 1000000,
+        "effort": "기본 메모리",
+        "harness": "4×H100",
+        "평가 점수": 73,
+        "단위": "동시 수용 요청 수 / 건"
+      }
+    },
+    {
+      "id": "sugar-capacity-H100-2-2",
+      "model": "Sugar Glider 120B",
+      "provider": "i14",
+      "source_url": "https://www.i14.ai/papers/cerbearus-whitepaper.pdf",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 백서 메모리 수용량",
+        "suite": "동시 수용량 / 4×H100 / 1000000토큰",
+        "condition": "Figure2. 서버 메모리에 동시에 들어가는 요청 수, 처리량/초와 처리 속도 아님. 메모리 설정과장비/길이를구분. 예약시간/처리성능/실제비용 미검증.",
+        "context": 1000000,
+        "effort": "4배 메모리",
+        "harness": "4×H100",
+        "평가 점수": 22,
+        "단위": "동시 수용 요청 수 / 건"
+      }
+    },
+    {
+      "id": "maxwell-access",
+      "model": "Maxwell",
+      "provider": "doubleAI",
+      "source_url": "https://heymaxwell.ai/",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 모델 제공 안내",
+        "suite": "Code Execution Model / 조기 접근",
+        "condition": "기존3월/6월 연구를보유한시스템. 현재 early access 안내와available soon 문구가함께있음. 일반공개API/확정표준요금/모델규모/가중치다운로드 미확인.",
+        "access": "조기 접근 문의",
+        "status": "조기 접근 안내 / 일반 제공 미확인",
+        "note": "코드 실행 모델. 대화 LLM의 토큰/초나 Context/토큰요금으로 환산하지 않음."
+      }
+    },
+    {
+      "id": "maxwell-ltx-0-0",
+      "model": "LTX-2.5 / 기존 파이프라인",
+      "provider": "LTX / doubleAI",
+      "source_url": "https://heymaxwell.ai/ltx/time_by_component.png",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 협업 성능 보고",
+        "suite": "LTX-2.5 4K / 전체",
+        "condition": "2026-10-19 LTX 협업 공급사보고, 21일확인. 5초4K클립,2×B200. 그림의소수값과본문의반올림250/134초 및1.87배를구분. 실제고객일반성능이나SignalDesk측정아님.",
+        "harness": "2×NVIDIA B200 / 공급사 pipeline",
+        "평가 점수": 249.4,
+        "단위": "초 / 낮을수록 좋음",
+        "note": "Maxwell 모델의 출력 토큰 속도가 아닌 최적화된 외부 파이프라인 시간."
+      }
+    },
+    {
+      "id": "maxwell-ltx-0-1",
+      "model": "LTX-2.5 / 기존 파이프라인",
+      "provider": "LTX / doubleAI",
+      "source_url": "https://heymaxwell.ai/ltx/time_by_component.png",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 협업 성능 보고",
+        "suite": "LTX-2.5 4K / Spatial epilogue",
+        "condition": "2026-10-19 LTX 협업 공급사보고, 21일확인. 5초4K클립,2×B200. 그림의소수값과본문의반올림250/134초 및1.87배를구분. 실제고객일반성능이나SignalDesk측정아님.",
+        "harness": "2×NVIDIA B200 / 공급사 pipeline",
+        "평가 점수": 134.1,
+        "단위": "초 / 낮을수록 좋음",
+        "note": "Maxwell 모델의 출력 토큰 속도가 아닌 최적화된 외부 파이프라인 시간."
+      }
+    },
+    {
+      "id": "maxwell-ltx-0-2",
+      "model": "LTX-2.5 / 기존 파이프라인",
+      "provider": "LTX / doubleAI",
+      "source_url": "https://heymaxwell.ai/ltx/time_by_component.png",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 협업 성능 보고",
+        "suite": "LTX-2.5 4K / Video decode",
+        "condition": "2026-10-19 LTX 협업 공급사보고, 21일확인. 5초4K클립,2×B200. 그림의소수값과본문의반올림250/134초 및1.87배를구분. 실제고객일반성능이나SignalDesk측정아님.",
+        "harness": "2×NVIDIA B200 / 공급사 pipeline",
+        "평가 점수": 65.7,
+        "단위": "초 / 낮을수록 좋음",
+        "note": "Maxwell 모델의 출력 토큰 속도가 아닌 최적화된 외부 파이프라인 시간."
+      }
+    },
+    {
+      "id": "maxwell-ltx-0-3",
+      "model": "LTX-2.5 / 기존 파이프라인",
+      "provider": "LTX / doubleAI",
+      "source_url": "https://heymaxwell.ai/ltx/time_by_component.png",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 협업 성능 보고",
+        "suite": "LTX-2.5 4K / Temporal round",
+        "condition": "2026-10-19 LTX 협업 공급사보고, 21일확인. 5초4K클립,2×B200. 그림의소수값과본문의반올림250/134초 및1.87배를구분. 실제고객일반성능이나SignalDesk측정아님.",
+        "harness": "2×NVIDIA B200 / 공급사 pipeline",
+        "평가 점수": 33.2,
+        "단위": "초 / 낮을수록 좋음",
+        "note": "Maxwell 모델의 출력 토큰 속도가 아닌 최적화된 외부 파이프라인 시간."
+      }
+    },
+    {
+      "id": "maxwell-ltx-1-0",
+      "model": "LTX-2.5 / Maxwell 최적화",
+      "provider": "LTX / doubleAI",
+      "source_url": "https://heymaxwell.ai/ltx/time_by_component.png",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 협업 성능 보고",
+        "suite": "LTX-2.5 4K / 전체",
+        "condition": "2026-10-19 LTX 협업 공급사보고, 21일확인. 5초4K클립,2×B200. 그림의소수값과본문의반올림250/134초 및1.87배를구분. 실제고객일반성능이나SignalDesk측정아님.",
+        "harness": "2×NVIDIA B200 / 공급사 pipeline",
+        "평가 점수": 133.9,
+        "단위": "초 / 낮을수록 좋음",
+        "note": "Maxwell 모델의 출력 토큰 속도가 아닌 최적화된 외부 파이프라인 시간."
+      }
+    },
+    {
+      "id": "maxwell-ltx-1-1",
+      "model": "LTX-2.5 / Maxwell 최적화",
+      "provider": "LTX / doubleAI",
+      "source_url": "https://heymaxwell.ai/ltx/time_by_component.png",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 협업 성능 보고",
+        "suite": "LTX-2.5 4K / Spatial epilogue",
+        "condition": "2026-10-19 LTX 협업 공급사보고, 21일확인. 5초4K클립,2×B200. 그림의소수값과본문의반올림250/134초 및1.87배를구분. 실제고객일반성능이나SignalDesk측정아님.",
+        "harness": "2×NVIDIA B200 / 공급사 pipeline",
+        "평가 점수": 54.4,
+        "단위": "초 / 낮을수록 좋음",
+        "note": "Maxwell 모델의 출력 토큰 속도가 아닌 최적화된 외부 파이프라인 시간."
+      }
+    },
+    {
+      "id": "maxwell-ltx-1-2",
+      "model": "LTX-2.5 / Maxwell 최적화",
+      "provider": "LTX / doubleAI",
+      "source_url": "https://heymaxwell.ai/ltx/time_by_component.png",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 협업 성능 보고",
+        "suite": "LTX-2.5 4K / Video decode",
+        "condition": "2026-10-19 LTX 협업 공급사보고, 21일확인. 5초4K클립,2×B200. 그림의소수값과본문의반올림250/134초 및1.87배를구분. 실제고객일반성능이나SignalDesk측정아님.",
+        "harness": "2×NVIDIA B200 / 공급사 pipeline",
+        "평가 점수": 39.8,
+        "단위": "초 / 낮을수록 좋음",
+        "note": "Maxwell 모델의 출력 토큰 속도가 아닌 최적화된 외부 파이프라인 시간."
+      }
+    },
+    {
+      "id": "maxwell-ltx-1-3",
+      "model": "LTX-2.5 / Maxwell 최적화",
+      "provider": "LTX / doubleAI",
+      "source_url": "https://heymaxwell.ai/ltx/time_by_component.png",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 협업 성능 보고",
+        "suite": "LTX-2.5 4K / Temporal round",
+        "condition": "2026-10-19 LTX 협업 공급사보고, 21일확인. 5초4K클립,2×B200. 그림의소수값과본문의반올림250/134초 및1.87배를구분. 실제고객일반성능이나SignalDesk측정아님.",
+        "harness": "2×NVIDIA B200 / 공급사 pipeline",
+        "평가 점수": 29.7,
+        "단위": "초 / 낮을수록 좋음",
+        "note": "Maxwell 모델의 출력 토큰 속도가 아닌 최적화된 외부 파이프라인 시간."
+      }
+    },
+    {
+      "id": "maxwell-sol-0-win",
+      "model": "Maxwell",
+      "provider": "doubleAI",
+      "source_url": "https://www.doubleai.com/research/maxwell-approaches-speed-of-light-on-blackwell",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 공급사 벤치마크 비교",
+        "suite": "SOL-ExecBench 235 / win / 1일탐색",
+        "condition": "6월29일공급사글의기존결과. NVIDIA 최적화PyTorch 기준. 탐색예산1/2/21일로다름, Cursor의정확모델과snapshot미확인. 2일233/235를99%로반올림. 21일은3주표현환산. 독립실행미수행.",
+        "effort": "1일 탐색",
+        "harness": "SOL-ExecBench / Blackwell 공급사 실행",
+        "평가 점수": 90,
+        "단위": "% / 기준보다 빠른 문제 비율"
+      }
+    },
+    {
+      "id": "maxwell-sol-0-speed",
+      "model": "Maxwell",
+      "provider": "doubleAI",
+      "source_url": "https://www.doubleai.com/research/maxwell-approaches-speed-of-light-on-blackwell",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 공급사 벤치마크 비교",
+        "suite": "SOL-ExecBench 235 / speed / 1일탐색",
+        "condition": "6월29일공급사글의기존결과. NVIDIA 최적화PyTorch 기준. 탐색예산1/2/21일로다름, Cursor의정확모델과snapshot미확인. 2일233/235를99%로반올림. 21일은3주표현환산. 독립실행미수행.",
+        "effort": "1일 탐색",
+        "harness": "SOL-ExecBench / Blackwell 공급사 실행",
+        "평가 점수": 2.24,
+        "단위": "배 / 기하평균 속도 향상"
+      }
+    },
+    {
+      "id": "maxwell-sol-1-win",
+      "model": "Maxwell",
+      "provider": "doubleAI",
+      "source_url": "https://www.doubleai.com/research/maxwell-approaches-speed-of-light-on-blackwell",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 공급사 벤치마크 비교",
+        "suite": "SOL-ExecBench 235 / win / 2일탐색",
+        "condition": "6월29일공급사글의기존결과. NVIDIA 최적화PyTorch 기준. 탐색예산1/2/21일로다름, Cursor의정확모델과snapshot미확인. 2일233/235를99%로반올림. 21일은3주표현환산. 독립실행미수행.",
+        "effort": "2일 탐색",
+        "harness": "SOL-ExecBench / Blackwell 공급사 실행",
+        "평가 점수": 99,
+        "단위": "% / 기준보다 빠른 문제 비율"
+      }
+    },
+    {
+      "id": "maxwell-sol-1-speed",
+      "model": "Maxwell",
+      "provider": "doubleAI",
+      "source_url": "https://www.doubleai.com/research/maxwell-approaches-speed-of-light-on-blackwell",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 공급사 벤치마크 비교",
+        "suite": "SOL-ExecBench 235 / speed / 2일탐색",
+        "condition": "6월29일공급사글의기존결과. NVIDIA 최적화PyTorch 기준. 탐색예산1/2/21일로다름, Cursor의정확모델과snapshot미확인. 2일233/235를99%로반올림. 21일은3주표현환산. 독립실행미수행.",
+        "effort": "2일 탐색",
+        "harness": "SOL-ExecBench / Blackwell 공급사 실행",
+        "평가 점수": 3.14,
+        "단위": "배 / 기하평균 속도 향상"
+      }
+    },
+    {
+      "id": "maxwell-sol-2-win",
+      "model": "Cursor agentic swarm",
+      "provider": "Cursor",
+      "source_url": "https://www.doubleai.com/research/maxwell-approaches-speed-of-light-on-blackwell",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 공급사 벤치마크 비교",
+        "suite": "SOL-ExecBench 235 / win / 21일탐색",
+        "condition": "6월29일공급사글의기존결과. NVIDIA 최적화PyTorch 기준. 탐색예산1/2/21일로다름, Cursor의정확모델과snapshot미확인. 2일233/235를99%로반올림. 21일은3주표현환산. 독립실행미수행.",
+        "effort": "21일 탐색",
+        "harness": "SOL-ExecBench / Blackwell 공급사 실행",
+        "평가 점수": 63,
+        "단위": "% / 기준보다 빠른 문제 비율"
+      }
+    },
+    {
+      "id": "maxwell-sol-2-speed",
+      "model": "Cursor agentic swarm",
+      "provider": "Cursor",
+      "source_url": "https://www.doubleai.com/research/maxwell-approaches-speed-of-light-on-blackwell",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 공급사 벤치마크 비교",
+        "suite": "SOL-ExecBench 235 / speed / 21일탐색",
+        "condition": "6월29일공급사글의기존결과. NVIDIA 최적화PyTorch 기준. 탐색예산1/2/21일로다름, Cursor의정확모델과snapshot미확인. 2일233/235를99%로반올림. 21일은3주표현환산. 독립실행미수행.",
+        "effort": "21일 탐색",
+        "harness": "SOL-ExecBench / Blackwell 공급사 실행",
+        "평가 점수": 1.38,
+        "단위": "배 / 기하평균 속도 향상"
+      }
+    },
+    {
+      "id": "maxwell-pandas-pdsh",
+      "model": "Maxwell",
+      "provider": "doubleAI",
+      "source_url": "https://www.doubleai.com/research/maxwell-pandas-blogpost",
+      "checked_on": "2026-10-21",
+      "fields": {
+        "kind": "공식 공급사 성능 보고",
+        "suite": "PDS-H / pandas 최적화",
+        "condition": "7월26일기존보고.22쿼리/SF10(10GB),워밍업후5회중위수/계산시간만. 문서장비표기가c7i.metal-24xl와c7i.24xlarge로혼재. 일반업무/파일읽기시간/모든장비보장아님.",
+        "평가 점수": 38.4,
+        "단위": "배 / 공급사 보고 평균 속도 향상"
+      }
+    }
+  ]
+}

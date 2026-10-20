@@ -2,6 +2,9 @@
   "schema_version": 1,
   "featured_report_id": "mcp-apps-workflows",
   "report_ids": [
+    "mercury-3-model-guide",
+    "sugar-glider-120b-model-guide",
+    "maxwell-model-guide",
     "minimax-m3-1-flash-model-guide",
     "gpt-live-1-1-model-guide",
     "deepseek-v4-1-flash-model-guide",
@@ -334,6 +337,11 @@
       "id": "ai-model-introductions-2026-10-20",
       "input": "ai_model_guides.2026-10-20.json",
       "quality": "ai_model_guides.2026-10-20.quality.json"
+    },
+    {
+      "id": "ai-model-introductions-2026-10-21",
+      "input": "ai_model_guides.2026-10-21.json",
+      "quality": "ai_model_guides.2026-10-21.quality.json"
     }
   ]
 }
