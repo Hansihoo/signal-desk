@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "reviews": [
+    {
+      "candidate_id": "13f18017c832503af8e9ecce",
+      "fingerprint": "4724d63d73c8d8a98ad253870ca6acba23f113c52eba42dae3440ad6301814eb",
+      "candidate_url": "https://github.com/morluto/rea/releases/tag/rea-agents-6.7.0",
+      "candidate_title": "rea-agents: v6.7.0",
+      "decision": "important",
+      "event_key": "rea-analysis-evidence-compatibility",
+      "event_change": "6.7.0-includes-6.6.0",
+      "reviewed_at": "2026-10-20T23:36:43Z",
+      "novelty": "capability_change",
+      "summary": "REA6.7.0(10월18일)은 분석 범위 확대와 함께 저장 Evidence/스냅샷의 호환성 변경을 포함한다.",
+      "impact": "릴리스 노트는 기존 Evidence/스냅샷·인벤토리의 재생성을 요구한다. Windows ARM PE 분석은 Windows x64/Ghidra12.1.4 등 명시 조건에 한정되며 설치·마이그레이션은 미시험이다.",
+      "reason": "기존 공개 소개는6.5.0 고정 태그다. 후속6.7.0의 기능·설정 수정과 저장 결과 재사용 조건은 독자의 도입 판단에 영향을 주는 별도 변경이다. 원문의 태그6.6.0과npm 미발행 표기도 유지한다.",
+      "published_on": "2026-10-18",
+      "related_report_ids": [
+        "rea-ghidra-reverse-engineering"
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/morluto/rea/releases/tag/rea-agents-6.7.0",
+          "checked_at": "2026-10-20T23:31:53Z",
+          "sha256": "e6c4217fbd6c3555b9ee4c963dfb4951c8ff3051997efedda0b1696166db3f2e",
+          "receipt": "data/raw/signal_review/cf26af581f55c364088d3b1253d94b90bc243e957bc13fe9b5139fa17fecf4c8.json",
+          "role": "primary",
+          "finding": "6.7.0 Highlights와 포함된6.6.0의 Highlights, Windows ARM binaries 및 BREAKING CHANGES/Saved Evidence 절을 읽었다. Windows x64 호스트/Ghidra12.1.4 조건과 미검증 범위를 보존하며 실제 실행은 하지 않았다."
+        }
+      ]
+    },
+    {
+      "candidate_id": "0b9edfa2e54d3e8112ca59b8",
+      "fingerprint": "6469839f9c4cceb840cce215a785520ebf15ede77a3da142a6410ca9ecfd6bf8",
+      "candidate_url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1TdGhNYmxZNl9IZ2FCbUhXa1NyNmR3ZDRIaWo2SThmbDZBVFRYMXpxRmNuV0xfU2FHMWhidm9uS0xqd1gzQk56bDdSMWkydi0xYVVoZzJnMGFUX0x4MmRKT0ZoYVJFbVlOaVBMN2R30gFzQVVfeXFMTWtHbGdyUWQ0WjB4UnF4MlMzYmF5aVpoOEVXODY3VVBvSmVtelVCMDRBNHpIVVZIRjI5TVAyZEFULWZFbXZLTF9EZDh1VjZHZzEyenA2am4ySzgtVUoxc2oyLWhwYXBBR1hTa0xNZ2I4OVUzQQ?oc=5",
+      "candidate_title": "REA Tool Connects Claude Code and Cursor to Ghidra and IDA Pro to Reverse Engineer Anything",
+      "decision": "already_known",
+      "event_key": "rea-reverse-engineering-introduction",
+      "event_change": "2026-10-existing-introduction",
+      "reviewed_at": "2026-10-20T23:36:43Z",
+      "novelty": "existing_story",
+      "summary": "보존RSS의71번째였던REA 소개 기사를 복구했다. 기존10월16일 발행 주제이며 신규 도구 출시로 재알림하지 않는다.",
+      "impact": "과거 수집 공백의 복구 근거이며 오늘 처음 등장한 도구로 집계하지 않는다.",
+      "reason": "기존 rea-ghidra-reverse-engineering4판 및 제작자 공식 회고를 대조해 이미 반영된 주제로 확인했다.",
+      "published_on": "2026-10-10",
+      "related_report_ids": [
+        "rea-ghidra-reverse-engineering"
+      ],
+      "evidence": [
+        {
+          "url": "https://rea.tools/blog/touhou-reconstruction/",
+          "checked_at": "2026-10-20T23:33:01Z",
+          "sha256": "06011a2541f1298d05b117e4f1a2d07fb316d168f20ffad71c1732cf6f079497",
+          "receipt": "data/raw/signal_review/5c7c272781d980c965dc6e9bc222972e38c6c99a5b66b19c9529408afb8984bd.json",
+          "role": "primary",
+          "finding": "10월10일 제작자 회고의 날짜, 선행 사람 작업,0.0/128.0과 검사기 누락 절을 읽고 공개REA/Ghidra4판의 주제·원문 인용과 대조했다."
+        }
+      ]
+    }
+  ],
+  "acknowledgements": [
+    {
+      "alert_id": "fd742395d973d3f0c5ca3485",
+      "acknowledged_at": "2026-10-20T23:36:43Z",
+      "receipt": "2026-10-21 이 채팅의 진행 메시지에 공식 릴리스 링크,10월18일 발표/21일 확인,호환성 변경 및 실행 미검증 조건을 실제 표시한 뒤 기록했다."
+    }
+  ]
+}

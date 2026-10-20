@@ -30,12 +30,12 @@ jobs:
       - uses: actions/setup-python@v7.0.0
         with:
           python-version: '3.12'
-      - name: Test parsers and article preservation
-        run: python -m unittest tests.test_agent_news
+      - name: Test discovery, priority, review outbox and article preservation
+        run: python -m unittest tests.test_agent_news tests.test_ai_news tests.test_signal_review
       - name: Restore accumulated public state
         run: python -m housing_watch.cloud_state restore
-      - name: Watch agent companies and AI Witness
-        run: python -m housing_watch agent-news --collect --input config/newsroom_articles.2026-10-14.json --output reports/agent-news-result.json
+      - name: Preserve all received candidates and refresh impact review queue
+        run: python -m housing_watch.signal_review collect --output reports/agent-news-result.json
       - name: Check for new content, changed content or source health changes
         id: changes
         run: |

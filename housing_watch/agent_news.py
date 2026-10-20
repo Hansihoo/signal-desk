@@ -105,6 +105,7 @@ def published_date(text):
         if m:
             try: return date(*convert(m)).isoformat()
             except ValueError: pass
+    text = re.sub(r'\b(\d{1,2})\s+([A-Za-z]+)\s+(20\d{2})\b', r'\2 \1, \3', text or '')
     m = re.search(r'\b(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\s+(\d{1,2}),?\s+(20\d{2})', text or '', re.I)
     if m:
         month = ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'].index(m[1][:3].lower())+1
@@ -164,7 +165,7 @@ def parse_listing(body, source, limit=20):
             if m:title=m[1].strip()+' '+title
         rows.append({'url':target,'title':title[:260],'published_at':when,'excerpt':excerpt[:900]})
         seen.add(target)
-        if len(rows)>=limit: break
+        if limit is not None and len(rows)>=limit: break
     return rows
 
 
@@ -231,7 +232,8 @@ def _fetch(source, old):
         raise
 
 
-def collect_agent_news(conn, sources=None, raw_dir='data/raw/agent_news', days=30, per_source=20):
+def collect_agent_news(conn, sources=None, raw_dir='data/raw/agent_news', days=30, per_source=None):
+    from .signal_review import impact_priority
     ensure_schema(conn)
     sources=sources if sources is not None else load_sources()
     old={r['id']:dict(r) for r in conn.execute('SELECT * FROM agent_news_sources')}
@@ -243,7 +245,7 @@ def collect_agent_news(conn, sources=None, raw_dir='data/raw/agent_news', days=3
             previous=old.get(s['id'],{})
             try:
                 body,etag,modified,revalidated=tasks[s['id']].result()
-                rows=parse_listing(body,s,limit=max(1,min(50,per_source)))
+                rows=parse_listing(body,s,limit=per_source)
                 if not rows:raise ValueError('No readable entries; source layout may have changed')
                 checksum=hashlib.sha256(body).hexdigest()
                 raw=Path(raw_dir)/s['id']/(checksum+('.xml' if s['format']=='feed' else '.html'))
@@ -272,7 +274,7 @@ def collect_agent_news(conn, sources=None, raw_dir='data/raw/agent_news', days=3
                     kind='weekly' if '/weekly/' in r['url'] else 'release' if '/releases/' in r['url'] else s['kind']
                     excerpt=r.get('excerpt','')
                     if excerpt.startswith('원문 요약이 짧습니다.'):excerpt=''
-                    payload={'detail':excerpt[:900],'source_tier':s['tier'],'publisher':s['publisher'],
+                    payload={'detail':excerpt,'source_tier':s['tier'],'publisher':s['publisher'],
                         'news_kind':kind,'listing_url':s['url'],'review_status':'source_excerpt'}
                     fingerprint=hashlib.sha256(json.dumps([r['title'],r['published_at'],payload],ensure_ascii=False,sort_keys=True).encode()).hexdigest()
                     if existing and existing['content_hash']==fingerprint:
@@ -281,7 +283,7 @@ def collect_agent_news(conn, sources=None, raw_dir='data/raw/agent_news', days=3
                         changed.append({'source_id':'ai_agent_'+s['id'],'external_id':external,
                             'title':r['title'],'title_ko':'','url':r['url'],'source_name':s['name'],'source_url':s['url'],
                             'category':'에이전트 소식','published_at':r['published_at'],'summary_ko':excerpt[:900],
-                            'score':160 if s['tier']=='official' else 110,'raw_payload':json.dumps(payload,ensure_ascii=False,sort_keys=True),
+                            'score':impact_priority(r['title'],excerpt)['score'],'raw_payload':json.dumps(payload,ensure_ascii=False,sort_keys=True),
                             'content_hash':fingerprint,'collected_at':attempted})
                     totals['fetched']+=1
                 stats=upsert_news_items(conn,changed,dedupe_by_title=False)

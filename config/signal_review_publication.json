@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "batches": [
+    {
+      "id": "signal-original-reviews-2026-10-21",
+      "path": "signal_reviews.2026-10-21.json"
+    }
+  ]
+}

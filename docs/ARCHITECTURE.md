@@ -218,3 +218,8 @@ disclosures retain their independent state and citations across current editions
 The repo is `signal-desk`, but the current Python package is still `housing_watch` because the first MVP domain was housing. Jobs, weekly news, and AI news now share that package. Rename or generalize it only when the import/CLI churn is worth the cleanup.
 
 `model_pages` imports full hash-verified source documents and same-directory dependencies into model_pages/model_page_revisions/model_page_runs. Independent sandboxed source renderings preserve original interactive tables; the native Editorial library and edition pages own navigation. `model_publication` applies immutable reviewed official fact batches on local/cloud builds, without seeding a generated DB.
+
+
+## Important-signal discovery and review
+
+`signal_review` separates received candidate preservation, transparent impact triage, edition-bound original review and an acknowledged alert outbox. The hourly cloud collector stores the public backlog; the chat heartbeat reads originals and records immutable review batches. Public export adds `signal_review` without changing report-v1 or historical reports. See [contracts and limitations](SIGNAL_DISCOVERY.md).

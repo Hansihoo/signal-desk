@@ -83,7 +83,7 @@ def main(argv=None):
     news.add_argument("--no-image", action="store_true", help="skip PNG export")
 
     ai_news = sub.add_parser("ai-news", help="collect AI developer news and render a 3-page briefing")
-    ai_news.add_argument("--limit", type=int, default=24, help="maximum AI news candidates to keep")
+    ai_news.add_argument("--limit", type=int, default=24, help="maximum AI news cards to display; received candidates are preserved")
     ai_news.add_argument("--days", type=int, default=7, help="collect and render items from the latest N days")
     ai_news.add_argument("--per-page", type=int, default=6, help="maximum cards per page")
     ai_news.add_argument("--page", type=int, choices=[1, 2, 3], default=1, help="initial page to render/export")

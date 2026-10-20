@@ -1,18 +1,229 @@
 {
   "sources": [
-    {"id":"openai","name":"OpenAI News","publisher":"OpenAI","url":"https://openai.com/news/rss.xml","format":"feed","kind":"article","tier":"official"},
-    {"id":"anthropic","name":"Anthropic News","publisher":"Anthropic","url":"https://www.anthropic.com/news","format":"html","paths":["/news/"],"kind":"article","tier":"official"},
-    {"id":"anthropic-engineering","name":"Anthropic Engineering","publisher":"Anthropic","url":"https://www.anthropic.com/engineering","format":"html","paths":["/engineering/"],"kind":"article","tier":"official"},
-    {"id":"deepmind","name":"Google DeepMind","publisher":"Google","url":"https://deepmind.google/blog/","format":"html","paths":["/blog/"],"kind":"article","tier":"official"},
-    {"id":"cursor","name":"Cursor Changelog","publisher":"Cursor","url":"https://cursor.com/changelog","format":"html","paths":["/changelog/"],"kind":"release","tier":"official"},
-    {"id":"cognition","name":"Cognition Blog","publisher":"Cognition","url":"https://cognition.ai/blog","format":"html","paths":["/blog/"],"kind":"article","tier":"official"},
-    {"id":"langchain","name":"LangChain Blog","publisher":"LangChain","url":"https://www.langchain.com/blog","format":"html","paths":["/blog/"],"kind":"article","tier":"official"},
-    {"id":"claude-code","name":"Claude Code Releases","publisher":"Anthropic","url":"https://github.com/anthropics/claude-code/releases.atom","format":"feed","kind":"release","tier":"official"},
-    {"id":"codex","name":"Codex Releases","publisher":"OpenAI","url":"https://github.com/openai/codex/releases.atom","format":"feed","kind":"release","tier":"official"},
-    {"id":"agent-framework","name":"Microsoft Agent Framework","publisher":"Microsoft","url":"https://github.com/microsoft/agent-framework/releases.atom","format":"feed","kind":"release","tier":"official"},
-    {"id":"deepagents","name":"Deep Agents Releases","publisher":"LangChain","url":"https://github.com/langchain-ai/deepagents/releases.atom","format":"feed","kind":"release","tier":"official"},
-    {"id":"langfuse","name":"Langfuse Changelog","publisher":"Langfuse","url":"https://langfuse.com/changelog","format":"html","paths":["/changelog/"],"kind":"release","tier":"official"},
-    {"id":"a2a","name":"A2A Blog","publisher":"A2A Project","url":"https://a2a-protocol.org/latest/blog/","format":"html","paths":["/latest/blog/2026/"],"kind":"article","tier":"official"},
-    {"id":"aiwitness","name":"AI Witness","publisher":"AI Witness","url":"https://aiwitness.kr/","format":"html","paths":["/articles/","/weekly/","/releases/"],"kind":"article","tier":"discovery"}
+    {
+      "id": "openai",
+      "name": "OpenAI News",
+      "publisher": "OpenAI",
+      "url": "https://openai.com/news/rss.xml",
+      "format": "feed",
+      "kind": "article",
+      "tier": "official"
+    },
+    {
+      "id": "anthropic",
+      "name": "Anthropic News",
+      "publisher": "Anthropic",
+      "url": "https://www.anthropic.com/news",
+      "format": "html",
+      "paths": [
+        "/news/"
+      ],
+      "kind": "article",
+      "tier": "official"
+    },
+    {
+      "id": "anthropic-engineering",
+      "name": "Anthropic Engineering",
+      "publisher": "Anthropic",
+      "url": "https://www.anthropic.com/engineering",
+      "format": "html",
+      "paths": [
+        "/engineering/",
+        "/research/"
+      ],
+      "kind": "article",
+      "tier": "official"
+    },
+    {
+      "id": "deepmind",
+      "name": "Google DeepMind",
+      "publisher": "Google",
+      "url": "https://deepmind.google/blog/",
+      "format": "html",
+      "paths": [
+        "/blog/"
+      ],
+      "kind": "article",
+      "tier": "official"
+    },
+    {
+      "id": "cursor",
+      "name": "Cursor Changelog",
+      "publisher": "Cursor",
+      "url": "https://cursor.com/changelog",
+      "format": "html",
+      "paths": [
+        "/changelog/"
+      ],
+      "kind": "release",
+      "tier": "official"
+    },
+    {
+      "id": "cognition",
+      "name": "Cognition Blog",
+      "publisher": "Cognition",
+      "url": "https://cognition.ai/blog",
+      "format": "html",
+      "paths": [
+        "/blog/"
+      ],
+      "kind": "article",
+      "tier": "official"
+    },
+    {
+      "id": "langchain",
+      "name": "LangChain Blog",
+      "publisher": "LangChain",
+      "url": "https://www.langchain.com/blog",
+      "format": "html",
+      "paths": [
+        "/blog/"
+      ],
+      "kind": "article",
+      "tier": "official"
+    },
+    {
+      "id": "claude-code",
+      "name": "Claude Code Releases",
+      "publisher": "Anthropic",
+      "url": "https://github.com/anthropics/claude-code/releases.atom",
+      "format": "feed",
+      "kind": "release",
+      "tier": "official"
+    },
+    {
+      "id": "codex",
+      "name": "Codex Releases",
+      "publisher": "OpenAI",
+      "url": "https://github.com/openai/codex/releases.atom",
+      "format": "feed",
+      "kind": "release",
+      "tier": "official"
+    },
+    {
+      "id": "agent-framework",
+      "name": "Microsoft Agent Framework",
+      "publisher": "Microsoft",
+      "url": "https://github.com/microsoft/agent-framework/releases.atom",
+      "format": "feed",
+      "kind": "release",
+      "tier": "official"
+    },
+    {
+      "id": "deepagents",
+      "name": "Deep Agents Releases",
+      "publisher": "LangChain",
+      "url": "https://github.com/langchain-ai/deepagents/releases.atom",
+      "format": "feed",
+      "kind": "release",
+      "tier": "official"
+    },
+    {
+      "id": "langfuse",
+      "name": "Langfuse Changelog",
+      "publisher": "Langfuse",
+      "url": "https://langfuse.com/changelog",
+      "format": "html",
+      "paths": [
+        "/changelog/"
+      ],
+      "kind": "release",
+      "tier": "official"
+    },
+    {
+      "id": "a2a",
+      "name": "A2A Blog",
+      "publisher": "A2A Project",
+      "url": "https://a2a-protocol.org/latest/blog/",
+      "format": "html",
+      "paths": [
+        "/latest/blog/2026/"
+      ],
+      "kind": "article",
+      "tier": "official"
+    },
+    {
+      "id": "aiwitness",
+      "name": "AI Witness",
+      "publisher": "AI Witness",
+      "url": "https://aiwitness.kr/",
+      "format": "html",
+      "paths": [
+        "/articles/",
+        "/weekly/",
+        "/releases/"
+      ],
+      "kind": "article",
+      "tier": "discovery"
+    },
+    {
+      "id": "hacker-news",
+      "name": "Hacker News",
+      "publisher": "Hacker News",
+      "url": "https://news.ycombinator.com/rss",
+      "format": "feed",
+      "kind": "article",
+      "tier": "discovery"
+    },
+    {
+      "id": "hn-newest",
+      "name": "HN newest via HNRSS",
+      "publisher": "HNRSS / Hacker News",
+      "url": "https://hnrss.org/newest?count=100",
+      "format": "feed",
+      "kind": "article",
+      "tier": "discovery"
+    },
+    {
+      "id": "geeknews",
+      "name": "GeekNews",
+      "publisher": "GeekNews",
+      "url": "https://news.hada.io/rss/news",
+      "format": "feed",
+      "kind": "article",
+      "tier": "discovery"
+    },
+    {
+      "id": "rea-releases",
+      "name": "REA releases",
+      "publisher": "REA",
+      "url": "https://github.com/morluto/rea/releases.atom",
+      "format": "feed",
+      "kind": "release",
+      "tier": "official"
+    },
+    {
+      "id": "ghidra-releases",
+      "name": "Ghidra releases",
+      "publisher": "NSA / Ghidra",
+      "url": "https://github.com/NationalSecurityAgency/ghidra/releases.atom",
+      "format": "feed",
+      "kind": "release",
+      "tier": "official"
+    },
+    {
+      "id": "rea-blog",
+      "name": "REA Blog",
+      "publisher": "REA",
+      "url": "https://rea.tools/blog/",
+      "format": "html",
+      "paths": [
+        "/blog/"
+      ],
+      "kind": "article",
+      "tier": "official"
+    },
+    {
+      "id": "rea-showcase",
+      "name": "REA Case Studies",
+      "publisher": "REA",
+      "url": "https://rea.tools/showcase/",
+      "format": "html",
+      "paths": [
+        "/showcase/"
+      ],
+      "kind": "article",
+      "tier": "official"
+    }
   ]
 }

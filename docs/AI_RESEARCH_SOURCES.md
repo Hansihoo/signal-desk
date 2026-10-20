@@ -119,3 +119,8 @@ Agent Skills 명세, Anthropic 문맥/스킬 운영 지침, SkillsBench·SWE-Ski
 ### REA와 Ghidra 입문 풀이 추가 근거 — 2026-10-17
 
 고정 커밋의 [DX-Ball 조사 기록](https://raw.githubusercontent.com/N0zoM1z0/dx-ball/a55dca27ec0a07018c1b2c95ae2be027f7d8c3c4/docs/GAMEPLAY_OWNER.md)과 [컴파일 비교 기록](https://raw.githubusercontent.com/N0zoM1z0/dx-ball/a55dca27ec0a07018c1b2c95ae2be027f7d8c3c4/docs/BUILD_MATCHING.md), Electron 공식 [IPC](https://www.electronjs.org/docs/latest/tutorial/ipc)/[ASAR](https://www.electronjs.org/docs/latest/tutorial/asar-archives)의 필요한 절을 확보했다. 사례의 추론과 선행 개념을 설명할 근거이며 신규 수집기/예약이나 독립 재현이 아니다. 기존10원문의16일 획득과 이번17일 신규4건을 구분한다.
+
+
+## 2026-10-21 중요 도구·사건 발견 확대
+
+기존14경로에 HN 공식RSS/HNRSS신규/GeekNews, REA릴리스·Blog·Showcase와 Ghidra릴리스7경로를 실제 확인해 추가했다. 현재21경로(공식17/발견4)이며 별도 기존AI피드12경로도 수신 후보를 보존한다. HNRSS는 보조 제공자이고 커뮤니티 소식은 공식 원문 검토 전 후보로 유지한다. 첫 실행 Engineering0항목은 공식 목록의 /research/ 이동을 확인·수정한 뒤21/21 복구했다. [운영 정본](../docs/SIGNAL_DISCOVERY.md), [실제 근거·검증](SIGNAL_DISCOVERY.2026-10-21.md).

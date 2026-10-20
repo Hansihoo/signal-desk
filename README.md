@@ -300,3 +300,6 @@ stable report URLs. Existing daily source collection is separate from the planne
 weekly deep review.
 
 Model documents are accumulated in full, with source table controls and immutable editions. `model-pages --collect` discovers additional Theo model documents; daily05:00 source collection adds their pages. A current-chat daily05:00 agent checks official new models and writes/publishes new detailed research pages. See [AI model operations](docs/AI_MODEL_RESEARCH.md).
+
+
+중요 도구·사건은 [발견·원문 검토·알림 운영](docs/SIGNAL_DISCOVERY.md)을 따른다. 수신 후보 보존과 화면 표시를 분리하고, 발견 출처 확대·업무 영향 우선순위·이전 판 검토·중복 방지 알림을 연결했다. 시간별 클라우드 수집과 이 채팅의 원문 검토를 구분한다.

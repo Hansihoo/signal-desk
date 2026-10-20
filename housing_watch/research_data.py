@@ -343,6 +343,7 @@ def ensure_example_report(conn):
 
 
 def build_research_data(conn, records, topics, health=None):
+    from .signal_review import export_signals
     from .model_ledger import export_model_ledger
     from .model_pages import export_model_pages
     from .model_publication import apply_model_publication
@@ -366,7 +367,7 @@ def build_research_data(conn, records, topics, health=None):
             "publication_report_ids": publication["report_ids"], "topics": catalog,
             "source_records": records, "reports": reports, "report_versions": versions,
             "report_history": history, "health": health or [], "model_ledger": export_model_ledger(conn),
-            "model_pages": export_model_pages(conn)}
+            "model_pages": export_model_pages(conn), "signal_review": export_signals(conn)}
 
 
 def write_research_data(path, document):

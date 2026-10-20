@@ -161,3 +161,8 @@ When creating commits for Theo, use Korean commit messages:
 - Korean detail about what changed or was verified.
 - Korean detail about support work or follow-up.
 ```
+
+
+## Important Tool and Event Discovery
+
+For newly discovered AI/development tools, significant capability changes and incidents, follow [discovery and original review](docs/SIGNAL_DISCOVERY.md). Preserve candidates before display limits; triage priority is not factual review. Use the edition-bound review queue and acknowledged alert outbox. Preserve the daily model and weekly business scopes.

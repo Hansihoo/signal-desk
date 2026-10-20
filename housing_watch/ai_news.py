@@ -121,15 +121,17 @@ class AINewsFetchError(Exception):
     pass
 
 
-def collect_ai_news(conn, limit=24, raw_dir="data/raw/ai_news", days=7):
-    limit = max(1, int(limit or 1))
+def collect_feed_candidates(conn, raw_dir="data/raw/ai_news", days=7):
+    """Preserve every received recent candidate; display limits never discard inputs."""
+    from .signal_review import ensure_schema
+    ensure_schema(conn)
     days = max(1, int(days or 1))
     sources = AI_FEEDS + [_google_news_source(days), _model_news_source(days)]
     raw_feeds = []
     failures = []
     items = []
-    per_feed_limit = max(8, min(25, limit))
     collected_at = now_utc()
+    health_changed = False
 
     for source in sources:
         try:
@@ -141,12 +143,34 @@ def collect_ai_news(conn, limit=24, raw_dir="data/raw/ai_news", days=7):
                     "body": data.decode("utf-8", "replace"),
                 }
             )
-            parsed = parse_ai_feed(data, source, limit=per_feed_limit)
+            parsed = parse_ai_feed(data, source, limit=None)
+            if not parsed:
+                raise ValueError('No readable entries; source format may have changed')
             items.extend(filter_recent_ai_items(parsed, days=days, now=collected_at))
+            old = conn.execute('SELECT error FROM signal_feed_health WHERE id=?', (source['id'],)).fetchone()
+            health_changed |= not old or bool(old[0])
+            conn.execute('INSERT OR REPLACE INTO signal_feed_health VALUES (?,?,?,?,?,?)',
+                         (source['id'], source['feed_url'], iso_utc(), iso_utc(), '', len(parsed)))
         except (AINewsFetchError, OSError, ValueError, ET.ParseError, urllib.error.URLError) as exc:
             failures.append("%s: %s" % (source["id"], exc))
+            old = conn.execute('SELECT * FROM signal_feed_health WHERE id=?', (source['id'],)).fetchone()
+            health_changed |= not old or old['error'] != str(exc)
+            conn.execute('INSERT OR REPLACE INTO signal_feed_health VALUES (?,?,?,?,?,?)',
+                         (source['id'], source['feed_url'], iso_utc(), old['succeeded_at'] if old else '', str(exc), 0))
+    raw_data = json.dumps({'collected_at': iso_utc(), 'days': days, 'feed_count': len(raw_feeds),
+                           'failures': failures, 'feeds': raw_feeds}, ensure_ascii=False, sort_keys=True).encode('utf-8')
+    raw_path = _write_raw(raw_dir, 'ai_news_bundle', raw_data, '.json')
+    stats = upsert_news_items(conn, items, dedupe_by_title=False)
+    record_snapshot(conn, 'ai_news_bundle', raw_path, len(items))
+    conn.commit()
+    return {**stats, 'source_id': 'ai_news_bundle', 'fetched': len(items), 'failures': failures,
+            'health_changed': health_changed, 'raw_path': raw_path, 'days': days, 'collected_at': iso_utc()}
 
-    items = _rank_items(_dedupe_items(items))[:limit]
+
+def collect_ai_news(conn, limit=24, raw_dir="data/raw/ai_news", days=7):
+    # limit controls callers' briefings, not retained evidence or the review inbox.
+    result = collect_feed_candidates(conn, raw_dir=raw_dir, days=days)
+    failures = result['failures']
     model_result = None
     try:
         model_result = collect_model_research(conn, raw_dir=str(Path(raw_dir) / "model_research"))
@@ -166,32 +190,18 @@ def collect_ai_news(conn, limit=24, raw_dir="data/raw/ai_news", days=7):
     from .agent_news import collect_agent_news
     agent_result = collect_agent_news(conn, raw_dir=str(Path(raw_dir) / 'agents'))
     failures.extend(agent_result['failures'])
-    if not items and not model_result and not ledger_result and not pages_result and not agent_result['fetched']:
+    if not result['fetched'] and not model_result and not ledger_result and not pages_result and not agent_result['fetched']:
         raise AINewsFetchError("no AI news source returned items: " + "; ".join(failures))
-
-    raw_data = json.dumps(
-        {
-            "collected_at": iso_utc(),
-            "days": days,
-            "feed_count": len(raw_feeds),
-            "failures": failures,
-            "feeds": raw_feeds,
-        },
-        ensure_ascii=False,
-        sort_keys=True,
-    ).encode("utf-8")
-    raw_path = _write_raw(raw_dir, "ai_news_bundle", raw_data, ".json")
-    stats = upsert_news_items(conn, items, source_ids=[source["id"] for source in sources])
-    record_snapshot(conn, "ai_news_bundle", raw_path, len(items))
-    conn.commit()
+    from .signal_review import sync_candidates
+    sync_candidates(conn)
     return {
         "source_id": "ai_news_bundle",
-        "raw_path": raw_path,
-        "fetched": len(items) + (model_result["fetched"] if model_result else 0) + agent_result['fetched'],
+        "raw_path": result['raw_path'],
+        "fetched": result['fetched'] + (model_result["fetched"] if model_result else 0) + agent_result['fetched'],
         "days": days,
-        "inserted": stats["inserted"] + (model_result["inserted"] if model_result else 0) + agent_result['inserted'],
-        "updated": stats["updated"] + (model_result["updated"] if model_result else 0) + agent_result['updated'],
-        "deduped": stats.get("deduped", 0),
+        "inserted": result["inserted"] + (model_result["inserted"] if model_result else 0) + agent_result['inserted'],
+        "updated": result["updated"] + (model_result["updated"] if model_result else 0) + agent_result['updated'],
+        "deduped": 0,
         "failures": failures,
         "model_research": model_result,
         "model_ledger": ledger_result,
@@ -327,12 +337,12 @@ def _parse_rss_feed(root, source, limit):
         description = _html_to_text(_child_text(node, "description"))
         if not title or not link:
             continue
-        key = _dedupe_key(title)
+        key = link
         if key in seen:
             continue
         seen.add(key)
         items.append(_make_item(source, title, link, guid, description, _child_text(node, "pubDate"), source_name, source_url, index))
-        if len(items) >= limit:
+        if limit is not None and len(items) >= limit:
             break
     return items
 
@@ -349,7 +359,7 @@ def _parse_atom_feed(root, source, limit):
         published_at = _child_text(node, "published") or _child_text(node, "updated")
         if not title or not link:
             continue
-        key = _dedupe_key(title)
+        key = link
         if key in seen:
             continue
         seen.add(key)
@@ -366,12 +376,13 @@ def _parse_atom_feed(root, source, limit):
                 index,
             )
         )
-        if len(items) >= limit:
+        if limit is not None and len(items) >= limit:
             break
     return items
 
 
 def _make_item(source, title, link, guid, description, published_at, source_name, source_url, index):
+    from .signal_review import impact_priority
     category = source.get("category_hint") or categorize_ai_news("%s %s" % (title, description), source["id"])
     detail = _clean_text(description)
     payload = {
@@ -400,7 +411,7 @@ def _make_item(source, title, link, guid, description, published_at, source_name
         "country": "",
         "published_at": _parse_date(published_at),
         "summary_ko": summarize_ai_news(title, detail, category, source_name),
-        "score": max(1, int(source.get("score_base", 100)) - index * 2),
+        "score": impact_priority(title, detail)['score'],
         "raw_payload": json.dumps(payload, ensure_ascii=False, sort_keys=True),
         "content_hash": _hash(content),
         "collected_at": iso_utc(),
