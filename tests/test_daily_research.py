@@ -110,6 +110,14 @@ class DailyResearchTests(unittest.TestCase):
         self.assertEqual(result['cached'], 1)
         self.assertEqual(self.conn.execute('SELECT succeeded_at FROM daily_source_state').fetchone()[0], FIRST)
 
+    def test_receipt_separates_attempt_start_from_actual_acquisition(self):
+        with patch.object(daily, 'iso_utc', side_effect=[FIRST, SECOND]):
+            self.collect(now=None)
+        state = self.conn.execute('SELECT * FROM daily_source_state').fetchone()
+        self.assertEqual((state['attempted_at'], state['succeeded_at']), (FIRST, SECOND))
+        receipt = json.loads(next((Path(self.temp.name) / 'raw').rglob('*.receipt.json')).read_text(encoding='utf-8'))
+        self.assertEqual((receipt['attempt_started_at'], receipt['acquired_at']), (FIRST, SECOND))
+
     def test_browser_route_is_an_explicit_unreviewed_gap(self):
         result = self.collect(catalog={'sources': [dict(SOURCE, mode='browser')]},
                               fetcher=lambda s, o: self.fail('browser routes must not use text fetch'))

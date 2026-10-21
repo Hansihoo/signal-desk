@@ -103,6 +103,7 @@ def ensure_schema(conn):
 
 def collect(conn, catalog, raw_dir=RAW, fetcher=_fetch, now=None, max_age_minutes=30):
     ensure_schema(conn)
+    fixed_clock = now is not None
     now = now or iso_utc()
     old = {row['id']: dict(row) for row in conn.execute('SELECT * FROM daily_source_state')}
     result = {'baseline': 0, 'new': 0, 'changed': 0, 'cached': 0, 'sources': [],
@@ -128,13 +129,15 @@ def collect(conn, catalog, raw_dir=RAW, fetcher=_fetch, now=None, max_age_minute
             conn.execute('SAVEPOINT daily_source')
             try:
                 body, etag, modified, revalidated = tasks[s['id']].result()
+                acquired = now if fixed_clock else iso_utc()
                 checksum = hashlib.sha256(body).hexdigest()
                 raw = Path(raw_dir) / s['id'] / (checksum + ('.xml' if s['mode'] == 'feed' else '.html'))
                 raw.parent.mkdir(parents=True, exist_ok=True)
                 if not raw.exists():
                     raw.write_bytes(body)
-                receipt = dict(url=s['url'], acquired_at=now, sha256=checksum, raw_path=str(raw), revalidated=revalidated)
-                receipt_path = raw.parent / (now.replace(':', '').replace('+', '-') + '-' + checksum[:12] + '.receipt.json')
+                receipt = dict(url=s['url'], attempt_started_at=now, acquired_at=acquired,
+                               sha256=checksum, raw_path=str(raw), revalidated=revalidated)
+                receipt_path = raw.parent / (acquired.replace(':', '').replace('+', '-') + '-' + checksum[:12] + '.receipt.json')
                 if not receipt_path.exists():
                     receipt_path.write_text(json.dumps(receipt, ensure_ascii=False, indent=2), encoding='utf-8')
                 rows = parse_source(body, s)
@@ -153,17 +156,17 @@ def collect(conn, catalog, raw_dir=RAW, fetcher=_fetch, now=None, max_age_minute
                     fingerprint = hashlib.sha256(encoded.encode()).hexdigest()
                     existing = conn.execute('SELECT * FROM daily_candidates WHERE source_id=? AND url=?', (s['id'], url)).fetchone()
                     if existing and existing['fingerprint'] == fingerprint:
-                        conn.execute('UPDATE daily_candidates SET last_seen_at=? WHERE source_id=? AND url=?', (now, s['id'], url))
+                        conn.execute('UPDATE daily_candidates SET last_seen_at=? WHERE source_id=? AND url=?', (acquired, s['id'], url))
                         continue
                     kind = 'changed' if existing else 'baseline' if first_snapshot else 'new'
-                    first = existing['first_seen_at'] if existing else now
-                    conn.execute('INSERT OR REPLACE INTO daily_candidates VALUES (?,?,?,?,?,?,?,?)', (s['id'], url, encoded, fingerprint, first, now, now, kind))
-                    conn.execute('INSERT OR IGNORE INTO daily_candidate_editions VALUES (?,?,?,?,?)', (s['id'], url, fingerprint, now, encoded))
+                    first = existing['first_seen_at'] if existing else acquired
+                    conn.execute('INSERT OR REPLACE INTO daily_candidates VALUES (?,?,?,?,?,?,?,?)', (s['id'], url, encoded, fingerprint, first, acquired, acquired, kind))
+                    conn.execute('INSERT OR IGNORE INTO daily_candidate_editions VALUES (?,?,?,?,?)', (s['id'], url, fingerprint, acquired, encoded))
                     counts[kind] += 1
                 if not seen:
                     raise ValueError('No valid listing entries; not unchanged')
                 conn.execute('INSERT OR REPLACE INTO daily_source_state VALUES (?,?,?,?,?,?,?,?,?,?,?)',
-                             (s['id'], s['url'], now, now, 'ok', '', etag, modified, str(raw), checksum, len(seen)))
+                             (s['id'], s['url'], now, acquired, 'ok', '', etag, modified, str(raw), checksum, len(seen)))
                 conn.execute('RELEASE daily_source')
                 for kind, count in counts.items():
                     result[kind] += count
