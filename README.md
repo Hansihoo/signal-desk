@@ -302,4 +302,4 @@ weekly deep review.
 Model documents are accumulated in full, with source table controls and immutable editions. `model-pages --collect` discovers additional Theo model documents; daily05:00 source collection adds their pages. A current-chat daily05:00 agent checks official new models and writes/publishes new detailed research pages. See [AI model operations](docs/AI_MODEL_RESEARCH.md).
 
 
-중요 도구·사건은 [발견·원문 검토·알림 운영](docs/SIGNAL_DISCOVERY.md)을 따른다. 수신 후보 보존과 화면 표시를 분리하고, 발견 출처 확대·업무 영향 우선순위·이전 판 검토·중복 방지 알림을 연결했다. 시간별 클라우드 수집과 이 채팅의 원문 검토를 구분한다.
+중요 도구·사건은 [발견·원문 검토·알림 운영](docs/SIGNAL_DISCOVERY.md)을 따른다. 수신 후보 보존과 화면 표시를 분리하고, 발견 출처 확대·업무 영향 우선순위·이전 판 검토·중복 방지 알림을 연결했다. 후보 목록 수집은 매일08:00 KST, 큰 사건을 포함한 원문 검토·알림은09:00 일일 브리핑으로 구분하며 시간별 확인·수시 알림은 중단했다.

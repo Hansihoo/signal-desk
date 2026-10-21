@@ -3,7 +3,8 @@ name: Watch agent news when sources change
 on:
   workflow_dispatch:
   schedule:
-    - cron: '23 * * * *'
+    # 08:00 Asia/Seoul, ahead of the 09:00 daily briefing.
+    - cron: '0 23 * * *'
 
 permissions:
   contents: write
