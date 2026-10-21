@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "verified_on": "2026-10-21",
+  "purpose": "일일 조사 준비용 공식 목록. 목록 확보는 원문 검토나 참여 자격 판정이 아니다.",
+  "business_source_catalog": "config/business_sources.json",
+  "questions": [
+    {"area": "국책사업·조달", "question": "새 공고·정정·마감 중 연구개발/공급기업/조달 역할로 검토할 기회가 있는가?", "queries": ["문서 전자문서 문서변환", "AI AX 데이터 지식검색", "소프트웨어 SaaS 바우처 공급기업"]},
+    {"area": "유사 기업 방향", "question": "제품·사업모델·고객시장·제휴/인수·제공 조건이 어떤 방향으로 달라지는가?", "queries": ["문서 AI 에이전트 오피스", "공공 도입 파트너 해외진출", "가격 라이선스 출시 인수 제휴"]},
+    {"area": "AI 모델·개발 도구", "question": "새 모델/도구나 의미 있는 능력·비용 변화가 실제 제공되는가?", "existing_path": "housing_watch.signal_review sync-public → queue; config/agent_news_sources.json"},
+    {"area": "기업 도입·조직·역량", "question": "공개 도입 사례·FDE·지식베이스·RAG·온톨로지·인력 변화에 판단을 바꿀 새 근거가 있는가?", "existing_path": "docs/AI_RESEARCH_SOURCES.md의 공식 기업/연구 경로와 신규 발견 후보; 매일 관련 신규 발표를 선별하고 주간 심층 검토"},
+    {"area": "보안·서비스 변경", "question": "침해·중단·종료·권한/지원 조건 변경으로 빠른 대응이 필요한가?", "existing_path": "기존 공식 릴리스/공지 후보와 관련 제공자의 공식 보안·상태 공지"}
+  ],
+  "sources": [
+    {"id": "nipa-daily", "source_ref": "nipa", "area": "국책사업·조달", "mode": "nipa_table", "cadence": "daily", "verified_by": "공식 목록 웹 독해 및 직접 HTTP의 표/상세 링크 확인", "coverage": "서버가 제공한 첫 목록. 신청기간은 목록 표시값이며 본문·첨부 재확인 필요", "browser_task": "AI/AX·문서·SW/바우처 검색과 입찰 탭도 확인. 신규·정정·마감 및 지난 성공 이후 공백을 확인"},
+    {"id": "bizinfo-daily", "source_ref": "bizinfo", "area": "국책사업·조달", "mode": "bizinfo_table", "cadence": "daily", "verified_by": "공식 목록 웹 독해 및 직접 HTTP의 15개 상세 링크/표 열 확인", "coverage": "서버 제공 첫 15건. 지역·전 분야 공고가 섞여 있어 키워드 검색/페이지 확인을 대체하지 않음", "browser_task": "지원사업명/내용에서 문서·AI/AX·SW/SaaS/바우처 검색. 등록일순과 마감일순, 정정과 주관기관 원문 확인"},
+    {"id": "iris-daily", "source_ref": "iris", "area": "국책사업·조달", "mode": "browser", "cadence": "daily", "verified_by": "공식 목록 웹 독해 및 직접 HTTP의 JS 공고 ID/접수 상태 확인", "coverage": "공고 상세 이동이 JS/form 방식. 브라우저에서 검색·상세 확인 필요", "browser_task": "접수예정/접수중 및 AI·문서·데이터·SW 검색. 제목/주관기관/공고번호/모집 상태·수정과 접수기간 확인"},
+    {"id": "g2b-daily", "source_ref": "g2b", "area": "국책사업·조달", "mode": "browser", "cadence": "daily", "verified_by": "웹 독해는 HTML5 브라우저 안내만 반환. 일반 HTTP를 입찰 목록 수집 성공으로 인정하지 않음", "coverage": "실제 검색 목록은 브라우저 확인 필요. API 키·신청·입찰 제출을 사용하지 않음", "browser_task": "용역/SW의 문서·전자문서·문서변환·뷰어·오피스·검색·AI 검색. 최근 7일과 직전 성공 이후 공백, 사전규격·정정·접수 마감/개찰일 구분"},
+    {"id": "hancom-blog-daily", "name": "한컴 공식 블로그 RSS", "url": "https://blog.hancom.com/feed/", "area": "유사 기업 방향", "mode": "feed", "cadence": "daily", "verified_by": "직접 HTTP/XML에서 3항목·날짜·공식 글 URL 확인; 웹 도구는 RSS MIME 미지원", "coverage": "피드 제공 3건. 긴 수집 공백에는 블로그 최신글·목록 추가 확인", "browser_task": "제품/한컴 소식과 실제 제공 조건 확인. 튜토리얼을 새 출시로 바꾸지 않음"},
+    {"id": "hancom-news-daily", "name": "한컴 보도자료 목록", "url": "https://www.hancom.com/news/article", "area": "유사 기업 방향", "mode": "browser", "cadence": "daily", "verified_by": "공식 웹 목록을 읽었으나 최상단이 2026-07-30. 최신성 보완 필요", "coverage": "검색/목록의 오래된 최상단만으로 이후 변화 없음 판정 금지", "browser_task": "공식 보도자료/IR의 최신순과 블로그를 함께 확인. 공공 도입·인수/제휴·해외·제품 전략을 우선 확인"},
+    {"id": "microsoft-work-daily", "name": "Microsoft AI at Work RSS", "url": "https://www.microsoft.com/en-us/microsoft-365/blog/feed/", "area": "유사 기업 방향", "mode": "feed", "cadence": "daily", "verified_by": "직접 HTTP/XML 10항목 확인. 기존 블로그 홈페이지는 /en-us/copilot/blog/로 이동", "coverage": "피드 제공 목록만. 제공 범위는 릴리스 노트/제품 문서에서 별도 확인", "browser_task": "Copilot·Office·기업 데이터/에이전트·가격/라이선스·파트너 방향. 발표/예정/배포와 전 테넌트 제공을 구분"},
+    {"id": "adobe-news-daily", "name": "Adobe 공식 뉴스 목록", "url": "https://news.adobe.com/news", "area": "유사 기업 방향", "mode": "browser", "cadence": "daily", "verified_by": "공식 홈페이지의 View all Adobe news 링크 확인. 텍스트 응답은 동적 뉴스 카드 자리만 반환", "coverage": "텍스트/껍데기만으로 목록 검토 완료 판정 금지", "browser_task": "브라우저 뉴스 카드와 Acrobat/Document Cloud·Studio·PDF Spaces 제품/기업 도움말을 확인. 제품·사업모델·제휴/가격 변화와 실제 제공 조건 구분"},
+    {"id": "upstage-daily", "name": "Upstage 공식 블로그 목록", "url": "https://www.upstage.ai/blog", "area": "유사 기업 방향", "mode": "html", "paths": ["/blog/en/"], "cadence": "daily", "verified_by": "공식 웹 독해와 직접 HTTP에서 /blog/en/ 글 99개 확인", "coverage": "영문 제공 목록. featured와 중복 링크는 URL로 합치며 날짜 미상은 추정하지 않음", "browser_task": "문서 추출·구조화·업종별 도입·워크플로·사업 제휴 확인. Solar 모델은 매일05:00 모델 예약과 중복 발행하지 않음"},
+    {"id": "synap-daily", "name": "사이냅소프트 공식 RSS", "url": "https://www.synapsoft.co.kr/feed/", "area": "유사 기업 방향", "mode": "feed", "cadence": "daily", "verified_by": "직접 HTTP/XML 10항목의 공식 글·원문 날짜 확인; 웹 도구의 블로그 접근 실패와 구분", "coverage": "피드 제공 10건. 기사 재인용이므로 원발표와 회사 제품 문서를 추가 확인", "browser_task": "문서 뷰어/필터·오피스·문서 AI·공공/기업 도입과 파트너 변화. 언론 재인용을 독립 검증으로 세지 않음"},
+    {"id": "workspace-daily", "name": "Google Workspace Updates RSS", "url": "https://workspaceupdates.googleblog.com/feeds/posts/default?alt=rss", "area": "유사 기업 방향", "mode": "feed", "cadence": "daily", "verified_by": "직접 HTTP/XML 25항목·원문 날짜 확인; 웹 도구는 XML MIME 미지원", "coverage": "피드 제공 25건. 긴 공백은 블로그 검색/이전 목록 추가 확인", "browser_task": "Docs/Sheets/Drive·Gemini·NotebookLM·관리자/기업 제공 조건. 점진 배포·플랜·지역 조건 확인"}
+  ]
+}
