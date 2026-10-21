@@ -2,6 +2,8 @@
   "schema_version": 1,
   "featured_report_id": "mcp-apps-workflows",
   "report_ids": [
+    "granite-speech-5-model-guide",
+    "nemotron-3-5-retriever-model-guide",
     "mercury-3-model-guide",
     "sugar-glider-120b-model-guide",
     "maxwell-model-guide",
@@ -342,6 +344,11 @@
       "id": "ai-model-introductions-2026-10-21",
       "input": "ai_model_guides.2026-10-21.json",
       "quality": "ai_model_guides.2026-10-21.quality.json"
+    },
+    {
+      "id": "ai-model-introductions-2026-10-22",
+      "input": "ai_model_guides.2026-10-22.json",
+      "quality": "ai_model_guides.2026-10-22.quality.json"
     }
   ]
 }

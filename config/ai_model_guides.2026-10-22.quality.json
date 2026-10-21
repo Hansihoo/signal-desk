@@ -1,0 +1,3572 @@
+{
+  "packages": [
+    {
+      "version": "question-research-1",
+      "status": "ready",
+      "plan": {
+        "version": "question-research-1",
+        "request": {
+          "id": "granite-speech-5-model-guide",
+          "topic_id": "opportunities",
+          "topic_path": [
+            "개발 동향",
+            "AI 모델·API"
+          ],
+          "reader": "새 모델의 상대 성능과 비용, 제공 조건을 비교하는 개발자와 관리자",
+          "reader_question": "Granite의 새 음성 모델과 기존 모델 갱신을 구분하고, Qwen 및 다른 공개 음성 모델과 정확도, 속도, 지원 언어를 비교하도록 정리했습니다.",
+          "outcome": "신규와 기존 모델 갱신을 구분하고, 같은 평가 조건으로 장단점 및 제공 제한을 설명한다.",
+          "research_type": "model_introduction",
+          "plan_questions": false,
+          "sources": [
+            {
+              "id": "launch",
+              "title": "IBM의 Granite Speech 5.0 발표",
+              "url": "https://huggingface.co/blog/ibm-granite/granite-speech-5",
+              "kind": "official_document"
+            },
+            {
+              "id": "model",
+              "title": "Granite Speech 5.0 2B 모델 카드",
+              "url": "https://huggingface.co/ibm-granite/granite-speech-5.0-2b",
+              "kind": "official_document"
+            },
+            {
+              "id": "turbo",
+              "title": "다국어 TurboCTC 모델 카드",
+              "url": "https://huggingface.co/ibm-granite/granite-speech-5.0-470m-turboctc",
+              "kind": "official_document"
+            },
+            {
+              "id": "plus",
+              "title": "4.1 Plus 모델 카드",
+              "url": "https://huggingface.co/ibm-granite/granite-speech-4.1-2b-plus",
+              "kind": "official_document"
+            },
+            {
+              "id": "english",
+              "title": "영어11세트 비교 그림",
+              "url": "https://huggingface.co/ibm-granite/granite-speech-5.0-2b/resolve/main/assets/granite-5.0-2b-vs-open-english.png",
+              "kind": "official_document"
+            },
+            {
+              "id": "noise",
+              "title": "잡음과 잔향 비교 그림",
+              "url": "https://huggingface.co/ibm-granite/granite-speech-5.0-2b/resolve/main/assets/granite-speech-5.0-2b-ffasr-wer.png",
+              "kind": "official_document"
+            },
+            {
+              "id": "speed",
+              "title": "영어9세트 속도와 정확도 그림",
+              "url": "https://huggingface.co/ibm-granite/granite-speech-5.0-470m-turboctc/resolve/main/assets/granite-speech-5.0-470m-turboctc-pareto-rtfx.png",
+              "kind": "official_document"
+            },
+            {
+              "id": "japanese",
+              "title": "일본어 CER 비교 그림",
+              "url": "https://huggingface.co/ibm-granite/granite-speech-5.0-470m-turboctc/resolve/main/assets/granite-speech-5.0-470m-turboctc-cer-ja.png",
+              "kind": "official_document"
+            }
+          ],
+          "authoring": {
+            "template": "research-report",
+            "preferences": {
+              "examples": "가상 업무와 활용 예시, SDK/API 실습 코드와 문제를 넣지 않는다.",
+              "opening": "제목 아래 목적, 다음 요약을 둔다.",
+              "tone": "자연스러운 완결된 한국어 문장, 내용을 설명하는 소제목."
+            }
+          }
+        },
+        "questions": [
+          {
+            "id": "core",
+            "question": "Granite의 새 음성 모델과 기존 모델 갱신을 구분하고, Qwen 및 다른 공개 음성 모델과 정확도, 속도, 지원 언어를 비교하도록 정리했습니다.",
+            "requires": [
+              "identity",
+              "change",
+              "specification",
+              "availability",
+              "comparison",
+              "advantages",
+              "limitations",
+              "price"
+            ]
+          }
+        ],
+        "method": "공식 발표·모델 카드·사양·가격과 평가 원문을 대조한다. 다른 모델과의 비교표에서 평가판·추론·측정 주체·Harness·단위를 보존하고 장점과 단점을 근거로 설명한다. 활용 예시·가상 업무·실습 코드·응용 문제를 넣지 않는다."
+      },
+      "sources": [
+        {
+          "id": "launch",
+          "title": "IBM의 Granite Speech 5.0 발표",
+          "url": "https://huggingface.co/blog/ibm-granite/granite-speech-5",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "362d8845e34812cd5849957d1d7491ddbaf06448a0acc28c3b16598feb2c3bfc",
+          "text": "three updates to IBM's Granite Speech collection: a new",
+          "text_hash": "69815a9aa27b0442aed169b64c1eb7b1fc13f42f8b32927d24674f46e515939d",
+          "published_on": "2026-10-21",
+          "first_collected_at": null,
+          "last_successful_collection": "2026-10-21T19:59:36.083769+00:00",
+          "reviewed_at": "2026-10-22",
+          "raw_path": "data/raw/ai_news/official/2026-10-22/granite-blog.362d8845e34812cd.bin",
+          "acquisition_url": "https://huggingface.co/blog/ibm-granite/granite-speech-5",
+          "acquisition_method": "direct HTTP original preserved; selected related sections and full cited tables read",
+          "review_scope": "신규 2B와 기존 모델의 갱신을 함께 설명합니다. 선택 관련 절과 표/그림의 실제 확인이며 원문 전체 전수 검토나 독립 실행이 아닙니다."
+        },
+        {
+          "id": "model",
+          "title": "Granite Speech 5.0 2B 모델 카드",
+          "url": "https://huggingface.co/ibm-granite/granite-speech-5.0-2b",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "1b40b517219e08a461ff1c47bb22c5f725c321ae2c6a75f2e6aeb2ab0c1fd232",
+          "text": "Granite Speech 5.0 2B is a compact and efficient",
+          "text_hash": "c106373a7531907121bad2440937699ce06a6e5a3d92bca2a2f128f09aa0f5c1",
+          "published_on": null,
+          "first_collected_at": null,
+          "last_successful_collection": "2026-10-21T19:59:36.207421+00:00",
+          "reviewed_at": "2026-10-22",
+          "raw_path": "data/raw/ai_news/official/2026-10-22/granite5-card.1b40b517219e08a4.bin",
+          "acquisition_url": "https://huggingface.co/ibm-granite/granite-speech-5.0-2b/raw/main/README.md",
+          "acquisition_method": "direct HTTP original preserved; selected related sections and full cited tables read",
+          "review_scope": "출시일, 언어, 번역 범위와 문장부호 평가를 제공합니다. 선택 관련 절과 표/그림의 실제 확인이며 원문 전체 전수 검토나 독립 실행이 아닙니다."
+        },
+        {
+          "id": "turbo",
+          "title": "다국어 TurboCTC 모델 카드",
+          "url": "https://huggingface.co/ibm-granite/granite-speech-5.0-470m-turboctc",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "5a7f12bfee3bb82051df616fe55bae0fd987b43a6106c91c8ce0c006b9c07f62",
+          "text": "NEW (October 21, 2026): Granite Speech 5.0 TurboCTC is",
+          "text_hash": "ea1ea6ec4cc02d01ddf7f903fcc3915c73cb7fe6edcee15f2c5cd282d22e0ede",
+          "published_on": null,
+          "first_collected_at": null,
+          "last_successful_collection": "2026-10-21T19:59:36.319354+00:00",
+          "reviewed_at": "2026-10-22",
+          "raw_path": "data/raw/ai_news/official/2026-10-22/granite-turbo-card.5a7f12bfee3bb820.bin",
+          "acquisition_url": "https://huggingface.co/ibm-granite/granite-speech-5.0-470m-turboctc/raw/main/README.md",
+          "acquisition_method": "direct HTTP original preserved; selected related sections and full cited tables read",
+          "review_scope": "기존 영어판과 다국어 갱신, 공식/비공식 측정을 구분합니다. 선택 관련 절과 표/그림의 실제 확인이며 원문 전체 전수 검토나 독립 실행이 아닙니다."
+        },
+        {
+          "id": "plus",
+          "title": "4.1 Plus 모델 카드",
+          "url": "https://huggingface.co/ibm-granite/granite-speech-4.1-2b-plus",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "f15ca98d14d9966a546d434d86ce137fae2ba775282987990c497668fa6bfc63",
+          "text": "updated the model weights and configuration. The updated model",
+          "text_hash": "b98e6fcdf56aaddaad10764a7550903ae35534a8d136ec4edb082b4fbb0d7e93",
+          "published_on": null,
+          "first_collected_at": null,
+          "last_successful_collection": "2026-10-21T19:59:36.416293+00:00",
+          "reviewed_at": "2026-10-22",
+          "raw_path": "data/raw/ai_news/official/2026-10-22/granite-plus-card.f15ca98d14d9966a.bin",
+          "acquisition_url": "https://huggingface.co/ibm-granite/granite-speech-4.1-2b-plus/raw/main/README.md",
+          "acquisition_method": "direct HTTP original preserved; selected related sections and full cited tables read",
+          "review_scope": "최초 출시와 갱신, 화자 및 시간 오차를 설명합니다. 선택 관련 절과 표/그림의 실제 확인이며 원문 전체 전수 검토나 독립 실행이 아닙니다."
+        },
+        {
+          "id": "english",
+          "title": "영어11세트 비교 그림",
+          "url": "https://huggingface.co/ibm-granite/granite-speech-5.0-2b/resolve/main/assets/granite-5.0-2b-vs-open-english.png",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "04b703ae111ccf0d1b39fceb69ed83f9b7222ea41a3043ad82baa81034b4a847",
+          "text": "English short-form WER",
+          "text_hash": "0861f0c08a3503a4efa95f5757a77e4c870699c918e82e622f0980f5a22ca342",
+          "published_on": null,
+          "first_collected_at": null,
+          "last_successful_collection": "2026-10-21T20:00:29.145110+00:00",
+          "reviewed_at": "2026-10-22",
+          "raw_path": "data/raw/ai_news/official/2026-10-22/granite-english-chart.04b703ae111ccf0d.bin",
+          "acquisition_url": "https://huggingface.co/ibm-granite/granite-speech-5.0-2b/resolve/main/assets/granite-5.0-2b-vs-open-english.png",
+          "acquisition_method": "actual official PNG viewed; printed values and dataset/official-unofficial labels read",
+          "review_scope": "공개 9개와 비공개 2개를 합친 오류율 그림입니다. 선택 관련 절과 표/그림의 실제 확인이며 원문 전체 전수 검토나 독립 실행이 아닙니다."
+        },
+        {
+          "id": "noise",
+          "title": "잡음과 잔향 비교 그림",
+          "url": "https://huggingface.co/ibm-granite/granite-speech-5.0-2b/resolve/main/assets/granite-speech-5.0-2b-ffasr-wer.png",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "948ff7d440a02556605a2c630ecc8b06f6b6ea2d9e9ab01d162c8294d9a8ba40",
+          "text": "Noisy and reverberant speech",
+          "text_hash": "7870e7b00fbe31eb686e8e9a123b9ed6cbad0472cef853db07951937017f3863",
+          "published_on": null,
+          "first_collected_at": null,
+          "last_successful_collection": "2026-10-21T20:00:29.161520+00:00",
+          "reviewed_at": "2026-10-22",
+          "raw_path": "data/raw/ai_news/official/2026-10-22/granite-noisy-chart.948ff7d440a02556.bin",
+          "acquisition_url": "https://huggingface.co/ibm-granite/granite-speech-5.0-2b/resolve/main/assets/granite-speech-5.0-2b-ffasr-wer.png",
+          "acquisition_method": "actual official PNG viewed; printed values and dataset/official-unofficial labels read",
+          "review_scope": "잡음과 잔향에서 이전 모델과 경쟁 모델을 비교합니다. 선택 관련 절과 표/그림의 실제 확인이며 원문 전체 전수 검토나 독립 실행이 아닙니다."
+        },
+        {
+          "id": "speed",
+          "title": "영어9세트 속도와 정확도 그림",
+          "url": "https://huggingface.co/ibm-granite/granite-speech-5.0-470m-turboctc/resolve/main/assets/granite-speech-5.0-470m-turboctc-pareto-rtfx.png",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "b596dc143bff536d33940303bc5485a375da128484f955c4e98db24ee9ae356a",
+          "text": "WER 5.51 · RTFx 19,870 / multilingual, unofficial",
+          "text_hash": "316dcb3802e2b391a8a65585cec23dd29b5407fa66c23958d62d7128d00fb1e2",
+          "published_on": null,
+          "first_collected_at": null,
+          "last_successful_collection": "2026-10-21T20:02:57.858187+00:00",
+          "reviewed_at": "2026-10-22",
+          "raw_path": "data/raw/ai_news/official/2026-10-22/granite-turbo-speed.b596dc143bff536d.bin",
+          "acquisition_url": "https://huggingface.co/ibm-granite/granite-speech-5.0-470m-turboctc/resolve/main/assets/granite-speech-5.0-470m-turboctc-pareto-rtfx.png",
+          "acquisition_method": "actual official PNG viewed; printed values and dataset/official-unofficial labels read",
+          "review_scope": "공개 9세트의 속도와 오류율을 비교합니다. 선택 관련 절과 표/그림의 실제 확인이며 원문 전체 전수 검토나 독립 실행이 아닙니다."
+        },
+        {
+          "id": "japanese",
+          "title": "일본어 CER 비교 그림",
+          "url": "https://huggingface.co/ibm-granite/granite-speech-5.0-470m-turboctc/resolve/main/assets/granite-speech-5.0-470m-turboctc-cer-ja.png",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "afe36b89bd136a0296a8ee64d70b4797c3051b7bc38d553bff865a279902a32e",
+          "text": "Japanese ASR character error rate",
+          "text_hash": "23adc3d9ee22d7ce69d37c791ccf44760e6f00e0522b30a7e4c3d7956b4ecfdc",
+          "published_on": null,
+          "first_collected_at": null,
+          "last_successful_collection": "2026-10-21T20:02:57.745451+00:00",
+          "reviewed_at": "2026-10-22",
+          "raw_path": "data/raw/ai_news/official/2026-10-22/granite-turbo-japanese.afe36b89bd136a02.bin",
+          "acquisition_url": "https://huggingface.co/ibm-granite/granite-speech-5.0-470m-turboctc/resolve/main/assets/granite-speech-5.0-470m-turboctc-cer-ja.png",
+          "acquisition_method": "actual official PNG viewed; printed values and dataset/official-unofficial labels read",
+          "review_scope": "같은 일본어 정규화에서 두 모델을 비교합니다. 선택 관련 절과 표/그림의 실제 확인이며 원문 전체 전수 검토나 독립 실행이 아닙니다."
+        }
+      ],
+      "analysis": {
+        "evidence": [
+          {
+            "id": "e-launch",
+            "source_id": "launch",
+            "quote": "three updates to IBM's Granite Speech collection: a new",
+            "source_hash": "362d8845e34812cd5849957d1d7491ddbaf06448a0acc28c3b16598feb2c3bfc",
+            "meaning": "신규 2B와 기존 모델의 갱신을 함께 설명합니다.",
+            "limits": "IBM 공식 카드와 비교 그림을 읽은 문헌 비교입니다. WER, CER와 RTFx, 평가 대상 9개와 11개, 공식 측정과 비공식 측정, 신규 모델과 갱신을 구분합니다. 실제 실행, 독립 평가, 청구와 사람 독해 시험은 하지 않았습니다.",
+            "price_type": "not a tariff source",
+            "supports": [
+              "identity",
+              "change",
+              "comparison",
+              "specification",
+              "availability",
+              "price",
+              "advantages",
+              "limitations"
+            ]
+          },
+          {
+            "id": "e-model",
+            "source_id": "model",
+            "quote": "Granite Speech 5.0 2B is a compact and efficient",
+            "source_hash": "1b40b517219e08a461ff1c47bb22c5f725c321ae2c6a75f2e6aeb2ab0c1fd232",
+            "meaning": "출시일, 언어, 번역 범위와 문장부호 평가를 제공합니다.",
+            "limits": "IBM 공식 카드와 비교 그림을 읽은 문헌 비교입니다. WER, CER와 RTFx, 평가 대상 9개와 11개, 공식 측정과 비공식 측정, 신규 모델과 갱신을 구분합니다. 실제 실행, 독립 평가, 청구와 사람 독해 시험은 하지 않았습니다.",
+            "price_type": "download/license and infrastructure conditions; standard hosted API tariff unverified",
+            "supports": [
+              "identity",
+              "change",
+              "comparison",
+              "specification",
+              "availability",
+              "price",
+              "advantages",
+              "limitations"
+            ]
+          },
+          {
+            "id": "e-turbo",
+            "source_id": "turbo",
+            "quote": "NEW (October 21, 2026): Granite Speech 5.0 TurboCTC is",
+            "source_hash": "5a7f12bfee3bb82051df616fe55bae0fd987b43a6106c91c8ce0c006b9c07f62",
+            "meaning": "기존 영어판과 다국어 갱신, 공식/비공식 측정을 구분합니다.",
+            "limits": "IBM 공식 카드와 비교 그림을 읽은 문헌 비교입니다. WER, CER와 RTFx, 평가 대상 9개와 11개, 공식 측정과 비공식 측정, 신규 모델과 갱신을 구분합니다. 실제 실행, 독립 평가, 청구와 사람 독해 시험은 하지 않았습니다.",
+            "price_type": "download/license and infrastructure conditions; standard hosted API tariff unverified",
+            "supports": [
+              "identity",
+              "change",
+              "comparison",
+              "specification",
+              "availability",
+              "price",
+              "advantages",
+              "limitations"
+            ]
+          },
+          {
+            "id": "e-plus",
+            "source_id": "plus",
+            "quote": "updated the model weights and configuration. The updated model",
+            "source_hash": "f15ca98d14d9966a546d434d86ce137fae2ba775282987990c497668fa6bfc63",
+            "meaning": "최초 출시와 갱신, 화자 및 시간 오차를 설명합니다.",
+            "limits": "IBM 공식 카드와 비교 그림을 읽은 문헌 비교입니다. WER, CER와 RTFx, 평가 대상 9개와 11개, 공식 측정과 비공식 측정, 신규 모델과 갱신을 구분합니다. 실제 실행, 독립 평가, 청구와 사람 독해 시험은 하지 않았습니다.",
+            "price_type": "download/license and infrastructure conditions; standard hosted API tariff unverified",
+            "supports": [
+              "identity",
+              "change",
+              "comparison",
+              "specification",
+              "availability",
+              "price",
+              "advantages",
+              "limitations"
+            ]
+          },
+          {
+            "id": "e-english",
+            "source_id": "english",
+            "quote": "English short-form WER",
+            "source_hash": "04b703ae111ccf0d1b39fceb69ed83f9b7222ea41a3043ad82baa81034b4a847",
+            "meaning": "공개 9개와 비공개 2개를 합친 오류율 그림입니다.",
+            "limits": "IBM 공식 카드와 비교 그림을 읽은 문헌 비교입니다. WER, CER와 RTFx, 평가 대상 9개와 11개, 공식 측정과 비공식 측정, 신규 모델과 갱신을 구분합니다. 실제 실행, 독립 평가, 청구와 사람 독해 시험은 하지 않았습니다.",
+            "price_type": "not a tariff source",
+            "supports": [
+              "identity",
+              "change",
+              "comparison",
+              "specification",
+              "availability",
+              "price",
+              "advantages",
+              "limitations"
+            ]
+          },
+          {
+            "id": "e-noise",
+            "source_id": "noise",
+            "quote": "Noisy and reverberant speech",
+            "source_hash": "948ff7d440a02556605a2c630ecc8b06f6b6ea2d9e9ab01d162c8294d9a8ba40",
+            "meaning": "잡음과 잔향에서 이전 모델과 경쟁 모델을 비교합니다.",
+            "limits": "IBM 공식 카드와 비교 그림을 읽은 문헌 비교입니다. WER, CER와 RTFx, 평가 대상 9개와 11개, 공식 측정과 비공식 측정, 신규 모델과 갱신을 구분합니다. 실제 실행, 독립 평가, 청구와 사람 독해 시험은 하지 않았습니다.",
+            "price_type": "not a tariff source",
+            "supports": [
+              "identity",
+              "change",
+              "comparison",
+              "specification",
+              "availability",
+              "price",
+              "advantages",
+              "limitations"
+            ]
+          },
+          {
+            "id": "e-speed",
+            "source_id": "speed",
+            "quote": "WER 5.51 · RTFx 19,870 / multilingual, unofficial",
+            "source_hash": "b596dc143bff536d33940303bc5485a375da128484f955c4e98db24ee9ae356a",
+            "meaning": "공개 9세트의 속도와 오류율을 비교합니다.",
+            "limits": "IBM 공식 카드와 비교 그림을 읽은 문헌 비교입니다. WER, CER와 RTFx, 평가 대상 9개와 11개, 공식 측정과 비공식 측정, 신규 모델과 갱신을 구분합니다. 실제 실행, 독립 평가, 청구와 사람 독해 시험은 하지 않았습니다.",
+            "price_type": "not a tariff source",
+            "supports": [
+              "identity",
+              "change",
+              "comparison",
+              "specification",
+              "availability",
+              "price",
+              "advantages",
+              "limitations"
+            ]
+          },
+          {
+            "id": "e-japanese",
+            "source_id": "japanese",
+            "quote": "Japanese ASR character error rate",
+            "source_hash": "afe36b89bd136a0296a8ee64d70b4797c3051b7bc38d553bff865a279902a32e",
+            "meaning": "같은 일본어 정규화에서 두 모델을 비교합니다.",
+            "limits": "IBM 공식 카드와 비교 그림을 읽은 문헌 비교입니다. WER, CER와 RTFx, 평가 대상 9개와 11개, 공식 측정과 비공식 측정, 신규 모델과 갱신을 구분합니다. 실제 실행, 독립 평가, 청구와 사람 독해 시험은 하지 않았습니다.",
+            "price_type": "not a tariff source",
+            "supports": [
+              "identity",
+              "change",
+              "comparison",
+              "specification",
+              "availability",
+              "price",
+              "advantages",
+              "limitations"
+            ]
+          }
+        ],
+        "answers": [
+          {
+            "question_id": "core",
+            "answer": "Granite Speech 5.0 2B는 음성 인식과 번역 모델이고, 470M TurboCTC는 빠른 전사를 위한 별도 모델입니다. 잡음 환경과 키워드 처리가 개선됐지만 모든 언어와 평가에서 앞서지는 않습니다. TurboCTC 다국어판의 고속 측정은 비공식 결과이며, 공개 가중치가 무료 API를 뜻하지는 않습니다.",
+            "reasoning": "그림의 공개9/비공개2 모집단과 5.06/5.68,잡음14.80/이전16.35/Qwen13.41,다국어비공식19870/기존영어21174를 대조했습니다. 일본어CER와WER를 구분하고 CV-EN/CV-FR PER 및 VoxPopuli Cap-F1의 퇴보를 남겼습니다. AAS ms,키워드와화자 단위를 구분했습니다.",
+            "limits": "IBM 공식 카드와 비교 그림을 읽은 문헌 비교입니다. WER, CER와 RTFx, 평가 대상 9개와 11개, 공식 측정과 비공식 측정, 신규 모델과 갱신을 구분합니다. 실제 실행, 독립 평가, 청구와 사람 독해 시험은 하지 않았습니다.",
+            "evidence_ids": [
+              "e-launch",
+              "e-model",
+              "e-turbo",
+              "e-plus",
+              "e-english",
+              "e-noise",
+              "e-speed",
+              "e-japanese"
+            ]
+          }
+        ],
+        "gaps": []
+      },
+      "draft": {
+        "report": {
+          "id": "granite-speech-5-model-guide",
+          "topic_id": "opportunities",
+          "topic_path": [
+            "개발 동향",
+            "AI 모델·API"
+          ],
+          "checked_on": "2026-10-22",
+          "title": "Granite Speech 5.0 소개: 음성 인식 정확도와 다국어 TurboCTC의 장단점",
+          "description": "Granite의 새 음성 모델과 기존 모델 갱신을 구분하고, Qwen 및 다른 공개 음성 모델과 정확도, 속도, 지원 언어를 비교하도록 정리했습니다.",
+          "deck": "Granite Speech 5.0 2B는 음성 인식과 번역 모델이고, 470M TurboCTC는 빠른 전사를 위한 별도 모델입니다. 잡음 환경과 키워드 처리가 개선됐지만 모든 언어와 평가에서 앞서지는 않습니다. TurboCTC 다국어판의 고속 측정은 비공식 결과이며, 공개 가중치가 무료 API를 뜻하지는 않습니다.",
+          "scope": "2B 카드상 20일 출시, TurboCTC의 21일 다국어 갱신, Plus의 19일 갱신과 21일 묶음 발표를 22일 확인했습니다. 기존 모델을 오늘 처음 등장한 것으로 세지 않습니다.",
+          "source_note": "IBM 공식 카드와 비교 그림을 읽은 문헌 비교입니다. WER, CER와 RTFx, 평가 대상 9개와 11개, 공식 측정과 비공식 측정, 신규 모델과 갱신을 구분합니다. 실제 실행, 독립 평가, 청구와 사람 독해 시험은 하지 않았습니다.",
+          "highlights": [
+            "신규와 갱신",
+            "정확도와 반대 결과",
+            "속도와 제공 조건"
+          ],
+          "summary": [
+            {
+              "label": "신규와 갱신",
+              "text": "2B는 20일 출시 카드가 있습니다. TurboCTC는 8월 영어 전용 모델이 21일 7개 언어로 갱신됐고, Plus는 4월 모델의 19일 가중치 갱신입니다. 21일은 세 모델을 함께 소개한 글의 날짜입니다.",
+              "source_ids": [
+                "launch",
+                "model",
+                "turbo",
+                "plus"
+              ],
+              "kind": "fact"
+            },
+            {
+              "label": "정확도와 반대 결과",
+              "text": "잡음 평가 WER는 4.1의 16.35%에서 5.0의 14.80%로 낮아졌지만 Qwen3-ASR-1.7B의 13.41%보다 높습니다. 일본어 세 세트에서는 작은 TurboCTC가 2B보다 낮은 CER를 보였습니다.",
+              "source_ids": [
+                "noise",
+                "japanese"
+              ],
+              "kind": "fact"
+            },
+            {
+              "label": "속도와 제공 조건",
+              "text": "다국어 TurboCTC의 19,870 RTFx는 카드에서 비공식 결과입니다. 같은 그림의 기존 영어판 21,174보다 낮습니다. Apache 2.0 가중치를 받을 수 있지만 표준 호스팅 API 단가와 장비별 운영비는 확인하지 못했습니다.",
+              "source_ids": [
+                "turbo",
+                "speed"
+              ],
+              "kind": "fact"
+            }
+          ],
+          "metrics": [],
+          "datasets": [],
+          "learning": [],
+          "tables": [
+            {
+              "id": "specs",
+              "title": "모델별 사양과 제공 범위",
+              "columns": [
+                "모델",
+                "규모",
+                "변경일과 성격",
+                "주요 제공 기능"
+              ],
+              "rows": [
+                {
+                  "values": [
+                    "Granite Speech 5.0 2B",
+                    "2B",
+                    "2026-10-20 / 새 음성 언어 모델",
+                    "음성 인식과 양방향 영어 번역; 영어→이탈리아어/중국어 번역 추가"
+                  ],
+                  "source_ids": [
+                    "model"
+                  ]
+                },
+                {
+                  "values": [
+                    "Granite Speech 5.0 TurboCTC 470M",
+                    "0.47B",
+                    "2026-10-21 / 기존 영어 전용 모델의 다국어 갱신",
+                    "비자기회귀 CTC 음성 인식; 번역 모델과 구분"
+                  ],
+                  "source_ids": [
+                    "turbo"
+                  ]
+                },
+                {
+                  "values": [
+                    "Granite Speech 4.1 2B Plus",
+                    "2B",
+                    "2026-10-19 / 4월28일 기존 모델의 가중치 갱신",
+                    "화자별 전사와 단어 타임스탬프; 4.1 계열 유지"
+                  ],
+                  "source_ids": [
+                    "plus"
+                  ]
+                }
+              ],
+              "note": "모두 Apache 2.0 공개 가중치입니다. 2B의 ASR 6개 언어와 TurboCTC의 7개 언어를 구분합니다. 한국어 ASR 지원은 확인한 목록에 없습니다."
+            },
+            {
+              "id": "english",
+              "title": "경쟁 모델의 영어 단문 오류율",
+              "columns": [
+                "모델",
+                "WER % / 공개9+비공개2"
+              ],
+              "rows": [
+                {
+                  "values": [
+                    "Qwen3-ASR-1.7B-hf",
+                    "5.40"
+                  ],
+                  "source_ids": [
+                    "english"
+                  ]
+                },
+                {
+                  "values": [
+                    "Granite Speech 5.0 2B",
+                    "5.68"
+                  ],
+                  "source_ids": [
+                    "english"
+                  ]
+                },
+                {
+                  "values": [
+                    "cohere-transcribe-03-2026",
+                    "5.77"
+                  ],
+                  "source_ids": [
+                    "english"
+                  ]
+                },
+                {
+                  "values": [
+                    "Hojo-ASR-V1",
+                    "5.85"
+                  ],
+                  "source_ids": [
+                    "english"
+                  ]
+                },
+                {
+                  "values": [
+                    "thewhisper-large-v3-turbo",
+                    "5.91"
+                  ],
+                  "source_ids": [
+                    "english"
+                  ]
+                },
+                {
+                  "values": [
+                    "higgs-audio-v3-stt",
+                    "5.92"
+                  ],
+                  "source_ids": [
+                    "english"
+                  ]
+                },
+                {
+                  "values": [
+                    "ARK-ASR-3B",
+                    "5.92"
+                  ],
+                  "source_ids": [
+                    "english"
+                  ]
+                },
+                {
+                  "values": [
+                    "canary-qwen-2.5b",
+                    "5.94"
+                  ],
+                  "source_ids": [
+                    "english"
+                  ]
+                },
+                {
+                  "values": [
+                    "MOSS-Transcribe-Diarize",
+                    "6.17"
+                  ],
+                  "source_ids": [
+                    "english"
+                  ]
+                },
+                {
+                  "values": [
+                    "Voxtral-Small-24B-2507",
+                    "6.38"
+                  ],
+                  "source_ids": [
+                    "english"
+                  ]
+                },
+                {
+                  "values": [
+                    "distil-large-v3.5",
+                    "6.76"
+                  ],
+                  "source_ids": [
+                    "english"
+                  ]
+                }
+              ],
+              "note": "IBM 카드 그림. 2026-10-21 Open ASR 결과로 공개 9개와 비공개 2개 영어 단문 테스트의 평균 WER(%)입니다. 낮을수록 좋습니다. 기관당 한 모델을 선정한 공급사 그림이며, 공개 9개만의 5.06과 구분합니다. 독립 실행과 모든 설정의 재현은 하지 않았습니다."
+            },
+            {
+              "id": "speed",
+              "title": "공개9세트에서 본 속도와 정확도",
+              "columns": [
+                "모델",
+                "WER % ↓",
+                "RTFx ↑",
+                "결과 구분"
+              ],
+              "rows": [
+                {
+                  "values": [
+                    "Granite Speech 5.0 2B",
+                    "5.06",
+                    "545",
+                    "공식 리더보드 표기"
+                  ],
+                  "source_ids": [
+                    "speed"
+                  ]
+                },
+                {
+                  "values": [
+                    "Granite Speech 5.0 TurboCTC 470M",
+                    "5.51",
+                    "19,870",
+                    "다국어판 / 공급사 비공식 측정"
+                  ],
+                  "source_ids": [
+                    "speed"
+                  ]
+                },
+                {
+                  "values": [
+                    "Granite Speech 5.0 TurboCTC English-only",
+                    "5.78",
+                    "21,174",
+                    "기존 영어 전용 공식 항목"
+                  ],
+                  "source_ids": [
+                    "speed"
+                  ]
+                },
+                {
+                  "values": [
+                    "Qwen3-ASR-1.7B-hf",
+                    "4.94",
+                    "819",
+                    "공식 리더보드 표기"
+                  ],
+                  "source_ids": [
+                    "speed"
+                  ]
+                },
+                {
+                  "values": [
+                    "cohere-transcribe-03-2026",
+                    "5.21",
+                    "902",
+                    "공식 리더보드 표기"
+                  ],
+                  "source_ids": [
+                    "speed"
+                  ]
+                }
+              ],
+              "note": "RTFx는 오디오 길이/처리 시간 비율이며 동시 요청 수나 토큰/초가 아닙니다. 공급사 그림의 구성으로 장비와 부하 전체는 미확인입니다. 영어 11세트 평균과 섞지 않습니다."
+            },
+            {
+              "id": "noise",
+              "title": "잡음과 잔향에서의 이전 모델 비교",
+              "columns": [
+                "모델",
+                "FFASR 평균 WER % ↓"
+              ],
+              "rows": [
+                {
+                  "values": [
+                    "Granite Speech 5.0 2B",
+                    "14.80"
+                  ],
+                  "source_ids": [
+                    "noise"
+                  ]
+                },
+                {
+                  "values": [
+                    "Granite Speech 4.1 2B",
+                    "16.35"
+                  ],
+                  "source_ids": [
+                    "noise"
+                  ]
+                },
+                {
+                  "values": [
+                    "Granite Speech 4.1 2B NAR",
+                    "15.16"
+                  ],
+                  "source_ids": [
+                    "noise"
+                  ]
+                },
+                {
+                  "values": [
+                    "Qwen3-ASR-1.7B",
+                    "13.41"
+                  ],
+                  "source_ids": [
+                    "noise"
+                  ]
+                },
+                {
+                  "values": [
+                    "cohere-transcribe-03-2026",
+                    "15.03"
+                  ],
+                  "source_ids": [
+                    "noise"
+                  ]
+                },
+                {
+                  "values": [
+                    "Whisper-large-v3",
+                    "18.02"
+                  ],
+                  "source_ids": [
+                    "noise"
+                  ]
+                }
+              ],
+              "note": "2026-10-18 리더보드를 IBM이 수록했습니다. 다국어 전체 품질이나 회의 화자 분리 점수로 해석하지 않습니다."
+            },
+            {
+              "id": "format",
+              "title": "개선과 퇴보가 함께 나타난 문장 표기",
+              "columns": [
+                "평가",
+                "단위",
+                "4.1 2B",
+                "5.0 2B"
+              ],
+              "rows": [
+                {
+                  "values": [
+                    "LS clean",
+                    "PER %",
+                    "25.70",
+                    "23.20"
+                  ],
+                  "source_ids": [
+                    "model"
+                  ]
+                },
+                {
+                  "values": [
+                    "CV-EN",
+                    "PER %",
+                    "9.13",
+                    "9.18"
+                  ],
+                  "source_ids": [
+                    "model"
+                  ]
+                },
+                {
+                  "values": [
+                    "CV-FR",
+                    "PER %",
+                    "11.00",
+                    "11.43"
+                  ],
+                  "source_ids": [
+                    "model"
+                  ]
+                },
+                {
+                  "values": [
+                    "VoxPopuli",
+                    "Cap-F1",
+                    "95.35",
+                    "95.07"
+                  ],
+                  "source_ids": [
+                    "model"
+                  ]
+                }
+              ],
+              "note": "PER는 문장부호 오류율로 낮을수록, Cap-F1은 대문자 정확성으로 높을수록 좋습니다. 네 행은 상반된 결과를 보이기 위해 선정한 일부 평가입니다."
+            },
+            {
+              "id": "plus",
+              "title": "기존 Plus 가중치 갱신의 변화",
+              "columns": [
+                "평가",
+                "단위",
+                "이전 v2604",
+                "갱신 v2610"
+              ],
+              "rows": [
+                {
+                  "values": [
+                    "전체 타임스탬프",
+                    "AAS ms",
+                    "210.86",
+                    "98.54"
+                  ],
+                  "source_ids": [
+                    "launch",
+                    "plus"
+                  ]
+                },
+                {
+                  "values": [
+                    "짧은 타임스탬프",
+                    "AAS ms",
+                    "29.27",
+                    "26.20"
+                  ],
+                  "source_ids": [
+                    "launch",
+                    "plus"
+                  ]
+                },
+                {
+                  "values": [
+                    "20개 키워드 목록",
+                    "biased-word WER %",
+                    "11.79",
+                    "6.48"
+                  ],
+                  "source_ids": [
+                    "launch",
+                    "plus"
+                  ]
+                },
+                {
+                  "values": [
+                    "긴 음성",
+                    "WER %",
+                    "13.53",
+                    "10.22"
+                  ],
+                  "source_ids": [
+                    "launch",
+                    "plus"
+                  ]
+                },
+                {
+                  "values": [
+                    "화자 귀속",
+                    "WDER %",
+                    "4.40",
+                    "4.10"
+                  ],
+                  "source_ids": [
+                    "launch",
+                    "plus"
+                  ]
+                },
+                {
+                  "values": [
+                    "화자별 전사",
+                    "cpWER %",
+                    "30.50",
+                    "28.48"
+                  ],
+                  "source_ids": [
+                    "launch",
+                    "plus"
+                  ]
+                }
+              ],
+              "note": "전부 낮을수록 좋습니다. 시간 오차 AAS의 ms와 단어 및 화자 오류율 %를 합산하지 않습니다. 5.0 2B의 평가값이 아닙니다."
+            }
+          ],
+          "explanation": [
+            {
+              "id": "overview",
+              "title": "모델 개요와 이전 모델 대비 변화",
+              "lead": "큰 음성 언어 모델과 빠른 전사 전용 모델은 서로 다른 선택지입니다.",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "title": "음성 언어 모델과 CTC 모델",
+                  "text": "5.0 2B는 음성과 텍스트를 연결해 전사와 번역을 수행합니다. 약 39만 시간의 공개 음성과 합성 자료를 학습했고, 최대 2,000개 용어 목록으로 고유명사 인식을 유도합니다. 영어와 프랑스어, 독일어, 스페인어, 포르투갈어, 일본어를 전사하고 영어와의 번역을 지원합니다. 영어에서 이탈리아어와 중국어로의 번역도 별도 범위입니다.",
+                  "source_ids": [
+                    "model"
+                  ],
+                  "kind": "fact"
+                },
+                {
+                  "type": "paragraph",
+                  "title": "이름이 같은 TurboCTC의 갱신",
+                  "text": "470M TurboCTC는 CTC라는 비자기회귀 방식으로 전사하며, 2B의 번역 기능을 그대로 갖춘 모델은 아닙니다. 기존 8월 25일 영어 전용판에서 6개 언어와 문장부호 및 대문자를 추가했습니다. 새 이름의 모델을 하나 더 만든 것이 아니므로 같은 ID의 의미 있는 가중치 변경으로 읽어야 합니다.",
+                  "source_ids": [
+                    "turbo"
+                  ],
+                  "kind": "fact"
+                },
+                {
+                  "type": "paragraph",
+                  "title": "Plus의 역할",
+                  "text": "4.1 2B Plus는 화자별 전사와 단어별 타임스탬프를 담당합니다. 카드에는 기존 4월 28일 출시와 10월 19일 갱신이 명시돼 있습니다. API와 프롬프트 형식을 유지한 갱신이지만 가중치와 권장 사용법이 바뀌므로 과거판의 수치와 구분합니다.",
+                  "source_ids": [
+                    "plus",
+                    "launch"
+                  ],
+                  "kind": "fact"
+                }
+              ]
+            },
+            {
+              "id": "strengths",
+              "title": "장점: 잡음 대응과 경량 전사의 선택 폭",
+              "lead": "전사 정확도와 빠른 처리, 화자 정보 중 어느 것이 필요한지에 따라 장점이 다릅니다.",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "title": "이전 2B 대비 잡음 인식 개선",
+                  "text": "FFASR에서 5.0 2B의 평균 WER 14.80%는 이전 4.1의 16.35%보다 낮습니다. WER는 정답 전사와 다른 단어의 삽입, 삭제 및 대체 비율이므로 낮은 값이 더 좋습니다. 잡음과 잔향이 있는 조건에서의 개선이며, 모든 음성 분포에서 동일한 개선 폭을 보장하는 값은 아닙니다.",
+                  "source_ids": [
+                    "noise"
+                  ],
+                  "kind": "judgment"
+                },
+                {
+                  "type": "paragraph",
+                  "title": "작은 모델의 일본어 결과",
+                  "text": "동일한 일본어 정규화와 같은 세 테스트에서 470M의 평균 CER는 10.51%, 2B는 11.64%입니다. CommonVoice-17 JA는 8.48% 대 10.74%입니다. CER는 문자 단위 오류율이므로 영어 WER와 다른 척도입니다. 모델 규모가 크다고 언어별 정확도가 항상 높은 것은 아닙니다.",
+                  "source_ids": [
+                    "japanese",
+                    "turbo"
+                  ],
+                  "kind": "judgment"
+                },
+                {
+                  "type": "paragraph",
+                  "title": "화자와 시간 정보의 개선",
+                  "text": "Plus 갱신은 전체 타임스탬프 오차를 210.86ms에서 98.54ms로 줄였고, 20개 목록의 키워드 단어 오류율은 11.79%에서 6.48%로 낮아졌습니다. 이 값들은 전사 정확도 하나로는 알 수 없는 자막과 화자 정보의 차이를 보여줍니다.",
+                  "source_ids": [
+                    "launch",
+                    "plus"
+                  ],
+                  "kind": "judgment"
+                }
+              ]
+            },
+            {
+              "id": "weaknesses",
+              "title": "단점과 비교의 한계",
+              "lead": "정확도 향상이나 높은 처리량이 모든 측정에서의 우위를 뜻하지는 않습니다.",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "title": "경쟁 모델보다 높은 오류율",
+                  "text": "영어 11세트 평균은 Granite 5.68%, Qwen3-ASR-1.7B 5.40%입니다. FFASR도 Qwen 13.41%가 Granite 14.80%보다 낮습니다. 반대로 Granite는 같은 영어 11세트 그림에서 Cohere 5.77%보다 낮습니다. 어떤 평가와 경쟁자를 고르느냐에 따라 장단점이 달라집니다.",
+                  "source_ids": [
+                    "english",
+                    "noise"
+                  ],
+                  "kind": "judgment"
+                },
+                {
+                  "type": "paragraph",
+                  "title": "평균의 모집단 차이",
+                  "text": "공개 9세트만 보면 5.0 2B의 평균 WER는 5.06%이고, 비공개 2세트를 더한 그림에서는 5.68%입니다. 두 값을 모순으로 고치거나 5.06을 11세트의 Qwen 5.40과 직접 비교하면 잘못된 우위가 됩니다. 평가 대상 수가 다른 값은 분리해야 합니다.",
+                  "source_ids": [
+                    "english",
+                    "speed"
+                  ],
+                  "kind": "judgment"
+                },
+                {
+                  "type": "paragraph",
+                  "title": "일부 문장 표기와 다국어 결과의 퇴보",
+                  "text": "5.0의 CV-EN 문장부호 오류율 9.18%는 이전 9.13%보다 높고, CV-FR도 11.43% 대 11.00%입니다. VoxPopuli 대문자 F1은 95.07로 이전 95.35보다 낮습니다. 영어 단문 평균의 개선을 모든 언어의 문장 표기 개선으로 확대할 수 없습니다.",
+                  "source_ids": [
+                    "model"
+                  ],
+                  "kind": "judgment"
+                },
+                {
+                  "type": "paragraph",
+                  "title": "고속 결과의 조건",
+                  "text": "다국어 TurboCTC 19,870 RTFx는 IBM 카드에서 비공식 측정으로 표시됩니다. 이전 영어 전용판은 같은 그림에 21,174 RTFx로 표시돼 있어, 다국어판이 그 이전판보다 빠르다고 읽을 수 없습니다. 발표 글의 대략 12,600 대비 1.6배라는 서술은 같은 그림의 현재 영어 전용 항목과 기준이 다릅니다. 장비, 배치와 전체 부하 조건의 재현은 별도로 필요합니다.",
+                  "source_ids": [
+                    "speed",
+                    "turbo",
+                    "launch"
+                  ],
+                  "kind": "judgment"
+                }
+              ]
+            },
+            {
+              "id": "availability",
+              "title": "가격과 제공 조건",
+              "lead": "가중치 라이선스와 호스팅 서비스 비용은 서로 다릅니다.",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "title": "공개 가중치와 운영 비용",
+                  "text": "세 모델은 Apache 2.0으로 공개되며 카드에 Transformers 및 여러 실행 경로가 안내돼 있습니다. 내려받는 가중치가 호스팅 API의 무료 사용량을 보장하지는 않습니다. 확인한 원문에서 모델별 표준 API 단가, 최소 장비 비용과 서비스 보장은 확정하지 못했으므로 $0으로 표시하지 않습니다.",
+                  "source_ids": [
+                    "model",
+                    "turbo",
+                    "plus"
+                  ],
+                  "kind": "judgment"
+                },
+                {
+                  "type": "paragraph",
+                  "title": "입력과 언어의 경계",
+                  "text": "5.0 2B 카드는 16kHz 단일 채널 입력과 약 2분 이하 구간의 전사를 권장합니다. 긴 파일은 구간 분할이 필요할 수 있습니다. 한국어 ASR은 공식 지원 목록에 없고, 일본어 전사와 영어/중국어 번역 지원이 한국어 인식을 뜻하지도 않습니다. 실제 한국어 성능이나 실시간 통화 지연은 이번 자료로 판정할 수 없습니다.",
+                  "source_ids": [
+                    "model",
+                    "turbo"
+                  ],
+                  "kind": "judgment"
+                }
+              ]
+            }
+          ],
+          "result": {
+            "title": "결론",
+            "points": [
+              {
+                "label": "선택 기준",
+                "text": "번역과 용어 제어가 필요하면 2B, 다국어 전사 처리량이 중요하면 TurboCTC, 화자와 시간 정보가 중요하면 Plus를 비교할 수 있습니다. 다만 Qwen과의 오류율 차이, 비공식 속도 측정과 한국어 지원 공백까지 함께 판단해야 합니다.",
+                "source_ids": [
+                  "model",
+                  "turbo",
+                  "plus",
+                  "english",
+                  "speed"
+                ],
+                "kind": "judgment"
+              }
+            ]
+          },
+          "caveats": [
+            {
+              "text": "20일과 21일의 신규 및 갱신 자료와 19일 Plus 갱신을 22일 확인했습니다. 공개/비공개 평가 모집단과 WER, CER 및 RTFx를 나눠 읽었으며 실제 모델 실행, 독립 성능 재평가와 청구는 수행하지 않았습니다.",
+              "source_ids": [
+                "model",
+                "turbo",
+                "plus",
+                "english",
+                "speed"
+              ]
+            }
+          ],
+          "references": [
+            {
+              "id": "launch",
+              "title": "IBM의 Granite Speech 5.0 발표",
+              "url": "https://huggingface.co/blog/ibm-granite/granite-speech-5",
+              "description": "신규 2B와 기존 모델의 갱신을 함께 설명합니다."
+            },
+            {
+              "id": "model",
+              "title": "Granite Speech 5.0 2B 모델 카드",
+              "url": "https://huggingface.co/ibm-granite/granite-speech-5.0-2b",
+              "description": "출시일, 언어, 번역 범위와 문장부호 평가를 제공합니다."
+            },
+            {
+              "id": "turbo",
+              "title": "다국어 TurboCTC 모델 카드",
+              "url": "https://huggingface.co/ibm-granite/granite-speech-5.0-470m-turboctc",
+              "description": "기존 영어판과 다국어 갱신, 공식/비공식 측정을 구분합니다."
+            },
+            {
+              "id": "plus",
+              "title": "4.1 Plus 모델 카드",
+              "url": "https://huggingface.co/ibm-granite/granite-speech-4.1-2b-plus",
+              "description": "최초 출시와 갱신, 화자 및 시간 오차를 설명합니다."
+            },
+            {
+              "id": "english",
+              "title": "영어11세트 비교 그림",
+              "url": "https://huggingface.co/ibm-granite/granite-speech-5.0-2b/resolve/main/assets/granite-5.0-2b-vs-open-english.png",
+              "description": "공개 9개와 비공개 2개를 합친 오류율 그림입니다."
+            },
+            {
+              "id": "noise",
+              "title": "잡음과 잔향 비교 그림",
+              "url": "https://huggingface.co/ibm-granite/granite-speech-5.0-2b/resolve/main/assets/granite-speech-5.0-2b-ffasr-wer.png",
+              "description": "잡음과 잔향에서 이전 모델과 경쟁 모델을 비교합니다."
+            },
+            {
+              "id": "speed",
+              "title": "영어9세트 속도와 정확도 그림",
+              "url": "https://huggingface.co/ibm-granite/granite-speech-5.0-470m-turboctc/resolve/main/assets/granite-speech-5.0-470m-turboctc-pareto-rtfx.png",
+              "description": "공개 9세트의 속도와 오류율을 비교합니다."
+            },
+            {
+              "id": "japanese",
+              "title": "일본어 CER 비교 그림",
+              "url": "https://huggingface.co/ibm-granite/granite-speech-5.0-470m-turboctc/resolve/main/assets/granite-speech-5.0-470m-turboctc-cer-ja.png",
+              "description": "같은 일본어 정규화에서 두 모델을 비교합니다."
+            }
+          ]
+        },
+        "claims": [
+          {
+            "path": "/summary/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-launch",
+              "e-model",
+              "e-turbo",
+              "e-plus"
+            ]
+          },
+          {
+            "path": "/summary/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-noise",
+              "e-japanese"
+            ]
+          },
+          {
+            "path": "/summary/2",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-turbo",
+              "e-speed"
+            ]
+          },
+          {
+            "path": "/tables/0/rows/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-model"
+            ]
+          },
+          {
+            "path": "/tables/0/rows/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-turbo"
+            ]
+          },
+          {
+            "path": "/tables/0/rows/2",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-plus"
+            ]
+          },
+          {
+            "path": "/tables/1/rows/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-english"
+            ]
+          },
+          {
+            "path": "/tables/1/rows/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-english"
+            ]
+          },
+          {
+            "path": "/tables/1/rows/2",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-english"
+            ]
+          },
+          {
+            "path": "/tables/1/rows/3",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-english"
+            ]
+          },
+          {
+            "path": "/tables/1/rows/4",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-english"
+            ]
+          },
+          {
+            "path": "/tables/1/rows/5",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-english"
+            ]
+          },
+          {
+            "path": "/tables/1/rows/6",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-english"
+            ]
+          },
+          {
+            "path": "/tables/1/rows/7",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-english"
+            ]
+          },
+          {
+            "path": "/tables/1/rows/8",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-english"
+            ]
+          },
+          {
+            "path": "/tables/1/rows/9",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-english"
+            ]
+          },
+          {
+            "path": "/tables/1/rows/10",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-english"
+            ]
+          },
+          {
+            "path": "/tables/2/rows/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-speed"
+            ]
+          },
+          {
+            "path": "/tables/2/rows/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-speed"
+            ]
+          },
+          {
+            "path": "/tables/2/rows/2",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-speed"
+            ]
+          },
+          {
+            "path": "/tables/2/rows/3",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-speed"
+            ]
+          },
+          {
+            "path": "/tables/2/rows/4",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-speed"
+            ]
+          },
+          {
+            "path": "/tables/3/rows/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-noise"
+            ]
+          },
+          {
+            "path": "/tables/3/rows/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-noise"
+            ]
+          },
+          {
+            "path": "/tables/3/rows/2",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-noise"
+            ]
+          },
+          {
+            "path": "/tables/3/rows/3",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-noise"
+            ]
+          },
+          {
+            "path": "/tables/3/rows/4",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-noise"
+            ]
+          },
+          {
+            "path": "/tables/3/rows/5",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-noise"
+            ]
+          },
+          {
+            "path": "/tables/4/rows/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-model"
+            ]
+          },
+          {
+            "path": "/tables/4/rows/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-model"
+            ]
+          },
+          {
+            "path": "/tables/4/rows/2",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-model"
+            ]
+          },
+          {
+            "path": "/tables/4/rows/3",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-model"
+            ]
+          },
+          {
+            "path": "/tables/5/rows/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-launch",
+              "e-plus"
+            ]
+          },
+          {
+            "path": "/tables/5/rows/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-launch",
+              "e-plus"
+            ]
+          },
+          {
+            "path": "/tables/5/rows/2",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-launch",
+              "e-plus"
+            ]
+          },
+          {
+            "path": "/tables/5/rows/3",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-launch",
+              "e-plus"
+            ]
+          },
+          {
+            "path": "/tables/5/rows/4",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-launch",
+              "e-plus"
+            ]
+          },
+          {
+            "path": "/tables/5/rows/5",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-launch",
+              "e-plus"
+            ]
+          },
+          {
+            "path": "/explanation/0/blocks/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-model"
+            ]
+          },
+          {
+            "path": "/explanation/0/blocks/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-turbo"
+            ]
+          },
+          {
+            "path": "/explanation/0/blocks/2",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-plus",
+              "e-launch"
+            ]
+          },
+          {
+            "path": "/explanation/1/blocks/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-noise"
+            ]
+          },
+          {
+            "path": "/explanation/1/blocks/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-japanese",
+              "e-turbo"
+            ]
+          },
+          {
+            "path": "/explanation/1/blocks/2",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-launch",
+              "e-plus"
+            ]
+          },
+          {
+            "path": "/explanation/2/blocks/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-english",
+              "e-noise"
+            ]
+          },
+          {
+            "path": "/explanation/2/blocks/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-english",
+              "e-speed"
+            ]
+          },
+          {
+            "path": "/explanation/2/blocks/2",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-model"
+            ]
+          },
+          {
+            "path": "/explanation/2/blocks/3",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-speed",
+              "e-turbo",
+              "e-launch"
+            ]
+          },
+          {
+            "path": "/explanation/3/blocks/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-model",
+              "e-turbo",
+              "e-plus"
+            ]
+          },
+          {
+            "path": "/explanation/3/blocks/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-model",
+              "e-turbo"
+            ]
+          },
+          {
+            "path": "/result/points/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-model",
+              "e-turbo",
+              "e-plus",
+              "e-english",
+              "e-speed"
+            ]
+          },
+          {
+            "path": "/caveats/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-model",
+              "e-turbo",
+              "e-plus",
+              "e-english",
+              "e-speed"
+            ]
+          }
+        ],
+        "answer_paths": {
+          "core": [
+            "/summary",
+            "/tables",
+            "/explanation",
+            "/result",
+            "/caveats"
+          ]
+        }
+      },
+      "issues": [],
+      "authoring": {
+        "recipe": {
+          "version": "authoring-recipe-1",
+          "catalog_version": "1.0.2",
+          "brief": {
+            "id": "granite-speech-5-model-guide",
+            "reader": "새 모델의 상대 성능과 비용, 제공 조건을 비교하는 개발자와 관리자",
+            "reader_question": "Granite의 새 음성 모델과 기존 모델 갱신을 구분하고, Qwen 및 다른 공개 음성 모델과 정확도, 속도, 지원 언어를 비교하도록 정리했습니다.",
+            "outcome": "신규와 기존 모델 갱신을 구분하고, 같은 평가 조건으로 장단점 및 제공 제한을 설명한다.",
+            "profile": "model_introduction"
+          },
+          "request_hash": "5dc16aa57a5fcb94a5d539488cf2e2e658dac8a0e311c6e154f4d9af8f5ff727",
+          "components": [
+            {
+              "id": "common-principles",
+              "kind": "policy",
+              "version": "1.0.0",
+              "supports": [
+                "technology",
+                "comparison",
+                "market",
+                "opportunity",
+                "model_introduction",
+                "news",
+                "custom"
+              ],
+              "stages": [
+                "analyze",
+                "write",
+                "review"
+              ],
+              "sources": [
+                {
+                  "path": "docs/authoring/common.md",
+                  "sha256": "cf56f106511609377d003f3d592937b858b2de9a999cf78cb6e6408aa0aa59f7",
+                  "text": "# 공통 작성 원칙\n\n근거와 의미 보존, 자연스러운 한국어 및 본문과 편집 기록의 구분에 적용한다. 새 소식은 유형별 기사 형식을 사용한다. 학습 글을 명시한 문장은 그 유형에만 적용한다.\n\n## 독자 본문과 편집 기록을 분리하기\n\n독자는 주제와 실제 구현 방법을 배우려는 사람이다. 소제목에 `검토 의견` 같은\n내부 분류를 붙이거나 판 변경, 수집·검수 과정과 사이트 읽기 안내로 본문을 채우지\n않는다. 원문 링크와 자료의 설명은 더 자세한 내용을 배우는 데 사용한다. 출처 설명에는\n무엇을 알 수 있는지와 필요한 자료의 조건을 쓰고, 실제 수집/검토 시각과 실패 및 편집\n기록은 품질 패키지·작업 기록에 둔다. 가상 사례의 가정, 실습 준비물과 실행 조건,\n기술 한계와 통계 해석의 조건은 본문에 남긴다. [DevOps r12 수정](../DEVOPS_READER_COPY.2026-10-12.md).\n\n## 2026-10-10: 작성 목적 다음에 요약 배치하기\n\n앞으로 새로 작성하는 공유용 리서치 보고서는 다음 순서로 시작한다. 신규 소식 기사는 2026-10-14 기사 기준과 NEWSROOM.md의 별도 형식을 따른다.\n\n1. 제목 아래에 어떤 목적으로 만든 문서인지 한두 문장으로 짧게 설명한다.\n   독자의 어떤 문제나 판단을 돕기 위한 것인지 구체적으로 쓴다.\n2. 바로 다음 본문 구역은 `요약`으로 표시하고 핵심 내용과 결론을 정리한다.\n3. 요약 이후의 구성은 주제와 독자의 필요에 맞게 정한다. 목차, 개념 설명,\n   비교표, 도해, 사례, 실습, 출처의 순서와 분량을 일률적으로 고정하지 않는다.\n\n작성 목적은 “왜 이 문서를 만들었는가”에, 요약은 “핵심 내용과 결론이 무엇인가”에\n답한다. 둘을 같은 소개 문장으로 반복하지 않는다. DevOps 문서의 장 수나\n도구 카탈로그를 다른 주제의 필수 양식으로 삼지 않는다. 기존 페이지를 일괄\n재작성하는 규칙은 아니며, 앞서 정한 출처와 검토 기준은 유지한다.\n\n예시 작성 목적: “기존 Jenkins를 사용하는 C++ 팀이 검사 결과를 보관하고,\n검사한 파일을 릴리스하는 절차를 정할 수 있도록 구축 방법을 정리했다.”\n\n검토할 때는 첫 화면만 읽어 작성 목적을 알 수 있는지, 그다음 구역이 요약인지,\n요약에서 핵심 내용과 결론을 파악할 수 있는지 각각 확인한다. 본문 구성은\n이 고정된 앞부분 이후에 필요한 설명을 충분히 제공하는지로 판단한다.\n\n## 2026-10-10: 가운데점으로 단어나 동작을 묶지 않기\n\n새로 작성하거나 수정하는 제목, 요약, 본문, 표와 도구 설명에는 가운데점으로\n단어를 압축해 나열하지 않는다. 점을 공백으로 지우는 것으로 끝내지 않는다.\n병렬 항목은 쉼표나 자연스러운 연결어로 구분하고, 동작은 누가 무엇을 어떤\n순서로 하는지 문장으로 쓴다. 원문 코드, URL과 기존 분류 식별자는 보존한다.\n\n- 피할 표현: “누가 어떤 코드와 결과물을 검사·승인·반영했는지”\n- 사용할 표현: “누가 코드를 검사했고, 어떤 결과물을 승인해 실제 환경에 반영했는지”\n- 피할 표현: “개발·QA·운영이 공동 책임”\n- 사용할 표현: “개발 담당자는 코드를 수정하고 QA는 검사한다. 운영 담당자는 승인된 파일을 배포한다.”\n\n## 글을 쓰기 전에 정할 것\n\n교재형 글은 선행 개념의 순서를 확인한다. 먼저 익숙한 상황과 값으로 문제를\n설명하고, 그 문제에서 새 개념이 하는 일을 가르친 뒤 기술 이름·구조·코드를 연결한다.\n새 약어를 풀어 쓰는 것만으로 선행 지식의 공백이 해결되지는 않는다.\n\n목적은 자료 요약, 표 생성, 제목 작성이 아니라 **독자에게 생겨야 할 변화**다.\n먼저 아래 내용을 짧은 편집 메모에 적는다. 모르는 독자의 수준은 가정임을\n밝히고, 대화에서 이미 확인한 필요를 우선한다.\n\n| 질문 | 작성할 내용 |\n| --- | --- |\n| 누가 읽는가 | 주제와의 거리, 현재 알고 있는 것, 새로 설명해야 할 것 |\n| 왜 읽는가 | 이해하려는 문제 또는 내려야 할 결정 하나 |\n| 읽은 뒤 무엇이 가능한가 | 구분·설명·선택·실행처럼 확인 가능한 결과 |\n| 무엇을 다룰 것인가 | 그 결과에 필요한 범위와 선행 개념 |\n| 어떤 근거가 필요한가 | 기능, 수치, 적용 조건, 비교를 지지할 원문 |\n| 어떻게 확인할 것인가 | 다른 사례에 적용하는 질문 또는 관찰할 실행 결과 |\n\n예: MCP Apps의 역할을 모르는 독자가 공고 후보를 비교하는 업무에 이 기술을\n쓸 이유와 시작 경로를 고르고, 설명된 사례의 입력·조회·화면 결과를 추적한 뒤\n자기 목록에 적용할 변경점을 찾도록 쓴다. 역할을 설명하는 것은 이 작업을 위한\n중간 단계다. 예시를 실제로 실행시키는 경로를 제공하려면 현재 지원 환경·준비물·\n실행 절차·예상 결과를 확인한다. 이것이 없는 원고는 원리 설명으로 상태를 남긴다.\n\n‘초급~중급 개발자’라는 범위만으로 API, JSON, 비동기 처리, MCP를 이미\n안다고 가정하지 않는다. 필요한 개념은 설명하거나 정확한 선행 학습으로 연결한다.\n\n## 목적에 맞게 글의 성격을 고르기\n\n| 독자의 질문 | 중심 내용 | 완료를 확인하는 방법 |\n| --- | --- | --- |\n| 무엇이 바뀌고 내 작업에 어떤 영향이 있나 | 이전 상태, 변화, 해당 대상, 영향, 대응 시점 | 자신의 사용 여부와 다음 점검을 정할 수 있음 |\n| 이것은 무엇이고 왜 필요한가 | 익숙한 상황, 개념, 작동 이유, 구체적 사례, 한계 | 새로운 사례의 동작을 자기 말로 설명함 |\n| 어느 대안이 내 조건에 맞나 | 같은 비교 기준, 적용 조건, 비용·제약, 선택 이유 | 주어진 조건으로 대안을 고르고 이유를 말함 |\n| 따라 하면서 익히려면 무엇을 하나 | 준비물, 순서, 입력, 예상 출력, 오류 관찰 | 실제 결과를 재현하고 어느 단계에서 틀렸는지 찾음 |\n| 신청·참여할 수 있나 | 대상, 현재 접수 상태, 자격, 제외 조건, 제출물 | 해당·비해당·추가 확인을 구분하고 준비물을 정함 |\n| 이 수치·사례는 무엇을 알려주나 | 측정 대상·기간·단위, 관찰과 해석, 적용 한계 | 수치의 의미와 이 자료로 알 수 없는 것을 구분함 |\n\n설명 글과 실습 글의 역할은 다르다. 설명은 관계와 이유를 풀어내고, 실습은\n독자가 행동한 뒤 확인할 결과를 제공한다. 하나의 보고서에 둘 다 필요하면\n단위를 나누어 연결한다. 단순히 명령어를 넣었다고 실습이 완성되는 것은 아니다.\n이 구분은 [Diátaxis의 설명](https://diataxis.fr/explanation/)과\n[튜토리얼](https://diataxis.fr/tutorials/)을 참고한 프로젝트 편집 선택이다.\n\n## 원문에서 의미를 보존하기\n\n자료를 읽을 때 제목부터 만들지 않는다. 독자의 질문에 답하는 근거를 먼저\n확보하고, 아래 항목이 필요한 주장에 함께 남긴다.\n\n- 누가 무엇을 하는가: 제공자·실행자·요청자·결과 수신자를 구분한다.\n- 언제, 누구에게 적용되는가: 확인일, 발표일, 종료일, 지역·계정·버전 조건.\n- 무엇을 측정했는가: 기간·표본·분모·단위와 출처의 자체 공개 여부.\n- 무엇을 관찰했고 무엇을 해석했는가: 공식 기능, 편집 판단, 가상 예시를 구분한다.\n- 어떤 제한이 결론을 바꾸는가: 적용 제외, 필수 준비, 비교하지 못한 부분.\n\n출처 링크가 붙어 있는 것과 그 출처가 문장을 뒷받침하는 것은 별개다.\n원문의 주어·목적어·인과관계를 요약 과정에서 바꾸지 않는다. 예를 들어\n‘서버가 화면을 제공하고 호스트가 읽는다’를 ‘서버가 읽는 화면’으로 줄이면\n구조가 바뀐다. 규격은 실제 동작의 보장, 최대 지원액은 확정 지급액,\n한 회사의 성장과 제품 전략은 검증된 성장 원인으로 바꾸지 않는다.\n\n동적 규정·모델명·가격·프로그램 상태는 보강 시 공식 자료를 다시 확인한다.\n개념 문장을 고쳤다는 이유로 재확인하지 않은 다른 표의 확인일을 올리지 않는다.\n\n## 짧은 메인과 충분한 보고서\n\n메인은 독자가 읽을 보고서를 고를 수 있게 핵심 변화·문제·대상 조건을 짧게\n전달한다. 보고서는 선택한 내용을 혼자 이해할 수 있을 만큼 풀어 쓴다.\n메인의 분량 기준을 본문에 적용하지 않는다. 고정 글자 수나 항목 수로\n필수 설명을 자르지 않는다.\n\n펼치기는 상세 절차·추가 사례·사양·선택적 심화에 사용한다. 제목을 이해하는 데\n필요한 정의, 결론의 이유, 결정적인 자격·제약은 기본 읽기 경로에 둔다.\n처음 읽는 사람이 모든 펼치기를 열어야만 첫 문장을 이해한다면 배치가 잘못됐다.\n펼친 내용은 요약의 반복이 아니라 빠진 관계와 사례를 설명해야 한다.\n\n현재 Editorial의 `요약 → 데이터 → 결과 → 해설` 순서와 블록 개수는 의미 품질을\n보장하지 않는다. 원고를 먼저 완성하고 기존 데이터 필드에 의미를 유지하며\n옮긴다. 필요한 설명을 현재 필드로 자연스럽게 표현할 수 없으면 원고를 보존하고\n렌더링 개선을 별도 작업으로 기록한다. 원고를 양식에 맞춰 다시 축약하지 않는다.\n\n## 작성 지식베이스에 남길 내용\n\n새 주제의 편집 메모는 관련 보고서·검토 문서에 아래 정보를 남긴다. 단순\n용어집, 출처 모음, 글자 수 지침만 쌓지 않는다.\n\n| 항목 | 저장할 지식 |\n| --- | --- |\n| 독자의 질문 | 해당 글이 해결할 질문과 선행 지식 가정 |\n| 개념 관계 | 기존 개념과의 차이, 역할과 데이터 이동 |\n| 의미 근거 | 주장별 원문 위치·적용 조건·확인일 |\n| 끝까지 이어지는 예시 | 입력, 중간 값, 출력, 정상·실패 이유 |\n| 발견한 실패 | 원고의 어떤 표현이 무슨 오해를 만들었는지 |\n| 개선 원고 | 실제로 고친 문단과 독자가 대답할 수 있어야 할 질문 |\n| 보강 상태 | 진단·원고·사실 확인·실행 검증·게시 중 완료한 범위 |\n\n현재 결함 기록은 [앞선 내용 검토](../RESEARCH_CONTENT_REVIEW.2026-10-08.md)에,\n20편의 목적·실제 보강·검토 범위는 [전체 보강 기록](../RESEARCH_REPAIR.2026-10-08.md)에\n남긴다. 새 판의 본문 데이터는 `config/research_comprehension.2026-10-08.json`이다.\n[앞선 개선 원고](../RESEARCH_WRITING_EXAMPLES.md)는 부분 보강의 역사로 유지한다.\n사용자가 새 판을 승인한 완성 교재라는 뜻은 아니다. 날짜가 붙은 기능·규정은\n원문을 재확인하고 재사용한다. 예시 문장은 이번 독자 목적에 맞춘 사례다.\n\n## 참고한 작성 원칙\n\n- [Google Technical Writing — Audience](https://developers.google.com/tech-writing/one/audience): 독자의 현재 지식과 목표에 필요한 지식의 차이를 설명 범위로 삼는다.\n- [Google Technical Writing — Documents](https://developers.google.com/tech-writing/one/documents): 대상 독자와 읽은 뒤 가능한 일을 정하고 그 필요에 맞춰 내용을 조직한다.\n- [Diátaxis — Explanation](https://diataxis.fr/explanation/): 이해를 위한 관계·배경 설명의 역할을 구분한다.\n- [Diátaxis — Tutorials](https://diataxis.fr/tutorials/): 행동과 관찰할 결과를 통해 배우는 실습을 구분한다.\n\n2026-10-08 원문 확인. 위 원칙의 적용 방식과 검토 질문은 이 프로젝트의\n편집 판단이며, 문서화만으로 독자 이해 개선이 검증됐다는 뜻은 아니다.\n"
+                }
+              ]
+            },
+            {
+              "id": "profile-model_introduction",
+              "kind": "profile",
+              "version": "1.0.0",
+              "supports": [
+                "model_introduction"
+              ],
+              "stages": [
+                "analyze",
+                "write",
+                "review"
+              ],
+              "sources": [
+                {
+                  "path": "docs/authoring/types.md",
+                  "section": "모델 소개",
+                  "sha256": "fbeb922a5e6ca88f23ced7939f515837dedcbf5c6784f5cac5da74b97b311d82",
+                  "text": "## 모델 소개\n\n[모델 소개 정본](../AI_MODEL_RESEARCH.md)의 신규 모델 계약을 따른다. 이전 모델 대비 변화와 다른 모델의 같은 조건 비교, 상대 장단점 및 제공 조건을 설명한다. 학습 글의 가상 업무, 실습 코드와 응용 문제를 적용하지 않는다.\n\n"
+                },
+                {
+                  "path": "docs/AI_MODEL_RESEARCH.md",
+                  "section": "신규 모델 소개의 형식 — 2026-10-13 사용자 기준",
+                  "sha256": "dc9092e9a0eb8a62d8ce7a84238cb2d9c827745411d06208a26dd8c308b65286",
+                  "text": "## 신규 모델 소개의 형식 — 2026-10-13 사용자 기준\n\n신규 모델 소개는 활용 교재가 아니라 모델의 변화와 비교를 읽는 분석 문서다.\n기존 Theo의 GPT-6.1 Sol, Gemini4Argon, Opus5.5 소개처럼 모델 정보와\n비교표, 상대 장점과 단점, 비용과 결론을 중심으로 작성한다.\n독자는 새 모델이 무엇인지, 이전 모델에서 무엇이 달라졌는지,\n경쟁 모델보다 어떤 점이 낫고 부족한지 판단할 수 있어야 한다.\n\n- 제목 아래 짧은 작성 목적과 `요약`을 먼저 둔다. 이후에는 모델 개요,\n  이전 모델 대비 변화, 다른 모델과의 비교표, 장점과 단점, 가격과 제공 조건,\n  결론과 자료 기준을 주제에 맞게 구성한다. 장 수와 표 방향을 일률적으로 고정하지 않는다.\n- 소제목은 `모델 개요`, `주요 사양`, `성능 비교`, `장점과 한계`처럼\n  실제 내용을 이름 붙인다. `입력 사양과 제공 범위를 먼저 정합니다` 같은\n  작성 절차나 독자 행동을 지시하는 소제목을 사용하지 않는다.\n- 다른 모델과 비교한 표를 반드시 포함한다. 같은 계열의 이전 모델과 해당 분야의\n  주요 경쟁 모델을 선정하고 선정 이유를 남긴다. 사양과 제공 경로, 성능 평가,\n  가격의 서로 다른 비교 기준을 분리한다.\n- 표에는 모델 ID/판, 추론 설정, 평가판, 측정 주체, Harness, 단위와 날짜를\n  밝혀 수치가 무엇을 비교하는지 설명한다. 조건이 다른 결과는 그 차이를 표시하고\n  직접적인 모델 우열의 근거로 일반화하지 않는다. 미확인은0으로 채우지 않는다.\n- 장점과 단점은 비교표의 실제 값 또는 제공 조건으로 설명한다.\n  어느 평가에서 어떤 경쟁 모델보다 높거나 낮은지, API/구독/가중치 제공,\n  가격과 문맥 조건에서 어떤 차이가 있는지 구체적으로 쓴다.\n  공급사 주장, 공개 측정, 편집 판단과 독립 실사용 미측정을 구별한다.\n- 배송비 같은 가상 업무, 활용 예시, SDK/API 코드, 단계별 실습,\n  응용 문제와 풀이를 모델 소개에 넣지 않는다. 별도의 활용 가이드를 요청받은 경우에만\n  해당 문서를 학습/실습 유형으로 작성한다.\n- 작성 요청과 새 품질 sidecar에는 `research_type: model_introduction`을 사용한다.\n  `config/ai_model_introduction.request.example.json`은 계획 템플릿이다.\n  새 소개의 report ID를 `config/study_pages.json`의 `legacy_report_ids`에 넣어\n  기존 모델 소개와 같은 Editorial을 사용한다. 해당 판의 `digest(report)`를\n  `editorial_summary_first`와 `model_introduction_editions`에 등록하면\n  목적·요약 다음에 비교표, 모델 분석, 결론이 표시된다. 새 소개판은 같은 해시를\n  `model_introduction_purpose_editions`에도 등록해 `description`의 작성 목적을\n  제목 바로 아래 표시한다. 기존 판의 표시 형식은 보존한다. 내용 해시에 묶어\n  이전 판의 표시 순서는 보존한다.\n  문장 표기 교정은 본문 필드에 한정한다. 안정적인 ID, `topic_path`의\n  `개발 동향 / AI 모델·API`, 출처 ID와 URL은 나열 문장처럼 일괄 치환하지 않는다.\n  실제 화면에서 기존 모델 주제와 같은 분류로 연결되는지도 확인한다.\n  이 유형의 기계 검사는 비교표 누락과 예시/코드 블록을 거부하며,\n  의미 검토는 비교 대상·조건과 장단점의 논거를 실제 읽어 확인한다.\n  기존 불변 배치는 소급 수정하거나 새 기준 합격으로 간주하지 않는다.\n\n원문의 기존 활용 섹션을 수집하는 것과 새 모델 소개의 집필 형식은 다르다.\nTheo에서 가져온 원문과 원본 표 기능은 보존하고, 이 형식은 새로 집필하는\n모델 소개 및 사용자가 이 형식으로 고치라고 요청한 현재판에 적용한다.\n에이전트 Pass와 출력 검증은 사용자의 형식 승인이나 실제 독해 시험이 아니다.\n\n\n"
+                }
+              ]
+            },
+            {
+              "id": "writing-workflow",
+              "kind": "method",
+              "version": "2.1.0",
+              "supports": [
+                "technology",
+                "comparison",
+                "market",
+                "opportunity",
+                "model_introduction",
+                "news",
+                "custom"
+              ],
+              "stages": [
+                "write"
+              ],
+              "sources": [
+                {
+                  "path": "skills/research-teaching/SKILL.md",
+                  "sha256": "09d2dac52b42f7fd556193e005da59b29c16215a125f34dec3a55b8cc08c1227",
+                  "text": "---\nname: research-teaching\ndescription: \"Compose and revise Korean research by reader purpose. Select content/editing/presentation profiles, preserve evidence and version records, then finish local knowledge registration and query checks. Use for research explanations, comparisons and editing; models and news keep their own profiles. Does not authorize redesign, paid calls, delegation or publication.\"\nmetadata:\n  version: \"2.1.0\"\n---\n\n# 목적에 맞게 조사하고 이해할 수 있게 쓰기\n\n먼저 [작성 관리](../../docs/authoring/MANAGEMENT.md)와 현재 원고를 읽는다.\n대화에 이미 나온 독자, 목적과 요청을 사용하며 같은 질문을 다시 요구하지 않는다.\n정보가 부족하면 조사로 돌아간다. 이해의 빈칸을 문장 교정이나 목차 증가로 대신하지 않는다.\n\n## 이번 글에 적용할 기준 선택\n\n1. 독자의 질문과 끝에 가능한 설명, 판단 또는 실행을 요청서에 적는다.\n2. [공통 원칙](../../docs/authoring/common.md)을 적용하고 [목적별 유형](../../docs/authoring/types.md)을 선택한다.\n   모델 소개와 소식 기사에 학습 글의 실습, 가상 업무와 응용 문제를 강제하지 않는다.\n3. 필요한 작성 방법만 고른다. 설명 글은 [설명 방법](../../docs/authoring/explanation.md),\n   실행을 약속한 실습은 [실습 조건](../../docs/authoring/tutorial.md)을 사용한다.\n   기존 원고의 표현을 고칠 때는 [편집 방법](references/editing.md)을 사용한다.\n4. 기존 화면 계약과 개별 요청을 선택해 authoring plan으로 조합을 고정한다.\n   이 기록은 작성 지침이며 HTML 렌더러를 변경하지 않는다. 새 디자인 구현은 별도 작업이다.\n\n## 작성과 편집\n\n원문 근거에서 질문의 답을 도출하고 충분한 본문을 쓴 뒤 제목과 요약을 만든다.\n선행 개념은 주제와의 거리를 기준으로 판단한다. 개발자라는 이유로 API나 JSON을 안다고 가정하지 않는다.\n필요한 용어는 처음 나오는 자리에서 뜻과 역할을 설명한다. 기능을 쓰는 경로와 직접 구현하는 경로를 구분한다.\n설명 사례는 입력, 중간 변화와 출력의 이유가 끝까지 연결되어야 한다.\n그림과 표는 [시각 자료 기준](../../docs/authoring/visuals.md)에 따라 필요한 곳에 선택한다.\n웹 디자인은 이번 요청에 없으면 변경하지 않는다.\n\n정보 가치가 부족하다는 피드백을 받거나 여러 글을 보강하면\n[질문과 근거 검토](references/substantive-review.md)를 읽는다.\n문장 연결의 구체적인 실패는 [집필 예시](references/teaching-patterns.md)와 대조한다.\n과거 Pass를 사용자 승인이나 완성 교재의 견본으로 취급하지 않는다.\n\n## 검토와 적용 기록\n\n[내용과 독해 검토](../../docs/authoring/review.md)에 따라 첫 화면과 본문을 따로 읽는다.\n첫 화면 입력에서는 본문을 실제로 제외한다. 외부 지식으로 빠진 설명을 메우지 않는다.\n막힌 문장과 근거 위치를 기록하고 고친다. 자체 검토, 독립 에이전트 검토와 사람 시험을 구분한다.\n위임이 승인된 경우에만 다른 에이전트를 사용하고 수정된 원고 자체를 재검토하게 한다.\n실제 실행, 링크와 출력 검사도 내용 검토와 별도로 기록한다.\n\n완성한 판에 authoring record로 원고 지문과 사용한 조합을 연결한다.\n자동 생성은 품질 패키지의 authoring에 같은 정보를 남긴다.\n이 기록은 지침 선택과 사용 기록이며 사실 검토나 사람 독해 합격을 뜻하지 않는다.\n이전 판을 덮지 않는다. 기준 변경은 새 조합으로 채택하며 작업 중의 기록에 자동 반영하지 않는다.\n\n## 리서치 추가·수정 후 지식베이스 반영\n\n이 프로젝트의 리서치·모델 소개·뉴스를 추가하거나 수정하면\n[지식베이스 완료 절차](../../docs/KNOWLEDGE_BASE.md#리서치-추가수정-작업의-완료-절차)를\n같은 작업 안에서 실행한다. 실제 내용 검토를 현재 판의 지문에 연결하고 색인을 갱신한 뒤,\n독자의 질문으로 새 본문과 출처가 검색되는지 확인해야 작성 작업을 완료한 것으로 보고한다.\n사용자에게 지식베이스 갱신을 따로 요청하게 하지 않는다.\n\n이 단계는 로컬 작업을 수행하는 Codex의 책임이다. JSON을 생성하는 집필 모델이나\n수집 성공만으로 검토 완료를 선언하지 않는다. 초안은 초안으로 연결하고 실제 검토일과\n기존 판을 보존한다. 사용자의 MD 전용·미발행 범위를 지키며 별도 배포를 실행하지 않는다.\n"
+                },
+                {
+                  "path": "docs/KNOWLEDGE_BASE.md",
+                  "section": "리서치 추가·수정 작업의 완료 절차",
+                  "sha256": "ab8e0592885a8698e99d8b01cd3bcc8097bd3c1eda77c754bdaffd293fd9de03",
+                  "text": "## 리서치 추가·수정 작업의 완료 절차\n\n새 리서치를 만들거나 기존 글을 고치는 Codex는 아래 반영을 같은 작업 안에서 마친다.\n사용자는 지식베이스 갱신을 따로 요청할 필요가 없다. 보고서, 모델 소개, 뉴스에 공통으로\n적용하며 글의 목적별 작성·검토 기준은 유지한다. 색인 갱신을 새 원문 조사로 기록하지 않는다.\n\n1. **원고와 실제 저장 판을 맞춘다.** 내용·근거·독해 검토와 수정이 끝난 판을 기존 저장\n   절차로 반영하고 작성 기준의 적용 기록도 남긴다. 기존 판과 품질 부록은 보존한다.\n   사용자가 MD 파일만 요청했다면 DB 발행을 강제하지 않는다. 해당 파일만 연결 목록에\n   `kind: draft`로 등록해 미발행 상태를 유지하고 초안을 포함하는 검색으로 확인한다.\n   프로젝트 전체 폴더를 자동 수집하거나 비공개 자료를 연결하지 않는다.\n2. **현재 본문 지문을 읽는다.** DB에 저장한 글은 아래 명령의 `document`에서 실제\n   `key`, `revision`, `source_hash`, `document_digest`를 확인한다. 보고서는 `report:<id>`,\n   뉴스는 `article:<id>`다. 이 명령은 미검토 글도 명시적으로 읽을 수 있다.\n\n   ```powershell\n   python -m housing_watch knowledge --document report:<id> --json\n   ```\n\n3. **실제 검토를 현재 판에 연결한다.** `config/knowledge_sources.json`의 `review_ledger`가\n   가리키는 원장의 기존 항목을 보존하면서 이번 글의 검토 항목을 추가하거나 갱신한다.\n   `key`, `revision`, `source_hash`, `document_digest`, `reviewed_on`, `verdict`,\n   `reader_question`, `finding`, `body_locations`, `reference_urls`를 실제 원고·검토 기록에서\n   채운다. 새 파일의 등록 시각을 사실 확인일로 쓰지 않는다. `verdict`는 확인한 범위에\n   따라 정하고 계획·미완성·오래된 사실을 무조건 `usable_with_limits`로 바꾸지 않는다.\n   원문의 접근 실패와 미확인 조건은 `finding`, `advisories`, `link_check`에 해당 범위대로\n   남긴다. authoring record나 형식 검사 통과는 내용 검토의 대체물이 아니다.\n4. **검토 이력을 보존한다.** 기존 검토를 바꾸면 날짜와 작업 식별자를 붙인 새 원장\n   파일에 기존 현재 항목과 이번 항목을 함께 저장한다. 예를 들어\n   `config/content_review.<날짜>.<작업ID>.json`을 만들고 검증한 뒤 `review_ledger` 포인터를\n   옮긴다. 이전 원장을 덮거나 다른 글의 검토를 누락하지 않는다. 그 파일이 이미 있으면\n   새 판 이름을 쓴다. 신규 항목 추가도 같은 방식으로 기록한다.\n5. **색인과 실제 질의를 확인한다.** 아래 명령이 성공한 뒤 해당 글의 상태·현재 판·본문\n   지문과 출처가 맞는지 읽고, 독자가 물을 질문으로 검색한다. DB에 저장된 검토 완료 글은\n   기본 검색에서 새 본문이 나와야 한다. 미발행 MD는 `--include-drafts`로 확인하며,\n   검토하지 않은 자료를 기본 답변에 넣기 위해 제외 옵션을 풀지 않는다.\n\n   ```powershell\n   python -m housing_watch knowledge --build --status\n   python -m housing_watch knowledge --document report:<id> --json\n   python -m housing_watch knowledge \"이번 글의 구체적인 독자 질문\" --limit 5 --json\n   ```\n\n6. **반영까지 마친 뒤 완료를 보고한다.** 본문 지문이 달라 `review_outdated`로 남거나\n   검토 완료 글을 찾지 못하면 저장 판·원장·연결 목록·질문 표현을 대조해 원인을 고친다.\n   해결되지 않으면 글 저장과 검색 반영의 상태를 따로 보고하고 검색 연결 완료로 표시하지\n   않는다. 결과에는 새 글의 ID·판, 검토 범위, 검색 확인과 남은 한계를 남긴다.\n\n이 절차의 저장과 색인 갱신은 기존 저장소 계정·원격 검증 규칙을 따른다. 별도 사용자\n확인을 반복해서 요구하지 않는다. 파일 반영 권한이 확인되지 않으면 기존 가드대로 멈춘다.\n유료 생성·클라우드 업로드·예약·홈페이지 배포 권한을 추가하지 않는다. 단독 수집기 실행은\n내용 검토가 아니며 이 절차는 리서치 작성 작업의 완료 단계다.\n\n"
+                }
+              ]
+            },
+            {
+              "id": "section-editing",
+              "kind": "method",
+              "version": "1.0.0",
+              "supports": [
+                "technology",
+                "comparison",
+                "market",
+                "opportunity",
+                "model_introduction",
+                "news",
+                "custom"
+              ],
+              "stages": [
+                "write"
+              ],
+              "sources": [
+                {
+                  "path": "skills/research-teaching/references/editing.md",
+                  "section": "절별 편집",
+                  "sha256": "6373e218756a33531f9acb90d5a399223ec984f56181558f94b2a06f550a3900",
+                  "text": "## 절별 편집\n\n각 절이 답할 독자의 질문을 찾고 실제 답의 문장을 지목한다.\n정의 전에 나온 용어, 빠진 전제와 연결 설명, 비교 축이 섞인 부분을 찾는다.\n문제를 발견하면 원문, 문제의 이유와 수정안을 함께 남긴다. 정보가 부족하면 추가 조사로 돌아간다.\n본문을 충분히 설명한 뒤 요점, 표와 제목을 실제 내용에 맞춘다.\n문체 수정을 위해 근거 없는 통계, 인용이나 저자의 경험담을 추가하지 않는다.\n\n"
+                }
+              ]
+            },
+            {
+              "id": "korean-editing",
+              "kind": "method",
+              "version": "1.0.0",
+              "supports": [
+                "technology",
+                "comparison",
+                "market",
+                "opportunity",
+                "model_introduction",
+                "news",
+                "custom"
+              ],
+              "stages": [
+                "write"
+              ],
+              "sources": [
+                {
+                  "path": "skills/research-teaching/references/editing.md",
+                  "section": "한국어 문장 편집",
+                  "sha256": "a078b16d877034b6718a0cd576ee7c8561832cffe6939ae80a1292ee5d151968",
+                  "text": "## 한국어 문장 편집\n\n번역투, 불필요한 명사화, 같은 마무리의 반복, 추상적인 단어 나열과 과장을 찾는다.\n이번 독자에게 필요한 용어와 일관된 격식은 보존한다. 특정 단어나 문장부호를 기계적으로 삭제하지 않는다.\n원문과 수정문에서 행위자, 수치와 단위, 날짜, 부정과 추정, 적용 조건 및 인과관계를 대조한다.\n추정 표현을 단정으로 바꾸거나 실제로 없던 효과를 넣은 수정은 되돌린다.\n코드, 명령, 식별자와 링크는 일반 문장 교정 대상으로 취급하지 않는다.\n첫 절에서 변경 전후와 이유를 확인한 뒤 같은 방법을 나머지 원고에 적용한다.\n\n"
+                }
+              ]
+            },
+            {
+              "id": "reader-review",
+              "kind": "method",
+              "version": "1.0.0",
+              "supports": [
+                "technology",
+                "comparison",
+                "market",
+                "opportunity",
+                "model_introduction",
+                "news",
+                "custom"
+              ],
+              "stages": [
+                "review"
+              ],
+              "sources": [
+                {
+                  "path": "docs/authoring/review.md",
+                  "sha256": "0f86c95aa64ab7b60ffd6c825a237f573a1e246c89fe0e2300b10493f4cfec7a",
+                  "text": "# 내용과 독해 검토 방법\n\n선택한 유형과 질문에 해당하는 기준으로 검토한다. 에이전트 검토와 사람 시험을 구분하며 위임 권한을 만들지 않는다.\n\n## 2026-10-12: 설명 그림의 의미와 연결을 검토하기\n\n먼저 그림이 답할 독자의 질문을 정한다. 개념의 정의를 작업 순서 그림만으로 대신하지 않는다. 관계를 설명한다면 행위자와 공유하는 목표, 정보 및 책임을 본문과 그림에 연결한다.\n\n각 화살표의 출발 상자, 도착 상자, 전달하는 입력이나 결과를 표로 적고 실제 이미지의 선과 화살촉을 대조한다. 꼬리가 출발 경계에 닿는지, 도착 방향이 맞는지, 겹침과 불필요한 순서가 생기지 않는지 확인한다. 함께 고려하는 조건에 순차 화살표를 붙이지 않는다. 실패와 성공 경로를 그렸다면 다음 행동도 일치해야 한다.\n\n도해를 단순화했다면 생략한 조건과 역할의 참여 범위를 설명한다. 그림, 대체 텍스트와 본문의 의미가 같은지 확인하며, 그림이 예쁘거나 확대 버튼이 동작한다는 사실을 의미 검토와 합산하지 않는다. [DevOps r5의 거부와 r6 수정](../DEVOPS_DIAGRAM_REPAIR.2026-10-12.md)을 참고하되 수정본의 독자 승인을 주장하지 않는다.\n\n2026-10-09 보강: [AI 집필 연구](../AI_WRITING_RESEARCH.2026-10-09.md)와\n[질문·근거·학습 결과 검토](../../skills/research-teaching/references/substantive-review.md)를 적용한다.\n독자의 핵심 질문마다 본문의 답 위치·근거·공백을 연결한다. 기술마다 고유한 원리와 실제 자료\n해석이 있어야 하며, ‘조건 확인·검증·기록’의 반복만으로 보강됐다고 판정하지 않는다.\n사용자가 승인한 독립 에이전트 검토에서는 수정 원고를 읽게 하고 지적을 고친 뒤 재판정한다.\n전체 보강의 현재 범위와 실제 검증 결과는 [작업 상태](../RESEARCH_AUTHORING_REPAIR.2026-10-09.md)에 남긴다.\n\n2026-10-08부터 Signal Desk의 리서치 작성·보강·내용 검토에 적용한다.\n이 문서는 작성 에이전트의 작업 기준이다. 독자에게 그대로 보여줄 목차나\n모든 보고서에 강제할 양식이 아니다.\n\n## 에이전트의 작성 절차와 게시 판단\n\n1. **독자 작업 정의:** 업무 문제, 기존 지식, 끝낼 작업, 확인할 결과를 작성한다.\n   'MCP 이해하기', 'RAG 알아보기'처럼 기술 이름만 쓰면 다시 구체화한다.\n2. **필요한 근거 조사:** 이 작업을 할 수 있는 현재 도구·기능, 시작 조건, 제약,\n   공식 예제를 확인한다. 원문 요약을 바로 게시용 문장으로 바꾸지 않는다.\n3. **완성된 사례 구성:** 실제 샘플 값과 중간 결과를 고정한다. 어느 입력이 어떤\n   처리를 거쳐 어떤 출력에 대응하는지 끝까지 보여주고, 필요한 개념을 그 관계로\n   설명한다. 가상 사례·개념 코드·실행 확인한 실습은 구분한다.\n4. **학습과 적용 작성:** 왜 쓰는지, 어떻게 동작하는지, 어떻게 시작하는지,\n   자기 작업으로 바꾸려면 무엇이 달라지는지 설명한다. 설명형 학습에는 풀이가\n   있는 변형 문제를, 실습에는 행동·예상 출력·정상/실패 판정을 제공한다.\n5. **검토 후 재작성:** 아래 질문에 본문 위치를 인용해 답한다. 필요한 답이\n   본문에 없으면 누락으로 기록하고 원고를 보강한다. 검토자 자신의 상식으로\n   빈칸을 메워 통과시키지 않는다. 어려운 용어의 정의만 반복해 해결하지 않는다.\n6. **표현과 게시:** 내용이 충족된 뒤 메인 요약과 HTML을 만든다. 설명 필드를\n   모두 채웠거나 테스트가 통과했다고 교재 완성으로 처리하지 않는다. 검수 결과와\n   실행 확인 범위를 기록하고, 필요한 본문은 펼치기 안에 숨기지 않는다.\n\n| 검토 질문 | 원고가 보여줘야 할 근거 |\n| --- | --- |\n| 이 방법으로 내 어떤 작업이 나아지는가 | 구체적인 문제·완성 결과·적합하지 않은 경우 |\n| 어디서 어떻게 시작하는가 | 선택한 사용/구현 경로와 확인한 환경·준비물·첫 행동 |\n| 각 부분이 왜 필요한가 | 예시 값과 연결된 개념·처리 원리·선행 지식 |\n| 한 사례의 입력부터 결과까지 따라갈 수 있는가 | 실제 샘플 값·중간 변화·출력과 그 의미 |\n| 내 자료로 바꾸려면 무엇을 바꾸는가 | 다른 입력으로의 변형 예시와 풀이·변경점 |\n| 틀렸을 때 무엇을 확인하는가 | 관찰할 증상·확인 순서·실패 조건 |\n\n이 표는 게시용 목차나 점수표가 아니다. 모든 주제에 실행 실습을 강제하지 않는다.\n개념 교재에도 끝까지 풀어 준 사례와 새로운 상황에 적용하는 설명이 필요하다.\n실습을 약속한 글은 재현 경로가 빠지면 '실습 초안'으로 남긴다. 실행해 보지 않은\n단계를 검증 완료로 표시하거나 독자 사용성 시험을 했다고 주장하지 않는다.\n\n자동화를 구성할 때는 프로젝트 AGENTS에 위 목적과 필수 읽기를 두고, 작성 스킬에는\n단계별 입력·산출물·누락 시 재작성 규칙을 둔다. 지식베이스는 출처와 기능 조건,\n끝까지 풀어 준 예제, 사용자 검토를 받은 원고, 실패한 문장의 이유를 보존한다.\n기술 정리 역할과 집필·검토 역할은 별도 작업 단계로 수행한다. 여러 에이전트를\n자동으로 만드는 규칙은 아니며, 같은 에이전트의 별도 검토 과정으로도 수행한다.\n\nGoogle의 [독자 기준](https://developers.google.com/tech-writing/one/audience)은\n업무에 필요한 지식과 독자가 이미 가진 지식의 차이를 설명 범위로 삼는다.\nDiátaxis의 [실습 기준](https://diataxis.fr/tutorials/)은 구체적인 행동과 예상 결과를\n연결한다. [OpenAI의 스킬 문서](https://developers.openai.com/codex/skills)는\n재사용할 작업 절차를 지침·참고자료로 묶고 명시적인 입력·출력으로 설계하도록\n안내한다. 세 원문의 적용 절차와 위 검토 기준은 이 프로젝트의 편집 판단이다.\n\n## 제목·요약만으로 무엇을 배우는지 알 수 있는가\n\n2026-10-09 음성 보고서의 사용자 거부는 앞선 독립 Pass가 첫 화면의 이해와 자연스러움을\n충분히 검증하지 못했음을 보여준다. [수정 기록](../VOICE_REPORT_REPAIR.2026-10-09.md)과\n[구체적인 회귀 사례](../../skills/research-teaching/references/substantive-review.md#첫-화면과-비교-기준의-회귀-사례)를 따른다.\n첫 화면 검토에서는 본문을 실제로 제외한다. 명사형 소개를 완결된 문장으로 바꾸고, 독자가\n하려는 작업과 실제 비교 대상을 먼저 밝힌다. 구현 구조와 제품명을 같은 종류의 행으로 섞지 않는다.\n성능·비용·난이도 비교를 약속할 때는 실측·문헌 근거·설계 해석을 구분한다.\n\n제목에는 기술·주제 이름과 평이한 기능·변화·문제를 함께 담는다. 이름이 빠져\n무엇에 관한 글인지 알 수 없는 제목, 낯선 이름만 나열한 제목은 보강한다.\n요약은 본문 밖에서 읽어도 대상, 하는 일, 구체적인 쓰임과 중요한 조건이 전달되어야 한다.\n그림의 번호와 화살표를 읽는 방법이나 사이트 사용 안내로 주제의 답을 대신하지 않는다.\n필요한 도해 설명은 해당 그림의 캡션·접근성 설명에 두고 요약에는 주제의 정보를 담는다.\n본문의 B·호스트·UI 리소스·문맥을 설명 없이 가져오지 않는다.\n\n본문을 읽은 지식으로 요약의 빈칸을 채우지 않는다. 제목·요약만 보고 다시 설명한 답과\n근거 문장을 남기고, 알 수 없는 부분을 실제로 고친다. 본문은 별도로 개념 순서,\n한 사례의 전체 과정과 다른 조건의 문제를 검토한다. 검사표 점수나 글자 수로 대체하지 않는다.\n\n## 내용 검토와 기술 검증을 분리해서 기록\n\n게시 전에는 원고만으로 아래 질문에 답할 수 있는지 검토한다.\n\n1. 독자가 해결할 질문에 이 글이 실제로 답했는가?\n2. 선행 지식을 모르면 어느 문장에서 막히며, 그 부분을 설명했는가?\n3. 주어·대상·조건·단위가 원문과 같은가? 인과관계를 과장하지 않았는가?\n4. 한 예시의 입력·처리·출력이 연결되고 서로 모순되지 않는가?\n5. 결론이 왜 나오는지 설명하며 적용되지 않는 조건도 구분했는가?\n6. 처음의 예시와 다른 상황에 독자가 이 개념을 적용할 수 있는가?\n7. 원문 링크는 근거 확인·심화 학습을 돕는가? 빠진 본문 설명을 대신하지 않는가?\n\n각 질문은 통과 문구를 붙이는 체크박스가 아니라 실제 원고를 고칠 기준이다.\n막힌 문장과 수정 이유를 기록한다. 새 사례에 대한 예상 답은 근거와 함께\n작성하되 실제 독자 시험을 하지 않았다면 독자 검증 완료라고 쓰지 않는다.\n\n현재 `validate_report`는 형식·출처 ID·자료 타입을, `review`는 주택 브리핑의\n운영·출력 상태를 검사한다. 테스트 통과·출처 수·학습 장 수·모바일 넘침 없음은\n독자의 이해를 증명하지 않는다. 자동 검사에는 구조적으로 확인 가능한 부분만\n맡기고 사실 의미·논리·설명 충실도는 원문과 원고를 읽어 검토한다.\n\n보고서 수정 게시 시에는 새 immutable batch와 같은 보고서 ID로 이력을\n남긴다. 앞선 판을 덮어쓰지 않는다. 렌더링·링크·모바일 검증은 내용 검토와\n함께 수행하되 각각의 결과를 구분해 기록한다.\n"
+                },
+                {
+                  "path": "skills/research-teaching/references/substantive-review.md",
+                  "sha256": "2030364c1fc5a9af175b38395fa5e7c14a9471c7a97cae427d616e8bfcbe618b",
+                  "text": "# 질문에 답하는 정보와 설명을 검토하기\n\n## 글마다 독자가 알아야 할 것이 다르다\n\n기술 설명의 독자는 입력이 어떤 과정을 거쳐 결과가 되는지, 다른 방식과 왜 다른지\n이해해야 한다. 실습의 독자는 준비부터 실행·기대 출력·실패 진단까지 따라갈 수 있어야 한다.\n시장 분석의 독자는 관측 대상·기간·단위와 비교 범위, 반대 근거를 보고 자기 판단을 좁혀야 한다.\n행사·지원 안내의 독자는 자신이 어떤 참여 역할과 필수 조건에 해당하는지 선별할 수 있어야 한다.\n원문에 없는 내용은 추가로 조사한다. 같은 목차·문단 수·SDK 코드·퀴즈를 모든 글에 강제하지 않는다.\n\n모델 소개는 [모델 소개 운영 기준](../../../docs/AI_MODEL_RESEARCH.md)에 따른다.\\n가상 활용 사례나 응용 문제를 요구하지 않고 다른 모델과의 비교 및 장단점에 답하는지 확인한다.\\n\\n## 질문과 근거의 공백을 작업 메모에서 찾는다\n\n핵심 질문마다 필요한 자료, 원문에서 확인한 답, 본문의 답 위치, 남은 공백을 연결한다.\n글의 제목이 실제보다 큰 결과를 약속하면 제목과 범위를 조정하거나 그 결과까지 보강한다.\n자료가 부족한 상태에서 익숙한 일반 조언으로 문단을 채우지 않는다.\n\n| 원고의 약속 | 실질 내용의 예 | 그 내용이 없을 때 할 일 |\n| --- | --- | --- |\n| 문서 검색 AI를 이해한다 | 원문 부분·색인·질문·후보·선택·답변의 관계와 버전·권한의 역할 | 검색 과정에 답하는 문서와 후보 출력 확보 |\n| 작은 AI 앱을 만든다 | 모델의 호출 요청, 프로그램 실행, 결과 반환, 최종 답·화면이 끝까지 연결 | 실제 연결을 제공하거나 원리·제작 계획으로 범위 조정 |\n| 비용 표로 모델을 고른다 | 토큰 단가·구독 차감·시도당 비용·성공당 비용의 정의와 계산 | 출처 없는 배율을 예산 사실처럼 쓰지 않고 계산 가능한 범위 설명 |\n| 시장 변화를 판단한다 | 표본·기간·분모·관측 단위·다른 가능한 설명·선택의 조건 | 단일 채용 공고·자가 보고·과거 수입으로 전체 시장을 단정하지 않기 |\n| 지원 기회를 선별한다 | 원문·첨부의 신청 역할, 선행 자격, 일정·재정 조건을 사례에 대입 | 첨부 미열람을 남기고 신청 가능성을 확정하지 않기 |\n\n## 번역과 요약은 의미가 유지되는지 대조한다\n\n행위자, 조건, 수치·단위, 기간, 인과관계의 강도가 보존되는지 확인한다.\n원문이 기능 존재를 말했는데 ‘업무 성과가 향상됐다’로 바꾸거나, 제한된 표본을\n전체 시장으로 확대하지 않는다. 원문 자체가 작동 과정이나 실제 효과에 답하지 않는다면\n문체를 교정할 것이 아니라 자료를 추가한다. 영문 초안과 번역을 대조하지 않았다면\n번역을 직접 원인으로 확정하지 않는다.\n\n## 제목과 요약을 독립적으로 읽는다\n\n제목·요약만 받은 독자가 대상, 하는 일, 쓰임, 중요한 조건을 자기 말로 설명할 수 있는지 본다.\n낯선 이름은 일상적인 기능 설명과 연결한다. 기술 이름을 지우고 모호한 동사만 남기지 않는다.\n‘이 보고서는 설명한다’, ‘검증해야 한다’ 같은 안내 문장을 사실·원리·비교의 대용품으로 쓰지 않는다.\n\n## 본문은 같은 사례의 과정을 추적한다\n\n첫 등장 개념을 먼저 설명하고, 사례의 입력·중간 상태·출력과 각 단계의 이유를 함께 읽는다.\n핵심 설명은 주된 읽기 경로에 둔다. 코드는 앞에서 설명한 값과 과정을 그대로 구현해야 한다.\n제품 호출을 실행하지 않았다면 개념 예시·로컬 모의 실행·실제 서비스 실행을 구분한다.\n배운 내용을 다른 조건에 적용하는 문제에서는 결론뿐 아니라 이유와 본문 근거를 확인한다.\n\n## 첫 화면과 비교 기준의 회귀 사례\n\n2026-10-09 사용자는 독립 검토를 통과한 음성 보고서의 제목과 소개를 다시 거부했다.\n이 사례의 문제는 원문 기능 자체가 없다는 것이 아니라 독자의 질문 대신 집필자의\n검토 동작을 소개하고, 서로 다른 비교 기준을 섞었다는 점이다.\n\n| 거부된 표현·구성 | 실제 실패 | 수정할 정보 |\n| --- | --- | --- |\n| 말로 AI 업무를 실행하는 세 가지 구조와 오류 찾기 | 어떤 앱의 무엇을 추가·선택하는지 모호함 | 기존 AI 앱의 음성 입력·답변·대화 기능이라는 대상과 목적 |\n| 같은 발화를 음성 인식·업무 조회·답변 재생으로 추적한다 | 독자의 필요보다 집필자의 설명 방법부터 나옴 | 키보드 대신 말로 요청하고, 답도 들을지 결정하는 상황 |\n| 이미 만든 텍스트 앱…선택 기준. | 서술어 없는 소개, 무엇을 기준으로 무엇을 고르는지 비어 있음 | 중간 문장을 확인할 필요와 대화 중 조건 변경 같은 실제 조건 |\n| 세 구조 제목 아래 Gemini Live/GPT-Live/Realtime/단계형 네 행 | 공급사 제품과 역할 분담을 같은 종류처럼 비교 | 동일한 역할 분담을 행으로 비교하고 제품 사례를 별도 연결 |\n| 속도·난이도·비용을 설명한다고 약속 | 기능 문서만으로 실측 우열을 알 수 없음 | 맡아야 할 구현 작업과 측정 항목, 실제 확보한 수치의 범위 |\n\n초기 검토는 title/deck/description/summary/highlights만 별도 입력으로 제공한다.\n검토자는 그 문장으로 알 수 있는 대상·문제·대안·쓰임과 추측해야 하는 부분을 구분한다.\n그 뒤 본문에서 제목의 약속, 비교 기준, 설명 순서와 사실 근거를 검토한다.\n이 순서를 수행해도 실제 초보 사람의 이해가 확인된 것으로 부르지 않는다.\n요약에 설명할 내용의 목록만 있고 실제로 알게 되는 정보가 없다면 추가 보강한다.\n\n음성 입력만 추가하는 범위와 STT→AI→TTS 구조는 서로 배타적인 세 구조로 분류할 수 없다.\n전자는 필요한 기능 범위이고 후자는 음성으로 답하는 구현 경로다. 원문을 확인해 비교 기준을\n정한 뒤 원고를 쓴다. '3가지'라는 제목을 유지하려고 실제 내용을 왜곡하지 않는다.\n\n## 독립 에이전트 검토의 실제 기록\n\n위임은 사용자 또는 적용 가능한 지침의 승인 범위에서만 한다. 승인됐다면 검토자에게\n수정된 원고와 필요한 원문을 제공하고, 기대 답이나 ‘통과시켜야 한다’는 압력을 주지 않는다.\n새로운 평가가 목적이면 기존 판정을 답안처럼 제공하지 않는다. 이전 결함의 재검증이면\n그 결함과 수정 범위를 제공할 수 있으며 이를 새 독자의 무정보 시험으로 부르지 않는다.\n\n검토 기록에는 읽은 보고서 ID/판 또는 정확한 파일 hash, 제목·요약 이해, 본문 막힘 위치,\n해결할 누락·과장, 수정 후 재판정을 남긴다. 출력은 Pass / Revise / Evidence gap처럼\n명확히 하되 판단 이유가 본문에 있어야 한다. 분량·구조·인용 수는 합격 근거가 아니다.\n에이전트 검토가 끝나도 실제 사람의 독해·실습 시험을 수행했다고 말하지 않는다.\n\n## 참고한 방법과 적용의 한계\n\n질문하며 자료를 찾는 사전 조사(STORM), 유창성·정확성·인용 지원의 분리(ALCE),\n과제별 내용 기준(WritingBench/DeepResearch Bench), 깊은 설명과 풀이 사례(IES)를 참고했다.\n이 절차 전체나 하나의 집필 프롬프트가 한국어 교재 품질을 보장한다는 실험 결과는 아니다.\n실제 원고의 질문·사례·근거와 검토자의 막힘으로 효과를 확인하고 필요한 지침만 수정한다.\n\n원문: https://aclanthology.org/2024.naacl-long.347/,\nhttps://aclanthology.org/2023.emnlp-main.398/,\nhttps://arxiv.org/html/2503.05244v1,\nhttps://arxiv.org/html/2506.11763v1,\nhttps://ies.ed.gov/ncee/wwc/Docs/PracticeGuide/20072004.pdf.\n"
+                }
+              ]
+            },
+            {
+              "id": "research-report",
+              "kind": "template",
+              "version": "1.0.1",
+              "supports": [
+                "technology",
+                "comparison",
+                "market",
+                "opportunity",
+                "model_introduction",
+                "custom"
+              ],
+              "stages": [
+                "write"
+              ],
+              "sources": [
+                {
+                  "path": "docs/authoring/presentation.md",
+                  "section": "수치 비교 보고서",
+                  "sha256": "f4161db0f905d25e11128feed10d96a153f791bb90f2ee60fae5b5eba1542631",
+                  "text": "## 수치 비교 보고서\n\n기존 수치 보고서 표시를 사용한다. 같은 비교 기준의 표와 실제 수치의 차트를 선택한다. 수치가 없는 개념 설명에 임의 데이터를 만들지 않는다. 공통 화면 계약은 [보고서 화면](../BRIEFING_TEMPLATE.md)에 있다.\n\n"
+                },
+                {
+                  "path": "docs/BRIEFING_TEMPLATE.md",
+                  "section": "Unified typography, 2026-10-09",
+                  "sha256": "59e9506cc40a434ba77fb1f3851037e2b9ddee910e1d45c2c407ed36f43fc800",
+                  "text": "## Unified typography, 2026-10-09\n\nUse the locally packaged full Pretendard Variable v1.3.9 face for Korean, Latin,\nnumbers and punctuation in the shared Editorial shell, main, authored reports,\nnavigation, native model views and model reading companions. Main headings use700,\nsubheadings/emphasis600 and body400. Do not restore text-specific heading subsets:\nnew titles contained Korean glyphs missing from the old subset, and the reported\nUpwork heading actually used Roboto Slab, Noto Serif KR and Malgun Gothic together.\nCSS `font-synthesis:none` prevents simulated weight/style; the variable face\nprovides the actual weights. Code retains its monospace family. Imported originals\ninside isolated model iframes keep their original presentation.\n\nThe unmodified full font and original SIL OFL notice are in\n`housing_watch/assets/editorial/`; see its README for exact provenance/hash. The\nexisting build embeds one font in the shared content-versioned stylesheet, with\nno external font request. Uncompressed CSS grows from347,313 to2,851,316 bytes;\nthis is the cost of complete future Korean coverage and remains shared/cached\nacross pages. Standalone exports remain self-contained.\n\nLocal verification: actual browser font selection on the reported title now\ncontains only Pretendard Variable. All11,172 modern Korean syllables plus sample\nLatin/digits/punctuation select the same face; actual weights700/600 are used.\nAt320/390/1280px,96 font/representative-page checks and253 all34-report/model-\ncompanion/search/disclosure/history checks pass.109 tests,195HTML/9676 internal\nreferences, brief/desk/review and inspected PNG pass; report/history/model data\nand publication order exactly match the pre-change local snapshot. Receipts\nand before/after captures are retained under the existing registered research\nreview roots. App browser connection failed, so visual tests used standalone\nPlaywright/Edge. Optional host/favicon404 remains separately recorded.\n\nSource `4f956357646c12ca8972edb61826f2a6ad2072b2` deployed successfully through\n[Pages37891501551](https://github.com/Hansihoo/signal-desk/actions/runs/37891501551).\nPublic checks at2026-10-09 06:04:56.544319 UTC confirm exact34 current reports,\n122 edition documents,14 original model rows and publication order, matching\nlocal CSS (normalized SHA256 `5f48bd5bff11375877f7b14fea252e3becd3f87dd8f46795d5e2f8b6bc9ba7fc`),\none active font face and the original published license. Actual390px public\nfont/coverage/representative-route/search/disclosure/menu checks all36 pass at\n06:05:03.752 UTC; inspected public title/main screenshots match the intended\nuniform weights. Optional host favicon404 is separate from content errors.\nApp opening returned queued; this is not proof that the user viewed the page.\nThe retained public receipts are `font-weight-public-data-checks.json` and\n`font-weight-public-checks.json`; no reader preference/learning approval claimed.\n\n\n"
+                }
+              ],
+              "output_kind": "report",
+              "artifacts": [
+                {
+                  "path": "housing_watch/editorial.py",
+                  "sha256": "48962242f1a249780861a02b15a0e02f23fddcf9398a69c4ce7f8f3aad33baae"
+                },
+                {
+                  "path": "housing_watch/editorial_shell.html",
+                  "sha256": "51c686c3933942a76a282c20106d211332c08d5ba59dab0a5de9adfe953842fb"
+                },
+                {
+                  "path": "housing_watch/editorial.css",
+                  "sha256": "2ffc886b1f941a55822ff0a77442c37cbda110af5b7832a35e56d01101a31b66"
+                },
+                {
+                  "path": "housing_watch/editorial.js",
+                  "sha256": "d3435dc19709427b81a9b77514c5945cc34402e2dcf60232bb044280e43550b8"
+                },
+                {
+                  "path": "housing_watch/assets/editorial/fonts.css",
+                  "sha256": "44b9b2028cf703cc40c0446093e23aa7d3427015c9f61e6ee164f5c45123df30"
+                },
+                {
+                  "path": "housing_watch/assets/editorial/main.css",
+                  "sha256": "2574c51914d2bdf3d8da8afb4ec41fcbc73adcc12ebac376e26242efa04e33df"
+                },
+                {
+                  "path": "housing_watch/editorial_report.html",
+                  "sha256": "ac134b199a8f3e8255501679b6869c170b1088789c0d0dadcb869fa92aa244d7"
+                },
+                {
+                  "path": "housing_watch/briefing_preview.py",
+                  "sha256": "9432ec00398f5ce9ba1222366502d237e88b87723d54e975ea7780e58f82a463"
+                }
+              ]
+            }
+          ],
+          "requirements": [],
+          "preferences": {
+            "examples": "가상 업무와 활용 예시, SDK/API 실습 코드와 문제를 넣지 않는다.",
+            "opening": "제목 아래 목적, 다음 요약을 둔다.",
+            "tone": "자연스러운 완결된 한국어 문장, 내용을 설명하는 소제목."
+          },
+          "overrides": [],
+          "scope": "document",
+          "status": "planned",
+          "recipe_hash": "a269c094539af76d81bdccf98d37bac09c8398fc4ef9a95bbff25830afc882d2"
+        },
+        "content_hash": "d85a8065e364bc6e6f4aea320cceccc204aec621bb3df3c0a7772702dc1ef52f"
+      },
+      "first_screen_review": {
+        "input_hash": "abdcd431901652ae352cf63381f98d18578fd7be08c1a2f9df0ef73ffe95d2cb",
+        "reviewer": "author_self_review; isolated title/description/deck in first-screens.json",
+        "reviewed_at": "2026-10-22",
+        "checks": {
+          "readability": {
+            "passed": true,
+            "reason": "본문을 제외한 첫 화면에서 모델 역할과 비교 목적, 정확도/속도 및 제공 조건의 한계를 확인했습니다. Granite의 새 음성 모델과 기존 모델 갱신을 구분하고, Qwen 및 다른 공개 음성 모델과 정확도, 속도, 지원 언어를 비교하도록 정리했습니다.",
+            "locations": [
+              "/title",
+              "/description",
+              "/deck"
+            ]
+          },
+          "question_answered": {
+            "passed": true,
+            "reason": "본문을 제외한 첫 화면에서 모델 역할과 비교 목적, 정확도/속도 및 제공 조건의 한계를 확인했습니다. Granite의 새 음성 모델과 기존 모델 갱신을 구분하고, Qwen 및 다른 공개 음성 모델과 정확도, 속도, 지원 언어를 비교하도록 정리했습니다.",
+            "locations": [
+              "/title",
+              "/description",
+              "/deck"
+            ]
+          },
+          "reader_outcome": {
+            "passed": true,
+            "reason": "본문을 제외한 첫 화면에서 모델 역할과 비교 목적, 정확도/속도 및 제공 조건의 한계를 확인했습니다. Granite의 새 음성 모델과 기존 모델 갱신을 구분하고, Qwen 및 다른 공개 음성 모델과 정확도, 속도, 지원 언어를 비교하도록 정리했습니다.",
+            "locations": [
+              "/title",
+              "/description",
+              "/deck"
+            ]
+          }
+        },
+        "issues": []
+      },
+      "body_review": {
+        "input_hash": "7bb2a0847a66ff9eee729455260b470a100c49108f155a18d1f293035e251ca8",
+        "reviewer": "author_self_review; edited body with selected originals/tables and PNGs",
+        "reviewed_at": "2026-10-22",
+        "checks": {
+          "readability": {
+            "passed": true,
+            "reason": "압축 초안을 실제 문장으로 편집했습니다. 비교표를 본문에서 해석하고 가상 업무와 실습 코드를 넣지 않았습니다.",
+            "locations": [
+              "/draft/report/tables",
+              "/draft/report/explanation",
+              "/draft/report/caveats"
+            ]
+          },
+          "question_answered": {
+            "passed": true,
+            "reason": "20일 새2B,21일 다국어갱신,19일 Plus 갱신을 분리했고 기존 모델을 오늘 출시로 세지 않았습니다.",
+            "locations": [
+              "/draft/report/tables",
+              "/draft/report/explanation",
+              "/draft/report/caveats"
+            ]
+          },
+          "reader_outcome": {
+            "passed": true,
+            "reason": "Granite의 새 음성 모델과 기존 모델 갱신을 구분하고, Qwen 및 다른 공개 음성 모델과 정확도, 속도, 지원 언어를 비교하도록 정리했습니다.",
+            "locations": [
+              "/draft/report/tables",
+              "/draft/report/explanation",
+              "/draft/report/caveats"
+            ]
+          },
+          "analysis": {
+            "passed": true,
+            "reason": "그림의 공개9/비공개2 모집단과 5.06/5.68,잡음14.80/이전16.35/Qwen13.41,다국어비공식19870/기존영어21174를 대조했습니다. 일본어CER와WER를 구분하고 CV-EN/CV-FR PER 및 VoxPopuli Cap-F1의 퇴보를 남겼습니다. AAS ms,키워드와화자 단위를 구분했습니다.",
+            "locations": [
+              "/draft/report/tables",
+              "/draft/report/explanation",
+              "/draft/report/caveats"
+            ]
+          },
+          "evidence": {
+            "passed": true,
+            "reason": "IBM 공식 카드와 비교 그림을 읽은 문헌 비교입니다. WER, CER와 RTFx, 평가 대상 9개와 11개, 공식 측정과 비공식 측정, 신규 모델과 갱신을 구분합니다. 실제 실행, 독립 평가, 청구와 사람 독해 시험은 하지 않았습니다.",
+            "locations": [
+              "/draft/report/tables",
+              "/draft/report/explanation",
+              "/draft/report/caveats"
+            ]
+          },
+          "factuality": {
+            "passed": true,
+            "reason": "원문 발표일과 카드 출시/갱신일,실제 확인일을 나눴습니다. 미확인 API 단가를0으로 채우지 않고 단위/집합/반대결과를 유지했습니다. 그림의 공개9/비공개2 모집단과 5.06/5.68,잡음14.80/이전16.35/Qwen13.41,다국어비공식19870/기존영어21174를 대조했습니다. 일본어CER와WER를 구분하고 CV-EN/CV-FR PER 및 VoxPopuli Cap-F1의 퇴보를 남겼습니다. AAS ms,키워드와화자 단위를 구분했습니다.",
+            "locations": [
+              "/draft/report/tables",
+              "/draft/report/explanation",
+              "/draft/report/caveats"
+            ]
+          }
+        },
+        "issues": []
+      },
+      "review_limits": {
+        "scope": "같은 작성자의 고립 첫 화면과 본문/원문 자체 검토. 독립 에이전트나 사람 독해 시험과 실제 모델 실행은 없음.",
+        "not_performed": [
+          "independent agent review",
+          "human reader test",
+          "model execution",
+          "billing",
+          "private company document evaluation"
+        ]
+      }
+    },
+    {
+      "version": "question-research-1",
+      "status": "ready",
+      "plan": {
+        "version": "question-research-1",
+        "request": {
+          "id": "nemotron-3-5-retriever-model-guide",
+          "topic_id": "opportunities",
+          "topic_path": [
+            "개발 동향",
+            "AI 모델·API"
+          ],
+          "reader": "새 모델의 상대 성능과 비용, 제공 조건을 비교하는 개발자와 관리자",
+          "reader_question": "NVIDIA의 새 검색 모델과 문서 처리 모델을 이전 세대 및 Qwen, LightOnOCR와 비교해 정확도, 장비 조건과 제공 범위를 판단하도록 정리했습니다.",
+          "outcome": "신규와 기존 모델 갱신을 구분하고, 같은 평가 조건으로 장단점 및 제공 제한을 설명한다.",
+          "research_type": "model_introduction",
+          "plan_questions": false,
+          "sources": [
+            {
+              "id": "launch",
+              "title": "NVIDIA의 Retriever 확장 발표",
+              "url": "https://huggingface.co/blog/nvidia/nemotron-retriever-world-class-agentic-retrieval",
+              "kind": "official_document"
+            },
+            {
+              "id": "embed",
+              "title": "8B Embed 공식 모델 카드",
+              "url": "https://huggingface.co/nvidia/Nemotron-3.5-Embed-8B-BF16",
+              "kind": "official_document"
+            },
+            {
+              "id": "small",
+              "title": "1B Embed 공식 모델 카드",
+              "url": "https://huggingface.co/nvidia/Nemotron-3.5-Embed-1B-BF16",
+              "kind": "official_document"
+            },
+            {
+              "id": "fp4",
+              "title": "1B NVFP4 공식 모델 카드",
+              "url": "https://huggingface.co/nvidia/Nemotron-3.5-Embed-1B-NVFP4",
+              "kind": "official_document"
+            },
+            {
+              "id": "rerank",
+              "title": "8B Rerank 공식 모델 카드",
+              "url": "https://huggingface.co/nvidia/Nemotron-3.5-Rerank-8B-BF16",
+              "kind": "official_document"
+            },
+            {
+              "id": "parse",
+              "title": "Parse 공식 모델 카드",
+              "url": "https://huggingface.co/nvidia/Nemotron-3.5-Parse",
+              "kind": "official_document"
+            },
+            {
+              "id": "previous",
+              "title": "이전 Nemotron 3 Embed 8B 카드",
+              "url": "https://huggingface.co/nvidia/Nemotron-3-Embed-8B-BF16",
+              "kind": "official_document"
+            }
+          ],
+          "authoring": {
+            "template": "research-report",
+            "preferences": {
+              "examples": "가상 업무와 활용 예시, SDK/API 실습 코드와 문제를 넣지 않는다.",
+              "opening": "제목 아래 목적, 다음 요약을 둔다.",
+              "tone": "자연스러운 완결된 한국어 문장, 내용을 설명하는 소제목."
+            }
+          }
+        },
+        "questions": [
+          {
+            "id": "core",
+            "question": "NVIDIA의 새 검색 모델과 문서 처리 모델을 이전 세대 및 Qwen, LightOnOCR와 비교해 정확도, 장비 조건과 제공 범위를 판단하도록 정리했습니다.",
+            "requires": [
+              "identity",
+              "change",
+              "specification",
+              "availability",
+              "comparison",
+              "advantages",
+              "limitations",
+              "price"
+            ]
+          }
+        ],
+        "method": "공식 발표·모델 카드·사양·가격과 평가 원문을 대조한다. 다른 모델과의 비교표에서 평가판·추론·측정 주체·Harness·단위를 보존하고 장점과 단점을 근거로 설명한다. 활용 예시·가상 업무·실습 코드·응용 문제를 넣지 않는다."
+      },
+      "sources": [
+        {
+          "id": "launch",
+          "title": "NVIDIA의 Retriever 확장 발표",
+          "url": "https://huggingface.co/blog/nvidia/nemotron-retriever-world-class-agentic-retrieval",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "009c2a660af14f4238ce0259b2bbfd9bb489342f0985ce0e7346931f2f6dfd15",
+          "text": "Today, we are expanding the Nemotron Retriever collection with",
+          "text_hash": "b33144f30b42acaba3bf810f3bad5b430eebec34213fea60ab75541a9d382c52",
+          "published_on": "2026-10-21",
+          "first_collected_at": null,
+          "last_successful_collection": "2026-10-21T19:59:37.026662+00:00",
+          "reviewed_at": "2026-10-22",
+          "raw_path": "data/raw/ai_news/official/2026-10-22/nemotron-blog.009c2a660af14f42.bin",
+          "acquisition_url": "https://huggingface.co/blog/nvidia/nemotron-retriever-world-class-agentic-retrieval",
+          "acquisition_method": "direct HTTP original preserved; selected related sections and full cited tables read",
+          "review_scope": "새 검색 모델과 Parse의 역할 및 발표 평가를 설명합니다. 선택 관련 절과 표/그림의 실제 확인이며 원문 전체 전수 검토나 독립 실행이 아닙니다."
+        },
+        {
+          "id": "embed",
+          "title": "8B Embed 공식 모델 카드",
+          "url": "https://huggingface.co/nvidia/Nemotron-3.5-Embed-8B-BF16",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "d37a4c510cf95f56a1179b898cbbd7e44e8404f44e4eca692a74bef5b940fbcd",
+          "text": "4096-dimensional embedding vector for each input. The model also",
+          "text_hash": "7cd2b6840b70df3c4105b24f0876d2cf075bd898a377afdbc600a0dfa32b68aa",
+          "published_on": null,
+          "first_collected_at": null,
+          "last_successful_collection": "2026-10-21T20:00:25.635798+00:00",
+          "reviewed_at": "2026-10-22",
+          "raw_path": "data/raw/ai_news/official/2026-10-22/embed8-card.d37a4c510cf95f56.bin",
+          "acquisition_url": "https://huggingface.co/nvidia/Nemotron-3.5-Embed-8B-BF16/raw/main/README.md",
+          "acquisition_method": "direct HTTP original preserved; selected related sections and full cited tables read",
+          "review_scope": "8B 검색 모델의 사양과 V3 평가를 제공합니다. 선택 관련 절과 표/그림의 실제 확인이며 원문 전체 전수 검토나 독립 실행이 아닙니다."
+        },
+        {
+          "id": "small",
+          "title": "1B Embed 공식 모델 카드",
+          "url": "https://huggingface.co/nvidia/Nemotron-3.5-Embed-1B-BF16",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "55be50bfbbf0719520c43dd82fd8a25ccdf8c8355d7420e47508e66d1988f7e1",
+          "text": "2048-dimensional embedding vector for each input. The model also",
+          "text_hash": "7e460363a2039246ab3f73b61a169e551d0b0b5a1fe125d1f2333e8ab6905ce9",
+          "published_on": null,
+          "first_collected_at": null,
+          "last_successful_collection": "2026-10-21T20:00:25.625295+00:00",
+          "reviewed_at": "2026-10-22",
+          "raw_path": "data/raw/ai_news/official/2026-10-22/embed1-card.55be50bfbbf07195.bin",
+          "acquisition_url": "https://huggingface.co/nvidia/Nemotron-3.5-Embed-1B-BF16/raw/main/README.md",
+          "acquisition_method": "direct HTTP original preserved; selected related sections and full cited tables read",
+          "review_scope": "1B 모델의 벡터 차원과 입력 조건을 설명합니다. 선택 관련 절과 표/그림의 실제 확인이며 원문 전체 전수 검토나 독립 실행이 아닙니다."
+        },
+        {
+          "id": "fp4",
+          "title": "1B NVFP4 공식 모델 카드",
+          "url": "https://huggingface.co/nvidia/Nemotron-3.5-Embed-1B-NVFP4",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "0f5e1873fe1fdbfdba32a9f4cfa163c41d688b87f044ce89862317c11fba0bc2",
+          "text": "NVIDIA Blackwell (GB200 186GB) ## Ethical Considerations: NVIDIA believes",
+          "text_hash": "21f114807069b16f0060cc1202e4d2efadce1ea54a0b3569086317bd06ba0b57",
+          "published_on": null,
+          "first_collected_at": null,
+          "last_successful_collection": "2026-10-21T20:00:25.834471+00:00",
+          "reviewed_at": "2026-10-22",
+          "raw_path": "data/raw/ai_news/official/2026-10-22/embed1fp4-card.0f5e1873fe1fdbfd.bin",
+          "acquisition_url": "https://huggingface.co/nvidia/Nemotron-3.5-Embed-1B-NVFP4/raw/main/README.md",
+          "acquisition_method": "direct HTTP original preserved; selected related sections and full cited tables read",
+          "review_scope": "양자화 결과와 GB200 장비 조건을 제공합니다. 선택 관련 절과 표/그림의 실제 확인이며 원문 전체 전수 검토나 독립 실행이 아닙니다."
+        },
+        {
+          "id": "rerank",
+          "title": "8B Rerank 공식 모델 카드",
+          "url": "https://huggingface.co/nvidia/Nemotron-3.5-Rerank-8B-BF16",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "77c6e603226b58c5271bbed03c7f437962300fe7d0097110d82a34a3d3f30346",
+          "text": "Both models reranked the top 50 candidates retrieved by",
+          "text_hash": "ca57f5a16ce5a9b90bd2086ea1dac265bf8641e1f6e33eeea43d037ab3d24f3f",
+          "published_on": null,
+          "first_collected_at": null,
+          "last_successful_collection": "2026-10-21T20:00:25.837379+00:00",
+          "reviewed_at": "2026-10-22",
+          "raw_path": "data/raw/ai_news/official/2026-10-22/rerank8-card.77c6e603226b58c5.bin",
+          "acquisition_url": "https://huggingface.co/nvidia/Nemotron-3.5-Rerank-8B-BF16/raw/main/README.md",
+          "acquisition_method": "direct HTTP original preserved; selected related sections and full cited tables read",
+          "review_scope": "동일한 상위 50후보를 사용한 재정렬 비교입니다. 선택 관련 절과 표/그림의 실제 확인이며 원문 전체 전수 검토나 독립 실행이 아닙니다."
+        },
+        {
+          "id": "parse",
+          "title": "Parse 공식 모델 카드",
+          "url": "https://huggingface.co/nvidia/Nemotron-3.5-Parse",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "10929e823b91e440c973843f61335950fc2eee2c45e807e2da7850db64d4392b",
+          "text": "Published overall scores with locally measured throughput: | Model",
+          "text_hash": "ddc734b00c0ae42313f83037324927a5d13ea8179003d271734eea5a7113e638",
+          "published_on": null,
+          "first_collected_at": null,
+          "last_successful_collection": "2026-10-21T20:00:26.064763+00:00",
+          "reviewed_at": "2026-10-22",
+          "raw_path": "data/raw/ai_news/official/2026-10-22/parse-card.10929e823b91e440.bin",
+          "acquisition_url": "https://huggingface.co/nvidia/Nemotron-3.5-Parse/raw/main/README.md",
+          "acquisition_method": "direct HTTP original preserved; selected related sections and full cited tables read",
+          "review_scope": "출시일, 파라미터 수와 문서 처리 평가를 제공합니다. 선택 관련 절과 표/그림의 실제 확인이며 원문 전체 전수 검토나 독립 실행이 아닙니다."
+        },
+        {
+          "id": "previous",
+          "title": "이전 Nemotron 3 Embed 8B 카드",
+          "url": "https://huggingface.co/nvidia/Nemotron-3-Embed-8B-BF16",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "242e2ec0874c87ecd31558a8ef7b29e5a0e28a830f117132886290add30c1300",
+          "text": "Nemotron-3-Embed-8B-BF16\"> <img alt=\"Nemotron 3 Embed 8B BF16\" src=\"https://img.shields.io/badge/8B-BF16-76B900?style=for-the-badge&logo=nvidia&logoColor=white\"> </a>",
+          "text_hash": "deb543c0af562ec0b558cafcff783d3a06071f32ae14889a6010e20c0021c485",
+          "published_on": null,
+          "first_collected_at": null,
+          "last_successful_collection": "2026-10-21T20:00:26.340127+00:00",
+          "reviewed_at": "2026-10-22",
+          "raw_path": "data/raw/ai_news/official/2026-10-22/oldembed8-card.242e2ec0874c87ec.bin",
+          "acquisition_url": "https://huggingface.co/nvidia/Nemotron-3-Embed-8B-BF16/raw/main/README.md",
+          "acquisition_method": "direct HTTP original preserved; selected related sections and full cited tables read",
+          "review_scope": "이전 텍스트 임베딩 모델의 역할을 확인합니다. 선택 관련 절과 표/그림의 실제 확인이며 원문 전체 전수 검토나 독립 실행이 아닙니다."
+        }
+      ],
+      "analysis": {
+        "evidence": [
+          {
+            "id": "e-launch",
+            "source_id": "launch",
+            "quote": "Today, we are expanding the Nemotron Retriever collection with",
+            "source_hash": "009c2a660af14f4238ce0259b2bbfd9bb489342f0985ce0e7346931f2f6dfd15",
+            "meaning": "새 검색 모델과 Parse의 역할 및 발표 평가를 설명합니다.",
+            "limits": "NVIDIA 공식 모델 카드와 21일 발표를 대조했습니다. ViDoRe V3와 V3.1, 입력 형태와 전처리, 검색과 재정렬, 공개 점수와 공급사 처리량을 분리합니다. 실제 구축, 한국어 사내 문서 평가, 독립 재현과 청구는 하지 않았습니다.",
+            "price_type": "not a tariff source",
+            "supports": [
+              "identity",
+              "change",
+              "comparison",
+              "specification",
+              "availability",
+              "price",
+              "advantages",
+              "limitations"
+            ]
+          },
+          {
+            "id": "e-embed",
+            "source_id": "embed",
+            "quote": "4096-dimensional embedding vector for each input. The model also",
+            "source_hash": "d37a4c510cf95f56a1179b898cbbd7e44e8404f44e4eca692a74bef5b940fbcd",
+            "meaning": "8B 검색 모델의 사양과 V3 평가를 제공합니다.",
+            "limits": "NVIDIA 공식 모델 카드와 21일 발표를 대조했습니다. ViDoRe V3와 V3.1, 입력 형태와 전처리, 검색과 재정렬, 공개 점수와 공급사 처리량을 분리합니다. 실제 구축, 한국어 사내 문서 평가, 독립 재현과 청구는 하지 않았습니다.",
+            "price_type": "download/license and infrastructure conditions; standard hosted API tariff unverified",
+            "supports": [
+              "identity",
+              "change",
+              "comparison",
+              "specification",
+              "availability",
+              "price",
+              "advantages",
+              "limitations"
+            ]
+          },
+          {
+            "id": "e-small",
+            "source_id": "small",
+            "quote": "2048-dimensional embedding vector for each input. The model also",
+            "source_hash": "55be50bfbbf0719520c43dd82fd8a25ccdf8c8355d7420e47508e66d1988f7e1",
+            "meaning": "1B 모델의 벡터 차원과 입력 조건을 설명합니다.",
+            "limits": "NVIDIA 공식 모델 카드와 21일 발표를 대조했습니다. ViDoRe V3와 V3.1, 입력 형태와 전처리, 검색과 재정렬, 공개 점수와 공급사 처리량을 분리합니다. 실제 구축, 한국어 사내 문서 평가, 독립 재현과 청구는 하지 않았습니다.",
+            "price_type": "download/license and infrastructure conditions; standard hosted API tariff unverified",
+            "supports": [
+              "identity",
+              "change",
+              "comparison",
+              "specification",
+              "availability",
+              "price",
+              "advantages",
+              "limitations"
+            ]
+          },
+          {
+            "id": "e-fp4",
+            "source_id": "fp4",
+            "quote": "NVIDIA Blackwell (GB200 186GB) ## Ethical Considerations: NVIDIA believes",
+            "source_hash": "0f5e1873fe1fdbfdba32a9f4cfa163c41d688b87f044ce89862317c11fba0bc2",
+            "meaning": "양자화 결과와 GB200 장비 조건을 제공합니다.",
+            "limits": "NVIDIA 공식 모델 카드와 21일 발표를 대조했습니다. ViDoRe V3와 V3.1, 입력 형태와 전처리, 검색과 재정렬, 공개 점수와 공급사 처리량을 분리합니다. 실제 구축, 한국어 사내 문서 평가, 독립 재현과 청구는 하지 않았습니다.",
+            "price_type": "download/license and infrastructure conditions; standard hosted API tariff unverified",
+            "supports": [
+              "identity",
+              "change",
+              "comparison",
+              "specification",
+              "availability",
+              "price",
+              "advantages",
+              "limitations"
+            ]
+          },
+          {
+            "id": "e-rerank",
+            "source_id": "rerank",
+            "quote": "Both models reranked the top 50 candidates retrieved by",
+            "source_hash": "77c6e603226b58c5271bbed03c7f437962300fe7d0097110d82a34a3d3f30346",
+            "meaning": "동일한 상위 50후보를 사용한 재정렬 비교입니다.",
+            "limits": "NVIDIA 공식 모델 카드와 21일 발표를 대조했습니다. ViDoRe V3와 V3.1, 입력 형태와 전처리, 검색과 재정렬, 공개 점수와 공급사 처리량을 분리합니다. 실제 구축, 한국어 사내 문서 평가, 독립 재현과 청구는 하지 않았습니다.",
+            "price_type": "download/license and infrastructure conditions; standard hosted API tariff unverified",
+            "supports": [
+              "identity",
+              "change",
+              "comparison",
+              "specification",
+              "availability",
+              "price",
+              "advantages",
+              "limitations"
+            ]
+          },
+          {
+            "id": "e-parse",
+            "source_id": "parse",
+            "quote": "Published overall scores with locally measured throughput: | Model",
+            "source_hash": "10929e823b91e440c973843f61335950fc2eee2c45e807e2da7850db64d4392b",
+            "meaning": "출시일, 파라미터 수와 문서 처리 평가를 제공합니다.",
+            "limits": "NVIDIA 공식 모델 카드와 21일 발표를 대조했습니다. ViDoRe V3와 V3.1, 입력 형태와 전처리, 검색과 재정렬, 공개 점수와 공급사 처리량을 분리합니다. 실제 구축, 한국어 사내 문서 평가, 독립 재현과 청구는 하지 않았습니다.",
+            "price_type": "download/license and infrastructure conditions; standard hosted API tariff unverified",
+            "supports": [
+              "identity",
+              "change",
+              "comparison",
+              "specification",
+              "availability",
+              "price",
+              "advantages",
+              "limitations"
+            ]
+          },
+          {
+            "id": "e-previous",
+            "source_id": "previous",
+            "quote": "Nemotron-3-Embed-8B-BF16\"> <img alt=\"Nemotron 3 Embed 8B BF16\" src=\"https://img.shields.io/badge/8B-BF16-76B900?style=for-the-badge&logo=nvidia&logoColor=white\"> </a>",
+            "source_hash": "242e2ec0874c87ecd31558a8ef7b29e5a0e28a830f117132886290add30c1300",
+            "meaning": "이전 텍스트 임베딩 모델의 역할을 확인합니다.",
+            "limits": "NVIDIA 공식 모델 카드와 21일 발표를 대조했습니다. ViDoRe V3와 V3.1, 입력 형태와 전처리, 검색과 재정렬, 공개 점수와 공급사 처리량을 분리합니다. 실제 구축, 한국어 사내 문서 평가, 독립 재현과 청구는 하지 않았습니다.",
+            "price_type": "not a tariff source",
+            "supports": [
+              "identity",
+              "change",
+              "comparison",
+              "specification",
+              "availability",
+              "price",
+              "advantages",
+              "limitations"
+            ]
+          }
+        ],
+        "answers": [
+          {
+            "question_id": "core",
+            "answer": "Nemotron 3.5는 문서를 벡터로 찾는 Embed, 후보를 다시 정렬하는 Rerank, 페이지를 구조화하는 Parse로 나뉩니다. 공개 평가에서 검색 정확도와 문서 처리량이 높아졌지만 세 모델의 역할과 점수는 서로 다릅니다. NVFP4의 장비 제약, Parse의 정확도와 속도 교환, 확정하지 못한 API 단가를 함께 비교합니다.",
+            "reasoning": "카드V3와 발표V3.1,입력모드와 이미지 전처리 차이,공통top50을 유지했습니다. Parse의공개점수/공급사H100타이밍과준비/워밍업/렌더제외,pass별정확도/속도와하위결과를 설명했습니다. FP4 GB200/정확도손실/단위혼재,32K 이미지토큰합계,고정언어모듈의기대/실검증 차이를 보존했습니다.",
+            "limits": "NVIDIA 공식 모델 카드와 21일 발표를 대조했습니다. ViDoRe V3와 V3.1, 입력 형태와 전처리, 검색과 재정렬, 공개 점수와 공급사 처리량을 분리합니다. 실제 구축, 한국어 사내 문서 평가, 독립 재현과 청구는 하지 않았습니다.",
+            "evidence_ids": [
+              "e-launch",
+              "e-embed",
+              "e-small",
+              "e-fp4",
+              "e-rerank",
+              "e-parse",
+              "e-previous"
+            ]
+          }
+        ],
+        "gaps": []
+      },
+      "draft": {
+        "report": {
+          "id": "nemotron-3-5-retriever-model-guide",
+          "topic_id": "opportunities",
+          "topic_path": [
+            "개발 동향",
+            "AI 모델·API"
+          ],
+          "checked_on": "2026-10-22",
+          "title": "Nemotron 3.5 소개: 문서 검색, 재정렬과 Parse의 성능 비교",
+          "description": "NVIDIA의 새 검색 모델과 문서 처리 모델을 이전 세대 및 Qwen, LightOnOCR와 비교해 정확도, 장비 조건과 제공 범위를 판단하도록 정리했습니다.",
+          "deck": "Nemotron 3.5는 문서를 벡터로 찾는 Embed, 후보를 다시 정렬하는 Rerank, 페이지를 구조화하는 Parse로 나뉩니다. 공개 평가에서 검색 정확도와 문서 처리량이 높아졌지만 세 모델의 역할과 점수는 서로 다릅니다. NVFP4의 장비 제약, Parse의 정확도와 속도 교환, 확정하지 못한 API 단가를 함께 비교합니다.",
+          "scope": "Embed와 Rerank 카드의 20일 출시와 21일 발표를 22일 확인했습니다. Parse는 17일 출시를 늦게 보완하는 자료이며 21일 최초 출시로 분류하지 않습니다.",
+          "source_note": "NVIDIA 공식 모델 카드와 21일 발표를 대조했습니다. ViDoRe V3와 V3.1, 입력 형태와 전처리, 검색과 재정렬, 공개 점수와 공급사 처리량을 분리합니다. 실제 구축, 한국어 사내 문서 평가, 독립 재현과 청구는 하지 않았습니다.",
+          "highlights": [
+            "세 역할과 공개일",
+            "정확도의 개선",
+            "속도와 비용의 경계"
+          ],
+          "summary": [
+            {
+              "label": "세 역할과 공개일",
+              "text": "Embed는 검색용 벡터, Rerank는 질문과 후보 쌍의 관련도 점수, Parse는 문서 내용과 위치 및 순서 정보를 만듭니다. 20일 출시 검색 모델과 17일 출시 Parse를 21일에 같이 소개했습니다.",
+              "source_ids": [
+                "launch",
+                "embed",
+                "rerank",
+                "parse"
+              ],
+              "kind": "fact"
+            },
+            {
+              "label": "정확도의 개선",
+              "text": "카드의 ViDoRe V3 결합 입력에서 8B Embed는 61.47로 Qwen 8B의 57.03보다 높습니다. 같은 상위 50후보를 재정렬하면 NVIDIA 67.56, Qwen 66.03입니다. 두 단계의 점수를 같은 모델 능력 순위로 합치지 않습니다.",
+              "source_ids": [
+                "embed",
+                "rerank"
+              ],
+              "kind": "fact"
+            },
+            {
+              "label": "속도와 비용의 경계",
+              "text": "Parse triple-pass 75.20점/10.62페이지초와 single-pass 72.74점/15.42페이지초는 서로 다른 운영점입니다. FP4는 GB200 조건입니다. 가중치 라이선스는 OpenMDW 1.1이며 표준 API 단가는 확인한 원문에서 미확인입니다.",
+              "source_ids": [
+                "parse",
+                "fp4"
+              ],
+              "kind": "fact"
+            }
+          ],
+          "metrics": [],
+          "datasets": [],
+          "learning": [],
+          "tables": [
+            {
+              "id": "roles",
+              "title": "모델별 사양과 제공 범위",
+              "columns": [
+                "모델",
+                "규모",
+                "입력과 출력",
+                "핵심 조건"
+              ],
+              "rows": [
+                {
+                  "values": [
+                    "Nemotron-3.5-Embed-8B-BF16",
+                    "8B",
+                    "텍스트 쿼리 / 문서 이미지+텍스트 → 4096차원 벡터",
+                    "32768토큰 / BF16"
+                  ],
+                  "source_ids": [
+                    "embed"
+                  ]
+                },
+                {
+                  "values": [
+                    "Nemotron-3.5-Embed-1B-BF16",
+                    "1B",
+                    "텍스트 쿼리 / 문서 이미지+텍스트 → 2048차원 벡터",
+                    "32768토큰 / BF16"
+                  ],
+                  "source_ids": [
+                    "small"
+                  ]
+                },
+                {
+                  "values": [
+                    "Nemotron-3.5-Embed-1B-NVFP4",
+                    "1B",
+                    "문서 벡터 / NVFP4",
+                    "GB200 / 카드의 문맥 단위 표기 혼재"
+                  ],
+                  "source_ids": [
+                    "fp4"
+                  ]
+                },
+                {
+                  "values": [
+                    "Nemotron-3.5-Rerank-8B-BF16",
+                    "8B",
+                    "질문과 문서 쌍 → 관련도 점수",
+                    "32768토큰 / cross-encoder"
+                  ],
+                  "source_ids": [
+                    "rerank"
+                  ]
+                },
+                {
+                  "values": [
+                    "Nemotron-3.5-Parse",
+                    "약0.631B",
+                    "페이지 이미지 → 내용,영역,순서 문자열",
+                    "권장 최대1664×2048 / 후처리 별도"
+                  ],
+                  "source_ids": [
+                    "parse"
+                  ]
+                }
+              ],
+              "note": "크기는 계열 표기이며 실제 메모리 사용량이 아닙니다. 쿼리 이미지 지원이나 전체 PDF 파일의 자동 처리를 입력 설명으로 추가하지 않습니다."
+            },
+            {
+              "id": "retrieval",
+              "title": "모델 카드의 검색 성능 비교",
+              "columns": [
+                "모델",
+                "V3 이미지",
+                "V3 텍스트",
+                "V3 결합",
+                "MIRACL 이미지"
+              ],
+              "rows": [
+                {
+                  "values": [
+                    "Qwen3-VL-Embedding-2B",
+                    "52.89",
+                    "48.31",
+                    "51.97",
+                    "58.42"
+                  ],
+                  "source_ids": [
+                    "embed"
+                  ]
+                },
+                {
+                  "values": [
+                    "Nemotron-3.5-Embed-1B-BF16",
+                    "58.02",
+                    "57.80",
+                    "58.82",
+                    "68.93"
+                  ],
+                  "source_ids": [
+                    "embed"
+                  ]
+                },
+                {
+                  "values": [
+                    "Qwen3-VL-Embedding-8B",
+                    "58.29",
+                    "53.69",
+                    "57.03",
+                    "68.33"
+                  ],
+                  "source_ids": [
+                    "embed"
+                  ]
+                },
+                {
+                  "values": [
+                    "Nemotron-3.5-Embed-8B-BF16",
+                    "60.39",
+                    "60.65",
+                    "61.47",
+                    "72.64"
+                  ],
+                  "source_ids": [
+                    "embed"
+                  ]
+                }
+              ],
+              "note": "nDCG@10/0–100으로 높을수록 좋습니다. Nemotron 긴 변 1,120px, Qwen max_pixels 1,843,200으로 전처리가 다릅니다. ViDoRe V3 공개 8개/비공개 2개와 MIRACL 18언어를 구분합니다."
+            },
+            {
+              "id": "reranking",
+              "title": "동일 검색 후보의 재정렬 비교",
+              "columns": [
+                "모델",
+                "V3 이미지",
+                "V3 텍스트",
+                "V3 결합",
+                "MIRACL 이미지"
+              ],
+              "rows": [
+                {
+                  "values": [
+                    "Nemotron-3.5-Embed-1B-BF16",
+                    "58.02",
+                    "57.80",
+                    "58.82",
+                    "68.93"
+                  ],
+                  "source_ids": [
+                    "rerank"
+                  ]
+                },
+                {
+                  "values": [
+                    "Qwen3-VL-Reranker-8B",
+                    "66.02",
+                    "64.88",
+                    "66.03",
+                    "75.06"
+                  ],
+                  "source_ids": [
+                    "rerank"
+                  ]
+                },
+                {
+                  "values": [
+                    "Nemotron-3.5-Rerank-8B-BF16",
+                    "67.22",
+                    "66.89",
+                    "67.56",
+                    "78.69"
+                  ],
+                  "source_ids": [
+                    "rerank"
+                  ]
+                }
+              ],
+              "note": "nDCG@10. Embed 1B 상위 50개를 공통 후보로 사용합니다. NVIDIA 긴 변 1,120px, Qwen max_pixels 1,310,720입니다. 첫 행은 재정렬 전 검색 기준입니다."
+            },
+            {
+              "id": "parsing",
+              "title": "이전 Parse와 경쟁 모델의 정확도 및 처리량",
+              "columns": [
+                "모델 / 모드",
+                "공개 ParseBench ↑",
+                "공급사 실측 페이지/초 ↑"
+              ],
+              "rows": [
+                {
+                  "values": [
+                    "Nemotron 3.5 Parse triple-pass",
+                    "75.20",
+                    "10.62"
+                  ],
+                  "source_ids": [
+                    "parse"
+                  ]
+                },
+                {
+                  "values": [
+                    "LightOnOCR-3-4B",
+                    "75.10",
+                    "2.76"
+                  ],
+                  "source_ids": [
+                    "parse"
+                  ]
+                },
+                {
+                  "values": [
+                    "Nemotron 3.5 Parse double-pass",
+                    "74.92",
+                    "11.65"
+                  ],
+                  "source_ids": [
+                    "parse"
+                  ]
+                },
+                {
+                  "values": [
+                    "LightOnOCR-3-0.8B",
+                    "74.60",
+                    "5.69"
+                  ],
+                  "source_ids": [
+                    "parse"
+                  ]
+                },
+                {
+                  "values": [
+                    "Nemotron 3.5 Parse single-pass",
+                    "72.74",
+                    "15.42"
+                  ],
+                  "source_ids": [
+                    "parse"
+                  ]
+                },
+                {
+                  "values": [
+                    "PaddleOCR-VL-1.6",
+                    "67.43",
+                    "3.11"
+                  ],
+                  "source_ids": [
+                    "parse"
+                  ]
+                },
+                {
+                  "values": [
+                    "Nemotron Parse 2.0",
+                    "63.91",
+                    "3.95"
+                  ],
+                  "source_ids": [
+                    "parse"
+                  ]
+                }
+              ],
+              "note": "NVIDIA 카드의 공개 ParseBench와 공급사 실측 처리량입니다. 동일한 준비 페이지 2,078개, 모델당 H100 한 개입니다. 모든 pass와 종속 crop 작업은 포함하고 페이지 준비, 시작, 워밍업, 최종 렌더링과 쓰기는 제외합니다. 공개 점수와 타이밍을 모은 표로 전체 동일 Harness 재평가가 아니며, 발표 글의 10.5/11.2/16.1과 별도 측정입니다."
+            },
+            {
+              "id": "licensing",
+              "title": "가격과 제공 조건",
+              "columns": [
+                "항목",
+                "공개 가중치",
+                "표준 API 단가",
+                "남은 조건"
+              ],
+              "rows": [
+                {
+                  "values": [
+                    "NVIDIA Embed/Rerank",
+                    "OpenMDW1.1 / 기반모델 표기 별도",
+                    "이번 원문에서 미확인",
+                    "자체GPU 또는파트너요금/계약"
+                  ],
+                  "source_ids": [
+                    "embed",
+                    "small",
+                    "rerank"
+                  ]
+                },
+                {
+                  "values": [
+                    "NVIDIA NVFP4",
+                    "OpenMDW1.1",
+                    "이번 원문에서 미확인",
+                    "GB200지원과실제추론구성"
+                  ],
+                  "source_ids": [
+                    "fp4"
+                  ]
+                },
+                {
+                  "values": [
+                    "NVIDIA Parse",
+                    "OpenMDW1.1 / tokenizer MIT",
+                    "이번 원문에서 미확인",
+                    "페이지준비/후처리와운영비별도"
+                  ],
+                  "source_ids": [
+                    "parse"
+                  ]
+                }
+              ],
+              "note": "다운로드 가능과 서비스 무상 제공은 다릅니다. 전체 인프라 비용, 모든 파트너 요금과 실제 청구는 검증하지 않았으며 미확인을 0으로 채우지 않습니다."
+            }
+          ],
+          "explanation": [
+            {
+              "id": "overview",
+              "title": "모델 개요와 이전 세대 대비 변화",
+              "lead": "문서를 읽는 단계와 찾는 단계, 찾은 후보를 고르는 단계가 분리돼 있습니다.",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "title": "Embed와 Rerank의 차이",
+                  "text": "Embed는 문서와 질문을 숫자 벡터로 만들어 가까운 문서를 찾게 합니다. Rerank는 이미 찾은 후보와 질문을 함께 읽고 관련도 점수를 다시 매깁니다. Rerank 점수가 높다고 문서 전체를 빠르게 색인할 수 있는 것은 아닙니다. 두 모델은 서로 대체품이기보다 검색 파이프라인의 다른 단계입니다.",
+                  "source_ids": [
+                    "embed",
+                    "rerank"
+                  ],
+                  "kind": "judgment"
+                },
+                {
+                  "type": "paragraph",
+                  "title": "기존 텍스트 검색에서 문서 이미지로 확장",
+                  "text": "3.5 Embed는 이전 Nemotron 3의 텍스트 임베딩에 문서 페이지 이미지, 표와 차트 등의 시각 검색을 추가합니다. NVIDIA는 언어 부분을 고정했으므로 기존 텍스트 임베딩과 색인을 재사용할 수 있을 것으로 설명합니다. 이는 공급사 기대와 모델 설계에 대한 설명이며, 모든 기존 사용자 색인과의 일치 검증을 수행했다는 뜻은 아닙니다.",
+                  "source_ids": [
+                    "launch",
+                    "previous"
+                  ],
+                  "kind": "judgment"
+                },
+                {
+                  "type": "paragraph",
+                  "title": "Parse의 독립적인 역할",
+                  "text": "Parse는 이미지에서 본문과 표, 차트, 영역 및 읽기 순서를 뽑는 약 6.31억 파라미터 모델입니다. 임베딩 벡터를 직접 만드는 모델은 아닙니다. 카드의 기본 출력은 구조 정보를 포함한 문자열이며, HTML 표나 JSON/CSV 등의 최종 형태는 지원되는 후처리 경로와 구분해야 합니다.",
+                  "source_ids": [
+                    "parse"
+                  ],
+                  "kind": "judgment"
+                },
+                {
+                  "type": "paragraph",
+                  "title": "추가 pass가 바꾸는 처리",
+                  "text": "Single-pass는 페이지를 한 번 읽습니다. Double-pass는 그 결과에서 표와 차트 영역을 골라 확대해서 다시 읽습니다. Triple-pass는 별도 탐지 결과의 영역까지 합쳐 추가로 정밀 처리합니다. 반복 횟수가 늘수록 구조를 더 자세히 읽지만 처리 시간이 늘어나므로 하나의 정확도와 속도 조합으로 비교해야 합니다.",
+                  "source_ids": [
+                    "parse"
+                  ],
+                  "kind": "fact"
+                }
+              ]
+            },
+            {
+              "id": "strengths",
+              "title": "장점: 멀티모달 검색과 경량 문서 처리",
+              "lead": "같은 문서 집합이라도 입력 형태와 후보 정렬 방식에 따라 성능이 다릅니다.",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "title": "경쟁 검색 모델보다 높은 카드 수치",
+                  "text": "nDCG@10은 상위 10개 검색 결과의 관련도와 순서를 평가하는 지표로, 이 표에서는 0–100으로 표시하고 높을수록 좋습니다. ViDoRe V3 결합 입력에서 8B Embed의 61.47은 Qwen 8B 57.03보다 4.44포인트 높습니다. 1B도 58.82로 같은 표의 Qwen 2B 51.97보다 높고, Qwen 8B 57.03을 앞섭니다. 다만 NVIDIA와 Qwen의 입력 이미지 해상도 설정이 다르므로 같은 연산량에서의 우위라고 일반화하지 않습니다.",
+                  "source_ids": [
+                    "embed"
+                  ],
+                  "kind": "judgment"
+                },
+                {
+                  "type": "paragraph",
+                  "title": "재정렬로 더 적합한 근거 선택",
+                  "text": "같은 Embed 1B 상위 50후보에서 NVIDIA Rerank의 ViDoRe V3 결합 점수는 67.56, Qwen Reranker는 66.03입니다. 이는 검색 후에 후보를 고르는 능력의 비교입니다. NVIDIA 발표의 에이전트 토큰 약 13~14% 감소는 고정된 실험 파이프라인의 모든 턴 입출력 토큰 합계이며, 재정렬 서버 비용까지 포함한 전체 비용 할인율은 아닙니다.",
+                  "source_ids": [
+                    "rerank",
+                    "launch"
+                  ],
+                  "kind": "judgment"
+                },
+                {
+                  "type": "paragraph",
+                  "title": "이전 문서 파서보다 높은 정확도와 처리량",
+                  "text": "카드 표에서 Parse 3.5 triple-pass는 75.20점과 10.62페이지/초, 이전 Parse 2.0은 63.91점과 3.95페이지/초입니다. LightOnOCR-3-4B의 75.10점/2.76페이지초와도 비교할 수 있습니다. 그러나 이 표는 공개 점수와 NVIDIA가 측정한 속도를 모았으며, 모든 점수를 동일한 새 평가로 재현한 결과는 아닙니다.",
+                  "source_ids": [
+                    "parse"
+                  ],
+                  "kind": "judgment"
+                }
+              ]
+            },
+            {
+              "id": "weaknesses",
+              "title": "단점과 측정 조건의 차이",
+              "lead": "작은 모델의 장점과 실제 서비스 구성의 부담을 같이 보아야 합니다.",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "title": "정확도와 처리량의 교환",
+                  "text": "Parse의 single-pass 72.74점은 LightOnOCR-3-4B 75.10보다 낮습니다. triple-pass로 75.20까지 올리면 처리량은 15.42에서 10.62페이지/초로 줄어듭니다. double-pass 74.92점/11.65페이지초는 그 중간입니다. 가장 빠른 값과 가장 정확한 값을 한 번의 실행 결과처럼 붙일 수 없습니다.",
+                  "source_ids": [
+                    "parse"
+                  ],
+                  "kind": "judgment"
+                },
+                {
+                  "type": "paragraph",
+                  "title": "V3와 V3.1 결과는 다른 표",
+                  "text": "발표 글의 ViDoRe v3.1 수치는 Embed 8B 61.17, 1B 58.38이며 Rerank는 60.49 대 Qwen 59.17입니다. 카드의 V3 결합 입력 61.47/58.82와 재정렬 67.56/66.03과는 다릅니다. 버전, 평가 집합과 입력 모드를 유지하고 서로 좋은 값만 뽑아 하나의 순위를 만들지 않아야 합니다.",
+                  "source_ids": [
+                    "launch",
+                    "embed",
+                    "rerank"
+                  ],
+                  "kind": "judgment"
+                },
+                {
+                  "type": "paragraph",
+                  "title": "FP4의 장비 조건과 소폭 손실",
+                  "text": "NVFP4 카드는 Blackwell GB200을 하드웨어 조건으로 기재합니다. 카드의 V3 결합 점수는 BF16 58.82, FP4 58.71로 양자화 손실이 있습니다. 발표의 GB200 처리량 101.3 대 128.8문서/초는 해당 서버 비교이지 일반 PC나 모든 GPU에서의 향상을 뜻하지 않습니다. FP4 카드의 문맥 설명 한 문장은 pixels로, 다른 절은 sequence length 32768로 기재돼 있어 표에서 확정 토큰 한도로 채우지 않았습니다.",
+                  "source_ids": [
+                    "fp4",
+                    "launch"
+                  ],
+                  "kind": "judgment"
+                },
+                {
+                  "type": "paragraph",
+                  "title": "처리량에서 빠진 단계",
+                  "text": "Parse 속도는 준비된 2,078페이지를 모델당 H100 한 개로 처리한 값입니다. 모든 pass와 의존하는 crop 처리는 포함하지만 원본 페이지 준비, 서버 시작과 워밍업, 최종 문서 렌더링 및 쓰기는 제외합니다. 발표 글의 16.1/11.2/10.5페이지초와 카드의 15.42/11.65/10.62도 별도 수치입니다. 이를 PDF 업로드부터 완성 파일까지의 처리 속도로 표시하면 실제 서비스 비용을 과소평가합니다.",
+                  "source_ids": [
+                    "parse",
+                    "launch"
+                  ],
+                  "kind": "judgment"
+                },
+                {
+                  "type": "paragraph",
+                  "title": "검색과 한국어 문서의 제한",
+                  "text": "Embed 쿼리는 텍스트만 받고 문서는 텍스트, 이미지 또는 결합 입력을 받습니다. 32,768토큰 문맥에는 이미지 토큰도 포함되며 긴 입력은 분할이나 축소가 필요합니다. 다국어 평가에 한국어 자료가 있다는 설명은 모든 한국어 문서와 표의 정확도를 보장하지 않습니다. 이번 조사는 사내 문서를 사용하지 않았고 검색 결과의 정답 보장도 없습니다.",
+                  "source_ids": [
+                    "embed",
+                    "small",
+                    "rerank"
+                  ],
+                  "kind": "judgment"
+                }
+              ]
+            },
+            {
+              "id": "availability",
+              "title": "가격과 제공 범위",
+              "lead": "공개 가중치, 호스팅 API와 최종 서비스 계약은 별도 조건입니다.",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "title": "라이선스와 실행 경로",
+                  "text": "NVIDIA 모델 카드는 상업적/비상업적 사용을 안내하고 OpenMDW 1.1을 적용합니다. 기반 모델과 tokenizer, 별도 설치 구성요소의 고지도 남아 있습니다. 실제 배포자는 라이선스와 제3자 고지를 확인할 필요가 있습니다. BF16 카드에는 Transformers, SentenceTransformers와 vLLM 경로가, 발표에는 NIM 및 파트너 경로가 제시돼 있습니다.",
+                  "source_ids": [
+                    "embed",
+                    "small",
+                    "rerank",
+                    "parse",
+                    "launch"
+                  ],
+                  "kind": "fact"
+                },
+                {
+                  "type": "paragraph",
+                  "title": "단가와 운영비의 미확인 범위",
+                  "text": "확인한 발표와 카드만으로 각 모델의 표준 API 요금, 최소 실운영 메모리, 파트너별 제공 지역과 서비스 수준을 확정하지 않았습니다. 공개 가중치의 다운로드를 요청당 $0이나 전체 비용 0으로 환산하지 않습니다. 비교표에는 확인된 사양과 평가만 넣고 미확인 단가는 비워둡니다.",
+                  "source_ids": [
+                    "embed",
+                    "fp4",
+                    "parse"
+                  ],
+                  "kind": "judgment"
+                }
+              ]
+            }
+          ],
+          "result": {
+            "title": "결론",
+            "points": [
+              {
+                "label": "선택 기준",
+                "text": "멀티모달 문서 검색은 Embed, 근거 우선순위는 Rerank, 페이지 구조화는 Parse라는 역할에 맞춰 비교할 수 있습니다. 1B의 자원 절감 가능성과 8B의 정확도, Parse의 추가 pass, 장비 및 전체 서비스 비용을 함께 판단해야 합니다. 하나의 생성형 LLM 순위로 세 역할을 합치는 비교는 적절하지 않습니다.",
+                "source_ids": [
+                  "embed",
+                  "small",
+                  "rerank",
+                  "parse",
+                  "fp4"
+                ],
+                "kind": "judgment"
+              }
+            ]
+          },
+          "caveats": [
+            {
+              "text": "20일 출시 검색 모델, 17일 출시 Parse와 21일 발표를 22일 읽었습니다. 공급사 측정과 실제 운영 검증은 구분하며 독립 모델 실행, 원문 전체 벤치마크 재현, 청구 및 사람 시험은 하지 않았습니다.",
+              "source_ids": [
+                "embed",
+                "rerank",
+                "parse",
+                "launch"
+              ]
+            }
+          ],
+          "references": [
+            {
+              "id": "launch",
+              "title": "NVIDIA의 Retriever 확장 발표",
+              "url": "https://huggingface.co/blog/nvidia/nemotron-retriever-world-class-agentic-retrieval",
+              "description": "새 검색 모델과 Parse의 역할 및 발표 평가를 설명합니다."
+            },
+            {
+              "id": "embed",
+              "title": "8B Embed 공식 모델 카드",
+              "url": "https://huggingface.co/nvidia/Nemotron-3.5-Embed-8B-BF16",
+              "description": "8B 검색 모델의 사양과 V3 평가를 제공합니다."
+            },
+            {
+              "id": "small",
+              "title": "1B Embed 공식 모델 카드",
+              "url": "https://huggingface.co/nvidia/Nemotron-3.5-Embed-1B-BF16",
+              "description": "1B 모델의 벡터 차원과 입력 조건을 설명합니다."
+            },
+            {
+              "id": "fp4",
+              "title": "1B NVFP4 공식 모델 카드",
+              "url": "https://huggingface.co/nvidia/Nemotron-3.5-Embed-1B-NVFP4",
+              "description": "양자화 결과와 GB200 장비 조건을 제공합니다."
+            },
+            {
+              "id": "rerank",
+              "title": "8B Rerank 공식 모델 카드",
+              "url": "https://huggingface.co/nvidia/Nemotron-3.5-Rerank-8B-BF16",
+              "description": "동일한 상위 50후보를 사용한 재정렬 비교입니다."
+            },
+            {
+              "id": "parse",
+              "title": "Parse 공식 모델 카드",
+              "url": "https://huggingface.co/nvidia/Nemotron-3.5-Parse",
+              "description": "출시일, 파라미터 수와 문서 처리 평가를 제공합니다."
+            },
+            {
+              "id": "previous",
+              "title": "이전 Nemotron 3 Embed 8B 카드",
+              "url": "https://huggingface.co/nvidia/Nemotron-3-Embed-8B-BF16",
+              "description": "이전 텍스트 임베딩 모델의 역할을 확인합니다."
+            }
+          ]
+        },
+        "claims": [
+          {
+            "path": "/summary/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-launch",
+              "e-embed",
+              "e-rerank",
+              "e-parse"
+            ]
+          },
+          {
+            "path": "/summary/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-embed",
+              "e-rerank"
+            ]
+          },
+          {
+            "path": "/summary/2",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-parse",
+              "e-fp4"
+            ]
+          },
+          {
+            "path": "/tables/0/rows/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-embed"
+            ]
+          },
+          {
+            "path": "/tables/0/rows/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-small"
+            ]
+          },
+          {
+            "path": "/tables/0/rows/2",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-fp4"
+            ]
+          },
+          {
+            "path": "/tables/0/rows/3",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-rerank"
+            ]
+          },
+          {
+            "path": "/tables/0/rows/4",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-parse"
+            ]
+          },
+          {
+            "path": "/tables/1/rows/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-embed"
+            ]
+          },
+          {
+            "path": "/tables/1/rows/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-embed"
+            ]
+          },
+          {
+            "path": "/tables/1/rows/2",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-embed"
+            ]
+          },
+          {
+            "path": "/tables/1/rows/3",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-embed"
+            ]
+          },
+          {
+            "path": "/tables/2/rows/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-rerank"
+            ]
+          },
+          {
+            "path": "/tables/2/rows/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-rerank"
+            ]
+          },
+          {
+            "path": "/tables/2/rows/2",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-rerank"
+            ]
+          },
+          {
+            "path": "/tables/3/rows/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-parse"
+            ]
+          },
+          {
+            "path": "/tables/3/rows/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-parse"
+            ]
+          },
+          {
+            "path": "/tables/3/rows/2",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-parse"
+            ]
+          },
+          {
+            "path": "/tables/3/rows/3",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-parse"
+            ]
+          },
+          {
+            "path": "/tables/3/rows/4",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-parse"
+            ]
+          },
+          {
+            "path": "/tables/3/rows/5",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-parse"
+            ]
+          },
+          {
+            "path": "/tables/3/rows/6",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-parse"
+            ]
+          },
+          {
+            "path": "/tables/4/rows/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-embed",
+              "e-small",
+              "e-rerank"
+            ]
+          },
+          {
+            "path": "/tables/4/rows/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-fp4"
+            ]
+          },
+          {
+            "path": "/tables/4/rows/2",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-parse"
+            ]
+          },
+          {
+            "path": "/explanation/0/blocks/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-embed",
+              "e-rerank"
+            ]
+          },
+          {
+            "path": "/explanation/0/blocks/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-launch",
+              "e-previous"
+            ]
+          },
+          {
+            "path": "/explanation/0/blocks/2",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-parse"
+            ]
+          },
+          {
+            "path": "/explanation/0/blocks/3",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-parse"
+            ]
+          },
+          {
+            "path": "/explanation/1/blocks/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-embed"
+            ]
+          },
+          {
+            "path": "/explanation/1/blocks/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-rerank",
+              "e-launch"
+            ]
+          },
+          {
+            "path": "/explanation/1/blocks/2",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-parse"
+            ]
+          },
+          {
+            "path": "/explanation/2/blocks/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-parse"
+            ]
+          },
+          {
+            "path": "/explanation/2/blocks/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-launch",
+              "e-embed",
+              "e-rerank"
+            ]
+          },
+          {
+            "path": "/explanation/2/blocks/2",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-fp4",
+              "e-launch"
+            ]
+          },
+          {
+            "path": "/explanation/2/blocks/3",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-parse",
+              "e-launch"
+            ]
+          },
+          {
+            "path": "/explanation/2/blocks/4",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-embed",
+              "e-small",
+              "e-rerank"
+            ]
+          },
+          {
+            "path": "/explanation/3/blocks/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-embed",
+              "e-small",
+              "e-rerank",
+              "e-parse",
+              "e-launch"
+            ]
+          },
+          {
+            "path": "/explanation/3/blocks/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-embed",
+              "e-fp4",
+              "e-parse"
+            ]
+          },
+          {
+            "path": "/result/points/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-embed",
+              "e-small",
+              "e-rerank",
+              "e-parse",
+              "e-fp4"
+            ]
+          },
+          {
+            "path": "/caveats/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-embed",
+              "e-rerank",
+              "e-parse",
+              "e-launch"
+            ]
+          }
+        ],
+        "answer_paths": {
+          "core": [
+            "/summary",
+            "/tables",
+            "/explanation",
+            "/result",
+            "/caveats"
+          ]
+        }
+      },
+      "issues": [],
+      "authoring": {
+        "recipe": {
+          "version": "authoring-recipe-1",
+          "catalog_version": "1.0.2",
+          "brief": {
+            "id": "nemotron-3-5-retriever-model-guide",
+            "reader": "새 모델의 상대 성능과 비용, 제공 조건을 비교하는 개발자와 관리자",
+            "reader_question": "NVIDIA의 새 검색 모델과 문서 처리 모델을 이전 세대 및 Qwen, LightOnOCR와 비교해 정확도, 장비 조건과 제공 범위를 판단하도록 정리했습니다.",
+            "outcome": "신규와 기존 모델 갱신을 구분하고, 같은 평가 조건으로 장단점 및 제공 제한을 설명한다.",
+            "profile": "model_introduction"
+          },
+          "request_hash": "c73d9d6e9fac4ebfd09226d7c7d4032b437e904243e1d0a541e265d1f7fc59d0",
+          "components": [
+            {
+              "id": "common-principles",
+              "kind": "policy",
+              "version": "1.0.0",
+              "supports": [
+                "technology",
+                "comparison",
+                "market",
+                "opportunity",
+                "model_introduction",
+                "news",
+                "custom"
+              ],
+              "stages": [
+                "analyze",
+                "write",
+                "review"
+              ],
+              "sources": [
+                {
+                  "path": "docs/authoring/common.md",
+                  "sha256": "cf56f106511609377d003f3d592937b858b2de9a999cf78cb6e6408aa0aa59f7",
+                  "text": "# 공통 작성 원칙\n\n근거와 의미 보존, 자연스러운 한국어 및 본문과 편집 기록의 구분에 적용한다. 새 소식은 유형별 기사 형식을 사용한다. 학습 글을 명시한 문장은 그 유형에만 적용한다.\n\n## 독자 본문과 편집 기록을 분리하기\n\n독자는 주제와 실제 구현 방법을 배우려는 사람이다. 소제목에 `검토 의견` 같은\n내부 분류를 붙이거나 판 변경, 수집·검수 과정과 사이트 읽기 안내로 본문을 채우지\n않는다. 원문 링크와 자료의 설명은 더 자세한 내용을 배우는 데 사용한다. 출처 설명에는\n무엇을 알 수 있는지와 필요한 자료의 조건을 쓰고, 실제 수집/검토 시각과 실패 및 편집\n기록은 품질 패키지·작업 기록에 둔다. 가상 사례의 가정, 실습 준비물과 실행 조건,\n기술 한계와 통계 해석의 조건은 본문에 남긴다. [DevOps r12 수정](../DEVOPS_READER_COPY.2026-10-12.md).\n\n## 2026-10-10: 작성 목적 다음에 요약 배치하기\n\n앞으로 새로 작성하는 공유용 리서치 보고서는 다음 순서로 시작한다. 신규 소식 기사는 2026-10-14 기사 기준과 NEWSROOM.md의 별도 형식을 따른다.\n\n1. 제목 아래에 어떤 목적으로 만든 문서인지 한두 문장으로 짧게 설명한다.\n   독자의 어떤 문제나 판단을 돕기 위한 것인지 구체적으로 쓴다.\n2. 바로 다음 본문 구역은 `요약`으로 표시하고 핵심 내용과 결론을 정리한다.\n3. 요약 이후의 구성은 주제와 독자의 필요에 맞게 정한다. 목차, 개념 설명,\n   비교표, 도해, 사례, 실습, 출처의 순서와 분량을 일률적으로 고정하지 않는다.\n\n작성 목적은 “왜 이 문서를 만들었는가”에, 요약은 “핵심 내용과 결론이 무엇인가”에\n답한다. 둘을 같은 소개 문장으로 반복하지 않는다. DevOps 문서의 장 수나\n도구 카탈로그를 다른 주제의 필수 양식으로 삼지 않는다. 기존 페이지를 일괄\n재작성하는 규칙은 아니며, 앞서 정한 출처와 검토 기준은 유지한다.\n\n예시 작성 목적: “기존 Jenkins를 사용하는 C++ 팀이 검사 결과를 보관하고,\n검사한 파일을 릴리스하는 절차를 정할 수 있도록 구축 방법을 정리했다.”\n\n검토할 때는 첫 화면만 읽어 작성 목적을 알 수 있는지, 그다음 구역이 요약인지,\n요약에서 핵심 내용과 결론을 파악할 수 있는지 각각 확인한다. 본문 구성은\n이 고정된 앞부분 이후에 필요한 설명을 충분히 제공하는지로 판단한다.\n\n## 2026-10-10: 가운데점으로 단어나 동작을 묶지 않기\n\n새로 작성하거나 수정하는 제목, 요약, 본문, 표와 도구 설명에는 가운데점으로\n단어를 압축해 나열하지 않는다. 점을 공백으로 지우는 것으로 끝내지 않는다.\n병렬 항목은 쉼표나 자연스러운 연결어로 구분하고, 동작은 누가 무엇을 어떤\n순서로 하는지 문장으로 쓴다. 원문 코드, URL과 기존 분류 식별자는 보존한다.\n\n- 피할 표현: “누가 어떤 코드와 결과물을 검사·승인·반영했는지”\n- 사용할 표현: “누가 코드를 검사했고, 어떤 결과물을 승인해 실제 환경에 반영했는지”\n- 피할 표현: “개발·QA·운영이 공동 책임”\n- 사용할 표현: “개발 담당자는 코드를 수정하고 QA는 검사한다. 운영 담당자는 승인된 파일을 배포한다.”\n\n## 글을 쓰기 전에 정할 것\n\n교재형 글은 선행 개념의 순서를 확인한다. 먼저 익숙한 상황과 값으로 문제를\n설명하고, 그 문제에서 새 개념이 하는 일을 가르친 뒤 기술 이름·구조·코드를 연결한다.\n새 약어를 풀어 쓰는 것만으로 선행 지식의 공백이 해결되지는 않는다.\n\n목적은 자료 요약, 표 생성, 제목 작성이 아니라 **독자에게 생겨야 할 변화**다.\n먼저 아래 내용을 짧은 편집 메모에 적는다. 모르는 독자의 수준은 가정임을\n밝히고, 대화에서 이미 확인한 필요를 우선한다.\n\n| 질문 | 작성할 내용 |\n| --- | --- |\n| 누가 읽는가 | 주제와의 거리, 현재 알고 있는 것, 새로 설명해야 할 것 |\n| 왜 읽는가 | 이해하려는 문제 또는 내려야 할 결정 하나 |\n| 읽은 뒤 무엇이 가능한가 | 구분·설명·선택·실행처럼 확인 가능한 결과 |\n| 무엇을 다룰 것인가 | 그 결과에 필요한 범위와 선행 개념 |\n| 어떤 근거가 필요한가 | 기능, 수치, 적용 조건, 비교를 지지할 원문 |\n| 어떻게 확인할 것인가 | 다른 사례에 적용하는 질문 또는 관찰할 실행 결과 |\n\n예: MCP Apps의 역할을 모르는 독자가 공고 후보를 비교하는 업무에 이 기술을\n쓸 이유와 시작 경로를 고르고, 설명된 사례의 입력·조회·화면 결과를 추적한 뒤\n자기 목록에 적용할 변경점을 찾도록 쓴다. 역할을 설명하는 것은 이 작업을 위한\n중간 단계다. 예시를 실제로 실행시키는 경로를 제공하려면 현재 지원 환경·준비물·\n실행 절차·예상 결과를 확인한다. 이것이 없는 원고는 원리 설명으로 상태를 남긴다.\n\n‘초급~중급 개발자’라는 범위만으로 API, JSON, 비동기 처리, MCP를 이미\n안다고 가정하지 않는다. 필요한 개념은 설명하거나 정확한 선행 학습으로 연결한다.\n\n## 목적에 맞게 글의 성격을 고르기\n\n| 독자의 질문 | 중심 내용 | 완료를 확인하는 방법 |\n| --- | --- | --- |\n| 무엇이 바뀌고 내 작업에 어떤 영향이 있나 | 이전 상태, 변화, 해당 대상, 영향, 대응 시점 | 자신의 사용 여부와 다음 점검을 정할 수 있음 |\n| 이것은 무엇이고 왜 필요한가 | 익숙한 상황, 개념, 작동 이유, 구체적 사례, 한계 | 새로운 사례의 동작을 자기 말로 설명함 |\n| 어느 대안이 내 조건에 맞나 | 같은 비교 기준, 적용 조건, 비용·제약, 선택 이유 | 주어진 조건으로 대안을 고르고 이유를 말함 |\n| 따라 하면서 익히려면 무엇을 하나 | 준비물, 순서, 입력, 예상 출력, 오류 관찰 | 실제 결과를 재현하고 어느 단계에서 틀렸는지 찾음 |\n| 신청·참여할 수 있나 | 대상, 현재 접수 상태, 자격, 제외 조건, 제출물 | 해당·비해당·추가 확인을 구분하고 준비물을 정함 |\n| 이 수치·사례는 무엇을 알려주나 | 측정 대상·기간·단위, 관찰과 해석, 적용 한계 | 수치의 의미와 이 자료로 알 수 없는 것을 구분함 |\n\n설명 글과 실습 글의 역할은 다르다. 설명은 관계와 이유를 풀어내고, 실습은\n독자가 행동한 뒤 확인할 결과를 제공한다. 하나의 보고서에 둘 다 필요하면\n단위를 나누어 연결한다. 단순히 명령어를 넣었다고 실습이 완성되는 것은 아니다.\n이 구분은 [Diátaxis의 설명](https://diataxis.fr/explanation/)과\n[튜토리얼](https://diataxis.fr/tutorials/)을 참고한 프로젝트 편집 선택이다.\n\n## 원문에서 의미를 보존하기\n\n자료를 읽을 때 제목부터 만들지 않는다. 독자의 질문에 답하는 근거를 먼저\n확보하고, 아래 항목이 필요한 주장에 함께 남긴다.\n\n- 누가 무엇을 하는가: 제공자·실행자·요청자·결과 수신자를 구분한다.\n- 언제, 누구에게 적용되는가: 확인일, 발표일, 종료일, 지역·계정·버전 조건.\n- 무엇을 측정했는가: 기간·표본·분모·단위와 출처의 자체 공개 여부.\n- 무엇을 관찰했고 무엇을 해석했는가: 공식 기능, 편집 판단, 가상 예시를 구분한다.\n- 어떤 제한이 결론을 바꾸는가: 적용 제외, 필수 준비, 비교하지 못한 부분.\n\n출처 링크가 붙어 있는 것과 그 출처가 문장을 뒷받침하는 것은 별개다.\n원문의 주어·목적어·인과관계를 요약 과정에서 바꾸지 않는다. 예를 들어\n‘서버가 화면을 제공하고 호스트가 읽는다’를 ‘서버가 읽는 화면’으로 줄이면\n구조가 바뀐다. 규격은 실제 동작의 보장, 최대 지원액은 확정 지급액,\n한 회사의 성장과 제품 전략은 검증된 성장 원인으로 바꾸지 않는다.\n\n동적 규정·모델명·가격·프로그램 상태는 보강 시 공식 자료를 다시 확인한다.\n개념 문장을 고쳤다는 이유로 재확인하지 않은 다른 표의 확인일을 올리지 않는다.\n\n## 짧은 메인과 충분한 보고서\n\n메인은 독자가 읽을 보고서를 고를 수 있게 핵심 변화·문제·대상 조건을 짧게\n전달한다. 보고서는 선택한 내용을 혼자 이해할 수 있을 만큼 풀어 쓴다.\n메인의 분량 기준을 본문에 적용하지 않는다. 고정 글자 수나 항목 수로\n필수 설명을 자르지 않는다.\n\n펼치기는 상세 절차·추가 사례·사양·선택적 심화에 사용한다. 제목을 이해하는 데\n필요한 정의, 결론의 이유, 결정적인 자격·제약은 기본 읽기 경로에 둔다.\n처음 읽는 사람이 모든 펼치기를 열어야만 첫 문장을 이해한다면 배치가 잘못됐다.\n펼친 내용은 요약의 반복이 아니라 빠진 관계와 사례를 설명해야 한다.\n\n현재 Editorial의 `요약 → 데이터 → 결과 → 해설` 순서와 블록 개수는 의미 품질을\n보장하지 않는다. 원고를 먼저 완성하고 기존 데이터 필드에 의미를 유지하며\n옮긴다. 필요한 설명을 현재 필드로 자연스럽게 표현할 수 없으면 원고를 보존하고\n렌더링 개선을 별도 작업으로 기록한다. 원고를 양식에 맞춰 다시 축약하지 않는다.\n\n## 작성 지식베이스에 남길 내용\n\n새 주제의 편집 메모는 관련 보고서·검토 문서에 아래 정보를 남긴다. 단순\n용어집, 출처 모음, 글자 수 지침만 쌓지 않는다.\n\n| 항목 | 저장할 지식 |\n| --- | --- |\n| 독자의 질문 | 해당 글이 해결할 질문과 선행 지식 가정 |\n| 개념 관계 | 기존 개념과의 차이, 역할과 데이터 이동 |\n| 의미 근거 | 주장별 원문 위치·적용 조건·확인일 |\n| 끝까지 이어지는 예시 | 입력, 중간 값, 출력, 정상·실패 이유 |\n| 발견한 실패 | 원고의 어떤 표현이 무슨 오해를 만들었는지 |\n| 개선 원고 | 실제로 고친 문단과 독자가 대답할 수 있어야 할 질문 |\n| 보강 상태 | 진단·원고·사실 확인·실행 검증·게시 중 완료한 범위 |\n\n현재 결함 기록은 [앞선 내용 검토](../RESEARCH_CONTENT_REVIEW.2026-10-08.md)에,\n20편의 목적·실제 보강·검토 범위는 [전체 보강 기록](../RESEARCH_REPAIR.2026-10-08.md)에\n남긴다. 새 판의 본문 데이터는 `config/research_comprehension.2026-10-08.json`이다.\n[앞선 개선 원고](../RESEARCH_WRITING_EXAMPLES.md)는 부분 보강의 역사로 유지한다.\n사용자가 새 판을 승인한 완성 교재라는 뜻은 아니다. 날짜가 붙은 기능·규정은\n원문을 재확인하고 재사용한다. 예시 문장은 이번 독자 목적에 맞춘 사례다.\n\n## 참고한 작성 원칙\n\n- [Google Technical Writing — Audience](https://developers.google.com/tech-writing/one/audience): 독자의 현재 지식과 목표에 필요한 지식의 차이를 설명 범위로 삼는다.\n- [Google Technical Writing — Documents](https://developers.google.com/tech-writing/one/documents): 대상 독자와 읽은 뒤 가능한 일을 정하고 그 필요에 맞춰 내용을 조직한다.\n- [Diátaxis — Explanation](https://diataxis.fr/explanation/): 이해를 위한 관계·배경 설명의 역할을 구분한다.\n- [Diátaxis — Tutorials](https://diataxis.fr/tutorials/): 행동과 관찰할 결과를 통해 배우는 실습을 구분한다.\n\n2026-10-08 원문 확인. 위 원칙의 적용 방식과 검토 질문은 이 프로젝트의\n편집 판단이며, 문서화만으로 독자 이해 개선이 검증됐다는 뜻은 아니다.\n"
+                }
+              ]
+            },
+            {
+              "id": "profile-model_introduction",
+              "kind": "profile",
+              "version": "1.0.0",
+              "supports": [
+                "model_introduction"
+              ],
+              "stages": [
+                "analyze",
+                "write",
+                "review"
+              ],
+              "sources": [
+                {
+                  "path": "docs/authoring/types.md",
+                  "section": "모델 소개",
+                  "sha256": "fbeb922a5e6ca88f23ced7939f515837dedcbf5c6784f5cac5da74b97b311d82",
+                  "text": "## 모델 소개\n\n[모델 소개 정본](../AI_MODEL_RESEARCH.md)의 신규 모델 계약을 따른다. 이전 모델 대비 변화와 다른 모델의 같은 조건 비교, 상대 장단점 및 제공 조건을 설명한다. 학습 글의 가상 업무, 실습 코드와 응용 문제를 적용하지 않는다.\n\n"
+                },
+                {
+                  "path": "docs/AI_MODEL_RESEARCH.md",
+                  "section": "신규 모델 소개의 형식 — 2026-10-13 사용자 기준",
+                  "sha256": "dc9092e9a0eb8a62d8ce7a84238cb2d9c827745411d06208a26dd8c308b65286",
+                  "text": "## 신규 모델 소개의 형식 — 2026-10-13 사용자 기준\n\n신규 모델 소개는 활용 교재가 아니라 모델의 변화와 비교를 읽는 분석 문서다.\n기존 Theo의 GPT-6.1 Sol, Gemini4Argon, Opus5.5 소개처럼 모델 정보와\n비교표, 상대 장점과 단점, 비용과 결론을 중심으로 작성한다.\n독자는 새 모델이 무엇인지, 이전 모델에서 무엇이 달라졌는지,\n경쟁 모델보다 어떤 점이 낫고 부족한지 판단할 수 있어야 한다.\n\n- 제목 아래 짧은 작성 목적과 `요약`을 먼저 둔다. 이후에는 모델 개요,\n  이전 모델 대비 변화, 다른 모델과의 비교표, 장점과 단점, 가격과 제공 조건,\n  결론과 자료 기준을 주제에 맞게 구성한다. 장 수와 표 방향을 일률적으로 고정하지 않는다.\n- 소제목은 `모델 개요`, `주요 사양`, `성능 비교`, `장점과 한계`처럼\n  실제 내용을 이름 붙인다. `입력 사양과 제공 범위를 먼저 정합니다` 같은\n  작성 절차나 독자 행동을 지시하는 소제목을 사용하지 않는다.\n- 다른 모델과 비교한 표를 반드시 포함한다. 같은 계열의 이전 모델과 해당 분야의\n  주요 경쟁 모델을 선정하고 선정 이유를 남긴다. 사양과 제공 경로, 성능 평가,\n  가격의 서로 다른 비교 기준을 분리한다.\n- 표에는 모델 ID/판, 추론 설정, 평가판, 측정 주체, Harness, 단위와 날짜를\n  밝혀 수치가 무엇을 비교하는지 설명한다. 조건이 다른 결과는 그 차이를 표시하고\n  직접적인 모델 우열의 근거로 일반화하지 않는다. 미확인은0으로 채우지 않는다.\n- 장점과 단점은 비교표의 실제 값 또는 제공 조건으로 설명한다.\n  어느 평가에서 어떤 경쟁 모델보다 높거나 낮은지, API/구독/가중치 제공,\n  가격과 문맥 조건에서 어떤 차이가 있는지 구체적으로 쓴다.\n  공급사 주장, 공개 측정, 편집 판단과 독립 실사용 미측정을 구별한다.\n- 배송비 같은 가상 업무, 활용 예시, SDK/API 코드, 단계별 실습,\n  응용 문제와 풀이를 모델 소개에 넣지 않는다. 별도의 활용 가이드를 요청받은 경우에만\n  해당 문서를 학습/실습 유형으로 작성한다.\n- 작성 요청과 새 품질 sidecar에는 `research_type: model_introduction`을 사용한다.\n  `config/ai_model_introduction.request.example.json`은 계획 템플릿이다.\n  새 소개의 report ID를 `config/study_pages.json`의 `legacy_report_ids`에 넣어\n  기존 모델 소개와 같은 Editorial을 사용한다. 해당 판의 `digest(report)`를\n  `editorial_summary_first`와 `model_introduction_editions`에 등록하면\n  목적·요약 다음에 비교표, 모델 분석, 결론이 표시된다. 새 소개판은 같은 해시를\n  `model_introduction_purpose_editions`에도 등록해 `description`의 작성 목적을\n  제목 바로 아래 표시한다. 기존 판의 표시 형식은 보존한다. 내용 해시에 묶어\n  이전 판의 표시 순서는 보존한다.\n  문장 표기 교정은 본문 필드에 한정한다. 안정적인 ID, `topic_path`의\n  `개발 동향 / AI 모델·API`, 출처 ID와 URL은 나열 문장처럼 일괄 치환하지 않는다.\n  실제 화면에서 기존 모델 주제와 같은 분류로 연결되는지도 확인한다.\n  이 유형의 기계 검사는 비교표 누락과 예시/코드 블록을 거부하며,\n  의미 검토는 비교 대상·조건과 장단점의 논거를 실제 읽어 확인한다.\n  기존 불변 배치는 소급 수정하거나 새 기준 합격으로 간주하지 않는다.\n\n원문의 기존 활용 섹션을 수집하는 것과 새 모델 소개의 집필 형식은 다르다.\nTheo에서 가져온 원문과 원본 표 기능은 보존하고, 이 형식은 새로 집필하는\n모델 소개 및 사용자가 이 형식으로 고치라고 요청한 현재판에 적용한다.\n에이전트 Pass와 출력 검증은 사용자의 형식 승인이나 실제 독해 시험이 아니다.\n\n\n"
+                }
+              ]
+            },
+            {
+              "id": "writing-workflow",
+              "kind": "method",
+              "version": "2.1.0",
+              "supports": [
+                "technology",
+                "comparison",
+                "market",
+                "opportunity",
+                "model_introduction",
+                "news",
+                "custom"
+              ],
+              "stages": [
+                "write"
+              ],
+              "sources": [
+                {
+                  "path": "skills/research-teaching/SKILL.md",
+                  "sha256": "09d2dac52b42f7fd556193e005da59b29c16215a125f34dec3a55b8cc08c1227",
+                  "text": "---\nname: research-teaching\ndescription: \"Compose and revise Korean research by reader purpose. Select content/editing/presentation profiles, preserve evidence and version records, then finish local knowledge registration and query checks. Use for research explanations, comparisons and editing; models and news keep their own profiles. Does not authorize redesign, paid calls, delegation or publication.\"\nmetadata:\n  version: \"2.1.0\"\n---\n\n# 목적에 맞게 조사하고 이해할 수 있게 쓰기\n\n먼저 [작성 관리](../../docs/authoring/MANAGEMENT.md)와 현재 원고를 읽는다.\n대화에 이미 나온 독자, 목적과 요청을 사용하며 같은 질문을 다시 요구하지 않는다.\n정보가 부족하면 조사로 돌아간다. 이해의 빈칸을 문장 교정이나 목차 증가로 대신하지 않는다.\n\n## 이번 글에 적용할 기준 선택\n\n1. 독자의 질문과 끝에 가능한 설명, 판단 또는 실행을 요청서에 적는다.\n2. [공통 원칙](../../docs/authoring/common.md)을 적용하고 [목적별 유형](../../docs/authoring/types.md)을 선택한다.\n   모델 소개와 소식 기사에 학습 글의 실습, 가상 업무와 응용 문제를 강제하지 않는다.\n3. 필요한 작성 방법만 고른다. 설명 글은 [설명 방법](../../docs/authoring/explanation.md),\n   실행을 약속한 실습은 [실습 조건](../../docs/authoring/tutorial.md)을 사용한다.\n   기존 원고의 표현을 고칠 때는 [편집 방법](references/editing.md)을 사용한다.\n4. 기존 화면 계약과 개별 요청을 선택해 authoring plan으로 조합을 고정한다.\n   이 기록은 작성 지침이며 HTML 렌더러를 변경하지 않는다. 새 디자인 구현은 별도 작업이다.\n\n## 작성과 편집\n\n원문 근거에서 질문의 답을 도출하고 충분한 본문을 쓴 뒤 제목과 요약을 만든다.\n선행 개념은 주제와의 거리를 기준으로 판단한다. 개발자라는 이유로 API나 JSON을 안다고 가정하지 않는다.\n필요한 용어는 처음 나오는 자리에서 뜻과 역할을 설명한다. 기능을 쓰는 경로와 직접 구현하는 경로를 구분한다.\n설명 사례는 입력, 중간 변화와 출력의 이유가 끝까지 연결되어야 한다.\n그림과 표는 [시각 자료 기준](../../docs/authoring/visuals.md)에 따라 필요한 곳에 선택한다.\n웹 디자인은 이번 요청에 없으면 변경하지 않는다.\n\n정보 가치가 부족하다는 피드백을 받거나 여러 글을 보강하면\n[질문과 근거 검토](references/substantive-review.md)를 읽는다.\n문장 연결의 구체적인 실패는 [집필 예시](references/teaching-patterns.md)와 대조한다.\n과거 Pass를 사용자 승인이나 완성 교재의 견본으로 취급하지 않는다.\n\n## 검토와 적용 기록\n\n[내용과 독해 검토](../../docs/authoring/review.md)에 따라 첫 화면과 본문을 따로 읽는다.\n첫 화면 입력에서는 본문을 실제로 제외한다. 외부 지식으로 빠진 설명을 메우지 않는다.\n막힌 문장과 근거 위치를 기록하고 고친다. 자체 검토, 독립 에이전트 검토와 사람 시험을 구분한다.\n위임이 승인된 경우에만 다른 에이전트를 사용하고 수정된 원고 자체를 재검토하게 한다.\n실제 실행, 링크와 출력 검사도 내용 검토와 별도로 기록한다.\n\n완성한 판에 authoring record로 원고 지문과 사용한 조합을 연결한다.\n자동 생성은 품질 패키지의 authoring에 같은 정보를 남긴다.\n이 기록은 지침 선택과 사용 기록이며 사실 검토나 사람 독해 합격을 뜻하지 않는다.\n이전 판을 덮지 않는다. 기준 변경은 새 조합으로 채택하며 작업 중의 기록에 자동 반영하지 않는다.\n\n## 리서치 추가·수정 후 지식베이스 반영\n\n이 프로젝트의 리서치·모델 소개·뉴스를 추가하거나 수정하면\n[지식베이스 완료 절차](../../docs/KNOWLEDGE_BASE.md#리서치-추가수정-작업의-완료-절차)를\n같은 작업 안에서 실행한다. 실제 내용 검토를 현재 판의 지문에 연결하고 색인을 갱신한 뒤,\n독자의 질문으로 새 본문과 출처가 검색되는지 확인해야 작성 작업을 완료한 것으로 보고한다.\n사용자에게 지식베이스 갱신을 따로 요청하게 하지 않는다.\n\n이 단계는 로컬 작업을 수행하는 Codex의 책임이다. JSON을 생성하는 집필 모델이나\n수집 성공만으로 검토 완료를 선언하지 않는다. 초안은 초안으로 연결하고 실제 검토일과\n기존 판을 보존한다. 사용자의 MD 전용·미발행 범위를 지키며 별도 배포를 실행하지 않는다.\n"
+                },
+                {
+                  "path": "docs/KNOWLEDGE_BASE.md",
+                  "section": "리서치 추가·수정 작업의 완료 절차",
+                  "sha256": "ab8e0592885a8698e99d8b01cd3bcc8097bd3c1eda77c754bdaffd293fd9de03",
+                  "text": "## 리서치 추가·수정 작업의 완료 절차\n\n새 리서치를 만들거나 기존 글을 고치는 Codex는 아래 반영을 같은 작업 안에서 마친다.\n사용자는 지식베이스 갱신을 따로 요청할 필요가 없다. 보고서, 모델 소개, 뉴스에 공통으로\n적용하며 글의 목적별 작성·검토 기준은 유지한다. 색인 갱신을 새 원문 조사로 기록하지 않는다.\n\n1. **원고와 실제 저장 판을 맞춘다.** 내용·근거·독해 검토와 수정이 끝난 판을 기존 저장\n   절차로 반영하고 작성 기준의 적용 기록도 남긴다. 기존 판과 품질 부록은 보존한다.\n   사용자가 MD 파일만 요청했다면 DB 발행을 강제하지 않는다. 해당 파일만 연결 목록에\n   `kind: draft`로 등록해 미발행 상태를 유지하고 초안을 포함하는 검색으로 확인한다.\n   프로젝트 전체 폴더를 자동 수집하거나 비공개 자료를 연결하지 않는다.\n2. **현재 본문 지문을 읽는다.** DB에 저장한 글은 아래 명령의 `document`에서 실제\n   `key`, `revision`, `source_hash`, `document_digest`를 확인한다. 보고서는 `report:<id>`,\n   뉴스는 `article:<id>`다. 이 명령은 미검토 글도 명시적으로 읽을 수 있다.\n\n   ```powershell\n   python -m housing_watch knowledge --document report:<id> --json\n   ```\n\n3. **실제 검토를 현재 판에 연결한다.** `config/knowledge_sources.json`의 `review_ledger`가\n   가리키는 원장의 기존 항목을 보존하면서 이번 글의 검토 항목을 추가하거나 갱신한다.\n   `key`, `revision`, `source_hash`, `document_digest`, `reviewed_on`, `verdict`,\n   `reader_question`, `finding`, `body_locations`, `reference_urls`를 실제 원고·검토 기록에서\n   채운다. 새 파일의 등록 시각을 사실 확인일로 쓰지 않는다. `verdict`는 확인한 범위에\n   따라 정하고 계획·미완성·오래된 사실을 무조건 `usable_with_limits`로 바꾸지 않는다.\n   원문의 접근 실패와 미확인 조건은 `finding`, `advisories`, `link_check`에 해당 범위대로\n   남긴다. authoring record나 형식 검사 통과는 내용 검토의 대체물이 아니다.\n4. **검토 이력을 보존한다.** 기존 검토를 바꾸면 날짜와 작업 식별자를 붙인 새 원장\n   파일에 기존 현재 항목과 이번 항목을 함께 저장한다. 예를 들어\n   `config/content_review.<날짜>.<작업ID>.json`을 만들고 검증한 뒤 `review_ledger` 포인터를\n   옮긴다. 이전 원장을 덮거나 다른 글의 검토를 누락하지 않는다. 그 파일이 이미 있으면\n   새 판 이름을 쓴다. 신규 항목 추가도 같은 방식으로 기록한다.\n5. **색인과 실제 질의를 확인한다.** 아래 명령이 성공한 뒤 해당 글의 상태·현재 판·본문\n   지문과 출처가 맞는지 읽고, 독자가 물을 질문으로 검색한다. DB에 저장된 검토 완료 글은\n   기본 검색에서 새 본문이 나와야 한다. 미발행 MD는 `--include-drafts`로 확인하며,\n   검토하지 않은 자료를 기본 답변에 넣기 위해 제외 옵션을 풀지 않는다.\n\n   ```powershell\n   python -m housing_watch knowledge --build --status\n   python -m housing_watch knowledge --document report:<id> --json\n   python -m housing_watch knowledge \"이번 글의 구체적인 독자 질문\" --limit 5 --json\n   ```\n\n6. **반영까지 마친 뒤 완료를 보고한다.** 본문 지문이 달라 `review_outdated`로 남거나\n   검토 완료 글을 찾지 못하면 저장 판·원장·연결 목록·질문 표현을 대조해 원인을 고친다.\n   해결되지 않으면 글 저장과 검색 반영의 상태를 따로 보고하고 검색 연결 완료로 표시하지\n   않는다. 결과에는 새 글의 ID·판, 검토 범위, 검색 확인과 남은 한계를 남긴다.\n\n이 절차의 저장과 색인 갱신은 기존 저장소 계정·원격 검증 규칙을 따른다. 별도 사용자\n확인을 반복해서 요구하지 않는다. 파일 반영 권한이 확인되지 않으면 기존 가드대로 멈춘다.\n유료 생성·클라우드 업로드·예약·홈페이지 배포 권한을 추가하지 않는다. 단독 수집기 실행은\n내용 검토가 아니며 이 절차는 리서치 작성 작업의 완료 단계다.\n\n"
+                }
+              ]
+            },
+            {
+              "id": "section-editing",
+              "kind": "method",
+              "version": "1.0.0",
+              "supports": [
+                "technology",
+                "comparison",
+                "market",
+                "opportunity",
+                "model_introduction",
+                "news",
+                "custom"
+              ],
+              "stages": [
+                "write"
+              ],
+              "sources": [
+                {
+                  "path": "skills/research-teaching/references/editing.md",
+                  "section": "절별 편집",
+                  "sha256": "6373e218756a33531f9acb90d5a399223ec984f56181558f94b2a06f550a3900",
+                  "text": "## 절별 편집\n\n각 절이 답할 독자의 질문을 찾고 실제 답의 문장을 지목한다.\n정의 전에 나온 용어, 빠진 전제와 연결 설명, 비교 축이 섞인 부분을 찾는다.\n문제를 발견하면 원문, 문제의 이유와 수정안을 함께 남긴다. 정보가 부족하면 추가 조사로 돌아간다.\n본문을 충분히 설명한 뒤 요점, 표와 제목을 실제 내용에 맞춘다.\n문체 수정을 위해 근거 없는 통계, 인용이나 저자의 경험담을 추가하지 않는다.\n\n"
+                }
+              ]
+            },
+            {
+              "id": "korean-editing",
+              "kind": "method",
+              "version": "1.0.0",
+              "supports": [
+                "technology",
+                "comparison",
+                "market",
+                "opportunity",
+                "model_introduction",
+                "news",
+                "custom"
+              ],
+              "stages": [
+                "write"
+              ],
+              "sources": [
+                {
+                  "path": "skills/research-teaching/references/editing.md",
+                  "section": "한국어 문장 편집",
+                  "sha256": "a078b16d877034b6718a0cd576ee7c8561832cffe6939ae80a1292ee5d151968",
+                  "text": "## 한국어 문장 편집\n\n번역투, 불필요한 명사화, 같은 마무리의 반복, 추상적인 단어 나열과 과장을 찾는다.\n이번 독자에게 필요한 용어와 일관된 격식은 보존한다. 특정 단어나 문장부호를 기계적으로 삭제하지 않는다.\n원문과 수정문에서 행위자, 수치와 단위, 날짜, 부정과 추정, 적용 조건 및 인과관계를 대조한다.\n추정 표현을 단정으로 바꾸거나 실제로 없던 효과를 넣은 수정은 되돌린다.\n코드, 명령, 식별자와 링크는 일반 문장 교정 대상으로 취급하지 않는다.\n첫 절에서 변경 전후와 이유를 확인한 뒤 같은 방법을 나머지 원고에 적용한다.\n\n"
+                }
+              ]
+            },
+            {
+              "id": "reader-review",
+              "kind": "method",
+              "version": "1.0.0",
+              "supports": [
+                "technology",
+                "comparison",
+                "market",
+                "opportunity",
+                "model_introduction",
+                "news",
+                "custom"
+              ],
+              "stages": [
+                "review"
+              ],
+              "sources": [
+                {
+                  "path": "docs/authoring/review.md",
+                  "sha256": "0f86c95aa64ab7b60ffd6c825a237f573a1e246c89fe0e2300b10493f4cfec7a",
+                  "text": "# 내용과 독해 검토 방법\n\n선택한 유형과 질문에 해당하는 기준으로 검토한다. 에이전트 검토와 사람 시험을 구분하며 위임 권한을 만들지 않는다.\n\n## 2026-10-12: 설명 그림의 의미와 연결을 검토하기\n\n먼저 그림이 답할 독자의 질문을 정한다. 개념의 정의를 작업 순서 그림만으로 대신하지 않는다. 관계를 설명한다면 행위자와 공유하는 목표, 정보 및 책임을 본문과 그림에 연결한다.\n\n각 화살표의 출발 상자, 도착 상자, 전달하는 입력이나 결과를 표로 적고 실제 이미지의 선과 화살촉을 대조한다. 꼬리가 출발 경계에 닿는지, 도착 방향이 맞는지, 겹침과 불필요한 순서가 생기지 않는지 확인한다. 함께 고려하는 조건에 순차 화살표를 붙이지 않는다. 실패와 성공 경로를 그렸다면 다음 행동도 일치해야 한다.\n\n도해를 단순화했다면 생략한 조건과 역할의 참여 범위를 설명한다. 그림, 대체 텍스트와 본문의 의미가 같은지 확인하며, 그림이 예쁘거나 확대 버튼이 동작한다는 사실을 의미 검토와 합산하지 않는다. [DevOps r5의 거부와 r6 수정](../DEVOPS_DIAGRAM_REPAIR.2026-10-12.md)을 참고하되 수정본의 독자 승인을 주장하지 않는다.\n\n2026-10-09 보강: [AI 집필 연구](../AI_WRITING_RESEARCH.2026-10-09.md)와\n[질문·근거·학습 결과 검토](../../skills/research-teaching/references/substantive-review.md)를 적용한다.\n독자의 핵심 질문마다 본문의 답 위치·근거·공백을 연결한다. 기술마다 고유한 원리와 실제 자료\n해석이 있어야 하며, ‘조건 확인·검증·기록’의 반복만으로 보강됐다고 판정하지 않는다.\n사용자가 승인한 독립 에이전트 검토에서는 수정 원고를 읽게 하고 지적을 고친 뒤 재판정한다.\n전체 보강의 현재 범위와 실제 검증 결과는 [작업 상태](../RESEARCH_AUTHORING_REPAIR.2026-10-09.md)에 남긴다.\n\n2026-10-08부터 Signal Desk의 리서치 작성·보강·내용 검토에 적용한다.\n이 문서는 작성 에이전트의 작업 기준이다. 독자에게 그대로 보여줄 목차나\n모든 보고서에 강제할 양식이 아니다.\n\n## 에이전트의 작성 절차와 게시 판단\n\n1. **독자 작업 정의:** 업무 문제, 기존 지식, 끝낼 작업, 확인할 결과를 작성한다.\n   'MCP 이해하기', 'RAG 알아보기'처럼 기술 이름만 쓰면 다시 구체화한다.\n2. **필요한 근거 조사:** 이 작업을 할 수 있는 현재 도구·기능, 시작 조건, 제약,\n   공식 예제를 확인한다. 원문 요약을 바로 게시용 문장으로 바꾸지 않는다.\n3. **완성된 사례 구성:** 실제 샘플 값과 중간 결과를 고정한다. 어느 입력이 어떤\n   처리를 거쳐 어떤 출력에 대응하는지 끝까지 보여주고, 필요한 개념을 그 관계로\n   설명한다. 가상 사례·개념 코드·실행 확인한 실습은 구분한다.\n4. **학습과 적용 작성:** 왜 쓰는지, 어떻게 동작하는지, 어떻게 시작하는지,\n   자기 작업으로 바꾸려면 무엇이 달라지는지 설명한다. 설명형 학습에는 풀이가\n   있는 변형 문제를, 실습에는 행동·예상 출력·정상/실패 판정을 제공한다.\n5. **검토 후 재작성:** 아래 질문에 본문 위치를 인용해 답한다. 필요한 답이\n   본문에 없으면 누락으로 기록하고 원고를 보강한다. 검토자 자신의 상식으로\n   빈칸을 메워 통과시키지 않는다. 어려운 용어의 정의만 반복해 해결하지 않는다.\n6. **표현과 게시:** 내용이 충족된 뒤 메인 요약과 HTML을 만든다. 설명 필드를\n   모두 채웠거나 테스트가 통과했다고 교재 완성으로 처리하지 않는다. 검수 결과와\n   실행 확인 범위를 기록하고, 필요한 본문은 펼치기 안에 숨기지 않는다.\n\n| 검토 질문 | 원고가 보여줘야 할 근거 |\n| --- | --- |\n| 이 방법으로 내 어떤 작업이 나아지는가 | 구체적인 문제·완성 결과·적합하지 않은 경우 |\n| 어디서 어떻게 시작하는가 | 선택한 사용/구현 경로와 확인한 환경·준비물·첫 행동 |\n| 각 부분이 왜 필요한가 | 예시 값과 연결된 개념·처리 원리·선행 지식 |\n| 한 사례의 입력부터 결과까지 따라갈 수 있는가 | 실제 샘플 값·중간 변화·출력과 그 의미 |\n| 내 자료로 바꾸려면 무엇을 바꾸는가 | 다른 입력으로의 변형 예시와 풀이·변경점 |\n| 틀렸을 때 무엇을 확인하는가 | 관찰할 증상·확인 순서·실패 조건 |\n\n이 표는 게시용 목차나 점수표가 아니다. 모든 주제에 실행 실습을 강제하지 않는다.\n개념 교재에도 끝까지 풀어 준 사례와 새로운 상황에 적용하는 설명이 필요하다.\n실습을 약속한 글은 재현 경로가 빠지면 '실습 초안'으로 남긴다. 실행해 보지 않은\n단계를 검증 완료로 표시하거나 독자 사용성 시험을 했다고 주장하지 않는다.\n\n자동화를 구성할 때는 프로젝트 AGENTS에 위 목적과 필수 읽기를 두고, 작성 스킬에는\n단계별 입력·산출물·누락 시 재작성 규칙을 둔다. 지식베이스는 출처와 기능 조건,\n끝까지 풀어 준 예제, 사용자 검토를 받은 원고, 실패한 문장의 이유를 보존한다.\n기술 정리 역할과 집필·검토 역할은 별도 작업 단계로 수행한다. 여러 에이전트를\n자동으로 만드는 규칙은 아니며, 같은 에이전트의 별도 검토 과정으로도 수행한다.\n\nGoogle의 [독자 기준](https://developers.google.com/tech-writing/one/audience)은\n업무에 필요한 지식과 독자가 이미 가진 지식의 차이를 설명 범위로 삼는다.\nDiátaxis의 [실습 기준](https://diataxis.fr/tutorials/)은 구체적인 행동과 예상 결과를\n연결한다. [OpenAI의 스킬 문서](https://developers.openai.com/codex/skills)는\n재사용할 작업 절차를 지침·참고자료로 묶고 명시적인 입력·출력으로 설계하도록\n안내한다. 세 원문의 적용 절차와 위 검토 기준은 이 프로젝트의 편집 판단이다.\n\n## 제목·요약만으로 무엇을 배우는지 알 수 있는가\n\n2026-10-09 음성 보고서의 사용자 거부는 앞선 독립 Pass가 첫 화면의 이해와 자연스러움을\n충분히 검증하지 못했음을 보여준다. [수정 기록](../VOICE_REPORT_REPAIR.2026-10-09.md)과\n[구체적인 회귀 사례](../../skills/research-teaching/references/substantive-review.md#첫-화면과-비교-기준의-회귀-사례)를 따른다.\n첫 화면 검토에서는 본문을 실제로 제외한다. 명사형 소개를 완결된 문장으로 바꾸고, 독자가\n하려는 작업과 실제 비교 대상을 먼저 밝힌다. 구현 구조와 제품명을 같은 종류의 행으로 섞지 않는다.\n성능·비용·난이도 비교를 약속할 때는 실측·문헌 근거·설계 해석을 구분한다.\n\n제목에는 기술·주제 이름과 평이한 기능·변화·문제를 함께 담는다. 이름이 빠져\n무엇에 관한 글인지 알 수 없는 제목, 낯선 이름만 나열한 제목은 보강한다.\n요약은 본문 밖에서 읽어도 대상, 하는 일, 구체적인 쓰임과 중요한 조건이 전달되어야 한다.\n그림의 번호와 화살표를 읽는 방법이나 사이트 사용 안내로 주제의 답을 대신하지 않는다.\n필요한 도해 설명은 해당 그림의 캡션·접근성 설명에 두고 요약에는 주제의 정보를 담는다.\n본문의 B·호스트·UI 리소스·문맥을 설명 없이 가져오지 않는다.\n\n본문을 읽은 지식으로 요약의 빈칸을 채우지 않는다. 제목·요약만 보고 다시 설명한 답과\n근거 문장을 남기고, 알 수 없는 부분을 실제로 고친다. 본문은 별도로 개념 순서,\n한 사례의 전체 과정과 다른 조건의 문제를 검토한다. 검사표 점수나 글자 수로 대체하지 않는다.\n\n## 내용 검토와 기술 검증을 분리해서 기록\n\n게시 전에는 원고만으로 아래 질문에 답할 수 있는지 검토한다.\n\n1. 독자가 해결할 질문에 이 글이 실제로 답했는가?\n2. 선행 지식을 모르면 어느 문장에서 막히며, 그 부분을 설명했는가?\n3. 주어·대상·조건·단위가 원문과 같은가? 인과관계를 과장하지 않았는가?\n4. 한 예시의 입력·처리·출력이 연결되고 서로 모순되지 않는가?\n5. 결론이 왜 나오는지 설명하며 적용되지 않는 조건도 구분했는가?\n6. 처음의 예시와 다른 상황에 독자가 이 개념을 적용할 수 있는가?\n7. 원문 링크는 근거 확인·심화 학습을 돕는가? 빠진 본문 설명을 대신하지 않는가?\n\n각 질문은 통과 문구를 붙이는 체크박스가 아니라 실제 원고를 고칠 기준이다.\n막힌 문장과 수정 이유를 기록한다. 새 사례에 대한 예상 답은 근거와 함께\n작성하되 실제 독자 시험을 하지 않았다면 독자 검증 완료라고 쓰지 않는다.\n\n현재 `validate_report`는 형식·출처 ID·자료 타입을, `review`는 주택 브리핑의\n운영·출력 상태를 검사한다. 테스트 통과·출처 수·학습 장 수·모바일 넘침 없음은\n독자의 이해를 증명하지 않는다. 자동 검사에는 구조적으로 확인 가능한 부분만\n맡기고 사실 의미·논리·설명 충실도는 원문과 원고를 읽어 검토한다.\n\n보고서 수정 게시 시에는 새 immutable batch와 같은 보고서 ID로 이력을\n남긴다. 앞선 판을 덮어쓰지 않는다. 렌더링·링크·모바일 검증은 내용 검토와\n함께 수행하되 각각의 결과를 구분해 기록한다.\n"
+                },
+                {
+                  "path": "skills/research-teaching/references/substantive-review.md",
+                  "sha256": "2030364c1fc5a9af175b38395fa5e7c14a9471c7a97cae427d616e8bfcbe618b",
+                  "text": "# 질문에 답하는 정보와 설명을 검토하기\n\n## 글마다 독자가 알아야 할 것이 다르다\n\n기술 설명의 독자는 입력이 어떤 과정을 거쳐 결과가 되는지, 다른 방식과 왜 다른지\n이해해야 한다. 실습의 독자는 준비부터 실행·기대 출력·실패 진단까지 따라갈 수 있어야 한다.\n시장 분석의 독자는 관측 대상·기간·단위와 비교 범위, 반대 근거를 보고 자기 판단을 좁혀야 한다.\n행사·지원 안내의 독자는 자신이 어떤 참여 역할과 필수 조건에 해당하는지 선별할 수 있어야 한다.\n원문에 없는 내용은 추가로 조사한다. 같은 목차·문단 수·SDK 코드·퀴즈를 모든 글에 강제하지 않는다.\n\n모델 소개는 [모델 소개 운영 기준](../../../docs/AI_MODEL_RESEARCH.md)에 따른다.\\n가상 활용 사례나 응용 문제를 요구하지 않고 다른 모델과의 비교 및 장단점에 답하는지 확인한다.\\n\\n## 질문과 근거의 공백을 작업 메모에서 찾는다\n\n핵심 질문마다 필요한 자료, 원문에서 확인한 답, 본문의 답 위치, 남은 공백을 연결한다.\n글의 제목이 실제보다 큰 결과를 약속하면 제목과 범위를 조정하거나 그 결과까지 보강한다.\n자료가 부족한 상태에서 익숙한 일반 조언으로 문단을 채우지 않는다.\n\n| 원고의 약속 | 실질 내용의 예 | 그 내용이 없을 때 할 일 |\n| --- | --- | --- |\n| 문서 검색 AI를 이해한다 | 원문 부분·색인·질문·후보·선택·답변의 관계와 버전·권한의 역할 | 검색 과정에 답하는 문서와 후보 출력 확보 |\n| 작은 AI 앱을 만든다 | 모델의 호출 요청, 프로그램 실행, 결과 반환, 최종 답·화면이 끝까지 연결 | 실제 연결을 제공하거나 원리·제작 계획으로 범위 조정 |\n| 비용 표로 모델을 고른다 | 토큰 단가·구독 차감·시도당 비용·성공당 비용의 정의와 계산 | 출처 없는 배율을 예산 사실처럼 쓰지 않고 계산 가능한 범위 설명 |\n| 시장 변화를 판단한다 | 표본·기간·분모·관측 단위·다른 가능한 설명·선택의 조건 | 단일 채용 공고·자가 보고·과거 수입으로 전체 시장을 단정하지 않기 |\n| 지원 기회를 선별한다 | 원문·첨부의 신청 역할, 선행 자격, 일정·재정 조건을 사례에 대입 | 첨부 미열람을 남기고 신청 가능성을 확정하지 않기 |\n\n## 번역과 요약은 의미가 유지되는지 대조한다\n\n행위자, 조건, 수치·단위, 기간, 인과관계의 강도가 보존되는지 확인한다.\n원문이 기능 존재를 말했는데 ‘업무 성과가 향상됐다’로 바꾸거나, 제한된 표본을\n전체 시장으로 확대하지 않는다. 원문 자체가 작동 과정이나 실제 효과에 답하지 않는다면\n문체를 교정할 것이 아니라 자료를 추가한다. 영문 초안과 번역을 대조하지 않았다면\n번역을 직접 원인으로 확정하지 않는다.\n\n## 제목과 요약을 독립적으로 읽는다\n\n제목·요약만 받은 독자가 대상, 하는 일, 쓰임, 중요한 조건을 자기 말로 설명할 수 있는지 본다.\n낯선 이름은 일상적인 기능 설명과 연결한다. 기술 이름을 지우고 모호한 동사만 남기지 않는다.\n‘이 보고서는 설명한다’, ‘검증해야 한다’ 같은 안내 문장을 사실·원리·비교의 대용품으로 쓰지 않는다.\n\n## 본문은 같은 사례의 과정을 추적한다\n\n첫 등장 개념을 먼저 설명하고, 사례의 입력·중간 상태·출력과 각 단계의 이유를 함께 읽는다.\n핵심 설명은 주된 읽기 경로에 둔다. 코드는 앞에서 설명한 값과 과정을 그대로 구현해야 한다.\n제품 호출을 실행하지 않았다면 개념 예시·로컬 모의 실행·실제 서비스 실행을 구분한다.\n배운 내용을 다른 조건에 적용하는 문제에서는 결론뿐 아니라 이유와 본문 근거를 확인한다.\n\n## 첫 화면과 비교 기준의 회귀 사례\n\n2026-10-09 사용자는 독립 검토를 통과한 음성 보고서의 제목과 소개를 다시 거부했다.\n이 사례의 문제는 원문 기능 자체가 없다는 것이 아니라 독자의 질문 대신 집필자의\n검토 동작을 소개하고, 서로 다른 비교 기준을 섞었다는 점이다.\n\n| 거부된 표현·구성 | 실제 실패 | 수정할 정보 |\n| --- | --- | --- |\n| 말로 AI 업무를 실행하는 세 가지 구조와 오류 찾기 | 어떤 앱의 무엇을 추가·선택하는지 모호함 | 기존 AI 앱의 음성 입력·답변·대화 기능이라는 대상과 목적 |\n| 같은 발화를 음성 인식·업무 조회·답변 재생으로 추적한다 | 독자의 필요보다 집필자의 설명 방법부터 나옴 | 키보드 대신 말로 요청하고, 답도 들을지 결정하는 상황 |\n| 이미 만든 텍스트 앱…선택 기준. | 서술어 없는 소개, 무엇을 기준으로 무엇을 고르는지 비어 있음 | 중간 문장을 확인할 필요와 대화 중 조건 변경 같은 실제 조건 |\n| 세 구조 제목 아래 Gemini Live/GPT-Live/Realtime/단계형 네 행 | 공급사 제품과 역할 분담을 같은 종류처럼 비교 | 동일한 역할 분담을 행으로 비교하고 제품 사례를 별도 연결 |\n| 속도·난이도·비용을 설명한다고 약속 | 기능 문서만으로 실측 우열을 알 수 없음 | 맡아야 할 구현 작업과 측정 항목, 실제 확보한 수치의 범위 |\n\n초기 검토는 title/deck/description/summary/highlights만 별도 입력으로 제공한다.\n검토자는 그 문장으로 알 수 있는 대상·문제·대안·쓰임과 추측해야 하는 부분을 구분한다.\n그 뒤 본문에서 제목의 약속, 비교 기준, 설명 순서와 사실 근거를 검토한다.\n이 순서를 수행해도 실제 초보 사람의 이해가 확인된 것으로 부르지 않는다.\n요약에 설명할 내용의 목록만 있고 실제로 알게 되는 정보가 없다면 추가 보강한다.\n\n음성 입력만 추가하는 범위와 STT→AI→TTS 구조는 서로 배타적인 세 구조로 분류할 수 없다.\n전자는 필요한 기능 범위이고 후자는 음성으로 답하는 구현 경로다. 원문을 확인해 비교 기준을\n정한 뒤 원고를 쓴다. '3가지'라는 제목을 유지하려고 실제 내용을 왜곡하지 않는다.\n\n## 독립 에이전트 검토의 실제 기록\n\n위임은 사용자 또는 적용 가능한 지침의 승인 범위에서만 한다. 승인됐다면 검토자에게\n수정된 원고와 필요한 원문을 제공하고, 기대 답이나 ‘통과시켜야 한다’는 압력을 주지 않는다.\n새로운 평가가 목적이면 기존 판정을 답안처럼 제공하지 않는다. 이전 결함의 재검증이면\n그 결함과 수정 범위를 제공할 수 있으며 이를 새 독자의 무정보 시험으로 부르지 않는다.\n\n검토 기록에는 읽은 보고서 ID/판 또는 정확한 파일 hash, 제목·요약 이해, 본문 막힘 위치,\n해결할 누락·과장, 수정 후 재판정을 남긴다. 출력은 Pass / Revise / Evidence gap처럼\n명확히 하되 판단 이유가 본문에 있어야 한다. 분량·구조·인용 수는 합격 근거가 아니다.\n에이전트 검토가 끝나도 실제 사람의 독해·실습 시험을 수행했다고 말하지 않는다.\n\n## 참고한 방법과 적용의 한계\n\n질문하며 자료를 찾는 사전 조사(STORM), 유창성·정확성·인용 지원의 분리(ALCE),\n과제별 내용 기준(WritingBench/DeepResearch Bench), 깊은 설명과 풀이 사례(IES)를 참고했다.\n이 절차 전체나 하나의 집필 프롬프트가 한국어 교재 품질을 보장한다는 실험 결과는 아니다.\n실제 원고의 질문·사례·근거와 검토자의 막힘으로 효과를 확인하고 필요한 지침만 수정한다.\n\n원문: https://aclanthology.org/2024.naacl-long.347/,\nhttps://aclanthology.org/2023.emnlp-main.398/,\nhttps://arxiv.org/html/2503.05244v1,\nhttps://arxiv.org/html/2506.11763v1,\nhttps://ies.ed.gov/ncee/wwc/Docs/PracticeGuide/20072004.pdf.\n"
+                }
+              ]
+            },
+            {
+              "id": "research-report",
+              "kind": "template",
+              "version": "1.0.1",
+              "supports": [
+                "technology",
+                "comparison",
+                "market",
+                "opportunity",
+                "model_introduction",
+                "custom"
+              ],
+              "stages": [
+                "write"
+              ],
+              "sources": [
+                {
+                  "path": "docs/authoring/presentation.md",
+                  "section": "수치 비교 보고서",
+                  "sha256": "f4161db0f905d25e11128feed10d96a153f791bb90f2ee60fae5b5eba1542631",
+                  "text": "## 수치 비교 보고서\n\n기존 수치 보고서 표시를 사용한다. 같은 비교 기준의 표와 실제 수치의 차트를 선택한다. 수치가 없는 개념 설명에 임의 데이터를 만들지 않는다. 공통 화면 계약은 [보고서 화면](../BRIEFING_TEMPLATE.md)에 있다.\n\n"
+                },
+                {
+                  "path": "docs/BRIEFING_TEMPLATE.md",
+                  "section": "Unified typography, 2026-10-09",
+                  "sha256": "59e9506cc40a434ba77fb1f3851037e2b9ddee910e1d45c2c407ed36f43fc800",
+                  "text": "## Unified typography, 2026-10-09\n\nUse the locally packaged full Pretendard Variable v1.3.9 face for Korean, Latin,\nnumbers and punctuation in the shared Editorial shell, main, authored reports,\nnavigation, native model views and model reading companions. Main headings use700,\nsubheadings/emphasis600 and body400. Do not restore text-specific heading subsets:\nnew titles contained Korean glyphs missing from the old subset, and the reported\nUpwork heading actually used Roboto Slab, Noto Serif KR and Malgun Gothic together.\nCSS `font-synthesis:none` prevents simulated weight/style; the variable face\nprovides the actual weights. Code retains its monospace family. Imported originals\ninside isolated model iframes keep their original presentation.\n\nThe unmodified full font and original SIL OFL notice are in\n`housing_watch/assets/editorial/`; see its README for exact provenance/hash. The\nexisting build embeds one font in the shared content-versioned stylesheet, with\nno external font request. Uncompressed CSS grows from347,313 to2,851,316 bytes;\nthis is the cost of complete future Korean coverage and remains shared/cached\nacross pages. Standalone exports remain self-contained.\n\nLocal verification: actual browser font selection on the reported title now\ncontains only Pretendard Variable. All11,172 modern Korean syllables plus sample\nLatin/digits/punctuation select the same face; actual weights700/600 are used.\nAt320/390/1280px,96 font/representative-page checks and253 all34-report/model-\ncompanion/search/disclosure/history checks pass.109 tests,195HTML/9676 internal\nreferences, brief/desk/review and inspected PNG pass; report/history/model data\nand publication order exactly match the pre-change local snapshot. Receipts\nand before/after captures are retained under the existing registered research\nreview roots. App browser connection failed, so visual tests used standalone\nPlaywright/Edge. Optional host/favicon404 remains separately recorded.\n\nSource `4f956357646c12ca8972edb61826f2a6ad2072b2` deployed successfully through\n[Pages37891501551](https://github.com/Hansihoo/signal-desk/actions/runs/37891501551).\nPublic checks at2026-10-09 06:04:56.544319 UTC confirm exact34 current reports,\n122 edition documents,14 original model rows and publication order, matching\nlocal CSS (normalized SHA256 `5f48bd5bff11375877f7b14fea252e3becd3f87dd8f46795d5e2f8b6bc9ba7fc`),\none active font face and the original published license. Actual390px public\nfont/coverage/representative-route/search/disclosure/menu checks all36 pass at\n06:05:03.752 UTC; inspected public title/main screenshots match the intended\nuniform weights. Optional host favicon404 is separate from content errors.\nApp opening returned queued; this is not proof that the user viewed the page.\nThe retained public receipts are `font-weight-public-data-checks.json` and\n`font-weight-public-checks.json`; no reader preference/learning approval claimed.\n\n\n"
+                }
+              ],
+              "output_kind": "report",
+              "artifacts": [
+                {
+                  "path": "housing_watch/editorial.py",
+                  "sha256": "48962242f1a249780861a02b15a0e02f23fddcf9398a69c4ce7f8f3aad33baae"
+                },
+                {
+                  "path": "housing_watch/editorial_shell.html",
+                  "sha256": "51c686c3933942a76a282c20106d211332c08d5ba59dab0a5de9adfe953842fb"
+                },
+                {
+                  "path": "housing_watch/editorial.css",
+                  "sha256": "2ffc886b1f941a55822ff0a77442c37cbda110af5b7832a35e56d01101a31b66"
+                },
+                {
+                  "path": "housing_watch/editorial.js",
+                  "sha256": "d3435dc19709427b81a9b77514c5945cc34402e2dcf60232bb044280e43550b8"
+                },
+                {
+                  "path": "housing_watch/assets/editorial/fonts.css",
+                  "sha256": "44b9b2028cf703cc40c0446093e23aa7d3427015c9f61e6ee164f5c45123df30"
+                },
+                {
+                  "path": "housing_watch/assets/editorial/main.css",
+                  "sha256": "2574c51914d2bdf3d8da8afb4ec41fcbc73adcc12ebac376e26242efa04e33df"
+                },
+                {
+                  "path": "housing_watch/editorial_report.html",
+                  "sha256": "ac134b199a8f3e8255501679b6869c170b1088789c0d0dadcb869fa92aa244d7"
+                },
+                {
+                  "path": "housing_watch/briefing_preview.py",
+                  "sha256": "9432ec00398f5ce9ba1222366502d237e88b87723d54e975ea7780e58f82a463"
+                }
+              ]
+            }
+          ],
+          "requirements": [],
+          "preferences": {
+            "examples": "가상 업무와 활용 예시, SDK/API 실습 코드와 문제를 넣지 않는다.",
+            "opening": "제목 아래 목적, 다음 요약을 둔다.",
+            "tone": "자연스러운 완결된 한국어 문장, 내용을 설명하는 소제목."
+          },
+          "overrides": [],
+          "scope": "document",
+          "status": "planned",
+          "recipe_hash": "81ce07ffc8e2b5a5ee70a66296e5d365492011b5e8dbe266d64478127c0b60ba"
+        },
+        "content_hash": "39af19adec1f7471ab6b9558504a7b146e2cfc74c56cbb868a14d95a7ffd9bf9"
+      },
+      "first_screen_review": {
+        "input_hash": "6f9f303975a407be437c776fd89c0f2fffbbafc338bd043511bc925c929b314e",
+        "reviewer": "author_self_review; isolated title/description/deck in first-screens.json",
+        "reviewed_at": "2026-10-22",
+        "checks": {
+          "readability": {
+            "passed": true,
+            "reason": "본문을 제외한 첫 화면에서 모델 역할과 비교 목적, 정확도/속도 및 제공 조건의 한계를 확인했습니다. NVIDIA의 새 검색 모델과 문서 처리 모델을 이전 세대 및 Qwen, LightOnOCR와 비교해 정확도, 장비 조건과 제공 범위를 판단하도록 정리했습니다.",
+            "locations": [
+              "/title",
+              "/description",
+              "/deck"
+            ]
+          },
+          "question_answered": {
+            "passed": true,
+            "reason": "본문을 제외한 첫 화면에서 모델 역할과 비교 목적, 정확도/속도 및 제공 조건의 한계를 확인했습니다. NVIDIA의 새 검색 모델과 문서 처리 모델을 이전 세대 및 Qwen, LightOnOCR와 비교해 정확도, 장비 조건과 제공 범위를 판단하도록 정리했습니다.",
+            "locations": [
+              "/title",
+              "/description",
+              "/deck"
+            ]
+          },
+          "reader_outcome": {
+            "passed": true,
+            "reason": "본문을 제외한 첫 화면에서 모델 역할과 비교 목적, 정확도/속도 및 제공 조건의 한계를 확인했습니다. NVIDIA의 새 검색 모델과 문서 처리 모델을 이전 세대 및 Qwen, LightOnOCR와 비교해 정확도, 장비 조건과 제공 범위를 판단하도록 정리했습니다.",
+            "locations": [
+              "/title",
+              "/description",
+              "/deck"
+            ]
+          }
+        },
+        "issues": []
+      },
+      "body_review": {
+        "input_hash": "351befc23cdf7cf944bafe5faa7fc75bfc147798938f0f88d2737e2df38047d3",
+        "reviewer": "author_self_review; edited body with selected originals/tables and PNGs",
+        "reviewed_at": "2026-10-22",
+        "checks": {
+          "readability": {
+            "passed": true,
+            "reason": "압축 초안을 실제 문장으로 편집했습니다. 비교표를 본문에서 해석하고 가상 업무와 실습 코드를 넣지 않았습니다.",
+            "locations": [
+              "/draft/report/tables",
+              "/draft/report/explanation",
+              "/draft/report/caveats"
+            ]
+          },
+          "question_answered": {
+            "passed": true,
+            "reason": "20일 검색모델과17일 Parse,21일 발표를 구분하고 역할별 경쟁 비교와 가격 미확인을 설명했습니다.",
+            "locations": [
+              "/draft/report/tables",
+              "/draft/report/explanation",
+              "/draft/report/caveats"
+            ]
+          },
+          "reader_outcome": {
+            "passed": true,
+            "reason": "NVIDIA의 새 검색 모델과 문서 처리 모델을 이전 세대 및 Qwen, LightOnOCR와 비교해 정확도, 장비 조건과 제공 범위를 판단하도록 정리했습니다.",
+            "locations": [
+              "/draft/report/tables",
+              "/draft/report/explanation",
+              "/draft/report/caveats"
+            ]
+          },
+          "analysis": {
+            "passed": true,
+            "reason": "카드V3와 발표V3.1,입력모드와 이미지 전처리 차이,공통top50을 유지했습니다. Parse의공개점수/공급사H100타이밍과준비/워밍업/렌더제외,pass별정확도/속도와하위결과를 설명했습니다. FP4 GB200/정확도손실/단위혼재,32K 이미지토큰합계,고정언어모듈의기대/실검증 차이를 보존했습니다.",
+            "locations": [
+              "/draft/report/tables",
+              "/draft/report/explanation",
+              "/draft/report/caveats"
+            ]
+          },
+          "evidence": {
+            "passed": true,
+            "reason": "NVIDIA 공식 모델 카드와 21일 발표를 대조했습니다. ViDoRe V3와 V3.1, 입력 형태와 전처리, 검색과 재정렬, 공개 점수와 공급사 처리량을 분리합니다. 실제 구축, 한국어 사내 문서 평가, 독립 재현과 청구는 하지 않았습니다.",
+            "locations": [
+              "/draft/report/tables",
+              "/draft/report/explanation",
+              "/draft/report/caveats"
+            ]
+          },
+          "factuality": {
+            "passed": true,
+            "reason": "원문 발표일과 카드 출시/갱신일,실제 확인일을 나눴습니다. 미확인 API 단가를0으로 채우지 않고 단위/집합/반대결과를 유지했습니다. 카드V3와 발표V3.1,입력모드와 이미지 전처리 차이,공통top50을 유지했습니다. Parse의공개점수/공급사H100타이밍과준비/워밍업/렌더제외,pass별정확도/속도와하위결과를 설명했습니다. FP4 GB200/정확도손실/단위혼재,32K 이미지토큰합계,고정언어모듈의기대/실검증 차이를 보존했습니다.",
+            "locations": [
+              "/draft/report/tables",
+              "/draft/report/explanation",
+              "/draft/report/caveats"
+            ]
+          }
+        },
+        "issues": []
+      },
+      "review_limits": {
+        "scope": "같은 작성자의 고립 첫 화면과 본문/원문 자체 검토. 독립 에이전트나 사람 독해 시험과 실제 모델 실행은 없음.",
+        "not_performed": [
+          "independent agent review",
+          "human reader test",
+          "model execution",
+          "billing",
+          "private company document evaluation"
+        ]
+      }
+    }
+  ]
+}

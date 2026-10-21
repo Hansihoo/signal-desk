@@ -1,0 +1,1326 @@
+{
+  "schema_version": 1,
+  "reports": [
+    {
+      "id": "granite-speech-5-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "checked_on": "2026-10-22",
+      "title": "Granite Speech 5.0 소개: 음성 인식 정확도와 다국어 TurboCTC의 장단점",
+      "description": "Granite의 새 음성 모델과 기존 모델 갱신을 구분하고, Qwen 및 다른 공개 음성 모델과 정확도, 속도, 지원 언어를 비교하도록 정리했습니다.",
+      "deck": "Granite Speech 5.0 2B는 음성 인식과 번역 모델이고, 470M TurboCTC는 빠른 전사를 위한 별도 모델입니다. 잡음 환경과 키워드 처리가 개선됐지만 모든 언어와 평가에서 앞서지는 않습니다. TurboCTC 다국어판의 고속 측정은 비공식 결과이며, 공개 가중치가 무료 API를 뜻하지는 않습니다.",
+      "scope": "2B 카드상 20일 출시, TurboCTC의 21일 다국어 갱신, Plus의 19일 갱신과 21일 묶음 발표를 22일 확인했습니다. 기존 모델을 오늘 처음 등장한 것으로 세지 않습니다.",
+      "source_note": "IBM 공식 카드와 비교 그림을 읽은 문헌 비교입니다. WER, CER와 RTFx, 평가 대상 9개와 11개, 공식 측정과 비공식 측정, 신규 모델과 갱신을 구분합니다. 실제 실행, 독립 평가, 청구와 사람 독해 시험은 하지 않았습니다.",
+      "highlights": [
+        "신규와 갱신",
+        "정확도와 반대 결과",
+        "속도와 제공 조건"
+      ],
+      "summary": [
+        {
+          "label": "신규와 갱신",
+          "text": "2B는 20일 출시 카드가 있습니다. TurboCTC는 8월 영어 전용 모델이 21일 7개 언어로 갱신됐고, Plus는 4월 모델의 19일 가중치 갱신입니다. 21일은 세 모델을 함께 소개한 글의 날짜입니다.",
+          "source_ids": [
+            "launch",
+            "model",
+            "turbo",
+            "plus"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "정확도와 반대 결과",
+          "text": "잡음 평가 WER는 4.1의 16.35%에서 5.0의 14.80%로 낮아졌지만 Qwen3-ASR-1.7B의 13.41%보다 높습니다. 일본어 세 세트에서는 작은 TurboCTC가 2B보다 낮은 CER를 보였습니다.",
+          "source_ids": [
+            "noise",
+            "japanese"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "속도와 제공 조건",
+          "text": "다국어 TurboCTC의 19,870 RTFx는 카드에서 비공식 결과입니다. 같은 그림의 기존 영어판 21,174보다 낮습니다. Apache 2.0 가중치를 받을 수 있지만 표준 호스팅 API 단가와 장비별 운영비는 확인하지 못했습니다.",
+          "source_ids": [
+            "turbo",
+            "speed"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "tables": [
+        {
+          "id": "specs",
+          "title": "모델별 사양과 제공 범위",
+          "columns": [
+            "모델",
+            "규모",
+            "변경일과 성격",
+            "주요 제공 기능"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Granite Speech 5.0 2B",
+                "2B",
+                "2026-10-20 / 새 음성 언어 모델",
+                "음성 인식과 양방향 영어 번역; 영어→이탈리아어/중국어 번역 추가"
+              ],
+              "source_ids": [
+                "model"
+              ]
+            },
+            {
+              "values": [
+                "Granite Speech 5.0 TurboCTC 470M",
+                "0.47B",
+                "2026-10-21 / 기존 영어 전용 모델의 다국어 갱신",
+                "비자기회귀 CTC 음성 인식; 번역 모델과 구분"
+              ],
+              "source_ids": [
+                "turbo"
+              ]
+            },
+            {
+              "values": [
+                "Granite Speech 4.1 2B Plus",
+                "2B",
+                "2026-10-19 / 4월28일 기존 모델의 가중치 갱신",
+                "화자별 전사와 단어 타임스탬프; 4.1 계열 유지"
+              ],
+              "source_ids": [
+                "plus"
+              ]
+            }
+          ],
+          "note": "모두 Apache 2.0 공개 가중치입니다. 2B의 ASR 6개 언어와 TurboCTC의 7개 언어를 구분합니다. 한국어 ASR 지원은 확인한 목록에 없습니다."
+        },
+        {
+          "id": "english",
+          "title": "경쟁 모델의 영어 단문 오류율",
+          "columns": [
+            "모델",
+            "WER % / 공개9+비공개2"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Qwen3-ASR-1.7B-hf",
+                "5.40"
+              ],
+              "source_ids": [
+                "english"
+              ]
+            },
+            {
+              "values": [
+                "Granite Speech 5.0 2B",
+                "5.68"
+              ],
+              "source_ids": [
+                "english"
+              ]
+            },
+            {
+              "values": [
+                "cohere-transcribe-03-2026",
+                "5.77"
+              ],
+              "source_ids": [
+                "english"
+              ]
+            },
+            {
+              "values": [
+                "Hojo-ASR-V1",
+                "5.85"
+              ],
+              "source_ids": [
+                "english"
+              ]
+            },
+            {
+              "values": [
+                "thewhisper-large-v3-turbo",
+                "5.91"
+              ],
+              "source_ids": [
+                "english"
+              ]
+            },
+            {
+              "values": [
+                "higgs-audio-v3-stt",
+                "5.92"
+              ],
+              "source_ids": [
+                "english"
+              ]
+            },
+            {
+              "values": [
+                "ARK-ASR-3B",
+                "5.92"
+              ],
+              "source_ids": [
+                "english"
+              ]
+            },
+            {
+              "values": [
+                "canary-qwen-2.5b",
+                "5.94"
+              ],
+              "source_ids": [
+                "english"
+              ]
+            },
+            {
+              "values": [
+                "MOSS-Transcribe-Diarize",
+                "6.17"
+              ],
+              "source_ids": [
+                "english"
+              ]
+            },
+            {
+              "values": [
+                "Voxtral-Small-24B-2507",
+                "6.38"
+              ],
+              "source_ids": [
+                "english"
+              ]
+            },
+            {
+              "values": [
+                "distil-large-v3.5",
+                "6.76"
+              ],
+              "source_ids": [
+                "english"
+              ]
+            }
+          ],
+          "note": "IBM 카드 그림. 2026-10-21 Open ASR 결과로 공개 9개와 비공개 2개 영어 단문 테스트의 평균 WER(%)입니다. 낮을수록 좋습니다. 기관당 한 모델을 선정한 공급사 그림이며, 공개 9개만의 5.06과 구분합니다. 독립 실행과 모든 설정의 재현은 하지 않았습니다."
+        },
+        {
+          "id": "speed",
+          "title": "공개9세트에서 본 속도와 정확도",
+          "columns": [
+            "모델",
+            "WER % ↓",
+            "RTFx ↑",
+            "결과 구분"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Granite Speech 5.0 2B",
+                "5.06",
+                "545",
+                "공식 리더보드 표기"
+              ],
+              "source_ids": [
+                "speed"
+              ]
+            },
+            {
+              "values": [
+                "Granite Speech 5.0 TurboCTC 470M",
+                "5.51",
+                "19,870",
+                "다국어판 / 공급사 비공식 측정"
+              ],
+              "source_ids": [
+                "speed"
+              ]
+            },
+            {
+              "values": [
+                "Granite Speech 5.0 TurboCTC English-only",
+                "5.78",
+                "21,174",
+                "기존 영어 전용 공식 항목"
+              ],
+              "source_ids": [
+                "speed"
+              ]
+            },
+            {
+              "values": [
+                "Qwen3-ASR-1.7B-hf",
+                "4.94",
+                "819",
+                "공식 리더보드 표기"
+              ],
+              "source_ids": [
+                "speed"
+              ]
+            },
+            {
+              "values": [
+                "cohere-transcribe-03-2026",
+                "5.21",
+                "902",
+                "공식 리더보드 표기"
+              ],
+              "source_ids": [
+                "speed"
+              ]
+            }
+          ],
+          "note": "RTFx는 오디오 길이/처리 시간 비율이며 동시 요청 수나 토큰/초가 아닙니다. 공급사 그림의 구성으로 장비와 부하 전체는 미확인입니다. 영어 11세트 평균과 섞지 않습니다."
+        },
+        {
+          "id": "noise",
+          "title": "잡음과 잔향에서의 이전 모델 비교",
+          "columns": [
+            "모델",
+            "FFASR 평균 WER % ↓"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Granite Speech 5.0 2B",
+                "14.80"
+              ],
+              "source_ids": [
+                "noise"
+              ]
+            },
+            {
+              "values": [
+                "Granite Speech 4.1 2B",
+                "16.35"
+              ],
+              "source_ids": [
+                "noise"
+              ]
+            },
+            {
+              "values": [
+                "Granite Speech 4.1 2B NAR",
+                "15.16"
+              ],
+              "source_ids": [
+                "noise"
+              ]
+            },
+            {
+              "values": [
+                "Qwen3-ASR-1.7B",
+                "13.41"
+              ],
+              "source_ids": [
+                "noise"
+              ]
+            },
+            {
+              "values": [
+                "cohere-transcribe-03-2026",
+                "15.03"
+              ],
+              "source_ids": [
+                "noise"
+              ]
+            },
+            {
+              "values": [
+                "Whisper-large-v3",
+                "18.02"
+              ],
+              "source_ids": [
+                "noise"
+              ]
+            }
+          ],
+          "note": "2026-10-18 리더보드를 IBM이 수록했습니다. 다국어 전체 품질이나 회의 화자 분리 점수로 해석하지 않습니다."
+        },
+        {
+          "id": "format",
+          "title": "개선과 퇴보가 함께 나타난 문장 표기",
+          "columns": [
+            "평가",
+            "단위",
+            "4.1 2B",
+            "5.0 2B"
+          ],
+          "rows": [
+            {
+              "values": [
+                "LS clean",
+                "PER %",
+                "25.70",
+                "23.20"
+              ],
+              "source_ids": [
+                "model"
+              ]
+            },
+            {
+              "values": [
+                "CV-EN",
+                "PER %",
+                "9.13",
+                "9.18"
+              ],
+              "source_ids": [
+                "model"
+              ]
+            },
+            {
+              "values": [
+                "CV-FR",
+                "PER %",
+                "11.00",
+                "11.43"
+              ],
+              "source_ids": [
+                "model"
+              ]
+            },
+            {
+              "values": [
+                "VoxPopuli",
+                "Cap-F1",
+                "95.35",
+                "95.07"
+              ],
+              "source_ids": [
+                "model"
+              ]
+            }
+          ],
+          "note": "PER는 문장부호 오류율로 낮을수록, Cap-F1은 대문자 정확성으로 높을수록 좋습니다. 네 행은 상반된 결과를 보이기 위해 선정한 일부 평가입니다."
+        },
+        {
+          "id": "plus",
+          "title": "기존 Plus 가중치 갱신의 변화",
+          "columns": [
+            "평가",
+            "단위",
+            "이전 v2604",
+            "갱신 v2610"
+          ],
+          "rows": [
+            {
+              "values": [
+                "전체 타임스탬프",
+                "AAS ms",
+                "210.86",
+                "98.54"
+              ],
+              "source_ids": [
+                "launch",
+                "plus"
+              ]
+            },
+            {
+              "values": [
+                "짧은 타임스탬프",
+                "AAS ms",
+                "29.27",
+                "26.20"
+              ],
+              "source_ids": [
+                "launch",
+                "plus"
+              ]
+            },
+            {
+              "values": [
+                "20개 키워드 목록",
+                "biased-word WER %",
+                "11.79",
+                "6.48"
+              ],
+              "source_ids": [
+                "launch",
+                "plus"
+              ]
+            },
+            {
+              "values": [
+                "긴 음성",
+                "WER %",
+                "13.53",
+                "10.22"
+              ],
+              "source_ids": [
+                "launch",
+                "plus"
+              ]
+            },
+            {
+              "values": [
+                "화자 귀속",
+                "WDER %",
+                "4.40",
+                "4.10"
+              ],
+              "source_ids": [
+                "launch",
+                "plus"
+              ]
+            },
+            {
+              "values": [
+                "화자별 전사",
+                "cpWER %",
+                "30.50",
+                "28.48"
+              ],
+              "source_ids": [
+                "launch",
+                "plus"
+              ]
+            }
+          ],
+          "note": "전부 낮을수록 좋습니다. 시간 오차 AAS의 ms와 단어 및 화자 오류율 %를 합산하지 않습니다. 5.0 2B의 평가값이 아닙니다."
+        }
+      ],
+      "explanation": [
+        {
+          "id": "overview",
+          "title": "모델 개요와 이전 모델 대비 변화",
+          "lead": "큰 음성 언어 모델과 빠른 전사 전용 모델은 서로 다른 선택지입니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "음성 언어 모델과 CTC 모델",
+              "text": "5.0 2B는 음성과 텍스트를 연결해 전사와 번역을 수행합니다. 약 39만 시간의 공개 음성과 합성 자료를 학습했고, 최대 2,000개 용어 목록으로 고유명사 인식을 유도합니다. 영어와 프랑스어, 독일어, 스페인어, 포르투갈어, 일본어를 전사하고 영어와의 번역을 지원합니다. 영어에서 이탈리아어와 중국어로의 번역도 별도 범위입니다.",
+              "source_ids": [
+                "model"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "이름이 같은 TurboCTC의 갱신",
+              "text": "470M TurboCTC는 CTC라는 비자기회귀 방식으로 전사하며, 2B의 번역 기능을 그대로 갖춘 모델은 아닙니다. 기존 8월 25일 영어 전용판에서 6개 언어와 문장부호 및 대문자를 추가했습니다. 새 이름의 모델을 하나 더 만든 것이 아니므로 같은 ID의 의미 있는 가중치 변경으로 읽어야 합니다.",
+              "source_ids": [
+                "turbo"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "Plus의 역할",
+              "text": "4.1 2B Plus는 화자별 전사와 단어별 타임스탬프를 담당합니다. 카드에는 기존 4월 28일 출시와 10월 19일 갱신이 명시돼 있습니다. API와 프롬프트 형식을 유지한 갱신이지만 가중치와 권장 사용법이 바뀌므로 과거판의 수치와 구분합니다.",
+              "source_ids": [
+                "plus",
+                "launch"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "strengths",
+          "title": "장점: 잡음 대응과 경량 전사의 선택 폭",
+          "lead": "전사 정확도와 빠른 처리, 화자 정보 중 어느 것이 필요한지에 따라 장점이 다릅니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "이전 2B 대비 잡음 인식 개선",
+              "text": "FFASR에서 5.0 2B의 평균 WER 14.80%는 이전 4.1의 16.35%보다 낮습니다. WER는 정답 전사와 다른 단어의 삽입, 삭제 및 대체 비율이므로 낮은 값이 더 좋습니다. 잡음과 잔향이 있는 조건에서의 개선이며, 모든 음성 분포에서 동일한 개선 폭을 보장하는 값은 아닙니다.",
+              "source_ids": [
+                "noise"
+              ],
+              "kind": "judgment"
+            },
+            {
+              "type": "paragraph",
+              "title": "작은 모델의 일본어 결과",
+              "text": "동일한 일본어 정규화와 같은 세 테스트에서 470M의 평균 CER는 10.51%, 2B는 11.64%입니다. CommonVoice-17 JA는 8.48% 대 10.74%입니다. CER는 문자 단위 오류율이므로 영어 WER와 다른 척도입니다. 모델 규모가 크다고 언어별 정확도가 항상 높은 것은 아닙니다.",
+              "source_ids": [
+                "japanese",
+                "turbo"
+              ],
+              "kind": "judgment"
+            },
+            {
+              "type": "paragraph",
+              "title": "화자와 시간 정보의 개선",
+              "text": "Plus 갱신은 전체 타임스탬프 오차를 210.86ms에서 98.54ms로 줄였고, 20개 목록의 키워드 단어 오류율은 11.79%에서 6.48%로 낮아졌습니다. 이 값들은 전사 정확도 하나로는 알 수 없는 자막과 화자 정보의 차이를 보여줍니다.",
+              "source_ids": [
+                "launch",
+                "plus"
+              ],
+              "kind": "judgment"
+            }
+          ]
+        },
+        {
+          "id": "weaknesses",
+          "title": "단점과 비교의 한계",
+          "lead": "정확도 향상이나 높은 처리량이 모든 측정에서의 우위를 뜻하지는 않습니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "경쟁 모델보다 높은 오류율",
+              "text": "영어 11세트 평균은 Granite 5.68%, Qwen3-ASR-1.7B 5.40%입니다. FFASR도 Qwen 13.41%가 Granite 14.80%보다 낮습니다. 반대로 Granite는 같은 영어 11세트 그림에서 Cohere 5.77%보다 낮습니다. 어떤 평가와 경쟁자를 고르느냐에 따라 장단점이 달라집니다.",
+              "source_ids": [
+                "english",
+                "noise"
+              ],
+              "kind": "judgment"
+            },
+            {
+              "type": "paragraph",
+              "title": "평균의 모집단 차이",
+              "text": "공개 9세트만 보면 5.0 2B의 평균 WER는 5.06%이고, 비공개 2세트를 더한 그림에서는 5.68%입니다. 두 값을 모순으로 고치거나 5.06을 11세트의 Qwen 5.40과 직접 비교하면 잘못된 우위가 됩니다. 평가 대상 수가 다른 값은 분리해야 합니다.",
+              "source_ids": [
+                "english",
+                "speed"
+              ],
+              "kind": "judgment"
+            },
+            {
+              "type": "paragraph",
+              "title": "일부 문장 표기와 다국어 결과의 퇴보",
+              "text": "5.0의 CV-EN 문장부호 오류율 9.18%는 이전 9.13%보다 높고, CV-FR도 11.43% 대 11.00%입니다. VoxPopuli 대문자 F1은 95.07로 이전 95.35보다 낮습니다. 영어 단문 평균의 개선을 모든 언어의 문장 표기 개선으로 확대할 수 없습니다.",
+              "source_ids": [
+                "model"
+              ],
+              "kind": "judgment"
+            },
+            {
+              "type": "paragraph",
+              "title": "고속 결과의 조건",
+              "text": "다국어 TurboCTC 19,870 RTFx는 IBM 카드에서 비공식 측정으로 표시됩니다. 이전 영어 전용판은 같은 그림에 21,174 RTFx로 표시돼 있어, 다국어판이 그 이전판보다 빠르다고 읽을 수 없습니다. 발표 글의 대략 12,600 대비 1.6배라는 서술은 같은 그림의 현재 영어 전용 항목과 기준이 다릅니다. 장비, 배치와 전체 부하 조건의 재현은 별도로 필요합니다.",
+              "source_ids": [
+                "speed",
+                "turbo",
+                "launch"
+              ],
+              "kind": "judgment"
+            }
+          ]
+        },
+        {
+          "id": "availability",
+          "title": "가격과 제공 조건",
+          "lead": "가중치 라이선스와 호스팅 서비스 비용은 서로 다릅니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "공개 가중치와 운영 비용",
+              "text": "세 모델은 Apache 2.0으로 공개되며 카드에 Transformers 및 여러 실행 경로가 안내돼 있습니다. 내려받는 가중치가 호스팅 API의 무료 사용량을 보장하지는 않습니다. 확인한 원문에서 모델별 표준 API 단가, 최소 장비 비용과 서비스 보장은 확정하지 못했으므로 $0으로 표시하지 않습니다.",
+              "source_ids": [
+                "model",
+                "turbo",
+                "plus"
+              ],
+              "kind": "judgment"
+            },
+            {
+              "type": "paragraph",
+              "title": "입력과 언어의 경계",
+              "text": "5.0 2B 카드는 16kHz 단일 채널 입력과 약 2분 이하 구간의 전사를 권장합니다. 긴 파일은 구간 분할이 필요할 수 있습니다. 한국어 ASR은 공식 지원 목록에 없고, 일본어 전사와 영어/중국어 번역 지원이 한국어 인식을 뜻하지도 않습니다. 실제 한국어 성능이나 실시간 통화 지연은 이번 자료로 판정할 수 없습니다.",
+              "source_ids": [
+                "model",
+                "turbo"
+              ],
+              "kind": "judgment"
+            }
+          ]
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "선택 기준",
+            "text": "번역과 용어 제어가 필요하면 2B, 다국어 전사 처리량이 중요하면 TurboCTC, 화자와 시간 정보가 중요하면 Plus를 비교할 수 있습니다. 다만 Qwen과의 오류율 차이, 비공식 속도 측정과 한국어 지원 공백까지 함께 판단해야 합니다.",
+            "source_ids": [
+              "model",
+              "turbo",
+              "plus",
+              "english",
+              "speed"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "20일과 21일의 신규 및 갱신 자료와 19일 Plus 갱신을 22일 확인했습니다. 공개/비공개 평가 모집단과 WER, CER 및 RTFx를 나눠 읽었으며 실제 모델 실행, 독립 성능 재평가와 청구는 수행하지 않았습니다.",
+          "source_ids": [
+            "model",
+            "turbo",
+            "plus",
+            "english",
+            "speed"
+          ]
+        }
+      ],
+      "references": [
+        {
+          "id": "launch",
+          "title": "IBM의 Granite Speech 5.0 발표",
+          "url": "https://huggingface.co/blog/ibm-granite/granite-speech-5",
+          "description": "신규 2B와 기존 모델의 갱신을 함께 설명합니다."
+        },
+        {
+          "id": "model",
+          "title": "Granite Speech 5.0 2B 모델 카드",
+          "url": "https://huggingface.co/ibm-granite/granite-speech-5.0-2b",
+          "description": "출시일, 언어, 번역 범위와 문장부호 평가를 제공합니다."
+        },
+        {
+          "id": "turbo",
+          "title": "다국어 TurboCTC 모델 카드",
+          "url": "https://huggingface.co/ibm-granite/granite-speech-5.0-470m-turboctc",
+          "description": "기존 영어판과 다국어 갱신, 공식/비공식 측정을 구분합니다."
+        },
+        {
+          "id": "plus",
+          "title": "4.1 Plus 모델 카드",
+          "url": "https://huggingface.co/ibm-granite/granite-speech-4.1-2b-plus",
+          "description": "최초 출시와 갱신, 화자 및 시간 오차를 설명합니다."
+        },
+        {
+          "id": "english",
+          "title": "영어11세트 비교 그림",
+          "url": "https://huggingface.co/ibm-granite/granite-speech-5.0-2b/resolve/main/assets/granite-5.0-2b-vs-open-english.png",
+          "description": "공개 9개와 비공개 2개를 합친 오류율 그림입니다."
+        },
+        {
+          "id": "noise",
+          "title": "잡음과 잔향 비교 그림",
+          "url": "https://huggingface.co/ibm-granite/granite-speech-5.0-2b/resolve/main/assets/granite-speech-5.0-2b-ffasr-wer.png",
+          "description": "잡음과 잔향에서 이전 모델과 경쟁 모델을 비교합니다."
+        },
+        {
+          "id": "speed",
+          "title": "영어9세트 속도와 정확도 그림",
+          "url": "https://huggingface.co/ibm-granite/granite-speech-5.0-470m-turboctc/resolve/main/assets/granite-speech-5.0-470m-turboctc-pareto-rtfx.png",
+          "description": "공개 9세트의 속도와 오류율을 비교합니다."
+        },
+        {
+          "id": "japanese",
+          "title": "일본어 CER 비교 그림",
+          "url": "https://huggingface.co/ibm-granite/granite-speech-5.0-470m-turboctc/resolve/main/assets/granite-speech-5.0-470m-turboctc-cer-ja.png",
+          "description": "같은 일본어 정규화에서 두 모델을 비교합니다."
+        }
+      ]
+    },
+    {
+      "id": "nemotron-3-5-retriever-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "checked_on": "2026-10-22",
+      "title": "Nemotron 3.5 소개: 문서 검색, 재정렬과 Parse의 성능 비교",
+      "description": "NVIDIA의 새 검색 모델과 문서 처리 모델을 이전 세대 및 Qwen, LightOnOCR와 비교해 정확도, 장비 조건과 제공 범위를 판단하도록 정리했습니다.",
+      "deck": "Nemotron 3.5는 문서를 벡터로 찾는 Embed, 후보를 다시 정렬하는 Rerank, 페이지를 구조화하는 Parse로 나뉩니다. 공개 평가에서 검색 정확도와 문서 처리량이 높아졌지만 세 모델의 역할과 점수는 서로 다릅니다. NVFP4의 장비 제약, Parse의 정확도와 속도 교환, 확정하지 못한 API 단가를 함께 비교합니다.",
+      "scope": "Embed와 Rerank 카드의 20일 출시와 21일 발표를 22일 확인했습니다. Parse는 17일 출시를 늦게 보완하는 자료이며 21일 최초 출시로 분류하지 않습니다.",
+      "source_note": "NVIDIA 공식 모델 카드와 21일 발표를 대조했습니다. ViDoRe V3와 V3.1, 입력 형태와 전처리, 검색과 재정렬, 공개 점수와 공급사 처리량을 분리합니다. 실제 구축, 한국어 사내 문서 평가, 독립 재현과 청구는 하지 않았습니다.",
+      "highlights": [
+        "세 역할과 공개일",
+        "정확도의 개선",
+        "속도와 비용의 경계"
+      ],
+      "summary": [
+        {
+          "label": "세 역할과 공개일",
+          "text": "Embed는 검색용 벡터, Rerank는 질문과 후보 쌍의 관련도 점수, Parse는 문서 내용과 위치 및 순서 정보를 만듭니다. 20일 출시 검색 모델과 17일 출시 Parse를 21일에 같이 소개했습니다.",
+          "source_ids": [
+            "launch",
+            "embed",
+            "rerank",
+            "parse"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "정확도의 개선",
+          "text": "카드의 ViDoRe V3 결합 입력에서 8B Embed는 61.47로 Qwen 8B의 57.03보다 높습니다. 같은 상위 50후보를 재정렬하면 NVIDIA 67.56, Qwen 66.03입니다. 두 단계의 점수를 같은 모델 능력 순위로 합치지 않습니다.",
+          "source_ids": [
+            "embed",
+            "rerank"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "속도와 비용의 경계",
+          "text": "Parse triple-pass 75.20점/10.62페이지초와 single-pass 72.74점/15.42페이지초는 서로 다른 운영점입니다. FP4는 GB200 조건입니다. 가중치 라이선스는 OpenMDW 1.1이며 표준 API 단가는 확인한 원문에서 미확인입니다.",
+          "source_ids": [
+            "parse",
+            "fp4"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "tables": [
+        {
+          "id": "roles",
+          "title": "모델별 사양과 제공 범위",
+          "columns": [
+            "모델",
+            "규모",
+            "입력과 출력",
+            "핵심 조건"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Nemotron-3.5-Embed-8B-BF16",
+                "8B",
+                "텍스트 쿼리 / 문서 이미지+텍스트 → 4096차원 벡터",
+                "32768토큰 / BF16"
+              ],
+              "source_ids": [
+                "embed"
+              ]
+            },
+            {
+              "values": [
+                "Nemotron-3.5-Embed-1B-BF16",
+                "1B",
+                "텍스트 쿼리 / 문서 이미지+텍스트 → 2048차원 벡터",
+                "32768토큰 / BF16"
+              ],
+              "source_ids": [
+                "small"
+              ]
+            },
+            {
+              "values": [
+                "Nemotron-3.5-Embed-1B-NVFP4",
+                "1B",
+                "문서 벡터 / NVFP4",
+                "GB200 / 카드의 문맥 단위 표기 혼재"
+              ],
+              "source_ids": [
+                "fp4"
+              ]
+            },
+            {
+              "values": [
+                "Nemotron-3.5-Rerank-8B-BF16",
+                "8B",
+                "질문과 문서 쌍 → 관련도 점수",
+                "32768토큰 / cross-encoder"
+              ],
+              "source_ids": [
+                "rerank"
+              ]
+            },
+            {
+              "values": [
+                "Nemotron-3.5-Parse",
+                "약0.631B",
+                "페이지 이미지 → 내용,영역,순서 문자열",
+                "권장 최대1664×2048 / 후처리 별도"
+              ],
+              "source_ids": [
+                "parse"
+              ]
+            }
+          ],
+          "note": "크기는 계열 표기이며 실제 메모리 사용량이 아닙니다. 쿼리 이미지 지원이나 전체 PDF 파일의 자동 처리를 입력 설명으로 추가하지 않습니다."
+        },
+        {
+          "id": "retrieval",
+          "title": "모델 카드의 검색 성능 비교",
+          "columns": [
+            "모델",
+            "V3 이미지",
+            "V3 텍스트",
+            "V3 결합",
+            "MIRACL 이미지"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Qwen3-VL-Embedding-2B",
+                "52.89",
+                "48.31",
+                "51.97",
+                "58.42"
+              ],
+              "source_ids": [
+                "embed"
+              ]
+            },
+            {
+              "values": [
+                "Nemotron-3.5-Embed-1B-BF16",
+                "58.02",
+                "57.80",
+                "58.82",
+                "68.93"
+              ],
+              "source_ids": [
+                "embed"
+              ]
+            },
+            {
+              "values": [
+                "Qwen3-VL-Embedding-8B",
+                "58.29",
+                "53.69",
+                "57.03",
+                "68.33"
+              ],
+              "source_ids": [
+                "embed"
+              ]
+            },
+            {
+              "values": [
+                "Nemotron-3.5-Embed-8B-BF16",
+                "60.39",
+                "60.65",
+                "61.47",
+                "72.64"
+              ],
+              "source_ids": [
+                "embed"
+              ]
+            }
+          ],
+          "note": "nDCG@10/0–100으로 높을수록 좋습니다. Nemotron 긴 변 1,120px, Qwen max_pixels 1,843,200으로 전처리가 다릅니다. ViDoRe V3 공개 8개/비공개 2개와 MIRACL 18언어를 구분합니다."
+        },
+        {
+          "id": "reranking",
+          "title": "동일 검색 후보의 재정렬 비교",
+          "columns": [
+            "모델",
+            "V3 이미지",
+            "V3 텍스트",
+            "V3 결합",
+            "MIRACL 이미지"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Nemotron-3.5-Embed-1B-BF16",
+                "58.02",
+                "57.80",
+                "58.82",
+                "68.93"
+              ],
+              "source_ids": [
+                "rerank"
+              ]
+            },
+            {
+              "values": [
+                "Qwen3-VL-Reranker-8B",
+                "66.02",
+                "64.88",
+                "66.03",
+                "75.06"
+              ],
+              "source_ids": [
+                "rerank"
+              ]
+            },
+            {
+              "values": [
+                "Nemotron-3.5-Rerank-8B-BF16",
+                "67.22",
+                "66.89",
+                "67.56",
+                "78.69"
+              ],
+              "source_ids": [
+                "rerank"
+              ]
+            }
+          ],
+          "note": "nDCG@10. Embed 1B 상위 50개를 공통 후보로 사용합니다. NVIDIA 긴 변 1,120px, Qwen max_pixels 1,310,720입니다. 첫 행은 재정렬 전 검색 기준입니다."
+        },
+        {
+          "id": "parsing",
+          "title": "이전 Parse와 경쟁 모델의 정확도 및 처리량",
+          "columns": [
+            "모델 / 모드",
+            "공개 ParseBench ↑",
+            "공급사 실측 페이지/초 ↑"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Nemotron 3.5 Parse triple-pass",
+                "75.20",
+                "10.62"
+              ],
+              "source_ids": [
+                "parse"
+              ]
+            },
+            {
+              "values": [
+                "LightOnOCR-3-4B",
+                "75.10",
+                "2.76"
+              ],
+              "source_ids": [
+                "parse"
+              ]
+            },
+            {
+              "values": [
+                "Nemotron 3.5 Parse double-pass",
+                "74.92",
+                "11.65"
+              ],
+              "source_ids": [
+                "parse"
+              ]
+            },
+            {
+              "values": [
+                "LightOnOCR-3-0.8B",
+                "74.60",
+                "5.69"
+              ],
+              "source_ids": [
+                "parse"
+              ]
+            },
+            {
+              "values": [
+                "Nemotron 3.5 Parse single-pass",
+                "72.74",
+                "15.42"
+              ],
+              "source_ids": [
+                "parse"
+              ]
+            },
+            {
+              "values": [
+                "PaddleOCR-VL-1.6",
+                "67.43",
+                "3.11"
+              ],
+              "source_ids": [
+                "parse"
+              ]
+            },
+            {
+              "values": [
+                "Nemotron Parse 2.0",
+                "63.91",
+                "3.95"
+              ],
+              "source_ids": [
+                "parse"
+              ]
+            }
+          ],
+          "note": "NVIDIA 카드의 공개 ParseBench와 공급사 실측 처리량입니다. 동일한 준비 페이지 2,078개, 모델당 H100 한 개입니다. 모든 pass와 종속 crop 작업은 포함하고 페이지 준비, 시작, 워밍업, 최종 렌더링과 쓰기는 제외합니다. 공개 점수와 타이밍을 모은 표로 전체 동일 Harness 재평가가 아니며, 발표 글의 10.5/11.2/16.1과 별도 측정입니다."
+        },
+        {
+          "id": "licensing",
+          "title": "가격과 제공 조건",
+          "columns": [
+            "항목",
+            "공개 가중치",
+            "표준 API 단가",
+            "남은 조건"
+          ],
+          "rows": [
+            {
+              "values": [
+                "NVIDIA Embed/Rerank",
+                "OpenMDW1.1 / 기반모델 표기 별도",
+                "이번 원문에서 미확인",
+                "자체GPU 또는파트너요금/계약"
+              ],
+              "source_ids": [
+                "embed",
+                "small",
+                "rerank"
+              ]
+            },
+            {
+              "values": [
+                "NVIDIA NVFP4",
+                "OpenMDW1.1",
+                "이번 원문에서 미확인",
+                "GB200지원과실제추론구성"
+              ],
+              "source_ids": [
+                "fp4"
+              ]
+            },
+            {
+              "values": [
+                "NVIDIA Parse",
+                "OpenMDW1.1 / tokenizer MIT",
+                "이번 원문에서 미확인",
+                "페이지준비/후처리와운영비별도"
+              ],
+              "source_ids": [
+                "parse"
+              ]
+            }
+          ],
+          "note": "다운로드 가능과 서비스 무상 제공은 다릅니다. 전체 인프라 비용, 모든 파트너 요금과 실제 청구는 검증하지 않았으며 미확인을 0으로 채우지 않습니다."
+        }
+      ],
+      "explanation": [
+        {
+          "id": "overview",
+          "title": "모델 개요와 이전 세대 대비 변화",
+          "lead": "문서를 읽는 단계와 찾는 단계, 찾은 후보를 고르는 단계가 분리돼 있습니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "Embed와 Rerank의 차이",
+              "text": "Embed는 문서와 질문을 숫자 벡터로 만들어 가까운 문서를 찾게 합니다. Rerank는 이미 찾은 후보와 질문을 함께 읽고 관련도 점수를 다시 매깁니다. Rerank 점수가 높다고 문서 전체를 빠르게 색인할 수 있는 것은 아닙니다. 두 모델은 서로 대체품이기보다 검색 파이프라인의 다른 단계입니다.",
+              "source_ids": [
+                "embed",
+                "rerank"
+              ],
+              "kind": "judgment"
+            },
+            {
+              "type": "paragraph",
+              "title": "기존 텍스트 검색에서 문서 이미지로 확장",
+              "text": "3.5 Embed는 이전 Nemotron 3의 텍스트 임베딩에 문서 페이지 이미지, 표와 차트 등의 시각 검색을 추가합니다. NVIDIA는 언어 부분을 고정했으므로 기존 텍스트 임베딩과 색인을 재사용할 수 있을 것으로 설명합니다. 이는 공급사 기대와 모델 설계에 대한 설명이며, 모든 기존 사용자 색인과의 일치 검증을 수행했다는 뜻은 아닙니다.",
+              "source_ids": [
+                "launch",
+                "previous"
+              ],
+              "kind": "judgment"
+            },
+            {
+              "type": "paragraph",
+              "title": "Parse의 독립적인 역할",
+              "text": "Parse는 이미지에서 본문과 표, 차트, 영역 및 읽기 순서를 뽑는 약 6.31억 파라미터 모델입니다. 임베딩 벡터를 직접 만드는 모델은 아닙니다. 카드의 기본 출력은 구조 정보를 포함한 문자열이며, HTML 표나 JSON/CSV 등의 최종 형태는 지원되는 후처리 경로와 구분해야 합니다.",
+              "source_ids": [
+                "parse"
+              ],
+              "kind": "judgment"
+            },
+            {
+              "type": "paragraph",
+              "title": "추가 pass가 바꾸는 처리",
+              "text": "Single-pass는 페이지를 한 번 읽습니다. Double-pass는 그 결과에서 표와 차트 영역을 골라 확대해서 다시 읽습니다. Triple-pass는 별도 탐지 결과의 영역까지 합쳐 추가로 정밀 처리합니다. 반복 횟수가 늘수록 구조를 더 자세히 읽지만 처리 시간이 늘어나므로 하나의 정확도와 속도 조합으로 비교해야 합니다.",
+              "source_ids": [
+                "parse"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "strengths",
+          "title": "장점: 멀티모달 검색과 경량 문서 처리",
+          "lead": "같은 문서 집합이라도 입력 형태와 후보 정렬 방식에 따라 성능이 다릅니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "경쟁 검색 모델보다 높은 카드 수치",
+              "text": "nDCG@10은 상위 10개 검색 결과의 관련도와 순서를 평가하는 지표로, 이 표에서는 0–100으로 표시하고 높을수록 좋습니다. ViDoRe V3 결합 입력에서 8B Embed의 61.47은 Qwen 8B 57.03보다 4.44포인트 높습니다. 1B도 58.82로 같은 표의 Qwen 2B 51.97보다 높고, Qwen 8B 57.03을 앞섭니다. 다만 NVIDIA와 Qwen의 입력 이미지 해상도 설정이 다르므로 같은 연산량에서의 우위라고 일반화하지 않습니다.",
+              "source_ids": [
+                "embed"
+              ],
+              "kind": "judgment"
+            },
+            {
+              "type": "paragraph",
+              "title": "재정렬로 더 적합한 근거 선택",
+              "text": "같은 Embed 1B 상위 50후보에서 NVIDIA Rerank의 ViDoRe V3 결합 점수는 67.56, Qwen Reranker는 66.03입니다. 이는 검색 후에 후보를 고르는 능력의 비교입니다. NVIDIA 발표의 에이전트 토큰 약 13~14% 감소는 고정된 실험 파이프라인의 모든 턴 입출력 토큰 합계이며, 재정렬 서버 비용까지 포함한 전체 비용 할인율은 아닙니다.",
+              "source_ids": [
+                "rerank",
+                "launch"
+              ],
+              "kind": "judgment"
+            },
+            {
+              "type": "paragraph",
+              "title": "이전 문서 파서보다 높은 정확도와 처리량",
+              "text": "카드 표에서 Parse 3.5 triple-pass는 75.20점과 10.62페이지/초, 이전 Parse 2.0은 63.91점과 3.95페이지/초입니다. LightOnOCR-3-4B의 75.10점/2.76페이지초와도 비교할 수 있습니다. 그러나 이 표는 공개 점수와 NVIDIA가 측정한 속도를 모았으며, 모든 점수를 동일한 새 평가로 재현한 결과는 아닙니다.",
+              "source_ids": [
+                "parse"
+              ],
+              "kind": "judgment"
+            }
+          ]
+        },
+        {
+          "id": "weaknesses",
+          "title": "단점과 측정 조건의 차이",
+          "lead": "작은 모델의 장점과 실제 서비스 구성의 부담을 같이 보아야 합니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "정확도와 처리량의 교환",
+              "text": "Parse의 single-pass 72.74점은 LightOnOCR-3-4B 75.10보다 낮습니다. triple-pass로 75.20까지 올리면 처리량은 15.42에서 10.62페이지/초로 줄어듭니다. double-pass 74.92점/11.65페이지초는 그 중간입니다. 가장 빠른 값과 가장 정확한 값을 한 번의 실행 결과처럼 붙일 수 없습니다.",
+              "source_ids": [
+                "parse"
+              ],
+              "kind": "judgment"
+            },
+            {
+              "type": "paragraph",
+              "title": "V3와 V3.1 결과는 다른 표",
+              "text": "발표 글의 ViDoRe v3.1 수치는 Embed 8B 61.17, 1B 58.38이며 Rerank는 60.49 대 Qwen 59.17입니다. 카드의 V3 결합 입력 61.47/58.82와 재정렬 67.56/66.03과는 다릅니다. 버전, 평가 집합과 입력 모드를 유지하고 서로 좋은 값만 뽑아 하나의 순위를 만들지 않아야 합니다.",
+              "source_ids": [
+                "launch",
+                "embed",
+                "rerank"
+              ],
+              "kind": "judgment"
+            },
+            {
+              "type": "paragraph",
+              "title": "FP4의 장비 조건과 소폭 손실",
+              "text": "NVFP4 카드는 Blackwell GB200을 하드웨어 조건으로 기재합니다. 카드의 V3 결합 점수는 BF16 58.82, FP4 58.71로 양자화 손실이 있습니다. 발표의 GB200 처리량 101.3 대 128.8문서/초는 해당 서버 비교이지 일반 PC나 모든 GPU에서의 향상을 뜻하지 않습니다. FP4 카드의 문맥 설명 한 문장은 pixels로, 다른 절은 sequence length 32768로 기재돼 있어 표에서 확정 토큰 한도로 채우지 않았습니다.",
+              "source_ids": [
+                "fp4",
+                "launch"
+              ],
+              "kind": "judgment"
+            },
+            {
+              "type": "paragraph",
+              "title": "처리량에서 빠진 단계",
+              "text": "Parse 속도는 준비된 2,078페이지를 모델당 H100 한 개로 처리한 값입니다. 모든 pass와 의존하는 crop 처리는 포함하지만 원본 페이지 준비, 서버 시작과 워밍업, 최종 문서 렌더링 및 쓰기는 제외합니다. 발표 글의 16.1/11.2/10.5페이지초와 카드의 15.42/11.65/10.62도 별도 수치입니다. 이를 PDF 업로드부터 완성 파일까지의 처리 속도로 표시하면 실제 서비스 비용을 과소평가합니다.",
+              "source_ids": [
+                "parse",
+                "launch"
+              ],
+              "kind": "judgment"
+            },
+            {
+              "type": "paragraph",
+              "title": "검색과 한국어 문서의 제한",
+              "text": "Embed 쿼리는 텍스트만 받고 문서는 텍스트, 이미지 또는 결합 입력을 받습니다. 32,768토큰 문맥에는 이미지 토큰도 포함되며 긴 입력은 분할이나 축소가 필요합니다. 다국어 평가에 한국어 자료가 있다는 설명은 모든 한국어 문서와 표의 정확도를 보장하지 않습니다. 이번 조사는 사내 문서를 사용하지 않았고 검색 결과의 정답 보장도 없습니다.",
+              "source_ids": [
+                "embed",
+                "small",
+                "rerank"
+              ],
+              "kind": "judgment"
+            }
+          ]
+        },
+        {
+          "id": "availability",
+          "title": "가격과 제공 범위",
+          "lead": "공개 가중치, 호스팅 API와 최종 서비스 계약은 별도 조건입니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "라이선스와 실행 경로",
+              "text": "NVIDIA 모델 카드는 상업적/비상업적 사용을 안내하고 OpenMDW 1.1을 적용합니다. 기반 모델과 tokenizer, 별도 설치 구성요소의 고지도 남아 있습니다. 실제 배포자는 라이선스와 제3자 고지를 확인할 필요가 있습니다. BF16 카드에는 Transformers, SentenceTransformers와 vLLM 경로가, 발표에는 NIM 및 파트너 경로가 제시돼 있습니다.",
+              "source_ids": [
+                "embed",
+                "small",
+                "rerank",
+                "parse",
+                "launch"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "단가와 운영비의 미확인 범위",
+              "text": "확인한 발표와 카드만으로 각 모델의 표준 API 요금, 최소 실운영 메모리, 파트너별 제공 지역과 서비스 수준을 확정하지 않았습니다. 공개 가중치의 다운로드를 요청당 $0이나 전체 비용 0으로 환산하지 않습니다. 비교표에는 확인된 사양과 평가만 넣고 미확인 단가는 비워둡니다.",
+              "source_ids": [
+                "embed",
+                "fp4",
+                "parse"
+              ],
+              "kind": "judgment"
+            }
+          ]
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "선택 기준",
+            "text": "멀티모달 문서 검색은 Embed, 근거 우선순위는 Rerank, 페이지 구조화는 Parse라는 역할에 맞춰 비교할 수 있습니다. 1B의 자원 절감 가능성과 8B의 정확도, Parse의 추가 pass, 장비 및 전체 서비스 비용을 함께 판단해야 합니다. 하나의 생성형 LLM 순위로 세 역할을 합치는 비교는 적절하지 않습니다.",
+            "source_ids": [
+              "embed",
+              "small",
+              "rerank",
+              "parse",
+              "fp4"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "20일 출시 검색 모델, 17일 출시 Parse와 21일 발표를 22일 읽었습니다. 공급사 측정과 실제 운영 검증은 구분하며 독립 모델 실행, 원문 전체 벤치마크 재현, 청구 및 사람 시험은 하지 않았습니다.",
+          "source_ids": [
+            "embed",
+            "rerank",
+            "parse",
+            "launch"
+          ]
+        }
+      ],
+      "references": [
+        {
+          "id": "launch",
+          "title": "NVIDIA의 Retriever 확장 발표",
+          "url": "https://huggingface.co/blog/nvidia/nemotron-retriever-world-class-agentic-retrieval",
+          "description": "새 검색 모델과 Parse의 역할 및 발표 평가를 설명합니다."
+        },
+        {
+          "id": "embed",
+          "title": "8B Embed 공식 모델 카드",
+          "url": "https://huggingface.co/nvidia/Nemotron-3.5-Embed-8B-BF16",
+          "description": "8B 검색 모델의 사양과 V3 평가를 제공합니다."
+        },
+        {
+          "id": "small",
+          "title": "1B Embed 공식 모델 카드",
+          "url": "https://huggingface.co/nvidia/Nemotron-3.5-Embed-1B-BF16",
+          "description": "1B 모델의 벡터 차원과 입력 조건을 설명합니다."
+        },
+        {
+          "id": "fp4",
+          "title": "1B NVFP4 공식 모델 카드",
+          "url": "https://huggingface.co/nvidia/Nemotron-3.5-Embed-1B-NVFP4",
+          "description": "양자화 결과와 GB200 장비 조건을 제공합니다."
+        },
+        {
+          "id": "rerank",
+          "title": "8B Rerank 공식 모델 카드",
+          "url": "https://huggingface.co/nvidia/Nemotron-3.5-Rerank-8B-BF16",
+          "description": "동일한 상위 50후보를 사용한 재정렬 비교입니다."
+        },
+        {
+          "id": "parse",
+          "title": "Parse 공식 모델 카드",
+          "url": "https://huggingface.co/nvidia/Nemotron-3.5-Parse",
+          "description": "출시일, 파라미터 수와 문서 처리 평가를 제공합니다."
+        },
+        {
+          "id": "previous",
+          "title": "이전 Nemotron 3 Embed 8B 카드",
+          "url": "https://huggingface.co/nvidia/Nemotron-3-Embed-8B-BF16",
+          "description": "이전 텍스트 임베딩 모델의 역할을 확인합니다."
+        }
+      ]
+    }
+  ]
+}

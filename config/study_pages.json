@@ -62,7 +62,9 @@
     "minimax-m3-1-flash-model-guide",
     "mercury-3-model-guide",
     "sugar-glider-120b-model-guide",
-    "maxwell-model-guide"
+    "maxwell-model-guide",
+    "granite-speech-5-model-guide",
+    "nemotron-3-5-retriever-model-guide"
   ],
   "catalogs": {
     "devops-implementation-guide": "devops_tools.2026-10-10.r4.json"
@@ -173,6 +175,12 @@
     ],
     "maxwell-model-guide": [
       "f6f283a6991f325ad881d225850aa57494a536aa71ec7171b0cbea5e373f6ef2"
+    ],
+    "granite-speech-5-model-guide": [
+      "d85a8065e364bc6e6f4aea320cceccc204aec621bb3df3c0a7772702dc1ef52f"
+    ],
+    "nemotron-3-5-retriever-model-guide": [
+      "39af19adec1f7471ab6b9558504a7b146e2cfc74c56cbb868a14d95a7ffd9bf9"
     ]
   },
   "model_introduction_editions": {
@@ -231,6 +239,12 @@
     ],
     "maxwell-model-guide": [
       "f6f283a6991f325ad881d225850aa57494a536aa71ec7171b0cbea5e373f6ef2"
+    ],
+    "granite-speech-5-model-guide": [
+      "d85a8065e364bc6e6f4aea320cceccc204aec621bb3df3c0a7772702dc1ef52f"
+    ],
+    "nemotron-3-5-retriever-model-guide": [
+      "39af19adec1f7471ab6b9558504a7b146e2cfc74c56cbb868a14d95a7ffd9bf9"
     ]
   },
   "model_introduction_purpose_editions": {
@@ -278,6 +292,12 @@
     ],
     "maxwell-model-guide": [
       "f6f283a6991f325ad881d225850aa57494a536aa71ec7171b0cbea5e373f6ef2"
+    ],
+    "granite-speech-5-model-guide": [
+      "d85a8065e364bc6e6f4aea320cceccc204aec621bb3df3c0a7772702dc1ef52f"
+    ],
+    "nemotron-3-5-retriever-model-guide": [
+      "39af19adec1f7471ab6b9558504a7b146e2cfc74c56cbb868a14d95a7ffd9bf9"
     ]
   },
   "model_introduction_reader_editions": {
@@ -322,6 +342,12 @@
     ],
     "maxwell-model-guide": [
       "f6f283a6991f325ad881d225850aa57494a536aa71ec7171b0cbea5e373f6ef2"
+    ],
+    "granite-speech-5-model-guide": [
+      "d85a8065e364bc6e6f4aea320cceccc204aec621bb3df3c0a7772702dc1ef52f"
+    ],
+    "nemotron-3-5-retriever-model-guide": [
+      "39af19adec1f7471ab6b9558504a7b146e2cfc74c56cbb868a14d95a7ffd9bf9"
     ]
   }
 }
