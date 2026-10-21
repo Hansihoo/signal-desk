@@ -12,13 +12,13 @@ import subprocess
 import xml.etree.ElementTree as ET
 from concurrent.futures import ThreadPoolExecutor
 from contextlib import closing
-from datetime import datetime, timedelta
+from datetime import date, datetime, timedelta
 from pathlib import Path
 from urllib.parse import parse_qs, urlencode, urljoin, urlsplit, urlunsplit
 
 from .agent_news import _fetch, _tree, parse_listing
 from .signal_review import canonical_url
-from .timeutil import iso_utc
+from .timeutil import iso_utc, KST
 
 ROOT = Path(__file__).resolve().parent.parent
 CATALOG = ROOT / 'config/daily_research_sources.json'
@@ -184,14 +184,30 @@ def collect(conn, catalog, raw_dir=RAW, fetcher=_fetch, now=None, max_age_minute
     return result
 
 
-def queue(conn, limit=24, include_baseline=False):
+def queue(conn, limit=24, include_baseline=False, today=None):
+    today = today or datetime.now(KST).date()
     rows = []
+    deadlines = []
+    unknown_deadlines = 0
     for item in conn.execute('SELECT * FROM daily_candidates ORDER BY changed_at DESC,source_id,url'):
-        if item['change_kind'] == 'baseline' and not include_baseline:
-            continue
         doc = json.loads(item['document'])
         doc.update(change_kind=item['change_kind'], first_seen_at=item['first_seen_at'],
                    observed_at=item['last_seen_at'], changed_at=item['changed_at'])
+        # Unchanged/baseline notices still need a deadline check every day.
+        if doc['period']:
+            matches = re.findall(r'(20\d{2})[-./]\s*(\d{1,2})[-./]\s*(\d{1,2})', doc['period'])
+            try:
+                if not 1 <= len(matches) <= 2 or re.search(r'소진|상시|미정|추후|별도', doc['period']):
+                    raise ValueError('Open-ended or ambiguous period')
+                end = date(*map(int, matches[-1]))
+                days = (end - today).days
+                if 0 <= days <= 7:
+                    deadlines.append(dict(doc, end_date_hint=end.isoformat(), days_remaining_hint=days,
+                                          limitation='listing period only; verify actual status, KST time and amendments in original/attachment'))
+            except ValueError:
+                unknown_deadlines += 1
+        if item['change_kind'] == 'baseline' and not include_baseline:
+            continue
         text = doc['title'] + ' ' + doc['context']
         doc['triage_hint'] = sum(bool(re.search(p, text, re.I)) for p in
                                 [r'문서|오피스|document|office|pdf', r'AI|AX|에이전트|agent|지식|데이터|SaaS',
@@ -208,7 +224,11 @@ def queue(conn, limit=24, include_baseline=False):
         for bucket in buckets.values():
             if bucket and len(selected) < limit:
                 selected.append(bucket.pop(0))
-    return {'total': len(rows), 'items': selected, 'meaning': 'unreviewed listing observations; new means newly observed, not verified new launch'}
+    deadlines.sort(key=lambda x: (x['end_date_hint'], x['source_id'], x['url']))
+    return {'total': len(rows), 'items': selected, 'deadline_basis_on_kst': today.isoformat(),
+            'deadline_total': len(deadlines), 'deadline_hints': deadlines[:limit],
+            'unresolved_period_count': unknown_deadlines,
+            'meaning': 'unreviewed listing observations; new means newly observed, not verified new launch; deadline hints include unchanged baselines'}
 
 
 def main(argv=None):

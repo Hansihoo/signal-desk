@@ -3,6 +3,7 @@ import sqlite3
 import subprocess
 import tempfile
 import unittest
+from datetime import date
 from pathlib import Path
 from unittest.mock import patch
 
@@ -60,6 +61,24 @@ class DailyResearchTests(unittest.TestCase):
         row = self.conn.execute('SELECT * FROM daily_candidates').fetchone()
         self.assertEqual((row['first_seen_at'], row['last_seen_at']), (FIRST, SECOND))
         self.assertEqual(self.conn.execute('SELECT COUNT(*) FROM daily_candidate_editions').fetchone()[0], 1)
+
+    def test_unchanged_baseline_notice_still_enters_deadline_worklist(self):
+        self.collect()
+        far = daily.queue(self.conn, today=date(2026, 10, 22))
+        due = daily.queue(self.conn, today=date(2026, 10, 23))
+        self.assertEqual((far['total'], far['deadline_total']), (0, 0))
+        self.assertEqual((due['total'], due['deadline_total']), (0, 1))
+        self.assertEqual(due['deadline_hints'][0]['days_remaining_hint'], 7)
+        self.assertEqual(due['deadline_hints'][0]['change_kind'], 'baseline')
+        self.assertIn('verify actual status', due['deadline_hints'][0]['limitation'])
+        self.assertEqual(daily.queue(self.conn, today=date(2026, 10, 31))['deadline_total'], 0)
+
+    def test_open_ended_or_ambiguous_period_is_not_a_fabricated_deadline(self):
+        for period in ['예산 소진시까지', '2026-10-23부터 예산 소진시까지']:
+            body = BODY.replace(b'2026-10-15 09:00 ~ 2026-10-30 18:00', period.encode())
+            self.collect(body)
+            result = daily.queue(self.conn, today=date(2026, 10, 23))
+            self.assertEqual((result['deadline_total'], result['unresolved_period_count']), (0, 1))
 
     def test_real_amendment_and_new_notice_preserve_previous_editions(self):
         self.collect()
