@@ -4,6 +4,14 @@
     {
       "id": "signal-original-reviews-2026-10-21",
       "path": "signal_reviews.2026-10-21.json"
+    },
+    {
+      "id": "signal-original-reviews-2026-10-21-0047",
+      "path": "signal_reviews.2026-10-21.0047.json"
+    },
+    {
+      "id": "signal-alert-receipts-2026-10-21-0047",
+      "path": "signal_acknowledgements.2026-10-21.0047.json"
     }
   ]
 }

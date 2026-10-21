@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "reviews": [],
+  "acknowledgements": [
+    {
+      "alert_id": "2a6ea7c90c348ecf42ca347a",
+      "acknowledged_at": "2026-10-21T01:01:35Z",
+      "receipt": "이 채팅의2026-10-21 진행 메시지에서 OpenCode17일사건·Claude Code305·DeepInfer·TorchTPU0.2.0·durable-harness의발표일/변경/제한과공식링크5건을실제로표시한후기록했다."
+    },
+    {
+      "alert_id": "14fa8daa527b0f913f96f345",
+      "acknowledged_at": "2026-10-21T01:01:35Z",
+      "receipt": "이 채팅의2026-10-21 진행 메시지에서 OpenCode17일사건·Claude Code305·DeepInfer·TorchTPU0.2.0·durable-harness의발표일/변경/제한과공식링크5건을실제로표시한후기록했다."
+    },
+    {
+      "alert_id": "4d85b512cbfe0ea03bcb24e4",
+      "acknowledged_at": "2026-10-21T01:01:35Z",
+      "receipt": "이 채팅의2026-10-21 진행 메시지에서 OpenCode17일사건·Claude Code305·DeepInfer·TorchTPU0.2.0·durable-harness의발표일/변경/제한과공식링크5건을실제로표시한후기록했다."
+    },
+    {
+      "alert_id": "a62b9a4e8988d8a0b06b78ea",
+      "acknowledged_at": "2026-10-21T01:01:35Z",
+      "receipt": "이 채팅의2026-10-21 진행 메시지에서 OpenCode17일사건·Claude Code305·DeepInfer·TorchTPU0.2.0·durable-harness의발표일/변경/제한과공식링크5건을실제로표시한후기록했다."
+    },
+    {
+      "alert_id": "0f31553c0a1fba91a455ecf6",
+      "acknowledged_at": "2026-10-21T01:01:35Z",
+      "receipt": "이 채팅의2026-10-21 진행 메시지에서 OpenCode17일사건·Claude Code305·DeepInfer·TorchTPU0.2.0·durable-harness의발표일/변경/제한과공식링크5건을실제로표시한후기록했다."
+    }
+  ]
+}
