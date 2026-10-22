@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "id": "flint-price-202610-google-gemma-4-31b-it",
+      "model": "Google: Gemma 4 31B",
+      "provider": "google",
+      "source_url": "https://openrouter.ai/api/v1/models",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "호스팅 경로 요금",
+        "suite": "OpenRouter 공개 목록 / google/gemma-4-31b-it",
+        "condition": "23일 확인. OpenRouter USD/입력 및출력100만토큰,단가원문은토큰당USD. 무료Flint는무료경로조건부이며표준유료단가가아님. 계정/제공사/처리지역/요금변경/제한/실청구는별도확인.",
+        "단위": "USD / 1M tokens",
+        "요금 성격": "OpenRouter 게시 경로 요금",
+        "호스팅 ID": "google/gemma-4-31b-it",
+        "top_provider context": 262144,
+        "입력 USD / 100만 토큰": 0.2,
+        "출력 USD / 100만 토큰": 0.4
+      }
+    }
+  ]
+}
