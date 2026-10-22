@@ -1,0 +1,3442 @@
+{
+  "packages": [
+    {
+      "version": "question-research-1",
+      "status": "ready",
+      "plan": {
+        "version": "question-research-1",
+        "request": {
+          "id": "recursive-flint-model-guide",
+          "topic_id": "opportunities",
+          "topic_path": [
+            "개발 동향",
+            "AI 모델·API"
+          ],
+          "reader": "새 모델의 상대 성능과 비용, 제공 조건을 비교하는 개발자와 관리자",
+          "reader_question": "Flint를 비슷한 규모의 공개 코딩 모델과 비교하고, 양자화에 따른 점수 차이와 Mac·GPU 실행 조건을 설명합니다.",
+          "outcome": "이전 판과 경쟁 모델의 결과를 비교하고 측정 조건 및 제공 제한을 설명한다.",
+          "research_type": "model_introduction",
+          "plan_questions": false,
+          "sources": [
+            {
+              "id": "launch",
+              "title": "Recursive의 Flint 발표",
+              "url": "https://www.recursive.com/updates/introducing-recursive-flint",
+              "kind": "official_document"
+            },
+            {
+              "id": "card",
+              "title": "Flint 모델 카드",
+              "url": "https://huggingface.co/RecursiveSI/flint",
+              "kind": "official_document"
+            },
+            {
+              "id": "chart",
+              "title": "BF16와 NVFP4 평가 그림",
+              "url": "https://huggingface.co/RecursiveSI/flint/resolve/main/assets/flint_benchmarks_nvfp4.png",
+              "kind": "official_document"
+            },
+            {
+              "id": "speed",
+              "title": "로컬 생성 속도 그림",
+              "url": "https://framerusercontent.com/images/5t7vbDk5jkbHiOHKkSzJDzhgz4.png?scale-down-to=2048",
+              "kind": "official_document"
+            },
+            {
+              "id": "runtime",
+              "title": "rec 공식 저장소",
+              "url": "https://github.com/recursive-oss/rec",
+              "kind": "official_document"
+            },
+            {
+              "id": "serve",
+              "title": "SGLang 실행 조건",
+              "url": "https://huggingface.co/RecursiveSI/flint/blob/main/sglang/README.md",
+              "kind": "official_document"
+            },
+            {
+              "id": "host",
+              "title": "Flint 공식 제공 문서",
+              "url": "https://docs.recursive.com/models/flint",
+              "kind": "official_document"
+            },
+            {
+              "id": "release",
+              "title": "공식 체크포인트 이력",
+              "url": "https://huggingface.co/RecursiveSI/flint/commits/main",
+              "kind": "official_document"
+            },
+            {
+              "id": "access",
+              "title": "공식 제공 경로",
+              "url": "https://docs.recursive.com/resources/releases",
+              "kind": "official_document"
+            },
+            {
+              "id": "pricing",
+              "title": "OpenRouter 공개 모델 및 요금 목록",
+              "url": "https://openrouter.ai/api/v1/models",
+              "kind": "official_document"
+            }
+          ],
+          "authoring": {
+            "template": "research-report",
+            "preferences": {
+              "examples": "가상 업무와 활용 예시, SDK/API 실습 코드와 문제를 넣지 않는다.",
+              "opening": "제목 아래 목적, 다음 요약을 둔다.",
+              "tone": "자연스러운 완결된 한국어 문장, 내용을 설명하는 소제목."
+            }
+          }
+        },
+        "questions": [
+          {
+            "id": "core",
+            "question": "Flint를 비슷한 규모의 공개 코딩 모델과 비교하고, 양자화에 따른 점수 차이와 Mac·GPU 실행 조건을 설명합니다.",
+            "requires": [
+              "identity",
+              "change",
+              "specification",
+              "availability",
+              "comparison",
+              "advantages",
+              "limitations",
+              "price"
+            ]
+          }
+        ],
+        "method": "공식 발표·모델 카드·사양·가격과 평가 원문을 대조한다. 다른 모델과의 비교표에서 평가판·추론·측정 주체·Harness·단위를 보존하고 장점과 단점을 근거로 설명한다. 활용 예시·가상 업무·실습 코드·응용 문제를 넣지 않는다."
+      },
+      "sources": [
+        {
+          "id": "launch",
+          "title": "Recursive의 Flint 발표",
+          "url": "https://www.recursive.com/updates/introducing-recursive-flint",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "b33609b25ec849f8f5fc44b447d2f8f0d120a88fda0d4df5c81fdf00d55b4b43",
+          "text": "We’re introducing Recursive Flint, a mixture-of-experts (MoE) model built",
+          "text_hash": "5912de4feb5f327992b2fd4a4572f68546d3ffaf3c1dbcfce8dca0f00de9d546",
+          "published_on": null,
+          "first_collected_at": null,
+          "last_successful_collection": "2026-10-22T20:08:58.216324+00:00",
+          "reviewed_at": "2026-10-23",
+          "raw_path": "C:\\Engine\\signal-desk\\data\\raw\\ai_news\\official\\2026-10-23\\flint-blog-b33609b25ec849.bin",
+          "acquisition_url": "https://www.recursive.com/updates/introducing-recursive-flint",
+          "acquisition_method": "direct HTTP bytes preserved; selected original sections and full cited tables read",
+          "review_scope": "구조, 평가 설정, 양자화와 512k/권장256k 조건을 설명합니다. 선택 관련절과 표/그림 확인. 원문 전체전수/실행재현 아님."
+        },
+        {
+          "id": "card",
+          "title": "Flint 모델 카드",
+          "url": "https://huggingface.co/RecursiveSI/flint",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "43244381065d603bbfc650e399bb67aef8166a01675b2446ad552d680b1058dc",
+          "text": "Flint is Recursive’s mixture-of-experts language model for coding agents,",
+          "text_hash": "bad704d3dec445e42c386b47cb788cba115f6625ed00dbf74aa0776e0aa5a461",
+          "published_on": null,
+          "first_collected_at": null,
+          "last_successful_collection": "2026-10-22T20:08:01.861162+00:00",
+          "reviewed_at": "2026-10-23",
+          "raw_path": "data\\raw\\ai_news\\official\\2026-10-23\\flint-card-43244381065d60.bin",
+          "acquisition_url": "https://huggingface.co/RecursiveSI/flint/raw/main/README.md",
+          "acquisition_method": "direct HTTP bytes preserved; selected original sections and full cited tables read",
+          "review_scope": "BF16 사양, 정밀도별 평가와 실행 제약을 제공합니다. 선택 관련절과 표/그림 확인. 원문 전체전수/실행재현 아님."
+        },
+        {
+          "id": "chart",
+          "title": "BF16와 NVFP4 평가 그림",
+          "url": "https://huggingface.co/RecursiveSI/flint/resolve/main/assets/flint_benchmarks_nvfp4.png",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "329b7954c7bd5c9181ab94ab840d0b7df270780e694f65179d32742a242020c4",
+          "text": "Flint benchmark performance",
+          "text_hash": "34f1854fb1fc804ad8adace23bd18d4405cf667677e96db79fd4a7afab88768c",
+          "published_on": null,
+          "first_collected_at": null,
+          "last_successful_collection": "2026-10-22T20:08:58.102927+00:00",
+          "reviewed_at": "2026-10-23",
+          "raw_path": "C:\\Engine\\signal-desk\\data\\raw\\ai_news\\official\\2026-10-23\\flint-chart-329b7954c7bd5c.bin",
+          "acquisition_url": "https://huggingface.co/RecursiveSI/flint/resolve/main/assets/flint_benchmarks_nvfp4.png",
+          "acquisition_method": "actual official PNG viewed; all selected values and measured-by labels read",
+          "review_scope": "비교 모델과 여섯 평가, 측정 주체 표시를 직접 확인했습니다. 선택 관련절과 표/그림 확인. 원문 전체전수/실행재현 아님."
+        },
+        {
+          "id": "speed",
+          "title": "로컬 생성 속도 그림",
+          "url": "https://framerusercontent.com/images/5t7vbDk5jkbHiOHKkSzJDzhgz4.png?scale-down-to=2048",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "04e1bfec4699efd8e996ab2aa94c0d8aee7a38cbe3da0fe49351beb2ba6512cb",
+          "text": "Flint local inference performance",
+          "text_hash": "73a17c5180cdab95bb70ee8d3090776948ec72abebc88948fd02d67ee2f149b5",
+          "published_on": null,
+          "first_collected_at": null,
+          "last_successful_collection": "2026-10-22T20:10:01.446740+00:00",
+          "reviewed_at": "2026-10-23",
+          "raw_path": "C:\\Engine\\signal-desk\\data\\raw\\ai_news\\official\\2026-10-23\\flint-speed-main-04e1bfec4699ef.bin",
+          "acquisition_url": "https://framerusercontent.com/images/5t7vbDk5jkbHiOHKkSzJDzhgz4.png?scale-down-to=2048",
+          "acquisition_method": "actual official PNG viewed; all selected values and measured-by labels read",
+          "review_scope": "Mac과 RTX Spark의 문맥별 생성 속도를 비교합니다. 선택 관련절과 표/그림 확인. 원문 전체전수/실행재현 아님."
+        },
+        {
+          "id": "runtime",
+          "title": "rec 공식 저장소",
+          "url": "https://github.com/recursive-oss/rec",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "a52be0e31c4235cec9464885656fad9e4442260b5993c95e68e3cfb91a17023a",
+          "text": "Compared to llama.cpp, rec delivers **1.4–2.6×** the token throughput",
+          "text_hash": "ff8840c2b14e645ad3fa171322a7314d7f7a517c4f0e7014b15f469cf906fc3f",
+          "published_on": null,
+          "first_collected_at": null,
+          "last_successful_collection": "2026-10-22T20:08:01.807353+00:00",
+          "reviewed_at": "2026-10-23",
+          "raw_path": "data\\raw\\ai_news\\official\\2026-10-23\\rec-readme-a52be0e31c4235.bin",
+          "acquisition_url": "https://raw.githubusercontent.com/recursive-oss/rec/main/README.md",
+          "acquisition_method": "direct HTTP bytes preserved; selected original sections and full cited tables read",
+          "review_scope": "지원 Mac과 메모리, 단일 세션 측정 조건을 제공합니다. 선택 관련절과 표/그림 확인. 원문 전체전수/실행재현 아님."
+        },
+        {
+          "id": "serve",
+          "title": "SGLang 실행 조건",
+          "url": "https://huggingface.co/RecursiveSI/flint/blob/main/sglang/README.md",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "257de50c0f97ef9291de578089c0c590cd30081323d29d4ef97e6ce6671e6bd1",
+          "text": "One GPU with ≥141 GB per replica: B300/B200 (Blackwell)",
+          "text_hash": "c2d780b0275ae51e9514dc29827958dc4057229c452d7c96d964131d797db502",
+          "published_on": null,
+          "first_collected_at": null,
+          "last_successful_collection": "2026-10-22T20:09:24.296428+00:00",
+          "reviewed_at": "2026-10-23",
+          "raw_path": "C:\\Engine\\signal-desk\\data\\raw\\ai_news\\official\\2026-10-23\\flint-engine-readme-257de50c0f97ef.bin",
+          "acquisition_url": "https://huggingface.co/RecursiveSI/flint/raw/main/sglang/README.md",
+          "acquisition_method": "direct HTTP bytes preserved; selected original sections and full cited tables read",
+          "review_scope": "BF16의 GPU 메모리와 드라이버 및 저장 공간 조건입니다. 선택 관련절과 표/그림 확인. 원문 전체전수/실행재현 아님."
+        },
+        {
+          "id": "host",
+          "title": "Flint 공식 제공 문서",
+          "url": "https://docs.recursive.com/models/flint",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "604f0c8a097de0c021d44d0e7349ce5420a01ece449714fb19e4894cf60b6bee",
+          "text": "The hosted Flint configuration uses a 262,144-token context window",
+          "text_hash": "58c45fbe5c403e166a8b89ebe104f10b9e3fb5f87a6ce1dd45b58dc54b2c1d51",
+          "published_on": null,
+          "first_collected_at": null,
+          "last_successful_collection": "2026-10-22T20:10:58.649750+00:00",
+          "reviewed_at": "2026-10-23",
+          "raw_path": "C:\\Engine\\signal-desk\\data\\raw\\ai_news\\official\\2026-10-23\\flint-doc-model-604f0c8a097de0.bin",
+          "acquisition_url": "https://docs.recursive.com/models/flint",
+          "acquisition_method": "direct HTTP bytes preserved; selected original sections and full cited tables read",
+          "review_scope": "호스팅 문맥과 최대 출력, 로컬 설정의 차이를 설명합니다. 선택 관련절과 표/그림 확인. 원문 전체전수/실행재현 아님."
+        },
+        {
+          "id": "release",
+          "title": "공식 체크포인트 이력",
+          "url": "https://huggingface.co/RecursiveSI/flint/commits/main",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "ebdec1129d37c43c6eeaf1bd2618913de3b5385498d5e343347d848c8d3042c9",
+          "text": "Initial release\",\"message\":\"\\n\",\"authors\":[{\"user\":\"lvmopt\",\"avatar\":\"/avatars/cc7f1819e15be668dc04a6380745c50e.svg\"}],\"date\":\"2026-10-21T14:24:03.000Z\"}]",
+          "text_hash": "b898b0e957172078b25dd0c348e98edbdd70e50fe7e421e0149471a3928910ce",
+          "published_on": "2026-10-21",
+          "first_collected_at": null,
+          "last_successful_collection": "2026-10-22T20:10:58.239117+00:00",
+          "reviewed_at": "2026-10-23",
+          "raw_path": "C:\\Engine\\signal-desk\\data\\raw\\ai_news\\official\\2026-10-23\\flint-history-ebdec1129d37c4.bin",
+          "acquisition_url": "https://huggingface.co/api/models/RecursiveSI/flint/commits/main?limit=5",
+          "acquisition_method": "direct HTTP bytes preserved; selected original sections and full cited tables read",
+          "review_scope": "21일 Initial release를 확인했습니다. 선택 관련절과 표/그림 확인. 원문 전체전수/실행재현 아님."
+        },
+        {
+          "id": "access",
+          "title": "공식 제공 경로",
+          "url": "https://docs.recursive.com/resources/releases",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "a99b8b8ff6e3a2054db2ee9ebbf6702d685d333b67370147d2bc59277c100ab1",
+          "text": "Direct Recursive API access is limited to select partners",
+          "text_hash": "839bf5d4bd68bee6a789b22f2fd8214cb94518e16424977a546f6005d394f9b1",
+          "published_on": null,
+          "first_collected_at": null,
+          "last_successful_collection": "2026-10-22T20:10:58.564964+00:00",
+          "reviewed_at": "2026-10-23",
+          "raw_path": "C:\\Engine\\signal-desk\\data\\raw\\ai_news\\official\\2026-10-23\\flint-releases-a99b8b8ff6e3a2.bin",
+          "acquisition_url": "https://docs.recursive.com/resources/releases",
+          "acquisition_method": "direct HTTP bytes preserved; selected original sections and full cited tables read",
+          "review_scope": "직접 API는 일부 파트너, 클라우드는 별도 파트너 경로입니다. 선택 관련절과 표/그림 확인. 원문 전체전수/실행재현 아님."
+        },
+        {
+          "id": "pricing",
+          "title": "OpenRouter 공개 모델 및 요금 목록",
+          "url": "https://openrouter.ai/api/v1/models",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "108fd0607d2196ee3bee21b5928de33114b7c1714874508526b5af7d478dcab3",
+          "text": "recursive/flint-v1.0:free\",\"canonical_slug\":\"recursive/flint-v1.0-20261021\",\"hugging_face_id\":\"RecursiveSI/flint\",\"name\":\"Recursive: Flint (free)\",\"created\":1792622765,\"description\":\"Flint is an open-weight mixture-of-experts model from",
+          "text_hash": "c8590e79b1c23f2133515c904af6dc0fc0cfe67d09b48c9ae670a19bd8ab34b8",
+          "published_on": null,
+          "first_collected_at": null,
+          "last_successful_collection": "2026-10-22T20:11:37.122530+00:00",
+          "reviewed_at": "2026-10-23",
+          "raw_path": "C:\\Engine\\signal-desk\\data\\raw\\ai_news\\official\\2026-10-23\\openrouter-models-108fd0607d2196.bin",
+          "acquisition_url": "https://openrouter.ai/api/v1/models",
+          "acquisition_method": "direct HTTP bytes preserved; selected original sections and full cited tables read",
+          "review_scope": "무료 Flint 경로와 비교 모델의 토큰당 USD를 확인했습니다. 선택 관련절과 표/그림 확인. 원문 전체전수/실행재현 아님."
+        }
+      ],
+      "analysis": {
+        "evidence": [
+          {
+            "id": "e-launch",
+            "source_id": "launch",
+            "quote": "We’re introducing Recursive Flint, a mixture-of-experts (MoE) model built",
+            "source_hash": "b33609b25ec849f8f5fc44b447d2f8f0d120a88fda0d4df5c81fdf00d55b4b43",
+            "meaning": "구조, 평가 설정, 양자화와 512k/권장256k 조건을 설명합니다.",
+            "limits": "Recursive의 발표, 카드, 평가 그림과 실행 문서 및 OpenRouter 공개 요금을 대조했습니다. 공급사 및 경쟁 개발사의 보고값이며 모델 실행, 독립 성능 재현, 청구와 사람 독해 시험은 하지 않았습니다.",
+            "price_type": "not a standard hosted tariff source",
+            "supports": [
+              "identity",
+              "change",
+              "comparison",
+              "specification",
+              "availability",
+              "price",
+              "advantages",
+              "limitations"
+            ]
+          },
+          {
+            "id": "e-card",
+            "source_id": "card",
+            "quote": "Flint is Recursive’s mixture-of-experts language model for coding agents,",
+            "source_hash": "43244381065d603bbfc650e399bb67aef8166a01675b2446ad552d680b1058dc",
+            "meaning": "BF16 사양, 정밀도별 평가와 실행 제약을 제공합니다.",
+            "limits": "Recursive의 발표, 카드, 평가 그림과 실행 문서 및 OpenRouter 공개 요금을 대조했습니다. 공급사 및 경쟁 개발사의 보고값이며 모델 실행, 독립 성능 재현, 청구와 사람 독해 시험은 하지 않았습니다.",
+            "price_type": "not a standard hosted tariff source",
+            "supports": [
+              "identity",
+              "change",
+              "comparison",
+              "specification",
+              "availability",
+              "price",
+              "advantages",
+              "limitations"
+            ]
+          },
+          {
+            "id": "e-chart",
+            "source_id": "chart",
+            "quote": "Flint benchmark performance",
+            "source_hash": "329b7954c7bd5c9181ab94ab840d0b7df270780e694f65179d32742a242020c4",
+            "meaning": "비교 모델과 여섯 평가, 측정 주체 표시를 직접 확인했습니다.",
+            "limits": "Recursive의 발표, 카드, 평가 그림과 실행 문서 및 OpenRouter 공개 요금을 대조했습니다. 공급사 및 경쟁 개발사의 보고값이며 모델 실행, 독립 성능 재현, 청구와 사람 독해 시험은 하지 않았습니다.",
+            "price_type": "not a standard hosted tariff source",
+            "supports": [
+              "identity",
+              "change",
+              "comparison",
+              "specification",
+              "availability",
+              "price",
+              "advantages",
+              "limitations"
+            ]
+          },
+          {
+            "id": "e-speed",
+            "source_id": "speed",
+            "quote": "Flint local inference performance",
+            "source_hash": "04e1bfec4699efd8e996ab2aa94c0d8aee7a38cbe3da0fe49351beb2ba6512cb",
+            "meaning": "Mac과 RTX Spark의 문맥별 생성 속도를 비교합니다.",
+            "limits": "Recursive의 발표, 카드, 평가 그림과 실행 문서 및 OpenRouter 공개 요금을 대조했습니다. 공급사 및 경쟁 개발사의 보고값이며 모델 실행, 독립 성능 재현, 청구와 사람 독해 시험은 하지 않았습니다.",
+            "price_type": "not a standard hosted tariff source",
+            "supports": [
+              "identity",
+              "change",
+              "comparison",
+              "specification",
+              "availability",
+              "price",
+              "advantages",
+              "limitations"
+            ]
+          },
+          {
+            "id": "e-runtime",
+            "source_id": "runtime",
+            "quote": "Compared to llama.cpp, rec delivers **1.4–2.6×** the token throughput",
+            "source_hash": "a52be0e31c4235cec9464885656fad9e4442260b5993c95e68e3cfb91a17023a",
+            "meaning": "지원 Mac과 메모리, 단일 세션 측정 조건을 제공합니다.",
+            "limits": "Recursive의 발표, 카드, 평가 그림과 실행 문서 및 OpenRouter 공개 요금을 대조했습니다. 공급사 및 경쟁 개발사의 보고값이며 모델 실행, 독립 성능 재현, 청구와 사람 독해 시험은 하지 않았습니다.",
+            "price_type": "not a standard hosted tariff source",
+            "supports": [
+              "identity",
+              "change",
+              "comparison",
+              "specification",
+              "availability",
+              "price",
+              "advantages",
+              "limitations"
+            ]
+          },
+          {
+            "id": "e-serve",
+            "source_id": "serve",
+            "quote": "One GPU with ≥141 GB per replica: B300/B200 (Blackwell)",
+            "source_hash": "257de50c0f97ef9291de578089c0c590cd30081323d29d4ef97e6ce6671e6bd1",
+            "meaning": "BF16의 GPU 메모리와 드라이버 및 저장 공간 조건입니다.",
+            "limits": "Recursive의 발표, 카드, 평가 그림과 실행 문서 및 OpenRouter 공개 요금을 대조했습니다. 공급사 및 경쟁 개발사의 보고값이며 모델 실행, 독립 성능 재현, 청구와 사람 독해 시험은 하지 않았습니다.",
+            "price_type": "not a standard hosted tariff source",
+            "supports": [
+              "identity",
+              "change",
+              "comparison",
+              "specification",
+              "availability",
+              "price",
+              "advantages",
+              "limitations"
+            ]
+          },
+          {
+            "id": "e-host",
+            "source_id": "host",
+            "quote": "The hosted Flint configuration uses a 262,144-token context window",
+            "source_hash": "604f0c8a097de0c021d44d0e7349ce5420a01ece449714fb19e4894cf60b6bee",
+            "meaning": "호스팅 문맥과 최대 출력, 로컬 설정의 차이를 설명합니다.",
+            "limits": "Recursive의 발표, 카드, 평가 그림과 실행 문서 및 OpenRouter 공개 요금을 대조했습니다. 공급사 및 경쟁 개발사의 보고값이며 모델 실행, 독립 성능 재현, 청구와 사람 독해 시험은 하지 않았습니다.",
+            "price_type": "not a standard hosted tariff source",
+            "supports": [
+              "identity",
+              "change",
+              "comparison",
+              "specification",
+              "availability",
+              "price",
+              "advantages",
+              "limitations"
+            ]
+          },
+          {
+            "id": "e-release",
+            "source_id": "release",
+            "quote": "Initial release\",\"message\":\"\\n\",\"authors\":[{\"user\":\"lvmopt\",\"avatar\":\"/avatars/cc7f1819e15be668dc04a6380745c50e.svg\"}],\"date\":\"2026-10-21T14:24:03.000Z\"}]",
+            "source_hash": "ebdec1129d37c43c6eeaf1bd2618913de3b5385498d5e343347d848c8d3042c9",
+            "meaning": "21일 Initial release를 확인했습니다.",
+            "limits": "Recursive의 발표, 카드, 평가 그림과 실행 문서 및 OpenRouter 공개 요금을 대조했습니다. 공급사 및 경쟁 개발사의 보고값이며 모델 실행, 독립 성능 재현, 청구와 사람 독해 시험은 하지 않았습니다.",
+            "price_type": "not a standard hosted tariff source",
+            "supports": [
+              "identity",
+              "change",
+              "comparison",
+              "specification",
+              "availability",
+              "price",
+              "advantages",
+              "limitations"
+            ]
+          },
+          {
+            "id": "e-access",
+            "source_id": "access",
+            "quote": "Direct Recursive API access is limited to select partners",
+            "source_hash": "a99b8b8ff6e3a2054db2ee9ebbf6702d685d333b67370147d2bc59277c100ab1",
+            "meaning": "직접 API는 일부 파트너, 클라우드는 별도 파트너 경로입니다.",
+            "limits": "Recursive의 발표, 카드, 평가 그림과 실행 문서 및 OpenRouter 공개 요금을 대조했습니다. 공급사 및 경쟁 개발사의 보고값이며 모델 실행, 독립 성능 재현, 청구와 사람 독해 시험은 하지 않았습니다.",
+            "price_type": "not a standard hosted tariff source",
+            "supports": [
+              "identity",
+              "change",
+              "comparison",
+              "specification",
+              "availability",
+              "price",
+              "advantages",
+              "limitations"
+            ]
+          },
+          {
+            "id": "e-pricing",
+            "source_id": "pricing",
+            "quote": "recursive/flint-v1.0:free\",\"canonical_slug\":\"recursive/flint-v1.0-20261021\",\"hugging_face_id\":\"RecursiveSI/flint\",\"name\":\"Recursive: Flint (free)\",\"created\":1792622765,\"description\":\"Flint is an open-weight mixture-of-experts model from",
+            "source_hash": "108fd0607d2196ee3bee21b5928de33114b7c1714874508526b5af7d478dcab3",
+            "meaning": "무료 Flint 경로와 비교 모델의 토큰당 USD를 확인했습니다.",
+            "limits": "Recursive의 발표, 카드, 평가 그림과 실행 문서 및 OpenRouter 공개 요금을 대조했습니다. 공급사 및 경쟁 개발사의 보고값이며 모델 실행, 독립 성능 재현, 청구와 사람 독해 시험은 하지 않았습니다.",
+            "price_type": "OpenRouter posted free route and per-token USD multiplied by one million; standard Recursive paid tariff unverified",
+            "supports": [
+              "identity",
+              "change",
+              "comparison",
+              "specification",
+              "availability",
+              "price",
+              "advantages",
+              "limitations"
+            ]
+          }
+        ],
+        "answers": [
+          {
+            "question_id": "core",
+            "answer": "Flint는 코드와 도구 호출을 생성하는 약 398억 파라미터의 공개 언어 모델입니다. 매번 일부 전문가만 계산하는 비슷한 규모의 모델보다 코딩 점수가 높지만, Qwen 3.8보다 낮은 평가도 있습니다. 로컬 생성 속도와 에이전트 문제 해결 능력은 다른 측정이며 무료 호스팅이 모든 운영비를 없애지는 않습니다.",
+            "reasoning": "6평가48값/공급사†/경쟁개발사수록과Terminus2 XML인터넷검색해답실패/mini-swe-agent인터넷없음,최소5회평균과최대5시간을보존. Qwen3.8 Terminal73.0>54.9,Pro94.9>89.7,MuseVerified76>74.2와NVFP4별차이. M4Pro1K/128K AUC및입력처리제외,Mac48GB/BF16141GBGPU를구분. 512k발표/262144카드·호스팅,최대출력65536/235929충돌과무료0/0/표준미확인보존.",
+            "limits": "Recursive의 발표, 카드, 평가 그림과 실행 문서 및 OpenRouter 공개 요금을 대조했습니다. 공급사 및 경쟁 개발사의 보고값이며 모델 실행, 독립 성능 재현, 청구와 사람 독해 시험은 하지 않았습니다.",
+            "evidence_ids": [
+              "e-launch",
+              "e-card",
+              "e-chart",
+              "e-speed",
+              "e-runtime",
+              "e-serve",
+              "e-host",
+              "e-release",
+              "e-access",
+              "e-pricing"
+            ]
+          }
+        ],
+        "gaps": []
+      },
+      "draft": {
+        "report": {
+          "id": "recursive-flint-model-guide",
+          "topic_id": "opportunities",
+          "topic_path": [
+            "개발 동향",
+            "AI 모델·API"
+          ],
+          "checked_on": "2026-10-23",
+          "title": "Flint 소개: 로컬 코딩 모델의 성능, 속도와 실행 조건",
+          "description": "Flint를 비슷한 규모의 공개 코딩 모델과 비교하고, 양자화에 따른 점수 차이와 Mac·GPU 실행 조건을 설명합니다.",
+          "deck": "Flint는 코드와 도구 호출을 생성하는 약 398억 파라미터의 공개 언어 모델입니다. 매번 일부 전문가만 계산하는 비슷한 규모의 모델보다 코딩 점수가 높지만, Qwen 3.8보다 낮은 평가도 있습니다. 로컬 생성 속도와 에이전트 문제 해결 능력은 다른 측정이며 무료 호스팅이 모든 운영비를 없애지는 않습니다.",
+          "scope": "21일 공식 BF16 체크포인트의 Initial release를23일 확인한 보완입니다. 블로그 자체의 최초 게시일은 명시적으로 확인하지 못했습니다. 오늘 처음 출시된 모델로 소개하지 않습니다.",
+          "source_note": "Recursive의 발표, 카드, 평가 그림과 실행 문서 및 OpenRouter 공개 요금을 대조했습니다. 공급사 및 경쟁 개발사의 보고값이며 모델 실행, 독립 성능 재현, 청구와 사람 독해 시험은 하지 않았습니다.",
+          "highlights": [
+            "모델과 공개 시점",
+            "상대 장점과 단점",
+            "제공과 비용"
+          ],
+          "summary": [
+            {
+              "label": "모델과 공개 시점",
+              "text": "Flint는 텍스트 입출력, 추론과 여러 차례의 도구 호출을 지원합니다. 공식 BF16 체크포인트는21일 Initial release 기록이 있으며 이번23일에 누락을 보완했습니다. 이전 Flint 공개판 대비의 재평가 수치는 확인하지 못했습니다.",
+              "source_ids": [
+                "card",
+                "release"
+              ],
+              "kind": "fact"
+            },
+            {
+              "label": "상대 장점과 단점",
+              "text": "BF16의 Terminal-Bench 2.1은54.9%, Qwen 3.6은44.9%입니다. 그러나 Qwen 3.8은73.0%이고 SWE-bench Pro v2도94.9%로 Flint89.7%보다 높습니다. 측정 주체와 인터넷 처리 조건이 달라 모든 작업의 우열로 일반화할 수 없습니다.",
+              "source_ids": [
+                "chart",
+                "launch"
+              ],
+              "kind": "fact"
+            },
+            {
+              "label": "제공과 비용",
+              "text": "Apache 2.0 가중치와 로컬 실행 경로가 있습니다. rec는 지정된 Apple Silicon과 48GB 이상 메모리가 필요하고, BF16 SGLang 경로는 141GB 이상 GPU를 요구합니다. OpenRouter 무료 경로의 입력·출력 $0 단가와 표준 유료 API 단가 미확인을 구분합니다.",
+              "source_ids": [
+                "card",
+                "runtime",
+                "serve",
+                "pricing"
+              ],
+              "kind": "fact"
+            }
+          ],
+          "metrics": [],
+          "datasets": [],
+          "learning": [],
+          "tables": [
+            {
+              "id": "specs",
+              "title": "모델 사양과 제공 조건",
+              "columns": [
+                "항목",
+                "확인한 내용"
+              ],
+              "rows": [
+                {
+                  "values": [
+                    "총 파라미터 / 토큰당 활성",
+                    "39.8B / 약2.5B; 활성 본문만 약2.2B"
+                  ],
+                  "source_ids": [
+                    "card",
+                    "host",
+                    "runtime",
+                    "serve"
+                  ]
+                },
+                {
+                  "values": [
+                    "구조",
+                    "49층, 256개 routed expert 중6개와 shared expert"
+                  ],
+                  "source_ids": [
+                    "card",
+                    "host",
+                    "runtime",
+                    "serve"
+                  ]
+                },
+                {
+                  "values": [
+                    "문맥",
+                    "카드와 호스팅262,144토큰; 블로그 최대512k, 권장256k"
+                  ],
+                  "source_ids": [
+                    "card",
+                    "host",
+                    "runtime",
+                    "serve"
+                  ]
+                },
+                {
+                  "values": [
+                    "호스팅 최대 출력",
+                    "공식 문서65,536; OpenRouter top_provider235,929로 불일치"
+                  ],
+                  "source_ids": [
+                    "card",
+                    "host",
+                    "runtime",
+                    "serve"
+                  ]
+                },
+                {
+                  "values": [
+                    "입출력 / 지식 기준",
+                    "텍스트 / 카드상2026년6월"
+                  ],
+                  "source_ids": [
+                    "card",
+                    "host",
+                    "runtime",
+                    "serve"
+                  ]
+                },
+                {
+                  "values": [
+                    "라이선스",
+                    "Apache 2.0 가중치; 호스팅 조건은 별도"
+                  ],
+                  "source_ids": [
+                    "card",
+                    "host",
+                    "runtime",
+                    "serve"
+                  ]
+                }
+              ],
+              "note": "문맥은 입력과 출력, 추론 및 도구 결과가 함께 쓰는 한도입니다. 발표의512k를 모든 실행 경로에서 검증한 한도로 쓰지 않습니다."
+            },
+            {
+              "id": "agent",
+              "title": "다른 모델과의 코딩 에이전트 평가",
+              "columns": [
+                "모델",
+                "Terminal-Bench 2.1 %",
+                "SWE-bench Pro v2 %",
+                "Verified %"
+              ],
+              "rows": [
+                {
+                  "values": [
+                    "Flint BF16",
+                    "54.9",
+                    "89.7",
+                    "74.2"
+                  ],
+                  "source_ids": [
+                    "chart"
+                  ]
+                },
+                {
+                  "values": [
+                    "Flint NVFP4",
+                    "53.7",
+                    "88.5",
+                    "74.1"
+                  ],
+                  "source_ids": [
+                    "chart"
+                  ]
+                },
+                {
+                  "values": [
+                    "Qwen 3.5 (도표 약칭)",
+                    "38.7",
+                    "68.6",
+                    "69.2"
+                  ],
+                  "source_ids": [
+                    "chart"
+                  ]
+                },
+                {
+                  "values": [
+                    "Qwen 3.6 (도표 약칭)",
+                    "44.9",
+                    "73.8",
+                    "73.4"
+                  ],
+                  "source_ids": [
+                    "chart"
+                  ]
+                },
+                {
+                  "values": [
+                    "Laguna XS 2.1",
+                    "24.7",
+                    "38.6",
+                    "70.9"
+                  ],
+                  "source_ids": [
+                    "chart"
+                  ]
+                },
+                {
+                  "values": [
+                    "Qwen 3.8 (도표 약칭)",
+                    "73.0",
+                    "94.9",
+                    "75.6"
+                  ],
+                  "source_ids": [
+                    "chart"
+                  ]
+                },
+                {
+                  "values": [
+                    "Muse Glimmer",
+                    "51.7",
+                    "86.0",
+                    "76.0"
+                  ],
+                  "source_ids": [
+                    "chart"
+                  ]
+                },
+                {
+                  "values": [
+                    "Gemma 4 (도표 약칭)",
+                    "43.4",
+                    "61.7",
+                    "66.6"
+                  ],
+                  "source_ids": [
+                    "chart"
+                  ]
+                }
+              ],
+              "note": "높을수록 좋습니다. Flint는 temperature 1.0, top-p 0.95, top-k 20, 평균 pass@1 최소 5회, agent 제한 최대 5시간입니다. pass@1은 한 번의 시도에서 해결한 비율이며 여기서는 여러 시도의 평균입니다. Terminal은 Terminus 2 XML과 인터넷을 사용하지만 검색으로 얻은 해답은 실패로 처리합니다. SWE는 mini-swe-agent와 인터넷 없는 조건입니다. Pro v2의 모든 값과 Laguna의 Terminal 및 Qwen 3.8의 Verified는 Recursive 측정이며, 다른 경쟁값은 개발사 보고입니다. 정확한 체크포인트 ID와 모든 경쟁 설정은 그림에 없습니다."
+            },
+            {
+              "id": "single",
+              "title": "단일 턴 코딩과 지시 이행",
+              "columns": [
+                "모델",
+                "LiveCodeBench v6 %",
+                "IFBench %",
+                "IFEval %"
+              ],
+              "rows": [
+                {
+                  "values": [
+                    "Flint BF16",
+                    "80.3",
+                    "89.2",
+                    "95.1"
+                  ],
+                  "source_ids": [
+                    "chart"
+                  ]
+                },
+                {
+                  "values": [
+                    "Flint NVFP4",
+                    "80.8",
+                    "88.1",
+                    "94.6"
+                  ],
+                  "source_ids": [
+                    "chart"
+                  ]
+                },
+                {
+                  "values": [
+                    "Qwen 3.5 (도표 약칭)",
+                    "74.6",
+                    "70.2",
+                    "91.9"
+                  ],
+                  "source_ids": [
+                    "chart"
+                  ]
+                },
+                {
+                  "values": [
+                    "Qwen 3.6 (도표 약칭)",
+                    "80.4",
+                    "67.9",
+                    "89.6"
+                  ],
+                  "source_ids": [
+                    "chart"
+                  ]
+                },
+                {
+                  "values": [
+                    "Laguna XS 2.1",
+                    "49.5",
+                    "34.4",
+                    "73.7"
+                  ],
+                  "source_ids": [
+                    "chart"
+                  ]
+                },
+                {
+                  "values": [
+                    "Qwen 3.8 (도표 약칭)",
+                    "90.3",
+                    "79.5",
+                    "94.6"
+                  ],
+                  "source_ids": [
+                    "chart"
+                  ]
+                },
+                {
+                  "values": [
+                    "Muse Glimmer",
+                    "63.5",
+                    "77.0",
+                    "94.7"
+                  ],
+                  "source_ids": [
+                    "chart"
+                  ]
+                },
+                {
+                  "values": [
+                    "Gemma 4 (도표 약칭)",
+                    "80.0",
+                    "76.0",
+                    "94.6"
+                  ],
+                  "source_ids": [
+                    "chart"
+                  ]
+                }
+              ],
+              "note": "Flint는 단일 턴 평균 pass@1 5회입니다. Laguna의 세 값, Muse의 LiveCodeBench/IFEval, Qwen 3.8의 IFEval은 Recursive 측정 표시가 있고, 나머지 경쟁값은 개발사 보고입니다. 서로 다른 시험을 평균 내 업무 성공률로 사용하지 않습니다."
+            },
+            {
+              "id": "throughput",
+              "title": "M4 Pro에서의 생성 속도",
+              "columns": [
+                "모델·실행 경로",
+                "1K 입력 토큰/초",
+                "128K 세션 평균 토큰/초"
+              ],
+              "rows": [
+                {
+                  "values": [
+                    "Flint MLX",
+                    "131.22",
+                    "68.89"
+                  ],
+                  "source_ids": [
+                    "speed"
+                  ]
+                },
+                {
+                  "values": [
+                    "Flint llama.cpp",
+                    "87.98",
+                    "47.58"
+                  ],
+                  "source_ids": [
+                    "speed"
+                  ]
+                },
+                {
+                  "values": [
+                    "Laguna XS 2.1 33B-A3B",
+                    "68.84",
+                    "39.60"
+                  ],
+                  "source_ids": [
+                    "speed"
+                  ]
+                },
+                {
+                  "values": [
+                    "Qwen3.6 35B-A3B",
+                    "65.55",
+                    "37.13"
+                  ],
+                  "source_ids": [
+                    "speed"
+                  ]
+                },
+                {
+                  "values": [
+                    "Qwen3.8 27B",
+                    "13.01",
+                    "10.11"
+                  ],
+                  "source_ids": [
+                    "speed"
+                  ]
+                },
+                {
+                  "values": [
+                    "Muse Glimmer 30B",
+                    "14.54",
+                    "12.61"
+                  ],
+                  "source_ids": [
+                    "speed"
+                  ]
+                }
+              ],
+              "note": "48GiB M4 Pro의 공급사 측정이며 입력 처리(prefill)는 제외합니다. 세션 값은 문맥이 늘어나는 과정의 속도 곡선을 정규화한 AUC이며 Muse는 124K까지입니다. 속도 그림의 양자화 조건과 BF16 코딩 평가는 별도입니다."
+            },
+            {
+              "id": "price",
+              "title": "공개 호스팅 경로 요금",
+              "columns": [
+                "경로 ID",
+                "입력 USD/100만토큰",
+                "출력 USD/100만토큰",
+                "성격"
+              ],
+              "rows": [
+                {
+                  "values": [
+                    "recursive/flint-v1.0:free",
+                    "0",
+                    "0",
+                    "제한 있는 무료 경로"
+                  ],
+                  "source_ids": [
+                    "pricing"
+                  ]
+                },
+                {
+                  "values": [
+                    "qwen/qwen3.8-27b",
+                    "0.04",
+                    "1.35",
+                    "OpenRouter 게시 요금"
+                  ],
+                  "source_ids": [
+                    "pricing"
+                  ]
+                },
+                {
+                  "values": [
+                    "google/gemma-4-31b-it",
+                    "0.2",
+                    "0.4",
+                    "OpenRouter 게시 요금"
+                  ],
+                  "source_ids": [
+                    "pricing"
+                  ]
+                }
+              ],
+              "note": "2026-10-23 확인. 원문의 토큰당 USD에100만을 곱했습니다. 무료 경로의 용량·속도·데이터 정책과 유료 경로의 제공사 선택을 따로 확인해야 합니다. Recursive의 일반 유료 API 표준 단가는 미확인입니다."
+            }
+          ],
+          "explanation": [
+            {
+              "id": "overview",
+              "title": "모델 개요와 기존 방식의 차이",
+              "lead": "Flint는 모델이며, 코드와 도구 요청을 실제로 실행하는 프로그램은 별도입니다.",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "title": "작은 활성 규모와 전체 메모리",
+                  "text": "MoE는 토큰마다 일부 전문가만 계산하는 구조입니다. Flint는 총39.8B 가운데 출력 head를 포함해 약2.5B를 활성화합니다. 연산량이 작다는 사실이 전체 가중치까지2.5B만 저장한다는 뜻은 아닙니다. 코드 실행, 파일 수정과 시험 결과의 회신은 연결된 에이전트 실행기가 담당합니다.",
+                  "source_ids": [
+                    "card",
+                    "host"
+                  ],
+                  "kind": "fact"
+                },
+                {
+                  "type": "paragraph",
+                  "title": "이전 모델과의 관계",
+                  "text": "공식 발표는 Flint를 처음부터 학습한 출발점으로 설명합니다. 이전 공개 Flint 판과 같은 조건의 점수는 확인되지 않아 향상률을 만들지 않았습니다. 비교 대상으로는 발표가 제시한33~35B MoE군과27~31B dense군을 사용했습니다. 발표에 함께 나온 Eureka Machine은 모델을 만든 연구 시스템이며 Flint 자체의 도구 실행기와 다릅니다.",
+                  "source_ids": [
+                    "launch",
+                    "chart"
+                  ],
+                  "kind": "fact"
+                }
+              ]
+            },
+            {
+              "id": "strengths",
+              "title": "장점: 작은 MoE군의 코딩 성능과 로컬 선택권",
+              "lead": "비교표에서 확인한 강점은 작업과 실행 조건을 함께 붙여 읽어야 합니다.",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "title": "코딩 평가에서의 상대 성능",
+                  "text": "Flint BF16은 Terminal-Bench에서 Qwen 3.6보다 10.0포인트, SWE-bench Pro v2에서 15.9포인트 높습니다. IFBench 89.2도 그림의 모든 비교 모델보다 높습니다. 다만 이는 공급사 공개 비교이며, 같은 에이전트 설정으로 모든 경쟁 모델을 다시 실행한 독립 검증을 뜻하지 않습니다.",
+                  "source_ids": [
+                    "chart",
+                    "launch"
+                  ],
+                  "kind": "judgment"
+                },
+                {
+                  "type": "paragraph",
+                  "title": "양자화판의 비교적 작은 점수 차이",
+                  "text": "NVFP4는 BF16보다 Terminal 54.9→53.7, Pro 89.7→88.5, Verified 74.2→74.1로 낮아집니다. LiveCodeBench는 80.3→80.8로 오히려 높습니다. 여섯 지표의 평균 차이는 약 0.60포인트지만, 각 평가의 손실이 모두 0.7 이하라는 뜻은 아닙니다. 양자화가 모든 과제에서 동일하게 작동한다고 볼 수 없습니다.",
+                  "source_ids": [
+                    "chart",
+                    "launch"
+                  ],
+                  "kind": "judgment"
+                },
+                {
+                  "type": "paragraph",
+                  "title": "자체 실행과 빠른 생성",
+                  "text": "M4 Pro의 MLX 경로는 1K 입력에서 131.22토큰/초, 128K 세션 평균은 68.89입니다. 같은 그림의 Flint llama.cpp는 87.98/47.58입니다. 별도 rec 저장소의 1K~252K 실험은 4비트, 출력 1,024토큰, 문맥별 5회이며 입력 처리(prefill)를 제외합니다. 서로 다른 실행기와 문맥을 섞어 하나의 고정 속도로 표시하지 않습니다.",
+                  "source_ids": [
+                    "speed",
+                    "runtime"
+                  ],
+                  "kind": "judgment"
+                }
+              ]
+            },
+            {
+              "id": "weaknesses",
+              "title": "단점과 비교의 한계",
+              "lead": "속도 우위가 더 높은 문제 해결률이나 낮은 전체 지연을 보장하지 않습니다.",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "title": "더 큰 dense 모델에 뒤지는 평가",
+                  "text": "Flint의 Terminal 54.9는 Qwen 3.8의 73.0보다 18.1포인트 낮고, Pro 89.7도 94.9보다 낮습니다. Verified 74.2는 Muse Glimmer 76.0보다 낮고, LiveCodeBench 80.3은 Qwen 3.6의 80.4보다도 조금 낮습니다. 공개 그림이 지지하는 결론은 작은 MoE군의 경쟁력이지 모든 공개 코딩 모델의 1위가 아닙니다.",
+                  "source_ids": [
+                    "chart"
+                  ],
+                  "kind": "judgment"
+                },
+                {
+                  "type": "paragraph",
+                  "title": "긴 추론과 실제 작업 지연",
+                  "text": "짧은 문맥에서의 생성 속도는 입력 처리, 여러 도구 호출, 재시도와 긴 추론의 시간을 포함하지 않습니다. 공급사도 복잡한 작업에서는 더 큰 비공개 모델보다 명시적인 지도가 필요할 수 있다고 설명합니다. 도구 요청의 문법 지원은 안전한 행동 선택이나 권한 준수를 보장하지 않습니다.",
+                  "source_ids": [
+                    "launch",
+                    "card",
+                    "speed"
+                  ],
+                  "kind": "judgment"
+                },
+                {
+                  "type": "paragraph",
+                  "title": "문맥과 출력 한도의 불일치",
+                  "text": "카드와 공식 호스팅 문서는 262,144토큰 문맥을 제시하고, 블로그는 최대 512k와 권장 256k를 설명합니다. 공식 호스팅 최대 출력 65,536과 OpenRouter top_provider의 235,929도 다릅니다. 정확한 실행 경로와 현재 제공자 조건으로 다시 확인해야 하며, 더 큰 값을 전체 경로의 확정 사양으로 쓰지 않습니다.",
+                  "source_ids": [
+                    "launch",
+                    "host",
+                    "pricing"
+                  ],
+                  "kind": "judgment"
+                }
+              ]
+            },
+            {
+              "id": "availability",
+              "title": "가격과 실행 조건",
+              "lead": "라이선스, 하드웨어와 클라우드 서비스의 조건은 서로 다릅니다.",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "title": "Mac과 BF16 서버의 차이",
+                  "text": "rec는 M4 Pro, M5 Pro/Max와 48GB 이상 통합 메모리, 약 30GB 여유 저장 공간을 요구합니다. 단일 세션에 최적화돼 동시 에이전트 수용량은 별도 문제입니다. BF16 SGLang 키트는 B300/B200 또는 H200의 141GB 이상 GPU를 요구하며 80GB GPU는 지원하지 않습니다. 가중치 약 80GB와 이미지 약 50GB, CUDA 13 계열 조건도 제시합니다. 일반 노트북 전체에 적용되는 실행 약속이 아닙니다.",
+                  "source_ids": [
+                    "runtime",
+                    "serve"
+                  ],
+                  "kind": "fact"
+                },
+                {
+                  "type": "paragraph",
+                  "title": "무료 경로와 유료 표준 단가",
+                  "text": "공식 문서는 OpenCode/OpenRouter 경로와 일부 파트너만 가능한 직접 Recursive API를 구분합니다. 23일 OpenRouter에는 recursive/flint-v1.0:free가 입력과 출력 모두 $0으로 게시돼 있지만 이는 특정 무료 경로입니다. 용량과 속도 제한, 데이터 처리 정책과 서비스 지속성을 포함한 기업 계약을 대신하지 않습니다. 자체 실행에는 장비, 전력과 운영 비용이 듭니다.",
+                  "source_ids": [
+                    "access",
+                    "pricing",
+                    "card"
+                  ],
+                  "kind": "judgment"
+                }
+              ]
+            }
+          ],
+          "result": {
+            "title": "결론",
+            "points": [
+              {
+                "label": "선택 기준",
+                "text": "Flint는 지정된 로컬 장비에서 공개 가중치와 코딩 성능을 함께 비교할 후보입니다. Qwen3.8의 더 높은 문제 해결 점수와 Flint의 빠른 생성, 실제 장비·문맥 및 에이전트 실행기의 차이를 함께 비교해야 합니다. 수치가 좋은 정밀도와 속도가 빠른 정밀도를 하나의 실행처럼 합치지 않았습니다.",
+                "source_ids": [
+                  "chart",
+                  "speed",
+                  "runtime"
+                ],
+                "kind": "judgment"
+              }
+            ]
+          },
+          "caveats": [
+            {
+              "text": "23일 공식 원문과 그림을 읽었습니다.21일 체크포인트 등록을 오늘 출시로 바꾸지 않았으며 모든 경쟁 모델의 체크포인트/추론 설정과 호스팅 한도 충돌은 미확인 범위로 남겼습니다. 실제 모델 실행, 청구, 독립 재현과 사람 시험은 수행하지 않았습니다.",
+              "source_ids": [
+                "release",
+                "chart",
+                "host",
+                "pricing"
+              ]
+            }
+          ],
+          "references": [
+            {
+              "id": "launch",
+              "title": "Recursive의 Flint 발표",
+              "url": "https://www.recursive.com/updates/introducing-recursive-flint",
+              "description": "구조, 평가 설정, 양자화와 512k/권장256k 조건을 설명합니다."
+            },
+            {
+              "id": "card",
+              "title": "Flint 모델 카드",
+              "url": "https://huggingface.co/RecursiveSI/flint",
+              "description": "BF16 사양, 정밀도별 평가와 실행 제약을 제공합니다."
+            },
+            {
+              "id": "chart",
+              "title": "BF16와 NVFP4 평가 그림",
+              "url": "https://huggingface.co/RecursiveSI/flint/resolve/main/assets/flint_benchmarks_nvfp4.png",
+              "description": "비교 모델과 여섯 평가, 측정 주체 표시를 직접 확인했습니다."
+            },
+            {
+              "id": "speed",
+              "title": "로컬 생성 속도 그림",
+              "url": "https://framerusercontent.com/images/5t7vbDk5jkbHiOHKkSzJDzhgz4.png?scale-down-to=2048",
+              "description": "Mac과 RTX Spark의 문맥별 생성 속도를 비교합니다."
+            },
+            {
+              "id": "runtime",
+              "title": "rec 공식 저장소",
+              "url": "https://github.com/recursive-oss/rec",
+              "description": "지원 Mac과 메모리, 단일 세션 측정 조건을 제공합니다."
+            },
+            {
+              "id": "serve",
+              "title": "SGLang 실행 조건",
+              "url": "https://huggingface.co/RecursiveSI/flint/blob/main/sglang/README.md",
+              "description": "BF16의 GPU 메모리와 드라이버 및 저장 공간 조건입니다."
+            },
+            {
+              "id": "host",
+              "title": "Flint 공식 제공 문서",
+              "url": "https://docs.recursive.com/models/flint",
+              "description": "호스팅 문맥과 최대 출력, 로컬 설정의 차이를 설명합니다."
+            },
+            {
+              "id": "release",
+              "title": "공식 체크포인트 이력",
+              "url": "https://huggingface.co/RecursiveSI/flint/commits/main",
+              "description": "21일 Initial release를 확인했습니다."
+            },
+            {
+              "id": "access",
+              "title": "공식 제공 경로",
+              "url": "https://docs.recursive.com/resources/releases",
+              "description": "직접 API는 일부 파트너, 클라우드는 별도 파트너 경로입니다."
+            },
+            {
+              "id": "pricing",
+              "title": "OpenRouter 공개 모델 및 요금 목록",
+              "url": "https://openrouter.ai/api/v1/models",
+              "description": "무료 Flint 경로와 비교 모델의 토큰당 USD를 확인했습니다."
+            }
+          ]
+        },
+        "claims": [
+          {
+            "path": "/summary/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-card",
+              "e-release"
+            ]
+          },
+          {
+            "path": "/summary/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-chart",
+              "e-launch"
+            ]
+          },
+          {
+            "path": "/summary/2",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-card",
+              "e-runtime",
+              "e-serve",
+              "e-pricing"
+            ]
+          },
+          {
+            "path": "/tables/0/rows/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-card",
+              "e-host",
+              "e-runtime",
+              "e-serve"
+            ]
+          },
+          {
+            "path": "/tables/0/rows/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-card",
+              "e-host",
+              "e-runtime",
+              "e-serve"
+            ]
+          },
+          {
+            "path": "/tables/0/rows/2",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-card",
+              "e-host",
+              "e-runtime",
+              "e-serve"
+            ]
+          },
+          {
+            "path": "/tables/0/rows/3",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-card",
+              "e-host",
+              "e-runtime",
+              "e-serve"
+            ]
+          },
+          {
+            "path": "/tables/0/rows/4",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-card",
+              "e-host",
+              "e-runtime",
+              "e-serve"
+            ]
+          },
+          {
+            "path": "/tables/0/rows/5",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-card",
+              "e-host",
+              "e-runtime",
+              "e-serve"
+            ]
+          },
+          {
+            "path": "/tables/1/rows/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-chart"
+            ]
+          },
+          {
+            "path": "/tables/1/rows/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-chart"
+            ]
+          },
+          {
+            "path": "/tables/1/rows/2",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-chart"
+            ]
+          },
+          {
+            "path": "/tables/1/rows/3",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-chart"
+            ]
+          },
+          {
+            "path": "/tables/1/rows/4",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-chart"
+            ]
+          },
+          {
+            "path": "/tables/1/rows/5",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-chart"
+            ]
+          },
+          {
+            "path": "/tables/1/rows/6",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-chart"
+            ]
+          },
+          {
+            "path": "/tables/1/rows/7",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-chart"
+            ]
+          },
+          {
+            "path": "/tables/2/rows/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-chart"
+            ]
+          },
+          {
+            "path": "/tables/2/rows/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-chart"
+            ]
+          },
+          {
+            "path": "/tables/2/rows/2",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-chart"
+            ]
+          },
+          {
+            "path": "/tables/2/rows/3",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-chart"
+            ]
+          },
+          {
+            "path": "/tables/2/rows/4",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-chart"
+            ]
+          },
+          {
+            "path": "/tables/2/rows/5",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-chart"
+            ]
+          },
+          {
+            "path": "/tables/2/rows/6",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-chart"
+            ]
+          },
+          {
+            "path": "/tables/2/rows/7",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-chart"
+            ]
+          },
+          {
+            "path": "/tables/3/rows/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-speed"
+            ]
+          },
+          {
+            "path": "/tables/3/rows/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-speed"
+            ]
+          },
+          {
+            "path": "/tables/3/rows/2",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-speed"
+            ]
+          },
+          {
+            "path": "/tables/3/rows/3",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-speed"
+            ]
+          },
+          {
+            "path": "/tables/3/rows/4",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-speed"
+            ]
+          },
+          {
+            "path": "/tables/3/rows/5",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-speed"
+            ]
+          },
+          {
+            "path": "/tables/4/rows/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-pricing"
+            ]
+          },
+          {
+            "path": "/tables/4/rows/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-pricing"
+            ]
+          },
+          {
+            "path": "/tables/4/rows/2",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-pricing"
+            ]
+          },
+          {
+            "path": "/explanation/0/blocks/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-card",
+              "e-host"
+            ]
+          },
+          {
+            "path": "/explanation/0/blocks/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-launch",
+              "e-chart"
+            ]
+          },
+          {
+            "path": "/explanation/1/blocks/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-chart",
+              "e-launch"
+            ]
+          },
+          {
+            "path": "/explanation/1/blocks/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-chart",
+              "e-launch"
+            ]
+          },
+          {
+            "path": "/explanation/1/blocks/2",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-speed",
+              "e-runtime"
+            ]
+          },
+          {
+            "path": "/explanation/2/blocks/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-chart"
+            ]
+          },
+          {
+            "path": "/explanation/2/blocks/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-launch",
+              "e-card",
+              "e-speed"
+            ]
+          },
+          {
+            "path": "/explanation/2/blocks/2",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-launch",
+              "e-host",
+              "e-pricing"
+            ]
+          },
+          {
+            "path": "/explanation/3/blocks/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-runtime",
+              "e-serve"
+            ]
+          },
+          {
+            "path": "/explanation/3/blocks/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-access",
+              "e-pricing",
+              "e-card"
+            ]
+          },
+          {
+            "path": "/result/points/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-chart",
+              "e-speed",
+              "e-runtime"
+            ]
+          },
+          {
+            "path": "/caveats/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-release",
+              "e-chart",
+              "e-host",
+              "e-pricing"
+            ]
+          }
+        ],
+        "answer_paths": {
+          "core": [
+            "/summary",
+            "/tables",
+            "/explanation",
+            "/result",
+            "/caveats"
+          ]
+        }
+      },
+      "issues": [],
+      "authoring": {
+        "recipe": {
+          "version": "authoring-recipe-1",
+          "catalog_version": "1.0.2",
+          "brief": {
+            "id": "recursive-flint-model-guide",
+            "reader": "새 모델의 상대 성능과 비용, 제공 조건을 비교하는 개발자와 관리자",
+            "reader_question": "Flint를 비슷한 규모의 공개 코딩 모델과 비교하고, 양자화에 따른 점수 차이와 Mac·GPU 실행 조건을 설명합니다.",
+            "outcome": "이전 판과 경쟁 모델의 결과를 비교하고 측정 조건 및 제공 제한을 설명한다.",
+            "profile": "model_introduction"
+          },
+          "request_hash": "aa3a4174189e5b79cd1f964dd9e6d0db5464e7fd3a1c09748e51f549876834cf",
+          "components": [
+            {
+              "id": "common-principles",
+              "kind": "policy",
+              "version": "1.0.0",
+              "supports": [
+                "technology",
+                "comparison",
+                "market",
+                "opportunity",
+                "model_introduction",
+                "news",
+                "custom"
+              ],
+              "stages": [
+                "analyze",
+                "write",
+                "review"
+              ],
+              "sources": [
+                {
+                  "path": "docs/authoring/common.md",
+                  "sha256": "cf56f106511609377d003f3d592937b858b2de9a999cf78cb6e6408aa0aa59f7",
+                  "text": "# 공통 작성 원칙\n\n근거와 의미 보존, 자연스러운 한국어 및 본문과 편집 기록의 구분에 적용한다. 새 소식은 유형별 기사 형식을 사용한다. 학습 글을 명시한 문장은 그 유형에만 적용한다.\n\n## 독자 본문과 편집 기록을 분리하기\n\n독자는 주제와 실제 구현 방법을 배우려는 사람이다. 소제목에 `검토 의견` 같은\n내부 분류를 붙이거나 판 변경, 수집·검수 과정과 사이트 읽기 안내로 본문을 채우지\n않는다. 원문 링크와 자료의 설명은 더 자세한 내용을 배우는 데 사용한다. 출처 설명에는\n무엇을 알 수 있는지와 필요한 자료의 조건을 쓰고, 실제 수집/검토 시각과 실패 및 편집\n기록은 품질 패키지·작업 기록에 둔다. 가상 사례의 가정, 실습 준비물과 실행 조건,\n기술 한계와 통계 해석의 조건은 본문에 남긴다. [DevOps r12 수정](../DEVOPS_READER_COPY.2026-10-12.md).\n\n## 2026-10-10: 작성 목적 다음에 요약 배치하기\n\n앞으로 새로 작성하는 공유용 리서치 보고서는 다음 순서로 시작한다. 신규 소식 기사는 2026-10-14 기사 기준과 NEWSROOM.md의 별도 형식을 따른다.\n\n1. 제목 아래에 어떤 목적으로 만든 문서인지 한두 문장으로 짧게 설명한다.\n   독자의 어떤 문제나 판단을 돕기 위한 것인지 구체적으로 쓴다.\n2. 바로 다음 본문 구역은 `요약`으로 표시하고 핵심 내용과 결론을 정리한다.\n3. 요약 이후의 구성은 주제와 독자의 필요에 맞게 정한다. 목차, 개념 설명,\n   비교표, 도해, 사례, 실습, 출처의 순서와 분량을 일률적으로 고정하지 않는다.\n\n작성 목적은 “왜 이 문서를 만들었는가”에, 요약은 “핵심 내용과 결론이 무엇인가”에\n답한다. 둘을 같은 소개 문장으로 반복하지 않는다. DevOps 문서의 장 수나\n도구 카탈로그를 다른 주제의 필수 양식으로 삼지 않는다. 기존 페이지를 일괄\n재작성하는 규칙은 아니며, 앞서 정한 출처와 검토 기준은 유지한다.\n\n예시 작성 목적: “기존 Jenkins를 사용하는 C++ 팀이 검사 결과를 보관하고,\n검사한 파일을 릴리스하는 절차를 정할 수 있도록 구축 방법을 정리했다.”\n\n검토할 때는 첫 화면만 읽어 작성 목적을 알 수 있는지, 그다음 구역이 요약인지,\n요약에서 핵심 내용과 결론을 파악할 수 있는지 각각 확인한다. 본문 구성은\n이 고정된 앞부분 이후에 필요한 설명을 충분히 제공하는지로 판단한다.\n\n## 2026-10-10: 가운데점으로 단어나 동작을 묶지 않기\n\n새로 작성하거나 수정하는 제목, 요약, 본문, 표와 도구 설명에는 가운데점으로\n단어를 압축해 나열하지 않는다. 점을 공백으로 지우는 것으로 끝내지 않는다.\n병렬 항목은 쉼표나 자연스러운 연결어로 구분하고, 동작은 누가 무엇을 어떤\n순서로 하는지 문장으로 쓴다. 원문 코드, URL과 기존 분류 식별자는 보존한다.\n\n- 피할 표현: “누가 어떤 코드와 결과물을 검사·승인·반영했는지”\n- 사용할 표현: “누가 코드를 검사했고, 어떤 결과물을 승인해 실제 환경에 반영했는지”\n- 피할 표현: “개발·QA·운영이 공동 책임”\n- 사용할 표현: “개발 담당자는 코드를 수정하고 QA는 검사한다. 운영 담당자는 승인된 파일을 배포한다.”\n\n## 글을 쓰기 전에 정할 것\n\n교재형 글은 선행 개념의 순서를 확인한다. 먼저 익숙한 상황과 값으로 문제를\n설명하고, 그 문제에서 새 개념이 하는 일을 가르친 뒤 기술 이름·구조·코드를 연결한다.\n새 약어를 풀어 쓰는 것만으로 선행 지식의 공백이 해결되지는 않는다.\n\n목적은 자료 요약, 표 생성, 제목 작성이 아니라 **독자에게 생겨야 할 변화**다.\n먼저 아래 내용을 짧은 편집 메모에 적는다. 모르는 독자의 수준은 가정임을\n밝히고, 대화에서 이미 확인한 필요를 우선한다.\n\n| 질문 | 작성할 내용 |\n| --- | --- |\n| 누가 읽는가 | 주제와의 거리, 현재 알고 있는 것, 새로 설명해야 할 것 |\n| 왜 읽는가 | 이해하려는 문제 또는 내려야 할 결정 하나 |\n| 읽은 뒤 무엇이 가능한가 | 구분·설명·선택·실행처럼 확인 가능한 결과 |\n| 무엇을 다룰 것인가 | 그 결과에 필요한 범위와 선행 개념 |\n| 어떤 근거가 필요한가 | 기능, 수치, 적용 조건, 비교를 지지할 원문 |\n| 어떻게 확인할 것인가 | 다른 사례에 적용하는 질문 또는 관찰할 실행 결과 |\n\n예: MCP Apps의 역할을 모르는 독자가 공고 후보를 비교하는 업무에 이 기술을\n쓸 이유와 시작 경로를 고르고, 설명된 사례의 입력·조회·화면 결과를 추적한 뒤\n자기 목록에 적용할 변경점을 찾도록 쓴다. 역할을 설명하는 것은 이 작업을 위한\n중간 단계다. 예시를 실제로 실행시키는 경로를 제공하려면 현재 지원 환경·준비물·\n실행 절차·예상 결과를 확인한다. 이것이 없는 원고는 원리 설명으로 상태를 남긴다.\n\n‘초급~중급 개발자’라는 범위만으로 API, JSON, 비동기 처리, MCP를 이미\n안다고 가정하지 않는다. 필요한 개념은 설명하거나 정확한 선행 학습으로 연결한다.\n\n## 목적에 맞게 글의 성격을 고르기\n\n| 독자의 질문 | 중심 내용 | 완료를 확인하는 방법 |\n| --- | --- | --- |\n| 무엇이 바뀌고 내 작업에 어떤 영향이 있나 | 이전 상태, 변화, 해당 대상, 영향, 대응 시점 | 자신의 사용 여부와 다음 점검을 정할 수 있음 |\n| 이것은 무엇이고 왜 필요한가 | 익숙한 상황, 개념, 작동 이유, 구체적 사례, 한계 | 새로운 사례의 동작을 자기 말로 설명함 |\n| 어느 대안이 내 조건에 맞나 | 같은 비교 기준, 적용 조건, 비용·제약, 선택 이유 | 주어진 조건으로 대안을 고르고 이유를 말함 |\n| 따라 하면서 익히려면 무엇을 하나 | 준비물, 순서, 입력, 예상 출력, 오류 관찰 | 실제 결과를 재현하고 어느 단계에서 틀렸는지 찾음 |\n| 신청·참여할 수 있나 | 대상, 현재 접수 상태, 자격, 제외 조건, 제출물 | 해당·비해당·추가 확인을 구분하고 준비물을 정함 |\n| 이 수치·사례는 무엇을 알려주나 | 측정 대상·기간·단위, 관찰과 해석, 적용 한계 | 수치의 의미와 이 자료로 알 수 없는 것을 구분함 |\n\n설명 글과 실습 글의 역할은 다르다. 설명은 관계와 이유를 풀어내고, 실습은\n독자가 행동한 뒤 확인할 결과를 제공한다. 하나의 보고서에 둘 다 필요하면\n단위를 나누어 연결한다. 단순히 명령어를 넣었다고 실습이 완성되는 것은 아니다.\n이 구분은 [Diátaxis의 설명](https://diataxis.fr/explanation/)과\n[튜토리얼](https://diataxis.fr/tutorials/)을 참고한 프로젝트 편집 선택이다.\n\n## 원문에서 의미를 보존하기\n\n자료를 읽을 때 제목부터 만들지 않는다. 독자의 질문에 답하는 근거를 먼저\n확보하고, 아래 항목이 필요한 주장에 함께 남긴다.\n\n- 누가 무엇을 하는가: 제공자·실행자·요청자·결과 수신자를 구분한다.\n- 언제, 누구에게 적용되는가: 확인일, 발표일, 종료일, 지역·계정·버전 조건.\n- 무엇을 측정했는가: 기간·표본·분모·단위와 출처의 자체 공개 여부.\n- 무엇을 관찰했고 무엇을 해석했는가: 공식 기능, 편집 판단, 가상 예시를 구분한다.\n- 어떤 제한이 결론을 바꾸는가: 적용 제외, 필수 준비, 비교하지 못한 부분.\n\n출처 링크가 붙어 있는 것과 그 출처가 문장을 뒷받침하는 것은 별개다.\n원문의 주어·목적어·인과관계를 요약 과정에서 바꾸지 않는다. 예를 들어\n‘서버가 화면을 제공하고 호스트가 읽는다’를 ‘서버가 읽는 화면’으로 줄이면\n구조가 바뀐다. 규격은 실제 동작의 보장, 최대 지원액은 확정 지급액,\n한 회사의 성장과 제품 전략은 검증된 성장 원인으로 바꾸지 않는다.\n\n동적 규정·모델명·가격·프로그램 상태는 보강 시 공식 자료를 다시 확인한다.\n개념 문장을 고쳤다는 이유로 재확인하지 않은 다른 표의 확인일을 올리지 않는다.\n\n## 짧은 메인과 충분한 보고서\n\n메인은 독자가 읽을 보고서를 고를 수 있게 핵심 변화·문제·대상 조건을 짧게\n전달한다. 보고서는 선택한 내용을 혼자 이해할 수 있을 만큼 풀어 쓴다.\n메인의 분량 기준을 본문에 적용하지 않는다. 고정 글자 수나 항목 수로\n필수 설명을 자르지 않는다.\n\n펼치기는 상세 절차·추가 사례·사양·선택적 심화에 사용한다. 제목을 이해하는 데\n필요한 정의, 결론의 이유, 결정적인 자격·제약은 기본 읽기 경로에 둔다.\n처음 읽는 사람이 모든 펼치기를 열어야만 첫 문장을 이해한다면 배치가 잘못됐다.\n펼친 내용은 요약의 반복이 아니라 빠진 관계와 사례를 설명해야 한다.\n\n현재 Editorial의 `요약 → 데이터 → 결과 → 해설` 순서와 블록 개수는 의미 품질을\n보장하지 않는다. 원고를 먼저 완성하고 기존 데이터 필드에 의미를 유지하며\n옮긴다. 필요한 설명을 현재 필드로 자연스럽게 표현할 수 없으면 원고를 보존하고\n렌더링 개선을 별도 작업으로 기록한다. 원고를 양식에 맞춰 다시 축약하지 않는다.\n\n## 작성 지식베이스에 남길 내용\n\n새 주제의 편집 메모는 관련 보고서·검토 문서에 아래 정보를 남긴다. 단순\n용어집, 출처 모음, 글자 수 지침만 쌓지 않는다.\n\n| 항목 | 저장할 지식 |\n| --- | --- |\n| 독자의 질문 | 해당 글이 해결할 질문과 선행 지식 가정 |\n| 개념 관계 | 기존 개념과의 차이, 역할과 데이터 이동 |\n| 의미 근거 | 주장별 원문 위치·적용 조건·확인일 |\n| 끝까지 이어지는 예시 | 입력, 중간 값, 출력, 정상·실패 이유 |\n| 발견한 실패 | 원고의 어떤 표현이 무슨 오해를 만들었는지 |\n| 개선 원고 | 실제로 고친 문단과 독자가 대답할 수 있어야 할 질문 |\n| 보강 상태 | 진단·원고·사실 확인·실행 검증·게시 중 완료한 범위 |\n\n현재 결함 기록은 [앞선 내용 검토](../RESEARCH_CONTENT_REVIEW.2026-10-08.md)에,\n20편의 목적·실제 보강·검토 범위는 [전체 보강 기록](../RESEARCH_REPAIR.2026-10-08.md)에\n남긴다. 새 판의 본문 데이터는 `config/research_comprehension.2026-10-08.json`이다.\n[앞선 개선 원고](../RESEARCH_WRITING_EXAMPLES.md)는 부분 보강의 역사로 유지한다.\n사용자가 새 판을 승인한 완성 교재라는 뜻은 아니다. 날짜가 붙은 기능·규정은\n원문을 재확인하고 재사용한다. 예시 문장은 이번 독자 목적에 맞춘 사례다.\n\n## 참고한 작성 원칙\n\n- [Google Technical Writing — Audience](https://developers.google.com/tech-writing/one/audience): 독자의 현재 지식과 목표에 필요한 지식의 차이를 설명 범위로 삼는다.\n- [Google Technical Writing — Documents](https://developers.google.com/tech-writing/one/documents): 대상 독자와 읽은 뒤 가능한 일을 정하고 그 필요에 맞춰 내용을 조직한다.\n- [Diátaxis — Explanation](https://diataxis.fr/explanation/): 이해를 위한 관계·배경 설명의 역할을 구분한다.\n- [Diátaxis — Tutorials](https://diataxis.fr/tutorials/): 행동과 관찰할 결과를 통해 배우는 실습을 구분한다.\n\n2026-10-08 원문 확인. 위 원칙의 적용 방식과 검토 질문은 이 프로젝트의\n편집 판단이며, 문서화만으로 독자 이해 개선이 검증됐다는 뜻은 아니다.\n"
+                }
+              ]
+            },
+            {
+              "id": "profile-model_introduction",
+              "kind": "profile",
+              "version": "1.0.0",
+              "supports": [
+                "model_introduction"
+              ],
+              "stages": [
+                "analyze",
+                "write",
+                "review"
+              ],
+              "sources": [
+                {
+                  "path": "docs/authoring/types.md",
+                  "section": "모델 소개",
+                  "sha256": "fbeb922a5e6ca88f23ced7939f515837dedcbf5c6784f5cac5da74b97b311d82",
+                  "text": "## 모델 소개\n\n[모델 소개 정본](../AI_MODEL_RESEARCH.md)의 신규 모델 계약을 따른다. 이전 모델 대비 변화와 다른 모델의 같은 조건 비교, 상대 장단점 및 제공 조건을 설명한다. 학습 글의 가상 업무, 실습 코드와 응용 문제를 적용하지 않는다.\n\n"
+                },
+                {
+                  "path": "docs/AI_MODEL_RESEARCH.md",
+                  "section": "신규 모델 소개의 형식 — 2026-10-13 사용자 기준",
+                  "sha256": "dc9092e9a0eb8a62d8ce7a84238cb2d9c827745411d06208a26dd8c308b65286",
+                  "text": "## 신규 모델 소개의 형식 — 2026-10-13 사용자 기준\n\n신규 모델 소개는 활용 교재가 아니라 모델의 변화와 비교를 읽는 분석 문서다.\n기존 Theo의 GPT-6.1 Sol, Gemini4Argon, Opus5.5 소개처럼 모델 정보와\n비교표, 상대 장점과 단점, 비용과 결론을 중심으로 작성한다.\n독자는 새 모델이 무엇인지, 이전 모델에서 무엇이 달라졌는지,\n경쟁 모델보다 어떤 점이 낫고 부족한지 판단할 수 있어야 한다.\n\n- 제목 아래 짧은 작성 목적과 `요약`을 먼저 둔다. 이후에는 모델 개요,\n  이전 모델 대비 변화, 다른 모델과의 비교표, 장점과 단점, 가격과 제공 조건,\n  결론과 자료 기준을 주제에 맞게 구성한다. 장 수와 표 방향을 일률적으로 고정하지 않는다.\n- 소제목은 `모델 개요`, `주요 사양`, `성능 비교`, `장점과 한계`처럼\n  실제 내용을 이름 붙인다. `입력 사양과 제공 범위를 먼저 정합니다` 같은\n  작성 절차나 독자 행동을 지시하는 소제목을 사용하지 않는다.\n- 다른 모델과 비교한 표를 반드시 포함한다. 같은 계열의 이전 모델과 해당 분야의\n  주요 경쟁 모델을 선정하고 선정 이유를 남긴다. 사양과 제공 경로, 성능 평가,\n  가격의 서로 다른 비교 기준을 분리한다.\n- 표에는 모델 ID/판, 추론 설정, 평가판, 측정 주체, Harness, 단위와 날짜를\n  밝혀 수치가 무엇을 비교하는지 설명한다. 조건이 다른 결과는 그 차이를 표시하고\n  직접적인 모델 우열의 근거로 일반화하지 않는다. 미확인은0으로 채우지 않는다.\n- 장점과 단점은 비교표의 실제 값 또는 제공 조건으로 설명한다.\n  어느 평가에서 어떤 경쟁 모델보다 높거나 낮은지, API/구독/가중치 제공,\n  가격과 문맥 조건에서 어떤 차이가 있는지 구체적으로 쓴다.\n  공급사 주장, 공개 측정, 편집 판단과 독립 실사용 미측정을 구별한다.\n- 배송비 같은 가상 업무, 활용 예시, SDK/API 코드, 단계별 실습,\n  응용 문제와 풀이를 모델 소개에 넣지 않는다. 별도의 활용 가이드를 요청받은 경우에만\n  해당 문서를 학습/실습 유형으로 작성한다.\n- 작성 요청과 새 품질 sidecar에는 `research_type: model_introduction`을 사용한다.\n  `config/ai_model_introduction.request.example.json`은 계획 템플릿이다.\n  새 소개의 report ID를 `config/study_pages.json`의 `legacy_report_ids`에 넣어\n  기존 모델 소개와 같은 Editorial을 사용한다. 해당 판의 `digest(report)`를\n  `editorial_summary_first`와 `model_introduction_editions`에 등록하면\n  목적·요약 다음에 비교표, 모델 분석, 결론이 표시된다. 새 소개판은 같은 해시를\n  `model_introduction_purpose_editions`에도 등록해 `description`의 작성 목적을\n  제목 바로 아래 표시한다. 기존 판의 표시 형식은 보존한다. 내용 해시에 묶어\n  이전 판의 표시 순서는 보존한다.\n  문장 표기 교정은 본문 필드에 한정한다. 안정적인 ID, `topic_path`의\n  `개발 동향 / AI 모델·API`, 출처 ID와 URL은 나열 문장처럼 일괄 치환하지 않는다.\n  실제 화면에서 기존 모델 주제와 같은 분류로 연결되는지도 확인한다.\n  이 유형의 기계 검사는 비교표 누락과 예시/코드 블록을 거부하며,\n  의미 검토는 비교 대상·조건과 장단점의 논거를 실제 읽어 확인한다.\n  기존 불변 배치는 소급 수정하거나 새 기준 합격으로 간주하지 않는다.\n\n원문의 기존 활용 섹션을 수집하는 것과 새 모델 소개의 집필 형식은 다르다.\nTheo에서 가져온 원문과 원본 표 기능은 보존하고, 이 형식은 새로 집필하는\n모델 소개 및 사용자가 이 형식으로 고치라고 요청한 현재판에 적용한다.\n에이전트 Pass와 출력 검증은 사용자의 형식 승인이나 실제 독해 시험이 아니다.\n\n\n"
+                }
+              ]
+            },
+            {
+              "id": "writing-workflow",
+              "kind": "method",
+              "version": "2.1.0",
+              "supports": [
+                "technology",
+                "comparison",
+                "market",
+                "opportunity",
+                "model_introduction",
+                "news",
+                "custom"
+              ],
+              "stages": [
+                "write"
+              ],
+              "sources": [
+                {
+                  "path": "skills/research-teaching/SKILL.md",
+                  "sha256": "09d2dac52b42f7fd556193e005da59b29c16215a125f34dec3a55b8cc08c1227",
+                  "text": "---\nname: research-teaching\ndescription: \"Compose and revise Korean research by reader purpose. Select content/editing/presentation profiles, preserve evidence and version records, then finish local knowledge registration and query checks. Use for research explanations, comparisons and editing; models and news keep their own profiles. Does not authorize redesign, paid calls, delegation or publication.\"\nmetadata:\n  version: \"2.1.0\"\n---\n\n# 목적에 맞게 조사하고 이해할 수 있게 쓰기\n\n먼저 [작성 관리](../../docs/authoring/MANAGEMENT.md)와 현재 원고를 읽는다.\n대화에 이미 나온 독자, 목적과 요청을 사용하며 같은 질문을 다시 요구하지 않는다.\n정보가 부족하면 조사로 돌아간다. 이해의 빈칸을 문장 교정이나 목차 증가로 대신하지 않는다.\n\n## 이번 글에 적용할 기준 선택\n\n1. 독자의 질문과 끝에 가능한 설명, 판단 또는 실행을 요청서에 적는다.\n2. [공통 원칙](../../docs/authoring/common.md)을 적용하고 [목적별 유형](../../docs/authoring/types.md)을 선택한다.\n   모델 소개와 소식 기사에 학습 글의 실습, 가상 업무와 응용 문제를 강제하지 않는다.\n3. 필요한 작성 방법만 고른다. 설명 글은 [설명 방법](../../docs/authoring/explanation.md),\n   실행을 약속한 실습은 [실습 조건](../../docs/authoring/tutorial.md)을 사용한다.\n   기존 원고의 표현을 고칠 때는 [편집 방법](references/editing.md)을 사용한다.\n4. 기존 화면 계약과 개별 요청을 선택해 authoring plan으로 조합을 고정한다.\n   이 기록은 작성 지침이며 HTML 렌더러를 변경하지 않는다. 새 디자인 구현은 별도 작업이다.\n\n## 작성과 편집\n\n원문 근거에서 질문의 답을 도출하고 충분한 본문을 쓴 뒤 제목과 요약을 만든다.\n선행 개념은 주제와의 거리를 기준으로 판단한다. 개발자라는 이유로 API나 JSON을 안다고 가정하지 않는다.\n필요한 용어는 처음 나오는 자리에서 뜻과 역할을 설명한다. 기능을 쓰는 경로와 직접 구현하는 경로를 구분한다.\n설명 사례는 입력, 중간 변화와 출력의 이유가 끝까지 연결되어야 한다.\n그림과 표는 [시각 자료 기준](../../docs/authoring/visuals.md)에 따라 필요한 곳에 선택한다.\n웹 디자인은 이번 요청에 없으면 변경하지 않는다.\n\n정보 가치가 부족하다는 피드백을 받거나 여러 글을 보강하면\n[질문과 근거 검토](references/substantive-review.md)를 읽는다.\n문장 연결의 구체적인 실패는 [집필 예시](references/teaching-patterns.md)와 대조한다.\n과거 Pass를 사용자 승인이나 완성 교재의 견본으로 취급하지 않는다.\n\n## 검토와 적용 기록\n\n[내용과 독해 검토](../../docs/authoring/review.md)에 따라 첫 화면과 본문을 따로 읽는다.\n첫 화면 입력에서는 본문을 실제로 제외한다. 외부 지식으로 빠진 설명을 메우지 않는다.\n막힌 문장과 근거 위치를 기록하고 고친다. 자체 검토, 독립 에이전트 검토와 사람 시험을 구분한다.\n위임이 승인된 경우에만 다른 에이전트를 사용하고 수정된 원고 자체를 재검토하게 한다.\n실제 실행, 링크와 출력 검사도 내용 검토와 별도로 기록한다.\n\n완성한 판에 authoring record로 원고 지문과 사용한 조합을 연결한다.\n자동 생성은 품질 패키지의 authoring에 같은 정보를 남긴다.\n이 기록은 지침 선택과 사용 기록이며 사실 검토나 사람 독해 합격을 뜻하지 않는다.\n이전 판을 덮지 않는다. 기준 변경은 새 조합으로 채택하며 작업 중의 기록에 자동 반영하지 않는다.\n\n## 리서치 추가·수정 후 지식베이스 반영\n\n이 프로젝트의 리서치·모델 소개·뉴스를 추가하거나 수정하면\n[지식베이스 완료 절차](../../docs/KNOWLEDGE_BASE.md#리서치-추가수정-작업의-완료-절차)를\n같은 작업 안에서 실행한다. 실제 내용 검토를 현재 판의 지문에 연결하고 색인을 갱신한 뒤,\n독자의 질문으로 새 본문과 출처가 검색되는지 확인해야 작성 작업을 완료한 것으로 보고한다.\n사용자에게 지식베이스 갱신을 따로 요청하게 하지 않는다.\n\n이 단계는 로컬 작업을 수행하는 Codex의 책임이다. JSON을 생성하는 집필 모델이나\n수집 성공만으로 검토 완료를 선언하지 않는다. 초안은 초안으로 연결하고 실제 검토일과\n기존 판을 보존한다. 사용자의 MD 전용·미발행 범위를 지키며 별도 배포를 실행하지 않는다.\n"
+                },
+                {
+                  "path": "docs/KNOWLEDGE_BASE.md",
+                  "section": "리서치 추가·수정 작업의 완료 절차",
+                  "sha256": "ab8e0592885a8698e99d8b01cd3bcc8097bd3c1eda77c754bdaffd293fd9de03",
+                  "text": "## 리서치 추가·수정 작업의 완료 절차\n\n새 리서치를 만들거나 기존 글을 고치는 Codex는 아래 반영을 같은 작업 안에서 마친다.\n사용자는 지식베이스 갱신을 따로 요청할 필요가 없다. 보고서, 모델 소개, 뉴스에 공통으로\n적용하며 글의 목적별 작성·검토 기준은 유지한다. 색인 갱신을 새 원문 조사로 기록하지 않는다.\n\n1. **원고와 실제 저장 판을 맞춘다.** 내용·근거·독해 검토와 수정이 끝난 판을 기존 저장\n   절차로 반영하고 작성 기준의 적용 기록도 남긴다. 기존 판과 품질 부록은 보존한다.\n   사용자가 MD 파일만 요청했다면 DB 발행을 강제하지 않는다. 해당 파일만 연결 목록에\n   `kind: draft`로 등록해 미발행 상태를 유지하고 초안을 포함하는 검색으로 확인한다.\n   프로젝트 전체 폴더를 자동 수집하거나 비공개 자료를 연결하지 않는다.\n2. **현재 본문 지문을 읽는다.** DB에 저장한 글은 아래 명령의 `document`에서 실제\n   `key`, `revision`, `source_hash`, `document_digest`를 확인한다. 보고서는 `report:<id>`,\n   뉴스는 `article:<id>`다. 이 명령은 미검토 글도 명시적으로 읽을 수 있다.\n\n   ```powershell\n   python -m housing_watch knowledge --document report:<id> --json\n   ```\n\n3. **실제 검토를 현재 판에 연결한다.** `config/knowledge_sources.json`의 `review_ledger`가\n   가리키는 원장의 기존 항목을 보존하면서 이번 글의 검토 항목을 추가하거나 갱신한다.\n   `key`, `revision`, `source_hash`, `document_digest`, `reviewed_on`, `verdict`,\n   `reader_question`, `finding`, `body_locations`, `reference_urls`를 실제 원고·검토 기록에서\n   채운다. 새 파일의 등록 시각을 사실 확인일로 쓰지 않는다. `verdict`는 확인한 범위에\n   따라 정하고 계획·미완성·오래된 사실을 무조건 `usable_with_limits`로 바꾸지 않는다.\n   원문의 접근 실패와 미확인 조건은 `finding`, `advisories`, `link_check`에 해당 범위대로\n   남긴다. authoring record나 형식 검사 통과는 내용 검토의 대체물이 아니다.\n4. **검토 이력을 보존한다.** 기존 검토를 바꾸면 날짜와 작업 식별자를 붙인 새 원장\n   파일에 기존 현재 항목과 이번 항목을 함께 저장한다. 예를 들어\n   `config/content_review.<날짜>.<작업ID>.json`을 만들고 검증한 뒤 `review_ledger` 포인터를\n   옮긴다. 이전 원장을 덮거나 다른 글의 검토를 누락하지 않는다. 그 파일이 이미 있으면\n   새 판 이름을 쓴다. 신규 항목 추가도 같은 방식으로 기록한다.\n5. **색인과 실제 질의를 확인한다.** 아래 명령이 성공한 뒤 해당 글의 상태·현재 판·본문\n   지문과 출처가 맞는지 읽고, 독자가 물을 질문으로 검색한다. DB에 저장된 검토 완료 글은\n   기본 검색에서 새 본문이 나와야 한다. 미발행 MD는 `--include-drafts`로 확인하며,\n   검토하지 않은 자료를 기본 답변에 넣기 위해 제외 옵션을 풀지 않는다.\n\n   ```powershell\n   python -m housing_watch knowledge --build --status\n   python -m housing_watch knowledge --document report:<id> --json\n   python -m housing_watch knowledge \"이번 글의 구체적인 독자 질문\" --limit 5 --json\n   ```\n\n6. **반영까지 마친 뒤 완료를 보고한다.** 본문 지문이 달라 `review_outdated`로 남거나\n   검토 완료 글을 찾지 못하면 저장 판·원장·연결 목록·질문 표현을 대조해 원인을 고친다.\n   해결되지 않으면 글 저장과 검색 반영의 상태를 따로 보고하고 검색 연결 완료로 표시하지\n   않는다. 결과에는 새 글의 ID·판, 검토 범위, 검색 확인과 남은 한계를 남긴다.\n\n이 절차의 저장과 색인 갱신은 기존 저장소 계정·원격 검증 규칙을 따른다. 별도 사용자\n확인을 반복해서 요구하지 않는다. 파일 반영 권한이 확인되지 않으면 기존 가드대로 멈춘다.\n유료 생성·클라우드 업로드·예약·홈페이지 배포 권한을 추가하지 않는다. 단독 수집기 실행은\n내용 검토가 아니며 이 절차는 리서치 작성 작업의 완료 단계다.\n\n"
+                }
+              ]
+            },
+            {
+              "id": "section-editing",
+              "kind": "method",
+              "version": "1.0.0",
+              "supports": [
+                "technology",
+                "comparison",
+                "market",
+                "opportunity",
+                "model_introduction",
+                "news",
+                "custom"
+              ],
+              "stages": [
+                "write"
+              ],
+              "sources": [
+                {
+                  "path": "skills/research-teaching/references/editing.md",
+                  "section": "절별 편집",
+                  "sha256": "6373e218756a33531f9acb90d5a399223ec984f56181558f94b2a06f550a3900",
+                  "text": "## 절별 편집\n\n각 절이 답할 독자의 질문을 찾고 실제 답의 문장을 지목한다.\n정의 전에 나온 용어, 빠진 전제와 연결 설명, 비교 축이 섞인 부분을 찾는다.\n문제를 발견하면 원문, 문제의 이유와 수정안을 함께 남긴다. 정보가 부족하면 추가 조사로 돌아간다.\n본문을 충분히 설명한 뒤 요점, 표와 제목을 실제 내용에 맞춘다.\n문체 수정을 위해 근거 없는 통계, 인용이나 저자의 경험담을 추가하지 않는다.\n\n"
+                }
+              ]
+            },
+            {
+              "id": "korean-editing",
+              "kind": "method",
+              "version": "1.0.0",
+              "supports": [
+                "technology",
+                "comparison",
+                "market",
+                "opportunity",
+                "model_introduction",
+                "news",
+                "custom"
+              ],
+              "stages": [
+                "write"
+              ],
+              "sources": [
+                {
+                  "path": "skills/research-teaching/references/editing.md",
+                  "section": "한국어 문장 편집",
+                  "sha256": "a078b16d877034b6718a0cd576ee7c8561832cffe6939ae80a1292ee5d151968",
+                  "text": "## 한국어 문장 편집\n\n번역투, 불필요한 명사화, 같은 마무리의 반복, 추상적인 단어 나열과 과장을 찾는다.\n이번 독자에게 필요한 용어와 일관된 격식은 보존한다. 특정 단어나 문장부호를 기계적으로 삭제하지 않는다.\n원문과 수정문에서 행위자, 수치와 단위, 날짜, 부정과 추정, 적용 조건 및 인과관계를 대조한다.\n추정 표현을 단정으로 바꾸거나 실제로 없던 효과를 넣은 수정은 되돌린다.\n코드, 명령, 식별자와 링크는 일반 문장 교정 대상으로 취급하지 않는다.\n첫 절에서 변경 전후와 이유를 확인한 뒤 같은 방법을 나머지 원고에 적용한다.\n\n"
+                }
+              ]
+            },
+            {
+              "id": "reader-review",
+              "kind": "method",
+              "version": "1.0.0",
+              "supports": [
+                "technology",
+                "comparison",
+                "market",
+                "opportunity",
+                "model_introduction",
+                "news",
+                "custom"
+              ],
+              "stages": [
+                "review"
+              ],
+              "sources": [
+                {
+                  "path": "docs/authoring/review.md",
+                  "sha256": "0f86c95aa64ab7b60ffd6c825a237f573a1e246c89fe0e2300b10493f4cfec7a",
+                  "text": "# 내용과 독해 검토 방법\n\n선택한 유형과 질문에 해당하는 기준으로 검토한다. 에이전트 검토와 사람 시험을 구분하며 위임 권한을 만들지 않는다.\n\n## 2026-10-12: 설명 그림의 의미와 연결을 검토하기\n\n먼저 그림이 답할 독자의 질문을 정한다. 개념의 정의를 작업 순서 그림만으로 대신하지 않는다. 관계를 설명한다면 행위자와 공유하는 목표, 정보 및 책임을 본문과 그림에 연결한다.\n\n각 화살표의 출발 상자, 도착 상자, 전달하는 입력이나 결과를 표로 적고 실제 이미지의 선과 화살촉을 대조한다. 꼬리가 출발 경계에 닿는지, 도착 방향이 맞는지, 겹침과 불필요한 순서가 생기지 않는지 확인한다. 함께 고려하는 조건에 순차 화살표를 붙이지 않는다. 실패와 성공 경로를 그렸다면 다음 행동도 일치해야 한다.\n\n도해를 단순화했다면 생략한 조건과 역할의 참여 범위를 설명한다. 그림, 대체 텍스트와 본문의 의미가 같은지 확인하며, 그림이 예쁘거나 확대 버튼이 동작한다는 사실을 의미 검토와 합산하지 않는다. [DevOps r5의 거부와 r6 수정](../DEVOPS_DIAGRAM_REPAIR.2026-10-12.md)을 참고하되 수정본의 독자 승인을 주장하지 않는다.\n\n2026-10-09 보강: [AI 집필 연구](../AI_WRITING_RESEARCH.2026-10-09.md)와\n[질문·근거·학습 결과 검토](../../skills/research-teaching/references/substantive-review.md)를 적용한다.\n독자의 핵심 질문마다 본문의 답 위치·근거·공백을 연결한다. 기술마다 고유한 원리와 실제 자료\n해석이 있어야 하며, ‘조건 확인·검증·기록’의 반복만으로 보강됐다고 판정하지 않는다.\n사용자가 승인한 독립 에이전트 검토에서는 수정 원고를 읽게 하고 지적을 고친 뒤 재판정한다.\n전체 보강의 현재 범위와 실제 검증 결과는 [작업 상태](../RESEARCH_AUTHORING_REPAIR.2026-10-09.md)에 남긴다.\n\n2026-10-08부터 Signal Desk의 리서치 작성·보강·내용 검토에 적용한다.\n이 문서는 작성 에이전트의 작업 기준이다. 독자에게 그대로 보여줄 목차나\n모든 보고서에 강제할 양식이 아니다.\n\n## 에이전트의 작성 절차와 게시 판단\n\n1. **독자 작업 정의:** 업무 문제, 기존 지식, 끝낼 작업, 확인할 결과를 작성한다.\n   'MCP 이해하기', 'RAG 알아보기'처럼 기술 이름만 쓰면 다시 구체화한다.\n2. **필요한 근거 조사:** 이 작업을 할 수 있는 현재 도구·기능, 시작 조건, 제약,\n   공식 예제를 확인한다. 원문 요약을 바로 게시용 문장으로 바꾸지 않는다.\n3. **완성된 사례 구성:** 실제 샘플 값과 중간 결과를 고정한다. 어느 입력이 어떤\n   처리를 거쳐 어떤 출력에 대응하는지 끝까지 보여주고, 필요한 개념을 그 관계로\n   설명한다. 가상 사례·개념 코드·실행 확인한 실습은 구분한다.\n4. **학습과 적용 작성:** 왜 쓰는지, 어떻게 동작하는지, 어떻게 시작하는지,\n   자기 작업으로 바꾸려면 무엇이 달라지는지 설명한다. 설명형 학습에는 풀이가\n   있는 변형 문제를, 실습에는 행동·예상 출력·정상/실패 판정을 제공한다.\n5. **검토 후 재작성:** 아래 질문에 본문 위치를 인용해 답한다. 필요한 답이\n   본문에 없으면 누락으로 기록하고 원고를 보강한다. 검토자 자신의 상식으로\n   빈칸을 메워 통과시키지 않는다. 어려운 용어의 정의만 반복해 해결하지 않는다.\n6. **표현과 게시:** 내용이 충족된 뒤 메인 요약과 HTML을 만든다. 설명 필드를\n   모두 채웠거나 테스트가 통과했다고 교재 완성으로 처리하지 않는다. 검수 결과와\n   실행 확인 범위를 기록하고, 필요한 본문은 펼치기 안에 숨기지 않는다.\n\n| 검토 질문 | 원고가 보여줘야 할 근거 |\n| --- | --- |\n| 이 방법으로 내 어떤 작업이 나아지는가 | 구체적인 문제·완성 결과·적합하지 않은 경우 |\n| 어디서 어떻게 시작하는가 | 선택한 사용/구현 경로와 확인한 환경·준비물·첫 행동 |\n| 각 부분이 왜 필요한가 | 예시 값과 연결된 개념·처리 원리·선행 지식 |\n| 한 사례의 입력부터 결과까지 따라갈 수 있는가 | 실제 샘플 값·중간 변화·출력과 그 의미 |\n| 내 자료로 바꾸려면 무엇을 바꾸는가 | 다른 입력으로의 변형 예시와 풀이·변경점 |\n| 틀렸을 때 무엇을 확인하는가 | 관찰할 증상·확인 순서·실패 조건 |\n\n이 표는 게시용 목차나 점수표가 아니다. 모든 주제에 실행 실습을 강제하지 않는다.\n개념 교재에도 끝까지 풀어 준 사례와 새로운 상황에 적용하는 설명이 필요하다.\n실습을 약속한 글은 재현 경로가 빠지면 '실습 초안'으로 남긴다. 실행해 보지 않은\n단계를 검증 완료로 표시하거나 독자 사용성 시험을 했다고 주장하지 않는다.\n\n자동화를 구성할 때는 프로젝트 AGENTS에 위 목적과 필수 읽기를 두고, 작성 스킬에는\n단계별 입력·산출물·누락 시 재작성 규칙을 둔다. 지식베이스는 출처와 기능 조건,\n끝까지 풀어 준 예제, 사용자 검토를 받은 원고, 실패한 문장의 이유를 보존한다.\n기술 정리 역할과 집필·검토 역할은 별도 작업 단계로 수행한다. 여러 에이전트를\n자동으로 만드는 규칙은 아니며, 같은 에이전트의 별도 검토 과정으로도 수행한다.\n\nGoogle의 [독자 기준](https://developers.google.com/tech-writing/one/audience)은\n업무에 필요한 지식과 독자가 이미 가진 지식의 차이를 설명 범위로 삼는다.\nDiátaxis의 [실습 기준](https://diataxis.fr/tutorials/)은 구체적인 행동과 예상 결과를\n연결한다. [OpenAI의 스킬 문서](https://developers.openai.com/codex/skills)는\n재사용할 작업 절차를 지침·참고자료로 묶고 명시적인 입력·출력으로 설계하도록\n안내한다. 세 원문의 적용 절차와 위 검토 기준은 이 프로젝트의 편집 판단이다.\n\n## 제목·요약만으로 무엇을 배우는지 알 수 있는가\n\n2026-10-09 음성 보고서의 사용자 거부는 앞선 독립 Pass가 첫 화면의 이해와 자연스러움을\n충분히 검증하지 못했음을 보여준다. [수정 기록](../VOICE_REPORT_REPAIR.2026-10-09.md)과\n[구체적인 회귀 사례](../../skills/research-teaching/references/substantive-review.md#첫-화면과-비교-기준의-회귀-사례)를 따른다.\n첫 화면 검토에서는 본문을 실제로 제외한다. 명사형 소개를 완결된 문장으로 바꾸고, 독자가\n하려는 작업과 실제 비교 대상을 먼저 밝힌다. 구현 구조와 제품명을 같은 종류의 행으로 섞지 않는다.\n성능·비용·난이도 비교를 약속할 때는 실측·문헌 근거·설계 해석을 구분한다.\n\n제목에는 기술·주제 이름과 평이한 기능·변화·문제를 함께 담는다. 이름이 빠져\n무엇에 관한 글인지 알 수 없는 제목, 낯선 이름만 나열한 제목은 보강한다.\n요약은 본문 밖에서 읽어도 대상, 하는 일, 구체적인 쓰임과 중요한 조건이 전달되어야 한다.\n그림의 번호와 화살표를 읽는 방법이나 사이트 사용 안내로 주제의 답을 대신하지 않는다.\n필요한 도해 설명은 해당 그림의 캡션·접근성 설명에 두고 요약에는 주제의 정보를 담는다.\n본문의 B·호스트·UI 리소스·문맥을 설명 없이 가져오지 않는다.\n\n본문을 읽은 지식으로 요약의 빈칸을 채우지 않는다. 제목·요약만 보고 다시 설명한 답과\n근거 문장을 남기고, 알 수 없는 부분을 실제로 고친다. 본문은 별도로 개념 순서,\n한 사례의 전체 과정과 다른 조건의 문제를 검토한다. 검사표 점수나 글자 수로 대체하지 않는다.\n\n## 내용 검토와 기술 검증을 분리해서 기록\n\n게시 전에는 원고만으로 아래 질문에 답할 수 있는지 검토한다.\n\n1. 독자가 해결할 질문에 이 글이 실제로 답했는가?\n2. 선행 지식을 모르면 어느 문장에서 막히며, 그 부분을 설명했는가?\n3. 주어·대상·조건·단위가 원문과 같은가? 인과관계를 과장하지 않았는가?\n4. 한 예시의 입력·처리·출력이 연결되고 서로 모순되지 않는가?\n5. 결론이 왜 나오는지 설명하며 적용되지 않는 조건도 구분했는가?\n6. 처음의 예시와 다른 상황에 독자가 이 개념을 적용할 수 있는가?\n7. 원문 링크는 근거 확인·심화 학습을 돕는가? 빠진 본문 설명을 대신하지 않는가?\n\n각 질문은 통과 문구를 붙이는 체크박스가 아니라 실제 원고를 고칠 기준이다.\n막힌 문장과 수정 이유를 기록한다. 새 사례에 대한 예상 답은 근거와 함께\n작성하되 실제 독자 시험을 하지 않았다면 독자 검증 완료라고 쓰지 않는다.\n\n현재 `validate_report`는 형식·출처 ID·자료 타입을, `review`는 주택 브리핑의\n운영·출력 상태를 검사한다. 테스트 통과·출처 수·학습 장 수·모바일 넘침 없음은\n독자의 이해를 증명하지 않는다. 자동 검사에는 구조적으로 확인 가능한 부분만\n맡기고 사실 의미·논리·설명 충실도는 원문과 원고를 읽어 검토한다.\n\n보고서 수정 게시 시에는 새 immutable batch와 같은 보고서 ID로 이력을\n남긴다. 앞선 판을 덮어쓰지 않는다. 렌더링·링크·모바일 검증은 내용 검토와\n함께 수행하되 각각의 결과를 구분해 기록한다.\n"
+                },
+                {
+                  "path": "skills/research-teaching/references/substantive-review.md",
+                  "sha256": "2030364c1fc5a9af175b38395fa5e7c14a9471c7a97cae427d616e8bfcbe618b",
+                  "text": "# 질문에 답하는 정보와 설명을 검토하기\n\n## 글마다 독자가 알아야 할 것이 다르다\n\n기술 설명의 독자는 입력이 어떤 과정을 거쳐 결과가 되는지, 다른 방식과 왜 다른지\n이해해야 한다. 실습의 독자는 준비부터 실행·기대 출력·실패 진단까지 따라갈 수 있어야 한다.\n시장 분석의 독자는 관측 대상·기간·단위와 비교 범위, 반대 근거를 보고 자기 판단을 좁혀야 한다.\n행사·지원 안내의 독자는 자신이 어떤 참여 역할과 필수 조건에 해당하는지 선별할 수 있어야 한다.\n원문에 없는 내용은 추가로 조사한다. 같은 목차·문단 수·SDK 코드·퀴즈를 모든 글에 강제하지 않는다.\n\n모델 소개는 [모델 소개 운영 기준](../../../docs/AI_MODEL_RESEARCH.md)에 따른다.\\n가상 활용 사례나 응용 문제를 요구하지 않고 다른 모델과의 비교 및 장단점에 답하는지 확인한다.\\n\\n## 질문과 근거의 공백을 작업 메모에서 찾는다\n\n핵심 질문마다 필요한 자료, 원문에서 확인한 답, 본문의 답 위치, 남은 공백을 연결한다.\n글의 제목이 실제보다 큰 결과를 약속하면 제목과 범위를 조정하거나 그 결과까지 보강한다.\n자료가 부족한 상태에서 익숙한 일반 조언으로 문단을 채우지 않는다.\n\n| 원고의 약속 | 실질 내용의 예 | 그 내용이 없을 때 할 일 |\n| --- | --- | --- |\n| 문서 검색 AI를 이해한다 | 원문 부분·색인·질문·후보·선택·답변의 관계와 버전·권한의 역할 | 검색 과정에 답하는 문서와 후보 출력 확보 |\n| 작은 AI 앱을 만든다 | 모델의 호출 요청, 프로그램 실행, 결과 반환, 최종 답·화면이 끝까지 연결 | 실제 연결을 제공하거나 원리·제작 계획으로 범위 조정 |\n| 비용 표로 모델을 고른다 | 토큰 단가·구독 차감·시도당 비용·성공당 비용의 정의와 계산 | 출처 없는 배율을 예산 사실처럼 쓰지 않고 계산 가능한 범위 설명 |\n| 시장 변화를 판단한다 | 표본·기간·분모·관측 단위·다른 가능한 설명·선택의 조건 | 단일 채용 공고·자가 보고·과거 수입으로 전체 시장을 단정하지 않기 |\n| 지원 기회를 선별한다 | 원문·첨부의 신청 역할, 선행 자격, 일정·재정 조건을 사례에 대입 | 첨부 미열람을 남기고 신청 가능성을 확정하지 않기 |\n\n## 번역과 요약은 의미가 유지되는지 대조한다\n\n행위자, 조건, 수치·단위, 기간, 인과관계의 강도가 보존되는지 확인한다.\n원문이 기능 존재를 말했는데 ‘업무 성과가 향상됐다’로 바꾸거나, 제한된 표본을\n전체 시장으로 확대하지 않는다. 원문 자체가 작동 과정이나 실제 효과에 답하지 않는다면\n문체를 교정할 것이 아니라 자료를 추가한다. 영문 초안과 번역을 대조하지 않았다면\n번역을 직접 원인으로 확정하지 않는다.\n\n## 제목과 요약을 독립적으로 읽는다\n\n제목·요약만 받은 독자가 대상, 하는 일, 쓰임, 중요한 조건을 자기 말로 설명할 수 있는지 본다.\n낯선 이름은 일상적인 기능 설명과 연결한다. 기술 이름을 지우고 모호한 동사만 남기지 않는다.\n‘이 보고서는 설명한다’, ‘검증해야 한다’ 같은 안내 문장을 사실·원리·비교의 대용품으로 쓰지 않는다.\n\n## 본문은 같은 사례의 과정을 추적한다\n\n첫 등장 개념을 먼저 설명하고, 사례의 입력·중간 상태·출력과 각 단계의 이유를 함께 읽는다.\n핵심 설명은 주된 읽기 경로에 둔다. 코드는 앞에서 설명한 값과 과정을 그대로 구현해야 한다.\n제품 호출을 실행하지 않았다면 개념 예시·로컬 모의 실행·실제 서비스 실행을 구분한다.\n배운 내용을 다른 조건에 적용하는 문제에서는 결론뿐 아니라 이유와 본문 근거를 확인한다.\n\n## 첫 화면과 비교 기준의 회귀 사례\n\n2026-10-09 사용자는 독립 검토를 통과한 음성 보고서의 제목과 소개를 다시 거부했다.\n이 사례의 문제는 원문 기능 자체가 없다는 것이 아니라 독자의 질문 대신 집필자의\n검토 동작을 소개하고, 서로 다른 비교 기준을 섞었다는 점이다.\n\n| 거부된 표현·구성 | 실제 실패 | 수정할 정보 |\n| --- | --- | --- |\n| 말로 AI 업무를 실행하는 세 가지 구조와 오류 찾기 | 어떤 앱의 무엇을 추가·선택하는지 모호함 | 기존 AI 앱의 음성 입력·답변·대화 기능이라는 대상과 목적 |\n| 같은 발화를 음성 인식·업무 조회·답변 재생으로 추적한다 | 독자의 필요보다 집필자의 설명 방법부터 나옴 | 키보드 대신 말로 요청하고, 답도 들을지 결정하는 상황 |\n| 이미 만든 텍스트 앱…선택 기준. | 서술어 없는 소개, 무엇을 기준으로 무엇을 고르는지 비어 있음 | 중간 문장을 확인할 필요와 대화 중 조건 변경 같은 실제 조건 |\n| 세 구조 제목 아래 Gemini Live/GPT-Live/Realtime/단계형 네 행 | 공급사 제품과 역할 분담을 같은 종류처럼 비교 | 동일한 역할 분담을 행으로 비교하고 제품 사례를 별도 연결 |\n| 속도·난이도·비용을 설명한다고 약속 | 기능 문서만으로 실측 우열을 알 수 없음 | 맡아야 할 구현 작업과 측정 항목, 실제 확보한 수치의 범위 |\n\n초기 검토는 title/deck/description/summary/highlights만 별도 입력으로 제공한다.\n검토자는 그 문장으로 알 수 있는 대상·문제·대안·쓰임과 추측해야 하는 부분을 구분한다.\n그 뒤 본문에서 제목의 약속, 비교 기준, 설명 순서와 사실 근거를 검토한다.\n이 순서를 수행해도 실제 초보 사람의 이해가 확인된 것으로 부르지 않는다.\n요약에 설명할 내용의 목록만 있고 실제로 알게 되는 정보가 없다면 추가 보강한다.\n\n음성 입력만 추가하는 범위와 STT→AI→TTS 구조는 서로 배타적인 세 구조로 분류할 수 없다.\n전자는 필요한 기능 범위이고 후자는 음성으로 답하는 구현 경로다. 원문을 확인해 비교 기준을\n정한 뒤 원고를 쓴다. '3가지'라는 제목을 유지하려고 실제 내용을 왜곡하지 않는다.\n\n## 독립 에이전트 검토의 실제 기록\n\n위임은 사용자 또는 적용 가능한 지침의 승인 범위에서만 한다. 승인됐다면 검토자에게\n수정된 원고와 필요한 원문을 제공하고, 기대 답이나 ‘통과시켜야 한다’는 압력을 주지 않는다.\n새로운 평가가 목적이면 기존 판정을 답안처럼 제공하지 않는다. 이전 결함의 재검증이면\n그 결함과 수정 범위를 제공할 수 있으며 이를 새 독자의 무정보 시험으로 부르지 않는다.\n\n검토 기록에는 읽은 보고서 ID/판 또는 정확한 파일 hash, 제목·요약 이해, 본문 막힘 위치,\n해결할 누락·과장, 수정 후 재판정을 남긴다. 출력은 Pass / Revise / Evidence gap처럼\n명확히 하되 판단 이유가 본문에 있어야 한다. 분량·구조·인용 수는 합격 근거가 아니다.\n에이전트 검토가 끝나도 실제 사람의 독해·실습 시험을 수행했다고 말하지 않는다.\n\n## 참고한 방법과 적용의 한계\n\n질문하며 자료를 찾는 사전 조사(STORM), 유창성·정확성·인용 지원의 분리(ALCE),\n과제별 내용 기준(WritingBench/DeepResearch Bench), 깊은 설명과 풀이 사례(IES)를 참고했다.\n이 절차 전체나 하나의 집필 프롬프트가 한국어 교재 품질을 보장한다는 실험 결과는 아니다.\n실제 원고의 질문·사례·근거와 검토자의 막힘으로 효과를 확인하고 필요한 지침만 수정한다.\n\n원문: https://aclanthology.org/2024.naacl-long.347/,\nhttps://aclanthology.org/2023.emnlp-main.398/,\nhttps://arxiv.org/html/2503.05244v1,\nhttps://arxiv.org/html/2506.11763v1,\nhttps://ies.ed.gov/ncee/wwc/Docs/PracticeGuide/20072004.pdf.\n"
+                }
+              ]
+            },
+            {
+              "id": "research-report",
+              "kind": "template",
+              "version": "1.0.1",
+              "supports": [
+                "technology",
+                "comparison",
+                "market",
+                "opportunity",
+                "model_introduction",
+                "custom"
+              ],
+              "stages": [
+                "write"
+              ],
+              "sources": [
+                {
+                  "path": "docs/authoring/presentation.md",
+                  "section": "수치 비교 보고서",
+                  "sha256": "f4161db0f905d25e11128feed10d96a153f791bb90f2ee60fae5b5eba1542631",
+                  "text": "## 수치 비교 보고서\n\n기존 수치 보고서 표시를 사용한다. 같은 비교 기준의 표와 실제 수치의 차트를 선택한다. 수치가 없는 개념 설명에 임의 데이터를 만들지 않는다. 공통 화면 계약은 [보고서 화면](../BRIEFING_TEMPLATE.md)에 있다.\n\n"
+                },
+                {
+                  "path": "docs/BRIEFING_TEMPLATE.md",
+                  "section": "Unified typography, 2026-10-09",
+                  "sha256": "59e9506cc40a434ba77fb1f3851037e2b9ddee910e1d45c2c407ed36f43fc800",
+                  "text": "## Unified typography, 2026-10-09\n\nUse the locally packaged full Pretendard Variable v1.3.9 face for Korean, Latin,\nnumbers and punctuation in the shared Editorial shell, main, authored reports,\nnavigation, native model views and model reading companions. Main headings use700,\nsubheadings/emphasis600 and body400. Do not restore text-specific heading subsets:\nnew titles contained Korean glyphs missing from the old subset, and the reported\nUpwork heading actually used Roboto Slab, Noto Serif KR and Malgun Gothic together.\nCSS `font-synthesis:none` prevents simulated weight/style; the variable face\nprovides the actual weights. Code retains its monospace family. Imported originals\ninside isolated model iframes keep their original presentation.\n\nThe unmodified full font and original SIL OFL notice are in\n`housing_watch/assets/editorial/`; see its README for exact provenance/hash. The\nexisting build embeds one font in the shared content-versioned stylesheet, with\nno external font request. Uncompressed CSS grows from347,313 to2,851,316 bytes;\nthis is the cost of complete future Korean coverage and remains shared/cached\nacross pages. Standalone exports remain self-contained.\n\nLocal verification: actual browser font selection on the reported title now\ncontains only Pretendard Variable. All11,172 modern Korean syllables plus sample\nLatin/digits/punctuation select the same face; actual weights700/600 are used.\nAt320/390/1280px,96 font/representative-page checks and253 all34-report/model-\ncompanion/search/disclosure/history checks pass.109 tests,195HTML/9676 internal\nreferences, brief/desk/review and inspected PNG pass; report/history/model data\nand publication order exactly match the pre-change local snapshot. Receipts\nand before/after captures are retained under the existing registered research\nreview roots. App browser connection failed, so visual tests used standalone\nPlaywright/Edge. Optional host/favicon404 remains separately recorded.\n\nSource `4f956357646c12ca8972edb61826f2a6ad2072b2` deployed successfully through\n[Pages37891501551](https://github.com/Hansihoo/signal-desk/actions/runs/37891501551).\nPublic checks at2026-10-09 06:04:56.544319 UTC confirm exact34 current reports,\n122 edition documents,14 original model rows and publication order, matching\nlocal CSS (normalized SHA256 `5f48bd5bff11375877f7b14fea252e3becd3f87dd8f46795d5e2f8b6bc9ba7fc`),\none active font face and the original published license. Actual390px public\nfont/coverage/representative-route/search/disclosure/menu checks all36 pass at\n06:05:03.752 UTC; inspected public title/main screenshots match the intended\nuniform weights. Optional host favicon404 is separate from content errors.\nApp opening returned queued; this is not proof that the user viewed the page.\nThe retained public receipts are `font-weight-public-data-checks.json` and\n`font-weight-public-checks.json`; no reader preference/learning approval claimed.\n\n\n"
+                }
+              ],
+              "output_kind": "report",
+              "artifacts": [
+                {
+                  "path": "housing_watch/editorial.py",
+                  "sha256": "48962242f1a249780861a02b15a0e02f23fddcf9398a69c4ce7f8f3aad33baae"
+                },
+                {
+                  "path": "housing_watch/editorial_shell.html",
+                  "sha256": "51c686c3933942a76a282c20106d211332c08d5ba59dab0a5de9adfe953842fb"
+                },
+                {
+                  "path": "housing_watch/editorial.css",
+                  "sha256": "2ffc886b1f941a55822ff0a77442c37cbda110af5b7832a35e56d01101a31b66"
+                },
+                {
+                  "path": "housing_watch/editorial.js",
+                  "sha256": "d3435dc19709427b81a9b77514c5945cc34402e2dcf60232bb044280e43550b8"
+                },
+                {
+                  "path": "housing_watch/assets/editorial/fonts.css",
+                  "sha256": "44b9b2028cf703cc40c0446093e23aa7d3427015c9f61e6ee164f5c45123df30"
+                },
+                {
+                  "path": "housing_watch/assets/editorial/main.css",
+                  "sha256": "2574c51914d2bdf3d8da8afb4ec41fcbc73adcc12ebac376e26242efa04e33df"
+                },
+                {
+                  "path": "housing_watch/editorial_report.html",
+                  "sha256": "ac134b199a8f3e8255501679b6869c170b1088789c0d0dadcb869fa92aa244d7"
+                },
+                {
+                  "path": "housing_watch/briefing_preview.py",
+                  "sha256": "9432ec00398f5ce9ba1222366502d237e88b87723d54e975ea7780e58f82a463"
+                }
+              ]
+            }
+          ],
+          "requirements": [],
+          "preferences": {
+            "examples": "가상 업무와 활용 예시, SDK/API 실습 코드와 문제를 넣지 않는다.",
+            "opening": "제목 아래 목적, 다음 요약을 둔다.",
+            "tone": "자연스러운 완결된 한국어 문장, 내용을 설명하는 소제목."
+          },
+          "overrides": [],
+          "scope": "document",
+          "status": "planned",
+          "recipe_hash": "6146243b387ad2cdae7dea42e2536eb09294d5ece3a652c9712d20e2f900a022"
+        },
+        "content_hash": "b3391f2ed1238f63aa837b08e8944f85053e68f0600aa941e74818a17da369bd"
+      },
+      "first_screen_review": {
+        "input_hash": "7dcadea1da715c16b0ef3438be26f9a44f0fc0f4ec1536af9b57b71c4e2ed258",
+        "reviewer": "author_self_review; isolated title/description/deck in first-screens.json",
+        "reviewed_at": "2026-10-23",
+        "checks": {
+          "readability": {
+            "passed": true,
+            "reason": "고립된 첫 화면에서 모델의 입력/출력과 비교 목적, 반대 결과와 제공 범위를 설명할 수 있음. Flint의MoE와Olmo의Pooler용어를평이한역할설명으로편집. Flint를 비슷한 규모의 공개 코딩 모델과 비교하고, 양자화에 따른 점수 차이와 Mac·GPU 실행 조건을 설명합니다.",
+            "locations": [
+              "/title",
+              "/description",
+              "/deck"
+            ]
+          },
+          "question_answered": {
+            "passed": true,
+            "reason": "고립된 첫 화면에서 모델의 입력/출력과 비교 목적, 반대 결과와 제공 범위를 설명할 수 있음. Flint의MoE와Olmo의Pooler용어를평이한역할설명으로편집. Flint를 비슷한 규모의 공개 코딩 모델과 비교하고, 양자화에 따른 점수 차이와 Mac·GPU 실행 조건을 설명합니다.",
+            "locations": [
+              "/title",
+              "/description",
+              "/deck"
+            ]
+          },
+          "reader_outcome": {
+            "passed": true,
+            "reason": "고립된 첫 화면에서 모델의 입력/출력과 비교 목적, 반대 결과와 제공 범위를 설명할 수 있음. Flint의MoE와Olmo의Pooler용어를평이한역할설명으로편집. Flint를 비슷한 규모의 공개 코딩 모델과 비교하고, 양자화에 따른 점수 차이와 Mac·GPU 실행 조건을 설명합니다.",
+            "locations": [
+              "/title",
+              "/description",
+              "/deck"
+            ]
+          }
+        },
+        "issues": []
+      },
+      "body_review": {
+        "input_hash": "920db95857b823f9b3ab0a379658f0611bcd6005134e8da00bb41e1073ad912d",
+        "reviewer": "author_self_review; edited body compared to related sections, PNG and PDF tables",
+        "reviewed_at": "2026-10-23",
+        "checks": {
+          "readability": {
+            "passed": true,
+            "reason": "압축초안을완결된문장으로수정하고pass@1/AUC/mIoU/linear probe/chunk/MoE의역할을본문에추가. 절차형제목/가상업무/실습코드없음.",
+            "locations": [
+              "/draft/report/tables",
+              "/draft/report/explanation",
+              "/draft/report/caveats"
+            ]
+          },
+          "question_answered": {
+            "passed": true,
+            "reason": "21일 공식Initial release를23일확인한보완이며오늘최초출시로쓰지않음. 동일규모MoE와dense,정밀도별성과/속도/요금을구분.",
+            "locations": [
+              "/draft/report/tables",
+              "/draft/report/explanation",
+              "/draft/report/caveats"
+            ]
+          },
+          "reader_outcome": {
+            "passed": true,
+            "reason": "Flint를 비슷한 규모의 공개 코딩 모델과 비교하고, 양자화에 따른 점수 차이와 Mac·GPU 실행 조건을 설명합니다.",
+            "locations": [
+              "/draft/report/tables",
+              "/draft/report/explanation",
+              "/draft/report/caveats"
+            ]
+          },
+          "analysis": {
+            "passed": true,
+            "reason": "6평가48값/공급사†/경쟁개발사수록과Terminus2 XML인터넷검색해답실패/mini-swe-agent인터넷없음,최소5회평균과최대5시간을보존. Qwen3.8 Terminal73.0>54.9,Pro94.9>89.7,MuseVerified76>74.2와NVFP4별차이. M4Pro1K/128K AUC및입력처리제외,Mac48GB/BF16141GBGPU를구분. 512k발표/262144카드·호스팅,최대출력65536/235929충돌과무료0/0/표준미확인보존.",
+            "locations": [
+              "/draft/report/tables",
+              "/draft/report/explanation",
+              "/draft/report/caveats"
+            ]
+          },
+          "evidence": {
+            "passed": true,
+            "reason": "Recursive의 발표, 카드, 평가 그림과 실행 문서 및 OpenRouter 공개 요금을 대조했습니다. 공급사 및 경쟁 개발사의 보고값이며 모델 실행, 독립 성능 재현, 청구와 사람 독해 시험은 하지 않았습니다.",
+            "locations": [
+              "/draft/report/tables",
+              "/draft/report/explanation",
+              "/draft/report/caveats"
+            ]
+          },
+          "factuality": {
+            "passed": true,
+            "reason": "발표/체크포인트등록/갱신/현재확인일을분리. 반대값,표준요금미확인과원문충돌을보존. 6평가48값/공급사†/경쟁개발사수록과Terminus2 XML인터넷검색해답실패/mini-swe-agent인터넷없음,최소5회평균과최대5시간을보존. Qwen3.8 Terminal73.0>54.9,Pro94.9>89.7,MuseVerified76>74.2와NVFP4별차이. M4Pro1K/128K AUC및입력처리제외,Mac48GB/BF16141GBGPU를구분. 512k발표/262144카드·호스팅,최대출력65536/235929충돌과무료0/0/표준미확인보존.",
+            "locations": [
+              "/draft/report/tables",
+              "/draft/report/explanation",
+              "/draft/report/caveats"
+            ]
+          }
+        },
+        "issues": []
+      },
+      "review_limits": {
+        "scope": "같은 작성자의 첫 화면 및 본문 자체검토. 독립 에이전트/사람시험/실제 모델실행 없음.",
+        "not_performed": [
+          "independent reviewer",
+          "human reader test",
+          "model execution",
+          "billing",
+          "private company data evaluation"
+        ]
+      }
+    },
+    {
+      "version": "question-research-1",
+      "status": "ready",
+      "plan": {
+        "version": "question-research-1",
+        "request": {
+          "id": "olmoearth-1-3-model-guide",
+          "topic_id": "opportunities",
+          "topic_path": [
+            "개발 동향",
+            "AI 모델·API"
+          ],
+          "reader": "새 모델의 상대 성능과 비용, 제공 조건을 비교하는 개발자와 관리자",
+          "reader_question": "OlmoEarth 1.3을 이전 모델, AlphaEarth 및 TESSERA와 비교하고, 임베딩과 미세조정의 성능 차이 및 이용 제한을 설명합니다.",
+          "outcome": "이전 판과 경쟁 모델의 결과를 비교하고 측정 조건 및 제공 제한을 설명한다.",
+          "research_type": "model_introduction",
+          "plan_questions": false,
+          "sources": [
+            {
+              "id": "launch",
+              "title": "Ai2의22일 OlmoEarth1.3 발표",
+              "url": "https://huggingface.co/blog/allenai/olmoearth-v1-3",
+              "kind": "official_document"
+            },
+            {
+              "id": "card",
+              "title": "OlmoEarth1.3 모델 카드",
+              "url": "https://huggingface.co/allenai/OlmoEarth-v1_3-Base",
+              "kind": "official_document"
+            },
+            {
+              "id": "paper",
+              "title": "OlmoEarth1.3 기술보고서",
+              "url": "https://allenai.org/papers/olmoearth-v1-3",
+              "kind": "official_document"
+            },
+            {
+              "id": "license",
+              "title": "OlmoEarth Artifact License",
+              "url": "https://huggingface.co/allenai/OlmoEarth-v1_3-Base/blob/main/LICENSE.txt",
+              "kind": "official_document"
+            },
+            {
+              "id": "previous",
+              "title": "기존1.2 모델 카드",
+              "url": "https://huggingface.co/allenai/OlmoEarth-v1_2-Base",
+              "kind": "official_document"
+            },
+            {
+              "id": "history",
+              "title": "공식 체크포인트 이력",
+              "url": "https://huggingface.co/allenai/OlmoEarth-v1_3-Base/commits/main",
+              "kind": "official_document"
+            },
+            {
+              "id": "data",
+              "title": "공개 임베딩 저장소",
+              "url": "https://source.coop/olmoearth/olmoearth-v1-3-embeddings",
+              "kind": "official_document"
+            }
+          ],
+          "authoring": {
+            "template": "research-report",
+            "preferences": {
+              "examples": "가상 업무와 활용 예시, SDK/API 실습 코드와 문제를 넣지 않는다.",
+              "opening": "제목 아래 목적, 다음 요약을 둔다.",
+              "tone": "자연스러운 완결된 한국어 문장, 내용을 설명하는 소제목."
+            }
+          }
+        },
+        "questions": [
+          {
+            "id": "core",
+            "question": "OlmoEarth 1.3을 이전 모델, AlphaEarth 및 TESSERA와 비교하고, 임베딩과 미세조정의 성능 차이 및 이용 제한을 설명합니다.",
+            "requires": [
+              "identity",
+              "change",
+              "specification",
+              "availability",
+              "comparison",
+              "advantages",
+              "limitations",
+              "price"
+            ]
+          }
+        ],
+        "method": "공식 발표·모델 카드·사양·가격과 평가 원문을 대조한다. 다른 모델과의 비교표에서 평가판·추론·측정 주체·Harness·단위를 보존하고 장점과 단점을 근거로 설명한다. 활용 예시·가상 업무·실습 코드·응용 문제를 넣지 않는다."
+      },
+      "sources": [
+        {
+          "id": "launch",
+          "title": "Ai2의22일 OlmoEarth1.3 발표",
+          "url": "https://huggingface.co/blog/allenai/olmoearth-v1-3",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "57efd1f28cb90d2edee55456838b20019d0e457b3995db780efe2e4fa7ecf91f",
+          "text": "Today, we’re releasing OlmoEarth v1.3 , a state-of-the-art satellite",
+          "text_hash": "287c4972130e6e125105a3f6832137214cc9104721e1bf1798b37963cc873574",
+          "published_on": "2026-10-22",
+          "first_collected_at": null,
+          "last_successful_collection": "2026-10-22T20:08:01.994308+00:00",
+          "reviewed_at": "2026-10-23",
+          "raw_path": "data\\raw\\ai_news\\official\\2026-10-23\\olmo-blog-57efd1f28cb90d.bin",
+          "acquisition_url": "https://huggingface.co/blog/allenai/olmoearth-v1-3",
+          "acquisition_method": "direct HTTP bytes preserved; selected original sections and full cited tables read",
+          "review_scope": "새 모델과 연간 임베딩 및 브라우저 탐색기를 함께 소개합니다. 선택 관련절과 표/그림 확인. 원문 전체전수/실행재현 아님."
+        },
+        {
+          "id": "card",
+          "title": "OlmoEarth1.3 모델 카드",
+          "url": "https://huggingface.co/allenai/OlmoEarth-v1_3-Base",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "ca6490d9a980d296e4f084ddbb15b8e45731db6b03af2f9ee3a794a77037ec81",
+          "text": "foundation model for remote sensing tasks over Sentinel-1, Sentinel-2,",
+          "text_hash": "7e67f5b0a9bea43bd8c6c418f9b90a4a917ee3618a81e18d0f66a5107bfa75ca",
+          "published_on": null,
+          "first_collected_at": null,
+          "last_successful_collection": "2026-10-22T20:08:56.789430+00:00",
+          "reviewed_at": "2026-10-23",
+          "raw_path": "C:\\Engine\\signal-desk\\data\\raw\\ai_news\\official\\2026-10-23\\olmo-card-ca6490d9a980d2.bin",
+          "acquisition_url": "https://huggingface.co/allenai/OlmoEarth-v1_3-Base/raw/main/README.md",
+          "acquisition_method": "direct HTTP bytes preserved; selected original sections and full cited tables read",
+          "review_scope": "백본과 추가 구성요소의 규모 및 입력을 설명합니다. 선택 관련절과 표/그림 확인. 원문 전체전수/실행재현 아님."
+        },
+        {
+          "id": "paper",
+          "title": "OlmoEarth1.3 기술보고서",
+          "url": "https://allenai.org/papers/olmoearth-v1-3",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "f2a516fd55c88a052b65dc4860f40524de8d7a60cab055b40b24ee27d08ef1d5",
+          "text": "We make some OlmoEarth embeddings. To do this, we",
+          "text_hash": "3abd29344713d6e55e434150f74c6f7b5b117f719690b624bd635ff48a308691",
+          "published_on": null,
+          "first_collected_at": null,
+          "last_successful_collection": "2026-10-22T20:09:25.323638+00:00",
+          "reviewed_at": "2026-10-23",
+          "raw_path": "C:\\Engine\\signal-desk\\data\\raw\\ai_news\\official\\2026-10-23\\olmo-paper-f2a516fd55c88a.bin",
+          "acquisition_url": "https://allenai.org/papers/olmoearth-v1-3",
+          "acquisition_method": "18-page PDF text extracted; sections1-4/selected5 read; pages7/9/10 rendered and visually read, not a replication or all citations checked",
+          "review_scope": "임베딩,이전판과미세조정,계산량 및 배포자료의범위를비교합니다. 선택 관련절과 표/그림 확인. 원문 전체전수/실행재현 아님."
+        },
+        {
+          "id": "license",
+          "title": "OlmoEarth Artifact License",
+          "url": "https://huggingface.co/allenai/OlmoEarth-v1_3-Base/blob/main/LICENSE.txt",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "f9906ca382b72377a8d0a7506946ba9c64607044eb7ff8deb2337e868856abf7",
+          "text": "Any military and defense-related applications and use cases, including",
+          "text_hash": "4faa468d8f59e4138a2c59c75c2064540ff8120ba5e0d4b99b8e572d26d3e984",
+          "published_on": null,
+          "first_collected_at": null,
+          "last_successful_collection": "2026-10-22T20:09:24.297005+00:00",
+          "reviewed_at": "2026-10-23",
+          "raw_path": "C:\\Engine\\signal-desk\\data\\raw\\ai_news\\official\\2026-10-23\\olmo-license-f9906ca382b723.bin",
+          "acquisition_url": "https://huggingface.co/allenai/OlmoEarth-v1_3-Base/raw/main/LICENSE.txt",
+          "acquisition_method": "direct HTTP bytes preserved; selected original sections and full cited tables read",
+          "review_scope": "사용권,제한용도와재배포조건을명시합니다. 선택 관련절과 표/그림 확인. 원문 전체전수/실행재현 아님."
+        },
+        {
+          "id": "previous",
+          "title": "기존1.2 모델 카드",
+          "url": "https://huggingface.co/allenai/OlmoEarth-v1_2-Base",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "7fb2dc320861f8d3f123b896ef502aa0ee0d7ff593371006bd3fa7acd8e190d1",
+          "text": "OlmoEarth-v1_1-Base is a ViT-Base (114M parameters) foundation model for",
+          "text_hash": "27fb803725376f60b28bb8a6bc1abb18ad9279103181c6b5cafd62877e8ee3d9",
+          "published_on": null,
+          "first_collected_at": null,
+          "last_successful_collection": "2026-10-22T20:09:24.299430+00:00",
+          "reviewed_at": "2026-10-23",
+          "raw_path": "C:\\Engine\\signal-desk\\data\\raw\\ai_news\\official\\2026-10-23\\olmo-previous-7fb2dc320861f8.bin",
+          "acquisition_url": "https://huggingface.co/allenai/OlmoEarth-v1_2-Base/raw/main/README.md",
+          "acquisition_method": "direct HTTP bytes preserved; selected original sections and full cited tables read",
+          "review_scope": "이전판 문서와 현재 카드의 표기 차이를 보존합니다. 선택 관련절과 표/그림 확인. 원문 전체전수/실행재현 아님."
+        },
+        {
+          "id": "history",
+          "title": "공식 체크포인트 이력",
+          "url": "https://huggingface.co/allenai/OlmoEarth-v1_3-Base/commits/main",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "0c136bc09f331b9a0e58d9803f60105acf52005999a06c194c0ed9ef9d62c926",
+          "text": "2026-10-13T09:56:22.000Z\"},{\"id\":\"b51687692d00e98f29616ab9a9af70d6a55bba53\",\"title\":\"Delete config.json\",\"message\":\"\",\"authors\":[{\"user\":\"gabrieltsengai2\",\"avatar\":\"/avatars/c999bdd6efa19882ec7c766acbd9ba0f.svg\"}],\"date\":\"2026-10-13T09:54:36.000Z\"},{\"id\":\"aeaece0ebad5f721eaa289b4b92058a723ada046\",\"title\":\"Delete weights.pth\",\"message\":\"\",\"authors\":[{\"user\":\"gabrieltsengai2\",\"avatar\":\"/avatars/c999bdd6efa19882ec7c766acbd9ba0f.svg\"}],\"date\":\"2026-10-13T09:54:26.000Z\"},{\"id\":\"7edd69c5d01757cf6853082346c9420c1b56261c\",\"title\":\"Update README.md\",\"message\":\"\",\"authors\":[{\"user\":\"gabrieltsengai2\",\"avatar\":\"/avatars/c999bdd6efa19882ec7c766acbd9ba0f.svg\"}],\"date\":\"2026-10-08T09:10:23.000Z\"},{\"id\":\"dd6ef220b16998bf3edc01b4ddf88f3804a0b03d\",\"title\":\"Upload config.json\",\"message\":\"\",\"authors\":[{\"user\":\"gabrieltsengai2\",\"avatar\":\"/avatars/c999bdd6efa19882ec7c766acbd9ba0f.svg\"}],\"date\":\"2026-10-08T09:08:24.000Z\"}]",
+          "text_hash": "8f7e48641de2d1d420c80b1f4a92e834519a78520a98f1dfb76213110b9f786d",
+          "published_on": null,
+          "first_collected_at": null,
+          "last_successful_collection": "2026-10-22T20:10:58.293824+00:00",
+          "reviewed_at": "2026-10-23",
+          "raw_path": "C:\\Engine\\signal-desk\\data\\raw\\ai_news\\official\\2026-10-23\\olmo-history-0c136bc09f331b.bin",
+          "acquisition_url": "https://huggingface.co/api/models/allenai/OlmoEarth-v1_3-Base/commits/main?limit=5",
+          "acquisition_method": "direct HTTP bytes preserved; selected original sections and full cited tables read",
+          "review_scope": "22일 발표 이전의13일 가중치 갱신 기록입니다. 선택 관련절과 표/그림 확인. 원문 전체전수/실행재현 아님."
+        },
+        {
+          "id": "data",
+          "title": "공개 임베딩 저장소",
+          "url": "https://source.coop/olmoearth/olmoearth-v1-3-embeddings",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "e2931c70a4dc9ec02bed605df411e97efd99ec3433fbb8d6d20e03a4e4633881",
+          "text": "olmoearth-v1-3-embeddings/embeddings.zarr\" 7 8 zarr.config.set({ \"array.sharding_coalesce_max_gap_bytes\" : 0 }) 9",
+          "text_hash": "3916394a906c1aa1b44a1f2c755e68032522f2c411212a1178b1ecf1063a2d64",
+          "published_on": null,
+          "first_collected_at": null,
+          "last_successful_collection": "2026-10-22T20:09:26.552405+00:00",
+          "reviewed_at": "2026-10-23",
+          "raw_path": "C:\\Engine\\signal-desk\\data\\raw\\ai_news\\official\\2026-10-23\\olmo-data-e2931c70a4dc9e.bin",
+          "acquisition_url": "https://source.coop/olmoearth/olmoearth-v1-3-embeddings",
+          "acquisition_method": "direct HTTP bytes preserved; selected original sections and full cited tables read",
+          "review_scope": "공개 데이터의배포경로입니다. 전체데이터다운로드검증은하지않았습니다. 선택 관련절과 표/그림 확인. 원문 전체전수/실행재현 아님."
+        }
+      ],
+      "analysis": {
+        "evidence": [
+          {
+            "id": "e-launch",
+            "source_id": "launch",
+            "quote": "Today, we’re releasing OlmoEarth v1.3 , a state-of-the-art satellite",
+            "source_hash": "57efd1f28cb90d2edee55456838b20019d0e457b3995db780efe2e4fa7ecf91f",
+            "meaning": "새 모델과 연간 임베딩 및 브라우저 탐색기를 함께 소개합니다.",
+            "limits": "Ai2 카드, 18쪽 기술보고서의 관련 절과 표, 22일 발표 및 라이선스를 대조했습니다. 공급사 측정이며 실제 위성 처리, 독립 재현, 청구와 사람 독해 시험은 수행하지 않았습니다.",
+            "price_type": "not a standard hosted tariff source",
+            "supports": [
+              "identity",
+              "change",
+              "comparison",
+              "specification",
+              "availability",
+              "price",
+              "advantages",
+              "limitations"
+            ]
+          },
+          {
+            "id": "e-card",
+            "source_id": "card",
+            "quote": "foundation model for remote sensing tasks over Sentinel-1, Sentinel-2,",
+            "source_hash": "ca6490d9a980d296e4f084ddbb15b8e45731db6b03af2f9ee3a794a77037ec81",
+            "meaning": "백본과 추가 구성요소의 규모 및 입력을 설명합니다.",
+            "limits": "Ai2 카드, 18쪽 기술보고서의 관련 절과 표, 22일 발표 및 라이선스를 대조했습니다. 공급사 측정이며 실제 위성 처리, 독립 재현, 청구와 사람 독해 시험은 수행하지 않았습니다.",
+            "price_type": "not a standard hosted tariff source",
+            "supports": [
+              "identity",
+              "change",
+              "comparison",
+              "specification",
+              "availability",
+              "price",
+              "advantages",
+              "limitations"
+            ]
+          },
+          {
+            "id": "e-paper",
+            "source_id": "paper",
+            "quote": "We make some OlmoEarth embeddings. To do this, we",
+            "source_hash": "f2a516fd55c88a052b65dc4860f40524de8d7a60cab055b40b24ee27d08ef1d5",
+            "meaning": "임베딩,이전판과미세조정,계산량 및 배포자료의범위를비교합니다.",
+            "limits": "Ai2 카드, 18쪽 기술보고서의 관련 절과 표, 22일 발표 및 라이선스를 대조했습니다. 공급사 측정이며 실제 위성 처리, 독립 재현, 청구와 사람 독해 시험은 수행하지 않았습니다.",
+            "price_type": "not a standard hosted tariff source",
+            "supports": [
+              "identity",
+              "change",
+              "comparison",
+              "specification",
+              "availability",
+              "price",
+              "advantages",
+              "limitations"
+            ]
+          },
+          {
+            "id": "e-license",
+            "source_id": "license",
+            "quote": "Any military and defense-related applications and use cases, including",
+            "source_hash": "f9906ca382b72377a8d0a7506946ba9c64607044eb7ff8deb2337e868856abf7",
+            "meaning": "사용권,제한용도와재배포조건을명시합니다.",
+            "limits": "Ai2 카드, 18쪽 기술보고서의 관련 절과 표, 22일 발표 및 라이선스를 대조했습니다. 공급사 측정이며 실제 위성 처리, 독립 재현, 청구와 사람 독해 시험은 수행하지 않았습니다.",
+            "price_type": "not a standard hosted tariff source",
+            "supports": [
+              "identity",
+              "change",
+              "comparison",
+              "specification",
+              "availability",
+              "price",
+              "advantages",
+              "limitations"
+            ]
+          },
+          {
+            "id": "e-previous",
+            "source_id": "previous",
+            "quote": "OlmoEarth-v1_1-Base is a ViT-Base (114M parameters) foundation model for",
+            "source_hash": "7fb2dc320861f8d3f123b896ef502aa0ee0d7ff593371006bd3fa7acd8e190d1",
+            "meaning": "이전판 문서와 현재 카드의 표기 차이를 보존합니다.",
+            "limits": "Ai2 카드, 18쪽 기술보고서의 관련 절과 표, 22일 발표 및 라이선스를 대조했습니다. 공급사 측정이며 실제 위성 처리, 독립 재현, 청구와 사람 독해 시험은 수행하지 않았습니다.",
+            "price_type": "not a standard hosted tariff source",
+            "supports": [
+              "identity",
+              "change",
+              "comparison",
+              "specification",
+              "availability",
+              "price",
+              "advantages",
+              "limitations"
+            ]
+          },
+          {
+            "id": "e-history",
+            "source_id": "history",
+            "quote": "2026-10-13T09:56:22.000Z\"},{\"id\":\"b51687692d00e98f29616ab9a9af70d6a55bba53\",\"title\":\"Delete config.json\",\"message\":\"\",\"authors\":[{\"user\":\"gabrieltsengai2\",\"avatar\":\"/avatars/c999bdd6efa19882ec7c766acbd9ba0f.svg\"}],\"date\":\"2026-10-13T09:54:36.000Z\"},{\"id\":\"aeaece0ebad5f721eaa289b4b92058a723ada046\",\"title\":\"Delete weights.pth\",\"message\":\"\",\"authors\":[{\"user\":\"gabrieltsengai2\",\"avatar\":\"/avatars/c999bdd6efa19882ec7c766acbd9ba0f.svg\"}],\"date\":\"2026-10-13T09:54:26.000Z\"},{\"id\":\"7edd69c5d01757cf6853082346c9420c1b56261c\",\"title\":\"Update README.md\",\"message\":\"\",\"authors\":[{\"user\":\"gabrieltsengai2\",\"avatar\":\"/avatars/c999bdd6efa19882ec7c766acbd9ba0f.svg\"}],\"date\":\"2026-10-08T09:10:23.000Z\"},{\"id\":\"dd6ef220b16998bf3edc01b4ddf88f3804a0b03d\",\"title\":\"Upload config.json\",\"message\":\"\",\"authors\":[{\"user\":\"gabrieltsengai2\",\"avatar\":\"/avatars/c999bdd6efa19882ec7c766acbd9ba0f.svg\"}],\"date\":\"2026-10-08T09:08:24.000Z\"}]",
+            "source_hash": "0c136bc09f331b9a0e58d9803f60105acf52005999a06c194c0ed9ef9d62c926",
+            "meaning": "22일 발표 이전의13일 가중치 갱신 기록입니다.",
+            "limits": "Ai2 카드, 18쪽 기술보고서의 관련 절과 표, 22일 발표 및 라이선스를 대조했습니다. 공급사 측정이며 실제 위성 처리, 독립 재현, 청구와 사람 독해 시험은 수행하지 않았습니다.",
+            "price_type": "not a standard hosted tariff source",
+            "supports": [
+              "identity",
+              "change",
+              "comparison",
+              "specification",
+              "availability",
+              "price",
+              "advantages",
+              "limitations"
+            ]
+          },
+          {
+            "id": "e-data",
+            "source_id": "data",
+            "quote": "olmoearth-v1-3-embeddings/embeddings.zarr\" 7 8 zarr.config.set({ \"array.sharding_coalesce_max_gap_bytes\" : 0 }) 9",
+            "source_hash": "e2931c70a4dc9ec02bed605df411e97efd99ec3433fbb8d6d20e03a4e4633881",
+            "meaning": "공개 데이터의배포경로입니다. 전체데이터다운로드검증은하지않았습니다.",
+            "limits": "Ai2 카드, 18쪽 기술보고서의 관련 절과 표, 22일 발표 및 라이선스를 대조했습니다. 공급사 측정이며 실제 위성 처리, 독립 재현, 청구와 사람 독해 시험은 수행하지 않았습니다.",
+            "price_type": "not a standard hosted tariff source",
+            "supports": [
+              "identity",
+              "change",
+              "comparison",
+              "specification",
+              "availability",
+              "price",
+              "advantages",
+              "limitations"
+            ]
+          }
+        ],
+        "answers": [
+          {
+            "question_id": "core",
+            "answer": "OlmoEarth 1.3은 위성 영상과 시계열을 64 또는 128차원의 숫자 벡터로 바꾸는 지구 관측 모델입니다. 일부 농작물 분할 평가에서 경쟁 임베딩보다 높지만, 64차원으로 줄이거나 정보를 집약하는 구성요소를 붙이면 성능이 낮아지는 과제도 있습니다. 공개 데이터의 연도별 범위와 용도 제한을 확인해야 합니다.",
+            "reasoning": "Table2 PASTIS/PLANTEUR/random/LOIO mIoU와평가/배포벡터차이. 64d PASTIS53.4<TESSERA58.3,finetune rank1.2 4.02<1.3 4.34와pooler5.88,2.1점퇴보. 발표27평가20/18과PDF11평가10/7집합미통합. 이전카드114M/1.1명칭충돌보존. GPU시간53%/18%와요금분리,2023~25/2017~22/남극제외,독자라이선스용도제한/무확인API가격보존.",
+            "limits": "Ai2 카드, 18쪽 기술보고서의 관련 절과 표, 22일 발표 및 라이선스를 대조했습니다. 공급사 측정이며 실제 위성 처리, 독립 재현, 청구와 사람 독해 시험은 수행하지 않았습니다.",
+            "evidence_ids": [
+              "e-launch",
+              "e-card",
+              "e-paper",
+              "e-license",
+              "e-previous",
+              "e-history",
+              "e-data"
+            ]
+          }
+        ],
+        "gaps": []
+      },
+      "draft": {
+        "report": {
+          "id": "olmoearth-1-3-model-guide",
+          "topic_id": "opportunities",
+          "topic_path": [
+            "개발 동향",
+            "AI 모델·API"
+          ],
+          "checked_on": "2026-10-23",
+          "title": "OlmoEarth 1.3 소개: 위성 임베딩 성능과 공개 범위",
+          "description": "OlmoEarth 1.3을 이전 모델, AlphaEarth 및 TESSERA와 비교하고, 임베딩과 미세조정의 성능 차이 및 이용 제한을 설명합니다.",
+          "deck": "OlmoEarth 1.3은 위성 영상과 시계열을 64 또는 128차원의 숫자 벡터로 바꾸는 지구 관측 모델입니다. 일부 농작물 분할 평가에서 경쟁 임베딩보다 높지만, 64차원으로 줄이거나 정보를 집약하는 구성요소를 붙이면 성능이 낮아지는 과제도 있습니다. 공개 데이터의 연도별 범위와 용도 제한을 확인해야 합니다.",
+          "scope": "22일의 모델·연간 임베딩·탐색기 묶음 발표를23일 검토했습니다. 가중치의13일 갱신과9월 저장소 생성을22일 최초 공개로 간주하지 않습니다. 생성형 LLM의 코딩 순위와 비교하지 않습니다.",
+          "source_note": "Ai2 카드, 18쪽 기술보고서의 관련 절과 표, 22일 발표 및 라이선스를 대조했습니다. 공급사 측정이며 실제 위성 처리, 독립 재현, 청구와 사람 독해 시험은 수행하지 않았습니다.",
+          "highlights": [
+            "역할과 변화",
+            "장점과 반대 결과",
+            "공개 범위와 조건"
+          ],
+          "summary": [
+            {
+              "label": "역할과 변화",
+              "text": "이전 OlmoEarth가 작업별 미세조정을 중심으로 제공됐다면1.3은 여러 시간과 센서의 정보를 한 장소의 작은 벡터로 모으는 데 초점을 맞춥니다. 준비된 연간 벡터를 재사용할 수 있어 매번 위성 모델 전체를 실행하는 부담을 줄일 수 있습니다.",
+              "source_ids": [
+                "launch",
+                "paper"
+              ],
+              "kind": "fact"
+            },
+            {
+              "label": "장점과 반대 결과",
+              "text": "128차원의 PLANTEUR 미관측 섬 분할 점수는mIoU24.9로 TESSERA19.1보다 높습니다. 하지만64차원 PASTIS는53.4로 TESSERA58.3보다 낮습니다. 미세조정의 전체 평균 순위도1.2의4.02보다1.3의4.34가 낮은 성능입니다.",
+              "source_ids": [
+                "paper"
+              ],
+              "kind": "fact"
+            },
+            {
+              "label": "공개 범위와 조건",
+              "text": "2023~2025년은 육지와 인접 해역의 전지구 범위이고, 2017~2022년은 일부 국가가 제공됩니다. 남극은 포함되지 않습니다. 자체 라이선스에 군사·방위, 감시·치안 및 자원 채취 등의 제한이 있고, 표준 호스팅 API 단가는 확인하지 못했습니다.",
+              "source_ids": [
+                "launch",
+                "paper",
+                "license"
+              ],
+              "kind": "fact"
+            }
+          ],
+          "metrics": [],
+          "datasets": [],
+          "learning": [],
+          "tables": [
+            {
+              "id": "specs",
+              "title": "모델과 자료의 사양",
+              "columns": [
+                "항목",
+                "내용"
+              ],
+              "rows": [
+                {
+                  "values": [
+                    "모델",
+                    "ViT 백본 128M, Perceiver 14.3M, 선형 학생 0.1M"
+                  ],
+                  "source_ids": [
+                    "card",
+                    "paper",
+                    "launch"
+                  ]
+                },
+                {
+                  "values": [
+                    "입력",
+                    "Sentinel-1, Sentinel-2, Landsat 영상 또는 시계열"
+                  ],
+                  "source_ids": [
+                    "card",
+                    "paper",
+                    "launch"
+                  ]
+                },
+                {
+                  "values": [
+                    "임베딩",
+                    "10m 공간 해상도, 128차원 또는 앞 64차원"
+                  ],
+                  "source_ids": [
+                    "card",
+                    "paper",
+                    "launch"
+                  ]
+                },
+                {
+                  "values": [
+                    "시간 단위",
+                    "1년 영상을 모은 연간 벡터; 실시간 영상이 아님"
+                  ],
+                  "source_ids": [
+                    "card",
+                    "paper",
+                    "launch"
+                  ]
+                },
+                {
+                  "values": [
+                    "공개 범위",
+                    "2023~2025년 육지와 인접 해역, 2017~2022년 일부 국가"
+                  ],
+                  "source_ids": [
+                    "card",
+                    "paper",
+                    "launch"
+                  ]
+                },
+                {
+                  "values": [
+                    "표준 API 단가",
+                    "미확인; 가중치·공개 데이터와 호스팅 비용 구분"
+                  ],
+                  "source_ids": [
+                    "card",
+                    "paper",
+                    "launch"
+                  ]
+                }
+              ],
+              "note": "카드의 128M은 백본 규모이며 추가 구성요소를 뺀 전체 모델 규모로 쓰지 않습니다. 1.2 카드 본문의 1.1 명칭과 114M 표기는 1.3 기술보고서의 동일 백본 설명과 맞지 않아 확정 규모 비교에서 제외했습니다."
+            },
+            {
+              "id": "crop",
+              "title": "경쟁 임베딩의 농작물 분할 평가",
+              "columns": [
+                "모델",
+                "차원",
+                "PASTIS random",
+                "PLANTEUR random",
+                "PLANTEUR 미관측 섬"
+              ],
+              "rows": [
+                {
+                  "values": [
+                    "AlphaEarth Foundations",
+                    "64",
+                    "39.1",
+                    "27.7",
+                    "15.8"
+                  ],
+                  "source_ids": [
+                    "paper"
+                  ]
+                },
+                {
+                  "values": [
+                    "TESSERA v2 Large",
+                    "128",
+                    "58.3",
+                    "34.2",
+                    "19.1"
+                  ],
+                  "source_ids": [
+                    "paper"
+                  ]
+                },
+                {
+                  "values": [
+                    "OlmoEarth v1.3 distilled 128d",
+                    "128",
+                    "58.6",
+                    "36.7",
+                    "24.9"
+                  ],
+                  "source_ids": [
+                    "paper"
+                  ]
+                },
+                {
+                  "values": [
+                    "OlmoEarth v1.3 distilled 64d",
+                    "64",
+                    "53.4",
+                    "35.2",
+                    "21.5"
+                  ],
+                  "source_ids": [
+                    "paper"
+                  ]
+                }
+              ],
+              "note": "기술보고서 Table 2의 mIoU %이며 높을수록 좋습니다. mIoU는 예측 영역과 정답 영역이 겹치는 정도를 종류별로 평균한 값입니다. 연간 임베딩과 라벨 연도 정렬, 배포 양자화, 같은 linear probe(고정된 벡터 위에서 분류기만 학습) 조건입니다. 미관측 섬은 다른 섬으로 분류기를 학습한 leave-one-island-out입니다. 평가 자료와 실제 공개 Searchlight 자료는 비트 단위로 동일하지 않습니다."
+            },
+            {
+              "id": "previous",
+              "title": "이전 모델과의 미세조정 평가",
+              "columns": [
+                "모델",
+                "전체 평균 순위",
+                "연구 과제",
+                "파트너 과제"
+              ],
+              "rows": [
+                {
+                  "values": [
+                    "OlmoEarth v1 Base",
+                    "4.74",
+                    "7.30",
+                    "3.03"
+                  ],
+                  "source_ids": [
+                    "paper"
+                  ]
+                },
+                {
+                  "values": [
+                    "OlmoEarth v1.2 Base",
+                    "4.02",
+                    "2.60",
+                    "4.97"
+                  ],
+                  "source_ids": [
+                    "paper"
+                  ]
+                },
+                {
+                  "values": [
+                    "OlmoEarth v1.3 Base (pooler 없음)",
+                    "4.34",
+                    "4.50",
+                    "4.23"
+                  ],
+                  "source_ids": [
+                    "paper"
+                  ]
+                },
+                {
+                  "values": [
+                    "OlmoEarth v1.3 Base + pooler",
+                    "5.88",
+                    "미표기",
+                    "미표기"
+                  ],
+                  "source_ids": [
+                    "paper"
+                  ]
+                }
+              ],
+              "note": "기술보고서 3.2.2와 Table 4의 값이며 낮을수록 좋습니다. 누락된 모델과 과제 조합은 제외합니다. 순위는 정답률이 아니며 연구 과제와 파트너 과제의 대상이 달라 두 열을 직접 비교하지 않습니다."
+            },
+            {
+              "id": "conditions",
+              "title": "임베딩 크기와 제공 조건",
+              "columns": [
+                "대상",
+                "전송/보관 단위",
+                "비용·제약"
+              ],
+              "rows": [
+                {
+                  "values": [
+                    "1.3 128차원",
+                    "256×256 타일 전송 6.05MB",
+                    "공개 데이터, 전체 연간 약 150TB; 대량 다운로드 부담"
+                  ],
+                  "source_ids": [
+                    "paper"
+                  ]
+                },
+                {
+                  "values": [
+                    "1.3 64차원",
+                    "같은 타일 3.04MB",
+                    "전송 절감과 일부 분할 성능 손실을 함께 고려"
+                  ],
+                  "source_ids": [
+                    "paper"
+                  ]
+                },
+                {
+                  "values": [
+                    "직접 모델 실행",
+                    "패치와 입력 해상도, 장비별로 다름",
+                    "표준 호스팅 요금과 최소 운영비 미확인"
+                  ],
+                  "source_ids": [
+                    "paper",
+                    "card"
+                  ]
+                },
+                {
+                  "values": [
+                    "라이선스",
+                    "OlmoEarth Artifact License",
+                    "용도 제한과 파생물 재배포 조건"
+                  ],
+                  "source_ids": [
+                    "license"
+                  ]
+                }
+              ],
+              "note": "3.04/6.05MB는 실제 전송량이며 압축 해제 후 한 chunk는 4.19MB입니다. chunk는 저장소가 전송하는 최소 묶음으로, 픽셀 하나를 조회해도 이 묶음을 받아야 합니다. 벡터 차원만으로 통신비를 계산하지 않습니다."
+            }
+          ],
+          "explanation": [
+            {
+              "id": "overview",
+              "title": "모델 개요와 이전 모델 대비 변화",
+              "lead": "위성 임베딩은 한 장소의 특징을 숫자로 압축한 표현입니다.",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "title": "시간과 센서의 결합",
+                  "text": "위성은 센서별로 보는 정보와 관측 시점이 다릅니다. 1.3은 ViT가 만든 시간과 센서별 토큰을 Attention Pooler로 합치고, 768차원의 특징을 선형 학생으로 128차원에 압축합니다. 앞 64차원도 단독으로 쓰도록 학습했습니다. 위치별 벡터 위에 작은 분류기를 학습할 수 있지만, 벡터 자체가 토지 종류나 변화 원인을 확정한 정답은 아닙니다.",
+                  "source_ids": [
+                    "paper",
+                    "card"
+                  ],
+                  "kind": "fact"
+                },
+                {
+                  "type": "paragraph",
+                  "title": "미세조정 중심에서 재사용 가능한 벡터로",
+                  "text": "1.3은 이전 1.2와 같은 백본을 바탕으로 집약기와 증류를 추가했습니다. 논문은 학습에 사용한 GPU 시간이 1.2의 53%, 1의 18%라고 설명합니다. 이는 각각 47%와 82% 절감이라는 상대 비교이며 서비스 요금이 같은 비율로 줄었다는 뜻이 아닙니다. 이미 계산한 연간 임베딩은 추론을 되풀이하는 비용을 줄이는 다른 제공 방식입니다.",
+                  "source_ids": [
+                    "paper"
+                  ],
+                  "kind": "judgment"
+                }
+              ]
+            },
+            {
+              "id": "strengths",
+              "title": "장점: 재사용과 지리적 일반화",
+              "lead": "전체 모델을 실행하지 않고 준비된 자료를 사용하는 선택지가 생겼습니다.",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "title": "미관측 지역의 상대 성능",
+                  "text": "PLANTEUR는 프랑스 해외 지역의 섬을 나눠 일부 섬으로 학습하고 다른 섬에서 시험합니다. 1.3의 128차원 24.9 mIoU는 TESSERA의 19.1보다 5.8포인트 높고, 64차원 21.5도 높습니다. 이는 평가한 섬과 작물 분류의 결과이며 한국의 모든 농경지나 새 연도의 정확도를 보장하지 않습니다.",
+                  "source_ids": [
+                    "paper"
+                  ],
+                  "kind": "judgment"
+                },
+                {
+                  "type": "paragraph",
+                  "title": "해상도와 계산량의 분리",
+                  "text": "Attention Pooler는 20m 간격으로 입력을 토큰화하더라도 10m 출력 벡터를 만들 수 있게 합니다. 보고서의 16×16 공간, 12시점, 세 센서 조건에서 패치 2는 308GMACs, 패치 1은 2,396GMACs입니다. GMACs는 곱셈과 덧셈 연산의 양을 나타내며 요금이나 처리 시간은 아닙니다. PASTIS 검증 mIoU는 각각 59.8과 60.2로 달라 작은 계산량에서 정확도가 완전히 같다는 주장도 아닙니다.",
+                  "source_ids": [
+                    "paper"
+                  ],
+                  "kind": "fact"
+                },
+                {
+                  "type": "paragraph",
+                  "title": "연간 자료와 추적 가능성",
+                  "text": "원본 장면과 모델, 연도 및 입력 처리를 추적할 수 있는 출처 기록(provenance)이 공개됩니다. 64차원은 저장뿐 아니라 차원별 chunk 분할 덕분에 전송량도 줄입니다. 그러나 자료의 연도와 공간 범위, 조회 단위 및 입력 영상의 차이를 함께 확인해야 합니다.",
+                  "source_ids": [
+                    "paper",
+                    "data"
+                  ],
+                  "kind": "judgment"
+                }
+              ]
+            },
+            {
+              "id": "weaknesses",
+              "title": "단점과 평가 범위",
+              "lead": "임베딩에 유리한 설계가 모든 미세조정 과제에도 유리하지는 않습니다.",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "title": "축소와 집약에서의 성능 손실",
+                  "text": "PASTIS에서 64차원 53.4는 128차원 58.6보다 낮고 TESSERA 58.3에도 못 미칩니다. 논문은 일부 Ethiopia 작물 평가에서도 TESSERA가 더 높다고 설명합니다. 고정 백본의 kNN/linear probe 과제에서는 pooler 추가로 평균 2.1포인트 퇴보했고, 미세조정 평균 순위는 pooler 없는 4.34에서 있는 5.88로 나빠집니다. 합칠 시간과 센서 정보가 적은 과제에서 부담과 손실이 커집니다.",
+                  "source_ids": [
+                    "paper"
+                  ],
+                  "kind": "judgment"
+                },
+                {
+                  "type": "paragraph",
+                  "title": "이전판과의 교환 관계",
+                  "text": "전체 미세조정 평균 순위는 1.2가 4.02로 1.3의 4.34보다 좋습니다. 1.3은 파트너 과제 4.23으로 1.2의 4.97보다 좋지만, 1의 3.03보다는 낮은 성능입니다. 집계 대상과 실험 방법이 바뀌면 순위도 바뀌므로 새 판이 이전 판을 전면 대체한다고 결론내리지 않습니다.",
+                  "source_ids": [
+                    "paper"
+                  ],
+                  "kind": "judgment"
+                },
+                {
+                  "type": "paragraph",
+                  "title": "발표의27개와 보고서의11개",
+                  "text": "22일 발표는 27개 평가 중 128차원 20개, 64차원 18개의 최고점을 주장합니다. 확보한 기술보고서는 kNN-20 기준 11개에서 10개와 7개를 설명합니다. 집계 구성과 분모가 달라 한 숫자로 합치지 않았습니다. 비교표에는 직접 읽은 Table 2와 3.2.2의 조건을 사용합니다. 실제 배포 벡터는 Searchlight 처리를 쓰므로 평가용 타일링 벡터와 비트 단위로 동일하지 않다는 한계도 있습니다.",
+                  "source_ids": [
+                    "launch",
+                    "paper"
+                  ],
+                  "kind": "judgment"
+                },
+                {
+                  "type": "paragraph",
+                  "title": "전체 지구와 모든 연도는 다름",
+                  "text": "출시 자료의 2023~2025년은 육지와 인접 해역 범위이고 남극은 제외합니다. 2017~2022년은 일부 국가만 제공 중입니다. 2017~2025년 슬롯이 존재한다는 것은 모든 지역과 연도가 이미 채워졌다는 뜻이 아닙니다. 연간 벡터는 현재 발생한 변화를 즉시 반영하는 실시간 모델이 아닙니다.",
+                  "source_ids": [
+                    "launch",
+                    "paper"
+                  ],
+                  "kind": "fact"
+                }
+              ]
+            },
+            {
+              "id": "availability",
+              "title": "가격과 이용 조건",
+              "lead": "공개 모델, 공개 데이터와 관리형 서비스는 구분합니다.",
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "title": "가중치와 서비스",
+                  "text": "모델 카드는 공개 가중치와 OlmoEarth Platform을 안내하고, 22일 발표는 로그인 없는 브라우저 임베딩 탐색기를 설명합니다. 공개 데이터를 쓰는 경로와 자체 GPU로 임베딩을 다시 계산하거나 미세조정하는 경로의 비용은 다릅니다. 확인한 자료에서 일반 호스팅 API의 표준 요금, 전송비와 최소 운영비는 확정하지 못해 $0으로 채우지 않습니다.",
+                  "source_ids": [
+                    "launch",
+                    "card",
+                    "paper"
+                  ],
+                  "kind": "judgment"
+                },
+                {
+                  "type": "paragraph",
+                  "title": "용도 제한",
+                  "text": "OlmoEarth Artifact License는 무상 사용과 수정 및 배포권을 제공하면서 군사·방위, 정보 수집과 사람 감시·치안, 석유·가스·광물 채취와 벌채 등의 용도를 제한합니다. 파생물을 배포할 때도 해당 제한을 승계하는 조건이 있습니다. 공개 가중치를 무제한 상업 라이선스나 Apache 2.0과 동일하게 표시하지 않습니다.",
+                  "source_ids": [
+                    "license"
+                  ],
+                  "kind": "fact"
+                }
+              ]
+            }
+          ],
+          "result": {
+            "title": "결론",
+            "points": [
+              {
+                "label": "선택 기준",
+                "text": "OlmoEarth 1.3은 연간 위성 벡터를 재사용하거나 새 지역의 분류기를 비교할 때 검토할 후보입니다. 64차원과 128차원의 성능 및 전송량, 직접 미세조정의 이전판 성능, 공간과 연도 범위 및 용도 제한을 함께 비교해야 합니다. 문서 임베딩이나 생성형 코딩 모델을 대체하는 모델은 아닙니다.",
+                "source_ids": [
+                  "paper",
+                  "card",
+                  "license"
+                ],
+                "kind": "judgment"
+              }
+            ]
+          },
+          "caveats": [
+            {
+              "text": "22일 묶음 발표와 13일 가중치 갱신을 구분했습니다. 공급사 측정과 선별한 기술보고서의 표 및 그림 독해이며 한국 실데이터 처리, 독립 재현, 실계정 비용 및 사람 시험은 없습니다. 1.2 카드 표기와 평가 집계의 차이는 미확인으로 보존했습니다.",
+              "source_ids": [
+                "launch",
+                "history",
+                "previous",
+                "paper"
+              ]
+            }
+          ],
+          "references": [
+            {
+              "id": "launch",
+              "title": "Ai2의22일 OlmoEarth1.3 발표",
+              "url": "https://huggingface.co/blog/allenai/olmoearth-v1-3",
+              "description": "새 모델과 연간 임베딩 및 브라우저 탐색기를 함께 소개합니다."
+            },
+            {
+              "id": "card",
+              "title": "OlmoEarth1.3 모델 카드",
+              "url": "https://huggingface.co/allenai/OlmoEarth-v1_3-Base",
+              "description": "백본과 추가 구성요소의 규모 및 입력을 설명합니다."
+            },
+            {
+              "id": "paper",
+              "title": "OlmoEarth1.3 기술보고서",
+              "url": "https://allenai.org/papers/olmoearth-v1-3",
+              "description": "임베딩,이전판과미세조정,계산량 및 배포자료의범위를비교합니다."
+            },
+            {
+              "id": "license",
+              "title": "OlmoEarth Artifact License",
+              "url": "https://huggingface.co/allenai/OlmoEarth-v1_3-Base/blob/main/LICENSE.txt",
+              "description": "사용권,제한용도와재배포조건을명시합니다."
+            },
+            {
+              "id": "previous",
+              "title": "기존1.2 모델 카드",
+              "url": "https://huggingface.co/allenai/OlmoEarth-v1_2-Base",
+              "description": "이전판 문서와 현재 카드의 표기 차이를 보존합니다."
+            },
+            {
+              "id": "history",
+              "title": "공식 체크포인트 이력",
+              "url": "https://huggingface.co/allenai/OlmoEarth-v1_3-Base/commits/main",
+              "description": "22일 발표 이전의13일 가중치 갱신 기록입니다."
+            },
+            {
+              "id": "data",
+              "title": "공개 임베딩 저장소",
+              "url": "https://source.coop/olmoearth/olmoearth-v1-3-embeddings",
+              "description": "공개 데이터의배포경로입니다. 전체데이터다운로드검증은하지않았습니다."
+            }
+          ]
+        },
+        "claims": [
+          {
+            "path": "/summary/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-launch",
+              "e-paper"
+            ]
+          },
+          {
+            "path": "/summary/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-paper"
+            ]
+          },
+          {
+            "path": "/summary/2",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-launch",
+              "e-paper",
+              "e-license"
+            ]
+          },
+          {
+            "path": "/tables/0/rows/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-card",
+              "e-paper",
+              "e-launch"
+            ]
+          },
+          {
+            "path": "/tables/0/rows/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-card",
+              "e-paper",
+              "e-launch"
+            ]
+          },
+          {
+            "path": "/tables/0/rows/2",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-card",
+              "e-paper",
+              "e-launch"
+            ]
+          },
+          {
+            "path": "/tables/0/rows/3",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-card",
+              "e-paper",
+              "e-launch"
+            ]
+          },
+          {
+            "path": "/tables/0/rows/4",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-card",
+              "e-paper",
+              "e-launch"
+            ]
+          },
+          {
+            "path": "/tables/0/rows/5",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-card",
+              "e-paper",
+              "e-launch"
+            ]
+          },
+          {
+            "path": "/tables/1/rows/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-paper"
+            ]
+          },
+          {
+            "path": "/tables/1/rows/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-paper"
+            ]
+          },
+          {
+            "path": "/tables/1/rows/2",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-paper"
+            ]
+          },
+          {
+            "path": "/tables/1/rows/3",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-paper"
+            ]
+          },
+          {
+            "path": "/tables/2/rows/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-paper"
+            ]
+          },
+          {
+            "path": "/tables/2/rows/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-paper"
+            ]
+          },
+          {
+            "path": "/tables/2/rows/2",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-paper"
+            ]
+          },
+          {
+            "path": "/tables/2/rows/3",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-paper"
+            ]
+          },
+          {
+            "path": "/tables/3/rows/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-paper"
+            ]
+          },
+          {
+            "path": "/tables/3/rows/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-paper"
+            ]
+          },
+          {
+            "path": "/tables/3/rows/2",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-paper",
+              "e-card"
+            ]
+          },
+          {
+            "path": "/tables/3/rows/3",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-license"
+            ]
+          },
+          {
+            "path": "/explanation/0/blocks/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-paper",
+              "e-card"
+            ]
+          },
+          {
+            "path": "/explanation/0/blocks/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-paper"
+            ]
+          },
+          {
+            "path": "/explanation/1/blocks/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-paper"
+            ]
+          },
+          {
+            "path": "/explanation/1/blocks/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-paper"
+            ]
+          },
+          {
+            "path": "/explanation/1/blocks/2",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-paper",
+              "e-data"
+            ]
+          },
+          {
+            "path": "/explanation/2/blocks/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-paper"
+            ]
+          },
+          {
+            "path": "/explanation/2/blocks/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-paper"
+            ]
+          },
+          {
+            "path": "/explanation/2/blocks/2",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-launch",
+              "e-paper"
+            ]
+          },
+          {
+            "path": "/explanation/2/blocks/3",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-launch",
+              "e-paper"
+            ]
+          },
+          {
+            "path": "/explanation/3/blocks/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-launch",
+              "e-card",
+              "e-paper"
+            ]
+          },
+          {
+            "path": "/explanation/3/blocks/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-license"
+            ]
+          },
+          {
+            "path": "/result/points/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-paper",
+              "e-card",
+              "e-license"
+            ]
+          },
+          {
+            "path": "/caveats/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-launch",
+              "e-history",
+              "e-previous",
+              "e-paper"
+            ]
+          }
+        ],
+        "answer_paths": {
+          "core": [
+            "/summary",
+            "/tables",
+            "/explanation",
+            "/result",
+            "/caveats"
+          ]
+        }
+      },
+      "issues": [],
+      "authoring": {
+        "recipe": {
+          "version": "authoring-recipe-1",
+          "catalog_version": "1.0.2",
+          "brief": {
+            "id": "olmoearth-1-3-model-guide",
+            "reader": "새 모델의 상대 성능과 비용, 제공 조건을 비교하는 개발자와 관리자",
+            "reader_question": "OlmoEarth 1.3을 이전 모델, AlphaEarth 및 TESSERA와 비교하고, 임베딩과 미세조정의 성능 차이 및 이용 제한을 설명합니다.",
+            "outcome": "이전 판과 경쟁 모델의 결과를 비교하고 측정 조건 및 제공 제한을 설명한다.",
+            "profile": "model_introduction"
+          },
+          "request_hash": "f6272202b19a28c26c6ed529bf76346310d928bab74608c080bc2499fe59fe7a",
+          "components": [
+            {
+              "id": "common-principles",
+              "kind": "policy",
+              "version": "1.0.0",
+              "supports": [
+                "technology",
+                "comparison",
+                "market",
+                "opportunity",
+                "model_introduction",
+                "news",
+                "custom"
+              ],
+              "stages": [
+                "analyze",
+                "write",
+                "review"
+              ],
+              "sources": [
+                {
+                  "path": "docs/authoring/common.md",
+                  "sha256": "cf56f106511609377d003f3d592937b858b2de9a999cf78cb6e6408aa0aa59f7",
+                  "text": "# 공통 작성 원칙\n\n근거와 의미 보존, 자연스러운 한국어 및 본문과 편집 기록의 구분에 적용한다. 새 소식은 유형별 기사 형식을 사용한다. 학습 글을 명시한 문장은 그 유형에만 적용한다.\n\n## 독자 본문과 편집 기록을 분리하기\n\n독자는 주제와 실제 구현 방법을 배우려는 사람이다. 소제목에 `검토 의견` 같은\n내부 분류를 붙이거나 판 변경, 수집·검수 과정과 사이트 읽기 안내로 본문을 채우지\n않는다. 원문 링크와 자료의 설명은 더 자세한 내용을 배우는 데 사용한다. 출처 설명에는\n무엇을 알 수 있는지와 필요한 자료의 조건을 쓰고, 실제 수집/검토 시각과 실패 및 편집\n기록은 품질 패키지·작업 기록에 둔다. 가상 사례의 가정, 실습 준비물과 실행 조건,\n기술 한계와 통계 해석의 조건은 본문에 남긴다. [DevOps r12 수정](../DEVOPS_READER_COPY.2026-10-12.md).\n\n## 2026-10-10: 작성 목적 다음에 요약 배치하기\n\n앞으로 새로 작성하는 공유용 리서치 보고서는 다음 순서로 시작한다. 신규 소식 기사는 2026-10-14 기사 기준과 NEWSROOM.md의 별도 형식을 따른다.\n\n1. 제목 아래에 어떤 목적으로 만든 문서인지 한두 문장으로 짧게 설명한다.\n   독자의 어떤 문제나 판단을 돕기 위한 것인지 구체적으로 쓴다.\n2. 바로 다음 본문 구역은 `요약`으로 표시하고 핵심 내용과 결론을 정리한다.\n3. 요약 이후의 구성은 주제와 독자의 필요에 맞게 정한다. 목차, 개념 설명,\n   비교표, 도해, 사례, 실습, 출처의 순서와 분량을 일률적으로 고정하지 않는다.\n\n작성 목적은 “왜 이 문서를 만들었는가”에, 요약은 “핵심 내용과 결론이 무엇인가”에\n답한다. 둘을 같은 소개 문장으로 반복하지 않는다. DevOps 문서의 장 수나\n도구 카탈로그를 다른 주제의 필수 양식으로 삼지 않는다. 기존 페이지를 일괄\n재작성하는 규칙은 아니며, 앞서 정한 출처와 검토 기준은 유지한다.\n\n예시 작성 목적: “기존 Jenkins를 사용하는 C++ 팀이 검사 결과를 보관하고,\n검사한 파일을 릴리스하는 절차를 정할 수 있도록 구축 방법을 정리했다.”\n\n검토할 때는 첫 화면만 읽어 작성 목적을 알 수 있는지, 그다음 구역이 요약인지,\n요약에서 핵심 내용과 결론을 파악할 수 있는지 각각 확인한다. 본문 구성은\n이 고정된 앞부분 이후에 필요한 설명을 충분히 제공하는지로 판단한다.\n\n## 2026-10-10: 가운데점으로 단어나 동작을 묶지 않기\n\n새로 작성하거나 수정하는 제목, 요약, 본문, 표와 도구 설명에는 가운데점으로\n단어를 압축해 나열하지 않는다. 점을 공백으로 지우는 것으로 끝내지 않는다.\n병렬 항목은 쉼표나 자연스러운 연결어로 구분하고, 동작은 누가 무엇을 어떤\n순서로 하는지 문장으로 쓴다. 원문 코드, URL과 기존 분류 식별자는 보존한다.\n\n- 피할 표현: “누가 어떤 코드와 결과물을 검사·승인·반영했는지”\n- 사용할 표현: “누가 코드를 검사했고, 어떤 결과물을 승인해 실제 환경에 반영했는지”\n- 피할 표현: “개발·QA·운영이 공동 책임”\n- 사용할 표현: “개발 담당자는 코드를 수정하고 QA는 검사한다. 운영 담당자는 승인된 파일을 배포한다.”\n\n## 글을 쓰기 전에 정할 것\n\n교재형 글은 선행 개념의 순서를 확인한다. 먼저 익숙한 상황과 값으로 문제를\n설명하고, 그 문제에서 새 개념이 하는 일을 가르친 뒤 기술 이름·구조·코드를 연결한다.\n새 약어를 풀어 쓰는 것만으로 선행 지식의 공백이 해결되지는 않는다.\n\n목적은 자료 요약, 표 생성, 제목 작성이 아니라 **독자에게 생겨야 할 변화**다.\n먼저 아래 내용을 짧은 편집 메모에 적는다. 모르는 독자의 수준은 가정임을\n밝히고, 대화에서 이미 확인한 필요를 우선한다.\n\n| 질문 | 작성할 내용 |\n| --- | --- |\n| 누가 읽는가 | 주제와의 거리, 현재 알고 있는 것, 새로 설명해야 할 것 |\n| 왜 읽는가 | 이해하려는 문제 또는 내려야 할 결정 하나 |\n| 읽은 뒤 무엇이 가능한가 | 구분·설명·선택·실행처럼 확인 가능한 결과 |\n| 무엇을 다룰 것인가 | 그 결과에 필요한 범위와 선행 개념 |\n| 어떤 근거가 필요한가 | 기능, 수치, 적용 조건, 비교를 지지할 원문 |\n| 어떻게 확인할 것인가 | 다른 사례에 적용하는 질문 또는 관찰할 실행 결과 |\n\n예: MCP Apps의 역할을 모르는 독자가 공고 후보를 비교하는 업무에 이 기술을\n쓸 이유와 시작 경로를 고르고, 설명된 사례의 입력·조회·화면 결과를 추적한 뒤\n자기 목록에 적용할 변경점을 찾도록 쓴다. 역할을 설명하는 것은 이 작업을 위한\n중간 단계다. 예시를 실제로 실행시키는 경로를 제공하려면 현재 지원 환경·준비물·\n실행 절차·예상 결과를 확인한다. 이것이 없는 원고는 원리 설명으로 상태를 남긴다.\n\n‘초급~중급 개발자’라는 범위만으로 API, JSON, 비동기 처리, MCP를 이미\n안다고 가정하지 않는다. 필요한 개념은 설명하거나 정확한 선행 학습으로 연결한다.\n\n## 목적에 맞게 글의 성격을 고르기\n\n| 독자의 질문 | 중심 내용 | 완료를 확인하는 방법 |\n| --- | --- | --- |\n| 무엇이 바뀌고 내 작업에 어떤 영향이 있나 | 이전 상태, 변화, 해당 대상, 영향, 대응 시점 | 자신의 사용 여부와 다음 점검을 정할 수 있음 |\n| 이것은 무엇이고 왜 필요한가 | 익숙한 상황, 개념, 작동 이유, 구체적 사례, 한계 | 새로운 사례의 동작을 자기 말로 설명함 |\n| 어느 대안이 내 조건에 맞나 | 같은 비교 기준, 적용 조건, 비용·제약, 선택 이유 | 주어진 조건으로 대안을 고르고 이유를 말함 |\n| 따라 하면서 익히려면 무엇을 하나 | 준비물, 순서, 입력, 예상 출력, 오류 관찰 | 실제 결과를 재현하고 어느 단계에서 틀렸는지 찾음 |\n| 신청·참여할 수 있나 | 대상, 현재 접수 상태, 자격, 제외 조건, 제출물 | 해당·비해당·추가 확인을 구분하고 준비물을 정함 |\n| 이 수치·사례는 무엇을 알려주나 | 측정 대상·기간·단위, 관찰과 해석, 적용 한계 | 수치의 의미와 이 자료로 알 수 없는 것을 구분함 |\n\n설명 글과 실습 글의 역할은 다르다. 설명은 관계와 이유를 풀어내고, 실습은\n독자가 행동한 뒤 확인할 결과를 제공한다. 하나의 보고서에 둘 다 필요하면\n단위를 나누어 연결한다. 단순히 명령어를 넣었다고 실습이 완성되는 것은 아니다.\n이 구분은 [Diátaxis의 설명](https://diataxis.fr/explanation/)과\n[튜토리얼](https://diataxis.fr/tutorials/)을 참고한 프로젝트 편집 선택이다.\n\n## 원문에서 의미를 보존하기\n\n자료를 읽을 때 제목부터 만들지 않는다. 독자의 질문에 답하는 근거를 먼저\n확보하고, 아래 항목이 필요한 주장에 함께 남긴다.\n\n- 누가 무엇을 하는가: 제공자·실행자·요청자·결과 수신자를 구분한다.\n- 언제, 누구에게 적용되는가: 확인일, 발표일, 종료일, 지역·계정·버전 조건.\n- 무엇을 측정했는가: 기간·표본·분모·단위와 출처의 자체 공개 여부.\n- 무엇을 관찰했고 무엇을 해석했는가: 공식 기능, 편집 판단, 가상 예시를 구분한다.\n- 어떤 제한이 결론을 바꾸는가: 적용 제외, 필수 준비, 비교하지 못한 부분.\n\n출처 링크가 붙어 있는 것과 그 출처가 문장을 뒷받침하는 것은 별개다.\n원문의 주어·목적어·인과관계를 요약 과정에서 바꾸지 않는다. 예를 들어\n‘서버가 화면을 제공하고 호스트가 읽는다’를 ‘서버가 읽는 화면’으로 줄이면\n구조가 바뀐다. 규격은 실제 동작의 보장, 최대 지원액은 확정 지급액,\n한 회사의 성장과 제품 전략은 검증된 성장 원인으로 바꾸지 않는다.\n\n동적 규정·모델명·가격·프로그램 상태는 보강 시 공식 자료를 다시 확인한다.\n개념 문장을 고쳤다는 이유로 재확인하지 않은 다른 표의 확인일을 올리지 않는다.\n\n## 짧은 메인과 충분한 보고서\n\n메인은 독자가 읽을 보고서를 고를 수 있게 핵심 변화·문제·대상 조건을 짧게\n전달한다. 보고서는 선택한 내용을 혼자 이해할 수 있을 만큼 풀어 쓴다.\n메인의 분량 기준을 본문에 적용하지 않는다. 고정 글자 수나 항목 수로\n필수 설명을 자르지 않는다.\n\n펼치기는 상세 절차·추가 사례·사양·선택적 심화에 사용한다. 제목을 이해하는 데\n필요한 정의, 결론의 이유, 결정적인 자격·제약은 기본 읽기 경로에 둔다.\n처음 읽는 사람이 모든 펼치기를 열어야만 첫 문장을 이해한다면 배치가 잘못됐다.\n펼친 내용은 요약의 반복이 아니라 빠진 관계와 사례를 설명해야 한다.\n\n현재 Editorial의 `요약 → 데이터 → 결과 → 해설` 순서와 블록 개수는 의미 품질을\n보장하지 않는다. 원고를 먼저 완성하고 기존 데이터 필드에 의미를 유지하며\n옮긴다. 필요한 설명을 현재 필드로 자연스럽게 표현할 수 없으면 원고를 보존하고\n렌더링 개선을 별도 작업으로 기록한다. 원고를 양식에 맞춰 다시 축약하지 않는다.\n\n## 작성 지식베이스에 남길 내용\n\n새 주제의 편집 메모는 관련 보고서·검토 문서에 아래 정보를 남긴다. 단순\n용어집, 출처 모음, 글자 수 지침만 쌓지 않는다.\n\n| 항목 | 저장할 지식 |\n| --- | --- |\n| 독자의 질문 | 해당 글이 해결할 질문과 선행 지식 가정 |\n| 개념 관계 | 기존 개념과의 차이, 역할과 데이터 이동 |\n| 의미 근거 | 주장별 원문 위치·적용 조건·확인일 |\n| 끝까지 이어지는 예시 | 입력, 중간 값, 출력, 정상·실패 이유 |\n| 발견한 실패 | 원고의 어떤 표현이 무슨 오해를 만들었는지 |\n| 개선 원고 | 실제로 고친 문단과 독자가 대답할 수 있어야 할 질문 |\n| 보강 상태 | 진단·원고·사실 확인·실행 검증·게시 중 완료한 범위 |\n\n현재 결함 기록은 [앞선 내용 검토](../RESEARCH_CONTENT_REVIEW.2026-10-08.md)에,\n20편의 목적·실제 보강·검토 범위는 [전체 보강 기록](../RESEARCH_REPAIR.2026-10-08.md)에\n남긴다. 새 판의 본문 데이터는 `config/research_comprehension.2026-10-08.json`이다.\n[앞선 개선 원고](../RESEARCH_WRITING_EXAMPLES.md)는 부분 보강의 역사로 유지한다.\n사용자가 새 판을 승인한 완성 교재라는 뜻은 아니다. 날짜가 붙은 기능·규정은\n원문을 재확인하고 재사용한다. 예시 문장은 이번 독자 목적에 맞춘 사례다.\n\n## 참고한 작성 원칙\n\n- [Google Technical Writing — Audience](https://developers.google.com/tech-writing/one/audience): 독자의 현재 지식과 목표에 필요한 지식의 차이를 설명 범위로 삼는다.\n- [Google Technical Writing — Documents](https://developers.google.com/tech-writing/one/documents): 대상 독자와 읽은 뒤 가능한 일을 정하고 그 필요에 맞춰 내용을 조직한다.\n- [Diátaxis — Explanation](https://diataxis.fr/explanation/): 이해를 위한 관계·배경 설명의 역할을 구분한다.\n- [Diátaxis — Tutorials](https://diataxis.fr/tutorials/): 행동과 관찰할 결과를 통해 배우는 실습을 구분한다.\n\n2026-10-08 원문 확인. 위 원칙의 적용 방식과 검토 질문은 이 프로젝트의\n편집 판단이며, 문서화만으로 독자 이해 개선이 검증됐다는 뜻은 아니다.\n"
+                }
+              ]
+            },
+            {
+              "id": "profile-model_introduction",
+              "kind": "profile",
+              "version": "1.0.0",
+              "supports": [
+                "model_introduction"
+              ],
+              "stages": [
+                "analyze",
+                "write",
+                "review"
+              ],
+              "sources": [
+                {
+                  "path": "docs/authoring/types.md",
+                  "section": "모델 소개",
+                  "sha256": "fbeb922a5e6ca88f23ced7939f515837dedcbf5c6784f5cac5da74b97b311d82",
+                  "text": "## 모델 소개\n\n[모델 소개 정본](../AI_MODEL_RESEARCH.md)의 신규 모델 계약을 따른다. 이전 모델 대비 변화와 다른 모델의 같은 조건 비교, 상대 장단점 및 제공 조건을 설명한다. 학습 글의 가상 업무, 실습 코드와 응용 문제를 적용하지 않는다.\n\n"
+                },
+                {
+                  "path": "docs/AI_MODEL_RESEARCH.md",
+                  "section": "신규 모델 소개의 형식 — 2026-10-13 사용자 기준",
+                  "sha256": "dc9092e9a0eb8a62d8ce7a84238cb2d9c827745411d06208a26dd8c308b65286",
+                  "text": "## 신규 모델 소개의 형식 — 2026-10-13 사용자 기준\n\n신규 모델 소개는 활용 교재가 아니라 모델의 변화와 비교를 읽는 분석 문서다.\n기존 Theo의 GPT-6.1 Sol, Gemini4Argon, Opus5.5 소개처럼 모델 정보와\n비교표, 상대 장점과 단점, 비용과 결론을 중심으로 작성한다.\n독자는 새 모델이 무엇인지, 이전 모델에서 무엇이 달라졌는지,\n경쟁 모델보다 어떤 점이 낫고 부족한지 판단할 수 있어야 한다.\n\n- 제목 아래 짧은 작성 목적과 `요약`을 먼저 둔다. 이후에는 모델 개요,\n  이전 모델 대비 변화, 다른 모델과의 비교표, 장점과 단점, 가격과 제공 조건,\n  결론과 자료 기준을 주제에 맞게 구성한다. 장 수와 표 방향을 일률적으로 고정하지 않는다.\n- 소제목은 `모델 개요`, `주요 사양`, `성능 비교`, `장점과 한계`처럼\n  실제 내용을 이름 붙인다. `입력 사양과 제공 범위를 먼저 정합니다` 같은\n  작성 절차나 독자 행동을 지시하는 소제목을 사용하지 않는다.\n- 다른 모델과 비교한 표를 반드시 포함한다. 같은 계열의 이전 모델과 해당 분야의\n  주요 경쟁 모델을 선정하고 선정 이유를 남긴다. 사양과 제공 경로, 성능 평가,\n  가격의 서로 다른 비교 기준을 분리한다.\n- 표에는 모델 ID/판, 추론 설정, 평가판, 측정 주체, Harness, 단위와 날짜를\n  밝혀 수치가 무엇을 비교하는지 설명한다. 조건이 다른 결과는 그 차이를 표시하고\n  직접적인 모델 우열의 근거로 일반화하지 않는다. 미확인은0으로 채우지 않는다.\n- 장점과 단점은 비교표의 실제 값 또는 제공 조건으로 설명한다.\n  어느 평가에서 어떤 경쟁 모델보다 높거나 낮은지, API/구독/가중치 제공,\n  가격과 문맥 조건에서 어떤 차이가 있는지 구체적으로 쓴다.\n  공급사 주장, 공개 측정, 편집 판단과 독립 실사용 미측정을 구별한다.\n- 배송비 같은 가상 업무, 활용 예시, SDK/API 코드, 단계별 실습,\n  응용 문제와 풀이를 모델 소개에 넣지 않는다. 별도의 활용 가이드를 요청받은 경우에만\n  해당 문서를 학습/실습 유형으로 작성한다.\n- 작성 요청과 새 품질 sidecar에는 `research_type: model_introduction`을 사용한다.\n  `config/ai_model_introduction.request.example.json`은 계획 템플릿이다.\n  새 소개의 report ID를 `config/study_pages.json`의 `legacy_report_ids`에 넣어\n  기존 모델 소개와 같은 Editorial을 사용한다. 해당 판의 `digest(report)`를\n  `editorial_summary_first`와 `model_introduction_editions`에 등록하면\n  목적·요약 다음에 비교표, 모델 분석, 결론이 표시된다. 새 소개판은 같은 해시를\n  `model_introduction_purpose_editions`에도 등록해 `description`의 작성 목적을\n  제목 바로 아래 표시한다. 기존 판의 표시 형식은 보존한다. 내용 해시에 묶어\n  이전 판의 표시 순서는 보존한다.\n  문장 표기 교정은 본문 필드에 한정한다. 안정적인 ID, `topic_path`의\n  `개발 동향 / AI 모델·API`, 출처 ID와 URL은 나열 문장처럼 일괄 치환하지 않는다.\n  실제 화면에서 기존 모델 주제와 같은 분류로 연결되는지도 확인한다.\n  이 유형의 기계 검사는 비교표 누락과 예시/코드 블록을 거부하며,\n  의미 검토는 비교 대상·조건과 장단점의 논거를 실제 읽어 확인한다.\n  기존 불변 배치는 소급 수정하거나 새 기준 합격으로 간주하지 않는다.\n\n원문의 기존 활용 섹션을 수집하는 것과 새 모델 소개의 집필 형식은 다르다.\nTheo에서 가져온 원문과 원본 표 기능은 보존하고, 이 형식은 새로 집필하는\n모델 소개 및 사용자가 이 형식으로 고치라고 요청한 현재판에 적용한다.\n에이전트 Pass와 출력 검증은 사용자의 형식 승인이나 실제 독해 시험이 아니다.\n\n\n"
+                }
+              ]
+            },
+            {
+              "id": "writing-workflow",
+              "kind": "method",
+              "version": "2.1.0",
+              "supports": [
+                "technology",
+                "comparison",
+                "market",
+                "opportunity",
+                "model_introduction",
+                "news",
+                "custom"
+              ],
+              "stages": [
+                "write"
+              ],
+              "sources": [
+                {
+                  "path": "skills/research-teaching/SKILL.md",
+                  "sha256": "09d2dac52b42f7fd556193e005da59b29c16215a125f34dec3a55b8cc08c1227",
+                  "text": "---\nname: research-teaching\ndescription: \"Compose and revise Korean research by reader purpose. Select content/editing/presentation profiles, preserve evidence and version records, then finish local knowledge registration and query checks. Use for research explanations, comparisons and editing; models and news keep their own profiles. Does not authorize redesign, paid calls, delegation or publication.\"\nmetadata:\n  version: \"2.1.0\"\n---\n\n# 목적에 맞게 조사하고 이해할 수 있게 쓰기\n\n먼저 [작성 관리](../../docs/authoring/MANAGEMENT.md)와 현재 원고를 읽는다.\n대화에 이미 나온 독자, 목적과 요청을 사용하며 같은 질문을 다시 요구하지 않는다.\n정보가 부족하면 조사로 돌아간다. 이해의 빈칸을 문장 교정이나 목차 증가로 대신하지 않는다.\n\n## 이번 글에 적용할 기준 선택\n\n1. 독자의 질문과 끝에 가능한 설명, 판단 또는 실행을 요청서에 적는다.\n2. [공통 원칙](../../docs/authoring/common.md)을 적용하고 [목적별 유형](../../docs/authoring/types.md)을 선택한다.\n   모델 소개와 소식 기사에 학습 글의 실습, 가상 업무와 응용 문제를 강제하지 않는다.\n3. 필요한 작성 방법만 고른다. 설명 글은 [설명 방법](../../docs/authoring/explanation.md),\n   실행을 약속한 실습은 [실습 조건](../../docs/authoring/tutorial.md)을 사용한다.\n   기존 원고의 표현을 고칠 때는 [편집 방법](references/editing.md)을 사용한다.\n4. 기존 화면 계약과 개별 요청을 선택해 authoring plan으로 조합을 고정한다.\n   이 기록은 작성 지침이며 HTML 렌더러를 변경하지 않는다. 새 디자인 구현은 별도 작업이다.\n\n## 작성과 편집\n\n원문 근거에서 질문의 답을 도출하고 충분한 본문을 쓴 뒤 제목과 요약을 만든다.\n선행 개념은 주제와의 거리를 기준으로 판단한다. 개발자라는 이유로 API나 JSON을 안다고 가정하지 않는다.\n필요한 용어는 처음 나오는 자리에서 뜻과 역할을 설명한다. 기능을 쓰는 경로와 직접 구현하는 경로를 구분한다.\n설명 사례는 입력, 중간 변화와 출력의 이유가 끝까지 연결되어야 한다.\n그림과 표는 [시각 자료 기준](../../docs/authoring/visuals.md)에 따라 필요한 곳에 선택한다.\n웹 디자인은 이번 요청에 없으면 변경하지 않는다.\n\n정보 가치가 부족하다는 피드백을 받거나 여러 글을 보강하면\n[질문과 근거 검토](references/substantive-review.md)를 읽는다.\n문장 연결의 구체적인 실패는 [집필 예시](references/teaching-patterns.md)와 대조한다.\n과거 Pass를 사용자 승인이나 완성 교재의 견본으로 취급하지 않는다.\n\n## 검토와 적용 기록\n\n[내용과 독해 검토](../../docs/authoring/review.md)에 따라 첫 화면과 본문을 따로 읽는다.\n첫 화면 입력에서는 본문을 실제로 제외한다. 외부 지식으로 빠진 설명을 메우지 않는다.\n막힌 문장과 근거 위치를 기록하고 고친다. 자체 검토, 독립 에이전트 검토와 사람 시험을 구분한다.\n위임이 승인된 경우에만 다른 에이전트를 사용하고 수정된 원고 자체를 재검토하게 한다.\n실제 실행, 링크와 출력 검사도 내용 검토와 별도로 기록한다.\n\n완성한 판에 authoring record로 원고 지문과 사용한 조합을 연결한다.\n자동 생성은 품질 패키지의 authoring에 같은 정보를 남긴다.\n이 기록은 지침 선택과 사용 기록이며 사실 검토나 사람 독해 합격을 뜻하지 않는다.\n이전 판을 덮지 않는다. 기준 변경은 새 조합으로 채택하며 작업 중의 기록에 자동 반영하지 않는다.\n\n## 리서치 추가·수정 후 지식베이스 반영\n\n이 프로젝트의 리서치·모델 소개·뉴스를 추가하거나 수정하면\n[지식베이스 완료 절차](../../docs/KNOWLEDGE_BASE.md#리서치-추가수정-작업의-완료-절차)를\n같은 작업 안에서 실행한다. 실제 내용 검토를 현재 판의 지문에 연결하고 색인을 갱신한 뒤,\n독자의 질문으로 새 본문과 출처가 검색되는지 확인해야 작성 작업을 완료한 것으로 보고한다.\n사용자에게 지식베이스 갱신을 따로 요청하게 하지 않는다.\n\n이 단계는 로컬 작업을 수행하는 Codex의 책임이다. JSON을 생성하는 집필 모델이나\n수집 성공만으로 검토 완료를 선언하지 않는다. 초안은 초안으로 연결하고 실제 검토일과\n기존 판을 보존한다. 사용자의 MD 전용·미발행 범위를 지키며 별도 배포를 실행하지 않는다.\n"
+                },
+                {
+                  "path": "docs/KNOWLEDGE_BASE.md",
+                  "section": "리서치 추가·수정 작업의 완료 절차",
+                  "sha256": "ab8e0592885a8698e99d8b01cd3bcc8097bd3c1eda77c754bdaffd293fd9de03",
+                  "text": "## 리서치 추가·수정 작업의 완료 절차\n\n새 리서치를 만들거나 기존 글을 고치는 Codex는 아래 반영을 같은 작업 안에서 마친다.\n사용자는 지식베이스 갱신을 따로 요청할 필요가 없다. 보고서, 모델 소개, 뉴스에 공통으로\n적용하며 글의 목적별 작성·검토 기준은 유지한다. 색인 갱신을 새 원문 조사로 기록하지 않는다.\n\n1. **원고와 실제 저장 판을 맞춘다.** 내용·근거·독해 검토와 수정이 끝난 판을 기존 저장\n   절차로 반영하고 작성 기준의 적용 기록도 남긴다. 기존 판과 품질 부록은 보존한다.\n   사용자가 MD 파일만 요청했다면 DB 발행을 강제하지 않는다. 해당 파일만 연결 목록에\n   `kind: draft`로 등록해 미발행 상태를 유지하고 초안을 포함하는 검색으로 확인한다.\n   프로젝트 전체 폴더를 자동 수집하거나 비공개 자료를 연결하지 않는다.\n2. **현재 본문 지문을 읽는다.** DB에 저장한 글은 아래 명령의 `document`에서 실제\n   `key`, `revision`, `source_hash`, `document_digest`를 확인한다. 보고서는 `report:<id>`,\n   뉴스는 `article:<id>`다. 이 명령은 미검토 글도 명시적으로 읽을 수 있다.\n\n   ```powershell\n   python -m housing_watch knowledge --document report:<id> --json\n   ```\n\n3. **실제 검토를 현재 판에 연결한다.** `config/knowledge_sources.json`의 `review_ledger`가\n   가리키는 원장의 기존 항목을 보존하면서 이번 글의 검토 항목을 추가하거나 갱신한다.\n   `key`, `revision`, `source_hash`, `document_digest`, `reviewed_on`, `verdict`,\n   `reader_question`, `finding`, `body_locations`, `reference_urls`를 실제 원고·검토 기록에서\n   채운다. 새 파일의 등록 시각을 사실 확인일로 쓰지 않는다. `verdict`는 확인한 범위에\n   따라 정하고 계획·미완성·오래된 사실을 무조건 `usable_with_limits`로 바꾸지 않는다.\n   원문의 접근 실패와 미확인 조건은 `finding`, `advisories`, `link_check`에 해당 범위대로\n   남긴다. authoring record나 형식 검사 통과는 내용 검토의 대체물이 아니다.\n4. **검토 이력을 보존한다.** 기존 검토를 바꾸면 날짜와 작업 식별자를 붙인 새 원장\n   파일에 기존 현재 항목과 이번 항목을 함께 저장한다. 예를 들어\n   `config/content_review.<날짜>.<작업ID>.json`을 만들고 검증한 뒤 `review_ledger` 포인터를\n   옮긴다. 이전 원장을 덮거나 다른 글의 검토를 누락하지 않는다. 그 파일이 이미 있으면\n   새 판 이름을 쓴다. 신규 항목 추가도 같은 방식으로 기록한다.\n5. **색인과 실제 질의를 확인한다.** 아래 명령이 성공한 뒤 해당 글의 상태·현재 판·본문\n   지문과 출처가 맞는지 읽고, 독자가 물을 질문으로 검색한다. DB에 저장된 검토 완료 글은\n   기본 검색에서 새 본문이 나와야 한다. 미발행 MD는 `--include-drafts`로 확인하며,\n   검토하지 않은 자료를 기본 답변에 넣기 위해 제외 옵션을 풀지 않는다.\n\n   ```powershell\n   python -m housing_watch knowledge --build --status\n   python -m housing_watch knowledge --document report:<id> --json\n   python -m housing_watch knowledge \"이번 글의 구체적인 독자 질문\" --limit 5 --json\n   ```\n\n6. **반영까지 마친 뒤 완료를 보고한다.** 본문 지문이 달라 `review_outdated`로 남거나\n   검토 완료 글을 찾지 못하면 저장 판·원장·연결 목록·질문 표현을 대조해 원인을 고친다.\n   해결되지 않으면 글 저장과 검색 반영의 상태를 따로 보고하고 검색 연결 완료로 표시하지\n   않는다. 결과에는 새 글의 ID·판, 검토 범위, 검색 확인과 남은 한계를 남긴다.\n\n이 절차의 저장과 색인 갱신은 기존 저장소 계정·원격 검증 규칙을 따른다. 별도 사용자\n확인을 반복해서 요구하지 않는다. 파일 반영 권한이 확인되지 않으면 기존 가드대로 멈춘다.\n유료 생성·클라우드 업로드·예약·홈페이지 배포 권한을 추가하지 않는다. 단독 수집기 실행은\n내용 검토가 아니며 이 절차는 리서치 작성 작업의 완료 단계다.\n\n"
+                }
+              ]
+            },
+            {
+              "id": "section-editing",
+              "kind": "method",
+              "version": "1.0.0",
+              "supports": [
+                "technology",
+                "comparison",
+                "market",
+                "opportunity",
+                "model_introduction",
+                "news",
+                "custom"
+              ],
+              "stages": [
+                "write"
+              ],
+              "sources": [
+                {
+                  "path": "skills/research-teaching/references/editing.md",
+                  "section": "절별 편집",
+                  "sha256": "6373e218756a33531f9acb90d5a399223ec984f56181558f94b2a06f550a3900",
+                  "text": "## 절별 편집\n\n각 절이 답할 독자의 질문을 찾고 실제 답의 문장을 지목한다.\n정의 전에 나온 용어, 빠진 전제와 연결 설명, 비교 축이 섞인 부분을 찾는다.\n문제를 발견하면 원문, 문제의 이유와 수정안을 함께 남긴다. 정보가 부족하면 추가 조사로 돌아간다.\n본문을 충분히 설명한 뒤 요점, 표와 제목을 실제 내용에 맞춘다.\n문체 수정을 위해 근거 없는 통계, 인용이나 저자의 경험담을 추가하지 않는다.\n\n"
+                }
+              ]
+            },
+            {
+              "id": "korean-editing",
+              "kind": "method",
+              "version": "1.0.0",
+              "supports": [
+                "technology",
+                "comparison",
+                "market",
+                "opportunity",
+                "model_introduction",
+                "news",
+                "custom"
+              ],
+              "stages": [
+                "write"
+              ],
+              "sources": [
+                {
+                  "path": "skills/research-teaching/references/editing.md",
+                  "section": "한국어 문장 편집",
+                  "sha256": "a078b16d877034b6718a0cd576ee7c8561832cffe6939ae80a1292ee5d151968",
+                  "text": "## 한국어 문장 편집\n\n번역투, 불필요한 명사화, 같은 마무리의 반복, 추상적인 단어 나열과 과장을 찾는다.\n이번 독자에게 필요한 용어와 일관된 격식은 보존한다. 특정 단어나 문장부호를 기계적으로 삭제하지 않는다.\n원문과 수정문에서 행위자, 수치와 단위, 날짜, 부정과 추정, 적용 조건 및 인과관계를 대조한다.\n추정 표현을 단정으로 바꾸거나 실제로 없던 효과를 넣은 수정은 되돌린다.\n코드, 명령, 식별자와 링크는 일반 문장 교정 대상으로 취급하지 않는다.\n첫 절에서 변경 전후와 이유를 확인한 뒤 같은 방법을 나머지 원고에 적용한다.\n\n"
+                }
+              ]
+            },
+            {
+              "id": "reader-review",
+              "kind": "method",
+              "version": "1.0.0",
+              "supports": [
+                "technology",
+                "comparison",
+                "market",
+                "opportunity",
+                "model_introduction",
+                "news",
+                "custom"
+              ],
+              "stages": [
+                "review"
+              ],
+              "sources": [
+                {
+                  "path": "docs/authoring/review.md",
+                  "sha256": "0f86c95aa64ab7b60ffd6c825a237f573a1e246c89fe0e2300b10493f4cfec7a",
+                  "text": "# 내용과 독해 검토 방법\n\n선택한 유형과 질문에 해당하는 기준으로 검토한다. 에이전트 검토와 사람 시험을 구분하며 위임 권한을 만들지 않는다.\n\n## 2026-10-12: 설명 그림의 의미와 연결을 검토하기\n\n먼저 그림이 답할 독자의 질문을 정한다. 개념의 정의를 작업 순서 그림만으로 대신하지 않는다. 관계를 설명한다면 행위자와 공유하는 목표, 정보 및 책임을 본문과 그림에 연결한다.\n\n각 화살표의 출발 상자, 도착 상자, 전달하는 입력이나 결과를 표로 적고 실제 이미지의 선과 화살촉을 대조한다. 꼬리가 출발 경계에 닿는지, 도착 방향이 맞는지, 겹침과 불필요한 순서가 생기지 않는지 확인한다. 함께 고려하는 조건에 순차 화살표를 붙이지 않는다. 실패와 성공 경로를 그렸다면 다음 행동도 일치해야 한다.\n\n도해를 단순화했다면 생략한 조건과 역할의 참여 범위를 설명한다. 그림, 대체 텍스트와 본문의 의미가 같은지 확인하며, 그림이 예쁘거나 확대 버튼이 동작한다는 사실을 의미 검토와 합산하지 않는다. [DevOps r5의 거부와 r6 수정](../DEVOPS_DIAGRAM_REPAIR.2026-10-12.md)을 참고하되 수정본의 독자 승인을 주장하지 않는다.\n\n2026-10-09 보강: [AI 집필 연구](../AI_WRITING_RESEARCH.2026-10-09.md)와\n[질문·근거·학습 결과 검토](../../skills/research-teaching/references/substantive-review.md)를 적용한다.\n독자의 핵심 질문마다 본문의 답 위치·근거·공백을 연결한다. 기술마다 고유한 원리와 실제 자료\n해석이 있어야 하며, ‘조건 확인·검증·기록’의 반복만으로 보강됐다고 판정하지 않는다.\n사용자가 승인한 독립 에이전트 검토에서는 수정 원고를 읽게 하고 지적을 고친 뒤 재판정한다.\n전체 보강의 현재 범위와 실제 검증 결과는 [작업 상태](../RESEARCH_AUTHORING_REPAIR.2026-10-09.md)에 남긴다.\n\n2026-10-08부터 Signal Desk의 리서치 작성·보강·내용 검토에 적용한다.\n이 문서는 작성 에이전트의 작업 기준이다. 독자에게 그대로 보여줄 목차나\n모든 보고서에 강제할 양식이 아니다.\n\n## 에이전트의 작성 절차와 게시 판단\n\n1. **독자 작업 정의:** 업무 문제, 기존 지식, 끝낼 작업, 확인할 결과를 작성한다.\n   'MCP 이해하기', 'RAG 알아보기'처럼 기술 이름만 쓰면 다시 구체화한다.\n2. **필요한 근거 조사:** 이 작업을 할 수 있는 현재 도구·기능, 시작 조건, 제약,\n   공식 예제를 확인한다. 원문 요약을 바로 게시용 문장으로 바꾸지 않는다.\n3. **완성된 사례 구성:** 실제 샘플 값과 중간 결과를 고정한다. 어느 입력이 어떤\n   처리를 거쳐 어떤 출력에 대응하는지 끝까지 보여주고, 필요한 개념을 그 관계로\n   설명한다. 가상 사례·개념 코드·실행 확인한 실습은 구분한다.\n4. **학습과 적용 작성:** 왜 쓰는지, 어떻게 동작하는지, 어떻게 시작하는지,\n   자기 작업으로 바꾸려면 무엇이 달라지는지 설명한다. 설명형 학습에는 풀이가\n   있는 변형 문제를, 실습에는 행동·예상 출력·정상/실패 판정을 제공한다.\n5. **검토 후 재작성:** 아래 질문에 본문 위치를 인용해 답한다. 필요한 답이\n   본문에 없으면 누락으로 기록하고 원고를 보강한다. 검토자 자신의 상식으로\n   빈칸을 메워 통과시키지 않는다. 어려운 용어의 정의만 반복해 해결하지 않는다.\n6. **표현과 게시:** 내용이 충족된 뒤 메인 요약과 HTML을 만든다. 설명 필드를\n   모두 채웠거나 테스트가 통과했다고 교재 완성으로 처리하지 않는다. 검수 결과와\n   실행 확인 범위를 기록하고, 필요한 본문은 펼치기 안에 숨기지 않는다.\n\n| 검토 질문 | 원고가 보여줘야 할 근거 |\n| --- | --- |\n| 이 방법으로 내 어떤 작업이 나아지는가 | 구체적인 문제·완성 결과·적합하지 않은 경우 |\n| 어디서 어떻게 시작하는가 | 선택한 사용/구현 경로와 확인한 환경·준비물·첫 행동 |\n| 각 부분이 왜 필요한가 | 예시 값과 연결된 개념·처리 원리·선행 지식 |\n| 한 사례의 입력부터 결과까지 따라갈 수 있는가 | 실제 샘플 값·중간 변화·출력과 그 의미 |\n| 내 자료로 바꾸려면 무엇을 바꾸는가 | 다른 입력으로의 변형 예시와 풀이·변경점 |\n| 틀렸을 때 무엇을 확인하는가 | 관찰할 증상·확인 순서·실패 조건 |\n\n이 표는 게시용 목차나 점수표가 아니다. 모든 주제에 실행 실습을 강제하지 않는다.\n개념 교재에도 끝까지 풀어 준 사례와 새로운 상황에 적용하는 설명이 필요하다.\n실습을 약속한 글은 재현 경로가 빠지면 '실습 초안'으로 남긴다. 실행해 보지 않은\n단계를 검증 완료로 표시하거나 독자 사용성 시험을 했다고 주장하지 않는다.\n\n자동화를 구성할 때는 프로젝트 AGENTS에 위 목적과 필수 읽기를 두고, 작성 스킬에는\n단계별 입력·산출물·누락 시 재작성 규칙을 둔다. 지식베이스는 출처와 기능 조건,\n끝까지 풀어 준 예제, 사용자 검토를 받은 원고, 실패한 문장의 이유를 보존한다.\n기술 정리 역할과 집필·검토 역할은 별도 작업 단계로 수행한다. 여러 에이전트를\n자동으로 만드는 규칙은 아니며, 같은 에이전트의 별도 검토 과정으로도 수행한다.\n\nGoogle의 [독자 기준](https://developers.google.com/tech-writing/one/audience)은\n업무에 필요한 지식과 독자가 이미 가진 지식의 차이를 설명 범위로 삼는다.\nDiátaxis의 [실습 기준](https://diataxis.fr/tutorials/)은 구체적인 행동과 예상 결과를\n연결한다. [OpenAI의 스킬 문서](https://developers.openai.com/codex/skills)는\n재사용할 작업 절차를 지침·참고자료로 묶고 명시적인 입력·출력으로 설계하도록\n안내한다. 세 원문의 적용 절차와 위 검토 기준은 이 프로젝트의 편집 판단이다.\n\n## 제목·요약만으로 무엇을 배우는지 알 수 있는가\n\n2026-10-09 음성 보고서의 사용자 거부는 앞선 독립 Pass가 첫 화면의 이해와 자연스러움을\n충분히 검증하지 못했음을 보여준다. [수정 기록](../VOICE_REPORT_REPAIR.2026-10-09.md)과\n[구체적인 회귀 사례](../../skills/research-teaching/references/substantive-review.md#첫-화면과-비교-기준의-회귀-사례)를 따른다.\n첫 화면 검토에서는 본문을 실제로 제외한다. 명사형 소개를 완결된 문장으로 바꾸고, 독자가\n하려는 작업과 실제 비교 대상을 먼저 밝힌다. 구현 구조와 제품명을 같은 종류의 행으로 섞지 않는다.\n성능·비용·난이도 비교를 약속할 때는 실측·문헌 근거·설계 해석을 구분한다.\n\n제목에는 기술·주제 이름과 평이한 기능·변화·문제를 함께 담는다. 이름이 빠져\n무엇에 관한 글인지 알 수 없는 제목, 낯선 이름만 나열한 제목은 보강한다.\n요약은 본문 밖에서 읽어도 대상, 하는 일, 구체적인 쓰임과 중요한 조건이 전달되어야 한다.\n그림의 번호와 화살표를 읽는 방법이나 사이트 사용 안내로 주제의 답을 대신하지 않는다.\n필요한 도해 설명은 해당 그림의 캡션·접근성 설명에 두고 요약에는 주제의 정보를 담는다.\n본문의 B·호스트·UI 리소스·문맥을 설명 없이 가져오지 않는다.\n\n본문을 읽은 지식으로 요약의 빈칸을 채우지 않는다. 제목·요약만 보고 다시 설명한 답과\n근거 문장을 남기고, 알 수 없는 부분을 실제로 고친다. 본문은 별도로 개념 순서,\n한 사례의 전체 과정과 다른 조건의 문제를 검토한다. 검사표 점수나 글자 수로 대체하지 않는다.\n\n## 내용 검토와 기술 검증을 분리해서 기록\n\n게시 전에는 원고만으로 아래 질문에 답할 수 있는지 검토한다.\n\n1. 독자가 해결할 질문에 이 글이 실제로 답했는가?\n2. 선행 지식을 모르면 어느 문장에서 막히며, 그 부분을 설명했는가?\n3. 주어·대상·조건·단위가 원문과 같은가? 인과관계를 과장하지 않았는가?\n4. 한 예시의 입력·처리·출력이 연결되고 서로 모순되지 않는가?\n5. 결론이 왜 나오는지 설명하며 적용되지 않는 조건도 구분했는가?\n6. 처음의 예시와 다른 상황에 독자가 이 개념을 적용할 수 있는가?\n7. 원문 링크는 근거 확인·심화 학습을 돕는가? 빠진 본문 설명을 대신하지 않는가?\n\n각 질문은 통과 문구를 붙이는 체크박스가 아니라 실제 원고를 고칠 기준이다.\n막힌 문장과 수정 이유를 기록한다. 새 사례에 대한 예상 답은 근거와 함께\n작성하되 실제 독자 시험을 하지 않았다면 독자 검증 완료라고 쓰지 않는다.\n\n현재 `validate_report`는 형식·출처 ID·자료 타입을, `review`는 주택 브리핑의\n운영·출력 상태를 검사한다. 테스트 통과·출처 수·학습 장 수·모바일 넘침 없음은\n독자의 이해를 증명하지 않는다. 자동 검사에는 구조적으로 확인 가능한 부분만\n맡기고 사실 의미·논리·설명 충실도는 원문과 원고를 읽어 검토한다.\n\n보고서 수정 게시 시에는 새 immutable batch와 같은 보고서 ID로 이력을\n남긴다. 앞선 판을 덮어쓰지 않는다. 렌더링·링크·모바일 검증은 내용 검토와\n함께 수행하되 각각의 결과를 구분해 기록한다.\n"
+                },
+                {
+                  "path": "skills/research-teaching/references/substantive-review.md",
+                  "sha256": "2030364c1fc5a9af175b38395fa5e7c14a9471c7a97cae427d616e8bfcbe618b",
+                  "text": "# 질문에 답하는 정보와 설명을 검토하기\n\n## 글마다 독자가 알아야 할 것이 다르다\n\n기술 설명의 독자는 입력이 어떤 과정을 거쳐 결과가 되는지, 다른 방식과 왜 다른지\n이해해야 한다. 실습의 독자는 준비부터 실행·기대 출력·실패 진단까지 따라갈 수 있어야 한다.\n시장 분석의 독자는 관측 대상·기간·단위와 비교 범위, 반대 근거를 보고 자기 판단을 좁혀야 한다.\n행사·지원 안내의 독자는 자신이 어떤 참여 역할과 필수 조건에 해당하는지 선별할 수 있어야 한다.\n원문에 없는 내용은 추가로 조사한다. 같은 목차·문단 수·SDK 코드·퀴즈를 모든 글에 강제하지 않는다.\n\n모델 소개는 [모델 소개 운영 기준](../../../docs/AI_MODEL_RESEARCH.md)에 따른다.\\n가상 활용 사례나 응용 문제를 요구하지 않고 다른 모델과의 비교 및 장단점에 답하는지 확인한다.\\n\\n## 질문과 근거의 공백을 작업 메모에서 찾는다\n\n핵심 질문마다 필요한 자료, 원문에서 확인한 답, 본문의 답 위치, 남은 공백을 연결한다.\n글의 제목이 실제보다 큰 결과를 약속하면 제목과 범위를 조정하거나 그 결과까지 보강한다.\n자료가 부족한 상태에서 익숙한 일반 조언으로 문단을 채우지 않는다.\n\n| 원고의 약속 | 실질 내용의 예 | 그 내용이 없을 때 할 일 |\n| --- | --- | --- |\n| 문서 검색 AI를 이해한다 | 원문 부분·색인·질문·후보·선택·답변의 관계와 버전·권한의 역할 | 검색 과정에 답하는 문서와 후보 출력 확보 |\n| 작은 AI 앱을 만든다 | 모델의 호출 요청, 프로그램 실행, 결과 반환, 최종 답·화면이 끝까지 연결 | 실제 연결을 제공하거나 원리·제작 계획으로 범위 조정 |\n| 비용 표로 모델을 고른다 | 토큰 단가·구독 차감·시도당 비용·성공당 비용의 정의와 계산 | 출처 없는 배율을 예산 사실처럼 쓰지 않고 계산 가능한 범위 설명 |\n| 시장 변화를 판단한다 | 표본·기간·분모·관측 단위·다른 가능한 설명·선택의 조건 | 단일 채용 공고·자가 보고·과거 수입으로 전체 시장을 단정하지 않기 |\n| 지원 기회를 선별한다 | 원문·첨부의 신청 역할, 선행 자격, 일정·재정 조건을 사례에 대입 | 첨부 미열람을 남기고 신청 가능성을 확정하지 않기 |\n\n## 번역과 요약은 의미가 유지되는지 대조한다\n\n행위자, 조건, 수치·단위, 기간, 인과관계의 강도가 보존되는지 확인한다.\n원문이 기능 존재를 말했는데 ‘업무 성과가 향상됐다’로 바꾸거나, 제한된 표본을\n전체 시장으로 확대하지 않는다. 원문 자체가 작동 과정이나 실제 효과에 답하지 않는다면\n문체를 교정할 것이 아니라 자료를 추가한다. 영문 초안과 번역을 대조하지 않았다면\n번역을 직접 원인으로 확정하지 않는다.\n\n## 제목과 요약을 독립적으로 읽는다\n\n제목·요약만 받은 독자가 대상, 하는 일, 쓰임, 중요한 조건을 자기 말로 설명할 수 있는지 본다.\n낯선 이름은 일상적인 기능 설명과 연결한다. 기술 이름을 지우고 모호한 동사만 남기지 않는다.\n‘이 보고서는 설명한다’, ‘검증해야 한다’ 같은 안내 문장을 사실·원리·비교의 대용품으로 쓰지 않는다.\n\n## 본문은 같은 사례의 과정을 추적한다\n\n첫 등장 개념을 먼저 설명하고, 사례의 입력·중간 상태·출력과 각 단계의 이유를 함께 읽는다.\n핵심 설명은 주된 읽기 경로에 둔다. 코드는 앞에서 설명한 값과 과정을 그대로 구현해야 한다.\n제품 호출을 실행하지 않았다면 개념 예시·로컬 모의 실행·실제 서비스 실행을 구분한다.\n배운 내용을 다른 조건에 적용하는 문제에서는 결론뿐 아니라 이유와 본문 근거를 확인한다.\n\n## 첫 화면과 비교 기준의 회귀 사례\n\n2026-10-09 사용자는 독립 검토를 통과한 음성 보고서의 제목과 소개를 다시 거부했다.\n이 사례의 문제는 원문 기능 자체가 없다는 것이 아니라 독자의 질문 대신 집필자의\n검토 동작을 소개하고, 서로 다른 비교 기준을 섞었다는 점이다.\n\n| 거부된 표현·구성 | 실제 실패 | 수정할 정보 |\n| --- | --- | --- |\n| 말로 AI 업무를 실행하는 세 가지 구조와 오류 찾기 | 어떤 앱의 무엇을 추가·선택하는지 모호함 | 기존 AI 앱의 음성 입력·답변·대화 기능이라는 대상과 목적 |\n| 같은 발화를 음성 인식·업무 조회·답변 재생으로 추적한다 | 독자의 필요보다 집필자의 설명 방법부터 나옴 | 키보드 대신 말로 요청하고, 답도 들을지 결정하는 상황 |\n| 이미 만든 텍스트 앱…선택 기준. | 서술어 없는 소개, 무엇을 기준으로 무엇을 고르는지 비어 있음 | 중간 문장을 확인할 필요와 대화 중 조건 변경 같은 실제 조건 |\n| 세 구조 제목 아래 Gemini Live/GPT-Live/Realtime/단계형 네 행 | 공급사 제품과 역할 분담을 같은 종류처럼 비교 | 동일한 역할 분담을 행으로 비교하고 제품 사례를 별도 연결 |\n| 속도·난이도·비용을 설명한다고 약속 | 기능 문서만으로 실측 우열을 알 수 없음 | 맡아야 할 구현 작업과 측정 항목, 실제 확보한 수치의 범위 |\n\n초기 검토는 title/deck/description/summary/highlights만 별도 입력으로 제공한다.\n검토자는 그 문장으로 알 수 있는 대상·문제·대안·쓰임과 추측해야 하는 부분을 구분한다.\n그 뒤 본문에서 제목의 약속, 비교 기준, 설명 순서와 사실 근거를 검토한다.\n이 순서를 수행해도 실제 초보 사람의 이해가 확인된 것으로 부르지 않는다.\n요약에 설명할 내용의 목록만 있고 실제로 알게 되는 정보가 없다면 추가 보강한다.\n\n음성 입력만 추가하는 범위와 STT→AI→TTS 구조는 서로 배타적인 세 구조로 분류할 수 없다.\n전자는 필요한 기능 범위이고 후자는 음성으로 답하는 구현 경로다. 원문을 확인해 비교 기준을\n정한 뒤 원고를 쓴다. '3가지'라는 제목을 유지하려고 실제 내용을 왜곡하지 않는다.\n\n## 독립 에이전트 검토의 실제 기록\n\n위임은 사용자 또는 적용 가능한 지침의 승인 범위에서만 한다. 승인됐다면 검토자에게\n수정된 원고와 필요한 원문을 제공하고, 기대 답이나 ‘통과시켜야 한다’는 압력을 주지 않는다.\n새로운 평가가 목적이면 기존 판정을 답안처럼 제공하지 않는다. 이전 결함의 재검증이면\n그 결함과 수정 범위를 제공할 수 있으며 이를 새 독자의 무정보 시험으로 부르지 않는다.\n\n검토 기록에는 읽은 보고서 ID/판 또는 정확한 파일 hash, 제목·요약 이해, 본문 막힘 위치,\n해결할 누락·과장, 수정 후 재판정을 남긴다. 출력은 Pass / Revise / Evidence gap처럼\n명확히 하되 판단 이유가 본문에 있어야 한다. 분량·구조·인용 수는 합격 근거가 아니다.\n에이전트 검토가 끝나도 실제 사람의 독해·실습 시험을 수행했다고 말하지 않는다.\n\n## 참고한 방법과 적용의 한계\n\n질문하며 자료를 찾는 사전 조사(STORM), 유창성·정확성·인용 지원의 분리(ALCE),\n과제별 내용 기준(WritingBench/DeepResearch Bench), 깊은 설명과 풀이 사례(IES)를 참고했다.\n이 절차 전체나 하나의 집필 프롬프트가 한국어 교재 품질을 보장한다는 실험 결과는 아니다.\n실제 원고의 질문·사례·근거와 검토자의 막힘으로 효과를 확인하고 필요한 지침만 수정한다.\n\n원문: https://aclanthology.org/2024.naacl-long.347/,\nhttps://aclanthology.org/2023.emnlp-main.398/,\nhttps://arxiv.org/html/2503.05244v1,\nhttps://arxiv.org/html/2506.11763v1,\nhttps://ies.ed.gov/ncee/wwc/Docs/PracticeGuide/20072004.pdf.\n"
+                }
+              ]
+            },
+            {
+              "id": "research-report",
+              "kind": "template",
+              "version": "1.0.1",
+              "supports": [
+                "technology",
+                "comparison",
+                "market",
+                "opportunity",
+                "model_introduction",
+                "custom"
+              ],
+              "stages": [
+                "write"
+              ],
+              "sources": [
+                {
+                  "path": "docs/authoring/presentation.md",
+                  "section": "수치 비교 보고서",
+                  "sha256": "f4161db0f905d25e11128feed10d96a153f791bb90f2ee60fae5b5eba1542631",
+                  "text": "## 수치 비교 보고서\n\n기존 수치 보고서 표시를 사용한다. 같은 비교 기준의 표와 실제 수치의 차트를 선택한다. 수치가 없는 개념 설명에 임의 데이터를 만들지 않는다. 공통 화면 계약은 [보고서 화면](../BRIEFING_TEMPLATE.md)에 있다.\n\n"
+                },
+                {
+                  "path": "docs/BRIEFING_TEMPLATE.md",
+                  "section": "Unified typography, 2026-10-09",
+                  "sha256": "59e9506cc40a434ba77fb1f3851037e2b9ddee910e1d45c2c407ed36f43fc800",
+                  "text": "## Unified typography, 2026-10-09\n\nUse the locally packaged full Pretendard Variable v1.3.9 face for Korean, Latin,\nnumbers and punctuation in the shared Editorial shell, main, authored reports,\nnavigation, native model views and model reading companions. Main headings use700,\nsubheadings/emphasis600 and body400. Do not restore text-specific heading subsets:\nnew titles contained Korean glyphs missing from the old subset, and the reported\nUpwork heading actually used Roboto Slab, Noto Serif KR and Malgun Gothic together.\nCSS `font-synthesis:none` prevents simulated weight/style; the variable face\nprovides the actual weights. Code retains its monospace family. Imported originals\ninside isolated model iframes keep their original presentation.\n\nThe unmodified full font and original SIL OFL notice are in\n`housing_watch/assets/editorial/`; see its README for exact provenance/hash. The\nexisting build embeds one font in the shared content-versioned stylesheet, with\nno external font request. Uncompressed CSS grows from347,313 to2,851,316 bytes;\nthis is the cost of complete future Korean coverage and remains shared/cached\nacross pages. Standalone exports remain self-contained.\n\nLocal verification: actual browser font selection on the reported title now\ncontains only Pretendard Variable. All11,172 modern Korean syllables plus sample\nLatin/digits/punctuation select the same face; actual weights700/600 are used.\nAt320/390/1280px,96 font/representative-page checks and253 all34-report/model-\ncompanion/search/disclosure/history checks pass.109 tests,195HTML/9676 internal\nreferences, brief/desk/review and inspected PNG pass; report/history/model data\nand publication order exactly match the pre-change local snapshot. Receipts\nand before/after captures are retained under the existing registered research\nreview roots. App browser connection failed, so visual tests used standalone\nPlaywright/Edge. Optional host/favicon404 remains separately recorded.\n\nSource `4f956357646c12ca8972edb61826f2a6ad2072b2` deployed successfully through\n[Pages37891501551](https://github.com/Hansihoo/signal-desk/actions/runs/37891501551).\nPublic checks at2026-10-09 06:04:56.544319 UTC confirm exact34 current reports,\n122 edition documents,14 original model rows and publication order, matching\nlocal CSS (normalized SHA256 `5f48bd5bff11375877f7b14fea252e3becd3f87dd8f46795d5e2f8b6bc9ba7fc`),\none active font face and the original published license. Actual390px public\nfont/coverage/representative-route/search/disclosure/menu checks all36 pass at\n06:05:03.752 UTC; inspected public title/main screenshots match the intended\nuniform weights. Optional host favicon404 is separate from content errors.\nApp opening returned queued; this is not proof that the user viewed the page.\nThe retained public receipts are `font-weight-public-data-checks.json` and\n`font-weight-public-checks.json`; no reader preference/learning approval claimed.\n\n\n"
+                }
+              ],
+              "output_kind": "report",
+              "artifacts": [
+                {
+                  "path": "housing_watch/editorial.py",
+                  "sha256": "48962242f1a249780861a02b15a0e02f23fddcf9398a69c4ce7f8f3aad33baae"
+                },
+                {
+                  "path": "housing_watch/editorial_shell.html",
+                  "sha256": "51c686c3933942a76a282c20106d211332c08d5ba59dab0a5de9adfe953842fb"
+                },
+                {
+                  "path": "housing_watch/editorial.css",
+                  "sha256": "2ffc886b1f941a55822ff0a77442c37cbda110af5b7832a35e56d01101a31b66"
+                },
+                {
+                  "path": "housing_watch/editorial.js",
+                  "sha256": "d3435dc19709427b81a9b77514c5945cc34402e2dcf60232bb044280e43550b8"
+                },
+                {
+                  "path": "housing_watch/assets/editorial/fonts.css",
+                  "sha256": "44b9b2028cf703cc40c0446093e23aa7d3427015c9f61e6ee164f5c45123df30"
+                },
+                {
+                  "path": "housing_watch/assets/editorial/main.css",
+                  "sha256": "2574c51914d2bdf3d8da8afb4ec41fcbc73adcc12ebac376e26242efa04e33df"
+                },
+                {
+                  "path": "housing_watch/editorial_report.html",
+                  "sha256": "ac134b199a8f3e8255501679b6869c170b1088789c0d0dadcb869fa92aa244d7"
+                },
+                {
+                  "path": "housing_watch/briefing_preview.py",
+                  "sha256": "9432ec00398f5ce9ba1222366502d237e88b87723d54e975ea7780e58f82a463"
+                }
+              ]
+            }
+          ],
+          "requirements": [],
+          "preferences": {
+            "examples": "가상 업무와 활용 예시, SDK/API 실습 코드와 문제를 넣지 않는다.",
+            "opening": "제목 아래 목적, 다음 요약을 둔다.",
+            "tone": "자연스러운 완결된 한국어 문장, 내용을 설명하는 소제목."
+          },
+          "overrides": [],
+          "scope": "document",
+          "status": "planned",
+          "recipe_hash": "e5ee91cb61d0fc3ef28f90938e5980d8847c642c21114d48a76b3f3081508481"
+        },
+        "content_hash": "d888f4b9ebb8679622deed1a79bb6f11c47031f91203df154b1383b4879bf82b"
+      },
+      "first_screen_review": {
+        "input_hash": "d0bf56dcd772a8ddb699ef233ce6d330b99f915fc069682aa8a6645ce5827fdd",
+        "reviewer": "author_self_review; isolated title/description/deck in first-screens.json",
+        "reviewed_at": "2026-10-23",
+        "checks": {
+          "readability": {
+            "passed": true,
+            "reason": "고립된 첫 화면에서 모델의 입력/출력과 비교 목적, 반대 결과와 제공 범위를 설명할 수 있음. Flint의MoE와Olmo의Pooler용어를평이한역할설명으로편집. OlmoEarth 1.3을 이전 모델, AlphaEarth 및 TESSERA와 비교하고, 임베딩과 미세조정의 성능 차이 및 이용 제한을 설명합니다.",
+            "locations": [
+              "/title",
+              "/description",
+              "/deck"
+            ]
+          },
+          "question_answered": {
+            "passed": true,
+            "reason": "고립된 첫 화면에서 모델의 입력/출력과 비교 목적, 반대 결과와 제공 범위를 설명할 수 있음. Flint의MoE와Olmo의Pooler용어를평이한역할설명으로편집. OlmoEarth 1.3을 이전 모델, AlphaEarth 및 TESSERA와 비교하고, 임베딩과 미세조정의 성능 차이 및 이용 제한을 설명합니다.",
+            "locations": [
+              "/title",
+              "/description",
+              "/deck"
+            ]
+          },
+          "reader_outcome": {
+            "passed": true,
+            "reason": "고립된 첫 화면에서 모델의 입력/출력과 비교 목적, 반대 결과와 제공 범위를 설명할 수 있음. Flint의MoE와Olmo의Pooler용어를평이한역할설명으로편집. OlmoEarth 1.3을 이전 모델, AlphaEarth 및 TESSERA와 비교하고, 임베딩과 미세조정의 성능 차이 및 이용 제한을 설명합니다.",
+            "locations": [
+              "/title",
+              "/description",
+              "/deck"
+            ]
+          }
+        },
+        "issues": []
+      },
+      "body_review": {
+        "input_hash": "e5369609bfab31432cadd2c6c87932449dd117c054df9373f1db552229f24c4b",
+        "reviewer": "author_self_review; edited body compared to related sections, PNG and PDF tables",
+        "reviewed_at": "2026-10-23",
+        "checks": {
+          "readability": {
+            "passed": true,
+            "reason": "압축초안을완결된문장으로수정하고pass@1/AUC/mIoU/linear probe/chunk/MoE의역할을본문에추가. 절차형제목/가상업무/실습코드없음.",
+            "locations": [
+              "/draft/report/tables",
+              "/draft/report/explanation",
+              "/draft/report/caveats"
+            ]
+          },
+          "question_answered": {
+            "passed": true,
+            "reason": "22일묶음발표와13일가중치갱신/9월저장소생성을구분. 위성임베딩과생성형LLM역할을분리.",
+            "locations": [
+              "/draft/report/tables",
+              "/draft/report/explanation",
+              "/draft/report/caveats"
+            ]
+          },
+          "reader_outcome": {
+            "passed": true,
+            "reason": "OlmoEarth 1.3을 이전 모델, AlphaEarth 및 TESSERA와 비교하고, 임베딩과 미세조정의 성능 차이 및 이용 제한을 설명합니다.",
+            "locations": [
+              "/draft/report/tables",
+              "/draft/report/explanation",
+              "/draft/report/caveats"
+            ]
+          },
+          "analysis": {
+            "passed": true,
+            "reason": "Table2 PASTIS/PLANTEUR/random/LOIO mIoU와평가/배포벡터차이. 64d PASTIS53.4<TESSERA58.3,finetune rank1.2 4.02<1.3 4.34와pooler5.88,2.1점퇴보. 발표27평가20/18과PDF11평가10/7집합미통합. 이전카드114M/1.1명칭충돌보존. GPU시간53%/18%와요금분리,2023~25/2017~22/남극제외,독자라이선스용도제한/무확인API가격보존.",
+            "locations": [
+              "/draft/report/tables",
+              "/draft/report/explanation",
+              "/draft/report/caveats"
+            ]
+          },
+          "evidence": {
+            "passed": true,
+            "reason": "Ai2 카드, 18쪽 기술보고서의 관련 절과 표, 22일 발표 및 라이선스를 대조했습니다. 공급사 측정이며 실제 위성 처리, 독립 재현, 청구와 사람 독해 시험은 수행하지 않았습니다.",
+            "locations": [
+              "/draft/report/tables",
+              "/draft/report/explanation",
+              "/draft/report/caveats"
+            ]
+          },
+          "factuality": {
+            "passed": true,
+            "reason": "발표/체크포인트등록/갱신/현재확인일을분리. 반대값,표준요금미확인과원문충돌을보존. Table2 PASTIS/PLANTEUR/random/LOIO mIoU와평가/배포벡터차이. 64d PASTIS53.4<TESSERA58.3,finetune rank1.2 4.02<1.3 4.34와pooler5.88,2.1점퇴보. 발표27평가20/18과PDF11평가10/7집합미통합. 이전카드114M/1.1명칭충돌보존. GPU시간53%/18%와요금분리,2023~25/2017~22/남극제외,독자라이선스용도제한/무확인API가격보존.",
+            "locations": [
+              "/draft/report/tables",
+              "/draft/report/explanation",
+              "/draft/report/caveats"
+            ]
+          }
+        },
+        "issues": []
+      },
+      "review_limits": {
+        "scope": "같은 작성자의 첫 화면 및 본문 자체검토. 독립 에이전트/사람시험/실제 모델실행 없음.",
+        "not_performed": [
+          "independent reviewer",
+          "human reader test",
+          "model execution",
+          "billing",
+          "private company data evaluation"
+        ]
+      }
+    }
+  ]
+}

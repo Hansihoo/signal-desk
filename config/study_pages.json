@@ -64,7 +64,9 @@
     "sugar-glider-120b-model-guide",
     "maxwell-model-guide",
     "granite-speech-5-model-guide",
-    "nemotron-3-5-retriever-model-guide"
+    "nemotron-3-5-retriever-model-guide",
+    "recursive-flint-model-guide",
+    "olmoearth-1-3-model-guide"
   ],
   "catalogs": {
     "devops-implementation-guide": "devops_tools.2026-10-10.r4.json"
@@ -181,6 +183,12 @@
     ],
     "nemotron-3-5-retriever-model-guide": [
       "39af19adec1f7471ab6b9558504a7b146e2cfc74c56cbb868a14d95a7ffd9bf9"
+    ],
+    "recursive-flint-model-guide": [
+      "b3391f2ed1238f63aa837b08e8944f85053e68f0600aa941e74818a17da369bd"
+    ],
+    "olmoearth-1-3-model-guide": [
+      "d888f4b9ebb8679622deed1a79bb6f11c47031f91203df154b1383b4879bf82b"
     ]
   },
   "model_introduction_editions": {
@@ -245,6 +253,12 @@
     ],
     "nemotron-3-5-retriever-model-guide": [
       "39af19adec1f7471ab6b9558504a7b146e2cfc74c56cbb868a14d95a7ffd9bf9"
+    ],
+    "recursive-flint-model-guide": [
+      "b3391f2ed1238f63aa837b08e8944f85053e68f0600aa941e74818a17da369bd"
+    ],
+    "olmoearth-1-3-model-guide": [
+      "d888f4b9ebb8679622deed1a79bb6f11c47031f91203df154b1383b4879bf82b"
     ]
   },
   "model_introduction_purpose_editions": {
@@ -298,6 +312,12 @@
     ],
     "nemotron-3-5-retriever-model-guide": [
       "39af19adec1f7471ab6b9558504a7b146e2cfc74c56cbb868a14d95a7ffd9bf9"
+    ],
+    "recursive-flint-model-guide": [
+      "b3391f2ed1238f63aa837b08e8944f85053e68f0600aa941e74818a17da369bd"
+    ],
+    "olmoearth-1-3-model-guide": [
+      "d888f4b9ebb8679622deed1a79bb6f11c47031f91203df154b1383b4879bf82b"
     ]
   },
   "model_introduction_reader_editions": {
@@ -348,6 +368,12 @@
     ],
     "nemotron-3-5-retriever-model-guide": [
       "39af19adec1f7471ab6b9558504a7b146e2cfc74c56cbb868a14d95a7ffd9bf9"
+    ],
+    "recursive-flint-model-guide": [
+      "b3391f2ed1238f63aa837b08e8944f85053e68f0600aa941e74818a17da369bd"
+    ],
+    "olmoearth-1-3-model-guide": [
+      "d888f4b9ebb8679622deed1a79bb6f11c47031f91203df154b1383b4879bf82b"
     ]
   }
 }

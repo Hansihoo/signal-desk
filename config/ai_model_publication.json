@@ -64,6 +64,10 @@
     {
       "id": "ai-model-official-facts-2026-10-22",
       "path": "ai_model_facts.2026-10-22.json"
+    },
+    {
+      "id": "ai-model-official-facts-2026-10-23",
+      "path": "ai_model_facts.2026-10-23.json"
     }
   ]
 }

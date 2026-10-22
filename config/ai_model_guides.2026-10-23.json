@@ -1,0 +1,1190 @@
+{
+  "schema_version": 1,
+  "reports": [
+    {
+      "id": "recursive-flint-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "checked_on": "2026-10-23",
+      "title": "Flint 소개: 로컬 코딩 모델의 성능, 속도와 실행 조건",
+      "description": "Flint를 비슷한 규모의 공개 코딩 모델과 비교하고, 양자화에 따른 점수 차이와 Mac·GPU 실행 조건을 설명합니다.",
+      "deck": "Flint는 코드와 도구 호출을 생성하는 약 398억 파라미터의 공개 언어 모델입니다. 매번 일부 전문가만 계산하는 비슷한 규모의 모델보다 코딩 점수가 높지만, Qwen 3.8보다 낮은 평가도 있습니다. 로컬 생성 속도와 에이전트 문제 해결 능력은 다른 측정이며 무료 호스팅이 모든 운영비를 없애지는 않습니다.",
+      "scope": "21일 공식 BF16 체크포인트의 Initial release를23일 확인한 보완입니다. 블로그 자체의 최초 게시일은 명시적으로 확인하지 못했습니다. 오늘 처음 출시된 모델로 소개하지 않습니다.",
+      "source_note": "Recursive의 발표, 카드, 평가 그림과 실행 문서 및 OpenRouter 공개 요금을 대조했습니다. 공급사 및 경쟁 개발사의 보고값이며 모델 실행, 독립 성능 재현, 청구와 사람 독해 시험은 하지 않았습니다.",
+      "highlights": [
+        "모델과 공개 시점",
+        "상대 장점과 단점",
+        "제공과 비용"
+      ],
+      "summary": [
+        {
+          "label": "모델과 공개 시점",
+          "text": "Flint는 텍스트 입출력, 추론과 여러 차례의 도구 호출을 지원합니다. 공식 BF16 체크포인트는21일 Initial release 기록이 있으며 이번23일에 누락을 보완했습니다. 이전 Flint 공개판 대비의 재평가 수치는 확인하지 못했습니다.",
+          "source_ids": [
+            "card",
+            "release"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "상대 장점과 단점",
+          "text": "BF16의 Terminal-Bench 2.1은54.9%, Qwen 3.6은44.9%입니다. 그러나 Qwen 3.8은73.0%이고 SWE-bench Pro v2도94.9%로 Flint89.7%보다 높습니다. 측정 주체와 인터넷 처리 조건이 달라 모든 작업의 우열로 일반화할 수 없습니다.",
+          "source_ids": [
+            "chart",
+            "launch"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "제공과 비용",
+          "text": "Apache 2.0 가중치와 로컬 실행 경로가 있습니다. rec는 지정된 Apple Silicon과 48GB 이상 메모리가 필요하고, BF16 SGLang 경로는 141GB 이상 GPU를 요구합니다. OpenRouter 무료 경로의 입력·출력 $0 단가와 표준 유료 API 단가 미확인을 구분합니다.",
+          "source_ids": [
+            "card",
+            "runtime",
+            "serve",
+            "pricing"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "tables": [
+        {
+          "id": "specs",
+          "title": "모델 사양과 제공 조건",
+          "columns": [
+            "항목",
+            "확인한 내용"
+          ],
+          "rows": [
+            {
+              "values": [
+                "총 파라미터 / 토큰당 활성",
+                "39.8B / 약2.5B; 활성 본문만 약2.2B"
+              ],
+              "source_ids": [
+                "card",
+                "host",
+                "runtime",
+                "serve"
+              ]
+            },
+            {
+              "values": [
+                "구조",
+                "49층, 256개 routed expert 중6개와 shared expert"
+              ],
+              "source_ids": [
+                "card",
+                "host",
+                "runtime",
+                "serve"
+              ]
+            },
+            {
+              "values": [
+                "문맥",
+                "카드와 호스팅262,144토큰; 블로그 최대512k, 권장256k"
+              ],
+              "source_ids": [
+                "card",
+                "host",
+                "runtime",
+                "serve"
+              ]
+            },
+            {
+              "values": [
+                "호스팅 최대 출력",
+                "공식 문서65,536; OpenRouter top_provider235,929로 불일치"
+              ],
+              "source_ids": [
+                "card",
+                "host",
+                "runtime",
+                "serve"
+              ]
+            },
+            {
+              "values": [
+                "입출력 / 지식 기준",
+                "텍스트 / 카드상2026년6월"
+              ],
+              "source_ids": [
+                "card",
+                "host",
+                "runtime",
+                "serve"
+              ]
+            },
+            {
+              "values": [
+                "라이선스",
+                "Apache 2.0 가중치; 호스팅 조건은 별도"
+              ],
+              "source_ids": [
+                "card",
+                "host",
+                "runtime",
+                "serve"
+              ]
+            }
+          ],
+          "note": "문맥은 입력과 출력, 추론 및 도구 결과가 함께 쓰는 한도입니다. 발표의512k를 모든 실행 경로에서 검증한 한도로 쓰지 않습니다."
+        },
+        {
+          "id": "agent",
+          "title": "다른 모델과의 코딩 에이전트 평가",
+          "columns": [
+            "모델",
+            "Terminal-Bench 2.1 %",
+            "SWE-bench Pro v2 %",
+            "Verified %"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Flint BF16",
+                "54.9",
+                "89.7",
+                "74.2"
+              ],
+              "source_ids": [
+                "chart"
+              ]
+            },
+            {
+              "values": [
+                "Flint NVFP4",
+                "53.7",
+                "88.5",
+                "74.1"
+              ],
+              "source_ids": [
+                "chart"
+              ]
+            },
+            {
+              "values": [
+                "Qwen 3.5 (도표 약칭)",
+                "38.7",
+                "68.6",
+                "69.2"
+              ],
+              "source_ids": [
+                "chart"
+              ]
+            },
+            {
+              "values": [
+                "Qwen 3.6 (도표 약칭)",
+                "44.9",
+                "73.8",
+                "73.4"
+              ],
+              "source_ids": [
+                "chart"
+              ]
+            },
+            {
+              "values": [
+                "Laguna XS 2.1",
+                "24.7",
+                "38.6",
+                "70.9"
+              ],
+              "source_ids": [
+                "chart"
+              ]
+            },
+            {
+              "values": [
+                "Qwen 3.8 (도표 약칭)",
+                "73.0",
+                "94.9",
+                "75.6"
+              ],
+              "source_ids": [
+                "chart"
+              ]
+            },
+            {
+              "values": [
+                "Muse Glimmer",
+                "51.7",
+                "86.0",
+                "76.0"
+              ],
+              "source_ids": [
+                "chart"
+              ]
+            },
+            {
+              "values": [
+                "Gemma 4 (도표 약칭)",
+                "43.4",
+                "61.7",
+                "66.6"
+              ],
+              "source_ids": [
+                "chart"
+              ]
+            }
+          ],
+          "note": "높을수록 좋습니다. Flint는 temperature 1.0, top-p 0.95, top-k 20, 평균 pass@1 최소 5회, agent 제한 최대 5시간입니다. pass@1은 한 번의 시도에서 해결한 비율이며 여기서는 여러 시도의 평균입니다. Terminal은 Terminus 2 XML과 인터넷을 사용하지만 검색으로 얻은 해답은 실패로 처리합니다. SWE는 mini-swe-agent와 인터넷 없는 조건입니다. Pro v2의 모든 값과 Laguna의 Terminal 및 Qwen 3.8의 Verified는 Recursive 측정이며, 다른 경쟁값은 개발사 보고입니다. 정확한 체크포인트 ID와 모든 경쟁 설정은 그림에 없습니다."
+        },
+        {
+          "id": "single",
+          "title": "단일 턴 코딩과 지시 이행",
+          "columns": [
+            "모델",
+            "LiveCodeBench v6 %",
+            "IFBench %",
+            "IFEval %"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Flint BF16",
+                "80.3",
+                "89.2",
+                "95.1"
+              ],
+              "source_ids": [
+                "chart"
+              ]
+            },
+            {
+              "values": [
+                "Flint NVFP4",
+                "80.8",
+                "88.1",
+                "94.6"
+              ],
+              "source_ids": [
+                "chart"
+              ]
+            },
+            {
+              "values": [
+                "Qwen 3.5 (도표 약칭)",
+                "74.6",
+                "70.2",
+                "91.9"
+              ],
+              "source_ids": [
+                "chart"
+              ]
+            },
+            {
+              "values": [
+                "Qwen 3.6 (도표 약칭)",
+                "80.4",
+                "67.9",
+                "89.6"
+              ],
+              "source_ids": [
+                "chart"
+              ]
+            },
+            {
+              "values": [
+                "Laguna XS 2.1",
+                "49.5",
+                "34.4",
+                "73.7"
+              ],
+              "source_ids": [
+                "chart"
+              ]
+            },
+            {
+              "values": [
+                "Qwen 3.8 (도표 약칭)",
+                "90.3",
+                "79.5",
+                "94.6"
+              ],
+              "source_ids": [
+                "chart"
+              ]
+            },
+            {
+              "values": [
+                "Muse Glimmer",
+                "63.5",
+                "77.0",
+                "94.7"
+              ],
+              "source_ids": [
+                "chart"
+              ]
+            },
+            {
+              "values": [
+                "Gemma 4 (도표 약칭)",
+                "80.0",
+                "76.0",
+                "94.6"
+              ],
+              "source_ids": [
+                "chart"
+              ]
+            }
+          ],
+          "note": "Flint는 단일 턴 평균 pass@1 5회입니다. Laguna의 세 값, Muse의 LiveCodeBench/IFEval, Qwen 3.8의 IFEval은 Recursive 측정 표시가 있고, 나머지 경쟁값은 개발사 보고입니다. 서로 다른 시험을 평균 내 업무 성공률로 사용하지 않습니다."
+        },
+        {
+          "id": "throughput",
+          "title": "M4 Pro에서의 생성 속도",
+          "columns": [
+            "모델·실행 경로",
+            "1K 입력 토큰/초",
+            "128K 세션 평균 토큰/초"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Flint MLX",
+                "131.22",
+                "68.89"
+              ],
+              "source_ids": [
+                "speed"
+              ]
+            },
+            {
+              "values": [
+                "Flint llama.cpp",
+                "87.98",
+                "47.58"
+              ],
+              "source_ids": [
+                "speed"
+              ]
+            },
+            {
+              "values": [
+                "Laguna XS 2.1 33B-A3B",
+                "68.84",
+                "39.60"
+              ],
+              "source_ids": [
+                "speed"
+              ]
+            },
+            {
+              "values": [
+                "Qwen3.6 35B-A3B",
+                "65.55",
+                "37.13"
+              ],
+              "source_ids": [
+                "speed"
+              ]
+            },
+            {
+              "values": [
+                "Qwen3.8 27B",
+                "13.01",
+                "10.11"
+              ],
+              "source_ids": [
+                "speed"
+              ]
+            },
+            {
+              "values": [
+                "Muse Glimmer 30B",
+                "14.54",
+                "12.61"
+              ],
+              "source_ids": [
+                "speed"
+              ]
+            }
+          ],
+          "note": "48GiB M4 Pro의 공급사 측정이며 입력 처리(prefill)는 제외합니다. 세션 값은 문맥이 늘어나는 과정의 속도 곡선을 정규화한 AUC이며 Muse는 124K까지입니다. 속도 그림의 양자화 조건과 BF16 코딩 평가는 별도입니다."
+        },
+        {
+          "id": "price",
+          "title": "공개 호스팅 경로 요금",
+          "columns": [
+            "경로 ID",
+            "입력 USD/100만토큰",
+            "출력 USD/100만토큰",
+            "성격"
+          ],
+          "rows": [
+            {
+              "values": [
+                "recursive/flint-v1.0:free",
+                "0",
+                "0",
+                "제한 있는 무료 경로"
+              ],
+              "source_ids": [
+                "pricing"
+              ]
+            },
+            {
+              "values": [
+                "qwen/qwen3.8-27b",
+                "0.04",
+                "1.35",
+                "OpenRouter 게시 요금"
+              ],
+              "source_ids": [
+                "pricing"
+              ]
+            },
+            {
+              "values": [
+                "google/gemma-4-31b-it",
+                "0.2",
+                "0.4",
+                "OpenRouter 게시 요금"
+              ],
+              "source_ids": [
+                "pricing"
+              ]
+            }
+          ],
+          "note": "2026-10-23 확인. 원문의 토큰당 USD에100만을 곱했습니다. 무료 경로의 용량·속도·데이터 정책과 유료 경로의 제공사 선택을 따로 확인해야 합니다. Recursive의 일반 유료 API 표준 단가는 미확인입니다."
+        }
+      ],
+      "explanation": [
+        {
+          "id": "overview",
+          "title": "모델 개요와 기존 방식의 차이",
+          "lead": "Flint는 모델이며, 코드와 도구 요청을 실제로 실행하는 프로그램은 별도입니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "작은 활성 규모와 전체 메모리",
+              "text": "MoE는 토큰마다 일부 전문가만 계산하는 구조입니다. Flint는 총39.8B 가운데 출력 head를 포함해 약2.5B를 활성화합니다. 연산량이 작다는 사실이 전체 가중치까지2.5B만 저장한다는 뜻은 아닙니다. 코드 실행, 파일 수정과 시험 결과의 회신은 연결된 에이전트 실행기가 담당합니다.",
+              "source_ids": [
+                "card",
+                "host"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "이전 모델과의 관계",
+              "text": "공식 발표는 Flint를 처음부터 학습한 출발점으로 설명합니다. 이전 공개 Flint 판과 같은 조건의 점수는 확인되지 않아 향상률을 만들지 않았습니다. 비교 대상으로는 발표가 제시한33~35B MoE군과27~31B dense군을 사용했습니다. 발표에 함께 나온 Eureka Machine은 모델을 만든 연구 시스템이며 Flint 자체의 도구 실행기와 다릅니다.",
+              "source_ids": [
+                "launch",
+                "chart"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "strengths",
+          "title": "장점: 작은 MoE군의 코딩 성능과 로컬 선택권",
+          "lead": "비교표에서 확인한 강점은 작업과 실행 조건을 함께 붙여 읽어야 합니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "코딩 평가에서의 상대 성능",
+              "text": "Flint BF16은 Terminal-Bench에서 Qwen 3.6보다 10.0포인트, SWE-bench Pro v2에서 15.9포인트 높습니다. IFBench 89.2도 그림의 모든 비교 모델보다 높습니다. 다만 이는 공급사 공개 비교이며, 같은 에이전트 설정으로 모든 경쟁 모델을 다시 실행한 독립 검증을 뜻하지 않습니다.",
+              "source_ids": [
+                "chart",
+                "launch"
+              ],
+              "kind": "judgment"
+            },
+            {
+              "type": "paragraph",
+              "title": "양자화판의 비교적 작은 점수 차이",
+              "text": "NVFP4는 BF16보다 Terminal 54.9→53.7, Pro 89.7→88.5, Verified 74.2→74.1로 낮아집니다. LiveCodeBench는 80.3→80.8로 오히려 높습니다. 여섯 지표의 평균 차이는 약 0.60포인트지만, 각 평가의 손실이 모두 0.7 이하라는 뜻은 아닙니다. 양자화가 모든 과제에서 동일하게 작동한다고 볼 수 없습니다.",
+              "source_ids": [
+                "chart",
+                "launch"
+              ],
+              "kind": "judgment"
+            },
+            {
+              "type": "paragraph",
+              "title": "자체 실행과 빠른 생성",
+              "text": "M4 Pro의 MLX 경로는 1K 입력에서 131.22토큰/초, 128K 세션 평균은 68.89입니다. 같은 그림의 Flint llama.cpp는 87.98/47.58입니다. 별도 rec 저장소의 1K~252K 실험은 4비트, 출력 1,024토큰, 문맥별 5회이며 입력 처리(prefill)를 제외합니다. 서로 다른 실행기와 문맥을 섞어 하나의 고정 속도로 표시하지 않습니다.",
+              "source_ids": [
+                "speed",
+                "runtime"
+              ],
+              "kind": "judgment"
+            }
+          ]
+        },
+        {
+          "id": "weaknesses",
+          "title": "단점과 비교의 한계",
+          "lead": "속도 우위가 더 높은 문제 해결률이나 낮은 전체 지연을 보장하지 않습니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "더 큰 dense 모델에 뒤지는 평가",
+              "text": "Flint의 Terminal 54.9는 Qwen 3.8의 73.0보다 18.1포인트 낮고, Pro 89.7도 94.9보다 낮습니다. Verified 74.2는 Muse Glimmer 76.0보다 낮고, LiveCodeBench 80.3은 Qwen 3.6의 80.4보다도 조금 낮습니다. 공개 그림이 지지하는 결론은 작은 MoE군의 경쟁력이지 모든 공개 코딩 모델의 1위가 아닙니다.",
+              "source_ids": [
+                "chart"
+              ],
+              "kind": "judgment"
+            },
+            {
+              "type": "paragraph",
+              "title": "긴 추론과 실제 작업 지연",
+              "text": "짧은 문맥에서의 생성 속도는 입력 처리, 여러 도구 호출, 재시도와 긴 추론의 시간을 포함하지 않습니다. 공급사도 복잡한 작업에서는 더 큰 비공개 모델보다 명시적인 지도가 필요할 수 있다고 설명합니다. 도구 요청의 문법 지원은 안전한 행동 선택이나 권한 준수를 보장하지 않습니다.",
+              "source_ids": [
+                "launch",
+                "card",
+                "speed"
+              ],
+              "kind": "judgment"
+            },
+            {
+              "type": "paragraph",
+              "title": "문맥과 출력 한도의 불일치",
+              "text": "카드와 공식 호스팅 문서는 262,144토큰 문맥을 제시하고, 블로그는 최대 512k와 권장 256k를 설명합니다. 공식 호스팅 최대 출력 65,536과 OpenRouter top_provider의 235,929도 다릅니다. 정확한 실행 경로와 현재 제공자 조건으로 다시 확인해야 하며, 더 큰 값을 전체 경로의 확정 사양으로 쓰지 않습니다.",
+              "source_ids": [
+                "launch",
+                "host",
+                "pricing"
+              ],
+              "kind": "judgment"
+            }
+          ]
+        },
+        {
+          "id": "availability",
+          "title": "가격과 실행 조건",
+          "lead": "라이선스, 하드웨어와 클라우드 서비스의 조건은 서로 다릅니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "Mac과 BF16 서버의 차이",
+              "text": "rec는 M4 Pro, M5 Pro/Max와 48GB 이상 통합 메모리, 약 30GB 여유 저장 공간을 요구합니다. 단일 세션에 최적화돼 동시 에이전트 수용량은 별도 문제입니다. BF16 SGLang 키트는 B300/B200 또는 H200의 141GB 이상 GPU를 요구하며 80GB GPU는 지원하지 않습니다. 가중치 약 80GB와 이미지 약 50GB, CUDA 13 계열 조건도 제시합니다. 일반 노트북 전체에 적용되는 실행 약속이 아닙니다.",
+              "source_ids": [
+                "runtime",
+                "serve"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "무료 경로와 유료 표준 단가",
+              "text": "공식 문서는 OpenCode/OpenRouter 경로와 일부 파트너만 가능한 직접 Recursive API를 구분합니다. 23일 OpenRouter에는 recursive/flint-v1.0:free가 입력과 출력 모두 $0으로 게시돼 있지만 이는 특정 무료 경로입니다. 용량과 속도 제한, 데이터 처리 정책과 서비스 지속성을 포함한 기업 계약을 대신하지 않습니다. 자체 실행에는 장비, 전력과 운영 비용이 듭니다.",
+              "source_ids": [
+                "access",
+                "pricing",
+                "card"
+              ],
+              "kind": "judgment"
+            }
+          ]
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "선택 기준",
+            "text": "Flint는 지정된 로컬 장비에서 공개 가중치와 코딩 성능을 함께 비교할 후보입니다. Qwen3.8의 더 높은 문제 해결 점수와 Flint의 빠른 생성, 실제 장비·문맥 및 에이전트 실행기의 차이를 함께 비교해야 합니다. 수치가 좋은 정밀도와 속도가 빠른 정밀도를 하나의 실행처럼 합치지 않았습니다.",
+            "source_ids": [
+              "chart",
+              "speed",
+              "runtime"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "23일 공식 원문과 그림을 읽었습니다.21일 체크포인트 등록을 오늘 출시로 바꾸지 않았으며 모든 경쟁 모델의 체크포인트/추론 설정과 호스팅 한도 충돌은 미확인 범위로 남겼습니다. 실제 모델 실행, 청구, 독립 재현과 사람 시험은 수행하지 않았습니다.",
+          "source_ids": [
+            "release",
+            "chart",
+            "host",
+            "pricing"
+          ]
+        }
+      ],
+      "references": [
+        {
+          "id": "launch",
+          "title": "Recursive의 Flint 발표",
+          "url": "https://www.recursive.com/updates/introducing-recursive-flint",
+          "description": "구조, 평가 설정, 양자화와 512k/권장256k 조건을 설명합니다."
+        },
+        {
+          "id": "card",
+          "title": "Flint 모델 카드",
+          "url": "https://huggingface.co/RecursiveSI/flint",
+          "description": "BF16 사양, 정밀도별 평가와 실행 제약을 제공합니다."
+        },
+        {
+          "id": "chart",
+          "title": "BF16와 NVFP4 평가 그림",
+          "url": "https://huggingface.co/RecursiveSI/flint/resolve/main/assets/flint_benchmarks_nvfp4.png",
+          "description": "비교 모델과 여섯 평가, 측정 주체 표시를 직접 확인했습니다."
+        },
+        {
+          "id": "speed",
+          "title": "로컬 생성 속도 그림",
+          "url": "https://framerusercontent.com/images/5t7vbDk5jkbHiOHKkSzJDzhgz4.png?scale-down-to=2048",
+          "description": "Mac과 RTX Spark의 문맥별 생성 속도를 비교합니다."
+        },
+        {
+          "id": "runtime",
+          "title": "rec 공식 저장소",
+          "url": "https://github.com/recursive-oss/rec",
+          "description": "지원 Mac과 메모리, 단일 세션 측정 조건을 제공합니다."
+        },
+        {
+          "id": "serve",
+          "title": "SGLang 실행 조건",
+          "url": "https://huggingface.co/RecursiveSI/flint/blob/main/sglang/README.md",
+          "description": "BF16의 GPU 메모리와 드라이버 및 저장 공간 조건입니다."
+        },
+        {
+          "id": "host",
+          "title": "Flint 공식 제공 문서",
+          "url": "https://docs.recursive.com/models/flint",
+          "description": "호스팅 문맥과 최대 출력, 로컬 설정의 차이를 설명합니다."
+        },
+        {
+          "id": "release",
+          "title": "공식 체크포인트 이력",
+          "url": "https://huggingface.co/RecursiveSI/flint/commits/main",
+          "description": "21일 Initial release를 확인했습니다."
+        },
+        {
+          "id": "access",
+          "title": "공식 제공 경로",
+          "url": "https://docs.recursive.com/resources/releases",
+          "description": "직접 API는 일부 파트너, 클라우드는 별도 파트너 경로입니다."
+        },
+        {
+          "id": "pricing",
+          "title": "OpenRouter 공개 모델 및 요금 목록",
+          "url": "https://openrouter.ai/api/v1/models",
+          "description": "무료 Flint 경로와 비교 모델의 토큰당 USD를 확인했습니다."
+        }
+      ]
+    },
+    {
+      "id": "olmoearth-1-3-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "checked_on": "2026-10-23",
+      "title": "OlmoEarth 1.3 소개: 위성 임베딩 성능과 공개 범위",
+      "description": "OlmoEarth 1.3을 이전 모델, AlphaEarth 및 TESSERA와 비교하고, 임베딩과 미세조정의 성능 차이 및 이용 제한을 설명합니다.",
+      "deck": "OlmoEarth 1.3은 위성 영상과 시계열을 64 또는 128차원의 숫자 벡터로 바꾸는 지구 관측 모델입니다. 일부 농작물 분할 평가에서 경쟁 임베딩보다 높지만, 64차원으로 줄이거나 정보를 집약하는 구성요소를 붙이면 성능이 낮아지는 과제도 있습니다. 공개 데이터의 연도별 범위와 용도 제한을 확인해야 합니다.",
+      "scope": "22일의 모델·연간 임베딩·탐색기 묶음 발표를23일 검토했습니다. 가중치의13일 갱신과9월 저장소 생성을22일 최초 공개로 간주하지 않습니다. 생성형 LLM의 코딩 순위와 비교하지 않습니다.",
+      "source_note": "Ai2 카드, 18쪽 기술보고서의 관련 절과 표, 22일 발표 및 라이선스를 대조했습니다. 공급사 측정이며 실제 위성 처리, 독립 재현, 청구와 사람 독해 시험은 수행하지 않았습니다.",
+      "highlights": [
+        "역할과 변화",
+        "장점과 반대 결과",
+        "공개 범위와 조건"
+      ],
+      "summary": [
+        {
+          "label": "역할과 변화",
+          "text": "이전 OlmoEarth가 작업별 미세조정을 중심으로 제공됐다면1.3은 여러 시간과 센서의 정보를 한 장소의 작은 벡터로 모으는 데 초점을 맞춥니다. 준비된 연간 벡터를 재사용할 수 있어 매번 위성 모델 전체를 실행하는 부담을 줄일 수 있습니다.",
+          "source_ids": [
+            "launch",
+            "paper"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "장점과 반대 결과",
+          "text": "128차원의 PLANTEUR 미관측 섬 분할 점수는mIoU24.9로 TESSERA19.1보다 높습니다. 하지만64차원 PASTIS는53.4로 TESSERA58.3보다 낮습니다. 미세조정의 전체 평균 순위도1.2의4.02보다1.3의4.34가 낮은 성능입니다.",
+          "source_ids": [
+            "paper"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "공개 범위와 조건",
+          "text": "2023~2025년은 육지와 인접 해역의 전지구 범위이고, 2017~2022년은 일부 국가가 제공됩니다. 남극은 포함되지 않습니다. 자체 라이선스에 군사·방위, 감시·치안 및 자원 채취 등의 제한이 있고, 표준 호스팅 API 단가는 확인하지 못했습니다.",
+          "source_ids": [
+            "launch",
+            "paper",
+            "license"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "tables": [
+        {
+          "id": "specs",
+          "title": "모델과 자료의 사양",
+          "columns": [
+            "항목",
+            "내용"
+          ],
+          "rows": [
+            {
+              "values": [
+                "모델",
+                "ViT 백본 128M, Perceiver 14.3M, 선형 학생 0.1M"
+              ],
+              "source_ids": [
+                "card",
+                "paper",
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "입력",
+                "Sentinel-1, Sentinel-2, Landsat 영상 또는 시계열"
+              ],
+              "source_ids": [
+                "card",
+                "paper",
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "임베딩",
+                "10m 공간 해상도, 128차원 또는 앞 64차원"
+              ],
+              "source_ids": [
+                "card",
+                "paper",
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "시간 단위",
+                "1년 영상을 모은 연간 벡터; 실시간 영상이 아님"
+              ],
+              "source_ids": [
+                "card",
+                "paper",
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "공개 범위",
+                "2023~2025년 육지와 인접 해역, 2017~2022년 일부 국가"
+              ],
+              "source_ids": [
+                "card",
+                "paper",
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "표준 API 단가",
+                "미확인; 가중치·공개 데이터와 호스팅 비용 구분"
+              ],
+              "source_ids": [
+                "card",
+                "paper",
+                "launch"
+              ]
+            }
+          ],
+          "note": "카드의 128M은 백본 규모이며 추가 구성요소를 뺀 전체 모델 규모로 쓰지 않습니다. 1.2 카드 본문의 1.1 명칭과 114M 표기는 1.3 기술보고서의 동일 백본 설명과 맞지 않아 확정 규모 비교에서 제외했습니다."
+        },
+        {
+          "id": "crop",
+          "title": "경쟁 임베딩의 농작물 분할 평가",
+          "columns": [
+            "모델",
+            "차원",
+            "PASTIS random",
+            "PLANTEUR random",
+            "PLANTEUR 미관측 섬"
+          ],
+          "rows": [
+            {
+              "values": [
+                "AlphaEarth Foundations",
+                "64",
+                "39.1",
+                "27.7",
+                "15.8"
+              ],
+              "source_ids": [
+                "paper"
+              ]
+            },
+            {
+              "values": [
+                "TESSERA v2 Large",
+                "128",
+                "58.3",
+                "34.2",
+                "19.1"
+              ],
+              "source_ids": [
+                "paper"
+              ]
+            },
+            {
+              "values": [
+                "OlmoEarth v1.3 distilled 128d",
+                "128",
+                "58.6",
+                "36.7",
+                "24.9"
+              ],
+              "source_ids": [
+                "paper"
+              ]
+            },
+            {
+              "values": [
+                "OlmoEarth v1.3 distilled 64d",
+                "64",
+                "53.4",
+                "35.2",
+                "21.5"
+              ],
+              "source_ids": [
+                "paper"
+              ]
+            }
+          ],
+          "note": "기술보고서 Table 2의 mIoU %이며 높을수록 좋습니다. mIoU는 예측 영역과 정답 영역이 겹치는 정도를 종류별로 평균한 값입니다. 연간 임베딩과 라벨 연도 정렬, 배포 양자화, 같은 linear probe(고정된 벡터 위에서 분류기만 학습) 조건입니다. 미관측 섬은 다른 섬으로 분류기를 학습한 leave-one-island-out입니다. 평가 자료와 실제 공개 Searchlight 자료는 비트 단위로 동일하지 않습니다."
+        },
+        {
+          "id": "previous",
+          "title": "이전 모델과의 미세조정 평가",
+          "columns": [
+            "모델",
+            "전체 평균 순위",
+            "연구 과제",
+            "파트너 과제"
+          ],
+          "rows": [
+            {
+              "values": [
+                "OlmoEarth v1 Base",
+                "4.74",
+                "7.30",
+                "3.03"
+              ],
+              "source_ids": [
+                "paper"
+              ]
+            },
+            {
+              "values": [
+                "OlmoEarth v1.2 Base",
+                "4.02",
+                "2.60",
+                "4.97"
+              ],
+              "source_ids": [
+                "paper"
+              ]
+            },
+            {
+              "values": [
+                "OlmoEarth v1.3 Base (pooler 없음)",
+                "4.34",
+                "4.50",
+                "4.23"
+              ],
+              "source_ids": [
+                "paper"
+              ]
+            },
+            {
+              "values": [
+                "OlmoEarth v1.3 Base + pooler",
+                "5.88",
+                "미표기",
+                "미표기"
+              ],
+              "source_ids": [
+                "paper"
+              ]
+            }
+          ],
+          "note": "기술보고서 3.2.2와 Table 4의 값이며 낮을수록 좋습니다. 누락된 모델과 과제 조합은 제외합니다. 순위는 정답률이 아니며 연구 과제와 파트너 과제의 대상이 달라 두 열을 직접 비교하지 않습니다."
+        },
+        {
+          "id": "conditions",
+          "title": "임베딩 크기와 제공 조건",
+          "columns": [
+            "대상",
+            "전송/보관 단위",
+            "비용·제약"
+          ],
+          "rows": [
+            {
+              "values": [
+                "1.3 128차원",
+                "256×256 타일 전송 6.05MB",
+                "공개 데이터, 전체 연간 약 150TB; 대량 다운로드 부담"
+              ],
+              "source_ids": [
+                "paper"
+              ]
+            },
+            {
+              "values": [
+                "1.3 64차원",
+                "같은 타일 3.04MB",
+                "전송 절감과 일부 분할 성능 손실을 함께 고려"
+              ],
+              "source_ids": [
+                "paper"
+              ]
+            },
+            {
+              "values": [
+                "직접 모델 실행",
+                "패치와 입력 해상도, 장비별로 다름",
+                "표준 호스팅 요금과 최소 운영비 미확인"
+              ],
+              "source_ids": [
+                "paper",
+                "card"
+              ]
+            },
+            {
+              "values": [
+                "라이선스",
+                "OlmoEarth Artifact License",
+                "용도 제한과 파생물 재배포 조건"
+              ],
+              "source_ids": [
+                "license"
+              ]
+            }
+          ],
+          "note": "3.04/6.05MB는 실제 전송량이며 압축 해제 후 한 chunk는 4.19MB입니다. chunk는 저장소가 전송하는 최소 묶음으로, 픽셀 하나를 조회해도 이 묶음을 받아야 합니다. 벡터 차원만으로 통신비를 계산하지 않습니다."
+        }
+      ],
+      "explanation": [
+        {
+          "id": "overview",
+          "title": "모델 개요와 이전 모델 대비 변화",
+          "lead": "위성 임베딩은 한 장소의 특징을 숫자로 압축한 표현입니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "시간과 센서의 결합",
+              "text": "위성은 센서별로 보는 정보와 관측 시점이 다릅니다. 1.3은 ViT가 만든 시간과 센서별 토큰을 Attention Pooler로 합치고, 768차원의 특징을 선형 학생으로 128차원에 압축합니다. 앞 64차원도 단독으로 쓰도록 학습했습니다. 위치별 벡터 위에 작은 분류기를 학습할 수 있지만, 벡터 자체가 토지 종류나 변화 원인을 확정한 정답은 아닙니다.",
+              "source_ids": [
+                "paper",
+                "card"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "미세조정 중심에서 재사용 가능한 벡터로",
+              "text": "1.3은 이전 1.2와 같은 백본을 바탕으로 집약기와 증류를 추가했습니다. 논문은 학습에 사용한 GPU 시간이 1.2의 53%, 1의 18%라고 설명합니다. 이는 각각 47%와 82% 절감이라는 상대 비교이며 서비스 요금이 같은 비율로 줄었다는 뜻이 아닙니다. 이미 계산한 연간 임베딩은 추론을 되풀이하는 비용을 줄이는 다른 제공 방식입니다.",
+              "source_ids": [
+                "paper"
+              ],
+              "kind": "judgment"
+            }
+          ]
+        },
+        {
+          "id": "strengths",
+          "title": "장점: 재사용과 지리적 일반화",
+          "lead": "전체 모델을 실행하지 않고 준비된 자료를 사용하는 선택지가 생겼습니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "미관측 지역의 상대 성능",
+              "text": "PLANTEUR는 프랑스 해외 지역의 섬을 나눠 일부 섬으로 학습하고 다른 섬에서 시험합니다. 1.3의 128차원 24.9 mIoU는 TESSERA의 19.1보다 5.8포인트 높고, 64차원 21.5도 높습니다. 이는 평가한 섬과 작물 분류의 결과이며 한국의 모든 농경지나 새 연도의 정확도를 보장하지 않습니다.",
+              "source_ids": [
+                "paper"
+              ],
+              "kind": "judgment"
+            },
+            {
+              "type": "paragraph",
+              "title": "해상도와 계산량의 분리",
+              "text": "Attention Pooler는 20m 간격으로 입력을 토큰화하더라도 10m 출력 벡터를 만들 수 있게 합니다. 보고서의 16×16 공간, 12시점, 세 센서 조건에서 패치 2는 308GMACs, 패치 1은 2,396GMACs입니다. GMACs는 곱셈과 덧셈 연산의 양을 나타내며 요금이나 처리 시간은 아닙니다. PASTIS 검증 mIoU는 각각 59.8과 60.2로 달라 작은 계산량에서 정확도가 완전히 같다는 주장도 아닙니다.",
+              "source_ids": [
+                "paper"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "연간 자료와 추적 가능성",
+              "text": "원본 장면과 모델, 연도 및 입력 처리를 추적할 수 있는 출처 기록(provenance)이 공개됩니다. 64차원은 저장뿐 아니라 차원별 chunk 분할 덕분에 전송량도 줄입니다. 그러나 자료의 연도와 공간 범위, 조회 단위 및 입력 영상의 차이를 함께 확인해야 합니다.",
+              "source_ids": [
+                "paper",
+                "data"
+              ],
+              "kind": "judgment"
+            }
+          ]
+        },
+        {
+          "id": "weaknesses",
+          "title": "단점과 평가 범위",
+          "lead": "임베딩에 유리한 설계가 모든 미세조정 과제에도 유리하지는 않습니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "축소와 집약에서의 성능 손실",
+              "text": "PASTIS에서 64차원 53.4는 128차원 58.6보다 낮고 TESSERA 58.3에도 못 미칩니다. 논문은 일부 Ethiopia 작물 평가에서도 TESSERA가 더 높다고 설명합니다. 고정 백본의 kNN/linear probe 과제에서는 pooler 추가로 평균 2.1포인트 퇴보했고, 미세조정 평균 순위는 pooler 없는 4.34에서 있는 5.88로 나빠집니다. 합칠 시간과 센서 정보가 적은 과제에서 부담과 손실이 커집니다.",
+              "source_ids": [
+                "paper"
+              ],
+              "kind": "judgment"
+            },
+            {
+              "type": "paragraph",
+              "title": "이전판과의 교환 관계",
+              "text": "전체 미세조정 평균 순위는 1.2가 4.02로 1.3의 4.34보다 좋습니다. 1.3은 파트너 과제 4.23으로 1.2의 4.97보다 좋지만, 1의 3.03보다는 낮은 성능입니다. 집계 대상과 실험 방법이 바뀌면 순위도 바뀌므로 새 판이 이전 판을 전면 대체한다고 결론내리지 않습니다.",
+              "source_ids": [
+                "paper"
+              ],
+              "kind": "judgment"
+            },
+            {
+              "type": "paragraph",
+              "title": "발표의27개와 보고서의11개",
+              "text": "22일 발표는 27개 평가 중 128차원 20개, 64차원 18개의 최고점을 주장합니다. 확보한 기술보고서는 kNN-20 기준 11개에서 10개와 7개를 설명합니다. 집계 구성과 분모가 달라 한 숫자로 합치지 않았습니다. 비교표에는 직접 읽은 Table 2와 3.2.2의 조건을 사용합니다. 실제 배포 벡터는 Searchlight 처리를 쓰므로 평가용 타일링 벡터와 비트 단위로 동일하지 않다는 한계도 있습니다.",
+              "source_ids": [
+                "launch",
+                "paper"
+              ],
+              "kind": "judgment"
+            },
+            {
+              "type": "paragraph",
+              "title": "전체 지구와 모든 연도는 다름",
+              "text": "출시 자료의 2023~2025년은 육지와 인접 해역 범위이고 남극은 제외합니다. 2017~2022년은 일부 국가만 제공 중입니다. 2017~2025년 슬롯이 존재한다는 것은 모든 지역과 연도가 이미 채워졌다는 뜻이 아닙니다. 연간 벡터는 현재 발생한 변화를 즉시 반영하는 실시간 모델이 아닙니다.",
+              "source_ids": [
+                "launch",
+                "paper"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "availability",
+          "title": "가격과 이용 조건",
+          "lead": "공개 모델, 공개 데이터와 관리형 서비스는 구분합니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "가중치와 서비스",
+              "text": "모델 카드는 공개 가중치와 OlmoEarth Platform을 안내하고, 22일 발표는 로그인 없는 브라우저 임베딩 탐색기를 설명합니다. 공개 데이터를 쓰는 경로와 자체 GPU로 임베딩을 다시 계산하거나 미세조정하는 경로의 비용은 다릅니다. 확인한 자료에서 일반 호스팅 API의 표준 요금, 전송비와 최소 운영비는 확정하지 못해 $0으로 채우지 않습니다.",
+              "source_ids": [
+                "launch",
+                "card",
+                "paper"
+              ],
+              "kind": "judgment"
+            },
+            {
+              "type": "paragraph",
+              "title": "용도 제한",
+              "text": "OlmoEarth Artifact License는 무상 사용과 수정 및 배포권을 제공하면서 군사·방위, 정보 수집과 사람 감시·치안, 석유·가스·광물 채취와 벌채 등의 용도를 제한합니다. 파생물을 배포할 때도 해당 제한을 승계하는 조건이 있습니다. 공개 가중치를 무제한 상업 라이선스나 Apache 2.0과 동일하게 표시하지 않습니다.",
+              "source_ids": [
+                "license"
+              ],
+              "kind": "fact"
+            }
+          ]
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "선택 기준",
+            "text": "OlmoEarth 1.3은 연간 위성 벡터를 재사용하거나 새 지역의 분류기를 비교할 때 검토할 후보입니다. 64차원과 128차원의 성능 및 전송량, 직접 미세조정의 이전판 성능, 공간과 연도 범위 및 용도 제한을 함께 비교해야 합니다. 문서 임베딩이나 생성형 코딩 모델을 대체하는 모델은 아닙니다.",
+            "source_ids": [
+              "paper",
+              "card",
+              "license"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "22일 묶음 발표와 13일 가중치 갱신을 구분했습니다. 공급사 측정과 선별한 기술보고서의 표 및 그림 독해이며 한국 실데이터 처리, 독립 재현, 실계정 비용 및 사람 시험은 없습니다. 1.2 카드 표기와 평가 집계의 차이는 미확인으로 보존했습니다.",
+          "source_ids": [
+            "launch",
+            "history",
+            "previous",
+            "paper"
+          ]
+        }
+      ],
+      "references": [
+        {
+          "id": "launch",
+          "title": "Ai2의22일 OlmoEarth1.3 발표",
+          "url": "https://huggingface.co/blog/allenai/olmoearth-v1-3",
+          "description": "새 모델과 연간 임베딩 및 브라우저 탐색기를 함께 소개합니다."
+        },
+        {
+          "id": "card",
+          "title": "OlmoEarth1.3 모델 카드",
+          "url": "https://huggingface.co/allenai/OlmoEarth-v1_3-Base",
+          "description": "백본과 추가 구성요소의 규모 및 입력을 설명합니다."
+        },
+        {
+          "id": "paper",
+          "title": "OlmoEarth1.3 기술보고서",
+          "url": "https://allenai.org/papers/olmoearth-v1-3",
+          "description": "임베딩,이전판과미세조정,계산량 및 배포자료의범위를비교합니다."
+        },
+        {
+          "id": "license",
+          "title": "OlmoEarth Artifact License",
+          "url": "https://huggingface.co/allenai/OlmoEarth-v1_3-Base/blob/main/LICENSE.txt",
+          "description": "사용권,제한용도와재배포조건을명시합니다."
+        },
+        {
+          "id": "previous",
+          "title": "기존1.2 모델 카드",
+          "url": "https://huggingface.co/allenai/OlmoEarth-v1_2-Base",
+          "description": "이전판 문서와 현재 카드의 표기 차이를 보존합니다."
+        },
+        {
+          "id": "history",
+          "title": "공식 체크포인트 이력",
+          "url": "https://huggingface.co/allenai/OlmoEarth-v1_3-Base/commits/main",
+          "description": "22일 발표 이전의13일 가중치 갱신 기록입니다."
+        },
+        {
+          "id": "data",
+          "title": "공개 임베딩 저장소",
+          "url": "https://source.coop/olmoearth/olmoearth-v1-3-embeddings",
+          "description": "공개 데이터의배포경로입니다. 전체데이터다운로드검증은하지않았습니다."
+        }
+      ]
+    }
+  ]
+}

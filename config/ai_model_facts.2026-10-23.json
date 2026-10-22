@@ -1,0 +1,1460 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "id": "flint-202610-0-0",
+      "model": "Flint BF16",
+      "provider": "Recursive",
+      "source_url": "https://huggingface.co/RecursiveSI/flint/resolve/main/assets/flint_benchmarks_nvfp4.png",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 코딩/지시 평가",
+        "suite": "Terminal-Bench 2.1",
+        "condition": "Recursive 카드 그림. 높은 값이 좋음. Recursive 측정. Flint는 temperature1.0/top_p0.95/top_k20, 평균 pass@1 최소5회(단일턴5회), agent 최대5시간. 비교군의 모든 설정을 재현한 독립 시험 아님. 그림 약칭의 정확한 체크포인트 ID는 미표기.",
+        "harness": "Terminus 2 XML; 인터넷 허용, 검색으로 얻은 해답은 실패",
+        "평가 점수": 54.9,
+        "단위": "%",
+        "측정 주체": "Recursive",
+        "정밀도": "BF16"
+      }
+    },
+    {
+      "id": "flint-202610-0-1",
+      "model": "Flint BF16",
+      "provider": "Recursive",
+      "source_url": "https://huggingface.co/RecursiveSI/flint/resolve/main/assets/flint_benchmarks_nvfp4.png",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 코딩/지시 평가",
+        "suite": "SWE-bench Pro v2",
+        "condition": "Recursive 카드 그림. 높은 값이 좋음. Recursive 측정. Flint는 temperature1.0/top_p0.95/top_k20, 평균 pass@1 최소5회(단일턴5회), agent 최대5시간. 비교군의 모든 설정을 재현한 독립 시험 아님. 그림 약칭의 정확한 체크포인트 ID는 미표기.",
+        "harness": "mini-swe-agent; 인터넷 없음",
+        "평가 점수": 89.7,
+        "단위": "%",
+        "측정 주체": "Recursive",
+        "정밀도": "BF16"
+      }
+    },
+    {
+      "id": "flint-202610-0-2",
+      "model": "Flint BF16",
+      "provider": "Recursive",
+      "source_url": "https://huggingface.co/RecursiveSI/flint/resolve/main/assets/flint_benchmarks_nvfp4.png",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 코딩/지시 평가",
+        "suite": "SWE-bench Verified",
+        "condition": "Recursive 카드 그림. 높은 값이 좋음. Recursive 측정. Flint는 temperature1.0/top_p0.95/top_k20, 평균 pass@1 최소5회(단일턴5회), agent 최대5시간. 비교군의 모든 설정을 재현한 독립 시험 아님. 그림 약칭의 정확한 체크포인트 ID는 미표기.",
+        "harness": "mini-swe-agent; 인터넷 없음",
+        "평가 점수": 74.2,
+        "단위": "%",
+        "측정 주체": "Recursive",
+        "정밀도": "BF16"
+      }
+    },
+    {
+      "id": "flint-202610-0-3",
+      "model": "Flint BF16",
+      "provider": "Recursive",
+      "source_url": "https://huggingface.co/RecursiveSI/flint/resolve/main/assets/flint_benchmarks_nvfp4.png",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 코딩/지시 평가",
+        "suite": "LiveCodeBench v6",
+        "condition": "Recursive 카드 그림. 높은 값이 좋음. Recursive 측정. Flint는 temperature1.0/top_p0.95/top_k20, 평균 pass@1 최소5회(단일턴5회), agent 최대5시간. 비교군의 모든 설정을 재현한 독립 시험 아님. 그림 약칭의 정확한 체크포인트 ID는 미표기.",
+        "harness": "단일 턴",
+        "평가 점수": 80.3,
+        "단위": "%",
+        "측정 주체": "Recursive",
+        "정밀도": "BF16"
+      }
+    },
+    {
+      "id": "flint-202610-0-4",
+      "model": "Flint BF16",
+      "provider": "Recursive",
+      "source_url": "https://huggingface.co/RecursiveSI/flint/resolve/main/assets/flint_benchmarks_nvfp4.png",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 코딩/지시 평가",
+        "suite": "IFBench",
+        "condition": "Recursive 카드 그림. 높은 값이 좋음. Recursive 측정. Flint는 temperature1.0/top_p0.95/top_k20, 평균 pass@1 최소5회(단일턴5회), agent 최대5시간. 비교군의 모든 설정을 재현한 독립 시험 아님. 그림 약칭의 정확한 체크포인트 ID는 미표기.",
+        "harness": "단일 턴",
+        "평가 점수": 89.2,
+        "단위": "%",
+        "측정 주체": "Recursive",
+        "정밀도": "BF16"
+      }
+    },
+    {
+      "id": "flint-202610-0-5",
+      "model": "Flint BF16",
+      "provider": "Recursive",
+      "source_url": "https://huggingface.co/RecursiveSI/flint/resolve/main/assets/flint_benchmarks_nvfp4.png",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 코딩/지시 평가",
+        "suite": "IFEval",
+        "condition": "Recursive 카드 그림. 높은 값이 좋음. Recursive 측정. Flint는 temperature1.0/top_p0.95/top_k20, 평균 pass@1 최소5회(단일턴5회), agent 최대5시간. 비교군의 모든 설정을 재현한 독립 시험 아님. 그림 약칭의 정확한 체크포인트 ID는 미표기.",
+        "harness": "단일 턴",
+        "평가 점수": 95.1,
+        "단위": "%",
+        "측정 주체": "Recursive",
+        "정밀도": "BF16"
+      }
+    },
+    {
+      "id": "flint-202610-1-0",
+      "model": "Flint NVFP4",
+      "provider": "Recursive",
+      "source_url": "https://huggingface.co/RecursiveSI/flint/resolve/main/assets/flint_benchmarks_nvfp4.png",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 코딩/지시 평가",
+        "suite": "Terminal-Bench 2.1",
+        "condition": "Recursive 카드 그림. 높은 값이 좋음. Recursive 측정. Flint는 temperature1.0/top_p0.95/top_k20, 평균 pass@1 최소5회(단일턴5회), agent 최대5시간. 비교군의 모든 설정을 재현한 독립 시험 아님. 그림 약칭의 정확한 체크포인트 ID는 미표기.",
+        "harness": "Terminus 2 XML; 인터넷 허용, 검색으로 얻은 해답은 실패",
+        "평가 점수": 53.7,
+        "단위": "%",
+        "측정 주체": "Recursive",
+        "정밀도": "NVFP4"
+      }
+    },
+    {
+      "id": "flint-202610-1-1",
+      "model": "Flint NVFP4",
+      "provider": "Recursive",
+      "source_url": "https://huggingface.co/RecursiveSI/flint/resolve/main/assets/flint_benchmarks_nvfp4.png",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 코딩/지시 평가",
+        "suite": "SWE-bench Pro v2",
+        "condition": "Recursive 카드 그림. 높은 값이 좋음. Recursive 측정. Flint는 temperature1.0/top_p0.95/top_k20, 평균 pass@1 최소5회(단일턴5회), agent 최대5시간. 비교군의 모든 설정을 재현한 독립 시험 아님. 그림 약칭의 정확한 체크포인트 ID는 미표기.",
+        "harness": "mini-swe-agent; 인터넷 없음",
+        "평가 점수": 88.5,
+        "단위": "%",
+        "측정 주체": "Recursive",
+        "정밀도": "NVFP4"
+      }
+    },
+    {
+      "id": "flint-202610-1-2",
+      "model": "Flint NVFP4",
+      "provider": "Recursive",
+      "source_url": "https://huggingface.co/RecursiveSI/flint/resolve/main/assets/flint_benchmarks_nvfp4.png",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 코딩/지시 평가",
+        "suite": "SWE-bench Verified",
+        "condition": "Recursive 카드 그림. 높은 값이 좋음. Recursive 측정. Flint는 temperature1.0/top_p0.95/top_k20, 평균 pass@1 최소5회(단일턴5회), agent 최대5시간. 비교군의 모든 설정을 재현한 독립 시험 아님. 그림 약칭의 정확한 체크포인트 ID는 미표기.",
+        "harness": "mini-swe-agent; 인터넷 없음",
+        "평가 점수": 74.1,
+        "단위": "%",
+        "측정 주체": "Recursive",
+        "정밀도": "NVFP4"
+      }
+    },
+    {
+      "id": "flint-202610-1-3",
+      "model": "Flint NVFP4",
+      "provider": "Recursive",
+      "source_url": "https://huggingface.co/RecursiveSI/flint/resolve/main/assets/flint_benchmarks_nvfp4.png",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 코딩/지시 평가",
+        "suite": "LiveCodeBench v6",
+        "condition": "Recursive 카드 그림. 높은 값이 좋음. Recursive 측정. Flint는 temperature1.0/top_p0.95/top_k20, 평균 pass@1 최소5회(단일턴5회), agent 최대5시간. 비교군의 모든 설정을 재현한 독립 시험 아님. 그림 약칭의 정확한 체크포인트 ID는 미표기.",
+        "harness": "단일 턴",
+        "평가 점수": 80.8,
+        "단위": "%",
+        "측정 주체": "Recursive",
+        "정밀도": "NVFP4"
+      }
+    },
+    {
+      "id": "flint-202610-1-4",
+      "model": "Flint NVFP4",
+      "provider": "Recursive",
+      "source_url": "https://huggingface.co/RecursiveSI/flint/resolve/main/assets/flint_benchmarks_nvfp4.png",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 코딩/지시 평가",
+        "suite": "IFBench",
+        "condition": "Recursive 카드 그림. 높은 값이 좋음. Recursive 측정. Flint는 temperature1.0/top_p0.95/top_k20, 평균 pass@1 최소5회(단일턴5회), agent 최대5시간. 비교군의 모든 설정을 재현한 독립 시험 아님. 그림 약칭의 정확한 체크포인트 ID는 미표기.",
+        "harness": "단일 턴",
+        "평가 점수": 88.1,
+        "단위": "%",
+        "측정 주체": "Recursive",
+        "정밀도": "NVFP4"
+      }
+    },
+    {
+      "id": "flint-202610-1-5",
+      "model": "Flint NVFP4",
+      "provider": "Recursive",
+      "source_url": "https://huggingface.co/RecursiveSI/flint/resolve/main/assets/flint_benchmarks_nvfp4.png",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 코딩/지시 평가",
+        "suite": "IFEval",
+        "condition": "Recursive 카드 그림. 높은 값이 좋음. Recursive 측정. Flint는 temperature1.0/top_p0.95/top_k20, 평균 pass@1 최소5회(단일턴5회), agent 최대5시간. 비교군의 모든 설정을 재현한 독립 시험 아님. 그림 약칭의 정확한 체크포인트 ID는 미표기.",
+        "harness": "단일 턴",
+        "평가 점수": 94.6,
+        "단위": "%",
+        "측정 주체": "Recursive",
+        "정밀도": "NVFP4"
+      }
+    },
+    {
+      "id": "flint-202610-2-0",
+      "model": "Qwen 3.5 (도표 약칭)",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/RecursiveSI/flint/resolve/main/assets/flint_benchmarks_nvfp4.png",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 코딩/지시 평가",
+        "suite": "Terminal-Bench 2.1",
+        "condition": "Recursive 카드 그림. 높은 값이 좋음. 경쟁 개발사 보고값 수록. Flint는 temperature1.0/top_p0.95/top_k20, 평균 pass@1 최소5회(단일턴5회), agent 최대5시간. 비교군의 모든 설정을 재현한 독립 시험 아님. 그림 약칭의 정확한 체크포인트 ID는 미표기.",
+        "harness": "Terminus 2 XML; 인터넷 허용, 검색으로 얻은 해답은 실패",
+        "평가 점수": 38.7,
+        "단위": "%",
+        "측정 주체": "경쟁 모델 개발사 / Recursive 수록",
+        "정밀도": "비교 그림의 설정"
+      }
+    },
+    {
+      "id": "flint-202610-2-1",
+      "model": "Qwen 3.5 (도표 약칭)",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/RecursiveSI/flint/resolve/main/assets/flint_benchmarks_nvfp4.png",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 코딩/지시 평가",
+        "suite": "SWE-bench Pro v2",
+        "condition": "Recursive 카드 그림. 높은 값이 좋음. Recursive 측정. Flint는 temperature1.0/top_p0.95/top_k20, 평균 pass@1 최소5회(단일턴5회), agent 최대5시간. 비교군의 모든 설정을 재현한 독립 시험 아님. 그림 약칭의 정확한 체크포인트 ID는 미표기.",
+        "harness": "mini-swe-agent; 인터넷 없음",
+        "평가 점수": 68.6,
+        "단위": "%",
+        "측정 주체": "Recursive",
+        "정밀도": "비교 그림의 설정"
+      }
+    },
+    {
+      "id": "flint-202610-2-2",
+      "model": "Qwen 3.5 (도표 약칭)",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/RecursiveSI/flint/resolve/main/assets/flint_benchmarks_nvfp4.png",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 코딩/지시 평가",
+        "suite": "SWE-bench Verified",
+        "condition": "Recursive 카드 그림. 높은 값이 좋음. 경쟁 개발사 보고값 수록. Flint는 temperature1.0/top_p0.95/top_k20, 평균 pass@1 최소5회(단일턴5회), agent 최대5시간. 비교군의 모든 설정을 재현한 독립 시험 아님. 그림 약칭의 정확한 체크포인트 ID는 미표기.",
+        "harness": "mini-swe-agent; 인터넷 없음",
+        "평가 점수": 69.2,
+        "단위": "%",
+        "측정 주체": "경쟁 모델 개발사 / Recursive 수록",
+        "정밀도": "비교 그림의 설정"
+      }
+    },
+    {
+      "id": "flint-202610-2-3",
+      "model": "Qwen 3.5 (도표 약칭)",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/RecursiveSI/flint/resolve/main/assets/flint_benchmarks_nvfp4.png",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 코딩/지시 평가",
+        "suite": "LiveCodeBench v6",
+        "condition": "Recursive 카드 그림. 높은 값이 좋음. 경쟁 개발사 보고값 수록. Flint는 temperature1.0/top_p0.95/top_k20, 평균 pass@1 최소5회(단일턴5회), agent 최대5시간. 비교군의 모든 설정을 재현한 독립 시험 아님. 그림 약칭의 정확한 체크포인트 ID는 미표기.",
+        "harness": "단일 턴",
+        "평가 점수": 74.6,
+        "단위": "%",
+        "측정 주체": "경쟁 모델 개발사 / Recursive 수록",
+        "정밀도": "비교 그림의 설정"
+      }
+    },
+    {
+      "id": "flint-202610-2-4",
+      "model": "Qwen 3.5 (도표 약칭)",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/RecursiveSI/flint/resolve/main/assets/flint_benchmarks_nvfp4.png",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 코딩/지시 평가",
+        "suite": "IFBench",
+        "condition": "Recursive 카드 그림. 높은 값이 좋음. 경쟁 개발사 보고값 수록. Flint는 temperature1.0/top_p0.95/top_k20, 평균 pass@1 최소5회(단일턴5회), agent 최대5시간. 비교군의 모든 설정을 재현한 독립 시험 아님. 그림 약칭의 정확한 체크포인트 ID는 미표기.",
+        "harness": "단일 턴",
+        "평가 점수": 70.2,
+        "단위": "%",
+        "측정 주체": "경쟁 모델 개발사 / Recursive 수록",
+        "정밀도": "비교 그림의 설정"
+      }
+    },
+    {
+      "id": "flint-202610-2-5",
+      "model": "Qwen 3.5 (도표 약칭)",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/RecursiveSI/flint/resolve/main/assets/flint_benchmarks_nvfp4.png",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 코딩/지시 평가",
+        "suite": "IFEval",
+        "condition": "Recursive 카드 그림. 높은 값이 좋음. 경쟁 개발사 보고값 수록. Flint는 temperature1.0/top_p0.95/top_k20, 평균 pass@1 최소5회(단일턴5회), agent 최대5시간. 비교군의 모든 설정을 재현한 독립 시험 아님. 그림 약칭의 정확한 체크포인트 ID는 미표기.",
+        "harness": "단일 턴",
+        "평가 점수": 91.9,
+        "단위": "%",
+        "측정 주체": "경쟁 모델 개발사 / Recursive 수록",
+        "정밀도": "비교 그림의 설정"
+      }
+    },
+    {
+      "id": "flint-202610-3-0",
+      "model": "Qwen 3.6 (도표 약칭)",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/RecursiveSI/flint/resolve/main/assets/flint_benchmarks_nvfp4.png",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 코딩/지시 평가",
+        "suite": "Terminal-Bench 2.1",
+        "condition": "Recursive 카드 그림. 높은 값이 좋음. 경쟁 개발사 보고값 수록. Flint는 temperature1.0/top_p0.95/top_k20, 평균 pass@1 최소5회(단일턴5회), agent 최대5시간. 비교군의 모든 설정을 재현한 독립 시험 아님. 그림 약칭의 정확한 체크포인트 ID는 미표기.",
+        "harness": "Terminus 2 XML; 인터넷 허용, 검색으로 얻은 해답은 실패",
+        "평가 점수": 44.9,
+        "단위": "%",
+        "측정 주체": "경쟁 모델 개발사 / Recursive 수록",
+        "정밀도": "비교 그림의 설정"
+      }
+    },
+    {
+      "id": "flint-202610-3-1",
+      "model": "Qwen 3.6 (도표 약칭)",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/RecursiveSI/flint/resolve/main/assets/flint_benchmarks_nvfp4.png",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 코딩/지시 평가",
+        "suite": "SWE-bench Pro v2",
+        "condition": "Recursive 카드 그림. 높은 값이 좋음. Recursive 측정. Flint는 temperature1.0/top_p0.95/top_k20, 평균 pass@1 최소5회(단일턴5회), agent 최대5시간. 비교군의 모든 설정을 재현한 독립 시험 아님. 그림 약칭의 정확한 체크포인트 ID는 미표기.",
+        "harness": "mini-swe-agent; 인터넷 없음",
+        "평가 점수": 73.8,
+        "단위": "%",
+        "측정 주체": "Recursive",
+        "정밀도": "비교 그림의 설정"
+      }
+    },
+    {
+      "id": "flint-202610-3-2",
+      "model": "Qwen 3.6 (도표 약칭)",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/RecursiveSI/flint/resolve/main/assets/flint_benchmarks_nvfp4.png",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 코딩/지시 평가",
+        "suite": "SWE-bench Verified",
+        "condition": "Recursive 카드 그림. 높은 값이 좋음. 경쟁 개발사 보고값 수록. Flint는 temperature1.0/top_p0.95/top_k20, 평균 pass@1 최소5회(단일턴5회), agent 최대5시간. 비교군의 모든 설정을 재현한 독립 시험 아님. 그림 약칭의 정확한 체크포인트 ID는 미표기.",
+        "harness": "mini-swe-agent; 인터넷 없음",
+        "평가 점수": 73.4,
+        "단위": "%",
+        "측정 주체": "경쟁 모델 개발사 / Recursive 수록",
+        "정밀도": "비교 그림의 설정"
+      }
+    },
+    {
+      "id": "flint-202610-3-3",
+      "model": "Qwen 3.6 (도표 약칭)",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/RecursiveSI/flint/resolve/main/assets/flint_benchmarks_nvfp4.png",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 코딩/지시 평가",
+        "suite": "LiveCodeBench v6",
+        "condition": "Recursive 카드 그림. 높은 값이 좋음. 경쟁 개발사 보고값 수록. Flint는 temperature1.0/top_p0.95/top_k20, 평균 pass@1 최소5회(단일턴5회), agent 최대5시간. 비교군의 모든 설정을 재현한 독립 시험 아님. 그림 약칭의 정확한 체크포인트 ID는 미표기.",
+        "harness": "단일 턴",
+        "평가 점수": 80.4,
+        "단위": "%",
+        "측정 주체": "경쟁 모델 개발사 / Recursive 수록",
+        "정밀도": "비교 그림의 설정"
+      }
+    },
+    {
+      "id": "flint-202610-3-4",
+      "model": "Qwen 3.6 (도표 약칭)",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/RecursiveSI/flint/resolve/main/assets/flint_benchmarks_nvfp4.png",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 코딩/지시 평가",
+        "suite": "IFBench",
+        "condition": "Recursive 카드 그림. 높은 값이 좋음. 경쟁 개발사 보고값 수록. Flint는 temperature1.0/top_p0.95/top_k20, 평균 pass@1 최소5회(단일턴5회), agent 최대5시간. 비교군의 모든 설정을 재현한 독립 시험 아님. 그림 약칭의 정확한 체크포인트 ID는 미표기.",
+        "harness": "단일 턴",
+        "평가 점수": 67.9,
+        "단위": "%",
+        "측정 주체": "경쟁 모델 개발사 / Recursive 수록",
+        "정밀도": "비교 그림의 설정"
+      }
+    },
+    {
+      "id": "flint-202610-3-5",
+      "model": "Qwen 3.6 (도표 약칭)",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/RecursiveSI/flint/resolve/main/assets/flint_benchmarks_nvfp4.png",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 코딩/지시 평가",
+        "suite": "IFEval",
+        "condition": "Recursive 카드 그림. 높은 값이 좋음. 경쟁 개발사 보고값 수록. Flint는 temperature1.0/top_p0.95/top_k20, 평균 pass@1 최소5회(단일턴5회), agent 최대5시간. 비교군의 모든 설정을 재현한 독립 시험 아님. 그림 약칭의 정확한 체크포인트 ID는 미표기.",
+        "harness": "단일 턴",
+        "평가 점수": 89.6,
+        "단위": "%",
+        "측정 주체": "경쟁 모델 개발사 / Recursive 수록",
+        "정밀도": "비교 그림의 설정"
+      }
+    },
+    {
+      "id": "flint-202610-4-0",
+      "model": "Laguna XS 2.1",
+      "provider": "Poolside",
+      "source_url": "https://huggingface.co/RecursiveSI/flint/resolve/main/assets/flint_benchmarks_nvfp4.png",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 코딩/지시 평가",
+        "suite": "Terminal-Bench 2.1",
+        "condition": "Recursive 카드 그림. 높은 값이 좋음. Recursive 측정. Flint는 temperature1.0/top_p0.95/top_k20, 평균 pass@1 최소5회(단일턴5회), agent 최대5시간. 비교군의 모든 설정을 재현한 독립 시험 아님. 그림 약칭의 정확한 체크포인트 ID는 미표기.",
+        "harness": "Terminus 2 XML; 인터넷 허용, 검색으로 얻은 해답은 실패",
+        "평가 점수": 24.7,
+        "단위": "%",
+        "측정 주체": "Recursive",
+        "정밀도": "비교 그림의 설정"
+      }
+    },
+    {
+      "id": "flint-202610-4-1",
+      "model": "Laguna XS 2.1",
+      "provider": "Poolside",
+      "source_url": "https://huggingface.co/RecursiveSI/flint/resolve/main/assets/flint_benchmarks_nvfp4.png",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 코딩/지시 평가",
+        "suite": "SWE-bench Pro v2",
+        "condition": "Recursive 카드 그림. 높은 값이 좋음. Recursive 측정. Flint는 temperature1.0/top_p0.95/top_k20, 평균 pass@1 최소5회(단일턴5회), agent 최대5시간. 비교군의 모든 설정을 재현한 독립 시험 아님. 그림 약칭의 정확한 체크포인트 ID는 미표기.",
+        "harness": "mini-swe-agent; 인터넷 없음",
+        "평가 점수": 38.6,
+        "단위": "%",
+        "측정 주체": "Recursive",
+        "정밀도": "비교 그림의 설정"
+      }
+    },
+    {
+      "id": "flint-202610-4-2",
+      "model": "Laguna XS 2.1",
+      "provider": "Poolside",
+      "source_url": "https://huggingface.co/RecursiveSI/flint/resolve/main/assets/flint_benchmarks_nvfp4.png",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 코딩/지시 평가",
+        "suite": "SWE-bench Verified",
+        "condition": "Recursive 카드 그림. 높은 값이 좋음. 경쟁 개발사 보고값 수록. Flint는 temperature1.0/top_p0.95/top_k20, 평균 pass@1 최소5회(단일턴5회), agent 최대5시간. 비교군의 모든 설정을 재현한 독립 시험 아님. 그림 약칭의 정확한 체크포인트 ID는 미표기.",
+        "harness": "mini-swe-agent; 인터넷 없음",
+        "평가 점수": 70.9,
+        "단위": "%",
+        "측정 주체": "경쟁 모델 개발사 / Recursive 수록",
+        "정밀도": "비교 그림의 설정"
+      }
+    },
+    {
+      "id": "flint-202610-4-3",
+      "model": "Laguna XS 2.1",
+      "provider": "Poolside",
+      "source_url": "https://huggingface.co/RecursiveSI/flint/resolve/main/assets/flint_benchmarks_nvfp4.png",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 코딩/지시 평가",
+        "suite": "LiveCodeBench v6",
+        "condition": "Recursive 카드 그림. 높은 값이 좋음. Recursive 측정. Flint는 temperature1.0/top_p0.95/top_k20, 평균 pass@1 최소5회(단일턴5회), agent 최대5시간. 비교군의 모든 설정을 재현한 독립 시험 아님. 그림 약칭의 정확한 체크포인트 ID는 미표기.",
+        "harness": "단일 턴",
+        "평가 점수": 49.5,
+        "단위": "%",
+        "측정 주체": "Recursive",
+        "정밀도": "비교 그림의 설정"
+      }
+    },
+    {
+      "id": "flint-202610-4-4",
+      "model": "Laguna XS 2.1",
+      "provider": "Poolside",
+      "source_url": "https://huggingface.co/RecursiveSI/flint/resolve/main/assets/flint_benchmarks_nvfp4.png",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 코딩/지시 평가",
+        "suite": "IFBench",
+        "condition": "Recursive 카드 그림. 높은 값이 좋음. Recursive 측정. Flint는 temperature1.0/top_p0.95/top_k20, 평균 pass@1 최소5회(단일턴5회), agent 최대5시간. 비교군의 모든 설정을 재현한 독립 시험 아님. 그림 약칭의 정확한 체크포인트 ID는 미표기.",
+        "harness": "단일 턴",
+        "평가 점수": 34.4,
+        "단위": "%",
+        "측정 주체": "Recursive",
+        "정밀도": "비교 그림의 설정"
+      }
+    },
+    {
+      "id": "flint-202610-4-5",
+      "model": "Laguna XS 2.1",
+      "provider": "Poolside",
+      "source_url": "https://huggingface.co/RecursiveSI/flint/resolve/main/assets/flint_benchmarks_nvfp4.png",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 코딩/지시 평가",
+        "suite": "IFEval",
+        "condition": "Recursive 카드 그림. 높은 값이 좋음. Recursive 측정. Flint는 temperature1.0/top_p0.95/top_k20, 평균 pass@1 최소5회(단일턴5회), agent 최대5시간. 비교군의 모든 설정을 재현한 독립 시험 아님. 그림 약칭의 정확한 체크포인트 ID는 미표기.",
+        "harness": "단일 턴",
+        "평가 점수": 73.7,
+        "단위": "%",
+        "측정 주체": "Recursive",
+        "정밀도": "비교 그림의 설정"
+      }
+    },
+    {
+      "id": "flint-202610-5-0",
+      "model": "Qwen 3.8 (도표 약칭)",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/RecursiveSI/flint/resolve/main/assets/flint_benchmarks_nvfp4.png",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 코딩/지시 평가",
+        "suite": "Terminal-Bench 2.1",
+        "condition": "Recursive 카드 그림. 높은 값이 좋음. 경쟁 개발사 보고값 수록. Flint는 temperature1.0/top_p0.95/top_k20, 평균 pass@1 최소5회(단일턴5회), agent 최대5시간. 비교군의 모든 설정을 재현한 독립 시험 아님. 그림 약칭의 정확한 체크포인트 ID는 미표기.",
+        "harness": "Terminus 2 XML; 인터넷 허용, 검색으로 얻은 해답은 실패",
+        "평가 점수": 73.0,
+        "단위": "%",
+        "측정 주체": "경쟁 모델 개발사 / Recursive 수록",
+        "정밀도": "비교 그림의 설정"
+      }
+    },
+    {
+      "id": "flint-202610-5-1",
+      "model": "Qwen 3.8 (도표 약칭)",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/RecursiveSI/flint/resolve/main/assets/flint_benchmarks_nvfp4.png",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 코딩/지시 평가",
+        "suite": "SWE-bench Pro v2",
+        "condition": "Recursive 카드 그림. 높은 값이 좋음. Recursive 측정. Flint는 temperature1.0/top_p0.95/top_k20, 평균 pass@1 최소5회(단일턴5회), agent 최대5시간. 비교군의 모든 설정을 재현한 독립 시험 아님. 그림 약칭의 정확한 체크포인트 ID는 미표기.",
+        "harness": "mini-swe-agent; 인터넷 없음",
+        "평가 점수": 94.9,
+        "단위": "%",
+        "측정 주체": "Recursive",
+        "정밀도": "비교 그림의 설정"
+      }
+    },
+    {
+      "id": "flint-202610-5-2",
+      "model": "Qwen 3.8 (도표 약칭)",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/RecursiveSI/flint/resolve/main/assets/flint_benchmarks_nvfp4.png",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 코딩/지시 평가",
+        "suite": "SWE-bench Verified",
+        "condition": "Recursive 카드 그림. 높은 값이 좋음. Recursive 측정. Flint는 temperature1.0/top_p0.95/top_k20, 평균 pass@1 최소5회(단일턴5회), agent 최대5시간. 비교군의 모든 설정을 재현한 독립 시험 아님. 그림 약칭의 정확한 체크포인트 ID는 미표기.",
+        "harness": "mini-swe-agent; 인터넷 없음",
+        "평가 점수": 75.6,
+        "단위": "%",
+        "측정 주체": "Recursive",
+        "정밀도": "비교 그림의 설정"
+      }
+    },
+    {
+      "id": "flint-202610-5-3",
+      "model": "Qwen 3.8 (도표 약칭)",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/RecursiveSI/flint/resolve/main/assets/flint_benchmarks_nvfp4.png",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 코딩/지시 평가",
+        "suite": "LiveCodeBench v6",
+        "condition": "Recursive 카드 그림. 높은 값이 좋음. 경쟁 개발사 보고값 수록. Flint는 temperature1.0/top_p0.95/top_k20, 평균 pass@1 최소5회(단일턴5회), agent 최대5시간. 비교군의 모든 설정을 재현한 독립 시험 아님. 그림 약칭의 정확한 체크포인트 ID는 미표기.",
+        "harness": "단일 턴",
+        "평가 점수": 90.3,
+        "단위": "%",
+        "측정 주체": "경쟁 모델 개발사 / Recursive 수록",
+        "정밀도": "비교 그림의 설정"
+      }
+    },
+    {
+      "id": "flint-202610-5-4",
+      "model": "Qwen 3.8 (도표 약칭)",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/RecursiveSI/flint/resolve/main/assets/flint_benchmarks_nvfp4.png",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 코딩/지시 평가",
+        "suite": "IFBench",
+        "condition": "Recursive 카드 그림. 높은 값이 좋음. 경쟁 개발사 보고값 수록. Flint는 temperature1.0/top_p0.95/top_k20, 평균 pass@1 최소5회(단일턴5회), agent 최대5시간. 비교군의 모든 설정을 재현한 독립 시험 아님. 그림 약칭의 정확한 체크포인트 ID는 미표기.",
+        "harness": "단일 턴",
+        "평가 점수": 79.5,
+        "단위": "%",
+        "측정 주체": "경쟁 모델 개발사 / Recursive 수록",
+        "정밀도": "비교 그림의 설정"
+      }
+    },
+    {
+      "id": "flint-202610-5-5",
+      "model": "Qwen 3.8 (도표 약칭)",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/RecursiveSI/flint/resolve/main/assets/flint_benchmarks_nvfp4.png",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 코딩/지시 평가",
+        "suite": "IFEval",
+        "condition": "Recursive 카드 그림. 높은 값이 좋음. Recursive 측정. Flint는 temperature1.0/top_p0.95/top_k20, 평균 pass@1 최소5회(단일턴5회), agent 최대5시간. 비교군의 모든 설정을 재현한 독립 시험 아님. 그림 약칭의 정확한 체크포인트 ID는 미표기.",
+        "harness": "단일 턴",
+        "평가 점수": 94.6,
+        "단위": "%",
+        "측정 주체": "Recursive",
+        "정밀도": "비교 그림의 설정"
+      }
+    },
+    {
+      "id": "flint-202610-6-0",
+      "model": "Muse Glimmer",
+      "provider": "Meta",
+      "source_url": "https://huggingface.co/RecursiveSI/flint/resolve/main/assets/flint_benchmarks_nvfp4.png",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 코딩/지시 평가",
+        "suite": "Terminal-Bench 2.1",
+        "condition": "Recursive 카드 그림. 높은 값이 좋음. 경쟁 개발사 보고값 수록. Flint는 temperature1.0/top_p0.95/top_k20, 평균 pass@1 최소5회(단일턴5회), agent 최대5시간. 비교군의 모든 설정을 재현한 독립 시험 아님. 그림 약칭의 정확한 체크포인트 ID는 미표기.",
+        "harness": "Terminus 2 XML; 인터넷 허용, 검색으로 얻은 해답은 실패",
+        "평가 점수": 51.7,
+        "단위": "%",
+        "측정 주체": "경쟁 모델 개발사 / Recursive 수록",
+        "정밀도": "비교 그림의 설정"
+      }
+    },
+    {
+      "id": "flint-202610-6-1",
+      "model": "Muse Glimmer",
+      "provider": "Meta",
+      "source_url": "https://huggingface.co/RecursiveSI/flint/resolve/main/assets/flint_benchmarks_nvfp4.png",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 코딩/지시 평가",
+        "suite": "SWE-bench Pro v2",
+        "condition": "Recursive 카드 그림. 높은 값이 좋음. Recursive 측정. Flint는 temperature1.0/top_p0.95/top_k20, 평균 pass@1 최소5회(단일턴5회), agent 최대5시간. 비교군의 모든 설정을 재현한 독립 시험 아님. 그림 약칭의 정확한 체크포인트 ID는 미표기.",
+        "harness": "mini-swe-agent; 인터넷 없음",
+        "평가 점수": 86.0,
+        "단위": "%",
+        "측정 주체": "Recursive",
+        "정밀도": "비교 그림의 설정"
+      }
+    },
+    {
+      "id": "flint-202610-6-2",
+      "model": "Muse Glimmer",
+      "provider": "Meta",
+      "source_url": "https://huggingface.co/RecursiveSI/flint/resolve/main/assets/flint_benchmarks_nvfp4.png",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 코딩/지시 평가",
+        "suite": "SWE-bench Verified",
+        "condition": "Recursive 카드 그림. 높은 값이 좋음. 경쟁 개발사 보고값 수록. Flint는 temperature1.0/top_p0.95/top_k20, 평균 pass@1 최소5회(단일턴5회), agent 최대5시간. 비교군의 모든 설정을 재현한 독립 시험 아님. 그림 약칭의 정확한 체크포인트 ID는 미표기.",
+        "harness": "mini-swe-agent; 인터넷 없음",
+        "평가 점수": 76.0,
+        "단위": "%",
+        "측정 주체": "경쟁 모델 개발사 / Recursive 수록",
+        "정밀도": "비교 그림의 설정"
+      }
+    },
+    {
+      "id": "flint-202610-6-3",
+      "model": "Muse Glimmer",
+      "provider": "Meta",
+      "source_url": "https://huggingface.co/RecursiveSI/flint/resolve/main/assets/flint_benchmarks_nvfp4.png",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 코딩/지시 평가",
+        "suite": "LiveCodeBench v6",
+        "condition": "Recursive 카드 그림. 높은 값이 좋음. Recursive 측정. Flint는 temperature1.0/top_p0.95/top_k20, 평균 pass@1 최소5회(단일턴5회), agent 최대5시간. 비교군의 모든 설정을 재현한 독립 시험 아님. 그림 약칭의 정확한 체크포인트 ID는 미표기.",
+        "harness": "단일 턴",
+        "평가 점수": 63.5,
+        "단위": "%",
+        "측정 주체": "Recursive",
+        "정밀도": "비교 그림의 설정"
+      }
+    },
+    {
+      "id": "flint-202610-6-4",
+      "model": "Muse Glimmer",
+      "provider": "Meta",
+      "source_url": "https://huggingface.co/RecursiveSI/flint/resolve/main/assets/flint_benchmarks_nvfp4.png",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 코딩/지시 평가",
+        "suite": "IFBench",
+        "condition": "Recursive 카드 그림. 높은 값이 좋음. 경쟁 개발사 보고값 수록. Flint는 temperature1.0/top_p0.95/top_k20, 평균 pass@1 최소5회(단일턴5회), agent 최대5시간. 비교군의 모든 설정을 재현한 독립 시험 아님. 그림 약칭의 정확한 체크포인트 ID는 미표기.",
+        "harness": "단일 턴",
+        "평가 점수": 77.0,
+        "단위": "%",
+        "측정 주체": "경쟁 모델 개발사 / Recursive 수록",
+        "정밀도": "비교 그림의 설정"
+      }
+    },
+    {
+      "id": "flint-202610-6-5",
+      "model": "Muse Glimmer",
+      "provider": "Meta",
+      "source_url": "https://huggingface.co/RecursiveSI/flint/resolve/main/assets/flint_benchmarks_nvfp4.png",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 코딩/지시 평가",
+        "suite": "IFEval",
+        "condition": "Recursive 카드 그림. 높은 값이 좋음. Recursive 측정. Flint는 temperature1.0/top_p0.95/top_k20, 평균 pass@1 최소5회(단일턴5회), agent 최대5시간. 비교군의 모든 설정을 재현한 독립 시험 아님. 그림 약칭의 정확한 체크포인트 ID는 미표기.",
+        "harness": "단일 턴",
+        "평가 점수": 94.7,
+        "단위": "%",
+        "측정 주체": "Recursive",
+        "정밀도": "비교 그림의 설정"
+      }
+    },
+    {
+      "id": "flint-202610-7-0",
+      "model": "Gemma 4 (도표 약칭)",
+      "provider": "Google",
+      "source_url": "https://huggingface.co/RecursiveSI/flint/resolve/main/assets/flint_benchmarks_nvfp4.png",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 코딩/지시 평가",
+        "suite": "Terminal-Bench 2.1",
+        "condition": "Recursive 카드 그림. 높은 값이 좋음. 경쟁 개발사 보고값 수록. Flint는 temperature1.0/top_p0.95/top_k20, 평균 pass@1 최소5회(단일턴5회), agent 최대5시간. 비교군의 모든 설정을 재현한 독립 시험 아님. 그림 약칭의 정확한 체크포인트 ID는 미표기.",
+        "harness": "Terminus 2 XML; 인터넷 허용, 검색으로 얻은 해답은 실패",
+        "평가 점수": 43.4,
+        "단위": "%",
+        "측정 주체": "경쟁 모델 개발사 / Recursive 수록",
+        "정밀도": "비교 그림의 설정"
+      }
+    },
+    {
+      "id": "flint-202610-7-1",
+      "model": "Gemma 4 (도표 약칭)",
+      "provider": "Google",
+      "source_url": "https://huggingface.co/RecursiveSI/flint/resolve/main/assets/flint_benchmarks_nvfp4.png",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 코딩/지시 평가",
+        "suite": "SWE-bench Pro v2",
+        "condition": "Recursive 카드 그림. 높은 값이 좋음. Recursive 측정. Flint는 temperature1.0/top_p0.95/top_k20, 평균 pass@1 최소5회(단일턴5회), agent 최대5시간. 비교군의 모든 설정을 재현한 독립 시험 아님. 그림 약칭의 정확한 체크포인트 ID는 미표기.",
+        "harness": "mini-swe-agent; 인터넷 없음",
+        "평가 점수": 61.7,
+        "단위": "%",
+        "측정 주체": "Recursive",
+        "정밀도": "비교 그림의 설정"
+      }
+    },
+    {
+      "id": "flint-202610-7-2",
+      "model": "Gemma 4 (도표 약칭)",
+      "provider": "Google",
+      "source_url": "https://huggingface.co/RecursiveSI/flint/resolve/main/assets/flint_benchmarks_nvfp4.png",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 코딩/지시 평가",
+        "suite": "SWE-bench Verified",
+        "condition": "Recursive 카드 그림. 높은 값이 좋음. 경쟁 개발사 보고값 수록. Flint는 temperature1.0/top_p0.95/top_k20, 평균 pass@1 최소5회(단일턴5회), agent 최대5시간. 비교군의 모든 설정을 재현한 독립 시험 아님. 그림 약칭의 정확한 체크포인트 ID는 미표기.",
+        "harness": "mini-swe-agent; 인터넷 없음",
+        "평가 점수": 66.6,
+        "단위": "%",
+        "측정 주체": "경쟁 모델 개발사 / Recursive 수록",
+        "정밀도": "비교 그림의 설정"
+      }
+    },
+    {
+      "id": "flint-202610-7-3",
+      "model": "Gemma 4 (도표 약칭)",
+      "provider": "Google",
+      "source_url": "https://huggingface.co/RecursiveSI/flint/resolve/main/assets/flint_benchmarks_nvfp4.png",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 코딩/지시 평가",
+        "suite": "LiveCodeBench v6",
+        "condition": "Recursive 카드 그림. 높은 값이 좋음. 경쟁 개발사 보고값 수록. Flint는 temperature1.0/top_p0.95/top_k20, 평균 pass@1 최소5회(단일턴5회), agent 최대5시간. 비교군의 모든 설정을 재현한 독립 시험 아님. 그림 약칭의 정확한 체크포인트 ID는 미표기.",
+        "harness": "단일 턴",
+        "평가 점수": 80.0,
+        "단위": "%",
+        "측정 주체": "경쟁 모델 개발사 / Recursive 수록",
+        "정밀도": "비교 그림의 설정"
+      }
+    },
+    {
+      "id": "flint-202610-7-4",
+      "model": "Gemma 4 (도표 약칭)",
+      "provider": "Google",
+      "source_url": "https://huggingface.co/RecursiveSI/flint/resolve/main/assets/flint_benchmarks_nvfp4.png",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 코딩/지시 평가",
+        "suite": "IFBench",
+        "condition": "Recursive 카드 그림. 높은 값이 좋음. 경쟁 개발사 보고값 수록. Flint는 temperature1.0/top_p0.95/top_k20, 평균 pass@1 최소5회(단일턴5회), agent 최대5시간. 비교군의 모든 설정을 재현한 독립 시험 아님. 그림 약칭의 정확한 체크포인트 ID는 미표기.",
+        "harness": "단일 턴",
+        "평가 점수": 76.0,
+        "단위": "%",
+        "측정 주체": "경쟁 모델 개발사 / Recursive 수록",
+        "정밀도": "비교 그림의 설정"
+      }
+    },
+    {
+      "id": "flint-202610-7-5",
+      "model": "Gemma 4 (도표 약칭)",
+      "provider": "Google",
+      "source_url": "https://huggingface.co/RecursiveSI/flint/resolve/main/assets/flint_benchmarks_nvfp4.png",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 코딩/지시 평가",
+        "suite": "IFEval",
+        "condition": "Recursive 카드 그림. 높은 값이 좋음. 경쟁 개발사 보고값 수록. Flint는 temperature1.0/top_p0.95/top_k20, 평균 pass@1 최소5회(단일턴5회), agent 최대5시간. 비교군의 모든 설정을 재현한 독립 시험 아님. 그림 약칭의 정확한 체크포인트 ID는 미표기.",
+        "harness": "단일 턴",
+        "평가 점수": 94.6,
+        "단위": "%",
+        "측정 주체": "경쟁 모델 개발사 / Recursive 수록",
+        "정밀도": "비교 그림의 설정"
+      }
+    },
+    {
+      "id": "flint-202610-spec",
+      "model": "Recursive Flint",
+      "provider": "Recursive",
+      "source_url": "https://huggingface.co/RecursiveSI/flint",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 모델 사양",
+        "suite": "Flint BF16 / 모델 카드",
+        "condition": "HF Initial release 2026-10-21 14:24:03Z를23일 확인. 블로그의최대512k와권장256k,카드/호스팅262144를 구분. 2.5B는출력head포함;활성본문약2.2B. 실행/과금/독립재현 없음.",
+        "access": "Apache-2.0 공개 가중치, 자체 실행 및 파트너 호스팅",
+        "입출력": "텍스트 → 텍스트",
+        "라이선스": "Apache-2.0",
+        "최초 확인한 공식 체크포인트 등록일": "2026-10-21",
+        "표준 유료 API 단가": "미확인",
+        "context": 262144,
+        "parameters": 39.8,
+        "active_parameters": 2.5
+      }
+    },
+    {
+      "id": "flint-speed-202610-0-short",
+      "model": "Flint MLX",
+      "provider": "Recursive",
+      "source_url": "https://framerusercontent.com/images/5t7vbDk5jkbHiOHKkSzJDzhgz4.png?scale-down-to=2048",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 로컬 생성 속도",
+        "suite": "M4 Pro 48GiB / short",
+        "condition": "Recursive 자체 측정. short는1K입력,session은128K세션 정규화 AUC(Muse124K). prefill제외. BF16벤치마크와 양자화 로컬속도는 같은실행 아님.",
+        "평가 점수": 131.22,
+        "단위": "생성 토큰/초",
+        "입력 조건": "1K 토큰",
+        "측정 주체": "Recursive"
+      }
+    },
+    {
+      "id": "flint-speed-202610-0-session",
+      "model": "Flint MLX",
+      "provider": "Recursive",
+      "source_url": "https://framerusercontent.com/images/5t7vbDk5jkbHiOHKkSzJDzhgz4.png?scale-down-to=2048",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 로컬 생성 속도",
+        "suite": "M4 Pro 48GiB / session",
+        "condition": "Recursive 자체 측정. short는1K입력,session은128K세션 정규화 AUC(Muse124K). prefill제외. BF16벤치마크와 양자화 로컬속도는 같은실행 아님.",
+        "평가 점수": 68.89,
+        "단위": "생성 토큰/초",
+        "입력 조건": "128K 세션 평균, Muse124K",
+        "측정 주체": "Recursive"
+      }
+    },
+    {
+      "id": "flint-speed-202610-1-short",
+      "model": "Flint llama.cpp",
+      "provider": "Recursive",
+      "source_url": "https://framerusercontent.com/images/5t7vbDk5jkbHiOHKkSzJDzhgz4.png?scale-down-to=2048",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 로컬 생성 속도",
+        "suite": "M4 Pro 48GiB / short",
+        "condition": "Recursive 자체 측정. short는1K입력,session은128K세션 정규화 AUC(Muse124K). prefill제외. BF16벤치마크와 양자화 로컬속도는 같은실행 아님.",
+        "평가 점수": 87.98,
+        "단위": "생성 토큰/초",
+        "입력 조건": "1K 토큰",
+        "측정 주체": "Recursive"
+      }
+    },
+    {
+      "id": "flint-speed-202610-1-session",
+      "model": "Flint llama.cpp",
+      "provider": "Recursive",
+      "source_url": "https://framerusercontent.com/images/5t7vbDk5jkbHiOHKkSzJDzhgz4.png?scale-down-to=2048",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 로컬 생성 속도",
+        "suite": "M4 Pro 48GiB / session",
+        "condition": "Recursive 자체 측정. short는1K입력,session은128K세션 정규화 AUC(Muse124K). prefill제외. BF16벤치마크와 양자화 로컬속도는 같은실행 아님.",
+        "평가 점수": 47.58,
+        "단위": "생성 토큰/초",
+        "입력 조건": "128K 세션 평균, Muse124K",
+        "측정 주체": "Recursive"
+      }
+    },
+    {
+      "id": "flint-speed-202610-2-short",
+      "model": "Laguna XS 2.1 33B-A3B",
+      "provider": "Poolside",
+      "source_url": "https://framerusercontent.com/images/5t7vbDk5jkbHiOHKkSzJDzhgz4.png?scale-down-to=2048",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 로컬 생성 속도",
+        "suite": "M4 Pro 48GiB / short",
+        "condition": "Recursive 자체 측정. short는1K입력,session은128K세션 정규화 AUC(Muse124K). prefill제외. BF16벤치마크와 양자화 로컬속도는 같은실행 아님.",
+        "평가 점수": 68.84,
+        "단위": "생성 토큰/초",
+        "입력 조건": "1K 토큰",
+        "측정 주체": "Recursive"
+      }
+    },
+    {
+      "id": "flint-speed-202610-2-session",
+      "model": "Laguna XS 2.1 33B-A3B",
+      "provider": "Poolside",
+      "source_url": "https://framerusercontent.com/images/5t7vbDk5jkbHiOHKkSzJDzhgz4.png?scale-down-to=2048",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 로컬 생성 속도",
+        "suite": "M4 Pro 48GiB / session",
+        "condition": "Recursive 자체 측정. short는1K입력,session은128K세션 정규화 AUC(Muse124K). prefill제외. BF16벤치마크와 양자화 로컬속도는 같은실행 아님.",
+        "평가 점수": 39.6,
+        "단위": "생성 토큰/초",
+        "입력 조건": "128K 세션 평균, Muse124K",
+        "측정 주체": "Recursive"
+      }
+    },
+    {
+      "id": "flint-speed-202610-3-short",
+      "model": "Qwen3.6 35B-A3B",
+      "provider": "Qwen",
+      "source_url": "https://framerusercontent.com/images/5t7vbDk5jkbHiOHKkSzJDzhgz4.png?scale-down-to=2048",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 로컬 생성 속도",
+        "suite": "M4 Pro 48GiB / short",
+        "condition": "Recursive 자체 측정. short는1K입력,session은128K세션 정규화 AUC(Muse124K). prefill제외. BF16벤치마크와 양자화 로컬속도는 같은실행 아님.",
+        "평가 점수": 65.55,
+        "단위": "생성 토큰/초",
+        "입력 조건": "1K 토큰",
+        "측정 주체": "Recursive"
+      }
+    },
+    {
+      "id": "flint-speed-202610-3-session",
+      "model": "Qwen3.6 35B-A3B",
+      "provider": "Qwen",
+      "source_url": "https://framerusercontent.com/images/5t7vbDk5jkbHiOHKkSzJDzhgz4.png?scale-down-to=2048",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 로컬 생성 속도",
+        "suite": "M4 Pro 48GiB / session",
+        "condition": "Recursive 자체 측정. short는1K입력,session은128K세션 정규화 AUC(Muse124K). prefill제외. BF16벤치마크와 양자화 로컬속도는 같은실행 아님.",
+        "평가 점수": 37.13,
+        "단위": "생성 토큰/초",
+        "입력 조건": "128K 세션 평균, Muse124K",
+        "측정 주체": "Recursive"
+      }
+    },
+    {
+      "id": "flint-speed-202610-4-short",
+      "model": "Qwen3.8 27B",
+      "provider": "Qwen",
+      "source_url": "https://framerusercontent.com/images/5t7vbDk5jkbHiOHKkSzJDzhgz4.png?scale-down-to=2048",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 로컬 생성 속도",
+        "suite": "M4 Pro 48GiB / short",
+        "condition": "Recursive 자체 측정. short는1K입력,session은128K세션 정규화 AUC(Muse124K). prefill제외. BF16벤치마크와 양자화 로컬속도는 같은실행 아님.",
+        "평가 점수": 13.01,
+        "단위": "생성 토큰/초",
+        "입력 조건": "1K 토큰",
+        "측정 주체": "Recursive"
+      }
+    },
+    {
+      "id": "flint-speed-202610-4-session",
+      "model": "Qwen3.8 27B",
+      "provider": "Qwen",
+      "source_url": "https://framerusercontent.com/images/5t7vbDk5jkbHiOHKkSzJDzhgz4.png?scale-down-to=2048",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 로컬 생성 속도",
+        "suite": "M4 Pro 48GiB / session",
+        "condition": "Recursive 자체 측정. short는1K입력,session은128K세션 정규화 AUC(Muse124K). prefill제외. BF16벤치마크와 양자화 로컬속도는 같은실행 아님.",
+        "평가 점수": 10.11,
+        "단위": "생성 토큰/초",
+        "입력 조건": "128K 세션 평균, Muse124K",
+        "측정 주체": "Recursive"
+      }
+    },
+    {
+      "id": "flint-speed-202610-5-short",
+      "model": "Muse Glimmer 30B",
+      "provider": "Meta",
+      "source_url": "https://framerusercontent.com/images/5t7vbDk5jkbHiOHKkSzJDzhgz4.png?scale-down-to=2048",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 로컬 생성 속도",
+        "suite": "M4 Pro 48GiB / short",
+        "condition": "Recursive 자체 측정. short는1K입력,session은128K세션 정규화 AUC(Muse124K). prefill제외. BF16벤치마크와 양자화 로컬속도는 같은실행 아님.",
+        "평가 점수": 14.54,
+        "단위": "생성 토큰/초",
+        "입력 조건": "1K 토큰",
+        "측정 주체": "Recursive"
+      }
+    },
+    {
+      "id": "flint-speed-202610-5-session",
+      "model": "Muse Glimmer 30B",
+      "provider": "Meta",
+      "source_url": "https://framerusercontent.com/images/5t7vbDk5jkbHiOHKkSzJDzhgz4.png?scale-down-to=2048",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 로컬 생성 속도",
+        "suite": "M4 Pro 48GiB / session",
+        "condition": "Recursive 자체 측정. short는1K입력,session은128K세션 정규화 AUC(Muse124K). prefill제외. BF16벤치마크와 양자화 로컬속도는 같은실행 아님.",
+        "평가 점수": 12.61,
+        "단위": "생성 토큰/초",
+        "입력 조건": "128K 세션 평균, Muse124K",
+        "측정 주체": "Recursive"
+      }
+    },
+    {
+      "id": "flint-price-202610-recursive-flint-v1.0-free",
+      "model": "Recursive: Flint (free)",
+      "provider": "recursive",
+      "source_url": "https://openrouter.ai/api/v1/models",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "호스팅 경로 요금",
+        "suite": "OpenRouter 공개 목록 / recursive/flint-v1.0:free",
+        "condition": "23일 확인. OpenRouter USD/입력 및출력100만토큰,단가원문은토큰당USD. 무료Flint는무료경로조건부이며표준유료단가가아님. 계정/제공사/처리지역/요금변경/제한/실청구는별도확인.",
+        "단위": "USD / 1M tokens",
+        "요금 성격": "무료 경로; 표준 유료 단가 미확인",
+        "호스팅 ID": "recursive/flint-v1.0:free",
+        "top_provider context": 262144,
+        "입력 USD / 100만 토큰": 0.0,
+        "출력 USD / 100만 토큰": 0.0
+      }
+    },
+    {
+      "id": "flint-price-202610-qwen-qwen3.8-27b",
+      "model": "Qwen: Qwen3.8 27B",
+      "provider": "qwen",
+      "source_url": "https://openrouter.ai/api/v1/models",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "호스팅 경로 요금",
+        "suite": "OpenRouter 공개 목록 / qwen/qwen3.8-27b",
+        "condition": "23일 확인. OpenRouter USD/입력 및출력100만토큰,단가원문은토큰당USD. 무료Flint는무료경로조건부이며표준유료단가가아님. 계정/제공사/처리지역/요금변경/제한/실청구는별도확인.",
+        "단위": "USD / 1M tokens",
+        "요금 성격": "OpenRouter 게시 경로 요금",
+        "호스팅 ID": "qwen/qwen3.8-27b",
+        "top_provider context": 262144,
+        "입력 USD / 100만 토큰": 0.04,
+        "출력 USD / 100만 토큰": 1.35
+      }
+    },
+    {
+      "id": "flint-price-202610-google-gemma-4-31b-it",
+      "model": "Google: Gemma 4 31B",
+      "provider": "google",
+      "source_url": "https://openrouter.ai/api/v1/models",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "호스팅 경로 요금",
+        "suite": "OpenRouter 공개 목록 / google/gemma-4-31b-it",
+        "condition": "23일 확인. OpenRouter USD/입력 및출력100만토큰,단가원문은토큰당USD. 무료Flint는무료경로조건부이며표준유료단가가아님. 계정/제공사/처리지역/요금변경/제한/실청구는별도확인.",
+        "단위": "USD / 1M tokens",
+        "요금 성격": "OpenRouter 게시 경로 요금",
+        "호스팅 ID": "google/gemma-4-31b-it",
+        "top_provider context": 262144,
+        "입력 USD / 100만 토큰": 0.19999999999999998,
+        "출력 USD / 100만 토큰": 0.39999999999999997
+      }
+    },
+    {
+      "id": "olmoearth13-crop-0-0",
+      "model": "AlphaEarth Foundations",
+      "provider": "Google",
+      "source_url": "https://allenai.org/papers/olmoearth-v1-3",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 위성 임베딩 평가",
+        "suite": "OlmoEarth v1.3 Table2 / PASTIS random",
+        "condition": "Ai2 기술보고서7쪽,linear probe,연간임베딩을라벨연도에정렬/배포양자화방식,위성입력S1/S2/Landsat,평가타일링과배포Searchlight는bit동일아님. 공개점수이고독립재현없음. 높은mIoU가좋음.",
+        "평가 점수": 39.1,
+        "단위": "mIoU %",
+        "임베딩 차원": 64,
+        "측정 주체": "Ai2"
+      }
+    },
+    {
+      "id": "olmoearth13-crop-0-1",
+      "model": "AlphaEarth Foundations",
+      "provider": "Google",
+      "source_url": "https://allenai.org/papers/olmoearth-v1-3",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 위성 임베딩 평가",
+        "suite": "OlmoEarth v1.3 Table2 / PLANTEUR random",
+        "condition": "Ai2 기술보고서7쪽,linear probe,연간임베딩을라벨연도에정렬/배포양자화방식,위성입력S1/S2/Landsat,평가타일링과배포Searchlight는bit동일아님. 공개점수이고독립재현없음. 높은mIoU가좋음.",
+        "평가 점수": 27.7,
+        "단위": "mIoU %",
+        "임베딩 차원": 64,
+        "측정 주체": "Ai2"
+      }
+    },
+    {
+      "id": "olmoearth13-crop-0-2",
+      "model": "AlphaEarth Foundations",
+      "provider": "Google",
+      "source_url": "https://allenai.org/papers/olmoearth-v1-3",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 위성 임베딩 평가",
+        "suite": "OlmoEarth v1.3 Table2 / PLANTEUR leave-one-island-out",
+        "condition": "Ai2 기술보고서7쪽,linear probe,연간임베딩을라벨연도에정렬/배포양자화방식,위성입력S1/S2/Landsat,평가타일링과배포Searchlight는bit동일아님. 공개점수이고독립재현없음. 높은mIoU가좋음.",
+        "평가 점수": 15.8,
+        "단위": "mIoU %",
+        "임베딩 차원": 64,
+        "측정 주체": "Ai2"
+      }
+    },
+    {
+      "id": "olmoearth13-crop-1-0",
+      "model": "TESSERA v2 Large",
+      "provider": "TESSERA",
+      "source_url": "https://allenai.org/papers/olmoearth-v1-3",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 위성 임베딩 평가",
+        "suite": "OlmoEarth v1.3 Table2 / PASTIS random",
+        "condition": "Ai2 기술보고서7쪽,linear probe,연간임베딩을라벨연도에정렬/배포양자화방식,위성입력S1/S2/Landsat,평가타일링과배포Searchlight는bit동일아님. 공개점수이고독립재현없음. 높은mIoU가좋음.",
+        "평가 점수": 58.3,
+        "단위": "mIoU %",
+        "임베딩 차원": 128,
+        "측정 주체": "Ai2"
+      }
+    },
+    {
+      "id": "olmoearth13-crop-1-1",
+      "model": "TESSERA v2 Large",
+      "provider": "TESSERA",
+      "source_url": "https://allenai.org/papers/olmoearth-v1-3",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 위성 임베딩 평가",
+        "suite": "OlmoEarth v1.3 Table2 / PLANTEUR random",
+        "condition": "Ai2 기술보고서7쪽,linear probe,연간임베딩을라벨연도에정렬/배포양자화방식,위성입력S1/S2/Landsat,평가타일링과배포Searchlight는bit동일아님. 공개점수이고독립재현없음. 높은mIoU가좋음.",
+        "평가 점수": 34.2,
+        "단위": "mIoU %",
+        "임베딩 차원": 128,
+        "측정 주체": "Ai2"
+      }
+    },
+    {
+      "id": "olmoearth13-crop-1-2",
+      "model": "TESSERA v2 Large",
+      "provider": "TESSERA",
+      "source_url": "https://allenai.org/papers/olmoearth-v1-3",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 위성 임베딩 평가",
+        "suite": "OlmoEarth v1.3 Table2 / PLANTEUR leave-one-island-out",
+        "condition": "Ai2 기술보고서7쪽,linear probe,연간임베딩을라벨연도에정렬/배포양자화방식,위성입력S1/S2/Landsat,평가타일링과배포Searchlight는bit동일아님. 공개점수이고독립재현없음. 높은mIoU가좋음.",
+        "평가 점수": 19.1,
+        "단위": "mIoU %",
+        "임베딩 차원": 128,
+        "측정 주체": "Ai2"
+      }
+    },
+    {
+      "id": "olmoearth13-crop-2-0",
+      "model": "OlmoEarth v1.3 distilled 128d",
+      "provider": "Ai2",
+      "source_url": "https://allenai.org/papers/olmoearth-v1-3",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 위성 임베딩 평가",
+        "suite": "OlmoEarth v1.3 Table2 / PASTIS random",
+        "condition": "Ai2 기술보고서7쪽,linear probe,연간임베딩을라벨연도에정렬/배포양자화방식,위성입력S1/S2/Landsat,평가타일링과배포Searchlight는bit동일아님. 공개점수이고독립재현없음. 높은mIoU가좋음.",
+        "평가 점수": 58.6,
+        "단위": "mIoU %",
+        "임베딩 차원": 128,
+        "측정 주체": "Ai2"
+      }
+    },
+    {
+      "id": "olmoearth13-crop-2-1",
+      "model": "OlmoEarth v1.3 distilled 128d",
+      "provider": "Ai2",
+      "source_url": "https://allenai.org/papers/olmoearth-v1-3",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 위성 임베딩 평가",
+        "suite": "OlmoEarth v1.3 Table2 / PLANTEUR random",
+        "condition": "Ai2 기술보고서7쪽,linear probe,연간임베딩을라벨연도에정렬/배포양자화방식,위성입력S1/S2/Landsat,평가타일링과배포Searchlight는bit동일아님. 공개점수이고독립재현없음. 높은mIoU가좋음.",
+        "평가 점수": 36.7,
+        "단위": "mIoU %",
+        "임베딩 차원": 128,
+        "측정 주체": "Ai2"
+      }
+    },
+    {
+      "id": "olmoearth13-crop-2-2",
+      "model": "OlmoEarth v1.3 distilled 128d",
+      "provider": "Ai2",
+      "source_url": "https://allenai.org/papers/olmoearth-v1-3",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 위성 임베딩 평가",
+        "suite": "OlmoEarth v1.3 Table2 / PLANTEUR leave-one-island-out",
+        "condition": "Ai2 기술보고서7쪽,linear probe,연간임베딩을라벨연도에정렬/배포양자화방식,위성입력S1/S2/Landsat,평가타일링과배포Searchlight는bit동일아님. 공개점수이고독립재현없음. 높은mIoU가좋음.",
+        "평가 점수": 24.9,
+        "단위": "mIoU %",
+        "임베딩 차원": 128,
+        "측정 주체": "Ai2"
+      }
+    },
+    {
+      "id": "olmoearth13-crop-3-0",
+      "model": "OlmoEarth v1.3 distilled 64d",
+      "provider": "Ai2",
+      "source_url": "https://allenai.org/papers/olmoearth-v1-3",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 위성 임베딩 평가",
+        "suite": "OlmoEarth v1.3 Table2 / PASTIS random",
+        "condition": "Ai2 기술보고서7쪽,linear probe,연간임베딩을라벨연도에정렬/배포양자화방식,위성입력S1/S2/Landsat,평가타일링과배포Searchlight는bit동일아님. 공개점수이고독립재현없음. 높은mIoU가좋음.",
+        "평가 점수": 53.4,
+        "단위": "mIoU %",
+        "임베딩 차원": 64,
+        "측정 주체": "Ai2"
+      }
+    },
+    {
+      "id": "olmoearth13-crop-3-1",
+      "model": "OlmoEarth v1.3 distilled 64d",
+      "provider": "Ai2",
+      "source_url": "https://allenai.org/papers/olmoearth-v1-3",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 위성 임베딩 평가",
+        "suite": "OlmoEarth v1.3 Table2 / PLANTEUR random",
+        "condition": "Ai2 기술보고서7쪽,linear probe,연간임베딩을라벨연도에정렬/배포양자화방식,위성입력S1/S2/Landsat,평가타일링과배포Searchlight는bit동일아님. 공개점수이고독립재현없음. 높은mIoU가좋음.",
+        "평가 점수": 35.2,
+        "단위": "mIoU %",
+        "임베딩 차원": 64,
+        "측정 주체": "Ai2"
+      }
+    },
+    {
+      "id": "olmoearth13-crop-3-2",
+      "model": "OlmoEarth v1.3 distilled 64d",
+      "provider": "Ai2",
+      "source_url": "https://allenai.org/papers/olmoearth-v1-3",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 위성 임베딩 평가",
+        "suite": "OlmoEarth v1.3 Table2 / PLANTEUR leave-one-island-out",
+        "condition": "Ai2 기술보고서7쪽,linear probe,연간임베딩을라벨연도에정렬/배포양자화방식,위성입력S1/S2/Landsat,평가타일링과배포Searchlight는bit동일아님. 공개점수이고독립재현없음. 높은mIoU가좋음.",
+        "평가 점수": 21.5,
+        "단위": "mIoU %",
+        "임베딩 차원": 64,
+        "측정 주체": "Ai2"
+      }
+    },
+    {
+      "id": "olmoearth13-ft-rank-0-0",
+      "model": "OlmoEarth v1 Base",
+      "provider": "Ai2",
+      "source_url": "https://allenai.org/papers/olmoearth-v1-3",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 이전판 비교",
+        "suite": "OlmoEarth v1.3 finetuning mean rank / all",
+        "condition": "기술보고서9쪽3.2.2/Table4. 낮을수록좋음,미측정모델-과제조합제외. all/research/partner집합별평균순위이며mIoU%나정답률아님. 공급사측정,독립재현없음.",
+        "평균 순위": 4.74,
+        "단위": "평균 rank / 무차원",
+        "방향": "낮을수록 좋음",
+        "평가 점수": 4.74
+      }
+    },
+    {
+      "id": "olmoearth13-ft-rank-0-1",
+      "model": "OlmoEarth v1 Base",
+      "provider": "Ai2",
+      "source_url": "https://allenai.org/papers/olmoearth-v1-3",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 이전판 비교",
+        "suite": "OlmoEarth v1.3 finetuning mean rank / research",
+        "condition": "기술보고서9쪽3.2.2/Table4. 낮을수록좋음,미측정모델-과제조합제외. all/research/partner집합별평균순위이며mIoU%나정답률아님. 공급사측정,독립재현없음.",
+        "평균 순위": 7.3,
+        "단위": "평균 rank / 무차원",
+        "방향": "낮을수록 좋음",
+        "평가 점수": 7.3
+      }
+    },
+    {
+      "id": "olmoearth13-ft-rank-0-2",
+      "model": "OlmoEarth v1 Base",
+      "provider": "Ai2",
+      "source_url": "https://allenai.org/papers/olmoearth-v1-3",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 이전판 비교",
+        "suite": "OlmoEarth v1.3 finetuning mean rank / partner",
+        "condition": "기술보고서9쪽3.2.2/Table4. 낮을수록좋음,미측정모델-과제조합제외. all/research/partner집합별평균순위이며mIoU%나정답률아님. 공급사측정,독립재현없음.",
+        "평균 순위": 3.03,
+        "단위": "평균 rank / 무차원",
+        "방향": "낮을수록 좋음",
+        "평가 점수": 3.03
+      }
+    },
+    {
+      "id": "olmoearth13-ft-rank-1-0",
+      "model": "OlmoEarth v1.2 Base",
+      "provider": "Ai2",
+      "source_url": "https://allenai.org/papers/olmoearth-v1-3",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 이전판 비교",
+        "suite": "OlmoEarth v1.3 finetuning mean rank / all",
+        "condition": "기술보고서9쪽3.2.2/Table4. 낮을수록좋음,미측정모델-과제조합제외. all/research/partner집합별평균순위이며mIoU%나정답률아님. 공급사측정,독립재현없음.",
+        "평균 순위": 4.02,
+        "단위": "평균 rank / 무차원",
+        "방향": "낮을수록 좋음",
+        "평가 점수": 4.02
+      }
+    },
+    {
+      "id": "olmoearth13-ft-rank-1-1",
+      "model": "OlmoEarth v1.2 Base",
+      "provider": "Ai2",
+      "source_url": "https://allenai.org/papers/olmoearth-v1-3",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 이전판 비교",
+        "suite": "OlmoEarth v1.3 finetuning mean rank / research",
+        "condition": "기술보고서9쪽3.2.2/Table4. 낮을수록좋음,미측정모델-과제조합제외. all/research/partner집합별평균순위이며mIoU%나정답률아님. 공급사측정,독립재현없음.",
+        "평균 순위": 2.6,
+        "단위": "평균 rank / 무차원",
+        "방향": "낮을수록 좋음",
+        "평가 점수": 2.6
+      }
+    },
+    {
+      "id": "olmoearth13-ft-rank-1-2",
+      "model": "OlmoEarth v1.2 Base",
+      "provider": "Ai2",
+      "source_url": "https://allenai.org/papers/olmoearth-v1-3",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 이전판 비교",
+        "suite": "OlmoEarth v1.3 finetuning mean rank / partner",
+        "condition": "기술보고서9쪽3.2.2/Table4. 낮을수록좋음,미측정모델-과제조합제외. all/research/partner집합별평균순위이며mIoU%나정답률아님. 공급사측정,독립재현없음.",
+        "평균 순위": 4.97,
+        "단위": "평균 rank / 무차원",
+        "방향": "낮을수록 좋음",
+        "평가 점수": 4.97
+      }
+    },
+    {
+      "id": "olmoearth13-ft-rank-2-0",
+      "model": "OlmoEarth v1.3 Base (pooler 없음)",
+      "provider": "Ai2",
+      "source_url": "https://allenai.org/papers/olmoearth-v1-3",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 이전판 비교",
+        "suite": "OlmoEarth v1.3 finetuning mean rank / all",
+        "condition": "기술보고서9쪽3.2.2/Table4. 낮을수록좋음,미측정모델-과제조합제외. all/research/partner집합별평균순위이며mIoU%나정답률아님. 공급사측정,독립재현없음.",
+        "평균 순위": 4.34,
+        "단위": "평균 rank / 무차원",
+        "방향": "낮을수록 좋음",
+        "평가 점수": 4.34
+      }
+    },
+    {
+      "id": "olmoearth13-ft-rank-2-1",
+      "model": "OlmoEarth v1.3 Base (pooler 없음)",
+      "provider": "Ai2",
+      "source_url": "https://allenai.org/papers/olmoearth-v1-3",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 이전판 비교",
+        "suite": "OlmoEarth v1.3 finetuning mean rank / research",
+        "condition": "기술보고서9쪽3.2.2/Table4. 낮을수록좋음,미측정모델-과제조합제외. all/research/partner집합별평균순위이며mIoU%나정답률아님. 공급사측정,독립재현없음.",
+        "평균 순위": 4.5,
+        "단위": "평균 rank / 무차원",
+        "방향": "낮을수록 좋음",
+        "평가 점수": 4.5
+      }
+    },
+    {
+      "id": "olmoearth13-ft-rank-2-2",
+      "model": "OlmoEarth v1.3 Base (pooler 없음)",
+      "provider": "Ai2",
+      "source_url": "https://allenai.org/papers/olmoearth-v1-3",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 이전판 비교",
+        "suite": "OlmoEarth v1.3 finetuning mean rank / partner",
+        "condition": "기술보고서9쪽3.2.2/Table4. 낮을수록좋음,미측정모델-과제조합제외. all/research/partner집합별평균순위이며mIoU%나정답률아님. 공급사측정,독립재현없음.",
+        "평균 순위": 4.23,
+        "단위": "평균 rank / 무차원",
+        "방향": "낮을수록 좋음",
+        "평가 점수": 4.23
+      }
+    },
+    {
+      "id": "olmoearth13-ft-rank-3-0",
+      "model": "OlmoEarth v1.3 Base + pooler",
+      "provider": "Ai2",
+      "source_url": "https://allenai.org/papers/olmoearth-v1-3",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 수록 이전판 비교",
+        "suite": "OlmoEarth v1.3 finetuning mean rank / all",
+        "condition": "기술보고서9쪽3.2.2/Table4. 낮을수록좋음,미측정모델-과제조합제외. all/research/partner집합별평균순위이며mIoU%나정답률아님. 공급사측정,독립재현없음.",
+        "평균 순위": 5.88,
+        "단위": "평균 rank / 무차원",
+        "방향": "낮을수록 좋음",
+        "평가 점수": 5.88
+      }
+    },
+    {
+      "id": "olmoearth13-spec",
+      "model": "OlmoEarth v1.3 Base",
+      "provider": "Ai2",
+      "source_url": "https://huggingface.co/allenai/OlmoEarth-v1_3-Base",
+      "checked_on": "2026-10-23",
+      "fields": {
+        "kind": "공식 위성 모델 사양",
+        "suite": "OlmoEarth-v1_3-Base / 22일 발표",
+        "condition": "22일 발표를23일검토. HF저장소9월4일생성/가중치10월13일갱신은별도이며22일처음가중치가올라왔다고쓰지않음. 카드128M ViT+14.3M Perceiver+0.1M선형학생;총규모를128M로단정하지않음.",
+        "access": "공개 가중치, 연간 임베딩 및 브라우저 탐색기",
+        "ViT 백본 파라미터 B": 0.128,
+        "Perceiver 파라미터 B": 0.0143,
+        "선형 학생 파라미터 B": 0.0001,
+        "입출력": "위성 영상/시계열 → 64 또는128차원 벡터",
+        "공간 해상도": "10m",
+        "라이선스": "OlmoEarth Artifact License; 용도 제한",
+        "표준 API 단가": "미확인",
+        "발표일": "2026-10-22"
+      }
+    }
+  ]
+}
