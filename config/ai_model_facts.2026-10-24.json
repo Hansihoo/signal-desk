@@ -1,0 +1,2459 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "id": "kimi31-202610-0-0",
+      "model": "Kimi K3.1 Pro",
+      "provider": "Moonshot AI",
+      "source_url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/benchmark-overview-v6.webp",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 수록 코딩·문서 평가",
+        "suite": "Terminal-Bench 4.0",
+        "condition": "Moonshot 수록/측정. 높은 값이 좋음. 기본 Kimi max/temperature1/top_p.95; 그림은 비교군 최대추론, Claude fallback/GPT cyberguard 가능. 동일조건 독립재현 아님.",
+        "평가 점수": 65.7,
+        "단위": "%",
+        "측정 주체": "Moonshot AI 수록; 경쟁군 재인용 포함",
+        "harness": "Claude Code; 비교군 원발표/리더보드 최대값",
+        "effort": "max"
+      }
+    },
+    {
+      "id": "kimi31-202610-0-1",
+      "model": "Claude Opus 5.5",
+      "provider": "Anthropic",
+      "source_url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/benchmark-overview-v6.webp",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 수록 코딩·문서 평가",
+        "suite": "Terminal-Bench 4.0",
+        "condition": "Moonshot 수록/측정. 높은 값이 좋음. 기본 Kimi max/temperature1/top_p.95; 그림은 비교군 최대추론, Claude fallback/GPT cyberguard 가능. 동일조건 독립재현 아님.",
+        "평가 점수": 66.4,
+        "단위": "%",
+        "측정 주체": "Moonshot AI 수록; 경쟁군 재인용 포함",
+        "harness": "Claude Code; 비교군 원발표/리더보드 최대값",
+        "effort": "max"
+      }
+    },
+    {
+      "id": "kimi31-202610-0-2",
+      "model": "GPT-6 Astra",
+      "provider": "OpenAI",
+      "source_url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/benchmark-overview-v6.webp",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 수록 코딩·문서 평가",
+        "suite": "Terminal-Bench 4.0",
+        "condition": "Moonshot 수록/측정. 높은 값이 좋음. 기본 Kimi max/temperature1/top_p.95; 그림은 비교군 최대추론, Claude fallback/GPT cyberguard 가능. 동일조건 독립재현 아님.",
+        "평가 점수": 58.2,
+        "단위": "%",
+        "측정 주체": "Moonshot AI 수록; 경쟁군 재인용 포함",
+        "harness": "Claude Code; 비교군 원발표/리더보드 최대값",
+        "effort": "max"
+      }
+    },
+    {
+      "id": "kimi31-202610-0-3",
+      "model": "Claude Fable 5.1",
+      "provider": "Anthropic",
+      "source_url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/benchmark-overview-v6.webp",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 수록 코딩·문서 평가",
+        "suite": "Terminal-Bench 4.0",
+        "condition": "Moonshot 수록/측정. 높은 값이 좋음. 기본 Kimi max/temperature1/top_p.95; 그림은 비교군 최대추론, Claude fallback/GPT cyberguard 가능. 동일조건 독립재현 아님.",
+        "평가 점수": 57.9,
+        "단위": "%",
+        "측정 주체": "Moonshot AI 수록; 경쟁군 재인용 포함",
+        "harness": "Claude Code; 비교군 원발표/리더보드 최대값",
+        "effort": "max"
+      }
+    },
+    {
+      "id": "kimi31-202610-0-4",
+      "model": "DeepSeek-V4.1-Flash-1017",
+      "provider": "DeepSeek",
+      "source_url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/benchmark-overview-v6.webp",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 수록 코딩·문서 평가",
+        "suite": "Terminal-Bench 4.0",
+        "condition": "Moonshot 수록/측정. 높은 값이 좋음. 기본 Kimi max/temperature1/top_p.95; 그림은 비교군 최대추론, Claude fallback/GPT cyberguard 가능. 동일조건 독립재현 아님.",
+        "평가 점수": 42.3,
+        "단위": "%",
+        "측정 주체": "Moonshot AI 수록; 경쟁군 재인용 포함",
+        "harness": "Claude Code; 비교군 원발표/리더보드 최대값",
+        "effort": "max"
+      }
+    },
+    {
+      "id": "kimi31-202610-0-5",
+      "model": "GLM-5.3",
+      "provider": "Zhipu",
+      "source_url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/benchmark-overview-v6.webp",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 수록 코딩·문서 평가",
+        "suite": "Terminal-Bench 4.0",
+        "condition": "Moonshot 수록/측정. 높은 값이 좋음. 기본 Kimi max/temperature1/top_p.95; 그림은 비교군 최대추론, Claude fallback/GPT cyberguard 가능. 동일조건 독립재현 아님.",
+        "평가 점수": 41.8,
+        "단위": "%",
+        "측정 주체": "Moonshot AI 수록; 경쟁군 재인용 포함",
+        "harness": "Claude Code; 비교군 원발표/리더보드 최대값",
+        "effort": "max"
+      }
+    },
+    {
+      "id": "kimi31-202610-1-0",
+      "model": "Kimi K3.1 Pro",
+      "provider": "Moonshot AI",
+      "source_url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/benchmark-overview-v6.webp",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 수록 코딩·문서 평가",
+        "suite": "Terminal-Bench Science 0.1",
+        "condition": "Moonshot 수록/측정. 높은 값이 좋음. 기본 Kimi max/temperature1/top_p.95; 그림은 비교군 최대추론, Claude fallback/GPT cyberguard 가능. 동일조건 독립재현 아님.",
+        "평가 점수": 38.1,
+        "단위": "%",
+        "측정 주체": "Moonshot AI 수록; 경쟁군 재인용 포함",
+        "harness": "Claude Code; 비교군 공식 리더보드",
+        "effort": "max"
+      }
+    },
+    {
+      "id": "kimi31-202610-1-1",
+      "model": "Claude Opus 5.5",
+      "provider": "Anthropic",
+      "source_url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/benchmark-overview-v6.webp",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 수록 코딩·문서 평가",
+        "suite": "Terminal-Bench Science 0.1",
+        "condition": "Moonshot 수록/측정. 높은 값이 좋음. 기본 Kimi max/temperature1/top_p.95; 그림은 비교군 최대추론, Claude fallback/GPT cyberguard 가능. 동일조건 독립재현 아님.",
+        "평가 점수": 63.3,
+        "단위": "%",
+        "측정 주체": "Moonshot AI 수록; 경쟁군 재인용 포함",
+        "harness": "Claude Code; 비교군 공식 리더보드",
+        "effort": "max"
+      }
+    },
+    {
+      "id": "kimi31-202610-1-2",
+      "model": "GPT-6 Astra",
+      "provider": "OpenAI",
+      "source_url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/benchmark-overview-v6.webp",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 수록 코딩·문서 평가",
+        "suite": "Terminal-Bench Science 0.1",
+        "condition": "Moonshot 수록/측정. 높은 값이 좋음. 기본 Kimi max/temperature1/top_p.95; 그림은 비교군 최대추론, Claude fallback/GPT cyberguard 가능. 동일조건 독립재현 아님.",
+        "평가 점수": 68.1,
+        "단위": "%",
+        "측정 주체": "Moonshot AI 수록; 경쟁군 재인용 포함",
+        "harness": "Claude Code; 비교군 공식 리더보드",
+        "effort": "max"
+      }
+    },
+    {
+      "id": "kimi31-202610-1-3",
+      "model": "Claude Fable 5.1",
+      "provider": "Anthropic",
+      "source_url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/benchmark-overview-v6.webp",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 수록 코딩·문서 평가",
+        "suite": "Terminal-Bench Science 0.1",
+        "condition": "Moonshot 수록/측정. 높은 값이 좋음. 기본 Kimi max/temperature1/top_p.95; 그림은 비교군 최대추론, Claude fallback/GPT cyberguard 가능. 동일조건 독립재현 아님.",
+        "평가 점수": 40.0,
+        "단위": "%",
+        "측정 주체": "Moonshot AI 수록; 경쟁군 재인용 포함",
+        "harness": "Claude Code; 비교군 공식 리더보드",
+        "effort": "max"
+      }
+    },
+    {
+      "id": "kimi31-202610-1-4",
+      "model": "DeepSeek-V4.1-Flash",
+      "provider": "DeepSeek",
+      "source_url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/benchmark-overview-v6.webp",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 수록 코딩·문서 평가",
+        "suite": "Terminal-Bench Science 0.1",
+        "condition": "Moonshot 수록/측정. 높은 값이 좋음. 기본 Kimi max/temperature1/top_p.95; 그림은 비교군 최대추론, Claude fallback/GPT cyberguard 가능. 동일조건 독립재현 아님. 이 행15.7은 이전 Flash의 리더보드 인용.1017 직접측정9.3과 다름.",
+        "평가 점수": 15.7,
+        "단위": "%",
+        "측정 주체": "Moonshot AI 수록; 경쟁군 재인용 포함",
+        "harness": "Claude Code; 비교군 공식 리더보드",
+        "effort": "max"
+      }
+    },
+    {
+      "id": "kimi31-202610-1-5",
+      "model": "GLM-5.3",
+      "provider": "Zhipu",
+      "source_url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/benchmark-overview-v6.webp",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 수록 코딩·문서 평가",
+        "suite": "Terminal-Bench Science 0.1",
+        "condition": "Moonshot 수록/측정. 높은 값이 좋음. 기본 Kimi max/temperature1/top_p.95; 그림은 비교군 최대추론, Claude fallback/GPT cyberguard 가능. 동일조건 독립재현 아님.",
+        "평가 점수": 8.1,
+        "단위": "%",
+        "측정 주체": "Moonshot AI 수록; 경쟁군 재인용 포함",
+        "harness": "Claude Code; 비교군 공식 리더보드",
+        "effort": "max"
+      }
+    },
+    {
+      "id": "kimi31-202610-2-0",
+      "model": "Kimi K3.1 Pro",
+      "provider": "Moonshot AI",
+      "source_url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/benchmark-overview-v6.webp",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 수록 코딩·문서 평가",
+        "suite": "SWE-Marathon v1.1",
+        "condition": "Moonshot 수록/측정. 높은 값이 좋음. 기본 Kimi max/temperature1/top_p.95; 그림은 비교군 최대추론, Claude fallback/GPT cyberguard 가능. 동일조건 독립재현 아님.",
+        "평가 점수": 51.7,
+        "단위": "%",
+        "측정 주체": "Moonshot AI 수록; 경쟁군 재인용 포함",
+        "harness": "Claude Code; 비교군 공식 SWE-Marathon 리더보드",
+        "effort": "max"
+      }
+    },
+    {
+      "id": "kimi31-202610-2-1",
+      "model": "Claude Opus 5.5",
+      "provider": "Anthropic",
+      "source_url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/benchmark-overview-v6.webp",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 수록 코딩·문서 평가",
+        "suite": "SWE-Marathon v1.1",
+        "condition": "Moonshot 수록/측정. 높은 값이 좋음. 기본 Kimi max/temperature1/top_p.95; 그림은 비교군 최대추론, Claude fallback/GPT cyberguard 가능. 동일조건 독립재현 아님.",
+        "평가 점수": 46.3,
+        "단위": "%",
+        "측정 주체": "Moonshot AI 수록; 경쟁군 재인용 포함",
+        "harness": "Claude Code; 비교군 공식 SWE-Marathon 리더보드",
+        "effort": "max"
+      }
+    },
+    {
+      "id": "kimi31-202610-2-2",
+      "model": "GPT-6 Astra",
+      "provider": "OpenAI",
+      "source_url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/benchmark-overview-v6.webp",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 수록 코딩·문서 평가",
+        "suite": "SWE-Marathon v1.1",
+        "condition": "Moonshot 수록/측정. 높은 값이 좋음. 기본 Kimi max/temperature1/top_p.95; 그림은 비교군 최대추론, Claude fallback/GPT cyberguard 가능. 동일조건 독립재현 아님.",
+        "평가 점수": 42.5,
+        "단위": "%",
+        "측정 주체": "Moonshot AI 수록; 경쟁군 재인용 포함",
+        "harness": "Claude Code; 비교군 공식 SWE-Marathon 리더보드",
+        "effort": "max"
+      }
+    },
+    {
+      "id": "kimi31-202610-2-3",
+      "model": "Claude Fable 5.1",
+      "provider": "Anthropic",
+      "source_url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/benchmark-overview-v6.webp",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 수록 코딩·문서 평가",
+        "suite": "SWE-Marathon v1.1",
+        "condition": "Moonshot 수록/측정. 높은 값이 좋음. 기본 Kimi max/temperature1/top_p.95; 그림은 비교군 최대추론, Claude fallback/GPT cyberguard 가능. 동일조건 독립재현 아님.",
+        "평가 점수": 45.6,
+        "단위": "%",
+        "측정 주체": "Moonshot AI 수록; 경쟁군 재인용 포함",
+        "harness": "Claude Code; 비교군 공식 SWE-Marathon 리더보드",
+        "effort": "max"
+      }
+    },
+    {
+      "id": "kimi31-202610-2-4",
+      "model": "DeepSeek-V4.1-Flash-1017",
+      "provider": "DeepSeek",
+      "source_url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/benchmark-overview-v6.webp",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 수록 코딩·문서 평가",
+        "suite": "SWE-Marathon v1.1",
+        "condition": "Moonshot 수록/측정. 높은 값이 좋음. 기본 Kimi max/temperature1/top_p.95; 그림은 비교군 최대추론, Claude fallback/GPT cyberguard 가능. 동일조건 독립재현 아님.",
+        "평가 점수": 40.0,
+        "단위": "%",
+        "측정 주체": "Moonshot AI 수록; 경쟁군 재인용 포함",
+        "harness": "Claude Code; 비교군 공식 SWE-Marathon 리더보드",
+        "effort": "max"
+      }
+    },
+    {
+      "id": "kimi31-202610-2-5",
+      "model": "GLM-5.3",
+      "provider": "Zhipu",
+      "source_url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/benchmark-overview-v6.webp",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 수록 코딩·문서 평가",
+        "suite": "SWE-Marathon v1.1",
+        "condition": "Moonshot 수록/측정. 높은 값이 좋음. 기본 Kimi max/temperature1/top_p.95; 그림은 비교군 최대추론, Claude fallback/GPT cyberguard 가능. 동일조건 독립재현 아님.",
+        "평가 점수": 42.5,
+        "단위": "%",
+        "측정 주체": "Moonshot AI 수록; 경쟁군 재인용 포함",
+        "harness": "Claude Code; 비교군 공식 SWE-Marathon 리더보드",
+        "effort": "max"
+      }
+    },
+    {
+      "id": "kimi31-202610-3-0",
+      "model": "Kimi K3.1 Pro",
+      "provider": "Moonshot AI",
+      "source_url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/benchmark-overview-v6.webp",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 수록 코딩·문서 평가",
+        "suite": "Kimi Code Bench 3.0 Long-horizon",
+        "condition": "Moonshot 수록/측정. 높은 값이 좋음. 기본 Kimi max/temperature1/top_p.95; 그림은 비교군 최대추론, Claude fallback/GPT cyberguard 가능. 동일조건 독립재현 아님.",
+        "평가 점수": 61.2,
+        "단위": "%",
+        "측정 주체": "Moonshot AI 수록; 경쟁군 재인용 포함",
+        "harness": "Kimi 내부 Claude Code; 비교군 최대 추론, fallback 가능",
+        "effort": "max"
+      }
+    },
+    {
+      "id": "kimi31-202610-3-1",
+      "model": "Claude Opus 5.5",
+      "provider": "Anthropic",
+      "source_url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/benchmark-overview-v6.webp",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 수록 코딩·문서 평가",
+        "suite": "Kimi Code Bench 3.0 Long-horizon",
+        "condition": "Moonshot 수록/측정. 높은 값이 좋음. 기본 Kimi max/temperature1/top_p.95; 그림은 비교군 최대추론, Claude fallback/GPT cyberguard 가능. 동일조건 독립재현 아님.",
+        "평가 점수": 58.5,
+        "단위": "%",
+        "측정 주체": "Moonshot AI 수록; 경쟁군 재인용 포함",
+        "harness": "Kimi 내부 Claude Code; 비교군 최대 추론, fallback 가능",
+        "effort": "max"
+      }
+    },
+    {
+      "id": "kimi31-202610-3-2",
+      "model": "GPT-6 Astra",
+      "provider": "OpenAI",
+      "source_url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/benchmark-overview-v6.webp",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 수록 코딩·문서 평가",
+        "suite": "Kimi Code Bench 3.0 Long-horizon",
+        "condition": "Moonshot 수록/측정. 높은 값이 좋음. 기본 Kimi max/temperature1/top_p.95; 그림은 비교군 최대추론, Claude fallback/GPT cyberguard 가능. 동일조건 독립재현 아님.",
+        "평가 점수": 66.5,
+        "단위": "%",
+        "측정 주체": "Moonshot AI 수록; 경쟁군 재인용 포함",
+        "harness": "Kimi 내부 Claude Code; 비교군 최대 추론, fallback 가능",
+        "effort": "max"
+      }
+    },
+    {
+      "id": "kimi31-202610-3-3",
+      "model": "Claude Fable 5.1",
+      "provider": "Anthropic",
+      "source_url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/benchmark-overview-v6.webp",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 수록 코딩·문서 평가",
+        "suite": "Kimi Code Bench 3.0 Long-horizon",
+        "condition": "Moonshot 수록/측정. 높은 값이 좋음. 기본 Kimi max/temperature1/top_p.95; 그림은 비교군 최대추론, Claude fallback/GPT cyberguard 가능. 동일조건 독립재현 아님.",
+        "평가 점수": 58.8,
+        "단위": "%",
+        "측정 주체": "Moonshot AI 수록; 경쟁군 재인용 포함",
+        "harness": "Kimi 내부 Claude Code; 비교군 최대 추론, fallback 가능",
+        "effort": "max"
+      }
+    },
+    {
+      "id": "kimi31-202610-3-4",
+      "model": "DeepSeek-V4.1-Flash-1017",
+      "provider": "DeepSeek",
+      "source_url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/benchmark-overview-v6.webp",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 수록 코딩·문서 평가",
+        "suite": "Kimi Code Bench 3.0 Long-horizon",
+        "condition": "Moonshot 수록/측정. 높은 값이 좋음. 기본 Kimi max/temperature1/top_p.95; 그림은 비교군 최대추론, Claude fallback/GPT cyberguard 가능. 동일조건 독립재현 아님.",
+        "평가 점수": 51.5,
+        "단위": "%",
+        "측정 주체": "Moonshot AI 수록; 경쟁군 재인용 포함",
+        "harness": "Kimi 내부 Claude Code; 비교군 최대 추론, fallback 가능",
+        "effort": "max"
+      }
+    },
+    {
+      "id": "kimi31-202610-3-5",
+      "model": "GLM-5.3",
+      "provider": "Zhipu",
+      "source_url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/benchmark-overview-v6.webp",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 수록 코딩·문서 평가",
+        "suite": "Kimi Code Bench 3.0 Long-horizon",
+        "condition": "Moonshot 수록/측정. 높은 값이 좋음. 기본 Kimi max/temperature1/top_p.95; 그림은 비교군 최대추론, Claude fallback/GPT cyberguard 가능. 동일조건 독립재현 아님.",
+        "평가 점수": 45.5,
+        "단위": "%",
+        "측정 주체": "Moonshot AI 수록; 경쟁군 재인용 포함",
+        "harness": "Kimi 내부 Claude Code; 비교군 최대 추론, fallback 가능",
+        "effort": "max"
+      }
+    },
+    {
+      "id": "kimi31-202610-4-0",
+      "model": "Kimi K3.1 Pro",
+      "provider": "Moonshot AI",
+      "source_url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/benchmark-overview-v6.webp",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 수록 코딩·문서 평가",
+        "suite": "OfficeQA Pro v2",
+        "condition": "Moonshot 수록/측정. 높은 값이 좋음. 기본 Kimi max/temperature1/top_p.95; 그림은 비교군 최대추론, Claude fallback/GPT cyberguard 가능. 동일조건 독립재현 아님.",
+        "평가 점수": 64.4,
+        "단위": "%",
+        "측정 주체": "Moonshot AI 수록; 경쟁군 재인용 포함",
+        "harness": "Astra=Codex; 나머지=Claude Code. 전체 PDF를 이미지로 제공, 온라인 정답검색은0점",
+        "effort": "max"
+      }
+    },
+    {
+      "id": "kimi31-202610-4-1",
+      "model": "Claude Opus 5.5",
+      "provider": "Anthropic",
+      "source_url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/benchmark-overview-v6.webp",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 수록 코딩·문서 평가",
+        "suite": "OfficeQA Pro v2",
+        "condition": "Moonshot 수록/측정. 높은 값이 좋음. 기본 Kimi max/temperature1/top_p.95; 그림은 비교군 최대추론, Claude fallback/GPT cyberguard 가능. 동일조건 독립재현 아님.",
+        "평가 점수": 62.2,
+        "단위": "%",
+        "측정 주체": "Moonshot AI 수록; 경쟁군 재인용 포함",
+        "harness": "Astra=Codex; 나머지=Claude Code. 전체 PDF를 이미지로 제공, 온라인 정답검색은0점",
+        "effort": "max"
+      }
+    },
+    {
+      "id": "kimi31-202610-4-2",
+      "model": "GPT-6 Astra",
+      "provider": "OpenAI",
+      "source_url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/benchmark-overview-v6.webp",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 수록 코딩·문서 평가",
+        "suite": "OfficeQA Pro v2",
+        "condition": "Moonshot 수록/측정. 높은 값이 좋음. 기본 Kimi max/temperature1/top_p.95; 그림은 비교군 최대추론, Claude fallback/GPT cyberguard 가능. 동일조건 독립재현 아님.",
+        "평가 점수": 54.4,
+        "단위": "%",
+        "측정 주체": "Moonshot AI 수록; 경쟁군 재인용 포함",
+        "harness": "Astra=Codex; 나머지=Claude Code. 전체 PDF를 이미지로 제공, 온라인 정답검색은0점",
+        "effort": "max"
+      }
+    },
+    {
+      "id": "kimi31-202610-4-3",
+      "model": "Claude Fable 5.1",
+      "provider": "Anthropic",
+      "source_url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/benchmark-overview-v6.webp",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 수록 코딩·문서 평가",
+        "suite": "OfficeQA Pro v2",
+        "condition": "Moonshot 수록/측정. 높은 값이 좋음. 기본 Kimi max/temperature1/top_p.95; 그림은 비교군 최대추론, Claude fallback/GPT cyberguard 가능. 동일조건 독립재현 아님.",
+        "평가 점수": 54.5,
+        "단위": "%",
+        "측정 주체": "Moonshot AI 수록; 경쟁군 재인용 포함",
+        "harness": "Astra=Codex; 나머지=Claude Code. 전체 PDF를 이미지로 제공, 온라인 정답검색은0점",
+        "effort": "max"
+      }
+    },
+    {
+      "id": "kimi31-202610-4-4",
+      "model": "DeepSeek-V4.1-Flash-1017",
+      "provider": "DeepSeek",
+      "source_url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/benchmark-overview-v6.webp",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 수록 코딩·문서 평가",
+        "suite": "OfficeQA Pro v2",
+        "condition": "Moonshot 수록/측정. 높은 값이 좋음. 기본 Kimi max/temperature1/top_p.95; 그림은 비교군 최대추론, Claude fallback/GPT cyberguard 가능. 동일조건 독립재현 아님.",
+        "평가 점수": 40.4,
+        "단위": "%",
+        "측정 주체": "Moonshot AI 수록; 경쟁군 재인용 포함",
+        "harness": "Astra=Codex; 나머지=Claude Code. 전체 PDF를 이미지로 제공, 온라인 정답검색은0점",
+        "effort": "max"
+      }
+    },
+    {
+      "id": "kimi31-202610-4-5",
+      "model": "GLM-5.3",
+      "provider": "Zhipu",
+      "source_url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/benchmark-overview-v6.webp",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 수록 코딩·문서 평가",
+        "suite": "OfficeQA Pro v2",
+        "condition": "Moonshot 수록/측정. 높은 값이 좋음. 기본 Kimi max/temperature1/top_p.95; 그림은 비교군 최대추론, Claude fallback/GPT cyberguard 가능. 동일조건 독립재현 아님.",
+        "평가 점수": 31.1,
+        "단위": "%",
+        "측정 주체": "Moonshot AI 수록; 경쟁군 재인용 포함",
+        "harness": "Astra=Codex; 나머지=Claude Code. 전체 PDF를 이미지로 제공, 온라인 정답검색은0점",
+        "effort": "max"
+      }
+    },
+    {
+      "id": "kimi31-202610-5-0",
+      "model": "Kimi K3.1 Pro",
+      "provider": "Moonshot AI",
+      "source_url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/benchmark-overview-v6.webp",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 수록 코딩·문서 평가",
+        "suite": "Frontier Finance",
+        "condition": "Moonshot 수록/측정. 높은 값이 좋음. 기본 Kimi max/temperature1/top_p.95; 그림은 비교군 최대추론, Claude fallback/GPT cyberguard 가능. 동일조건 독립재현 아님.",
+        "평가 점수": 58.6,
+        "단위": "%",
+        "측정 주체": "Moonshot AI 수록; 경쟁군 재인용 포함",
+        "harness": "official finance agent v2",
+        "effort": "max"
+      }
+    },
+    {
+      "id": "kimi31-202610-5-1",
+      "model": "Claude Opus 5.5",
+      "provider": "Anthropic",
+      "source_url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/benchmark-overview-v6.webp",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 수록 코딩·문서 평가",
+        "suite": "Frontier Finance",
+        "condition": "Moonshot 수록/측정. 높은 값이 좋음. 기본 Kimi max/temperature1/top_p.95; 그림은 비교군 최대추론, Claude fallback/GPT cyberguard 가능. 동일조건 독립재현 아님.",
+        "평가 점수": 56.7,
+        "단위": "%",
+        "측정 주체": "Moonshot AI 수록; 경쟁군 재인용 포함",
+        "harness": "official finance agent v2",
+        "effort": "max"
+      }
+    },
+    {
+      "id": "kimi31-202610-5-2",
+      "model": "GPT-6 Astra",
+      "provider": "OpenAI",
+      "source_url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/benchmark-overview-v6.webp",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 수록 코딩·문서 평가",
+        "suite": "Frontier Finance",
+        "condition": "Moonshot 수록/측정. 높은 값이 좋음. 기본 Kimi max/temperature1/top_p.95; 그림은 비교군 최대추론, Claude fallback/GPT cyberguard 가능. 동일조건 독립재현 아님.",
+        "평가 점수": 45.0,
+        "단위": "%",
+        "측정 주체": "Moonshot AI 수록; 경쟁군 재인용 포함",
+        "harness": "official finance agent v2",
+        "effort": "max"
+      }
+    },
+    {
+      "id": "kimi31-202610-5-3",
+      "model": "Claude Fable 5.1",
+      "provider": "Anthropic",
+      "source_url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/benchmark-overview-v6.webp",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 수록 코딩·문서 평가",
+        "suite": "Frontier Finance",
+        "condition": "Moonshot 수록/측정. 높은 값이 좋음. 기본 Kimi max/temperature1/top_p.95; 그림은 비교군 최대추론, Claude fallback/GPT cyberguard 가능. 동일조건 독립재현 아님.",
+        "평가 점수": 60.8,
+        "단위": "%",
+        "측정 주체": "Moonshot AI 수록; 경쟁군 재인용 포함",
+        "harness": "official finance agent v2",
+        "effort": "max"
+      }
+    },
+    {
+      "id": "kimi31-202610-5-4",
+      "model": "DeepSeek-V4.1-Flash-1017",
+      "provider": "DeepSeek",
+      "source_url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/benchmark-overview-v6.webp",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 수록 코딩·문서 평가",
+        "suite": "Frontier Finance",
+        "condition": "Moonshot 수록/측정. 높은 값이 좋음. 기본 Kimi max/temperature1/top_p.95; 그림은 비교군 최대추론, Claude fallback/GPT cyberguard 가능. 동일조건 독립재현 아님.",
+        "평가 점수": 54.5,
+        "단위": "%",
+        "측정 주체": "Moonshot AI 수록; 경쟁군 재인용 포함",
+        "harness": "official finance agent v2",
+        "effort": "max"
+      }
+    },
+    {
+      "id": "kimi31-202610-5-5",
+      "model": "GLM-5.3",
+      "provider": "Zhipu",
+      "source_url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/benchmark-overview-v6.webp",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 수록 코딩·문서 평가",
+        "suite": "Frontier Finance",
+        "condition": "Moonshot 수록/측정. 높은 값이 좋음. 기본 Kimi max/temperature1/top_p.95; 그림은 비교군 최대추론, Claude fallback/GPT cyberguard 가능. 동일조건 독립재현 아님.",
+        "평가 점수": 57.5,
+        "단위": "%",
+        "측정 주체": "Moonshot AI 수록; 경쟁군 재인용 포함",
+        "harness": "official finance agent v2",
+        "effort": "max"
+      }
+    },
+    {
+      "id": "kimi31-science-1017-direct",
+      "model": "DeepSeek-V4.1-Flash-1017",
+      "provider": "DeepSeek",
+      "source_url": "https://www.kimi.com/en/blog/kimi-k3-1-pro",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 수록 평가",
+        "suite": "Terminal-Bench Science 0.1 / Moonshot 직접측정",
+        "condition": "원문 주석9.3이며 비교 그림의 이전 Flash15.7과 구분. 높은 값이 좋음.",
+        "평가 점수": 9.3,
+        "단위": "%",
+        "측정 주체": "Moonshot AI",
+        "harness": "Claude Code"
+      }
+    },
+    {
+      "id": "kimi31-hallu-0-0",
+      "model": "Kimi K3.1 Pro",
+      "provider": "Moonshot AI",
+      "source_url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/hallu-bench-results-v2.webp",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "주장 단위 오류율",
+        "suite": "Kimi Hallu Bench / 도구 없음",
+        "condition": "낮은 값이 좋음. Moonshot의 내부 어려운 프롬프트. 일상 오류율/정확도로 일반화하지 않음. 최대 추론; 타사 fallback/cyberguard 가능.",
+        "평가 점수": 5.4,
+        "단위": "% (낮을수록 좋음)",
+        "측정 주체": "Moonshot AI",
+        "harness": "도구 없음"
+      }
+    },
+    {
+      "id": "kimi31-hallu-0-1",
+      "model": "Claude Opus 5.5",
+      "provider": "Anthropic",
+      "source_url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/hallu-bench-results-v2.webp",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "주장 단위 오류율",
+        "suite": "Kimi Hallu Bench / 도구 없음",
+        "condition": "낮은 값이 좋음. Moonshot의 내부 어려운 프롬프트. 일상 오류율/정확도로 일반화하지 않음. 최대 추론; 타사 fallback/cyberguard 가능.",
+        "평가 점수": 6.8,
+        "단위": "% (낮을수록 좋음)",
+        "측정 주체": "Moonshot AI",
+        "harness": "도구 없음"
+      }
+    },
+    {
+      "id": "kimi31-hallu-0-2",
+      "model": "GPT-6 Astra",
+      "provider": "OpenAI",
+      "source_url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/hallu-bench-results-v2.webp",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "주장 단위 오류율",
+        "suite": "Kimi Hallu Bench / 도구 없음",
+        "condition": "낮은 값이 좋음. Moonshot의 내부 어려운 프롬프트. 일상 오류율/정확도로 일반화하지 않음. 최대 추론; 타사 fallback/cyberguard 가능.",
+        "평가 점수": 4.2,
+        "단위": "% (낮을수록 좋음)",
+        "측정 주체": "Moonshot AI",
+        "harness": "도구 없음"
+      }
+    },
+    {
+      "id": "kimi31-hallu-0-3",
+      "model": "Claude Fable 5.1",
+      "provider": "Anthropic",
+      "source_url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/hallu-bench-results-v2.webp",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "주장 단위 오류율",
+        "suite": "Kimi Hallu Bench / 도구 없음",
+        "condition": "낮은 값이 좋음. Moonshot의 내부 어려운 프롬프트. 일상 오류율/정확도로 일반화하지 않음. 최대 추론; 타사 fallback/cyberguard 가능.",
+        "평가 점수": 11.4,
+        "단위": "% (낮을수록 좋음)",
+        "측정 주체": "Moonshot AI",
+        "harness": "도구 없음"
+      }
+    },
+    {
+      "id": "kimi31-hallu-0-4",
+      "model": "DeepSeek-V4.1-Flash-1017",
+      "provider": "DeepSeek",
+      "source_url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/hallu-bench-results-v2.webp",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "주장 단위 오류율",
+        "suite": "Kimi Hallu Bench / 도구 없음",
+        "condition": "낮은 값이 좋음. Moonshot의 내부 어려운 프롬프트. 일상 오류율/정확도로 일반화하지 않음. 최대 추론; 타사 fallback/cyberguard 가능.",
+        "평가 점수": 13.1,
+        "단위": "% (낮을수록 좋음)",
+        "측정 주체": "Moonshot AI",
+        "harness": "도구 없음"
+      }
+    },
+    {
+      "id": "kimi31-hallu-0-5",
+      "model": "GLM-5.3",
+      "provider": "Zhipu",
+      "source_url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/hallu-bench-results-v2.webp",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "주장 단위 오류율",
+        "suite": "Kimi Hallu Bench / 도구 없음",
+        "condition": "낮은 값이 좋음. Moonshot의 내부 어려운 프롬프트. 일상 오류율/정확도로 일반화하지 않음. 최대 추론; 타사 fallback/cyberguard 가능.",
+        "평가 점수": 14.8,
+        "단위": "% (낮을수록 좋음)",
+        "측정 주체": "Moonshot AI",
+        "harness": "도구 없음"
+      }
+    },
+    {
+      "id": "kimi31-hallu-1-0",
+      "model": "Kimi K3.1 Pro",
+      "provider": "Moonshot AI",
+      "source_url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/hallu-bench-results-v2.webp",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "주장 단위 오류율",
+        "suite": "Kimi Hallu Bench Hard / 도구 있음",
+        "condition": "낮은 값이 좋음. Moonshot의 내부 어려운 프롬프트. 일상 오류율/정확도로 일반화하지 않음. 최대 추론; 타사 fallback/cyberguard 가능.",
+        "평가 점수": 8.3,
+        "단위": "% (낮을수록 좋음)",
+        "측정 주체": "Moonshot AI",
+        "harness": "Hard; 도구 있음"
+      }
+    },
+    {
+      "id": "kimi31-hallu-1-1",
+      "model": "Claude Opus 5.5",
+      "provider": "Anthropic",
+      "source_url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/hallu-bench-results-v2.webp",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "주장 단위 오류율",
+        "suite": "Kimi Hallu Bench Hard / 도구 있음",
+        "condition": "낮은 값이 좋음. Moonshot의 내부 어려운 프롬프트. 일상 오류율/정확도로 일반화하지 않음. 최대 추론; 타사 fallback/cyberguard 가능.",
+        "평가 점수": 15.0,
+        "단위": "% (낮을수록 좋음)",
+        "측정 주체": "Moonshot AI",
+        "harness": "Hard; 도구 있음"
+      }
+    },
+    {
+      "id": "kimi31-hallu-1-2",
+      "model": "GPT-6 Astra",
+      "provider": "OpenAI",
+      "source_url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/hallu-bench-results-v2.webp",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "주장 단위 오류율",
+        "suite": "Kimi Hallu Bench Hard / 도구 있음",
+        "condition": "낮은 값이 좋음. Moonshot의 내부 어려운 프롬프트. 일상 오류율/정확도로 일반화하지 않음. 최대 추론; 타사 fallback/cyberguard 가능.",
+        "평가 점수": 5.5,
+        "단위": "% (낮을수록 좋음)",
+        "측정 주체": "Moonshot AI",
+        "harness": "Hard; 도구 있음"
+      }
+    },
+    {
+      "id": "kimi31-hallu-1-3",
+      "model": "Claude Fable 5.1",
+      "provider": "Anthropic",
+      "source_url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/hallu-bench-results-v2.webp",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "주장 단위 오류율",
+        "suite": "Kimi Hallu Bench Hard / 도구 있음",
+        "condition": "낮은 값이 좋음. Moonshot의 내부 어려운 프롬프트. 일상 오류율/정확도로 일반화하지 않음. 최대 추론; 타사 fallback/cyberguard 가능.",
+        "평가 점수": 23.3,
+        "단위": "% (낮을수록 좋음)",
+        "측정 주체": "Moonshot AI",
+        "harness": "Hard; 도구 있음"
+      }
+    },
+    {
+      "id": "kimi31-hallu-1-4",
+      "model": "DeepSeek-V4.1-Flash-1017",
+      "provider": "DeepSeek",
+      "source_url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/hallu-bench-results-v2.webp",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "주장 단위 오류율",
+        "suite": "Kimi Hallu Bench Hard / 도구 있음",
+        "condition": "낮은 값이 좋음. Moonshot의 내부 어려운 프롬프트. 일상 오류율/정확도로 일반화하지 않음. 최대 추론; 타사 fallback/cyberguard 가능.",
+        "평가 점수": 23.3,
+        "단위": "% (낮을수록 좋음)",
+        "측정 주체": "Moonshot AI",
+        "harness": "Hard; 도구 있음"
+      }
+    },
+    {
+      "id": "kimi31-hallu-1-5",
+      "model": "GLM-5.3",
+      "provider": "Zhipu",
+      "source_url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/hallu-bench-results-v2.webp",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "주장 단위 오류율",
+        "suite": "Kimi Hallu Bench Hard / 도구 있음",
+        "condition": "낮은 값이 좋음. Moonshot의 내부 어려운 프롬프트. 일상 오류율/정확도로 일반화하지 않음. 최대 추론; 타사 fallback/cyberguard 가능.",
+        "평가 점수": 22.6,
+        "단위": "% (낮을수록 좋음)",
+        "측정 주체": "Moonshot AI",
+        "harness": "Hard; 도구 있음"
+      }
+    },
+    {
+      "id": "kimi31-prev-kimi-code-bench-3-0-long-horizon-kimi-k3",
+      "model": "Kimi K3",
+      "provider": "Moonshot AI",
+      "source_url": "https://www.kimi.com/en/blog/kimi-k3-1-pro",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "이전판 비교",
+        "suite": "내부 Kimi Code Bench 3.0 Long-horizon",
+        "condition": "공급사 내부 평가. 비교 조건을 실제 작업이나 다른 공개 평가에 일반화하지 않음.",
+        "평가 점수": 55.95,
+        "단위": "score",
+        "측정 주체": "Moonshot AI"
+      }
+    },
+    {
+      "id": "kimi31-prev-kimi-code-bench-3-0-long-horizon-kimi-k3-1-pro",
+      "model": "Kimi K3.1 Pro",
+      "provider": "Moonshot AI",
+      "source_url": "https://www.kimi.com/en/blog/kimi-k3-1-pro",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "이전판 비교",
+        "suite": "내부 Kimi Code Bench 3.0 Long-horizon",
+        "condition": "공급사 내부 평가. 비교 조건을 실제 작업이나 다른 공개 평가에 일반화하지 않음.",
+        "평가 점수": 61.2,
+        "단위": "score",
+        "측정 주체": "Moonshot AI"
+      }
+    },
+    {
+      "id": "kimi31-prev-financial-modeling-kimi-k3",
+      "model": "Kimi K3",
+      "provider": "Moonshot AI",
+      "source_url": "https://www.kimi.com/en/blog/kimi-k3-1-pro",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "이전판 비교",
+        "suite": "내부 내부 Financial Modeling",
+        "condition": "공급사 내부 평가. 비교 조건을 실제 작업이나 다른 공개 평가에 일반화하지 않음.",
+        "평가 점수": 50.4,
+        "단위": "score",
+        "측정 주체": "Moonshot AI"
+      }
+    },
+    {
+      "id": "kimi31-prev-financial-modeling-kimi-k3-1-pro",
+      "model": "Kimi K3.1 Pro",
+      "provider": "Moonshot AI",
+      "source_url": "https://www.kimi.com/en/blog/kimi-k3-1-pro",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "이전판 비교",
+        "suite": "내부 내부 Financial Modeling",
+        "condition": "공급사 내부 평가. 비교 조건을 실제 작업이나 다른 공개 평가에 일반화하지 않음.",
+        "평가 점수": 57.6,
+        "단위": "score",
+        "측정 주체": "Moonshot AI"
+      }
+    },
+    {
+      "id": "kimi31-prev-financial-research-kimi-k3",
+      "model": "Kimi K3",
+      "provider": "Moonshot AI",
+      "source_url": "https://www.kimi.com/en/blog/kimi-k3-1-pro",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "이전판 비교",
+        "suite": "내부 내부 Financial Research",
+        "condition": "공급사 내부 평가. 비교 조건을 실제 작업이나 다른 공개 평가에 일반화하지 않음.",
+        "평가 점수": 58.8,
+        "단위": "score",
+        "측정 주체": "Moonshot AI"
+      }
+    },
+    {
+      "id": "kimi31-prev-financial-research-kimi-k3-1-pro",
+      "model": "Kimi K3.1 Pro",
+      "provider": "Moonshot AI",
+      "source_url": "https://www.kimi.com/en/blog/kimi-k3-1-pro",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "이전판 비교",
+        "suite": "내부 내부 Financial Research",
+        "condition": "공급사 내부 평가. 비교 조건을 실제 작업이나 다른 공개 평가에 일반화하지 않음.",
+        "평가 점수": 70.4,
+        "단위": "score",
+        "측정 주체": "Moonshot AI"
+      }
+    },
+    {
+      "id": "kimi31-prev-hallu-bench-hard-kimi-k3",
+      "model": "Kimi K3",
+      "provider": "Moonshot AI",
+      "source_url": "https://www.kimi.com/en/blog/kimi-k3-1-pro",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "이전판 비교",
+        "suite": "내부 Hallu Bench Hard 주장 오류율",
+        "condition": "공급사 내부 평가. 비교 조건을 실제 작업이나 다른 공개 평가에 일반화하지 않음.",
+        "평가 점수": 23.4,
+        "단위": "% (낮을수록 좋음)",
+        "측정 주체": "Moonshot AI"
+      }
+    },
+    {
+      "id": "kimi31-prev-hallu-bench-hard-kimi-k3-1-pro",
+      "model": "Kimi K3.1 Pro",
+      "provider": "Moonshot AI",
+      "source_url": "https://www.kimi.com/en/blog/kimi-k3-1-pro",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "이전판 비교",
+        "suite": "내부 Hallu Bench Hard 주장 오류율",
+        "condition": "공급사 내부 평가. 비교 조건을 실제 작업이나 다른 공개 평가에 일반화하지 않음.",
+        "평가 점수": 8.3,
+        "단위": "% (낮을수록 좋음)",
+        "측정 주체": "Moonshot AI"
+      }
+    },
+    {
+      "id": "kimi31-spec-kimi-k3-1-pro",
+      "model": "Kimi K3.1 Pro",
+      "provider": "Moonshot AI",
+      "source_url": "https://www.kimi.com/code/docs/en/kimi-code/models.html",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 사양·제공",
+        "suite": "K3.1 Pro / 2026-10-24 확인",
+        "condition": "API와 Code ID/요금제를 구분. Code 상위 요금제의1M 한도를 모든 플랜에 보장하지 않음. 3T급은 정확한 전체/활성 파라미터 숫자가 아님.",
+        "context": 1048576,
+        "effort": "low/high/max; default max; thinking cannot be disabled",
+        "access": "앱·Work·Code·API 제공; 전체 가중치는2026-11-04까지 공개 예정",
+        "API ID": "kimi-k3.1-pro",
+        "Code ID": "k3.1-pro",
+        "입출력": "텍스트/이미지/영상 입력; 텍스트 출력",
+        "정확한 파라미터 수": "미공개",
+        "가중치 현재 상태": "공개 예정",
+        "비교표 상세 소개": "preview/kimi-k3-1-pro-model-guide.html"
+      }
+    },
+    {
+      "id": "kimi31-spec-kimi-k3-1-pro-highspeed",
+      "model": "Kimi K3.1 Pro Highspeed",
+      "provider": "Moonshot AI",
+      "source_url": "https://www.kimi.com/code/docs/en/kimi-code/models.html",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 사양·제공",
+        "suite": "K3.1 Pro / 2026-10-24 확인",
+        "condition": "API와 Code ID/요금제를 구분. Code 상위 요금제의1M 한도를 모든 플랜에 보장하지 않음. 3T급은 정확한 전체/활성 파라미터 숫자가 아님.",
+        "context": 1048576,
+        "effort": "low/high/max; default max; thinking cannot be disabled",
+        "access": "앱·Work·Code·API 제공; 전체 가중치는2026-11-04까지 공개 예정",
+        "API ID": "kimi-k3.1-pro-highspeed",
+        "Code ID": "k3.1-pro-highspeed",
+        "입출력": "텍스트/이미지/영상 입력; 텍스트 출력",
+        "정확한 파라미터 수": "미공개",
+        "가중치 현재 상태": "공개 예정",
+        "비교표 상세 소개": "preview/kimi-k3-1-pro-model-guide.html"
+      }
+    },
+    {
+      "id": "kimi31-price-kimi-k3-1-pro",
+      "model": "Kimi K3.1 Pro",
+      "provider": "Moonshot AI",
+      "source_url": "https://platform.kimi.ai/",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 API 표준 요금",
+        "suite": "Kimi 공식 공개 홈페이지 / 24일 확인",
+        "condition": "USD/1M=1,000,000tokens, 세금 제외. API 종량제이며 Code 구독/할당량과 다름. 홈페이지 캐시쓰기 값의 TTL은 미표기; 5분/1시간 별도 과금. 1시간 쓰기 단가 추정 안함.",
+        "입력 USD / 100만 토큰": 2,
+        "출력 USD / 100만 토큰": 10,
+        "캐시 적중 입력 USD / 100만 토큰": 0.2,
+        "캐시 쓰기 USD / 100만 토큰": 2,
+        "단위": "USD / 1M tokens",
+        "요금 성격": "공식 표준 종량제; 홈페이지 표시값"
+      }
+    },
+    {
+      "id": "kimi31-price-kimi-k3-1-pro-highspeed",
+      "model": "Kimi K3.1 Pro Highspeed",
+      "provider": "Moonshot AI",
+      "source_url": "https://platform.kimi.ai/",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 API 표준 요금",
+        "suite": "Kimi 공식 공개 홈페이지 / 24일 확인",
+        "condition": "USD/1M=1,000,000tokens, 세금 제외. API 종량제이며 Code 구독/할당량과 다름. 홈페이지 캐시쓰기 값의 TTL은 미표기; 5분/1시간 별도 과금. 1시간 쓰기 단가 추정 안함.",
+        "입력 USD / 100만 토큰": 4,
+        "출력 USD / 100만 토큰": 20,
+        "캐시 적중 입력 USD / 100만 토큰": 0.2,
+        "캐시 쓰기 USD / 100만 토큰": 4,
+        "단위": "USD / 1M tokens",
+        "요금 성격": "공식 표준 종량제; 홈페이지 표시값"
+      }
+    },
+    {
+      "id": "kimi31-price-kimi-k3",
+      "model": "Kimi K3",
+      "provider": "Moonshot AI",
+      "source_url": "https://platform.kimi.ai/",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 API 표준 요금",
+        "suite": "Kimi 공식 공개 홈페이지 / 24일 확인",
+        "condition": "USD/1M=1,000,000tokens, 세금 제외. API 종량제이며 Code 구독/할당량과 다름. 홈페이지 캐시쓰기 값의 TTL은 미표기; 5분/1시간 별도 과금. 1시간 쓰기 단가 추정 안함.",
+        "입력 USD / 100만 토큰": 3,
+        "출력 USD / 100만 토큰": 15,
+        "캐시 적중 입력 USD / 100만 토큰": 0.3,
+        "캐시 쓰기 USD / 100만 토큰": 3,
+        "단위": "USD / 1M tokens",
+        "요금 성격": "공식 표준 종량제; 홈페이지 표시값"
+      }
+    },
+    {
+      "id": "bolt-202610-multichallenge-bf16-0",
+      "model": "Nemotron 3.5 Bolt E4B BF16",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "MultiChallenge",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 53.1,
+        "단위": "score",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "BF16"
+      }
+    },
+    {
+      "id": "bolt-202610-multichallenge-bf16-1",
+      "model": "Gemma 4 E4B-it BF16",
+      "provider": "Google",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "MultiChallenge",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 42.08,
+        "단위": "score",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "BF16"
+      }
+    },
+    {
+      "id": "bolt-202610-multichallenge-bf16-2",
+      "model": "Qwen 3.5 4B BF16",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "MultiChallenge",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 51.76,
+        "단위": "score",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "BF16"
+      }
+    },
+    {
+      "id": "bolt-202610-multichallenge-bf16-3",
+      "model": "Nemotron 3 Nano 4B BF16",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "MultiChallenge",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 35.3,
+        "단위": "score",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "BF16"
+      }
+    },
+    {
+      "id": "bolt-202610-multichallenge-q4-k-m-0",
+      "model": "Nemotron 3.5 Bolt E4B Q4_K_M",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "MultiChallenge",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 55.6,
+        "단위": "score",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "Q4_K_M"
+      }
+    },
+    {
+      "id": "bolt-202610-multichallenge-q4-k-m-1",
+      "model": "Gemma 4 E4B-it Q4_K_M",
+      "provider": "Google",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "MultiChallenge",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 39.36,
+        "단위": "score",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "Q4_K_M"
+      }
+    },
+    {
+      "id": "bolt-202610-multichallenge-q4-k-m-2",
+      "model": "Qwen 3.5 4B Q4_K_M",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "MultiChallenge",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 52.23,
+        "단위": "score",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "Q4_K_M"
+      }
+    },
+    {
+      "id": "bolt-202610-multichallenge-q4-k-m-3",
+      "model": "Nemotron 3 Nano 4B Q4_K_M",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "MultiChallenge",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 34.53,
+        "단위": "score",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "Q4_K_M"
+      }
+    },
+    {
+      "id": "bolt-202610-bfcl-v3-bf16-0",
+      "model": "Nemotron 3.5 Bolt E4B BF16",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "BFCL-v3",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 68.51,
+        "단위": "score",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "BF16"
+      }
+    },
+    {
+      "id": "bolt-202610-bfcl-v3-bf16-1",
+      "model": "Gemma 4 E4B-it BF16",
+      "provider": "Google",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "BFCL-v3",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 66.39,
+        "단위": "score",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "BF16"
+      }
+    },
+    {
+      "id": "bolt-202610-bfcl-v3-bf16-2",
+      "model": "Qwen 3.5 4B BF16",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "BFCL-v3",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 70.95,
+        "단위": "score",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "BF16"
+      }
+    },
+    {
+      "id": "bolt-202610-bfcl-v3-bf16-3",
+      "model": "Nemotron 3 Nano 4B BF16",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "BFCL-v3",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 61.1,
+        "단위": "score",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "BF16"
+      }
+    },
+    {
+      "id": "bolt-202610-bfcl-v3-q4-k-m-0",
+      "model": "Nemotron 3.5 Bolt E4B Q4_K_M",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "BFCL-v3",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 67.31,
+        "단위": "score",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "Q4_K_M"
+      }
+    },
+    {
+      "id": "bolt-202610-bfcl-v3-q4-k-m-1",
+      "model": "Gemma 4 E4B-it Q4_K_M",
+      "provider": "Google",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "BFCL-v3",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 65.03,
+        "단위": "score",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "Q4_K_M"
+      }
+    },
+    {
+      "id": "bolt-202610-bfcl-v3-q4-k-m-2",
+      "model": "Qwen 3.5 4B Q4_K_M",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "BFCL-v3",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 70.56,
+        "단위": "score",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "Q4_K_M"
+      }
+    },
+    {
+      "id": "bolt-202610-bfcl-v3-q4-k-m-3",
+      "model": "Nemotron 3 Nano 4B Q4_K_M",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "BFCL-v3",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 59.07,
+        "단위": "score",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "Q4_K_M"
+      }
+    },
+    {
+      "id": "bolt-202610-tau2-bench-bf16-0",
+      "model": "Nemotron 3.5 Bolt E4B BF16",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "Tau2-Bench",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 55.1,
+        "단위": "score",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "BF16"
+      }
+    },
+    {
+      "id": "bolt-202610-tau2-bench-bf16-1",
+      "model": "Gemma 4 E4B-it BF16",
+      "provider": "Google",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "Tau2-Bench",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 38.5,
+        "단위": "score",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "BF16"
+      }
+    },
+    {
+      "id": "bolt-202610-tau2-bench-bf16-2",
+      "model": "Qwen 3.5 4B BF16",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "Tau2-Bench",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 75.06,
+        "단위": "score",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "BF16"
+      }
+    },
+    {
+      "id": "bolt-202610-tau2-bench-bf16-3",
+      "model": "Nemotron 3 Nano 4B BF16",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "Tau2-Bench",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 29.2,
+        "단위": "score",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "BF16"
+      }
+    },
+    {
+      "id": "bolt-202610-tau2-bench-q4-k-m-0",
+      "model": "Nemotron 3.5 Bolt E4B Q4_K_M",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "Tau2-Bench",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 52.32,
+        "단위": "score",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "Q4_K_M"
+      }
+    },
+    {
+      "id": "bolt-202610-tau2-bench-q4-k-m-1",
+      "model": "Gemma 4 E4B-it Q4_K_M",
+      "provider": "Google",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "Tau2-Bench",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 38.72,
+        "단위": "score",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "Q4_K_M"
+      }
+    },
+    {
+      "id": "bolt-202610-tau2-bench-q4-k-m-2",
+      "model": "Qwen 3.5 4B Q4_K_M",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "Tau2-Bench",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 61.74,
+        "단위": "score",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "Q4_K_M"
+      }
+    },
+    {
+      "id": "bolt-202610-tau2-bench-q4-k-m-3",
+      "model": "Nemotron 3 Nano 4B Q4_K_M",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "Tau2-Bench",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 14.89,
+        "단위": "score",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "Q4_K_M"
+      }
+    },
+    {
+      "id": "bolt-202610-iheval-bf16-0",
+      "model": "Nemotron 3.5 Bolt E4B BF16",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "IHEval",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 84.79,
+        "단위": "score",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "BF16"
+      }
+    },
+    {
+      "id": "bolt-202610-iheval-bf16-1",
+      "model": "Gemma 4 E4B-it BF16",
+      "provider": "Google",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "IHEval",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 67.04,
+        "단위": "score",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "BF16"
+      }
+    },
+    {
+      "id": "bolt-202610-iheval-bf16-2",
+      "model": "Qwen 3.5 4B BF16",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "IHEval",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 60.57,
+        "단위": "score",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "BF16"
+      }
+    },
+    {
+      "id": "bolt-202610-iheval-bf16-3",
+      "model": "Nemotron 3 Nano 4B BF16",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "IHEval",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 51.31,
+        "단위": "score",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "BF16"
+      }
+    },
+    {
+      "id": "bolt-202610-iheval-q4-k-m-0",
+      "model": "Nemotron 3.5 Bolt E4B Q4_K_M",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "IHEval",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 82.4,
+        "단위": "score",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "Q4_K_M"
+      }
+    },
+    {
+      "id": "bolt-202610-iheval-q4-k-m-1",
+      "model": "Gemma 4 E4B-it Q4_K_M",
+      "provider": "Google",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "IHEval",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 66.61,
+        "단위": "score",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "Q4_K_M"
+      }
+    },
+    {
+      "id": "bolt-202610-iheval-q4-k-m-2",
+      "model": "Qwen 3.5 4B Q4_K_M",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "IHEval",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 62.87,
+        "단위": "score",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "Q4_K_M"
+      }
+    },
+    {
+      "id": "bolt-202610-iheval-q4-k-m-3",
+      "model": "Nemotron 3 Nano 4B Q4_K_M",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "IHEval",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 53.75,
+        "단위": "score",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "Q4_K_M"
+      }
+    },
+    {
+      "id": "bolt-202610-ruler-64k-bf16-0",
+      "model": "Nemotron 3.5 Bolt E4B BF16",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "RULER (64K)",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 86.99,
+        "단위": "score",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "BF16"
+      }
+    },
+    {
+      "id": "bolt-202610-ruler-64k-bf16-1",
+      "model": "Gemma 4 E4B-it BF16",
+      "provider": "Google",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "RULER (64K)",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 86.55,
+        "단위": "score",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "BF16"
+      }
+    },
+    {
+      "id": "bolt-202610-ruler-64k-bf16-2",
+      "model": "Qwen 3.5 4B BF16",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "RULER (64K)",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 95.15,
+        "단위": "score",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "BF16"
+      }
+    },
+    {
+      "id": "bolt-202610-ruler-64k-bf16-3",
+      "model": "Nemotron 3 Nano 4B BF16",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "RULER (64K)",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 91.51,
+        "단위": "score",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "BF16"
+      }
+    },
+    {
+      "id": "bolt-202610-ruler-64k-q4-k-m-0",
+      "model": "Nemotron 3.5 Bolt E4B Q4_K_M",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "RULER (64K)",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 85.76,
+        "단위": "score",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "Q4_K_M"
+      }
+    },
+    {
+      "id": "bolt-202610-ruler-64k-q4-k-m-1",
+      "model": "Gemma 4 E4B-it Q4_K_M",
+      "provider": "Google",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "RULER (64K)",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 86.14,
+        "단위": "score",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "Q4_K_M"
+      }
+    },
+    {
+      "id": "bolt-202610-ruler-64k-q4-k-m-2",
+      "model": "Qwen 3.5 4B Q4_K_M",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "RULER (64K)",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 95.37,
+        "단위": "score",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "Q4_K_M"
+      }
+    },
+    {
+      "id": "bolt-202610-ruler-64k-q4-k-m-3",
+      "model": "Nemotron 3 Nano 4B Q4_K_M",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "RULER (64K)",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 91.31,
+        "단위": "score",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "Q4_K_M"
+      }
+    },
+    {
+      "id": "bolt-202610-longmemeval-bf16-0",
+      "model": "Nemotron 3.5 Bolt E4B BF16",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "LongMemEval",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 72.1,
+        "단위": "score",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "BF16"
+      }
+    },
+    {
+      "id": "bolt-202610-longmemeval-bf16-1",
+      "model": "Gemma 4 E4B-it BF16",
+      "provider": "Google",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "LongMemEval",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 70.95,
+        "단위": "score",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "BF16"
+      }
+    },
+    {
+      "id": "bolt-202610-longmemeval-bf16-2",
+      "model": "Qwen 3.5 4B BF16",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "LongMemEval",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 66.85,
+        "단위": "score",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "BF16"
+      }
+    },
+    {
+      "id": "bolt-202610-longmemeval-bf16-3",
+      "model": "Nemotron 3 Nano 4B BF16",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "LongMemEval",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 25.2,
+        "단위": "score",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "BF16"
+      }
+    },
+    {
+      "id": "bolt-202610-longmemeval-q4-k-m-0",
+      "model": "Nemotron 3.5 Bolt E4B Q4_K_M",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "LongMemEval",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 69.92,
+        "단위": "score",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "Q4_K_M"
+      }
+    },
+    {
+      "id": "bolt-202610-longmemeval-q4-k-m-1",
+      "model": "Gemma 4 E4B-it Q4_K_M",
+      "provider": "Google",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "LongMemEval",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 67.95,
+        "단위": "score",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "Q4_K_M"
+      }
+    },
+    {
+      "id": "bolt-202610-longmemeval-q4-k-m-2",
+      "model": "Qwen 3.5 4B Q4_K_M",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "LongMemEval",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 76.6,
+        "단위": "score",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "Q4_K_M"
+      }
+    },
+    {
+      "id": "bolt-202610-longmemeval-q4-k-m-3",
+      "model": "Nemotron 3 Nano 4B Q4_K_M",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "LongMemEval",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 27.15,
+        "단위": "score",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "Q4_K_M"
+      }
+    },
+    {
+      "id": "bolt-202610-longbench-v2-48k-bf16-0",
+      "model": "Nemotron 3.5 Bolt E4B BF16",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "LongBench v2 (48K)",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 50.5,
+        "단위": "score",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "BF16"
+      }
+    },
+    {
+      "id": "bolt-202610-longbench-v2-48k-bf16-1",
+      "model": "Gemma 4 E4B-it BF16",
+      "provider": "Google",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "LongBench v2 (48K)",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 49.34,
+        "단위": "score",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "BF16"
+      }
+    },
+    {
+      "id": "bolt-202610-longbench-v2-48k-bf16-2",
+      "model": "Qwen 3.5 4B BF16",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "LongBench v2 (48K)",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 59.93,
+        "단위": "score",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "BF16"
+      }
+    },
+    {
+      "id": "bolt-202610-longbench-v2-48k-bf16-3",
+      "model": "Nemotron 3 Nano 4B BF16",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "LongBench v2 (48K)",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 31.4,
+        "단위": "score",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "BF16"
+      }
+    },
+    {
+      "id": "bolt-202610-longbench-v2-48k-q4-k-m-0",
+      "model": "Nemotron 3.5 Bolt E4B Q4_K_M",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "LongBench v2 (48K)",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 48.67,
+        "단위": "score",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "Q4_K_M"
+      }
+    },
+    {
+      "id": "bolt-202610-longbench-v2-48k-q4-k-m-1",
+      "model": "Gemma 4 E4B-it Q4_K_M",
+      "provider": "Google",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "LongBench v2 (48K)",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 45.7,
+        "단위": "score",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "Q4_K_M"
+      }
+    },
+    {
+      "id": "bolt-202610-longbench-v2-48k-q4-k-m-2",
+      "model": "Qwen 3.5 4B Q4_K_M",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "LongBench v2 (48K)",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 58.28,
+        "단위": "score",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "Q4_K_M"
+      }
+    },
+    {
+      "id": "bolt-202610-longbench-v2-48k-q4-k-m-3",
+      "model": "Nemotron 3 Nano 4B Q4_K_M",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "LongBench v2 (48K)",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 37.42,
+        "단위": "score",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "Q4_K_M"
+      }
+    },
+    {
+      "id": "bolt-202610-ragtruth-bf16-0",
+      "model": "Nemotron 3.5 Bolt E4B BF16",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "RAGTruth",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 77.59,
+        "단위": "F1",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "BF16"
+      }
+    },
+    {
+      "id": "bolt-202610-ragtruth-bf16-1",
+      "model": "Gemma 4 E4B-it BF16",
+      "provider": "Google",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "RAGTruth",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 76.97,
+        "단위": "F1",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "BF16"
+      }
+    },
+    {
+      "id": "bolt-202610-ragtruth-bf16-2",
+      "model": "Qwen 3.5 4B BF16",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "RAGTruth",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 75.6,
+        "단위": "F1",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "BF16"
+      }
+    },
+    {
+      "id": "bolt-202610-ragtruth-bf16-3",
+      "model": "Nemotron 3 Nano 4B BF16",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "RAGTruth",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 71.4,
+        "단위": "F1",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "BF16"
+      }
+    },
+    {
+      "id": "bolt-202610-ragtruth-q4-k-m-0",
+      "model": "Nemotron 3.5 Bolt E4B Q4_K_M",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "RAGTruth",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 77.88,
+        "단위": "F1",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "Q4_K_M"
+      }
+    },
+    {
+      "id": "bolt-202610-ragtruth-q4-k-m-1",
+      "model": "Gemma 4 E4B-it Q4_K_M",
+      "provider": "Google",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "RAGTruth",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 77.17,
+        "단위": "F1",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "Q4_K_M"
+      }
+    },
+    {
+      "id": "bolt-202610-ragtruth-q4-k-m-2",
+      "model": "Qwen 3.5 4B Q4_K_M",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "RAGTruth",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 74.08,
+        "단위": "F1",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "Q4_K_M"
+      }
+    },
+    {
+      "id": "bolt-202610-ragtruth-q4-k-m-3",
+      "model": "Nemotron 3 Nano 4B Q4_K_M",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 로컬 모델 비교",
+        "suite": "RAGTruth",
+        "condition": "NVIDIA의 일관된 NeMo Gym 측정. 동일 평가에서 추론 모드 동일; RULER는비추론/그외 선택평가는추론. BF16/Q4 혼합하지 않음. 원 개발사 수치와 다를 수 있음.",
+        "평가 점수": 71.75,
+        "단위": "F1",
+        "측정 주체": "NVIDIA",
+        "harness": "NeMo Gym",
+        "정밀도": "Q4_K_M"
+      }
+    },
+    {
+      "id": "bolt-e4b-spec",
+      "model": "Nemotron 3.5 Bolt E4B 4GB",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 모델 사양",
+        "suite": "10월23일 GA / 24일 확인",
+        "condition": "Gemma 기반 후속 학습. 전체8B와유효4B 구분. 카드입출력/최대문맥/4GB실측은서로다른조건.",
+        "context": 65536,
+        "access": "공개 GGUF Q4_K_M와 BF16 및 별도 DFlash drafter",
+        "파라미터 B": 8,
+        "유효 파라미터 B": 4,
+        "입출력": "텍스트 / 텍스트",
+        "라이선스": "OpenMDW 1.1; 기반 Gemma의 Apache 2.0 원문 별도",
+        "표준 API 단가": "미확인",
+        "출시일": "2026-10-23"
+      }
+    },
+    {
+      "id": "bolt-hardware-0",
+      "model": "Nemotron 3.5 Bolt E4B Q4_K_M",
+      "provider": "NVIDIA",
+      "source_url": "https://research.nvidia.com/labs/nemotron/Nemotron-3.5-Bolt-E4B-4GB/",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "장비별 추론 측정",
+        "suite": "RTX5070 12GB / 0/3K/50",
+        "condition": "Q4_K_M, batch1, llama.cpp CUDA, AIPerf. 캐시/새입력/출력 토큰 순서. 고정4GB 또는 모든 환경 지연 보장 아님.",
+        "VRAM GB": 3.5,
+        "첫 토큰 지연 ms": 548.0,
+        "생성 tokens/s": 133.4,
+        "정밀도": "Q4_K_M",
+        "측정 주체": "NVIDIA"
+      }
+    },
+    {
+      "id": "bolt-hardware-1",
+      "model": "Nemotron 3.5 Bolt E4B Q4_K_M",
+      "provider": "NVIDIA",
+      "source_url": "https://research.nvidia.com/labs/nemotron/Nemotron-3.5-Bolt-E4B-4GB/",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "장비별 추론 측정",
+        "suite": "RTX5070 12GB / 32K/2K/256",
+        "condition": "Q4_K_M, batch1, llama.cpp CUDA, AIPerf. 캐시/새입력/출력 토큰 순서. 고정4GB 또는 모든 환경 지연 보장 아님.",
+        "VRAM GB": 4.3,
+        "첫 토큰 지연 ms": 1238.0,
+        "생성 tokens/s": 106.2,
+        "정밀도": "Q4_K_M",
+        "측정 주체": "NVIDIA"
+      }
+    },
+    {
+      "id": "bolt-hardware-2",
+      "model": "Nemotron 3.5 Bolt E4B Q4_K_M",
+      "provider": "NVIDIA",
+      "source_url": "https://research.nvidia.com/labs/nemotron/Nemotron-3.5-Bolt-E4B-4GB/",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "장비별 추론 측정",
+        "suite": "RTX Spark32GB / 0/3K/50",
+        "condition": "Q4_K_M, batch1, llama.cpp CUDA, AIPerf. 캐시/새입력/출력 토큰 순서. 고정4GB 또는 모든 환경 지연 보장 아님.",
+        "VRAM GB": 3.1,
+        "첫 토큰 지연 ms": 930.0,
+        "생성 tokens/s": 67.0,
+        "정밀도": "Q4_K_M",
+        "측정 주체": "NVIDIA"
+      }
+    },
+    {
+      "id": "bolt-hardware-3",
+      "model": "Nemotron 3.5 Bolt E4B Q4_K_M",
+      "provider": "NVIDIA",
+      "source_url": "https://research.nvidia.com/labs/nemotron/Nemotron-3.5-Bolt-E4B-4GB/",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "장비별 추론 측정",
+        "suite": "Jetson Orin Nano8GB / 0/3K/50",
+        "condition": "Q4_K_M, batch1, llama.cpp CUDA, AIPerf. 캐시/새입력/출력 토큰 순서. 고정4GB 또는 모든 환경 지연 보장 아님.",
+        "VRAM GB": 4.2,
+        "첫 토큰 지연 ms": 5785.0,
+        "생성 tokens/s": 15.5,
+        "정밀도": "Q4_K_M",
+        "측정 주체": "NVIDIA"
+      }
+    },
+    {
+      "id": "bolt-hardware-4",
+      "model": "Nemotron 3.5 Bolt E4B Q4_K_M",
+      "provider": "NVIDIA",
+      "source_url": "https://research.nvidia.com/labs/nemotron/Nemotron-3.5-Bolt-E4B-4GB/",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "장비별 추론 측정",
+        "suite": "Jetson Orin Nano8GB / 32K/2K/256",
+        "condition": "Q4_K_M, batch1, llama.cpp CUDA, AIPerf. 캐시/새입력/출력 토큰 순서. 고정4GB 또는 모든 환경 지연 보장 아님.",
+        "VRAM GB": 4.9,
+        "첫 토큰 지연 ms": 6259.0,
+        "생성 tokens/s": 13.0,
+        "정밀도": "Q4_K_M",
+        "측정 주체": "NVIDIA"
+      }
+    },
+    {
+      "id": "canva-arena-20261024-gpt-image-2-5-sunburst",
+      "model": "GPT-Image-2.5 Sunburst",
+      "provider": "OpenAI",
+      "source_url": "https://www.designarena.ai/leaderboard?tab=image&section=image",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "이미지 선호도 평가",
+        "suite": "DesignArena Image / 2026-10-24 05:04 KST",
+        "condition": "실제 브라우저 표05:06 독해. Bradley-Terry Elo, 사용자 쌍대 선호도, 상대 혼합/표본수 상이. 승률은 행끼리의 직접승률이 아님. 시간은 해당평가관찰이며API성능보장아님.",
+        "평가 점수": 1407,
+        "단위": "Elo",
+        "전체 순위": 1,
+        "전체 승률 %": 70.5,
+        "비교 표본 수": 11576,
+        "표시 시간 초": 26.7,
+        "측정 주체": "DesignArena",
+        "harness": "Image text-to-image preference arena"
+      }
+    },
+    {
+      "id": "canva-arena-20261024-gpt-image-2-5-flare",
+      "model": "GPT-Image-2.5 Flare",
+      "provider": "OpenAI",
+      "source_url": "https://www.designarena.ai/leaderboard?tab=image&section=image",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "이미지 선호도 평가",
+        "suite": "DesignArena Image / 2026-10-24 05:04 KST",
+        "condition": "실제 브라우저 표05:06 독해. Bradley-Terry Elo, 사용자 쌍대 선호도, 상대 혼합/표본수 상이. 승률은 행끼리의 직접승률이 아님. 시간은 해당평가관찰이며API성능보장아님.",
+        "평가 점수": 1382,
+        "단위": "Elo",
+        "전체 순위": 2,
+        "전체 승률 %": 68.2,
+        "비교 표본 수": 11997,
+        "표시 시간 초": 18.0,
+        "측정 주체": "DesignArena",
+        "harness": "Image text-to-image preference arena"
+      }
+    },
+    {
+      "id": "canva-arena-20261024-gpt-image-2",
+      "model": "GPT Image 2",
+      "provider": "OpenAI",
+      "source_url": "https://www.designarena.ai/leaderboard?tab=image&section=image",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "이미지 선호도 평가",
+        "suite": "DesignArena Image / 2026-10-24 05:04 KST",
+        "condition": "실제 브라우저 표05:06 독해. Bradley-Terry Elo, 사용자 쌍대 선호도, 상대 혼합/표본수 상이. 승률은 행끼리의 직접승률이 아님. 시간은 해당평가관찰이며API성능보장아님.",
+        "평가 점수": 1363,
+        "단위": "Elo",
+        "전체 순위": 3,
+        "전체 승률 %": 71.7,
+        "비교 표본 수": 61506,
+        "표시 시간 초": 61.5,
+        "측정 주체": "DesignArena",
+        "harness": "Image text-to-image preference arena"
+      }
+    },
+    {
+      "id": "canva-arena-20261024-canva-craft",
+      "model": "Canva Craft",
+      "provider": "Canva",
+      "source_url": "https://www.designarena.ai/leaderboard?tab=image&section=image",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "이미지 선호도 평가",
+        "suite": "DesignArena Image / 2026-10-24 05:04 KST",
+        "condition": "실제 브라우저 표05:06 독해. Bradley-Terry Elo, 사용자 쌍대 선호도, 상대 혼합/표본수 상이. 승률은 행끼리의 직접승률이 아님. 시간은 해당평가관찰이며API성능보장아님.",
+        "평가 점수": 1330,
+        "단위": "Elo",
+        "전체 순위": 4,
+        "전체 승률 %": 65.8,
+        "비교 표본 수": 2082,
+        "표시 시간 초": 48.8,
+        "측정 주체": "DesignArena",
+        "harness": "Image text-to-image preference arena"
+      }
+    },
+    {
+      "id": "canva-arena-20261024-reve-2-1",
+      "model": "Reve 2.1",
+      "provider": "Reve",
+      "source_url": "https://www.designarena.ai/leaderboard?tab=image&section=image",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "이미지 선호도 평가",
+        "suite": "DesignArena Image / 2026-10-24 05:04 KST",
+        "condition": "실제 브라우저 표05:06 독해. Bradley-Terry Elo, 사용자 쌍대 선호도, 상대 혼합/표본수 상이. 승률은 행끼리의 직접승률이 아님. 시간은 해당평가관찰이며API성능보장아님.",
+        "평가 점수": 1321,
+        "단위": "Elo",
+        "전체 순위": 5,
+        "전체 승률 %": 64.5,
+        "비교 표본 수": 43407,
+        "표시 시간 초": 76.1,
+        "측정 주체": "DesignArena",
+        "harness": "Image text-to-image preference arena"
+      }
+    },
+    {
+      "id": "canva-arena-20261024-mai-image-2-6",
+      "model": "MAI-Image-2.6",
+      "provider": "Microsoft",
+      "source_url": "https://www.designarena.ai/leaderboard?tab=image&section=image",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "이미지 선호도 평가",
+        "suite": "DesignArena Image / 2026-10-24 05:04 KST",
+        "condition": "실제 브라우저 표05:06 독해. Bradley-Terry Elo, 사용자 쌍대 선호도, 상대 혼합/표본수 상이. 승률은 행끼리의 직접승률이 아님. 시간은 해당평가관찰이며API성능보장아님.",
+        "평가 점수": 1317,
+        "단위": "Elo",
+        "전체 순위": 6,
+        "전체 승률 %": 61.3,
+        "비교 표본 수": 28044,
+        "표시 시간 초": 26.5,
+        "측정 주체": "DesignArena",
+        "harness": "Image text-to-image preference arena"
+      }
+    },
+    {
+      "id": "canva-arena-20261024-nano-banana-2-1",
+      "model": "Nano Banana 2.1",
+      "provider": "Google",
+      "source_url": "https://www.designarena.ai/leaderboard?tab=image&section=image",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "이미지 선호도 평가",
+        "suite": "DesignArena Image / 2026-10-24 05:04 KST",
+        "condition": "실제 브라우저 표05:06 독해. Bradley-Terry Elo, 사용자 쌍대 선호도, 상대 혼합/표본수 상이. 승률은 행끼리의 직접승률이 아님. 시간은 해당평가관찰이며API성능보장아님.",
+        "평가 점수": 1290,
+        "단위": "Elo",
+        "전체 순위": 11,
+        "전체 승률 %": 62.4,
+        "비교 표본 수": 3811,
+        "표시 시간 초": 20.9,
+        "측정 주체": "DesignArena",
+        "harness": "Image text-to-image preference arena"
+      }
+    },
+    {
+      "id": "canva-craft-spec",
+      "model": "Canva Craft",
+      "provider": "Canva",
+      "source_url": "https://www.canva.dev/docs/apps/rest-apis/reference/generations/create-image-generation-job/",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "이미지 모델 제공",
+        "suite": "craft_v1_2k / 24일 확인",
+        "condition": "22일 출시를24일 확인한 보완. API는preview로공개앱배포검토불가. 앱발표의30이상비율과API6가지열거값구분.",
+        "access": "Dream Lab와 preview 이미지 API; MCP·고속 변형은 예정",
+        "API ID": "craft_v1_2k",
+        "입출력": "텍스트 입력 / 최대2K 이미지 출력",
+        "지원 비율": "API enum6개; 앱발표30개이상과별도",
+        "표준 USD / 장 단가": "미확인",
+        "과금": "사용자 AI 크레딧 차감; 무료무제한 아님",
+        "사용자별 요청 한도 / 분": 20,
+        "다운로드 URL 유효 시간 / h": 24,
+        "가중치": "공개 확인 없음"
+      }
+    },
+    {
+      "id": "canva-abstract-20261024",
+      "model": "Canva Craft",
+      "provider": "Canva",
+      "source_url": "https://www.designarena.ai/leaderboard?tab=image&section=image",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "이미지 세부 선호도 평가",
+        "suite": "DesignArena Abstract / 2026-10-24 확인",
+        "condition": "발표 당시 Abstract2위와현재6위구분. 세부순위변화이며다른분야에일반화하지않음.",
+        "평가 점수": 1314,
+        "단위": "Elo",
+        "전체 순위": 6,
+        "측정 주체": "DesignArena"
+      }
+    },
+    {
+      "id": "kimi31-peer-price-claude-opus-5.5",
+      "model": "Claude Opus 5.5",
+      "provider": "Anthropic",
+      "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 API 기본 요금",
+        "suite": "2026-10-24 기본 단가 비교",
+        "condition": "공식 기본 표. OpenAI는Standard 기본 표시 문맥 모드;Batch/Fast/Ultrafast 제외. 캐시·장문/지역/세금/도구·실토큰량 및총청구 비교 아님.",
+        "입력 USD / 100만 토큰": 4,
+        "출력 USD / 100만 토큰": 20,
+        "단위": "USD / 1M tokens",
+        "요금 성격": "공식 기본 API 단가"
+      }
+    },
+    {
+      "id": "kimi31-peer-price-claude-fable-5.1",
+      "model": "Claude Fable 5.1",
+      "provider": "Anthropic",
+      "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 API 기본 요금",
+        "suite": "2026-10-24 기본 단가 비교",
+        "condition": "공식 기본 표. OpenAI는Standard 기본 표시 문맥 모드;Batch/Fast/Ultrafast 제외. 캐시·장문/지역/세금/도구·실토큰량 및총청구 비교 아님.",
+        "입력 USD / 100만 토큰": 10,
+        "출력 USD / 100만 토큰": 50,
+        "단위": "USD / 1M tokens",
+        "요금 성격": "공식 기본 API 단가"
+      }
+    },
+    {
+      "id": "kimi31-peer-price-gpt-6-astra",
+      "model": "GPT-6 Astra",
+      "provider": "OpenAI",
+      "source_url": "https://developers.openai.com/api/docs/pricing",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 API 기본 요금",
+        "suite": "2026-10-24 기본 단가 비교",
+        "condition": "공식 기본 표. OpenAI는Standard 기본 표시 문맥 모드;Batch/Fast/Ultrafast 제외. 캐시·장문/지역/세금/도구·실토큰량 및총청구 비교 아님.",
+        "입력 USD / 100만 토큰": 10,
+        "출력 USD / 100만 토큰": 50,
+        "단위": "USD / 1M tokens",
+        "요금 성격": "공식 기본 API 단가"
+      }
+    }
+  ]
+}

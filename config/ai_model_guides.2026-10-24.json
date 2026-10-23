@@ -1,0 +1,1967 @@
+{
+  "schema_version": 1,
+  "reports": [
+    {
+      "id": "kimi-k3-1-pro-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "checked_on": "2026-10-24",
+      "title": "Kimi K3.1 Pro 소개: 코딩·문서 성능과 Highspeed의 비용 차이",
+      "description": "Kimi K3.1 Pro와 Highspeed를 K3 및 경쟁 모델과 비교하고, 코딩·문서 평가의 장단점과 실제 제공·요금 조건을 설명합니다.",
+      "deck": "Kimi K3.1 Pro는 K3를 추가 학습한 대형 멀티모달 모델입니다. 코딩과 문서 분석의 여러 평가에서 개선됐지만 과학 터미널 과제와 일부 금융·사실성 평가에서는 경쟁 모델에 뒤집니다. 앱·API는 제공을 시작했고 전체 가중치는 11월 4일까지 공개할 계획입니다. Highspeed는 같은 능력을 더 빠르게 제공하는 대신 정규형보다 요금과 할당량 소모가 큽니다.",
+      "scope": "공식 연구 목록은 2026년 10월 24일로 표시합니다. 23일의 사전 영상·외부 보도와 지금 확인한 정식 발표 및 실제 API/Code 제공 문서를 구분했습니다. 정확한 최초 배포 시각은 확인하지 못했습니다.",
+      "source_note": "Moonshot의 발표·평가 그림·주석, Code/API 안내와 공식 단가를 대조했습니다. 평가 대부분은 공급사의 측정 또는 타사 결과 재수록입니다. 독립 모델 실행, 청구와 사람 독해 시험은 수행하지 않았습니다.",
+      "highlights": [
+        "모델과 제공",
+        "상대 장점과 단점",
+        "요금의 차이"
+      ],
+      "summary": [
+        {
+          "label": "모델과 제공",
+          "text": "K3의 후속 학습 모델이며 정규형과 Highspeed를 앱·Work·Code·API에서 제공합니다. 3T급과 1M 문맥 표기가 있지만 전체 가중치는 아직 공개 예정입니다.",
+          "source_ids": [
+            "launch",
+            "code",
+            "api"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "상대 장점과 단점",
+          "text": "Terminal-Bench 4.0은65.7로 Opus66.4에 근접하고 SWE-Marathon51.7은 비교군보다 높습니다. 반대로 Science38.1은 Astra68.1보다 낮고, Frontier Finance58.6은 Fable60.8보다 낮습니다.",
+          "source_ids": [
+            "launch",
+            "chart"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "요금의 차이",
+          "text": "정규형의 입력/출력은100만 토큰당 $2/$10, Highspeed는 $4/$20입니다. Code에서1M 문맥과 Highspeed는 상위 요금제가 필요하며 API 종량제와 별도입니다.",
+          "source_ids": [
+            "prices",
+            "billing",
+            "code"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "tables": [
+        {
+          "id": "specs",
+          "title": "사양과 제공 범위",
+          "columns": [
+            "항목",
+            "확인한 내용"
+          ],
+          "rows": [
+            {
+              "values": [
+                "구조 관계",
+                "K3를 바탕으로 후속 학습; 3T급 표기, 정확한 총/활성 파라미터 미공개"
+              ],
+              "source_ids": [
+                "launch",
+                "code",
+                "api"
+              ]
+            },
+            {
+              "values": [
+                "문맥",
+                "API1,048,576토큰; Code는 요금제에 따라 한도 다름"
+              ],
+              "source_ids": [
+                "launch",
+                "code",
+                "api"
+              ]
+            },
+            {
+              "values": [
+                "입출력",
+                "텍스트·이미지·영상 입력과 텍스트 출력; 모든 앱 기능의 실행 능력과 분리"
+              ],
+              "source_ids": [
+                "launch",
+                "code",
+                "api"
+              ]
+            },
+            {
+              "values": [
+                "API ID",
+                "kimi-k3.1-pro / kimi-k3.1-pro-highspeed"
+              ],
+              "source_ids": [
+                "launch",
+                "code",
+                "api"
+              ]
+            },
+            {
+              "values": [
+                "Code ID",
+                "k3.1-pro / k3.1-pro-highspeed"
+              ],
+              "source_ids": [
+                "launch",
+                "code",
+                "api"
+              ]
+            },
+            {
+              "values": [
+                "추론",
+                "low/high/max; 기본max, 생각 끄기 요청은 거부"
+              ],
+              "source_ids": [
+                "launch",
+                "code",
+                "api"
+              ]
+            },
+            {
+              "values": [
+                "가중치",
+                "2026-11-04까지 공개 예정; 현재 로컬 다운로드 가능으로 표시하지 않음"
+              ],
+              "source_ids": [
+                "launch",
+                "code",
+                "api"
+              ]
+            },
+            {
+              "values": [
+                "기업 제공",
+                "출시 시 관리자 활성화 필요; 기본 비활성"
+              ],
+              "source_ids": [
+                "launch",
+                "code",
+                "api"
+              ]
+            }
+          ],
+          "note": "1M 문맥은 읽을 수 있는 용량이며 전체 길이의 정확도 보장이 아닙니다. Code ID와 일반 API ID를 섞지 않습니다."
+        },
+        {
+          "id": "previous",
+          "title": "이전 K3 대비 변화",
+          "columns": [
+            "평가",
+            "K3",
+            "K3.1 Pro",
+            "차이"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Kimi Code Bench 3.0 Long-horizon",
+                "55.95",
+                "61.2",
+                "5.25포인트 상승"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "내부 Financial Modeling",
+                "50.4",
+                "57.6",
+                "7.2포인트 상승"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "내부 Financial Research",
+                "58.8",
+                "70.4",
+                "11.6포인트 상승"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Hallu Bench Hard 주장 오류율",
+                "23.4%",
+                "8.3%",
+                "15.1포인트 감소; 낮을수록 좋음"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            }
+          ],
+          "note": "Moonshot의 내부 평가입니다. 서로 다른 평가의 점수를 평균내지 않으며 오류율과 성공 점수의 방향을 구분합니다."
+        },
+        {
+          "id": "comparison",
+          "title": "경쟁 모델과 코딩·문서 성능",
+          "columns": [
+            "평가",
+            "Kimi K3.1 Pro",
+            "Claude Opus 5.5",
+            "GPT-6 Astra",
+            "Claude Fable 5.1",
+            "DeepSeek-V4.1-Flash-1017",
+            "GLM-5.3"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Terminal-Bench 4.0",
+                "65.7",
+                "66.4",
+                "58.2",
+                "57.9",
+                "42.3",
+                "41.8"
+              ],
+              "source_ids": [
+                "launch",
+                "chart"
+              ]
+            },
+            {
+              "values": [
+                "Terminal-Bench Science 0.1",
+                "38.1",
+                "63.3",
+                "68.1",
+                "40.0",
+                "15.7 (이전 Flash; 1017 직접측정 9.3)",
+                "8.1"
+              ],
+              "source_ids": [
+                "launch",
+                "chart"
+              ]
+            },
+            {
+              "values": [
+                "SWE-Marathon v1.1",
+                "51.7",
+                "46.3",
+                "42.5",
+                "45.6",
+                "40.0",
+                "42.5"
+              ],
+              "source_ids": [
+                "launch",
+                "chart"
+              ]
+            },
+            {
+              "values": [
+                "Kimi Code Bench 3.0 Long-horizon",
+                "61.2",
+                "58.5",
+                "66.5",
+                "58.8",
+                "51.5",
+                "45.5"
+              ],
+              "source_ids": [
+                "launch",
+                "chart"
+              ]
+            },
+            {
+              "values": [
+                "OfficeQA Pro v2",
+                "64.4",
+                "62.2",
+                "54.4",
+                "54.5",
+                "40.4",
+                "31.1"
+              ],
+              "source_ids": [
+                "launch",
+                "chart"
+              ]
+            },
+            {
+              "values": [
+                "Frontier Finance",
+                "58.6",
+                "56.7",
+                "45.0",
+                "60.8",
+                "54.5",
+                "57.5"
+              ],
+              "source_ids": [
+                "launch",
+                "chart"
+              ]
+            }
+          ],
+          "note": "Moonshot 그림의 보고값입니다. K3.1 Pro 기본max/temperature1/top-p0.95; 평가별 Harness와 경쟁 모델의 원측정이 다릅니다. Science의 DeepSeek15.7은1017판 직접측정9.3 대신 이전 Flash 리더보드 값을 사용한 수록값입니다."
+        },
+        {
+          "id": "factuality",
+          "title": "주장 단위 오류율 비교",
+          "columns": [
+            "평가",
+            "Kimi K3.1 Pro",
+            "Claude Opus 5.5",
+            "GPT-6 Astra",
+            "Claude Fable 5.1",
+            "DeepSeek-V4.1-Flash-1017",
+            "GLM-5.3"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Kimi Hallu Bench / 도구 없음",
+                "5.4%",
+                "6.8%",
+                "4.2%",
+                "11.4%",
+                "13.1%",
+                "14.8%"
+              ],
+              "source_ids": [
+                "launch",
+                "hallu"
+              ]
+            },
+            {
+              "values": [
+                "Kimi Hallu Bench Hard / 도구 있음",
+                "8.3%",
+                "15.0%",
+                "5.5%",
+                "23.3%",
+                "23.3%",
+                "22.6%"
+              ],
+              "source_ids": [
+                "launch",
+                "hallu"
+              ]
+            }
+          ],
+          "note": "낮을수록 좋습니다. 공급사가 고른 어려운 프롬프트의 스트레스 시험이며 실제 업무 전체의 오류 확률이 아닙니다."
+        },
+        {
+          "id": "prices",
+          "title": "공식 API 표준 단가",
+          "columns": [
+            "모델",
+            "일반 입력",
+            "출력",
+            "캐시 적중 입력",
+            "홈페이지 캐시 쓰기"
+          ],
+          "rows": [
+            {
+              "values": [
+                "K3.1 Pro",
+                "$2.00",
+                "$10.00",
+                "$0.20",
+                "$2.00"
+              ],
+              "source_ids": [
+                "prices",
+                "billing"
+              ]
+            },
+            {
+              "values": [
+                "K3.1 Pro Highspeed",
+                "$4.00",
+                "$20.00",
+                "$0.20",
+                "$4.00"
+              ],
+              "source_ids": [
+                "prices",
+                "billing"
+              ]
+            },
+            {
+              "values": [
+                "K3",
+                "$3.00",
+                "$15.00",
+                "$0.30",
+                "$3.00"
+              ],
+              "source_ids": [
+                "prices",
+                "billing"
+              ]
+            }
+          ],
+          "note": "USD/1,000,000토큰, 세금 제외. 캐시 쓰기는 TTL5분/1시간에 따라 별도 과금되며 홈페이지 표의 값만 보존했습니다. 표에 명시되지 않은1시간 쓰기 요금은 추정하지 않았습니다. 구독료·할당량을 이 API 단가로 환산하지 않습니다."
+        },
+        {
+          "id": "peer-prices",
+          "title": "주요 경쟁 모델의 기본 API 단가",
+          "columns": [
+            "모델",
+            "입력 USD/100만 토큰",
+            "출력 USD/100만 토큰",
+            "제공 범위"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Kimi K3.1 Pro",
+                "2",
+                "10",
+                "Kimi 앱/Work/Code/API; 가중치 예정"
+              ],
+              "source_ids": [
+                "prices",
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Kimi K3.1 Pro Highspeed",
+                "4",
+                "20",
+                "고속 제공; 정규형 대비 같은 능력 설명"
+              ],
+              "source_ids": [
+                "prices",
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Claude Opus 5.5",
+                "4",
+                "20",
+                "공식 API 요금표; 가중치 제공으로 해석하지 않음"
+              ],
+              "source_ids": [
+                "claude-price"
+              ]
+            },
+            {
+              "values": [
+                "Claude Fable 5.1",
+                "10",
+                "50",
+                "공식 API 요금표; 가중치 제공으로 해석하지 않음"
+              ],
+              "source_ids": [
+                "claude-price"
+              ]
+            },
+            {
+              "values": [
+                "GPT-6 Astra",
+                "10",
+                "50",
+                "Standard의 기본 표시 문맥 모드"
+              ],
+              "source_ids": [
+                "openai-price"
+              ]
+            }
+          ],
+          "note": "24일 공식 공개 표의 기본 단가입니다. 캐시/문맥 옵션·실제 토큰 수·세금/지역·도구 비용과 Batch/Fast/Ultrafast는 다릅니다. 같은 요청의 총비용이나 단위 시간 처리량을 직접 측정한 비교가 아닙니다."
+        }
+      ],
+      "explanation": [
+        {
+          "id": "overview",
+          "title": "모델 개요와 K3의 관계",
+          "lead": "K3.1 Pro는 새 이름의 앱이 아니라 K3에 후속 학습을 더한 모델입니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "추가 학습과 실행기",
+              "text": "후속 학습은 기존 모델을 다양한 과제의 피드백으로 다시 조정하는 과정입니다. Moonshot은 강화학습 계산량과 긴 문맥·실행 환경을 확대했다고 설명합니다. 3D 제작이나 문서 검증을 끝내는 전체 제품에는 모델뿐 아니라 검색, 코드 실행, 파일 도구와 에이전트 실행기가 필요합니다. 같은 모델을 연결해도 그 구성에 따라 결과가 달라집니다.",
+              "source_ids": [
+                "launch"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "Highspeed의 의미",
+              "text": "Highspeed는 공식 설명상 같은 모델 능력을 더 빠르게 제공하는 경로입니다. 별도의 성능 향상 모델처럼 점수를 복제하지 않았습니다. 속도2~3배는 공급사 설명이며 모든 입력·혼잡도에서 확인한 지연 보장이 아닙니다.",
+              "source_ids": [
+                "launch",
+                "code"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "analysis",
+          "title": "코딩과 문서 평가의 장점",
+          "lead": "긴 코딩과 문서 분석에서는 이전 K3 및 주요 비교 모델보다 높은 보고값이 있습니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "개선이 보이는 지점",
+              "text": "SWE-Marathon은 긴 소프트웨어 작업의 수행을 평가하며51.7로 Opus46.3보다 높습니다. OfficeQA Pro v2의64.4는 Opus62.2와 Astra54.4보다 높습니다. 이 평가에서 모델은 전체 PDF 묶음을 이미지로 받았고, 정답을 인터넷에서 가져온 과제는0점 처리됐습니다. 결과를 일반 텍스트 검색 정확도나 임의의 사내 문서 정확도로 옮길 수는 없습니다.",
+              "source_ids": [
+                "launch",
+                "chart"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "이전판의 개선과 공개 비교",
+              "text": "내부 금융 모델링57.6은 K3의50.4보다7.2포인트 높고 내부 금융 연구70.4는58.8보다11.6포인트 높습니다. 공급사의 선택한 시험에서 후속 학습 효과를 보여주는 값입니다. 실제 회사의 보고서 작성 시간이나 수익 개선을 직접 측정한 결과는 아닙니다.",
+              "source_ids": [
+                "launch"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "limits",
+          "title": "경쟁 모델보다 부족한 점과 평가 조건",
+          "lead": "종합적인 우위와 개별 과제의 우위를 구분해야 합니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "명확한 반대 결과",
+              "text": "과학 터미널 평가38.1은 Astra68.1와 Opus63.3보다 낮습니다. 내부 장기 코딩61.2도 Astra66.5보다 낮고, 금융58.6은 Fable60.8보다 낮습니다. Hard 오류율8.3%는 K3의23.4%보다 줄었지만 Astra5.5%보다 높습니다. 따라서 코딩·문서에 강하다는 설명을 모든 분야의1위로 읽어서는 안 됩니다.",
+              "source_ids": [
+                "launch",
+                "chart",
+                "hallu"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "같은 시험도 실행 방식이 다름",
+              "text": "Terminal-Bench4.0과 SWE-Marathon의 Kimi는 Claude Code 실행기를 사용했습니다. OfficeQA에서는 Astra만 Codex를 사용하고 다른 모델은 Claude Code를 사용했습니다. 비교군은 각 발표나 리더보드의 최대 보고값을 재수록하며 일부 Claude의 fallback과 GPT의 cyberguard 가능성을 주석으로 명시합니다. 이 표는 동일 환경에서 독립 재측정한 모델 순위가 아닙니다.",
+              "source_ids": [
+                "launch",
+                "chart"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "access",
+          "title": "API·구독과 가중치 제공",
+          "lead": "현재 사용할 수 있는 서비스와 나중에 공개할 가중치는 다릅니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "실제 접근 조건",
+              "text": "Kimi Code는 신요금제 Plus 이상에서 정규형을 제공하고 Pro 이상에서1M 문맥과 Highspeed를 제공합니다. 구요금제는 Moderato/Allegretto 조건이 별도로 남습니다. Highspeed의 Code 할당량 소모는 정규형의 약2배이며 API 요금도 두 배입니다. 앱의 모델 선택과 기업 관리자의 활성화를 각각 확인해야 합니다.",
+              "source_ids": [
+                "code",
+                "api",
+                "launch"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "API 제한과 이행 계획",
+              "text": "일반 API는 생각을 끌 수 없고 low/high/max로 강도만 바꿉니다. 안내는 temperature1/top-p0.95 같은 일부 값을 고정하며, 공개 이미지 URL을 직접 입력하는 경로도 지원하지 않는다고 설명합니다. 검색 도구는 갱신 중이어서 당분간 프로덕션 사용을 권하지 않습니다. 가중치와 최종 라이선스·로컬 실행 조건은 공개 후 다시 확인할 부분입니다.",
+              "source_ids": [
+                "api",
+                "launch"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "경쟁 API의 표시 단가와 총비용",
+              "text": "정규형의 기본 입력·출력 단가는 Opus5.5의 $4/$20보다 낮고, Highspeed의 $4/$20는 Opus와 같습니다. Astra의Standard 기본 표시 단가와 Fable5.1은 $10/$50입니다. 다만 같은 글도 모델별 토큰화와 추론량이 달라 총 청구액의 차이를 이 비율로 확정할 수 없습니다. 캐시 쓰기·지역·문맥 옵션과 도구 호출 비용은 별도로 남습니다.",
+              "source_ids": [
+                "prices",
+                "claude-price",
+                "openai-price"
+              ],
+              "kind": "fact"
+            }
+          ]
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "판단 기준",
+            "text": "정규형은 이전 K3보다 낮은 표시 단가와 개선된 코딩·문서 결과를 함께 비교할 후보입니다. 과학·금융의 반대 결과와 실행기 차이를 감안해야 하며, Highspeed는 품질 향상보다 시간과 비용의 선택입니다. 현재의 서비스 이용 가능을 가중치 다운로드 가능으로 바꾸지 않습니다.",
+            "source_ids": [
+              "launch",
+              "chart",
+              "hallu",
+              "code",
+              "api",
+              "prices",
+              "billing",
+              "index"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "기준은24일 실제 확인한 공식 원문과 그림입니다. 23일 사전 영상만으로 출시를 확정하지 않았고24일 공식 목록/현재 제공 문서를 대조했습니다. 모든 경쟁 모델의 설정·지원 언어·개별 테넌트 접근과 독립 실행·청구는 미검증입니다.",
+          "source_ids": [
+            "launch",
+            "chart",
+            "hallu",
+            "code",
+            "api",
+            "prices",
+            "billing",
+            "index"
+          ]
+        }
+      ],
+      "references": [
+        {
+          "id": "launch",
+          "title": "Kimi K3.1 Pro 공식 발표",
+          "url": "https://www.kimi.com/en/blog/kimi-k3-1-pro",
+          "description": "후속 학습, 비교 평가의 주석, 제공 경로와 11월 4일까지 가중치 공개 계획을 읽었습니다."
+        },
+        {
+          "id": "chart",
+          "title": "Kimi의 코딩·문서 평가 그림",
+          "url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/benchmark-overview-v6.webp",
+          "description": "14평가의 모델별 수치와 최대 추론·fallback·cyberguard 주석을 직접 읽었습니다."
+        },
+        {
+          "id": "hallu",
+          "title": "Kimi Hallu Bench 그림",
+          "url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/hallu-bench-results-v2.webp",
+          "description": "도구 유무와 Hard 평가의 주장 단위 오류율을 구분했습니다."
+        },
+        {
+          "id": "code",
+          "title": "Kimi Code 모델별 조건",
+          "url": "https://www.kimi.com/code/docs/en/kimi-code/models.html",
+          "description": "정확한 Code ID, 추론 강제, 문맥과 신·구 요금제 조건을 대조했습니다."
+        },
+        {
+          "id": "api",
+          "title": "Kimi API 모델 안내",
+          "url": "https://platform.kimi.ai/docs/guide/kimi-k3-1-pro-quickstart",
+          "description": "API ID, 문맥, 추론과 샘플링 제약, 캐시 TTL 및 검색 도구의 주의를 확인했습니다."
+        },
+        {
+          "id": "prices",
+          "title": "Kimi API 공식 모델·요금 목록",
+          "url": "https://platform.kimi.ai/",
+          "description": "정규/Highspeed/K3의 입력·출력·캐시 단가를 USD/100만 토큰으로 확인했습니다."
+        },
+        {
+          "id": "billing",
+          "title": "Kimi API 과금 설명",
+          "url": "https://platform.kimi.ai/docs/pricing/chat",
+          "description": "세금 제외, 캐시 쓰기와 TTL, API 종량제와 멤버십 차이를 확인했습니다."
+        },
+        {
+          "id": "index",
+          "title": "Kimi 연구 목록의 발표 날짜",
+          "url": "https://www.kimi.com/en/blog/",
+          "description": "공식 목록의 2026-10-24 표기와 이전 K3의 7월 16일 표기를 확인했습니다."
+        },
+        {
+          "id": "claude-price",
+          "title": "Anthropic 공식 API 요금",
+          "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+          "description": "Opus5.5/Fable5.1의 기본 입력·출력 단가를 현재 공식 표에서 확인했습니다."
+        },
+        {
+          "id": "openai-price",
+          "title": "OpenAI 공식 API 요금",
+          "url": "https://developers.openai.com/api/docs/pricing",
+          "description": "Astra의 Standard 기본 표시 단가와 Batch/Fast/Ultrafast의 구분을 확인했습니다."
+        }
+      ]
+    },
+    {
+      "id": "nvidia-nemotron-3-5-bolt-e4b-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "checked_on": "2026-10-24",
+      "title": "Nemotron 3.5 Bolt E4B 소개: 작은 대화 모델의 성능과 4GB 조건",
+      "description": "Bolt E4B를 이전 Nano 4B, 기반 Gemma와 Qwen에 비교하고, 정밀도에 따른 성능 차이와 약 4GB 메모리 주장의 조건을 설명합니다.",
+      "deck": "Bolt E4B는 Gemma를 추가 학습해 대화, 지시 준수와 여러 차례의 도구 사용을 강화한 공개 텍스트 모델입니다. 이전 Nano4B보다 여러 점수가 높지만 도구 호출과 긴 문맥에서는 Qwen이나 이전 모델보다 낮은 결과도 있습니다. 약4GB는 양자화된 모델을 특정 장비·문맥에서 실행한 측정이며 모든 환경의 요구 메모리가 아닙니다.",
+      "scope": "공식 발표와 카드가10월23일 출시를 명시합니다. Hugging Face 저장소의10월5일 생성,23일 갱신과 공개 출시를 구분했습니다.",
+      "source_note": "NVIDIA 공식 발표와 BF16/Q4 비교 표, 모델 카드·라이선스의 관련 절을 읽었습니다. 공급사의 측정이며 모델 다운로드/추론, 독립 속도 재현, 청구와 사람 시험은 수행하지 않았습니다.",
+      "highlights": [
+        "모델과 규모",
+        "좋아진 점과 반대 결과",
+        "배포의 실제 조건"
+      ],
+      "summary": [
+        {
+          "label": "모델과 규모",
+          "text": "전체8B/유효4B로 표기된 Gemma 기반 후속 학습 모델입니다. 텍스트를 입력하고 생성하며 추론을 켜거나 끌 수 있습니다.",
+          "source_ids": [
+            "card",
+            "launch"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "좋아진 점과 반대 결과",
+          "text": "BF16의 IHEval84.79와 LongMemEval72.10은 이전 Nano51.31/25.20보다 높습니다. 반면 Tau2는55.10으로 Qwen75.06보다 낮고 RULER86.99는 이전 Nano91.51보다 낮습니다.",
+          "source_ids": [
+            "card"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "배포의 실제 조건",
+          "text": "Q4_K_M 단일 세션에서 RTX5070의 짧은 입력은3.5GB,32K 캐시 조건은4.3GB입니다. 이름의4GB와 공개 가중치만으로 모든 장비 실행이나 운영비를 보장하지 않습니다.",
+          "source_ids": [
+            "launch",
+            "card"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "tables": [
+        {
+          "id": "specs",
+          "title": "모델 사양과 제공",
+          "columns": [
+            "항목",
+            "확인한 내용"
+          ],
+          "rows": [
+            {
+              "values": [
+                "기반/후속 학습",
+                "Gemma-4-E4B-it 기반, NVIDIA의 대화·도구·지시 후속 학습"
+              ],
+              "source_ids": [
+                "card",
+                "launch",
+                "license"
+              ]
+            },
+            {
+              "values": [
+                "규모",
+                "전체8B / 유효4B 표기; 전체 저장 규모를4B로 읽지 않음"
+              ],
+              "source_ids": [
+                "card",
+                "launch",
+                "license"
+              ]
+            },
+            {
+              "values": [
+                "정밀도",
+                "비교 BF16와 배포 GGUF Q4_K_M을 구분"
+              ],
+              "source_ids": [
+                "card",
+                "launch",
+                "license"
+              ]
+            },
+            {
+              "values": [
+                "문맥과 입출력",
+                "최대64K 문맥, 텍스트 입력/출력"
+              ],
+              "source_ids": [
+                "card",
+                "launch",
+                "license"
+              ]
+            },
+            {
+              "values": [
+                "제어",
+                "추론 on/off와 대화 모드; 샘플링 권장temperature1/top-p0.95"
+              ],
+              "source_ids": [
+                "card",
+                "launch",
+                "license"
+              ]
+            },
+            {
+              "values": [
+                "언어",
+                "공급사35개 언어 설명과 카드의ko 표기; 한국어 실측 없음"
+              ],
+              "source_ids": [
+                "card",
+                "launch",
+                "license"
+              ]
+            },
+            {
+              "values": [
+                "공개/가격",
+                "공개 가중치·로컬 실행; 호스팅 표준 API 단가 미확인"
+              ],
+              "source_ids": [
+                "card",
+                "launch",
+                "license"
+              ]
+            },
+            {
+              "values": [
+                "라이선스",
+                "OpenMDW1.1, 기반 Gemma의 별도 Apache2.0 원문 참조"
+              ],
+              "source_ids": [
+                "card",
+                "launch",
+                "license"
+              ]
+            }
+          ],
+          "note": "모델이 음성·로봇 제품에 사용된다는 설명은 오디오·영상의 직접 입출력을 뜻하지 않습니다."
+        },
+        {
+          "id": "base-comparison",
+          "title": "기반 Gemma와 달라진 사양",
+          "columns": [
+            "항목",
+            "Gemma 4 E4B-it 카드",
+            "Bolt E4B 카드"
+          ],
+          "rows": [
+            {
+              "values": [
+                "입출력",
+                "텍스트·이미지·오디오 입력 / 텍스트 출력",
+                "텍스트 입력 / 텍스트 출력"
+              ],
+              "source_ids": [
+                "base",
+                "card"
+              ]
+            },
+            {
+              "values": [
+                "문맥",
+                "128K토큰",
+                "64K토큰"
+              ],
+              "source_ids": [
+                "base",
+                "card"
+              ]
+            },
+            {
+              "values": [
+                "파라미터 표기",
+                "전체8B / 유효4.5B",
+                "전체8B / 유효4B"
+              ],
+              "source_ids": [
+                "base",
+                "card"
+              ]
+            }
+          ],
+          "note": "각 공급사 카드의 표시값입니다. 유효 파라미터의 정의/반올림 차이를 정확한 파라미터 감소량으로 해석하지 않습니다. 기반 모델의 멀티모달 입력과 문맥을 후속 모델에 그대로 적용하지 않습니다."
+        },
+        {
+          "id": "bf16",
+          "title": "BF16 평가의 이전·경쟁 모델 비교",
+          "columns": [
+            "평가",
+            "Bolt E4B",
+            "Gemma4 E4B-it",
+            "Qwen3.5 4B",
+            "Nemotron3 Nano4B"
+          ],
+          "rows": [
+            {
+              "values": [
+                "MultiChallenge",
+                "53.1",
+                "42.08",
+                "51.76",
+                "35.3"
+              ],
+              "source_ids": [
+                "card"
+              ]
+            },
+            {
+              "values": [
+                "BFCL-v3",
+                "68.51",
+                "66.39",
+                "70.95",
+                "61.1"
+              ],
+              "source_ids": [
+                "card"
+              ]
+            },
+            {
+              "values": [
+                "Tau2-Bench",
+                "55.1",
+                "38.5",
+                "75.06",
+                "29.2"
+              ],
+              "source_ids": [
+                "card"
+              ]
+            },
+            {
+              "values": [
+                "IHEval",
+                "84.79",
+                "67.04",
+                "60.57",
+                "51.31"
+              ],
+              "source_ids": [
+                "card"
+              ]
+            },
+            {
+              "values": [
+                "RULER (64K)",
+                "86.99",
+                "86.55",
+                "95.15",
+                "91.51"
+              ],
+              "source_ids": [
+                "card"
+              ]
+            },
+            {
+              "values": [
+                "LongMemEval",
+                "72.1",
+                "70.95",
+                "66.85",
+                "25.2"
+              ],
+              "source_ids": [
+                "card"
+              ]
+            },
+            {
+              "values": [
+                "LongBench v2 (48K)",
+                "50.5",
+                "49.34",
+                "59.93",
+                "31.4"
+              ],
+              "source_ids": [
+                "card"
+              ]
+            },
+            {
+              "values": [
+                "RAGTruth",
+                "77.59",
+                "76.97",
+                "75.6",
+                "71.4"
+              ],
+              "source_ids": [
+                "card"
+              ]
+            }
+          ],
+          "note": "NVIDIA가 NeMo Gym의 일관된 실행기로 측정한 공급사 결과입니다. RULER는 비추론, 나머지 이 표의 항목은 추론 모드입니다. 지표별 정확도·F1·점수의 뜻을 유지하고 평균으로 합치지 않습니다."
+        },
+        {
+          "id": "q4",
+          "title": "Q4_K_M 배포 정밀도 비교",
+          "columns": [
+            "평가",
+            "Bolt E4B",
+            "Gemma4 E4B-it",
+            "Qwen3.5 4B",
+            "Nemotron3 Nano4B"
+          ],
+          "rows": [
+            {
+              "values": [
+                "MultiChallenge",
+                "55.6",
+                "39.36",
+                "52.23",
+                "34.53"
+              ],
+              "source_ids": [
+                "card"
+              ]
+            },
+            {
+              "values": [
+                "BFCL-v3",
+                "67.31",
+                "65.03",
+                "70.56",
+                "59.07"
+              ],
+              "source_ids": [
+                "card"
+              ]
+            },
+            {
+              "values": [
+                "Tau2-Bench",
+                "52.32",
+                "38.72",
+                "61.74",
+                "14.89"
+              ],
+              "source_ids": [
+                "card"
+              ]
+            },
+            {
+              "values": [
+                "IHEval",
+                "82.4",
+                "66.61",
+                "62.87",
+                "53.75"
+              ],
+              "source_ids": [
+                "card"
+              ]
+            },
+            {
+              "values": [
+                "RULER (64K)",
+                "85.76",
+                "86.14",
+                "95.37",
+                "91.31"
+              ],
+              "source_ids": [
+                "card"
+              ]
+            },
+            {
+              "values": [
+                "LongMemEval",
+                "69.92",
+                "67.95",
+                "76.6",
+                "27.15"
+              ],
+              "source_ids": [
+                "card"
+              ]
+            },
+            {
+              "values": [
+                "LongBench v2 (48K)",
+                "48.67",
+                "45.7",
+                "58.28",
+                "37.42"
+              ],
+              "source_ids": [
+                "card"
+              ]
+            },
+            {
+              "values": [
+                "RAGTruth",
+                "77.88",
+                "77.17",
+                "74.08",
+                "71.75"
+              ],
+              "source_ids": [
+                "card"
+              ]
+            }
+          ],
+          "note": "위 BF16와 다른 정밀도입니다. 양자화는 값을 적은 비트로 저장하는 방식이며 성능 변화가 일률적이지 않습니다. BF16의 우위를 Q4로 그대로 옮기지 않습니다."
+        },
+        {
+          "id": "memory",
+          "title": "장비·문맥별 지연과 메모리",
+          "columns": [
+            "장비",
+            "캐시/새 입력/출력 토큰",
+            "메모리 GB",
+            "첫 토큰 ms",
+            "생성 tokens/s"
+          ],
+          "rows": [
+            {
+              "values": [
+                "RTX5070 12GB",
+                "0/3K/50",
+                "3.5",
+                "548",
+                "133.4"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "RTX5070 12GB",
+                "32K/2K/256",
+                "4.3",
+                "1238",
+                "106.2"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "RTX Spark32GB",
+                "0/3K/50",
+                "3.1",
+                "930",
+                "67.0"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Jetson Orin Nano8GB",
+                "0/3K/50",
+                "4.2",
+                "5785",
+                "15.5"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Jetson Orin Nano8GB",
+                "32K/2K/256",
+                "4.9",
+                "6259",
+                "13.0"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            }
+          ],
+          "note": "Q4_K_M, batch1, llama.cpp CUDA와 AIPerf 측정입니다. 캐시·입출력 길이와 장비가 달라지면4GB와 응답 시간이 달라집니다. 운영 앱 전체의 메모리/지연 보장이 아닙니다."
+        },
+        {
+          "id": "cost",
+          "title": "제공 방식과 비용의 비교",
+          "columns": [
+            "대상",
+            "이 글에서 확인한 요금",
+            "남는 비용/조건"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Bolt E4B 공개 가중치",
+                "표준 호스팅 API 단가 미확인",
+                "장비·전력·서빙·보안·통합 비용"
+              ],
+              "source_ids": [
+                "card",
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Gemma4/Qwen3.5/Nano4B 비교군",
+                "표의 성능은 로컬 비교; API 단가 미확인",
+                "다른 호스팅·정밀도·라이선스 조건은 별도"
+              ],
+              "source_ids": [
+                "card",
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "DFlash 보조 모델",
+                "표준 API 단가 미확인",
+                "별도 drafter 메모리와 실행기 지원; 새 본체 모델로 중복 등록하지 않음"
+              ],
+              "source_ids": [
+                "card",
+                "launch"
+              ]
+            }
+          ],
+          "note": "가중치 공개를 서비스 운영비0이나 모든 상용 사용의 무조건 허가로 바꾸지 않습니다."
+        }
+      ],
+      "explanation": [
+        {
+          "id": "overview",
+          "title": "모델 개요와 기존 Nano의 관계",
+          "lead": "작은 대화 모델의 목표와 기반 모델을 구분해 읽어야 합니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "Gemma를 조정한 모델",
+              "text": "Bolt는 Gemma4 E4B-it에 지시, 도구 호출과 대화 과제의 후속 학습을 적용했습니다. 같은 Nemotron 계열의 Nano4B는 이전 비교 기준이며 Bolt가 Nano의 가중치를 그대로 확대했다는 뜻은 아닙니다. 카드의 전체8B와 유효4B도 서로 다른 표기입니다. 저장할 전체 규모와 연산에 해당하는 규모를 혼동하지 않습니다.",
+              "source_ids": [
+                "card",
+                "base",
+                "launch"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "대화 제품과 모델 입력",
+              "text": "NVIDIA는 음성·기기·캐릭터의 대화 에이전트를 목표로 제시합니다. 그러나 공개한 본체의 입출력은 텍스트입니다. 음성을 문자로 바꾸거나 영상을 이해하고 다시 음성을 내는 주변 모델과 제품 구성이 따로 필요합니다. 따라서 이 모델의 도구 점수를 음성 인식 정확도나 로봇의 동작 안전성으로 읽을 수 없습니다.",
+              "source_ids": [
+                "card",
+                "launch"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "기반 모델에서 달라진 범위",
+              "text": "기반 Gemma E4B 카드는 이미지·오디오 입력과128K 문맥을 명시하지만 Bolt 카드는 텍스트 입출력과64K를 명시합니다. 후속 학습의 대화 점수 개선을 기반 모델의 모든 기능이 그대로 유지된다는 뜻으로 읽을 수 없습니다. 이미지·음성을 직접 넣거나 더 긴 문맥이 필요하다면 이 사양 차이가 선택에 중요합니다.",
+              "source_ids": [
+                "base",
+                "card"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "advantages",
+          "title": "지시 준수와 대화 기억의 장점",
+          "lead": "이전 Nano보다 개선된 영역이 뚜렷합니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "대화 문맥과 규칙",
+              "text": "BF16의 여러 대화 제약을 보는 MultiChallenge53.10은 Nano35.30보다 높고, 지시의 우선순위를 보는 IHEval84.79는 Nano51.31과 Gemma67.04보다 높습니다. 이전 대화의 정보를 회상하는 LongMemEval72.10도 Nano25.20보다 높습니다. 여러 과제에서 개선됐다는 근거이지만 대화의 모든 오류를 해결했다는 뜻은 아닙니다.",
+              "source_ids": [
+                "card"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "주어진 정보에 근거한 응답",
+              "text": "RAGTruth의 F1은77.59로 Nano71.40보다 높고 Gemma76.97과도 차이가 있습니다. F1은 정밀도와 재현율을 결합한 지표이므로77.59를 일반 문서 답변의 정확도77.59%라고 바꾸지 않습니다. 실제 제공 자료와 검색 품질까지 포함한 제품의 사실성은 별도입니다.",
+              "source_ids": [
+                "card"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "limitations",
+          "title": "도구 호출·긴 문맥과 양자화의 단점",
+          "lead": "경쟁군보다 높은 항목만 고르면 선택을 오도합니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "더 좋은 비교 모델의 결과",
+              "text": "BFCL-v3는 Bolt68.51보다 Qwen70.95가 높고 Tau2는55.10 대75.06으로 차이가 더 큽니다. RULER64K에서는 Nano91.51와 Qwen95.15가 Bolt86.99보다 높습니다. 긴 대화를 다룬다는 설명만으로 긴 문맥의 모든 검색·추론 문제에서 더 낫다고 결론낼 수 없습니다.",
+              "source_ids": [
+                "card"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "배포 파일은 BF16 표와 다름",
+              "text": "Q4는 작은 메모리를 위해 가중치 값을 압축한 정밀도입니다. LongMemEval에서 Bolt는 BF16의72.10에서 Q4의69.92로 달라지고, Qwen Q4는76.60으로 더 높습니다. 반대로 일부 과제는 Q4의 점수가 높습니다. 각 수치를 선택한 정밀도와 함께 읽어야 하며 하나의 평균 손실률로 모든 과제를 설명할 수 없습니다.",
+              "source_ids": [
+                "card"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "runtime",
+          "title": "4GB·속도와 배포 비용",
+          "lead": "지연과 메모리 표는 실행 조건이 있어야 의미가 있습니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "메모리와 첫 응답의 뜻",
+              "text": "VRAM은 GPU가 사용하는 메모리이고 첫 토큰 지연은 응답의 첫 조각이 나올 때까지의 시간입니다. RTX5070에서 새 입력3K/출력50은3.5GB와548ms이지만32K 캐시/새 입력2K/출력256은4.3GB와1,238ms입니다. Jetson Orin Nano의 후자는4.9GB와6,259ms입니다. 같은 모델이라도 장비와 문맥에 따라 실시간성의 판단이 달라집니다.",
+              "source_ids": [
+                "launch"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "요금·라이선스와 미확인 범위",
+              "text": "표준 호스팅 API 단가는 확인하지 못했습니다. 공개 가중치는 로컬 검토 경로를 제공하지만 하드웨어, 통합, 보안 운영의 비용은 남습니다. 카드가 명시한 OpenMDW1.1과 기반 Gemma의 Apache2.0 원문 조건을 구분하며,35개 언어 지원 주장을 한국어의 실제 품질 검증으로 바꾸지 않습니다.",
+              "source_ids": [
+                "card",
+                "license",
+                "base"
+              ],
+              "kind": "fact"
+            }
+          ]
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "판단 기준",
+            "text": "Bolt E4B는 제한된 장비에서 지시 준수와 대화 기억을 개선할 후보입니다. 도구 호출·긴 문맥에서는 Qwen이나 Nano가 더 나은 결과도 있으므로 실행 정밀도와 지연 조건을 함께 비교해야 합니다. 4GB는 고정된 제품 사양이나 전체 서비스 비용의 결론이 아닙니다.",
+            "source_ids": [
+              "launch",
+              "card",
+              "history",
+              "base",
+              "license"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "24일 확인한23일 발표·카드의 선택 관련 절과 전체 비교 표를 기준으로 합니다.12MB까지만 확보한 기술 PDF는 완전한 원본/독해 근거로 사용하지 않았습니다. DFlash, 모든 지원 장비·한국어·실제 실행·독립 재현은 미검증입니다.",
+          "source_ids": [
+            "launch",
+            "card",
+            "history",
+            "base",
+            "license"
+          ]
+        }
+      ],
+      "references": [
+        {
+          "id": "launch",
+          "title": "NVIDIA Bolt E4B 발표",
+          "url": "https://research.nvidia.com/labs/nemotron/Nemotron-3.5-Bolt-E4B-4GB/",
+          "description": "23일 발표, 비교 표, 하드웨어별 Q4 메모리·지연·속도 조건을 읽었습니다."
+        },
+        {
+          "id": "card",
+          "title": "Bolt 공식 모델 카드",
+          "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+          "description": "전체 8B/유효 4B, BF16/Q4별 평가, 텍스트 입출력, 추론 설정과 라이선스를 확인했습니다."
+        },
+        {
+          "id": "history",
+          "title": "Bolt 공개 저장소 메타데이터",
+          "url": "https://huggingface.co/api/models/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+          "description": "저장소 10월 5일 생성과 23일 갱신을 공개 출시일과 분리했습니다."
+        },
+        {
+          "id": "base",
+          "title": "기반 Gemma 4 E4B 모델 카드",
+          "url": "https://huggingface.co/google/gemma-4-E4B-it",
+          "description": "Gemma 기반이라는 관계와 별도의 모델 사양/조건을 확인했습니다."
+        },
+        {
+          "id": "license",
+          "title": "OpenMDW 1.1 원문",
+          "url": "https://openmdw.ai/license/1-1/",
+          "description": "모델 사용·배포 조건의 원문입니다. 법적 적합성 판정이나 모든 사용의 보장은 하지 않습니다."
+        }
+      ]
+    },
+    {
+      "id": "canva-craft-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "checked_on": "2026-10-24",
+      "title": "Canva Craft 소개: 이미지 품질과 편집 연결, API의 한계",
+      "description": "Canva Craft의 이미지 생성과 레이어 편집의 관계를 설명하고, 경쟁 모델의 평가 점수 및 API 제공·비용·제약을 비교합니다.",
+      "deck": "Canva Craft는 디자인 구성을 먼저 계획하고 이미지를 생성하는 Canva의 새 모델입니다. 생성 이미지를 Magic Layers로 옮겨 편집하는 연결이 장점이며, 생성 자체가 편집 가능한 원본 문서를 곧바로 내놓는 것과는 다릅니다. 현재 이미지 선호도 표에서4위지만 선두 모델보다 점수가 낮고, 공개 API는 미리보기 제한과 사용자 크레딧 조건이 남습니다.",
+      "scope": "10월22일19:36 UTC의 공식 개발자 공지를24일에 확인한 보완입니다. 오늘 처음 출시된 모델로 쓰지 않습니다. Craft의 출시와 이후 예정된 MCP·고속 변형을 구분합니다.",
+      "source_note": "공식 개발자 공지·API 명세, 웹에서 읽은 발표 관련 절과 실제 DesignArena 표를 대조했습니다. 직접 발표 HTTP403과 동적 평가표의 본문 누락을 보존했고, 실제 브라우저에서 평가값을 읽었습니다. 독립 이미지 생성·편집·결제 시험은 하지 않았습니다.",
+      "highlights": [
+        "모델과 편집의 관계",
+        "품질과 상대 한계",
+        "제공과 비용"
+      ],
+      "summary": [
+        {
+          "label": "모델과 편집의 관계",
+          "text": "Craft는 이미지를 생성하며 Magic Layers가 이를 편집 가능한 디자인 요소로 변환합니다. 기존 Design Model이나 완성된 슬라이드 원본 생성과 같은 기능으로 합치지 않습니다.",
+          "source_ids": [
+            "news",
+            "announcement"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "품질과 상대 한계",
+          "text": "24일05:04 KST 표에서 Elo1330/4위입니다. Sunburst1407·Flare1382·GPT Image2의1363보다 낮고 Reve2.1의1321보다 높습니다. 선호도와 표본·과제 차이를 함께 읽어야 합니다.",
+          "source_ids": [
+            "arena"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "제공과 비용",
+          "text": "Dream Lab과API에 제공되지만API는preview로 사용자권한/크레딧이 필요합니다. Craft-fast/ultrafast와MCP는 예정이며 USD/장 단가와 한국어 글자 품질은 미확인입니다.",
+          "source_ids": [
+            "api",
+            "announcement",
+            "news"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "tables": [
+        {
+          "id": "specs",
+          "title": "사양과 제공 범위",
+          "columns": [
+            "항목",
+            "확인한 내용"
+          ],
+          "rows": [
+            {
+              "values": [
+                "모델 ID",
+                "craft_v1_2k; API 표기는 CRAFT-1 2K"
+              ],
+              "source_ids": [
+                "news",
+                "announcement",
+                "api"
+              ]
+            },
+            {
+              "values": [
+                "출력",
+                "최대2K 이미지; 파라미터 수·문맥 한도 미공개"
+              ],
+              "source_ids": [
+                "news",
+                "announcement",
+                "api"
+              ]
+            },
+            {
+              "values": [
+                "구조",
+                "디자인 구성 계획과 이미지 렌더링의 두 단계"
+              ],
+              "source_ids": [
+                "news",
+                "announcement",
+                "api"
+              ]
+            },
+            {
+              "values": [
+                "언어",
+                "프롬프트 다국어, 그림 안 글자55개 언어 주장; 한국어 실측 없음"
+              ],
+              "source_ids": [
+                "news",
+                "announcement",
+                "api"
+              ]
+            },
+            {
+              "values": [
+                "편집",
+                "Magic Layers 변환을 통한 요소 편집; 이미지 파일 자체와 원본 문서를 구분"
+              ],
+              "source_ids": [
+                "news",
+                "announcement",
+                "api"
+              ]
+            },
+            {
+              "values": [
+                "이용",
+                "Canva Dream Lab·이미지 API; MCP와 고속 변형은 예정"
+              ],
+              "source_ids": [
+                "news",
+                "announcement",
+                "api"
+              ]
+            }
+          ],
+          "note": "발표의30개 이상 비율과 실제 API 명세의6개 열거값은 채널이 다릅니다. 앱의 비율 전체를 API 지원값으로 복사하지 않습니다."
+        },
+        {
+          "id": "models",
+          "title": "같은 API의 모델 선택 비교",
+          "columns": [
+            "모델 ID",
+            "공식 문서가 제시한 강점",
+            "제공·비용 조건"
+          ],
+          "rows": [
+            {
+              "values": [
+                "craft_v1_2k",
+                "인포그래픽·포스터·슬라이드 이미지·인물/자연·마케팅",
+                "preview, 사용자 크레딧"
+              ],
+              "source_ids": [
+                "api"
+              ]
+            },
+            {
+              "values": [
+                "lucid_origin",
+                "건축·로고·포스터·SF/판타지",
+                "동일 API; 모델별 USD 단가 미확인"
+              ],
+              "source_ids": [
+                "api"
+              ]
+            },
+            {
+              "values": [
+                "z_image_turbo",
+                "그림 안 문자·음식/음료·일반 이미지",
+                "동일 API; 모델별 USD 단가 미확인"
+              ],
+              "source_ids": [
+                "api"
+              ]
+            }
+          ],
+          "note": "이 강점은 Canva 자체 평가의 설명이며 같은 프롬프트로 독립 시험한 성능 순위가 아닙니다. Craft가 회사의 첫 이미지 모델이므로 이전 Craft판의 개선율은 없습니다."
+        },
+        {
+          "id": "comparison",
+          "title": "다른 이미지 모델과 현재 선호도 비교",
+          "columns": [
+            "모델",
+            "전체 순위",
+            "Elo",
+            "전체 승률 %",
+            "비교 표본 수",
+            "표시 시간 초"
+          ],
+          "rows": [
+            {
+              "values": [
+                "GPT-Image-2.5 Sunburst",
+                "1",
+                "1407",
+                "70.5",
+                "11576",
+                "26.7"
+              ],
+              "source_ids": [
+                "arena"
+              ]
+            },
+            {
+              "values": [
+                "GPT-Image-2.5 Flare",
+                "2",
+                "1382",
+                "68.2",
+                "11997",
+                "18.0"
+              ],
+              "source_ids": [
+                "arena"
+              ]
+            },
+            {
+              "values": [
+                "GPT Image 2",
+                "3",
+                "1363",
+                "71.7",
+                "61506",
+                "61.5"
+              ],
+              "source_ids": [
+                "arena"
+              ]
+            },
+            {
+              "values": [
+                "Canva Craft",
+                "4",
+                "1330",
+                "65.8",
+                "2082",
+                "48.8"
+              ],
+              "source_ids": [
+                "arena"
+              ]
+            },
+            {
+              "values": [
+                "Reve 2.1",
+                "5",
+                "1321",
+                "64.5",
+                "43407",
+                "76.1"
+              ],
+              "source_ids": [
+                "arena"
+              ]
+            },
+            {
+              "values": [
+                "MAI-Image-2.6",
+                "6",
+                "1317",
+                "61.3",
+                "28044",
+                "26.5"
+              ],
+              "source_ids": [
+                "arena"
+              ]
+            },
+            {
+              "values": [
+                "Nano Banana 2.1",
+                "11",
+                "1290",
+                "62.4",
+                "3811",
+                "20.9"
+              ],
+              "source_ids": [
+                "arena"
+              ]
+            }
+          ],
+          "note": "24일05:04 KST 갱신 표시,05:06 실제 독해. Bradley-Terry 선호도 점수입니다. 승률은 각 모델이 만난 상대 혼합에 대한 값이며 행 사이의 직접 승률이 아닙니다. 시간은 이 평가의 관찰값으로 모든 API 지연을 보장하지 않습니다."
+        },
+        {
+          "id": "prices",
+          "title": "요금과 제공 예정 항목",
+          "columns": [
+            "대상",
+            "확인한 과금",
+            "미확인/예정"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Canva Craft",
+                "사용자의AI 크레딧 차감",
+                "USD/장 표준 단가 미확인"
+              ],
+              "source_ids": [
+                "announcement",
+                "api",
+                "news"
+              ]
+            },
+            {
+              "values": [
+                "Lucid Origin / Z Image Turbo",
+                "동일 이미지 생성 API의 사용자 크레딧",
+                "모델별 크레딧·USD/장 비교 미확인"
+              ],
+              "source_ids": [
+                "announcement",
+                "api",
+                "news"
+              ]
+            },
+            {
+              "values": [
+                "Craft-fast / Craft-ultrafast",
+                "예고된 변형",
+                "현재 사용 가능/가격으로 기록하지 않음"
+              ],
+              "source_ids": [
+                "announcement",
+                "api",
+                "news"
+              ]
+            }
+          ],
+          "note": "API 사용 가능을 무료·무제한으로 읽지 않습니다. 모든 모델을 동일한USD/장으로 환산할 근거가 없어 숫자를 만들지 않았습니다."
+        },
+        {
+          "id": "conditions",
+          "title": "API의 주요 제약",
+          "columns": [
+            "항목",
+            "실제 명세"
+          ],
+          "rows": [
+            {
+              "values": [
+                "공개 서비스 적용",
+                "preview API 사용 공개 앱은 검토를 통과할 수 없어 전체 사용자에게 배포 불가"
+              ],
+              "source_ids": [
+                "api"
+              ]
+            },
+            {
+              "values": [
+                "사용자 권한",
+                "사용자를 대신하는 토큰, asset:write와image_generation capability"
+              ],
+              "source_ids": [
+                "api"
+              ]
+            },
+            {
+              "values": [
+                "지원 비율",
+                "square, landscape, portrait, landscape_3_2, portrait_2_3, portrait_4_5"
+              ],
+              "source_ids": [
+                "api"
+              ]
+            },
+            {
+              "values": [
+                "처리·한도",
+                "비동기 작업; 사용자별 분당20요청, 결과 다운로드 URL24시간"
+              ],
+              "source_ids": [
+                "api"
+              ]
+            },
+            {
+              "values": [
+                "고정 모델 실패",
+                "요청 모델을 쓰지 못하면 실패; 지정하지 않을 때의 대체 모델 선택과 구분"
+              ],
+              "source_ids": [
+                "api"
+              ]
+            }
+          ],
+          "note": "공식 커뮤니티 글에 남은 편집용 확인 문구는 확정 조건으로 사용하지 않고 현재 API 명세를 우선했습니다."
+        }
+      ],
+      "explanation": [
+        {
+          "id": "overview",
+          "title": "모델 개요와 기존 Canva 모델의 차이",
+          "lead": "이미지 생성과 디자인 요소 편집은 연결돼 있지만 같은 출력이 아닙니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "계획과 렌더링",
+              "text": "Canva는 먼저 요소의 위치·상대 크기·문자와 시각적 위계를 계획하고 그 다음 이미지를 렌더링한다고 설명합니다. 이 구성 정보는 Magic Layers가 이미지를 편집 요소로 바꾸는 데 도움이 됩니다. 그렇더라도 Craft의API 결과는 이미지이며, 모든 글자·표·도형이 편집 가능한 발표 원본으로 바로 반환된다는 뜻은 아닙니다.",
+              "source_ids": [
+                "news",
+                "api"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "첫 모델과 이전 비교 기준",
+              "text": "Craft는 Canva Research가 처음부터 만든 첫 이미지 모델이라는 공식 설명입니다. 따라서 이전 Craft의 성능을 임의로 만들지 않았습니다. 비교는 같은 API의 Lucid Origin/Z Image Turbo와 현재 이미지 선호도 표의 경쟁 모델을 사용했습니다. 기존 디자인 모델·편집 도구의 발전을 새 이미지 모델의 개선율로 합산하지 않습니다.",
+              "source_ids": [
+                "news",
+                "announcement",
+                "api"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "quality",
+          "title": "디자인 연결의 장점과 평가의 의미",
+          "lead": "선호도 점수와 실제 편집 생산성은 다른 근거입니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "상대적으로 높은 선호도",
+              "text": "현재 Craft1330은 Reve2.1의1321과 Nano Banana2.1의1290보다 높지만 선두 Sunburst1407보다 낮습니다. Craft는2,082번의 비교 표본으로 표시되며 다른 모델과 표본 수가 다릅니다. 승률65.8%도Sunburst와 직접 비교해65.8%를 이겼다는 뜻은 아닙니다.",
+              "source_ids": [
+                "arena"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "편집과 제품 연결",
+              "text": "Canva 안에서 생성 결과를 디자인 작업으로 이어갈 수 있다는 점은 별도 이미지 도구에서 파일을 옮기는 경로와 비교할 장점입니다. 다만 이는 공개 기능을 근거로 한 편집 판단입니다. 실제 레이어 보존율·수정 횟수·한국어 텍스트 교정 시간이나 회사의 작업 비용을 이번에 측정하지 않았습니다.",
+              "source_ids": [
+                "news",
+                "api"
+              ],
+              "kind": "judgment"
+            }
+          ]
+        },
+        {
+          "id": "limits",
+          "title": "현재 평가와 공식 발표의 차이",
+          "lead": "출시 당시의 순위를 계속 현재 순위로 재사용하면 안 됩니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "업데이트된 반대 근거",
+              "text": "Canva 발표는Abstract/Patterns2위를 주장하지만24일 실제 표의Abstract에서는6위/Elo1314입니다. 전체4위는 여전히 확인되지만 세부 분야는 바뀔 수 있습니다. 따라서 출시 당시의 인물/자연1위도 오늘의 모든 과제 우위로 일반화하지 않고 발표 당시 주장으로만 남깁니다.",
+              "source_ids": [
+                "news",
+                "arena"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "속도와 실제 API 조건",
+              "text": "표의 Craft 시간48.8초는 Flare18.0초와 Nano Banana2.1의20.9초보다 깁니다. 공식 개발자 공지도 약50~60초를 예상하라고 설명합니다. 기획 단계를 거친다는 구조의 이점과 기다리는 시간은 함께 비교해야 합니다. 단, 서로 다른 프롬프트·해상도·제공 환경의 관찰값이므로 지연 차이를 순수한 모델 계산 성능으로 단정하지 않습니다.",
+              "source_ids": [
+                "announcement",
+                "arena"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "availability",
+          "title": "API·크레딧과 향후 제공",
+          "lead": "공개 문서가 있어도 바로 공개 앱으로 배포할 수 있는 API는 아닙니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "preview의 실제 제한",
+              "text": "API는 사용자 크레딧을 소모하고 분당20요청 한도가 있으며preview 사용 공개 앱은 전체 사용자 배포 심사를 통과할 수 없다고 명시합니다. 모델을 고정한 작업이 실패하면 자동으로 다른 모델의 결과를 성공으로 돌려주지 않습니다. 이는 모델 자체의 품질과 별도로 제품 도입을 판단할 조건입니다.",
+              "source_ids": [
+                "api"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "비용과 예정 기능",
+              "text": "USD/장 표준 단가와 모델별 크레딧 소모는 확인하지 못했습니다. 모든 사용자가 접근한다는 발표는 무료·무제한 제공의 근거가 아닙니다. MCP와Craft-fast/ultrafast는 미래 계획으로 남기며, 더 고급 편집과 참조 이미지 기능의 예고도 현재 지원으로 계산하지 않습니다.",
+              "source_ids": [
+                "news",
+                "announcement",
+                "api"
+              ],
+              "kind": "fact"
+            }
+          ]
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "판단 기준",
+            "text": "Canva 안에서 디자인을 이어가는 연결과 높은 이미지 선호도는 비교할 장점입니다. 그러나 선두보다 낮은 점수, 변하는 세부 순위, 느린 관찰 시간과preview API 배포 제한을 함께 봐야 합니다. 이미지 생성의 성과를 편집 가능한 문서 완성이나 비용 절감으로 바로 환산할 근거는 아직 없습니다.",
+            "source_ids": [
+              "announcement",
+              "api",
+              "arena",
+              "news"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "22일 출시를24일 뒤늦게 보완했습니다. 발표 관련 절은 웹 독해,API/공지 원본은 직접 획득,평가값은 실제 브라우저 표 확인으로 구분합니다. 가격·한국어·레이어 변환의 실사용,모델 실행·독립 이미지 비교·청구와 사람 시험은 미수행입니다.",
+          "source_ids": [
+            "announcement",
+            "api",
+            "arena",
+            "news"
+          ]
+        }
+      ],
+      "references": [
+        {
+          "id": "announcement",
+          "title": "Canva 개발자 공식 출시 공지",
+          "url": "https://community.canva.dev/t/connect-api-canva-craft-is-now-available-for-image-generation/8999",
+          "description": "22일 19:36 UTC 공지, craft_v1_2k, 크레딧과 지연, preview 및 예정 MCP를 읽었습니다. 편집용 확인 문구는 확정 조건으로 채택하지 않았습니다."
+        },
+        {
+          "id": "api",
+          "title": "Canva 이미지 생성 API 명세",
+          "url": "https://www.canva.dev/docs/apps/rest-apis/reference/generations/create-image-generation-job/",
+          "description": "Craft/Lucid Origin/Z Image Turbo의 모델 ID와 권한·제공·실패·6가지 비율 조건을 대조했습니다."
+        },
+        {
+          "id": "arena",
+          "title": "DesignArena 이미지 평가표",
+          "url": "https://www.designarena.ai/leaderboard?tab=image&section=image",
+          "description": "24일 05:04 KST 갱신 표시의 실제 브라우저 표에서 점수·표본·시간, Abstract 6위를 읽었습니다."
+        },
+        {
+          "id": "news",
+          "title": "Canva Craft 발표의 구조 설명",
+          "url": "https://www.canva.com/newsroom/news/canva-craft/",
+          "description": "웹 도구로 계획/렌더링 두 단계, Magic Layers와 예정 기능의 관련 절을 읽었습니다. 직접 HTTP 403은 성공으로 처리하지 않았습니다."
+        }
+      ]
+    }
+  ]
+}

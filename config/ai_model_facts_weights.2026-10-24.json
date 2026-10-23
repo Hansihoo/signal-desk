@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "id": "minimax-m31-weights-20261024",
+      "model": "MiniMax M3.1 Flash",
+      "provider": "MiniMax",
+      "source_url": "https://huggingface.co/MiniMaxAI/MiniMax-M3.1-Flash",
+      "checked_on": "2026-10-24",
+      "fields": {
+        "kind": "공식 가중치·라이선스 제공",
+        "suite": "M3.1 Flash 정식 가중치 / 24일 확인",
+        "condition": "같은19일모델의가중치제공확인. 저장소23일03:37:20Z갱신은정확한최초공개시각이아님.파일목록/라이선스만읽고실제다운로드/추론/법적적합성판정없음.",
+        "access": "공식 공개 가중치 및 API/앱",
+        "safetensors 파일 수": 49,
+        "라이선스": "MiniMax Community License; 상용표시·통지/사전승인·금지용도 조건",
+        "상용 연매출 승인 기준 USD": 20000000,
+        "변경 유형": "기존 모델 제공 확대; 신규 모델 아님"
+      }
+    }
+  ]
+}

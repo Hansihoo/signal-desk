@@ -66,7 +66,10 @@
     "granite-speech-5-model-guide",
     "nemotron-3-5-retriever-model-guide",
     "recursive-flint-model-guide",
-    "olmoearth-1-3-model-guide"
+    "olmoearth-1-3-model-guide",
+    "kimi-k3-1-pro-model-guide",
+    "nvidia-nemotron-3-5-bolt-e4b-model-guide",
+    "canva-craft-model-guide"
   ],
   "catalogs": {
     "devops-implementation-guide": "devops_tools.2026-10-10.r4.json"
@@ -167,7 +170,9 @@
       "4c600cdbd4209cd3d02ac3787eab8b29c432b9385a0c3a28d09a1dccbb8478d7"
     ],
     "minimax-m3-1-flash-model-guide": [
-      "6fc188af41fb7cd2d2dcf23dee4e927381261d7da395e873d81a9c676b27e24c"
+      "6fc188af41fb7cd2d2dcf23dee4e927381261d7da395e873d81a9c676b27e24c",
+      "efc8d95018238e02988911e214626f3ed47d97098335a171bc21e17107382509",
+      "5f87fe04f3c4db04481e0fba9347ca10758e2bab18634ca163a160e7ce32b73b"
     ],
     "mercury-3-model-guide": [
       "e68b826890ae8099a7c98d0acd1fecfb25bc6a5ff4d2653317437b9577aec265"
@@ -189,6 +194,15 @@
     ],
     "olmoearth-1-3-model-guide": [
       "d888f4b9ebb8679622deed1a79bb6f11c47031f91203df154b1383b4879bf82b"
+    ],
+    "kimi-k3-1-pro-model-guide": [
+      "510d4d853001c063ffd75d6d85794d7261fc0523d87b1b115f7deb3de13e1e2f"
+    ],
+    "nvidia-nemotron-3-5-bolt-e4b-model-guide": [
+      "de83eae3c56202bdd3d218319f96c6d65b101e82d309aba5872594542e3098ec"
+    ],
+    "canva-craft-model-guide": [
+      "cd3e12b5bc98c62aacf4079f2db92d06601b87f8a2f0e9ea61c49f49f4aa1856"
     ]
   },
   "model_introduction_editions": {
@@ -237,7 +251,9 @@
       "c48593720a0b1549980919d1205894f117a68509c1b5afa94c1a6790d22926a9"
     ],
     "minimax-m3-1-flash-model-guide": [
-      "6fc188af41fb7cd2d2dcf23dee4e927381261d7da395e873d81a9c676b27e24c"
+      "6fc188af41fb7cd2d2dcf23dee4e927381261d7da395e873d81a9c676b27e24c",
+      "efc8d95018238e02988911e214626f3ed47d97098335a171bc21e17107382509",
+      "5f87fe04f3c4db04481e0fba9347ca10758e2bab18634ca163a160e7ce32b73b"
     ],
     "mercury-3-model-guide": [
       "e68b826890ae8099a7c98d0acd1fecfb25bc6a5ff4d2653317437b9577aec265"
@@ -259,6 +275,15 @@
     ],
     "olmoearth-1-3-model-guide": [
       "d888f4b9ebb8679622deed1a79bb6f11c47031f91203df154b1383b4879bf82b"
+    ],
+    "kimi-k3-1-pro-model-guide": [
+      "510d4d853001c063ffd75d6d85794d7261fc0523d87b1b115f7deb3de13e1e2f"
+    ],
+    "nvidia-nemotron-3-5-bolt-e4b-model-guide": [
+      "de83eae3c56202bdd3d218319f96c6d65b101e82d309aba5872594542e3098ec"
+    ],
+    "canva-craft-model-guide": [
+      "cd3e12b5bc98c62aacf4079f2db92d06601b87f8a2f0e9ea61c49f49f4aa1856"
     ]
   },
   "model_introduction_purpose_editions": {
@@ -296,7 +321,9 @@
       "c48593720a0b1549980919d1205894f117a68509c1b5afa94c1a6790d22926a9"
     ],
     "minimax-m3-1-flash-model-guide": [
-      "6fc188af41fb7cd2d2dcf23dee4e927381261d7da395e873d81a9c676b27e24c"
+      "6fc188af41fb7cd2d2dcf23dee4e927381261d7da395e873d81a9c676b27e24c",
+      "efc8d95018238e02988911e214626f3ed47d97098335a171bc21e17107382509",
+      "5f87fe04f3c4db04481e0fba9347ca10758e2bab18634ca163a160e7ce32b73b"
     ],
     "mercury-3-model-guide": [
       "e68b826890ae8099a7c98d0acd1fecfb25bc6a5ff4d2653317437b9577aec265"
@@ -318,6 +345,15 @@
     ],
     "olmoearth-1-3-model-guide": [
       "d888f4b9ebb8679622deed1a79bb6f11c47031f91203df154b1383b4879bf82b"
+    ],
+    "kimi-k3-1-pro-model-guide": [
+      "510d4d853001c063ffd75d6d85794d7261fc0523d87b1b115f7deb3de13e1e2f"
+    ],
+    "nvidia-nemotron-3-5-bolt-e4b-model-guide": [
+      "de83eae3c56202bdd3d218319f96c6d65b101e82d309aba5872594542e3098ec"
+    ],
+    "canva-craft-model-guide": [
+      "cd3e12b5bc98c62aacf4079f2db92d06601b87f8a2f0e9ea61c49f49f4aa1856"
     ]
   },
   "model_introduction_reader_editions": {
@@ -352,7 +388,9 @@
       "c48593720a0b1549980919d1205894f117a68509c1b5afa94c1a6790d22926a9"
     ],
     "minimax-m3-1-flash-model-guide": [
-      "6fc188af41fb7cd2d2dcf23dee4e927381261d7da395e873d81a9c676b27e24c"
+      "6fc188af41fb7cd2d2dcf23dee4e927381261d7da395e873d81a9c676b27e24c",
+      "efc8d95018238e02988911e214626f3ed47d97098335a171bc21e17107382509",
+      "5f87fe04f3c4db04481e0fba9347ca10758e2bab18634ca163a160e7ce32b73b"
     ],
     "mercury-3-model-guide": [
       "e68b826890ae8099a7c98d0acd1fecfb25bc6a5ff4d2653317437b9577aec265"
@@ -374,6 +412,15 @@
     ],
     "olmoearth-1-3-model-guide": [
       "d888f4b9ebb8679622deed1a79bb6f11c47031f91203df154b1383b4879bf82b"
+    ],
+    "kimi-k3-1-pro-model-guide": [
+      "510d4d853001c063ffd75d6d85794d7261fc0523d87b1b115f7deb3de13e1e2f"
+    ],
+    "nvidia-nemotron-3-5-bolt-e4b-model-guide": [
+      "de83eae3c56202bdd3d218319f96c6d65b101e82d309aba5872594542e3098ec"
+    ],
+    "canva-craft-model-guide": [
+      "cd3e12b5bc98c62aacf4079f2db92d06601b87f8a2f0e9ea61c49f49f4aa1856"
     ]
   }
 }
