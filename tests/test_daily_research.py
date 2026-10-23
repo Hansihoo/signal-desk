@@ -170,8 +170,13 @@ class DailyResearchTests(unittest.TestCase):
 
     def test_catalog_resolves_existing_business_sources_without_changing_them(self):
         catalog = daily.load_catalog()
-        self.assertEqual(len(catalog['sources']), 11)
-        self.assertEqual(sum(s['mode'] == 'browser' for s in catalog['sources']), 4)
+        self.assertEqual(sum(s['mode'] != 'browser' for s in catalog['sources']), 7)
+        sources = {s['id']: s for s in catalog['sources']}
+        for source_id in ('ms365-copilot-release-daily', 'acrobat-updates-daily'):
+            self.assertEqual(sources[source_id]['mode'], 'browser')
+            self.assertEqual(sources[source_id]['area'], 'AI 문서 활용')
+        self.assertEqual(sources['ms365-copilot-release-daily']['url'],
+                         'https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes')
         self.assertTrue(all(s.get('url') and s.get('name') for s in catalog['sources']))
 
 

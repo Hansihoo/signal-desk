@@ -124,3 +124,10 @@ Agent Skills 명세, Anthropic 문맥/스킬 운영 지침, SkillsBench·SWE-Ski
 ## 2026-10-21 중요 도구·사건 발견 확대
 
 기존14경로에 HN 공식RSS/HNRSS신규/GeekNews, REA릴리스·Blog·Showcase와 Ghidra릴리스7경로를 실제 확인해 추가했다. 현재21경로(공식17/발견4)이며 별도 기존AI피드12경로도 수신 후보를 보존한다. HNRSS는 보조 제공자이고 커뮤니티 소식은 공식 원문 검토 전 후보로 유지한다. 첫 실행 Engineering0항목은 공식 목록의 /research/ 이동을 확인·수정한 뒤21/21 복구했다. [운영 정본](../docs/SIGNAL_DISCOVERY.md), [실제 근거·검증](SIGNAL_DISCOVERY.2026-10-21.md).
+
+
+## 2026-10-23 AI 문서 활용 기능의 일일 발견
+
+사용자 요청으로 AI가 문서·표·슬라이드·PDF를 작성·편집·분석·검색하는 기능의 변화를 일일 관심 범위에 명시했다. 기능별 선정·실제 제공 조건의 정본은 [문서 AI 조사](DOCUMENT_AI_RESEARCH.md), 경로와 접근 모드는 [일일 출처](../config/daily_research_sources.json)다. 기존 기업/제품 목록을 재사용하고 Microsoft 365 Copilot 릴리스 노트와 Acrobat What's new의 제품 원문 경로를 추가했다. 두 경로는 자동 파서가 아닌 `browser_required`이며 원문 관련 절을 읽어야 한다.
+
+2026-10-23 Microsoft 공식 원문의 개요·점진 배포·10월 6일 묶음 및 Word/Excel 관련 절, Acrobat의 10월 13일 수정·단계 배포 안내와 AI 도구 연결을 확인했다. Microsoft 직접 획득은 성공했고 Adobe 직접 HTTP는 403으로 실패했으며 웹 독해 성공과 분리해 보존했다. 모든 기능/플랜·실제 계정 실행을 검증한 것은 아니다. 이번 최초 연결 자료는 오늘의 신규 출시로 통지하지 않았다.
