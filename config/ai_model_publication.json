@@ -84,6 +84,10 @@
     {
       "id": "ai-model-weights-facts-2026-10-24",
       "path": "ai_model_facts_weights.2026-10-24.json"
+    },
+    {
+      "id": "ai-model-official-facts-2026-10-25",
+      "path": "ai_model_facts.2026-10-25.json"
     }
   ]
 }

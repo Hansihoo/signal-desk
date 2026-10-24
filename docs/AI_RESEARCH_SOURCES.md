@@ -131,3 +131,8 @@ Agent Skills 명세, Anthropic 문맥/스킬 운영 지침, SkillsBench·SWE-Ski
 사용자 요청으로 AI가 문서·표·슬라이드·PDF를 작성·편집·분석·검색하는 기능의 변화를 일일 관심 범위에 명시했다. 기능별 선정·실제 제공 조건의 정본은 [문서 AI 조사](DOCUMENT_AI_RESEARCH.md), 경로와 접근 모드는 [일일 출처](../config/daily_research_sources.json)다. 기존 기업/제품 목록을 재사용하고 Microsoft 365 Copilot 릴리스 노트와 Acrobat What's new의 제품 원문 경로를 추가했다. 두 경로는 자동 파서가 아닌 `browser_required`이며 원문 관련 절을 읽어야 한다.
 
 2026-10-23 Microsoft 공식 원문의 개요·점진 배포·10월 6일 묶음 및 Word/Excel 관련 절, Acrobat의 10월 13일 수정·단계 배포 안내와 AI 도구 연결을 확인했다. Microsoft 직접 획득은 성공했고 Adobe 직접 HTTP는 403으로 실패했으며 웹 독해 성공과 분리해 보존했다. 모든 기능/플랜·실제 계정 실행을 검증한 것은 아니다. 이번 최초 연결 자료는 오늘의 신규 출시로 통지하지 않았다.
+
+
+## 2026-10-25 판별 모델과 음성 모델의 추가 공식 경로
+
+[Base Labs 기술 보고서](https://labs.baseten.co/articles/mammoth-1-and-elephant-1-frontier-decision-models), [Baseten 제공 목록](https://www.baseten.co/library/mammoth-1/), [현재 Jev 평가](https://multimodalart-jev-decision-index.static.hf.space/index.html) 및 [AA Decision Index](https://artificialanalysis.ai/evaluations/artificial-analysis-decision-index)를 공개 가중치/판별 확률/출시 및 현재 평가판을 대조하는 경로로 확인했다. Jev는 평가 운영자의 자료이며 TypeSafe 공식 인증으로 취급하지 않는다. [Mistral 변경 이력](https://docs.mistral.ai/resources/changelogs), [모델 수명주기](https://legal.mistral.ai/ai-governance/models/voxtral-3/)와 [표준 요금](https://docs.mistral.ai/inference/pricing)은 음성 모델의 공개/Preview/정확한 분·문자 단위 확인 경로다. 실제25일 직접HTTP와선택관련절독해이며새자동파서/예약연결이나실행검증이아니다. 이전공식발표를오늘의새출시로분류하지않는다. [원문범위와충돌](AI_MODEL_REVIEW.2026-10-25.md).

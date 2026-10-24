@@ -1,0 +1,1350 @@
+{
+  "schema_version": 1,
+  "reports": [
+    {
+      "id": "baseten-mammoth-elephant-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "checked_on": "2026-10-25",
+      "title": "Mammoth-1과 Elephant-1 소개: 선택지 판별 성능과 공개 가중치의 조건",
+      "description": "Mammoth-1과 Elephant-1의 판별 성능을 출시 평가 및 현재 경쟁 모델과 비교하고, 가중치와 한시 무료 제공의 조건을 설명합니다.",
+      "deck": "Mammoth-1과 Elephant-1은 문장을 생성하는 대신 미리 정한 답의 확률을 계산하는 27B와9B 판별 모델입니다. 공개 가중치와 단일 입력을 여러 질문에 재사용하는 구조가 강점입니다. 다만 출시 당시의1위 주장과 현재 재평가 결과는 다르며, 작은 Elephant도 모든 경쟁 모델보다 우수하지는 않습니다. Baseten의 무료 API는10월27일23:59 PT까지인 한시 제공입니다.",
+      "scope": "2026년10월21일 공개된 두 모델을25일 뒤늦게 보완했습니다. 현재 평가 자료의 생성 시각은22일20:10:35 UTC이며, 오늘의 새 출시나 오늘 새로 측정한 값으로 표시하지 않습니다.",
+      "source_note": "공식 출시 글, 기술 보고서와 현재 모델 카드, 평가 운영자의 Jev0.4.1 및 AA 공개 데이터를 대조했습니다. 공급자 자체 재현과 외부 측정을 분리하며 실제 추론 실행, API 청구와 한국어 작업 검증은 수행하지 않았습니다.",
+      "highlights": [
+        "모델과 가중치",
+        "상대 성능",
+        "비용과 제공"
+      ],
+      "summary": [
+        {
+          "label": "모델과 가중치",
+          "text": "Qwen3.5-27B와9B를 추가 학습했습니다. 두 카드가 현재 MIT 가중치와 텍스트/이미지 입력을 안내하지만, 기술 보고서의 텍스트 전용 학습 설명과는 차이가 있습니다.",
+          "source_ids": [
+            "mammoth",
+            "elephant",
+            "report"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "상대 성능",
+          "text": "현재 Jev Full은 Mammoth68.44, Decider v1.2는67.98입니다. Elephant의 AA 점수64.69는 d1-ultra65.25와 SubQ65.00보다 낮습니다. 출시 카드의 순위를 현재 순위로 쓰지 않습니다.",
+          "source_ids": [
+            "jev",
+            "aa"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "비용과 제공",
+          "text": "공개 가중치 사용과 무료 API 체험은 별개입니다. API 무료 종료는10월28일15:59 한국시간이며 이후의 표준 단가는 확인하지 못했습니다.",
+          "source_ids": [
+            "mammoth",
+            "elephant"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "tables": [
+        {
+          "id": "specs",
+          "title": "두 모델의 사양과 현재 제공",
+          "columns": [
+            "항목",
+            "Mammoth-1",
+            "Elephant-1"
+          ],
+          "rows": [
+            {
+              "values": [
+                "크기와 기반",
+                "27B / Qwen3.5-27B",
+                "9B / Qwen3.5-9B"
+              ],
+              "source_ids": [
+                "mammoth",
+                "elephant",
+                "api"
+              ]
+            },
+            {
+              "values": [
+                "출력",
+                "선택지, 예/아니오, 순서 있는 점수의 확률",
+                "동일; 일반 문장 생성용 아님"
+              ],
+              "source_ids": [
+                "mammoth",
+                "elephant",
+                "api"
+              ]
+            },
+            {
+              "values": [
+                "최대 학습 길이",
+                "16,384토큰; 초과 요청 거부",
+                "16,384토큰; 초과 요청 거부"
+              ],
+              "source_ids": [
+                "mammoth",
+                "elephant",
+                "api"
+              ]
+            },
+            {
+              "values": [
+                "현재 입력 안내",
+                "텍스트와 이미지",
+                "텍스트와 이미지"
+              ],
+              "source_ids": [
+                "mammoth",
+                "elephant",
+                "api"
+              ]
+            },
+            {
+              "values": [
+                "가중치 라이선스",
+                "현재 모델 카드 MIT",
+                "현재 모델 카드 MIT"
+              ],
+              "source_ids": [
+                "mammoth",
+                "elephant",
+                "api"
+              ]
+            },
+            {
+              "values": [
+                "자체 호스팅",
+                "단일 CUDA GPU, 지정된 OneJev 및 패치",
+                "동일; 정확한 VRAM 하한 미확인"
+              ],
+              "source_ids": [
+                "mammoth",
+                "elephant",
+                "api"
+              ]
+            }
+          ],
+          "note": "B는10억 파라미터입니다. 입력 이미지 지원이 이미지 평가의 정확도나 모든 시각 언어 작업 성능을 보증하지 않습니다."
+        },
+        {
+          "id": "previous",
+          "title": "기반 모델과 달라진 점",
+          "columns": [
+            "비교 항목",
+            "기반 Qwen3.5",
+            "Mammoth / Elephant"
+          ],
+          "rows": [
+            {
+              "values": [
+                "모델 목적",
+                "일반 목적 생성 모델",
+                "정해진 답의 확률을 반환하는 판별 모델"
+              ],
+              "source_ids": [
+                "report"
+              ]
+            },
+            {
+              "values": [
+                "전체 주의집중 층",
+                "인과적 마스크",
+                "같은 블록 안의 앞뒤 정보를 읽는 마스크"
+              ],
+              "source_ids": [
+                "report"
+              ]
+            },
+            {
+              "values": [
+                "질문 처리",
+                "본문 답변 생성과 해석이 필요",
+                "입력 문맥을 먼저 읽고 질문별 계산에서 재사용"
+              ],
+              "source_ids": [
+                "report"
+              ]
+            },
+            {
+              "values": [
+                "9B 통제 실험",
+                "인과적44.8",
+                "블록 양방향48.6"
+              ],
+              "source_ids": [
+                "report"
+              ]
+            }
+          ],
+          "note": "9B의44.8/48.6은 초기 Mix1과 공개1만개 샘플을 고정한 단일 실험입니다. 최종 제품 전체 성능이나 일반 생성 모델의 지능 향상을 측정한 값이 아닙니다. 기존 Mammoth의 이전 세대는 확인하지 못해 기반 모델을 비교했습니다."
+        },
+        {
+          "id": "jev",
+          "title": "출시 평가와 현재 재평가 비교",
+          "columns": [
+            "모델",
+            "출시0.4 Full",
+            "현재0.4.1 Full",
+            "현재 공개 점수"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Mammoth-1 27B",
+                "71.24",
+                "68.44",
+                "75.34"
+              ],
+              "source_ids": [
+                "report",
+                "mammoth",
+                "jev"
+              ]
+            },
+            {
+              "values": [
+                "Elephant-1 9B",
+                "62.65",
+                "60.26",
+                "72.24"
+              ],
+              "source_ids": [
+                "report",
+                "mammoth",
+                "jev"
+              ]
+            },
+            {
+              "values": [
+                "Perplexity Decider v1.2 27B",
+                "69.42",
+                "67.98",
+                "67.74"
+              ],
+              "source_ids": [
+                "report",
+                "mammoth",
+                "jev"
+              ]
+            },
+            {
+              "values": [
+                "Jev 1.14",
+                "62.2",
+                "60.24",
+                "60.7"
+              ],
+              "source_ids": [
+                "report",
+                "mammoth",
+                "jev"
+              ]
+            },
+            {
+              "values": [
+                "Cloudflare Clef",
+                "55.7",
+                "54.92",
+                "61.71"
+              ],
+              "source_ids": [
+                "report",
+                "mammoth",
+                "jev"
+              ]
+            }
+          ],
+          "note": "높을수록 좋음. 0.4와0.4.1은 같은 판이 아닙니다. 현재 Full은 비공개 동일기술60%와 신규영역40%를 결합하며 공개 점수는 Full에 넣지 않습니다. 현재 원자료 생성22일20:10:35 UTC / 확인25일."
+        },
+        {
+          "id": "aa",
+          "title": "독립 AA Decision Index의 현재 결과",
+          "columns": [
+            "모델",
+            "지수 점수"
+          ],
+          "rows": [
+            {
+              "values": [
+                "d1-ultra",
+                "65.25"
+              ],
+              "source_ids": [
+                "aa"
+              ]
+            },
+            {
+              "values": [
+                "SubQ Snap 1.1",
+                "65.0"
+              ],
+              "source_ids": [
+                "aa"
+              ]
+            },
+            {
+              "values": [
+                "Elephant 9B",
+                "64.69"
+              ],
+              "source_ids": [
+                "aa"
+              ]
+            },
+            {
+              "values": [
+                "Jev 1.14",
+                "57.07"
+              ],
+              "source_ids": [
+                "aa"
+              ]
+            },
+            {
+              "values": [
+                "Decider v1.2",
+                "56.17"
+              ],
+              "source_ids": [
+                "aa"
+              ]
+            },
+            {
+              "values": [
+                "Microsoft-Decision-1",
+                "53.76"
+              ],
+              "source_ids": [
+                "aa"
+              ]
+            },
+            {
+              "values": [
+                "GPT-6 Luna (Decisions)",
+                "48.49"
+              ],
+              "source_ids": [
+                "aa"
+              ]
+            }
+          ],
+          "note": "25일 확인한 평가 운영자의 공개 값. AA-Omniscience-Decision, HLE-MultiChoice, When2Call, WildGuardTest를 결합하며 높을수록 좋습니다. 일반 AA Intelligence Index와 다릅니다. Mammoth는 이 현재 표의 측정 대상으로 확인되지 않았습니다."
+        },
+        {
+          "id": "replica",
+          "title": "공급자의 AA 재현과 외부 측정 구분",
+          "columns": [
+            "항목",
+            "Mammoth",
+            "Elephant",
+            "비교 기준"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Base Labs 자체 AA 재현",
+                "65.9",
+                "65.2",
+                "출시 보고서; d1-ultra65 수록"
+              ],
+              "source_ids": [
+                "report",
+                "aa"
+              ]
+            },
+            {
+              "values": [
+                "현재 AA 운영자 측정",
+                "미확인",
+                "64.69",
+                "d1-ultra65.25 / SubQ65.00"
+              ],
+              "source_ids": [
+                "report",
+                "aa"
+              ]
+            }
+          ],
+          "note": "재현 지수와 공식 운영자의 현재 점수를 이어 붙여 단일 순위로 만들지 않습니다. 데이터, 체크포인트와 평가 시점이 다릅니다."
+        },
+        {
+          "id": "pricing",
+          "title": "가중치와 API 비용의 차이",
+          "columns": [
+            "제공 경로",
+            "현재 확인한 비용",
+            "적용 조건"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Baseten Model APIs",
+                "10월27일23:59 PT까지 무료",
+                "한국시간28일15:59; 두 모델 카드의 종료 시각"
+              ],
+              "source_ids": [
+                "mammoth",
+                "elephant"
+              ]
+            },
+            {
+              "values": [
+                "무료 기간 이후 API",
+                "표준 단가 미확인",
+                "영구 USD0/100만토큰으로 저장하지 않음"
+              ],
+              "source_ids": [
+                "mammoth",
+                "elephant"
+              ]
+            },
+            {
+              "values": [
+                "MIT 가중치 자체 호스팅",
+                "가중치 라이선스와 장비 비용 별개",
+                "CUDA 장비, 운영과 보안 구성 비용 필요"
+              ],
+              "source_ids": [
+                "mammoth",
+                "elephant"
+              ]
+            }
+          ],
+          "note": "무료 기간은 종량제 정상 가격이 아닙니다. ZDR 기본 안내는 개별 계약의 모든 보안 요건이나 실제 데이터 처리 경로를 확인했다는 뜻이 아닙니다."
+        }
+      ],
+      "explanation": [
+        {
+          "id": "overview",
+          "title": "확률을 반환하는 판별 모델",
+          "lead": "답의 후보가 정해진 판단을 위한 모델군입니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "생성 모델과의 차이",
+              "text": "일반 생성 모델은 답을 문장으로 만들지만, 이 모델은 주어진 답 각각에 확률을 매깁니다. 가장 높은 확률을 고르는 것과 확률이 실제 정답률에 맞는지는 다른 문제입니다. 확신 정도와 실제 정답률의 일치를 교정이라고 하며, 높은 지수 점수 하나만으로 모든 업무에서 교정이 잘 된다고 판단할 수는 없습니다.",
+              "source_ids": [
+                "launch",
+                "report"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "모델 간 관계",
+              "text": "Mammoth와 Elephant는 같은 학습법을 크기가 다른 기반 모델에 적용한 형제 모델입니다. Elephant가 먼저 나온 Mammoth의 후속 세대라는 뜻은 아닙니다. 일반 언어 지식이 더 필요한 판단에는 큰 모델을, 자원과 응답 부담을 줄이는 비교에는 작은 모델을 검토할 수 있지만 실제 지연은 입력 길이와 장비에 좌우됩니다.",
+              "source_ids": [
+                "launch",
+                "mammoth",
+                "elephant"
+              ],
+              "kind": "judgment"
+            }
+          ]
+        },
+        {
+          "id": "strengths",
+          "title": "공개 가중치와 선택지 중심 처리의 장점",
+          "lead": "정해진 출력과 작은 모델을 비교할 수 있다는 점이 차별점입니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "구조와 학습의 변화",
+              "text": "공통 입력을 한 번 읽고 질문별 계산에 재사용해 문장을 끝까지 생성하지 않습니다. 기술 보고서는621만 개의 판단 사례와 불확실할 때 답을 유보하는 학습을 설명합니다. 초기9B 통제 실험의44.8에서48.6으로의 변화는 마스크 변경의 근거지만, 데이터와 구조를 함께 바꾼 최종 점수를 구조 하나의 효과로 해석하면 안 됩니다.",
+              "source_ids": [
+                "report"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "같은 판의 비교",
+              "text": "현재 Jev Full에서 Mammoth는 Perplexity Decider v1.2보다0.46포인트 높고 공개 점수는75.34로67.74보다 높습니다. 반대로 Full 선두 Fastino GLiDE1.2의71.52에는 못 미칩니다. 현재 Mammoth68.44는 확인한 표에서 세 번째 위치이며 출시 때의1위를 현재 상태로 일반화할 수 없습니다.",
+              "source_ids": [
+                "jev"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "limits",
+          "title": "평가와 공식 설명의 한계",
+          "lead": "모델 카드와 발표, 현재 평가를 서로 대조해야 합니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "작은 모델의 상대적 약점",
+              "text": "Elephant의 현재 Jev Full60.26은 Mammoth68.44보다 낮고, Jev1.14의60.24와도 거의 같습니다. 외부 AA에서는 d1-ultra와 SubQ Snap1.1보다 낮습니다. 작다는 이유로 모든 경쟁 모델보다 정확하거나 빠르다고 말할 수 없으며, 현재 표에 없는 Mammoth의 외부 AA 점수도 공급자의 재현 값으로 대신 채우지 않습니다.",
+              "source_ids": [
+                "jev",
+                "aa"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "원문 간 불일치",
+              "text": "현재 두 모델 카드는 이미지 입력과 텍스트/이미지 판단 학습을 설명하지만 기술 보고서는 텍스트 학습 및 향후 멀티모달 학습을 설명합니다. 제공 목록의 이미지 입력은 확인되지만, 학습판과 이미지 성능의 차이는 미확인입니다. 또한 현재 Jev 주석은 학습 중복 신호로 신규영역 시험 하나를 제외했다고 설명하고 기술 보고서는 평가 오염이 없었다고 주장합니다. 이 차이를 해결된 문제로 단정하지 않습니다.",
+              "source_ids": [
+                "mammoth",
+                "elephant",
+                "report",
+                "jev"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "제공과 운영 조건",
+              "text": "현재 HF 카드의 MIT와 평가표의 오래된 proprietary 표기가 다르므로, 배포 조건은 실제 사용할 체크포인트의 라이선스로 재확인해야 합니다. 단일 CUDA GPU 안내만으로 특정 VRAM에서 동작한다고 보장할 수 없으며 한국어 정확도, 동시 처리, 실제 청구와 독립 재현은 이번 자료에서 확인하지 않았습니다.",
+              "source_ids": [
+                "mammoth",
+                "elephant",
+                "jev"
+              ],
+              "kind": "fact"
+            }
+          ]
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "비교 판단",
+            "text": "공개 가중치를 가진 판별 모델을 비교하려면 Mammoth의 현재 Full 우세와 Elephant의 크기 이점을 분리해 봐야 합니다. 최신 외부 평가에서는 두 모델의 출시 당시 선두 주장이 그대로 유지되지 않습니다. 현재 입력, 교정과 평가판의 불일치, 무료 종료 이후 비용을 해소한 뒤 실제 작업의 선택 후보로 판단하는 것이 적절합니다.",
+            "source_ids": [
+              "launch",
+              "report",
+              "mammoth",
+              "elephant",
+              "jev",
+              "aa",
+              "api"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "25일의 문서 검토이며20~22일 측정과21일 출시를 오늘의 신규 측정/출시로 바꾸지 않습니다. 외부 평가를 독립적으로 다시 실행하지 않았고 공급자의 속도/비용 우세를 사용자 환경의 결과로 보장하지 않습니다.",
+          "source_ids": [
+            "launch",
+            "report",
+            "mammoth",
+            "elephant",
+            "jev",
+            "aa",
+            "api"
+          ]
+        }
+      ],
+      "references": [
+        {
+          "id": "launch",
+          "title": "Base Labs의 공식 출시 발표",
+          "url": "https://www.baseten.co/blog/the-best-decision-models-in-the-world-mammoth-1-and-elephant-1/",
+          "description": "10월 21일 발표일과 판별 모델의 출력, 제공 경로를 확인했습니다."
+        },
+        {
+          "id": "report",
+          "title": "Mammoth와 Elephant 기술 보고서",
+          "url": "https://labs.baseten.co/articles/mammoth-1-and-elephant-1-frontier-decision-models",
+          "description": "구조 변경과 학습 데이터, 출시 평가의 판 및 자체 재현 AA 결과를 구분했습니다."
+        },
+        {
+          "id": "mammoth",
+          "title": "Mammoth 공식 모델 카드",
+          "url": "https://huggingface.co/baselabs/mammoth-1",
+          "description": "현재 MIT, 이미지 입력, 16,384토큰, 한시 무료와 CUDA 실행 조건을 확인했습니다."
+        },
+        {
+          "id": "elephant",
+          "title": "Elephant 공식 모델 카드",
+          "url": "https://huggingface.co/baselabs/elephant-1",
+          "description": "9B 기반, 현재 입력과 가중치 제공, 무료 종료 시각을 대조했습니다."
+        },
+        {
+          "id": "jev",
+          "title": "Jev Decision Index의 현재 공개 결과",
+          "url": "https://multimodalart-jev-decision-index.static.hf.space/index.html",
+          "description": "현재 0.4.1의 Full/public 분리, 체크포인트, 재평가 값과 시험 제외 주석을 확인했습니다. TypeSafe의 공식 인증이 아닌 평가 운영자의 공개 결과입니다."
+        },
+        {
+          "id": "aa",
+          "title": "Artificial Analysis의 현재 Decision Index",
+          "url": "https://artificialanalysis.ai/evaluations/artificial-analysis-decision-index",
+          "description": "평가 운영자의 현재 Elephant 및 경쟁 모델 점수와 지표 정의를 확인했습니다. Baseten의 자체 재현 수치와 별개입니다."
+        },
+        {
+          "id": "api",
+          "title": "Baseten의 Mammoth 제공 목록",
+          "url": "https://www.baseten.co/library/mammoth-1/",
+          "description": "현재 텍스트/이미지 입력, 구조화된 출력과 정확한 API 모델 이름을 대조했습니다."
+        }
+      ]
+    },
+    {
+      "id": "mistral-voxtral-3-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "checked_on": "2026-10-25",
+      "title": "Voxtral 3 소개: 전사 오류율, 실시간 지연과 음성 합성 비용 비교",
+      "description": "Voxtral 3의 네 음성 모델을 이전 모델과 경쟁 전사 모델에 비교하고, 오류율의 장단점과 실제 API 단가 및 제공 제한을 설명합니다.",
+      "deck": "Voxtral 3는 녹음 전사 두 모델, 실시간 전사 모델과 음성 합성 모델로 구성된 새 음성 모델군입니다. 이전 Mini Transcribe2보다 화자 분리 오류가 줄었고 다국어 전사에서도 경쟁력이 있지만, 실시간 전사에서는 Gemini3.5보다 오류율이 높습니다. 네 모델은 Public Preview이며, 전사는 오디오 분당, 합성은 입력100만문자당 과금합니다.",
+      "scope": "2026년10월20일 공개된 모델군을25일 뒤늦게 보완했습니다. 발표일은 공식 변경 이력과 수명주기에서 확인했습니다. 실제 API 호출, 음성 청취 비교, 한국어 작업과 온프레미스 배포는 이번에 시험하지 않았습니다.",
+      "source_note": "Mistral 발표의 정적 차트 JSON과 주석, 네 모델 카드와 현재 표준 요금을 읽었습니다. 발표 수록/자체 평가와 외부 AA 수록값을 구분했습니다. 모형별 조건, WER/CER와 화자 분리 오류율, Preview 및 언어 표기 충돌을 보존합니다.",
+      "highlights": [
+        "네 모델의 역할",
+        "이전과 경쟁 모델 비교",
+        "요금과 상태"
+      ],
+      "summary": [
+        {
+          "label": "네 모델의 역할",
+          "text": "Mini와 Small은 녹음의 전사 및 화자 분리, Realtime은 스트리밍 입력, TTS는 텍스트의 음성 합성을 담당합니다. 연결된 에이전트 SDK와 추론 LLM은 별개입니다.",
+          "source_ids": [
+            "launch",
+            "mini",
+            "small",
+            "realtime",
+            "tts"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "이전과 경쟁 모델 비교",
+          "text": "화자 분리 cpWER는 Mini2의30.9%에서 Mini3의18.6%로 낮아졌습니다. 다만 실시간 FLEURS35에서480ms 설정의6.4%는 Gemini3.5 Realtime4.2%보다 높습니다.",
+          "source_ids": [
+            "launch"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "요금과 상태",
+          "text": "Mini/Small/Realtime은 각각분당 $0.0035/$0.004/$0.008, TTS는100만문자당 $13입니다. 네 모델은 Public Preview이며 자체 배포 조건과 언어 지원은 별도 확인이 필요합니다.",
+          "source_ids": [
+            "prices",
+            "changes",
+            "tts",
+            "launch"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "tables": [
+        {
+          "id": "specs",
+          "title": "모델별 사양과 제공 범위",
+          "columns": [
+            "모델",
+            "정확한 API ID",
+            "기능",
+            "표준 USD 단가"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Mini Transcribe3",
+                "voxtral-mini-transcribe-3-0",
+                "오프라인 전사, 화자 분리",
+                "$0.0035/오디오분"
+              ],
+              "source_ids": [
+                "mini",
+                "small",
+                "realtime",
+                "tts",
+                "prices"
+              ]
+            },
+            {
+              "values": [
+                "Small Transcribe3",
+                "voxtral-small-transcribe-3-0",
+                "오프라인 전사, 화자 분리",
+                "$0.004/오디오분"
+              ],
+              "source_ids": [
+                "mini",
+                "small",
+                "realtime",
+                "tts",
+                "prices"
+              ]
+            },
+            {
+              "values": [
+                "Mini Realtime3",
+                "voxtral-mini-transcribe-realtime-3-0",
+                "실시간 전사, 발화 종료와 화자 분리",
+                "$0.008/오디오분"
+              ],
+              "source_ids": [
+                "mini",
+                "small",
+                "realtime",
+                "tts",
+                "prices"
+              ]
+            },
+            {
+              "values": [
+                "Mini TTS3",
+                "voxtral-mini-tts-3-0",
+                "음성 합성, 음성 복제",
+                "$13/100만입력문자"
+              ],
+              "source_ids": [
+                "mini",
+                "small",
+                "realtime",
+                "tts",
+                "prices"
+              ]
+            }
+          ],
+          "note": "모든 모델은20일 출시/Public Preview입니다. Mini 전사는 발표에서4B로 설명하지만 다른 크기는 추정하지 않습니다. 모델 카드32k 표시를 최대 오디오 시간이나 모든 대화의 기억 용량으로 환산하지 않습니다."
+        },
+        {
+          "id": "previous",
+          "title": "이전 음성 모델과 요금 및 성능 변화",
+          "columns": [
+            "항목",
+            "이전 모델",
+            "3세대",
+            "비교 의미"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Mini 전사 표준 요금",
+                "$0.003/분",
+                "$0.0035/분",
+                "약16.7% 증가"
+              ],
+              "source_ids": [
+                "prices",
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Realtime 표준 요금",
+                "$0.006/분",
+                "$0.008/분",
+                "약33.3% 증가"
+              ],
+              "source_ids": [
+                "prices",
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "TTS 표준 요금",
+                "$16/100만문자",
+                "$13/100만문자",
+                "18.75% 감소"
+              ],
+              "source_ids": [
+                "prices",
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Mini 화자 분리 cpWER",
+                "2세대30.9%",
+                "3세대18.6%",
+                "12.3포인트 감소; 낮을수록 좋음"
+              ],
+              "source_ids": [
+                "prices",
+                "launch"
+              ]
+            }
+          ],
+          "note": "같은 표준 요금표의25일 값과 공급자 발표에 수록한 같은 화자 분리 평가를 비교했습니다. 이전 Voxtral Small의 입력 오디오와 출력 토큰 복합 과금은 새 전사 전용 모델과 단일 단가로 합치지 않습니다."
+        },
+        {
+          "id": "fleurs",
+          "title": "45언어 녹음 전사 비교",
+          "columns": [
+            "모델",
+            "언어 지정 오류율%",
+            "언어 자동 감지 오류율%"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Voxtral Small Transcribe 3",
+                "4",
+                "4.1"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Microsoft AI Transcribe 2",
+                "4",
+                "4.1"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Voxtral Mini Transcribe 3",
+                "4.5",
+                "4.6"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Gemini 3.5 Transcribe",
+                "4.5",
+                "6.1"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Scribe v2",
+                "4.9",
+                "4.9"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "GPT Transcribe",
+                "5.6",
+                "6.3"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Whisper large-v3",
+                "14.9",
+                "16"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            }
+          ],
+          "note": "공급자 수록 FLEURS 공통45언어의 매크로 평균, 낮을수록 좋음. 일본어/한국어/태국어/중국어는 단어 오류율 WER 대신 문자 오류율 CER 사용. 특정 한국어 업무의 실제 오류율을 뜻하지 않습니다. 경쟁 모델 이름/판은 원문 표기입니다."
+        },
+        {
+          "id": "diarization",
+          "title": "화자 분리 전사 오류율",
+          "columns": [
+            "모델",
+            "cpWER %"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Voxtral Small Transcribe 3",
+                "18.4"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Voxtral Mini Transcribe 3",
+                "18.6"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Pyannote Orchestrator (Precision 3)",
+                "19"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Microsoft AI Transcribe 2",
+                "20.3"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Scribe v2",
+                "23"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Voxtral Mini Transcribe 2",
+                "30.9"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Gemini 3.5 Transcribe",
+                "38.4"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            }
+          ],
+          "note": "공급자 평가. AMI-IHM/AMI-SDM, Switchboard/CallHome, AISHELL-4의 매크로 평균이며 AMI와 AISHELL은30분판을 사용합니다. cpWER는 화자별 발언을 연결하고 최적 화자 대응을 적용한 단어 오류율로, 낮을수록 좋습니다."
+        },
+        {
+          "id": "realtime",
+          "title": "실시간 전사의 지연 설정과 오류율",
+          "columns": [
+            "모델/설정",
+            "평균 오류율%"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Voxtral Mini Transcribe 3*",
+                "4"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Gemini 3.5 Realtime Transcribe",
+                "4.2"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Voxtral Mini Realtime 3 · 2400 ms",
+                "5.7"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Microsoft AI Transcribe 2 Streaming",
+                "5.8"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Voxtral Mini Realtime 3 · 960 ms",
+                "6"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Voxtral Mini Realtime 3 · 480 ms",
+                "6.4"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Voxtral Mini Realtime 3 · 240 ms",
+                "7.4"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "GPT Live Transcribe",
+                "8.4"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Scribe v2 Realtime",
+                "8.7"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            }
+          ],
+          "note": "FLEURS35언어, 한국어/일본어/중국어는 CER, 나머지는 WER. 별표 Mini Transcribe3는 오프라인 참고값이며 실시간 우열로 합산하지 않습니다. 240/480/960/2,400ms는 제공자의 지연 설정으로, 전체 통화 응답시간 보장이 아닙니다."
+        },
+        {
+          "id": "aa-wer",
+          "title": "발표에 수록한 AA 전사 지수의 반대 결과",
+          "columns": [
+            "모델",
+            "WER 지수%"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Fun-Realtime-ASR-preview",
+                "1.73"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Microsoft AI Transcribe 2",
+                "2.04"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Voxtral Small Transcribe 3",
+                "2.1"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Scribe v2",
+                "2.18"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Voxtral Mini Transcribe 3",
+                "2.22"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Voxtral Mini Transcribe 2",
+                "3.59"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            }
+          ],
+          "note": "Mistral 발표에 재수록한 AA WER Index이며 VoxPopuli, Earnings-22, AgentTalk의 가중 평균입니다. 낮을수록 좋음. AA의 현재 표를 직접 재수집한 값이나 모든 언어의 평균으로 바꾸지 않습니다."
+        },
+        {
+          "id": "pricing",
+          "title": "표준 오디오 요금과 별도 서비스",
+          "columns": [
+            "경로",
+            "표준 USD 단가",
+            "주의"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Mini / Small / Realtime 전사",
+                "분당0.0035 /0.004 /0.008",
+                "오디오 길이 기준; 출력 텍스트 토큰 단가와 다름"
+              ],
+              "source_ids": [
+                "launch",
+                "prices"
+              ]
+            },
+            {
+              "values": [
+                "TTS3",
+                "100만입력문자당13",
+                "오디오분이나100만토큰으로 환산하지 않음"
+              ],
+              "source_ids": [
+                "launch",
+                "prices"
+              ]
+            },
+            {
+              "values": [
+                "Voice Agents + Small4",
+                "대화분당0.04",
+                "전사 한 모델의 요금이 아닌 연결 서비스"
+              ],
+              "source_ids": [
+                "launch",
+                "prices"
+              ]
+            },
+            {
+              "values": [
+                "Voice Agents + 큰 모델",
+                "대화분당0.08",
+                "개별 모델 API와 분리"
+              ],
+              "source_ids": [
+                "launch",
+                "prices"
+              ]
+            },
+            {
+              "values": [
+                "자체 인프라 배포",
+                "공개 표준 견적 미확인",
+                "영업 협의 경로; 무료 가중치 제공으로 단정하지 않음"
+              ],
+              "source_ids": [
+                "launch",
+                "prices"
+              ]
+            }
+          ],
+          "note": "25일 확인한 USD Standard 표시입니다. 캐시 입력 열의10분의1 수치, Batch/Priority 및 지역 선택을 표준 기본 단가와 혼합하지 않았습니다. 캐시 적용 방식과 청구를 이번에 시험하지 않았습니다."
+        }
+      ],
+      "explanation": [
+        {
+          "id": "overview",
+          "title": "음성 모델과 대화 실행기의 관계",
+          "lead": "듣기와 말하기, 추론을 각각 담당하는 구성을 구분합니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "전사와 화자 분리",
+              "text": "전사는 말소리를 글로 바꾸고 화자 분리는 누가 어느 구간을 말했는지 나눕니다. 새 Mini와 Small은 이 두 기능 및 용어를 알려 인식을 보조하는 문맥 편향을 제공합니다. Small의45언어 전사 오류율4.0/4.1은 Microsoft와 동률이고 Mini4.5/4.6보다 낮지만, 다른 평가에서도 항상 가장 낮은 것은 아닙니다.",
+              "source_ids": [
+                "launch",
+                "mini",
+                "small"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "에이전트 SDK와 기반 모델",
+              "text": "LiveKit 기반 SDK는 전사, 별도 추론 모델, 음성 합성을 이어 줍니다. 외부 시스템의 실행 능력은 이 연결과 도구 권한에 달려 있습니다. Voxtral의 이름이나 음성 입력만으로 문서를 직접 편집하거나 모든 업무를 수행하는 단일 기반 모델이라고 해석하지 않습니다.",
+              "source_ids": [
+                "launch"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "strengths",
+          "title": "이전 모델보다 개선된 전사와 합성 비용",
+          "lead": "오류율 개선과 비용 변화는 모델별로 방향이 다릅니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "화자 분리의 개선",
+              "text": "같은 화자 분리 시험에서 Mini3의18.6은 Mini2의30.9보다12.3포인트 낮고, Small3의18.4는 Scribe v2의23.0과 Microsoft20.3보다 낮습니다. 발표의 Earnings22 용어 재현율도 Small이 문맥 없을 때81.4에서 문맥 제공94.6으로 높아집니다. 이는 공급자의 평가 조건에서 확인된 변화이며 임의의 녹음에 같은 개선폭을 보장하지 않습니다.",
+              "source_ids": [
+                "launch"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "성능과 가격의 선택",
+              "text": "Mini는 Small보다 기본 분당 단가가 낮지만45언어 전사 오류율은 더 높습니다. Small도 발표 수록 AA 지수2.10에서 Microsoft2.04 및 Fun1.73보다 오류가 많습니다. TTS3의 표준 문자 단가는 이전 TTS보다18.75% 낮아졌지만 새 전사와 실시간 모델의 단가는 오히려 올랐습니다.",
+              "source_ids": [
+                "launch",
+                "prices"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "limits",
+          "title": "실시간 정확도, 언어와 제공 조건의 한계",
+          "lead": "출시 소개의 넓은 표현을 실제 모델별 조건으로 좁혀 읽어야 합니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "지연과 정확도의 교환",
+              "text": "Realtime의 설정을240ms에서2,400ms로 늘릴 때 오류율은7.4에서5.7로 낮아집니다. 그래도 같은 표의 Gemini Realtime4.2보다 높습니다. 카드의80~2,400ms 설정과 출시 글의500ms 미만 표기는 선택한 설정의 범위이지 모든 음성 길이와 네트워크에서 달성하는 응답 보장이 아닙니다.",
+              "source_ids": [
+                "launch",
+                "realtime"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "언어 표기와 실제 제공",
+              "text": "전사 발표는50개 이상 언어와 한국어 평가를 설명합니다. 음성 합성 발표는35개 이상 언어,18언어 음성 프리셋과 한국어를 제시하지만 TTS 카드에는9언어라고 적혀 있습니다. 어느 기능과 API 판에서 한국어가 실제 지원되는지는 추가 확인이 필요하며 한국어 음질이나 실시간 인식률을 이번에 검증한 것은 아닙니다.",
+              "source_ids": [
+                "launch",
+                "tts"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "가중치와 운영 제약",
+              "text": "공식 수명주기의 Active와 모델 카드의 Public Preview는 의미가 다릅니다. 발표가 자체 배포를 안내하더라도 네 모델의 일반 공개 가중치, 장비 요구량과 온프레미스 계약 가격을 확인한 것은 아닙니다. 음성 복제의 동의 및 지역별 처리/보관 조건도 별도 검토 대상이며, 기존 오픈 모델의 라이선스를 새 모델에 그대로 적용하지 않습니다.",
+              "source_ids": [
+                "lifecycle",
+                "changes",
+                "launch"
+              ],
+              "kind": "fact"
+            }
+          ]
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "비교 판단",
+            "text": "Voxtral3는 화자 분리와 다국어 녹음 전사, 합성 비용에서 검토할 변화가 있습니다. 실시간 전사는 지연을 줄일수록 오류가 늘고 Gemini 대비 열세가 있으며, 새 전사 단가도 이전보다 높습니다. 모델별 요금 단위와 Preview, 언어 및 자체 배포 조건을 분리해 비교해야 합니다.",
+            "source_ids": [
+              "launch",
+              "mini",
+              "small",
+              "realtime",
+              "tts",
+              "prices",
+              "changes",
+              "lifecycle"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "20일 발표를25일 보완한 문서입니다. 벤치마크는 공급자 수록값이며 녹음별 오류, 실제 음질, 청구와 업무 도입 성과를 측정하지 않았습니다. 언어 표기 충돌과 가중치/계약 조건은 미확인으로 남깁니다.",
+          "source_ids": [
+            "launch",
+            "mini",
+            "small",
+            "realtime",
+            "tts",
+            "prices",
+            "changes",
+            "lifecycle"
+          ]
+        }
+      ],
+      "references": [
+        {
+          "id": "launch",
+          "title": "Voxtral 3 공식 발표와 평가 그림",
+          "url": "https://mistral.ai/news/voxtral-3/",
+          "description": "HTML에 포함된 정적 차트 JSON과 설명을 읽고 45언어/35언어, WER/CER, 화자 분리 평가와 요금을 구분했습니다."
+        },
+        {
+          "id": "mini",
+          "title": "Voxtral Mini Transcribe 3 모델 카드",
+          "url": "https://docs.mistral.ai/models/voxtral-mini-transcribe-3-0",
+          "description": "10월 20일 Public Preview, 정확한 ID와 32k 표시 및 분당 요금을 확인했습니다."
+        },
+        {
+          "id": "small",
+          "title": "Voxtral Small Transcribe 3 모델 카드",
+          "url": "https://docs.mistral.ai/models/voxtral-small-transcribe-3-0",
+          "description": "오프라인 전사와 화자 분리, 모델 ID와 분당 요금을 확인했습니다."
+        },
+        {
+          "id": "realtime",
+          "title": "Voxtral Realtime 3 모델 카드",
+          "url": "https://docs.mistral.ai/models/voxtral-mini-transcribe-realtime-3-0",
+          "description": "80~2,400ms 설정 범위, 발화 종료 감지, 화자 분리 및 정확한 API ID를 확인했습니다."
+        },
+        {
+          "id": "tts",
+          "title": "Voxtral TTS 3 모델 카드",
+          "url": "https://docs.mistral.ai/models/voxtral-mini-tts-3-0",
+          "description": "음성 복제, 최초 오디오 약90ms 주장과 카드의9언어 표기를 읽었습니다. 발표의35언어 설명과 충돌을 보존했습니다."
+        },
+        {
+          "id": "prices",
+          "title": "Mistral 공식 표준 요금표",
+          "url": "https://docs.mistral.ai/inference/pricing",
+          "description": "USD 표준 오디오 요금과 기존2세대/기존TTS를 같은 원문 단위로 비교했습니다. 대화 전체의 Voice Agents 요금은 별도입니다."
+        },
+        {
+          "id": "changes",
+          "title": "Mistral의 공식 변경 이력",
+          "url": "https://docs.mistral.ai/resources/changelogs",
+          "description": "20일 네 모델의 Public Preview 및 22일 타사 모델 제공을 구분했습니다."
+        },
+        {
+          "id": "lifecycle",
+          "title": "Voxtral 3의 공식 수명주기",
+          "url": "https://legal.mistral.ai/ai-governance/models/voxtral-3/",
+          "description": "네 모델의20일 출시 및 Active 상태를 확인했습니다. Active를 정식 제공 완료로 바꾸지 않았습니다."
+        }
+      ]
+    }
+  ]
+}

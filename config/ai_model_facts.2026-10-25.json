@@ -1,0 +1,1141 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "id": "mammoth-1-202610-spec",
+      "model": "Mammoth-1",
+      "provider": "Base Labs / Baseten",
+      "source_url": "https://huggingface.co/baselabs/mammoth-1/raw/main/README.md",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "2026-10 모델 카드",
+        "condition": "21일 출시를25일 보완. 현재카드MIT/텍스트+이미지, 학습 설명은 기술보고서와 차이. 실제추론/한국어/VRAM미검증.",
+        "context": 16384,
+        "parameters": "27B",
+        "access": "공개 가중치 / Baseten Model APIs",
+        "status": "가중치 공개 / API 한시 무료",
+        "release": "2026-10-21",
+        "파라미터 B": 27,
+        "입력": "텍스트, 이미지",
+        "출력": "선택지 확률; 문장 생성 아님",
+        "라이선스": "MIT (현재 카드)",
+        "후속 API 표준요금": "미확인",
+        "무료 종료": "2026-10-27 23:59 PT / 2026-10-28 15:59 KST"
+      }
+    },
+    {
+      "id": "elephant-1-202610-spec",
+      "model": "Elephant-1",
+      "provider": "Base Labs / Baseten",
+      "source_url": "https://huggingface.co/baselabs/elephant-1/raw/main/README.md",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "2026-10 모델 카드",
+        "condition": "21일 출시를25일 보완. 현재카드MIT/텍스트+이미지, 학습 설명은 기술보고서와 차이. 실제추론/한국어/VRAM미검증.",
+        "context": 16384,
+        "parameters": "9B",
+        "access": "공개 가중치 / Baseten Model APIs",
+        "status": "가중치 공개 / API 한시 무료",
+        "release": "2026-10-21",
+        "파라미터 B": 9,
+        "입력": "텍스트, 이미지",
+        "출력": "선택지 확률; 문장 생성 아님",
+        "라이선스": "MIT (현재 카드)",
+        "후속 API 표준요금": "미확인",
+        "무료 종료": "2026-10-27 23:59 PT / 2026-10-28 15:59 KST"
+      }
+    },
+    {
+      "id": "baseten-jev041-0-balanced_skill",
+      "model": "Jev 1.14",
+      "provider": "TypeSafe",
+      "source_url": "https://multimodalart-jev-decision-index.static.hf.space/data/index.json",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "외부 공개 판별 평가",
+        "suite": "Decision Index 0.4.1 Full",
+        "condition": "자료 생성22일20:10:35 UTC / 확인25일. Full=비공개동일기술60%+신규영역40%; 공개점수는Full에미포함. 평가운영자 주석/시험 제외/리비전은 원문 유지. 높을수록좋음; 일반AA지수아님.",
+        "평가 점수": 60.24,
+        "단위": "지수 포인트",
+        "측정 주체": "Jev Decision Index 운영자",
+        "harness": "Decision Index 공개/비공개 평가; 단일 RTX PRO6000; 후보별 serving 조건은 원문",
+        "평가 원자료 생성": "2026-10-22T20:10:35Z"
+      }
+    },
+    {
+      "id": "baseten-jev041-0-public_skill",
+      "model": "Jev 1.14",
+      "provider": "TypeSafe",
+      "source_url": "https://multimodalart-jev-decision-index.static.hf.space/data/index.json",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "외부 공개 판별 평가",
+        "suite": "Decision Index 0.4.1 Public",
+        "condition": "자료 생성22일20:10:35 UTC / 확인25일. Full=비공개동일기술60%+신규영역40%; 공개점수는Full에미포함. 평가운영자 주석/시험 제외/리비전은 원문 유지. 높을수록좋음; 일반AA지수아님.",
+        "평가 점수": 60.7,
+        "단위": "지수 포인트",
+        "측정 주체": "Jev Decision Index 운영자",
+        "harness": "Decision Index 공개/비공개 평가; 단일 RTX PRO6000; 후보별 serving 조건은 원문",
+        "평가 원자료 생성": "2026-10-22T20:10:35Z"
+      }
+    },
+    {
+      "id": "baseten-jev041-1-balanced_skill",
+      "model": "Cloudflare clef",
+      "provider": "Cloudflare",
+      "source_url": "https://multimodalart-jev-decision-index.static.hf.space/data/index.json",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "외부 공개 판별 평가",
+        "suite": "Decision Index 0.4.1 Full",
+        "condition": "자료 생성22일20:10:35 UTC / 확인25일. Full=비공개동일기술60%+신규영역40%; 공개점수는Full에미포함. 평가운영자 주석/시험 제외/리비전은 원문 유지. 높을수록좋음; 일반AA지수아님.",
+        "평가 점수": 54.92,
+        "단위": "지수 포인트",
+        "측정 주체": "Jev Decision Index 운영자",
+        "harness": "Decision Index 공개/비공개 평가; 단일 RTX PRO6000; 후보별 serving 조건은 원문",
+        "평가 원자료 생성": "2026-10-22T20:10:35Z"
+      }
+    },
+    {
+      "id": "baseten-jev041-1-public_skill",
+      "model": "Cloudflare clef",
+      "provider": "Cloudflare",
+      "source_url": "https://multimodalart-jev-decision-index.static.hf.space/data/index.json",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "외부 공개 판별 평가",
+        "suite": "Decision Index 0.4.1 Public",
+        "condition": "자료 생성22일20:10:35 UTC / 확인25일. Full=비공개동일기술60%+신규영역40%; 공개점수는Full에미포함. 평가운영자 주석/시험 제외/리비전은 원문 유지. 높을수록좋음; 일반AA지수아님.",
+        "평가 점수": 61.71,
+        "단위": "지수 포인트",
+        "측정 주체": "Jev Decision Index 운영자",
+        "harness": "Decision Index 공개/비공개 평가; 단일 RTX PRO6000; 후보별 serving 조건은 원문",
+        "평가 원자료 생성": "2026-10-22T20:10:35Z"
+      }
+    },
+    {
+      "id": "baseten-jev041-2-balanced_skill",
+      "model": "Perplexity Decider v1.2 (27B)",
+      "provider": "Perplexity",
+      "source_url": "https://multimodalart-jev-decision-index.static.hf.space/data/index.json",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "외부 공개 판별 평가",
+        "suite": "Decision Index 0.4.1 Full",
+        "condition": "자료 생성22일20:10:35 UTC / 확인25일. Full=비공개동일기술60%+신규영역40%; 공개점수는Full에미포함. 평가운영자 주석/시험 제외/리비전은 원문 유지. 높을수록좋음; 일반AA지수아님.",
+        "평가 점수": 67.98,
+        "단위": "지수 포인트",
+        "측정 주체": "Jev Decision Index 운영자",
+        "harness": "Decision Index 공개/비공개 평가; 단일 RTX PRO6000; 후보별 serving 조건은 원문",
+        "평가 원자료 생성": "2026-10-22T20:10:35Z"
+      }
+    },
+    {
+      "id": "baseten-jev041-2-public_skill",
+      "model": "Perplexity Decider v1.2 (27B)",
+      "provider": "Perplexity",
+      "source_url": "https://multimodalart-jev-decision-index.static.hf.space/data/index.json",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "외부 공개 판별 평가",
+        "suite": "Decision Index 0.4.1 Public",
+        "condition": "자료 생성22일20:10:35 UTC / 확인25일. Full=비공개동일기술60%+신규영역40%; 공개점수는Full에미포함. 평가운영자 주석/시험 제외/리비전은 원문 유지. 높을수록좋음; 일반AA지수아님.",
+        "평가 점수": 67.74,
+        "단위": "지수 포인트",
+        "측정 주체": "Jev Decision Index 운영자",
+        "harness": "Decision Index 공개/비공개 평가; 단일 RTX PRO6000; 후보별 serving 조건은 원문",
+        "평가 원자료 생성": "2026-10-22T20:10:35Z"
+      }
+    },
+    {
+      "id": "baseten-jev041-3-balanced_skill",
+      "model": "Perplexity Decider Flash v1.2 (4B)",
+      "provider": "Perplexity",
+      "source_url": "https://multimodalart-jev-decision-index.static.hf.space/data/index.json",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "외부 공개 판별 평가",
+        "suite": "Decision Index 0.4.1 Full",
+        "condition": "자료 생성22일20:10:35 UTC / 확인25일. Full=비공개동일기술60%+신규영역40%; 공개점수는Full에미포함. 평가운영자 주석/시험 제외/리비전은 원문 유지. 높을수록좋음; 일반AA지수아님.",
+        "평가 점수": 54.29,
+        "단위": "지수 포인트",
+        "측정 주체": "Jev Decision Index 운영자",
+        "harness": "Decision Index 공개/비공개 평가; 단일 RTX PRO6000; 후보별 serving 조건은 원문",
+        "평가 원자료 생성": "2026-10-22T20:10:35Z"
+      }
+    },
+    {
+      "id": "baseten-jev041-3-public_skill",
+      "model": "Perplexity Decider Flash v1.2 (4B)",
+      "provider": "Perplexity",
+      "source_url": "https://multimodalart-jev-decision-index.static.hf.space/data/index.json",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "외부 공개 판별 평가",
+        "suite": "Decision Index 0.4.1 Public",
+        "condition": "자료 생성22일20:10:35 UTC / 확인25일. Full=비공개동일기술60%+신규영역40%; 공개점수는Full에미포함. 평가운영자 주석/시험 제외/리비전은 원문 유지. 높을수록좋음; 일반AA지수아님.",
+        "평가 점수": 60.06,
+        "단위": "지수 포인트",
+        "측정 주체": "Jev Decision Index 운영자",
+        "harness": "Decision Index 공개/비공개 평가; 단일 RTX PRO6000; 후보별 serving 조건은 원문",
+        "평가 원자료 생성": "2026-10-22T20:10:35Z"
+      }
+    },
+    {
+      "id": "baseten-jev041-4-balanced_skill",
+      "model": "mammoth-1 (27B)",
+      "provider": "Base Labs / Baseten",
+      "source_url": "https://multimodalart-jev-decision-index.static.hf.space/data/index.json",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "외부 공개 판별 평가",
+        "suite": "Decision Index 0.4.1 Full",
+        "condition": "자료 생성22일20:10:35 UTC / 확인25일. Full=비공개동일기술60%+신규영역40%; 공개점수는Full에미포함. 평가운영자 주석/시험 제외/리비전은 원문 유지. 높을수록좋음; 일반AA지수아님.",
+        "평가 점수": 68.44,
+        "단위": "지수 포인트",
+        "측정 주체": "Jev Decision Index 운영자",
+        "harness": "Decision Index 공개/비공개 평가; 단일 RTX PRO6000; 후보별 serving 조건은 원문",
+        "평가 원자료 생성": "2026-10-22T20:10:35Z"
+      }
+    },
+    {
+      "id": "baseten-jev041-4-public_skill",
+      "model": "mammoth-1 (27B)",
+      "provider": "Base Labs / Baseten",
+      "source_url": "https://multimodalart-jev-decision-index.static.hf.space/data/index.json",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "외부 공개 판별 평가",
+        "suite": "Decision Index 0.4.1 Public",
+        "condition": "자료 생성22일20:10:35 UTC / 확인25일. Full=비공개동일기술60%+신규영역40%; 공개점수는Full에미포함. 평가운영자 주석/시험 제외/리비전은 원문 유지. 높을수록좋음; 일반AA지수아님.",
+        "평가 점수": 75.34,
+        "단위": "지수 포인트",
+        "측정 주체": "Jev Decision Index 운영자",
+        "harness": "Decision Index 공개/비공개 평가; 단일 RTX PRO6000; 후보별 serving 조건은 원문",
+        "평가 원자료 생성": "2026-10-22T20:10:35Z"
+      }
+    },
+    {
+      "id": "baseten-jev041-5-balanced_skill",
+      "model": "elephant-1 (9B)",
+      "provider": "Base Labs / Baseten",
+      "source_url": "https://multimodalart-jev-decision-index.static.hf.space/data/index.json",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "외부 공개 판별 평가",
+        "suite": "Decision Index 0.4.1 Full",
+        "condition": "자료 생성22일20:10:35 UTC / 확인25일. Full=비공개동일기술60%+신규영역40%; 공개점수는Full에미포함. 평가운영자 주석/시험 제외/리비전은 원문 유지. 높을수록좋음; 일반AA지수아님.",
+        "평가 점수": 60.26,
+        "단위": "지수 포인트",
+        "측정 주체": "Jev Decision Index 운영자",
+        "harness": "Decision Index 공개/비공개 평가; 단일 RTX PRO6000; 후보별 serving 조건은 원문",
+        "평가 원자료 생성": "2026-10-22T20:10:35Z"
+      }
+    },
+    {
+      "id": "baseten-jev041-5-public_skill",
+      "model": "elephant-1 (9B)",
+      "provider": "Base Labs / Baseten",
+      "source_url": "https://multimodalart-jev-decision-index.static.hf.space/data/index.json",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "외부 공개 판별 평가",
+        "suite": "Decision Index 0.4.1 Public",
+        "condition": "자료 생성22일20:10:35 UTC / 확인25일. Full=비공개동일기술60%+신규영역40%; 공개점수는Full에미포함. 평가운영자 주석/시험 제외/리비전은 원문 유지. 높을수록좋음; 일반AA지수아님.",
+        "평가 점수": 72.24,
+        "단위": "지수 포인트",
+        "측정 주체": "Jev Decision Index 운영자",
+        "harness": "Decision Index 공개/비공개 평가; 단일 RTX PRO6000; 후보별 serving 조건은 원문",
+        "평가 원자료 생성": "2026-10-22T20:10:35Z"
+      }
+    },
+    {
+      "id": "baseten-aa-current-baseten_elephant-9b",
+      "model": "Elephant 9B",
+      "provider": "Baseten",
+      "source_url": "https://artificialanalysis.ai/evaluations/artificial-analysis-decision-index",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "평가 운영자 판별 지수",
+        "suite": "AA Decision Index / 2026-10-25 확인",
+        "condition": "AA운영자 공개값; 공급자 자체재현과별도. AA-Omniscience-Decision/HLE-MultiChoice/When2Call/WildGuardTest. 높을수록좋음. 원발표일 미기재, 확인일을측정일로바꾸지않음.",
+        "평가 점수": 64.69,
+        "단위": "지수 포인트",
+        "측정 주체": "Artificial Analysis",
+        "harness": "AA Decision Index; 일반 Intelligence Index와 별도"
+      }
+    },
+    {
+      "id": "baseten-aa-current-liquid-ai_d1-ultra",
+      "model": "d1-ultra",
+      "provider": "Liquid AI",
+      "source_url": "https://artificialanalysis.ai/evaluations/artificial-analysis-decision-index",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "평가 운영자 판별 지수",
+        "suite": "AA Decision Index / 2026-10-25 확인",
+        "condition": "AA운영자 공개값; 공급자 자체재현과별도. AA-Omniscience-Decision/HLE-MultiChoice/When2Call/WildGuardTest. 높을수록좋음. 원발표일 미기재, 확인일을측정일로바꾸지않음.",
+        "평가 점수": 65.25,
+        "단위": "지수 포인트",
+        "측정 주체": "Artificial Analysis",
+        "harness": "AA Decision Index; 일반 Intelligence Index와 별도"
+      }
+    },
+    {
+      "id": "baseten-aa-current-openai_gpt-6-luna-decisions",
+      "model": "GPT-6 Luna (Decisions)",
+      "provider": "OpenAI",
+      "source_url": "https://artificialanalysis.ai/evaluations/artificial-analysis-decision-index",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "평가 운영자 판별 지수",
+        "suite": "AA Decision Index / 2026-10-25 확인",
+        "condition": "AA운영자 공개값; 공급자 자체재현과별도. AA-Omniscience-Decision/HLE-MultiChoice/When2Call/WildGuardTest. 높을수록좋음. 원발표일 미기재, 확인일을측정일로바꾸지않음.",
+        "평가 점수": 48.49,
+        "단위": "지수 포인트",
+        "측정 주체": "Artificial Analysis",
+        "harness": "AA Decision Index; 일반 Intelligence Index와 별도"
+      }
+    },
+    {
+      "id": "baseten-aa-current-openrouter_microsoft-decision-1",
+      "model": "Microsoft-Decision-1",
+      "provider": "Microsoft",
+      "source_url": "https://artificialanalysis.ai/evaluations/artificial-analysis-decision-index",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "평가 운영자 판별 지수",
+        "suite": "AA Decision Index / 2026-10-25 확인",
+        "condition": "AA운영자 공개값; 공급자 자체재현과별도. AA-Omniscience-Decision/HLE-MultiChoice/When2Call/WildGuardTest. 높을수록좋음. 원발표일 미기재, 확인일을측정일로바꾸지않음.",
+        "평가 점수": 53.76,
+        "단위": "지수 포인트",
+        "측정 주체": "Artificial Analysis",
+        "harness": "AA Decision Index; 일반 Intelligence Index와 별도"
+      }
+    },
+    {
+      "id": "baseten-aa-current-perplexity_pplx-decider-v1-2",
+      "model": "Decider v1.2",
+      "provider": "Perplexity",
+      "source_url": "https://artificialanalysis.ai/evaluations/artificial-analysis-decision-index",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "평가 운영자 판별 지수",
+        "suite": "AA Decision Index / 2026-10-25 확인",
+        "condition": "AA운영자 공개값; 공급자 자체재현과별도. AA-Omniscience-Decision/HLE-MultiChoice/When2Call/WildGuardTest. 높을수록좋음. 원발표일 미기재, 확인일을측정일로바꾸지않음.",
+        "평가 점수": 56.17,
+        "단위": "지수 포인트",
+        "측정 주체": "Artificial Analysis",
+        "harness": "AA Decision Index; 일반 Intelligence Index와 별도"
+      }
+    },
+    {
+      "id": "baseten-aa-current-subquadratic_subq-snap-1-1",
+      "model": "SubQ Snap 1.1",
+      "provider": "Subquadratic",
+      "source_url": "https://artificialanalysis.ai/evaluations/artificial-analysis-decision-index",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "평가 운영자 판별 지수",
+        "suite": "AA Decision Index / 2026-10-25 확인",
+        "condition": "AA운영자 공개값; 공급자 자체재현과별도. AA-Omniscience-Decision/HLE-MultiChoice/When2Call/WildGuardTest. 높을수록좋음. 원발표일 미기재, 확인일을측정일로바꾸지않음.",
+        "평가 점수": 65.0,
+        "단위": "지수 포인트",
+        "측정 주체": "Artificial Analysis",
+        "harness": "AA Decision Index; 일반 Intelligence Index와 별도"
+      }
+    },
+    {
+      "id": "baseten-aa-current-typesafe_jev-1-14",
+      "model": "Jev 1.14",
+      "provider": "TypeSafe",
+      "source_url": "https://artificialanalysis.ai/evaluations/artificial-analysis-decision-index",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "평가 운영자 판별 지수",
+        "suite": "AA Decision Index / 2026-10-25 확인",
+        "condition": "AA운영자 공개값; 공급자 자체재현과별도. AA-Omniscience-Decision/HLE-MultiChoice/When2Call/WildGuardTest. 높을수록좋음. 원발표일 미기재, 확인일을측정일로바꾸지않음.",
+        "평가 점수": 57.07,
+        "단위": "지수 포인트",
+        "측정 주체": "Artificial Analysis",
+        "harness": "AA Decision Index; 일반 Intelligence Index와 별도"
+      }
+    },
+    {
+      "id": "mammoth-1-baselabs-aa-replica",
+      "model": "Mammoth-1",
+      "provider": "Base Labs / Baseten",
+      "source_url": "https://labs.baseten.co/articles/mammoth-1-and-elephant-1-frontier-decision-models",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "공급자 자체 재현 평가",
+        "suite": "AA Decision Index / Base Labs 출시 재현",
+        "condition": "21일 출시보고서 자체재현. AA현재운영자의외부측정과분리; 높을수록좋음.",
+        "평가 점수": 65.9,
+        "단위": "지수 포인트",
+        "측정 주체": "Base Labs 자체 재현",
+        "harness": "AA prompt formats replica; 외부 AA측정 아님"
+      }
+    },
+    {
+      "id": "elephant-1-baselabs-aa-replica",
+      "model": "Elephant-1",
+      "provider": "Base Labs / Baseten",
+      "source_url": "https://labs.baseten.co/articles/mammoth-1-and-elephant-1-frontier-decision-models",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "공급자 자체 재현 평가",
+        "suite": "AA Decision Index / Base Labs 출시 재현",
+        "condition": "21일 출시보고서 자체재현. AA현재운영자의외부측정과분리; 높을수록좋음.",
+        "평가 점수": 65.2,
+        "단위": "지수 포인트",
+        "측정 주체": "Base Labs 자체 재현",
+        "harness": "AA prompt formats replica; 외부 AA측정 아님"
+      }
+    },
+    {
+      "id": "voxtral3-eval-0-0",
+      "model": "Voxtral Small Transcribe 3",
+      "provider": "Mistral AI",
+      "source_url": "https://mistral.ai/news/voxtral-3/",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "공급자 공식 수록 음성 평가",
+        "suite": "FLEURS 45 Forced vs Inferred / Forced",
+        "condition": "Mistral20일발표수록/25일확인; 낮을수록좋음. Macro-average WER over the intersection of 45 languages in the FLEURS benchmark supported by all seven models. WER is used for all languages except Japanese, Korean, Thai, and Chinese, which use CER. Lower is better. Forced = language specified; Inferred = language auto-detected. Languages: AR, BN, BG, CA, ZH, CS, DA, NL, EN, ET, FI, FR, DE, EL, GU, HI, HU, IS, ID, IT, JA, KN, KO, LV, LT, MK, MS, ML, MR, NO, FA, PL, PT, RO, RU, SK, SL, ES, SV, FIL, TE, TH, TR, UK, VI; 실제음성/네트워크/독립재현미시험.",
+        "평가 점수": 4,
+        "단위": "%",
+        "측정 주체": "Mistral 측정 또는 AA결과 재수록 (FLEURS 45 Forced vs Inferred)",
+        "harness": "FLEURS 45 Forced vs Inferred; 언어/판/지연설정은조건에명시"
+      }
+    },
+    {
+      "id": "voxtral3-eval-0-1",
+      "model": "Microsoft AI Transcribe 2",
+      "provider": "Microsoft",
+      "source_url": "https://mistral.ai/news/voxtral-3/",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "공급자 공식 수록 음성 평가",
+        "suite": "FLEURS 45 Forced vs Inferred / Forced",
+        "condition": "Mistral20일발표수록/25일확인; 낮을수록좋음. Macro-average WER over the intersection of 45 languages in the FLEURS benchmark supported by all seven models. WER is used for all languages except Japanese, Korean, Thai, and Chinese, which use CER. Lower is better. Forced = language specified; Inferred = language auto-detected. Languages: AR, BN, BG, CA, ZH, CS, DA, NL, EN, ET, FI, FR, DE, EL, GU, HI, HU, IS, ID, IT, JA, KN, KO, LV, LT, MK, MS, ML, MR, NO, FA, PL, PT, RO, RU, SK, SL, ES, SV, FIL, TE, TH, TR, UK, VI; 실제음성/네트워크/독립재현미시험.",
+        "평가 점수": 4,
+        "단위": "%",
+        "측정 주체": "Mistral 측정 또는 AA결과 재수록 (FLEURS 45 Forced vs Inferred)",
+        "harness": "FLEURS 45 Forced vs Inferred; 언어/판/지연설정은조건에명시"
+      }
+    },
+    {
+      "id": "voxtral3-eval-0-2",
+      "model": "Voxtral Mini Transcribe 3",
+      "provider": "Mistral AI",
+      "source_url": "https://mistral.ai/news/voxtral-3/",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "공급자 공식 수록 음성 평가",
+        "suite": "FLEURS 45 Forced vs Inferred / Forced",
+        "condition": "Mistral20일발표수록/25일확인; 낮을수록좋음. Macro-average WER over the intersection of 45 languages in the FLEURS benchmark supported by all seven models. WER is used for all languages except Japanese, Korean, Thai, and Chinese, which use CER. Lower is better. Forced = language specified; Inferred = language auto-detected. Languages: AR, BN, BG, CA, ZH, CS, DA, NL, EN, ET, FI, FR, DE, EL, GU, HI, HU, IS, ID, IT, JA, KN, KO, LV, LT, MK, MS, ML, MR, NO, FA, PL, PT, RO, RU, SK, SL, ES, SV, FIL, TE, TH, TR, UK, VI; 실제음성/네트워크/독립재현미시험.",
+        "평가 점수": 4.5,
+        "단위": "%",
+        "측정 주체": "Mistral 측정 또는 AA결과 재수록 (FLEURS 45 Forced vs Inferred)",
+        "harness": "FLEURS 45 Forced vs Inferred; 언어/판/지연설정은조건에명시"
+      }
+    },
+    {
+      "id": "voxtral3-eval-0-3",
+      "model": "Gemini 3.5 Transcribe",
+      "provider": "Google",
+      "source_url": "https://mistral.ai/news/voxtral-3/",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "공급자 공식 수록 음성 평가",
+        "suite": "FLEURS 45 Forced vs Inferred / Forced",
+        "condition": "Mistral20일발표수록/25일확인; 낮을수록좋음. Macro-average WER over the intersection of 45 languages in the FLEURS benchmark supported by all seven models. WER is used for all languages except Japanese, Korean, Thai, and Chinese, which use CER. Lower is better. Forced = language specified; Inferred = language auto-detected. Languages: AR, BN, BG, CA, ZH, CS, DA, NL, EN, ET, FI, FR, DE, EL, GU, HI, HU, IS, ID, IT, JA, KN, KO, LV, LT, MK, MS, ML, MR, NO, FA, PL, PT, RO, RU, SK, SL, ES, SV, FIL, TE, TH, TR, UK, VI; 실제음성/네트워크/독립재현미시험.",
+        "평가 점수": 4.5,
+        "단위": "%",
+        "측정 주체": "Mistral 측정 또는 AA결과 재수록 (FLEURS 45 Forced vs Inferred)",
+        "harness": "FLEURS 45 Forced vs Inferred; 언어/판/지연설정은조건에명시"
+      }
+    },
+    {
+      "id": "voxtral3-eval-0-4",
+      "model": "Scribe v2",
+      "provider": "ElevenLabs",
+      "source_url": "https://mistral.ai/news/voxtral-3/",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "공급자 공식 수록 음성 평가",
+        "suite": "FLEURS 45 Forced vs Inferred / Forced",
+        "condition": "Mistral20일발표수록/25일확인; 낮을수록좋음. Macro-average WER over the intersection of 45 languages in the FLEURS benchmark supported by all seven models. WER is used for all languages except Japanese, Korean, Thai, and Chinese, which use CER. Lower is better. Forced = language specified; Inferred = language auto-detected. Languages: AR, BN, BG, CA, ZH, CS, DA, NL, EN, ET, FI, FR, DE, EL, GU, HI, HU, IS, ID, IT, JA, KN, KO, LV, LT, MK, MS, ML, MR, NO, FA, PL, PT, RO, RU, SK, SL, ES, SV, FIL, TE, TH, TR, UK, VI; 실제음성/네트워크/독립재현미시험.",
+        "평가 점수": 4.9,
+        "단위": "%",
+        "측정 주체": "Mistral 측정 또는 AA결과 재수록 (FLEURS 45 Forced vs Inferred)",
+        "harness": "FLEURS 45 Forced vs Inferred; 언어/판/지연설정은조건에명시"
+      }
+    },
+    {
+      "id": "voxtral3-eval-0-5",
+      "model": "GPT Transcribe",
+      "provider": "OpenAI",
+      "source_url": "https://mistral.ai/news/voxtral-3/",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "공급자 공식 수록 음성 평가",
+        "suite": "FLEURS 45 Forced vs Inferred / Forced",
+        "condition": "Mistral20일발표수록/25일확인; 낮을수록좋음. Macro-average WER over the intersection of 45 languages in the FLEURS benchmark supported by all seven models. WER is used for all languages except Japanese, Korean, Thai, and Chinese, which use CER. Lower is better. Forced = language specified; Inferred = language auto-detected. Languages: AR, BN, BG, CA, ZH, CS, DA, NL, EN, ET, FI, FR, DE, EL, GU, HI, HU, IS, ID, IT, JA, KN, KO, LV, LT, MK, MS, ML, MR, NO, FA, PL, PT, RO, RU, SK, SL, ES, SV, FIL, TE, TH, TR, UK, VI; 실제음성/네트워크/독립재현미시험.",
+        "평가 점수": 5.6,
+        "단위": "%",
+        "측정 주체": "Mistral 측정 또는 AA결과 재수록 (FLEURS 45 Forced vs Inferred)",
+        "harness": "FLEURS 45 Forced vs Inferred; 언어/판/지연설정은조건에명시"
+      }
+    },
+    {
+      "id": "voxtral3-eval-0-6",
+      "model": "Whisper large-v3",
+      "provider": "OpenAI",
+      "source_url": "https://mistral.ai/news/voxtral-3/",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "공급자 공식 수록 음성 평가",
+        "suite": "FLEURS 45 Forced vs Inferred / Forced",
+        "condition": "Mistral20일발표수록/25일확인; 낮을수록좋음. Macro-average WER over the intersection of 45 languages in the FLEURS benchmark supported by all seven models. WER is used for all languages except Japanese, Korean, Thai, and Chinese, which use CER. Lower is better. Forced = language specified; Inferred = language auto-detected. Languages: AR, BN, BG, CA, ZH, CS, DA, NL, EN, ET, FI, FR, DE, EL, GU, HI, HU, IS, ID, IT, JA, KN, KO, LV, LT, MK, MS, ML, MR, NO, FA, PL, PT, RO, RU, SK, SL, ES, SV, FIL, TE, TH, TR, UK, VI; 실제음성/네트워크/독립재현미시험.",
+        "평가 점수": 14.9,
+        "단위": "%",
+        "측정 주체": "Mistral 측정 또는 AA결과 재수록 (FLEURS 45 Forced vs Inferred)",
+        "harness": "FLEURS 45 Forced vs Inferred; 언어/판/지연설정은조건에명시"
+      }
+    },
+    {
+      "id": "voxtral3-eval-0-7",
+      "model": "Voxtral Small Transcribe 3",
+      "provider": "Mistral AI",
+      "source_url": "https://mistral.ai/news/voxtral-3/",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "공급자 공식 수록 음성 평가",
+        "suite": "FLEURS 45 Forced vs Inferred / Inferred",
+        "condition": "Mistral20일발표수록/25일확인; 낮을수록좋음. Macro-average WER over the intersection of 45 languages in the FLEURS benchmark supported by all seven models. WER is used for all languages except Japanese, Korean, Thai, and Chinese, which use CER. Lower is better. Forced = language specified; Inferred = language auto-detected. Languages: AR, BN, BG, CA, ZH, CS, DA, NL, EN, ET, FI, FR, DE, EL, GU, HI, HU, IS, ID, IT, JA, KN, KO, LV, LT, MK, MS, ML, MR, NO, FA, PL, PT, RO, RU, SK, SL, ES, SV, FIL, TE, TH, TR, UK, VI; 실제음성/네트워크/독립재현미시험.",
+        "평가 점수": 4.1,
+        "단위": "%",
+        "측정 주체": "Mistral 측정 또는 AA결과 재수록 (FLEURS 45 Forced vs Inferred)",
+        "harness": "FLEURS 45 Forced vs Inferred; 언어/판/지연설정은조건에명시"
+      }
+    },
+    {
+      "id": "voxtral3-eval-0-8",
+      "model": "Microsoft AI Transcribe 2",
+      "provider": "Microsoft",
+      "source_url": "https://mistral.ai/news/voxtral-3/",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "공급자 공식 수록 음성 평가",
+        "suite": "FLEURS 45 Forced vs Inferred / Inferred",
+        "condition": "Mistral20일발표수록/25일확인; 낮을수록좋음. Macro-average WER over the intersection of 45 languages in the FLEURS benchmark supported by all seven models. WER is used for all languages except Japanese, Korean, Thai, and Chinese, which use CER. Lower is better. Forced = language specified; Inferred = language auto-detected. Languages: AR, BN, BG, CA, ZH, CS, DA, NL, EN, ET, FI, FR, DE, EL, GU, HI, HU, IS, ID, IT, JA, KN, KO, LV, LT, MK, MS, ML, MR, NO, FA, PL, PT, RO, RU, SK, SL, ES, SV, FIL, TE, TH, TR, UK, VI; 실제음성/네트워크/독립재현미시험.",
+        "평가 점수": 4.1,
+        "단위": "%",
+        "측정 주체": "Mistral 측정 또는 AA결과 재수록 (FLEURS 45 Forced vs Inferred)",
+        "harness": "FLEURS 45 Forced vs Inferred; 언어/판/지연설정은조건에명시"
+      }
+    },
+    {
+      "id": "voxtral3-eval-0-9",
+      "model": "Voxtral Mini Transcribe 3",
+      "provider": "Mistral AI",
+      "source_url": "https://mistral.ai/news/voxtral-3/",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "공급자 공식 수록 음성 평가",
+        "suite": "FLEURS 45 Forced vs Inferred / Inferred",
+        "condition": "Mistral20일발표수록/25일확인; 낮을수록좋음. Macro-average WER over the intersection of 45 languages in the FLEURS benchmark supported by all seven models. WER is used for all languages except Japanese, Korean, Thai, and Chinese, which use CER. Lower is better. Forced = language specified; Inferred = language auto-detected. Languages: AR, BN, BG, CA, ZH, CS, DA, NL, EN, ET, FI, FR, DE, EL, GU, HI, HU, IS, ID, IT, JA, KN, KO, LV, LT, MK, MS, ML, MR, NO, FA, PL, PT, RO, RU, SK, SL, ES, SV, FIL, TE, TH, TR, UK, VI; 실제음성/네트워크/독립재현미시험.",
+        "평가 점수": 4.6,
+        "단위": "%",
+        "측정 주체": "Mistral 측정 또는 AA결과 재수록 (FLEURS 45 Forced vs Inferred)",
+        "harness": "FLEURS 45 Forced vs Inferred; 언어/판/지연설정은조건에명시"
+      }
+    },
+    {
+      "id": "voxtral3-eval-0-10",
+      "model": "Gemini 3.5 Transcribe",
+      "provider": "Google",
+      "source_url": "https://mistral.ai/news/voxtral-3/",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "공급자 공식 수록 음성 평가",
+        "suite": "FLEURS 45 Forced vs Inferred / Inferred",
+        "condition": "Mistral20일발표수록/25일확인; 낮을수록좋음. Macro-average WER over the intersection of 45 languages in the FLEURS benchmark supported by all seven models. WER is used for all languages except Japanese, Korean, Thai, and Chinese, which use CER. Lower is better. Forced = language specified; Inferred = language auto-detected. Languages: AR, BN, BG, CA, ZH, CS, DA, NL, EN, ET, FI, FR, DE, EL, GU, HI, HU, IS, ID, IT, JA, KN, KO, LV, LT, MK, MS, ML, MR, NO, FA, PL, PT, RO, RU, SK, SL, ES, SV, FIL, TE, TH, TR, UK, VI; 실제음성/네트워크/독립재현미시험.",
+        "평가 점수": 6.1,
+        "단위": "%",
+        "측정 주체": "Mistral 측정 또는 AA결과 재수록 (FLEURS 45 Forced vs Inferred)",
+        "harness": "FLEURS 45 Forced vs Inferred; 언어/판/지연설정은조건에명시"
+      }
+    },
+    {
+      "id": "voxtral3-eval-0-11",
+      "model": "Scribe v2",
+      "provider": "ElevenLabs",
+      "source_url": "https://mistral.ai/news/voxtral-3/",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "공급자 공식 수록 음성 평가",
+        "suite": "FLEURS 45 Forced vs Inferred / Inferred",
+        "condition": "Mistral20일발표수록/25일확인; 낮을수록좋음. Macro-average WER over the intersection of 45 languages in the FLEURS benchmark supported by all seven models. WER is used for all languages except Japanese, Korean, Thai, and Chinese, which use CER. Lower is better. Forced = language specified; Inferred = language auto-detected. Languages: AR, BN, BG, CA, ZH, CS, DA, NL, EN, ET, FI, FR, DE, EL, GU, HI, HU, IS, ID, IT, JA, KN, KO, LV, LT, MK, MS, ML, MR, NO, FA, PL, PT, RO, RU, SK, SL, ES, SV, FIL, TE, TH, TR, UK, VI; 실제음성/네트워크/독립재현미시험.",
+        "평가 점수": 4.9,
+        "단위": "%",
+        "측정 주체": "Mistral 측정 또는 AA결과 재수록 (FLEURS 45 Forced vs Inferred)",
+        "harness": "FLEURS 45 Forced vs Inferred; 언어/판/지연설정은조건에명시"
+      }
+    },
+    {
+      "id": "voxtral3-eval-0-12",
+      "model": "GPT Transcribe",
+      "provider": "OpenAI",
+      "source_url": "https://mistral.ai/news/voxtral-3/",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "공급자 공식 수록 음성 평가",
+        "suite": "FLEURS 45 Forced vs Inferred / Inferred",
+        "condition": "Mistral20일발표수록/25일확인; 낮을수록좋음. Macro-average WER over the intersection of 45 languages in the FLEURS benchmark supported by all seven models. WER is used for all languages except Japanese, Korean, Thai, and Chinese, which use CER. Lower is better. Forced = language specified; Inferred = language auto-detected. Languages: AR, BN, BG, CA, ZH, CS, DA, NL, EN, ET, FI, FR, DE, EL, GU, HI, HU, IS, ID, IT, JA, KN, KO, LV, LT, MK, MS, ML, MR, NO, FA, PL, PT, RO, RU, SK, SL, ES, SV, FIL, TE, TH, TR, UK, VI; 실제음성/네트워크/독립재현미시험.",
+        "평가 점수": 6.3,
+        "단위": "%",
+        "측정 주체": "Mistral 측정 또는 AA결과 재수록 (FLEURS 45 Forced vs Inferred)",
+        "harness": "FLEURS 45 Forced vs Inferred; 언어/판/지연설정은조건에명시"
+      }
+    },
+    {
+      "id": "voxtral3-eval-0-13",
+      "model": "Whisper large-v3",
+      "provider": "OpenAI",
+      "source_url": "https://mistral.ai/news/voxtral-3/",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "공급자 공식 수록 음성 평가",
+        "suite": "FLEURS 45 Forced vs Inferred / Inferred",
+        "condition": "Mistral20일발표수록/25일확인; 낮을수록좋음. Macro-average WER over the intersection of 45 languages in the FLEURS benchmark supported by all seven models. WER is used for all languages except Japanese, Korean, Thai, and Chinese, which use CER. Lower is better. Forced = language specified; Inferred = language auto-detected. Languages: AR, BN, BG, CA, ZH, CS, DA, NL, EN, ET, FI, FR, DE, EL, GU, HI, HU, IS, ID, IT, JA, KN, KO, LV, LT, MK, MS, ML, MR, NO, FA, PL, PT, RO, RU, SK, SL, ES, SV, FIL, TE, TH, TR, UK, VI; 실제음성/네트워크/독립재현미시험.",
+        "평가 점수": 16,
+        "단위": "%",
+        "측정 주체": "Mistral 측정 또는 AA결과 재수록 (FLEURS 45 Forced vs Inferred)",
+        "harness": "FLEURS 45 Forced vs Inferred; 언어/판/지연설정은조건에명시"
+      }
+    },
+    {
+      "id": "voxtral3-eval-1-0",
+      "model": "Voxtral Small Transcribe 3",
+      "provider": "Mistral AI",
+      "source_url": "https://mistral.ai/news/voxtral-3/",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "공급자 공식 수록 음성 평가",
+        "suite": "Diarization",
+        "condition": "Mistral20일발표수록/25일확인; 낮을수록좋음. Macro-average concatenated minimum permutation WER (cpWER) over public diarization benchmarks: AMI-IHM, AMI-SDM, Switchboard, Switchboard CallHome, AISHELL-4. For maximum compatibility of API baselines, we use 30 minute versions of AMI and AISHELL. Lower is better. Diarization benchmark, Concatenated Minimum Permutation Word Error Rate (cpWER).; 실제음성/네트워크/독립재현미시험.",
+        "평가 점수": 18.4,
+        "단위": "%",
+        "측정 주체": "Mistral 측정 또는 AA결과 재수록 (Diarization)",
+        "harness": "Diarization; 언어/판/지연설정은조건에명시"
+      }
+    },
+    {
+      "id": "voxtral3-eval-1-1",
+      "model": "Voxtral Mini Transcribe 3",
+      "provider": "Mistral AI",
+      "source_url": "https://mistral.ai/news/voxtral-3/",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "공급자 공식 수록 음성 평가",
+        "suite": "Diarization",
+        "condition": "Mistral20일발표수록/25일확인; 낮을수록좋음. Macro-average concatenated minimum permutation WER (cpWER) over public diarization benchmarks: AMI-IHM, AMI-SDM, Switchboard, Switchboard CallHome, AISHELL-4. For maximum compatibility of API baselines, we use 30 minute versions of AMI and AISHELL. Lower is better. Diarization benchmark, Concatenated Minimum Permutation Word Error Rate (cpWER).; 실제음성/네트워크/독립재현미시험.",
+        "평가 점수": 18.6,
+        "단위": "%",
+        "측정 주체": "Mistral 측정 또는 AA결과 재수록 (Diarization)",
+        "harness": "Diarization; 언어/판/지연설정은조건에명시"
+      }
+    },
+    {
+      "id": "voxtral3-eval-1-2",
+      "model": "Pyannote Orchestrator (Precision 3)",
+      "provider": "pyannoteAI",
+      "source_url": "https://mistral.ai/news/voxtral-3/",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "공급자 공식 수록 음성 평가",
+        "suite": "Diarization",
+        "condition": "Mistral20일발표수록/25일확인; 낮을수록좋음. Macro-average concatenated minimum permutation WER (cpWER) over public diarization benchmarks: AMI-IHM, AMI-SDM, Switchboard, Switchboard CallHome, AISHELL-4. For maximum compatibility of API baselines, we use 30 minute versions of AMI and AISHELL. Lower is better. Diarization benchmark, Concatenated Minimum Permutation Word Error Rate (cpWER).; 실제음성/네트워크/독립재현미시험.",
+        "평가 점수": 19,
+        "단위": "%",
+        "측정 주체": "Mistral 측정 또는 AA결과 재수록 (Diarization)",
+        "harness": "Diarization; 언어/판/지연설정은조건에명시"
+      }
+    },
+    {
+      "id": "voxtral3-eval-1-3",
+      "model": "Microsoft AI Transcribe 2",
+      "provider": "Microsoft",
+      "source_url": "https://mistral.ai/news/voxtral-3/",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "공급자 공식 수록 음성 평가",
+        "suite": "Diarization",
+        "condition": "Mistral20일발표수록/25일확인; 낮을수록좋음. Macro-average concatenated minimum permutation WER (cpWER) over public diarization benchmarks: AMI-IHM, AMI-SDM, Switchboard, Switchboard CallHome, AISHELL-4. For maximum compatibility of API baselines, we use 30 minute versions of AMI and AISHELL. Lower is better. Diarization benchmark, Concatenated Minimum Permutation Word Error Rate (cpWER).; 실제음성/네트워크/독립재현미시험.",
+        "평가 점수": 20.3,
+        "단위": "%",
+        "측정 주체": "Mistral 측정 또는 AA결과 재수록 (Diarization)",
+        "harness": "Diarization; 언어/판/지연설정은조건에명시"
+      }
+    },
+    {
+      "id": "voxtral3-eval-1-4",
+      "model": "Scribe v2",
+      "provider": "ElevenLabs",
+      "source_url": "https://mistral.ai/news/voxtral-3/",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "공급자 공식 수록 음성 평가",
+        "suite": "Diarization",
+        "condition": "Mistral20일발표수록/25일확인; 낮을수록좋음. Macro-average concatenated minimum permutation WER (cpWER) over public diarization benchmarks: AMI-IHM, AMI-SDM, Switchboard, Switchboard CallHome, AISHELL-4. For maximum compatibility of API baselines, we use 30 minute versions of AMI and AISHELL. Lower is better. Diarization benchmark, Concatenated Minimum Permutation Word Error Rate (cpWER).; 실제음성/네트워크/독립재현미시험.",
+        "평가 점수": 23,
+        "단위": "%",
+        "측정 주체": "Mistral 측정 또는 AA결과 재수록 (Diarization)",
+        "harness": "Diarization; 언어/판/지연설정은조건에명시"
+      }
+    },
+    {
+      "id": "voxtral3-eval-1-5",
+      "model": "Voxtral Mini Transcribe 2",
+      "provider": "Mistral AI",
+      "source_url": "https://mistral.ai/news/voxtral-3/",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "공급자 공식 수록 음성 평가",
+        "suite": "Diarization",
+        "condition": "Mistral20일발표수록/25일확인; 낮을수록좋음. Macro-average concatenated minimum permutation WER (cpWER) over public diarization benchmarks: AMI-IHM, AMI-SDM, Switchboard, Switchboard CallHome, AISHELL-4. For maximum compatibility of API baselines, we use 30 minute versions of AMI and AISHELL. Lower is better. Diarization benchmark, Concatenated Minimum Permutation Word Error Rate (cpWER).; 실제음성/네트워크/독립재현미시험.",
+        "평가 점수": 30.9,
+        "단위": "%",
+        "측정 주체": "Mistral 측정 또는 AA결과 재수록 (Diarization)",
+        "harness": "Diarization; 언어/판/지연설정은조건에명시"
+      }
+    },
+    {
+      "id": "voxtral3-eval-1-6",
+      "model": "Gemini 3.5 Transcribe",
+      "provider": "Google",
+      "source_url": "https://mistral.ai/news/voxtral-3/",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "공급자 공식 수록 음성 평가",
+        "suite": "Diarization",
+        "condition": "Mistral20일발표수록/25일확인; 낮을수록좋음. Macro-average concatenated minimum permutation WER (cpWER) over public diarization benchmarks: AMI-IHM, AMI-SDM, Switchboard, Switchboard CallHome, AISHELL-4. For maximum compatibility of API baselines, we use 30 minute versions of AMI and AISHELL. Lower is better. Diarization benchmark, Concatenated Minimum Permutation Word Error Rate (cpWER).; 실제음성/네트워크/독립재현미시험.",
+        "평가 점수": 38.4,
+        "단위": "%",
+        "측정 주체": "Mistral 측정 또는 AA결과 재수록 (Diarization)",
+        "harness": "Diarization; 언어/판/지연설정은조건에명시"
+      }
+    },
+    {
+      "id": "voxtral3-eval-3-0",
+      "model": "Fun-Realtime-ASR-preview",
+      "provider": "Alibaba",
+      "source_url": "https://mistral.ai/news/voxtral-3/",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "공급자 공식 수록 음성 평가",
+        "suite": "Artificial Analysis Benchmark",
+        "condition": "Mistral20일발표수록/25일확인; 낮을수록좋음. Artificial Analysis WER Index, a weighted average over VoxPopuli, Earnings-22 and AgentTalk.  Lower is better.; 실제음성/네트워크/독립재현미시험.",
+        "평가 점수": 1.73,
+        "단위": "%",
+        "측정 주체": "Mistral 측정 또는 AA결과 재수록 (Artificial Analysis Benchmark)",
+        "harness": "Artificial Analysis Benchmark; 언어/판/지연설정은조건에명시"
+      }
+    },
+    {
+      "id": "voxtral3-eval-3-1",
+      "model": "Microsoft AI Transcribe 2",
+      "provider": "Microsoft",
+      "source_url": "https://mistral.ai/news/voxtral-3/",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "공급자 공식 수록 음성 평가",
+        "suite": "Artificial Analysis Benchmark",
+        "condition": "Mistral20일발표수록/25일확인; 낮을수록좋음. Artificial Analysis WER Index, a weighted average over VoxPopuli, Earnings-22 and AgentTalk.  Lower is better.; 실제음성/네트워크/독립재현미시험.",
+        "평가 점수": 2.04,
+        "단위": "%",
+        "측정 주체": "Mistral 측정 또는 AA결과 재수록 (Artificial Analysis Benchmark)",
+        "harness": "Artificial Analysis Benchmark; 언어/판/지연설정은조건에명시"
+      }
+    },
+    {
+      "id": "voxtral3-eval-3-2",
+      "model": "Voxtral Small Transcribe 3",
+      "provider": "Mistral AI",
+      "source_url": "https://mistral.ai/news/voxtral-3/",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "공급자 공식 수록 음성 평가",
+        "suite": "Artificial Analysis Benchmark",
+        "condition": "Mistral20일발표수록/25일확인; 낮을수록좋음. Artificial Analysis WER Index, a weighted average over VoxPopuli, Earnings-22 and AgentTalk.  Lower is better.; 실제음성/네트워크/독립재현미시험.",
+        "평가 점수": 2.1,
+        "단위": "%",
+        "측정 주체": "Mistral 측정 또는 AA결과 재수록 (Artificial Analysis Benchmark)",
+        "harness": "Artificial Analysis Benchmark; 언어/판/지연설정은조건에명시"
+      }
+    },
+    {
+      "id": "voxtral3-eval-3-3",
+      "model": "Scribe v2",
+      "provider": "ElevenLabs",
+      "source_url": "https://mistral.ai/news/voxtral-3/",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "공급자 공식 수록 음성 평가",
+        "suite": "Artificial Analysis Benchmark",
+        "condition": "Mistral20일발표수록/25일확인; 낮을수록좋음. Artificial Analysis WER Index, a weighted average over VoxPopuli, Earnings-22 and AgentTalk.  Lower is better.; 실제음성/네트워크/독립재현미시험.",
+        "평가 점수": 2.18,
+        "단위": "%",
+        "측정 주체": "Mistral 측정 또는 AA결과 재수록 (Artificial Analysis Benchmark)",
+        "harness": "Artificial Analysis Benchmark; 언어/판/지연설정은조건에명시"
+      }
+    },
+    {
+      "id": "voxtral3-eval-3-4",
+      "model": "Voxtral Mini Transcribe 3",
+      "provider": "Mistral AI",
+      "source_url": "https://mistral.ai/news/voxtral-3/",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "공급자 공식 수록 음성 평가",
+        "suite": "Artificial Analysis Benchmark",
+        "condition": "Mistral20일발표수록/25일확인; 낮을수록좋음. Artificial Analysis WER Index, a weighted average over VoxPopuli, Earnings-22 and AgentTalk.  Lower is better.; 실제음성/네트워크/독립재현미시험.",
+        "평가 점수": 2.22,
+        "단위": "%",
+        "측정 주체": "Mistral 측정 또는 AA결과 재수록 (Artificial Analysis Benchmark)",
+        "harness": "Artificial Analysis Benchmark; 언어/판/지연설정은조건에명시"
+      }
+    },
+    {
+      "id": "voxtral3-eval-3-5",
+      "model": "Voxtral Mini Transcribe 2",
+      "provider": "Mistral AI",
+      "source_url": "https://mistral.ai/news/voxtral-3/",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "공급자 공식 수록 음성 평가",
+        "suite": "Artificial Analysis Benchmark",
+        "condition": "Mistral20일발표수록/25일확인; 낮을수록좋음. Artificial Analysis WER Index, a weighted average over VoxPopuli, Earnings-22 and AgentTalk.  Lower is better.; 실제음성/네트워크/독립재현미시험.",
+        "평가 점수": 3.59,
+        "단위": "%",
+        "측정 주체": "Mistral 측정 또는 AA결과 재수록 (Artificial Analysis Benchmark)",
+        "harness": "Artificial Analysis Benchmark; 언어/판/지연설정은조건에명시"
+      }
+    },
+    {
+      "id": "voxtral3-eval-4-0",
+      "model": "Voxtral Mini Transcribe 3*",
+      "provider": "Mistral AI",
+      "source_url": "https://mistral.ai/news/voxtral-3/",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "공급자 공식 수록 음성 평가",
+        "suite": "FLEURS 35",
+        "condition": "Mistral20일발표수록/25일확인; 낮을수록좋음. Macro-average WER over 35 languages from the FLEURS benchmark. WER is used for all languages except Japanese, Korean, and Chinese, which use CER. Lower is better. *Voxtral Mini Transcribe 3 is an offline baseline. The remaining models are realtime. Languages: AR, BN, BG, CA, CS, NL, EN, ET, FI, FR, DE, EL, GU, HI, ID, IT, JA, KN, KO, LV, MK, MS, ML, MR, NO, FA, PL, PT, RO, RU, SK, ES, FIL, TE, TR; 실제음성/네트워크/독립재현미시험.",
+        "평가 점수": 4,
+        "단위": "%",
+        "측정 주체": "Mistral 측정 또는 AA결과 재수록 (FLEURS 35)",
+        "harness": "FLEURS 35; 언어/판/지연설정은조건에명시"
+      }
+    },
+    {
+      "id": "voxtral3-eval-4-1",
+      "model": "Gemini 3.5 Realtime Transcribe",
+      "provider": "Google",
+      "source_url": "https://mistral.ai/news/voxtral-3/",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "공급자 공식 수록 음성 평가",
+        "suite": "FLEURS 35",
+        "condition": "Mistral20일발표수록/25일확인; 낮을수록좋음. Macro-average WER over 35 languages from the FLEURS benchmark. WER is used for all languages except Japanese, Korean, and Chinese, which use CER. Lower is better. *Voxtral Mini Transcribe 3 is an offline baseline. The remaining models are realtime. Languages: AR, BN, BG, CA, CS, NL, EN, ET, FI, FR, DE, EL, GU, HI, ID, IT, JA, KN, KO, LV, MK, MS, ML, MR, NO, FA, PL, PT, RO, RU, SK, ES, FIL, TE, TR; 실제음성/네트워크/독립재현미시험.",
+        "평가 점수": 4.2,
+        "단위": "%",
+        "측정 주체": "Mistral 측정 또는 AA결과 재수록 (FLEURS 35)",
+        "harness": "FLEURS 35; 언어/판/지연설정은조건에명시"
+      }
+    },
+    {
+      "id": "voxtral3-eval-4-2",
+      "model": "Voxtral Mini Realtime 3 · 2400 ms",
+      "provider": "Mistral AI",
+      "source_url": "https://mistral.ai/news/voxtral-3/",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "공급자 공식 수록 음성 평가",
+        "suite": "FLEURS 35",
+        "condition": "Mistral20일발표수록/25일확인; 낮을수록좋음. Macro-average WER over 35 languages from the FLEURS benchmark. WER is used for all languages except Japanese, Korean, and Chinese, which use CER. Lower is better. *Voxtral Mini Transcribe 3 is an offline baseline. The remaining models are realtime. Languages: AR, BN, BG, CA, CS, NL, EN, ET, FI, FR, DE, EL, GU, HI, ID, IT, JA, KN, KO, LV, MK, MS, ML, MR, NO, FA, PL, PT, RO, RU, SK, ES, FIL, TE, TR; 실제음성/네트워크/독립재현미시험.",
+        "평가 점수": 5.7,
+        "단위": "%",
+        "측정 주체": "Mistral 측정 또는 AA결과 재수록 (FLEURS 35)",
+        "harness": "FLEURS 35; 언어/판/지연설정은조건에명시"
+      }
+    },
+    {
+      "id": "voxtral3-eval-4-3",
+      "model": "Microsoft AI Transcribe 2 Streaming",
+      "provider": "Microsoft",
+      "source_url": "https://mistral.ai/news/voxtral-3/",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "공급자 공식 수록 음성 평가",
+        "suite": "FLEURS 35",
+        "condition": "Mistral20일발표수록/25일확인; 낮을수록좋음. Macro-average WER over 35 languages from the FLEURS benchmark. WER is used for all languages except Japanese, Korean, and Chinese, which use CER. Lower is better. *Voxtral Mini Transcribe 3 is an offline baseline. The remaining models are realtime. Languages: AR, BN, BG, CA, CS, NL, EN, ET, FI, FR, DE, EL, GU, HI, ID, IT, JA, KN, KO, LV, MK, MS, ML, MR, NO, FA, PL, PT, RO, RU, SK, ES, FIL, TE, TR; 실제음성/네트워크/독립재현미시험.",
+        "평가 점수": 5.8,
+        "단위": "%",
+        "측정 주체": "Mistral 측정 또는 AA결과 재수록 (FLEURS 35)",
+        "harness": "FLEURS 35; 언어/판/지연설정은조건에명시"
+      }
+    },
+    {
+      "id": "voxtral3-eval-4-4",
+      "model": "Voxtral Mini Realtime 3 · 960 ms",
+      "provider": "Mistral AI",
+      "source_url": "https://mistral.ai/news/voxtral-3/",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "공급자 공식 수록 음성 평가",
+        "suite": "FLEURS 35",
+        "condition": "Mistral20일발표수록/25일확인; 낮을수록좋음. Macro-average WER over 35 languages from the FLEURS benchmark. WER is used for all languages except Japanese, Korean, and Chinese, which use CER. Lower is better. *Voxtral Mini Transcribe 3 is an offline baseline. The remaining models are realtime. Languages: AR, BN, BG, CA, CS, NL, EN, ET, FI, FR, DE, EL, GU, HI, ID, IT, JA, KN, KO, LV, MK, MS, ML, MR, NO, FA, PL, PT, RO, RU, SK, ES, FIL, TE, TR; 실제음성/네트워크/독립재현미시험.",
+        "평가 점수": 6,
+        "단위": "%",
+        "측정 주체": "Mistral 측정 또는 AA결과 재수록 (FLEURS 35)",
+        "harness": "FLEURS 35; 언어/판/지연설정은조건에명시"
+      }
+    },
+    {
+      "id": "voxtral3-eval-4-5",
+      "model": "Voxtral Mini Realtime 3 · 480 ms",
+      "provider": "Mistral AI",
+      "source_url": "https://mistral.ai/news/voxtral-3/",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "공급자 공식 수록 음성 평가",
+        "suite": "FLEURS 35",
+        "condition": "Mistral20일발표수록/25일확인; 낮을수록좋음. Macro-average WER over 35 languages from the FLEURS benchmark. WER is used for all languages except Japanese, Korean, and Chinese, which use CER. Lower is better. *Voxtral Mini Transcribe 3 is an offline baseline. The remaining models are realtime. Languages: AR, BN, BG, CA, CS, NL, EN, ET, FI, FR, DE, EL, GU, HI, ID, IT, JA, KN, KO, LV, MK, MS, ML, MR, NO, FA, PL, PT, RO, RU, SK, ES, FIL, TE, TR; 실제음성/네트워크/독립재현미시험.",
+        "평가 점수": 6.4,
+        "단위": "%",
+        "측정 주체": "Mistral 측정 또는 AA결과 재수록 (FLEURS 35)",
+        "harness": "FLEURS 35; 언어/판/지연설정은조건에명시"
+      }
+    },
+    {
+      "id": "voxtral3-eval-4-6",
+      "model": "Voxtral Mini Realtime 3 · 240 ms",
+      "provider": "Mistral AI",
+      "source_url": "https://mistral.ai/news/voxtral-3/",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "공급자 공식 수록 음성 평가",
+        "suite": "FLEURS 35",
+        "condition": "Mistral20일발표수록/25일확인; 낮을수록좋음. Macro-average WER over 35 languages from the FLEURS benchmark. WER is used for all languages except Japanese, Korean, and Chinese, which use CER. Lower is better. *Voxtral Mini Transcribe 3 is an offline baseline. The remaining models are realtime. Languages: AR, BN, BG, CA, CS, NL, EN, ET, FI, FR, DE, EL, GU, HI, ID, IT, JA, KN, KO, LV, MK, MS, ML, MR, NO, FA, PL, PT, RO, RU, SK, ES, FIL, TE, TR; 실제음성/네트워크/독립재현미시험.",
+        "평가 점수": 7.4,
+        "단위": "%",
+        "측정 주체": "Mistral 측정 또는 AA결과 재수록 (FLEURS 35)",
+        "harness": "FLEURS 35; 언어/판/지연설정은조건에명시"
+      }
+    },
+    {
+      "id": "voxtral3-eval-4-7",
+      "model": "GPT Live Transcribe",
+      "provider": "OpenAI",
+      "source_url": "https://mistral.ai/news/voxtral-3/",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "공급자 공식 수록 음성 평가",
+        "suite": "FLEURS 35",
+        "condition": "Mistral20일발표수록/25일확인; 낮을수록좋음. Macro-average WER over 35 languages from the FLEURS benchmark. WER is used for all languages except Japanese, Korean, and Chinese, which use CER. Lower is better. *Voxtral Mini Transcribe 3 is an offline baseline. The remaining models are realtime. Languages: AR, BN, BG, CA, CS, NL, EN, ET, FI, FR, DE, EL, GU, HI, ID, IT, JA, KN, KO, LV, MK, MS, ML, MR, NO, FA, PL, PT, RO, RU, SK, ES, FIL, TE, TR; 실제음성/네트워크/독립재현미시험.",
+        "평가 점수": 8.4,
+        "단위": "%",
+        "측정 주체": "Mistral 측정 또는 AA결과 재수록 (FLEURS 35)",
+        "harness": "FLEURS 35; 언어/판/지연설정은조건에명시"
+      }
+    },
+    {
+      "id": "voxtral3-eval-4-8",
+      "model": "Scribe v2 Realtime",
+      "provider": "ElevenLabs",
+      "source_url": "https://mistral.ai/news/voxtral-3/",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "공급자 공식 수록 음성 평가",
+        "suite": "FLEURS 35",
+        "condition": "Mistral20일발표수록/25일확인; 낮을수록좋음. Macro-average WER over 35 languages from the FLEURS benchmark. WER is used for all languages except Japanese, Korean, and Chinese, which use CER. Lower is better. *Voxtral Mini Transcribe 3 is an offline baseline. The remaining models are realtime. Languages: AR, BN, BG, CA, CS, NL, EN, ET, FI, FR, DE, EL, GU, HI, ID, IT, JA, KN, KO, LV, MK, MS, ML, MR, NO, FA, PL, PT, RO, RU, SK, ES, FIL, TE, TR; 실제음성/네트워크/독립재현미시험.",
+        "평가 점수": 8.7,
+        "단위": "%",
+        "측정 주체": "Mistral 측정 또는 AA결과 재수록 (FLEURS 35)",
+        "harness": "FLEURS 35; 언어/판/지연설정은조건에명시"
+      }
+    },
+    {
+      "id": "voxtral3-spec-0",
+      "model": "Voxtral Mini Transcribe 3",
+      "provider": "Mistral AI",
+      "source_url": "https://docs.mistral.ai/models/voxtral-mini-transcribe-3-0",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "공식 모델 사양",
+        "suite": "Voxtral 3 Public Preview",
+        "condition": "20일출시/25일확인. Active는정식제공완료와별개; 언어/장비/가중치계약은별도. TTS9언어카드와35+언어발표충돌보존.",
+        "status": "Public Preview",
+        "access": "Mistral API; 자체 인프라 제공은 별도 협의",
+        "release": "2026-10-20",
+        "API ID": "voxtral-mini-transcribe-3-0",
+        "가중치": "일반 공개 다운로드 조건 미확인"
+      }
+    },
+    {
+      "id": "voxtral3-price-0",
+      "model": "Voxtral Mini Transcribe 3",
+      "provider": "Mistral AI",
+      "source_url": "https://docs.mistral.ai/inference/pricing",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "공식 표준 요금",
+        "suite": "Voxtral 3 USD Standard / 2026-10-25",
+        "condition": "USD Standard표시기본단가; 캐시/Batch/Priority/지역/실제청구와분리. 오디오분/입력문자를토큰으로환산하지않음.",
+        "USD / 오디오 분": 0.0035,
+        "단위": "USD / 오디오 분"
+      }
+    },
+    {
+      "id": "voxtral3-spec-1",
+      "model": "Voxtral Small Transcribe 3",
+      "provider": "Mistral AI",
+      "source_url": "https://docs.mistral.ai/models/voxtral-small-transcribe-3-0",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "공식 모델 사양",
+        "suite": "Voxtral 3 Public Preview",
+        "condition": "20일출시/25일확인. Active는정식제공완료와별개; 언어/장비/가중치계약은별도. TTS9언어카드와35+언어발표충돌보존.",
+        "status": "Public Preview",
+        "access": "Mistral API; 자체 인프라 제공은 별도 협의",
+        "release": "2026-10-20",
+        "API ID": "voxtral-small-transcribe-3-0",
+        "가중치": "일반 공개 다운로드 조건 미확인"
+      }
+    },
+    {
+      "id": "voxtral3-price-1",
+      "model": "Voxtral Small Transcribe 3",
+      "provider": "Mistral AI",
+      "source_url": "https://docs.mistral.ai/inference/pricing",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "공식 표준 요금",
+        "suite": "Voxtral 3 USD Standard / 2026-10-25",
+        "condition": "USD Standard표시기본단가; 캐시/Batch/Priority/지역/실제청구와분리. 오디오분/입력문자를토큰으로환산하지않음.",
+        "USD / 오디오 분": 0.004,
+        "단위": "USD / 오디오 분"
+      }
+    },
+    {
+      "id": "voxtral3-spec-2",
+      "model": "Voxtral Mini Transcribe Realtime 3",
+      "provider": "Mistral AI",
+      "source_url": "https://docs.mistral.ai/models/voxtral-mini-transcribe-realtime-3-0",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "공식 모델 사양",
+        "suite": "Voxtral 3 Public Preview",
+        "condition": "20일출시/25일확인. Active는정식제공완료와별개; 언어/장비/가중치계약은별도. TTS9언어카드와35+언어발표충돌보존.",
+        "status": "Public Preview",
+        "access": "Mistral API; 자체 인프라 제공은 별도 협의",
+        "release": "2026-10-20",
+        "API ID": "voxtral-mini-transcribe-realtime-3-0",
+        "가중치": "일반 공개 다운로드 조건 미확인"
+      }
+    },
+    {
+      "id": "voxtral3-price-2",
+      "model": "Voxtral Mini Transcribe Realtime 3",
+      "provider": "Mistral AI",
+      "source_url": "https://docs.mistral.ai/inference/pricing",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "공식 표준 요금",
+        "suite": "Voxtral 3 USD Standard / 2026-10-25",
+        "condition": "USD Standard표시기본단가; 캐시/Batch/Priority/지역/실제청구와분리. 오디오분/입력문자를토큰으로환산하지않음.",
+        "USD / 오디오 분": 0.008,
+        "단위": "USD / 오디오 분"
+      }
+    },
+    {
+      "id": "voxtral3-spec-3",
+      "model": "Voxtral Mini TTS 3",
+      "provider": "Mistral AI",
+      "source_url": "https://docs.mistral.ai/models/voxtral-mini-tts-3-0",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "공식 모델 사양",
+        "suite": "Voxtral 3 Public Preview",
+        "condition": "20일출시/25일확인. Active는정식제공완료와별개; 언어/장비/가중치계약은별도. TTS9언어카드와35+언어발표충돌보존.",
+        "status": "Public Preview",
+        "access": "Mistral API; 자체 인프라 제공은 별도 협의",
+        "release": "2026-10-20",
+        "API ID": "voxtral-mini-tts-3-0",
+        "가중치": "일반 공개 다운로드 조건 미확인"
+      }
+    },
+    {
+      "id": "voxtral3-price-3",
+      "model": "Voxtral Mini TTS 3",
+      "provider": "Mistral AI",
+      "source_url": "https://docs.mistral.ai/inference/pricing",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "공식 표준 요금",
+        "suite": "Voxtral 3 USD Standard / 2026-10-25",
+        "condition": "USD Standard표시기본단가; 캐시/Batch/Priority/지역/실제청구와분리. 오디오분/입력문자를토큰으로환산하지않음.",
+        "USD / 100만 입력 문자": 13,
+        "단위": "USD / 100만 입력 문자"
+      }
+    },
+    {
+      "id": "voxtral-previous-price-0",
+      "model": "Voxtral Mini Transcribe 2",
+      "provider": "Mistral AI",
+      "source_url": "https://docs.mistral.ai/inference/pricing",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "이전 모델 공식 표준 요금",
+        "suite": "Mistral USD Standard / 2026-10-25",
+        "condition": "현재공식표준요금표의이전모델행; 출시당시청구액이아님.",
+        "USD / 오디오 분": 0.003,
+        "단위": "USD / 오디오 분"
+      }
+    },
+    {
+      "id": "voxtral-previous-price-1",
+      "model": "Voxtral Mini Transcribe Realtime",
+      "provider": "Mistral AI",
+      "source_url": "https://docs.mistral.ai/inference/pricing",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "이전 모델 공식 표준 요금",
+        "suite": "Mistral USD Standard / 2026-10-25",
+        "condition": "현재공식표준요금표의이전모델행; 출시당시청구액이아님.",
+        "USD / 오디오 분": 0.006,
+        "단위": "USD / 오디오 분"
+      }
+    },
+    {
+      "id": "voxtral-previous-price-2",
+      "model": "Voxtral TTS",
+      "provider": "Mistral AI",
+      "source_url": "https://docs.mistral.ai/inference/pricing",
+      "checked_on": "2026-10-25",
+      "fields": {
+        "kind": "이전 모델 공식 표준 요금",
+        "suite": "Mistral USD Standard / 2026-10-25",
+        "condition": "현재공식표준요금표의이전모델행; 출시당시청구액이아님.",
+        "USD / 100만 입력 문자": 16,
+        "단위": "USD / 100만 입력 문자"
+      }
+    }
+  ]
+}

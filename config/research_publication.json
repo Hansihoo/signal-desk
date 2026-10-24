@@ -369,6 +369,11 @@
       "id": "ai-model-weights-guide-dates-2026-10-24",
       "input": "ai_model_guides_weights.2026-10-24.r3.json",
       "quality": "ai_model_guides_weights.2026-10-24.r3.quality.json"
+    },
+    {
+      "id": "ai-model-introductions-2026-10-25",
+      "input": "ai_model_guides.2026-10-25.json",
+      "quality": "ai_model_guides.2026-10-25.quality.json"
     }
   ]
 }
