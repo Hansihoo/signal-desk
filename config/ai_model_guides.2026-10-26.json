@@ -1,0 +1,1008 @@
+{
+  "schema_version": 1,
+  "reports": [
+    {
+      "id": "lighton-slideon-mslideon-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "checked_on": "2026-10-26",
+      "title": "SlideOn과 mSlideOn 소개: 문서 검색 성능과 희소 벡터의 장단점",
+      "description": "LightOn의 두 문서 검색 모델을 기존 밀집 벡터 및 다중 벡터 모델과 비교하고, 성능과 검색 비용, 공개 가중치의 제공 조건을 설명합니다.",
+      "deck": "SlideOn은 영어 문서, mSlideOn은 다국어 문서와 코드를 검색하는 공개 모델입니다. 답변을 생성하지 않고 질문과 문서를 검색용 벡터로 바꿉니다. SlideOn은 영어 평가에서 DenseOn보다 높고, mSlideOn은 mDenseOn보다 다국어 및 긴 문서 평가에서 높습니다. 다만 mLateOn보다 낮은 결과도 있으며, 검색 비용 지표를 실제 속도나 운영비 절감으로 해석할 수는 없습니다.",
+      "scope": "10월 19일 발표를 26일 뒤늦게 보완했습니다. Hugging Face 저장소 생성일은 각각 12일과 13일이며 이 날짜를 최초 공개일로 확정하지 않습니다. 오늘 출시된 모델로 표시하지 않습니다.",
+      "source_note": "공식 발표, 현재 모델 카드와 메타데이터, 학습 및 평가 저장소를 대조했습니다. 아래 점수는 LightOn이 공개한 비교 결과이며 자체 재현이나 독립 평가가 아닙니다. 발표일과 26일 확인일, 현재 체크포인트와 평가판의 차이를 구분합니다.",
+      "highlights": [
+        "모델과 변화",
+        "상대 성능",
+        "제공과 한계"
+      ],
+      "summary": [
+        {
+          "label": "모델과 변화",
+          "text": "영어 SlideOn은 174M, 다국어 mSlideOn은 339M 규모입니다. 기존 DenseOn과 mLateOn을 출발점으로 학습해 역색인에 저장할 수 있는 희소 벡터를 만듭니다.",
+          "source_ids": [
+            "launch",
+            "slideon",
+            "mslideon"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "상대 성능",
+          "text": "SlideOn의 BEIR-15는 56.68로 DenseOn의 56.20보다 높습니다. mSlideOn의 전체 MIRACL은 62.78, MLDR은 61.68로 mDenseOn보다 높지만 mLateOn의 67.04와 77.92보다는 낮습니다.",
+          "source_ids": [
+            "launch",
+            "slideon",
+            "mslideon"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "제공과 한계",
+          "text": "두 가중치의 라이선스는 Apache 2.0입니다. 공식 카드에서 표준 호스팅 API 요금은 확인하지 못했습니다. 자체 운영 비용, 한국어 개별 성능과 실제 검색 지연시간은 별도 확인이 필요합니다.",
+          "source_ids": [
+            "slideon",
+            "mslideon",
+            "repo",
+            "license"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "tables": [
+        {
+          "id": "specs",
+          "title": "두 모델의 사양과 제공 범위",
+          "note": "2026-10-26 공식 원문 확인. 평가 수치는 공급자 공개값이며 조건과 미확인 범위는 본문 및 평가 조건표에 설명합니다.",
+          "columns": [
+            "항목",
+            "SlideOn",
+            "mSlideOn"
+          ],
+          "rows": [
+            {
+              "values": [
+                "주요 대상",
+                "영어 문서 검색",
+                "다국어, 긴 문서, 코드 검색"
+              ],
+              "source_ids": [
+                "slideon",
+                "mslideon",
+                "slideon-meta",
+                "mslideon-meta"
+              ]
+            },
+            {
+              "values": [
+                "총 파라미터",
+                "174M; 메타데이터 174,246,400",
+                "339M; 메타데이터 339,449,472"
+              ],
+              "source_ids": [
+                "slideon",
+                "mslideon",
+                "slideon-meta",
+                "mslideon-meta"
+              ]
+            },
+            {
+              "values": [
+                "기반 모델",
+                "DenseOn / ModernBERT-base",
+                "mLateOn / mmBERT-base"
+              ],
+              "source_ids": [
+                "slideon",
+                "mslideon",
+                "slideon-meta",
+                "mslideon-meta"
+              ]
+            },
+            {
+              "values": [
+                "최대 입력",
+                "8,192 토큰; 프롬프트와 특수 토큰 포함",
+                "8,192 토큰; 표식과 특수 토큰 포함"
+              ],
+              "source_ids": [
+                "slideon",
+                "mslideon",
+                "slideon-meta",
+                "mslideon-meta"
+              ]
+            },
+            {
+              "values": [
+                "출력",
+                "32,768차원 비음수 희소 벡터",
+                "32,768차원 비음수 희소 벡터"
+              ],
+              "source_ids": [
+                "slideon",
+                "mslideon",
+                "slideon-meta",
+                "mslideon-meta"
+              ]
+            },
+            {
+              "values": [
+                "토큰 표현과 희소화",
+                "768차원 → 토큰별 상위 32개 활성값",
+                "128차원 → 768차원 변환 → 토큰별 상위 32개 활성값"
+              ],
+              "source_ids": [
+                "slideon",
+                "mslideon",
+                "slideon-meta",
+                "mslideon-meta"
+              ]
+            },
+            {
+              "values": [
+                "문서 단위 벡터",
+                "토큰 활성값의 최댓값으로 통합",
+                "토큰 활성값의 최댓값으로 통합"
+              ],
+              "source_ids": [
+                "slideon",
+                "mslideon",
+                "slideon-meta",
+                "mslideon-meta"
+              ]
+            },
+            {
+              "values": [
+                "최종 검색 점수",
+                "정규화하지 않은 벡터의 내적",
+                "정규화하지 않은 벡터의 내적"
+              ],
+              "source_ids": [
+                "slideon",
+                "mslideon",
+                "slideon-meta",
+                "mslideon-meta"
+              ]
+            },
+            {
+              "values": [
+                "제공",
+                "공개 가중치; Apache 2.0",
+                "공개 가중치; Apache 2.0"
+              ],
+              "source_ids": [
+                "slideon",
+                "mslideon",
+                "slideon-meta",
+                "mslideon-meta"
+              ]
+            },
+            {
+              "values": [
+                "생성 기능",
+                "문장 생성 또는 채팅 모델 아님",
+                "문장 생성 또는 채팅 모델 아님"
+              ],
+              "source_ids": [
+                "slideon",
+                "mslideon",
+                "slideon-meta",
+                "mslideon-meta"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "english",
+          "title": "영어 문서 검색 비교: BEIR-15",
+          "note": "2026-10-26 공식 원문 확인. 평가 수치는 공급자 공개값이며 조건과 미확인 범위는 본문 및 평가 조건표에 설명합니다.",
+          "columns": [
+            "모델",
+            "종류",
+            "규모",
+            "nDCG@10 ↑",
+            "Retrieval FLOPS ↓"
+          ],
+          "rows": [
+            {
+              "values": [
+                "SlideOn",
+                "희소",
+                "174M",
+                "56.68",
+                "30.87"
+              ],
+              "source_ids": [
+                "slideon",
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "DenseOn",
+                "밀집 단일 벡터",
+                "149M",
+                "56.20",
+                "산출 대상 아님"
+              ],
+              "source_ids": [
+                "slideon",
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "LateOn",
+                "다중 벡터",
+                "149M",
+                "57.22",
+                "산출 대상 아님"
+              ],
+              "source_ids": [
+                "slideon",
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "SPARSEUP",
+                "희소",
+                "188M",
+                "54.46",
+                "6.20"
+              ],
+              "source_ids": [
+                "slideon",
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "SPLADE-v3",
+                "희소",
+                "133M",
+                "50.46",
+                "5.55"
+              ],
+              "source_ids": [
+                "slideon",
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "OpenSearch doc-v3-GTE",
+                "희소",
+                "137M",
+                "52.68",
+                "0.72"
+              ],
+              "source_ids": [
+                "slideon",
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "LACONIC-1B",
+                "희소",
+                "1.24B",
+                "56.13",
+                "47.95"
+              ],
+              "source_ids": [
+                "slideon",
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "LACONIC-8B",
+                "희소",
+                "8.03B",
+                "60.06",
+                "20.07"
+              ],
+              "source_ids": [
+                "slideon",
+                "launch"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "multilingual",
+          "title": "다국어 및 긴 문서 비교: 전체 언어 평균",
+          "note": "2026-10-26 공식 원문 확인. 평가 수치는 공급자 공개값이며 조건과 미확인 범위는 본문 및 평가 조건표에 설명합니다.",
+          "columns": [
+            "모델과 검색 방식",
+            "BEIR-15 ↑",
+            "MIRACL 18언어 ↑",
+            "MLDR 13언어 ↑",
+            "MTEB Code 12과제 ↑"
+          ],
+          "rows": [
+            {
+              "values": [
+                "mSlideOn / 희소",
+                "56.00",
+                "62.78",
+                "61.68",
+                "74.78"
+              ],
+              "source_ids": [
+                "mslideon",
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "mDenseOn / 밀집",
+                "56.70",
+                "58.02",
+                "51.50",
+                "71.53"
+              ],
+              "source_ids": [
+                "mslideon",
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "mLateOn / 다중 벡터",
+                "57.56",
+                "67.04",
+                "77.92",
+                "73.48"
+              ],
+              "source_ids": [
+                "mslideon",
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "BGE-M3 / 희소",
+                "40.20",
+                "55.48",
+                "62.13",
+                "42.03"
+              ],
+              "source_ids": [
+                "mslideon",
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "gte-multilingual-base / 희소",
+                "40.27",
+                "57.49",
+                "70.75",
+                "51.09"
+              ],
+              "source_ids": [
+                "mslideon",
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "MILCO-300M / 희소",
+                "53.33",
+                "70.05",
+                "51.78",
+                "41.25"
+              ],
+              "source_ids": [
+                "mslideon",
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "pplx-embed-v1-0.6b / 밀집",
+                "56.70",
+                "68.20",
+                "43.98",
+                "75.18"
+              ],
+              "source_ids": [
+                "mslideon",
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "voyage-4-nano / 밀집",
+                "49.96",
+                "58.65",
+                "51.97",
+                "76.43"
+              ],
+              "source_ids": [
+                "mslideon",
+                "launch"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "target-full",
+          "title": "mSlideOn의 학습 대상 언어 평균과 전체 평균",
+          "note": "2026-10-26 공식 원문 확인. 평가 수치는 공급자 공개값이며 조건과 미확인 범위는 본문 및 평가 조건표에 설명합니다.",
+          "columns": [
+            "평가",
+            "학습 대상 언어 평균",
+            "전체 언어 평균",
+            "대상 범위"
+          ],
+          "rows": [
+            {
+              "values": [
+                "MIRACL",
+                "63.21",
+                "62.78",
+                "대상 5언어 / 전체 18언어; dev split"
+              ],
+              "source_ids": [
+                "mslideon"
+              ]
+            },
+            {
+              "values": [
+                "MLDR",
+                "75.79",
+                "61.68",
+                "대상 7언어 / 전체 13언어; test split"
+              ],
+              "source_ids": [
+                "mslideon"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "costs",
+          "title": "검색 비용 지표와 실제 비용의 차이",
+          "note": "2026-10-26 공식 원문 확인. 평가 수치는 공급자 공개값이며 조건과 미확인 범위는 본문 및 평가 조건표에 설명합니다.",
+          "columns": [
+            "항목",
+            "확인한 의미",
+            "이 자료로 알 수 없는 것"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Retrieval FLOPS",
+                "질문과 문서가 함께 활성화한 특징 수의 기대값",
+                "초당 처리량, 밀리초 지연시간, GPU 연산량"
+              ],
+              "source_ids": [
+                "launch",
+                "slideon",
+                "mslideon",
+                "repo",
+                "license"
+              ]
+            },
+            {
+              "values": [
+                "문서 NNZ",
+                "문서 벡터의 0이 아닌 특징 개수",
+                "실제 인덱스 파일 바이트와 서버 메모리"
+              ],
+              "source_ids": [
+                "launch",
+                "slideon",
+                "mslideon",
+                "repo",
+                "license"
+              ]
+            },
+            {
+              "values": [
+                "표의 기본 점수",
+                "질문과 문서의 최종 벡터를 가지치기하지 않은 상태",
+                "벡터를 더 줄였을 때의 동일 점수 보장"
+              ],
+              "source_ids": [
+                "launch",
+                "slideon",
+                "mslideon",
+                "repo",
+                "license"
+              ]
+            },
+            {
+              "values": [
+                "질문/문서 가지치기",
+                "질문은 순회할 목록, 문서는 저장할 활성값을 줄임",
+                "인코딩부터 최종 검색까지의 종단 지연시간"
+              ],
+              "source_ids": [
+                "launch",
+                "slideon",
+                "mslideon",
+                "repo",
+                "license"
+              ]
+            },
+            {
+              "values": [
+                "가중치와 코드",
+                "Apache 2.0 공개; 자체 운영 가능",
+                "GPU, 서버, 저장소, 인덱스 운영비의 무료 제공"
+              ],
+              "source_ids": [
+                "launch",
+                "slideon",
+                "mslideon",
+                "repo",
+                "license"
+              ]
+            },
+            {
+              "values": [
+                "호스팅 API 표준 요금",
+                "공식 카드와 저장소에서 확인하지 못함",
+                "100만 토큰당 또는 검색 1건당 확정 단가"
+              ],
+              "source_ids": [
+                "launch",
+                "slideon",
+                "mslideon",
+                "repo",
+                "license"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "conditions",
+          "title": "평가 조건과 제공 조건",
+          "note": "2026-10-26 공식 원문 확인. 평가 수치는 공급자 공개값이며 조건과 미확인 범위는 본문 및 평가 조건표에 설명합니다.",
+          "columns": [
+            "항목",
+            "보존해야 할 조건"
+          ],
+          "rows": [
+            {
+              "values": [
+                "측정 주체",
+                "LightOn 공개 비교; 이 사이트의 실행 측정이나 독립 검증 아님"
+              ],
+              "source_ids": [
+                "launch",
+                "slideon",
+                "mslideon",
+                "slideon-meta",
+                "mslideon-meta"
+              ]
+            },
+            {
+              "values": [
+                "영어 평가",
+                "BEIR 15개 데이터셋 nDCG@10 평균; 0–100 척도"
+              ],
+              "source_ids": [
+                "launch",
+                "slideon",
+                "mslideon",
+                "slideon-meta",
+                "mslideon-meta"
+              ]
+            },
+            {
+              "values": [
+                "희소 검색 설정",
+                "각 평가 전체 말뭉치를 내적으로 정확 검색; 질문과 문서 최종 벡터 미가지치기"
+              ],
+              "source_ids": [
+                "launch",
+                "slideon",
+                "mslideon",
+                "slideon-meta",
+                "mslideon-meta"
+              ]
+            },
+            {
+              "values": [
+                "밀집/다중 벡터 결과",
+                "이전 DenseOn/LateOn 및 mDenseOn/mLateOn 공개 결과를 재수록; 동일 실행에서 전부 재측정한 값 아님"
+              ],
+              "source_ids": [
+                "launch",
+                "slideon",
+                "mslideon",
+                "slideon-meta",
+                "mslideon-meta"
+              ]
+            },
+            {
+              "values": [
+                "다국어 평가판",
+                "MIRACL: mteb/miracl-hard-negatives dev; MLDR: mteb/MultiLongDocRetrieval test"
+              ],
+              "source_ids": [
+                "launch",
+                "slideon",
+                "mslideon",
+                "slideon-meta",
+                "mslideon-meta"
+              ]
+            },
+            {
+              "values": [
+                "비용 지표 표본",
+                "SciFact, NFCorpus, FiQA의 문서 6,000개와 질문 1,271개"
+              ],
+              "source_ids": [
+                "launch",
+                "slideon",
+                "mslideon",
+                "slideon-meta",
+                "mslideon-meta"
+              ]
+            },
+            {
+              "values": [
+                "실행 라이브러리",
+                "Sentence Transformers >=6.1,<6.2; Transformers >=5.3,<6; 원격 저장소 사용자 정의 코드 로딩"
+              ],
+              "source_ids": [
+                "launch",
+                "slideon",
+                "mslideon",
+                "slideon-meta",
+                "mslideon-meta"
+              ]
+            },
+            {
+              "values": [
+                "한국어",
+                "9개 자연언어의 검색 미세학습 목록에 없음; 전체 언어 평균이 한국어 점수를 뜻하지 않음"
+              ],
+              "source_ids": [
+                "launch",
+                "slideon",
+                "mslideon",
+                "slideon-meta",
+                "mslideon-meta"
+              ]
+            },
+            {
+              "values": [
+                "현재 체크포인트",
+                "SlideOn 370c600e9886; mSlideOn ef8016025bfd; 둘 다 20일 수정. 평가표의 정확한 가중치 commit은 미확인"
+              ],
+              "source_ids": [
+                "launch",
+                "slideon",
+                "mslideon",
+                "slideon-meta",
+                "mslideon-meta"
+              ]
+            }
+          ]
+        }
+      ],
+      "explanation": [
+        {
+          "id": "overview",
+          "title": "문서를 찾아주는 두 검색 모델",
+          "lead": "답변 생성 앞단에서 관련 문서를 고르는 모델입니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "희소 벡터와 역색인",
+              "text": "SlideOn과 mSlideOn은 질문과 문서를 숫자 벡터로 바꿉니다. 희소 벡터는 대부분의 값이 0이고 일부 특징에만 양의 가중치가 있습니다. 역색인은 각 특징이 나타난 문서 목록을 저장하므로, 질문에서 활성화한 특징과 겹치는 문서의 점수를 합산할 수 있습니다. 검색된 문서로 답변을 작성하려면 별도의 생성 모델이 필요합니다.",
+              "source_ids": [
+                "launch",
+                "slideon",
+                "mslideon"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "기존 모델에서 달라진 구조",
+              "text": "DenseOn은 문서 전체를 밀집 단일 벡터로 압축하고, mLateOn은 여러 토큰 벡터를 유지하는 방식입니다. 새 모델은 기존 표현을 희소 자동인코더로 학습한 뒤 검색에 맞게 추가 학습합니다. SlideOn은 DenseOn에서, mSlideOn은 mLateOn에서 출발합니다. 새 기반 언어 모델 두 개를 처음부터 학습한 발표로 해석하지 않습니다.",
+              "source_ids": [
+                "launch",
+                "denseon",
+                "mlateon"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "두 종류의 가지치기",
+              "text": "토큰별 상위 32개 활성값 선택과, 문서 전체를 합친 뒤 최종 벡터의 활성값 개수를 제한하는 작업은 다릅니다. 최종 벡터의 차원은 계속 32,768이며 질문과 문서에 서로 다른 활성값 한도를 둘 수 있습니다. 여러 한도로 학습하는 Matryoshka 방식은 가지치기 후 품질 하락을 줄이려는 설계입니다. 상위 32개라는 사양을 문서당 특징 32개로 읽으면 안 됩니다.",
+              "source_ids": [
+                "launch",
+                "slideon",
+                "mslideon"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "해석 가능한 단어 목록과의 차이",
+              "text": "특징은 토크나이저의 단어 목록이 아니라 학습한 잠재 표현입니다. 따라서 SPLADE의 단어 가중치처럼 각 차원을 곧바로 사람이 읽을 단어로 표시할 수 없습니다. 검색 설명 가능성이나 규칙 기반 필터와 연결할 때 이 차이가 중요합니다.",
+              "source_ids": [
+                "launch",
+                "slideon",
+                "mslideon"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "english-results",
+          "title": "SlideOn의 영어 성능과 경쟁 모델",
+          "lead": "DenseOn 대비 소폭 우세와 비용 지표의 불리함을 함께 봐야 합니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "BEIR 점수가 보여주는 장점",
+              "text": "BEIR-15의 nDCG@10은 관련 문서가 상위 10개 결과에서 얼마나 좋은 순서로 배치되는지 평가한 값입니다. 표는 15개 데이터셋 평균을 0–100 척도로 표시합니다. SlideOn의 56.68은 DenseOn보다 0.48포인트, SPARSEUP보다 2.22포인트 높습니다. LightOn 비교표에 포함된 3B 미만 희소 모델 가운데 가장 높은 점수라는 범위에서 우세를 말할 수 있습니다.",
+              "source_ids": [
+                "launch",
+                "slideon"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "최고 성능이나 최저 비용은 아님",
+              "text": "LateOn의 57.22와 LACONIC-8B의 60.06은 SlideOn보다 높습니다. 미가지치기 상태의 Retrieval FLOPS 30.87도 SPARSEUP의 6.20과 OpenSearch doc-v3-GTE의 0.72보다 큽니다. 파라미터 수가 작다는 이유만으로 검색 과정까지 더 저렴하다고 결론내릴 수 없습니다. nDCG 점수 차이에는 신뢰구간이나 유의성 검정이 제시되지 않아 소폭 차이의 통계적 확실성도 확인하지 못했습니다.",
+              "source_ids": [
+                "launch",
+                "slideon"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "비교 범위의 한계",
+              "text": "희소 모델은 전체 평가 말뭉치를 정확 검색했지만, 밀집 및 다중 벡터 수치는 이전 발표에서 가져왔습니다. 근사 최근접 검색 엔진, 인덱스 압축과 재정렬 구성이 달라지면 운영 결과도 달라집니다. 이 표를 모든 공개 모델의 최신 종합 순위나 실제 서비스 속도 순위로 사용하기는 어렵습니다.",
+              "source_ids": [
+                "launch",
+                "slideon"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "multilingual-results",
+          "title": "mSlideOn의 다국어, 긴 문서와 코드 성능",
+          "lead": "mDenseOn의 개선판이라는 장점과 mLateOn에서 잃은 성능이 동시에 있습니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "mDenseOn 대비 개선",
+              "text": "전체 MIRACL 62.78은 mDenseOn의 58.02보다 4.76포인트 높고, 전체 MLDR 61.68은 51.50보다 표의 반올림 수치로 10.18포인트 높습니다. 본문은 반올림 전 값에 기반한 것으로 보이는 10.19를 안내하지만 정확한 원점수는 확인하지 못했습니다. 코드 12과제 평균은 74.78로 mDenseOn 71.53과 mLateOn 73.48을 웃돕니다.",
+              "source_ids": [
+                "launch",
+                "mslideon",
+                "mdenseon"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "같이 남겨야 할 반대 결과",
+              "text": "mLateOn은 영어 57.56, 전체 MIRACL 67.04, 전체 MLDR 77.92로 세 평가 모두 mSlideOn보다 높습니다. mSlideOn의 영어 점수 56.00은 mDenseOn 56.70보다도 낮습니다. 희소 경쟁 모델 gte-multilingual-base는 전체 MLDR 70.75, MILCO-300M은 전체 MIRACL 70.05로 각각 앞섭니다. 코드에서도 밀집 모델 voyage-4-nano 76.43과 pplx-embed-v1-0.6b 75.18은 mSlideOn보다 높습니다.",
+              "source_ids": [
+                "launch",
+                "mslideon"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "언어 평균과 한국어의 구분",
+              "text": "MIRACL은 18언어, MLDR은 13언어 전체 평균과 검색 학습에 포함된 대상 언어 평균을 나눠 공개합니다. MIRACL 대상 5언어는 아랍어, 영어, 프랑스어, 독일어, 스페인어이고 MLDR 대상 7언어는 여기에 이탈리아어와 포르투갈어를 더한 범위입니다. 전체 MLDR 61.68 대신 대상 언어 평균 75.79만 제시하면 범위가 달라집니다. 한국어는 9개 자연언어 미세학습 목록에 없으며, 여기서는 한국어 개별 점수와 사내 문서 검색 성능을 확인하지 않았습니다.",
+              "source_ids": [
+                "mslideon",
+                "launch"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "이전 모델의 파라미터 표기 차이",
+              "text": "19일 비교표는 mLateOn을 312M으로 쓰지만 현재 기존 카드의 소개문은 307M으로 표기합니다. 위 성능 비교는 19일 공개표의 모델과 수치를 유지했고, 두 표기가 같은 가중치를 뜻하는지 자체 확인하지 않았습니다. 현재 카드의 숫자로 평가 조건을 소급 교체하지 않습니다.",
+              "source_ids": [
+                "mslideon",
+                "mlateon"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "cost-availability",
+          "title": "공개 가중치, 표준 요금과 운영 제약",
+          "lead": "가중치 이용 조건과 검색 서버의 실제 비용은 다릅니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "검색 비용 지표의 정확한 의미",
+              "text": "Retrieval FLOPS는 질문과 문서가 함께 활성화하는 특징 수의 기대값입니다. 대문자 FLOPS라는 이름에도 이 자료에서는 GPU 연산량이나 초당 부동소수점 연산 수가 아닙니다. SciFact, NFCorpus, FiQA의 문서 6,000개와 질문 1,271개로 계산한 검색 비용의 대리지표입니다. 문서 NNZ도 0이 아닌 특징 개수라서 인덱스의 실제 바이트 수와 같지 않습니다.",
+              "source_ids": [
+                "launch",
+                "slideon",
+                "mslideon"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "가지치기의 이득과 측정 공백",
+              "text": "질문 활성값을 줄이면 읽을 역색인 목록이 줄고 문서 활성값을 줄이면 저장하는 가중치와 목록이 줄어듭니다. 공급자는 여러 가지치기 한도에서 품질과 비용의 절충이 좋다고 보고했습니다. 그러나 위 주요 점수는 질문과 문서를 가지치기하지 않은 조건입니다. d-512 같은 다른 조건의 비용 지표와 미가지치기 점수를 하나의 결과로 합쳐서는 안 됩니다. 문서 인코딩, 인덱스 구축과 검색을 합친 지연시간은 직접 측정하지 않았습니다.",
+              "source_ids": [
+                "launch",
+                "slideon",
+                "mslideon"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "라이선스와 호스팅 비용",
+              "text": "두 모델 카드와 메타데이터는 Apache 2.0을 명시하고 학습 코드 저장소도 같은 라이선스를 제공합니다. 라이선스 고지 등 의무를 지켜 자체 운영할 수 있지만 GPU와 서버, 저장소와 인덱스 운영비까지 무료라는 뜻은 아닙니다. 공식 카드와 공개 저장소에서는 표준 호스팅 API 단가를 확인하지 못했으므로 100만 토큰당 0달러 같은 가격을 채우지 않습니다.",
+              "source_ids": [
+                "slideon",
+                "mslideon",
+                "slideon-meta",
+                "mslideon-meta",
+                "repo",
+                "license"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "현재 제공 조건과 미확인 항목",
+              "text": "현재 카드는 Sentence Transformers 6.1 이상 6.2 미만, Transformers 5.3 이상 6 미만과 사용자 정의 모델 코드 로딩을 안내합니다. 코드와 가중치의 허용 판을 검토해야 하며 최소 VRAM, CPU 처리량과 한국어 품질은 이 조사에서 검증하지 않았습니다. 공개된 SAE 중간 체크포인트는 검색 미세학습 전 초기화용이므로 최종 SlideOn 및 mSlideOn의 평가값을 그 모델의 점수로 옮기지 않습니다.",
+              "source_ids": [
+                "slideon",
+                "mslideon",
+                "repo"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "발표일과 현재 체크포인트",
+              "text": "묶음 발표는 19일이고 현재 메타데이터의 저장소 생성은 SlideOn 12일, mSlideOn 13일입니다. 생성 시각만으로 처음부터 공개였다고 단정하지 않습니다. 현재 HEAD는 각각 370c600e9886과 ef8016025bfd이며 20일에 수정됐습니다. 평가표가 사용한 정확한 가중치 commit과 평가 라이브러리 고정판은 원문에서 확인하지 못했으므로 현재 HEAD로 같은 수치가 재현된다고 보장하지 않습니다.",
+              "source_ids": [
+                "launch",
+                "slideon-meta",
+                "mslideon-meta"
+              ],
+              "kind": "fact"
+            }
+          ]
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "모델 선택",
+            "text": "영어에서는 DenseOn보다 높은 문서 검색 품질을 희소 역색인으로 얻으려는 경우 SlideOn이 검토 대상입니다. 다국어와 긴 문서에서는 mDenseOn 대비 개선과 코드 검색이 mSlideOn의 장점입니다. 다만 mLateOn이나 일부 희소 경쟁 모델이 앞서는 평가가 있어 일괄 교체 근거는 아닙니다.",
+            "source_ids": [
+              "launch",
+              "slideon",
+              "mslideon"
+            ],
+            "kind": "judgment"
+          },
+          {
+            "label": "도입 조건",
+            "text": "최종 활성값 한도에 따른 품질과 실제 인덱스 크기, 인코딩 및 검색 지연시간을 같은 조건에서 비교해야 합니다. 한국어 문서 평가와 운영비가 확인되기 전에는 공급자의 비용 대리지표를 실제 절감액으로 바꾸지 않는 것이 타당합니다.",
+            "source_ids": [
+              "launch",
+              "slideon",
+              "mslideon"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "19일 발표를 26일 보완한 문헌 조사입니다. LightOn의 결과와 주장, 현재 사양을 대조했으며 모델 실행, 독립 벤치마크 재현, 한국어 검증, 청구 측정과 사람 독해 시험은 수행하지 않았습니다.",
+          "source_ids": [
+            "launch",
+            "slideon",
+            "mslideon"
+          ]
+        },
+        {
+          "text": "현재 카드와 메타데이터의 revision은 기록했지만 공개 평가의 정확한 가중치 commit은 미확인입니다. 전체 언어 평균, 대상 언어 평균, 가지치기 조건과 표준 요금 미확인을 유지합니다.",
+          "source_ids": [
+            "slideon",
+            "mslideon",
+            "slideon-meta",
+            "mslideon-meta"
+          ]
+        }
+      ],
+      "references": [
+        {
+          "id": "launch",
+          "title": "LightOn의 SlideOn과 mSlideOn 발표 및 평가",
+          "url": "https://huggingface.co/blog/lightonai/slideon-mslideon",
+          "description": "19일 발표일, 학습 방법, 영어 및 다국어 비교와 비용 지표의 정의를 확인할 수 있습니다."
+        },
+        {
+          "id": "slideon",
+          "title": "SlideOn 공식 모델 카드",
+          "url": "https://huggingface.co/lightonai/SlideOn/raw/main/README.md",
+          "description": "8192토큰, 희소 표현, 영어 평가, 실행 조건과 최종 체크포인트를 설명합니다."
+        },
+        {
+          "id": "mslideon",
+          "title": "mSlideOn 공식 모델 카드",
+          "url": "https://huggingface.co/lightonai/mSlideOn/raw/main/README.md",
+          "description": "다국어 평가의 전체/대상 언어 범위와 반대 결과, 코드 검색 및 제공 조건을 설명합니다."
+        },
+        {
+          "id": "denseon",
+          "title": "DenseOn 기존 모델 카드",
+          "url": "https://huggingface.co/lightonai/DenseOn/raw/main/README.md",
+          "description": "SlideOn의 출발점인 기존 밀집 단일 벡터 모델입니다."
+        },
+        {
+          "id": "mdenseon",
+          "title": "mDenseOn 기존 모델 카드",
+          "url": "https://huggingface.co/lightonai/mDenseOn/raw/main/README.md",
+          "description": "다국어 밀집 모델과의 변화 비교를 위한 기존 카드입니다."
+        },
+        {
+          "id": "mlateon",
+          "title": "mLateOn 기존 모델 카드",
+          "url": "https://huggingface.co/lightonai/mLateOn/raw/main/README.md",
+          "description": "mSlideOn의 기반이 되는 다중 벡터 모델입니다. 비교표와 파라미터 표기 차이도 남겼습니다."
+        },
+        {
+          "id": "repo",
+          "title": "학습 및 평가 저장소",
+          "url": "https://raw.githubusercontent.com/lightonai/slideon-mslideon/main/README.md",
+          "description": "학습 및 평가 코드의 공개 범위와 SAE 초기화/최종 모델의 구분을 확인할 수 있습니다."
+        },
+        {
+          "id": "license",
+          "title": "학습 코드의 Apache 2.0 라이선스",
+          "url": "https://raw.githubusercontent.com/lightonai/slideon-mslideon/main/LICENSE",
+          "description": "학습 코드의 허용 조건과 고지 의무를 확인하는 라이선스 원문입니다."
+        },
+        {
+          "id": "slideon-meta",
+          "title": "SlideOn 저장소 메타데이터",
+          "url": "https://huggingface.co/api/models/lightonai/SlideOn",
+          "description": "현재 HEAD, 저장소 생성/수정과 정확한 파라미터 수를 보존합니다."
+        },
+        {
+          "id": "mslideon-meta",
+          "title": "mSlideOn 저장소 메타데이터",
+          "url": "https://huggingface.co/api/models/lightonai/mSlideOn",
+          "description": "현재 HEAD, 저장소 생성/수정과 언어 목록을 보존합니다."
+        }
+      ]
+    }
+  ]
+}

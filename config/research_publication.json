@@ -2,6 +2,7 @@
   "schema_version": 1,
   "featured_report_id": "mcp-apps-workflows",
   "report_ids": [
+    "lighton-slideon-mslideon-model-guide",
     "granite-speech-5-model-guide",
     "nemotron-3-5-retriever-model-guide",
     "mercury-3-model-guide",
@@ -374,6 +375,11 @@
       "id": "ai-model-introductions-2026-10-25",
       "input": "ai_model_guides.2026-10-25.json",
       "quality": "ai_model_guides.2026-10-25.quality.json"
+    },
+    {
+      "id": "ai-model-introductions-2026-10-26",
+      "input": "ai_model_guides.2026-10-26.json",
+      "quality": "ai_model_guides.2026-10-26.quality.json"
     }
   ]
 }

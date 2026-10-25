@@ -1,0 +1,28 @@
+# AI 모델 누락 보완 검토 — 2026-10-26
+
+## 범위와 실제 원문
+
+10월19일 발표된 LightOn SlideOn과 mSlideOn을26일 뒤늦게 보완한다. 영어/다국어 문서 검색용 희소 모델이며 생성형 LLM으로 분류하지 않는다. 소개1편(6표)과 전체 비교표20관측을 동일 작업에서 발행한다. 학습 초기화용 SAE를 별도 신규 최종 모델로 세지 않는다. HF저장소 생성12/13일, 묶음발표19일, 현재HEAD 수정20일과 실제확인26일을 분리했다. 생성일을 최초 공개일로 추정하지 않았다.
+
+Theo 모델자료15편과 원본관측793건은 실제수집 성공/변경0/실패0이다. signal_review collect는711항목 수집/실패0이며 모든 후보의 원문 심층검토를 뜻하지 않는다. 기존 발행모델/판과 대조해 중복을 피했다. OpenAI 및 Anthropic 공식 모델발표 목록도 확인했으나 이번 확인 범위를 모든 공급자 전수조사로 부르지 않는다. SKY001은 공식 제품경로의 본문이JS셸로 제한됐고19일 공식 공급자 배포자료에서 research preview/대기명단 및2027년 상용목표를 읽었다. 공개가중치/API/검증 가능한 상세 비교 미확인을 유지하며 신규 공개LLM으로 추가하지 않았다. Mundo는 방을3D/물리/비디오로 변환하는 연구파이프라인 후보로 추가심층검토를 보류했다. 미검토를 변경없음으로 바꾸지 않았다.
+
+공개HTTP12응답의 원본bytes/UTC/SHA256을 data/raw/ai_news/official/2026-10-26/receipts-12.json 및 연결원문에 보존했다. LightOn 발표/현재두카드/메타데이터/기존DenseOn,mDenseOn,mLateOn/코드README/라이선스의 관련절을 실제읽었다. 모델/외부코드 실행과 유료API 호출은 없었다. 현재HEAD는 SlideOn370c600e9886, mSlideOnef8016025bfd이며 평가가중치commit/harness고정판은 미확인이다.
+
+## 의미 검토와 비교표
+
+원문HTML16모델 행의 실제값을 소개표와 프로그램으로도 대조했다. SlideOn BEIR56.68 대DenseOn56.20(+0.48), LateOn57.22 및LACONIC8B60.06의 반대결과를 보존했다. 미가지치기RetrievalFLOPS30.87 대SPARSEUP6.20/OpenSearch0.72를 지연시간이나GPU속도로 바꾸지 않았다. 비용지표의표본6000문서/1271질문과NNZ의의미,최종활성값가지치기와토큰Top32의차이를 설명했다.
+
+mSlideOn MIRACL62.78/MLDR61.68 대mDenseOn58.02/51.50과mLateOn67.04/77.92를 함께 비교했다. mSlideOn 영어56.00의하락, MILCO MIRACL70.05 및gte sparse MLDR70.75, 코드의voyage76.43/pplx75.18 열세를 보존했다. 전체18/13언어와대상5/7언어,dev/test,Code12과제를 구분했다. MLDR 공급자+10.19 주장과공개반올림표차이10.18, mLateOn표312M/기존카드소개307M 차이는 해결된것처럼지우지않았다. 한국어개별성능/최소VRAM/실측지연/운영비/표준호스팅API요금은미확인이다. Apache2.0을운영비0달러로기록하지않았다.
+
+research_type=model_introduction과고정authoring recipe를 사용했다. 제목/목적/요약만으로첫화면을읽은후본문/원문을따로대조한작성자자체검토이며독립에이전트/사람독해시험은아니다. 가상업무/활용예시/SDK코드/응용문제를넣지않았다. report-v1에지원하지않는provenance필드를추가하지않고새불변품질sidecar와두manifest에연결했다. 현재본문1판을기존검토원장을보존한새로컬원장에연결하고검색색인/독자질의를검증한다.
+
+## 제출과 검증 경계
+
+기존main과정확한ROOT/fetch/실제push/Hansihoo CLI/GCM을매쓰기직전 git signal-gh verify로검증한다. 기본theo-s-han/전역credential과읽기전용Theo원본은바꾸지않는다. 기존다른작업dirty변경은로컬에보존하고HEAD기반선택index에이번배치/필수manifest/문서만더한다. generatedDB/JSON/HTML/PNG/raw는제출하지않는다. 임시시험은소유scratch로실행하고필수원문/검증근거만 D:/9_codex_temp/2026-10-26/signal-ai-models 에보존한다. 원격배포와공개화면결과는완료후추가한다.
+
+
+## 로컬 검증 완료
+
+배포할선택index소스를424파일로추출해61영향시험(60.896초)을통과했다. 형식quality1편통과,원문16행/새20관측일치,로컬1914관측/1994판과기존payload보존을확인했다. 로컬/클라우드의기존저장시각차이만로컬비교에서제외했고공개전후비교는시각을포함한다. 소개6표/참고출처/내부anchor/전체표링크검사가통과했다. publish및brief생성성공,390x1500PNG를실제읽었다. 주거review는기존활성공고0에한해서FAIL이고나머지11출력/링크검사는OK다. 모델실패와분리한다.
+
+내용검토93항목을보존한새로컬원장을등록했고색인2026문서/3454문단및질문「mSlideOn 다국어 문서 검색 성능 비용 한계」가현재1판을usable_with_limits로반환했다. authoring record는actual1판/현재본문7a6946f1a35f와recipe5eb797557550을연결했다. research-audit의55gated/29legacy미검토는다른기존글을소급승인한것이아니다. 이번보고서는새quality1편에포함된다. 준비helper의의존성/스키마키누락은게시전고쳤고기계검사와최종선택소스시험이통과했다. Git diff-check통과. 원격완료는아래공개검증으로구분한다.

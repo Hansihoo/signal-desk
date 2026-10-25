@@ -1,0 +1,422 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "id": "slideon-202610-spec",
+      "model": "SlideOn",
+      "provider": "LightOn",
+      "source_url": "https://huggingface.co/lightonai/SlideOn/raw/main/README.md",
+      "checked_on": "2026-10-26",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "2026-10 모델 카드",
+        "condition": "19일 묶음 발표를26일 뒤늦게 보완. 저장소 생성12/13일은 최초 공개일 미확인. 현재HEAD=370c600e9886afc43ff8026695261e56ecfaa011; 평가가중치commit/한국어품질/최소VRAM 미검증.",
+        "context": 8192,
+        "parameters": "174M",
+        "access": "공개 가중치 / 자체 운영",
+        "status": "가중치 공개",
+        "release": "2026-10-19",
+        "입력": "텍스트; 프롬프트/표식/특수토큰 포함8192토큰",
+        "출력": "32768차원 비음수 희소 검색 벡터; 문장생성 아님",
+        "파라미터 M": 174,
+        "기반": "DenseOn",
+        "라이선스": "Apache 2.0",
+        "모델 식별자": "lightonai/SlideOn",
+        "현재 HEAD": "370c600e9886afc43ff8026695261e56ecfaa011",
+        "검색 점수": "정규화하지 않은 벡터 내적",
+        "토큰별 활성값": 32
+      }
+    },
+    {
+      "id": "slideon-202610-availability",
+      "model": "SlideOn",
+      "provider": "LightOn",
+      "source_url": "https://huggingface.co/lightonai/SlideOn/raw/main/README.md",
+      "checked_on": "2026-10-26",
+      "fields": {
+        "kind": "공식 제공과 비용",
+        "suite": "공개 가중치 / 자체 운영",
+        "condition": "Apache 2.0 가중치. 공식 카드와 공개 학습/평가 저장소에서 호스팅 표준단가 미확인. 자체운영 GPU/서버/저장소/인덱스 비용을0달러로 기록하지 않음.",
+        "access": "공개 가중치 / 자체 운영",
+        "status": "가중치 공개",
+        "라이선스": "Apache 2.0",
+        "호스팅 API 표준요금": "미확인",
+        "실제 지연시간": "미측정",
+        "한국어 개별 성능": "미검증",
+        "원문 라이브러리": "sentence-transformers >=6.1,<6.2; transformers >=5.3,<6; custom code"
+      }
+    },
+    {
+      "id": "mslideon-202610-spec",
+      "model": "mSlideOn",
+      "provider": "LightOn",
+      "source_url": "https://huggingface.co/lightonai/mSlideOn/raw/main/README.md",
+      "checked_on": "2026-10-26",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "2026-10 모델 카드",
+        "condition": "19일 묶음 발표를26일 뒤늦게 보완. 저장소 생성12/13일은 최초 공개일 미확인. 현재HEAD=ef8016025bfd0ea10e44ee27c4038a5852b1018a; 평가가중치commit/한국어품질/최소VRAM 미검증.",
+        "context": 8192,
+        "parameters": "339M",
+        "access": "공개 가중치 / 자체 운영",
+        "status": "가중치 공개",
+        "release": "2026-10-19",
+        "입력": "텍스트; 프롬프트/표식/특수토큰 포함8192토큰",
+        "출력": "32768차원 비음수 희소 검색 벡터; 문장생성 아님",
+        "파라미터 M": 339,
+        "기반": "mLateOn",
+        "라이선스": "Apache 2.0",
+        "모델 식별자": "lightonai/mSlideOn",
+        "현재 HEAD": "ef8016025bfd0ea10e44ee27c4038a5852b1018a",
+        "검색 점수": "정규화하지 않은 벡터 내적",
+        "토큰별 활성값": 32
+      }
+    },
+    {
+      "id": "mslideon-202610-availability",
+      "model": "mSlideOn",
+      "provider": "LightOn",
+      "source_url": "https://huggingface.co/lightonai/mSlideOn/raw/main/README.md",
+      "checked_on": "2026-10-26",
+      "fields": {
+        "kind": "공식 제공과 비용",
+        "suite": "공개 가중치 / 자체 운영",
+        "condition": "Apache 2.0 가중치. 공식 카드와 공개 학습/평가 저장소에서 호스팅 표준단가 미확인. 자체운영 GPU/서버/저장소/인덱스 비용을0달러로 기록하지 않음.",
+        "access": "공개 가중치 / 자체 운영",
+        "status": "가중치 공개",
+        "라이선스": "Apache 2.0",
+        "호스팅 API 표준요금": "미확인",
+        "실제 지연시간": "미측정",
+        "한국어 개별 성능": "미검증",
+        "원문 라이브러리": "sentence-transformers >=6.1,<6.2; transformers >=5.3,<6; custom code"
+      }
+    },
+    {
+      "id": "lighton-202610-english-0",
+      "model": "SlideOn",
+      "provider": "LightOn",
+      "source_url": "https://huggingface.co/lightonai/SlideOn/raw/main/README.md",
+      "checked_on": "2026-10-26",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "LightOn BEIR-15 2026-10",
+        "condition": "LightOn 19일 비교표/26일 확인. BEIR15개 평균 nDCG@10 0–100↑. 희소모델은전체말뭉치내적정확검색,질문/문서최종벡터미가지치기. 밀집/다중벡터는이전발표수치재수록. 평가commit/harness고정판미확인; 독립재현아님.",
+        "parameters": "174M",
+        "BEIR-15 nDCG@10": 56.68,
+        "단위": "nDCG@10; 0–100; 높을수록 좋음",
+        "측정 주체": "LightOn 공개 비교; 독립 재현 아님",
+        "Harness": "sparse exact full-corpus dot-product / unpruned; dense/late prior published results",
+        "검색 비용 표본": "SciFact/NFCorpus/FiQA:6000문서,1271질문",
+        "Retrieval FLOPS": 30.87,
+        "비용 지표 의미": "공유활성특징기대값↓; latency/encoder FLOPs 아님"
+      }
+    },
+    {
+      "id": "lighton-202610-english-1",
+      "model": "DenseOn",
+      "provider": "LightOn",
+      "source_url": "https://huggingface.co/lightonai/SlideOn/raw/main/README.md",
+      "checked_on": "2026-10-26",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "LightOn BEIR-15 2026-10",
+        "condition": "LightOn 19일 비교표/26일 확인. BEIR15개 평균 nDCG@10 0–100↑. 희소모델은전체말뭉치내적정확검색,질문/문서최종벡터미가지치기. 밀집/다중벡터는이전발표수치재수록. 평가commit/harness고정판미확인; 독립재현아님.",
+        "parameters": "149M",
+        "BEIR-15 nDCG@10": 56.2,
+        "단위": "nDCG@10; 0–100; 높을수록 좋음",
+        "측정 주체": "LightOn 공개 비교; 독립 재현 아님",
+        "Harness": "sparse exact full-corpus dot-product / unpruned; dense/late prior published results",
+        "검색 비용 표본": "SciFact/NFCorpus/FiQA:6000문서,1271질문"
+      }
+    },
+    {
+      "id": "lighton-202610-english-2",
+      "model": "LateOn",
+      "provider": "LightOn",
+      "source_url": "https://huggingface.co/lightonai/SlideOn/raw/main/README.md",
+      "checked_on": "2026-10-26",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "LightOn BEIR-15 2026-10",
+        "condition": "LightOn 19일 비교표/26일 확인. BEIR15개 평균 nDCG@10 0–100↑. 희소모델은전체말뭉치내적정확검색,질문/문서최종벡터미가지치기. 밀집/다중벡터는이전발표수치재수록. 평가commit/harness고정판미확인; 독립재현아님.",
+        "parameters": "149M",
+        "BEIR-15 nDCG@10": 57.22,
+        "단위": "nDCG@10; 0–100; 높을수록 좋음",
+        "측정 주체": "LightOn 공개 비교; 독립 재현 아님",
+        "Harness": "sparse exact full-corpus dot-product / unpruned; dense/late prior published results",
+        "검색 비용 표본": "SciFact/NFCorpus/FiQA:6000문서,1271질문"
+      }
+    },
+    {
+      "id": "lighton-202610-english-3",
+      "model": "SPARSEUP",
+      "provider": "SPARSEUP authors",
+      "source_url": "https://huggingface.co/lightonai/SlideOn/raw/main/README.md",
+      "checked_on": "2026-10-26",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "LightOn BEIR-15 2026-10",
+        "condition": "LightOn 19일 비교표/26일 확인. BEIR15개 평균 nDCG@10 0–100↑. 희소모델은전체말뭉치내적정확검색,질문/문서최종벡터미가지치기. 밀집/다중벡터는이전발표수치재수록. 평가commit/harness고정판미확인; 독립재현아님.",
+        "parameters": "188M",
+        "BEIR-15 nDCG@10": 54.46,
+        "단위": "nDCG@10; 0–100; 높을수록 좋음",
+        "측정 주체": "LightOn 공개 비교; 독립 재현 아님",
+        "Harness": "sparse exact full-corpus dot-product / unpruned; dense/late prior published results",
+        "검색 비용 표본": "SciFact/NFCorpus/FiQA:6000문서,1271질문",
+        "Retrieval FLOPS": 6.2,
+        "비용 지표 의미": "공유활성특징기대값↓; latency/encoder FLOPs 아님"
+      }
+    },
+    {
+      "id": "lighton-202610-english-4",
+      "model": "SPLADE-v3",
+      "provider": "NAVER",
+      "source_url": "https://huggingface.co/lightonai/SlideOn/raw/main/README.md",
+      "checked_on": "2026-10-26",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "LightOn BEIR-15 2026-10",
+        "condition": "LightOn 19일 비교표/26일 확인. BEIR15개 평균 nDCG@10 0–100↑. 희소모델은전체말뭉치내적정확검색,질문/문서최종벡터미가지치기. 밀집/다중벡터는이전발표수치재수록. 평가commit/harness고정판미확인; 독립재현아님.",
+        "parameters": "133M",
+        "BEIR-15 nDCG@10": 50.46,
+        "단위": "nDCG@10; 0–100; 높을수록 좋음",
+        "측정 주체": "LightOn 공개 비교; 독립 재현 아님",
+        "Harness": "sparse exact full-corpus dot-product / unpruned; dense/late prior published results",
+        "검색 비용 표본": "SciFact/NFCorpus/FiQA:6000문서,1271질문",
+        "Retrieval FLOPS": 5.55,
+        "비용 지표 의미": "공유활성특징기대값↓; latency/encoder FLOPs 아님"
+      }
+    },
+    {
+      "id": "lighton-202610-english-5",
+      "model": "OpenSearch doc-v3-GTE",
+      "provider": "OpenSearch",
+      "source_url": "https://huggingface.co/lightonai/SlideOn/raw/main/README.md",
+      "checked_on": "2026-10-26",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "LightOn BEIR-15 2026-10",
+        "condition": "LightOn 19일 비교표/26일 확인. BEIR15개 평균 nDCG@10 0–100↑. 희소모델은전체말뭉치내적정확검색,질문/문서최종벡터미가지치기. 밀집/다중벡터는이전발표수치재수록. 평가commit/harness고정판미확인; 독립재현아님.",
+        "parameters": "137M",
+        "BEIR-15 nDCG@10": 52.68,
+        "단위": "nDCG@10; 0–100; 높을수록 좋음",
+        "측정 주체": "LightOn 공개 비교; 독립 재현 아님",
+        "Harness": "sparse exact full-corpus dot-product / unpruned; dense/late prior published results",
+        "검색 비용 표본": "SciFact/NFCorpus/FiQA:6000문서,1271질문",
+        "Retrieval FLOPS": 0.72,
+        "비용 지표 의미": "공유활성특징기대값↓; latency/encoder FLOPs 아님"
+      }
+    },
+    {
+      "id": "lighton-202610-english-6",
+      "model": "LACONIC-1B",
+      "provider": "LACONIC authors",
+      "source_url": "https://huggingface.co/lightonai/SlideOn/raw/main/README.md",
+      "checked_on": "2026-10-26",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "LightOn BEIR-15 2026-10",
+        "condition": "LightOn 19일 비교표/26일 확인. BEIR15개 평균 nDCG@10 0–100↑. 희소모델은전체말뭉치내적정확검색,질문/문서최종벡터미가지치기. 밀집/다중벡터는이전발표수치재수록. 평가commit/harness고정판미확인; 독립재현아님.",
+        "parameters": "1240M",
+        "BEIR-15 nDCG@10": 56.13,
+        "단위": "nDCG@10; 0–100; 높을수록 좋음",
+        "측정 주체": "LightOn 공개 비교; 독립 재현 아님",
+        "Harness": "sparse exact full-corpus dot-product / unpruned; dense/late prior published results",
+        "검색 비용 표본": "SciFact/NFCorpus/FiQA:6000문서,1271질문",
+        "Retrieval FLOPS": 47.95,
+        "비용 지표 의미": "공유활성특징기대값↓; latency/encoder FLOPs 아님"
+      }
+    },
+    {
+      "id": "lighton-202610-english-7",
+      "model": "LACONIC-8B",
+      "provider": "LACONIC authors",
+      "source_url": "https://huggingface.co/lightonai/SlideOn/raw/main/README.md",
+      "checked_on": "2026-10-26",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "LightOn BEIR-15 2026-10",
+        "condition": "LightOn 19일 비교표/26일 확인. BEIR15개 평균 nDCG@10 0–100↑. 희소모델은전체말뭉치내적정확검색,질문/문서최종벡터미가지치기. 밀집/다중벡터는이전발표수치재수록. 평가commit/harness고정판미확인; 독립재현아님.",
+        "parameters": "8030M",
+        "BEIR-15 nDCG@10": 60.06,
+        "단위": "nDCG@10; 0–100; 높을수록 좋음",
+        "측정 주체": "LightOn 공개 비교; 독립 재현 아님",
+        "Harness": "sparse exact full-corpus dot-product / unpruned; dense/late prior published results",
+        "검색 비용 표본": "SciFact/NFCorpus/FiQA:6000문서,1271질문",
+        "Retrieval FLOPS": 20.07,
+        "비용 지표 의미": "공유활성특징기대값↓; latency/encoder FLOPs 아님"
+      }
+    },
+    {
+      "id": "lighton-202610-multilingual-0",
+      "model": "mSlideOn",
+      "provider": "LightOn",
+      "source_url": "https://huggingface.co/lightonai/mSlideOn/raw/main/README.md",
+      "checked_on": "2026-10-26",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "LightOn multilingual retrieval 2026-10",
+        "condition": "LightOn 19일 비교표/26일 확인. BEIR15개 평균 nDCG@10 0–100↑. 희소모델은전체말뭉치내적정확검색,질문/문서최종벡터미가지치기. 밀집/다중벡터는이전발표수치재수록. 평가commit/harness고정판미확인; 독립재현아님. MIRACL18언어dev(mteb/miracl-hard-negatives),MLDR13언어test(mteb/MultiLongDocRetrieval),MTEBCode12과제. 전체평균이며대상언어평균과다름.",
+        "parameters": "339M",
+        "BEIR-15 nDCG@10": 56.0,
+        "MIRACL 18언어 nDCG@10": 62.78,
+        "MLDR 13언어 nDCG@10": 61.68,
+        "MTEB Code 12과제 nDCG@10": 74.78,
+        "단위": "nDCG@10; 0–100; 높을수록 좋음",
+        "측정 주체": "LightOn 공개 비교; 독립 재현 아님",
+        "Harness": "sparse full-corpus exact dot-product / unpruned; prior dense/late results",
+        "Retrieval FLOPS": 44.88,
+        "비용 지표 의미": "6000문서/1271질문 공유활성특징기대값↓;실제지연아님",
+        "MIRACL 대상5언어 nDCG@10": 63.21,
+        "MLDR 대상7언어 nDCG@10": 75.79
+      }
+    },
+    {
+      "id": "lighton-202610-multilingual-1",
+      "model": "mDenseOn",
+      "provider": "LightOn",
+      "source_url": "https://huggingface.co/lightonai/mSlideOn/raw/main/README.md",
+      "checked_on": "2026-10-26",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "LightOn multilingual retrieval 2026-10",
+        "condition": "LightOn 19일 비교표/26일 확인. BEIR15개 평균 nDCG@10 0–100↑. 희소모델은전체말뭉치내적정확검색,질문/문서최종벡터미가지치기. 밀집/다중벡터는이전발표수치재수록. 평가commit/harness고정판미확인; 독립재현아님. MIRACL18언어dev(mteb/miracl-hard-negatives),MLDR13언어test(mteb/MultiLongDocRetrieval),MTEBCode12과제. 전체평균이며대상언어평균과다름.",
+        "parameters": "307M",
+        "BEIR-15 nDCG@10": 56.7,
+        "MIRACL 18언어 nDCG@10": 58.02,
+        "MLDR 13언어 nDCG@10": 51.5,
+        "MTEB Code 12과제 nDCG@10": 71.53,
+        "단위": "nDCG@10; 0–100; 높을수록 좋음",
+        "측정 주체": "LightOn 공개 비교; 독립 재현 아님",
+        "Harness": "sparse full-corpus exact dot-product / unpruned; prior dense/late results"
+      }
+    },
+    {
+      "id": "lighton-202610-multilingual-2",
+      "model": "mLateOn",
+      "provider": "LightOn",
+      "source_url": "https://huggingface.co/lightonai/mSlideOn/raw/main/README.md",
+      "checked_on": "2026-10-26",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "LightOn multilingual retrieval 2026-10",
+        "condition": "LightOn 19일 비교표/26일 확인. BEIR15개 평균 nDCG@10 0–100↑. 희소모델은전체말뭉치내적정확검색,질문/문서최종벡터미가지치기. 밀집/다중벡터는이전발표수치재수록. 평가commit/harness고정판미확인; 독립재현아님. MIRACL18언어dev(mteb/miracl-hard-negatives),MLDR13언어test(mteb/MultiLongDocRetrieval),MTEBCode12과제. 전체평균이며대상언어평균과다름.",
+        "parameters": "312M",
+        "BEIR-15 nDCG@10": 57.56,
+        "MIRACL 18언어 nDCG@10": 67.04,
+        "MLDR 13언어 nDCG@10": 77.92,
+        "MTEB Code 12과제 nDCG@10": 73.48,
+        "단위": "nDCG@10; 0–100; 높을수록 좋음",
+        "측정 주체": "LightOn 공개 비교; 독립 재현 아님",
+        "Harness": "sparse full-corpus exact dot-product / unpruned; prior dense/late results",
+        "파라미터 표기 차이": "19일 비교표312M / 현재 기존카드소개307M; 동일성미검증"
+      }
+    },
+    {
+      "id": "lighton-202610-multilingual-3",
+      "model": "BGE-M3 [sparse]",
+      "provider": "BAAI",
+      "source_url": "https://huggingface.co/lightonai/mSlideOn/raw/main/README.md",
+      "checked_on": "2026-10-26",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "LightOn multilingual retrieval 2026-10",
+        "condition": "LightOn 19일 비교표/26일 확인. BEIR15개 평균 nDCG@10 0–100↑. 희소모델은전체말뭉치내적정확검색,질문/문서최종벡터미가지치기. 밀집/다중벡터는이전발표수치재수록. 평가commit/harness고정판미확인; 독립재현아님. MIRACL18언어dev(mteb/miracl-hard-negatives),MLDR13언어test(mteb/MultiLongDocRetrieval),MTEBCode12과제. 전체평균이며대상언어평균과다름.",
+        "parameters": "568M",
+        "BEIR-15 nDCG@10": 40.2,
+        "MIRACL 18언어 nDCG@10": 55.48,
+        "MLDR 13언어 nDCG@10": 62.13,
+        "MTEB Code 12과제 nDCG@10": 42.03,
+        "단위": "nDCG@10; 0–100; 높을수록 좋음",
+        "측정 주체": "LightOn 공개 비교; 독립 재현 아님",
+        "Harness": "sparse full-corpus exact dot-product / unpruned; prior dense/late results",
+        "Retrieval FLOPS": 1.69,
+        "비용 지표 의미": "6000문서/1271질문 공유활성특징기대값↓;실제지연아님"
+      }
+    },
+    {
+      "id": "lighton-202610-multilingual-4",
+      "model": "gte-multilingual-base [sparse]",
+      "provider": "Alibaba / GTE",
+      "source_url": "https://huggingface.co/lightonai/mSlideOn/raw/main/README.md",
+      "checked_on": "2026-10-26",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "LightOn multilingual retrieval 2026-10",
+        "condition": "LightOn 19일 비교표/26일 확인. BEIR15개 평균 nDCG@10 0–100↑. 희소모델은전체말뭉치내적정확검색,질문/문서최종벡터미가지치기. 밀집/다중벡터는이전발표수치재수록. 평가commit/harness고정판미확인; 독립재현아님. MIRACL18언어dev(mteb/miracl-hard-negatives),MLDR13언어test(mteb/MultiLongDocRetrieval),MTEBCode12과제. 전체평균이며대상언어평균과다름.",
+        "parameters": "305M",
+        "BEIR-15 nDCG@10": 40.27,
+        "MIRACL 18언어 nDCG@10": 57.49,
+        "MLDR 13언어 nDCG@10": 70.75,
+        "MTEB Code 12과제 nDCG@10": 51.09,
+        "단위": "nDCG@10; 0–100; 높을수록 좋음",
+        "측정 주체": "LightOn 공개 비교; 독립 재현 아님",
+        "Harness": "sparse full-corpus exact dot-product / unpruned; prior dense/late results",
+        "Retrieval FLOPS": 1.7,
+        "비용 지표 의미": "6000문서/1271질문 공유활성특징기대값↓;실제지연아님"
+      }
+    },
+    {
+      "id": "lighton-202610-multilingual-5",
+      "model": "MILCO-300M",
+      "provider": "MILCO authors",
+      "source_url": "https://huggingface.co/lightonai/mSlideOn/raw/main/README.md",
+      "checked_on": "2026-10-26",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "LightOn multilingual retrieval 2026-10",
+        "condition": "LightOn 19일 비교표/26일 확인. BEIR15개 평균 nDCG@10 0–100↑. 희소모델은전체말뭉치내적정확검색,질문/문서최종벡터미가지치기. 밀집/다중벡터는이전발표수치재수록. 평가commit/harness고정판미확인; 독립재현아님. MIRACL18언어dev(mteb/miracl-hard-negatives),MLDR13언어test(mteb/MultiLongDocRetrieval),MTEBCode12과제. 전체평균이며대상언어평균과다름.",
+        "parameters": "330M",
+        "BEIR-15 nDCG@10": 53.33,
+        "MIRACL 18언어 nDCG@10": 70.05,
+        "MLDR 13언어 nDCG@10": 51.78,
+        "MTEB Code 12과제 nDCG@10": 41.25,
+        "단위": "nDCG@10; 0–100; 높을수록 좋음",
+        "측정 주체": "LightOn 공개 비교; 독립 재현 아님",
+        "Harness": "sparse full-corpus exact dot-product / unpruned; prior dense/late results",
+        "Retrieval FLOPS": 17.43,
+        "비용 지표 의미": "6000문서/1271질문 공유활성특징기대값↓;실제지연아님"
+      }
+    },
+    {
+      "id": "lighton-202610-multilingual-6",
+      "model": "pplx-embed-v1-0.6b",
+      "provider": "Perplexity",
+      "source_url": "https://huggingface.co/lightonai/mSlideOn/raw/main/README.md",
+      "checked_on": "2026-10-26",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "LightOn multilingual retrieval 2026-10",
+        "condition": "LightOn 19일 비교표/26일 확인. BEIR15개 평균 nDCG@10 0–100↑. 희소모델은전체말뭉치내적정확검색,질문/문서최종벡터미가지치기. 밀집/다중벡터는이전발표수치재수록. 평가commit/harness고정판미확인; 독립재현아님. MIRACL18언어dev(mteb/miracl-hard-negatives),MLDR13언어test(mteb/MultiLongDocRetrieval),MTEBCode12과제. 전체평균이며대상언어평균과다름.",
+        "parameters": "596M",
+        "BEIR-15 nDCG@10": 56.7,
+        "MIRACL 18언어 nDCG@10": 68.2,
+        "MLDR 13언어 nDCG@10": 43.98,
+        "MTEB Code 12과제 nDCG@10": 75.18,
+        "단위": "nDCG@10; 0–100; 높을수록 좋음",
+        "측정 주체": "LightOn 공개 비교; 독립 재현 아님",
+        "Harness": "sparse full-corpus exact dot-product / unpruned; prior dense/late results"
+      }
+    },
+    {
+      "id": "lighton-202610-multilingual-7",
+      "model": "voyage-4-nano",
+      "provider": "Voyage AI",
+      "source_url": "https://huggingface.co/lightonai/mSlideOn/raw/main/README.md",
+      "checked_on": "2026-10-26",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "LightOn multilingual retrieval 2026-10",
+        "condition": "LightOn 19일 비교표/26일 확인. BEIR15개 평균 nDCG@10 0–100↑. 희소모델은전체말뭉치내적정확검색,질문/문서최종벡터미가지치기. 밀집/다중벡터는이전발표수치재수록. 평가commit/harness고정판미확인; 독립재현아님. MIRACL18언어dev(mteb/miracl-hard-negatives),MLDR13언어test(mteb/MultiLongDocRetrieval),MTEBCode12과제. 전체평균이며대상언어평균과다름.",
+        "parameters": "346M",
+        "BEIR-15 nDCG@10": 49.96,
+        "MIRACL 18언어 nDCG@10": 58.65,
+        "MLDR 13언어 nDCG@10": 51.97,
+        "MTEB Code 12과제 nDCG@10": 76.43,
+        "단위": "nDCG@10; 0–100; 높을수록 좋음",
+        "측정 주체": "LightOn 공개 비교; 독립 재현 아님",
+        "Harness": "sparse full-corpus exact dot-product / unpruned; prior dense/late results"
+      }
+    }
+  ]
+}
