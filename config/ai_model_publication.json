@@ -92,6 +92,10 @@
     {
       "id": "ai-model-official-facts-2026-10-26",
       "path": "ai_model_facts.2026-10-26.json"
+    },
+    {
+      "id": "ai-model-official-facts-2026-10-26-r2",
+      "path": "ai_model_facts.2026-10-26.r2.json"
     }
   ]
 }
