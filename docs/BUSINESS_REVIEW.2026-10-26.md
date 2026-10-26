@@ -84,3 +84,45 @@ brief390px 이미지를 실제 확인했다. 로컬 review는11항목 통과와 
 1항목 실패다. 사업 실패로 합산하지 않는다. 로컬 file URL 미리보기는 브라우저의
 허용 프로토콜 정책으로 거절되어 재시도/우회하지 않았다. 공개 HTTPS 배포 화면에서
 후속 시각·필터·이전 판 확인을 수행한다.
+
+
+### 공개 배포와 검증 완료
+
+소스 [40ad282](https://github.com/Hansihoo/signal-desk/commit/40ad282a5ceba70f122165fc41ff109aabfd3bcb)의
+[Pages40249728399](https://github.com/Hansihoo/signal-desk/actions/runs/40249728399)가 성공했다.
+원격212시험(78.554초), 공개 상태 복구·수집·주거 review·백업·배포가 통과했다.
+로컬 주거 모집중0건과 클라우드 PASS는 서로 다른 데이터 상태로 기록한다.
+
+실제 공개 JSON·목록·현재3편·이전3편에서28검사를 통과했다. 사업3편은7판이며,
+나머지79편의 현재 본문·발행 메타데이터와 이전207판은 정확히 보존됐다.
+공개82편/210판, 모델1950관측/2046판과 Theo15원문/16판도 기존 값과 일치한다.
+공개 JSON·세 상세 HTML에 사내 경로·프로필 해시·실제 사내 민감 필드의 전체 값이
+없는 것을 대조했다. 외부 사내 저장소는12건/23판이며 이번4건의 고객·가격·제안·담당
+원 필드를 이전 판과 대조해 보존했다. 회사 판정표 정정판은 외부에만 존재한다.
+
+공개 사업 화면에서 분야별1건/전체3건, 명판 검색1건/빈 검색0건, 실제 보고서 읽기
+이동을 확인했다.390px 현재3편의 화면·표 내부 가로 스크롤과1280px 영업 화면,
+요약 우선 순서, 페이지 넘침 없음을 확인했다. 목차를 열고6판 링크를 눌러 실제 이전
+제목·10월19일 본문으로 이동했다. 처음 닫힌 목차에서의 클릭은 이동하지 않았으며
+이 시도를 성공으로 세지 않았다. 처음 보고서 제목 클릭도 이동하지 않아 실제 읽기
+링크로 검증했다. 사용자 탭은 보존하고 임시 탭을 닫고 viewport를 복원했다.
+
+세 현재 HTML의424개 상대 링크/앵커는 생성 대상과 대조해 누락0이었다.
+424주소 모두에 HTTP를 보낸 검사가 아니며, 실제 HTTP 본문 확인은 위 현재/이전
+페이지와 목록/JSON 범위다. 초기 공개 검증기는 모델 원문의 slug 키와 제목 내부
+HTML 줄바꿈 태그를 처리하지 못했다. 검증기의 키/텍스트 파싱을 바로잡은 뒤28검사를
+통과했다. 초기 실패 결과도 보존했으며 이 때문에 사이트 데이터를 변경하지 않았다.
+
+필수 원문·PDF 화면·공개 전후 JSON·검증 결과·모바일/PC 캡처는
+`D:/9_codex_temp/2026-10-26/signal-business-weekly`에 검증 근거로 보존한다.
+원본 bytes는 ignored data/raw/business/2026-10-26에도 남긴다. 생성 SQLite/JSON/HTML/
+PNG와 사내 자료를 Git에 넣지 않았다. 소유한 시험 scratch는 소비자 종료 뒤 정리됐고
+일회성 작성/수집 보조 스크립트는 정리했다. 필요한 증거가 있는 폴더 전체를 폐기
+완료 대상으로 표시하지 않았다. 유료 API·신청·고객 연락·견적·예약 변경은 없다.
+
+[사업 자료](https://hansihoo.github.io/signal-desk/preview/business.html),
+[국책사업7판](https://hansihoo.github.io/signal-desk/preview/polaris-government-opportunities.html),
+[영업7판](https://hansihoo.github.io/signal-desk/preview/polaris-sales-opportunities.html),
+[문서AI 사업 방향7판](https://hansihoo.github.io/signal-desk/preview/office-business-directions.html).
+계약 방식·착수/연장 시각 충돌, 현재 회사 증빙과 수행 승인, 실제 제품·계정·성과는
+미확인으로 유지한다. 사내 상세 근거를 이 문서나 공개 배포에 옮기지 않았다.
