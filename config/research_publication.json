@@ -380,6 +380,11 @@
       "id": "ai-model-introductions-2026-10-26",
       "input": "ai_model_guides.2026-10-26.json",
       "quality": "ai_model_guides.2026-10-26.quality.json"
+    },
+    {
+      "id": "business-review-2026-10-26",
+      "input": "business_review.2026-10-26.json",
+      "quality": "business_review.2026-10-26.quality.json"
     }
   ]
 }

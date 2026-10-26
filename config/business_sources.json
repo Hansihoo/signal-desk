@@ -41,7 +41,7 @@
       "area": "국책사업",
       "name": "나라장터",
       "url": "https://www.g2b.go.kr",
-      "check": "2026-10-19 실제 브라우저 문서 검색: 실제 적용 9/20~10/19, 19건 두 목록과 R26BK01741921-000 상세1건. 목록 자동 개찰일과 본문 접수 일정이 다름. 첨부/외부 ePRO 미확인, 전체 적합성·참여 가능을 단정하지 않음."
+      "check": "2026-10-26 실제 브라우저 공고번호 R26BK01787860-000 상세와 공고서5쪽/RFP6쪽 확인. 입찰17시·개찰18시, 목록과 PDF의 계약 방식 충돌·전문 연구기관·하도급 불허. 전체 공고/자격/착수일 조정은 미확인."
     },
     {
       "id": "polaris",
@@ -140,6 +140,20 @@
       "name": "Adobe Acrobat Studio 기업 관리",
       "url": "https://helpx.adobe.com/acrobat/desktop/use-acrobat-ai/set-up-acrobat-generative-ai/acrobat-studio-enterprise.html",
       "check": "직접 GET403, 동일 공식 원문 웹 독해 성공.6/7 수정, Named User와 같은 Admin Console·프로필 조건."
+    },
+    {
+      "id": "synap-caption",
+      "area": "경쟁사·시장",
+      "name": "사이냅 이미지 캡셔닝·MCP 발표",
+      "url": "https://www.synapsoft.co.kr/blog/39925/",
+      "check": "2026-10-26 관련 본문. 발표10/22·게시10/23. 속도는 공급자 주장, 버전/실행 미검증."
+    },
+    {
+      "id": "nipa-gpu-beta",
+      "area": "국책사업",
+      "name": "NIPA 첨단 GPU 베타 모집",
+      "url": "https://www.nipa.kr/home/2-2/16976",
+      "check": "2026-10-26 HTML·HWPX 공고. 이용기업/상용·제3자 용역 제한. 실제 기업 자격·배정 미확인."
     }
   ]
 }
