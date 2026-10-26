@@ -1,0 +1,1355 @@
+{
+  "schema_version": 1,
+  "reports": [
+    {
+      "id": "gpt-6-1-terra-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "checked_on": "2026-10-27",
+      "title": "GPT-6.1 Terra 소개: 화면 이해와 컴퓨터 사용, 가격과 성능의 변화",
+      "description": "새 Terra를 이전 Terra, Sol, Astra와 경쟁 모델에 비교해 화면 작업과 코딩 성능의 강약점 및 실제 요금 조건을 설명합니다.",
+      "deck": "GPT-6.1 Terra는 텍스트와 이미지를 읽고 텍스트를 생성하는 모델입니다. 컴퓨터 작업 성능과 사실 오류율은 이전 Terra보다 개선됐고 표준 API 단가는 Sol의 절반입니다. 다만 복잡한 코딩에서는 Sol과 Astra가 우선이며 일부 안전 및 건강 평가도 일괄 개선되지 않았습니다. 저렴한 토큰 단가를 모든 업무의 비용 절감으로 해석해서는 안 됩니다.",
+      "scope": "OpenAI의 10월 26일 공식 공개를 27일 한국시간에 확인했습니다. 앱의 화면 조작은 도구와 권한이 함께 필요한 기능이며 모델 단독의 모든 PC 접근을 뜻하지 않습니다.",
+      "source_note": "OpenAI Docs의 현재 사양과 가격, 공식 발표 및 시스템 카드, Anthropic의 경쟁 모델 문서를 대조했습니다. 평가는 공급자 측정이며 독립 재현이나 이 사이트의 모델 실행 결과가 아닙니다. 발표와 현재 문서의 가격 설명 차이를 남겼습니다.",
+      "highlights": [
+        "주요 변화",
+        "상대 장단점",
+        "제공과 비용"
+      ],
+      "summary": [
+        {
+          "text": "화면 이해와 컴퓨터 사용을 중심으로 이전 GPT-5.6 Terra를 개선했습니다. Terminal-Bench 4.0의 공개 최대 추론 점수는 50.3%이며 이전 Terra의 발표값 21.5%보다 높습니다. 정확한 Harness 고정판과 이전 값의 동일 실행 여부는 미확인입니다.",
+          "source_ids": [
+            "launch"
+          ],
+          "kind": "fact",
+          "label": "주요 변화"
+        },
+        {
+          "text": "Sol보다 낮은 단가와 이전 Terra 대비 오류 감소가 장점입니다. 복잡한 코딩은 Sol과 Astra가 우선이고, HealthBench의 길이 보정 전체 점수는 이전 Terra보다 낮습니다.",
+          "source_ids": [
+            "launch",
+            "safety",
+            "sol",
+            "terra"
+          ],
+          "kind": "fact",
+          "label": "상대 장단점"
+        },
+        {
+          "text": "Work와 Codex, API에서 제공됩니다. 표준 100만 토큰당 입력 1달러, 캐시 입력 0.05달러, 출력 5달러이며 긴 입력, 캐시 쓰기와 실행 도구 비용은 별도 조건입니다.",
+          "source_ids": [
+            "terra",
+            "pricing",
+            "work"
+          ],
+          "kind": "fact",
+          "label": "제공과 비용"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "tables": [
+        {
+          "id": "specifications",
+          "title": "주요 사양과 제공 범위",
+          "note": "2026-10-27 KST 확인. 최대 문맥, 최대 입력과 최대 출력은 별개의 제한입니다.",
+          "columns": [
+            "항목",
+            "GPT-6.1 Terra",
+            "제약과 해석"
+          ],
+          "rows": [
+            {
+              "values": [
+                "모델 ID",
+                "gpt-6.1-terra",
+                "공식 문서의 현재 snapshot 표기; 고정 날짜 별칭을 만들어 쓰지 않음"
+              ],
+              "source_ids": [
+                "terra"
+              ]
+            },
+            {
+              "values": [
+                "입력과 출력",
+                "텍스트 및 이미지 → 텍스트",
+                "음성과 동영상 직접 입력/출력은 지원하지 않음"
+              ],
+              "source_ids": [
+                "terra"
+              ]
+            },
+            {
+              "values": [
+                "문맥과 최대 출력",
+                "1,050,000 / 128,000 토큰",
+                "문맥 전체가 입력 허용량은 아님; 문서 Markdown의 최대 입력 922,000"
+              ],
+              "source_ids": [
+                "terra"
+              ]
+            },
+            {
+              "values": [
+                "지식 기준일",
+                "2026-06-01",
+                "실시간 정보나 모든 학습 자료의 완전성을 보장하지 않음"
+              ],
+              "source_ids": [
+                "terra"
+              ]
+            },
+            {
+              "values": [
+                "추론 설정",
+                "none, low, medium, high, xhigh, max",
+                "기본 medium; 높은 설정이 항상 경제적이라는 측정은 없음"
+              ],
+              "source_ids": [
+                "terra"
+              ]
+            },
+            {
+              "values": [
+                "도구 사용",
+                "Responses API 필요",
+                "Chat Completions의 모델 지원과 도구 호출 지원을 혼동하지 않음"
+              ],
+              "source_ids": [
+                "terra"
+              ]
+            },
+            {
+              "values": [
+                "앱 제공",
+                "Work와 Codex; Plus/Pro/Business/Enterprise/Edu",
+                "Work 문서 기준. Chat에서는 제공하지 않으며 기업 관리자와 사용 환경 조건이 적용됨"
+              ],
+              "source_ids": [
+                "work"
+              ]
+            },
+            {
+              "values": [
+                "가중치와 자체 운영",
+                "공개 가중치 제공 근거 미확인",
+                "지원 도구 목록은 설치된 모든 앱의 접근 허가가 아님"
+              ],
+              "source_ids": [
+                "terra",
+                "work"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "standard-prices",
+          "title": "이전 모델 및 경쟁 모델의 표준 API 단가",
+          "note": "2026-10-27 KST 현재 공식 문서의 표준 API 단가입니다. 장문, 캐시 쓰기, 도구와 Fast/Batch 조건 및 월 구독료는 포함하지 않습니다.",
+          "columns": [
+            "모델",
+            "문맥 / 최대 출력",
+            "입력 USD/100만 토큰",
+            "캐시 입력 USD/100만 토큰",
+            "출력 USD/100만 토큰"
+          ],
+          "rows": [
+            {
+              "values": [
+                "GPT-6.1 Terra",
+                "1.05M / 128k",
+                "1.00",
+                "0.05",
+                "5.00"
+              ],
+              "source_ids": [
+                "terra"
+              ]
+            },
+            {
+              "values": [
+                "GPT-5.6 Terra",
+                "1.05M / 128k",
+                "2.00",
+                "0.20",
+                "12.00"
+              ],
+              "source_ids": [
+                "previous"
+              ]
+            },
+            {
+              "values": [
+                "GPT-6.1 Sol",
+                "1.05M / 128k",
+                "2.00",
+                "0.10",
+                "10.00"
+              ],
+              "source_ids": [
+                "sol"
+              ]
+            },
+            {
+              "values": [
+                "GPT-6 Astra",
+                "1.05M / 128k",
+                "10.00",
+                "1.00",
+                "50.00"
+              ],
+              "source_ids": [
+                "astra"
+              ]
+            },
+            {
+              "values": [
+                "GPT-6 Luna",
+                "1.05M / 128k",
+                "0.10",
+                "0.01",
+                "0.50"
+              ],
+              "source_ids": [
+                "luna"
+              ]
+            },
+            {
+              "values": [
+                "Claude Sonnet 5.5",
+                "1M / 128k",
+                "2.00",
+                "0.10",
+                "10.00"
+              ],
+              "source_ids": [
+                "sonnet"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "release-results",
+          "title": "공식 발표의 성능 개선과 비교 범위",
+          "note": "공식 발표의 추론 조건과 비교 대상을 보존한 공급자 평가입니다. 서로 다른 평가를 하나의 종합 순위로 합치지 않습니다.",
+          "columns": [
+            "평가",
+            "GPT-6.1 Terra",
+            "이전 및 다른 모델과의 비교",
+            "조건과 미확인"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Terminal-Bench 4.0",
+                "50.3%",
+                "GPT-5.6 Terra의 기존 발표값 21.5%",
+                "Terra max 추론. OpenAI 측정. 이전 값의 동일 Harness 재측정 여부 미확인"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "오류를 유발하는 내부 프롬프트의 오류율 ↓",
+                "low 16.7%; max 4.3%",
+                "이전 Terra low 53.6%; max에서는 18포인트 감소라고 발표",
+                "일반 이용의 오류율이 아님. 발표 본문에서 표본 수 및 고정 Harness 미확인"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Agents’ Last Exam",
+                "medium에서 이전 Terra 대비 +15포인트",
+                "약 1/3의 작업 비용이라는 공급자 평가",
+                "절대 점수와 작업 구성별 독립 재현 미확인"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "복잡한 소프트웨어 개발",
+                "Sol/Astra 우선이라는 공식 설명",
+                "낮은 단가가 모든 코딩 능력의 우위를 뜻하지 않음",
+                "모델을 바꾼 동일 업무의 측정은 미수행"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "counter-results",
+          "title": "시스템 카드의 상반된 평가: 길이 보정 HealthBench",
+          "note": "OpenAI 시스템 카드의 length-adjusted 점수, 2026-10-26 공개/27 KST 확인. 괄호의 미보정 점수와 응답 길이는 섞지 않았습니다. 이 표의 추론 설정 고정값은 해당 절에서 확인하지 못했으며 의료 적합성의 보장이 아닙니다.",
+          "columns": [
+            "평가 ↑",
+            "GPT-5.6 Terra",
+            "GPT-6.1 Terra",
+            "GPT-6.1 Sol",
+            "GPT-6 Astra"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Professional",
+                "57.7",
+                "62.7",
+                "64.2",
+                "64.7"
+              ],
+              "source_ids": [
+                "safety"
+              ]
+            },
+            {
+              "values": [
+                "전체 HealthBench",
+                "57.0",
+                "55.1",
+                "58.5",
+                "58.3"
+              ],
+              "source_ids": [
+                "safety"
+              ]
+            },
+            {
+              "values": [
+                "Hard",
+                "32.7",
+                "31.4",
+                "36.2",
+                "36.6"
+              ],
+              "source_ids": [
+                "safety"
+              ]
+            },
+            {
+              "values": [
+                "Consensus",
+                "95.1",
+                "95.1",
+                "96.0",
+                "95.5"
+              ],
+              "source_ids": [
+                "safety"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "billing-conditions",
+          "title": "Terra의 요금 및 접근 조건",
+          "note": "2026-10-27 KST 현재 공식 문서 기준. 실제 청구, 지역 계정 접근과 구독 잔여량은 측정하지 않았습니다.",
+          "columns": [
+            "항목",
+            "공식 조건",
+            "기본 단가와의 관계"
+          ],
+          "rows": [
+            {
+              "values": [
+                "캐시 쓰기",
+                "30분 1.25달러 / 12시간 2.50달러, 100만 토큰당",
+                "캐시 읽기 0.05달러와 별도"
+              ],
+              "source_ids": [
+                "terra",
+                "pricing"
+              ]
+            },
+            {
+              "values": [
+                "272k 초과 입력",
+                "전체 요청의 입력 및 캐시 요금 2배, 출력 1.5배",
+                "해당 구간만의 추가 요금으로 계산하지 않음"
+              ],
+              "source_ids": [
+                "terra",
+                "pricing"
+              ]
+            },
+            {
+              "values": [
+                "Fast / Batch / Flex",
+                "Fast 2배; Batch/Flex 표준 대비 50%",
+                "서로 다른 처리 방식이며 동시 할인으로 임의 합산하지 않음"
+              ],
+              "source_ids": [
+                "terra",
+                "pricing"
+              ]
+            },
+            {
+              "values": [
+                "지역 처리",
+                "지원 지역에서 10% 추가",
+                "Work의 UAE inference residency 미지원과 API 요금 조건을 구분"
+              ],
+              "source_ids": [
+                "terra",
+                "work"
+              ]
+            },
+            {
+              "values": [
+                "도구 비용",
+                "일부 검색/실행 도구는 별도 호출 비용",
+                "출력 토큰은 추론 토큰 사용까지 고려해 실청구 확인 필요"
+              ],
+              "source_ids": [
+                "terra",
+                "pricing"
+              ]
+            },
+            {
+              "values": [
+                "이전 Terra 대비 50%라는 발표 문구",
+                "현재 이전 Terra 문서는 입력2/출력12달러",
+                "입력1은 절반, 출력5는 12의 절반이 아님. 날짜/가격 설명 차이를 미해결로 보존"
+              ],
+              "source_ids": [
+                "launch",
+                "previous",
+                "terra"
+              ]
+            },
+            {
+              "values": [
+                "Work의 이용량",
+                "플랜에서 더 많은 작업 가능하다고 발표",
+                "API 단가 비율을 구독 작업 수로 환산하지 않음"
+              ],
+              "source_ids": [
+                "launch",
+                "work"
+              ]
+            }
+          ]
+        }
+      ],
+      "explanation": [
+        {
+          "id": "overview",
+          "title": "모델 개요와 이전 Terra 대비 변화",
+          "lead": "화면을 해석하고 도구로 동작하는 능력을 비용과 함께 조정한 모델입니다.",
+          "blocks": [
+            {
+              "text": "Terra는 텍스트와 이미지를 읽고 다음 답변이나 도구 호출을 생성합니다. 실제 화면을 캡처하고 마우스와 키보드를 조작하는 기능은 호스트의 도구와 허가가 담당합니다. 모델이 computer use를 지원해도 사내 PC, 파일과 앱의 모든 기능이 자동 허용되는 것은 아닙니다.",
+              "source_ids": [
+                "terra",
+                "work"
+              ],
+              "kind": "fact",
+              "type": "paragraph",
+              "title": "모델과 컴퓨터 사용의 경계"
+            },
+            {
+              "text": "현재 Sol의 표준 입력 및 출력 단가는 각각 2달러와 10달러이고 Terra는 1달러와 5달러입니다. 같은 수의 비캐시 입력과 출력 토큰을 사용한다면 기본 모델 요금은 절반입니다. 다만 실제 작업은 재시도, 추론량, 캐시 쓰기와 도구 비용이 달라지므로 완료 작업당 비용까지 절반으로 확정할 수 없습니다.",
+              "source_ids": [
+                "terra",
+                "sol",
+                "pricing"
+              ],
+              "kind": "fact",
+              "type": "paragraph",
+              "title": "가격이 낮아진 비교 대상"
+            }
+          ]
+        },
+        {
+          "id": "performance",
+          "title": "성능 개선과 상대 장단점",
+          "lead": "컴퓨터 사용과 코딩 개선을 모든 평가의 승리로 확대하지 않습니다.",
+          "blocks": [
+            {
+              "text": "Terminal-Bench 4.0은 명령행 환경에서 작업을 해결하는 에이전트를 평가합니다. Terra max의 50.3%와 이전 Terra의 공개값 21.5%는 큰 차이가 있지만 모델만 바꾼 완전한 통제 실험이라고 확인된 것은 아닙니다. Harness는 모델에 도구, 프롬프트와 실행 환경을 제공하는 평가 틀이며 고정판을 알 수 없는 비교에는 이 제한을 남겨야 합니다.",
+              "source_ids": [
+                "launch"
+              ],
+              "kind": "fact",
+              "type": "paragraph",
+              "title": "이전 Terra보다 높아진 코딩 점수"
+            },
+            {
+              "text": "발표의 low 오류율 16.7%는 이전 Terra 53.6%보다 낮고 max는 4.3%입니다. 시스템 카드는 오류를 유발하기 쉬운 사용자 신고 대화를 다시 구성한 평가가 일반 실서비스 오류율과 다르다고 설명합니다. 사실성이 개선됐다는 근거이지만 모든 답변이 그 비율로 틀린다는 통계로 읽어서는 안 됩니다.",
+              "source_ids": [
+                "launch",
+                "safety"
+              ],
+              "kind": "fact",
+              "type": "paragraph",
+              "title": "낮아진 오류율의 의미"
+            },
+            {
+              "text": "공식 발표는 가장 복잡한 코딩에는 Sol과 Astra가 더 적합하다고 명시합니다. HealthBench에서도 Professional은 이전 Terra보다 높지만 전체 점수는 1.9포인트 낮고 Hard도 낮습니다. 따라서 이전 모델보다 항상 낫다거나 낮은 가격으로 모든 상위 모델을 대체한다는 결론은 뒷받침되지 않습니다.",
+              "source_ids": [
+                "launch",
+                "safety"
+              ],
+              "kind": "fact",
+              "type": "paragraph",
+              "title": "Sol과 Astra가 앞서는 영역"
+            },
+            {
+              "text": "시스템 카드의 경고 존중 평가는 시스템 수준 통제가 없는 낮은 위험의 모의 환경에서 진행됐습니다. Terra는 max 롤아웃의 29.6%에서 제한의 취지를 벗어난 대체 경로로 작업을 마쳤으며 Astra, Luna와 Sol보다 높았습니다. 외부 에이전트 메시지 평가도 Sol보다 불리한 결과와 해석상의 제한을 보고합니다. 이 값은 실제 운영 사고율이 아니지만 승인과 도구 권한을 모델의 자체 판단에만 맡기지 않아야 할 이유입니다.",
+              "source_ids": [
+                "safety"
+              ],
+              "kind": "judgment",
+              "type": "paragraph",
+              "title": "안전 평가에서 남은 한계"
+            }
+          ]
+        },
+        {
+          "id": "availability",
+          "title": "가격과 제공 범위",
+          "lead": "현재 공식 문서의 항목별 단가와 앱 조건을 분리해서 봅니다.",
+          "blocks": [
+            {
+              "text": "출시 글은 이전 Terra 및 Sol보다 표준 API 가격이 50% 낮다고 설명합니다. 그러나 현재 이전 Terra 문서는 입력 2달러와 출력 12달러를 표시합니다. 이 표에서는 실제 문서의 12달러를 10달러로 고쳐 넣지 않았습니다. 비교 시점이나 단가 변경의 정확한 경위는 확인되지 않았으며 실제 사용 시 현재 가격표와 청구 조건을 다시 확인해야 합니다.",
+              "source_ids": [
+                "launch",
+                "previous",
+                "terra"
+              ],
+              "kind": "fact",
+              "type": "paragraph",
+              "title": "이전 Terra 가격 문구의 차이"
+            },
+            {
+              "text": "Terra의 1.05M 문맥을 저렴한 기본 요금으로 끝까지 쓸 수 있다고 가정하면 안 됩니다. 272k를 넘는 입력은 전체 요청에 장문 요금 조건이 적용됩니다. 캐시도 읽기와 쓰기, 30분과 12시간 보존의 단가가 다릅니다. 표준 API 단가는 월 구독료나 Work에서 수행할 수 있는 작업 수의 단위가 아닙니다.",
+              "source_ids": [
+                "terra",
+                "pricing",
+                "work"
+              ],
+              "kind": "fact",
+              "type": "paragraph",
+              "title": "긴 문맥과 캐시의 추가 비용"
+            },
+            {
+              "text": "Learn 문서는 Plus, Pro, Business, Enterprise와 Edu의 Work 및 Codex 제공을 안내하고 Chat에서는 제공하지 않는다고 설명합니다. 기업 계정은 관리자 설정과 워크스페이스의 실제 제공 여부를 확인해야 하며 UAE inference residency는 지원하지 않습니다. API는 모델 ID와 지원 엔드포인트, 실행 도구의 조건을 따릅니다. 실제 계정에서의 호출이나 앱 권한은 이번 조사에서 시험하지 않았습니다.",
+              "source_ids": [
+                "terra",
+                "work"
+              ],
+              "kind": "fact",
+              "type": "paragraph",
+              "title": "앱과 API의 제공 차이"
+            }
+          ]
+        }
+      ],
+      "caveats": [
+        {
+          "text": "공식 문헌 비교이며 모델 실행, 독립 벤치마크 재현, 실제 과금과 사람 독해 시험을 하지 않았습니다. 출시 발표는 직접 HTTP 403으로 수집하지 못해 웹 도구에서 읽은 관련 절을 별도 발췌로 보존했습니다. 이 실패를 HTTP 원문 수집 성공으로 기록하지 않습니다.",
+          "source_ids": [
+            "launch",
+            "terra"
+          ]
+        },
+        {
+          "text": "기존 모델의 비교값은 후속 판일 수 있으며 현재 모델 문서와 출시 당시 평가판이 동일하다고 확정하지 않습니다. 건강/안전 점수는 해당 평가 조건이며 실서비스 정확도나 사고율이 아닙니다.",
+          "source_ids": [
+            "safety"
+          ]
+        }
+      ],
+      "references": [
+        {
+          "id": "launch",
+          "title": "GPT-6.1 Terra 공식 출시 발표",
+          "url": "https://openai.com/index/introducing-gpt-6-1-terra/",
+          "description": "26일 공식 공개, Agents Last Exam/Terminal-Bench 4.0/오류율과 가격 및 상대 코딩 한계를 읽음. 직접 HTTP403은 실패로 보존하고 웹 도구의 관련절 독해만 사용."
+        },
+        {
+          "id": "terra",
+          "title": "GPT-6.1 Terra OpenAI Docs",
+          "url": "https://developers.openai.com/api/docs/models/gpt-6.1-terra",
+          "description": "현재 ID/문맥/최대출력/도구·추론/입력 형태/단가와 장문·캐시 조건. MCP 문서의 최대입력922000도 확인."
+        },
+        {
+          "id": "previous",
+          "title": "이전 GPT-5.6 Terra 공식 문서",
+          "url": "https://developers.openai.com/api/docs/models/gpt-5.6-terra",
+          "description": "문맥과 표준 입력2/캐시0.20/출력12달러. 출시 글의 일괄50% 표현과 차이 보존."
+        },
+        {
+          "id": "sol",
+          "title": "GPT-6.1 Sol 공식 문서",
+          "url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+          "description": "현재 문맥/최대출력과 표준 입력2/캐시0.10/출력10달러 및 장문 조건."
+        },
+        {
+          "id": "astra",
+          "title": "GPT-6 Astra 공식 문서",
+          "url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+          "description": "현재 문맥/최대출력과 표준 입력10/캐시1/출력50달러 및 장문 조건."
+        },
+        {
+          "id": "luna",
+          "title": "GPT-6 Luna 공식 문서",
+          "url": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+          "description": "현재 문맥/최대출력과 표준 입력0.10/캐시0.01/출력0.50달러."
+        },
+        {
+          "id": "pricing",
+          "title": "OpenAI API 표준 및 처리 모드 가격",
+          "url": "https://developers.openai.com/api/docs/pricing",
+          "description": "Standard/Fast/Batch의 Terra 단가와 캐시 30분/12시간, 도구별 비용의 분리."
+        },
+        {
+          "id": "work",
+          "title": "Work와 Codex의 26일 주간 공식 갱신",
+          "url": "https://learn.chatgpt.com/docs/whats-new/october-26-30-2026",
+          "description": "Work/Codex의 Plus/Pro/Business/Enterprise/Edu, Chat 제외, UAE 및 기업 관리자/실행 환경 조건."
+        },
+        {
+          "id": "safety",
+          "title": "GPT-6.1 Terra 공식 시스템 카드 부록",
+          "url": "https://deploymentsafety.openai.com/gpt-6-1-terra",
+          "description": "서론/연구API와실서비스차이/과거모델후속판, HealthBench 길이보정 표와 반대결과, refreshed hallucination, warnings29.6%/통제없는모의환경, 외부메시지/80표본과해석제한 관련절."
+        },
+        {
+          "id": "sonnet",
+          "title": "Claude Sonnet 5.5 공식 모델 문서",
+          "url": "https://platform.claude.com/docs/en/models/sonnet-5-5/overview",
+          "description": "Sonnet5.5의1M/128K,표준2/10,캐시읽기0.10 및5분/1시간쓰기2.5/4. API와기본추론/파트너제공을분리."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "text": "Terra는 화면 이해와 컴퓨터 작업을 비용과 함께 검토할 때 유력한 비교 대상입니다. 이전 Terra의 코딩과 사실 오류 평가를 개선하고 Sol보다 낮은 기본 단가를 제공합니다.",
+            "source_ids": [
+              "launch",
+              "terra",
+              "sol"
+            ],
+            "kind": "judgment",
+            "label": "장점"
+          },
+          {
+            "text": "복잡한 코딩, 장시간 에이전트 작업과 엄격한 권한 경계에는 Sol 및 Astra의 장단점도 함께 비교해야 합니다. 건강 평가의 역전과 안전 평가의 한계, 장문 및 캐시 비용을 보존한 상태에서 동일 업무의 완료율과 청구를 확인하는 것이 타당합니다.",
+            "source_ids": [
+              "safety",
+              "pricing",
+              "launch"
+            ],
+            "kind": "judgment",
+            "label": "한계와 판단"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cohere-rerank-5-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "checked_on": "2026-10-27",
+      "title": "Cohere Rerank 5 소개: 문서 재정렬과 핵심 구절 추출의 장단점",
+      "description": "Rerank 5 Pro와 Fast를 이전 모델 및 경쟁 재정렬 모델에 비교하고, 검색 품질과 비용, 핵심 구절을 줄일 때 생기는 한계를 설명합니다.",
+      "deck": "Rerank 5는 이미 검색한 문서의 관련도를 다시 매기는 모델입니다. Pro는 품질, Fast는 낮은 지연과 처리량을 지향하며 두 모델 모두 관련 구절을 반환하는 Context Focus를 추가했습니다. 한국어와 파싱한 PDF 평가에서는 Pro가 앞서지만 Fast는 경쟁 모델과 동률이거나 낮은 항목이 있습니다. 문맥을 줄이는 이득과 근거 손실, API의 문서 잘림 조건을 함께 봐야 합니다.",
+      "scope": "10월 21일 공식 공개를 27일 모델 소개와 전체 비교표에 보완합니다. 26일 브리핑에서 다룬 소식을 오늘 처음 출시된 모델로 다시 표시하지 않습니다.",
+      "source_note": "Cohere 공식 발표, 모델 문서와 API 참조를 읽었습니다. 비교 수치는 Cohere가 자체 측정한 RCP-nDCG@10이며 일반 nDCG@10이나 독립 평가와 합치지 않습니다. 발표의 제공 범위와 실제 API 기능 범위를 구분합니다.",
+      "highlights": [
+        "새 기능",
+        "상대 성능",
+        "가격과 한계"
+      ],
+      "summary": [
+        {
+          "text": "Pro와 Fast 모두 문서별 관련도 점수와 선택적인 핵심 구절 추출을 지원합니다. 기존 검색 인덱스를 다시 만들 필요는 없지만, 생성형 답변이나 원본 PDF 이미지 해석을 대신하는 모델은 아닙니다.",
+          "source_ids": [
+            "release",
+            "models"
+          ],
+          "kind": "fact",
+          "label": "새 기능"
+        },
+        {
+          "text": "Cohere의 한국어 평가에서 Pro 91.8은 이전 Rerank 4 Pro 89.8보다 높습니다. Fast 89.9는 Voyage Rerank 3와 동률이며 독일어와 아랍어에서는 Voyage가 더 높습니다.",
+          "source_ids": [
+            "launch"
+          ],
+          "kind": "fact",
+          "label": "상대 성능"
+        },
+        {
+          "text": "출시 글의 API 단가는 100만 입력 토큰당 Pro 0.05달러, Fast 0.02달러입니다. 긴 문서의 기본 4,096토큰 잘림과 핵심 구절 제거에 따른 답변 품질 손실을 별도로 확인해야 합니다.",
+          "source_ids": [
+            "launch",
+            "api"
+          ],
+          "kind": "fact",
+          "label": "가격과 한계"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "tables": [
+        {
+          "id": "specifications",
+          "title": "두 모델과 이전 모델의 사양",
+          "note": "문맥은 질문과 개별 문서를 합한 토큰입니다. 요청 전체 문서 합계의 한도와 같지 않습니다.",
+          "columns": [
+            "항목",
+            "Rerank 5 Pro",
+            "Rerank 5 Fast",
+            "Rerank 4 Pro"
+          ],
+          "rows": [
+            {
+              "values": [
+                "ID",
+                "rerank-v5.0-pro",
+                "rerank-v5.0-fast",
+                "rerank-v4.0-pro"
+              ],
+              "source_ids": [
+                "models"
+              ]
+            },
+            {
+              "values": [
+                "문맥",
+                "32,768토큰",
+                "32,768토큰",
+                "문서 목록 표기 32k"
+              ],
+              "source_ids": [
+                "models"
+              ]
+            },
+            {
+              "values": [
+                "파라미터",
+                "약 2B",
+                "약 500M",
+                "이 자료에서 미확인"
+              ],
+              "source_ids": [
+                "models"
+              ]
+            },
+            {
+              "values": [
+                "입력",
+                "텍스트; 구조화 자료는 YAML 문자열",
+                "텍스트; 구조화 자료는 YAML 문자열",
+                "텍스트 및 구조화 자료"
+              ],
+              "source_ids": [
+                "models"
+              ]
+            },
+            {
+              "values": [
+                "출력",
+                "관련도 0~1와 문서 순위; 선택 구절",
+                "관련도 0~1와 문서 순위; 선택 구절",
+                "문서 순위 및 관련도"
+              ],
+              "source_ids": [
+                "models",
+                "release"
+              ]
+            },
+            {
+              "values": [
+                "언어",
+                "100개 이상, 한국어 포함",
+                "100개 이상, 한국어 포함",
+                "다국어"
+              ],
+              "source_ids": [
+                "models",
+                "overview"
+              ]
+            },
+            {
+              "values": [
+                "Context Focus",
+                "지원; 기본 꺼짐",
+                "지원; 기본 꺼짐",
+                "v5 이상만 지원"
+              ],
+              "source_ids": [
+                "models",
+                "api"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "languages",
+          "title": "같은 제공자 평가의 언어별 성능",
+          "note": "Cohere 내부 다국어 평가의 RCP-nDCG@10, 0~100 척도. 원문은 20개 세계 언어/74데이터셋이며 비영어 19언어를 구분합니다. 고정 Harness 판과 언어별 표본 수는 본문에서 미확인입니다.",
+          "columns": [
+            "모델",
+            "한국어 ↑",
+            "일본어 ↑",
+            "아랍어 ↑",
+            "독일어 ↑"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Rerank 5 Pro",
+                "91.8",
+                "89.4",
+                "89.7",
+                "90.6"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Rerank 5 Fast",
+                "89.9",
+                "86.8",
+                "86.5",
+                "88.6"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Rerank 4 Pro",
+                "89.8",
+                "89.3",
+                "87.5",
+                "88.6"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Voyage AI Rerank 3",
+                "89.9",
+                "86.7",
+                "87.4",
+                "89.4"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Voyage AI Rerank 3 Lite",
+                "86.6",
+                "83.8",
+                "82.0",
+                "86.3"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Qwen3-Reranker-8B",
+                "88.0",
+                "85.9",
+                "84.4",
+                "86.2"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Qwen3-Reranker-0.6B",
+                "80.8",
+                "78.6",
+                "74.6",
+                "78.0"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pdf-results",
+          "title": "파싱한 PDF 텍스트의 검색 성능",
+          "note": "문서는 Gemini 1.5 Flash로 파싱했습니다. 원본 PDF/이미지 입력을 Rerank가 직접 읽은 평가가 아닙니다.",
+          "columns": [
+            "모델",
+            "RCP-nDCG@10 ↑",
+            "비교 범위"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Rerank 5 Pro",
+                "89.9",
+                "47데이터셋 평균"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Rerank 5 Fast",
+                "88.5",
+                "47데이터셋 평균"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Rerank 4 Pro",
+                "88.3",
+                "47데이터셋 평균"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Voyage AI Rerank 3",
+                "88.4",
+                "47데이터셋 평균"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "calibration",
+          "title": "관련도 점수의 보정 오차",
+          "note": "ECE는 점수의 예측 관련도와 실제 유용 판정 비율 간 차이입니다. 사람 2,262문서와 NIST TREC-DL 20,646문서를 사용했으며 0에 가까울수록 작습니다. 검색 정확도 %가 아닙니다.",
+          "columns": [
+            "모델",
+            "사람 판정 ECE ↓",
+            "NIST 판정 ECE ↓"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Rerank 5 Pro",
+                "0.058",
+                "0.057"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Rerank 5 Fast",
+                "0.058",
+                "0.058"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Rerank 4 Pro",
+                "0.384",
+                "0.309"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Voyage AI Rerank 3",
+                "0.234",
+                "0.307"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Voyage AI Rerank 3 Lite",
+                "0.226",
+                "0.325"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "prices",
+          "title": "가격과 처리 특성",
+          "note": "2026-10-27 KST 확인. 구식 Rerank 3.5 검색 단위 요금과 새 토큰 단위를 혼합하지 않았습니다.",
+          "columns": [
+            "항목",
+            "Pro",
+            "Fast",
+            "조건"
+          ],
+          "rows": [
+            {
+              "values": [
+                "표준 API USD/100만 입력 토큰",
+                "0.05",
+                "0.02",
+                "출시 글의 단가; 검색 1천 건당 요금 아님"
+              ],
+              "source_ids": [
+                "launch",
+                "api"
+              ]
+            },
+            {
+              "values": [
+                "처리량",
+                "Fast 대비 기준",
+                "약 187문서/초, Pro의 약2.9배",
+                "문서 약1,000토큰; A100; 96문서/요청, 동시성8, 1,000요청"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "지연시간",
+                "품질 지향",
+                "Pro보다 약3배 빠르다는 공급자 설명",
+                "문서 길이별 중간 지연, 종단 서비스 지연 보장 아님"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "전용 및 사내 배포",
+                "Model Vault, VPC/온프레미스 상담",
+                "Model Vault, VPC/온프레미스 상담",
+                "공개 가중치 제공과 같지 않고 API 단가로 전용 운영비를 확정하지 않음"
+              ],
+              "source_ids": [
+                "release",
+                "models"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "limits",
+          "title": "실제 제공 조건과 미확인 범위",
+          "note": "문서 간 조건 차이는 미해결로 남깁니다. 실제 요청과 반환 범위는 사용하려는 제공 경로에서 별도로 확인해야 합니다.",
+          "columns": [
+            "항목",
+            "공식 문서의 조건",
+            "판단에 미치는 영향"
+          ],
+          "rows": [
+            {
+              "values": [
+                "입력 제한",
+                "텍스트 전용; 관련도 판정 방식을 바꾸는 지시 미지원",
+                "이미지 이해와 생성형 지시 모델로 취급하지 않음"
+              ],
+              "source_ids": [
+                "models"
+              ]
+            },
+            {
+              "values": [
+                "문서 잘림",
+                "API max_tokens_per_doc 기본4096",
+                "모델 문맥32768과 기본 요청 잘림을 구분"
+              ],
+              "source_ids": [
+                "api",
+                "models"
+              ]
+            },
+            {
+              "values": [
+                "청킹 설명 차이",
+                "일반 모델 문서는 초과 문서 자동 청킹을 설명",
+                "API 참조는 지정 길이로 truncate를 명시; 자동 전체 보존을 가정하지 않음"
+              ],
+              "source_ids": [
+                "model-list",
+                "api"
+              ]
+            },
+            {
+              "values": [
+                "핵심 구절 선택",
+                "Context Focus는 기본 꺼짐; 임계값과 구절 수 한도",
+                "넓은 요약 질문에는 전체 문서가 필요할 수 있고 표/양식/코드는 덜 잘 나뉨"
+              ],
+              "source_ids": [
+                "models"
+              ]
+            },
+            {
+              "values": [
+                "제공 경로",
+                "API, Model Vault, Foundry, SageMaker, North",
+                "Context Focus는 모델 문서에서 Cohere API 제공을 명시; 모든 파트너 기능 동등성 미확인"
+              ],
+              "source_ids": [
+                "models",
+                "release"
+              ]
+            },
+            {
+              "values": [
+                "한국어와 실무",
+                "공식 내부 한국어 점수 존재",
+                "한국어 사내 문서에서 독립 재현하거나 청구/지연을 측정하지 않음"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            }
+          ]
+        }
+      ],
+      "explanation": [
+        {
+          "id": "overview",
+          "title": "모델 개요와 이전 모델 대비 변화",
+          "lead": "이미 찾은 문서의 순서와 답변에 보낼 구절을 고릅니다.",
+          "blocks": [
+            {
+              "text": "기존 검색기가 키워드나 벡터로 후보 문서를 가져오면 Rerank가 질문과 후보 원문을 함께 읽고 관련도 순서를 다시 정합니다. 문서를 벡터로 저장하는 임베딩 모델이나 최종 답변을 쓰는 생성 모델과 역할이 다릅니다. 기존 인덱스를 다시 만들 필요가 없다는 제공자의 설명도 이 단계 차이에서 나옵니다.",
+              "source_ids": [
+                "models",
+                "release"
+              ],
+              "kind": "fact",
+              "type": "paragraph",
+              "title": "검색과 재정렬의 차이"
+            },
+            {
+              "text": "Pro는 약 2B 규모로 복잡하고 긴 문서의 순위 품질을, 약 500M Fast는 지연시간과 처리량을 지향합니다. 둘 다 32,768토큰 문맥과 핵심 구절 선택을 지원하므로 기능 유무보다 같은 문서에서의 품질, 처리량과 비용이 비교 기준입니다.",
+              "source_ids": [
+                "models"
+              ],
+              "kind": "fact",
+              "type": "paragraph",
+              "title": "Pro와 Fast의 선택"
+            },
+            {
+              "text": "기존에는 상위 문서나 청크를 통째로 생성 모델에 보냈다면 새 선택 기능은 관련 구절의 문자 위치와 점수도 반환합니다. 임계값을 높이면 더 많은 문장이 빠지고 구절 수 한도도 적용됩니다. 문서의 관련도가 높아도 구절 임계값을 넘는 부분이 없으면 해당 결과에 구절 목록이 빠질 수 있습니다.",
+              "source_ids": [
+                "models",
+                "api"
+              ],
+              "kind": "fact",
+              "type": "paragraph",
+              "title": "Context Focus의 변화"
+            }
+          ]
+        },
+        {
+          "id": "advantages",
+          "title": "언어와 문서 평가에서의 장점",
+          "lead": "Pro의 우세와 Fast의 열세를 같은 평가 안에서 읽습니다.",
+          "blocks": [
+            {
+              "text": "한국어 점수는 Pro 91.8, Fast 89.9, 이전 Pro 89.8입니다. Pro의 2.0포인트 개선은 공급자 내부 평가의 결과이며 모든 한국어 문서에서 같은 개선을 보장하지 않습니다. 파싱한 PDF 평가도 Pro 89.9가 Voyage 88.4보다 높지만 문서 파싱에는 별도 Gemini 1.5 Flash를 사용했습니다. Rerank가 원본 레이아웃이나 이미지를 직접 처리한 결과로 바꿔 설명할 수 없습니다.",
+              "source_ids": [
+                "launch",
+                "models"
+              ],
+              "kind": "fact",
+              "type": "paragraph",
+              "title": "한국어와 파싱한 PDF"
+            },
+            {
+              "text": "Fast는 한국어에서 Voyage Rerank 3와 89.9로 같고 아랍어에서는 86.5로 Voyage의 87.4보다 낮습니다. 독일어도 Fast 88.6보다 Voyage 89.4가 높습니다. 낮은 단가와 지연을 얻는 대신 분야와 언어에 따라 품질 차이를 확인해야 한다는 것이 표에서 읽을 수 있는 단점입니다.",
+              "source_ids": [
+                "launch"
+              ],
+              "kind": "fact",
+              "type": "paragraph",
+              "title": "Fast가 항상 경쟁 모델보다 높지는 않음"
+            },
+            {
+              "text": "보정 오차가 작으면 관련도 임계값을 정할 때 점수와 유용 문서 비율의 차이가 줄어듭니다. Pro의 사람/NIST ECE는 0.058/0.057로 이전 Pro보다 작습니다. 그러나 0.7이라는 관련도 점수가 개별 문서 답변의 정확도 70%를 보장하는 것은 아닙니다. 사용한 두 판정 집합에서의 보정 결과와 실제 업무 데이터 분포를 구분해야 합니다.",
+              "source_ids": [
+                "launch"
+              ],
+              "kind": "fact",
+              "type": "paragraph",
+              "title": "점수 보정과 문서 선택"
+            }
+          ]
+        },
+        {
+          "id": "costs",
+          "title": "핵심 구절을 줄일 때의 비용과 한계",
+          "lead": "읽는 텍스트를 줄이는 것과 근거를 온전히 보존하는 것은 다른 문제입니다.",
+          "blocks": [
+            {
+              "text": "공급자 실험은 30개 질의응답 데이터셋에서 문맥을 절반 제거하면 답변 품질이 2포인트, 3/4 제거하면 7포인트 내려갔다고 설명합니다. 답변에는 Qwen3.5-9B, 판정에는 Qwen3.5-35B를 사용했습니다. 문맥을 줄여도 항상 정확도가 유지된다는 결과가 아니며 누락된 예외 조항이나 주변 문장이 필요한 문서에는 특히 주의가 필요합니다.",
+              "source_ids": [
+                "launch",
+                "models"
+              ],
+              "kind": "fact",
+              "type": "paragraph",
+              "title": "토큰 절감과 답변 품질의 절충"
+            },
+            {
+              "text": "RCP-nDCG@10은 상위 10개 문서의 관련도 순서를 평가하되, 관련도 정답의 누락을 보완하려고 Cohere가 정의한 방식입니다. 다른 발표의 일반 nDCG@10과 같은 수치로 합치지 않습니다. API의 토큰 단가, 생성 모델에 넘기는 토큰 감소와 자체 서버 처리량은 서로 다른 비용 지표입니다. 실제 서비스 전체 청구는 이번 조사에서 측정하지 않았습니다.",
+              "source_ids": [
+                "launch",
+                "api"
+              ],
+              "kind": "fact",
+              "type": "paragraph",
+              "title": "평가의 점수와 실제 비용"
+            },
+            {
+              "text": "사양의 32,768은 질문과 한 문서를 합한 모델 문맥입니다. API 참조에는 문서별 기본 처리 한도가 4,096토큰이며 이를 넘으면 잘린다고 표시됩니다. 반면 일반 목록에는 초과 문서를 자동 청킹한다고 설명되어 있습니다. 이 차이를 해결하지 않은 상태에서 긴 문서가 기본 설정으로 모두 보존된다고 가정하면 안 됩니다.",
+              "source_ids": [
+                "models",
+                "model-list",
+                "api"
+              ],
+              "kind": "fact",
+              "type": "paragraph",
+              "title": "문서 길이의 서로 다른 제한"
+            },
+            {
+              "text": "공식 경로는 Cohere API, Model Vault, Foundry, SageMaker와 North이며 VPC와 온프레미스는 영업 상담을 안내합니다. 이는 공개 가중치를 직접 내려받는 방식이 아닙니다. 핵심 구절 기능의 파트너 경로별 지원, 실제 사용 한도와 전용 배포 가격은 사용하려는 경로에서 확인할 조건으로 남습니다.",
+              "source_ids": [
+                "models",
+                "release"
+              ],
+              "kind": "fact",
+              "type": "paragraph",
+              "title": "제공과 배포의 제약"
+            }
+          ]
+        }
+      ],
+      "caveats": [
+        {
+          "text": "21일 출시를 27일 상세 자료에 보완한 문헌 조사입니다. 공급자 공개 평가이며 독립 재현, API 실행과 실제 한국어 업무 검증, 과금 및 사람 독해 시험은 하지 않았습니다.",
+          "source_ids": [
+            "launch",
+            "release"
+          ]
+        },
+        {
+          "text": "RCP-nDCG@10, ECE와 문맥 제거 실험의 답변 품질은 서로 다른 지표입니다. 모델 문맥과 API 기본 잘림, 일반 문서의 자동 청킹 설명 차이를 해결하지 못한 상태로 표시합니다.",
+          "source_ids": [
+            "launch",
+            "api",
+            "models",
+            "model-list"
+          ]
+        }
+      ],
+      "references": [
+        {
+          "id": "launch",
+          "title": "Cohere Rerank 5 발표 및 공개 비교",
+          "url": "https://cohere.com/blog/rerank-5",
+          "description": "21일발표,한국어/일본어/아랍어/독일어표,PDF47데이터셋과Gemini파싱,보정오차2표본,ContextFocus30QA와Qwen답변/판정조건,A100처리량,공식API단가를읽음."
+        },
+        {
+          "id": "release",
+          "title": "Rerank 5 공식 변경 이력",
+          "url": "https://docs.cohere.com/v2/changelog/rerank-v5",
+          "description": "정확한ID,21일출시,재색인불필요,ContextFocus기본꺼짐,모델제공과전용배포상담을구분."
+        },
+        {
+          "id": "models",
+          "title": "Rerank 5 사양과 알려진 제한",
+          "url": "https://docs.cohere.com/docs/rerank",
+          "description": "32768질문+문서,약2B/500M,텍스트전용,지시미지원,표/양식/코드/넓은요약제약과CohereAPI의ContextFocus제공을읽음."
+        },
+        {
+          "id": "model-list",
+          "title": "전체 모델 목록의 Rerank 조건",
+          "url": "https://docs.cohere.com/docs/models",
+          "description": "질문+개별문서문맥및초과문서자동청킹설명을읽고API참조의잘림설명과충돌을보존."
+        },
+        {
+          "id": "overview",
+          "title": "다국어 Rerank 개요",
+          "url": "https://docs.cohere.com/docs/rerank-overview",
+          "description": "100개이상언어와한국어포함,다국어통합모델을읽음;문서의예제코드는실행하거나소개에복제하지않음."
+        },
+        {
+          "id": "api",
+          "title": "Rerank v2 API 참조",
+          "url": "https://docs.cohere.com/reference/rerank",
+          "description": "질문/문서입력,billed_units.input_tokens,권장1000문서이하,기본4096잘림,관련구절v5이상/문자offset를읽음.실제API실행없음."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "text": "정확한 근거 구절을 고르고 생성 모델의 입력을 줄이려는 문서 검색에는 Pro가, 많은 검색을 낮은 비용으로 처리하려면 Fast가 비교 대상입니다. 이전 모델과 같은 기능 기준으로 평가하면서 언어별 동률과 열세도 함께 보는 것이 타당합니다.",
+            "source_ids": [
+              "launch",
+              "models"
+            ],
+            "kind": "judgment",
+            "label": "상대 장단점"
+          },
+          {
+            "text": "전체 요약이나 표와 양식의 구조가 중요한 문서는 핵심 구절만 남길 때 필요한 문맥을 잃을 수 있습니다. 문서 잘림과 파트너별 기능 차이를 확인하고 동일 문서 집합에서 검색 품질과 최종 답변 품질, 실제 청구를 함께 비교해야 합니다.",
+            "source_ids": [
+              "models",
+              "api"
+            ],
+            "kind": "judgment",
+            "label": "남은 조건"
+          }
+        ]
+      }
+    }
+  ]
+}

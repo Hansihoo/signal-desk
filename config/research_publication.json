@@ -2,6 +2,8 @@
   "schema_version": 1,
   "featured_report_id": "mcp-apps-workflows",
   "report_ids": [
+    "gpt-6-1-terra-model-guide",
+    "cohere-rerank-5-model-guide",
     "lighton-slideon-mslideon-model-guide",
     "granite-speech-5-model-guide",
     "nemotron-3-5-retriever-model-guide",
@@ -385,6 +387,16 @@
       "id": "business-review-2026-10-26",
       "input": "business_review.2026-10-26.json",
       "quality": "business_review.2026-10-26.quality.json"
+    },
+    {
+      "id": "ai-model-introductions-2026-10-27",
+      "input": "ai_model_guides.2026-10-27.json",
+      "quality": "ai_model_guides.2026-10-27.quality.json"
+    },
+    {
+      "id": "ai-model-introductions-2026-10-27-r2",
+      "input": "ai_model_guides.2026-10-27.r2.json",
+      "quality": "ai_model_guides.2026-10-27.r2.quality.json"
     }
   ]
 }

@@ -72,7 +72,9 @@
     "canva-craft-model-guide",
     "baseten-mammoth-elephant-model-guide",
     "mistral-voxtral-3-model-guide",
-    "lighton-slideon-mslideon-model-guide"
+    "lighton-slideon-mslideon-model-guide",
+    "gpt-6-1-terra-model-guide",
+    "cohere-rerank-5-model-guide"
   ],
   "catalogs": {
     "devops-implementation-guide": "devops_tools.2026-10-10.r4.json"
@@ -218,6 +220,14 @@
     ],
     "lighton-slideon-mslideon-model-guide": [
       "7a6946f1a35f9790a9844ba331f6aba5090d1d61cf302a265e634173131e9034"
+    ],
+    "gpt-6-1-terra-model-guide": [
+      "edc3b4ca5da157004577f791a1300dd799bd83af4df360265e60639cc14aae5e",
+      "30a6e598bfd06aef198053a9064550613e2e59b383e79d4be4dab199fbd75dce"
+    ],
+    "cohere-rerank-5-model-guide": [
+      "38f63d70bcf91869df2d72ecfea71e7e99f1475eaf8cca6b3113b1d9a61fb494",
+      "10914ffb732ebb094827a943260f92537f0bdf88ea8584ad31cde8d7ae00cff6"
     ]
   },
   "model_introduction_editions": {
@@ -308,6 +318,14 @@
     ],
     "lighton-slideon-mslideon-model-guide": [
       "7a6946f1a35f9790a9844ba331f6aba5090d1d61cf302a265e634173131e9034"
+    ],
+    "gpt-6-1-terra-model-guide": [
+      "edc3b4ca5da157004577f791a1300dd799bd83af4df360265e60639cc14aae5e",
+      "30a6e598bfd06aef198053a9064550613e2e59b383e79d4be4dab199fbd75dce"
+    ],
+    "cohere-rerank-5-model-guide": [
+      "38f63d70bcf91869df2d72ecfea71e7e99f1475eaf8cca6b3113b1d9a61fb494",
+      "10914ffb732ebb094827a943260f92537f0bdf88ea8584ad31cde8d7ae00cff6"
     ]
   },
   "model_introduction_purpose_editions": {
@@ -387,6 +405,14 @@
     ],
     "lighton-slideon-mslideon-model-guide": [
       "7a6946f1a35f9790a9844ba331f6aba5090d1d61cf302a265e634173131e9034"
+    ],
+    "gpt-6-1-terra-model-guide": [
+      "edc3b4ca5da157004577f791a1300dd799bd83af4df360265e60639cc14aae5e",
+      "30a6e598bfd06aef198053a9064550613e2e59b383e79d4be4dab199fbd75dce"
+    ],
+    "cohere-rerank-5-model-guide": [
+      "38f63d70bcf91869df2d72ecfea71e7e99f1475eaf8cca6b3113b1d9a61fb494",
+      "10914ffb732ebb094827a943260f92537f0bdf88ea8584ad31cde8d7ae00cff6"
     ]
   },
   "model_introduction_reader_editions": {
@@ -463,6 +489,14 @@
     ],
     "lighton-slideon-mslideon-model-guide": [
       "7a6946f1a35f9790a9844ba331f6aba5090d1d61cf302a265e634173131e9034"
+    ],
+    "gpt-6-1-terra-model-guide": [
+      "edc3b4ca5da157004577f791a1300dd799bd83af4df360265e60639cc14aae5e",
+      "30a6e598bfd06aef198053a9064550613e2e59b383e79d4be4dab199fbd75dce"
+    ],
+    "cohere-rerank-5-model-guide": [
+      "38f63d70bcf91869df2d72ecfea71e7e99f1475eaf8cca6b3113b1d9a61fb494",
+      "10914ffb732ebb094827a943260f92537f0bdf88ea8584ad31cde8d7ae00cff6"
     ]
   }
 }

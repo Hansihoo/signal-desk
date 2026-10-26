@@ -1,0 +1,1311 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "id": "terra61-spec-20261026",
+      "model": "GPT-6.1 Terra",
+      "provider": "OpenAI",
+      "source_url": "https://developers.openai.com/api/docs/models/gpt-6.1-terra",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "GPT-6.1 Terra 2026-10-26",
+        "condition": "공식 문서27KST확인. 문맥/입력/출력한도별도. 도구는Responses; 실제앱/청구/워크로드미검증.",
+        "context": 1050000,
+        "max_output": 128000,
+        "최대 입력 토큰": 922000,
+        "모델 ID": "gpt-6.1-terra",
+        "입력": "텍스트, 이미지",
+        "출력": "텍스트",
+        "추론": "none/low/medium(default)/high/xhigh/max",
+        "지식 기준일": "2026-06-01",
+        "access": "API / Work / Codex",
+        "status": "공식 제공"
+      }
+    },
+    {
+      "id": "terra61-peer-standard-0",
+      "model": "GPT-6.1 Terra",
+      "provider": "OpenAI",
+      "source_url": "https://developers.openai.com/api/docs/models/gpt-6.1-terra",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 표준 요금",
+        "suite": "2026-10-27 KST Standard USD/1M tokens",
+        "condition": "공식 현재 기본 단가. 장문/캐시쓰기/도구/Fast/Batch/Flex/지역/실청구 제외. 이전Terra출력12는출시글일괄50%표현과차이있음. Anthropic캐시보존구간은OpenAI와다름.",
+        "입력 USD / 100만 토큰": 1,
+        "캐시 입력 USD / 100만 토큰": 0.05,
+        "출력 USD / 100만 토큰": 5,
+        "단위": "USD / 1M tokens"
+      }
+    },
+    {
+      "id": "terra61-peer-standard-1",
+      "model": "GPT-5.6 Terra",
+      "provider": "OpenAI",
+      "source_url": "https://developers.openai.com/api/docs/models/gpt-5.6-terra",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 표준 요금",
+        "suite": "2026-10-27 KST Standard USD/1M tokens",
+        "condition": "공식 현재 기본 단가. 장문/캐시쓰기/도구/Fast/Batch/Flex/지역/실청구 제외. 이전Terra출력12는출시글일괄50%표현과차이있음. Anthropic캐시보존구간은OpenAI와다름.",
+        "입력 USD / 100만 토큰": 2,
+        "캐시 입력 USD / 100만 토큰": 0.2,
+        "출력 USD / 100만 토큰": 12,
+        "단위": "USD / 1M tokens"
+      }
+    },
+    {
+      "id": "terra61-peer-standard-2",
+      "model": "GPT-6.1 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 표준 요금",
+        "suite": "2026-10-27 KST Standard USD/1M tokens",
+        "condition": "공식 현재 기본 단가. 장문/캐시쓰기/도구/Fast/Batch/Flex/지역/실청구 제외. 이전Terra출력12는출시글일괄50%표현과차이있음. Anthropic캐시보존구간은OpenAI와다름.",
+        "입력 USD / 100만 토큰": 2,
+        "캐시 입력 USD / 100만 토큰": 0.1,
+        "출력 USD / 100만 토큰": 10,
+        "단위": "USD / 1M tokens"
+      }
+    },
+    {
+      "id": "terra61-peer-standard-3",
+      "model": "GPT-6 Astra",
+      "provider": "OpenAI",
+      "source_url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 표준 요금",
+        "suite": "2026-10-27 KST Standard USD/1M tokens",
+        "condition": "공식 현재 기본 단가. 장문/캐시쓰기/도구/Fast/Batch/Flex/지역/실청구 제외. 이전Terra출력12는출시글일괄50%표현과차이있음. Anthropic캐시보존구간은OpenAI와다름.",
+        "입력 USD / 100만 토큰": 10,
+        "캐시 입력 USD / 100만 토큰": 1,
+        "출력 USD / 100만 토큰": 50,
+        "단위": "USD / 1M tokens"
+      }
+    },
+    {
+      "id": "terra61-peer-standard-4",
+      "model": "GPT-6 Luna",
+      "provider": "OpenAI",
+      "source_url": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 표준 요금",
+        "suite": "2026-10-27 KST Standard USD/1M tokens",
+        "condition": "공식 현재 기본 단가. 장문/캐시쓰기/도구/Fast/Batch/Flex/지역/실청구 제외. 이전Terra출력12는출시글일괄50%표현과차이있음. Anthropic캐시보존구간은OpenAI와다름.",
+        "입력 USD / 100만 토큰": 0.1,
+        "캐시 입력 USD / 100만 토큰": 0.01,
+        "출력 USD / 100만 토큰": 0.5,
+        "단위": "USD / 1M tokens"
+      }
+    },
+    {
+      "id": "terra61-peer-standard-5",
+      "model": "Claude Sonnet 5.5",
+      "provider": "Anthropic",
+      "source_url": "https://platform.claude.com/docs/en/models/sonnet-5-5/overview",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 표준 요금",
+        "suite": "2026-10-27 KST Standard USD/1M tokens",
+        "condition": "공식 현재 기본 단가. 장문/캐시쓰기/도구/Fast/Batch/Flex/지역/실청구 제외. 이전Terra출력12는출시글일괄50%표현과차이있음. Anthropic캐시보존구간은OpenAI와다름.",
+        "입력 USD / 100만 토큰": 2,
+        "캐시 입력 USD / 100만 토큰": 0.1,
+        "출력 USD / 100만 토큰": 10,
+        "단위": "USD / 1M tokens"
+      }
+    },
+    {
+      "id": "terra61-cache-write",
+      "model": "GPT-6.1 Terra",
+      "provider": "OpenAI",
+      "source_url": "https://developers.openai.com/api/docs/models/gpt-6.1-terra",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 캐시 쓰기 요금",
+        "suite": "Standard cache write 2026-10-27",
+        "condition": "장문272k초과시캐시요금2배;지역/모드/실청구제외. 보존시간별별도쓰기요금.",
+        "30분 캐시 쓰기 USD / 100만 토큰": 1.25,
+        "12시간 캐시 쓰기 USD / 100만 토큰": 2.5,
+        "단위": "USD / 1M written tokens"
+      }
+    },
+    {
+      "id": "terra61-availability",
+      "model": "GPT-6.1 Terra",
+      "provider": "OpenAI",
+      "source_url": "https://learn.chatgpt.com/docs/whats-new/october-26-30-2026",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 앱 제공 조건",
+        "suite": "Work/Codex 2026-10-26",
+        "condition": "Plus/Pro/Business/Enterprise/Edu;Chat제외;UAEinference-residency미지원;기업관리자/워크스페이스/도구조건별도. 계정접근직접미검증.",
+        "access": "Work / Codex",
+        "status": "공식 제공"
+      }
+    },
+    {
+      "id": "terra61-launch-eval-0",
+      "model": "GPT-6.1 Terra",
+      "provider": "OpenAI",
+      "source_url": "https://openai.com/index/introducing-gpt-6-1-terra/",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "Terminal-Bench 4.0",
+        "condition": "OpenAI26일출시문헌/27KST확인. 직접HTTP403/웹관련절독해. 이전TB점수기발표값이며동일Harness재측정미확인. 오류유도내부표본은실서비스오류율아님. 고정Harness/표본수미확인.",
+        "평가 점수": 50.3,
+        "평가 항목": "Terminal-Bench 4.0",
+        "단위": "% success ↑",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "GPT-6.1 Terra / Terminal-Bench 4.0",
+        "effort": "max"
+      }
+    },
+    {
+      "id": "terra61-launch-eval-1",
+      "model": "GPT-5.6 Terra",
+      "provider": "OpenAI",
+      "source_url": "https://openai.com/index/introducing-gpt-6-1-terra/",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "Terminal-Bench 4.0",
+        "condition": "OpenAI26일출시문헌/27KST확인. 직접HTTP403/웹관련절독해. 이전TB점수기발표값이며동일Harness재측정미확인. 오류유도내부표본은실서비스오류율아님. 고정Harness/표본수미확인.",
+        "평가 점수": 21.5,
+        "평가 항목": "Terminal-Bench 4.0",
+        "단위": "% success ↑",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "GPT-5.6 Terra / Terminal-Bench 4.0"
+      }
+    },
+    {
+      "id": "terra61-launch-eval-2",
+      "model": "GPT-6.1 Terra",
+      "provider": "OpenAI",
+      "source_url": "https://openai.com/index/introducing-gpt-6-1-terra/",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "Internal difficult-prompt error rate",
+        "condition": "OpenAI26일출시문헌/27KST확인. 직접HTTP403/웹관련절독해. 이전TB점수기발표값이며동일Harness재측정미확인. 오류유도내부표본은실서비스오류율아님. 고정Harness/표본수미확인.",
+        "평가 점수": 16.7,
+        "평가 항목": "Internal difficult-prompt error rate",
+        "단위": "% error ↓",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "GPT-6.1 Terra / Internal difficult-prompt error rate",
+        "effort": "low"
+      }
+    },
+    {
+      "id": "terra61-launch-eval-3",
+      "model": "GPT-5.6 Terra",
+      "provider": "OpenAI",
+      "source_url": "https://openai.com/index/introducing-gpt-6-1-terra/",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "Internal difficult-prompt error rate",
+        "condition": "OpenAI26일출시문헌/27KST확인. 직접HTTP403/웹관련절독해. 이전TB점수기발표값이며동일Harness재측정미확인. 오류유도내부표본은실서비스오류율아님. 고정Harness/표본수미확인.",
+        "평가 점수": 53.6,
+        "평가 항목": "Internal difficult-prompt error rate",
+        "단위": "% error ↓",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "GPT-5.6 Terra / Internal difficult-prompt error rate",
+        "effort": "low"
+      }
+    },
+    {
+      "id": "terra61-launch-eval-4",
+      "model": "GPT-6.1 Terra",
+      "provider": "OpenAI",
+      "source_url": "https://openai.com/index/introducing-gpt-6-1-terra/",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "Internal difficult-prompt error rate",
+        "condition": "OpenAI26일출시문헌/27KST확인. 직접HTTP403/웹관련절독해. 이전TB점수기발표값이며동일Harness재측정미확인. 오류유도내부표본은실서비스오류율아님. 고정Harness/표본수미확인.",
+        "평가 점수": 4.3,
+        "평가 항목": "Internal difficult-prompt error rate",
+        "단위": "% error ↓",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "GPT-6.1 Terra / Internal difficult-prompt error rate",
+        "effort": "max"
+      }
+    },
+    {
+      "id": "terra61-health-0-0",
+      "model": "GPT-5.6 Terra",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-6-1-terra",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "HealthBench Professional length-adjusted",
+        "condition": "OpenAI26일시스템카드HealthBench표. 괄호미보정/문자길이와분리. 연구환경/API;생산ChatGPT와다를수있음. 이전모델후속판가능;해당절추론고정값/Harnesscommit미확인. 의료적합성보장아님.",
+        "평가 점수": 57.7,
+        "평가 항목": "HealthBench Professional length-adjusted",
+        "단위": "length-adjusted score; 0–100 ↑",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "GPT-5.6 Terra / HealthBench Professional length-adjusted"
+      }
+    },
+    {
+      "id": "terra61-health-0-1",
+      "model": "GPT-6.1 Terra",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-6-1-terra",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "HealthBench Professional length-adjusted",
+        "condition": "OpenAI26일시스템카드HealthBench표. 괄호미보정/문자길이와분리. 연구환경/API;생산ChatGPT와다를수있음. 이전모델후속판가능;해당절추론고정값/Harnesscommit미확인. 의료적합성보장아님.",
+        "평가 점수": 62.7,
+        "평가 항목": "HealthBench Professional length-adjusted",
+        "단위": "length-adjusted score; 0–100 ↑",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "GPT-6.1 Terra / HealthBench Professional length-adjusted"
+      }
+    },
+    {
+      "id": "terra61-health-0-2",
+      "model": "GPT-6.1 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-6-1-terra",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "HealthBench Professional length-adjusted",
+        "condition": "OpenAI26일시스템카드HealthBench표. 괄호미보정/문자길이와분리. 연구환경/API;생산ChatGPT와다를수있음. 이전모델후속판가능;해당절추론고정값/Harnesscommit미확인. 의료적합성보장아님.",
+        "평가 점수": 64.2,
+        "평가 항목": "HealthBench Professional length-adjusted",
+        "단위": "length-adjusted score; 0–100 ↑",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "GPT-6.1 Sol / HealthBench Professional length-adjusted"
+      }
+    },
+    {
+      "id": "terra61-health-0-3",
+      "model": "GPT-6 Astra",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-6-1-terra",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "HealthBench Professional length-adjusted",
+        "condition": "OpenAI26일시스템카드HealthBench표. 괄호미보정/문자길이와분리. 연구환경/API;생산ChatGPT와다를수있음. 이전모델후속판가능;해당절추론고정값/Harnesscommit미확인. 의료적합성보장아님.",
+        "평가 점수": 64.7,
+        "평가 항목": "HealthBench Professional length-adjusted",
+        "단위": "length-adjusted score; 0–100 ↑",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "GPT-6 Astra / HealthBench Professional length-adjusted"
+      }
+    },
+    {
+      "id": "terra61-health-1-0",
+      "model": "GPT-5.6 Terra",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-6-1-terra",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "HealthBench length-adjusted",
+        "condition": "OpenAI26일시스템카드HealthBench표. 괄호미보정/문자길이와분리. 연구환경/API;생산ChatGPT와다를수있음. 이전모델후속판가능;해당절추론고정값/Harnesscommit미확인. 의료적합성보장아님.",
+        "평가 점수": 57.0,
+        "평가 항목": "HealthBench length-adjusted",
+        "단위": "length-adjusted score; 0–100 ↑",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "GPT-5.6 Terra / HealthBench length-adjusted"
+      }
+    },
+    {
+      "id": "terra61-health-1-1",
+      "model": "GPT-6.1 Terra",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-6-1-terra",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "HealthBench length-adjusted",
+        "condition": "OpenAI26일시스템카드HealthBench표. 괄호미보정/문자길이와분리. 연구환경/API;생산ChatGPT와다를수있음. 이전모델후속판가능;해당절추론고정값/Harnesscommit미확인. 의료적합성보장아님.",
+        "평가 점수": 55.1,
+        "평가 항목": "HealthBench length-adjusted",
+        "단위": "length-adjusted score; 0–100 ↑",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "GPT-6.1 Terra / HealthBench length-adjusted"
+      }
+    },
+    {
+      "id": "terra61-health-1-2",
+      "model": "GPT-6.1 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-6-1-terra",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "HealthBench length-adjusted",
+        "condition": "OpenAI26일시스템카드HealthBench표. 괄호미보정/문자길이와분리. 연구환경/API;생산ChatGPT와다를수있음. 이전모델후속판가능;해당절추론고정값/Harnesscommit미확인. 의료적합성보장아님.",
+        "평가 점수": 58.5,
+        "평가 항목": "HealthBench length-adjusted",
+        "단위": "length-adjusted score; 0–100 ↑",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "GPT-6.1 Sol / HealthBench length-adjusted"
+      }
+    },
+    {
+      "id": "terra61-health-1-3",
+      "model": "GPT-6 Astra",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-6-1-terra",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "HealthBench length-adjusted",
+        "condition": "OpenAI26일시스템카드HealthBench표. 괄호미보정/문자길이와분리. 연구환경/API;생산ChatGPT와다를수있음. 이전모델후속판가능;해당절추론고정값/Harnesscommit미확인. 의료적합성보장아님.",
+        "평가 점수": 58.3,
+        "평가 항목": "HealthBench length-adjusted",
+        "단위": "length-adjusted score; 0–100 ↑",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "GPT-6 Astra / HealthBench length-adjusted"
+      }
+    },
+    {
+      "id": "terra61-health-2-0",
+      "model": "GPT-5.6 Terra",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-6-1-terra",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "HealthBench Hard length-adjusted",
+        "condition": "OpenAI26일시스템카드HealthBench표. 괄호미보정/문자길이와분리. 연구환경/API;생산ChatGPT와다를수있음. 이전모델후속판가능;해당절추론고정값/Harnesscommit미확인. 의료적합성보장아님.",
+        "평가 점수": 32.7,
+        "평가 항목": "HealthBench Hard length-adjusted",
+        "단위": "length-adjusted score; 0–100 ↑",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "GPT-5.6 Terra / HealthBench Hard length-adjusted"
+      }
+    },
+    {
+      "id": "terra61-health-2-1",
+      "model": "GPT-6.1 Terra",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-6-1-terra",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "HealthBench Hard length-adjusted",
+        "condition": "OpenAI26일시스템카드HealthBench표. 괄호미보정/문자길이와분리. 연구환경/API;생산ChatGPT와다를수있음. 이전모델후속판가능;해당절추론고정값/Harnesscommit미확인. 의료적합성보장아님.",
+        "평가 점수": 31.4,
+        "평가 항목": "HealthBench Hard length-adjusted",
+        "단위": "length-adjusted score; 0–100 ↑",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "GPT-6.1 Terra / HealthBench Hard length-adjusted"
+      }
+    },
+    {
+      "id": "terra61-health-2-2",
+      "model": "GPT-6.1 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-6-1-terra",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "HealthBench Hard length-adjusted",
+        "condition": "OpenAI26일시스템카드HealthBench표. 괄호미보정/문자길이와분리. 연구환경/API;생산ChatGPT와다를수있음. 이전모델후속판가능;해당절추론고정값/Harnesscommit미확인. 의료적합성보장아님.",
+        "평가 점수": 36.2,
+        "평가 항목": "HealthBench Hard length-adjusted",
+        "단위": "length-adjusted score; 0–100 ↑",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "GPT-6.1 Sol / HealthBench Hard length-adjusted"
+      }
+    },
+    {
+      "id": "terra61-health-2-3",
+      "model": "GPT-6 Astra",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-6-1-terra",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "HealthBench Hard length-adjusted",
+        "condition": "OpenAI26일시스템카드HealthBench표. 괄호미보정/문자길이와분리. 연구환경/API;생산ChatGPT와다를수있음. 이전모델후속판가능;해당절추론고정값/Harnesscommit미확인. 의료적합성보장아님.",
+        "평가 점수": 36.6,
+        "평가 항목": "HealthBench Hard length-adjusted",
+        "단위": "length-adjusted score; 0–100 ↑",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "GPT-6 Astra / HealthBench Hard length-adjusted"
+      }
+    },
+    {
+      "id": "terra61-health-3-0",
+      "model": "GPT-5.6 Terra",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-6-1-terra",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "HealthBench Consensus length-adjusted",
+        "condition": "OpenAI26일시스템카드HealthBench표. 괄호미보정/문자길이와분리. 연구환경/API;생산ChatGPT와다를수있음. 이전모델후속판가능;해당절추론고정값/Harnesscommit미확인. 의료적합성보장아님.",
+        "평가 점수": 95.1,
+        "평가 항목": "HealthBench Consensus length-adjusted",
+        "단위": "length-adjusted score; 0–100 ↑",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "GPT-5.6 Terra / HealthBench Consensus length-adjusted"
+      }
+    },
+    {
+      "id": "terra61-health-3-1",
+      "model": "GPT-6.1 Terra",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-6-1-terra",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "HealthBench Consensus length-adjusted",
+        "condition": "OpenAI26일시스템카드HealthBench표. 괄호미보정/문자길이와분리. 연구환경/API;생산ChatGPT와다를수있음. 이전모델후속판가능;해당절추론고정값/Harnesscommit미확인. 의료적합성보장아님.",
+        "평가 점수": 95.1,
+        "평가 항목": "HealthBench Consensus length-adjusted",
+        "단위": "length-adjusted score; 0–100 ↑",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "GPT-6.1 Terra / HealthBench Consensus length-adjusted"
+      }
+    },
+    {
+      "id": "terra61-health-3-2",
+      "model": "GPT-6.1 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-6-1-terra",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "HealthBench Consensus length-adjusted",
+        "condition": "OpenAI26일시스템카드HealthBench표. 괄호미보정/문자길이와분리. 연구환경/API;생산ChatGPT와다를수있음. 이전모델후속판가능;해당절추론고정값/Harnesscommit미확인. 의료적합성보장아님.",
+        "평가 점수": 96.0,
+        "평가 항목": "HealthBench Consensus length-adjusted",
+        "단위": "length-adjusted score; 0–100 ↑",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "GPT-6.1 Sol / HealthBench Consensus length-adjusted"
+      }
+    },
+    {
+      "id": "terra61-health-3-3",
+      "model": "GPT-6 Astra",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-6-1-terra",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "HealthBench Consensus length-adjusted",
+        "condition": "OpenAI26일시스템카드HealthBench표. 괄호미보정/문자길이와분리. 연구환경/API;생산ChatGPT와다를수있음. 이전모델후속판가능;해당절추론고정값/Harnesscommit미확인. 의료적합성보장아님.",
+        "평가 점수": 95.5,
+        "평가 항목": "HealthBench Consensus length-adjusted",
+        "단위": "length-adjusted score; 0–100 ↑",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "GPT-6 Astra / HealthBench Consensus length-adjusted"
+      }
+    },
+    {
+      "id": "terra61-warning-boundary",
+      "model": "GPT-6.1 Terra",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-6-1-terra",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "Respecting Warnings / successful circumvention",
+        "condition": "시스템카드7.2,낮은위험의모의환경/시스템통제없이max. 제한취지를벗어난대체경로완료;실제운영사고율아님. 표본수미확인. 공급자측정.",
+        "평가 점수": 29.6,
+        "평가 항목": "Respecting Warnings / successful circumvention",
+        "단위": "% rollouts ↓",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "GPT-6.1 Terra / Respecting Warnings / successful circumvention",
+        "effort": "max"
+      }
+    },
+    {
+      "id": "rerank5-spec-pro",
+      "model": "Cohere Rerank 5 Pro",
+      "provider": "Cohere",
+      "source_url": "https://docs.cohere.com/docs/rerank",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "Rerank 5 / 2026-10-21",
+        "condition": "질문+개별문서32768토큰,API기본문서별4096잘림과구분. 텍스트전용/100+언어. ContextFocus기본꺼짐;API명시지원/파트너동등성미확인. 과업지시변경미지원.",
+        "context": 32768,
+        "parameters": "약2B",
+        "모델 ID": "rerank-v5.0-pro",
+        "입력": "텍스트/YAML문자열",
+        "출력": "문서순위/관련도/선택문자구절",
+        "access": "API / Model Vault / Foundry / SageMaker / North / 사내배포상담",
+        "status": "공식 제공"
+      }
+    },
+    {
+      "id": "rerank5-price-pro",
+      "model": "Cohere Rerank 5 Pro",
+      "provider": "Cohere",
+      "source_url": "https://cohere.com/blog/rerank-5",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 표준 요금",
+        "suite": "Rerank 5 USD per 1M input tokens",
+        "condition": "21일출시글/27KST확인. API참조billed_units.input_tokens;검색천건단가/생성출력단가아님. 전용배포가격/실청구미확인.",
+        "입력 USD / 100만 토큰": 0.05,
+        "단위": "USD / 1M input tokens"
+      }
+    },
+    {
+      "id": "rerank5-spec-fast",
+      "model": "Cohere Rerank 5 Fast",
+      "provider": "Cohere",
+      "source_url": "https://docs.cohere.com/docs/rerank",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "Rerank 5 / 2026-10-21",
+        "condition": "질문+개별문서32768토큰,API기본문서별4096잘림과구분. 텍스트전용/100+언어. ContextFocus기본꺼짐;API명시지원/파트너동등성미확인. 과업지시변경미지원.",
+        "context": 32768,
+        "parameters": "약500M",
+        "모델 ID": "rerank-v5.0-fast",
+        "입력": "텍스트/YAML문자열",
+        "출력": "문서순위/관련도/선택문자구절",
+        "access": "API / Model Vault / Foundry / SageMaker / North / 사내배포상담",
+        "status": "공식 제공"
+      }
+    },
+    {
+      "id": "rerank5-price-fast",
+      "model": "Cohere Rerank 5 Fast",
+      "provider": "Cohere",
+      "source_url": "https://cohere.com/blog/rerank-5",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 표준 요금",
+        "suite": "Rerank 5 USD per 1M input tokens",
+        "condition": "21일출시글/27KST확인. API참조billed_units.input_tokens;검색천건단가/생성출력단가아님. 전용배포가격/실청구미확인.",
+        "입력 USD / 100만 토큰": 0.02,
+        "단위": "USD / 1M input tokens"
+      }
+    },
+    {
+      "id": "rerank5-multilingual-0-0",
+      "model": "Cohere Rerank 5 Pro",
+      "provider": "Cohere",
+      "source_url": "https://cohere.com/blog/rerank-5",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "Cohere internal Korean RCP-nDCG@10",
+        "condition": "Cohere21일내부다국어평가표/27KST확인. 전체20언어74데이터셋중선택언어. 언어별표본수/고정Harness판미확인. 공급자가경쟁모델도측정. 일반nDCG/독립평가와합산불가.",
+        "평가 점수": 91.8,
+        "평가 항목": "Cohere internal Korean RCP-nDCG@10",
+        "단위": "RCP-nDCG@10; 0–100 ↑",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "Cohere Rerank 5 Pro / Cohere internal Korean RCP-nDCG@10"
+      }
+    },
+    {
+      "id": "rerank5-multilingual-0-1",
+      "model": "Cohere Rerank 5 Pro",
+      "provider": "Cohere",
+      "source_url": "https://cohere.com/blog/rerank-5",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "Cohere internal Japanese RCP-nDCG@10",
+        "condition": "Cohere21일내부다국어평가표/27KST확인. 전체20언어74데이터셋중선택언어. 언어별표본수/고정Harness판미확인. 공급자가경쟁모델도측정. 일반nDCG/독립평가와합산불가.",
+        "평가 점수": 89.4,
+        "평가 항목": "Cohere internal Japanese RCP-nDCG@10",
+        "단위": "RCP-nDCG@10; 0–100 ↑",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "Cohere Rerank 5 Pro / Cohere internal Japanese RCP-nDCG@10"
+      }
+    },
+    {
+      "id": "rerank5-multilingual-0-2",
+      "model": "Cohere Rerank 5 Pro",
+      "provider": "Cohere",
+      "source_url": "https://cohere.com/blog/rerank-5",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "Cohere internal Arabic RCP-nDCG@10",
+        "condition": "Cohere21일내부다국어평가표/27KST확인. 전체20언어74데이터셋중선택언어. 언어별표본수/고정Harness판미확인. 공급자가경쟁모델도측정. 일반nDCG/독립평가와합산불가.",
+        "평가 점수": 89.7,
+        "평가 항목": "Cohere internal Arabic RCP-nDCG@10",
+        "단위": "RCP-nDCG@10; 0–100 ↑",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "Cohere Rerank 5 Pro / Cohere internal Arabic RCP-nDCG@10"
+      }
+    },
+    {
+      "id": "rerank5-multilingual-0-3",
+      "model": "Cohere Rerank 5 Pro",
+      "provider": "Cohere",
+      "source_url": "https://cohere.com/blog/rerank-5",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "Cohere internal German RCP-nDCG@10",
+        "condition": "Cohere21일내부다국어평가표/27KST확인. 전체20언어74데이터셋중선택언어. 언어별표본수/고정Harness판미확인. 공급자가경쟁모델도측정. 일반nDCG/독립평가와합산불가.",
+        "평가 점수": 90.6,
+        "평가 항목": "Cohere internal German RCP-nDCG@10",
+        "단위": "RCP-nDCG@10; 0–100 ↑",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "Cohere Rerank 5 Pro / Cohere internal German RCP-nDCG@10"
+      }
+    },
+    {
+      "id": "rerank5-multilingual-1-0",
+      "model": "Cohere Rerank 5 Fast",
+      "provider": "Cohere",
+      "source_url": "https://cohere.com/blog/rerank-5",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "Cohere internal Korean RCP-nDCG@10",
+        "condition": "Cohere21일내부다국어평가표/27KST확인. 전체20언어74데이터셋중선택언어. 언어별표본수/고정Harness판미확인. 공급자가경쟁모델도측정. 일반nDCG/독립평가와합산불가.",
+        "평가 점수": 89.9,
+        "평가 항목": "Cohere internal Korean RCP-nDCG@10",
+        "단위": "RCP-nDCG@10; 0–100 ↑",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "Cohere Rerank 5 Fast / Cohere internal Korean RCP-nDCG@10"
+      }
+    },
+    {
+      "id": "rerank5-multilingual-1-1",
+      "model": "Cohere Rerank 5 Fast",
+      "provider": "Cohere",
+      "source_url": "https://cohere.com/blog/rerank-5",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "Cohere internal Japanese RCP-nDCG@10",
+        "condition": "Cohere21일내부다국어평가표/27KST확인. 전체20언어74데이터셋중선택언어. 언어별표본수/고정Harness판미확인. 공급자가경쟁모델도측정. 일반nDCG/독립평가와합산불가.",
+        "평가 점수": 86.8,
+        "평가 항목": "Cohere internal Japanese RCP-nDCG@10",
+        "단위": "RCP-nDCG@10; 0–100 ↑",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "Cohere Rerank 5 Fast / Cohere internal Japanese RCP-nDCG@10"
+      }
+    },
+    {
+      "id": "rerank5-multilingual-1-2",
+      "model": "Cohere Rerank 5 Fast",
+      "provider": "Cohere",
+      "source_url": "https://cohere.com/blog/rerank-5",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "Cohere internal Arabic RCP-nDCG@10",
+        "condition": "Cohere21일내부다국어평가표/27KST확인. 전체20언어74데이터셋중선택언어. 언어별표본수/고정Harness판미확인. 공급자가경쟁모델도측정. 일반nDCG/독립평가와합산불가.",
+        "평가 점수": 86.5,
+        "평가 항목": "Cohere internal Arabic RCP-nDCG@10",
+        "단위": "RCP-nDCG@10; 0–100 ↑",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "Cohere Rerank 5 Fast / Cohere internal Arabic RCP-nDCG@10"
+      }
+    },
+    {
+      "id": "rerank5-multilingual-1-3",
+      "model": "Cohere Rerank 5 Fast",
+      "provider": "Cohere",
+      "source_url": "https://cohere.com/blog/rerank-5",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "Cohere internal German RCP-nDCG@10",
+        "condition": "Cohere21일내부다국어평가표/27KST확인. 전체20언어74데이터셋중선택언어. 언어별표본수/고정Harness판미확인. 공급자가경쟁모델도측정. 일반nDCG/독립평가와합산불가.",
+        "평가 점수": 88.6,
+        "평가 항목": "Cohere internal German RCP-nDCG@10",
+        "단위": "RCP-nDCG@10; 0–100 ↑",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "Cohere Rerank 5 Fast / Cohere internal German RCP-nDCG@10"
+      }
+    },
+    {
+      "id": "rerank5-multilingual-2-0",
+      "model": "Cohere Rerank 4 Pro",
+      "provider": "Cohere",
+      "source_url": "https://cohere.com/blog/rerank-5",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "Cohere internal Korean RCP-nDCG@10",
+        "condition": "Cohere21일내부다국어평가표/27KST확인. 전체20언어74데이터셋중선택언어. 언어별표본수/고정Harness판미확인. 공급자가경쟁모델도측정. 일반nDCG/독립평가와합산불가.",
+        "평가 점수": 89.8,
+        "평가 항목": "Cohere internal Korean RCP-nDCG@10",
+        "단위": "RCP-nDCG@10; 0–100 ↑",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "Cohere Rerank 4 Pro / Cohere internal Korean RCP-nDCG@10"
+      }
+    },
+    {
+      "id": "rerank5-multilingual-2-1",
+      "model": "Cohere Rerank 4 Pro",
+      "provider": "Cohere",
+      "source_url": "https://cohere.com/blog/rerank-5",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "Cohere internal Japanese RCP-nDCG@10",
+        "condition": "Cohere21일내부다국어평가표/27KST확인. 전체20언어74데이터셋중선택언어. 언어별표본수/고정Harness판미확인. 공급자가경쟁모델도측정. 일반nDCG/독립평가와합산불가.",
+        "평가 점수": 89.3,
+        "평가 항목": "Cohere internal Japanese RCP-nDCG@10",
+        "단위": "RCP-nDCG@10; 0–100 ↑",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "Cohere Rerank 4 Pro / Cohere internal Japanese RCP-nDCG@10"
+      }
+    },
+    {
+      "id": "rerank5-multilingual-2-2",
+      "model": "Cohere Rerank 4 Pro",
+      "provider": "Cohere",
+      "source_url": "https://cohere.com/blog/rerank-5",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "Cohere internal Arabic RCP-nDCG@10",
+        "condition": "Cohere21일내부다국어평가표/27KST확인. 전체20언어74데이터셋중선택언어. 언어별표본수/고정Harness판미확인. 공급자가경쟁모델도측정. 일반nDCG/독립평가와합산불가.",
+        "평가 점수": 87.5,
+        "평가 항목": "Cohere internal Arabic RCP-nDCG@10",
+        "단위": "RCP-nDCG@10; 0–100 ↑",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "Cohere Rerank 4 Pro / Cohere internal Arabic RCP-nDCG@10"
+      }
+    },
+    {
+      "id": "rerank5-multilingual-2-3",
+      "model": "Cohere Rerank 4 Pro",
+      "provider": "Cohere",
+      "source_url": "https://cohere.com/blog/rerank-5",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "Cohere internal German RCP-nDCG@10",
+        "condition": "Cohere21일내부다국어평가표/27KST확인. 전체20언어74데이터셋중선택언어. 언어별표본수/고정Harness판미확인. 공급자가경쟁모델도측정. 일반nDCG/독립평가와합산불가.",
+        "평가 점수": 88.6,
+        "평가 항목": "Cohere internal German RCP-nDCG@10",
+        "단위": "RCP-nDCG@10; 0–100 ↑",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "Cohere Rerank 4 Pro / Cohere internal German RCP-nDCG@10"
+      }
+    },
+    {
+      "id": "rerank5-multilingual-3-0",
+      "model": "Voyage AI Rerank 3",
+      "provider": "Voyage AI",
+      "source_url": "https://cohere.com/blog/rerank-5",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "Cohere internal Korean RCP-nDCG@10",
+        "condition": "Cohere21일내부다국어평가표/27KST확인. 전체20언어74데이터셋중선택언어. 언어별표본수/고정Harness판미확인. 공급자가경쟁모델도측정. 일반nDCG/독립평가와합산불가.",
+        "평가 점수": 89.9,
+        "평가 항목": "Cohere internal Korean RCP-nDCG@10",
+        "단위": "RCP-nDCG@10; 0–100 ↑",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "Voyage AI Rerank 3 / Cohere internal Korean RCP-nDCG@10"
+      }
+    },
+    {
+      "id": "rerank5-multilingual-3-1",
+      "model": "Voyage AI Rerank 3",
+      "provider": "Voyage AI",
+      "source_url": "https://cohere.com/blog/rerank-5",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "Cohere internal Japanese RCP-nDCG@10",
+        "condition": "Cohere21일내부다국어평가표/27KST확인. 전체20언어74데이터셋중선택언어. 언어별표본수/고정Harness판미확인. 공급자가경쟁모델도측정. 일반nDCG/독립평가와합산불가.",
+        "평가 점수": 86.7,
+        "평가 항목": "Cohere internal Japanese RCP-nDCG@10",
+        "단위": "RCP-nDCG@10; 0–100 ↑",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "Voyage AI Rerank 3 / Cohere internal Japanese RCP-nDCG@10"
+      }
+    },
+    {
+      "id": "rerank5-multilingual-3-2",
+      "model": "Voyage AI Rerank 3",
+      "provider": "Voyage AI",
+      "source_url": "https://cohere.com/blog/rerank-5",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "Cohere internal Arabic RCP-nDCG@10",
+        "condition": "Cohere21일내부다국어평가표/27KST확인. 전체20언어74데이터셋중선택언어. 언어별표본수/고정Harness판미확인. 공급자가경쟁모델도측정. 일반nDCG/독립평가와합산불가.",
+        "평가 점수": 87.4,
+        "평가 항목": "Cohere internal Arabic RCP-nDCG@10",
+        "단위": "RCP-nDCG@10; 0–100 ↑",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "Voyage AI Rerank 3 / Cohere internal Arabic RCP-nDCG@10"
+      }
+    },
+    {
+      "id": "rerank5-multilingual-3-3",
+      "model": "Voyage AI Rerank 3",
+      "provider": "Voyage AI",
+      "source_url": "https://cohere.com/blog/rerank-5",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "Cohere internal German RCP-nDCG@10",
+        "condition": "Cohere21일내부다국어평가표/27KST확인. 전체20언어74데이터셋중선택언어. 언어별표본수/고정Harness판미확인. 공급자가경쟁모델도측정. 일반nDCG/독립평가와합산불가.",
+        "평가 점수": 89.4,
+        "평가 항목": "Cohere internal German RCP-nDCG@10",
+        "단위": "RCP-nDCG@10; 0–100 ↑",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "Voyage AI Rerank 3 / Cohere internal German RCP-nDCG@10"
+      }
+    },
+    {
+      "id": "rerank5-multilingual-4-0",
+      "model": "Voyage AI Rerank 3 Lite",
+      "provider": "Voyage AI",
+      "source_url": "https://cohere.com/blog/rerank-5",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "Cohere internal Korean RCP-nDCG@10",
+        "condition": "Cohere21일내부다국어평가표/27KST확인. 전체20언어74데이터셋중선택언어. 언어별표본수/고정Harness판미확인. 공급자가경쟁모델도측정. 일반nDCG/독립평가와합산불가.",
+        "평가 점수": 86.6,
+        "평가 항목": "Cohere internal Korean RCP-nDCG@10",
+        "단위": "RCP-nDCG@10; 0–100 ↑",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "Voyage AI Rerank 3 Lite / Cohere internal Korean RCP-nDCG@10"
+      }
+    },
+    {
+      "id": "rerank5-multilingual-4-1",
+      "model": "Voyage AI Rerank 3 Lite",
+      "provider": "Voyage AI",
+      "source_url": "https://cohere.com/blog/rerank-5",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "Cohere internal Japanese RCP-nDCG@10",
+        "condition": "Cohere21일내부다국어평가표/27KST확인. 전체20언어74데이터셋중선택언어. 언어별표본수/고정Harness판미확인. 공급자가경쟁모델도측정. 일반nDCG/독립평가와합산불가.",
+        "평가 점수": 83.8,
+        "평가 항목": "Cohere internal Japanese RCP-nDCG@10",
+        "단위": "RCP-nDCG@10; 0–100 ↑",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "Voyage AI Rerank 3 Lite / Cohere internal Japanese RCP-nDCG@10"
+      }
+    },
+    {
+      "id": "rerank5-multilingual-4-2",
+      "model": "Voyage AI Rerank 3 Lite",
+      "provider": "Voyage AI",
+      "source_url": "https://cohere.com/blog/rerank-5",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "Cohere internal Arabic RCP-nDCG@10",
+        "condition": "Cohere21일내부다국어평가표/27KST확인. 전체20언어74데이터셋중선택언어. 언어별표본수/고정Harness판미확인. 공급자가경쟁모델도측정. 일반nDCG/독립평가와합산불가.",
+        "평가 점수": 82.0,
+        "평가 항목": "Cohere internal Arabic RCP-nDCG@10",
+        "단위": "RCP-nDCG@10; 0–100 ↑",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "Voyage AI Rerank 3 Lite / Cohere internal Arabic RCP-nDCG@10"
+      }
+    },
+    {
+      "id": "rerank5-multilingual-4-3",
+      "model": "Voyage AI Rerank 3 Lite",
+      "provider": "Voyage AI",
+      "source_url": "https://cohere.com/blog/rerank-5",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "Cohere internal German RCP-nDCG@10",
+        "condition": "Cohere21일내부다국어평가표/27KST확인. 전체20언어74데이터셋중선택언어. 언어별표본수/고정Harness판미확인. 공급자가경쟁모델도측정. 일반nDCG/독립평가와합산불가.",
+        "평가 점수": 86.3,
+        "평가 항목": "Cohere internal German RCP-nDCG@10",
+        "단위": "RCP-nDCG@10; 0–100 ↑",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "Voyage AI Rerank 3 Lite / Cohere internal German RCP-nDCG@10"
+      }
+    },
+    {
+      "id": "rerank5-multilingual-5-0",
+      "model": "Qwen3-Reranker-8B",
+      "provider": "Alibaba",
+      "source_url": "https://cohere.com/blog/rerank-5",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "Cohere internal Korean RCP-nDCG@10",
+        "condition": "Cohere21일내부다국어평가표/27KST확인. 전체20언어74데이터셋중선택언어. 언어별표본수/고정Harness판미확인. 공급자가경쟁모델도측정. 일반nDCG/독립평가와합산불가.",
+        "평가 점수": 88.0,
+        "평가 항목": "Cohere internal Korean RCP-nDCG@10",
+        "단위": "RCP-nDCG@10; 0–100 ↑",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "Qwen3-Reranker-8B / Cohere internal Korean RCP-nDCG@10"
+      }
+    },
+    {
+      "id": "rerank5-multilingual-5-1",
+      "model": "Qwen3-Reranker-8B",
+      "provider": "Alibaba",
+      "source_url": "https://cohere.com/blog/rerank-5",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "Cohere internal Japanese RCP-nDCG@10",
+        "condition": "Cohere21일내부다국어평가표/27KST확인. 전체20언어74데이터셋중선택언어. 언어별표본수/고정Harness판미확인. 공급자가경쟁모델도측정. 일반nDCG/독립평가와합산불가.",
+        "평가 점수": 85.9,
+        "평가 항목": "Cohere internal Japanese RCP-nDCG@10",
+        "단위": "RCP-nDCG@10; 0–100 ↑",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "Qwen3-Reranker-8B / Cohere internal Japanese RCP-nDCG@10"
+      }
+    },
+    {
+      "id": "rerank5-multilingual-5-2",
+      "model": "Qwen3-Reranker-8B",
+      "provider": "Alibaba",
+      "source_url": "https://cohere.com/blog/rerank-5",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "Cohere internal Arabic RCP-nDCG@10",
+        "condition": "Cohere21일내부다국어평가표/27KST확인. 전체20언어74데이터셋중선택언어. 언어별표본수/고정Harness판미확인. 공급자가경쟁모델도측정. 일반nDCG/독립평가와합산불가.",
+        "평가 점수": 84.4,
+        "평가 항목": "Cohere internal Arabic RCP-nDCG@10",
+        "단위": "RCP-nDCG@10; 0–100 ↑",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "Qwen3-Reranker-8B / Cohere internal Arabic RCP-nDCG@10"
+      }
+    },
+    {
+      "id": "rerank5-multilingual-5-3",
+      "model": "Qwen3-Reranker-8B",
+      "provider": "Alibaba",
+      "source_url": "https://cohere.com/blog/rerank-5",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "Cohere internal German RCP-nDCG@10",
+        "condition": "Cohere21일내부다국어평가표/27KST확인. 전체20언어74데이터셋중선택언어. 언어별표본수/고정Harness판미확인. 공급자가경쟁모델도측정. 일반nDCG/독립평가와합산불가.",
+        "평가 점수": 86.2,
+        "평가 항목": "Cohere internal German RCP-nDCG@10",
+        "단위": "RCP-nDCG@10; 0–100 ↑",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "Qwen3-Reranker-8B / Cohere internal German RCP-nDCG@10"
+      }
+    },
+    {
+      "id": "rerank5-multilingual-6-0",
+      "model": "Qwen3-Reranker-0.6B",
+      "provider": "Alibaba",
+      "source_url": "https://cohere.com/blog/rerank-5",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "Cohere internal Korean RCP-nDCG@10",
+        "condition": "Cohere21일내부다국어평가표/27KST확인. 전체20언어74데이터셋중선택언어. 언어별표본수/고정Harness판미확인. 공급자가경쟁모델도측정. 일반nDCG/독립평가와합산불가.",
+        "평가 점수": 80.8,
+        "평가 항목": "Cohere internal Korean RCP-nDCG@10",
+        "단위": "RCP-nDCG@10; 0–100 ↑",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "Qwen3-Reranker-0.6B / Cohere internal Korean RCP-nDCG@10"
+      }
+    },
+    {
+      "id": "rerank5-multilingual-6-1",
+      "model": "Qwen3-Reranker-0.6B",
+      "provider": "Alibaba",
+      "source_url": "https://cohere.com/blog/rerank-5",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "Cohere internal Japanese RCP-nDCG@10",
+        "condition": "Cohere21일내부다국어평가표/27KST확인. 전체20언어74데이터셋중선택언어. 언어별표본수/고정Harness판미확인. 공급자가경쟁모델도측정. 일반nDCG/독립평가와합산불가.",
+        "평가 점수": 78.6,
+        "평가 항목": "Cohere internal Japanese RCP-nDCG@10",
+        "단위": "RCP-nDCG@10; 0–100 ↑",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "Qwen3-Reranker-0.6B / Cohere internal Japanese RCP-nDCG@10"
+      }
+    },
+    {
+      "id": "rerank5-multilingual-6-2",
+      "model": "Qwen3-Reranker-0.6B",
+      "provider": "Alibaba",
+      "source_url": "https://cohere.com/blog/rerank-5",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "Cohere internal Arabic RCP-nDCG@10",
+        "condition": "Cohere21일내부다국어평가표/27KST확인. 전체20언어74데이터셋중선택언어. 언어별표본수/고정Harness판미확인. 공급자가경쟁모델도측정. 일반nDCG/독립평가와합산불가.",
+        "평가 점수": 74.6,
+        "평가 항목": "Cohere internal Arabic RCP-nDCG@10",
+        "단위": "RCP-nDCG@10; 0–100 ↑",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "Qwen3-Reranker-0.6B / Cohere internal Arabic RCP-nDCG@10"
+      }
+    },
+    {
+      "id": "rerank5-multilingual-6-3",
+      "model": "Qwen3-Reranker-0.6B",
+      "provider": "Alibaba",
+      "source_url": "https://cohere.com/blog/rerank-5",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "Cohere internal German RCP-nDCG@10",
+        "condition": "Cohere21일내부다국어평가표/27KST확인. 전체20언어74데이터셋중선택언어. 언어별표본수/고정Harness판미확인. 공급자가경쟁모델도측정. 일반nDCG/독립평가와합산불가.",
+        "평가 점수": 78.0,
+        "평가 항목": "Cohere internal German RCP-nDCG@10",
+        "단위": "RCP-nDCG@10; 0–100 ↑",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "Qwen3-Reranker-0.6B / Cohere internal German RCP-nDCG@10"
+      }
+    },
+    {
+      "id": "rerank5-pdf-0",
+      "model": "Cohere Rerank 5 Pro",
+      "provider": "Cohere",
+      "source_url": "https://cohere.com/blog/rerank-5",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "Cohere parsed PDF RCP-nDCG@10",
+        "condition": "Cohere21일발표/27KST확인. 47데이터셋평균;Gemini1.5Flash로PDF파싱. 원본이미지직접입력평가아님. 고정Harness/가중치commit미확인.",
+        "평가 점수": 89.9,
+        "평가 항목": "Cohere parsed PDF RCP-nDCG@10",
+        "단위": "RCP-nDCG@10; 0–100 ↑",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "Cohere Rerank 5 Pro / Cohere parsed PDF RCP-nDCG@10"
+      }
+    },
+    {
+      "id": "rerank5-pdf-1",
+      "model": "Cohere Rerank 5 Fast",
+      "provider": "Cohere",
+      "source_url": "https://cohere.com/blog/rerank-5",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "Cohere parsed PDF RCP-nDCG@10",
+        "condition": "Cohere21일발표/27KST확인. 47데이터셋평균;Gemini1.5Flash로PDF파싱. 원본이미지직접입력평가아님. 고정Harness/가중치commit미확인.",
+        "평가 점수": 88.5,
+        "평가 항목": "Cohere parsed PDF RCP-nDCG@10",
+        "단위": "RCP-nDCG@10; 0–100 ↑",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "Cohere Rerank 5 Fast / Cohere parsed PDF RCP-nDCG@10"
+      }
+    },
+    {
+      "id": "rerank5-pdf-2",
+      "model": "Cohere Rerank 4 Pro",
+      "provider": "Cohere",
+      "source_url": "https://cohere.com/blog/rerank-5",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "Cohere parsed PDF RCP-nDCG@10",
+        "condition": "Cohere21일발표/27KST확인. 47데이터셋평균;Gemini1.5Flash로PDF파싱. 원본이미지직접입력평가아님. 고정Harness/가중치commit미확인.",
+        "평가 점수": 88.3,
+        "평가 항목": "Cohere parsed PDF RCP-nDCG@10",
+        "단위": "RCP-nDCG@10; 0–100 ↑",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "Cohere Rerank 4 Pro / Cohere parsed PDF RCP-nDCG@10"
+      }
+    },
+    {
+      "id": "rerank5-pdf-3",
+      "model": "Voyage AI Rerank 3",
+      "provider": "Voyage AI",
+      "source_url": "https://cohere.com/blog/rerank-5",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "Cohere parsed PDF RCP-nDCG@10",
+        "condition": "Cohere21일발표/27KST확인. 47데이터셋평균;Gemini1.5Flash로PDF파싱. 원본이미지직접입력평가아님. 고정Harness/가중치commit미확인.",
+        "평가 점수": 88.4,
+        "평가 항목": "Cohere parsed PDF RCP-nDCG@10",
+        "단위": "RCP-nDCG@10; 0–100 ↑",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "Voyage AI Rerank 3 / Cohere parsed PDF RCP-nDCG@10"
+      }
+    },
+    {
+      "id": "rerank5-ece-0-0",
+      "model": "Cohere Rerank 5 Pro",
+      "provider": "Cohere",
+      "source_url": "https://cohere.com/blog/rerank-5",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "Cohere calibration ECE / Humans",
+        "condition": "Cohere제공자평가. 사람2262문서Useful이상/5단계평균 또는NISTTREC-DL20646문서grade2이상. 10점수구간가중보정차이;검색정확도%아님. 판정집합독립과공급자실험독립은다름.",
+        "평가 점수": 0.058,
+        "평가 항목": "Cohere calibration ECE / Humans",
+        "단위": "ECE 0–1; lower ↓",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "Cohere Rerank 5 Pro / Cohere calibration ECE / Humans"
+      }
+    },
+    {
+      "id": "rerank5-ece-0-1",
+      "model": "Cohere Rerank 5 Pro",
+      "provider": "Cohere",
+      "source_url": "https://cohere.com/blog/rerank-5",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "Cohere calibration ECE / NIST",
+        "condition": "Cohere제공자평가. 사람2262문서Useful이상/5단계평균 또는NISTTREC-DL20646문서grade2이상. 10점수구간가중보정차이;검색정확도%아님. 판정집합독립과공급자실험독립은다름.",
+        "평가 점수": 0.057,
+        "평가 항목": "Cohere calibration ECE / NIST",
+        "단위": "ECE 0–1; lower ↓",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "Cohere Rerank 5 Pro / Cohere calibration ECE / NIST"
+      }
+    },
+    {
+      "id": "rerank5-ece-1-0",
+      "model": "Cohere Rerank 5 Fast",
+      "provider": "Cohere",
+      "source_url": "https://cohere.com/blog/rerank-5",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "Cohere calibration ECE / Humans",
+        "condition": "Cohere제공자평가. 사람2262문서Useful이상/5단계평균 또는NISTTREC-DL20646문서grade2이상. 10점수구간가중보정차이;검색정확도%아님. 판정집합독립과공급자실험독립은다름.",
+        "평가 점수": 0.058,
+        "평가 항목": "Cohere calibration ECE / Humans",
+        "단위": "ECE 0–1; lower ↓",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "Cohere Rerank 5 Fast / Cohere calibration ECE / Humans"
+      }
+    },
+    {
+      "id": "rerank5-ece-1-1",
+      "model": "Cohere Rerank 5 Fast",
+      "provider": "Cohere",
+      "source_url": "https://cohere.com/blog/rerank-5",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "Cohere calibration ECE / NIST",
+        "condition": "Cohere제공자평가. 사람2262문서Useful이상/5단계평균 또는NISTTREC-DL20646문서grade2이상. 10점수구간가중보정차이;검색정확도%아님. 판정집합독립과공급자실험독립은다름.",
+        "평가 점수": 0.058,
+        "평가 항목": "Cohere calibration ECE / NIST",
+        "단위": "ECE 0–1; lower ↓",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "Cohere Rerank 5 Fast / Cohere calibration ECE / NIST"
+      }
+    },
+    {
+      "id": "rerank5-ece-2-0",
+      "model": "Cohere Rerank 4 Pro",
+      "provider": "Cohere",
+      "source_url": "https://cohere.com/blog/rerank-5",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "Cohere calibration ECE / Humans",
+        "condition": "Cohere제공자평가. 사람2262문서Useful이상/5단계평균 또는NISTTREC-DL20646문서grade2이상. 10점수구간가중보정차이;검색정확도%아님. 판정집합독립과공급자실험독립은다름.",
+        "평가 점수": 0.384,
+        "평가 항목": "Cohere calibration ECE / Humans",
+        "단위": "ECE 0–1; lower ↓",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "Cohere Rerank 4 Pro / Cohere calibration ECE / Humans"
+      }
+    },
+    {
+      "id": "rerank5-ece-2-1",
+      "model": "Cohere Rerank 4 Pro",
+      "provider": "Cohere",
+      "source_url": "https://cohere.com/blog/rerank-5",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "Cohere calibration ECE / NIST",
+        "condition": "Cohere제공자평가. 사람2262문서Useful이상/5단계평균 또는NISTTREC-DL20646문서grade2이상. 10점수구간가중보정차이;검색정확도%아님. 판정집합독립과공급자실험독립은다름.",
+        "평가 점수": 0.309,
+        "평가 항목": "Cohere calibration ECE / NIST",
+        "단위": "ECE 0–1; lower ↓",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "Cohere Rerank 4 Pro / Cohere calibration ECE / NIST"
+      }
+    },
+    {
+      "id": "rerank5-ece-3-0",
+      "model": "Voyage AI Rerank 3",
+      "provider": "Voyage AI",
+      "source_url": "https://cohere.com/blog/rerank-5",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "Cohere calibration ECE / Humans",
+        "condition": "Cohere제공자평가. 사람2262문서Useful이상/5단계평균 또는NISTTREC-DL20646문서grade2이상. 10점수구간가중보정차이;검색정확도%아님. 판정집합독립과공급자실험독립은다름.",
+        "평가 점수": 0.234,
+        "평가 항목": "Cohere calibration ECE / Humans",
+        "단위": "ECE 0–1; lower ↓",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "Voyage AI Rerank 3 / Cohere calibration ECE / Humans"
+      }
+    },
+    {
+      "id": "rerank5-ece-3-1",
+      "model": "Voyage AI Rerank 3",
+      "provider": "Voyage AI",
+      "source_url": "https://cohere.com/blog/rerank-5",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "Cohere calibration ECE / NIST",
+        "condition": "Cohere제공자평가. 사람2262문서Useful이상/5단계평균 또는NISTTREC-DL20646문서grade2이상. 10점수구간가중보정차이;검색정확도%아님. 판정집합독립과공급자실험독립은다름.",
+        "평가 점수": 0.307,
+        "평가 항목": "Cohere calibration ECE / NIST",
+        "단위": "ECE 0–1; lower ↓",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "Voyage AI Rerank 3 / Cohere calibration ECE / NIST"
+      }
+    },
+    {
+      "id": "rerank5-ece-4-0",
+      "model": "Voyage AI Rerank 3 Lite",
+      "provider": "Voyage AI",
+      "source_url": "https://cohere.com/blog/rerank-5",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "Cohere calibration ECE / Humans",
+        "condition": "Cohere제공자평가. 사람2262문서Useful이상/5단계평균 또는NISTTREC-DL20646문서grade2이상. 10점수구간가중보정차이;검색정확도%아님. 판정집합독립과공급자실험독립은다름.",
+        "평가 점수": 0.226,
+        "평가 항목": "Cohere calibration ECE / Humans",
+        "단위": "ECE 0–1; lower ↓",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "Voyage AI Rerank 3 Lite / Cohere calibration ECE / Humans"
+      }
+    },
+    {
+      "id": "rerank5-ece-4-1",
+      "model": "Voyage AI Rerank 3 Lite",
+      "provider": "Voyage AI",
+      "source_url": "https://cohere.com/blog/rerank-5",
+      "checked_on": "2026-10-27",
+      "fields": {
+        "kind": "공식 제공자 공개 평가",
+        "suite": "Cohere calibration ECE / NIST",
+        "condition": "Cohere제공자평가. 사람2262문서Useful이상/5단계평균 또는NISTTREC-DL20646문서grade2이상. 10점수구간가중보정차이;검색정확도%아님. 판정집합독립과공급자실험독립은다름.",
+        "평가 점수": 0.325,
+        "평가 항목": "Cohere calibration ECE / NIST",
+        "단위": "ECE 0–1; lower ↓",
+        "측정 주체": "해당 공식 제공자 공개 비교; 독립 재현 아님",
+        "label": "Voyage AI Rerank 3 Lite / Cohere calibration ECE / NIST"
+      }
+    }
+  ]
+}
