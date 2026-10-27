@@ -80,6 +80,49 @@ class ModelLedgerTests(unittest.TestCase):
         self.assertEqual(result["retained"],1)
         self.assertEqual(len(export_model_ledger(self.conn)["records"]),6)
 
+    def test_row_verification_date_overrides_bundle_date_without_redating_peers(self):
+        for source, key, kind in (("availability", "models", "availability"),
+                                  ("models", "records", "model"),
+                                  ("agents", "records", "agent"),
+                                  ("cursor", "records", "cursor")):
+            with self.subTest(source=source):
+                self.bodies = bundle()
+                before = self.rows()
+                doc = json.loads(self.bodies[source])
+                doc[key][0]["verifiedAt"] = "2026-10-27"
+                self.bodies[source] = json.dumps(doc).encode()
+                after = self.rows()
+                target = next(row for row in after if row["source_kind"] == kind)
+                self.assertEqual(target["checked_on"], "2026-10-27")
+                original = next(row for row in before if row["id"] == target["id"])
+                self.assertEqual(original["checked_on"], "2026-10-07")
+                self.assertEqual([row for row in before if row["id"] != target["id"]],
+                                 [row for row in after if row["id"] != target["id"]])
+                # A declared unknown date stays unknown; a missing row date still
+                # inherits the legacy envelope, never today's acquisition date.
+                doc[key][0]["verifiedAt"] = ""
+                self.bodies[source] = json.dumps(doc).encode()
+                self.assertEqual(next(row for row in self.rows() if row["id"] == target["id"])["checked_on"], "")
+                doc[key][0]["verifiedAt"] = "not-a-date"
+                self.bodies[source] = json.dumps(doc).encode()
+                with self.assertRaises(ValueError):
+                    self.rows()
+
+    def test_date_correction_keeps_identity_values_and_prior_edition(self):
+        before = self.rows()
+        upsert_model_observations(self.conn, before, "2026-10-28T00:00:00Z")
+        doc = json.loads(self.bodies["models"])
+        doc["records"][0]["verifiedAt"] = "2026-10-27"
+        self.bodies["models"] = json.dumps(doc).encode()
+        after = self.rows()
+        result = upsert_model_observations(self.conn, after, "2026-10-28T01:00:00Z")
+        self.assertEqual((result["inserted"], result["updated"], result["unchanged"]), (0, 1, 5))
+        target = next(row for row in after if row["source_kind"] == "model")
+        history = sorted((row for row in export_model_ledger(self.conn)["history"] if row["id"] == target["id"]), key=lambda row: row["revision"])
+        self.assertEqual([row["checked_on"] for row in history], ["2026-10-07", "2026-10-27"])
+        self.assertEqual(history[0]["fields"], history[1]["fields"])
+        self.assertEqual(upsert_model_observations(self.conn, after)["unchanged"], 6)
+
     def test_new_suite_retains_previous_evaluation(self):
         upsert_model_observations(self.conn,self.rows())
         model=json.loads(self.bodies["models"])

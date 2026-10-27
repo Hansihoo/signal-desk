@@ -1,0 +1,1245 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "id": "lfm3-0-spec-20261027",
+      "model": "LFM3-1.7B",
+      "provider": "Liquid AI",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-1.7B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "LFM3 2026-10-27",
+        "condition": "복잡한 에이전트 코딩과 다단계 추론 비권장; 모델 카드28KST확인. 실제 한국어/장치 미측정.",
+        "parameters": 1.73,
+        "context": 262144,
+        "access": "공개 가중치 / 모델별 런타임",
+        "status": "가중치 공개",
+        "모델 ID": "LiquidAI/LFM3-1.7B",
+        "입출력": "텍스트 → 텍스트",
+        "표준 API 단가": "새 개별 모델 요금 미확인",
+        "라이선스": "LFM Open License v1.0; 연매출 문턱과 상업 사용 제한"
+      }
+    },
+    {
+      "id": "lfm3-1-spec-20261027",
+      "model": "LFM3-VL-2B",
+      "provider": "Liquid AI",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-VL-2B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "LFM3 2026-10-27",
+        "condition": "영상 2fps; 코딩, 긴 다중 대화와 복잡 추론 비권장; 모델 카드28KST확인. 실제 한국어/장치 미측정.",
+        "parameters": 1.92,
+        "context": 131072,
+        "access": "공개 가중치 / 모델별 런타임",
+        "status": "가중치 공개",
+        "모델 ID": "LiquidAI/LFM3-VL-2B",
+        "입출력": "텍스트, 이미지, 영상 → 텍스트",
+        "표준 API 단가": "새 개별 모델 요금 미확인",
+        "라이선스": "LFM Open License v1.0; 연매출 문턱과 상업 사용 제한"
+      }
+    },
+    {
+      "id": "lfm3-2-spec-20261027",
+      "model": "LFM3-Audio-2B",
+      "provider": "Liquid AI",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-Audio-2B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "LFM3 2026-10-27",
+        "condition": "언어별 인식 및 발화 조건이 다름; 모델 카드28KST확인. 실제 한국어/장치 미측정.",
+        "parameters": 2,
+        "context": 32768,
+        "access": "공개 가중치 / 모델별 런타임",
+        "status": "가중치 공개",
+        "모델 ID": "LiquidAI/LFM3-Audio-2B",
+        "입출력": "텍스트, 16kHz 음성 → 텍스트, 24kHz 음성",
+        "표준 API 단가": "새 개별 모델 요금 미확인",
+        "라이선스": "LFM Open License v1.0; 연매출 문턱과 상업 사용 제한"
+      }
+    },
+    {
+      "id": "lfm3-3-spec-20261027",
+      "model": "LFM3-Omni-2B",
+      "provider": "Liquid AI",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-Omni-2B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "LFM3 2026-10-27",
+        "condition": "비추론 모델; enable_thinking 미지원; 모델 카드28KST확인. 실제 한국어/장치 미측정.",
+        "parameters": 2.17,
+        "context": 32768,
+        "access": "공개 가중치 / 모델별 런타임",
+        "status": "가중치 공개",
+        "모델 ID": "LiquidAI/LFM3-Omni-2B",
+        "입출력": "텍스트, 이미지, 영상, 음성 → 텍스트, 음성",
+        "표준 API 단가": "새 개별 모델 요금 미확인",
+        "라이선스": "LFM Open License v1.0; 연매출 문턱과 상업 사용 제한"
+      }
+    },
+    {
+      "id": "lfm3-4-spec-20261027",
+      "model": "d1-2B",
+      "provider": "Liquid AI",
+      "source_url": "https://huggingface.co/LiquidAI/d1-2B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "LFM3 2026-10-27",
+        "condition": "생성 토큰 없음; 약 64K 이후 신뢰도 저하; 모델 카드28KST확인. 실제 한국어/장치 미측정.",
+        "parameters": 1.92,
+        "context": 131072,
+        "access": "공개 가중치 / 모델별 런타임",
+        "status": "가중치 공개",
+        "모델 ID": "LiquidAI/d1-2B",
+        "입출력": "텍스트, 이미지, 영상 → 형식화한 답과 확률",
+        "표준 API 단가": "새 개별 모델 요금 미확인",
+        "라이선스": "LFM Open License v1.0; 연매출 문턱과 상업 사용 제한"
+      }
+    },
+    {
+      "id": "lfm3-5-spec-20261027",
+      "model": "d1-Omni-2B",
+      "provider": "Liquid AI",
+      "source_url": "https://huggingface.co/LiquidAI/d1-omni-2B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "LFM3 2026-10-27",
+        "condition": "대화, 전사와 음성 생성 모델이 아님; 모델 카드28KST확인. 실제 한국어/장치 미측정.",
+        "parameters": 2.17,
+        "context": 131072,
+        "access": "공개 가중치 / 모델별 런타임",
+        "status": "가중치 공개",
+        "모델 ID": "LiquidAI/d1-Omni-2B",
+        "입출력": "텍스트, 이미지, 영상, 음성 → 답과 확률",
+        "표준 API 단가": "새 개별 모델 요금 미확인",
+        "라이선스": "LFM Open License v1.0; 연매출 문턱과 상업 사용 제한"
+      }
+    },
+    {
+      "id": "lfm3-text-evals-0-0",
+      "model": "LFM3-1.7B",
+      "provider": "Liquid AI",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-1.7B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "WebArena-Verified / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI의 같은 카드 비교, 0–100 점수. BF16/vLLM, 모델별 전체 문맥과 권장 설정. 일반 temperature=0.6, top_p=0.95; BFCL은 greedy/최대 32,768 출력, WebArena 40단계, MCP-Atlas 256턴, SWE-bench OpenCode 250턴, Terminal 100턴입니다. 모델 크기와 문맥은 같지 않으며 순수 모델 효과만 분리한 실험은 아닙니다.",
+        "평가 점수": 38.42,
+        "단위": "원문 0–100 점수; higher is better",
+        "측정 주체": "Liquid AI",
+        "effort": "모델별 원문 설정",
+        "harness": "Liquid AI 공개 평가 설정"
+      }
+    },
+    {
+      "id": "lfm3-text-evals-0-1",
+      "model": "LFM2.5-2.6B",
+      "provider": "Liquid AI",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-1.7B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "WebArena-Verified / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI의 같은 카드 비교, 0–100 점수. BF16/vLLM, 모델별 전체 문맥과 권장 설정. 일반 temperature=0.6, top_p=0.95; BFCL은 greedy/최대 32,768 출력, WebArena 40단계, MCP-Atlas 256턴, SWE-bench OpenCode 250턴, Terminal 100턴입니다. 모델 크기와 문맥은 같지 않으며 순수 모델 효과만 분리한 실험은 아닙니다.",
+        "평가 점수": 3.02,
+        "단위": "원문 0–100 점수; higher is better",
+        "측정 주체": "Liquid AI",
+        "effort": "모델별 원문 설정",
+        "harness": "Liquid AI 공개 평가 설정"
+      }
+    },
+    {
+      "id": "lfm3-text-evals-0-2",
+      "model": "Qwen3.5-9B",
+      "provider": "Alibaba",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-1.7B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "WebArena-Verified / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI의 같은 카드 비교, 0–100 점수. BF16/vLLM, 모델별 전체 문맥과 권장 설정. 일반 temperature=0.6, top_p=0.95; BFCL은 greedy/최대 32,768 출력, WebArena 40단계, MCP-Atlas 256턴, SWE-bench OpenCode 250턴, Terminal 100턴입니다. 모델 크기와 문맥은 같지 않으며 순수 모델 효과만 분리한 실험은 아닙니다.",
+        "평가 점수": 28.94,
+        "단위": "원문 0–100 점수; higher is better",
+        "측정 주체": "Liquid AI",
+        "effort": "모델별 원문 설정",
+        "harness": "Liquid AI 공개 평가 설정"
+      }
+    },
+    {
+      "id": "lfm3-text-evals-1-0",
+      "model": "LFM3-1.7B",
+      "provider": "Liquid AI",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-1.7B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "BFCL V4 / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI의 같은 카드 비교, 0–100 점수. BF16/vLLM, 모델별 전체 문맥과 권장 설정. 일반 temperature=0.6, top_p=0.95; BFCL은 greedy/최대 32,768 출력, WebArena 40단계, MCP-Atlas 256턴, SWE-bench OpenCode 250턴, Terminal 100턴입니다. 모델 크기와 문맥은 같지 않으며 순수 모델 효과만 분리한 실험은 아닙니다.",
+        "평가 점수": 71.39,
+        "단위": "원문 0–100 점수; higher is better",
+        "측정 주체": "Liquid AI",
+        "effort": "모델별 원문 설정",
+        "harness": "Liquid AI 공개 평가 설정"
+      }
+    },
+    {
+      "id": "lfm3-text-evals-1-1",
+      "model": "LFM2.5-2.6B",
+      "provider": "Liquid AI",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-1.7B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "BFCL V4 / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI의 같은 카드 비교, 0–100 점수. BF16/vLLM, 모델별 전체 문맥과 권장 설정. 일반 temperature=0.6, top_p=0.95; BFCL은 greedy/최대 32,768 출력, WebArena 40단계, MCP-Atlas 256턴, SWE-bench OpenCode 250턴, Terminal 100턴입니다. 모델 크기와 문맥은 같지 않으며 순수 모델 효과만 분리한 실험은 아닙니다.",
+        "평가 점수": 55.89,
+        "단위": "원문 0–100 점수; higher is better",
+        "측정 주체": "Liquid AI",
+        "effort": "모델별 원문 설정",
+        "harness": "Liquid AI 공개 평가 설정"
+      }
+    },
+    {
+      "id": "lfm3-text-evals-1-2",
+      "model": "Qwen3.5-9B",
+      "provider": "Alibaba",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-1.7B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "BFCL V4 / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI의 같은 카드 비교, 0–100 점수. BF16/vLLM, 모델별 전체 문맥과 권장 설정. 일반 temperature=0.6, top_p=0.95; BFCL은 greedy/최대 32,768 출력, WebArena 40단계, MCP-Atlas 256턴, SWE-bench OpenCode 250턴, Terminal 100턴입니다. 모델 크기와 문맥은 같지 않으며 순수 모델 효과만 분리한 실험은 아닙니다.",
+        "평가 점수": 62.83,
+        "단위": "원문 0–100 점수; higher is better",
+        "측정 주체": "Liquid AI",
+        "effort": "모델별 원문 설정",
+        "harness": "Liquid AI 공개 평가 설정"
+      }
+    },
+    {
+      "id": "lfm3-text-evals-2-0",
+      "model": "LFM3-1.7B",
+      "provider": "Liquid AI",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-1.7B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "MCP-Atlas / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI의 같은 카드 비교, 0–100 점수. BF16/vLLM, 모델별 전체 문맥과 권장 설정. 일반 temperature=0.6, top_p=0.95; BFCL은 greedy/최대 32,768 출력, WebArena 40단계, MCP-Atlas 256턴, SWE-bench OpenCode 250턴, Terminal 100턴입니다. 모델 크기와 문맥은 같지 않으며 순수 모델 효과만 분리한 실험은 아닙니다.",
+        "평가 점수": 32.57,
+        "단위": "원문 0–100 점수; higher is better",
+        "측정 주체": "Liquid AI",
+        "effort": "모델별 원문 설정",
+        "harness": "Liquid AI 공개 평가 설정"
+      }
+    },
+    {
+      "id": "lfm3-text-evals-2-1",
+      "model": "LFM2.5-2.6B",
+      "provider": "Liquid AI",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-1.7B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "MCP-Atlas / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI의 같은 카드 비교, 0–100 점수. BF16/vLLM, 모델별 전체 문맥과 권장 설정. 일반 temperature=0.6, top_p=0.95; BFCL은 greedy/최대 32,768 출력, WebArena 40단계, MCP-Atlas 256턴, SWE-bench OpenCode 250턴, Terminal 100턴입니다. 모델 크기와 문맥은 같지 않으며 순수 모델 효과만 분리한 실험은 아닙니다.",
+        "평가 점수": 16.45,
+        "단위": "원문 0–100 점수; higher is better",
+        "측정 주체": "Liquid AI",
+        "effort": "모델별 원문 설정",
+        "harness": "Liquid AI 공개 평가 설정"
+      }
+    },
+    {
+      "id": "lfm3-text-evals-2-2",
+      "model": "Qwen3.5-9B",
+      "provider": "Alibaba",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-1.7B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "MCP-Atlas / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI의 같은 카드 비교, 0–100 점수. BF16/vLLM, 모델별 전체 문맥과 권장 설정. 일반 temperature=0.6, top_p=0.95; BFCL은 greedy/최대 32,768 출력, WebArena 40단계, MCP-Atlas 256턴, SWE-bench OpenCode 250턴, Terminal 100턴입니다. 모델 크기와 문맥은 같지 않으며 순수 모델 효과만 분리한 실험은 아닙니다.",
+        "평가 점수": 42.67,
+        "단위": "원문 0–100 점수; higher is better",
+        "측정 주체": "Liquid AI",
+        "effort": "모델별 원문 설정",
+        "harness": "Liquid AI 공개 평가 설정"
+      }
+    },
+    {
+      "id": "lfm3-text-evals-3-0",
+      "model": "LFM3-1.7B",
+      "provider": "Liquid AI",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-1.7B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SWE-bench Verified, OpenCode / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI의 같은 카드 비교, 0–100 점수. BF16/vLLM, 모델별 전체 문맥과 권장 설정. 일반 temperature=0.6, top_p=0.95; BFCL은 greedy/최대 32,768 출력, WebArena 40단계, MCP-Atlas 256턴, SWE-bench OpenCode 250턴, Terminal 100턴입니다. 모델 크기와 문맥은 같지 않으며 순수 모델 효과만 분리한 실험은 아닙니다.",
+        "평가 점수": 43.4,
+        "단위": "원문 0–100 점수; higher is better",
+        "측정 주체": "Liquid AI",
+        "effort": "모델별 원문 설정",
+        "harness": "OpenCode"
+      }
+    },
+    {
+      "id": "lfm3-text-evals-3-1",
+      "model": "LFM2.5-2.6B",
+      "provider": "Liquid AI",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-1.7B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SWE-bench Verified, OpenCode / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI의 같은 카드 비교, 0–100 점수. BF16/vLLM, 모델별 전체 문맥과 권장 설정. 일반 temperature=0.6, top_p=0.95; BFCL은 greedy/최대 32,768 출력, WebArena 40단계, MCP-Atlas 256턴, SWE-bench OpenCode 250턴, Terminal 100턴입니다. 모델 크기와 문맥은 같지 않으며 순수 모델 효과만 분리한 실험은 아닙니다.",
+        "평가 점수": 18.0,
+        "단위": "원문 0–100 점수; higher is better",
+        "측정 주체": "Liquid AI",
+        "effort": "모델별 원문 설정",
+        "harness": "OpenCode"
+      }
+    },
+    {
+      "id": "lfm3-text-evals-3-2",
+      "model": "Qwen3.5-9B",
+      "provider": "Alibaba",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-1.7B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SWE-bench Verified, OpenCode / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI의 같은 카드 비교, 0–100 점수. BF16/vLLM, 모델별 전체 문맥과 권장 설정. 일반 temperature=0.6, top_p=0.95; BFCL은 greedy/최대 32,768 출력, WebArena 40단계, MCP-Atlas 256턴, SWE-bench OpenCode 250턴, Terminal 100턴입니다. 모델 크기와 문맥은 같지 않으며 순수 모델 효과만 분리한 실험은 아닙니다.",
+        "평가 점수": 51.2,
+        "단위": "원문 0–100 점수; higher is better",
+        "측정 주체": "Liquid AI",
+        "effort": "모델별 원문 설정",
+        "harness": "OpenCode"
+      }
+    },
+    {
+      "id": "lfm3-text-evals-4-0",
+      "model": "LFM3-1.7B",
+      "provider": "Liquid AI",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-1.7B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Terminal-Bench 2.1, OpenCode / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI의 같은 카드 비교, 0–100 점수. BF16/vLLM, 모델별 전체 문맥과 권장 설정. 일반 temperature=0.6, top_p=0.95; BFCL은 greedy/최대 32,768 출력, WebArena 40단계, MCP-Atlas 256턴, SWE-bench OpenCode 250턴, Terminal 100턴입니다. 모델 크기와 문맥은 같지 않으며 순수 모델 효과만 분리한 실험은 아닙니다.",
+        "평가 점수": 12.92,
+        "단위": "원문 0–100 점수; higher is better",
+        "측정 주체": "Liquid AI",
+        "effort": "모델별 원문 설정",
+        "harness": "OpenCode"
+      }
+    },
+    {
+      "id": "lfm3-text-evals-4-1",
+      "model": "LFM2.5-2.6B",
+      "provider": "Liquid AI",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-1.7B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Terminal-Bench 2.1, OpenCode / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI의 같은 카드 비교, 0–100 점수. BF16/vLLM, 모델별 전체 문맥과 권장 설정. 일반 temperature=0.6, top_p=0.95; BFCL은 greedy/최대 32,768 출력, WebArena 40단계, MCP-Atlas 256턴, SWE-bench OpenCode 250턴, Terminal 100턴입니다. 모델 크기와 문맥은 같지 않으며 순수 모델 효과만 분리한 실험은 아닙니다.",
+        "평가 점수": 0.0,
+        "단위": "원문 0–100 점수; higher is better",
+        "측정 주체": "Liquid AI",
+        "effort": "모델별 원문 설정",
+        "harness": "OpenCode"
+      }
+    },
+    {
+      "id": "lfm3-text-evals-4-2",
+      "model": "Qwen3.5-9B",
+      "provider": "Alibaba",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-1.7B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Terminal-Bench 2.1, OpenCode / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI의 같은 카드 비교, 0–100 점수. BF16/vLLM, 모델별 전체 문맥과 권장 설정. 일반 temperature=0.6, top_p=0.95; BFCL은 greedy/최대 32,768 출력, WebArena 40단계, MCP-Atlas 256턴, SWE-bench OpenCode 250턴, Terminal 100턴입니다. 모델 크기와 문맥은 같지 않으며 순수 모델 효과만 분리한 실험은 아닙니다.",
+        "평가 점수": 17.98,
+        "단위": "원문 0–100 점수; higher is better",
+        "측정 주체": "Liquid AI",
+        "effort": "모델별 원문 설정",
+        "harness": "OpenCode"
+      }
+    },
+    {
+      "id": "lfm3-text-evals-5-0",
+      "model": "LFM3-1.7B",
+      "provider": "Liquid AI",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-1.7B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "GPQA Diamond / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI의 같은 카드 비교, 0–100 점수. BF16/vLLM, 모델별 전체 문맥과 권장 설정. 일반 temperature=0.6, top_p=0.95; BFCL은 greedy/최대 32,768 출력, WebArena 40단계, MCP-Atlas 256턴, SWE-bench OpenCode 250턴, Terminal 100턴입니다. 모델 크기와 문맥은 같지 않으며 순수 모델 효과만 분리한 실험은 아닙니다.",
+        "평가 점수": 63.37,
+        "단위": "원문 0–100 점수; higher is better",
+        "측정 주체": "Liquid AI",
+        "effort": "모델별 원문 설정",
+        "harness": "Liquid AI 공개 평가 설정"
+      }
+    },
+    {
+      "id": "lfm3-text-evals-5-1",
+      "model": "LFM2.5-2.6B",
+      "provider": "Liquid AI",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-1.7B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "GPQA Diamond / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI의 같은 카드 비교, 0–100 점수. BF16/vLLM, 모델별 전체 문맥과 권장 설정. 일반 temperature=0.6, top_p=0.95; BFCL은 greedy/최대 32,768 출력, WebArena 40단계, MCP-Atlas 256턴, SWE-bench OpenCode 250턴, Terminal 100턴입니다. 모델 크기와 문맥은 같지 않으며 순수 모델 효과만 분리한 실험은 아닙니다.",
+        "평가 점수": 57.78,
+        "단위": "원문 0–100 점수; higher is better",
+        "측정 주체": "Liquid AI",
+        "effort": "모델별 원문 설정",
+        "harness": "Liquid AI 공개 평가 설정"
+      }
+    },
+    {
+      "id": "lfm3-text-evals-5-2",
+      "model": "Qwen3.5-9B",
+      "provider": "Alibaba",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-1.7B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "GPQA Diamond / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI의 같은 카드 비교, 0–100 점수. BF16/vLLM, 모델별 전체 문맥과 권장 설정. 일반 temperature=0.6, top_p=0.95; BFCL은 greedy/최대 32,768 출력, WebArena 40단계, MCP-Atlas 256턴, SWE-bench OpenCode 250턴, Terminal 100턴입니다. 모델 크기와 문맥은 같지 않으며 순수 모델 효과만 분리한 실험은 아닙니다.",
+        "평가 점수": 80.4,
+        "단위": "원문 0–100 점수; higher is better",
+        "측정 주체": "Liquid AI",
+        "effort": "모델별 원문 설정",
+        "harness": "Liquid AI 공개 평가 설정"
+      }
+    },
+    {
+      "id": "lfm3-text-evals-6-0",
+      "model": "LFM3-1.7B",
+      "provider": "Liquid AI",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-1.7B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "AA-LCR / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI의 같은 카드 비교, 0–100 점수. BF16/vLLM, 모델별 전체 문맥과 권장 설정. 일반 temperature=0.6, top_p=0.95; BFCL은 greedy/최대 32,768 출력, WebArena 40단계, MCP-Atlas 256턴, SWE-bench OpenCode 250턴, Terminal 100턴입니다. 모델 크기와 문맥은 같지 않으며 순수 모델 효과만 분리한 실험은 아닙니다.",
+        "평가 점수": 52.83,
+        "단위": "원문 0–100 점수; higher is better",
+        "측정 주체": "Liquid AI",
+        "effort": "모델별 원문 설정",
+        "harness": "Liquid AI 공개 평가 설정"
+      }
+    },
+    {
+      "id": "lfm3-text-evals-6-1",
+      "model": "LFM2.5-2.6B",
+      "provider": "Liquid AI",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-1.7B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "AA-LCR / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI의 같은 카드 비교, 0–100 점수. BF16/vLLM, 모델별 전체 문맥과 권장 설정. 일반 temperature=0.6, top_p=0.95; BFCL은 greedy/최대 32,768 출력, WebArena 40단계, MCP-Atlas 256턴, SWE-bench OpenCode 250턴, Terminal 100턴입니다. 모델 크기와 문맥은 같지 않으며 순수 모델 효과만 분리한 실험은 아닙니다.",
+        "평가 점수": 6.0,
+        "단위": "원문 0–100 점수; higher is better",
+        "측정 주체": "Liquid AI",
+        "effort": "모델별 원문 설정",
+        "harness": "Liquid AI 공개 평가 설정"
+      }
+    },
+    {
+      "id": "lfm3-text-evals-6-2",
+      "model": "Qwen3.5-9B",
+      "provider": "Alibaba",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-1.7B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "AA-LCR / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI의 같은 카드 비교, 0–100 점수. BF16/vLLM, 모델별 전체 문맥과 권장 설정. 일반 temperature=0.6, top_p=0.95; BFCL은 greedy/최대 32,768 출력, WebArena 40단계, MCP-Atlas 256턴, SWE-bench OpenCode 250턴, Terminal 100턴입니다. 모델 크기와 문맥은 같지 않으며 순수 모델 효과만 분리한 실험은 아닙니다.",
+        "평가 점수": 62.0,
+        "단위": "원문 0–100 점수; higher is better",
+        "측정 주체": "Liquid AI",
+        "effort": "모델별 원문 설정",
+        "harness": "Liquid AI 공개 평가 설정"
+      }
+    },
+    {
+      "id": "lfm3-text-evals-7-0",
+      "model": "LFM3-1.7B",
+      "provider": "Liquid AI",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-1.7B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "RULER 128K / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI의 같은 카드 비교, 0–100 점수. BF16/vLLM, 모델별 전체 문맥과 권장 설정. 일반 temperature=0.6, top_p=0.95; BFCL은 greedy/최대 32,768 출력, WebArena 40단계, MCP-Atlas 256턴, SWE-bench OpenCode 250턴, Terminal 100턴입니다. 모델 크기와 문맥은 같지 않으며 순수 모델 효과만 분리한 실험은 아닙니다.",
+        "평가 점수": 65.56,
+        "단위": "원문 0–100 점수; higher is better",
+        "측정 주체": "Liquid AI",
+        "effort": "모델별 원문 설정",
+        "harness": "Liquid AI 공개 평가 설정"
+      }
+    },
+    {
+      "id": "lfm3-text-evals-7-1",
+      "model": "LFM2.5-2.6B",
+      "provider": "Liquid AI",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-1.7B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "RULER 128K / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI의 같은 카드 비교, 0–100 점수. BF16/vLLM, 모델별 전체 문맥과 권장 설정. 일반 temperature=0.6, top_p=0.95; BFCL은 greedy/최대 32,768 출력, WebArena 40단계, MCP-Atlas 256턴, SWE-bench OpenCode 250턴, Terminal 100턴입니다. 모델 크기와 문맥은 같지 않으며 순수 모델 효과만 분리한 실험은 아닙니다.",
+        "평가 점수": 1.15,
+        "단위": "원문 0–100 점수; higher is better",
+        "측정 주체": "Liquid AI",
+        "effort": "모델별 원문 설정",
+        "harness": "Liquid AI 공개 평가 설정"
+      }
+    },
+    {
+      "id": "lfm3-text-evals-7-2",
+      "model": "Qwen3.5-9B",
+      "provider": "Alibaba",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-1.7B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "RULER 128K / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI의 같은 카드 비교, 0–100 점수. BF16/vLLM, 모델별 전체 문맥과 권장 설정. 일반 temperature=0.6, top_p=0.95; BFCL은 greedy/최대 32,768 출력, WebArena 40단계, MCP-Atlas 256턴, SWE-bench OpenCode 250턴, Terminal 100턴입니다. 모델 크기와 문맥은 같지 않으며 순수 모델 효과만 분리한 실험은 아닙니다.",
+        "평가 점수": 87.11,
+        "단위": "원문 0–100 점수; higher is better",
+        "측정 주체": "Liquid AI",
+        "effort": "모델별 원문 설정",
+        "harness": "Liquid AI 공개 평가 설정"
+      }
+    },
+    {
+      "id": "lfm3-vision-evals-0-0",
+      "model": "LFM3-VL-2B",
+      "provider": "Liquid AI",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-VL-2B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "62평가 평균 / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI, vLLM 0.27.1, 0–100 정규화. LFM3와 경쟁 모델은 추론 모드, 이전 LFM2.5-VL은 추론 미지원입니다. 62평가 평균은 전체 평가의 단순 평균입니다. DocVQA 원 단위는 0–1 ANLS이며 표는 ×100입니다. MMMU-Pro는 10지선다형입니다.",
+        "평가 점수": 71.4,
+        "단위": "원문 0–100 점수; higher is better",
+        "측정 주체": "Liquid AI",
+        "effort": "모델별 원문 설정",
+        "harness": "Liquid AI 공개 평가 설정"
+      }
+    },
+    {
+      "id": "lfm3-vision-evals-0-1",
+      "model": "LFM2.5-VL-3B",
+      "provider": "Liquid AI",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-VL-2B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "62평가 평균 / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI, vLLM 0.27.1, 0–100 정규화. LFM3와 경쟁 모델은 추론 모드, 이전 LFM2.5-VL은 추론 미지원입니다. 62평가 평균은 전체 평가의 단순 평균입니다. DocVQA 원 단위는 0–1 ANLS이며 표는 ×100입니다. MMMU-Pro는 10지선다형입니다.",
+        "평가 점수": 57.6,
+        "단위": "원문 0–100 점수; higher is better",
+        "측정 주체": "Liquid AI",
+        "effort": "모델별 원문 설정",
+        "harness": "Liquid AI 공개 평가 설정"
+      }
+    },
+    {
+      "id": "lfm3-vision-evals-0-2",
+      "model": "Qwen3.5-4B",
+      "provider": "Alibaba",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-VL-2B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "62평가 평균 / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI, vLLM 0.27.1, 0–100 정규화. LFM3와 경쟁 모델은 추론 모드, 이전 LFM2.5-VL은 추론 미지원입니다. 62평가 평균은 전체 평가의 단순 평균입니다. DocVQA 원 단위는 0–1 ANLS이며 표는 ×100입니다. MMMU-Pro는 10지선다형입니다.",
+        "평가 점수": 73.4,
+        "단위": "원문 0–100 점수; higher is better",
+        "측정 주체": "Liquid AI",
+        "effort": "모델별 원문 설정",
+        "harness": "Liquid AI 공개 평가 설정"
+      }
+    },
+    {
+      "id": "lfm3-vision-evals-0-3",
+      "model": "Gemma 4 12B",
+      "provider": "Google",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-VL-2B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "62평가 평균 / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI, vLLM 0.27.1, 0–100 정규화. LFM3와 경쟁 모델은 추론 모드, 이전 LFM2.5-VL은 추론 미지원입니다. 62평가 평균은 전체 평가의 단순 평균입니다. DocVQA 원 단위는 0–1 ANLS이며 표는 ×100입니다. MMMU-Pro는 10지선다형입니다.",
+        "평가 점수": 71.7,
+        "단위": "원문 0–100 점수; higher is better",
+        "측정 주체": "Liquid AI",
+        "effort": "모델별 원문 설정",
+        "harness": "Liquid AI 공개 평가 설정"
+      }
+    },
+    {
+      "id": "lfm3-vision-evals-1-0",
+      "model": "LFM3-VL-2B",
+      "provider": "Liquid AI",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-VL-2B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "DocVQA val / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI, vLLM 0.27.1, 0–100 정규화. LFM3와 경쟁 모델은 추론 모드, 이전 LFM2.5-VL은 추론 미지원입니다. 62평가 평균은 전체 평가의 단순 평균입니다. DocVQA 원 단위는 0–1 ANLS이며 표는 ×100입니다. MMMU-Pro는 10지선다형입니다.",
+        "평가 점수": 96.7,
+        "단위": "원문 0–100 점수; higher is better",
+        "측정 주체": "Liquid AI",
+        "effort": "모델별 원문 설정",
+        "harness": "Liquid AI 공개 평가 설정"
+      }
+    },
+    {
+      "id": "lfm3-vision-evals-1-1",
+      "model": "LFM2.5-VL-3B",
+      "provider": "Liquid AI",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-VL-2B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "DocVQA val / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI, vLLM 0.27.1, 0–100 정규화. LFM3와 경쟁 모델은 추론 모드, 이전 LFM2.5-VL은 추론 미지원입니다. 62평가 평균은 전체 평가의 단순 평균입니다. DocVQA 원 단위는 0–1 ANLS이며 표는 ×100입니다. MMMU-Pro는 10지선다형입니다.",
+        "평가 점수": 91.8,
+        "단위": "원문 0–100 점수; higher is better",
+        "측정 주체": "Liquid AI",
+        "effort": "모델별 원문 설정",
+        "harness": "Liquid AI 공개 평가 설정"
+      }
+    },
+    {
+      "id": "lfm3-vision-evals-1-2",
+      "model": "Qwen3.5-4B",
+      "provider": "Alibaba",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-VL-2B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "DocVQA val / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI, vLLM 0.27.1, 0–100 정규화. LFM3와 경쟁 모델은 추론 모드, 이전 LFM2.5-VL은 추론 미지원입니다. 62평가 평균은 전체 평가의 단순 평균입니다. DocVQA 원 단위는 0–1 ANLS이며 표는 ×100입니다. MMMU-Pro는 10지선다형입니다.",
+        "평가 점수": 97.1,
+        "단위": "원문 0–100 점수; higher is better",
+        "측정 주체": "Liquid AI",
+        "effort": "모델별 원문 설정",
+        "harness": "Liquid AI 공개 평가 설정"
+      }
+    },
+    {
+      "id": "lfm3-vision-evals-1-3",
+      "model": "Gemma 4 12B",
+      "provider": "Google",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-VL-2B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "DocVQA val / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI, vLLM 0.27.1, 0–100 정규화. LFM3와 경쟁 모델은 추론 모드, 이전 LFM2.5-VL은 추론 미지원입니다. 62평가 평균은 전체 평가의 단순 평균입니다. DocVQA 원 단위는 0–1 ANLS이며 표는 ×100입니다. MMMU-Pro는 10지선다형입니다.",
+        "평가 점수": 97.0,
+        "단위": "원문 0–100 점수; higher is better",
+        "측정 주체": "Liquid AI",
+        "effort": "모델별 원문 설정",
+        "harness": "Liquid AI 공개 평가 설정"
+      }
+    },
+    {
+      "id": "lfm3-vision-evals-2-0",
+      "model": "LFM3-VL-2B",
+      "provider": "Liquid AI",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-VL-2B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "TextVQA val / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI, vLLM 0.27.1, 0–100 정규화. LFM3와 경쟁 모델은 추론 모드, 이전 LFM2.5-VL은 추론 미지원입니다. 62평가 평균은 전체 평가의 단순 평균입니다. DocVQA 원 단위는 0–1 ANLS이며 표는 ×100입니다. MMMU-Pro는 10지선다형입니다.",
+        "평가 점수": 87.9,
+        "단위": "원문 0–100 점수; higher is better",
+        "측정 주체": "Liquid AI",
+        "effort": "모델별 원문 설정",
+        "harness": "Liquid AI 공개 평가 설정"
+      }
+    },
+    {
+      "id": "lfm3-vision-evals-2-1",
+      "model": "LFM2.5-VL-3B",
+      "provider": "Liquid AI",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-VL-2B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "TextVQA val / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI, vLLM 0.27.1, 0–100 정규화. LFM3와 경쟁 모델은 추론 모드, 이전 LFM2.5-VL은 추론 미지원입니다. 62평가 평균은 전체 평가의 단순 평균입니다. DocVQA 원 단위는 0–1 ANLS이며 표는 ×100입니다. MMMU-Pro는 10지선다형입니다.",
+        "평가 점수": 90.4,
+        "단위": "원문 0–100 점수; higher is better",
+        "측정 주체": "Liquid AI",
+        "effort": "모델별 원문 설정",
+        "harness": "Liquid AI 공개 평가 설정"
+      }
+    },
+    {
+      "id": "lfm3-vision-evals-2-2",
+      "model": "Qwen3.5-4B",
+      "provider": "Alibaba",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-VL-2B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "TextVQA val / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI, vLLM 0.27.1, 0–100 정규화. LFM3와 경쟁 모델은 추론 모드, 이전 LFM2.5-VL은 추론 미지원입니다. 62평가 평균은 전체 평가의 단순 평균입니다. DocVQA 원 단위는 0–1 ANLS이며 표는 ×100입니다. MMMU-Pro는 10지선다형입니다.",
+        "평가 점수": 88.0,
+        "단위": "원문 0–100 점수; higher is better",
+        "측정 주체": "Liquid AI",
+        "effort": "모델별 원문 설정",
+        "harness": "Liquid AI 공개 평가 설정"
+      }
+    },
+    {
+      "id": "lfm3-vision-evals-2-3",
+      "model": "Gemma 4 12B",
+      "provider": "Google",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-VL-2B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "TextVQA val / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI, vLLM 0.27.1, 0–100 정규화. LFM3와 경쟁 모델은 추론 모드, 이전 LFM2.5-VL은 추론 미지원입니다. 62평가 평균은 전체 평가의 단순 평균입니다. DocVQA 원 단위는 0–1 ANLS이며 표는 ×100입니다. MMMU-Pro는 10지선다형입니다.",
+        "평가 점수": 88.4,
+        "단위": "원문 0–100 점수; higher is better",
+        "측정 주체": "Liquid AI",
+        "effort": "모델별 원문 설정",
+        "harness": "Liquid AI 공개 평가 설정"
+      }
+    },
+    {
+      "id": "lfm3-vision-evals-3-0",
+      "model": "LFM3-VL-2B",
+      "provider": "Liquid AI",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-VL-2B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "ChartQA test / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI, vLLM 0.27.1, 0–100 정규화. LFM3와 경쟁 모델은 추론 모드, 이전 LFM2.5-VL은 추론 미지원입니다. 62평가 평균은 전체 평가의 단순 평균입니다. DocVQA 원 단위는 0–1 ANLS이며 표는 ×100입니다. MMMU-Pro는 10지선다형입니다.",
+        "평가 점수": 92.7,
+        "단위": "원문 0–100 점수; higher is better",
+        "측정 주체": "Liquid AI",
+        "effort": "모델별 원문 설정",
+        "harness": "Liquid AI 공개 평가 설정"
+      }
+    },
+    {
+      "id": "lfm3-vision-evals-3-1",
+      "model": "LFM2.5-VL-3B",
+      "provider": "Liquid AI",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-VL-2B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "ChartQA test / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI, vLLM 0.27.1, 0–100 정규화. LFM3와 경쟁 모델은 추론 모드, 이전 LFM2.5-VL은 추론 미지원입니다. 62평가 평균은 전체 평가의 단순 평균입니다. DocVQA 원 단위는 0–1 ANLS이며 표는 ×100입니다. MMMU-Pro는 10지선다형입니다.",
+        "평가 점수": 80.6,
+        "단위": "원문 0–100 점수; higher is better",
+        "측정 주체": "Liquid AI",
+        "effort": "모델별 원문 설정",
+        "harness": "Liquid AI 공개 평가 설정"
+      }
+    },
+    {
+      "id": "lfm3-vision-evals-3-2",
+      "model": "Qwen3.5-4B",
+      "provider": "Alibaba",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-VL-2B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "ChartQA test / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI, vLLM 0.27.1, 0–100 정규화. LFM3와 경쟁 모델은 추론 모드, 이전 LFM2.5-VL은 추론 미지원입니다. 62평가 평균은 전체 평가의 단순 평균입니다. DocVQA 원 단위는 0–1 ANLS이며 표는 ×100입니다. MMMU-Pro는 10지선다형입니다.",
+        "평가 점수": 85.8,
+        "단위": "원문 0–100 점수; higher is better",
+        "측정 주체": "Liquid AI",
+        "effort": "모델별 원문 설정",
+        "harness": "Liquid AI 공개 평가 설정"
+      }
+    },
+    {
+      "id": "lfm3-vision-evals-3-3",
+      "model": "Gemma 4 12B",
+      "provider": "Google",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-VL-2B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "ChartQA test / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI, vLLM 0.27.1, 0–100 정규화. LFM3와 경쟁 모델은 추론 모드, 이전 LFM2.5-VL은 추론 미지원입니다. 62평가 평균은 전체 평가의 단순 평균입니다. DocVQA 원 단위는 0–1 ANLS이며 표는 ×100입니다. MMMU-Pro는 10지선다형입니다.",
+        "평가 점수": 89.4,
+        "단위": "원문 0–100 점수; higher is better",
+        "측정 주체": "Liquid AI",
+        "effort": "모델별 원문 설정",
+        "harness": "Liquid AI 공개 평가 설정"
+      }
+    },
+    {
+      "id": "lfm3-vision-evals-4-0",
+      "model": "LFM3-VL-2B",
+      "provider": "Liquid AI",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-VL-2B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "MMMU-Pro / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI, vLLM 0.27.1, 0–100 정규화. LFM3와 경쟁 모델은 추론 모드, 이전 LFM2.5-VL은 추론 미지원입니다. 62평가 평균은 전체 평가의 단순 평균입니다. DocVQA 원 단위는 0–1 ANLS이며 표는 ×100입니다. MMMU-Pro는 10지선다형입니다.",
+        "평가 점수": 45.7,
+        "단위": "원문 0–100 점수; higher is better",
+        "측정 주체": "Liquid AI",
+        "effort": "모델별 원문 설정",
+        "harness": "Liquid AI 공개 평가 설정"
+      }
+    },
+    {
+      "id": "lfm3-vision-evals-4-1",
+      "model": "LFM2.5-VL-3B",
+      "provider": "Liquid AI",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-VL-2B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "MMMU-Pro / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI, vLLM 0.27.1, 0–100 정규화. LFM3와 경쟁 모델은 추론 모드, 이전 LFM2.5-VL은 추론 미지원입니다. 62평가 평균은 전체 평가의 단순 평균입니다. DocVQA 원 단위는 0–1 ANLS이며 표는 ×100입니다. MMMU-Pro는 10지선다형입니다.",
+        "평가 점수": 33.2,
+        "단위": "원문 0–100 점수; higher is better",
+        "측정 주체": "Liquid AI",
+        "effort": "모델별 원문 설정",
+        "harness": "Liquid AI 공개 평가 설정"
+      }
+    },
+    {
+      "id": "lfm3-vision-evals-4-2",
+      "model": "Qwen3.5-4B",
+      "provider": "Alibaba",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-VL-2B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "MMMU-Pro / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI, vLLM 0.27.1, 0–100 정규화. LFM3와 경쟁 모델은 추론 모드, 이전 LFM2.5-VL은 추론 미지원입니다. 62평가 평균은 전체 평가의 단순 평균입니다. DocVQA 원 단위는 0–1 ANLS이며 표는 ×100입니다. MMMU-Pro는 10지선다형입니다.",
+        "평가 점수": 67.2,
+        "단위": "원문 0–100 점수; higher is better",
+        "측정 주체": "Liquid AI",
+        "effort": "모델별 원문 설정",
+        "harness": "Liquid AI 공개 평가 설정"
+      }
+    },
+    {
+      "id": "lfm3-vision-evals-4-3",
+      "model": "Gemma 4 12B",
+      "provider": "Google",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-VL-2B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "MMMU-Pro / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI, vLLM 0.27.1, 0–100 정규화. LFM3와 경쟁 모델은 추론 모드, 이전 LFM2.5-VL은 추론 미지원입니다. 62평가 평균은 전체 평가의 단순 평균입니다. DocVQA 원 단위는 0–1 ANLS이며 표는 ×100입니다. MMMU-Pro는 10지선다형입니다.",
+        "평가 점수": 69.1,
+        "단위": "원문 0–100 점수; higher is better",
+        "측정 주체": "Liquid AI",
+        "effort": "모델별 원문 설정",
+        "harness": "Liquid AI 공개 평가 설정"
+      }
+    },
+    {
+      "id": "lfm3-audio-evals-0-0",
+      "model": "LFM3-Audio-2B",
+      "provider": "Liquid AI",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-Audio-2B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "영어 ASR WER %, ↓ / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI 공급자 측정. 영어 인식은 ESB/Open ASR 평균 WER로 낮을수록 좋습니다. UTMOSv2는 음질 점수로 오류율이 아닙니다. 이 영어 수치로 한국어 인식 성능을 확정하지 않습니다.",
+        "평가 점수": 6.23,
+        "단위": "WER %; lower is better",
+        "측정 주체": "Liquid AI",
+        "effort": "모델별 원문 설정",
+        "harness": "Liquid AI 공개 평가 설정"
+      }
+    },
+    {
+      "id": "lfm3-audio-evals-0-1",
+      "model": "LFM2.5-Audio-1.5B",
+      "provider": "Liquid AI",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-Audio-2B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "영어 ASR WER %, ↓ / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI 공급자 측정. 영어 인식은 ESB/Open ASR 평균 WER로 낮을수록 좋습니다. UTMOSv2는 음질 점수로 오류율이 아닙니다. 이 영어 수치로 한국어 인식 성능을 확정하지 않습니다.",
+        "평가 점수": 6.13,
+        "단위": "WER %; lower is better",
+        "측정 주체": "Liquid AI",
+        "effort": "모델별 원문 설정",
+        "harness": "Liquid AI 공개 평가 설정"
+      }
+    },
+    {
+      "id": "lfm3-audio-evals-0-2",
+      "model": "Qwen2.5-Omni-3B",
+      "provider": "Alibaba",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-Audio-2B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "영어 ASR WER %, ↓ / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI 공급자 측정. 영어 인식은 ESB/Open ASR 평균 WER로 낮을수록 좋습니다. UTMOSv2는 음질 점수로 오류율이 아닙니다. 이 영어 수치로 한국어 인식 성능을 확정하지 않습니다.",
+        "평가 점수": 6.3,
+        "단위": "WER %; lower is better",
+        "측정 주체": "Liquid AI",
+        "effort": "모델별 원문 설정",
+        "harness": "Liquid AI 공개 평가 설정"
+      }
+    },
+    {
+      "id": "lfm3-audio-evals-1-0",
+      "model": "LFM3-Audio-2B",
+      "provider": "Liquid AI",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-Audio-2B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "영어 TTS UTMOSv2, 1–5 ↑ / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI 공급자 측정. 영어 인식은 ESB/Open ASR 평균 WER로 낮을수록 좋습니다. UTMOSv2는 음질 점수로 오류율이 아닙니다. 이 영어 수치로 한국어 인식 성능을 확정하지 않습니다.",
+        "평가 점수": 3.83,
+        "단위": "UTMOSv2 1–5",
+        "측정 주체": "Liquid AI",
+        "effort": "모델별 원문 설정",
+        "harness": "Liquid AI 공개 평가 설정"
+      }
+    },
+    {
+      "id": "lfm3-audio-evals-1-1",
+      "model": "LFM2.5-Audio-1.5B",
+      "provider": "Liquid AI",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-Audio-2B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "영어 TTS UTMOSv2, 1–5 ↑ / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI 공급자 측정. 영어 인식은 ESB/Open ASR 평균 WER로 낮을수록 좋습니다. UTMOSv2는 음질 점수로 오류율이 아닙니다. 이 영어 수치로 한국어 인식 성능을 확정하지 않습니다.",
+        "평가 점수": 3.22,
+        "단위": "UTMOSv2 1–5",
+        "측정 주체": "Liquid AI",
+        "effort": "모델별 원문 설정",
+        "harness": "Liquid AI 공개 평가 설정"
+      }
+    },
+    {
+      "id": "lfm3-audio-evals-1-2",
+      "model": "Qwen2.5-Omni-3B",
+      "provider": "Alibaba",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-Audio-2B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "영어 TTS UTMOSv2, 1–5 ↑ / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI 공급자 측정. 영어 인식은 ESB/Open ASR 평균 WER로 낮을수록 좋습니다. UTMOSv2는 음질 점수로 오류율이 아닙니다. 이 영어 수치로 한국어 인식 성능을 확정하지 않습니다.",
+        "평가 점수": 3.42,
+        "단위": "UTMOSv2 1–5",
+        "측정 주체": "Liquid AI",
+        "effort": "모델별 원문 설정",
+        "harness": "Liquid AI 공개 평가 설정"
+      }
+    },
+    {
+      "id": "lfm3-audio-evals-2-0",
+      "model": "LFM3-Audio-2B",
+      "provider": "Liquid AI",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-Audio-2B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "VoiceBench, 0–100 ↑ / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI 공급자 측정. 영어 인식은 ESB/Open ASR 평균 WER로 낮을수록 좋습니다. UTMOSv2는 음질 점수로 오류율이 아닙니다. 이 영어 수치로 한국어 인식 성능을 확정하지 않습니다.",
+        "평가 점수": 73.13,
+        "단위": "원문 0–100 점수; higher is better",
+        "측정 주체": "Liquid AI",
+        "effort": "모델별 원문 설정",
+        "harness": "Liquid AI 공개 평가 설정"
+      }
+    },
+    {
+      "id": "lfm3-audio-evals-2-1",
+      "model": "LFM2.5-Audio-1.5B",
+      "provider": "Liquid AI",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-Audio-2B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "VoiceBench, 0–100 ↑ / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI 공급자 측정. 영어 인식은 ESB/Open ASR 평균 WER로 낮을수록 좋습니다. UTMOSv2는 음질 점수로 오류율이 아닙니다. 이 영어 수치로 한국어 인식 성능을 확정하지 않습니다.",
+        "평가 점수": 55.17,
+        "단위": "원문 0–100 점수; higher is better",
+        "측정 주체": "Liquid AI",
+        "effort": "모델별 원문 설정",
+        "harness": "Liquid AI 공개 평가 설정"
+      }
+    },
+    {
+      "id": "lfm3-audio-evals-2-2",
+      "model": "Qwen2.5-Omni-3B",
+      "provider": "Alibaba",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-Audio-2B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "VoiceBench, 0–100 ↑ / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI 공급자 측정. 영어 인식은 ESB/Open ASR 평균 WER로 낮을수록 좋습니다. UTMOSv2는 음질 점수로 오류율이 아닙니다. 이 영어 수치로 한국어 인식 성능을 확정하지 않습니다.",
+        "평가 점수": 66.37,
+        "단위": "원문 0–100 점수; higher is better",
+        "측정 주체": "Liquid AI",
+        "effort": "모델별 원문 설정",
+        "harness": "Liquid AI 공개 평가 설정"
+      }
+    },
+    {
+      "id": "lfm3-audio-evals-3-0",
+      "model": "LFM3-Audio-2B",
+      "provider": "Liquid AI",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-Audio-2B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "MMAR, 0–100 ↑ / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI 공급자 측정. 영어 인식은 ESB/Open ASR 평균 WER로 낮을수록 좋습니다. UTMOSv2는 음질 점수로 오류율이 아닙니다. 이 영어 수치로 한국어 인식 성능을 확정하지 않습니다.",
+        "평가 점수": 50.6,
+        "단위": "원문 0–100 점수; higher is better",
+        "측정 주체": "Liquid AI",
+        "effort": "모델별 원문 설정",
+        "harness": "Liquid AI 공개 평가 설정"
+      }
+    },
+    {
+      "id": "lfm3-audio-evals-3-1",
+      "model": "LFM2.5-Audio-1.5B",
+      "provider": "Liquid AI",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-Audio-2B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "MMAR, 0–100 ↑ / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI 공급자 측정. 영어 인식은 ESB/Open ASR 평균 WER로 낮을수록 좋습니다. UTMOSv2는 음질 점수로 오류율이 아닙니다. 이 영어 수치로 한국어 인식 성능을 확정하지 않습니다.",
+        "평가 점수": 25.85,
+        "단위": "원문 0–100 점수; higher is better",
+        "측정 주체": "Liquid AI",
+        "effort": "모델별 원문 설정",
+        "harness": "Liquid AI 공개 평가 설정"
+      }
+    },
+    {
+      "id": "lfm3-audio-evals-3-2",
+      "model": "Qwen2.5-Omni-3B",
+      "provider": "Alibaba",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-Audio-2B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "MMAR, 0–100 ↑ / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI 공급자 측정. 영어 인식은 ESB/Open ASR 평균 WER로 낮을수록 좋습니다. UTMOSv2는 음질 점수로 오류율이 아닙니다. 이 영어 수치로 한국어 인식 성능을 확정하지 않습니다.",
+        "평가 점수": 54.41,
+        "단위": "원문 0–100 점수; higher is better",
+        "측정 주체": "Liquid AI",
+        "effort": "모델별 원문 설정",
+        "harness": "Liquid AI 공개 평가 설정"
+      }
+    },
+    {
+      "id": "lfm3-omni-d1-0-0",
+      "model": "LFM3-Omni-2B",
+      "provider": "Liquid AI",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-Omni-2B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Daily-Omni / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI 측정. Omni는 모델별 템플릿/전처리, 텍스트 greedy 설정입니다. d1 비교의 이미지 평가 표본은 평가별 최대 1,000행이며 생성형 LLM의 코딩 점수와 합치지 않습니다. 영상과 소리의 다지선다 정확도",
+        "평가 점수": 70.09,
+        "단위": "0–100, higher is better",
+        "측정 주체": "Liquid AI"
+      }
+    },
+    {
+      "id": "lfm3-omni-d1-0-1",
+      "model": "Qwen2.5-Omni-7B",
+      "provider": "Alibaba",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-Omni-2B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Daily-Omni / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI 측정. Omni는 모델별 템플릿/전처리, 텍스트 greedy 설정입니다. d1 비교의 이미지 평가 표본은 평가별 최대 1,000행이며 생성형 LLM의 코딩 점수와 합치지 않습니다. 영상과 소리의 다지선다 정확도",
+        "평가 점수": 61.32,
+        "단위": "0–100, higher is better",
+        "측정 주체": "Liquid AI"
+      }
+    },
+    {
+      "id": "lfm3-omni-d1-1-0",
+      "model": "LFM3-Omni-2B",
+      "provider": "Liquid AI",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-Omni-2B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OmniBench overall / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI 측정. Omni는 모델별 템플릿/전처리, 텍스트 greedy 설정입니다. d1 비교의 이미지 평가 표본은 평가별 최대 1,000행이며 생성형 LLM의 코딩 점수와 합치지 않습니다. 이미지와 음성 1,142문항",
+        "평가 점수": 46.32,
+        "단위": "0–100, higher is better",
+        "측정 주체": "Liquid AI"
+      }
+    },
+    {
+      "id": "lfm3-omni-d1-1-1",
+      "model": "Qwen2.5-Omni-7B",
+      "provider": "Alibaba",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-Omni-2B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OmniBench overall / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI 측정. Omni는 모델별 템플릿/전처리, 텍스트 greedy 설정입니다. d1 비교의 이미지 평가 표본은 평가별 최대 1,000행이며 생성형 LLM의 코딩 점수와 합치지 않습니다. 이미지와 음성 1,142문항",
+        "평가 점수": 49.65,
+        "단위": "0–100, higher is better",
+        "측정 주체": "Liquid AI"
+      }
+    },
+    {
+      "id": "lfm3-omni-d1-2-0",
+      "model": "d1-2B",
+      "provider": "Liquid AI",
+      "source_url": "https://huggingface.co/LiquidAI/d1-2B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "ImajevBench v2.0-lite / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI 측정. Omni는 모델별 템플릿/전처리, 텍스트 greedy 설정입니다. d1 비교의 이미지 평가 표본은 평가별 최대 1,000행이며 생성형 LLM의 코딩 점수와 합치지 않습니다. 같은 항목과 채점; 판별 응답",
+        "평가 점수": 75.5,
+        "단위": "0–100, higher is better",
+        "측정 주체": "Liquid AI"
+      }
+    },
+    {
+      "id": "lfm3-omni-d1-2-1",
+      "model": "d1-Omni-2B",
+      "provider": "Liquid AI",
+      "source_url": "https://huggingface.co/LiquidAI/d1-2B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "ImajevBench v2.0-lite / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI 측정. Omni는 모델별 템플릿/전처리, 텍스트 greedy 설정입니다. d1 비교의 이미지 평가 표본은 평가별 최대 1,000행이며 생성형 LLM의 코딩 점수와 합치지 않습니다. 같은 항목과 채점; 판별 응답",
+        "평가 점수": 72.3,
+        "단위": "0–100, higher is better",
+        "측정 주체": "Liquid AI"
+      }
+    },
+    {
+      "id": "lfm3-omni-d1-2-2",
+      "model": "d1-3B",
+      "provider": "Liquid AI",
+      "source_url": "https://huggingface.co/LiquidAI/d1-2B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "ImajevBench v2.0-lite / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI 측정. Omni는 모델별 템플릿/전처리, 텍스트 greedy 설정입니다. d1 비교의 이미지 평가 표본은 평가별 최대 1,000행이며 생성형 LLM의 코딩 점수와 합치지 않습니다. 같은 항목과 채점; 판별 응답",
+        "평가 점수": 64.0,
+        "단위": "0–100, higher is better",
+        "측정 주체": "Liquid AI"
+      }
+    },
+    {
+      "id": "lfm3-omni-d1-3-0",
+      "model": "d1-2B",
+      "provider": "Liquid AI",
+      "source_url": "https://huggingface.co/LiquidAI/d1-2B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Typed Decisions / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI 측정. Omni는 모델별 템플릿/전처리, 텍스트 greedy 설정입니다. d1 비교의 이미지 평가 표본은 평가별 최대 1,000행이며 생성형 LLM의 코딩 점수와 합치지 않습니다. 큰 모델이 여전히 우세한 반대 결과",
+        "평가 점수": 61.3,
+        "단위": "0–100, higher is better",
+        "측정 주체": "Liquid AI"
+      }
+    },
+    {
+      "id": "lfm3-omni-d1-3-1",
+      "model": "d1-Omni-2B",
+      "provider": "Liquid AI",
+      "source_url": "https://huggingface.co/LiquidAI/d1-2B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Typed Decisions / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI 측정. Omni는 모델별 템플릿/전처리, 텍스트 greedy 설정입니다. d1 비교의 이미지 평가 표본은 평가별 최대 1,000행이며 생성형 LLM의 코딩 점수와 합치지 않습니다. 큰 모델이 여전히 우세한 반대 결과",
+        "평가 점수": 63.1,
+        "단위": "0–100, higher is better",
+        "측정 주체": "Liquid AI"
+      }
+    },
+    {
+      "id": "lfm3-omni-d1-3-2",
+      "model": "d1-3B",
+      "provider": "Liquid AI",
+      "source_url": "https://huggingface.co/LiquidAI/d1-2B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Typed Decisions / Liquid AI LFM3 공개 카드",
+        "condition": "Liquid AI 측정. Omni는 모델별 템플릿/전처리, 텍스트 greedy 설정입니다. d1 비교의 이미지 평가 표본은 평가별 최대 1,000행이며 생성형 LLM의 코딩 점수와 합치지 않습니다. 큰 모델이 여전히 우세한 반대 결과",
+        "평가 점수": 65.0,
+        "단위": "0–100, higher is better",
+        "측정 주체": "Liquid AI"
+      }
+    },
+    {
+      "id": "genie4-spec-20261027",
+      "model": "Genie 4",
+      "provider": "Google DeepMind",
+      "source_url": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 사양과 제공",
+        "suite": "Genie 4 2026-10-27 research preview",
+        "condition": "현재 trusted testers. Ultra/Project Genie 및 API/AI Studio 초기 파트너 확대는 예정; 같은 평가의 수치/요금 미확인.",
+        "status": "연구 미리보기 / 제한 제공",
+        "access": "신뢰한 테스터; 후속 확대 대기",
+        "입출력": "프롬프트/조작에 반응하는 영상, 소리와 대화",
+        "표준 API 단가": "미확인",
+        "평가값": "동일 평가판 정량 결과 미확인",
+        "가중치": "공개 다운로드 경로 미확인"
+      }
+    }
+  ]
+}

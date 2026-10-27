@@ -74,7 +74,9 @@
     "mistral-voxtral-3-model-guide",
     "lighton-slideon-mslideon-model-guide",
     "gpt-6-1-terra-model-guide",
-    "cohere-rerank-5-model-guide"
+    "cohere-rerank-5-model-guide",
+    "lfm3-family-model-guide",
+    "google-genie-4-model-guide"
   ],
   "catalogs": {
     "devops-implementation-guide": "devops_tools.2026-10-10.r4.json"
@@ -228,6 +230,12 @@
     "cohere-rerank-5-model-guide": [
       "38f63d70bcf91869df2d72ecfea71e7e99f1475eaf8cca6b3113b1d9a61fb494",
       "10914ffb732ebb094827a943260f92537f0bdf88ea8584ad31cde8d7ae00cff6"
+    ],
+    "lfm3-family-model-guide": [
+      "c3780a0649d22c9f39684feed8335435ffbb10f67f0297f12943aaff53d27549"
+    ],
+    "google-genie-4-model-guide": [
+      "c9892bd0e681ddad40c8d6497a237f7d1eaa1d7c56cbc109a63e4ca45b9e20dc"
     ]
   },
   "model_introduction_editions": {
@@ -326,6 +334,12 @@
     "cohere-rerank-5-model-guide": [
       "38f63d70bcf91869df2d72ecfea71e7e99f1475eaf8cca6b3113b1d9a61fb494",
       "10914ffb732ebb094827a943260f92537f0bdf88ea8584ad31cde8d7ae00cff6"
+    ],
+    "lfm3-family-model-guide": [
+      "c3780a0649d22c9f39684feed8335435ffbb10f67f0297f12943aaff53d27549"
+    ],
+    "google-genie-4-model-guide": [
+      "c9892bd0e681ddad40c8d6497a237f7d1eaa1d7c56cbc109a63e4ca45b9e20dc"
     ]
   },
   "model_introduction_purpose_editions": {
@@ -413,6 +427,12 @@
     "cohere-rerank-5-model-guide": [
       "38f63d70bcf91869df2d72ecfea71e7e99f1475eaf8cca6b3113b1d9a61fb494",
       "10914ffb732ebb094827a943260f92537f0bdf88ea8584ad31cde8d7ae00cff6"
+    ],
+    "lfm3-family-model-guide": [
+      "c3780a0649d22c9f39684feed8335435ffbb10f67f0297f12943aaff53d27549"
+    ],
+    "google-genie-4-model-guide": [
+      "c9892bd0e681ddad40c8d6497a237f7d1eaa1d7c56cbc109a63e4ca45b9e20dc"
     ]
   },
   "model_introduction_reader_editions": {
@@ -497,6 +517,12 @@
     "cohere-rerank-5-model-guide": [
       "38f63d70bcf91869df2d72ecfea71e7e99f1475eaf8cca6b3113b1d9a61fb494",
       "10914ffb732ebb094827a943260f92537f0bdf88ea8584ad31cde8d7ae00cff6"
+    ],
+    "lfm3-family-model-guide": [
+      "c3780a0649d22c9f39684feed8335435ffbb10f67f0297f12943aaff53d27549"
+    ],
+    "google-genie-4-model-guide": [
+      "c9892bd0e681ddad40c8d6497a237f7d1eaa1d7c56cbc109a63e4ca45b9e20dc"
     ]
   }
 }

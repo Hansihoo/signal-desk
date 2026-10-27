@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "id": "lfm3-0-spec-20261027",
+      "model": "LFM3-1.7B",
+      "provider": "Liquid AI",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-1.7B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "LFM3 2026-10-27",
+        "condition": "복잡한 에이전트 코딩과 다단계 추론 비권장; 모델 카드28KST확인. 실제 한국어/장치 미측정. 원문 K 표기를 보존한다. 일부 config의 max_position_embeddings와 카드의 안내 범위는 다르므로 설정 상한을 제공/품질 보장으로 올리지 않음.",
+        "parameters": 1.73,
+        "context": "256K",
+        "access": "공개 가중치 / 모델별 런타임",
+        "status": "가중치 공개",
+        "모델 ID": "LiquidAI/LFM3-1.7B",
+        "입출력": "텍스트 → 텍스트",
+        "표준 API 단가": "새 개별 모델 요금 미확인",
+        "라이선스": "LFM Open License v1.0; 연매출 문턱과 상업 사용 제한",
+        "문맥 단위": "원문 카드 K tokens; 별도 이진/십진 환산하지 않음"
+      }
+    },
+    {
+      "id": "lfm3-1-spec-20261027",
+      "model": "LFM3-VL-2B",
+      "provider": "Liquid AI",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-VL-2B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "LFM3 2026-10-27",
+        "condition": "영상 2fps; 코딩, 긴 다중 대화와 복잡 추론 비권장; 모델 카드28KST확인. 실제 한국어/장치 미측정. 원문 K 표기를 보존한다. 일부 config의 max_position_embeddings와 카드의 안내 범위는 다르므로 설정 상한을 제공/품질 보장으로 올리지 않음.",
+        "parameters": 1.92,
+        "context": "128K",
+        "access": "공개 가중치 / 모델별 런타임",
+        "status": "가중치 공개",
+        "모델 ID": "LiquidAI/LFM3-VL-2B",
+        "입출력": "텍스트, 이미지, 영상 → 텍스트",
+        "표준 API 단가": "새 개별 모델 요금 미확인",
+        "라이선스": "LFM Open License v1.0; 연매출 문턱과 상업 사용 제한",
+        "문맥 단위": "원문 카드 K tokens; 별도 이진/십진 환산하지 않음"
+      }
+    },
+    {
+      "id": "lfm3-2-spec-20261027",
+      "model": "LFM3-Audio-2B",
+      "provider": "Liquid AI",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-Audio-2B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "LFM3 2026-10-27",
+        "condition": "언어별 인식 및 발화 조건이 다름; 모델 카드28KST확인. 실제 한국어/장치 미측정. 원문 K 표기를 보존한다. 일부 config의 max_position_embeddings와 카드의 안내 범위는 다르므로 설정 상한을 제공/품질 보장으로 올리지 않음.",
+        "parameters": 2,
+        "context": "32K",
+        "access": "공개 가중치 / 모델별 런타임",
+        "status": "가중치 공개",
+        "모델 ID": "LiquidAI/LFM3-Audio-2B",
+        "입출력": "텍스트, 16kHz 음성 → 텍스트, 24kHz 음성",
+        "표준 API 단가": "새 개별 모델 요금 미확인",
+        "라이선스": "LFM Open License v1.0; 연매출 문턱과 상업 사용 제한",
+        "문맥 단위": "원문 카드 K tokens; 별도 이진/십진 환산하지 않음"
+      }
+    },
+    {
+      "id": "lfm3-3-spec-20261027",
+      "model": "LFM3-Omni-2B",
+      "provider": "Liquid AI",
+      "source_url": "https://huggingface.co/LiquidAI/LFM3-Omni-2B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "LFM3 2026-10-27",
+        "condition": "비추론 모델; enable_thinking 미지원; 모델 카드28KST확인. 실제 한국어/장치 미측정. 원문 K 표기를 보존한다. 일부 config의 max_position_embeddings와 카드의 안내 범위는 다르므로 설정 상한을 제공/품질 보장으로 올리지 않음.",
+        "parameters": 2.17,
+        "context": "32K",
+        "access": "공개 가중치 / 모델별 런타임",
+        "status": "가중치 공개",
+        "모델 ID": "LiquidAI/LFM3-Omni-2B",
+        "입출력": "텍스트, 이미지, 영상, 음성 → 텍스트, 음성",
+        "표준 API 단가": "새 개별 모델 요금 미확인",
+        "라이선스": "LFM Open License v1.0; 연매출 문턱과 상업 사용 제한",
+        "문맥 단위": "원문 카드 K tokens; 별도 이진/십진 환산하지 않음"
+      }
+    },
+    {
+      "id": "lfm3-4-spec-20261027",
+      "model": "d1-2B",
+      "provider": "Liquid AI",
+      "source_url": "https://huggingface.co/LiquidAI/d1-2B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "LFM3 2026-10-27",
+        "condition": "생성 토큰 없음; 약 64K 이후 신뢰도 저하; 모델 카드28KST확인. 실제 한국어/장치 미측정. 원문 K 표기를 보존한다. 일부 config의 max_position_embeddings와 카드의 안내 범위는 다르므로 설정 상한을 제공/품질 보장으로 올리지 않음.",
+        "parameters": 1.92,
+        "context": "128K",
+        "access": "공개 가중치 / 모델별 런타임",
+        "status": "가중치 공개",
+        "모델 ID": "LiquidAI/d1-2B",
+        "입출력": "텍스트, 이미지, 영상 → 형식화한 답과 확률",
+        "표준 API 단가": "새 개별 모델 요금 미확인",
+        "라이선스": "LFM Open License v1.0; 연매출 문턱과 상업 사용 제한",
+        "문맥 단위": "원문 카드 K tokens; 별도 이진/십진 환산하지 않음"
+      }
+    },
+    {
+      "id": "lfm3-5-spec-20261027",
+      "model": "d1-Omni-2B",
+      "provider": "Liquid AI",
+      "source_url": "https://huggingface.co/LiquidAI/d1-omni-2B/raw/main/README.md",
+      "checked_on": "2026-10-28",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "LFM3 2026-10-27",
+        "condition": "대화, 전사와 음성 생성 모델이 아님; 모델 카드28KST확인. 실제 한국어/장치 미측정. 원문 K 표기를 보존한다. 일부 config의 max_position_embeddings와 카드의 안내 범위는 다르므로 설정 상한을 제공/품질 보장으로 올리지 않음.",
+        "parameters": 2.17,
+        "context": "128K",
+        "access": "공개 가중치 / 모델별 런타임",
+        "status": "가중치 공개",
+        "모델 ID": "LiquidAI/d1-Omni-2B",
+        "입출력": "텍스트, 이미지, 영상, 음성 → 답과 확률",
+        "표준 API 단가": "새 개별 모델 요금 미확인",
+        "라이선스": "LFM Open License v1.0; 연매출 문턱과 상업 사용 제한",
+        "문맥 단위": "원문 카드 K tokens; 별도 이진/십진 환산하지 않음"
+      }
+    }
+  ]
+}

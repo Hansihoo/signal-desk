@@ -173,7 +173,7 @@ def parse_model_bundle(bodies, config):
                   "harness": row["tool"], "kind": "도구 제공 목록", "note": row.get("note"),
                   "suite": availability["scope"], "condition": availability["scope"] + " · " + row.get("note", "")}
         add("availability", [row["id"], row["tool"]], row["name"], row["provider"], fields,
-            FILES["availability"], availability["verifiedAt"], row)
+            FILES["availability"], row.get("verifiedAt", availability["verifiedAt"]), row)
 
     for row in guides["modelRows"]:
         keys = ["intelligence", "briefcase", "automation", "model_terminal", "scicode", "model_cost", "cursor_score", "cursor_cost", "lcr"]
@@ -206,7 +206,7 @@ def parse_model_bundle(bodies, config):
                   "note": "SciCode는 원본에서 평가 재검토 중. 추정 종합 Index는 실측 칸에 표시하지 않음."}
         for target, key in [("automation", "automation"), ("model_terminal", "terminal"), ("scicode", "scicode"), ("lcr", "lcr")]:
             fields[target] = _number(row.get(key), 100)
-        add("model", [row["sourceId"], model_doc["suite"], model_doc.get("benchmarkVersions")], row["model"], row["provider"], fields, row["source"], model_doc["verifiedAt"], row)
+        add("model", [row["sourceId"], model_doc["suite"], model_doc.get("benchmarkVersions")], row["model"], row["provider"], fields, row["source"], row.get("verifiedAt", model_doc["verifiedAt"]), row)
 
     agent_doc = documents["agents"]
     for row in agent_doc["records"]:
@@ -220,7 +220,7 @@ def parse_model_bundle(bodies, config):
                   "retained_attempts": row.get("retainedAttempts"), "benchmark_versions": agent_doc.get("benchmarkVersions"),
                   "condition": agent_doc["suite"] + " · " + row["harness"] + " " + row.get("harnessVersion", "") +
                                " · fallback: " + (", ".join(row.get("fallbackModels", [])) or "없음") + " · 실행일 미명시"}
-        add("agent", [row["sourceId"], agent_doc["suite"], agent_doc.get("benchmarkVersions")], row["model"], row["provider"], fields, agent_doc["source"], agent_doc["verifiedAt"], row)
+        add("agent", [row["sourceId"], agent_doc["suite"], agent_doc.get("benchmarkVersions")], row["model"], row["provider"], fields, agent_doc["source"], row.get("verifiedAt", agent_doc["verifiedAt"]), row)
 
     cursor_doc = documents["cursor"]
     for row in cursor_doc["records"]:
@@ -228,7 +228,7 @@ def parse_model_bundle(bodies, config):
                   "cursor_score": _number(row.get("score")), "cursor_cost": _number(row.get("costUsd")),
                   "cursor_tokens": _number(row.get("tokens")), "cursor_steps": _number(row.get("steps")),
                   "condition": cursor_doc["suite"] + " · " + row["label"] + " · AA와 별도 실행 환경 · 실행일 미명시"}
-        add("cursor", [row["label"], cursor_doc["suite"]], row["model"], row["provider"], fields, cursor_doc["source"], cursor_doc["verifiedAt"], row)
+        add("cursor", [row["label"], cursor_doc["suite"]], row["model"], row["provider"], fields, cursor_doc["source"], row.get("verifiedAt", cursor_doc["verifiedAt"]), row)
 
     for row in documents["workload"]["records"]:
         total, completed, cost = row["totalTasks"], row["completedTasks"], row["totalCostUsd"]

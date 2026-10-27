@@ -1,0 +1,1096 @@
+{
+  "schema_version": 1,
+  "reports": [
+    {
+      "id": "lfm3-family-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "checked_on": "2026-10-28",
+      "title": "LFM3 소개: 작은 문서 모델과 음성, 판별 모델의 성능 비교",
+      "description": "LFM3의 여섯 모델을 이전 LFM과 경쟁 모델에 비교해 문서 이해, 도구 사용, 음성 및 판별 성능의 장단점과 제공 조건을 설명합니다.",
+      "deck": "LFM3는 약 20억 파라미터 규모의 텍스트, 시각, 음성, 통합 입력 및 판별 모델군입니다. 작은 장치에서 특화 모델을 운영하도록 공통 기반을 바꿨으며 가중치를 공개했습니다. 문서와 도구 평가가 개선됐지만 복잡한 코딩, 긴 대화와 일부 음성 평가에는 뚜렷한 약점이 있습니다.",
+      "scope": "공식 원문의 2026년 10월 27일 발표를 한국시간 28일 확인했습니다. 모델 실행, 독립 성능 재현과 실제 과금은 수행하지 않았습니다.",
+      "source_note": "발표일과 확인일을 구분합니다. 제공자의 평가와 제품 설명을 현재 사양 및 제한 조건과 함께 읽습니다.",
+      "highlights": [
+        "새로운 모델군",
+        "상대 장단점",
+        "제공과 비용"
+      ],
+      "summary": [
+        {
+          "label": "새로운 모델군",
+          "text": "LFM3-1.7B를 바탕으로 VL, Audio, Omni와 두 d1 모델을 제공합니다. 텍스트 문맥은 256K, VL은 128K, Audio와 Omni는 32K로 서로 다릅니다.",
+          "source_ids": [
+            "launch",
+            "text",
+            "vision",
+            "audio",
+            "omni"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "상대 장단점",
+          "text": "LFM3-VL의 DocVQA는 96.7로 이전 VL의 91.8보다 높지만 TextVQA는 87.9로 이전 90.4보다 낮습니다. 텍스트 모델도 Qwen3.5-9B보다 코딩과 일부 지식 평가에서 낮습니다.",
+          "source_ids": [
+            "vision",
+            "text"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "제공과 비용",
+          "text": "가중치 공개를 모든 기업의 무조건 무료 사용으로 해석할 수 없습니다. LFM Open License의 연매출 1천만 달러 문턱과 상업 사용 조건이 적용되며 새 LFM3 개별 API 단가는 확인되지 않았습니다.",
+          "source_ids": [
+            "license",
+            "pricing"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "tables": [
+        {
+          "id": "family",
+          "title": "모델별 사양과 제공 범위",
+          "columns": [
+            "모델 ID (LiquidAI/)",
+            "파라미터",
+            "입력 → 출력",
+            "문맥",
+            "주요 제약"
+          ],
+          "rows": [
+            {
+              "values": [
+                "LFM3-1.7B",
+                "1.73B",
+                "텍스트 → 텍스트",
+                "256K, 입출력 합계",
+                "복잡한 에이전트 코딩과 다단계 추론 비권장"
+              ],
+              "source_ids": [
+                "text"
+              ]
+            },
+            {
+              "values": [
+                "LFM3-VL-2B",
+                "1.92B",
+                "텍스트, 이미지, 영상 → 텍스트",
+                "128K, 입출력 합계",
+                "영상 2fps; 코딩, 긴 다중 대화와 복잡 추론 비권장"
+              ],
+              "source_ids": [
+                "vision"
+              ]
+            },
+            {
+              "values": [
+                "LFM3-Audio-2B",
+                "2B",
+                "텍스트, 16kHz 음성 → 텍스트, 24kHz 음성",
+                "32K, 입출력 합계",
+                "언어별 인식 및 발화 조건이 다름"
+              ],
+              "source_ids": [
+                "audio"
+              ]
+            },
+            {
+              "values": [
+                "LFM3-Omni-2B",
+                "2.17B",
+                "텍스트, 이미지, 영상, 음성 → 텍스트, 음성",
+                "32K, 입출력 합계",
+                "비추론 모델; enable_thinking 미지원"
+              ],
+              "source_ids": [
+                "omni"
+              ]
+            },
+            {
+              "values": [
+                "d1-2B",
+                "1.92B",
+                "텍스트, 이미지, 영상 → 형식화한 답과 확률",
+                "128K",
+                "생성 토큰 없음; 약 64K 이후 신뢰도 저하"
+              ],
+              "source_ids": [
+                "decision"
+              ]
+            },
+            {
+              "values": [
+                "d1-Omni-2B",
+                "2.17B",
+                "텍스트, 이미지, 영상, 음성 → 답과 확률",
+                "128K",
+                "대화, 전사와 음성 생성 모델이 아님"
+              ],
+              "source_ids": [
+                "decision-omni"
+              ]
+            }
+          ],
+          "note": "2026-10-28 확인. B는 10억 파라미터, K는 카드의 토큰 표기입니다. 공통 기반의 최대 문맥을 모든 파생 모델에 적용하지 않습니다. 기반 체크포인트 LFM3-1.7B-Base는 후학습 출발점이며 위 여섯 완성 모델과 구분합니다."
+        },
+        {
+          "id": "text-evals",
+          "title": "텍스트 모델: 도구 사용의 개선과 코딩의 한계",
+          "columns": [
+            "평가 ↑",
+            "LFM3-1.7B",
+            "LFM2.5-2.6B",
+            "Qwen3.5-9B"
+          ],
+          "rows": [
+            {
+              "values": [
+                "WebArena-Verified",
+                "38.42",
+                "3.02",
+                "28.94"
+              ],
+              "source_ids": [
+                "text"
+              ]
+            },
+            {
+              "values": [
+                "BFCL V4",
+                "71.39",
+                "55.89",
+                "62.83"
+              ],
+              "source_ids": [
+                "text"
+              ]
+            },
+            {
+              "values": [
+                "MCP-Atlas",
+                "32.57",
+                "16.45",
+                "42.67"
+              ],
+              "source_ids": [
+                "text"
+              ]
+            },
+            {
+              "values": [
+                "SWE-bench Verified, OpenCode",
+                "43.4",
+                "18.0",
+                "51.2"
+              ],
+              "source_ids": [
+                "text"
+              ]
+            },
+            {
+              "values": [
+                "Terminal-Bench 2.1, OpenCode",
+                "12.92",
+                "0.0",
+                "17.98"
+              ],
+              "source_ids": [
+                "text"
+              ]
+            },
+            {
+              "values": [
+                "GPQA Diamond",
+                "63.37",
+                "57.78",
+                "80.4"
+              ],
+              "source_ids": [
+                "text"
+              ]
+            },
+            {
+              "values": [
+                "AA-LCR",
+                "52.83",
+                "6.0",
+                "62.0"
+              ],
+              "source_ids": [
+                "text"
+              ]
+            },
+            {
+              "values": [
+                "RULER 128K",
+                "65.56",
+                "1.15",
+                "87.11"
+              ],
+              "source_ids": [
+                "text"
+              ]
+            }
+          ],
+          "note": "Liquid AI의 같은 카드 비교, 0–100 점수. BF16/vLLM, 모델별 전체 문맥과 권장 설정. 일반 temperature=0.6, top_p=0.95; BFCL은 greedy/최대 32,768 출력, WebArena 40단계, MCP-Atlas 256턴, SWE-bench OpenCode 250턴, Terminal 100턴입니다. 모델 크기와 문맥은 같지 않으며 순수 모델 효과만 분리한 실험은 아닙니다."
+        },
+        {
+          "id": "vision-evals",
+          "title": "시각 모델: 문서 평가에도 개선과 역전이 함께 존재",
+          "columns": [
+            "평가 ↑",
+            "LFM3-VL-2B",
+            "LFM2.5-VL-3B",
+            "Qwen3.5-4B",
+            "Gemma 4 12B"
+          ],
+          "rows": [
+            {
+              "values": [
+                "62평가 평균",
+                "71.4",
+                "57.6",
+                "73.4",
+                "71.7"
+              ],
+              "source_ids": [
+                "vision"
+              ]
+            },
+            {
+              "values": [
+                "DocVQA val",
+                "96.7",
+                "91.8",
+                "97.1",
+                "97.0"
+              ],
+              "source_ids": [
+                "vision"
+              ]
+            },
+            {
+              "values": [
+                "TextVQA val",
+                "87.9",
+                "90.4",
+                "88.0",
+                "88.4"
+              ],
+              "source_ids": [
+                "vision"
+              ]
+            },
+            {
+              "values": [
+                "ChartQA test",
+                "92.7",
+                "80.6",
+                "85.8",
+                "89.4"
+              ],
+              "source_ids": [
+                "vision"
+              ]
+            },
+            {
+              "values": [
+                "MMMU-Pro",
+                "45.7",
+                "33.2",
+                "67.2",
+                "69.1"
+              ],
+              "source_ids": [
+                "vision"
+              ]
+            }
+          ],
+          "note": "Liquid AI, vLLM 0.27.1, 0–100 정규화. LFM3와 경쟁 모델은 추론 모드, 이전 LFM2.5-VL은 추론 미지원입니다. 62평가 평균은 전체 평가의 단순 평균입니다. DocVQA 원 단위는 0–1 ANLS이며 표는 ×100입니다. MMMU-Pro는 10지선다형입니다."
+        },
+        {
+          "id": "audio-evals",
+          "title": "음성 모델: 음질 향상과 영어 인식 오류율의 역전",
+          "columns": [
+            "평가와 방향",
+            "LFM3-Audio-2B",
+            "LFM2.5-Audio-1.5B",
+            "Qwen2.5-Omni-3B"
+          ],
+          "rows": [
+            {
+              "values": [
+                "영어 ASR WER %, ↓",
+                "6.23",
+                "6.13",
+                "6.3"
+              ],
+              "source_ids": [
+                "audio"
+              ]
+            },
+            {
+              "values": [
+                "영어 TTS UTMOSv2, 1–5 ↑",
+                "3.83",
+                "3.22",
+                "3.42"
+              ],
+              "source_ids": [
+                "audio"
+              ]
+            },
+            {
+              "values": [
+                "VoiceBench, 0–100 ↑",
+                "73.13",
+                "55.17",
+                "66.37"
+              ],
+              "source_ids": [
+                "audio"
+              ]
+            },
+            {
+              "values": [
+                "MMAR, 0–100 ↑",
+                "50.6",
+                "25.85",
+                "54.41"
+              ],
+              "source_ids": [
+                "audio"
+              ]
+            }
+          ],
+          "note": "Liquid AI 공급자 측정. 영어 인식은 ESB/Open ASR 평균 WER로 낮을수록 좋습니다. UTMOSv2는 음질 점수로 오류율이 아닙니다. 이 영어 수치로 한국어 인식 성능을 확정하지 않습니다."
+        },
+        {
+          "id": "omni-evals",
+          "title": "통합 입력 모델과 판별 모델의 강약점",
+          "columns": [
+            "평가 ↑",
+            "새 모델",
+            "비교 모델",
+            "원문 조건"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Daily-Omni",
+                "LFM3-Omni-2B 70.09",
+                "Qwen2.5-Omni-7B 61.32",
+                "영상과 소리의 다지선다 정확도"
+              ],
+              "source_ids": [
+                "omni"
+              ]
+            },
+            {
+              "values": [
+                "OmniBench overall",
+                "LFM3-Omni-2B 46.32",
+                "Qwen2.5-Omni-7B 49.65",
+                "이미지와 음성 1,142문항"
+              ],
+              "source_ids": [
+                "omni"
+              ]
+            },
+            {
+              "values": [
+                "ImajevBench v2.0-lite",
+                "d1-2B 75.5 / d1-Omni-2B 72.3",
+                "d1-3B 64.0",
+                "같은 항목과 채점; 판별 응답"
+              ],
+              "source_ids": [
+                "decision",
+                "decision-omni"
+              ]
+            },
+            {
+              "values": [
+                "Typed Decisions",
+                "d1-2B 61.3 / d1-Omni-2B 63.1",
+                "d1-3B 65.0",
+                "큰 모델이 여전히 우세한 반대 결과"
+              ],
+              "source_ids": [
+                "decision",
+                "decision-omni"
+              ]
+            }
+          ],
+          "note": "Liquid AI 측정. Omni는 모델별 템플릿/전처리, 텍스트 greedy 설정입니다. d1 비교의 이미지 평가 표본은 평가별 최대 1,000행이며 생성형 LLM의 코딩 점수와 합치지 않습니다."
+        },
+        {
+          "id": "cost",
+          "title": "표준 요금과 자체 운영 조건",
+          "columns": [
+            "제공 방식",
+            "확인한 조건",
+            "비용 해석"
+          ],
+          "rows": [
+            {
+              "values": [
+                "LFM3 개별 API",
+                "현재 요금표에 새 개별 모델 ID 단가가 명시되지 않음",
+                "기존 d1 또는 LFM2.5 API 단가를 이식하지 않음"
+              ],
+              "source_ids": [
+                "pricing"
+              ]
+            },
+            {
+              "values": [
+                "공개 가중치",
+                "LFM Open License v1.0",
+                "연매출 1천만 달러 문턱에 연결된 상업 사용 제한; 별도 기업 계약 검토"
+              ],
+              "source_ids": [
+                "license",
+                "pricing"
+              ]
+            },
+            {
+              "values": [
+                "자체 운영",
+                "직접 GPU/CPU 운영과 모델별 지원 런타임",
+                "하드웨어, 메모리, 전력과 유지 비용은 별도"
+              ],
+              "source_ids": [
+                "text",
+                "vision",
+                "audio",
+                "omni"
+              ]
+            },
+            {
+              "values": [
+                "텍스트 4비트",
+                "제공자 소개의 약 1GB",
+                "모든 모델의 256K 문맥 실행 총메모리 보장이 아님"
+              ],
+              "source_ids": [
+                "text",
+                "launch"
+              ]
+            }
+          ],
+          "note": "2026-10-28 공식 요금표 및 라이선스 확인. 명목 토큰 단가와 실제 완료 작업당 비용을 혼합하지 않습니다."
+        }
+      ],
+      "explanation": [
+        {
+          "id": "changes",
+          "title": "모델 개요와 이전 세대 대비 변화",
+          "lead": "공통 기반을 작게 유지하며 입력 유형별 모델을 나눈 세대입니다.",
+          "blocks": [
+            {
+              "title": "공통 기반의 변화",
+              "text": "LFM3의 24개 층은 짧은 합성곱 13개, 좁은 범위의 어텐션 5개와 전역 어텐션 6개를 조합합니다. 가까운 정보는 작은 범위에서 처리하고 필요한 층에서 전체 문맥을 연결하는 구조입니다. 기반은 22조 토큰으로 학습했으며 마지막 3.5조 토큰 단계에서 에이전트 기록과 도구 호출 비중을 높였습니다. 작은 파라미터 수와 긴 문맥의 효율을 함께 추구한 설계이지 모든 복잡한 업무를 해결했다는 뜻은 아닙니다.",
+              "source_ids": [
+                "launch",
+                "base",
+                "text"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            },
+            {
+              "title": "여섯 모델의 구분",
+              "text": "VL은 이미지와 영상을 읽지만 음성 응답을 만들지 않습니다. Audio는 소리를 처리하고, Omni는 시각과 소리를 함께 읽습니다. d1 계열은 문장을 이어 생성하는 대신 주어진 질문의 형식화한 답과 확률을 반환합니다. 텍스트의 256K 문맥을 Omni의 문맥으로 읽거나 d1을 일반 대화 모델로 비교하면 선택 기준이 달라집니다.",
+              "source_ids": [
+                "vision",
+                "audio",
+                "omni",
+                "decision",
+                "decision-omni"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            }
+          ]
+        },
+        {
+          "id": "strengths",
+          "title": "장점: 작은 크기에서 개선된 문서와 도구 평가",
+          "lead": "이전 모델과 비교한 향상 폭은 크지만 평가별로 해석해야 합니다.",
+          "blocks": [
+            {
+              "title": "텍스트와 시각의 개선",
+              "text": "텍스트 모델은 이전 2.6B보다 작으면서 WebArena와 BFCL에서 더 높습니다. VL도 이전 모델보다 문서 질문과 차트 질문 점수가 높습니다. 이는 로컬 문서 모델을 비교할 근거지만 OCR의 모든 항목이 개선된 것은 아닙니다. TextVQA 역전은 도표 평균이나 종합 평균만으로 원문 전사 정확도를 판단할 수 없음을 보여줍니다.",
+              "source_ids": [
+                "text",
+                "vision"
+              ],
+              "kind": "judgment",
+              "type": "paragraph"
+            },
+            {
+              "title": "통합 입력과 판별",
+              "text": "Omni는 소리가 있는 영상의 Daily-Omni에서 큰 Qwen 모델보다 높지만 이미지와 음성의 OmniBench 전체에서는 낮습니다. d1은 이전 3B보다 적은 파라미터로 ImajevBench가 높아졌습니다. 입력 유형과 출력 형식이 맞는 비교에서만 이 장점이 의미가 있습니다.",
+              "source_ids": [
+                "omni",
+                "decision"
+              ],
+              "kind": "judgment",
+              "type": "paragraph"
+            }
+          ]
+        },
+        {
+          "id": "weaknesses",
+          "title": "단점: 코딩, 긴 문맥과 음성의 제약",
+          "lead": "작은 크기와 입력 통합은 큰 모델의 능력을 일괄 대체하지 않습니다.",
+          "blocks": [
+            {
+              "title": "코딩과 문맥",
+              "text": "텍스트 모델의 SWE-bench와 Terminal 점수는 Qwen3.5-9B보다 낮습니다. 공식 카드도 복잡한 코딩과 다단계 추론을 권장하지 않습니다. 256K는 수용 한도이고 RULER 128K에서의 정확도 보장은 아닙니다. VL은 긴 다중 대화에 제한이 있고 Omni는 추론 모드 자체를 지원하지 않습니다.",
+              "source_ids": [
+                "text",
+                "vision",
+                "omni"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            },
+            {
+              "title": "음성과 판별의 반대 결과",
+              "text": "Audio의 영어 WER는 이전보다 조금 높아 인식 오류율이 개선됐다고 쓸 수 없습니다. d1-Omni는 긴 음성 구간에서, 특히 비라틴 문자 언어에서 정확도가 크게 떨어질 수 있습니다. 음성이 없다면 d1-2B가 텍스트와 단일 박스 및 보정에서 낫다는 제공자 설명도 있습니다. 한국어가 지원 목록에 있다는 사실은 사내 문서나 긴 한국어 발화의 정확도를 보장하지 않습니다.",
+              "source_ids": [
+                "audio",
+                "decision-omni"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            }
+          ]
+        },
+        {
+          "id": "availability",
+          "title": "가격과 제공 조건",
+          "lead": "가중치와 런타임의 이용 조건을 API 요금과 나눠 봅니다.",
+          "blocks": [
+            {
+              "title": "공개 가중치와 상업 사용",
+              "text": "LFM Open License는 저작권 고지와 수정 표시 등 재배포 조건을 두며 연매출 1천만 달러 문턱에 연결된 상업 사용 제한을 둡니다. 라이선스의 법인 정의에는 지배 관계도 포함됩니다. 실제 적용 법인과 금액 경계, 별도 계약은 원문을 대조해야 합니다. 다운로드가 가능하다는 이유로 모든 상업 이용이 무료라고 해석하지 않습니다.",
+              "source_ids": [
+                "license",
+                "pricing"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            },
+            {
+              "title": "지원과 비용의 구분",
+              "text": "텍스트 모델의 GGUF, MLX, ONNX와 GPU 변형은 지원 경로가 서로 다릅니다. Omni의 일부 서버 경로는 텍스트 출력만 지원합니다. 공식 요금표의 기존 d1 및 LFM2.5 단가는 새 여섯 모델의 표준 단가로 확인되지 않았으므로 표에는 미확인으로 남겼습니다.",
+              "source_ids": [
+                "text",
+                "omni",
+                "pricing"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            }
+          ]
+        }
+      ],
+      "caveats": [
+        {
+          "text": "모든 수치는 Liquid AI가 발표한 문헌 평가입니다. 독립 재현, 실제 한국어 문서 검증, 장치별 속도와 과금은 수행하지 않았습니다.",
+          "source_ids": [
+            "launch",
+            "text",
+            "vision"
+          ]
+        },
+        {
+          "text": "카드의 권장 설정과 실제 평가 설정은 다를 수 있습니다. 추론 유무, 전처리, Harness와 평가판을 보존하며 종합 점수를 다른 평가 지수로 옮기지 않습니다.",
+          "source_ids": [
+            "text",
+            "vision",
+            "omni"
+          ]
+        }
+      ],
+      "references": [
+        {
+          "id": "launch",
+          "title": "LFM3 공식 발표",
+          "url": "https://huggingface.co/blog/LiquidAI/lfm3",
+          "description": "LFM3 공식 발표의 사양, 비교 근거와 제공 조건입니다."
+        },
+        {
+          "id": "text",
+          "title": "LFM3-1.7B 공식 모델 카드",
+          "url": "https://huggingface.co/LiquidAI/LFM3-1.7B/raw/main/README.md",
+          "description": "LFM3-1.7B 공식 모델 카드의 사양, 비교 근거와 제공 조건입니다."
+        },
+        {
+          "id": "base",
+          "title": "LFM3-1.7B-Base 공식 모델 카드",
+          "url": "https://huggingface.co/LiquidAI/LFM3-1.7B-Base/raw/main/README.md",
+          "description": "LFM3-1.7B-Base 공식 모델 카드의 사양, 비교 근거와 제공 조건입니다."
+        },
+        {
+          "id": "vision",
+          "title": "LFM3-VL-2B 공식 모델 카드",
+          "url": "https://huggingface.co/LiquidAI/LFM3-VL-2B/raw/main/README.md",
+          "description": "LFM3-VL-2B 공식 모델 카드의 사양, 비교 근거와 제공 조건입니다."
+        },
+        {
+          "id": "audio",
+          "title": "LFM3-Audio-2B 공식 모델 카드",
+          "url": "https://huggingface.co/LiquidAI/LFM3-Audio-2B/raw/main/README.md",
+          "description": "LFM3-Audio-2B 공식 모델 카드의 사양, 비교 근거와 제공 조건입니다."
+        },
+        {
+          "id": "omni",
+          "title": "LFM3-Omni-2B 공식 모델 카드",
+          "url": "https://huggingface.co/LiquidAI/LFM3-Omni-2B/raw/main/README.md",
+          "description": "LFM3-Omni-2B 공식 모델 카드의 사양, 비교 근거와 제공 조건입니다."
+        },
+        {
+          "id": "decision",
+          "title": "d1-2B 공식 모델 카드",
+          "url": "https://huggingface.co/LiquidAI/d1-2B/raw/main/README.md",
+          "description": "d1-2B 공식 모델 카드의 사양, 비교 근거와 제공 조건입니다."
+        },
+        {
+          "id": "decision-omni",
+          "title": "d1-omni-2B 공식 모델 카드",
+          "url": "https://huggingface.co/LiquidAI/d1-omni-2B/raw/main/README.md",
+          "description": "d1-omni-2B 공식 모델 카드의 사양, 비교 근거와 제공 조건입니다."
+        },
+        {
+          "id": "license",
+          "title": "LFM Open License v1.0",
+          "url": "https://huggingface.co/LiquidAI/LFM3-1.7B/raw/main/LICENSE",
+          "description": "LFM Open License v1.0의 사양, 비교 근거와 제공 조건입니다."
+        },
+        {
+          "id": "pricing",
+          "title": "Liquid AI 공식 요금과 라이선스",
+          "url": "https://www.liquid.ai/pricing",
+          "description": "Liquid AI 공식 요금과 라이선스의 사양, 비교 근거와 제공 조건입니다."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "비교 판단",
+            "text": "문서와 작은 로컬 모델을 검토한다면 VL과 텍스트를 별도로 비교할 가치가 있습니다. 음성과 시각을 함께 읽을 때는 Omni의 짧은 문맥과 반대 평가를, 형식화한 답이 필요할 때는 d1의 한계를 함께 봐야 합니다. 복잡한 코딩을 큰 모델에서 일괄 이전하거나 공개 가중치를 모든 기업의 무료 운영으로 처리할 근거는 없습니다.",
+            "source_ids": [
+              "launch",
+              "text",
+              "base",
+              "vision",
+              "audio",
+              "omni",
+              "decision",
+              "decision-omni",
+              "license",
+              "pricing"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      }
+    },
+    {
+      "id": "google-genie-4-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "checked_on": "2026-10-28",
+      "title": "Genie 4 소개: 소리와 대화를 더한 월드 모델의 변화와 한계",
+      "description": "Genie 4를 이전 Genie 3와 3D 재구성 방식에 비교해 새 능력, 실제 접근 범위, 성능 근거와 비용의 한계를 설명합니다.",
+      "deck": "Genie 4는 조작에 반응하는 가상 세계의 화면과 소리를 실시간으로 생성하는 모델입니다. 이전 Genie보다 네이티브 음성과 대화, 장면 제어 및 인물 표현을 강조하지만 현재는 신뢰한 테스터 대상 연구 미리보기입니다. 정밀한 물리 시뮬레이터나 일반 공개 API의 대체재로 확정할 수 없습니다.",
+      "scope": "공식 원문의 2026년 10월 27일 발표를 한국시간 28일 확인했습니다. 모델 실행, 독립 성능 재현과 실제 과금은 수행하지 않았습니다.",
+      "source_note": "발표일과 확인일을 구분합니다. 제공자의 평가와 제품 설명을 현재 사양 및 제한 조건과 함께 읽습니다.",
+      "highlights": [
+        "27일 발표",
+        "강점과 한계",
+        "제한 제공"
+      ],
+      "summary": [
+        {
+          "label": "27일 발표",
+          "text": "세계의 화면과 주변 소리, 음악 및 인물의 대화를 함께 생성하며 자연어로 진행 중 장면을 바꿀 수 있습니다. Gemini가 장면 진행을 돕습니다.",
+          "source_ids": [
+            "launch"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "강점과 한계",
+          "text": "시청각 상호작용이 장점이지만 물체의 지속성, 긴 시간의 일관성, 물리 상호작용과 읽기 쉬운 글자는 여전히 제한 사항입니다. 같은 조건의 수치 비교는 제시되지 않았습니다.",
+          "source_ids": [
+            "launch",
+            "previous"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "제한 제공",
+          "text": "현재는 신뢰한 테스터의 연구 미리보기입니다. Ultra의 Project Genie 및 Gemini API/AI Studio 초기 파트너 확대는 예정이며 표준 API 단가와 정확한 확대일은 확인되지 않았습니다.",
+          "source_ids": [
+            "launch"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "tables": [
+        {
+          "id": "comparison",
+          "title": "Genie 4와 이전 모델, 3D 재구성 모델의 차이",
+          "columns": [
+            "항목",
+            "Genie 4",
+            "Genie 3",
+            "Echo-3"
+          ],
+          "rows": [
+            {
+              "values": [
+                "중심 기능",
+                "조작에 반응하는 시청각 세계 생성",
+                "조작에 반응하는 화면 생성",
+                "촬영한 실제 공간의 3D 재구성"
+              ],
+              "source_ids": [
+                "launch",
+                "previous",
+                "echo"
+              ]
+            },
+            {
+              "values": [
+                "상호작용",
+                "키보드와 자연어 장면 변경, 대화",
+                "이동과 promptable world events",
+                "3D 이동, 측정과 링크 공유"
+              ],
+              "source_ids": [
+                "launch",
+                "previous",
+                "echo"
+              ]
+            },
+            {
+              "values": [
+                "공간 표현",
+                "픽셀 기반 실시간 생성; Gemini의 진행 보조",
+                "명시적 3D 구조 없이 프레임 생성",
+                "실제 크기의 Gaussian Splat 장면"
+              ],
+              "source_ids": [
+                "launch",
+                "previous",
+                "echo"
+              ]
+            },
+            {
+              "values": [
+                "공개 수치",
+                "해상도, fps, 세션 길이와 동일 벤치마크 미확인",
+                "발표 당시 720p, 24fps, 몇 분 상호작용",
+                "이 페이지의 같은 품질/속도 평가 미확인"
+              ],
+              "source_ids": [
+                "launch",
+                "previous",
+                "echo"
+              ]
+            },
+            {
+              "values": [
+                "현재 접근",
+                "신뢰한 테스터; 일반 확대 예정",
+                "이전 세대 연구 발표와 구분",
+                "촬영 앱과 웹/API 경로 안내"
+              ],
+              "source_ids": [
+                "launch",
+                "previous",
+                "echo"
+              ]
+            }
+          ],
+          "note": "확인 2026-10-28. Genie 3는 2025년 발표 당시 사양이며 현재 서비스 조건을 소급 확인한 값이 아닙니다. Echo-3는 촬영 공간의 재구성이라는 인접 대안으로 선정했으며 생성 세계의 품질 우열을 뜻하지 않습니다."
+        },
+        {
+          "id": "changes",
+          "title": "이전 모델 대비 변화와 아직 비교할 수 없는 항목",
+          "columns": [
+            "항목",
+            "공식 설명",
+            "판단 범위"
+          ],
+          "rows": [
+            {
+              "values": [
+                "네이티브 소리와 대화",
+                "세계와 함께 환경음, 음악과 대화 생성",
+                "음성 정확도, 지연 수치는 미확인"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "장면 제어",
+                "자연어로 날씨, 시점과 등장 요소를 변경",
+                "Genie 3도 이벤트 변경 지원; 변화는 더 통합된 제어"
+              ],
+              "source_ids": [
+                "launch",
+                "previous"
+              ]
+            },
+            {
+              "values": [
+                "Gemini 결합",
+                "Gemini 3.8 Flash가 목표 분해와 프레임 확인",
+                "Genie 단독 모델 능력으로 분리한 비교 아님"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "물리와 인물 표현",
+                "제공자는 사실성과 움직임 개선을 주장",
+                "정확한 물리/공간과 긴 세션 일관성은 여전히 연구 과제"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "성능 점수",
+                "같은 평가판의 Genie 4/3 정량 결과 미확인",
+                "실연 영상을 성공률이나 물리 오차 점수로 바꾸지 않음"
+              ],
+              "source_ids": [
+                "launch",
+                "previous"
+              ]
+            }
+          ],
+          "note": "공식 발표와 실연 설명을 비교합니다. 제공자 표현을 독립 성능 검증으로 해석하지 않습니다."
+        },
+        {
+          "id": "access",
+          "title": "가격과 제공 범위",
+          "columns": [
+            "경로",
+            "현재 상태",
+            "요금과 조건"
+          ],
+          "rows": [
+            {
+              "values": [
+                "신뢰한 테스터",
+                "연구 미리보기 배포 시작",
+                "대상별 접근; 공개 API 단가 미확인"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Project Genie / Google AI Ultra",
+                "Genie 4 확대 예정, 대기 명단",
+                "Ultra 구독만으로 즉시 Genie 4 이용 보장 아님"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Gemini API / AI Studio",
+                "초기 접근 파트너 확대 예정",
+                "호출 ID, 지역, 속도 제한과 표준 요금 미확인"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "가중치 자체 운영",
+                "공개 다운로드 경로 확인되지 않음",
+                "서비스 소개를 자체 서버 배포 권리로 해석하지 않음"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            }
+          ],
+          "note": "2026-10-28 확인. 이전 Project Genie의 구독 가격이나 세션 제한을 새 Genie 4의 단가/한도로 옮기지 않습니다."
+        }
+      ],
+      "explanation": [
+        {
+          "id": "overview",
+          "title": "모델 개요와 이전 세대 대비 변화",
+          "lead": "생성한 화면이 사용자의 조작에 반응하며 다음 장면으로 이어집니다.",
+          "blocks": [
+            {
+              "title": "영상 생성과의 관계",
+              "text": "월드 모델은 장면의 설명과 사용자의 이동에 따라 다음 상태를 생성합니다. Genie 4는 소리와 대화를 이 진행에 결합했습니다. 반면 촬영 공간을 명시적인 3D 장면으로 재구성하는 Echo-3는 원래 공간의 형태와 실제 크기를 보존하는 목적입니다. 생성 세계의 제어와 실제 공간 재구성은 대안의 성격부터 다릅니다.",
+              "source_ids": [
+                "launch",
+                "previous",
+                "echo"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            },
+            {
+              "title": "기존 제어와 새 통합",
+              "text": "Genie 3도 날씨나 물체를 바꾸는 이벤트를 지원했습니다. 따라서 장면 변경 자체가 처음 생긴 기능이라고 쓰기는 어렵습니다. Genie 4의 차이는 자연어 제어, 소리와 인물 반응 및 Gemini의 진행 보조를 더 밀접하게 결합한 데 있습니다.",
+              "source_ids": [
+                "launch",
+                "previous"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            }
+          ]
+        },
+        {
+          "id": "strengths",
+          "title": "장점: 소리와 대화를 포함한 상호작용",
+          "lead": "단일 녹화 영상보다 진행 중 제어를 살펴볼 수 있는 모델입니다.",
+          "blocks": [
+            {
+              "title": "시청각 생성과 진행 보조",
+              "text": "제공자는 네이티브 소리와 자연스러운 인물 움직임을 강조합니다. Gemini 3.8 Flash는 목표를 단계로 나누고 들어오는 프레임에서 진행을 확인합니다. 이는 생성기와 계획 담당 모델을 결합하는 방식의 장점이지만 성공 결과 전체를 Genie 4 한 모델의 추론 성능으로 해석할 수는 없습니다.",
+              "source_ids": [
+                "launch"
+              ],
+              "kind": "judgment",
+              "type": "paragraph"
+            }
+          ]
+        },
+        {
+          "id": "limits",
+          "title": "단점과 성능 비교의 한계",
+          "lead": "생성 영상의 사실감과 정밀한 시뮬레이션의 정확도는 다른 문제입니다.",
+          "blocks": [
+            {
+              "title": "장기 일관성과 물리 정확도",
+              "text": "공식 발표는 긴 세션, 복잡한 편집이나 이동 중에 시각적 세부와 물체 지속성이 흔들릴 수 있음을 밝힙니다. 정교한 물리 상호작용, 소리의 정확도, 글자와 공간 정확도도 남은 연구 과제입니다. 사실적으로 보이는 실연을 실제 세계의 물리 계산이나 측정 결과로 사용해서는 안 됩니다.",
+              "source_ids": [
+                "launch"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            },
+            {
+              "title": "수치 우열의 공백",
+              "text": "Genie 3 발표의 720p/24fps를 Genie 4의 사양으로 가져오지 않았습니다. 같은 평가판과 입력에서 측정한 성공률, 시간 일관성 또는 지연 표가 없으므로 더 빠르다거나 모든 성능이 높다는 점수 순위를 만들 수 없습니다. Echo-3의 재구성 기능도 같은 생성 품질 점수로 비교하지 않습니다.",
+              "source_ids": [
+                "launch",
+                "previous",
+                "echo"
+              ],
+              "kind": "judgment",
+              "type": "paragraph"
+            }
+          ]
+        },
+        {
+          "id": "availability",
+          "title": "가격과 제공 조건",
+          "lead": "발표된 모델과 지금 계정에서 쓸 수 있는 서비스를 구분합니다.",
+          "blocks": [
+            {
+              "title": "현재 제공과 확대 예정",
+              "text": "실제 배포 시작 대상은 신뢰한 테스터입니다. Ultra 가입자와 API/AI Studio 초기 파트너는 후속 확대 대상으로 적혀 있습니다. 구독 플랜의 존재만으로 접속을 보장하거나 아직 확인하지 못한 호출 ID와 표준 단가를 만들 수 없습니다. 생성된 영상과 소리에는 SynthID 표식을 넣는다고 안내합니다.",
+              "source_ids": [
+                "launch"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            }
+          ]
+        }
+      ],
+      "caveats": [
+        {
+          "text": "공식 실연과 기능 설명의 비교이며 독립 실행, 지연/물리 정확도 측정, 한국어 대화 품질 및 실제 계정 접근은 검증하지 않았습니다.",
+          "source_ids": [
+            "launch"
+          ]
+        },
+        {
+          "text": "Echo-3는 인접한 재구성 방식의 비교 대상입니다. 원문 제품 페이지의 발표일은 확인하지 못했으며 오늘의 신규 모델 출시로 분류하지 않았습니다.",
+          "source_ids": [
+            "echo"
+          ]
+        }
+      ],
+      "references": [
+        {
+          "id": "launch",
+          "title": "Genie 4 공식 발표",
+          "url": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
+          "description": "Genie 4 공식 발표의 사양, 비교 근거와 제공 조건입니다."
+        },
+        {
+          "id": "previous",
+          "title": "Genie 3 공식 발표",
+          "url": "https://deepmind.google/blog/genie-3-a-new-frontier-for-world-models/",
+          "description": "Genie 3 공식 발표의 사양, 비교 근거와 제공 조건입니다."
+        },
+        {
+          "id": "echo",
+          "title": "SpAItial Echo-3 공식 제품 소개",
+          "url": "https://spaitial.ai/echo-3",
+          "description": "SpAItial Echo-3 공식 제품 소개의 사양, 비교 근거와 제공 조건입니다."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "비교 판단",
+            "text": "Genie 4의 핵심 변화는 세계 생성에 소리와 대화, Gemini의 장면 제어를 결합한 점입니다. 정밀한 물리나 공간 정확도가 필요한 시스템과 일반 공개 API 도입은 현재 근거로 확정할 수 없습니다. 제공 확대와 요금, 같은 조건의 정량 평가가 나오는지 후속 확인할 연구 모델로 보는 것이 타당합니다.",
+            "source_ids": [
+              "launch",
+              "previous",
+              "echo"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      }
+    }
+  ]
+}

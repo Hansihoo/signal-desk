@@ -100,6 +100,14 @@
     {
       "id": "ai-model-official-facts-2026-10-27",
       "path": "ai_model_facts.2026-10-27.json"
+    },
+    {
+      "id": "ai-model-facts-2026-10-28",
+      "path": "ai_model_facts.2026-10-28.json"
+    },
+    {
+      "id": "ai-model-facts-2026-10-28-r2",
+      "path": "ai_model_facts.2026-10-28.r2.json"
     }
   ]
 }
