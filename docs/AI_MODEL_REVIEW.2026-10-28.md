@@ -42,3 +42,18 @@ research-teaching의 모델 소개 유형으로 두 request/recipe를 먼저 고
 - 새 두 소개의 내부 상대 링크와 fragment315개를 확인했다. 실제 본문/표의 반대 결과와 제한을 별도 대조했고 PC/모바일 화면과 briefing PNG를 시각 확인했다. 기존 로컬 주거 활성 공고0으로 review의 해당 항목은 실패했으며 나머지11항목과 모델 기능 검증은 통과했다. 주거 부족을 모델/배포 성공으로 바꾸지 않는다.
 
 검증용 소스·브라우저 profile·다운로드는 owned scratch 종료 시 정리했다. `D:/9_codex_temp/2026-10-28/signal-models`의 recipe/원문 receipt 연결/화면/검증 스크립트와 요약은 배포 및 본문 검토 증거로 보존하며 전체를 disposable로 등록하지 않는다. 공개 결과는 다음 절에 기록한다.
+
+
+### 원격 및 실제 공개 확인 — 2026-10-28 05:42 KST
+
+소스 `5428abc8a8087948a6905e8277090c8d4c9914fe`를 현재 main에 일반 push했다. [Pages 40579396056](https://github.com/Hansihoo/signal-desk/actions/runs/40579396056)는 05:39:59 KST에 success로 완료됐다. CI214시험(84.336초), 공개 상태 복원·수집/사이트 생성·주거 briefing/review·누적 snapshot 저장·Pages 배포가 모두 통과했다. 따라서 이전 로컬 주거 활성0 경고는 이번 공개 배포 실패가 아니다.
+
+실제 공개 `research-data.json`의 현재 보고서86/문서판216, 모델2,107관측/2,213판, 원자료16문서/18판을 확인했다. 종전84보고서/214문서판과 모든2,123모델 과거 판, 원자료16과거 판은 값을 대조해 모두 보존됐다. 기존 모델 변화는 Muse4관측의 원자료 확인일 정정뿐이며 수치·원문은 같다. 새73관측은 검토 입력과, 사양6관측은 원문K를 보존한r2와 정확히 같다. 새 두 공개 보고서의 전체 payload도 검토 입력과 같다.
+
+공개 Edge PC/390px 모바일에서도 소개6표/3표와 전체표의 Liquid AI/공식 평가 필터, DocVQA96.7 실제 셀, 출처·28일 확인일·원문 단위·이전 판, Genie4 제한 제공·단가 미확인, Terra27일 확인일과 원자료 iframe 본문/표/조작을 확인했다. JavaScript 오류와 페이지 너비 넘침은 없다. 공개 화면/JSON 비교 요약은 보존한 검증 폴더의 `public-browser.json`, `public-verification.json`, `public-*.png`이며 원본 공개 전후 JSON은 `data/raw/model_maintenance/2026-10-28`에 있다. 모델 실행·한국어 업무·독립 재현·실제 계정 접근/과금은 검증하지 않았다.
+
+- [LFM3 소개](https://hansihoo.github.io/signal-desk/preview/lfm3-family-model-guide.html)
+- [Genie4 소개](https://hansihoo.github.io/signal-desk/preview/google-genie-4-model-guide.html)
+- [전체 모델 비교표](https://hansihoo.github.io/signal-desk/preview/ai-models.html)
+
+기존 다른 dirty 파일/입력/기능은 제출하지 않았다. 사용한 owned scratch는 종료 후 정리했고, 앞서 설명한 본문/공개 검증 증거 폴더만 보존했다. 현재 모델 소개와 누적 비교표의 동시 발행은 완료다.
