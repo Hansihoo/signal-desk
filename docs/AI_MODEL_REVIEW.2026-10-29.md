@@ -48,3 +48,17 @@ research-check1편과audit현재판gated_agent_review,ai-models입력62신규와
 ## 제출 소스 검증
 
 선택한10개경로의index만LF로내보내다른작업을제외했다. 공개snapshot state-20261028T020414Z-40618663688-1.tar.gz의DB와archive만복원해전체214시험,Theo수집/모델입력/publish/brief/review 및실제Edge1280/390px를확인했다. 수집원문/DB/HTML/PNG는제출하지않는다. 새소개내부경로/fragment188개가정상이다. 자세한실제출력은외부검증폴더selected-check.log와local-browser.json에보존했다. 기존brief PNG명령은임시Edge가종료되지않아해당작업소유PID만검증후정리했고원명령exit1을보존했다. 같은선택소스fixture가살아있는동안별도Playwright임시프로필로390x1500 PNG를생성해시각확인한후review12항목PASS와모델브라우저검사를별도로완료했다. 이대체검증을원명령성공이나렌더러원인수정으로기록하지않는다. 복원된주거표시/기한은형식검사이며최신공고자격재검토가아니다. owned scratch와자식프로세스는종료후정리했다. 정상push와실제공개결과는후속절에기록한다.
+
+
+## 실제 공개 검증 완료 — 2026-10-29 05:34 KST
+
+소스78acacf를 main에 정상push했고 [Pages40762896056](https://github.com/Hansihoo/signal-desk/actions/runs/40762896056)는success로완료됐다. CI시험/공개상태복원/수집·사이트생성/주거briefing검사/누적snapshot저장/Pages배포가통과했다.
+
+실제공개research-data.json에서보고서87편/217판,모델2169관측/2275판을확인했다. 기존86현재보고서/216문서판과2107관측/2213모델판,Theo16현재/18문서판은전체값을대조해보존됐다. 새소개1판전체payload와62개사실의원문/수치/조건/날짜가검토입력과정확히같다.
+
+공개Edge1280/390px에서소개5표,전체표공식평가FrontierSWE2 61.2실제셀,Google필터/원문/29일확인일/출시2/.1/10과표준4/20·미확인,이전LFM3판을확인했다. JS오류와페이지너비넘침은없다. 새소개/전체표/이전모델3주소는HTTP200이다. 실제모델/한국어업무/계정접근/청구/독립재현/사람독해시험은수행하지않았다.
+
+- [Carbon소개](https://hansihoo.github.io/signal-desk/preview/gemini-4-carbon-model-guide.html)
+- [전체모델비교표](https://hansihoo.github.io/signal-desk/preview/ai-models.html)
+
+원본bytes와공개전후JSON은data/raw/model_maintenance/2026-10-29에비추적으로보존했다. D:/9_codex_temp/2026-10-29/signal-models에는원문/본문검토및로컬·공개검증스크립트/요약/PNG를필수증거로보존한다. 임시선택소스/DB/백업압축/브라우저프로필은owned scratch종료시정리했다. 기존다른dirty작업은제출하지않았다. 원PNG명령의대기문제는대체검증과구분해앞절에보존하며원인수정완료로보고하지않는다.
