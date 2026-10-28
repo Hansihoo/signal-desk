@@ -1,0 +1,749 @@
+{
+  "schema_version": 1,
+  "reports": [
+    {
+      "id": "gemini-4-carbon-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "checked_on": "2026-10-29",
+      "title": "Gemini 4 Carbon 소개: Argon과 경쟁 모델의 성능, 요금과 제한 제공 비교",
+      "description": "Gemini 4 Carbon을 Argon, GPT-6 Astra와 Claude Opus 5.5에 비교해 코딩과 보안 성능의 장단점, 실제 제공 범위와 비용을 설명합니다.",
+      "deck": "Gemini 4 Carbon은 Google이 10월 28일 발표한 새 프런티어 모델입니다. Argon보다 긴 작업과 코딩, 보안 평가가 개선됐지만 모든 평가에서 우세하지는 않습니다. 현재는 일부 보안 담당자와 신뢰한 파트너에게 단계적으로 제공하며 일반 개발자 공개 일정은 확정되지 않았습니다.",
+      "scope": "2026년 10월 28일 공식 발표와 현재 문서를 한국시간 29일 확인했습니다. 공개 전 테스트나 모델 실행, 실제 계정 접근과 과금은 수행하지 않았습니다.",
+      "source_note": "Google 제공표의 자체 측정과 외부 평가기관 결과를 구분합니다. 원문의 추론 설정, Harness와 평가판을 보존하며 조건이 다른 수치를 공통 환경의 모델 단독 성능으로 해석하지 않습니다.",
+      "highlights": [
+        "새 모델과 제공 범위",
+        "상대 장단점",
+        "할인과 표준 요금"
+      ],
+      "summary": [
+        {
+          "label": "새 모델과 제공 범위",
+          "text": "Carbon은 기존 Argon의 이름 변경이나 13일 공개 확대를 다시 전하는 소식이 아닙니다. 28일 새 모델 발표이며 이번 주 일부 보안 담당자부터 시작하는 제한 제공입니다. 일반 API 목록에는 아직 Carbon의 공개 ID가 없습니다.",
+          "source_ids": [
+            "launch",
+            "argon",
+            "api-models"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "상대 장단점",
+          "text": "공식 표의 Terminal-Bench 4.0은 Carbon 65.2, Argon 57.1입니다. 반면 FrontierSWE 2는 Carbon 61.2로 Astra 65.5와 Opus 5.5 62.3보다 낮고, OSWorld offline도 Opus보다 낮습니다.",
+          "source_ids": [
+            "chart",
+            "google-method"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "할인과 표준 요금",
+          "text": "출시 할인은 100만 토큰당 입력 2달러와 출력 10달러, 할인 이후 표준은 입력 4달러와 출력 20달러로 예고됐습니다. Carbon 할인 종료일은 미공개이며 Argon의 12월 1일 인상 일정을 그대로 적용하지 않습니다.",
+          "source_ids": [
+            "launch",
+            "pricing"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "tables": [
+        {
+          "id": "specification",
+          "title": "주요 사양과 실제 제공 범위",
+          "columns": [
+            "모델",
+            "입력 → 출력",
+            "문맥 / 최대 출력",
+            "현재 제공"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Gemini 4 Carbon",
+                "텍스트, 이미지, 음성, 영상 → 텍스트 (AA 표기)",
+                "1M (AA 표기) / 공식 최대 출력 미확인",
+                "선정한 보안 담당자, 이후 Fairwind 파트너; 공개 API ID 미확인"
+              ],
+              "source_ids": [
+                "launch",
+                "aa",
+                "api-models"
+              ]
+            },
+            {
+              "values": [
+                "Gemini 4 Argon",
+                "텍스트, 이미지, 영상, 음성, PDF → 텍스트",
+                "통합 1,048,576 / 기본 65,536; long decode 별도",
+                "유료 Gemini API, AI Studio, Android Studio; 일부 구독 경로"
+              ],
+              "source_ids": [
+                "argon",
+                "argon-api"
+              ]
+            },
+            {
+              "values": [
+                "GPT-6 Astra",
+                "텍스트, 이미지 → 텍스트",
+                "1,050,000 / 최대 출력 128,000",
+                "OpenAI API; 이용 등급별 한도"
+              ],
+              "source_ids": [
+                "openai-spec"
+              ]
+            },
+            {
+              "values": [
+                "Claude Opus 5.5",
+                "텍스트, 이미지 → 텍스트",
+                "1M / 최대 출력 128K",
+                "Claude API와 문서에 명시된 파트너 플랫폼"
+              ],
+              "source_ids": [
+                "claude-spec"
+              ]
+            }
+          ],
+          "note": "2026-10-29 확인. K와 M은 각 원문의 토큰 표기를 유지합니다. 문맥은 한 요청이 다룰 수 있는 범위이며 최대 출력과 다릅니다. Carbon의 1M과 입력 형식은 AA의 평가 모델 메타데이터로, 공개 API 사양 확인을 대신하지 않습니다. Argon의 long decode 기능이나 PDF 입력, 출력 한도를 Carbon에도 지원한다고 추정하지 않습니다."
+        },
+        {
+          "id": "performance",
+          "title": "이전 모델과 경쟁 모델의 성능 비교",
+          "columns": [
+            "평가 ↑",
+            "Carbon",
+            "Argon",
+            "GPT-6 Astra",
+            "Opus 5.5"
+          ],
+          "rows": [
+            {
+              "values": [
+                "AA Intelligence Index v5.0",
+                "59",
+                "50",
+                "57",
+                "58"
+              ],
+              "source_ids": [
+                "chart",
+                "google-method",
+                "aa"
+              ]
+            },
+            {
+              "values": [
+                "SWE-sweep",
+                "9.6",
+                "4.3",
+                "9.5",
+                "3.6"
+              ],
+              "source_ids": [
+                "chart",
+                "google-method"
+              ]
+            },
+            {
+              "values": [
+                "FrontierSWE 2",
+                "61.2",
+                "55.0",
+                "65.5",
+                "62.3"
+              ],
+              "source_ids": [
+                "chart",
+                "google-method"
+              ]
+            },
+            {
+              "values": [
+                "Terminal-Bench 4.0 (AA)",
+                "65.2",
+                "57.1",
+                "59.1",
+                "59.6"
+              ],
+              "source_ids": [
+                "chart",
+                "google-method"
+              ]
+            },
+            {
+              "values": [
+                "Agents’ Last Exam v1.1",
+                "77.4",
+                "69.0",
+                "73.1",
+                "71.6"
+              ],
+              "source_ids": [
+                "chart",
+                "google-method"
+              ]
+            },
+            {
+              "values": [
+                "OSWorld 2.1 offline",
+                "81.5",
+                "74.7",
+                "80.9",
+                "87.2"
+              ],
+              "source_ids": [
+                "chart",
+                "google-method"
+              ]
+            },
+            {
+              "values": [
+                "GraphWalks 256K–1M BFS F1",
+                "96.2",
+                "84.2",
+                "71.8",
+                "66.8"
+              ],
+              "source_ids": [
+                "chart",
+                "google-method"
+              ]
+            },
+            {
+              "values": [
+                "Chartography",
+                "72.5",
+                "71.6",
+                "71.0",
+                "66.3"
+              ],
+              "source_ids": [
+                "chart",
+                "google-method"
+              ]
+            },
+            {
+              "values": [
+                "Terminal-Bench-Science 0.1 (AA)",
+                "64.8",
+                "52.9",
+                "63.3",
+                "59.0"
+              ],
+              "source_ids": [
+                "chart",
+                "google-method"
+              ]
+            }
+          ],
+          "note": "Google 2026년 10월 공개 비교표. AA 지수는 v5.0 점수, 나머지는 원문 백분율 또는 F1×100입니다. 높을수록 좋습니다. 기본적으로 Gemini는 최고 thinking의 단일 시도이며 예외와 Harness 차이는 본문에서 설명합니다. AA/외부 리더보드 값과 Google 자체 측정이 섞여 있으므로 이 표 전체를 동일 환경의 독립 실험으로 부르지 않습니다."
+        },
+        {
+          "id": "cybersecurity",
+          "title": "보안 평가: 탐지, 검증과 수정",
+          "columns": [
+            "평가 ↑ (%)",
+            "Carbon",
+            "Argon",
+            "GPT-6 Astra",
+            "Opus 5.5"
+          ],
+          "rows": [
+            {
+              "values": [
+                "SEC-bench Pro",
+                "88.2",
+                "83.4",
+                "85.4",
+                "미공개"
+              ],
+              "source_ids": [
+                "chart",
+                "google-method",
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "ExploitGym",
+                "54.8",
+                "42.0",
+                "42.4",
+                "34.5"
+              ],
+              "source_ids": [
+                "chart",
+                "google-method",
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "CWE-bench v1",
+                "71.0",
+                "68.0",
+                "68.0",
+                "67.0"
+              ],
+              "source_ids": [
+                "chart",
+                "google-method",
+                "launch"
+              ]
+            }
+          ],
+          "note": "Google 발표는 보안 결과가 guardrail 없이 평가됐다고 명시합니다. SEC-bench Pro와 ExploitGym은 Gemini 자체 측정과 경쟁사 공개 결과를 함께 사용하며, CWE-bench는 Collinear의 공개 평가입니다. 미공개는 0점이 아닙니다. 실제 제공 모델의 차단 정책과 회사 보안 업무의 성공률을 보장하지 않습니다."
+        },
+        {
+          "id": "pricing",
+          "title": "출시 할인과 표준 API 요금",
+          "columns": [
+            "모델 / 조건",
+            "입력 USD/100만 토큰",
+            "캐시 입력 USD/100만 토큰",
+            "출력 USD/100만 토큰"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Carbon: 출시 할인, 종료일 미공개",
+                "2",
+                "0.10 (95% 할인율로 계산)",
+                "10"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Carbon: 출시 할인 종료 후 예고",
+                "4",
+                "별도 적용 조건 미확인",
+                "20"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Argon: 2026-11-30까지 Standard",
+                "2",
+                "0.10, implicit만",
+                "10, thinking 포함"
+              ],
+              "source_ids": [
+                "pricing"
+              ]
+            },
+            {
+              "values": [
+                "Argon: 2026-12-01부터 Standard",
+                "4",
+                "0.20, implicit만",
+                "20, thinking 포함"
+              ],
+              "source_ids": [
+                "pricing"
+              ]
+            },
+            {
+              "values": [
+                "Astra: 입력 ≤272K, Standard",
+                "10",
+                "1",
+                "50"
+              ],
+              "source_ids": [
+                "openai-spec"
+              ]
+            },
+            {
+              "values": [
+                "Astra: 입력 >272K, 요청 전체",
+                "20",
+                "2",
+                "75"
+              ],
+              "source_ids": [
+                "openai-spec"
+              ]
+            },
+            {
+              "values": [
+                "Opus 5.5: 기본 요금",
+                "4",
+                "0.20, 읽기",
+                "20"
+              ],
+              "source_ids": [
+                "claude-prices"
+              ]
+            }
+          ],
+          "note": "2026-10-29 확인. Carbon은 제한 제공 모델의 발표 가격이며 누구나 구매 가능한 API 상품을 뜻하지 않습니다. Carbon의 할인 만료 시각과 Batch/캐시 쓰기/보관/장문 추가요금은 미확인입니다. Astra >272K 값은 공식 배율을 기본값에 적용한 값이며 요청 전체에 적용됩니다. 캐시 쓰기, 도구, 처리 우선순위, 지역과 파트너, 세금 및 월 구독은 별도입니다."
+        },
+        {
+          "id": "evaluation-cost",
+          "title": "AA 평가에서의 작업 비용과 출력량",
+          "columns": [
+            "평가 모델 / 설정",
+            "지수 v5.0",
+            "평가 작업당 USD",
+            "평가 전체 출력 토큰"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Gemini 4 Carbon (High)",
+                "59",
+                "7.76",
+                "200M"
+              ],
+              "source_ids": [
+                "aa"
+              ]
+            },
+            {
+              "values": [
+                "GPT-6 Astra (Max)",
+                "57",
+                "6.24",
+                "54M"
+              ],
+              "source_ids": [
+                "astra-aa"
+              ]
+            },
+            {
+              "values": [
+                "Claude Opus 5.5 (Max, Default Fallback)",
+                "58",
+                "10.04",
+                "220M"
+              ],
+              "source_ids": [
+                "opus-aa"
+              ]
+            }
+          ],
+          "note": "AA 현재 평가 페이지를 2026-10-29 확인했습니다. 작업 비용은 입력/캐시/추론/답변의 평가별 비용을 지수 가중치로 결합한 값이며 Carbon 4/20달러 표준 단가 기준입니다. 전체 출력량은 답변 한 개의 길이가 아닙니다. 모델별 추론과 Fallback이 다르고 실제 회사 작업의 비용이나 소요시간은 측정하지 않았습니다."
+        }
+      ],
+      "explanation": [
+        {
+          "id": "overview",
+          "title": "모델 개요와 이전 모델 대비 변화",
+          "lead": "Carbon은 Argon을 바탕으로 긴 엔지니어링 작업과 보안 역량을 확장한 후속 모델입니다.",
+          "blocks": [
+            {
+              "title": "발표일과 제공 단계",
+              "text": "새 모델의 공식 발표일은 10월 28일입니다. Argon의 최초 발표와 10월 13일 개발자 공개 확대는 별개 사건입니다. Google은 Carbon을 이번 주 선정한 보안 담당자에게 제공하고 Fairwind의 신뢰한 파트너로 넓힌 뒤 개발자, 기업과 일반 소비자에게 제공하겠다고 설명합니다. 아직 구체적인 일반 공개일이나 공개 API ID를 제시하지 않았습니다.",
+              "source_ids": [
+                "launch",
+                "argon",
+                "api-models"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            },
+            {
+              "title": "장시간 작업의 의미",
+              "text": "Google은 내부에서 Carbon이 며칠 동안 막힌 경로를 다시 탐색하며 큰 코드베이스의 오류 원인을 찾고 수정하는 일을 관찰했다고 설명합니다. 이는 회사 내부 사례이며 며칠간의 무중단 실행, 모든 과제의 완료나 사용자 환경의 성공을 보장하는 수치가 아닙니다. 모델과 함께 실행한 도구 및 제어 프로그램인 Harness의 구성도 결과에 영향을 줍니다.",
+              "source_ids": [
+                "launch",
+                "google-method"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            }
+          ]
+        },
+        {
+          "id": "comparison",
+          "title": "성능 비교의 조건",
+          "lead": "같은 평가 이름이어도 판, 추론량과 실행 도구가 다르면 순위를 그대로 옮길 수 없습니다.",
+          "blocks": [
+            {
+              "title": "측정 주체와 추론 설정",
+              "text": "Google 방법서의 기본값은 Gemini 최고 thinking과 pass@1, 즉 한 시도에서의 성과입니다. 경쟁 모델은 별도 명시가 없으면 제공자 공개 수치를 사용하며 가능한 최고 추론 설정을 우선합니다. SWE-sweep의 Carbon은 mini-swe-agent의 세부 과제 가중 점수이고 경쟁 수치는 공개 리더보드입니다. FrontierSWE 2는 Proximal, Terminal-Bench 4.0과 Science 0.1은 AA 결과를 가져옵니다.",
+              "source_ids": [
+                "google-method",
+                "chart"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            },
+            {
+              "title": "컴퓨터 조작과 긴 문맥",
+              "text": "Agents’ Last Exam v1.1의 Gemini 결과는 10월 17일 판 122과제, ALE-Claw, 5시간 조건이며 26일 변경판을 적용하지 않았습니다. OSWorld는 인터넷 없는 82과제 부분집합의 partial score이고 Gemini는 단일 시도를 3번 실행한 최댓값입니다. 1080p, 최대 500단계, 업데이트한 Gemini CUA Harness 조건이 있으므로 한 번의 사용자 작업 성공률로 읽으면 안 됩니다. GraphWalks는 모든 모델을 자체 계산한 256K–1M 문맥의 200문제 BFS F1입니다.",
+              "source_ids": [
+                "google-method"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            },
+            {
+              "title": "AA 새 평가판",
+              "text": "AA 지수 v5.0은 AA-Briefcase v1.1, AutomationBench-AA, Terminal-Bench 4.0, FrontierCode 2.0, AA-Omniscience v1.1, GDP.pdf, HLE-Diamond, CritPt v2 Hard Subset과 Terminal-Bench-Science 0.1을 결합합니다. Carbon High의 59는 이 판에서의 점수입니다. 기존 자료의 다른 지수판과 직접 비교해 지능이 몇 퍼센트 늘었다고 해석하지 않습니다.",
+              "source_ids": [
+                "aa",
+                "aa-method"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            }
+          ]
+        },
+        {
+          "id": "advantages",
+          "title": "장점: 코딩, 긴 문맥과 보안 평가의 개선",
+          "lead": "Carbon의 강점은 이전 모델보다 개선된 범위가 넓고, 일부 외부 평가에서도 높은 결과를 보인다는 점입니다.",
+          "blocks": [
+            {
+              "title": "코딩과 긴 정보 추적",
+              "text": "Terminal-Bench 4.0에서 Carbon 65.2는 Argon 57.1, Astra 59.1과 Opus 59.6보다 높습니다. GraphWalks도 96.2로 Argon 84.2보다 높습니다. 긴 입력 안의 관계를 따라가는 능력과 터미널 작업의 개선 근거지만, 실제 저장소의 회귀 없는 수정이나 한국어 문서 처리 성능을 직접 확인한 결과는 아닙니다. Chartography는 72.5로 Argon 71.6보다 높은 정도이며 큰 폭의 일괄 개선으로 표현하지 않습니다.",
+              "source_ids": [
+                "chart",
+                "google-method"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            },
+            {
+              "title": "보안 과제의 구체적 범위",
+              "text": "SEC-bench Pro 88.2는 2026년 5월 JavaScript 엔진 183과제에서 Antigravity를 사용한 pass@1의 반복 평균입니다. ExploitGym 54.8은 인터넷 없이 완화장치가 꺼진 설정에서 목표 취약점을 확인하는 실험입니다. 방법서는 기본 6시간과 연장 10시간을 모두 측정했다고 적지만 공개 표의 단일 값이 어느 시간 조건인지 분명히 연결하지 않아 그 한계를 남깁니다. CWE-bench v1의 71.0은 Collinear가 모델들을 평가한 수정 과제 결과입니다. 서로 다른 세 지표를 회사의 취약점 처리 완료율 하나로 합치지 않습니다.",
+              "source_ids": [
+                "launch",
+                "google-method",
+                "chart"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            },
+            {
+              "title": "정렬과 주입 방어의 개선 주장",
+              "text": "Google은 내부의 근거 없는 주장 감소와 Terminal-Bench 부정행위 억제, 범위를 넘는 행동과 불충분한 수행 감소를 보고합니다. Gray Swan IPI에서 Argon 0.7%, Carbon 0.0% 공격 성공을 제시하지만 이는 평가된 공격 표본의 결과입니다. 모든 프롬프트 주입을 막는다는 보증이나 독립적인 운영 사고율 측정은 아닙니다.",
+              "source_ids": [
+                "launch"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            }
+          ]
+        },
+        {
+          "id": "limitations",
+          "title": "단점과 확인되지 않은 범위",
+          "lead": "종합 지수 선두와 일부 보안 성과가 모든 업무에서의 우위를 뜻하지 않습니다.",
+          "blocks": [
+            {
+              "title": "경쟁 모델에 뒤처진 평가",
+              "text": "FrontierSWE 2의 Carbon 61.2는 Astra 65.5보다 4.3%p, Opus 62.3보다 1.1%p 낮습니다. OSWorld offline도 81.5로 Opus 87.2보다 5.7%p 낮습니다. 따라서 가장 높은 종합 지수만 보고 저장소 수정과 화면 조작까지 모두 최상이라고 결론낼 수 없습니다. 비교표의 단위와 Harness 차이를 고려해 작업별로 후보를 나누는 것이 타당합니다.",
+              "source_ids": [
+                "chart",
+                "google-method"
+              ],
+              "kind": "judgment",
+              "type": "paragraph"
+            },
+            {
+              "title": "낮은 토큰 요금과 실제 비용의 차이",
+              "text": "AA에서 Carbon은 작업당 7.76달러로 Astra 6.24달러보다 높습니다. Carbon의 표준 토큰 요율은 낮지만 같은 평가에서 총 출력량은 200M으로 Astra의 54M보다 많았습니다. 반면 Opus의 작업당 10.04달러와 220M 출력량보다는 작습니다. 이 자료는 토큰 단가만으로 작업 비용을 판단하기 어렵다는 근거이며, 우리 업무에서도 같은 순서나 비율이 된다는 뜻은 아닙니다.",
+              "source_ids": [
+                "aa",
+                "astra-aa",
+                "opus-aa"
+              ],
+              "kind": "judgment",
+              "type": "paragraph"
+            },
+            {
+              "title": "도입과 문서 사양의 공백",
+              "text": "공식 API 목록과 모델 카드 목록에는 아직 Carbon의 별도 공개 항목을 찾지 못했습니다. AA의 1M 문맥 및 여러 입력 형식과 Google의 제한 제공 발표를 구분해야 합니다. 한국어 정확도, 지역/기업별 제공, 데이터 처리 조건과 SLA, 최대 출력 및 구체적인 공개 API 사양은 추가 확인이 필요합니다. 현재 계정에서 쓸 수 있다고 안내하거나 Argon의 옵션을 Carbon에 그대로 적용하지 않습니다.",
+              "source_ids": [
+                "api-models",
+                "model-cards",
+                "aa",
+                "launch"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            }
+          ]
+        },
+        {
+          "id": "cost-access",
+          "title": "가격과 제공 조건",
+          "lead": "지금 발표된 요금과 실제 구매 및 계정 접근은 서로 다른 확인 대상입니다.",
+          "blocks": [
+            {
+              "title": "출시 할인과 표준 요금",
+              "text": "Carbon은 입력 2달러와 출력 10달러의 출시 할인 후 입력 4달러와 출력 20달러를 적용한다고 예고했습니다. 캐시 입력 95% 할인은 출시 입력 요율에 계산하면 0.10달러입니다. Carbon의 할인 종료일은 발표에 없으므로 Argon의 11월 30일/12월 1일 일정을 공유한다고 단정하지 않습니다. 별도 표준 캐시 조건과 장문, 도구 및 처리 등급 요금도 공개 상품 문서로 확인되기 전에는 채우지 않습니다.",
+              "source_ids": [
+                "launch",
+                "pricing"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            },
+            {
+              "title": "경쟁 모델 요금의 적용 범위",
+              "text": "현재 Opus 5.5 기본 요금은 입력 4, 캐시 읽기 0.20, 출력 20달러이며 캐시 쓰기는 별도입니다. Astra는 입력 272K 초과 시 요청 전체의 입력과 캐시 요율을 2배, 출력 요율을 1.5배로 적용합니다. API의 토큰 요율을 월 구독료나 에이전트 한 작업의 가격으로 바꾸지 않습니다. Carbon의 제한 접근을 이미 공개된 경쟁 API와 같은 구매 경로로 비교하지 않는 것이 중요합니다.",
+              "source_ids": [
+                "claude-prices",
+                "openai-spec",
+                "launch"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            }
+          ]
+        }
+      ],
+      "caveats": [
+        {
+          "text": "공식 발표일은 2026-10-28, 실제 확인일은 한국시간 2026-10-29입니다. Argon 공개 확대나 이전 유출/시연을 Carbon의 새 정식 공개일로 바꾸지 않습니다.",
+          "source_ids": [
+            "launch",
+            "argon"
+          ]
+        },
+        {
+          "text": "표는 Google 공개 비교표와 방법서 및 AA 평가 원문을 읽은 문헌 비교입니다. 평가별 판과 추론/Harness가 다르며 독립 재현, 실제 한국어 업무, 계정 접근과 과금은 수행하지 않았습니다.",
+          "source_ids": [
+            "chart",
+            "google-method",
+            "aa"
+          ]
+        },
+        {
+          "text": "Carbon은 제한 제공입니다. 일반 API, 최대 출력, 요금 할인 종료일과 일부 세부 조건은 확인되지 않았으며 미확인 값을 0이나 기존 Argon 값으로 채우지 않습니다.",
+          "source_ids": [
+            "launch",
+            "api-models",
+            "model-cards"
+          ]
+        }
+      ],
+      "references": [
+        {
+          "id": "launch",
+          "title": "Carbon 공식 발표",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+          "description": "Carbon 공식 발표의 실제 관련절, 평가판과 제공 조건을 확인했습니다. Carbon 미등록 목록과 미공개 조건은 별도로 표시합니다."
+        },
+        {
+          "id": "chart",
+          "title": "Carbon 공식 성능 비교표",
+          "url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_4_carbon__evals-table.width-1200.format-webp.webp",
+          "description": "Carbon 공식 성능 비교표의 실제 관련절, 평가판과 제공 조건을 확인했습니다. Carbon 미등록 목록과 미공개 조건은 별도로 표시합니다."
+        },
+        {
+          "id": "google-method",
+          "title": "Carbon 평가 방법서 PDF",
+          "url": "https://deepmind.google/models/evals-methodology/gemini-4-carbon",
+          "description": "Carbon 평가 방법서 PDF의 실제 관련절, 평가판과 제공 조건을 확인했습니다. Carbon 미등록 목록과 미공개 조건은 별도로 표시합니다."
+        },
+        {
+          "id": "aa",
+          "title": "Carbon AA 평가 원문",
+          "url": "https://artificialanalysis.ai/models/gemini-4-carbon",
+          "description": "Carbon AA 평가 원문의 실제 관련절, 평가판과 제공 조건을 확인했습니다. Carbon 미등록 목록과 미공개 조건은 별도로 표시합니다."
+        },
+        {
+          "id": "aa-method",
+          "title": "AA 지수 v5.0 구성과 측정 방법",
+          "url": "https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index",
+          "description": "AA 지수 v5.0 구성과 측정 방법의 실제 관련절, 평가판과 제공 조건을 확인했습니다. Carbon 미등록 목록과 미공개 조건은 별도로 표시합니다."
+        },
+        {
+          "id": "opus-aa",
+          "title": "Opus 5.5 AA 평가",
+          "url": "https://artificialanalysis.ai/models/claude-opus-5-5",
+          "description": "Opus 5.5 AA 평가의 실제 관련절, 평가판과 제공 조건을 확인했습니다. Carbon 미등록 목록과 미공개 조건은 별도로 표시합니다."
+        },
+        {
+          "id": "astra-aa",
+          "title": "Astra AA 평가",
+          "url": "https://artificialanalysis.ai/models/gpt-6-astra",
+          "description": "Astra AA 평가의 실제 관련절, 평가판과 제공 조건을 확인했습니다. Carbon 미등록 목록과 미공개 조건은 별도로 표시합니다."
+        },
+        {
+          "id": "argon",
+          "title": "Argon 개발자 제공 확대",
+          "url": "https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-4-argon/",
+          "description": "Argon 개발자 제공 확대의 실제 관련절, 평가판과 제공 조건을 확인했습니다. Carbon 미등록 목록과 미공개 조건은 별도로 표시합니다."
+        },
+        {
+          "id": "api-models",
+          "title": "Gemini API 현재 모델 목록",
+          "url": "https://ai.google.dev/gemini-api/docs/models",
+          "description": "Gemini API 현재 모델 목록의 실제 관련절, 평가판과 제공 조건을 확인했습니다. Carbon 미등록 목록과 미공개 조건은 별도로 표시합니다."
+        },
+        {
+          "id": "pricing",
+          "title": "Gemini API 요금",
+          "url": "https://ai.google.dev/gemini-api/docs/pricing",
+          "description": "Gemini API 요금의 실제 관련절, 평가판과 제공 조건을 확인했습니다. Carbon 미등록 목록과 미공개 조건은 별도로 표시합니다."
+        },
+        {
+          "id": "argon-api",
+          "title": "Argon API 사양",
+          "url": "https://ai.google.dev/gemini-api/docs/models/gemini-4-argon",
+          "description": "Argon API 사양의 실제 관련절, 평가판과 제공 조건을 확인했습니다. Carbon 미등록 목록과 미공개 조건은 별도로 표시합니다."
+        },
+        {
+          "id": "claude-prices",
+          "title": "Claude API 요금",
+          "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+          "description": "Claude API 요금의 실제 관련절, 평가판과 제공 조건을 확인했습니다. Carbon 미등록 목록과 미공개 조건은 별도로 표시합니다."
+        },
+        {
+          "id": "openai-spec",
+          "title": "GPT-6 Astra 사양과 요금",
+          "url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+          "description": "GPT-6 Astra 사양과 요금의 실제 관련절, 평가판과 제공 조건을 확인했습니다. Carbon 미등록 목록과 미공개 조건은 별도로 표시합니다."
+        },
+        {
+          "id": "claude-spec",
+          "title": "Claude 모델 사양",
+          "url": "https://platform.claude.com/docs/en/about-claude/models/overview",
+          "description": "Claude 모델 사양의 실제 관련절, 평가판과 제공 조건을 확인했습니다. Carbon 미등록 목록과 미공개 조건은 별도로 표시합니다."
+        },
+        {
+          "id": "model-cards",
+          "title": "Google 모델 카드 목록",
+          "url": "https://deepmind.google/models/model-cards/",
+          "description": "Google 모델 카드 목록의 실제 관련절, 평가판과 제공 조건을 확인했습니다. Carbon 미등록 목록과 미공개 조건은 별도로 표시합니다."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "모델 비교 판단",
+            "text": "Carbon은 Argon보다 코딩과 긴 문맥, 보안 평가가 개선된 후속 모델이며 AA v5.0에서도 선두입니다. 다만 저장소 수정과 화면 조작의 일부 평가에서는 Astra나 Opus가 앞서고, 출력량에 따른 작업 비용도 달라집니다. 현재는 일반 개발자가 즉시 전환할 대안이라기보다 제한 제공과 공개 사양의 후속 확인이 필요한 비교 대상입니다.",
+            "source_ids": [
+              "launch",
+              "chart",
+              "google-method",
+              "aa",
+              "astra-aa",
+              "opus-aa"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      }
+    }
+  ]
+}
