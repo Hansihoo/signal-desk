@@ -382,3 +382,5 @@ Carbon공개완료:78acacf/Pages40762896056 success. 소개1편/전체표62관�
 2026-10-30 모델 상세 보완:27일Unlimited OCR2와28일Nemotron3.5Transcribe 소개2편/41사실을동시입력했고TheoCarbon원본1편을누적수집했다. 원문판차이·상대퇴보·정확단위와미확인을보존한다. 로컬품질/지식연결완료,제출소스/공개검증진행중. [현재검토](docs/AI_MODEL_REVIEW.2026-10-30.md).
 
 2026-10-30 제출 소스 검증: 관련 입력만 분리한 소스에서 214개 테스트, 수집/publish/brief/review와 실제 Edge PC/모바일 검사를 통과했다. OCR 점수·Transcribe 분당 요금·원문·날짜·이전 판·Carbon 원본 표 기능을 확인했다. 공개 배포는 진행 중이며 완료 근거는 당일 모델 검토 문서에 추가한다.
+
+2026-10-30 모델 공개 완료: b830d17 / [Pages 40949183564](https://github.com/Hansihoo/signal-desk/actions/runs/40949183564) 성공. 공개 소개 2편과 비교 사실 41건, Theo Carbon 원본 1편을 확인했고 기존 보고서/모델/원본 이력을 정확히 보존했다. 실제 공개 PC·모바일/필터·점수·분당 요금·이전 판 확인 완료. [최종 근거](docs/AI_MODEL_REVIEW.2026-10-30.md).

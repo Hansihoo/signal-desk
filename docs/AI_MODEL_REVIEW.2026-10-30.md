@@ -1,5 +1,7 @@
 # 2026-10-30 AI 모델 검토
 
+현재 상태: 새 소개 2편과 전체 비교표, Theo Carbon 원본 추가 및 실제 공개 검증을 완료했다. [성공한 Pages 40949183564](https://github.com/Hansihoo/signal-desk/actions/runs/40949183564). 아래 배포 전 상태는 당시 기록이며 최종 결과는 문서 끝의 공개 완료 절을 따른다.
+
 질문은 긴 문서 파싱과 녹음 음성 이해의 새 모델이 기존/경쟁 대안보다 어디서 낫거나 부족하고 비용과 제공 조건이 무엇인가다. Unlimited OCR2는27일 공개의 상세 소개 누락 보완이며 Nemotron3.5Transcribe는28일 공식 출시다. 오늘 처음 발견한 자료를30일 신규 출시로 바꾸지 않는다.
 
 ## 실제 취득과 원문 검토
@@ -14,7 +16,7 @@ IBM29일Switch4.1.1은기반모델불변패치다. 발표10언어와연결ASR현
 
 HF모델LICENSE404는그대로실패로보존하고공식저장소MIT와카드표기를대조했다. Baidu가격표는PaddleOCR-VL/일반문서파싱으로UnlimitedOCR2가격매핑이없어단가미확인이다. PDF기본python에는pypdf/fitz가없어번들pypdf와Poppler로읽었다. 첫출력cp949문자오류는UTF8출력으로교정했으며취득실패와구분한다.
 
-## 원고와 검증의 현재 상태
+## 배포 전 로컬 원고·검토 상태
 
 새불변보고서2편/quality2패키지와41사실을양manifest에연결했다. 같은작성자가본문을제외한첫화면을별도읽고OCR대화이력을제거했으며본문과원문표를대조하고문장띄어쓰기를수정했다. research-check2편통과,로컬ai-models41신규/publish완료. 지식원장에실제1판source_hash/document_digest를연결하고두질의의본문반환을확인했다. 독립에이전트/사람독해시험,모델실행·한국어실업무·청구·계정시험은없다.
 
@@ -82,3 +84,16 @@ HF모델LICENSE404는그대로실패로보존하고공식저장소MIT와카드�
 처음 검증 실행은 index 준비가 끝나기 전에 시작해 검증 전에 취소했다. 취소를 통과로 세지 않는다. 재실행의 테스트/수집/발행/화면 결과는 `D:/9_codex_temp/2026-10-30/signal-models/selected-check.log`와 `local-browser.json`에 보존한다. 검증 폴더는 마지막 소비자 종료 후 scratch 실행기가 정리한다. 필요 근거인 이 외부 QA 폴더와 data/raw 원문은 유지한다.
 
 로컬 research-audit의 이번 두 소개는 gated_agent_review이며 사람/독립 실행 검토가 아니다. 전체 기존 문서의 미검토 상태를 이 작업으로 승격하지 않았다. 공개 배포·공개 payload/이력/화면 검증은 아직 완료 전이다.
+
+
+## 공개 완료 — 2026-10-30 05:34 KST
+
+소스 `b830d17a750a6f45bf34ddfa7ddd1caa6455a913`를 기존 main에 정상 push했고 [Pages 40949183564](https://github.com/Hansihoo/signal-desk/actions/runs/40949183564)가 성공했다. 실제 Actions 로그의 214개 테스트, 공개 소스 수집·publish, 클라우드 brief/review, 상태 저장과 Pages 배포 성공을 확인했다. 이 기록을 남기는 후속 커밋은 문서만 변경하고 [skip ci]로 재배포하지 않는다.
+
+공개 [Unlimited OCR 2](https://hansihoo.github.io/signal-desk/preview/unlimited-ocr-2-model-guide.html)와 [Nemotron 3.5 Transcribe](https://hansihoo.github.io/signal-desk/preview/nemotron-3-5-transcribe-model-guide.html), [전체 비교표](https://hansihoo.github.io/signal-desk/preview/ai-models.html)를 같은 작업에서 확인했다. 원고 2편과 검토 사실 41건의 payload/원문 URL/확인일이 입력과 일치한다. 공개 문서 89편/219판, 모델 2210관측/2316판, Theo 원본 17편/19판이다. 기존 87개 현재 보고서와 217개 판, 기존 2169개 모델 관측과 2275개 판, 기존 Theo 16개 원본과 18개 판의 내용은 정확히 보존됐다.
+
+[Theo Carbon 원본](https://hansihoo.github.io/signal-desk/preview/model-guides/gemini-4-carbon-model-guide.html) 신규 1판은 로컬 원본 payload와 같고 기존 작성 Carbon 소개도 유지됐다. 새 두 소개/전체표/두 Carbon 경로/이전 LFM3 경로의 HTTP 200을 확인했다. 실제 공개 Edge 1280/390px에서 제목·각 5개 표·내부 인용 anchor·정확한 전체 비교표 링크·모바일 화면과 Baidu/NVIDIA 필터를 검사했다. Table TEDS 89.60와 DeepInfra 0.002 USD/음성 분의 실제 값·원문 단위·출처·2026-10-30 확인일, LFM3 이전 판 표시, Carbon 원본의 표 검색·정렬·sandbox를 확인했다. 공개 스크린샷을 직접 읽고 로컬 결과와 대조했다.
+
+공식 발표일은 OCR2 27일, Transcribe 28일로 유지했다. 점수는 개발사/외부값 재인용이며 자체 재현이 아니다. OCR2의 한국어 실업무·API 전용 단가와 Transcribe 실제 한국어 업무/청구·계정·GPU 실행은 검증하지 않았다. 발표 글과 현재 카드의 WER/양자화 차이, 이전 모델보다 나쁜 평가와 메모리/런타임 조건은 본문과 표에 남겼다. IBM 패치/제3자 Cyber 및 미독 후보를 새 공식 기반 모델로 발행하지 않았다. 전 공급자 심층 전수검토 완료를 주장하지 않는다.
+
+검증 JSON·Actions 로그·실제 PNG는 `D:/9_codex_temp/2026-10-30/signal-models`에 필요한 근거로 보존한다. 성공한 선택 소스 scratch는 종료 후 삭제됐다. 조기 취소했던 `codex-scratch-signal-model-selected-source-88f1816ee4da`는 소유 프로세스 종료/소비자 없음 확인 뒤 공통 정리기로 완료 등록했고 보수적 정리 대상이다. 혼합 근거 폴더 전체를 삭제 가능으로 표시하지 않았다. 다른 작업의 미제출 소스와 로컬 지식 레지스트리는 제출하지 않았다.
