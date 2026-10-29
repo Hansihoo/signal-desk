@@ -77,7 +77,9 @@
     "cohere-rerank-5-model-guide",
     "lfm3-family-model-guide",
     "google-genie-4-model-guide",
-    "gemini-4-carbon-model-guide"
+    "gemini-4-carbon-model-guide",
+    "unlimited-ocr-2-model-guide",
+    "nemotron-3-5-transcribe-model-guide"
   ],
   "catalogs": {
     "devops-implementation-guide": "devops_tools.2026-10-10.r4.json"
@@ -240,6 +242,12 @@
     ],
     "gemini-4-carbon-model-guide": [
       "75e0c943fd9ec2496c3bcf7b7d58696b513b5d3d804c28ec377bd3fe8297f45a"
+    ],
+    "unlimited-ocr-2-model-guide": [
+      "83702dc96e994c400e7c5254e6cb21bb2ca0e4e2116d21b5eaf0d414a1a17acc"
+    ],
+    "nemotron-3-5-transcribe-model-guide": [
+      "3aca0e9cbbd8125cabdabe4e1877911d858fe22d80d0a2319d40402ea4a608d4"
     ]
   },
   "model_introduction_editions": {
@@ -347,6 +355,12 @@
     ],
     "gemini-4-carbon-model-guide": [
       "75e0c943fd9ec2496c3bcf7b7d58696b513b5d3d804c28ec377bd3fe8297f45a"
+    ],
+    "unlimited-ocr-2-model-guide": [
+      "83702dc96e994c400e7c5254e6cb21bb2ca0e4e2116d21b5eaf0d414a1a17acc"
+    ],
+    "nemotron-3-5-transcribe-model-guide": [
+      "3aca0e9cbbd8125cabdabe4e1877911d858fe22d80d0a2319d40402ea4a608d4"
     ]
   },
   "model_introduction_purpose_editions": {
@@ -443,6 +457,12 @@
     ],
     "gemini-4-carbon-model-guide": [
       "75e0c943fd9ec2496c3bcf7b7d58696b513b5d3d804c28ec377bd3fe8297f45a"
+    ],
+    "unlimited-ocr-2-model-guide": [
+      "83702dc96e994c400e7c5254e6cb21bb2ca0e4e2116d21b5eaf0d414a1a17acc"
+    ],
+    "nemotron-3-5-transcribe-model-guide": [
+      "3aca0e9cbbd8125cabdabe4e1877911d858fe22d80d0a2319d40402ea4a608d4"
     ]
   },
   "model_introduction_reader_editions": {
@@ -536,6 +556,12 @@
     ],
     "gemini-4-carbon-model-guide": [
       "75e0c943fd9ec2496c3bcf7b7d58696b513b5d3d804c28ec377bd3fe8297f45a"
+    ],
+    "unlimited-ocr-2-model-guide": [
+      "83702dc96e994c400e7c5254e6cb21bb2ca0e4e2116d21b5eaf0d414a1a17acc"
+    ],
+    "nemotron-3-5-transcribe-model-guide": [
+      "3aca0e9cbbd8125cabdabe4e1877911d858fe22d80d0a2319d40402ea4a608d4"
     ]
   }
 }

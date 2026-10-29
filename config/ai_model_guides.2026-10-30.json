@@ -1,0 +1,1041 @@
+{
+  "schema_version": 1,
+  "reports": [
+    {
+      "id": "unlimited-ocr-2-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "checked_on": "2026-10-30",
+      "title": "Unlimited OCR 2 소개: 긴 문서 파싱의 개선과 단일 페이지 인식의 한계",
+      "description": "Unlimited OCR 2를 이전 Unlimited OCR 및 경쟁 문서 모델과 비교해 장문서 구조 인식, 메모리 조건, 단일 페이지의 장단점과 제공 비용을 설명합니다.",
+      "deck": "Baidu가 10월 27일 공개한 Unlimited OCR 2는 페이지를 이어 처리하는 문서 파싱 모델입니다. 100쪽 이상 평가에서 강점을 보이지만 단일 페이지 표 인식은 이전판보다 낮고, 전역 문서 구조를 완전히 보존하지 못합니다.",
+      "scope": "공식 원문을 한국시간 2026년 10월 30일 확인했습니다. 모델 설치와 추론, 한국어 업무 시험, 실제 계정 접근과 과금은 수행하지 않았습니다.",
+      "source_note": "공급자 자체 평가와 외부 리더보드 재인용을 구분합니다. 오류율의 분모, 평가판, 설정과 시점을 보존하며 사양이나 점수의 미확인을 0으로 채우지 않습니다.",
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "highlights": [
+        "긴 문서의 구조 인식",
+        "단일 페이지의 반대 결과",
+        "캐시와 전체 비용의 차이"
+      ],
+      "summary": [
+        {
+          "label": "긴 문서의 구조 인식",
+          "text": "논문 MPDocBench Overall은 84.59로 이전판 61.89보다 높습니다. 103~300쪽 100문서의 MarathonDocBench에서는 77.06이며 Kimi-K3 33.74를 앞섭니다. 저자 설계 평가이며 경쟁 API의 입력 한도와 실패 처리도 결과에 포함됩니다.",
+          "source_ids": [
+            "ocr-pdf",
+            "marathon"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "단일 페이지의 반대 결과",
+          "text": "OmniDocBench v1.6 Overall은 94.02이지만 TeleOCR 96.91과 OvisOCR2 96.47보다 낮습니다. 표 TEDS는 이전판 90.16에서 89.60으로 낮아져 모든 문서 유형에서 좋아졌다고 말할 수 없습니다.",
+          "source_ids": [
+            "ocr-pdf"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "캐시와 전체 비용의 차이",
+          "text": "논문의 47.00→1.77GB는 동시성 1에서 측정한 KV 캐시입니다. 가중치나 전체 GPU 메모리 요구량이 아닙니다. MIT 공개 가중치와 자체 호스팅 비용, 별도 클라우드 상품의 가격은 서로 구분해야 합니다.",
+          "source_ids": [
+            "ocr-pdf",
+            "ocr-card",
+            "ocr-git-license",
+            "ocr-api-price"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "tables": [
+        {
+          "id": "specification",
+          "title": "주요 사양과 이전판의 차이",
+          "columns": [
+            "항목",
+            "Unlimited OCR 2",
+            "이전 Unlimited OCR"
+          ],
+          "rows": [
+            {
+              "values": [
+                "기반과 크기",
+                "DeepEncoder + MoE, 논문 약 3B / 활성 약 0.5B",
+                "같은 기반 계열 3B / 활성 약 0.5B"
+              ],
+              "source_ids": [
+                "ocr-pdf"
+              ]
+            },
+            {
+              "values": [
+                "입력과 출력",
+                "페이지 이미지 → 문서 구조를 포함한 텍스트",
+                "페이지 이미지 → 문서 구조를 포함한 텍스트"
+              ],
+              "source_ids": [
+                "ocr-card",
+                "ocr-old"
+              ]
+            },
+            {
+              "values": [
+                "긴 문서 처리",
+                "SR-SWA와 겹치는 페이지 창, 경계 캐시 재사용",
+                "R-SWA; 논문 비교에서 입력 40쪽 제한"
+              ],
+              "source_ids": [
+                "ocr-pdf"
+              ]
+            },
+            {
+              "values": [
+                "설정의 위치 범위",
+                "max_position_embeddings 131,072",
+                "max_position_embeddings 32,768"
+              ],
+              "source_ids": [
+                "ocr-config",
+                "ocr-old-config"
+              ]
+            },
+            {
+              "values": [
+                "제공 경로",
+                "공개 가중치, Transformers와 수정 SGLang; 클라우드 경로 안내",
+                "공개 가중치와 기존 실행 경로"
+              ],
+              "source_ids": [
+                "ocr-card",
+                "ocr-old"
+              ]
+            }
+          ],
+          "note": "논문 본문은 활성 500M, 구조 그림은 A570M으로 표기가 달라 활성 수를 정확한 실측치로 단정하지 않습니다. 설정의 위치 범위는 API 최대 입력 또는 총 문서 길이를 보장하는 수치가 아닙니다. 학습 최대 시퀀스 64K도 별도 조건입니다."
+        },
+        {
+          "id": "long-document",
+          "title": "여러 페이지 평가의 상대 성능",
+          "columns": [
+            "모델",
+            "MPDocBench Overall ↑",
+            "MarathonDocBench Overall ↑",
+            "MPDocBench 교차 페이지 표 TEDS ↑"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Unlimited OCR 2",
+                "84.59",
+                "77.06",
+                "89.54"
+              ],
+              "source_ids": [
+                "ocr-pdf"
+              ]
+            },
+            {
+              "values": [
+                "Unlimited OCR",
+                "61.89",
+                "40쪽 제한으로 미보고",
+                "60.76"
+              ],
+              "source_ids": [
+                "ocr-pdf"
+              ]
+            },
+            {
+              "values": [
+                "Qwen3.8-Max",
+                "78.3",
+                "22.93",
+                "67.18"
+              ],
+              "source_ids": [
+                "ocr-pdf"
+              ]
+            },
+            {
+              "values": [
+                "Kimi-K3",
+                "60.77",
+                "33.74",
+                "81.57"
+              ],
+              "source_ids": [
+                "ocr-pdf"
+              ]
+            }
+          ],
+          "note": "Baidu 논문 표1·2의 저자 비교이며 점수는 원문 척도입니다. MPDocBench는 최대30쪽, Marathon은103~300쪽100문서입니다. Overall은 세부 지표의 결합이며 실제 업무 정답률이 아닙니다. 원문 Edit Distance는 낮을수록 좋고 TEDS는 높을수록 좋습니다."
+        },
+        {
+          "id": "single-page",
+          "title": "단일 페이지에서의 개선과 퇴보",
+          "columns": [
+            "OmniDocBench v1.6 모델",
+            "Overall ↑",
+            "표 TEDS ↑",
+            "수식 CDM ↑"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Unlimited OCR 2",
+                "94.02",
+                "89.6",
+                "96.29"
+              ],
+              "source_ids": [
+                "ocr-pdf"
+              ]
+            },
+            {
+              "values": [
+                "Unlimited OCR",
+                "93.92",
+                "90.16",
+                "95.79"
+              ],
+              "source_ids": [
+                "ocr-pdf"
+              ]
+            },
+            {
+              "values": [
+                "OvisOCR2",
+                "96.47",
+                "94.58",
+                "97.49"
+              ],
+              "source_ids": [
+                "ocr-pdf"
+              ]
+            },
+            {
+              "values": [
+                "TeleOCR",
+                "96.91",
+                "96.82",
+                "96.6"
+              ],
+              "source_ids": [
+                "ocr-pdf"
+              ]
+            }
+          ],
+          "note": "논문 표3의 같은 비교표를 사용했습니다. 수식과 표 구조는 다른 측정이며 Overall 소폭 상승으로 표 인식 퇴보를 가리지 않습니다. 한국어, HWP 또는 회사 문서의 성능으로 일반화하지 않습니다."
+        },
+        {
+          "id": "resources",
+          "title": "페이지 분할의 메모리와 처리량",
+          "columns": [
+            "같은 모델의 처리 방식",
+            "Peak KV 캐시 GB, B=1 ↓",
+            "토큰/초, B=16 ↑"
+          ],
+          "rows": [
+            {
+              "values": [
+                "표준 디코딩",
+                "47.0",
+                "360"
+              ],
+              "source_ids": [
+                "ocr-pdf"
+              ]
+            },
+            {
+              "values": [
+                "겹치는 페이지 창과 캐시 재사용",
+                "1.77",
+                "1315"
+              ],
+              "source_ids": [
+                "ocr-pdf"
+              ]
+            }
+          ],
+          "note": "논문 표4의 MarathonDocBench 측정입니다. 메모리와 처리량은 동시성이 달라 한 실행의 지표로 합치지 않습니다. 이 표에 정확한 GPU 구성과 전체 메모리 내역은 충분히 제시되지 않았습니다. README의 A800 80GB는 별도 시험 환경이며 최소 요구량이 아닙니다."
+        },
+        {
+          "id": "price",
+          "title": "이용 조건과 표준 비용의 확인 범위",
+          "columns": [
+            "대상",
+            "가중치 이용 조건",
+            "API 표준 요금 / 실제 비용"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Unlimited OCR 2",
+                "모델 카드 MIT, 코드 MIT 고지",
+                "2판 전용 표준 API 단가 미확인; 자체 GPU/운영 비용 별도"
+              ],
+              "source_ids": [
+                "ocr-card",
+                "ocr-git-license",
+                "ocr-api-price"
+              ]
+            },
+            {
+              "values": [
+                "이전 Unlimited OCR",
+                "공개 모델 카드의 MIT",
+                "이전 클라우드 경로가2판과 같은 상품인지 미확인"
+              ],
+              "source_ids": [
+                "ocr-old",
+                "ocr-price"
+              ]
+            },
+            {
+              "values": [
+                "Baidu 일반 문서 파싱 가격표",
+                "클라우드 별도 상품",
+                "PaddleOCR-VL 및 일반 파싱 단가를 Unlimited OCR 2에 적용하지 않음"
+              ],
+              "source_ids": [
+                "ocr-api-price"
+              ]
+            }
+          ],
+          "note": "2026-10-30 확인. 공개 가중치의 라이선스에 사용량 단가가 없다는 사실은 총비용 0원을 뜻하지 않습니다. API 문서의 v2 대응, 계약과 요금 단위가 확인되기 전 다른 OCR 상품의 페이지당 위안 가격을 승계하지 않습니다."
+        }
+      ],
+      "explanation": [
+        {
+          "id": "overview",
+          "title": "모델 개요와 이전판 대비 변화",
+          "lead": "핵심 변화는 문서를 길게 넣는 것보다 매 단계에서 참조하는 정보와 메모리를 제한하는 방식에 있습니다.",
+          "blocks": [
+            {
+              "title": "연속 문서 파싱",
+              "text": "문서 파싱은 글자를 옮기는 데 그치지 않고 표, 수식, 읽는 순서와 다음 쪽으로 이어진 내용을 구조화하는 일입니다. 이전 Unlimited OCR은 긴 입력에서 원격 이미지 참조 범위와 메모리가 늘어나는 문제가 있었습니다. 2판은 같은 계열의 기반에서 추가 학습하며 긴 문서의 구조 인식을 강화했습니다.",
+              "source_ids": [
+                "ocr-pdf",
+                "ocr-old"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            },
+            {
+              "title": "SR-SWA와 경계 재사용",
+              "text": "Page Gate는 관련 페이지의 후보를 좁히고 Token Sieve는 그중 필요한 시각 정보 블록을 고정 예산 안에서 선택합니다. 이어 문서를 겹치는 페이지 묶음으로 순차 처리하며 경계 페이지의 캐시와 앞선 텍스트 꼬리를 재사용하고 쓰지 않는 캐시는 해제합니다. 이 방식은 모든 페이지를 항상 기억하는 전역 메모리와 다릅니다.",
+              "source_ids": [
+                "ocr-pdf"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            }
+          ]
+        },
+        {
+          "id": "evaluation",
+          "title": "평가 방식과 비교의 한계",
+          "lead": "긴 문서 점수에는 인식 능력과 서비스 입력 한도가 함께 작용합니다.",
+          "blocks": [
+            {
+              "title": "평가판과 측정 도구",
+              "text": "MPDocBench의 글자 및 읽기 순서는 Edit Distance, 표 구조는 TEDS, 수식은 CDM, 그림은 F1으로 평가합니다. 교차 페이지의 텍스트와 표도 따로 채점합니다. Marathon 데이터 카드는 MPDocBench-Parse의 교체 평가 파일과 매칭1800초, 표 TEDS300초의 제한을 제시하며 시간 한도를 넘는 표는0점으로 처리합니다. 같은 모델도 전처리, Markdown 제목과 그림의 페이지 표기, 평가기 조건에 따라 점수가 달라질 수 있습니다.",
+              "source_ids": [
+                "ocr-pdf",
+                "marathon"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            },
+            {
+              "title": "경쟁 모델의 실패 처리",
+              "text": "Marathon은 중국어와 영어의 약1만8천쪽을 포함합니다. 저자 비교는 모든 페이지를 한 요청에 넣고 과대 요청이나 시간 초과 때 축소와 재시도를 하며 이미지 개수 제한을 넘는 문서는 빈 예측으로 남겨100문서 분모를 유지합니다. 따라서 큰 격차를 모델의 순수 인식 우열만으로 해석하거나 경쟁 모델의 최적 분할 파이프라인 성능으로 읽으면 안 됩니다.",
+              "source_ids": [
+                "marathon"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            }
+          ]
+        },
+        {
+          "id": "strengths",
+          "title": "장점과 적합한 비교 범위",
+          "lead": "수십에서 수백 페이지까지 이어지는 구조 인식과 캐시 관리가 비교할 강점입니다.",
+          "blocks": [
+            {
+              "title": "교차 페이지 구조와 공개 경로",
+              "text": "MPDocBench에서 교차 페이지 표 TEDS89.54는 이전60.76보다 높습니다. Marathon77.06 역시 같은 저자 비교의 Kimi33.74보다 높습니다. 공개 가중치와 평가 데이터가 있어 제공자 API의 이미지 개수 제한과 별개로 자체 처리 경로를 검토할 수 있다는 점도 차이입니다. 다만 공개 자료가 있다는 사실을 재현 성공으로 부르지는 않습니다.",
+              "source_ids": [
+                "ocr-pdf",
+                "ocr-card",
+                "marathon"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            }
+          ]
+        },
+        {
+          "id": "limits",
+          "title": "단점과 남아 있는 한계",
+          "lead": "긴 문서의 높은 점수가 모든 페이지와 구조에서 우수함을 뜻하지는 않습니다.",
+          "blocks": [
+            {
+              "title": "단일 페이지와 전역 구조",
+              "text": "단일 페이지 Overall94.02는 OvisOCR2와 TeleOCR보다 낮고, 표 TEDS89.60은 이전90.16보다 낮습니다. 논문도 현재 희소 참조 방식이 전역 정보를 보존하지 못해 제목 계층 같은 문서 전체 구조 이해에 제한이 있다고 설명합니다. 학습 자료의 다양성도 제한으로 인정합니다. 무한 길이라는 이름을 무오류 또는 전체 내용의 완전 기억으로 해석하지 않습니다.",
+              "source_ids": [
+                "ocr-pdf"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            },
+            {
+              "title": "서빙 설정의 비용",
+              "text": "README는 수정 SGLang 휠과 페이지 창, 출력 토큰 상한 등 구체적인 설정을 사용합니다. 작은 페이지 창은 최고 메모리를 낮추지만 창 경계를 넘는 병합 정보가 약해질 수 있습니다. 일부 기본 할당은 메모리 부족을 일으킬 수 있어 파라미터 조정도 필요합니다. 공식 시험 GPU가 A80080GB라는 사실만으로 소형 PC에서의 실행이나1.77GB 전체 메모리를 약속할 수 없습니다.",
+              "source_ids": [
+                "ocr-card",
+                "ocr-pdf"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            }
+          ]
+        },
+        {
+          "id": "availability",
+          "title": "가격과 실제 제공 조건",
+          "lead": "공개 가중치와 클라우드 상품은 비용과 제공 계약을 각각 읽어야 합니다.",
+          "blocks": [
+            {
+              "title": "라이선스와 API 대응",
+              "text": "모델 카드와 저장소는 MIT를 표시합니다. 이는 코드와 가중치 고지를 따르는 사용 조건이며 GPU, 저장소, 전처리와 운영 인력 비용을 없애지 않습니다. 카드의 Baidu Cloud 링크는 Unlimited-OCR API 문서로 이어지지만 가격표의 PaddleOCR-VL이나 일반 문서 파싱을2판 전용 요금으로 연결할 근거는 확보하지 못했습니다. 따라서 표준 API 요금은 미확인으로 남깁니다.",
+              "source_ids": [
+                "ocr-card",
+                "ocr-git-license",
+                "ocr-price",
+                "ocr-api-price"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            }
+          ]
+        }
+      ],
+      "caveats": [
+        {
+          "text": "최초 발표는2026-10-27이며 오늘 신규 출시로 재분류하지 않습니다. 논문 표와 README의 실제 판을 비교했고 독립 추론 재현, 한국어/HWP 성능과 API 과금은 확인하지 않았습니다.",
+          "source_ids": [
+            "ocr-card",
+            "ocr-pdf"
+          ]
+        },
+        {
+          "text": "논문 표의 원래 오류율과 데이터 카드의100×(1−오류) 표시를 혼합하지 않았습니다. Marathon의 긴 문서 입력 제한과 빈 예측 처리는 순위 해석의 조건입니다.",
+          "source_ids": [
+            "ocr-pdf",
+            "marathon"
+          ]
+        }
+      ],
+      "references": [
+        {
+          "id": "ocr-card",
+          "title": "Unlimited OCR2 모델 카드",
+          "url": "https://huggingface.co/baidu/Unlimited-OCR-2/raw/main/README.md",
+          "description": "Unlimited OCR2 모델 카드의 본문과 관련 조건을 확인했습니다. 공급자 설명, 공개 평가와 실제 실행의 차이를 보존합니다."
+        },
+        {
+          "id": "ocr-pdf",
+          "title": "Unlimited OCR2 공식 기술 보고서",
+          "url": "https://huggingface.co/baidu/Unlimited-OCR-2/resolve/main/Unlimited-OCR-2.pdf",
+          "description": "Unlimited OCR2 공식 기술 보고서의 본문과 관련 조건을 확인했습니다. 공급자 설명, 공개 평가와 실제 실행의 차이를 보존합니다."
+        },
+        {
+          "id": "ocr-config",
+          "title": "OCR2 설정",
+          "url": "https://huggingface.co/baidu/Unlimited-OCR-2/raw/main/config.json",
+          "description": "OCR2 설정의 본문과 관련 조건을 확인했습니다. 공급자 설명, 공개 평가와 실제 실행의 차이를 보존합니다."
+        },
+        {
+          "id": "ocr-old",
+          "title": "이전 Unlimited OCR 카드",
+          "url": "https://huggingface.co/baidu/Unlimited-OCR/raw/main/README.md",
+          "description": "이전 Unlimited OCR 카드의 본문과 관련 조건을 확인했습니다. 공급자 설명, 공개 평가와 실제 실행의 차이를 보존합니다."
+        },
+        {
+          "id": "ocr-old-config",
+          "title": "이전 OCR 설정",
+          "url": "https://huggingface.co/baidu/Unlimited-OCR/raw/main/config.json",
+          "description": "이전 OCR 설정의 본문과 관련 조건을 확인했습니다. 공급자 설명, 공개 평가와 실제 실행의 차이를 보존합니다."
+        },
+        {
+          "id": "marathon",
+          "title": "MarathonDocBench 데이터/평가기 설명",
+          "url": "https://huggingface.co/datasets/baidu/MarathonDocBench/raw/main/README.md",
+          "description": "MarathonDocBench 데이터/평가기 설명의 본문과 관련 조건을 확인했습니다. 공급자 설명, 공개 평가와 실제 실행의 차이를 보존합니다."
+        },
+        {
+          "id": "ocr-git-license",
+          "title": "공식 저장소 MIT 라이선스",
+          "url": "https://raw.githubusercontent.com/baidu/Unlimited-OCR/main/LICENSE",
+          "description": "공식 저장소 MIT 라이선스의 본문과 관련 조건을 확인했습니다. 공급자 설명, 공개 평가와 실제 실행의 차이를 보존합니다."
+        },
+        {
+          "id": "ocr-price",
+          "title": "Baidu Unlimited-OCR API 문서",
+          "url": "https://cloud.baidu.com/doc/OCR/s/fmr1p39gb",
+          "description": "Baidu Unlimited-OCR API 문서의 본문과 관련 조건을 확인했습니다. 공급자 설명, 공개 평가와 실제 실행의 차이를 보존합니다."
+        },
+        {
+          "id": "ocr-api-price",
+          "title": "Baidu 문서 파싱 가격표",
+          "url": "https://cloud.baidu.com/doc/OCR/s/rmvt5uvkv",
+          "description": "Baidu 문서 파싱 가격표의 본문과 관련 조건을 확인했습니다. 공급자 설명, 공개 평가와 실제 실행의 차이를 보존합니다."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "모델 선택의 의미",
+            "text": "Unlimited OCR 2는 긴 문서의 교차 페이지 구조를 자체 호스팅으로 처리할 대안입니다. 단일 페이지 표 인식이나 문서 전체 계층이 우선인 경우에는 이전판과 다른 특화 모델이 더 나을 수 있습니다. 비교의 중심은 이름의 무한성이 아니라 문서 길이, 구조 종류, 분할 방식과 전체 운영 비용입니다.",
+            "source_ids": [
+              "ocr-pdf",
+              "ocr-card",
+              "marathon"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nemotron-3-5-transcribe-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "checked_on": "2026-10-30",
+      "title": "Nemotron 3.5 Transcribe 소개: 한국어 전사와 화자 구분, 기존 음성 모델과 비용 비교",
+      "description": "NVIDIA의 새 녹음 음성 모델을 기존 Parakeet 및 경쟁 ASR과 비교해 언어별 작업 범위, 정확도, 제공 방식과 분당 요금을 설명합니다.",
+      "deck": "NVIDIA가 10월 28일 공개한 Nemotron 3.5 Transcribe는 녹음 음성의 전사, 번역과 화자 구분을 텍스트 지시로 제어하는 공개 가중치 모델입니다. 한국어를 포함한 40개 언어 전사를 지원하지만 실시간 스트리밍용은 아니며, 작업별 언어 지원과 현재 모델 카드의 수치는 발표 글과 구분해서 읽어야 합니다.",
+      "scope": "공식 원문을 한국시간 2026년 10월 30일 확인했습니다. 모델 설치와 추론, 한국어 업무 시험, 실제 계정 접근과 과금은 수행하지 않았습니다.",
+      "source_note": "공급자 자체 평가와 외부 리더보드 재인용을 구분합니다. 오류율의 분모, 평가판, 설정과 시점을 보존하며 사양이나 점수의 미확인을 0으로 채우지 않습니다.",
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "highlights": [
+        "한국어와 작업별 언어 범위",
+        "정확도와 자원 부담",
+        "분당 요금과 제공 판"
+      ],
+      "summary": [
+        {
+          "label": "한국어와 작업별 언어 범위",
+          "text": "전사는40개 언어, 번역은31개 언어와 영어 사이, 화자 구분은13개 언어를 지원한다고 발표했습니다. 한국어도 지원표에 있지만 오디오 질의응답은 영어로 학습됐습니다. 녹음 최대1시간과65,536토큰 문맥은 서로 다른 한도입니다.",
+          "source_ids": [
+            "transcribe-card",
+            "transcribe-blog"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "정확도와 자원 부담",
+          "text": "현재 카드의 영어9자료 평균 WER은4.71%, 같은 비교의 Qwen3-ASR-1.7B는4.94%입니다. 음성 인코더 포함34B/활성4.3B로, 기존 Parakeet0.6B보다 전체 가중치가 훨씬 크며 활성 수만으로 메모리나 비용을 판단할 수 없습니다.",
+          "source_ids": [
+            "transcribe-card",
+            "transcribe-previous"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "분당 요금과 제공 판",
+          "text": "DeepInfra의 현재 표시 요금은 음성1분당0.00200달러입니다. NVIDIA 공통 표준 단가나 모든 파트너의 가격은 아닙니다. 발표 글의 예정 양자화와 달리 현재 모델 카드 및 공개 파일 목록은 FP8/NVFP4 제공을 표시하지만 최적화 NIM의 처리량을 공개 런타임 성능으로 옮기면 안 됩니다.",
+          "source_ids": [
+            "transcribe-price",
+            "transcribe-card",
+            "transcribe-fp8",
+            "transcribe-nvfp4",
+            "transcribe-blog"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "tables": [
+        {
+          "id": "specification",
+          "title": "주요 사양과 기존 음성 모델 비교",
+          "columns": [
+            "모델",
+            "전체 / 활성 파라미터",
+            "입력과 지원 범위",
+            "제공과 한계"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Nemotron 3.5 Transcribe",
+                "34B / 약4.3B, 인코더 포함",
+                "음성+텍스트→텍스트;전사40개언어;최대1시간/65,536토큰",
+                "녹음용;BF16/FP8/NVFP4 공개 경로;OpenMDW1.1"
+              ],
+              "source_ids": [
+                "transcribe-card"
+              ]
+            },
+            {
+              "values": [
+                "Parakeet-TDT-0.6B-v3",
+                "0.6B",
+                "25개유럽언어 전사;full attention24분/A10080GB,local attention최대3시간",
+                "기존 NVIDIA 대안;한국어목록없음;CC BY4.0"
+              ],
+              "source_ids": [
+                "transcribe-previous"
+              ]
+            },
+            {
+              "values": [
+                "Granite Speech5.0 TurboCTC",
+                "0.47B",
+                "영어,프랑스어,독일어,스페인어,포르투갈어,이탈리아어,일본어",
+                "기존 IBM 대안;한국어목록없음;Apache2.0"
+              ],
+              "source_ids": [
+                "switch-asr"
+              ]
+            }
+          ],
+          "note": "Parakeet은 같은 체크포인트의 직접 직전판이 아니라 NVIDIA의 기존 ASR 대안입니다. Transcribe의30B-A4B 이름과 발표 글의30B/약4B는 현재 카드의 인코더 포함34B/4.3B와 구분합니다. 작은 활성 수가 전체 가중치 저장이나 GPU 메모리를 뜻하지 않습니다."
+        },
+        {
+          "id": "performance",
+          "title": "공식 카드의 같은 평가별 상대 결과",
+          "columns": [
+            "평가 / 오류 지표 ↓ (%)",
+            "Transcribe",
+            "비교 모델",
+            "비교 값"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Open ASR 영어9자료 평균 WER",
+                "4.71",
+                "Qwen3-ASR-1.7B",
+                "4.94"
+              ],
+              "source_ids": [
+                "transcribe-card"
+              ]
+            },
+            {
+              "values": [
+                "Open ASR 장문 평균 WER",
+                "10.98",
+                "Parakeet-TDT-0.6B-v3",
+                "13.37"
+              ],
+              "source_ids": [
+                "transcribe-card"
+              ]
+            },
+            {
+              "values": [
+                "Open ASR7언어 평균 WER",
+                "4.62",
+                "Qwen3-ASR-1.7B",
+                "6.49"
+              ],
+              "source_ids": [
+                "transcribe-card"
+              ]
+            },
+            {
+              "values": [
+                "AMI/CALLHOME/Mixer6/NOTSOFAR-1 평균 cpWER",
+                "15.8",
+                "DiCoW v3.3 + DiariZen",
+                "16.83"
+              ],
+              "source_ids": [
+                "transcribe-card"
+              ]
+            }
+          ],
+          "note": "NVIDIA 모델 카드가2026-10-12 포착 결과로 표시한 비교입니다. WER은 단어 오류율이며 낮을수록 좋고 cpWER은 화자 라벨 대응 뒤 계산합니다. 장문은55분 창/5초 중첩입니다. 모델은 vLLM/NeMo Skills와 MTP로 평가하며 전사 온도0/추론 끔을 권장합니다. 공개 비교값 재인용이며 이번 작업의 독립 실행이 아닙니다."
+        },
+        {
+          "id": "source-editions",
+          "title": "발표와 현재 카드의 다른 수치와 제공 단계",
+          "columns": [
+            "항목",
+            "10월28일 발표 글",
+            "현재 카드 / 직접 확인"
+          ],
+          "rows": [
+            {
+              "values": [
+                "영어 Open ASR 평균 WER",
+                "5.33%",
+                "4.71%,9개자료 균등 평균,결과포착일10/12"
+              ],
+              "source_ids": [
+                "transcribe-blog",
+                "transcribe-card"
+              ]
+            },
+            {
+              "values": [
+                "크기",
+                "30B / 약4B활성",
+                "인코더 포함34B /4.3B활성"
+              ],
+              "source_ids": [
+                "transcribe-blog",
+                "transcribe-card"
+              ]
+            },
+            {
+              "values": [
+                "양자화",
+                "곧 제공 예정",
+                "카드FP8/NVFP4제공;두공개모델의파일목록확인"
+              ],
+              "source_ids": [
+                "transcribe-blog",
+                "transcribe-card",
+                "transcribe-fp8",
+                "transcribe-nvfp4"
+              ]
+            },
+            {
+              "values": [
+                "최고 처리량",
+                "Blackwell의예정양자화고동시성시연",
+                "최적화NIM2238음성초/초;공개릴리스에없는최적화"
+              ],
+              "source_ids": [
+                "transcribe-blog",
+                "transcribe-card"
+              ]
+            }
+          ],
+          "note": "5.33과4.71의 차이를 같은 평가의 개선량으로 계산하지 않습니다. 모델 카드와 블로그의 판/집계 차이를 해소할 동일 설정 재실행 근거가 없습니다. NIM의30초음성0.13초 결과와 공개 런타임의약2배느릴수있다는 설명은 공급자 조건입니다. 파일 목록 확인은 실제 양자화 실행 검증이 아닙니다."
+        },
+        {
+          "id": "korean",
+          "title": "한국어 평가와 다국어 평균의 구분",
+          "columns": [
+            "항목",
+            "현재 카드 값 / 조건",
+            "해석"
+          ],
+          "rows": [
+            {
+              "values": [
+                "한국어 FLEURS",
+                "CER2.78%",
+                "문자오류율;영어WER과직접비교금지"
+              ],
+              "source_ids": [
+                "transcribe-card"
+              ]
+            },
+            {
+              "values": [
+                "한국어 CoVoST2",
+                "미보고",
+                "0점이나미지원확정이아님"
+              ],
+              "source_ids": [
+                "transcribe-card"
+              ]
+            },
+            {
+              "values": [
+                "Open ASR7언어 평균",
+                "WER4.62%;한국어미포함",
+                "Dutch/French/German/Hindi/Italian/Portuguese/Spanish"
+              ],
+              "source_ids": [
+                "transcribe-card"
+              ]
+            },
+            {
+              "values": [
+                "오디오 질의응답",
+                "영어로학습",
+                "한국어전사 지원이한국어QA성능보장아님"
+              ],
+              "source_ids": [
+                "transcribe-blog",
+                "transcribe-card"
+              ]
+            }
+          ],
+          "note": "단독FLEURS와Open ASR은정규화,참조전사와오류지표가달라같은숫자로결합하지않습니다.실제한국어회의,고유명사,동시발화와회사문서화품질은미검증입니다."
+        },
+        {
+          "id": "pricing",
+          "title": "표준 이용료와 자체 호스팅 조건",
+          "columns": [
+            "모델 / 경로",
+            "원문 단위와 현재 가격",
+            "조건"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Transcribe / DeepInfra",
+                "USD0.00200 / 음성1분",
+                "공개페이지기본표시;다른서비스계층/계약가격별도"
+              ],
+              "source_ids": [
+                "transcribe-price"
+              ]
+            },
+            {
+              "values": [
+                "Transcribe / 공개 가중치",
+                "OpenMDW1.1;NVIDIA공통API단가미명시",
+                "자체GPU/운영비용별도;H10080GB1대는공식예시"
+              ],
+              "source_ids": [
+                "transcribe-card",
+                "openmdw"
+              ]
+            },
+            {
+              "values": [
+                "Parakeet-TDT-v3 / 공개 가중치",
+                "CC BY4.0;이번조사의API표준단가미확인",
+                "자체호스팅과별도사업자요금구분"
+              ],
+              "source_ids": [
+                "transcribe-previous"
+              ]
+            },
+            {
+              "values": [
+                "Granite TurboCTC / 공개 가중치",
+                "Apache2.0;이번조사의API표준단가미확인",
+                "0.47B의자체호스팅과서비스요금구분"
+              ],
+              "source_ids": [
+                "switch-asr"
+              ]
+            }
+          ],
+          "note": "2026-10-30 확인. DeepInfra 요금을60배하면 오디오1시간0.12달러이나 이는단순환산이며실제청구가아닙니다. 음성분당요금을100만토큰가격으로바꾸지않습니다.우선/유연계층과최소청구단위,세금·계약등미확인조건은총비용계산에남깁니다."
+        }
+      ],
+      "explanation": [
+        {
+          "id": "overview",
+          "title": "모델 개요와 기존 대안 대비 변화",
+          "lead": "기존 전사 모델에 언어 모델을 연결해 출력 방식과 음성 작업 범위를 넓힌 계열입니다.",
+          "blocks": [
+            {
+              "title": "전사에서 음성 이해로",
+              "text": "Parakeet은 기존의 가벼운 다국어 전사 모델인 반면 Transcribe는 음성과 작업 지시를 함께 받아 전사, 영어 번역, 화자 표시와 질문 응답을 같은 체크포인트에서 수행합니다. 언어 모델은 Nemotron3.5 Lightning 기반의 Mamba-2/Transformer 혼합 전문가 구조이며 음성 특징과 화자 단서를 함께 받습니다. 단어 시각도 제공하지만 화자 라벨은 녹음 안의 구분일 뿐 실제 인물 신원을 인증하지 않습니다.",
+              "source_ids": [
+                "transcribe-card",
+                "transcribe-blog",
+                "transcribe-previous"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            },
+            {
+              "title": "작업별 언어 지원",
+              "text": "40개 전사 언어,31개 영어 양방향 번역 언어와13개 화자 구분 언어는 서로 다릅니다. 한국어는 지원표의 해당 작업에 포함되지만 영어로 학습한 오디오QA를 한국어에서도 같은 품질로 제공한다고 약속하지 않습니다. 녹음 최대1시간과 출력까지 포함한65,536토큰 문맥을 함께 고려해야 하며 실시간 스트리밍 모델과 혼동하지 않습니다.",
+              "source_ids": [
+                "transcribe-card",
+                "transcribe-blog"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            }
+          ]
+        },
+        {
+          "id": "benchmarks",
+          "title": "성능 비교의 조건과 상대 장점",
+          "lead": "기능별로 같은 평가판과 오류 지표를 비교해야 합니다.",
+          "blocks": [
+            {
+              "title": "평가판과 추론",
+              "text": "전사와 번역은 온도 0 및 추론 끔, 음성 이해는 온도 0.6, top_p 0.95 및 추론 켬이 권장됩니다. 카드의 평가 기반은 NeMo Skills, vLLM과 MTP입니다. 영어 9개 자료의 평균 4.71은 같은 표의 Qwen 4.94보다 낮고, 긴 녹음 10.98은 Parakeet 13.37보다 낮습니다. 음성 영역별 분모와 정규화를 무시하고 서로 다른 WER, cpWER와 CER를 한 순위로 합치지 않습니다.",
+              "source_ids": [
+                "transcribe-card"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            },
+            {
+              "title": "전사 외 제어와 화자 정보",
+              "text": "지시로 축어적 출력과 정돈된 출력을 고르거나 문맥 용어를 줄 수 있고, 화자 단서를 생성 과정에 반영합니다. 이런 통합은 별도 전사와 화자 정렬 단계를 조합하는 기존 방식과 비교할 장점입니다. 하지만 도메인 용어나 숫자가 그럴듯하게 출력돼도 실제 녹음과 일치하는지는 별도 검토해야 합니다.",
+              "source_ids": [
+                "transcribe-blog",
+                "transcribe-card"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            }
+          ]
+        },
+        {
+          "id": "limits",
+          "title": "단점과 반대 조건",
+          "lead": "정확도와 기능 확대에는 가중치 규모와 작업 범위의 대가가 있습니다.",
+          "blocks": [
+            {
+              "title": "무거운 전체 가중치와 비실시간 처리",
+              "text": "인코더를 포함한 34B는 기존 Parakeet의 0.6B나 Granite의 0.47B보다 전체 가중치가 훨씬 큽니다. 약 4.3B 활성이라는 설명으로 34B의 저장과 메모리 부담을 없앨 수 없습니다. 공식 BF16 실행 예시는 H100 80GB이며 다른 정밀도와 장비의 지원표를 최소 장비 보장으로 읽지 않습니다. 실시간 저지연 전사가 필수인 경우 녹음용 Transcribe를 그대로 대체재로 선택하면 안 됩니다.",
+              "source_ids": [
+                "transcribe-card",
+                "transcribe-previous",
+                "switch-asr"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            },
+            {
+              "title": "공급자 주장과 현재판의 차이",
+              "text": "발표의 영어 오류율 5.33과 현재 카드의 4.71, 30B와 인코더 포함 34B 표기는 다릅니다. 단순한 버전업 성능 향상이나 계산 오류로 단정하지 않고 측정 범위와 판의 차이를 보존합니다. 또한 최적화 NIM의 처리량은 공개 소스에 아직 없는 최적화를 포함하므로 누구나 공개 체크포인트만 받아 같은 속도를 얻는다고 설명하지 않습니다.",
+              "source_ids": [
+                "transcribe-card",
+                "transcribe-blog"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            }
+          ]
+        },
+        {
+          "id": "availability",
+          "title": "가격과 실제 제공 범위",
+          "lead": "가중치 라이선스, 공개 런타임과 호스팅 서비스를 각각 확인해야 합니다.",
+          "blocks": [
+            {
+              "title": "공개 가중치와 파트너",
+              "text": "현재 카드와 Hugging Face 모델 파일 목록에는 BF16 및 FP8, NVFP4가 제시됩니다. 28일 발표의 곧 공개 예정이라는 설명과 현재 상태를 구분하지만 실제 다운로드와 추론은 수행하지 않았습니다. 적용 라이선스는 OpenMDW 1.1이며 배포 구성요소의 별도 고지도 함께 준수해야 합니다. 전처리와 화자 단서, 단어 시각 생성의 런타임 설정도 결과에 영향을 줍니다.",
+              "source_ids": [
+                "transcribe-card",
+                "transcribe-blog",
+                "transcribe-fp8",
+                "transcribe-nvfp4",
+                "openmdw"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            },
+            {
+              "title": "분당 요금의 의미",
+              "text": "DeepInfra 공개 페이지의 기본 표시는 오디오 1분에 0.00200달러입니다. 이 값은 NVIDIA의 공통 표준 요금이나 실제 고객 견적이 아니며 다른 호스팅 사업자와 같다고 가정하지 않습니다. 자체 호스팅은 라이선스에 사용량 단가가 없는 것과 GPU, 저장, 네트워크 및 운영 비용이 없는 것을 구분해야 합니다.",
+              "source_ids": [
+                "transcribe-price",
+                "transcribe-card",
+                "openmdw"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            }
+          ]
+        }
+      ],
+      "caveats": [
+        {
+          "text": "발표일은 2026-10-28입니다. 영어 9개 자료와 7개 언어 평균은 한국어 회의의 성능을 측정한 결과가 아닙니다. 인식, 번역 및 화자 구분 언어와 영어 QA 학습 범위를 분리했습니다.",
+          "source_ids": [
+            "transcribe-card",
+            "transcribe-blog"
+          ]
+        },
+        {
+          "text": "양자화 파일 목록과 카드의 현재 표기 확인은 설치 및 실행 검증과 다릅니다. 영어 WER 5.33/4.71 및 양자화 예정/현재 제공의 차이는 동일 설정 재실행으로 해소하지 못했습니다.",
+          "source_ids": [
+            "transcribe-card",
+            "transcribe-blog",
+            "transcribe-fp8",
+            "transcribe-nvfp4"
+          ]
+        }
+      ],
+      "references": [
+        {
+          "id": "transcribe-card",
+          "title": "Transcribe 현재 모델 카드와 평가표",
+          "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B/raw/main/README.md",
+          "description": "Transcribe 현재 모델 카드와 평가표의 본문과 관련 조건을 확인했습니다. 공급자 설명, 공개 평가와 실제 실행의 차이를 보존합니다."
+        },
+        {
+          "id": "transcribe-blog",
+          "title": "NVIDIA28일 발표",
+          "url": "https://huggingface.co/blog/nvidia/nemotron-transcribe-granary",
+          "description": "NVIDIA28일 발표의 본문과 관련 조건을 확인했습니다. 공급자 설명, 공개 평가와 실제 실행의 차이를 보존합니다."
+        },
+        {
+          "id": "transcribe-previous",
+          "title": "Parakeet-TDT-v3 기존 모델 카드",
+          "url": "https://huggingface.co/nvidia/parakeet-tdt-0.6b-v3/raw/main/README.md",
+          "description": "Parakeet-TDT-v3 기존 모델 카드의 본문과 관련 조건을 확인했습니다. 공급자 설명, 공개 평가와 실제 실행의 차이를 보존합니다."
+        },
+        {
+          "id": "switch-asr",
+          "title": "Granite TurboCTC 현재 카드",
+          "url": "https://huggingface.co/ibm-granite/granite-speech-5.0-470m-turboctc/raw/main/README.md",
+          "description": "Granite TurboCTC 현재 카드의 본문과 관련 조건을 확인했습니다. 공급자 설명, 공개 평가와 실제 실행의 차이를 보존합니다."
+        },
+        {
+          "id": "transcribe-price",
+          "title": "DeepInfra 현재 분당 요금",
+          "url": "https://deepinfra.com/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B",
+          "description": "DeepInfra 현재 분당 요금의 본문과 관련 조건을 확인했습니다. 공급자 설명, 공개 평가와 실제 실행의 차이를 보존합니다."
+        },
+        {
+          "id": "transcribe-fp8",
+          "title": "공식 FP8 공개 파일 메타데이터",
+          "url": "https://huggingface.co/api/models/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B-FP8",
+          "description": "공식 FP8 공개 파일 메타데이터의 본문과 관련 조건을 확인했습니다. 공급자 설명, 공개 평가와 실제 실행의 차이를 보존합니다."
+        },
+        {
+          "id": "transcribe-nvfp4",
+          "title": "공식 NVFP4 공개 파일 메타데이터",
+          "url": "https://huggingface.co/api/models/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B-NVFP4",
+          "description": "공식 NVFP4 공개 파일 메타데이터의 본문과 관련 조건을 확인했습니다. 공급자 설명, 공개 평가와 실제 실행의 차이를 보존합니다."
+        },
+        {
+          "id": "openmdw",
+          "title": "OpenMDW1.1 이용 조건",
+          "url": "https://openmdw.ai/license/1-1/",
+          "description": "OpenMDW1.1 이용 조건의 본문과 관련 조건을 확인했습니다. 공급자 설명, 공개 평가와 실제 실행의 차이를 보존합니다."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "모델 비교 판단",
+            "text": "Transcribe는 한국어를 포함한 녹음 전사와 화자 구분, 번역을 하나의 공개 모델로 비교할 대상입니다. 가벼운 전사만 필요하거나 실시간 스트리밍이 핵심이면 작은 기존 모델과 별도 실시간 모델이 더 알맞을 수 있습니다. 도입 판단에는 오류 지표 외에 전체 가중치, 언어별 작업 지원과 실제 분당 비용을 함께 봐야 합니다.",
+            "source_ids": [
+              "transcribe-card",
+              "transcribe-previous",
+              "switch-asr",
+              "transcribe-price"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      }
+    }
+  ]
+}

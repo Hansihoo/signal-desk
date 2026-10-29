@@ -2,6 +2,8 @@
   "schema_version": 1,
   "featured_report_id": "mcp-apps-workflows",
   "report_ids": [
+    "unlimited-ocr-2-model-guide",
+    "nemotron-3-5-transcribe-model-guide",
     "gemini-4-carbon-model-guide",
     "lfm3-family-model-guide",
     "google-genie-4-model-guide",
@@ -410,6 +412,11 @@
       "id": "ai-model-introduction-2026-10-29",
       "input": "ai_model_guides.2026-10-29.json",
       "quality": "ai_model_guides.2026-10-29.quality.json"
+    },
+    {
+      "id": "ai-model-introduction-2026-10-30",
+      "input": "ai_model_guides.2026-10-30.json",
+      "quality": "ai_model_guides.2026-10-30.quality.json"
     }
   ]
 }

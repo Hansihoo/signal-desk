@@ -1,0 +1,626 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "id": "uocr2-20261027-long-0-1",
+      "model": "Unlimited OCR 2",
+      "provider": "Baidu",
+      "source_url": "https://huggingface.co/baidu/Unlimited-OCR-2/resolve/main/Unlimited-OCR-2.pdf",
+      "checked_on": "2026-10-30",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "MPDocBench Overall / Unlimited OCR2 paper",
+        "condition": "Baidu공식표1/2. MP최대30쪽/Marathon103~300쪽100문서. 경쟁whole-document입력제한/축소·재시도·실패빈예측분모100. 평가기시간상한관련본문참조.",
+        "평가 점수": 84.59,
+        "단위": "원문 점수; higher is better",
+        "측정 주체": "모델개발사 공식 비교/외부값재인용; 독립재실행없음"
+      }
+    },
+    {
+      "id": "uocr2-20261027-long-0-2",
+      "model": "Unlimited OCR 2",
+      "provider": "Baidu",
+      "source_url": "https://huggingface.co/baidu/Unlimited-OCR-2/resolve/main/Unlimited-OCR-2.pdf",
+      "checked_on": "2026-10-30",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "MarathonDocBench Overall / Unlimited OCR2 paper",
+        "condition": "Baidu공식표1/2. MP최대30쪽/Marathon103~300쪽100문서. 경쟁whole-document입력제한/축소·재시도·실패빈예측분모100. 평가기시간상한관련본문참조.",
+        "평가 점수": 77.06,
+        "단위": "원문 점수; higher is better",
+        "측정 주체": "모델개발사 공식 비교/외부값재인용; 독립재실행없음"
+      }
+    },
+    {
+      "id": "uocr2-20261027-long-0-3",
+      "model": "Unlimited OCR 2",
+      "provider": "Baidu",
+      "source_url": "https://huggingface.co/baidu/Unlimited-OCR-2/resolve/main/Unlimited-OCR-2.pdf",
+      "checked_on": "2026-10-30",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "MPDocBench T-Table TEDS / Unlimited OCR2 paper",
+        "condition": "Baidu공식표1/2. MP최대30쪽/Marathon103~300쪽100문서. 경쟁whole-document입력제한/축소·재시도·실패빈예측분모100. 평가기시간상한관련본문참조.",
+        "평가 점수": 89.54,
+        "단위": "원문 점수; higher is better",
+        "측정 주체": "모델개발사 공식 비교/외부값재인용; 독립재실행없음"
+      }
+    },
+    {
+      "id": "uocr2-20261027-long-1-1",
+      "model": "Unlimited OCR",
+      "provider": "Baidu",
+      "source_url": "https://huggingface.co/baidu/Unlimited-OCR-2/resolve/main/Unlimited-OCR-2.pdf",
+      "checked_on": "2026-10-30",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "MPDocBench Overall / Unlimited OCR2 paper",
+        "condition": "Baidu공식표1/2. MP최대30쪽/Marathon103~300쪽100문서. 경쟁whole-document입력제한/축소·재시도·실패빈예측분모100. 평가기시간상한관련본문참조.",
+        "평가 점수": 61.89,
+        "단위": "원문 점수; higher is better",
+        "측정 주체": "모델개발사 공식 비교/외부값재인용; 독립재실행없음"
+      }
+    },
+    {
+      "id": "uocr2-20261027-long-1-3",
+      "model": "Unlimited OCR",
+      "provider": "Baidu",
+      "source_url": "https://huggingface.co/baidu/Unlimited-OCR-2/resolve/main/Unlimited-OCR-2.pdf",
+      "checked_on": "2026-10-30",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "MPDocBench T-Table TEDS / Unlimited OCR2 paper",
+        "condition": "Baidu공식표1/2. MP최대30쪽/Marathon103~300쪽100문서. 경쟁whole-document입력제한/축소·재시도·실패빈예측분모100. 평가기시간상한관련본문참조.",
+        "평가 점수": 60.76,
+        "단위": "원문 점수; higher is better",
+        "측정 주체": "모델개발사 공식 비교/외부값재인용; 독립재실행없음"
+      }
+    },
+    {
+      "id": "uocr2-20261027-long-2-1",
+      "model": "Qwen3.8-Max",
+      "provider": "Alibaba",
+      "source_url": "https://huggingface.co/baidu/Unlimited-OCR-2/resolve/main/Unlimited-OCR-2.pdf",
+      "checked_on": "2026-10-30",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "MPDocBench Overall / Unlimited OCR2 paper",
+        "condition": "Baidu공식표1/2. MP최대30쪽/Marathon103~300쪽100문서. 경쟁whole-document입력제한/축소·재시도·실패빈예측분모100. 평가기시간상한관련본문참조.",
+        "평가 점수": 78.3,
+        "단위": "원문 점수; higher is better",
+        "측정 주체": "모델개발사 공식 비교/외부값재인용; 독립재실행없음"
+      }
+    },
+    {
+      "id": "uocr2-20261027-long-2-2",
+      "model": "Qwen3.8-Max",
+      "provider": "Alibaba",
+      "source_url": "https://huggingface.co/baidu/Unlimited-OCR-2/resolve/main/Unlimited-OCR-2.pdf",
+      "checked_on": "2026-10-30",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "MarathonDocBench Overall / Unlimited OCR2 paper",
+        "condition": "Baidu공식표1/2. MP최대30쪽/Marathon103~300쪽100문서. 경쟁whole-document입력제한/축소·재시도·실패빈예측분모100. 평가기시간상한관련본문참조.",
+        "평가 점수": 22.93,
+        "단위": "원문 점수; higher is better",
+        "측정 주체": "모델개발사 공식 비교/외부값재인용; 독립재실행없음"
+      }
+    },
+    {
+      "id": "uocr2-20261027-long-2-3",
+      "model": "Qwen3.8-Max",
+      "provider": "Alibaba",
+      "source_url": "https://huggingface.co/baidu/Unlimited-OCR-2/resolve/main/Unlimited-OCR-2.pdf",
+      "checked_on": "2026-10-30",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "MPDocBench T-Table TEDS / Unlimited OCR2 paper",
+        "condition": "Baidu공식표1/2. MP최대30쪽/Marathon103~300쪽100문서. 경쟁whole-document입력제한/축소·재시도·실패빈예측분모100. 평가기시간상한관련본문참조.",
+        "평가 점수": 67.18,
+        "단위": "원문 점수; higher is better",
+        "측정 주체": "모델개발사 공식 비교/외부값재인용; 독립재실행없음"
+      }
+    },
+    {
+      "id": "uocr2-20261027-long-3-1",
+      "model": "Kimi-K3",
+      "provider": "Moonshot AI",
+      "source_url": "https://huggingface.co/baidu/Unlimited-OCR-2/resolve/main/Unlimited-OCR-2.pdf",
+      "checked_on": "2026-10-30",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "MPDocBench Overall / Unlimited OCR2 paper",
+        "condition": "Baidu공식표1/2. MP최대30쪽/Marathon103~300쪽100문서. 경쟁whole-document입력제한/축소·재시도·실패빈예측분모100. 평가기시간상한관련본문참조.",
+        "평가 점수": 60.77,
+        "단위": "원문 점수; higher is better",
+        "측정 주체": "모델개발사 공식 비교/외부값재인용; 독립재실행없음"
+      }
+    },
+    {
+      "id": "uocr2-20261027-long-3-2",
+      "model": "Kimi-K3",
+      "provider": "Moonshot AI",
+      "source_url": "https://huggingface.co/baidu/Unlimited-OCR-2/resolve/main/Unlimited-OCR-2.pdf",
+      "checked_on": "2026-10-30",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "MarathonDocBench Overall / Unlimited OCR2 paper",
+        "condition": "Baidu공식표1/2. MP최대30쪽/Marathon103~300쪽100문서. 경쟁whole-document입력제한/축소·재시도·실패빈예측분모100. 평가기시간상한관련본문참조.",
+        "평가 점수": 33.74,
+        "단위": "원문 점수; higher is better",
+        "측정 주체": "모델개발사 공식 비교/외부값재인용; 독립재실행없음"
+      }
+    },
+    {
+      "id": "uocr2-20261027-long-3-3",
+      "model": "Kimi-K3",
+      "provider": "Moonshot AI",
+      "source_url": "https://huggingface.co/baidu/Unlimited-OCR-2/resolve/main/Unlimited-OCR-2.pdf",
+      "checked_on": "2026-10-30",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "MPDocBench T-Table TEDS / Unlimited OCR2 paper",
+        "condition": "Baidu공식표1/2. MP최대30쪽/Marathon103~300쪽100문서. 경쟁whole-document입력제한/축소·재시도·실패빈예측분모100. 평가기시간상한관련본문참조.",
+        "평가 점수": 81.57,
+        "단위": "원문 점수; higher is better",
+        "측정 주체": "모델개발사 공식 비교/외부값재인용; 독립재실행없음"
+      }
+    },
+    {
+      "id": "uocr2-20261027-single-0-1",
+      "model": "Unlimited OCR 2",
+      "provider": "Baidu",
+      "source_url": "https://huggingface.co/baidu/Unlimited-OCR-2/resolve/main/Unlimited-OCR-2.pdf",
+      "checked_on": "2026-10-30",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OmniDocBench v1.6 Overall",
+        "condition": "Baidu논문표3/엔드투엔드VLM비교. 단일페이지; 한국어실업무미측정. 다른판과합치지않음.",
+        "평가 점수": 94.02,
+        "단위": "원문 점수; higher is better",
+        "측정 주체": "모델개발사 공식 비교/외부값재인용; 독립재실행없음"
+      }
+    },
+    {
+      "id": "uocr2-20261027-single-0-2",
+      "model": "Unlimited OCR 2",
+      "provider": "Baidu",
+      "source_url": "https://huggingface.co/baidu/Unlimited-OCR-2/resolve/main/Unlimited-OCR-2.pdf",
+      "checked_on": "2026-10-30",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OmniDocBench v1.6 Table TEDS",
+        "condition": "Baidu논문표3/엔드투엔드VLM비교. 단일페이지; 한국어실업무미측정. 다른판과합치지않음.",
+        "평가 점수": 89.6,
+        "단위": "원문 점수; higher is better",
+        "측정 주체": "모델개발사 공식 비교/외부값재인용; 독립재실행없음"
+      }
+    },
+    {
+      "id": "uocr2-20261027-single-0-3",
+      "model": "Unlimited OCR 2",
+      "provider": "Baidu",
+      "source_url": "https://huggingface.co/baidu/Unlimited-OCR-2/resolve/main/Unlimited-OCR-2.pdf",
+      "checked_on": "2026-10-30",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OmniDocBench v1.6 Formula CDM",
+        "condition": "Baidu논문표3/엔드투엔드VLM비교. 단일페이지; 한국어실업무미측정. 다른판과합치지않음.",
+        "평가 점수": 96.29,
+        "단위": "원문 점수; higher is better",
+        "측정 주체": "모델개발사 공식 비교/외부값재인용; 독립재실행없음"
+      }
+    },
+    {
+      "id": "uocr2-20261027-single-1-1",
+      "model": "Unlimited OCR",
+      "provider": "Baidu",
+      "source_url": "https://huggingface.co/baidu/Unlimited-OCR-2/resolve/main/Unlimited-OCR-2.pdf",
+      "checked_on": "2026-10-30",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OmniDocBench v1.6 Overall",
+        "condition": "Baidu논문표3/엔드투엔드VLM비교. 단일페이지; 한국어실업무미측정. 다른판과합치지않음.",
+        "평가 점수": 93.92,
+        "단위": "원문 점수; higher is better",
+        "측정 주체": "모델개발사 공식 비교/외부값재인용; 독립재실행없음"
+      }
+    },
+    {
+      "id": "uocr2-20261027-single-1-2",
+      "model": "Unlimited OCR",
+      "provider": "Baidu",
+      "source_url": "https://huggingface.co/baidu/Unlimited-OCR-2/resolve/main/Unlimited-OCR-2.pdf",
+      "checked_on": "2026-10-30",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OmniDocBench v1.6 Table TEDS",
+        "condition": "Baidu논문표3/엔드투엔드VLM비교. 단일페이지; 한국어실업무미측정. 다른판과합치지않음.",
+        "평가 점수": 90.16,
+        "단위": "원문 점수; higher is better",
+        "측정 주체": "모델개발사 공식 비교/외부값재인용; 독립재실행없음"
+      }
+    },
+    {
+      "id": "uocr2-20261027-single-1-3",
+      "model": "Unlimited OCR",
+      "provider": "Baidu",
+      "source_url": "https://huggingface.co/baidu/Unlimited-OCR-2/resolve/main/Unlimited-OCR-2.pdf",
+      "checked_on": "2026-10-30",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OmniDocBench v1.6 Formula CDM",
+        "condition": "Baidu논문표3/엔드투엔드VLM비교. 단일페이지; 한국어실업무미측정. 다른판과합치지않음.",
+        "평가 점수": 95.79,
+        "단위": "원문 점수; higher is better",
+        "측정 주체": "모델개발사 공식 비교/외부값재인용; 독립재실행없음"
+      }
+    },
+    {
+      "id": "uocr2-20261027-single-2-1",
+      "model": "OvisOCR2",
+      "provider": "공식논문비교대상",
+      "source_url": "https://huggingface.co/baidu/Unlimited-OCR-2/resolve/main/Unlimited-OCR-2.pdf",
+      "checked_on": "2026-10-30",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OmniDocBench v1.6 Overall",
+        "condition": "Baidu논문표3/엔드투엔드VLM비교. 단일페이지; 한국어실업무미측정. 다른판과합치지않음.",
+        "평가 점수": 96.47,
+        "단위": "원문 점수; higher is better",
+        "측정 주체": "모델개발사 공식 비교/외부값재인용; 독립재실행없음"
+      }
+    },
+    {
+      "id": "uocr2-20261027-single-2-2",
+      "model": "OvisOCR2",
+      "provider": "공식논문비교대상",
+      "source_url": "https://huggingface.co/baidu/Unlimited-OCR-2/resolve/main/Unlimited-OCR-2.pdf",
+      "checked_on": "2026-10-30",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OmniDocBench v1.6 Table TEDS",
+        "condition": "Baidu논문표3/엔드투엔드VLM비교. 단일페이지; 한국어실업무미측정. 다른판과합치지않음.",
+        "평가 점수": 94.58,
+        "단위": "원문 점수; higher is better",
+        "측정 주체": "모델개발사 공식 비교/외부값재인용; 독립재실행없음"
+      }
+    },
+    {
+      "id": "uocr2-20261027-single-2-3",
+      "model": "OvisOCR2",
+      "provider": "공식논문비교대상",
+      "source_url": "https://huggingface.co/baidu/Unlimited-OCR-2/resolve/main/Unlimited-OCR-2.pdf",
+      "checked_on": "2026-10-30",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OmniDocBench v1.6 Formula CDM",
+        "condition": "Baidu논문표3/엔드투엔드VLM비교. 단일페이지; 한국어실업무미측정. 다른판과합치지않음.",
+        "평가 점수": 97.49,
+        "단위": "원문 점수; higher is better",
+        "측정 주체": "모델개발사 공식 비교/외부값재인용; 독립재실행없음"
+      }
+    },
+    {
+      "id": "uocr2-20261027-single-3-1",
+      "model": "TeleOCR",
+      "provider": "공식논문비교대상",
+      "source_url": "https://huggingface.co/baidu/Unlimited-OCR-2/resolve/main/Unlimited-OCR-2.pdf",
+      "checked_on": "2026-10-30",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OmniDocBench v1.6 Overall",
+        "condition": "Baidu논문표3/엔드투엔드VLM비교. 단일페이지; 한국어실업무미측정. 다른판과합치지않음.",
+        "평가 점수": 96.91,
+        "단위": "원문 점수; higher is better",
+        "측정 주체": "모델개발사 공식 비교/외부값재인용; 독립재실행없음"
+      }
+    },
+    {
+      "id": "uocr2-20261027-single-3-2",
+      "model": "TeleOCR",
+      "provider": "공식논문비교대상",
+      "source_url": "https://huggingface.co/baidu/Unlimited-OCR-2/resolve/main/Unlimited-OCR-2.pdf",
+      "checked_on": "2026-10-30",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OmniDocBench v1.6 Table TEDS",
+        "condition": "Baidu논문표3/엔드투엔드VLM비교. 단일페이지; 한국어실업무미측정. 다른판과합치지않음.",
+        "평가 점수": 96.82,
+        "단위": "원문 점수; higher is better",
+        "측정 주체": "모델개발사 공식 비교/외부값재인용; 독립재실행없음"
+      }
+    },
+    {
+      "id": "uocr2-20261027-single-3-3",
+      "model": "TeleOCR",
+      "provider": "공식논문비교대상",
+      "source_url": "https://huggingface.co/baidu/Unlimited-OCR-2/resolve/main/Unlimited-OCR-2.pdf",
+      "checked_on": "2026-10-30",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OmniDocBench v1.6 Formula CDM",
+        "condition": "Baidu논문표3/엔드투엔드VLM비교. 단일페이지; 한국어실업무미측정. 다른판과합치지않음.",
+        "평가 점수": 96.6,
+        "단위": "원문 점수; higher is better",
+        "측정 주체": "모델개발사 공식 비교/외부값재인용; 독립재실행없음"
+      }
+    },
+    {
+      "id": "uocr2-20261027-resource-0-1",
+      "model": "Unlimited OCR 2",
+      "provider": "Baidu",
+      "source_url": "https://huggingface.co/baidu/Unlimited-OCR-2/resolve/main/Unlimited-OCR-2.pdf",
+      "checked_on": "2026-10-30",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Marathon Peak KV memory / 표준 디코딩",
+        "condition": "논문표4; B=1메모리/B=16처리량; 전체메모리/동일실행아님;정확GPU구성미명시.",
+        "평가 점수": 47.0,
+        "단위": "GB / KV cache only; lower is better",
+        "측정 주체": "모델개발사 공식 비교/외부값재인용; 독립재실행없음"
+      }
+    },
+    {
+      "id": "uocr2-20261027-resource-0-2",
+      "model": "Unlimited OCR 2",
+      "provider": "Baidu",
+      "source_url": "https://huggingface.co/baidu/Unlimited-OCR-2/resolve/main/Unlimited-OCR-2.pdf",
+      "checked_on": "2026-10-30",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Marathon Throughput / 표준 디코딩",
+        "condition": "논문표4; B=1메모리/B=16처리량; 전체메모리/동일실행아님;정확GPU구성미명시.",
+        "평가 점수": 360.0,
+        "단위": "tokens/s; higher is better",
+        "측정 주체": "모델개발사 공식 비교/외부값재인용; 독립재실행없음"
+      }
+    },
+    {
+      "id": "uocr2-20261027-resource-1-1",
+      "model": "Unlimited OCR 2",
+      "provider": "Baidu",
+      "source_url": "https://huggingface.co/baidu/Unlimited-OCR-2/resolve/main/Unlimited-OCR-2.pdf",
+      "checked_on": "2026-10-30",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Marathon Peak KV memory / 겹치는 페이지 창과 캐시 재사용",
+        "condition": "논문표4; B=1메모리/B=16처리량; 전체메모리/동일실행아님;정확GPU구성미명시.",
+        "평가 점수": 1.77,
+        "단위": "GB / KV cache only; lower is better",
+        "측정 주체": "모델개발사 공식 비교/외부값재인용; 독립재실행없음"
+      }
+    },
+    {
+      "id": "uocr2-20261027-resource-1-2",
+      "model": "Unlimited OCR 2",
+      "provider": "Baidu",
+      "source_url": "https://huggingface.co/baidu/Unlimited-OCR-2/resolve/main/Unlimited-OCR-2.pdf",
+      "checked_on": "2026-10-30",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Marathon Throughput / 겹치는 페이지 창과 캐시 재사용",
+        "condition": "논문표4; B=1메모리/B=16처리량; 전체메모리/동일실행아님;정확GPU구성미명시.",
+        "평가 점수": 1315.0,
+        "단위": "tokens/s; higher is better",
+        "측정 주체": "모델개발사 공식 비교/외부값재인용; 독립재실행없음"
+      }
+    },
+    {
+      "id": "uocr2-20261027-spec",
+      "model": "Unlimited OCR 2",
+      "provider": "Baidu",
+      "source_url": "https://huggingface.co/baidu/Unlimited-OCR-2/raw/main/README.md",
+      "checked_on": "2026-10-30",
+      "fields": {
+        "kind": "공식 사양과 제공",
+        "suite": "Unlimited OCR2 release 2026-10-27",
+        "condition": "논문3B/A0.5B와그림A570M표기차이.131072설정/64K학습/문서순차길이별도.실제최대길이/한국어미확인.",
+        "status": "공개 가중치",
+        "access": "Hugging Face / Transformers / 수정 SGLang",
+        "가중치 라이선스": "MIT",
+        "입출력": "페이지이미지 → 구조화텍스트",
+        "파라미터": "약3B, 활성0.5B(그림0.57B)",
+        "최대 출력": "미확인"
+      }
+    },
+    {
+      "id": "uocr2-20261027-api-price-unknown",
+      "model": "Unlimited OCR 2",
+      "provider": "Baidu",
+      "source_url": "https://cloud.baidu.com/doc/OCR/s/rmvt5uvkv",
+      "checked_on": "2026-10-30",
+      "fields": {
+        "kind": "공식 요금 확인 범위",
+        "suite": "Unlimited OCR2 API mapping check 2026-10-30",
+        "condition": "BaiduPaddleOCR-VL/일반파싱가격을2판에승계하지않음. 자체호스팅GPU/운영비용별도.",
+        "API 표준 단가": "2판전용상품매핑/원문단위미확인;0으로기재하지않음"
+      }
+    },
+    {
+      "id": "nemotranscribe20261028-bench-0-1",
+      "model": "NVIDIA Nemotron 3.5 Transcribe",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B/raw/main/README.md",
+      "checked_on": "2026-10-30",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Open ASR 영어9자료 평균 WER / NVIDIA card snapshot2026-10-12",
+        "condition": "현재NVIDIA카드의같은비교.영어9자료평균/7언어평균한국어제외/장문55분창5초중첩. NeMo Skills/vLLM/MTP;전사온도0/추론끔권장.한국어CER/공식발표5.33과분리.",
+        "평가 점수": 4.71,
+        "단위": "WER %; lower is better",
+        "측정 주체": "모델개발사 공식 비교/외부값재인용; 독립재실행없음"
+      }
+    },
+    {
+      "id": "nemotranscribe20261028-bench-0-3",
+      "model": "Qwen3-ASR-1.7B",
+      "provider": "공식카드비교대상",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B/raw/main/README.md",
+      "checked_on": "2026-10-30",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Open ASR 영어9자료 평균 WER / NVIDIA card snapshot2026-10-12",
+        "condition": "현재NVIDIA카드의같은비교.영어9자료평균/7언어평균한국어제외/장문55분창5초중첩. NeMo Skills/vLLM/MTP;전사온도0/추론끔권장.한국어CER/공식발표5.33과분리.",
+        "평가 점수": 4.94,
+        "단위": "WER %; lower is better",
+        "측정 주체": "모델개발사 공식 비교/외부값재인용; 독립재실행없음"
+      }
+    },
+    {
+      "id": "nemotranscribe20261028-bench-1-1",
+      "model": "NVIDIA Nemotron 3.5 Transcribe",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B/raw/main/README.md",
+      "checked_on": "2026-10-30",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Open ASR 장문 평균 WER / NVIDIA card snapshot2026-10-12",
+        "condition": "현재NVIDIA카드의같은비교.영어9자료평균/7언어평균한국어제외/장문55분창5초중첩. NeMo Skills/vLLM/MTP;전사온도0/추론끔권장.한국어CER/공식발표5.33과분리.",
+        "평가 점수": 10.98,
+        "단위": "WER %; lower is better",
+        "측정 주체": "모델개발사 공식 비교/외부값재인용; 독립재실행없음"
+      }
+    },
+    {
+      "id": "nemotranscribe20261028-bench-1-3",
+      "model": "Parakeet-TDT-0.6B-v3",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B/raw/main/README.md",
+      "checked_on": "2026-10-30",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Open ASR 장문 평균 WER / NVIDIA card snapshot2026-10-12",
+        "condition": "현재NVIDIA카드의같은비교.영어9자료평균/7언어평균한국어제외/장문55분창5초중첩. NeMo Skills/vLLM/MTP;전사온도0/추론끔권장.한국어CER/공식발표5.33과분리.",
+        "평가 점수": 13.37,
+        "단위": "WER %; lower is better",
+        "측정 주체": "모델개발사 공식 비교/외부값재인용; 독립재실행없음"
+      }
+    },
+    {
+      "id": "nemotranscribe20261028-bench-2-1",
+      "model": "NVIDIA Nemotron 3.5 Transcribe",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B/raw/main/README.md",
+      "checked_on": "2026-10-30",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Open ASR7언어 평균 WER / NVIDIA card snapshot2026-10-12",
+        "condition": "현재NVIDIA카드의같은비교.영어9자료평균/7언어평균한국어제외/장문55분창5초중첩. NeMo Skills/vLLM/MTP;전사온도0/추론끔권장.한국어CER/공식발표5.33과분리.",
+        "평가 점수": 4.62,
+        "단위": "WER %; lower is better",
+        "측정 주체": "모델개발사 공식 비교/외부값재인용; 독립재실행없음"
+      }
+    },
+    {
+      "id": "nemotranscribe20261028-bench-2-3",
+      "model": "Qwen3-ASR-1.7B",
+      "provider": "공식카드비교대상",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B/raw/main/README.md",
+      "checked_on": "2026-10-30",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Open ASR7언어 평균 WER / NVIDIA card snapshot2026-10-12",
+        "condition": "현재NVIDIA카드의같은비교.영어9자료평균/7언어평균한국어제외/장문55분창5초중첩. NeMo Skills/vLLM/MTP;전사온도0/추론끔권장.한국어CER/공식발표5.33과분리.",
+        "평가 점수": 6.49,
+        "단위": "WER %; lower is better",
+        "측정 주체": "모델개발사 공식 비교/외부값재인용; 독립재실행없음"
+      }
+    },
+    {
+      "id": "nemotranscribe20261028-bench-3-1",
+      "model": "NVIDIA Nemotron 3.5 Transcribe",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B/raw/main/README.md",
+      "checked_on": "2026-10-30",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "AMI/CALLHOME/Mixer6/NOTSOFAR-1 평균 cpWER / NVIDIA card snapshot2026-10-12",
+        "condition": "현재NVIDIA카드의같은비교.영어9자료평균/7언어평균한국어제외/장문55분창5초중첩. NeMo Skills/vLLM/MTP;전사온도0/추론끔권장.한국어CER/공식발표5.33과분리.",
+        "평가 점수": 15.8,
+        "단위": "cpWER %; lower is better",
+        "측정 주체": "모델개발사 공식 비교/외부값재인용; 독립재실행없음"
+      }
+    },
+    {
+      "id": "nemotranscribe20261028-bench-3-3",
+      "model": "DiCoW v3.3 + DiariZen",
+      "provider": "공식카드비교대상",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B/raw/main/README.md",
+      "checked_on": "2026-10-30",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "AMI/CALLHOME/Mixer6/NOTSOFAR-1 평균 cpWER / NVIDIA card snapshot2026-10-12",
+        "condition": "현재NVIDIA카드의같은비교.영어9자료평균/7언어평균한국어제외/장문55분창5초중첩. NeMo Skills/vLLM/MTP;전사온도0/추론끔권장.한국어CER/공식발표5.33과분리.",
+        "평가 점수": 16.83,
+        "단위": "cpWER %; lower is better",
+        "측정 주체": "모델개발사 공식 비교/외부값재인용; 독립재실행없음"
+      }
+    },
+    {
+      "id": "nemotranscribe20261028-korean-fleurs",
+      "model": "NVIDIA Nemotron 3.5 Transcribe",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B/raw/main/README.md",
+      "checked_on": "2026-10-30",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "FLEURS Korean / current model card",
+        "condition": "단독FLEURS문자오류율;OpenASR7언어평균과정규화/지표다름.한국어회의실측아님.",
+        "평가 점수": 2.78,
+        "단위": "CER %; lower is better",
+        "측정 주체": "모델개발사 공식 비교/외부값재인용; 독립재실행없음"
+      }
+    },
+    {
+      "id": "nemotranscribe20261028-spec",
+      "model": "NVIDIA Nemotron 3.5 Transcribe",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B/raw/main/README.md",
+      "checked_on": "2026-10-30",
+      "fields": {
+        "kind": "공식 사양과 제공",
+        "suite": "Nemotron3.5Transcribe current card 2026-10-30",
+        "condition": "녹음용/실시간스트리밍아님.전사40/번역31/화자13언어;QA영어학습.34B/4.3B는인코더포함,명칭30B-A4B와구분.",
+        "context": 65536,
+        "status": "공개 가중치 / 녹음용",
+        "access": "BF16 / FP8 / NVFP4,공개파일목록확인;실행없음",
+        "최대 녹음": "1시간",
+        "최대 화자": "8명(발표)",
+        "가중치 라이선스": "OpenMDW1.1",
+        "전체 파라미터 B": 34,
+        "활성 파라미터 B": 4.3
+      }
+    },
+    {
+      "id": "nemotranscribe20261028-deepinfra-price",
+      "model": "NVIDIA Nemotron 3.5 Transcribe",
+      "provider": "NVIDIA",
+      "source_url": "https://deepinfra.com/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B",
+      "checked_on": "2026-10-30",
+      "fields": {
+        "kind": "공식 파트너 요금",
+        "suite": "DeepInfra public displayed audio-minute rate 2026-10-30",
+        "condition": "DeepInfra페이지기본표시. NVIDIA공통단가아님/서비스계층·계약·최소청구단위미확인.실제청구없음.",
+        "음성 USD / 분": 0.002,
+        "단위": "USD / minute of audio",
+        "오디오 1시간 단순환산 USD": 0.12
+      }
+    },
+    {
+      "id": "nemotranscribe20261028-edition-differences",
+      "model": "NVIDIA Nemotron 3.5 Transcribe",
+      "provider": "NVIDIA",
+      "source_url": "https://huggingface.co/blog/nvidia/nemotron-transcribe-granary",
+      "checked_on": "2026-10-30",
+      "fields": {
+        "kind": "발표와 현재판 차이",
+        "suite": "28일 발표 vs current card",
+        "condition": "5.33/4.71을동일조건개선폭으로계산안함. 발표양자화예정과29일현재공개파일목록을구분.최적화NIM처리량을공개런타임에적용안함.",
+        "발표 영어 WER %": 5.33,
+        "현재 카드 영어9자료 WER %": 4.71,
+        "양자화": "발표예정 / 현재카드와공개파일목록제공"
+      }
+    }
+  ]
+}
