@@ -389,3 +389,5 @@ Carbon공개완료:78acacf/Pages40762896056 success. 소개1편/전체표62관�
 2026-10-31 모델 변경: Mistral Large 4의29일 개선 가중치 공개를 기존 소개4판과 전체표60검토관측으로 동시 보완했다. 상대열세/평가판·양자화/표준요금/라이선스·API미리보기조건을 보존한다. 로컬 품질·지식연결완료, 제출/공개검증진행중. [현재 검토](docs/AI_MODEL_REVIEW.2026-10-31.md).
 
 2026-10-31 제출소스 검증: 214개테스트와수집/publish/brief/review 및Edge PC/390px통과. Mistral4판/정확단가·Cyber수치·출처/날짜·이전판을확인했고다른작업은제외했다. 공개배포진행중. [실제범위](docs/AI_MODEL_REVIEW.2026-10-31.md).
+
+2026-10-31 Mistral 공개완료: bb0031c / [Pages41122671918](https://github.com/Hansihoo/signal-desk/actions/runs/41122671918) 성공. 소개4판과전체표60사실의실제공개값/단위·조건/출처·날짜·이전판과기존누적이력을검증했다. [최종범위](docs/AI_MODEL_REVIEW.2026-10-31.md).
