@@ -1,0 +1,971 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "id": "ml4-open-20261029-chart-0-0",
+      "model": "Mistral Large 4",
+      "provider": "Mistral",
+      "source_url": "https://mistral.ai/news/mistral-large-4-oss/",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Cognition - FrontierCode 2.0 / Mistral29Octsnapshot",
+        "condition": "29일공식차트원값.개별Harness/반복·추론예산미공개.비공개FrontierCode2.0은AA v1.1과다름.지수판·원문checkpoint표기를그대로보존.",
+        "reasoning": "未明示",
+        "평가 점수": 19.7,
+        "단위": "원문 %",
+        "측정 주체": "Mistral공식비교/외부값재인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "ml4-open-20261029-chart-0-2",
+      "model": "GLM-5.3 Flash",
+      "provider": "Z.ai",
+      "source_url": "https://mistral.ai/news/mistral-large-4-oss/",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Cognition - FrontierCode 2.0 / Mistral29Octsnapshot",
+        "condition": "29일공식차트원값.개별Harness/반복·추론예산미공개.비공개FrontierCode2.0은AA v1.1과다름.지수판·원문checkpoint표기를그대로보존.",
+        "reasoning": "未明示",
+        "평가 점수": 14.2,
+        "단위": "원문 %",
+        "측정 주체": "Mistral공식비교/외부값재인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "ml4-open-20261029-chart-0-3",
+      "model": "Kimi K3",
+      "provider": "Moonshot AI",
+      "source_url": "https://mistral.ai/news/mistral-large-4-oss/",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Cognition - FrontierCode 2.0 / Mistral29Octsnapshot",
+        "condition": "29일공식차트원값.개별Harness/반복·추론예산미공개.비공개FrontierCode2.0은AA v1.1과다름.지수판·원문checkpoint표기를그대로보존.",
+        "reasoning": "未明示",
+        "평가 점수": 17.3,
+        "단위": "원문 %",
+        "측정 주체": "Mistral공식비교/외부값재인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "ml4-open-20261029-chart-0-4",
+      "model": "GLM-5.3",
+      "provider": "Z.ai",
+      "source_url": "https://mistral.ai/news/mistral-large-4-oss/",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Cognition - FrontierCode 2.0 / Mistral29Octsnapshot",
+        "condition": "29일공식차트원값.개별Harness/반복·추론예산미공개.비공개FrontierCode2.0은AA v1.1과다름.지수판·원문checkpoint표기를그대로보존.",
+        "reasoning": "未明示",
+        "평가 점수": 17.8,
+        "단위": "원문 %",
+        "측정 주체": "Mistral공식비교/외부값재인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "ml4-open-20261029-chart-0-5",
+      "model": "DeepSeek V4.1 Flash",
+      "provider": "DeepSeek",
+      "source_url": "https://mistral.ai/news/mistral-large-4-oss/",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Cognition - FrontierCode 2.0 / Mistral29Octsnapshot",
+        "condition": "29일공식차트원값.개별Harness/반복·추론예산미공개.비공개FrontierCode2.0은AA v1.1과다름.지수판·원문checkpoint표기를그대로보존.",
+        "reasoning": "未明示",
+        "평가 점수": 19.3,
+        "단위": "원문 %",
+        "측정 주체": "Mistral공식비교/외부값재인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "ml4-open-20261029-chart-2-0",
+      "model": "Mistral Large 4 Preview",
+      "provider": "Mistral",
+      "source_url": "https://mistral.ai/news/mistral-large-4-oss/",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Artificial Analysis Coding Agent Index - Terminal-Bench 4.0 / Mistral29Octsnapshot",
+        "condition": "29일공식차트원값.개별Harness/반복·추론예산미공개.비공개FrontierCode2.0은AA v1.1과다름.지수판·원문checkpoint표기를그대로보존.",
+        "reasoning": "未明示",
+        "평가 점수": 28,
+        "단위": "원문 %",
+        "측정 주체": "Mistral공식비교/외부값재인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "ml4-open-20261029-chart-2-1",
+      "model": "Mistral Large 4",
+      "provider": "Mistral",
+      "source_url": "https://mistral.ai/news/mistral-large-4-oss/",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Artificial Analysis Coding Agent Index - Terminal-Bench 4.0 / Mistral29Octsnapshot",
+        "condition": "29일공식차트원값.개별Harness/반복·추론예산미공개.비공개FrontierCode2.0은AA v1.1과다름.지수판·원문checkpoint표기를그대로보존.",
+        "reasoning": "未明示",
+        "평가 점수": 41.4,
+        "단위": "원문 %",
+        "측정 주체": "Mistral공식비교/외부값재인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "ml4-open-20261029-chart-2-4",
+      "model": "Kimi K3",
+      "provider": "Moonshot AI",
+      "source_url": "https://mistral.ai/news/mistral-large-4-oss/",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Artificial Analysis Coding Agent Index - Terminal-Bench 4.0 / Mistral29Octsnapshot",
+        "condition": "29일공식차트원값.개별Harness/반복·추론예산미공개.비공개FrontierCode2.0은AA v1.1과다름.지수판·원문checkpoint표기를그대로보존.",
+        "reasoning": "未明示",
+        "평가 점수": 21,
+        "단위": "원문 %",
+        "측정 주체": "Mistral공식비교/외부값재인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "ml4-open-20261029-chart-2-5",
+      "model": "DeepSeek V4.1 Flash 1017",
+      "provider": "DeepSeek",
+      "source_url": "https://mistral.ai/news/mistral-large-4-oss/",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Artificial Analysis Coding Agent Index - Terminal-Bench 4.0 / Mistral29Octsnapshot",
+        "condition": "29일공식차트원값.개별Harness/반복·추론예산미공개.비공개FrontierCode2.0은AA v1.1과다름.지수판·원문checkpoint표기를그대로보존.",
+        "reasoning": "未明示",
+        "평가 점수": 31,
+        "단위": "원문 %",
+        "측정 주체": "Mistral공식비교/외부값재인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "ml4-open-20261029-chart-2-6",
+      "model": "GLM-5.3",
+      "provider": "Z.ai",
+      "source_url": "https://mistral.ai/news/mistral-large-4-oss/",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Artificial Analysis Coding Agent Index - Terminal-Bench 4.0 / Mistral29Octsnapshot",
+        "condition": "29일공식차트원값.개별Harness/반복·추론예산미공개.비공개FrontierCode2.0은AA v1.1과다름.지수판·원문checkpoint표기를그대로보존.",
+        "reasoning": "未明示",
+        "평가 점수": 40,
+        "단위": "원문 %",
+        "측정 주체": "Mistral공식비교/외부값재인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "ml4-open-20261029-chart-4-0",
+      "model": "Mistral Large 4",
+      "provider": "Mistral",
+      "source_url": "https://mistral.ai/news/mistral-large-4-oss/",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Artificial Analysis - Cyber Index / Mistral29Octsnapshot",
+        "condition": "29일공식차트원값.개별Harness/반복·추론예산미공개.비공개FrontierCode2.0은AA v1.1과다름.지수판·원문checkpoint표기를그대로보존.",
+        "reasoning": "未明示",
+        "평가 점수": 50.9,
+        "단위": "원문 %",
+        "측정 주체": "Mistral공식비교/외부값재인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "ml4-open-20261029-chart-4-2",
+      "model": "GLM-5.3",
+      "provider": "Z.ai",
+      "source_url": "https://mistral.ai/news/mistral-large-4-oss/",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Artificial Analysis - Cyber Index / Mistral29Octsnapshot",
+        "condition": "29일공식차트원값.개별Harness/반복·추론예산미공개.비공개FrontierCode2.0은AA v1.1과다름.지수판·원문checkpoint표기를그대로보존.",
+        "reasoning": "未明示",
+        "평가 점수": 36,
+        "단위": "원문 %",
+        "측정 주체": "Mistral공식비교/외부값재인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "ml4-open-20261029-chart-4-3",
+      "model": "Kimi K3",
+      "provider": "Moonshot AI",
+      "source_url": "https://mistral.ai/news/mistral-large-4-oss/",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Artificial Analysis - Cyber Index / Mistral29Octsnapshot",
+        "condition": "29일공식차트원값.개별Harness/반복·추론예산미공개.비공개FrontierCode2.0은AA v1.1과다름.지수판·원문checkpoint표기를그대로보존.",
+        "reasoning": "未明示",
+        "평가 점수": 41,
+        "단위": "원문 %",
+        "측정 주체": "Mistral공식비교/외부값재인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "ml4-open-20261029-chart-4-4",
+      "model": "GLM-5.3 Flash",
+      "provider": "Z.ai",
+      "source_url": "https://mistral.ai/news/mistral-large-4-oss/",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Artificial Analysis - Cyber Index / Mistral29Octsnapshot",
+        "condition": "29일공식차트원값.개별Harness/반복·추론예산미공개.비공개FrontierCode2.0은AA v1.1과다름.지수판·원문checkpoint표기를그대로보존.",
+        "reasoning": "未明示",
+        "평가 점수": 50,
+        "단위": "원문 %",
+        "측정 주체": "Mistral공식비교/외부값재인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "ml4-open-20261029-chart-4-6",
+      "model": "DeepSeek-V4.1-Flash 1017",
+      "provider": "DeepSeek",
+      "source_url": "https://mistral.ai/news/mistral-large-4-oss/",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Artificial Analysis - Cyber Index / Mistral29Octsnapshot",
+        "condition": "29일공식차트원값.개별Harness/반복·추론예산미공개.비공개FrontierCode2.0은AA v1.1과다름.지수판·원문checkpoint표기를그대로보존.",
+        "reasoning": "未明示",
+        "평가 점수": 57,
+        "단위": "원문 %",
+        "측정 주체": "Mistral공식비교/외부값재인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "ml4-open-20261029-chart-6-0",
+      "model": "Mistral Large 4 Preview",
+      "provider": "Mistral",
+      "source_url": "https://mistral.ai/news/mistral-large-4-oss/",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "FinWorkBench (Finch) / Mistral29Octsnapshot",
+        "condition": "29일공식차트원값.개별Harness/반복·추론예산미공개.비공개FrontierCode2.0은AA v1.1과다름.지수판·원문checkpoint표기를그대로보존.",
+        "reasoning": "未明示",
+        "평가 점수": 67.4,
+        "단위": "원문 %",
+        "측정 주체": "Mistral공식비교/외부값재인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "ml4-open-20261029-chart-6-1",
+      "model": "Mistral Large 4",
+      "provider": "Mistral",
+      "source_url": "https://mistral.ai/news/mistral-large-4-oss/",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "FinWorkBench (Finch) / Mistral29Octsnapshot",
+        "condition": "29일공식차트원값.개별Harness/반복·추론예산미공개.비공개FrontierCode2.0은AA v1.1과다름.지수판·원문checkpoint표기를그대로보존.",
+        "reasoning": "未明示",
+        "평가 점수": 73.3,
+        "단위": "원문 %",
+        "측정 주체": "Mistral공식비교/외부값재인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "ml4-open-20261029-chart-6-2",
+      "model": "GLM-5.3",
+      "provider": "Z.ai",
+      "source_url": "https://mistral.ai/news/mistral-large-4-oss/",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "FinWorkBench (Finch) / Mistral29Octsnapshot",
+        "condition": "29일공식차트원값.개별Harness/반복·추론예산미공개.비공개FrontierCode2.0은AA v1.1과다름.지수판·원문checkpoint표기를그대로보존.",
+        "reasoning": "未明示",
+        "평가 점수": 65.12,
+        "단위": "원문 %",
+        "측정 주체": "Mistral공식비교/외부값재인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "ml4-open-20261029-chart-6-3",
+      "model": "DeepSeek-V4-Pro-0813",
+      "provider": "DeepSeek",
+      "source_url": "https://mistral.ai/news/mistral-large-4-oss/",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "FinWorkBench (Finch) / Mistral29Octsnapshot",
+        "condition": "29일공식차트원값.개별Harness/반복·추론예산미공개.비공개FrontierCode2.0은AA v1.1과다름.지수판·원문checkpoint표기를그대로보존.",
+        "reasoning": "未明示",
+        "평가 점수": 67.44,
+        "단위": "원문 %",
+        "측정 주체": "Mistral공식비교/외부값재인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "ml4-open-20261029-chart-6-4",
+      "model": "Kimi K3",
+      "provider": "Moonshot AI",
+      "source_url": "https://mistral.ai/news/mistral-large-4-oss/",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "FinWorkBench (Finch) / Mistral29Octsnapshot",
+        "condition": "29일공식차트원값.개별Harness/반복·추론예산미공개.비공개FrontierCode2.0은AA v1.1과다름.지수판·원문checkpoint표기를그대로보존.",
+        "reasoning": "未明示",
+        "평가 점수": 77.33,
+        "단위": "원문 %",
+        "측정 주체": "Mistral공식비교/외부값재인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "ml4-open-20261029-chart-7-0",
+      "model": "Early Mistral Large  SFT checkpoint",
+      "provider": "Anthropic",
+      "source_url": "https://mistral.ai/news/mistral-large-4-oss/",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Web browsing - BrowseComp / Mistral29Octsnapshot",
+        "condition": "29일공식차트원값.개별Harness/반복·추론예산미공개.비공개FrontierCode2.0은AA v1.1과다름.지수판·원문checkpoint표기를그대로보존.",
+        "reasoning": "未明示",
+        "평가 점수": 75,
+        "단위": "원문 Score",
+        "측정 주체": "Mistral공식비교/외부값재인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "ml4-open-20261029-chart-7-1",
+      "model": "Mistral Large 4",
+      "provider": "Mistral",
+      "source_url": "https://mistral.ai/news/mistral-large-4-oss/",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Web browsing - BrowseComp / Mistral29Octsnapshot",
+        "condition": "29일공식차트원값.개별Harness/반복·추론예산미공개.비공개FrontierCode2.0은AA v1.1과다름.지수판·원문checkpoint표기를그대로보존.",
+        "reasoning": "未明示",
+        "평가 점수": 84.5,
+        "단위": "원문 Score",
+        "측정 주체": "Mistral공식비교/외부값재인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "ml4-open-20261029-chart-7-2",
+      "model": "GLM-5.3",
+      "provider": "Z.ai",
+      "source_url": "https://mistral.ai/news/mistral-large-4-oss/",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Web browsing - BrowseComp / Mistral29Octsnapshot",
+        "condition": "29일공식차트원값.개별Harness/반복·추론예산미공개.비공개FrontierCode2.0은AA v1.1과다름.지수판·원문checkpoint표기를그대로보존.",
+        "reasoning": "未明示",
+        "평가 점수": 82.5,
+        "단위": "원문 Score",
+        "측정 주체": "Mistral공식비교/외부값재인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "ml4-open-20261029-chart-7-3",
+      "model": "DeepSeek V4.1 Flash 1017",
+      "provider": "DeepSeek",
+      "source_url": "https://mistral.ai/news/mistral-large-4-oss/",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Web browsing - BrowseComp / Mistral29Octsnapshot",
+        "condition": "29일공식차트원값.개별Harness/반복·추론예산미공개.비공개FrontierCode2.0은AA v1.1과다름.지수판·원문checkpoint표기를그대로보존.",
+        "reasoning": "未明示",
+        "평가 점수": 83.4,
+        "단위": "원문 Score",
+        "측정 주체": "Mistral공식비교/외부값재인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "ml4-open-20261029-chart-7-4",
+      "model": "Kimi K3",
+      "provider": "Moonshot AI",
+      "source_url": "https://mistral.ai/news/mistral-large-4-oss/",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Web browsing - BrowseComp / Mistral29Octsnapshot",
+        "condition": "29일공식차트원값.개별Harness/반복·추론예산미공개.비공개FrontierCode2.0은AA v1.1과다름.지수판·원문checkpoint표기를그대로보존.",
+        "reasoning": "未明示",
+        "평가 점수": 91.2,
+        "단위": "원문 Score",
+        "측정 주체": "Mistral공식비교/외부값재인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "ml4-open-20261029-chart-8-0",
+      "model": "Mistral Large 4 Preview",
+      "provider": "Mistral",
+      "source_url": "https://mistral.ai/news/mistral-large-4-oss/",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "B3 Agent security benchmark - Attack resistance / Mistral29Octsnapshot",
+        "condition": "29일공식차트원값.개별Harness/반복·추론예산미공개.비공개FrontierCode2.0은AA v1.1과다름.지수판·원문checkpoint표기를그대로보존.",
+        "reasoning": "未明示",
+        "평가 점수": 93.3,
+        "단위": "원문 %",
+        "측정 주체": "Mistral공식비교/외부값재인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "ml4-open-20261029-chart-8-1",
+      "model": "Mistral Large 4",
+      "provider": "Mistral",
+      "source_url": "https://mistral.ai/news/mistral-large-4-oss/",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "B3 Agent security benchmark - Attack resistance / Mistral29Octsnapshot",
+        "condition": "29일공식차트원값.개별Harness/반복·추론예산미공개.비공개FrontierCode2.0은AA v1.1과다름.지수판·원문checkpoint표기를그대로보존.",
+        "reasoning": "未明示",
+        "평가 점수": 97.1,
+        "단위": "원문 %",
+        "측정 주체": "Mistral공식비교/외부값재인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "ml4-open-20261029-chart-8-2",
+      "model": "DeepSeek-V4-Pro",
+      "provider": "DeepSeek",
+      "source_url": "https://mistral.ai/news/mistral-large-4-oss/",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "B3 Agent security benchmark - Attack resistance / Mistral29Octsnapshot",
+        "condition": "29일공식차트원값.개별Harness/반복·추론예산미공개.비공개FrontierCode2.0은AA v1.1과다름.지수판·원문checkpoint표기를그대로보존.",
+        "reasoning": "未明示",
+        "평가 점수": 58.6,
+        "단위": "원문 %",
+        "측정 주체": "Mistral공식비교/외부값재인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "ml4-open-20261029-chart-8-4",
+      "model": "Kimi K3",
+      "provider": "Moonshot AI",
+      "source_url": "https://mistral.ai/news/mistral-large-4-oss/",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "B3 Agent security benchmark - Attack resistance / Mistral29Octsnapshot",
+        "condition": "29일공식차트원값.개별Harness/반복·추론예산미공개.비공개FrontierCode2.0은AA v1.1과다름.지수판·원문checkpoint표기를그대로보존.",
+        "reasoning": "未明示",
+        "평가 점수": 88.1,
+        "단위": "원문 %",
+        "측정 주체": "Mistral공식비교/외부값재인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "ml4-open-20261029-chart-8-5",
+      "model": "GLM-5.3",
+      "provider": "Z.ai",
+      "source_url": "https://mistral.ai/news/mistral-large-4-oss/",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "B3 Agent security benchmark - Attack resistance / Mistral29Octsnapshot",
+        "condition": "29일공식차트원값.개별Harness/반복·추론예산미공개.비공개FrontierCode2.0은AA v1.1과다름.지수판·원문checkpoint표기를그대로보존.",
+        "reasoning": "未明示",
+        "평가 점수": 93.3,
+        "단위": "원문 %",
+        "측정 주체": "Mistral공식비교/외부값재인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "ml4-open-20261029-coding-0",
+      "model": "Mistral Large 4",
+      "provider": "Mistral",
+      "source_url": "https://mistral.ai/news/mistral-large-4-oss/",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Coding Agent Index / Mistral29Octsnapshot",
+        "condition": "공식scatter;정확지수판/개별Harness미표시.현재AA v2.0으로자동승계하지않음.",
+        "reasoning": "Medium",
+        "평가 점수": 35,
+        "단위": "%",
+        "측정 주체": "Mistral공식비교/외부값재인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "ml4-open-20261029-token-0",
+      "model": "Mistral Large 4",
+      "provider": "Mistral",
+      "source_url": "https://mistral.ai/news/mistral-large-4-oss/",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 평가 자원",
+        "suite": "Coding Agent Index average tokens / Mistral29Octsnapshot",
+        "condition": "원문단위milliontokens/task;과제집계입력/캐시/출력포함조건전체미공개;속도/청구액아님.",
+        "reasoning": "Medium",
+        "평가 점수": 5.8,
+        "단위": "million tokens/task"
+      }
+    },
+    {
+      "id": "ml4-open-20261029-coding-1",
+      "model": "Mistral Large 4",
+      "provider": "Mistral",
+      "source_url": "https://mistral.ai/news/mistral-large-4-oss/",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Coding Agent Index / Mistral29Octsnapshot",
+        "condition": "공식scatter;정확지수판/개별Harness미표시.현재AA v2.0으로자동승계하지않음.",
+        "reasoning": "High",
+        "평가 점수": 48,
+        "단위": "%",
+        "측정 주체": "Mistral공식비교/외부값재인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "ml4-open-20261029-token-1",
+      "model": "Mistral Large 4",
+      "provider": "Mistral",
+      "source_url": "https://mistral.ai/news/mistral-large-4-oss/",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 평가 자원",
+        "suite": "Coding Agent Index average tokens / Mistral29Octsnapshot",
+        "condition": "원문단위milliontokens/task;과제집계입력/캐시/출력포함조건전체미공개;속도/청구액아님.",
+        "reasoning": "High",
+        "평가 점수": 8.5,
+        "단위": "million tokens/task"
+      }
+    },
+    {
+      "id": "ml4-open-20261029-coding-3",
+      "model": "GLM-5.3",
+      "provider": "Z.ai",
+      "source_url": "https://mistral.ai/news/mistral-large-4-oss/",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Coding Agent Index / Mistral29Octsnapshot",
+        "condition": "공식scatter;정확지수판/개별Harness미표시.현재AA v2.0으로자동승계하지않음.",
+        "reasoning": "원문미표시",
+        "평가 점수": 49,
+        "단위": "%",
+        "측정 주체": "Mistral공식비교/외부값재인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "ml4-open-20261029-token-3",
+      "model": "GLM-5.3",
+      "provider": "공식비교대상",
+      "source_url": "https://mistral.ai/news/mistral-large-4-oss/",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 평가 자원",
+        "suite": "Coding Agent Index average tokens / Mistral29Octsnapshot",
+        "condition": "원문단위milliontokens/task;과제집계입력/캐시/출력포함조건전체미공개;속도/청구액아님.",
+        "reasoning": "원문미표시",
+        "평가 점수": 15.9,
+        "단위": "million tokens/task"
+      }
+    },
+    {
+      "id": "ml4-open-20261029-coding-4",
+      "model": "DeepSeek V4.1 Flash 1017",
+      "provider": "DeepSeek",
+      "source_url": "https://mistral.ai/news/mistral-large-4-oss/",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Coding Agent Index / Mistral29Octsnapshot",
+        "condition": "공식scatter;정확지수판/개별Harness미표시.현재AA v2.0으로자동승계하지않음.",
+        "reasoning": "원문미표시",
+        "평가 점수": 46,
+        "단위": "%",
+        "측정 주체": "Mistral공식비교/외부값재인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "ml4-open-20261029-token-4",
+      "model": "DeepSeek V4.1 Flash 1017",
+      "provider": "공식비교대상",
+      "source_url": "https://mistral.ai/news/mistral-large-4-oss/",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 평가 자원",
+        "suite": "Coding Agent Index average tokens / Mistral29Octsnapshot",
+        "condition": "원문단위milliontokens/task;과제집계입력/캐시/출력포함조건전체미공개;속도/청구액아님.",
+        "reasoning": "원문미표시",
+        "평가 점수": 16.7,
+        "단위": "million tokens/task"
+      }
+    },
+    {
+      "id": "ml4-open-20261029-coding-5",
+      "model": "Kimi K3",
+      "provider": "Moonshot AI",
+      "source_url": "https://mistral.ai/news/mistral-large-4-oss/",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Coding Agent Index / Mistral29Octsnapshot",
+        "condition": "공식scatter;정확지수판/개별Harness미표시.현재AA v2.0으로자동승계하지않음.",
+        "reasoning": "원문미표시",
+        "평가 점수": 41,
+        "단위": "%",
+        "측정 주체": "Mistral공식비교/외부값재인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "ml4-open-20261029-token-5",
+      "model": "Kimi K3",
+      "provider": "공식비교대상",
+      "source_url": "https://mistral.ai/news/mistral-large-4-oss/",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 평가 자원",
+        "suite": "Coding Agent Index average tokens / Mistral29Octsnapshot",
+        "condition": "원문단위milliontokens/task;과제집계입력/캐시/출력포함조건전체미공개;속도/청구액아님.",
+        "reasoning": "원문미표시",
+        "평가 점수": 9,
+        "단위": "million tokens/task"
+      }
+    },
+    {
+      "id": "ml4-open-20261029-surge-0",
+      "model": "Mistral Large 4",
+      "provider": "Mistral",
+      "source_url": "https://mistral.ai/news/mistral-large-4-oss/",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SurgeCode blind pairwise vs GLM-5.3",
+        "condition": "코딩답변쌍대선호.표본/CI/오차범위미공개;상대모델전반성공률아님.",
+        "reasoning": "未明示",
+        "평가 점수": 64,
+        "단위": "선호 %",
+        "측정 주체": "Mistral공식비교/외부값재인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "ml4-open-20261029-surge-1",
+      "model": "Mistral Large 4",
+      "provider": "Mistral",
+      "source_url": "https://mistral.ai/news/mistral-large-4-oss/",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SurgeCode blind pairwise vs Kimi K3",
+        "condition": "코딩답변쌍대선호.표본/CI/오차범위미공개;상대모델전반성공률아님.",
+        "reasoning": "未明示",
+        "평가 점수": 64,
+        "단위": "선호 %",
+        "측정 주체": "Mistral공식비교/외부값재인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "ml4-open-20261029-surge-2",
+      "model": "Mistral Large 4",
+      "provider": "Mistral",
+      "source_url": "https://mistral.ai/news/mistral-large-4-oss/",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SurgeCode blind pairwise vs DeepSeek V4.1 Flash",
+        "condition": "코딩답변쌍대선호.표본/CI/오차범위미공개;상대모델전반성공률아님.",
+        "reasoning": "未明示",
+        "평가 점수": 56,
+        "단위": "선호 %",
+        "측정 주체": "Mistral공식비교/외부값재인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "ml4-open-20261029-surge-3",
+      "model": "Mistral Large 4",
+      "provider": "Mistral",
+      "source_url": "https://mistral.ai/news/mistral-large-4-oss/",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SurgeCode blind pairwise vs Claude Opus 5.5",
+        "condition": "코딩답변쌍대선호.표본/CI/오차범위미공개;상대모델전반성공률아님.",
+        "reasoning": "未明示",
+        "평가 점수": 22,
+        "단위": "선호 %",
+        "측정 주체": "Mistral공식비교/외부값재인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "ml4-open-20261029-intelligence-26-Mistral-Large-4",
+      "model": "Mistral Large 4",
+      "provider": "Mistral",
+      "source_url": "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B/resolve/main/images/intelligence_index.png",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "AA Intelligence Index v5 / official card image",
+        "condition": "공식카드원PNG를시각독해.현재실시간AA조회아님/세부추론미표시.",
+        "reasoning": "未明示",
+        "평가 점수": 26,
+        "단위": "지수 점수",
+        "측정 주체": "Mistral공식비교/외부값재인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "ml4-open-20261029-intelligence-32-GLM-5.3",
+      "model": "GLM-5.3",
+      "provider": "Z.ai",
+      "source_url": "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B/resolve/main/images/intelligence_index.png",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "AA Intelligence Index v5 / official card image",
+        "condition": "공식카드원PNG를시각독해.현재실시간AA조회아님/세부추론미표시.",
+        "reasoning": "未明示",
+        "평가 점수": 32,
+        "단위": "지수 점수",
+        "측정 주체": "Mistral공식비교/외부값재인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "ml4-open-20261029-intelligence-32-DeepSeek-V4.1-Flash-1017",
+      "model": "DeepSeek V4.1 Flash 1017",
+      "provider": "DeepSeek",
+      "source_url": "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B/resolve/main/images/intelligence_index.png",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "AA Intelligence Index v5 / official card image",
+        "condition": "공식카드원PNG를시각독해.현재실시간AA조회아님/세부추론미표시.",
+        "reasoning": "未明示",
+        "평가 점수": 32,
+        "단위": "지수 점수",
+        "측정 주체": "Mistral공식비교/외부값재인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "ml4-open-20261029-quant-0-FP8",
+      "model": "Mistral Large 4",
+      "provider": "Mistral",
+      "source_url": "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B-NVFP4/resolve/3d843073c9987de83d1f94a73a3184da8cf0dba2/images/fp8-vs-nvfp4-evaluations.png",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "GDP.pdf / FP8-NVFP4 official comparison",
+        "condition": "공식고정revision그림/FP8/오차막대있음;세부평가판·표본·Harness/검정미공개.다른AA표와합치지않음.",
+        "reasoning": "未明示",
+        "평가 점수": 19.2,
+        "단위": "원문 Score",
+        "측정 주체": "Mistral공식비교/외부값재인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "ml4-open-20261029-quant-0-NVFP4",
+      "model": "Mistral Large 4",
+      "provider": "Mistral",
+      "source_url": "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B-NVFP4/resolve/3d843073c9987de83d1f94a73a3184da8cf0dba2/images/fp8-vs-nvfp4-evaluations.png",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "GDP.pdf / FP8-NVFP4 official comparison",
+        "condition": "공식고정revision그림/NVFP4/오차막대있음;세부평가판·표본·Harness/검정미공개.다른AA표와합치지않음.",
+        "reasoning": "未明示",
+        "평가 점수": 17.4,
+        "단위": "원문 Score",
+        "측정 주체": "Mistral공식비교/외부값재인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "ml4-open-20261029-quant-1-FP8",
+      "model": "Mistral Large 4",
+      "provider": "Mistral",
+      "source_url": "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B-NVFP4/resolve/3d843073c9987de83d1f94a73a3184da8cf0dba2/images/fp8-vs-nvfp4-evaluations.png",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Terminal-Bench 4 / FP8-NVFP4 official comparison",
+        "condition": "공식고정revision그림/FP8/오차막대있음;세부평가판·표본·Harness/검정미공개.다른AA표와합치지않음.",
+        "reasoning": "未明示",
+        "평가 점수": 34.9,
+        "단위": "원문 Score",
+        "측정 주체": "Mistral공식비교/외부값재인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "ml4-open-20261029-quant-1-NVFP4",
+      "model": "Mistral Large 4",
+      "provider": "Mistral",
+      "source_url": "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B-NVFP4/resolve/3d843073c9987de83d1f94a73a3184da8cf0dba2/images/fp8-vs-nvfp4-evaluations.png",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Terminal-Bench 4 / FP8-NVFP4 official comparison",
+        "condition": "공식고정revision그림/NVFP4/오차막대있음;세부평가판·표본·Harness/검정미공개.다른AA표와합치지않음.",
+        "reasoning": "未明示",
+        "평가 점수": 32.8,
+        "단위": "원문 Score",
+        "측정 주체": "Mistral공식비교/외부값재인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "ml4-open-20261029-quant-2-FP8",
+      "model": "Mistral Large 4",
+      "provider": "Mistral",
+      "source_url": "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B-NVFP4/resolve/3d843073c9987de83d1f94a73a3184da8cf0dba2/images/fp8-vs-nvfp4-evaluations.png",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "CyberGym / FP8-NVFP4 official comparison",
+        "condition": "공식고정revision그림/FP8/오차막대있음;세부평가판·표본·Harness/검정미공개.다른AA표와합치지않음.",
+        "reasoning": "未明示",
+        "평가 점수": 82.6,
+        "단위": "원문 Score",
+        "측정 주체": "Mistral공식비교/외부값재인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "ml4-open-20261029-quant-2-NVFP4",
+      "model": "Mistral Large 4",
+      "provider": "Mistral",
+      "source_url": "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B-NVFP4/resolve/3d843073c9987de83d1f94a73a3184da8cf0dba2/images/fp8-vs-nvfp4-evaluations.png",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "CyberGym / FP8-NVFP4 official comparison",
+        "condition": "공식고정revision그림/NVFP4/오차막대있음;세부평가판·표본·Harness/검정미공개.다른AA표와합치지않음.",
+        "reasoning": "未明示",
+        "평가 점수": 80.9,
+        "단위": "원문 Score",
+        "측정 주체": "Mistral공식비교/외부값재인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "ml4-open-20261029-quant-3-FP8",
+      "model": "Mistral Large 4",
+      "provider": "Mistral",
+      "source_url": "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B-NVFP4/resolve/3d843073c9987de83d1f94a73a3184da8cf0dba2/images/fp8-vs-nvfp4-evaluations.png",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "DeepSWE / FP8-NVFP4 official comparison",
+        "condition": "공식고정revision그림/FP8/오차막대있음;세부평가판·표본·Harness/검정미공개.다른AA표와합치지않음.",
+        "reasoning": "未明示",
+        "평가 점수": 62.7,
+        "단위": "원문 Score",
+        "측정 주체": "Mistral공식비교/외부값재인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "ml4-open-20261029-quant-3-NVFP4",
+      "model": "Mistral Large 4",
+      "provider": "Mistral",
+      "source_url": "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B-NVFP4/resolve/3d843073c9987de83d1f94a73a3184da8cf0dba2/images/fp8-vs-nvfp4-evaluations.png",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "DeepSWE / FP8-NVFP4 official comparison",
+        "condition": "공식고정revision그림/NVFP4/오차막대있음;세부평가판·표본·Harness/검정미공개.다른AA표와합치지않음.",
+        "reasoning": "未明示",
+        "평가 점수": 64.6,
+        "단위": "원문 Score",
+        "측정 주체": "Mistral공식비교/외부값재인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "mistral-large-4-spec",
+      "model": "Mistral Large 4",
+      "provider": "Mistral",
+      "source_url": "https://docs.mistral.ai/models/mistral-large-4",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 모델 사양",
+        "suite": "공식 모델 사양",
+        "condition": "2026-10-31문서:API PublicPreview유지/29일개선가중치공개별도.1M사양과실제배포검증구분.",
+        "release": "2026-10-06",
+        "status": "API Public Preview / 29일 공개 가중치",
+        "access": "API / FP8 / NVFP4 weights",
+        "parameters": 1050,
+        "active_parameters": 52,
+        "context": 1000000,
+        "harness": "미측정",
+        "basis": "제공자 현재문서/공식카드",
+        "note": "HF약1T/활성49B(임베딩·출력포함52B),문서1.05T/52B/vision1.6B.설정위치1048576;임의1M환산없음.API최대출력/종료일·최소로컬자원미확인.",
+        "references": [
+          "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B/raw/main/README.md",
+          "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B/raw/main/config.json",
+          "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B/raw/main/LICENSE",
+          "https://mistral.ai/news/mistral-large-4-oss/",
+          "https://recipes.vllm.ai/mistralai/Mistral-Large-4-1T-A52B"
+        ]
+      }
+    },
+    {
+      "id": "ml4-open-20261029-mistral-standard-price-0",
+      "model": "Mistral Large 4",
+      "provider": "Mistral",
+      "source_url": "https://docs.mistral.ai/inference/pricing",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 API 표준 요금",
+        "suite": "Mistral Serverless Standard USD / 2026-10-29 change",
+        "condition": "Mistral호스팅/USD/Standard/100만토큰.캐시적중분만캐시단가.원개발사별도API·Batch/Priority/지역·계약/세금·실청구와분리.",
+        "access": "Mistral Serverless API",
+        "입력 USD / 100만 토큰": 0.7,
+        "캐시 입력 USD / 100만 토큰": 0.07,
+        "출력 USD / 100만 토큰": 2.1
+      }
+    },
+    {
+      "id": "ml4-open-20261029-mistral-standard-price-1",
+      "model": "GLM-5.3",
+      "provider": "Z.ai",
+      "source_url": "https://docs.mistral.ai/inference/pricing",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 API 표준 요금",
+        "suite": "Mistral Serverless Standard USD / 2026-10-29 change",
+        "condition": "Mistral호스팅/USD/Standard/100만토큰.캐시적중분만캐시단가.원개발사별도API·Batch/Priority/지역·계약/세금·실청구와분리.",
+        "access": "Mistral Serverless API",
+        "입력 USD / 100만 토큰": 1.4,
+        "캐시 입력 USD / 100만 토큰": 0.14,
+        "출력 USD / 100만 토큰": 4.4
+      }
+    },
+    {
+      "id": "ml4-open-20261029-mistral-standard-price-2",
+      "model": "DeepSeek V4.1 Flash 1017",
+      "provider": "DeepSeek",
+      "source_url": "https://docs.mistral.ai/inference/pricing",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 API 표준 요금",
+        "suite": "Mistral Serverless Standard USD / 2026-10-29 change",
+        "condition": "Mistral호스팅/USD/Standard/100만토큰.캐시적중분만캐시단가.원개발사별도API·Batch/Priority/지역·계약/세금·실청구와분리.",
+        "access": "Mistral Serverless API",
+        "입력 USD / 100만 토큰": 0.3,
+        "캐시 입력 USD / 100만 토큰": 0.007,
+        "출력 USD / 100만 토큰": 1.2
+      }
+    },
+    {
+      "id": "ml4-open-20261029-license",
+      "model": "Mistral Large 4",
+      "provider": "Mistral",
+      "source_url": "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B/raw/main/LICENSE",
+      "checked_on": "2026-10-31",
+      "fields": {
+        "kind": "공식 라이선스",
+        "suite": "Mistral Ecosystem Open-Weight License / 2026-10-29",
+        "condition": "본인/계열사MaaS사업자상업사용별도계약.내장기능/단순중계정의제외,내부/공식Mistral제품사용2항예외;고지유지·무보증.",
+        "status": "공개 가중치",
+        "라이선스": "modified MIT / MaaS additional commercial agreement",
+        "최종 사업별 계약 판단": "미수행"
+      }
+    }
+  ]
+}

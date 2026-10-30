@@ -1,0 +1,848 @@
+{
+  "schema_version": 1,
+  "reports": [
+    {
+      "id": "mistral-large-4-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "checked_on": "2026-10-31",
+      "title": "Mistral Large 4 소개: 공개 가중치의 코딩 강점과 배포 조건",
+      "description": "10월 29일 공개된 개선 가중치를 API 미리보기, 이전 Large 3와 경쟁 모델에 비교하고 성능의 강약점, 표준 요금과 상업 사용 조건을 설명합니다.",
+      "deck": "Mistral Large 4는 텍스트와 이미지를 이해하는 대형 공개 가중치 모델입니다. 코딩과 방어 보안 평가에서 강점을 보이지만 종합 지수와 금융·검색 평가에서는 앞선 경쟁 모델이 있으며, 자체 배포에는 큰 하드웨어와 라이선스 검토가 필요합니다.",
+      "scope": "공식 자료를 한국시간 2026년 10월 31일 확인했습니다. 가중치와 실행 패키지의 실제 설치, 추론, 한국어 업무, 과금과 사람 독해 시험은 수행하지 않았습니다.",
+      "source_note": "공급자 발표의 차트와 평가기관의 현재 방법론을 구분합니다. 측정 주체, 평가판과 추론 설정을 보존하며, 미공개 Harness·표본·가격 조건을 추정하지 않습니다.",
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "highlights": [
+        "개선 가중치와 API 미리보기",
+        "평가마다 다른 상대 강약점",
+        "표준 요금과 자체 배포 조건"
+      ],
+      "summary": [
+        {
+          "label": "개선 가중치와 API 미리보기",
+          "text": "6일 API 미리보기에 이어 29일 추가 강화학습을 거친 가중치가 공개됐습니다. 텍스트·이미지 입력, 텍스트 출력과 1M 문맥을 지원하지만 현재 API 문서의 상태 표시는 여전히 Public Preview입니다. 가중치 공개를 API 정식 제공으로 바꾸어 읽으면 안 됩니다.",
+          "source_ids": [
+            "announcement",
+            "card",
+            "docs"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "평가마다 다른 상대 강약점",
+          "text": "29일 발표의 Coding Agent Index는 High 48%로 GLM-5.3 49%에 가깝고 평균 토큰은 적습니다. 반면 카드의 Intelligence Index v5는 26으로 GLM-5.3·DeepSeek Flash 1017의 32보다 낮고, Finch와 BrowseComp는 Kimi K3가 앞섭니다. 코딩 강점을 모든 작업의 우위로 일반화할 수 없습니다.",
+          "source_ids": [
+            "announcement",
+            "card",
+            "intelligence-image"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "표준 요금과 자체 배포 조건",
+          "text": "현재 Mistral 서버리스 표준 요금은 100만 토큰당 입력 $0.70, 캐시 입력 $0.07, 출력 $2.10입니다. 공개 가중치는 별도 인프라 비용이 들며, 본인 또는 계열사가 MaaS 사업을 운영하는 경우 상업 사용에 별도 계약이 필요합니다. 내부 사용과 특정 제품 기능에 내장하는 경우는 원문의 예외 조항을 함께 읽어야 합니다.",
+          "source_ids": [
+            "pricing-doc",
+            "license"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "tables": [
+        {
+          "id": "specification",
+          "title": "모델 사양과 이전 계열의 차이",
+          "columns": [
+            "항목",
+            "Mistral Large 4 공개판",
+            "Large 4 API 미리보기",
+            "Mistral Large 3"
+          ],
+          "rows": [
+            {
+              "values": [
+                "모델 판",
+                "Mistral-Large-4-1T-A52B; 29일 개선 가중치",
+                "6일 공개, 같은 Large 4 계열",
+                "Mistral-Large-3-675B-Instruct-2512"
+              ],
+              "source_ids": [
+                "card",
+                "initial",
+                "mistral3"
+              ]
+            },
+            {
+              "values": [
+                "전체 / 활성 규모",
+                "카드 약 1T / 49B; 임베딩·출력 포함 활성 52B",
+                "문서 전체 1.05T / 활성 52B, 시각 인코더 1.6B",
+                "전체 675B / 활성 41B"
+              ],
+              "source_ids": [
+                "card",
+                "docs",
+                "mistral3"
+              ]
+            },
+            {
+              "values": [
+                "문맥과 입출력",
+                "1M 표기; 설정 위치 범위 1,048,576. 텍스트·이미지 → 텍스트",
+                "1M; 텍스트·이미지 → 텍스트",
+                "256k; 텍스트·이미지 → 텍스트"
+              ],
+              "source_ids": [
+                "card",
+                "config",
+                "docs",
+                "mistral3"
+              ]
+            },
+            {
+              "values": [
+                "추론 설정",
+                "Low / Medium / High, 기본 High",
+                "초기 None 모드를 현재 Low가 대체",
+                "Instruct 판; Large 4의 세 모드와 동일 설정 아님"
+              ],
+              "source_ids": [
+                "announcement",
+                "card",
+                "mistral3"
+              ]
+            },
+            {
+              "values": [
+                "제공과 라이선스",
+                "FP8 계열 및 NVFP4, 수정 MIT 계열 Mistral Ecosystem 라이선스",
+                "현재 API는 Public Preview 표시",
+                "FP8/BF16/NVFP4 공개, Apache 2.0"
+              ],
+              "source_ids": [
+                "card",
+                "config",
+                "nvfp4",
+                "license",
+                "docs",
+                "mistral3"
+              ]
+            }
+          ],
+          "note": "B는 10억 파라미터입니다. 토큰마다 계산에 쓰는 활성 규모는 전체 가중치를 보관하는 메모리와 다릅니다. Large 3는 세대 비교, 미리보기는 같은 Large 4의 공개 전 단계 비교입니다. 현재 두 사양 원문의 약 1T/1.05T와 49B/52B는 집계 범위를 밝혀 병기했습니다."
+        },
+        {
+          "id": "comparison",
+          "title": "공식 발표의 경쟁 모델 비교",
+          "columns": [
+            "평가",
+            "Large 4",
+            "GLM-5.3",
+            "DeepSeek V4.1 Flash 1017",
+            "Kimi K3"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Coding Agent Index",
+                "48% (High)",
+                "49%",
+                "46%",
+                "41%"
+              ],
+              "source_ids": [
+                "announcement",
+                "coding-image"
+              ]
+            },
+            {
+              "values": [
+                "평균 사용 토큰 / 과제",
+                "8.5M (High)",
+                "15.9M",
+                "16.7M",
+                "9.0M"
+              ],
+              "source_ids": [
+                "announcement"
+              ]
+            },
+            {
+              "values": [
+                "Terminal-Bench 4.0",
+                "41.4%",
+                "40%",
+                "31%",
+                "21%"
+              ],
+              "source_ids": [
+                "announcement"
+              ]
+            },
+            {
+              "values": [
+                "AA Cyber Index",
+                "50.9%",
+                "36%",
+                "57%",
+                "41%"
+              ],
+              "source_ids": [
+                "announcement"
+              ]
+            },
+            {
+              "values": [
+                "BrowseComp",
+                "84.5",
+                "82.5",
+                "83.4",
+                "91.2"
+              ],
+              "source_ids": [
+                "announcement"
+              ]
+            },
+            {
+              "values": [
+                "FinWorkBench (Finch)",
+                "73.3%",
+                "65.12%",
+                "같은 Flash 1017 값 미표시",
+                "77.33%"
+              ],
+              "source_ids": [
+                "announcement"
+              ]
+            },
+            {
+              "values": [
+                "Intelligence Index v5",
+                "26",
+                "32",
+                "32",
+                "해당 그림에 없음"
+              ],
+              "source_ids": [
+                "intelligence-image",
+                "card"
+              ]
+            }
+          ],
+          "note": "29일 발표의 차트 데이터와 현재 카드 그림을 전사했습니다. Terminal 본문은 41%로 반올림하지만 차트 원값은 41.4입니다. ML4 High 이외 비교 모델의 세부 추론/Harness는 해당 차트에 명시되지 않았습니다. Cyber·Finch·BrowseComp를 코딩 지수와 합산하지 않습니다. 정확 표본·신뢰구간이 없어 48 대 49를 유의한 차이 또는 완전한 동률로 판정하지 않습니다."
+        },
+        {
+          "id": "preview",
+          "title": "미리보기 대비 변화와 별도 평가의 반대 결과",
+          "columns": [
+            "측정",
+            "이전 또는 비교 대상",
+            "현재 Large 4",
+            "해석 조건"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Terminal-Bench 4.0",
+                "미리보기 28% (차트, 자체 보고)",
+                "41.4%",
+                "차트 비교; 동일 Harness/반복 수 미공개"
+              ],
+              "source_ids": [
+                "announcement"
+              ]
+            },
+            {
+              "values": [
+                "Finch",
+                "미리보기 67.4%",
+                "73.3%",
+                "Kimi K3는 77.33%로 여전히 높음"
+              ],
+              "source_ids": [
+                "announcement"
+              ]
+            },
+            {
+              "values": [
+                "B3 공격 저항률",
+                "미리보기 93.3%",
+                "97.1%",
+                "해당 주입·유출 평가의 저항률; 실제 무사고 보장 아님"
+              ],
+              "source_ids": [
+                "announcement"
+              ]
+            },
+            {
+              "values": [
+                "Surge Code 쌍대 선호",
+                "상대 GLM-5.3 / Kimi K3 / DS Flash",
+                "각각 64% / 64% / 56%",
+                "모델을 가린 쌍대 평가; 표본·오차 범위 미공개"
+              ],
+              "source_ids": [
+                "announcement"
+              ]
+            },
+            {
+              "values": [
+                "Surge Code 쌍대 선호",
+                "상대 Claude Opus 5.5",
+                "22%",
+                "앞의 같은 그림에서 Opus 상대 열세"
+              ],
+              "source_ids": [
+                "announcement"
+              ]
+            },
+            {
+              "values": [
+                "FrontierCode 2.0",
+                "GLM-5.3 17.8% / DS Flash 19.3% / Kimi K3 17.3%",
+                "19.7%",
+                "Cognition 비공개 평가; AA의 FrontierCode v1.1과 다른 판"
+              ],
+              "source_ids": [
+                "announcement"
+              ]
+            }
+          ],
+          "note": "6일 발표의 Coding Agent Index 49.8과 29일 48을 단순 개선·퇴보 폭으로 계산하지 않습니다. 평가기관의 현재 v2.0은 기존 DeepSWE를 FrontierCode v1.1로 바꾸고 QnA 채점도 개정했습니다. 29일 발표는 차트별 정확 지수 판을 명시하지 않아 그 48을 현재 v2.0 실시간 값으로 확정하지 않습니다."
+        },
+        {
+          "id": "quantization",
+          "title": "FP8와 NVFP4의 일부 낮아진 결과",
+          "columns": [
+            "공식 양자화 그림의 평가",
+            "FP8",
+            "NVFP4",
+            "읽을 때의 제한"
+          ],
+          "rows": [
+            {
+              "values": [
+                "GDP.pdf",
+                "19.2",
+                "17.4",
+                "문서 평가 평균; 한국어 실문서 미검증"
+              ],
+              "source_ids": [
+                "nvfp4-evaluation",
+                "nvfp4"
+              ]
+            },
+            {
+              "values": [
+                "Terminal-Bench 4",
+                "34.9",
+                "32.8",
+                "양자화 비교 실행; 앞의 AA 41.4와 다른 실험"
+              ],
+              "source_ids": [
+                "nvfp4-evaluation",
+                "nvfp4"
+              ]
+            },
+            {
+              "values": [
+                "CyberGym",
+                "82.6",
+                "80.9",
+                "원문 오차 막대가 있으나 통계적 차이 검정 미제시"
+              ],
+              "source_ids": [
+                "nvfp4-evaluation",
+                "nvfp4"
+              ]
+            },
+            {
+              "values": [
+                "DeepSWE",
+                "62.7",
+                "64.6",
+                "일부 평가에서는 NVFP4 평균이 높음"
+              ],
+              "source_ids": [
+                "nvfp4-evaluation",
+                "nvfp4"
+              ]
+            }
+          ],
+          "note": "공식 NVFP4 카드는 유사한 성능이라고 설명합니다. 그림에는 평가별 상승과 하락이 함께 있으므로 모든 과제에서 완전히 같은 정확도라고 쓰지 않습니다. 일부 벤치마크의 세부 판, 표본과 Harness 및 오차 막대 정의는 그림만으로 확인되지 않습니다. 그림의 평균 출력 토큰 역시 전체 GPU 메모리나 응답 지연과 다릅니다."
+        },
+        {
+          "id": "pricing",
+          "title": "동일 서비스의 현재 표준 API 요금",
+          "columns": [
+            "모델 / Mistral 서버리스",
+            "입력 USD / 1M 토큰",
+            "캐시 입력 USD / 1M 토큰",
+            "출력 USD / 1M 토큰",
+            "제공 범위"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Mistral Large 4",
+                "0.70",
+                "0.07",
+                "2.10",
+                "API 문서 Public Preview; 공개 가중치 별도"
+              ],
+              "source_ids": [
+                "pricing-doc",
+                "docs"
+              ]
+            },
+            {
+              "values": [
+                "Z.ai GLM 5.3",
+                "1.40",
+                "0.14",
+                "4.40",
+                "Mistral 호스팅의 제3자 텍스트 모델, GA"
+              ],
+              "source_ids": [
+                "pricing-doc",
+                "glm-doc"
+              ]
+            },
+            {
+              "values": [
+                "DeepSeek V4.1 Flash 1017",
+                "0.30",
+                "0.007",
+                "1.20",
+                "Mistral 요금표의 제3자 모델; 원 개발사 직접 요금 아님"
+              ],
+              "source_ids": [
+                "pricing-doc"
+              ]
+            },
+            {
+              "values": [
+                "Large 4 초기 미리보기",
+                "기존 판의 당시 표시만 보존",
+                "현재 할인으로 승계하지 않음",
+                "현재 표준 단가와 별도",
+                "6일 이력의 2주 50% 출시 행사"
+              ],
+              "source_ids": [
+                "initial",
+                "changelog"
+              ]
+            },
+            {
+              "values": [
+                "Large 3 자체 배포",
+                "토큰당 공통 단가 없음",
+                "서비스별 별도",
+                "GPU·전력·운영비 별도",
+                "현재 표준 표에 없어 과거 API 요금을 현재로 옮기지 않음"
+              ],
+              "source_ids": [
+                "pricing-doc",
+                "mistral3"
+              ]
+            }
+          ],
+          "note": "2026-10-31 확인, USD·Standard 표시이며 Batch/Priority/지역 옵션·계약 조건과 합치지 않습니다. 캐시 단가는 적중한 입력에만 해당하며 적중률을 가정한 총액은 아닙니다. 도구·재시도·추론 토큰과 캐시 조건, 세금·실청구는 별도입니다. 같은 서비스 안에서도 입력·출력 비율에 따라 총액이 달라집니다. 이전판의 다른 시점 가격과 혼합해 영구 할인율을 만들지 않습니다."
+        }
+      ],
+      "explanation": [
+        {
+          "id": "overview",
+          "title": "모델 개요와 29일 공개의 의미",
+          "lead": "가중치 공개는 API에만 의존하던 배포 선택을 바꾸지만 새로운 브랜드의 최초 출시와는 구분됩니다.",
+          "blocks": [
+            {
+              "title": "같은 Large 4의 개선 공개판",
+              "text": "6일 발표는 API 미리보기와 월말 가중치 계획이었습니다. 29일에는 그 뒤의 강화학습과 피드백을 반영한 가중치를 공개했습니다. 공식 모델 저장소의 실제 가중치 파일 목록과 NVFP4 카드도 확인됩니다. 따라서 이름만 바뀐 재게시가 아니라 같은 모델의 능력과 배포 방식이 달라진 사건입니다.",
+              "source_ids": [
+                "initial",
+                "announcement",
+                "metadata",
+                "nvfp4"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            },
+            {
+              "title": "계산량과 가중치 보관량",
+              "text": "Mixture-of-Experts는 토큰마다 전문가 일부만 계산하는 구조입니다. 현재 카드는 128개 routed 전문가 중 4개와 공유 전문가 1개를 설명하며 활성 49B, 임베딩과 출력층 포함 52B를 구분합니다. 그러나 약 1T의 전체 가중치는 여전히 보관하고 분산해야 합니다. 52B 활성이라는 이유로 52B 밀집 모델과 같은 메모리에서 실행된다고 볼 수 없습니다.",
+              "source_ids": [
+                "card",
+                "config"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            }
+          ]
+        },
+        {
+          "id": "performance",
+          "title": "코딩의 강점과 지수 판의 차이",
+          "lead": "같은 차트 안에서의 상대 비교는 가능하지만 서로 다른 지수와 Harness를 한 점수로 읽을 수 없습니다.",
+          "blocks": [
+            {
+              "title": "성능과 토큰 사용의 교환",
+              "text": "발표의 High는 48%·8.5M 토큰, Medium은 35%·5.8M 토큰입니다. High의 토큰이 GLM-5.3 15.9M보다 약 47% 적다는 설명은 해당 과제 집계의 소비량 비교입니다. Medium으로 낮추면 토큰이 줄어도 점수 역시 낮아지므로 세 모드를 같은 모델 성능 수치로 합치면 안 됩니다. 토큰 감소가 처리 시간이나 실제 청구액의 같은 비율 감소를 보장하지도 않습니다.",
+              "source_ids": [
+                "announcement"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            },
+            {
+              "title": "서로 다른 Terminal 수치",
+              "text": "Mistral 발표의 AA 차트는 DeepSeek Flash 1017을 31%로 표시하지만 DeepSeek 자체 카드는 Terminal-Bench 4.0을 42.3%로 보고하고 Claude Code Harness를 명시합니다. 양자화 그림의 ML4 FP8은 34.9이며 AA 차트는 41.4입니다. 측정 주체·실행 구성·판이 다른 수치를 한 조건의 승패로 섞지 않고 각 출처의 결과로 유지해야 합니다.",
+              "source_ids": [
+                "announcement",
+                "deepseek",
+                "nvfp4-evaluation"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            },
+            {
+              "title": "평가기관 방법론의 변경",
+              "text": "현재 AA 방법은 FrontierCode v1.1, Terminal-Bench 4.0, SWE-Atlas-QnA-AA를 같은 비중으로 평균합니다. 과제별 3회 시도를 사용하며 오류·시간 초과·차단은 점수에 영향을 줍니다. 기존 v1.5의 DeepSWE와 QnA 판정이 바뀌었으므로 과거 49.8과 새 발표의 48을 단순 시간 추이로 비교할 근거가 없습니다. 발표에 없는 개별 Harness 버전과 추론 예산은 미확인으로 남깁니다.",
+              "source_ids": [
+                "aa-method",
+                "initial",
+                "announcement"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            }
+          ]
+        },
+        {
+          "id": "advantages",
+          "title": "상대 장점",
+          "lead": "공개 가중치와 코딩·방어 보안의 결합은 운영 통제와 특정 작업 성능을 함께 비교할 이유가 됩니다.",
+          "blocks": [
+            {
+              "title": "코딩과 일부 방어 평가",
+              "text": "Cognition의 비공개 FrontierCode 2.0에서 19.7%로 발표 비교의 GLM-5.3 17.8과 DS Flash 19.3보다 높습니다. Terminal 차트도 41.4로 GLM 40을 앞섭니다. Cyber Index는 50.9로 GLM 36과 Kimi 41보다 높습니다. 이 강점은 공급자가 인용한 해당 평가에 한정되며 실제 회사 코드의 성공률을 뜻하지 않습니다.",
+              "source_ids": [
+                "announcement"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            },
+            {
+              "title": "자체 배포와 조정의 선택",
+              "text": "기존 Large 3의 256k에서 Large 4는 1M으로 문맥 사양이 늘고, 이미지 이해와 함수 호출·엄격한 JSON 출력을 함께 제공합니다. 가중치를 확보하면 API 외에 자체 배포와 추가 학습을 선택할 수 있습니다. 이는 데이터 경로와 모델 변경을 직접 관리할 가능성을 늘리는 조건이며, 보안·개인정보 준수나 운영 성능이 자동 확보된다는 뜻은 아닙니다.",
+              "source_ids": [
+                "mistral3",
+                "card",
+                "license"
+              ],
+              "kind": "judgment",
+              "type": "paragraph"
+            }
+          ]
+        },
+        {
+          "id": "limitations",
+          "title": "다른 모델에 뒤지는 평가와 미확인 범위",
+          "lead": "공개형이라는 장점과 모든 과제의 최고 성능은 서로 다른 주장입니다.",
+          "blocks": [
+            {
+              "title": "종합·금융·검색과 사람 선호",
+              "text": "카드 그림의 Intelligence v5는 ML4 26, GLM과 DS Flash 1017 각 32입니다. Finch 73.3은 Kimi 77.33보다 낮고 BrowseComp 84.5도 Kimi 91.2에 뒤집니다. Cyber 50.9 역시 DS Flash 1017의 57보다 낮습니다. Surge Code에서 GLM과 Kimi 상대 64% 선호와 함께 Opus 5.5 상대 22%라는 열세도 있습니다. 한 분야의 앞선 결과로 전체 모델의 최고 순위를 선언할 수 없습니다.",
+              "source_ids": [
+                "announcement",
+                "intelligence-image",
+                "card"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            },
+            {
+              "title": "안전 수치와 전문 변형",
+              "text": "B3 97.1%는 특정 공격 저항률이고 악성 보안 요청의 96.6% 거절은 JailbreakBench·StrongREJECT·AgentHarm의 관련 요청 평균입니다. 모든 공격을 막거나 무해한 요청의 거절이 없다는 보장이 아닙니다. 발표의 고급 보안 특화 변형은 심사를 거친 기업 파트너의 제한 미리보기로, 일반 공개 가중치에 동일한 권한과 능력이 모두 포함된다고 볼 수 없습니다.",
+              "source_ids": [
+                "announcement"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            },
+            {
+              "title": "언어 지원과 실제 문서 처리",
+              "text": "카드는 한국어를 포함하고 160개 이상 언어를 설명하지만 한국어 문서의 서식 보존, 표 수식 편집이나 인용 정확도를 이 글에서 실행 측정하지 않았습니다. 텍스트 출력 모델이 Office 파일을 직접 편집하는 완제품 기능과 동일하지도 않습니다. 범용 최대 출력, 지식 기준일과 개별 계정 제한은 이번 자료에서 확정하지 못했습니다.",
+              "source_ids": [
+                "card",
+                "docs"
+              ],
+              "kind": "judgment",
+              "type": "paragraph"
+            }
+          ]
+        },
+        {
+          "id": "deployment",
+          "title": "공개 가중치와 실제 배포의 조건",
+          "lead": "양자화는 메모리를 줄이는 선택이며 정확도와 하드웨어 호환성을 별도로 읽어야 합니다.",
+          "blocks": [
+            {
+              "title": "FP8와 NVFP4",
+              "text": "공개 기본 설정은 FP8 양자화를 포함하고 일부 층은 제외합니다. NVFP4는 Blackwell의 B200·B300·GB200·GB300을 겨냥하며 FP8 선형층과 혼합합니다. 공식 그림에서 GDP.pdf 19.2→17.4와 Terminal 34.9→32.8처럼 평균 하락도 있습니다. 오차 막대와 검정 조건이 충분히 설명되지 않아 이를 유의한 퇴보로 확정하지 않지만 모든 과제에서 완전히 동일하다는 설명도 피해야 합니다.",
+              "source_ids": [
+                "config",
+                "nvfp4",
+                "nvfp4-evaluation"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            },
+            {
+              "title": "문맥 사양과 실행 검증",
+              "text": "카드에는 8개 GPU로 나누는 예제가 있으나 최소 GPU/VRAM 보장이 아닙니다. 현재 vLLM 문서는 특정 GB300·B200·H200과 AMD 구성의 검증·미지원 항목을 구분하며, GB300 DCP 구성도 1M 문맥 제공 자체를 검증한 것은 아니고 recipe는 최대 262,144로 제한한다고 명시합니다. 해당 실행 구성의 지연·처리량을 모든 장비·1M 입력에 확대하면 안 됩니다.",
+              "source_ids": [
+                "card",
+                "vllm-recipe"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            },
+            {
+              "title": "가속과 운영 비용",
+              "text": "DSpark는 작은 초안 head가 토큰 묶음을 제안하는 추측 디코딩입니다. 카드의 최대 1.9배 처리량은 하드웨어와 작업에 따른 공급자 측정이며 모든 실행의 고정 배수가 아닙니다. 자체 배포는 GPU·메모리·네트워크와 서비스 운영·실패 복구 비용을 포함하므로 가중치 다운로드 허용을 무료 서비스 운영으로 해석하지 않습니다.",
+              "source_ids": [
+                "card",
+                "vllm-recipe"
+              ],
+              "kind": "judgment",
+              "type": "paragraph"
+            }
+          ]
+        },
+        {
+          "id": "conditions",
+          "title": "가격과 상업 사용 및 API 제공 조건",
+          "lead": "API 단가, 공개 가중치의 권한, 실제 운영 총비용을 따로 비교해야 합니다.",
+          "blocks": [
+            {
+              "title": "현재 표준 단가",
+              "text": "29일 발표와 현재 Mistral 요금표는 입력 0.70, 캐시 입력 0.07, 출력 2.10달러/100만 토큰으로 일치합니다. 같은 Mistral 표에서 ML4는 GLM-5.3보다 낮고 DS Flash 1017보다 높습니다. 이는 Mistral의 제3자 호스팅 요금이며 각 개발사의 직접 API나 다른 파트너 단가에 적용하지 않습니다. 과거 2주 출시 할인은 현재 영구 할인으로 옮기지 않습니다.",
+              "source_ids": [
+                "announcement",
+                "pricing-doc",
+                "changelog"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            },
+            {
+              "title": "MaaS 조항과 예외",
+              "text": "라이선스는 복제·수정·추가 학습·배포를 허용하되 고지를 유지해야 합니다. 본인 또는 계열사가 모델 입력·파라미터·학습 데이터에 의미 있는 통제를 제공하는 MaaS 사업을 운영하면 모델이나 파생물을 상업적으로 사용하기 전에 별도 계약을 요구합니다. 특정 제품 기능·Harness에만 내장하거나 다른 호스팅의 요청을 단순 중계하는 경우는 MaaS 정의에서 제외합니다. 내부 사용과 Mistral 공식 제품을 통한 사용에는 2항 요구가 적용되지 않는다고 명시합니다. 구체 사업의 계약 해석이나 법률 검토를 완료한 것은 아닙니다.",
+              "source_ids": [
+                "license"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            },
+            {
+              "title": "미리보기와 변경 가능성",
+              "text": "가중치 공개 후에도 현재 API 카드에는 Public Preview가 표시됩니다. 수명주기 정책은 미리보기의 조용한 업데이트와 정식 제공 없이 종료될 가능성을 허용하고, 별칭도 동작·가격 변화를 받을 수 있다고 설명합니다. GA·보장 지원 기간·확정 종료일이 발표됐다고 추정하지 않습니다. 공개 체크포인트 판을 고정하는 일과 API 별칭을 호출하는 일은 다릅니다.",
+              "source_ids": [
+                "docs",
+                "lifecycle-doc"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            }
+          ]
+        }
+      ],
+      "caveats": [
+        {
+          "text": "수치는 공식 발표·카드의 공급자 측정 또는 평가기관 값 재인용입니다. 독립 실험·모델 실행·청구·한국어 업무 시험이 아닙니다.",
+          "source_ids": [
+            "announcement",
+            "card",
+            "aa-method"
+          ]
+        },
+        {
+          "text": "비공개 FrontierCode 2.0과 AA FrontierCode v1.1, 지수 v1.5와 현재 v2.0, 다른 Harness·양자화 결과를 같은 평가로 합치지 않았습니다.",
+          "source_ids": [
+            "announcement",
+            "aa-method",
+            "deepseek"
+          ]
+        },
+        {
+          "text": "현재 API 문서의 Public Preview와 실제 가중치 공개를 병기합니다. GA·일반 최대 출력·확정 수명·자체 배포 최소 자원은 미확인입니다.",
+          "source_ids": [
+            "docs",
+            "lifecycle-doc",
+            "vllm-recipe"
+          ]
+        },
+        {
+          "text": "MaaS 조항은 본인과 계열사, 상업 목적과 예외를 함께 읽어야 하며 이 글은 개별 사업의 법률·계약 자격 판단을 대신하지 않습니다.",
+          "source_ids": [
+            "license"
+          ]
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "코딩과 자체 배포의 비교 대상",
+            "text": "Mistral Large 4는 코딩과 일부 방어 보안에서 강하면서 공개 가중치로 배포 통제를 선택할 수 있는 대안입니다. GLM·DeepSeek·Kimi·Opus가 앞서는 평가도 있으므로 한 순위보다 실제 작업 종류, 추론 설정과 같은 조건의 결과가 선택 근거가 됩니다.",
+            "source_ids": [
+              "announcement",
+              "intelligence-image"
+            ],
+            "kind": "judgment"
+          },
+          {
+            "label": "선택을 바꾸는 비용과 조건",
+            "text": "API는 현재 표준 요금과 미리보기의 변경 가능성을, 자체 배포는 전체 가중치의 자원과 NVFP4 호환성·라이선스를 함께 비교해야 합니다. 공개 가중치의 존재는 확인했지만 우리 환경의 처리량·정확도·총비용은 아직 측정하지 않았습니다.",
+            "source_ids": [
+              "pricing-doc",
+              "docs",
+              "lifecycle-doc",
+              "license",
+              "vllm-recipe"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "references": [
+        {
+          "id": "announcement",
+          "title": "29일 개선 가중치 발표와 공식 비교 차트",
+          "url": "https://mistral.ai/news/mistral-large-4-oss/",
+          "description": "발표일 2026-10-29. 개선 가중치·상대 평가 차트와 정밀 값, 표준 단가 및 제한 특화판을 설명합니다."
+        },
+        {
+          "id": "initial",
+          "title": "6일 API 미리보기 발표",
+          "url": "https://mistral.ai/news/mistral-large-4/",
+          "description": "공식 원문의 해당 사양·평가·제공 조건을 2026-10-31 확인했습니다. 실행·실제 청구 또는 전 분야 검증을 뜻하지 않습니다."
+        },
+        {
+          "id": "card",
+          "title": "현재 Mistral Large 4 카드",
+          "url": "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B/raw/main/README.md",
+          "description": "공식 원문의 해당 사양·평가·제공 조건을 2026-10-31 확인했습니다. 실행·실제 청구 또는 전 분야 검증을 뜻하지 않습니다."
+        },
+        {
+          "id": "docs",
+          "title": "현재 Mistral API 모델 문서",
+          "url": "https://docs.mistral.ai/models/mistral-large-4",
+          "description": "공식 원문의 해당 사양·평가·제공 조건을 2026-10-31 확인했습니다. 실행·실제 청구 또는 전 분야 검증을 뜻하지 않습니다."
+        },
+        {
+          "id": "license",
+          "title": "Mistral Ecosystem Open-Weight 라이선스 전문",
+          "url": "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B/raw/main/LICENSE",
+          "description": "수정 MIT의 MaaS·계열사·내장 기능 및 내부 사용 예외, 고지와 무보증 전문입니다."
+        },
+        {
+          "id": "pricing-doc",
+          "title": "동일 Mistral 서버리스 표준 요금표",
+          "url": "https://docs.mistral.ai/inference/pricing",
+          "description": "공식 원문의 해당 사양·평가·제공 조건을 2026-10-31 확인했습니다. 실행·실제 청구 또는 전 분야 검증을 뜻하지 않습니다."
+        },
+        {
+          "id": "lifecycle-doc",
+          "title": "Mistral API 수명주기 정책",
+          "url": "https://docs.mistral.ai/inference/model-lifecycle",
+          "description": "공식 원문의 해당 사양·평가·제공 조건을 2026-10-31 확인했습니다. 실행·실제 청구 또는 전 분야 검증을 뜻하지 않습니다."
+        },
+        {
+          "id": "nvfp4",
+          "title": "공식 NVFP4 카드",
+          "url": "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B-NVFP4/raw/main/README.md",
+          "description": "공식 원문의 해당 사양·평가·제공 조건을 2026-10-31 확인했습니다. 실행·실제 청구 또는 전 분야 검증을 뜻하지 않습니다."
+        },
+        {
+          "id": "mistral3",
+          "title": "이전 Mistral Large 3 카드",
+          "url": "https://huggingface.co/mistralai/Mistral-Large-3-675B-Instruct-2512/raw/main/README.md",
+          "description": "공식 원문의 해당 사양·평가·제공 조건을 2026-10-31 확인했습니다. 실행·실제 청구 또는 전 분야 검증을 뜻하지 않습니다."
+        },
+        {
+          "id": "deepseek",
+          "title": "DeepSeek Flash 1017 카드와 측정 조건",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017/raw/main/README.md",
+          "description": "공식 원문의 해당 사양·평가·제공 조건을 2026-10-31 확인했습니다. 실행·실제 청구 또는 전 분야 검증을 뜻하지 않습니다."
+        },
+        {
+          "id": "glm",
+          "title": "GLM 5.3 공식 카드",
+          "url": "https://huggingface.co/zai-org/GLM-5.3/raw/main/README.md",
+          "description": "공식 원문의 해당 사양·평가·제공 조건을 2026-10-31 확인했습니다. 실행·실제 청구 또는 전 분야 검증을 뜻하지 않습니다."
+        },
+        {
+          "id": "glm-doc",
+          "title": "Mistral이 호스팅하는 GLM 5.3 문서",
+          "url": "https://docs.mistral.ai/models/zai-glm-5-3",
+          "description": "공식 원문의 해당 사양·평가·제공 조건을 2026-10-31 확인했습니다. 실행·실제 청구 또는 전 분야 검증을 뜻하지 않습니다."
+        },
+        {
+          "id": "aa-method",
+          "title": "AA Coding Agent Index 방법과 판 변경",
+          "url": "https://artificialanalysis.ai/methodology/coding-agents-benchmarking",
+          "description": "현재 v2.0의 구성과 이전 판 변경을 설명합니다. 발표의 48을 현재 v2.0 재측정값으로 확정하지 않습니다."
+        },
+        {
+          "id": "intelligence-image",
+          "title": "공식 카드의 AA Intelligence v5 비교 그림",
+          "url": "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B/resolve/main/images/intelligence_index.png",
+          "description": "공식 카드의 Intelligence v5 원 그림. ML4 26, GLM/DS Flash 1017 32의 반대 비교 근거입니다."
+        },
+        {
+          "id": "vllm-recipe",
+          "title": "vLLM 실제 배포 구성",
+          "url": "https://recipes.vllm.ai/mistralai/Mistral-Large-4-1T-A52B",
+          "description": "특정 하드웨어의 실행 검증 범위와 1M 검증 미완료·262144 제한을 설명합니다. 설치·실행 명령은 수행하지 않았습니다."
+        },
+        {
+          "id": "config",
+          "title": "공개 체크포인트 설정",
+          "url": "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B/raw/main/config.json",
+          "description": "공식 원문의 해당 사양·평가·제공 조건을 2026-10-31 확인했습니다. 실행·실제 청구 또는 전 분야 검증을 뜻하지 않습니다."
+        },
+        {
+          "id": "metadata",
+          "title": "공식 저장소의 공개 파일 목록",
+          "url": "https://huggingface.co/api/models/mistralai/Mistral-Large-4-1T-A52B",
+          "description": "공식 원문의 해당 사양·평가·제공 조건을 2026-10-31 확인했습니다. 실행·실제 청구 또는 전 분야 검증을 뜻하지 않습니다."
+        },
+        {
+          "id": "nvfp4-evaluation",
+          "title": "FP8와 NVFP4의 공식 평가 그림",
+          "url": "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B-NVFP4/resolve/3d843073c9987de83d1f94a73a3184da8cf0dba2/images/fp8-vs-nvfp4-evaluations.png",
+          "description": "NVFP4 카드가 연결한 고정 revision의 그림. 평균 상승·하락과 오차 막대를 직접 확인했습니다."
+        },
+        {
+          "id": "coding-image",
+          "title": "공식 카드의 Coding Agent Index 그림",
+          "url": "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B/resolve/main/images/coding_index.png",
+          "description": "공식 원문의 해당 사양·평가·제공 조건을 2026-10-31 확인했습니다. 실행·실제 청구 또는 전 분야 검증을 뜻하지 않습니다."
+        },
+        {
+          "id": "changelog",
+          "title": "API 변경 이력",
+          "url": "https://docs.mistral.ai/resources/changelogs",
+          "description": "공식 원문의 해당 사양·평가·제공 조건을 2026-10-31 확인했습니다. 실행·실제 청구 또는 전 분야 검증을 뜻하지 않습니다."
+        }
+      ]
+    }
+  ]
+}

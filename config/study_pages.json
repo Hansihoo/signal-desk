@@ -248,6 +248,9 @@
     ],
     "nemotron-3-5-transcribe-model-guide": [
       "3aca0e9cbbd8125cabdabe4e1877911d858fe22d80d0a2319d40402ea4a608d4"
+    ],
+    "mistral-large-4-model-guide": [
+      "abc69f7f3f52ea13b2f603b3a4c0dfd84b0955fe6152bd9b3755496bf8514798"
     ]
   },
   "model_introduction_editions": {
@@ -361,6 +364,9 @@
     ],
     "nemotron-3-5-transcribe-model-guide": [
       "3aca0e9cbbd8125cabdabe4e1877911d858fe22d80d0a2319d40402ea4a608d4"
+    ],
+    "mistral-large-4-model-guide": [
+      "abc69f7f3f52ea13b2f603b3a4c0dfd84b0955fe6152bd9b3755496bf8514798"
     ]
   },
   "model_introduction_purpose_editions": {
@@ -463,6 +469,9 @@
     ],
     "nemotron-3-5-transcribe-model-guide": [
       "3aca0e9cbbd8125cabdabe4e1877911d858fe22d80d0a2319d40402ea4a608d4"
+    ],
+    "mistral-large-4-model-guide": [
+      "abc69f7f3f52ea13b2f603b3a4c0dfd84b0955fe6152bd9b3755496bf8514798"
     ]
   },
   "model_introduction_reader_editions": {
@@ -562,6 +571,9 @@
     ],
     "nemotron-3-5-transcribe-model-guide": [
       "3aca0e9cbbd8125cabdabe4e1877911d858fe22d80d0a2319d40402ea4a608d4"
+    ],
+    "mistral-large-4-model-guide": [
+      "abc69f7f3f52ea13b2f603b3a4c0dfd84b0955fe6152bd9b3755496bf8514798"
     ]
   }
 }
