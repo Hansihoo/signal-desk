@@ -396,3 +396,5 @@ Carbon공개완료:78acacf/Pages40762896056 success. 소개1편/전체표62관�
 2026-11-01 모델 추가: Mage-VL-Cowork 신규소개1판과40개공식관측을동시에등록했다.최종RL/SFT웹·상대열세/32K운용·표준API미확인과공개가중치조건을보존한다.로컬품질/지식연결완료,제출/공개검증진행중. [검토범위](docs/AI_MODEL_REVIEW.2026-11-01.md).
 
 2026-11-01 제출소스검증: 214시험과품질/publish/brief/review·Edge PC/390px통과.소개/전체표의정확값·원문·날짜/판조건과기존사양·소개이력보존을확인했다.공개검증진행중. [검증범위](docs/AI_MODEL_REVIEW.2026-11-01.md).
+
+2026-11-01 Mage 공개완료: c99b19a/[Pages41238839569](https://github.com/Hansihoo/signal-desk/actions/runs/41238839569) 성공.신규소개1판과전체표40사실을함께공개했고정확값/단위·조건/원문/날짜·기존이력과실제PC/모바일을검증했다. [최종범위](docs/AI_MODEL_REVIEW.2026-11-01.md).
