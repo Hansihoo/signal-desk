@@ -1,0 +1,2054 @@
+{
+  "packages": [
+    {
+      "version": "question-research-1",
+      "status": "ready",
+      "plan": {
+        "version": "question-research-1",
+        "request": {
+          "id": "mage-vl-cowork-model-guide",
+          "topic_id": "opportunities",
+          "topic_path": [
+            "개발 동향",
+            "AI 모델·API"
+          ],
+          "reader": "새 컴퓨터 사용 모델의 성능과 자체 배포 조건을 비교하는 개발자와 관리자",
+          "reader_question": "Mage-VL-Cowork는 이전 Mage-VL 및 다른 컴퓨터 사용 모델에 비해 무엇이 바뀌고 어느 평가에서 낫거나 부족하며 실제 제공 범위와 표준 비용은 무엇인가?",
+          "outcome": "GUI와 코드 통합의 차이, 동일 평가의 상대 장단점, 최종 RL과 SFT의 구분, 공개 가중치와 API 요금 및 배포 한계를 설명한다.",
+          "research_type": "model_introduction",
+          "plan_questions": false,
+          "sources": [
+            {
+              "id": "license",
+              "title": "license",
+              "url": "https://huggingface.co/microsoft/Mage-VL-Cowork/raw/main/LICENSE",
+              "kind": "official_document"
+            },
+            {
+              "id": "config",
+              "title": "config",
+              "url": "https://huggingface.co/microsoft/Mage-VL-Cowork/raw/main/config.json",
+              "kind": "official_document"
+            },
+            {
+              "id": "metadata",
+              "title": "metadata",
+              "url": "https://huggingface.co/api/models/microsoft/Mage-VL-Cowork",
+              "kind": "official_document"
+            },
+            {
+              "id": "card",
+              "title": "card",
+              "url": "https://huggingface.co/microsoft/Mage-VL-Cowork/raw/main/README.md",
+              "kind": "official_document"
+            },
+            {
+              "id": "project",
+              "title": "project",
+              "url": "https://microsoft.github.io/Mage/cowork/",
+              "kind": "official_document"
+            },
+            {
+              "id": "paper",
+              "title": "paper",
+              "url": "https://raw.githubusercontent.com/microsoft/Mage/main/assets/mage_vl_cowork_tech_report.pdf",
+              "kind": "official_document"
+            },
+            {
+              "id": "qwen",
+              "title": "qwen",
+              "url": "https://huggingface.co/Qwen/Qwen3.6-27B/raw/main/README.md",
+              "kind": "official_document"
+            },
+            {
+              "id": "base",
+              "title": "base",
+              "url": "https://huggingface.co/microsoft/Mage-VL/raw/main/README.md",
+              "kind": "official_document"
+            },
+            {
+              "id": "fara",
+              "title": "fara",
+              "url": "https://huggingface.co/microsoft/Fara1.5-4B/raw/main/README.md",
+              "kind": "official_document"
+            },
+            {
+              "id": "eval",
+              "title": "eval",
+              "url": "https://huggingface.co/microsoft/Mage-VL-Cowork/raw/main/osworld_eval/README.md",
+              "kind": "official_document"
+            },
+            {
+              "id": "mini",
+              "title": "mini",
+              "url": "https://developers.openai.com/api/docs/models/gpt-5.4-mini",
+              "kind": "official_document"
+            },
+            {
+              "id": "price",
+              "title": "price",
+              "url": "https://developers.openai.com/api/docs/pricing",
+              "kind": "official_document"
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "core",
+            "question": "Mage-VL-Cowork는 이전 Mage-VL 및 다른 컴퓨터 사용 모델에 비해 무엇이 바뀌고 어느 평가에서 낫거나 부족하며 실제 제공 범위와 표준 비용은 무엇인가?",
+            "requires": [
+              "identity",
+              "change",
+              "specification",
+              "availability",
+              "comparison",
+              "advantages",
+              "limitations",
+              "price"
+            ]
+          }
+        ],
+        "method": "공식 발표·모델 카드·사양·가격과 평가 원문을 대조한다. 다른 모델과의 비교표에서 평가판·추론·측정 주체·Harness·단위를 보존하고 장점과 단점을 근거로 설명한다. 활용 예시·가상 업무·실습 코드·응용 문제를 넣지 않는다."
+      },
+      "sources": [
+        {
+          "id": "card",
+          "title": "Microsoft Mage-VL-Cowork 모델 카드",
+          "url": "https://huggingface.co/microsoft/Mage-VL-Cowork/raw/main/README.md",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "40ba50f7cdea886de5f5bddd0de2aae25d9fa2dff7a5e930f8ea49518968851e",
+          "text": "32,768 tokens",
+          "text_hash": "0295f5735e20c69b9dd939e9f3e191845de9c6a0059ea0a34a7343318afdf519",
+          "published_on": "",
+          "first_collected_at": null,
+          "last_successful_collection": "2026-10-31T20:00:19.879254+00:00",
+          "reviewed_at": "2026-10-31T20:13:04.581014+00:00",
+          "raw_path": "data/raw/model_maintenance/2026-11-01/card-40ba50f7cdea.raw",
+          "review_scope": "모델 개요·별도 5단계 학습·입출력/32K 문맥·메모리·데스크톱/웹/학습 단계 표·고정 런타임·주의 조건을 실제 읽음. 66.04와 반올림 66.0/증분 불일치 및 SFT 58.6을 구분. 실행 없음."
+        },
+        {
+          "id": "metadata",
+          "title": "공식 저장소 메타데이터와 공개 시점",
+          "url": "https://huggingface.co/api/models/microsoft/Mage-VL-Cowork",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "1447974a27900fb2b3fa39fa8dc759b38e8adbc93c553fce8acf5b5167bb6483",
+          "text": "2026-10-30T12:13:24.000Z",
+          "text_hash": "d302fdef89b27b0cc8dc8db4b73ebdf2f81fe1f1a05054a7448dc991c0df460b",
+          "published_on": "",
+          "first_collected_at": null,
+          "last_successful_collection": "2026-10-31T20:00:19.859695+00:00",
+          "reviewed_at": "2026-10-31T20:13:04.581014+00:00",
+          "raw_path": "data/raw/model_maintenance/2026-11-01/metadata-1447974a2790.raw",
+          "review_scope": "공개/비게이트 상태, 생성UTC/수정UTC/revision 및 BF16 텐서 총계 확인. 생성 시각을 별도 정식 발표일로 바꾸지 않음."
+        },
+        {
+          "id": "config",
+          "title": "공식 모델 설정",
+          "url": "https://huggingface.co/microsoft/Mage-VL-Cowork/raw/main/config.json",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "b1af304453ea5af1a296aa012ab85402e2e811b693aebfb6a2bbaa8bdd908ee5",
+          "text": "\"max_position_embeddings\": 262144",
+          "text_hash": "46bfddc9d919394a3ff2845dc3266f7a135ff35672cb6ba90460fc83828944b0",
+          "published_on": "",
+          "first_collected_at": null,
+          "last_successful_collection": "2026-10-31T20:00:19.857127+00:00",
+          "reviewed_at": "2026-10-31T20:13:04.581014+00:00",
+          "raw_path": "data/raw/model_maintenance/2026-11-01/config-b1af304453ea.raw",
+          "review_scope": "llava_onevision2·Qwen3 계열, max_position_embeddings262144와정밀도/사용자정의코드 확인. 실제32K 운용과구분."
+        },
+        {
+          "id": "license",
+          "title": "Apache 2.0 라이선스",
+          "url": "https://huggingface.co/microsoft/Mage-VL-Cowork/raw/main/LICENSE",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+          "text": "Apache License",
+          "text_hash": "1c4ff40eaf7ffe9608d99772613032823b4d8213f7854288cf49e67657b34e67",
+          "published_on": "",
+          "first_collected_at": null,
+          "last_successful_collection": "2026-10-31T20:00:19.852587+00:00",
+          "reviewed_at": "2026-10-31T20:13:04.581014+00:00",
+          "raw_path": "data/raw/model_maintenance/2026-11-01/license-cfc7749b96f6.raw",
+          "review_scope": "Apache2.0 전문의 허여·재배포4항/고지·변경표시·상표/무보증을 읽음. 개별사업 법률승인 아님."
+        },
+        {
+          "id": "project",
+          "title": "Microsoft Mage-VL-Cowork 프로젝트",
+          "url": "https://microsoft.github.io/Mage/cowork/",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "ab3c077e06f63d683132aea758ba6840ca238f2acf6993474e3c578ece9861e9",
+          "text": "Mage-VL-Cowork",
+          "text_hash": "e5d30d628deb88a628316dd16bc8d4063de5464ec40e79a46de68115466aea64",
+          "published_on": "",
+          "first_collected_at": null,
+          "last_successful_collection": "2026-10-31T20:02:14.421879+00:00",
+          "reviewed_at": "2026-10-31T20:13:04.581014+00:00",
+          "raw_path": "data/raw/model_maintenance/2026-11-01/project-ab3c077e06f6.raw",
+          "review_scope": "공식 프로젝트 본문/평가표·모델/논문/코드 연결 확인. 두 데모 속도는 전체 성능으로 일반화하지 않고 소개에서 제외."
+        },
+        {
+          "id": "paper",
+          "title": "Mage-VL-Cowork 기술 보고서 / October 2026",
+          "url": "https://raw.githubusercontent.com/microsoft/Mage/main/assets/mage_vl_cowork_tech_report.pdf",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "b826e9dc82035f52bf2ed0dc9dc68a2031d6b3d050caa297348f6e9b347021e4",
+          "text": "Mage-VL-Cowork",
+          "text_hash": "e5d30d628deb88a628316dd16bc8d4063de5464ec40e79a46de68115466aea64",
+          "published_on": "",
+          "first_collected_at": null,
+          "last_successful_collection": "2026-10-31T20:02:14.509133+00:00",
+          "reviewed_at": "2026-10-31T20:13:04.581014+00:00",
+          "raw_path": "data/raw/model_maintenance/2026-11-01/paper-b826e9dc8203.raw",
+          "review_scope": "30쪽 기술 보고서의 1·9·12~18·23쪽 관련절 독해, 14쪽 표2/3과17쪽 표4/5를 PNG로 시각 대조. Google Drive 제외361·반복횟수/Static643·SFT판/데이터 생성비와 제외비용. 전체30쪽의 독립 검증 아님."
+        },
+        {
+          "id": "base",
+          "title": "이전 Mage-VL 모델 카드",
+          "url": "https://huggingface.co/microsoft/Mage-VL/raw/main/README.md",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "e84630ce6e4d4f636dc280b28065357c22aa1a373d29e7404a8a5dcfbbd81f45",
+          "text": "microsoft/Mage-VL",
+          "text_hash": "08e96fcd53d1238e464568d76bbf86c592dbdef26fbf87bd869f313f71b41189",
+          "published_on": "",
+          "first_collected_at": null,
+          "last_successful_collection": "2026-10-31T20:02:14.534286+00:00",
+          "reviewed_at": "2026-10-31T20:13:04.581014+00:00",
+          "raw_path": "data/raw/model_maintenance/2026-11-01/base-e84630ce6e4d.raw",
+          "review_scope": "Mage-VL 기반의 이미지·영상·codec-native streaming 및 4B/Apache2.0 관련절. Cowork에 영상 기능·동일 과제 기준값을 승계하지 않음."
+        },
+        {
+          "id": "fara",
+          "title": "Microsoft Fara1.5-4B 공식 카드",
+          "url": "https://huggingface.co/microsoft/Fara1.5-4B/raw/main/README.md",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "817286a8d5f1fc05dc2ea36655dfa20b8a747aa39c57fa84c5be6be33b051faa",
+          "text": "Fara1.5-4B",
+          "text_hash": "0efae78fc4ba3208091b061e798cfc43c309eb21285d9df8491de8e8c23900d8",
+          "published_on": "",
+          "first_collected_at": null,
+          "last_successful_collection": "2026-10-31T20:02:14.633174+00:00",
+          "reviewed_at": "2026-10-31T20:13:04.581014+00:00",
+          "raw_path": "data/raw/model_maintenance/2026-11-01/fara-817286a8d5f1.raw",
+          "review_scope": "Qwen3.5-4B 기반/스크린샷 지각·DOM/AX 미사용·262144·MIT·참고 실행/장비 관련절. Mage의 DOM표현과 구분; 장비조건을 Mage로 승계하지 않음."
+        },
+        {
+          "id": "qwen",
+          "title": "Qwen3.6-27B 공식 카드",
+          "url": "https://huggingface.co/Qwen/Qwen3.6-27B/raw/main/README.md",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "bb936d6da51014f1edc9aa4cf9abf28d98695b7616ad56adfeeebfa752051d3d",
+          "text": "Qwen3.6-27B",
+          "text_hash": "53da8f40180b14bcdbe886366e39ae760339825e02cfb93c8276f0f15f918693",
+          "published_on": "",
+          "first_collected_at": null,
+          "last_successful_collection": "2026-10-31T20:02:14.526573+00:00",
+          "reviewed_at": "2026-10-31T20:13:04.581014+00:00",
+          "raw_path": "data/raw/model_maintenance/2026-11-01/qwen-bb936d6da510.raw",
+          "review_scope": "Qwen3.6-27B 공식 카드의27B·시각입출력·262144 및1010000확장/Apache2.0 관련절. 그 문맥이 Mage 비교 실행에 쓰였는지 미확인."
+        },
+        {
+          "id": "eval",
+          "title": "OSWorld 평가 참고 구현",
+          "url": "https://huggingface.co/microsoft/Mage-VL-Cowork/raw/main/osworld_eval/README.md",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "fa8ebfb603bdc0fb4a8207a6d2dfe078096dc79d3ae4e529981c3c9d892a0a93",
+          "text": "images_to_keep",
+          "text_hash": "e9023f87a989381ac5d093c5e476af630c660392da43f5e8800523b502490a2d",
+          "published_on": "",
+          "first_collected_at": null,
+          "last_successful_collection": "2026-10-31T20:02:14.738841+00:00",
+          "reviewed_at": "2026-10-31T20:13:04.581014+00:00",
+          "raw_path": "data/raw/model_maintenance/2026-11-01/eval-fa8ebfb603bd.raw",
+          "review_scope": "OSWorld 참고 구현 전체. history3/images3/1920x1080·50단계/온도.7·topp.8·턴4096·네이티브SGLang generate/도구 실행조건 확인. 코드 실행 없음."
+        },
+        {
+          "id": "mini",
+          "title": "OpenAI GPT-5.4-mini 모델 문서",
+          "url": "https://developers.openai.com/api/docs/models/gpt-5.4-mini",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "c6e6cc3a3a681fa2cbddb5d03a4118f8e8ed9053193492f2b7213ce0ba71db82",
+          "text": "gpt-5.4-mini",
+          "text_hash": "5554c2cbb9b1761a5832ed0a8fb249dbdf75298724cd4594de828873af2c0205",
+          "published_on": "",
+          "first_collected_at": null,
+          "last_successful_collection": "2026-10-31T20:04:10.196300+00:00",
+          "reviewed_at": "2026-10-31T20:13:04.581014+00:00",
+          "raw_path": "data/raw/model_maintenance/2026-11-01/mini-c6e6cc3a3a68.raw",
+          "review_scope": "정확한 GPT5.4-mini 공식 모델 문서의 입출력/400000·272000·128000/추론 설정·snapshot·지역처리 조건. 모델규모 미공개 유지."
+        },
+        {
+          "id": "price",
+          "title": "OpenAI 공식 API 가격표",
+          "url": "https://developers.openai.com/api/docs/pricing",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "5c3217d1076c8cf3baa68f6100fc16cfc8471dad5765a4862e20edeac7b1343d",
+          "text": "[[0,\"gpt-5.4-mini\"],[0,0.75],[0,0.075],[0,4.5]]",
+          "text_hash": "be8e195806ea6c6f6a31d2b13cc6b25e9a4ea38edf3139e7c175ef4c22e3832a",
+          "published_on": "",
+          "first_collected_at": null,
+          "last_successful_collection": "2026-10-31T20:04:12.798261+00:00",
+          "reviewed_at": "2026-10-31T20:13:04.581014+00:00",
+          "raw_path": "data/raw/model_maintenance/2026-11-01/price-5c3217d1076c.raw",
+          "review_scope": "공식 현재 Standard 표의 정확mini .75/.075/4.50 USD/100만토큰과 캐시·지역·reasoning 과금조건 독해. Batch/Flex/Priority와 혼합하지 않음; 청구시험 없음."
+        }
+      ],
+      "analysis": {
+        "evidence": [
+          {
+            "id": "e-card",
+            "source_id": "card",
+            "quote": "32,768 tokens",
+            "source_hash": "40ba50f7cdea886de5f5bddd0de2aae25d9fa2dff7a5e930f8ea49518968851e",
+            "meaning": "모델 개요·별도 5단계 학습·입출력/32K 문맥·메모리·데스크톱/웹/학습 단계 표·고정 런타임·주의 조건을 실제 읽음. 66.04와 반올림 66.0/증분 불일치 및 SFT 58.6을 구분. 실행 없음.",
+            "limits": "선택 원문/표 문헌 검토. 독립모델 실행·한국어 회사업무·실제 청구·사람시험은 없음.",
+            "supports": [
+              "identity",
+              "change",
+              "specification",
+              "availability",
+              "comparison",
+              "advantages",
+              "limitations",
+              "price"
+            ],
+            "price_type": "Standard USD per 1M tokens for OpenAI mini only; other models unconfirmed API price or separately identified training-data cost/license"
+          },
+          {
+            "id": "e-metadata",
+            "source_id": "metadata",
+            "quote": "2026-10-30T12:13:24.000Z",
+            "source_hash": "1447974a27900fb2b3fa39fa8dc759b38e8adbc93c553fce8acf5b5167bb6483",
+            "meaning": "공개/비게이트 상태, 생성UTC/수정UTC/revision 및 BF16 텐서 총계 확인. 생성 시각을 별도 정식 발표일로 바꾸지 않음.",
+            "limits": "선택 원문/표 문헌 검토. 독립모델 실행·한국어 회사업무·실제 청구·사람시험은 없음.",
+            "supports": [
+              "identity",
+              "change",
+              "specification",
+              "availability",
+              "comparison",
+              "advantages",
+              "limitations"
+            ]
+          },
+          {
+            "id": "e-config",
+            "source_id": "config",
+            "quote": "\"max_position_embeddings\": 262144",
+            "source_hash": "b1af304453ea5af1a296aa012ab85402e2e811b693aebfb6a2bbaa8bdd908ee5",
+            "meaning": "llava_onevision2·Qwen3 계열, max_position_embeddings262144와정밀도/사용자정의코드 확인. 실제32K 운용과구분.",
+            "limits": "선택 원문/표 문헌 검토. 독립모델 실행·한국어 회사업무·실제 청구·사람시험은 없음.",
+            "supports": [
+              "identity",
+              "change",
+              "specification",
+              "availability",
+              "comparison",
+              "advantages",
+              "limitations"
+            ]
+          },
+          {
+            "id": "e-license",
+            "source_id": "license",
+            "quote": "Apache License",
+            "source_hash": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+            "meaning": "Apache2.0 전문의 허여·재배포4항/고지·변경표시·상표/무보증을 읽음. 개별사업 법률승인 아님.",
+            "limits": "선택 원문/표 문헌 검토. 독립모델 실행·한국어 회사업무·실제 청구·사람시험은 없음.",
+            "supports": [
+              "identity",
+              "change",
+              "specification",
+              "availability",
+              "comparison",
+              "advantages",
+              "limitations",
+              "price"
+            ],
+            "price_type": "Standard USD per 1M tokens for OpenAI mini only; other models unconfirmed API price or separately identified training-data cost/license"
+          },
+          {
+            "id": "e-project",
+            "source_id": "project",
+            "quote": "Mage-VL-Cowork",
+            "source_hash": "ab3c077e06f63d683132aea758ba6840ca238f2acf6993474e3c578ece9861e9",
+            "meaning": "공식 프로젝트 본문/평가표·모델/논문/코드 연결 확인. 두 데모 속도는 전체 성능으로 일반화하지 않고 소개에서 제외.",
+            "limits": "선택 원문/표 문헌 검토. 독립모델 실행·한국어 회사업무·실제 청구·사람시험은 없음.",
+            "supports": [
+              "identity",
+              "change",
+              "specification",
+              "availability",
+              "comparison",
+              "advantages",
+              "limitations"
+            ]
+          },
+          {
+            "id": "e-paper",
+            "source_id": "paper",
+            "quote": "Mage-VL-Cowork",
+            "source_hash": "b826e9dc82035f52bf2ed0dc9dc68a2031d6b3d050caa297348f6e9b347021e4",
+            "meaning": "30쪽 기술 보고서의 1·9·12~18·23쪽 관련절 독해, 14쪽 표2/3과17쪽 표4/5를 PNG로 시각 대조. Google Drive 제외361·반복횟수/Static643·SFT판/데이터 생성비와 제외비용. 전체30쪽의 독립 검증 아님.",
+            "limits": "선택 원문/표 문헌 검토. 독립모델 실행·한국어 회사업무·실제 청구·사람시험은 없음.",
+            "supports": [
+              "identity",
+              "change",
+              "specification",
+              "availability",
+              "comparison",
+              "advantages",
+              "limitations",
+              "price"
+            ],
+            "price_type": "Standard USD per 1M tokens for OpenAI mini only; other models unconfirmed API price or separately identified training-data cost/license"
+          },
+          {
+            "id": "e-base",
+            "source_id": "base",
+            "quote": "microsoft/Mage-VL",
+            "source_hash": "e84630ce6e4d4f636dc280b28065357c22aa1a373d29e7404a8a5dcfbbd81f45",
+            "meaning": "Mage-VL 기반의 이미지·영상·codec-native streaming 및 4B/Apache2.0 관련절. Cowork에 영상 기능·동일 과제 기준값을 승계하지 않음.",
+            "limits": "선택 원문/표 문헌 검토. 독립모델 실행·한국어 회사업무·실제 청구·사람시험은 없음.",
+            "supports": [
+              "identity",
+              "change",
+              "specification",
+              "availability",
+              "comparison",
+              "advantages",
+              "limitations",
+              "price"
+            ],
+            "price_type": "Standard USD per 1M tokens for OpenAI mini only; other models unconfirmed API price or separately identified training-data cost/license"
+          },
+          {
+            "id": "e-fara",
+            "source_id": "fara",
+            "quote": "Fara1.5-4B",
+            "source_hash": "817286a8d5f1fc05dc2ea36655dfa20b8a747aa39c57fa84c5be6be33b051faa",
+            "meaning": "Qwen3.5-4B 기반/스크린샷 지각·DOM/AX 미사용·262144·MIT·참고 실행/장비 관련절. Mage의 DOM표현과 구분; 장비조건을 Mage로 승계하지 않음.",
+            "limits": "선택 원문/표 문헌 검토. 독립모델 실행·한국어 회사업무·실제 청구·사람시험은 없음.",
+            "supports": [
+              "identity",
+              "change",
+              "specification",
+              "availability",
+              "comparison",
+              "advantages",
+              "limitations",
+              "price"
+            ],
+            "price_type": "Standard USD per 1M tokens for OpenAI mini only; other models unconfirmed API price or separately identified training-data cost/license"
+          },
+          {
+            "id": "e-qwen",
+            "source_id": "qwen",
+            "quote": "Qwen3.6-27B",
+            "source_hash": "bb936d6da51014f1edc9aa4cf9abf28d98695b7616ad56adfeeebfa752051d3d",
+            "meaning": "Qwen3.6-27B 공식 카드의27B·시각입출력·262144 및1010000확장/Apache2.0 관련절. 그 문맥이 Mage 비교 실행에 쓰였는지 미확인.",
+            "limits": "선택 원문/표 문헌 검토. 독립모델 실행·한국어 회사업무·실제 청구·사람시험은 없음.",
+            "supports": [
+              "identity",
+              "change",
+              "specification",
+              "availability",
+              "comparison",
+              "advantages",
+              "limitations",
+              "price"
+            ],
+            "price_type": "Standard USD per 1M tokens for OpenAI mini only; other models unconfirmed API price or separately identified training-data cost/license"
+          },
+          {
+            "id": "e-eval",
+            "source_id": "eval",
+            "quote": "images_to_keep",
+            "source_hash": "fa8ebfb603bdc0fb4a8207a6d2dfe078096dc79d3ae4e529981c3c9d892a0a93",
+            "meaning": "OSWorld 참고 구현 전체. history3/images3/1920x1080·50단계/온도.7·topp.8·턴4096·네이티브SGLang generate/도구 실행조건 확인. 코드 실행 없음.",
+            "limits": "선택 원문/표 문헌 검토. 독립모델 실행·한국어 회사업무·실제 청구·사람시험은 없음.",
+            "supports": [
+              "identity",
+              "change",
+              "specification",
+              "availability",
+              "comparison",
+              "advantages",
+              "limitations"
+            ]
+          },
+          {
+            "id": "e-mini",
+            "source_id": "mini",
+            "quote": "gpt-5.4-mini",
+            "source_hash": "c6e6cc3a3a681fa2cbddb5d03a4118f8e8ed9053193492f2b7213ce0ba71db82",
+            "meaning": "정확한 GPT5.4-mini 공식 모델 문서의 입출력/400000·272000·128000/추론 설정·snapshot·지역처리 조건. 모델규모 미공개 유지.",
+            "limits": "선택 원문/표 문헌 검토. 독립모델 실행·한국어 회사업무·실제 청구·사람시험은 없음.",
+            "supports": [
+              "identity",
+              "change",
+              "specification",
+              "availability",
+              "comparison",
+              "advantages",
+              "limitations",
+              "price"
+            ],
+            "price_type": "Standard USD per 1M tokens for OpenAI mini only; other models unconfirmed API price or separately identified training-data cost/license"
+          },
+          {
+            "id": "e-price",
+            "source_id": "price",
+            "quote": "[[0,\"gpt-5.4-mini\"],[0,0.75],[0,0.075],[0,4.5]]",
+            "source_hash": "5c3217d1076c8cf3baa68f6100fc16cfc8471dad5765a4862e20edeac7b1343d",
+            "meaning": "공식 현재 Standard 표의 정확mini .75/.075/4.50 USD/100만토큰과 캐시·지역·reasoning 과금조건 독해. Batch/Flex/Priority와 혼합하지 않음; 청구시험 없음.",
+            "limits": "선택 원문/표 문헌 검토. 독립모델 실행·한국어 회사업무·실제 청구·사람시험은 없음.",
+            "supports": [
+              "identity",
+              "change",
+              "specification",
+              "availability",
+              "comparison",
+              "advantages",
+              "limitations",
+              "price"
+            ],
+            "price_type": "Standard USD per 1M tokens for OpenAI mini only; other models unconfirmed API price or separately identified training-data cost/license"
+          }
+        ],
+        "answers": [
+          {
+            "question_id": "core",
+            "answer": "Microsoft의 Mage-VL-Cowork는 화면을 보며 마우스·키보드를 조작하거나 코드·터미널을 쓰는 경로를 한 모델이 선택한다. 공개 데스크톱 평가에서 66.0%를 보고했지만 GPT-5.4-mini와 일부 더 큰 공개 모델에는 뒤지고, 웹 58.6%는 최종 공개 RL 모델이 아닌 앞선 SFT 단계의 결과다. 공개 가중치를 내려받는 것과 안전하게 운영할 수 있는 컴퓨터 사용 서비스를 갖추는 것은 별도의 판단이다.",
+            "reasoning": "별도학습/GUI코드통합과 실제32K,평가판/주체·환경/반복조건,Office·웹의반대결과,라이선스와표준요금·데이터생성비를구분한다.",
+            "limits": "Hugging Face 공식 저장소 생성은 2026-10-30 12:13 UTC이며 기술 보고서는 October 2026으로만 표시한다. 별도의 일자별 발표일은 확인하지 못했다. 아래 평가는 Microsoft의 발표값 또는 그 보고서가 인용한 값으로, 조건이 다른 현재 순위·일반 업무 성과로 확대하지 않는다.",
+            "evidence_ids": [
+              "e-card",
+              "e-metadata",
+              "e-config",
+              "e-license",
+              "e-project",
+              "e-paper",
+              "e-base",
+              "e-fara",
+              "e-qwen",
+              "e-eval",
+              "e-mini",
+              "e-price"
+            ]
+          }
+        ],
+        "gaps": []
+      },
+      "draft": {
+        "report": {
+          "id": "mage-vl-cowork-model-guide",
+          "topic_id": "opportunities",
+          "topic_path": [
+            "개발 동향",
+            "AI 모델·API"
+          ],
+          "checked_on": "2026-11-01",
+          "title": "Mage-VL-Cowork 소개 — 화면 조작과 코드를 함께 고르는 4B급 모델",
+          "description": "이전 Mage-VL에서 달라진 학습, 데스크톱·웹 평가의 강약점, 공개 가중치의 배포 조건과 API 비용을 비교한다.",
+          "deck": "Microsoft의 Mage-VL-Cowork는 화면을 보며 마우스·키보드를 조작하거나 코드·터미널을 쓰는 경로를 한 모델이 선택한다. 공개 데스크톱 평가에서 66.0%를 보고했지만 GPT-5.4-mini와 일부 더 큰 공개 모델에는 뒤지고, 웹 58.6%는 최종 공개 RL 모델이 아닌 앞선 SFT 단계의 결과다. 공개 가중치를 내려받는 것과 안전하게 운영할 수 있는 컴퓨터 사용 서비스를 갖추는 것은 별도의 판단이다.",
+          "scope": "2026-11-01 KST 확인. 공식 모델 카드·설정·저장소 메타데이터·라이선스·기술 보고서와 비교 모델의 공식 문서를 대조한 문헌 검토다. 모델 실행, 한국어 문서 업무, Windows 앱, 독립 재현과 실제 청구는 시험하지 않았다.",
+          "source_note": "Hugging Face 공식 저장소 생성은 2026-10-30 12:13 UTC이며 기술 보고서는 October 2026으로만 표시한다. 별도의 일자별 발표일은 확인하지 못했다. 아래 평가는 Microsoft의 발표값 또는 그 보고서가 인용한 값으로, 조건이 다른 현재 순위·일반 업무 성과로 확대하지 않는다.",
+          "metrics": [],
+          "datasets": [],
+          "learning": [],
+          "highlights": [
+            "GUI·코드 통합 학습을 거친 별도 체크포인트",
+            "OSWorld 66.0%와 WebVoyagerStatic SFT 58.6%를 구분",
+            "실제 에이전트 문맥 32,768토큰; Apache 2.0 공개 가중치"
+          ],
+          "summary": [
+            {
+              "label": "무엇이 새로워졌나",
+              "text": "기존 Mage-VL 중간 체크포인트에 GUI·터미널·통합 학습과 온라인 강화학습을 더했다. 모델 이름만 바꾼 배포가 아니라 컴퓨터 사용을 위해 학습한 별도 모델이다.",
+              "source_ids": [
+                "card",
+                "base",
+                "metadata"
+              ],
+              "kind": "fact"
+            },
+            {
+              "label": "어디에서 강한가",
+              "text": "OSWorld-Verified 총점은 66.0%이며 OS 조작과 복합 작업에서 유리한 결과를 보인다. 같은 보고서의 GPT-5.4-mini 총점 69.6%, Office 68.0%보다 각각 낮아 오피스 업무의 우위를 뜻하지 않는다.",
+              "source_ids": [
+                "paper",
+                "card"
+              ],
+              "kind": "fact"
+            },
+            {
+              "label": "제공과 비용",
+              "text": "Apache 2.0 가중치와 평가용 구현이 공개됐다. 자체 GPU·실행 환경이 필요하며 공식 표준 API 요금은 확인되지 않았다. 32,768토큰의 실제 학습·추론 안내와 설정상 262,144를 구분해야 한다.",
+              "source_ids": [
+                "card",
+                "config",
+                "license"
+              ],
+              "kind": "fact"
+            }
+          ],
+          "tables": [
+            {
+              "id": "specification",
+              "title": "사양과 역할 — 이전 모델 및 주요 비교 대상",
+              "columns": [
+                "모델",
+                "역할·규모",
+                "문맥과 입출력",
+                "제공·라이선스"
+              ],
+              "rows": [
+                {
+                  "values": [
+                    "Mage-VL",
+                    "이미지·영상 이해의 기반 모델 / 언어 모델 4B급",
+                    "이미지·영상·텍스트 이해; Cowork 작업 성공률의 동일 조건 기준값은 미보고",
+                    "공개 가중치 / Apache 2.0"
+                  ],
+                  "source_ids": [
+                    "base"
+                  ]
+                },
+                {
+                  "values": [
+                    "Mage-VL-Cowork",
+                    "GUI·코드 통합 에이전트 / 4B급 표기, BF16 텐서 총 4,741,793,792개",
+                    "화면·텍스트 → 텍스트·도구 호출. 학습·추론 32,768; 설정 위치 상한 262,144",
+                    "공개 가중치·참고 실행 구현 / Apache 2.0"
+                  ],
+                  "source_ids": [
+                    "card",
+                    "config",
+                    "metadata",
+                    "license"
+                  ]
+                },
+                {
+                  "values": [
+                    "Fara1.5-4B",
+                    "스크린샷 기반 웹 에이전트 / Qwen3.5-4B 기반",
+                    "공식 문맥 262,144; 화면 지각 시 DOM·접근성 트리를 쓰지 않는다고 설명",
+                    "공개 가중치 / MIT"
+                  ],
+                  "source_ids": [
+                    "fara"
+                  ]
+                },
+                {
+                  "values": [
+                    "Qwen3.6-27B",
+                    "범용 시각·언어 모델 / 27B",
+                    "기본 262,144, 문서상 확장 1,010,000; 이 길이가 Mage 비교 실행에 적용됐다는 뜻은 아님",
+                    "공개 가중치 / Apache 2.0"
+                  ],
+                  "source_ids": [
+                    "qwen"
+                  ]
+                },
+                {
+                  "values": [
+                    "GPT-5.4-mini",
+                    "API 모델 / 파라미터 수 미공개",
+                    "텍스트·이미지 입력, 텍스트 출력; 문맥 400,000, 최대 입력 272,000·출력 128,000",
+                    "OpenAI API / 공개 가중치 아님"
+                  ],
+                  "source_ids": [
+                    "mini"
+                  ]
+                }
+              ],
+              "note": "2026-11-01 공식 문서 확인. B는 10억 파라미터 단위다. Mage의 4B 표기와 실제 공개 텐서 총계는 집계 범위가 다르다. 기반 모델의 영상·스트리밍 특성을 Cowork의 검증된 기능으로 승계하지 않는다."
+            },
+            {
+              "id": "desktop",
+              "title": "데스크톱 평가 — 총점과 Office·복합 작업은 다르게 읽어야 한다",
+              "columns": [
+                "모델",
+                "단계 한도",
+                "OS",
+                "Office",
+                "일상",
+                "전문 앱",
+                "복합 작업",
+                "전체"
+              ],
+              "rows": [
+                {
+                  "values": [
+                    "Mage-VL-Cowork / 최종 RL",
+                    "50",
+                    "87.5",
+                    "64.9",
+                    "65.0",
+                    "66.3",
+                    "62.7",
+                    "66.0"
+                  ],
+                  "source_ids": [
+                    "paper",
+                    "card"
+                  ]
+                },
+                {
+                  "values": [
+                    "GPT-5.4-mini",
+                    "50",
+                    "79.2",
+                    "68.0",
+                    "76.6",
+                    "69.4",
+                    "63.3",
+                    "69.6"
+                  ],
+                  "source_ids": [
+                    "paper"
+                  ]
+                },
+                {
+                  "values": [
+                    "ScaleCUA-Qwen3.5-9B",
+                    "50",
+                    "79.2",
+                    "70.6",
+                    "74.3",
+                    "89.5",
+                    "48.1",
+                    "68.7"
+                  ],
+                  "source_ids": [
+                    "paper"
+                  ]
+                },
+                {
+                  "values": [
+                    "Qwen3.6-27B",
+                    "원표 미표시",
+                    "—",
+                    "—",
+                    "—",
+                    "—",
+                    "—",
+                    "63.9"
+                  ],
+                  "source_ids": [
+                    "paper"
+                  ]
+                },
+                {
+                  "values": [
+                    "Fara1.5-4B",
+                    "50",
+                    "25.0",
+                    "7.6",
+                    "29.5",
+                    "12.2",
+                    "6.6",
+                    "13.9"
+                  ],
+                  "source_ids": [
+                    "paper"
+                  ]
+                }
+              ],
+              "note": "단위는 작업 성공률 %. Microsoft 보고서 표 2. OSWorld-Verified의 Google Drive를 제외한 361개 과제, Mage는 50단계·1920×1080·MAGEHybridAgent로 평가했다. 최종 RL은 두 실행 65.33/66.75%의 평균 66.04%를 소수 첫째 자리로 표시한다. GPT-5.4-mini는 같은 361개에서 한 번 실행했으며 나머지 인용 모델의 전 조건이 동일하다고 보장하지 않는다. —는 미보고다."
+            },
+            {
+              "id": "web",
+              "title": "웹 평가 — SFT 결과와 최종 RL 결과를 나누어 본다",
+              "columns": [
+                "모델·학습 판",
+                "WebVoyagerStatic 성공률",
+                "평가 범위"
+              ],
+              "rows": [
+                {
+                  "values": [
+                    "Mage-VL-Cowork-SFT",
+                    "58.6% / 377·643개",
+                    "온라인 강화학습 이전의 통합 SFT 판"
+                  ],
+                  "source_ids": [
+                    "paper",
+                    "card"
+                  ]
+                },
+                {
+                  "values": [
+                    "Mage-VL-Cowork / 최종 공개 RL",
+                    "미보고",
+                    "58.6%를 이 판의 결과로 옮길 수 없음"
+                  ],
+                  "source_ids": [
+                    "paper",
+                    "card"
+                  ]
+                },
+                {
+                  "values": [
+                    "Fara1.5-4B",
+                    "68.0%",
+                    "같은 보고서의 Static 비교값"
+                  ],
+                  "source_ids": [
+                    "paper"
+                  ]
+                },
+                {
+                  "values": [
+                    "Qwen3-VL-8B-Thinking",
+                    "53.7%",
+                    "같은 보고서의 Static 비교값"
+                  ],
+                  "source_ids": [
+                    "paper"
+                  ]
+                },
+                {
+                  "values": [
+                    "Qwen3.5-9B",
+                    "53.3%",
+                    "같은 보고서의 Static 비교값"
+                  ],
+                  "source_ids": [
+                    "paper"
+                  ]
+                }
+              ],
+              "note": "Microsoft 보고서 표 4. 15개 사이트를 재현한 자체 호스팅 환경의 643개 과제를 사용한다. 페이지 방문·필수 동작·최종 답변 및 백엔드 SQLite 상태를 검사한다. 실시간 웹의 가용성이나 실제 업무 성공률과 동일하지 않으며, Fara의 별도 live 웹 평가값을 이 표에 섞지 않는다."
+            },
+            {
+              "id": "stages",
+              "title": "학습 단계별 변화 — 정확도와 자원 지표를 함께 본다",
+              "columns": [
+                "학습 판·참조",
+                "OSWorld 성공률",
+                "평균 모델 호출",
+                "평균 출력 토큰",
+                "그중 추론 토큰"
+              ],
+              "rows": [
+                {
+                  "values": [
+                    "GUI Agent SFT",
+                    "45.56%",
+                    "25.36",
+                    "6,401",
+                    "4,549"
+                  ],
+                  "source_ids": [
+                    "card",
+                    "paper"
+                  ]
+                },
+                {
+                  "values": [
+                    "Hybrid CUA SFT",
+                    "55.84%",
+                    "21.57",
+                    "7,374",
+                    "3,328"
+                  ],
+                  "source_ids": [
+                    "card",
+                    "paper"
+                  ]
+                },
+                {
+                  "values": [
+                    "Hybrid CUA RL / 공개 최종 판",
+                    "66.04%",
+                    "18.77",
+                    "5,499",
+                    "2,482"
+                  ],
+                  "source_ids": [
+                    "card",
+                    "paper"
+                  ]
+                },
+                {
+                  "values": [
+                    "GPT-5.4-mini / xhigh 참조",
+                    "69.57%",
+                    "18.24",
+                    "12,397",
+                    "11,631"
+                  ],
+                  "source_ids": [
+                    "card",
+                    "paper"
+                  ]
+                }
+              ],
+              "note": "Microsoft의 OSWorld 단계 비교. 추론 토큰은 출력에 포함된 부분이므로 두 열을 더하지 않는다. 호출 수는 경과 시간·전체 시스템 동작 횟수와 다르다. 초기 GUI→통합 SFT에서는 출력 토큰이 늘어 모든 단계가 비용을 줄였다는 결론도 성립하지 않는다. 원문 본문의 +10.16%p는 66.0−55.84이며 카드의 66.04로 계산하면 +10.20%p다. 표시 정밀도 차이를 보존한다."
+            },
+            {
+              "id": "pricing",
+              "title": "표준 비용과 이용 조건 — 가중치, API, 학습 데이터 비용은 별개다",
+              "columns": [
+                "모델·항목",
+                "입력",
+                "캐시 입력",
+                "출력",
+                "가격·이용 범위"
+              ],
+              "rows": [
+                {
+                  "values": [
+                    "Mage-VL-Cowork",
+                    "표준 API 미확인",
+                    "미확인",
+                    "미확인",
+                    "Apache 2.0 공개 가중치. 자체 GPU·실행 VM·저장·운영 비용 별도"
+                  ],
+                  "source_ids": [
+                    "card",
+                    "license"
+                  ]
+                },
+                {
+                  "values": [
+                    "Mage-VL / Fara1.5-4B / Qwen3.6-27B",
+                    "공개 가중치 가격과 API 단가를 구분",
+                    "—",
+                    "—",
+                    "각 모델의 Apache 2.0 / MIT / Apache 2.0. 가중치 공개가 무료 추론을 뜻하지 않음"
+                  ],
+                  "source_ids": [
+                    "base",
+                    "fara",
+                    "qwen"
+                  ]
+                },
+                {
+                  "values": [
+                    "GPT-5.4-mini / OpenAI Standard",
+                    "0.75 USD",
+                    "0.075 USD",
+                    "4.50 USD",
+                    "100만 토큰당. 캐시 적중 입력에만 캐시 단가 적용"
+                  ],
+                  "source_ids": [
+                    "price",
+                    "mini"
+                  ]
+                },
+                {
+                  "values": [
+                    "Mage 논문의 데이터 생성 / 같은 교사 모델",
+                    "과제당 0.906 → 0.158 USD",
+                    "해당 없음",
+                    "해당 없음",
+                    "훈련용 데이터 취득 비교. 일회성 workflow 작성·디버깅 제외; Mage API 요금 아님"
+                  ],
+                  "source_ids": [
+                    "paper"
+                  ]
+                }
+              ],
+              "note": "2026-11-01 확인. API 요금은 Standard USD/100만 토큰이며 Batch·Flex·Priority·계약·세금·실제 청구와 구분한다. 지역 처리는 추가 요금 조건이 있고 이미지·추론 사용량도 총비용에 영향을 준다. 자체 호스팅에 이 단가나 논문의 데이터 생성비를 대입해 업무 비용·ROI를 계산하지 않는다."
+            }
+          ],
+          "explanation": [
+            {
+              "id": "identity",
+              "title": "기반 시각·언어 모델에서 컴퓨터 사용 정책으로",
+              "lead": "새 모델의 핵심은 화면 이해만이 아니라 다음 동작의 경로를 고르는 학습이다.",
+              "blocks": [
+                {
+                  "title": "별도 학습을 거친 공개 체크포인트",
+                  "text": "Cowork는 Mage-VL의 중간 체크포인트에서 출발해 GUI 지향 중간 학습, GUI 에이전트 SFT, 코딩·터미널 SFT, 통합 컴퓨터 사용 SFT, 온라인 강화학습을 거쳤다. SFT는 시범 동작을 따라 배우는 지도 학습이고, 마지막 RL은 실행 결과를 보상으로 정책을 더 조정하는 강화학습이다. 따라서 기존 Mage-VL의 이름만 바꾼 판과 구별할 수 있다.",
+                  "source_ids": [
+                    "card",
+                    "base"
+                  ],
+                  "kind": "fact",
+                  "type": "paragraph"
+                },
+                {
+                  "title": "화면 조작과 프로그램 실행의 결합",
+                  "text": "한 모델이 스크린샷을 읽고 마우스·키보드 조작을 하거나 지속되는 bash 세션에서 코드·파일 작업을 선택한다. 별도의 큰 모델이 화면 모델과 코딩 모델 사이를 배분하는 구조 대신 하나의 정책으로 선택을 학습했다는 설명이다. 결과는 모델 가중치뿐 아니라 프롬프트·도구 인터페이스·실행 환경을 묶은 harness에도 의존한다.",
+                  "source_ids": [
+                    "card",
+                    "paper"
+                  ],
+                  "kind": "fact",
+                  "type": "paragraph"
+                },
+                {
+                  "title": "공개 시점과 제품 출시의 구분",
+                  "text": "공식 Hugging Face 저장소는 10월 30일 12:13 UTC에 만들어졌고 확인한 revision은 6fbe7f91da477c1c73790dbb1f08d001b8626be1이다. 논문에는 October 2026만 적혀 있다. 이 문서는 11월 1일 확인한 공개 가중치 소개이며, Microsoft 365 Copilot에 이 기능이 실제 제공됐다는 발표나 별도 날짜의 상용 출시로 해석하지 않는다.",
+                  "source_ids": [
+                    "metadata",
+                    "paper"
+                  ],
+                  "kind": "fact",
+                  "type": "paragraph"
+                }
+              ]
+            },
+            {
+              "id": "context-runtime",
+              "title": "32K의 실제 운용 안내와 자체 실행 환경",
+              "lead": "설정 파일의 위치 상한보다 실제 학습·추론 및 도구 연결 조건이 중요하다.",
+              "blocks": [
+                {
+                  "title": "문맥 길이와 메모리 전략",
+                  "text": "카드는 학습·추론 문맥을 32,768토큰으로 안내한다. config의 max_position_embeddings 262,144는 모델 설정상의 위치 범위이며, 그 길이의 에이전트 동작을 검증했다는 결과는 아니다. 학습 설명에서는 최근 세 장의 화면과 최근 응답을 유지하고 과거 동작을 접는 메모리를 사용한다. 공개 평가 예제도 history_n=3과 images_to_keep=3을 명시한다.",
+                  "source_ids": [
+                    "card",
+                    "config",
+                    "eval"
+                  ],
+                  "kind": "fact",
+                  "type": "paragraph"
+                },
+                {
+                  "title": "참고 구현이 필요한 공개 가중치",
+                  "text": "모델 타입은 custom llava_onevision2다. 공식 참고 구현은 SGLang 계열 환경과 전용 모델·이미지 처리를 제시하며, 단순히 일반 Qwen 지원 목록에 있다는 이유로 어떤 vLLM 버전에서도 바로 실행된다고 볼 수 없다. 원격 사용자 정의 코드를 허용하는 로딩 예제는 코드를 별도로 검토해야 할 조건이다. 이 조사에서는 패키지 설치·가중치 다운로드·모델 실행을 하지 않았다.",
+                  "source_ids": [
+                    "card",
+                    "config",
+                    "eval"
+                  ],
+                  "kind": "fact",
+                  "type": "paragraph"
+                },
+                {
+                  "title": "훈련 장비와 최소 추론 장비",
+                  "text": "보고서의 B200 32개 및 다수의 GUI 실행 슬롯은 학습 구성이다. 이를 최소 추론 장비로 제시할 수 없다. GPU 메모리·동시 실행·문맥·이미지 크기에 따른 실제 추론 자원과 지연 시간은 이번에 검증하지 않았다. Fara 카드의 장비 예시 역시 별도 모델에 관한 설명이므로 Cowork의 최소 사양으로 옮기지 않는다.",
+                  "source_ids": [
+                    "paper",
+                    "fara"
+                  ],
+                  "kind": "judgment",
+                  "type": "paragraph"
+                }
+              ]
+            },
+            {
+              "id": "desktop-meaning",
+              "title": "데스크톱 강점은 총점보다 작업 종류에 드러난다",
+              "lead": "작은 모델로 높은 성공률을 보고했지만 Office·전문 앱의 최상위 결과는 아니다.",
+              "blocks": [
+                {
+                  "title": "규모 대비 성과와 상대 열세",
+                  "text": "Microsoft 표에서 Cowork는 총점 66.0%로 Qwen3.6-27B의 63.9%보다 높고, OS 조작 87.5%는 함께 실행한 GPT-5.4-mini의 79.2%보다 높다. 그러나 GPT-5.4-mini 총점 69.6%와 Office 68.0%, ScaleCUA의 총점 68.7%·Office 70.6%·전문 앱 89.5%에는 뒤진다. 복합 작업에서의 상대 강점과 오피스·전문 앱의 상대 약점을 같이 봐야 한다.",
+                  "source_ids": [
+                    "paper",
+                    "card"
+                  ],
+                  "kind": "judgment",
+                  "type": "paragraph"
+                },
+                {
+                  "title": "361개 과제와 반복 횟수의 한계",
+                  "text": "Mage 평가는 Google Drive를 제외한 361개 OSWorld 과제와 50단계 예산을 사용했다. 공개 참고 설정은 1920×1080, temperature 0.7, top_p 0.8, 턴당 최대 새 토큰 4,096이다. Mage 최종 판은 두 실행, GPT-5.4-mini는 한 실행이며 다른 인용 모델의 모든 조건은 같다고 확인되지 않았다. 신뢰구간·독립 반복이나 한국어 회사 문서·Windows판 Office의 결과로 넓혀 해석할 근거는 없다.",
+                  "source_ids": [
+                    "paper",
+                    "eval"
+                  ],
+                  "kind": "fact",
+                  "type": "paragraph"
+                },
+                {
+                  "title": "자원 지표의 해석",
+                  "text": "GUI SFT에서 통합 SFT, 최종 RL로 갈수록 성공률이 높아지고 마지막 단계는 출력 토큰과 호출 수도 줄었다. 다만 SFT 단계 사이에는 출력 토큰이 증가했다. 모델 호출이나 추론 토큰의 감소가 곧바로 같은 비율의 속도·요금 절감이라는 뜻은 아니다. 소수점 표시가 다른 원문 수치는 별도 표기해 +10.16과 +10.20%p를 같은 정확값으로 취급하지 않았다.",
+                  "source_ids": [
+                    "card",
+                    "paper"
+                  ],
+                  "kind": "judgment",
+                  "type": "paragraph"
+                }
+              ]
+            },
+            {
+              "id": "web-meaning",
+              "title": "웹 결과는 최종 RL 성능과 실시간 웹 성능을 대신하지 않는다",
+              "lead": "데스크톱의 개선 결과가 모든 웹 작업에서 확인된 것은 아니다.",
+              "blocks": [
+                {
+                  "title": "통합 SFT 판의 58.6%",
+                  "text": "WebVoyagerStatic 58.6%는 643개 중 377개를 통과한 통합 SFT 체크포인트의 값이다. 최종 온라인 RL 판의 웹 성공률은 해당 표에 없다. 같은 표에서 Fara1.5-4B는 68.0%여서, 데스크톱에서 앞선다는 사실만으로 웹 전문 모델에도 우세하다고 말할 수 없다. 최종 RL 가중치에 58.6%를 붙이는 것 역시 검증 범위를 바꾸는 일이다.",
+                  "source_ids": [
+                    "paper",
+                    "card"
+                  ],
+                  "kind": "judgment",
+                  "type": "paragraph"
+                },
+                {
+                  "title": "고정 웹 환경의 의미",
+                  "text": "WebVoyagerStatic은 15개 사이트를 재현해 백엔드 데이터베이스 상태까지 검사한다. 실행을 반복하기 좋은 반면 실제 사이트의 로그인·접근 제한·UI 변경·외부 서비스 상태를 모두 대변하지 않는다. live 웹의 별도 성공률과의 차이를 모델 능력 하락이나 부정행위로 단정할 수 없으며, 서로 다른 환경과 채점 방법을 먼저 구분해야 한다.",
+                  "source_ids": [
+                    "paper"
+                  ],
+                  "kind": "judgment",
+                  "type": "paragraph"
+                }
+              ]
+            },
+            {
+              "id": "availability-cost",
+              "title": "라이선스와 비용 — 공개 가중치 이후에도 남는 운영 조건",
+              "lead": "모델을 받을 수 있는지, 상업 사용 조건, API 단가와 실제 업무 비용은 서로 다른 질문이다.",
+              "blocks": [
+                {
+                  "title": "Apache 2.0의 제공 범위",
+                  "text": "공식 저장소는 공개 상태이며 라이선스 파일은 Apache 2.0이다. 배포 시 라이선스·고지와 변경 표시 등 원문의 조건을 보존해야 하며 상표권이나 서비스 품질 보증이 함께 주어지는 것은 아니다. 조직의 구체적 배포·계약에 대한 법률 적합성 판정은 이번 조사에 포함하지 않았다.",
+                  "source_ids": [
+                    "metadata",
+                    "license"
+                  ],
+                  "kind": "fact",
+                  "type": "paragraph"
+                },
+                {
+                  "title": "같은 단위로 비교할 수 있는 API 가격",
+                  "text": "OpenAI 공식 현재 Standard 표의 GPT-5.4-mini는 입력 0.75, 캐시 입력 0.075, 출력 4.50 USD/100만 토큰이다. 캐시 적중 조건과 지역 처리 추가 요금, 출력에 포함되는 추론 사용량 등을 실제 과금에서 고려해야 한다. Mage의 표준 API 단가는 검토한 공식 원문에서 확인되지 않아 0달러로 채우지 않았다. 자체 실행의 GPU·VM·저장·운영비와 이 API 단가를 직접 등치할 수도 없다.",
+                  "source_ids": [
+                    "price",
+                    "mini",
+                    "card"
+                  ],
+                  "kind": "fact",
+                  "type": "paragraph"
+                },
+                {
+                  "title": "데이터 생성비는 서비스 요금이 아니다",
+                  "text": "논문의 과제당 0.906→0.158 USD는 같은 교사 모델로 훈련 데이터를 얻는 두 방법의 비교다. 일회성 workflow 작성과 디버깅 비용을 제외한 값이므로 Mage 추론 단가나 고객 업무 처리비로 제시하면 안 된다. 공개 가중치의 낮은 파라미터 규모만으로 총소유비용의 우위를 확정하지 않는다.",
+                  "source_ids": [
+                    "paper"
+                  ],
+                  "kind": "judgment",
+                  "type": "paragraph"
+                }
+              ]
+            },
+            {
+              "id": "limits",
+              "title": "도입 판단에 남는 검증 — 자율 동작과 실제 업무 환경",
+              "lead": "공개 결과는 자체 검증을 시작할 근거이며, 오피스 제품의 제공 기능이나 안전 보증은 아니다.",
+              "blocks": [
+                {
+                  "title": "자율 실행 권한의 경계",
+                  "text": "이 모델은 파일과 코드·터미널을 다룬다. 공식 설명의 샌드박스·권한 제한·네트워크 범위·되돌릴 수 없는 동작의 사람 승인은 운영 조건으로 읽어야 한다. 벤치마크 성공률이 권한 오용·유출·파일 훼손에 대한 안전 인증을 뜻하지 않는다. 이 조사에서 그러한 방어 동작을 실행 검증하지 않았다.",
+                  "source_ids": [
+                    "card",
+                    "paper"
+                  ],
+                  "kind": "judgment",
+                  "type": "paragraph"
+                },
+                {
+                  "title": "확인되지 않은 업무 조건",
+                  "text": "한국어 품질, 실제 DOCX·XLSX·PPTX의 보존, Windows 응용프로그램, 사내 인증·보안 정책, 여러 사용자 동시 처리 및 오류 복구는 공개 수치만으로 판정할 수 없다. 기반 Mage-VL의 영상·스트리밍 기능도 Cowork의 실제 제공 기능으로 확인하지 않았다. 문서 AI 제품의 기능 출시와 기반 에이전트 모델의 공개를 나누어 판단해야 한다.",
+                  "source_ids": [
+                    "base",
+                    "card",
+                    "paper"
+                  ],
+                  "kind": "judgment",
+                  "type": "paragraph"
+                }
+              ]
+            }
+          ],
+          "result": {
+            "title": "결론 — 작은 통합 에이전트의 공개와 실무 우위는 별도로 평가한다",
+            "points": [
+              {
+                "label": "확인된 변화",
+                "text": "GUI와 코드를 고르는 단일 정책을 추가 학습한 공개 모델이다. OSWorld에서의 규모 대비 성과와 통합 학습의 효과는 주목할 근거가 있다.",
+                "source_ids": [
+                  "card",
+                  "paper"
+                ],
+                "kind": "judgment"
+              },
+              {
+                "label": "동시에 봐야 할 약점",
+                "text": "Office·전문 앱·총점의 상대 열세, 웹 결과가 SFT 단계라는 제한과 평가 환경 차이를 보존해야 한다. 더 작은 모델이 모든 컴퓨터 업무에서 더 낫다는 결론은 성립하지 않는다.",
+                "source_ids": [
+                  "paper"
+                ],
+                "kind": "judgment"
+              },
+              {
+                "label": "제공 판단",
+                "text": "Apache 2.0 가중치와 참고 구현은 확인했으나 관리형 API 표준 요금·최소 추론 장비·한국어 실제 업무 품질은 미확인이다. 32K 운용 안내를 기준으로 자체 환경과 권한을 검증해야 한다.",
+                "source_ids": [
+                  "card",
+                  "config",
+                  "license"
+                ],
+                "kind": "judgment"
+              }
+            ]
+          },
+          "references": [
+            {
+              "id": "card",
+              "title": "Microsoft Mage-VL-Cowork 모델 카드",
+              "url": "https://huggingface.co/microsoft/Mage-VL-Cowork/raw/main/README.md",
+              "description": "2026-11-01 확인. 원문 발표·평가 조건과 현재 제공 범위를 본문에 구분했다."
+            },
+            {
+              "id": "metadata",
+              "title": "공식 저장소 메타데이터와 공개 시점",
+              "url": "https://huggingface.co/api/models/microsoft/Mage-VL-Cowork",
+              "description": "2026-11-01 확인. 원문 발표·평가 조건과 현재 제공 범위를 본문에 구분했다."
+            },
+            {
+              "id": "config",
+              "title": "공식 모델 설정",
+              "url": "https://huggingface.co/microsoft/Mage-VL-Cowork/raw/main/config.json",
+              "description": "2026-11-01 확인. 원문 발표·평가 조건과 현재 제공 범위를 본문에 구분했다."
+            },
+            {
+              "id": "license",
+              "title": "Apache 2.0 라이선스",
+              "url": "https://huggingface.co/microsoft/Mage-VL-Cowork/raw/main/LICENSE",
+              "description": "2026-11-01 확인. 원문 발표·평가 조건과 현재 제공 범위를 본문에 구분했다."
+            },
+            {
+              "id": "project",
+              "title": "Microsoft Mage-VL-Cowork 프로젝트",
+              "url": "https://microsoft.github.io/Mage/cowork/",
+              "description": "2026-11-01 확인. 원문 발표·평가 조건과 현재 제공 범위를 본문에 구분했다."
+            },
+            {
+              "id": "paper",
+              "title": "Mage-VL-Cowork 기술 보고서 / October 2026",
+              "url": "https://raw.githubusercontent.com/microsoft/Mage/main/assets/mage_vl_cowork_tech_report.pdf",
+              "description": "2026-11-01 확인. 원문 발표·평가 조건과 현재 제공 범위를 본문에 구분했다."
+            },
+            {
+              "id": "base",
+              "title": "이전 Mage-VL 모델 카드",
+              "url": "https://huggingface.co/microsoft/Mage-VL/raw/main/README.md",
+              "description": "2026-11-01 확인. 원문 발표·평가 조건과 현재 제공 범위를 본문에 구분했다."
+            },
+            {
+              "id": "fara",
+              "title": "Microsoft Fara1.5-4B 공식 카드",
+              "url": "https://huggingface.co/microsoft/Fara1.5-4B/raw/main/README.md",
+              "description": "2026-11-01 확인. 원문 발표·평가 조건과 현재 제공 범위를 본문에 구분했다."
+            },
+            {
+              "id": "qwen",
+              "title": "Qwen3.6-27B 공식 카드",
+              "url": "https://huggingface.co/Qwen/Qwen3.6-27B/raw/main/README.md",
+              "description": "2026-11-01 확인. 원문 발표·평가 조건과 현재 제공 범위를 본문에 구분했다."
+            },
+            {
+              "id": "eval",
+              "title": "OSWorld 평가 참고 구현",
+              "url": "https://huggingface.co/microsoft/Mage-VL-Cowork/raw/main/osworld_eval/README.md",
+              "description": "2026-11-01 확인. 원문 발표·평가 조건과 현재 제공 범위를 본문에 구분했다."
+            },
+            {
+              "id": "mini",
+              "title": "OpenAI GPT-5.4-mini 모델 문서",
+              "url": "https://developers.openai.com/api/docs/models/gpt-5.4-mini",
+              "description": "2026-11-01 확인. 원문 발표·평가 조건과 현재 제공 범위를 본문에 구분했다."
+            },
+            {
+              "id": "price",
+              "title": "OpenAI 공식 API 가격표",
+              "url": "https://developers.openai.com/api/docs/pricing",
+              "description": "2026-11-01 확인. 원문 발표·평가 조건과 현재 제공 범위를 본문에 구분했다."
+            }
+          ],
+          "caveats": [
+            {
+              "text": "제공자 발표와 문헌 대조다. 독립 추론 재현·한국어 회사 문서·Windows 앱·청구 검증 및 사람 독해 시험은 수행하지 않았다.",
+              "source_ids": [
+                "card",
+                "paper"
+              ]
+            },
+            {
+              "text": "OSWorld 총점의 일부 모델은 인용값이며 반복·harness·입력 조건의 완전 일치를 보장하지 않는다. 웹 58.6%는 앞선 SFT 판이며 최종 RL 웹 성능은 미보고다.",
+              "source_ids": [
+                "paper"
+              ]
+            },
+            {
+              "text": "실제 문맥 32,768과 설정 위치 상한 262,144를 구분한다. 공개 가중치의 표준 API 요금·최소 추론 자원·상용 서비스 제공을 추정하지 않았다.",
+              "source_ids": [
+                "card",
+                "config"
+              ]
+            }
+          ]
+        },
+        "claims": [
+          {
+            "path": "/summary/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-card",
+              "e-base",
+              "e-metadata"
+            ]
+          },
+          {
+            "path": "/summary/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-paper",
+              "e-card"
+            ]
+          },
+          {
+            "path": "/summary/2",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-card",
+              "e-config",
+              "e-license"
+            ]
+          },
+          {
+            "path": "/tables/0/rows/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-base"
+            ]
+          },
+          {
+            "path": "/tables/0/rows/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-card",
+              "e-config",
+              "e-metadata",
+              "e-license"
+            ]
+          },
+          {
+            "path": "/tables/0/rows/2",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-fara"
+            ]
+          },
+          {
+            "path": "/tables/0/rows/3",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-qwen"
+            ]
+          },
+          {
+            "path": "/tables/0/rows/4",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-mini"
+            ]
+          },
+          {
+            "path": "/tables/1/rows/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-paper",
+              "e-card"
+            ]
+          },
+          {
+            "path": "/tables/1/rows/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-paper"
+            ]
+          },
+          {
+            "path": "/tables/1/rows/2",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-paper"
+            ]
+          },
+          {
+            "path": "/tables/1/rows/3",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-paper"
+            ]
+          },
+          {
+            "path": "/tables/1/rows/4",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-paper"
+            ]
+          },
+          {
+            "path": "/tables/2/rows/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-paper",
+              "e-card"
+            ]
+          },
+          {
+            "path": "/tables/2/rows/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-paper",
+              "e-card"
+            ]
+          },
+          {
+            "path": "/tables/2/rows/2",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-paper"
+            ]
+          },
+          {
+            "path": "/tables/2/rows/3",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-paper"
+            ]
+          },
+          {
+            "path": "/tables/2/rows/4",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-paper"
+            ]
+          },
+          {
+            "path": "/tables/3/rows/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-card",
+              "e-paper"
+            ]
+          },
+          {
+            "path": "/tables/3/rows/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-card",
+              "e-paper"
+            ]
+          },
+          {
+            "path": "/tables/3/rows/2",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-card",
+              "e-paper"
+            ]
+          },
+          {
+            "path": "/tables/3/rows/3",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-card",
+              "e-paper"
+            ]
+          },
+          {
+            "path": "/tables/4/rows/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-card",
+              "e-license"
+            ]
+          },
+          {
+            "path": "/tables/4/rows/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-base",
+              "e-fara",
+              "e-qwen"
+            ]
+          },
+          {
+            "path": "/tables/4/rows/2",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-price",
+              "e-mini"
+            ]
+          },
+          {
+            "path": "/tables/4/rows/3",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-paper"
+            ]
+          },
+          {
+            "path": "/explanation/0/blocks/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-card",
+              "e-base"
+            ]
+          },
+          {
+            "path": "/explanation/0/blocks/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-card",
+              "e-paper"
+            ]
+          },
+          {
+            "path": "/explanation/0/blocks/2",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-metadata",
+              "e-paper"
+            ]
+          },
+          {
+            "path": "/explanation/1/blocks/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-card",
+              "e-config",
+              "e-eval"
+            ]
+          },
+          {
+            "path": "/explanation/1/blocks/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-card",
+              "e-config",
+              "e-eval"
+            ]
+          },
+          {
+            "path": "/explanation/1/blocks/2",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-paper",
+              "e-fara"
+            ]
+          },
+          {
+            "path": "/explanation/2/blocks/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-paper",
+              "e-card"
+            ]
+          },
+          {
+            "path": "/explanation/2/blocks/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-paper",
+              "e-eval"
+            ]
+          },
+          {
+            "path": "/explanation/2/blocks/2",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-card",
+              "e-paper"
+            ]
+          },
+          {
+            "path": "/explanation/3/blocks/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-paper",
+              "e-card"
+            ]
+          },
+          {
+            "path": "/explanation/3/blocks/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-paper"
+            ]
+          },
+          {
+            "path": "/explanation/4/blocks/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-metadata",
+              "e-license"
+            ]
+          },
+          {
+            "path": "/explanation/4/blocks/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-price",
+              "e-mini",
+              "e-card"
+            ]
+          },
+          {
+            "path": "/explanation/4/blocks/2",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-paper"
+            ]
+          },
+          {
+            "path": "/explanation/5/blocks/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-card",
+              "e-paper"
+            ]
+          },
+          {
+            "path": "/explanation/5/blocks/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-base",
+              "e-card",
+              "e-paper"
+            ]
+          },
+          {
+            "path": "/result/points/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-card",
+              "e-paper"
+            ]
+          },
+          {
+            "path": "/result/points/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-paper"
+            ]
+          },
+          {
+            "path": "/result/points/2",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-card",
+              "e-config",
+              "e-license"
+            ]
+          },
+          {
+            "path": "/caveats/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-card",
+              "e-paper"
+            ]
+          },
+          {
+            "path": "/caveats/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-paper"
+            ]
+          },
+          {
+            "path": "/caveats/2",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-card",
+              "e-config"
+            ]
+          }
+        ],
+        "answer_paths": {
+          "core": [
+            "/summary",
+            "/tables",
+            "/explanation",
+            "/result"
+          ]
+        }
+      },
+      "issues": [],
+      "authoring": {
+        "recipe": {
+          "version": "authoring-recipe-1",
+          "catalog_version": "1.0.2",
+          "brief": {
+            "id": "mage-vl-cowork-model-guide",
+            "reader": "새 컴퓨터 사용 모델의 성능과 자체 배포 조건을 비교하는 개발자와 관리자",
+            "reader_question": "Mage-VL-Cowork는 이전 Mage-VL 및 다른 컴퓨터 사용 모델에 비해 무엇이 바뀌고 어느 평가에서 낫거나 부족하며 실제 제공 범위와 표준 비용은 무엇인가?",
+            "outcome": "GUI와 코드 통합의 차이, 동일 평가의 상대 장단점, 최종 RL과 SFT의 구분, 공개 가중치와 API 요금 및 배포 한계를 설명한다.",
+            "profile": "model_introduction"
+          },
+          "request_hash": "9391ed02ae5f9fdc74db2c03eacd78da3a9f54150b58c9ba5963177eb15dfd18",
+          "components": [
+            {
+              "id": "common-principles",
+              "kind": "policy",
+              "version": "1.0.0",
+              "supports": [
+                "technology",
+                "comparison",
+                "market",
+                "opportunity",
+                "model_introduction",
+                "news",
+                "custom"
+              ],
+              "stages": [
+                "analyze",
+                "write",
+                "review"
+              ],
+              "sources": [
+                {
+                  "path": "docs/authoring/common.md",
+                  "sha256": "cf56f106511609377d003f3d592937b858b2de9a999cf78cb6e6408aa0aa59f7",
+                  "text": "# 공통 작성 원칙\n\n근거와 의미 보존, 자연스러운 한국어 및 본문과 편집 기록의 구분에 적용한다. 새 소식은 유형별 기사 형식을 사용한다. 학습 글을 명시한 문장은 그 유형에만 적용한다.\n\n## 독자 본문과 편집 기록을 분리하기\n\n독자는 주제와 실제 구현 방법을 배우려는 사람이다. 소제목에 `검토 의견` 같은\n내부 분류를 붙이거나 판 변경, 수집·검수 과정과 사이트 읽기 안내로 본문을 채우지\n않는다. 원문 링크와 자료의 설명은 더 자세한 내용을 배우는 데 사용한다. 출처 설명에는\n무엇을 알 수 있는지와 필요한 자료의 조건을 쓰고, 실제 수집/검토 시각과 실패 및 편집\n기록은 품질 패키지·작업 기록에 둔다. 가상 사례의 가정, 실습 준비물과 실행 조건,\n기술 한계와 통계 해석의 조건은 본문에 남긴다. [DevOps r12 수정](../DEVOPS_READER_COPY.2026-10-12.md).\n\n## 2026-10-10: 작성 목적 다음에 요약 배치하기\n\n앞으로 새로 작성하는 공유용 리서치 보고서는 다음 순서로 시작한다. 신규 소식 기사는 2026-10-14 기사 기준과 NEWSROOM.md의 별도 형식을 따른다.\n\n1. 제목 아래에 어떤 목적으로 만든 문서인지 한두 문장으로 짧게 설명한다.\n   독자의 어떤 문제나 판단을 돕기 위한 것인지 구체적으로 쓴다.\n2. 바로 다음 본문 구역은 `요약`으로 표시하고 핵심 내용과 결론을 정리한다.\n3. 요약 이후의 구성은 주제와 독자의 필요에 맞게 정한다. 목차, 개념 설명,\n   비교표, 도해, 사례, 실습, 출처의 순서와 분량을 일률적으로 고정하지 않는다.\n\n작성 목적은 “왜 이 문서를 만들었는가”에, 요약은 “핵심 내용과 결론이 무엇인가”에\n답한다. 둘을 같은 소개 문장으로 반복하지 않는다. DevOps 문서의 장 수나\n도구 카탈로그를 다른 주제의 필수 양식으로 삼지 않는다. 기존 페이지를 일괄\n재작성하는 규칙은 아니며, 앞서 정한 출처와 검토 기준은 유지한다.\n\n예시 작성 목적: “기존 Jenkins를 사용하는 C++ 팀이 검사 결과를 보관하고,\n검사한 파일을 릴리스하는 절차를 정할 수 있도록 구축 방법을 정리했다.”\n\n검토할 때는 첫 화면만 읽어 작성 목적을 알 수 있는지, 그다음 구역이 요약인지,\n요약에서 핵심 내용과 결론을 파악할 수 있는지 각각 확인한다. 본문 구성은\n이 고정된 앞부분 이후에 필요한 설명을 충분히 제공하는지로 판단한다.\n\n## 2026-10-10: 가운데점으로 단어나 동작을 묶지 않기\n\n새로 작성하거나 수정하는 제목, 요약, 본문, 표와 도구 설명에는 가운데점으로\n단어를 압축해 나열하지 않는다. 점을 공백으로 지우는 것으로 끝내지 않는다.\n병렬 항목은 쉼표나 자연스러운 연결어로 구분하고, 동작은 누가 무엇을 어떤\n순서로 하는지 문장으로 쓴다. 원문 코드, URL과 기존 분류 식별자는 보존한다.\n\n- 피할 표현: “누가 어떤 코드와 결과물을 검사·승인·반영했는지”\n- 사용할 표현: “누가 코드를 검사했고, 어떤 결과물을 승인해 실제 환경에 반영했는지”\n- 피할 표현: “개발·QA·운영이 공동 책임”\n- 사용할 표현: “개발 담당자는 코드를 수정하고 QA는 검사한다. 운영 담당자는 승인된 파일을 배포한다.”\n\n## 글을 쓰기 전에 정할 것\n\n교재형 글은 선행 개념의 순서를 확인한다. 먼저 익숙한 상황과 값으로 문제를\n설명하고, 그 문제에서 새 개념이 하는 일을 가르친 뒤 기술 이름·구조·코드를 연결한다.\n새 약어를 풀어 쓰는 것만으로 선행 지식의 공백이 해결되지는 않는다.\n\n목적은 자료 요약, 표 생성, 제목 작성이 아니라 **독자에게 생겨야 할 변화**다.\n먼저 아래 내용을 짧은 편집 메모에 적는다. 모르는 독자의 수준은 가정임을\n밝히고, 대화에서 이미 확인한 필요를 우선한다.\n\n| 질문 | 작성할 내용 |\n| --- | --- |\n| 누가 읽는가 | 주제와의 거리, 현재 알고 있는 것, 새로 설명해야 할 것 |\n| 왜 읽는가 | 이해하려는 문제 또는 내려야 할 결정 하나 |\n| 읽은 뒤 무엇이 가능한가 | 구분·설명·선택·실행처럼 확인 가능한 결과 |\n| 무엇을 다룰 것인가 | 그 결과에 필요한 범위와 선행 개념 |\n| 어떤 근거가 필요한가 | 기능, 수치, 적용 조건, 비교를 지지할 원문 |\n| 어떻게 확인할 것인가 | 다른 사례에 적용하는 질문 또는 관찰할 실행 결과 |\n\n예: MCP Apps의 역할을 모르는 독자가 공고 후보를 비교하는 업무에 이 기술을\n쓸 이유와 시작 경로를 고르고, 설명된 사례의 입력·조회·화면 결과를 추적한 뒤\n자기 목록에 적용할 변경점을 찾도록 쓴다. 역할을 설명하는 것은 이 작업을 위한\n중간 단계다. 예시를 실제로 실행시키는 경로를 제공하려면 현재 지원 환경·준비물·\n실행 절차·예상 결과를 확인한다. 이것이 없는 원고는 원리 설명으로 상태를 남긴다.\n\n‘초급~중급 개발자’라는 범위만으로 API, JSON, 비동기 처리, MCP를 이미\n안다고 가정하지 않는다. 필요한 개념은 설명하거나 정확한 선행 학습으로 연결한다.\n\n## 목적에 맞게 글의 성격을 고르기\n\n| 독자의 질문 | 중심 내용 | 완료를 확인하는 방법 |\n| --- | --- | --- |\n| 무엇이 바뀌고 내 작업에 어떤 영향이 있나 | 이전 상태, 변화, 해당 대상, 영향, 대응 시점 | 자신의 사용 여부와 다음 점검을 정할 수 있음 |\n| 이것은 무엇이고 왜 필요한가 | 익숙한 상황, 개념, 작동 이유, 구체적 사례, 한계 | 새로운 사례의 동작을 자기 말로 설명함 |\n| 어느 대안이 내 조건에 맞나 | 같은 비교 기준, 적용 조건, 비용·제약, 선택 이유 | 주어진 조건으로 대안을 고르고 이유를 말함 |\n| 따라 하면서 익히려면 무엇을 하나 | 준비물, 순서, 입력, 예상 출력, 오류 관찰 | 실제 결과를 재현하고 어느 단계에서 틀렸는지 찾음 |\n| 신청·참여할 수 있나 | 대상, 현재 접수 상태, 자격, 제외 조건, 제출물 | 해당·비해당·추가 확인을 구분하고 준비물을 정함 |\n| 이 수치·사례는 무엇을 알려주나 | 측정 대상·기간·단위, 관찰과 해석, 적용 한계 | 수치의 의미와 이 자료로 알 수 없는 것을 구분함 |\n\n설명 글과 실습 글의 역할은 다르다. 설명은 관계와 이유를 풀어내고, 실습은\n독자가 행동한 뒤 확인할 결과를 제공한다. 하나의 보고서에 둘 다 필요하면\n단위를 나누어 연결한다. 단순히 명령어를 넣었다고 실습이 완성되는 것은 아니다.\n이 구분은 [Diátaxis의 설명](https://diataxis.fr/explanation/)과\n[튜토리얼](https://diataxis.fr/tutorials/)을 참고한 프로젝트 편집 선택이다.\n\n## 원문에서 의미를 보존하기\n\n자료를 읽을 때 제목부터 만들지 않는다. 독자의 질문에 답하는 근거를 먼저\n확보하고, 아래 항목이 필요한 주장에 함께 남긴다.\n\n- 누가 무엇을 하는가: 제공자·실행자·요청자·결과 수신자를 구분한다.\n- 언제, 누구에게 적용되는가: 확인일, 발표일, 종료일, 지역·계정·버전 조건.\n- 무엇을 측정했는가: 기간·표본·분모·단위와 출처의 자체 공개 여부.\n- 무엇을 관찰했고 무엇을 해석했는가: 공식 기능, 편집 판단, 가상 예시를 구분한다.\n- 어떤 제한이 결론을 바꾸는가: 적용 제외, 필수 준비, 비교하지 못한 부분.\n\n출처 링크가 붙어 있는 것과 그 출처가 문장을 뒷받침하는 것은 별개다.\n원문의 주어·목적어·인과관계를 요약 과정에서 바꾸지 않는다. 예를 들어\n‘서버가 화면을 제공하고 호스트가 읽는다’를 ‘서버가 읽는 화면’으로 줄이면\n구조가 바뀐다. 규격은 실제 동작의 보장, 최대 지원액은 확정 지급액,\n한 회사의 성장과 제품 전략은 검증된 성장 원인으로 바꾸지 않는다.\n\n동적 규정·모델명·가격·프로그램 상태는 보강 시 공식 자료를 다시 확인한다.\n개념 문장을 고쳤다는 이유로 재확인하지 않은 다른 표의 확인일을 올리지 않는다.\n\n## 짧은 메인과 충분한 보고서\n\n메인은 독자가 읽을 보고서를 고를 수 있게 핵심 변화·문제·대상 조건을 짧게\n전달한다. 보고서는 선택한 내용을 혼자 이해할 수 있을 만큼 풀어 쓴다.\n메인의 분량 기준을 본문에 적용하지 않는다. 고정 글자 수나 항목 수로\n필수 설명을 자르지 않는다.\n\n펼치기는 상세 절차·추가 사례·사양·선택적 심화에 사용한다. 제목을 이해하는 데\n필요한 정의, 결론의 이유, 결정적인 자격·제약은 기본 읽기 경로에 둔다.\n처음 읽는 사람이 모든 펼치기를 열어야만 첫 문장을 이해한다면 배치가 잘못됐다.\n펼친 내용은 요약의 반복이 아니라 빠진 관계와 사례를 설명해야 한다.\n\n현재 Editorial의 `요약 → 데이터 → 결과 → 해설` 순서와 블록 개수는 의미 품질을\n보장하지 않는다. 원고를 먼저 완성하고 기존 데이터 필드에 의미를 유지하며\n옮긴다. 필요한 설명을 현재 필드로 자연스럽게 표현할 수 없으면 원고를 보존하고\n렌더링 개선을 별도 작업으로 기록한다. 원고를 양식에 맞춰 다시 축약하지 않는다.\n\n## 작성 지식베이스에 남길 내용\n\n새 주제의 편집 메모는 관련 보고서·검토 문서에 아래 정보를 남긴다. 단순\n용어집, 출처 모음, 글자 수 지침만 쌓지 않는다.\n\n| 항목 | 저장할 지식 |\n| --- | --- |\n| 독자의 질문 | 해당 글이 해결할 질문과 선행 지식 가정 |\n| 개념 관계 | 기존 개념과의 차이, 역할과 데이터 이동 |\n| 의미 근거 | 주장별 원문 위치·적용 조건·확인일 |\n| 끝까지 이어지는 예시 | 입력, 중간 값, 출력, 정상·실패 이유 |\n| 발견한 실패 | 원고의 어떤 표현이 무슨 오해를 만들었는지 |\n| 개선 원고 | 실제로 고친 문단과 독자가 대답할 수 있어야 할 질문 |\n| 보강 상태 | 진단·원고·사실 확인·실행 검증·게시 중 완료한 범위 |\n\n현재 결함 기록은 [앞선 내용 검토](../RESEARCH_CONTENT_REVIEW.2026-10-08.md)에,\n20편의 목적·실제 보강·검토 범위는 [전체 보강 기록](../RESEARCH_REPAIR.2026-10-08.md)에\n남긴다. 새 판의 본문 데이터는 `config/research_comprehension.2026-10-08.json`이다.\n[앞선 개선 원고](../RESEARCH_WRITING_EXAMPLES.md)는 부분 보강의 역사로 유지한다.\n사용자가 새 판을 승인한 완성 교재라는 뜻은 아니다. 날짜가 붙은 기능·규정은\n원문을 재확인하고 재사용한다. 예시 문장은 이번 독자 목적에 맞춘 사례다.\n\n## 참고한 작성 원칙\n\n- [Google Technical Writing — Audience](https://developers.google.com/tech-writing/one/audience): 독자의 현재 지식과 목표에 필요한 지식의 차이를 설명 범위로 삼는다.\n- [Google Technical Writing — Documents](https://developers.google.com/tech-writing/one/documents): 대상 독자와 읽은 뒤 가능한 일을 정하고 그 필요에 맞춰 내용을 조직한다.\n- [Diátaxis — Explanation](https://diataxis.fr/explanation/): 이해를 위한 관계·배경 설명의 역할을 구분한다.\n- [Diátaxis — Tutorials](https://diataxis.fr/tutorials/): 행동과 관찰할 결과를 통해 배우는 실습을 구분한다.\n\n2026-10-08 원문 확인. 위 원칙의 적용 방식과 검토 질문은 이 프로젝트의\n편집 판단이며, 문서화만으로 독자 이해 개선이 검증됐다는 뜻은 아니다.\n"
+                }
+              ]
+            },
+            {
+              "id": "profile-model_introduction",
+              "kind": "profile",
+              "version": "1.0.0",
+              "supports": [
+                "model_introduction"
+              ],
+              "stages": [
+                "analyze",
+                "write",
+                "review"
+              ],
+              "sources": [
+                {
+                  "path": "docs/authoring/types.md",
+                  "section": "모델 소개",
+                  "sha256": "fbeb922a5e6ca88f23ced7939f515837dedcbf5c6784f5cac5da74b97b311d82",
+                  "text": "## 모델 소개\n\n[모델 소개 정본](../AI_MODEL_RESEARCH.md)의 신규 모델 계약을 따른다. 이전 모델 대비 변화와 다른 모델의 같은 조건 비교, 상대 장단점 및 제공 조건을 설명한다. 학습 글의 가상 업무, 실습 코드와 응용 문제를 적용하지 않는다.\n\n"
+                },
+                {
+                  "path": "docs/AI_MODEL_RESEARCH.md",
+                  "section": "신규 모델 소개의 형식 — 2026-10-13 사용자 기준",
+                  "sha256": "dc9092e9a0eb8a62d8ce7a84238cb2d9c827745411d06208a26dd8c308b65286",
+                  "text": "## 신규 모델 소개의 형식 — 2026-10-13 사용자 기준\n\n신규 모델 소개는 활용 교재가 아니라 모델의 변화와 비교를 읽는 분석 문서다.\n기존 Theo의 GPT-6.1 Sol, Gemini4Argon, Opus5.5 소개처럼 모델 정보와\n비교표, 상대 장점과 단점, 비용과 결론을 중심으로 작성한다.\n독자는 새 모델이 무엇인지, 이전 모델에서 무엇이 달라졌는지,\n경쟁 모델보다 어떤 점이 낫고 부족한지 판단할 수 있어야 한다.\n\n- 제목 아래 짧은 작성 목적과 `요약`을 먼저 둔다. 이후에는 모델 개요,\n  이전 모델 대비 변화, 다른 모델과의 비교표, 장점과 단점, 가격과 제공 조건,\n  결론과 자료 기준을 주제에 맞게 구성한다. 장 수와 표 방향을 일률적으로 고정하지 않는다.\n- 소제목은 `모델 개요`, `주요 사양`, `성능 비교`, `장점과 한계`처럼\n  실제 내용을 이름 붙인다. `입력 사양과 제공 범위를 먼저 정합니다` 같은\n  작성 절차나 독자 행동을 지시하는 소제목을 사용하지 않는다.\n- 다른 모델과 비교한 표를 반드시 포함한다. 같은 계열의 이전 모델과 해당 분야의\n  주요 경쟁 모델을 선정하고 선정 이유를 남긴다. 사양과 제공 경로, 성능 평가,\n  가격의 서로 다른 비교 기준을 분리한다.\n- 표에는 모델 ID/판, 추론 설정, 평가판, 측정 주체, Harness, 단위와 날짜를\n  밝혀 수치가 무엇을 비교하는지 설명한다. 조건이 다른 결과는 그 차이를 표시하고\n  직접적인 모델 우열의 근거로 일반화하지 않는다. 미확인은0으로 채우지 않는다.\n- 장점과 단점은 비교표의 실제 값 또는 제공 조건으로 설명한다.\n  어느 평가에서 어떤 경쟁 모델보다 높거나 낮은지, API/구독/가중치 제공,\n  가격과 문맥 조건에서 어떤 차이가 있는지 구체적으로 쓴다.\n  공급사 주장, 공개 측정, 편집 판단과 독립 실사용 미측정을 구별한다.\n- 배송비 같은 가상 업무, 활용 예시, SDK/API 코드, 단계별 실습,\n  응용 문제와 풀이를 모델 소개에 넣지 않는다. 별도의 활용 가이드를 요청받은 경우에만\n  해당 문서를 학습/실습 유형으로 작성한다.\n- 작성 요청과 새 품질 sidecar에는 `research_type: model_introduction`을 사용한다.\n  `config/ai_model_introduction.request.example.json`은 계획 템플릿이다.\n  새 소개의 report ID를 `config/study_pages.json`의 `legacy_report_ids`에 넣어\n  기존 모델 소개와 같은 Editorial을 사용한다. 해당 판의 `digest(report)`를\n  `editorial_summary_first`와 `model_introduction_editions`에 등록하면\n  목적·요약 다음에 비교표, 모델 분석, 결론이 표시된다. 새 소개판은 같은 해시를\n  `model_introduction_purpose_editions`에도 등록해 `description`의 작성 목적을\n  제목 바로 아래 표시한다. 기존 판의 표시 형식은 보존한다. 내용 해시에 묶어\n  이전 판의 표시 순서는 보존한다.\n  문장 표기 교정은 본문 필드에 한정한다. 안정적인 ID, `topic_path`의\n  `개발 동향 / AI 모델·API`, 출처 ID와 URL은 나열 문장처럼 일괄 치환하지 않는다.\n  실제 화면에서 기존 모델 주제와 같은 분류로 연결되는지도 확인한다.\n  이 유형의 기계 검사는 비교표 누락과 예시/코드 블록을 거부하며,\n  의미 검토는 비교 대상·조건과 장단점의 논거를 실제 읽어 확인한다.\n  기존 불변 배치는 소급 수정하거나 새 기준 합격으로 간주하지 않는다.\n\n원문의 기존 활용 섹션을 수집하는 것과 새 모델 소개의 집필 형식은 다르다.\nTheo에서 가져온 원문과 원본 표 기능은 보존하고, 이 형식은 새로 집필하는\n모델 소개 및 사용자가 이 형식으로 고치라고 요청한 현재판에 적용한다.\n에이전트 Pass와 출력 검증은 사용자의 형식 승인이나 실제 독해 시험이 아니다.\n\n\n"
+                }
+              ]
+            },
+            {
+              "id": "writing-workflow",
+              "kind": "method",
+              "version": "2.1.0",
+              "supports": [
+                "technology",
+                "comparison",
+                "market",
+                "opportunity",
+                "model_introduction",
+                "news",
+                "custom"
+              ],
+              "stages": [
+                "write"
+              ],
+              "sources": [
+                {
+                  "path": "skills/research-teaching/SKILL.md",
+                  "sha256": "09d2dac52b42f7fd556193e005da59b29c16215a125f34dec3a55b8cc08c1227",
+                  "text": "---\nname: research-teaching\ndescription: \"Compose and revise Korean research by reader purpose. Select content/editing/presentation profiles, preserve evidence and version records, then finish local knowledge registration and query checks. Use for research explanations, comparisons and editing; models and news keep their own profiles. Does not authorize redesign, paid calls, delegation or publication.\"\nmetadata:\n  version: \"2.1.0\"\n---\n\n# 목적에 맞게 조사하고 이해할 수 있게 쓰기\n\n먼저 [작성 관리](../../docs/authoring/MANAGEMENT.md)와 현재 원고를 읽는다.\n대화에 이미 나온 독자, 목적과 요청을 사용하며 같은 질문을 다시 요구하지 않는다.\n정보가 부족하면 조사로 돌아간다. 이해의 빈칸을 문장 교정이나 목차 증가로 대신하지 않는다.\n\n## 이번 글에 적용할 기준 선택\n\n1. 독자의 질문과 끝에 가능한 설명, 판단 또는 실행을 요청서에 적는다.\n2. [공통 원칙](../../docs/authoring/common.md)을 적용하고 [목적별 유형](../../docs/authoring/types.md)을 선택한다.\n   모델 소개와 소식 기사에 학습 글의 실습, 가상 업무와 응용 문제를 강제하지 않는다.\n3. 필요한 작성 방법만 고른다. 설명 글은 [설명 방법](../../docs/authoring/explanation.md),\n   실행을 약속한 실습은 [실습 조건](../../docs/authoring/tutorial.md)을 사용한다.\n   기존 원고의 표현을 고칠 때는 [편집 방법](references/editing.md)을 사용한다.\n4. 기존 화면 계약과 개별 요청을 선택해 authoring plan으로 조합을 고정한다.\n   이 기록은 작성 지침이며 HTML 렌더러를 변경하지 않는다. 새 디자인 구현은 별도 작업이다.\n\n## 작성과 편집\n\n원문 근거에서 질문의 답을 도출하고 충분한 본문을 쓴 뒤 제목과 요약을 만든다.\n선행 개념은 주제와의 거리를 기준으로 판단한다. 개발자라는 이유로 API나 JSON을 안다고 가정하지 않는다.\n필요한 용어는 처음 나오는 자리에서 뜻과 역할을 설명한다. 기능을 쓰는 경로와 직접 구현하는 경로를 구분한다.\n설명 사례는 입력, 중간 변화와 출력의 이유가 끝까지 연결되어야 한다.\n그림과 표는 [시각 자료 기준](../../docs/authoring/visuals.md)에 따라 필요한 곳에 선택한다.\n웹 디자인은 이번 요청에 없으면 변경하지 않는다.\n\n정보 가치가 부족하다는 피드백을 받거나 여러 글을 보강하면\n[질문과 근거 검토](references/substantive-review.md)를 읽는다.\n문장 연결의 구체적인 실패는 [집필 예시](references/teaching-patterns.md)와 대조한다.\n과거 Pass를 사용자 승인이나 완성 교재의 견본으로 취급하지 않는다.\n\n## 검토와 적용 기록\n\n[내용과 독해 검토](../../docs/authoring/review.md)에 따라 첫 화면과 본문을 따로 읽는다.\n첫 화면 입력에서는 본문을 실제로 제외한다. 외부 지식으로 빠진 설명을 메우지 않는다.\n막힌 문장과 근거 위치를 기록하고 고친다. 자체 검토, 독립 에이전트 검토와 사람 시험을 구분한다.\n위임이 승인된 경우에만 다른 에이전트를 사용하고 수정된 원고 자체를 재검토하게 한다.\n실제 실행, 링크와 출력 검사도 내용 검토와 별도로 기록한다.\n\n완성한 판에 authoring record로 원고 지문과 사용한 조합을 연결한다.\n자동 생성은 품질 패키지의 authoring에 같은 정보를 남긴다.\n이 기록은 지침 선택과 사용 기록이며 사실 검토나 사람 독해 합격을 뜻하지 않는다.\n이전 판을 덮지 않는다. 기준 변경은 새 조합으로 채택하며 작업 중의 기록에 자동 반영하지 않는다.\n\n## 리서치 추가·수정 후 지식베이스 반영\n\n이 프로젝트의 리서치·모델 소개·뉴스를 추가하거나 수정하면\n[지식베이스 완료 절차](../../docs/KNOWLEDGE_BASE.md#리서치-추가수정-작업의-완료-절차)를\n같은 작업 안에서 실행한다. 실제 내용 검토를 현재 판의 지문에 연결하고 색인을 갱신한 뒤,\n독자의 질문으로 새 본문과 출처가 검색되는지 확인해야 작성 작업을 완료한 것으로 보고한다.\n사용자에게 지식베이스 갱신을 따로 요청하게 하지 않는다.\n\n이 단계는 로컬 작업을 수행하는 Codex의 책임이다. JSON을 생성하는 집필 모델이나\n수집 성공만으로 검토 완료를 선언하지 않는다. 초안은 초안으로 연결하고 실제 검토일과\n기존 판을 보존한다. 사용자의 MD 전용·미발행 범위를 지키며 별도 배포를 실행하지 않는다.\n"
+                },
+                {
+                  "path": "docs/KNOWLEDGE_BASE.md",
+                  "section": "리서치 추가·수정 작업의 완료 절차",
+                  "sha256": "ab8e0592885a8698e99d8b01cd3bcc8097bd3c1eda77c754bdaffd293fd9de03",
+                  "text": "## 리서치 추가·수정 작업의 완료 절차\n\n새 리서치를 만들거나 기존 글을 고치는 Codex는 아래 반영을 같은 작업 안에서 마친다.\n사용자는 지식베이스 갱신을 따로 요청할 필요가 없다. 보고서, 모델 소개, 뉴스에 공통으로\n적용하며 글의 목적별 작성·검토 기준은 유지한다. 색인 갱신을 새 원문 조사로 기록하지 않는다.\n\n1. **원고와 실제 저장 판을 맞춘다.** 내용·근거·독해 검토와 수정이 끝난 판을 기존 저장\n   절차로 반영하고 작성 기준의 적용 기록도 남긴다. 기존 판과 품질 부록은 보존한다.\n   사용자가 MD 파일만 요청했다면 DB 발행을 강제하지 않는다. 해당 파일만 연결 목록에\n   `kind: draft`로 등록해 미발행 상태를 유지하고 초안을 포함하는 검색으로 확인한다.\n   프로젝트 전체 폴더를 자동 수집하거나 비공개 자료를 연결하지 않는다.\n2. **현재 본문 지문을 읽는다.** DB에 저장한 글은 아래 명령의 `document`에서 실제\n   `key`, `revision`, `source_hash`, `document_digest`를 확인한다. 보고서는 `report:<id>`,\n   뉴스는 `article:<id>`다. 이 명령은 미검토 글도 명시적으로 읽을 수 있다.\n\n   ```powershell\n   python -m housing_watch knowledge --document report:<id> --json\n   ```\n\n3. **실제 검토를 현재 판에 연결한다.** `config/knowledge_sources.json`의 `review_ledger`가\n   가리키는 원장의 기존 항목을 보존하면서 이번 글의 검토 항목을 추가하거나 갱신한다.\n   `key`, `revision`, `source_hash`, `document_digest`, `reviewed_on`, `verdict`,\n   `reader_question`, `finding`, `body_locations`, `reference_urls`를 실제 원고·검토 기록에서\n   채운다. 새 파일의 등록 시각을 사실 확인일로 쓰지 않는다. `verdict`는 확인한 범위에\n   따라 정하고 계획·미완성·오래된 사실을 무조건 `usable_with_limits`로 바꾸지 않는다.\n   원문의 접근 실패와 미확인 조건은 `finding`, `advisories`, `link_check`에 해당 범위대로\n   남긴다. authoring record나 형식 검사 통과는 내용 검토의 대체물이 아니다.\n4. **검토 이력을 보존한다.** 기존 검토를 바꾸면 날짜와 작업 식별자를 붙인 새 원장\n   파일에 기존 현재 항목과 이번 항목을 함께 저장한다. 예를 들어\n   `config/content_review.<날짜>.<작업ID>.json`을 만들고 검증한 뒤 `review_ledger` 포인터를\n   옮긴다. 이전 원장을 덮거나 다른 글의 검토를 누락하지 않는다. 그 파일이 이미 있으면\n   새 판 이름을 쓴다. 신규 항목 추가도 같은 방식으로 기록한다.\n5. **색인과 실제 질의를 확인한다.** 아래 명령이 성공한 뒤 해당 글의 상태·현재 판·본문\n   지문과 출처가 맞는지 읽고, 독자가 물을 질문으로 검색한다. DB에 저장된 검토 완료 글은\n   기본 검색에서 새 본문이 나와야 한다. 미발행 MD는 `--include-drafts`로 확인하며,\n   검토하지 않은 자료를 기본 답변에 넣기 위해 제외 옵션을 풀지 않는다.\n\n   ```powershell\n   python -m housing_watch knowledge --build --status\n   python -m housing_watch knowledge --document report:<id> --json\n   python -m housing_watch knowledge \"이번 글의 구체적인 독자 질문\" --limit 5 --json\n   ```\n\n6. **반영까지 마친 뒤 완료를 보고한다.** 본문 지문이 달라 `review_outdated`로 남거나\n   검토 완료 글을 찾지 못하면 저장 판·원장·연결 목록·질문 표현을 대조해 원인을 고친다.\n   해결되지 않으면 글 저장과 검색 반영의 상태를 따로 보고하고 검색 연결 완료로 표시하지\n   않는다. 결과에는 새 글의 ID·판, 검토 범위, 검색 확인과 남은 한계를 남긴다.\n\n이 절차의 저장과 색인 갱신은 기존 저장소 계정·원격 검증 규칙을 따른다. 별도 사용자\n확인을 반복해서 요구하지 않는다. 파일 반영 권한이 확인되지 않으면 기존 가드대로 멈춘다.\n유료 생성·클라우드 업로드·예약·홈페이지 배포 권한을 추가하지 않는다. 단독 수집기 실행은\n내용 검토가 아니며 이 절차는 리서치 작성 작업의 완료 단계다.\n\n"
+                }
+              ]
+            },
+            {
+              "id": "section-editing",
+              "kind": "method",
+              "version": "1.0.0",
+              "supports": [
+                "technology",
+                "comparison",
+                "market",
+                "opportunity",
+                "model_introduction",
+                "news",
+                "custom"
+              ],
+              "stages": [
+                "write"
+              ],
+              "sources": [
+                {
+                  "path": "skills/research-teaching/references/editing.md",
+                  "section": "절별 편집",
+                  "sha256": "6373e218756a33531f9acb90d5a399223ec984f56181558f94b2a06f550a3900",
+                  "text": "## 절별 편집\n\n각 절이 답할 독자의 질문을 찾고 실제 답의 문장을 지목한다.\n정의 전에 나온 용어, 빠진 전제와 연결 설명, 비교 축이 섞인 부분을 찾는다.\n문제를 발견하면 원문, 문제의 이유와 수정안을 함께 남긴다. 정보가 부족하면 추가 조사로 돌아간다.\n본문을 충분히 설명한 뒤 요점, 표와 제목을 실제 내용에 맞춘다.\n문체 수정을 위해 근거 없는 통계, 인용이나 저자의 경험담을 추가하지 않는다.\n\n"
+                }
+              ]
+            },
+            {
+              "id": "korean-editing",
+              "kind": "method",
+              "version": "1.0.0",
+              "supports": [
+                "technology",
+                "comparison",
+                "market",
+                "opportunity",
+                "model_introduction",
+                "news",
+                "custom"
+              ],
+              "stages": [
+                "write"
+              ],
+              "sources": [
+                {
+                  "path": "skills/research-teaching/references/editing.md",
+                  "section": "한국어 문장 편집",
+                  "sha256": "a078b16d877034b6718a0cd576ee7c8561832cffe6939ae80a1292ee5d151968",
+                  "text": "## 한국어 문장 편집\n\n번역투, 불필요한 명사화, 같은 마무리의 반복, 추상적인 단어 나열과 과장을 찾는다.\n이번 독자에게 필요한 용어와 일관된 격식은 보존한다. 특정 단어나 문장부호를 기계적으로 삭제하지 않는다.\n원문과 수정문에서 행위자, 수치와 단위, 날짜, 부정과 추정, 적용 조건 및 인과관계를 대조한다.\n추정 표현을 단정으로 바꾸거나 실제로 없던 효과를 넣은 수정은 되돌린다.\n코드, 명령, 식별자와 링크는 일반 문장 교정 대상으로 취급하지 않는다.\n첫 절에서 변경 전후와 이유를 확인한 뒤 같은 방법을 나머지 원고에 적용한다.\n\n"
+                }
+              ]
+            },
+            {
+              "id": "reader-review",
+              "kind": "method",
+              "version": "1.0.0",
+              "supports": [
+                "technology",
+                "comparison",
+                "market",
+                "opportunity",
+                "model_introduction",
+                "news",
+                "custom"
+              ],
+              "stages": [
+                "review"
+              ],
+              "sources": [
+                {
+                  "path": "docs/authoring/review.md",
+                  "sha256": "0f86c95aa64ab7b60ffd6c825a237f573a1e246c89fe0e2300b10493f4cfec7a",
+                  "text": "# 내용과 독해 검토 방법\n\n선택한 유형과 질문에 해당하는 기준으로 검토한다. 에이전트 검토와 사람 시험을 구분하며 위임 권한을 만들지 않는다.\n\n## 2026-10-12: 설명 그림의 의미와 연결을 검토하기\n\n먼저 그림이 답할 독자의 질문을 정한다. 개념의 정의를 작업 순서 그림만으로 대신하지 않는다. 관계를 설명한다면 행위자와 공유하는 목표, 정보 및 책임을 본문과 그림에 연결한다.\n\n각 화살표의 출발 상자, 도착 상자, 전달하는 입력이나 결과를 표로 적고 실제 이미지의 선과 화살촉을 대조한다. 꼬리가 출발 경계에 닿는지, 도착 방향이 맞는지, 겹침과 불필요한 순서가 생기지 않는지 확인한다. 함께 고려하는 조건에 순차 화살표를 붙이지 않는다. 실패와 성공 경로를 그렸다면 다음 행동도 일치해야 한다.\n\n도해를 단순화했다면 생략한 조건과 역할의 참여 범위를 설명한다. 그림, 대체 텍스트와 본문의 의미가 같은지 확인하며, 그림이 예쁘거나 확대 버튼이 동작한다는 사실을 의미 검토와 합산하지 않는다. [DevOps r5의 거부와 r6 수정](../DEVOPS_DIAGRAM_REPAIR.2026-10-12.md)을 참고하되 수정본의 독자 승인을 주장하지 않는다.\n\n2026-10-09 보강: [AI 집필 연구](../AI_WRITING_RESEARCH.2026-10-09.md)와\n[질문·근거·학습 결과 검토](../../skills/research-teaching/references/substantive-review.md)를 적용한다.\n독자의 핵심 질문마다 본문의 답 위치·근거·공백을 연결한다. 기술마다 고유한 원리와 실제 자료\n해석이 있어야 하며, ‘조건 확인·검증·기록’의 반복만으로 보강됐다고 판정하지 않는다.\n사용자가 승인한 독립 에이전트 검토에서는 수정 원고를 읽게 하고 지적을 고친 뒤 재판정한다.\n전체 보강의 현재 범위와 실제 검증 결과는 [작업 상태](../RESEARCH_AUTHORING_REPAIR.2026-10-09.md)에 남긴다.\n\n2026-10-08부터 Signal Desk의 리서치 작성·보강·내용 검토에 적용한다.\n이 문서는 작성 에이전트의 작업 기준이다. 독자에게 그대로 보여줄 목차나\n모든 보고서에 강제할 양식이 아니다.\n\n## 에이전트의 작성 절차와 게시 판단\n\n1. **독자 작업 정의:** 업무 문제, 기존 지식, 끝낼 작업, 확인할 결과를 작성한다.\n   'MCP 이해하기', 'RAG 알아보기'처럼 기술 이름만 쓰면 다시 구체화한다.\n2. **필요한 근거 조사:** 이 작업을 할 수 있는 현재 도구·기능, 시작 조건, 제약,\n   공식 예제를 확인한다. 원문 요약을 바로 게시용 문장으로 바꾸지 않는다.\n3. **완성된 사례 구성:** 실제 샘플 값과 중간 결과를 고정한다. 어느 입력이 어떤\n   처리를 거쳐 어떤 출력에 대응하는지 끝까지 보여주고, 필요한 개념을 그 관계로\n   설명한다. 가상 사례·개념 코드·실행 확인한 실습은 구분한다.\n4. **학습과 적용 작성:** 왜 쓰는지, 어떻게 동작하는지, 어떻게 시작하는지,\n   자기 작업으로 바꾸려면 무엇이 달라지는지 설명한다. 설명형 학습에는 풀이가\n   있는 변형 문제를, 실습에는 행동·예상 출력·정상/실패 판정을 제공한다.\n5. **검토 후 재작성:** 아래 질문에 본문 위치를 인용해 답한다. 필요한 답이\n   본문에 없으면 누락으로 기록하고 원고를 보강한다. 검토자 자신의 상식으로\n   빈칸을 메워 통과시키지 않는다. 어려운 용어의 정의만 반복해 해결하지 않는다.\n6. **표현과 게시:** 내용이 충족된 뒤 메인 요약과 HTML을 만든다. 설명 필드를\n   모두 채웠거나 테스트가 통과했다고 교재 완성으로 처리하지 않는다. 검수 결과와\n   실행 확인 범위를 기록하고, 필요한 본문은 펼치기 안에 숨기지 않는다.\n\n| 검토 질문 | 원고가 보여줘야 할 근거 |\n| --- | --- |\n| 이 방법으로 내 어떤 작업이 나아지는가 | 구체적인 문제·완성 결과·적합하지 않은 경우 |\n| 어디서 어떻게 시작하는가 | 선택한 사용/구현 경로와 확인한 환경·준비물·첫 행동 |\n| 각 부분이 왜 필요한가 | 예시 값과 연결된 개념·처리 원리·선행 지식 |\n| 한 사례의 입력부터 결과까지 따라갈 수 있는가 | 실제 샘플 값·중간 변화·출력과 그 의미 |\n| 내 자료로 바꾸려면 무엇을 바꾸는가 | 다른 입력으로의 변형 예시와 풀이·변경점 |\n| 틀렸을 때 무엇을 확인하는가 | 관찰할 증상·확인 순서·실패 조건 |\n\n이 표는 게시용 목차나 점수표가 아니다. 모든 주제에 실행 실습을 강제하지 않는다.\n개념 교재에도 끝까지 풀어 준 사례와 새로운 상황에 적용하는 설명이 필요하다.\n실습을 약속한 글은 재현 경로가 빠지면 '실습 초안'으로 남긴다. 실행해 보지 않은\n단계를 검증 완료로 표시하거나 독자 사용성 시험을 했다고 주장하지 않는다.\n\n자동화를 구성할 때는 프로젝트 AGENTS에 위 목적과 필수 읽기를 두고, 작성 스킬에는\n단계별 입력·산출물·누락 시 재작성 규칙을 둔다. 지식베이스는 출처와 기능 조건,\n끝까지 풀어 준 예제, 사용자 검토를 받은 원고, 실패한 문장의 이유를 보존한다.\n기술 정리 역할과 집필·검토 역할은 별도 작업 단계로 수행한다. 여러 에이전트를\n자동으로 만드는 규칙은 아니며, 같은 에이전트의 별도 검토 과정으로도 수행한다.\n\nGoogle의 [독자 기준](https://developers.google.com/tech-writing/one/audience)은\n업무에 필요한 지식과 독자가 이미 가진 지식의 차이를 설명 범위로 삼는다.\nDiátaxis의 [실습 기준](https://diataxis.fr/tutorials/)은 구체적인 행동과 예상 결과를\n연결한다. [OpenAI의 스킬 문서](https://developers.openai.com/codex/skills)는\n재사용할 작업 절차를 지침·참고자료로 묶고 명시적인 입력·출력으로 설계하도록\n안내한다. 세 원문의 적용 절차와 위 검토 기준은 이 프로젝트의 편집 판단이다.\n\n## 제목·요약만으로 무엇을 배우는지 알 수 있는가\n\n2026-10-09 음성 보고서의 사용자 거부는 앞선 독립 Pass가 첫 화면의 이해와 자연스러움을\n충분히 검증하지 못했음을 보여준다. [수정 기록](../VOICE_REPORT_REPAIR.2026-10-09.md)과\n[구체적인 회귀 사례](../../skills/research-teaching/references/substantive-review.md#첫-화면과-비교-기준의-회귀-사례)를 따른다.\n첫 화면 검토에서는 본문을 실제로 제외한다. 명사형 소개를 완결된 문장으로 바꾸고, 독자가\n하려는 작업과 실제 비교 대상을 먼저 밝힌다. 구현 구조와 제품명을 같은 종류의 행으로 섞지 않는다.\n성능·비용·난이도 비교를 약속할 때는 실측·문헌 근거·설계 해석을 구분한다.\n\n제목에는 기술·주제 이름과 평이한 기능·변화·문제를 함께 담는다. 이름이 빠져\n무엇에 관한 글인지 알 수 없는 제목, 낯선 이름만 나열한 제목은 보강한다.\n요약은 본문 밖에서 읽어도 대상, 하는 일, 구체적인 쓰임과 중요한 조건이 전달되어야 한다.\n그림의 번호와 화살표를 읽는 방법이나 사이트 사용 안내로 주제의 답을 대신하지 않는다.\n필요한 도해 설명은 해당 그림의 캡션·접근성 설명에 두고 요약에는 주제의 정보를 담는다.\n본문의 B·호스트·UI 리소스·문맥을 설명 없이 가져오지 않는다.\n\n본문을 읽은 지식으로 요약의 빈칸을 채우지 않는다. 제목·요약만 보고 다시 설명한 답과\n근거 문장을 남기고, 알 수 없는 부분을 실제로 고친다. 본문은 별도로 개념 순서,\n한 사례의 전체 과정과 다른 조건의 문제를 검토한다. 검사표 점수나 글자 수로 대체하지 않는다.\n\n## 내용 검토와 기술 검증을 분리해서 기록\n\n게시 전에는 원고만으로 아래 질문에 답할 수 있는지 검토한다.\n\n1. 독자가 해결할 질문에 이 글이 실제로 답했는가?\n2. 선행 지식을 모르면 어느 문장에서 막히며, 그 부분을 설명했는가?\n3. 주어·대상·조건·단위가 원문과 같은가? 인과관계를 과장하지 않았는가?\n4. 한 예시의 입력·처리·출력이 연결되고 서로 모순되지 않는가?\n5. 결론이 왜 나오는지 설명하며 적용되지 않는 조건도 구분했는가?\n6. 처음의 예시와 다른 상황에 독자가 이 개념을 적용할 수 있는가?\n7. 원문 링크는 근거 확인·심화 학습을 돕는가? 빠진 본문 설명을 대신하지 않는가?\n\n각 질문은 통과 문구를 붙이는 체크박스가 아니라 실제 원고를 고칠 기준이다.\n막힌 문장과 수정 이유를 기록한다. 새 사례에 대한 예상 답은 근거와 함께\n작성하되 실제 독자 시험을 하지 않았다면 독자 검증 완료라고 쓰지 않는다.\n\n현재 `validate_report`는 형식·출처 ID·자료 타입을, `review`는 주택 브리핑의\n운영·출력 상태를 검사한다. 테스트 통과·출처 수·학습 장 수·모바일 넘침 없음은\n독자의 이해를 증명하지 않는다. 자동 검사에는 구조적으로 확인 가능한 부분만\n맡기고 사실 의미·논리·설명 충실도는 원문과 원고를 읽어 검토한다.\n\n보고서 수정 게시 시에는 새 immutable batch와 같은 보고서 ID로 이력을\n남긴다. 앞선 판을 덮어쓰지 않는다. 렌더링·링크·모바일 검증은 내용 검토와\n함께 수행하되 각각의 결과를 구분해 기록한다.\n"
+                },
+                {
+                  "path": "skills/research-teaching/references/substantive-review.md",
+                  "sha256": "2030364c1fc5a9af175b38395fa5e7c14a9471c7a97cae427d616e8bfcbe618b",
+                  "text": "# 질문에 답하는 정보와 설명을 검토하기\n\n## 글마다 독자가 알아야 할 것이 다르다\n\n기술 설명의 독자는 입력이 어떤 과정을 거쳐 결과가 되는지, 다른 방식과 왜 다른지\n이해해야 한다. 실습의 독자는 준비부터 실행·기대 출력·실패 진단까지 따라갈 수 있어야 한다.\n시장 분석의 독자는 관측 대상·기간·단위와 비교 범위, 반대 근거를 보고 자기 판단을 좁혀야 한다.\n행사·지원 안내의 독자는 자신이 어떤 참여 역할과 필수 조건에 해당하는지 선별할 수 있어야 한다.\n원문에 없는 내용은 추가로 조사한다. 같은 목차·문단 수·SDK 코드·퀴즈를 모든 글에 강제하지 않는다.\n\n모델 소개는 [모델 소개 운영 기준](../../../docs/AI_MODEL_RESEARCH.md)에 따른다.\\n가상 활용 사례나 응용 문제를 요구하지 않고 다른 모델과의 비교 및 장단점에 답하는지 확인한다.\\n\\n## 질문과 근거의 공백을 작업 메모에서 찾는다\n\n핵심 질문마다 필요한 자료, 원문에서 확인한 답, 본문의 답 위치, 남은 공백을 연결한다.\n글의 제목이 실제보다 큰 결과를 약속하면 제목과 범위를 조정하거나 그 결과까지 보강한다.\n자료가 부족한 상태에서 익숙한 일반 조언으로 문단을 채우지 않는다.\n\n| 원고의 약속 | 실질 내용의 예 | 그 내용이 없을 때 할 일 |\n| --- | --- | --- |\n| 문서 검색 AI를 이해한다 | 원문 부분·색인·질문·후보·선택·답변의 관계와 버전·권한의 역할 | 검색 과정에 답하는 문서와 후보 출력 확보 |\n| 작은 AI 앱을 만든다 | 모델의 호출 요청, 프로그램 실행, 결과 반환, 최종 답·화면이 끝까지 연결 | 실제 연결을 제공하거나 원리·제작 계획으로 범위 조정 |\n| 비용 표로 모델을 고른다 | 토큰 단가·구독 차감·시도당 비용·성공당 비용의 정의와 계산 | 출처 없는 배율을 예산 사실처럼 쓰지 않고 계산 가능한 범위 설명 |\n| 시장 변화를 판단한다 | 표본·기간·분모·관측 단위·다른 가능한 설명·선택의 조건 | 단일 채용 공고·자가 보고·과거 수입으로 전체 시장을 단정하지 않기 |\n| 지원 기회를 선별한다 | 원문·첨부의 신청 역할, 선행 자격, 일정·재정 조건을 사례에 대입 | 첨부 미열람을 남기고 신청 가능성을 확정하지 않기 |\n\n## 번역과 요약은 의미가 유지되는지 대조한다\n\n행위자, 조건, 수치·단위, 기간, 인과관계의 강도가 보존되는지 확인한다.\n원문이 기능 존재를 말했는데 ‘업무 성과가 향상됐다’로 바꾸거나, 제한된 표본을\n전체 시장으로 확대하지 않는다. 원문 자체가 작동 과정이나 실제 효과에 답하지 않는다면\n문체를 교정할 것이 아니라 자료를 추가한다. 영문 초안과 번역을 대조하지 않았다면\n번역을 직접 원인으로 확정하지 않는다.\n\n## 제목과 요약을 독립적으로 읽는다\n\n제목·요약만 받은 독자가 대상, 하는 일, 쓰임, 중요한 조건을 자기 말로 설명할 수 있는지 본다.\n낯선 이름은 일상적인 기능 설명과 연결한다. 기술 이름을 지우고 모호한 동사만 남기지 않는다.\n‘이 보고서는 설명한다’, ‘검증해야 한다’ 같은 안내 문장을 사실·원리·비교의 대용품으로 쓰지 않는다.\n\n## 본문은 같은 사례의 과정을 추적한다\n\n첫 등장 개념을 먼저 설명하고, 사례의 입력·중간 상태·출력과 각 단계의 이유를 함께 읽는다.\n핵심 설명은 주된 읽기 경로에 둔다. 코드는 앞에서 설명한 값과 과정을 그대로 구현해야 한다.\n제품 호출을 실행하지 않았다면 개념 예시·로컬 모의 실행·실제 서비스 실행을 구분한다.\n배운 내용을 다른 조건에 적용하는 문제에서는 결론뿐 아니라 이유와 본문 근거를 확인한다.\n\n## 첫 화면과 비교 기준의 회귀 사례\n\n2026-10-09 사용자는 독립 검토를 통과한 음성 보고서의 제목과 소개를 다시 거부했다.\n이 사례의 문제는 원문 기능 자체가 없다는 것이 아니라 독자의 질문 대신 집필자의\n검토 동작을 소개하고, 서로 다른 비교 기준을 섞었다는 점이다.\n\n| 거부된 표현·구성 | 실제 실패 | 수정할 정보 |\n| --- | --- | --- |\n| 말로 AI 업무를 실행하는 세 가지 구조와 오류 찾기 | 어떤 앱의 무엇을 추가·선택하는지 모호함 | 기존 AI 앱의 음성 입력·답변·대화 기능이라는 대상과 목적 |\n| 같은 발화를 음성 인식·업무 조회·답변 재생으로 추적한다 | 독자의 필요보다 집필자의 설명 방법부터 나옴 | 키보드 대신 말로 요청하고, 답도 들을지 결정하는 상황 |\n| 이미 만든 텍스트 앱…선택 기준. | 서술어 없는 소개, 무엇을 기준으로 무엇을 고르는지 비어 있음 | 중간 문장을 확인할 필요와 대화 중 조건 변경 같은 실제 조건 |\n| 세 구조 제목 아래 Gemini Live/GPT-Live/Realtime/단계형 네 행 | 공급사 제품과 역할 분담을 같은 종류처럼 비교 | 동일한 역할 분담을 행으로 비교하고 제품 사례를 별도 연결 |\n| 속도·난이도·비용을 설명한다고 약속 | 기능 문서만으로 실측 우열을 알 수 없음 | 맡아야 할 구현 작업과 측정 항목, 실제 확보한 수치의 범위 |\n\n초기 검토는 title/deck/description/summary/highlights만 별도 입력으로 제공한다.\n검토자는 그 문장으로 알 수 있는 대상·문제·대안·쓰임과 추측해야 하는 부분을 구분한다.\n그 뒤 본문에서 제목의 약속, 비교 기준, 설명 순서와 사실 근거를 검토한다.\n이 순서를 수행해도 실제 초보 사람의 이해가 확인된 것으로 부르지 않는다.\n요약에 설명할 내용의 목록만 있고 실제로 알게 되는 정보가 없다면 추가 보강한다.\n\n음성 입력만 추가하는 범위와 STT→AI→TTS 구조는 서로 배타적인 세 구조로 분류할 수 없다.\n전자는 필요한 기능 범위이고 후자는 음성으로 답하는 구현 경로다. 원문을 확인해 비교 기준을\n정한 뒤 원고를 쓴다. '3가지'라는 제목을 유지하려고 실제 내용을 왜곡하지 않는다.\n\n## 독립 에이전트 검토의 실제 기록\n\n위임은 사용자 또는 적용 가능한 지침의 승인 범위에서만 한다. 승인됐다면 검토자에게\n수정된 원고와 필요한 원문을 제공하고, 기대 답이나 ‘통과시켜야 한다’는 압력을 주지 않는다.\n새로운 평가가 목적이면 기존 판정을 답안처럼 제공하지 않는다. 이전 결함의 재검증이면\n그 결함과 수정 범위를 제공할 수 있으며 이를 새 독자의 무정보 시험으로 부르지 않는다.\n\n검토 기록에는 읽은 보고서 ID/판 또는 정확한 파일 hash, 제목·요약 이해, 본문 막힘 위치,\n해결할 누락·과장, 수정 후 재판정을 남긴다. 출력은 Pass / Revise / Evidence gap처럼\n명확히 하되 판단 이유가 본문에 있어야 한다. 분량·구조·인용 수는 합격 근거가 아니다.\n에이전트 검토가 끝나도 실제 사람의 독해·실습 시험을 수행했다고 말하지 않는다.\n\n## 참고한 방법과 적용의 한계\n\n질문하며 자료를 찾는 사전 조사(STORM), 유창성·정확성·인용 지원의 분리(ALCE),\n과제별 내용 기준(WritingBench/DeepResearch Bench), 깊은 설명과 풀이 사례(IES)를 참고했다.\n이 절차 전체나 하나의 집필 프롬프트가 한국어 교재 품질을 보장한다는 실험 결과는 아니다.\n실제 원고의 질문·사례·근거와 검토자의 막힘으로 효과를 확인하고 필요한 지침만 수정한다.\n\n원문: https://aclanthology.org/2024.naacl-long.347/,\nhttps://aclanthology.org/2023.emnlp-main.398/,\nhttps://arxiv.org/html/2503.05244v1,\nhttps://arxiv.org/html/2506.11763v1,\nhttps://ies.ed.gov/ncee/wwc/Docs/PracticeGuide/20072004.pdf.\n"
+                }
+              ]
+            },
+            {
+              "id": "research-report",
+              "kind": "template",
+              "version": "1.0.1",
+              "supports": [
+                "technology",
+                "comparison",
+                "market",
+                "opportunity",
+                "model_introduction",
+                "custom"
+              ],
+              "stages": [
+                "write"
+              ],
+              "sources": [
+                {
+                  "path": "docs/authoring/presentation.md",
+                  "section": "수치 비교 보고서",
+                  "sha256": "f4161db0f905d25e11128feed10d96a153f791bb90f2ee60fae5b5eba1542631",
+                  "text": "## 수치 비교 보고서\n\n기존 수치 보고서 표시를 사용한다. 같은 비교 기준의 표와 실제 수치의 차트를 선택한다. 수치가 없는 개념 설명에 임의 데이터를 만들지 않는다. 공통 화면 계약은 [보고서 화면](../BRIEFING_TEMPLATE.md)에 있다.\n\n"
+                },
+                {
+                  "path": "docs/BRIEFING_TEMPLATE.md",
+                  "section": "Unified typography, 2026-10-09",
+                  "sha256": "59e9506cc40a434ba77fb1f3851037e2b9ddee910e1d45c2c407ed36f43fc800",
+                  "text": "## Unified typography, 2026-10-09\n\nUse the locally packaged full Pretendard Variable v1.3.9 face for Korean, Latin,\nnumbers and punctuation in the shared Editorial shell, main, authored reports,\nnavigation, native model views and model reading companions. Main headings use700,\nsubheadings/emphasis600 and body400. Do not restore text-specific heading subsets:\nnew titles contained Korean glyphs missing from the old subset, and the reported\nUpwork heading actually used Roboto Slab, Noto Serif KR and Malgun Gothic together.\nCSS `font-synthesis:none` prevents simulated weight/style; the variable face\nprovides the actual weights. Code retains its monospace family. Imported originals\ninside isolated model iframes keep their original presentation.\n\nThe unmodified full font and original SIL OFL notice are in\n`housing_watch/assets/editorial/`; see its README for exact provenance/hash. The\nexisting build embeds one font in the shared content-versioned stylesheet, with\nno external font request. Uncompressed CSS grows from347,313 to2,851,316 bytes;\nthis is the cost of complete future Korean coverage and remains shared/cached\nacross pages. Standalone exports remain self-contained.\n\nLocal verification: actual browser font selection on the reported title now\ncontains only Pretendard Variable. All11,172 modern Korean syllables plus sample\nLatin/digits/punctuation select the same face; actual weights700/600 are used.\nAt320/390/1280px,96 font/representative-page checks and253 all34-report/model-\ncompanion/search/disclosure/history checks pass.109 tests,195HTML/9676 internal\nreferences, brief/desk/review and inspected PNG pass; report/history/model data\nand publication order exactly match the pre-change local snapshot. Receipts\nand before/after captures are retained under the existing registered research\nreview roots. App browser connection failed, so visual tests used standalone\nPlaywright/Edge. Optional host/favicon404 remains separately recorded.\n\nSource `4f956357646c12ca8972edb61826f2a6ad2072b2` deployed successfully through\n[Pages37891501551](https://github.com/Hansihoo/signal-desk/actions/runs/37891501551).\nPublic checks at2026-10-09 06:04:56.544319 UTC confirm exact34 current reports,\n122 edition documents,14 original model rows and publication order, matching\nlocal CSS (normalized SHA256 `5f48bd5bff11375877f7b14fea252e3becd3f87dd8f46795d5e2f8b6bc9ba7fc`),\none active font face and the original published license. Actual390px public\nfont/coverage/representative-route/search/disclosure/menu checks all36 pass at\n06:05:03.752 UTC; inspected public title/main screenshots match the intended\nuniform weights. Optional host favicon404 is separate from content errors.\nApp opening returned queued; this is not proof that the user viewed the page.\nThe retained public receipts are `font-weight-public-data-checks.json` and\n`font-weight-public-checks.json`; no reader preference/learning approval claimed.\n\n\n"
+                }
+              ],
+              "output_kind": "report",
+              "artifacts": [
+                {
+                  "path": "housing_watch/editorial.py",
+                  "sha256": "48962242f1a249780861a02b15a0e02f23fddcf9398a69c4ce7f8f3aad33baae"
+                },
+                {
+                  "path": "housing_watch/editorial_shell.html",
+                  "sha256": "51c686c3933942a76a282c20106d211332c08d5ba59dab0a5de9adfe953842fb"
+                },
+                {
+                  "path": "housing_watch/editorial.css",
+                  "sha256": "2ffc886b1f941a55822ff0a77442c37cbda110af5b7832a35e56d01101a31b66"
+                },
+                {
+                  "path": "housing_watch/editorial.js",
+                  "sha256": "d3435dc19709427b81a9b77514c5945cc34402e2dcf60232bb044280e43550b8"
+                },
+                {
+                  "path": "housing_watch/assets/editorial/fonts.css",
+                  "sha256": "44b9b2028cf703cc40c0446093e23aa7d3427015c9f61e6ee164f5c45123df30"
+                },
+                {
+                  "path": "housing_watch/assets/editorial/main.css",
+                  "sha256": "2574c51914d2bdf3d8da8afb4ec41fcbc73adcc12ebac376e26242efa04e33df"
+                },
+                {
+                  "path": "housing_watch/editorial_report.html",
+                  "sha256": "ac134b199a8f3e8255501679b6869c170b1088789c0d0dadcb869fa92aa244d7"
+                },
+                {
+                  "path": "housing_watch/briefing_preview.py",
+                  "sha256": "9432ec00398f5ce9ba1222366502d237e88b87723d54e975ea7780e58f82a463"
+                }
+              ]
+            }
+          ],
+          "requirements": [],
+          "preferences": {},
+          "overrides": [],
+          "scope": "document",
+          "status": "planned",
+          "recipe_hash": "5895f8dea94382f1efc2a1c471c17716645d323abb4740f8770697798973a4b2"
+        },
+        "content_hash": "57c5ca84efa5aca69b21c251071e899c43a4cc437f33dfd285c7a059ab436655"
+      },
+      "first_screen_review": {
+        "input_hash": "0d797de08aa52b06893d0886eb9d0489957e05a06ceaee8561ade7b773202f42",
+        "reviewer": "same author: isolated first-screen.json read before body review; not independent/human",
+        "reviewed_at": "2026-10-31T20:13:04.581014+00:00",
+        "checks": {
+          "readability": {
+            "passed": true,
+            "reason": "분리한 첫화면은 GUI와코드의단일선택정책·66.0의상대열세·58.6의SFT판·자체운영별도조건을 도입만으로 설명한다. 본문으로 빠진 답을 보충하지 않았다.",
+            "locations": [
+              "/title",
+              "/description",
+              "/deck"
+            ]
+          },
+          "question_answered": {
+            "passed": true,
+            "reason": "분리한 첫화면은 GUI와코드의단일선택정책·66.0의상대열세·58.6의SFT판·자체운영별도조건을 도입만으로 설명한다. 본문으로 빠진 답을 보충하지 않았다.",
+            "locations": [
+              "/title",
+              "/description",
+              "/deck"
+            ]
+          },
+          "reader_outcome": {
+            "passed": true,
+            "reason": "분리한 첫화면은 GUI와코드의단일선택정책·66.0의상대열세·58.6의SFT판·자체운영별도조건을 도입만으로 설명한다. 본문으로 빠진 답을 보충하지 않았다.",
+            "locations": [
+              "/title",
+              "/description",
+              "/deck"
+            ]
+          }
+        },
+        "issues": []
+      },
+      "body_review": {
+        "input_hash": "c8126cc13b91a902aa02c8ea53c78c156df9243a91a082275946a421b695f0ac",
+        "reviewer": "same author: separate body/original review, no independent agent/human",
+        "reviewed_at": "2026-10-31T20:13:04.581014+00:00",
+        "checks": {
+          "readability": {
+            "passed": true,
+            "reason": "SFT/RL/harness를본문에서설명하고5표와6개설명절로사양/성능/비용과한계를연결.가상업무/SDK/실습/응용문제없음.",
+            "locations": [
+              "/draft/report/tables",
+              "/draft/report/explanation",
+              "/draft/report/caveats"
+            ]
+          },
+          "question_answered": {
+            "passed": true,
+            "reason": "기반Mage-VL과추가학습차이,주요경쟁모델의같은표/조건차이,상대장단점/현재공개가중치·라이선스·표준API비용을설명.",
+            "locations": [
+              "/draft/report/tables",
+              "/draft/report/explanation",
+              "/draft/report/caveats"
+            ]
+          },
+          "reader_outcome": {
+            "passed": true,
+            "reason": "OS/복합작업강점과Office·전문앱·웹열세,최종RL과SFT미보고,실제32K와설정262K를구분해판단가능.",
+            "locations": [
+              "/draft/report/tables",
+              "/draft/report/explanation",
+              "/draft/report/caveats"
+            ]
+          },
+          "analysis": {
+            "passed": true,
+            "reason": "GPTmini69.6>66/Office68>64.9,Scale68.7/Fara웹68>58.6을반대근거로유지.두실행/한실행·자체호스팅Static·토큰부분집합·단계별출력증가/표시정밀도차이를설명.",
+            "locations": [
+              "/draft/report/tables",
+              "/draft/report/explanation",
+              "/draft/report/caveats"
+            ]
+          },
+          "evidence": {
+            "passed": true,
+            "reason": "공식card/config/metadata/LICENSE·직전모델및경쟁카드/가격/평가README관련절을읽고PDF14·17쪽원표를시각대조.검색·목록수집을내용검토로부르지않음.",
+            "locations": [
+              "/draft/report/tables",
+              "/draft/report/explanation",
+              "/draft/report/caveats"
+            ]
+          },
+          "factuality": {
+            "passed": true,
+            "reason": "4B와총텐서4741793792/262144설정과32768실제운용,공개시점UTC30일과확인일1일,최종RL과SFT,데이터생성비와API표준가격을분리.미검증실행/한국어/Windows/자원·가격은확정안함.",
+            "locations": [
+              "/draft/report/tables",
+              "/draft/report/explanation",
+              "/draft/report/caveats"
+            ]
+          }
+        },
+        "issues": []
+      },
+      "review_limits": {
+        "scope": "author original-section/PDF-table review, isolated first screen and separate body",
+        "not_performed": [
+          "model execution",
+          "actual billing",
+          "Korean workload",
+          "Windows apps",
+          "independent agent/human review",
+          "all-provider exhaustive review"
+        ]
+      }
+    }
+  ]
+}

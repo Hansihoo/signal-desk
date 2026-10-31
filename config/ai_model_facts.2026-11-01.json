@@ -1,0 +1,618 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "id": "mage-cowork-20261030-osworld-0-0",
+      "model": "Mage-VL-Cowork",
+      "provider": "Microsoft",
+      "source_url": "https://raw.githubusercontent.com/microsoft/Mage/main/assets/mage_vl_cowork_tech_report.pdf",
+      "checked_on": "2026-11-01",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OSWorld-Verified / OS / Mage2026Oct",
+        "condition": "보고서표2/361과제(GoogleDrive제외)/50단계. Mage1920x1080·MAGEHybridAgent/최종RL두실행평균66.04→66.0. GPTmini동일361한실행;다른모델인용조건전부동일미확인.",
+        "평가 점수": 87.5,
+        "단위": "%",
+        "측정 주체": "Microsoft 기술보고서/카드; 일부비교값인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "mage-cowork-20261030-osworld-0-1",
+      "model": "Mage-VL-Cowork",
+      "provider": "Microsoft",
+      "source_url": "https://raw.githubusercontent.com/microsoft/Mage/main/assets/mage_vl_cowork_tech_report.pdf",
+      "checked_on": "2026-11-01",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OSWorld-Verified / Office / Mage2026Oct",
+        "condition": "보고서표2/361과제(GoogleDrive제외)/50단계. Mage1920x1080·MAGEHybridAgent/최종RL두실행평균66.04→66.0. GPTmini동일361한실행;다른모델인용조건전부동일미확인.",
+        "평가 점수": 64.9,
+        "단위": "%",
+        "측정 주체": "Microsoft 기술보고서/카드; 일부비교값인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "mage-cowork-20261030-osworld-0-2",
+      "model": "Mage-VL-Cowork",
+      "provider": "Microsoft",
+      "source_url": "https://raw.githubusercontent.com/microsoft/Mage/main/assets/mage_vl_cowork_tech_report.pdf",
+      "checked_on": "2026-11-01",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OSWorld-Verified / Daily / Mage2026Oct",
+        "condition": "보고서표2/361과제(GoogleDrive제외)/50단계. Mage1920x1080·MAGEHybridAgent/최종RL두실행평균66.04→66.0. GPTmini동일361한실행;다른모델인용조건전부동일미확인.",
+        "평가 점수": 65.0,
+        "단위": "%",
+        "측정 주체": "Microsoft 기술보고서/카드; 일부비교값인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "mage-cowork-20261030-osworld-0-3",
+      "model": "Mage-VL-Cowork",
+      "provider": "Microsoft",
+      "source_url": "https://raw.githubusercontent.com/microsoft/Mage/main/assets/mage_vl_cowork_tech_report.pdf",
+      "checked_on": "2026-11-01",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OSWorld-Verified / Professional / Mage2026Oct",
+        "condition": "보고서표2/361과제(GoogleDrive제외)/50단계. Mage1920x1080·MAGEHybridAgent/최종RL두실행평균66.04→66.0. GPTmini동일361한실행;다른모델인용조건전부동일미확인.",
+        "평가 점수": 66.3,
+        "단위": "%",
+        "측정 주체": "Microsoft 기술보고서/카드; 일부비교값인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "mage-cowork-20261030-osworld-0-4",
+      "model": "Mage-VL-Cowork",
+      "provider": "Microsoft",
+      "source_url": "https://raw.githubusercontent.com/microsoft/Mage/main/assets/mage_vl_cowork_tech_report.pdf",
+      "checked_on": "2026-11-01",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OSWorld-Verified / Workflow / Mage2026Oct",
+        "condition": "보고서표2/361과제(GoogleDrive제외)/50단계. Mage1920x1080·MAGEHybridAgent/최종RL두실행평균66.04→66.0. GPTmini동일361한실행;다른모델인용조건전부동일미확인.",
+        "평가 점수": 62.7,
+        "단위": "%",
+        "측정 주체": "Microsoft 기술보고서/카드; 일부비교값인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "mage-cowork-20261030-osworld-0-5",
+      "model": "Mage-VL-Cowork",
+      "provider": "Microsoft",
+      "source_url": "https://raw.githubusercontent.com/microsoft/Mage/main/assets/mage_vl_cowork_tech_report.pdf",
+      "checked_on": "2026-11-01",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OSWorld-Verified / Overall / Mage2026Oct",
+        "condition": "보고서표2/361과제(GoogleDrive제외)/50단계. Mage1920x1080·MAGEHybridAgent/최종RL두실행평균66.04→66.0. GPTmini동일361한실행;다른모델인용조건전부동일미확인.",
+        "평가 점수": 66.0,
+        "단위": "%",
+        "측정 주체": "Microsoft 기술보고서/카드; 일부비교값인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "mage-cowork-20261030-osworld-1-0",
+      "model": "GPT-5.4-mini",
+      "provider": "OpenAI",
+      "source_url": "https://raw.githubusercontent.com/microsoft/Mage/main/assets/mage_vl_cowork_tech_report.pdf",
+      "checked_on": "2026-11-01",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OSWorld-Verified / OS / Mage2026Oct",
+        "condition": "보고서표2/361과제(GoogleDrive제외)/50단계. Mage1920x1080·MAGEHybridAgent/최종RL두실행평균66.04→66.0. GPTmini동일361한실행;다른모델인용조건전부동일미확인.",
+        "평가 점수": 79.2,
+        "단위": "%",
+        "측정 주체": "Microsoft 기술보고서/카드; 일부비교값인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "mage-cowork-20261030-osworld-1-1",
+      "model": "GPT-5.4-mini",
+      "provider": "OpenAI",
+      "source_url": "https://raw.githubusercontent.com/microsoft/Mage/main/assets/mage_vl_cowork_tech_report.pdf",
+      "checked_on": "2026-11-01",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OSWorld-Verified / Office / Mage2026Oct",
+        "condition": "보고서표2/361과제(GoogleDrive제외)/50단계. Mage1920x1080·MAGEHybridAgent/최종RL두실행평균66.04→66.0. GPTmini동일361한실행;다른모델인용조건전부동일미확인.",
+        "평가 점수": 68.0,
+        "단위": "%",
+        "측정 주체": "Microsoft 기술보고서/카드; 일부비교값인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "mage-cowork-20261030-osworld-1-2",
+      "model": "GPT-5.4-mini",
+      "provider": "OpenAI",
+      "source_url": "https://raw.githubusercontent.com/microsoft/Mage/main/assets/mage_vl_cowork_tech_report.pdf",
+      "checked_on": "2026-11-01",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OSWorld-Verified / Daily / Mage2026Oct",
+        "condition": "보고서표2/361과제(GoogleDrive제외)/50단계. Mage1920x1080·MAGEHybridAgent/최종RL두실행평균66.04→66.0. GPTmini동일361한실행;다른모델인용조건전부동일미확인.",
+        "평가 점수": 76.6,
+        "단위": "%",
+        "측정 주체": "Microsoft 기술보고서/카드; 일부비교값인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "mage-cowork-20261030-osworld-1-3",
+      "model": "GPT-5.4-mini",
+      "provider": "OpenAI",
+      "source_url": "https://raw.githubusercontent.com/microsoft/Mage/main/assets/mage_vl_cowork_tech_report.pdf",
+      "checked_on": "2026-11-01",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OSWorld-Verified / Professional / Mage2026Oct",
+        "condition": "보고서표2/361과제(GoogleDrive제외)/50단계. Mage1920x1080·MAGEHybridAgent/최종RL두실행평균66.04→66.0. GPTmini동일361한실행;다른모델인용조건전부동일미확인.",
+        "평가 점수": 69.4,
+        "단위": "%",
+        "측정 주체": "Microsoft 기술보고서/카드; 일부비교값인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "mage-cowork-20261030-osworld-1-4",
+      "model": "GPT-5.4-mini",
+      "provider": "OpenAI",
+      "source_url": "https://raw.githubusercontent.com/microsoft/Mage/main/assets/mage_vl_cowork_tech_report.pdf",
+      "checked_on": "2026-11-01",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OSWorld-Verified / Workflow / Mage2026Oct",
+        "condition": "보고서표2/361과제(GoogleDrive제외)/50단계. Mage1920x1080·MAGEHybridAgent/최종RL두실행평균66.04→66.0. GPTmini동일361한실행;다른모델인용조건전부동일미확인.",
+        "평가 점수": 63.3,
+        "단위": "%",
+        "측정 주체": "Microsoft 기술보고서/카드; 일부비교값인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "mage-cowork-20261030-osworld-1-5",
+      "model": "GPT-5.4-mini",
+      "provider": "OpenAI",
+      "source_url": "https://raw.githubusercontent.com/microsoft/Mage/main/assets/mage_vl_cowork_tech_report.pdf",
+      "checked_on": "2026-11-01",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OSWorld-Verified / Overall / Mage2026Oct",
+        "condition": "보고서표2/361과제(GoogleDrive제외)/50단계. Mage1920x1080·MAGEHybridAgent/최종RL두실행평균66.04→66.0. GPTmini동일361한실행;다른모델인용조건전부동일미확인.",
+        "평가 점수": 69.6,
+        "단위": "%",
+        "측정 주체": "Microsoft 기술보고서/카드; 일부비교값인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "mage-cowork-20261030-osworld-2-0",
+      "model": "ScaleCUA-Qwen3.5-9B",
+      "provider": "Scale AI",
+      "source_url": "https://raw.githubusercontent.com/microsoft/Mage/main/assets/mage_vl_cowork_tech_report.pdf",
+      "checked_on": "2026-11-01",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OSWorld-Verified / OS / Mage2026Oct",
+        "condition": "보고서표2/361과제(GoogleDrive제외)/50단계. Mage1920x1080·MAGEHybridAgent/최종RL두실행평균66.04→66.0. GPTmini동일361한실행;다른모델인용조건전부동일미확인.",
+        "평가 점수": 79.2,
+        "단위": "%",
+        "측정 주체": "Microsoft 기술보고서/카드; 일부비교값인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "mage-cowork-20261030-osworld-2-1",
+      "model": "ScaleCUA-Qwen3.5-9B",
+      "provider": "Scale AI",
+      "source_url": "https://raw.githubusercontent.com/microsoft/Mage/main/assets/mage_vl_cowork_tech_report.pdf",
+      "checked_on": "2026-11-01",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OSWorld-Verified / Office / Mage2026Oct",
+        "condition": "보고서표2/361과제(GoogleDrive제외)/50단계. Mage1920x1080·MAGEHybridAgent/최종RL두실행평균66.04→66.0. GPTmini동일361한실행;다른모델인용조건전부동일미확인.",
+        "평가 점수": 70.6,
+        "단위": "%",
+        "측정 주체": "Microsoft 기술보고서/카드; 일부비교값인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "mage-cowork-20261030-osworld-2-2",
+      "model": "ScaleCUA-Qwen3.5-9B",
+      "provider": "Scale AI",
+      "source_url": "https://raw.githubusercontent.com/microsoft/Mage/main/assets/mage_vl_cowork_tech_report.pdf",
+      "checked_on": "2026-11-01",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OSWorld-Verified / Daily / Mage2026Oct",
+        "condition": "보고서표2/361과제(GoogleDrive제외)/50단계. Mage1920x1080·MAGEHybridAgent/최종RL두실행평균66.04→66.0. GPTmini동일361한실행;다른모델인용조건전부동일미확인.",
+        "평가 점수": 74.3,
+        "단위": "%",
+        "측정 주체": "Microsoft 기술보고서/카드; 일부비교값인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "mage-cowork-20261030-osworld-2-3",
+      "model": "ScaleCUA-Qwen3.5-9B",
+      "provider": "Scale AI",
+      "source_url": "https://raw.githubusercontent.com/microsoft/Mage/main/assets/mage_vl_cowork_tech_report.pdf",
+      "checked_on": "2026-11-01",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OSWorld-Verified / Professional / Mage2026Oct",
+        "condition": "보고서표2/361과제(GoogleDrive제외)/50단계. Mage1920x1080·MAGEHybridAgent/최종RL두실행평균66.04→66.0. GPTmini동일361한실행;다른모델인용조건전부동일미확인.",
+        "평가 점수": 89.5,
+        "단위": "%",
+        "측정 주체": "Microsoft 기술보고서/카드; 일부비교값인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "mage-cowork-20261030-osworld-2-4",
+      "model": "ScaleCUA-Qwen3.5-9B",
+      "provider": "Scale AI",
+      "source_url": "https://raw.githubusercontent.com/microsoft/Mage/main/assets/mage_vl_cowork_tech_report.pdf",
+      "checked_on": "2026-11-01",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OSWorld-Verified / Workflow / Mage2026Oct",
+        "condition": "보고서표2/361과제(GoogleDrive제외)/50단계. Mage1920x1080·MAGEHybridAgent/최종RL두실행평균66.04→66.0. GPTmini동일361한실행;다른모델인용조건전부동일미확인.",
+        "평가 점수": 48.1,
+        "단위": "%",
+        "측정 주체": "Microsoft 기술보고서/카드; 일부비교값인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "mage-cowork-20261030-osworld-2-5",
+      "model": "ScaleCUA-Qwen3.5-9B",
+      "provider": "Scale AI",
+      "source_url": "https://raw.githubusercontent.com/microsoft/Mage/main/assets/mage_vl_cowork_tech_report.pdf",
+      "checked_on": "2026-11-01",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OSWorld-Verified / Overall / Mage2026Oct",
+        "condition": "보고서표2/361과제(GoogleDrive제외)/50단계. Mage1920x1080·MAGEHybridAgent/최종RL두실행평균66.04→66.0. GPTmini동일361한실행;다른모델인용조건전부동일미확인.",
+        "평가 점수": 68.7,
+        "단위": "%",
+        "측정 주체": "Microsoft 기술보고서/카드; 일부비교값인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "mage-cowork-20261030-osworld-3-0",
+      "model": "Fara1.5-4B",
+      "provider": "Microsoft",
+      "source_url": "https://raw.githubusercontent.com/microsoft/Mage/main/assets/mage_vl_cowork_tech_report.pdf",
+      "checked_on": "2026-11-01",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OSWorld-Verified / OS / Mage2026Oct",
+        "condition": "보고서표2/361과제(GoogleDrive제외)/50단계. Mage1920x1080·MAGEHybridAgent/최종RL두실행평균66.04→66.0. GPTmini동일361한실행;다른모델인용조건전부동일미확인.",
+        "평가 점수": 25.0,
+        "단위": "%",
+        "측정 주체": "Microsoft 기술보고서/카드; 일부비교값인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "mage-cowork-20261030-osworld-3-1",
+      "model": "Fara1.5-4B",
+      "provider": "Microsoft",
+      "source_url": "https://raw.githubusercontent.com/microsoft/Mage/main/assets/mage_vl_cowork_tech_report.pdf",
+      "checked_on": "2026-11-01",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OSWorld-Verified / Office / Mage2026Oct",
+        "condition": "보고서표2/361과제(GoogleDrive제외)/50단계. Mage1920x1080·MAGEHybridAgent/최종RL두실행평균66.04→66.0. GPTmini동일361한실행;다른모델인용조건전부동일미확인.",
+        "평가 점수": 7.6,
+        "단위": "%",
+        "측정 주체": "Microsoft 기술보고서/카드; 일부비교값인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "mage-cowork-20261030-osworld-3-2",
+      "model": "Fara1.5-4B",
+      "provider": "Microsoft",
+      "source_url": "https://raw.githubusercontent.com/microsoft/Mage/main/assets/mage_vl_cowork_tech_report.pdf",
+      "checked_on": "2026-11-01",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OSWorld-Verified / Daily / Mage2026Oct",
+        "condition": "보고서표2/361과제(GoogleDrive제외)/50단계. Mage1920x1080·MAGEHybridAgent/최종RL두실행평균66.04→66.0. GPTmini동일361한실행;다른모델인용조건전부동일미확인.",
+        "평가 점수": 29.5,
+        "단위": "%",
+        "측정 주체": "Microsoft 기술보고서/카드; 일부비교값인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "mage-cowork-20261030-osworld-3-3",
+      "model": "Fara1.5-4B",
+      "provider": "Microsoft",
+      "source_url": "https://raw.githubusercontent.com/microsoft/Mage/main/assets/mage_vl_cowork_tech_report.pdf",
+      "checked_on": "2026-11-01",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OSWorld-Verified / Professional / Mage2026Oct",
+        "condition": "보고서표2/361과제(GoogleDrive제외)/50단계. Mage1920x1080·MAGEHybridAgent/최종RL두실행평균66.04→66.0. GPTmini동일361한실행;다른모델인용조건전부동일미확인.",
+        "평가 점수": 12.2,
+        "단위": "%",
+        "측정 주체": "Microsoft 기술보고서/카드; 일부비교값인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "mage-cowork-20261030-osworld-3-4",
+      "model": "Fara1.5-4B",
+      "provider": "Microsoft",
+      "source_url": "https://raw.githubusercontent.com/microsoft/Mage/main/assets/mage_vl_cowork_tech_report.pdf",
+      "checked_on": "2026-11-01",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OSWorld-Verified / Workflow / Mage2026Oct",
+        "condition": "보고서표2/361과제(GoogleDrive제외)/50단계. Mage1920x1080·MAGEHybridAgent/최종RL두실행평균66.04→66.0. GPTmini동일361한실행;다른모델인용조건전부동일미확인.",
+        "평가 점수": 6.6,
+        "단위": "%",
+        "측정 주체": "Microsoft 기술보고서/카드; 일부비교값인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "mage-cowork-20261030-osworld-3-5",
+      "model": "Fara1.5-4B",
+      "provider": "Microsoft",
+      "source_url": "https://raw.githubusercontent.com/microsoft/Mage/main/assets/mage_vl_cowork_tech_report.pdf",
+      "checked_on": "2026-11-01",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OSWorld-Verified / Overall / Mage2026Oct",
+        "condition": "보고서표2/361과제(GoogleDrive제외)/50단계. Mage1920x1080·MAGEHybridAgent/최종RL두실행평균66.04→66.0. GPTmini동일361한실행;다른모델인용조건전부동일미확인.",
+        "평가 점수": 13.9,
+        "단위": "%",
+        "측정 주체": "Microsoft 기술보고서/카드; 일부비교값인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "mage-cowork-20261030-osworld-qwen",
+      "model": "Qwen3.6-27B",
+      "provider": "Qwen",
+      "source_url": "https://raw.githubusercontent.com/microsoft/Mage/main/assets/mage_vl_cowork_tech_report.pdf",
+      "checked_on": "2026-11-01",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OSWorld-Verified / Overall / Mage2026Oct",
+        "condition": "표2인용값.단계/개별Harness/반복미표시;Mage와완전동일조건으로간주안함.",
+        "평가 점수": 63.9,
+        "단위": "%",
+        "측정 주체": "Microsoft 기술보고서/카드; 일부비교값인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "mage-cowork-20261030-webstatic-0",
+      "model": "Mage-VL-Cowork-SFT",
+      "provider": "Microsoft",
+      "source_url": "https://raw.githubusercontent.com/microsoft/Mage/main/assets/mage_vl_cowork_tech_report.pdf",
+      "checked_on": "2026-11-01",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "WebVoyagerStatic / Mage2026Oct",
+        "condition": "표4/15사이트복제·643과제/행동·답변·백엔드SQLite검사. Mage는최종RL전SFT377성공.최종RL웹성공률미보고;live웹과합치지않음.",
+        "평가 점수": 58.6,
+        "단위": "%",
+        "측정 주체": "Microsoft 기술보고서/카드; 일부비교값인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "mage-cowork-20261030-webstatic-1",
+      "model": "Fara1.5-4B",
+      "provider": "Microsoft",
+      "source_url": "https://raw.githubusercontent.com/microsoft/Mage/main/assets/mage_vl_cowork_tech_report.pdf",
+      "checked_on": "2026-11-01",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "WebVoyagerStatic / Mage2026Oct",
+        "condition": "표4/15사이트복제·643과제/행동·답변·백엔드SQLite검사. Mage는최종RL전SFT377성공.최종RL웹성공률미보고;live웹과합치지않음.",
+        "평가 점수": 68.0,
+        "단위": "%",
+        "측정 주체": "Microsoft 기술보고서/카드; 일부비교값인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "mage-cowork-20261030-webstatic-2",
+      "model": "Qwen3-VL-8B-Thinking",
+      "provider": "Qwen",
+      "source_url": "https://raw.githubusercontent.com/microsoft/Mage/main/assets/mage_vl_cowork_tech_report.pdf",
+      "checked_on": "2026-11-01",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "WebVoyagerStatic / Mage2026Oct",
+        "condition": "표4/15사이트복제·643과제/행동·답변·백엔드SQLite검사. Mage는최종RL전SFT377성공.최종RL웹성공률미보고;live웹과합치지않음.",
+        "평가 점수": 53.7,
+        "단위": "%",
+        "측정 주체": "Microsoft 기술보고서/카드; 일부비교값인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "mage-cowork-20261030-webstatic-3",
+      "model": "Qwen3.5-9B",
+      "provider": "Qwen",
+      "source_url": "https://raw.githubusercontent.com/microsoft/Mage/main/assets/mage_vl_cowork_tech_report.pdf",
+      "checked_on": "2026-11-01",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "WebVoyagerStatic / Mage2026Oct",
+        "condition": "표4/15사이트복제·643과제/행동·답변·백엔드SQLite검사. Mage는최종RL전SFT377성공.최종RL웹성공률미보고;live웹과합치지않음.",
+        "평가 점수": 53.3,
+        "단위": "%",
+        "측정 주체": "Microsoft 기술보고서/카드; 일부비교값인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "mage-cowork-20261030-stage-0",
+      "model": "Mage-VL-Cowork / GUI Agent SFT",
+      "provider": "Microsoft",
+      "source_url": "https://huggingface.co/microsoft/Mage-VL-Cowork/raw/main/README.md",
+      "checked_on": "2026-11-01",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OSWorld stage comparison / GUI Agent SFT",
+        "condition": "공식카드단계비교.최종66.04와반올림66.0구분;+10.16pp본문과정확값계산+10.20pp차이유지.",
+        "평가 점수": 45.56,
+        "단위": "%",
+        "측정 주체": "Microsoft 기술보고서/카드; 일부비교값인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "mage-cowork-20261030-resource-0",
+      "model": "Mage-VL-Cowork / GUI Agent SFT",
+      "provider": "Microsoft",
+      "source_url": "https://huggingface.co/microsoft/Mage-VL-Cowork/raw/main/README.md",
+      "checked_on": "2026-11-01",
+      "fields": {
+        "kind": "공식 평가 자원",
+        "suite": "OSWorld resource / GUI Agent SFT",
+        "condition": "성공률과같은단계표.추론토큰은출력부분집합;합산금지.호출/토큰은경과시간·청구금액아님.",
+        "평균 모델 호출": 25.36,
+        "평균 출력 토큰": 6401,
+        "그중 추론 토큰": 4549
+      }
+    },
+    {
+      "id": "mage-cowork-20261030-stage-1",
+      "model": "Mage-VL-Cowork / Hybrid CUA SFT",
+      "provider": "Microsoft",
+      "source_url": "https://huggingface.co/microsoft/Mage-VL-Cowork/raw/main/README.md",
+      "checked_on": "2026-11-01",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OSWorld stage comparison / Hybrid CUA SFT",
+        "condition": "공식카드단계비교.최종66.04와반올림66.0구분;+10.16pp본문과정확값계산+10.20pp차이유지.",
+        "평가 점수": 55.84,
+        "단위": "%",
+        "측정 주체": "Microsoft 기술보고서/카드; 일부비교값인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "mage-cowork-20261030-resource-1",
+      "model": "Mage-VL-Cowork / Hybrid CUA SFT",
+      "provider": "Microsoft",
+      "source_url": "https://huggingface.co/microsoft/Mage-VL-Cowork/raw/main/README.md",
+      "checked_on": "2026-11-01",
+      "fields": {
+        "kind": "공식 평가 자원",
+        "suite": "OSWorld resource / Hybrid CUA SFT",
+        "condition": "성공률과같은단계표.추론토큰은출력부분집합;합산금지.호출/토큰은경과시간·청구금액아님.",
+        "평균 모델 호출": 21.57,
+        "평균 출력 토큰": 7374,
+        "그중 추론 토큰": 3328
+      }
+    },
+    {
+      "id": "mage-cowork-20261030-stage-2",
+      "model": "Mage-VL-Cowork",
+      "provider": "Microsoft",
+      "source_url": "https://huggingface.co/microsoft/Mage-VL-Cowork/raw/main/README.md",
+      "checked_on": "2026-11-01",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OSWorld stage comparison / Online Hybrid RL",
+        "condition": "공식카드단계비교.최종66.04와반올림66.0구분;+10.16pp본문과정확값계산+10.20pp차이유지.",
+        "평가 점수": 66.04,
+        "단위": "%",
+        "측정 주체": "Microsoft 기술보고서/카드; 일부비교값인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "mage-cowork-20261030-resource-2",
+      "model": "Mage-VL-Cowork",
+      "provider": "Microsoft",
+      "source_url": "https://huggingface.co/microsoft/Mage-VL-Cowork/raw/main/README.md",
+      "checked_on": "2026-11-01",
+      "fields": {
+        "kind": "공식 평가 자원",
+        "suite": "OSWorld resource / Online Hybrid RL",
+        "condition": "성공률과같은단계표.추론토큰은출력부분집합;합산금지.호출/토큰은경과시간·청구금액아님.",
+        "평균 모델 호출": 18.77,
+        "평균 출력 토큰": 5499,
+        "그중 추론 토큰": 2482
+      }
+    },
+    {
+      "id": "mage-cowork-20261030-stage-3",
+      "model": "GPT-5.4-mini",
+      "provider": "OpenAI",
+      "source_url": "https://huggingface.co/microsoft/Mage-VL-Cowork/raw/main/README.md",
+      "checked_on": "2026-11-01",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OSWorld stage comparison / GPT-5.4-mini xhigh",
+        "condition": "공식카드단계비교.최종66.04와반올림66.0구분;+10.16pp본문과정확값계산+10.20pp차이유지.",
+        "평가 점수": 69.57,
+        "단위": "%",
+        "측정 주체": "Microsoft 기술보고서/카드; 일부비교값인용;독립재실행없음"
+      }
+    },
+    {
+      "id": "mage-cowork-20261030-resource-3",
+      "model": "GPT-5.4-mini",
+      "provider": "OpenAI",
+      "source_url": "https://huggingface.co/microsoft/Mage-VL-Cowork/raw/main/README.md",
+      "checked_on": "2026-11-01",
+      "fields": {
+        "kind": "공식 평가 자원",
+        "suite": "OSWorld resource / GPT-5.4-mini xhigh",
+        "condition": "성공률과같은단계표.추론토큰은출력부분집합;합산금지.호출/토큰은경과시간·청구금액아님.",
+        "평균 모델 호출": 18.24,
+        "평균 출력 토큰": 12397,
+        "그중 추론 토큰": 11631
+      }
+    },
+    {
+      "id": "mage-vl-cowork-spec",
+      "model": "Mage-VL-Cowork",
+      "provider": "Microsoft",
+      "source_url": "https://huggingface.co/microsoft/Mage-VL-Cowork/raw/main/README.md",
+      "checked_on": "2026-11-01",
+      "fields": {
+        "kind": "공식 모델 사양",
+        "suite": "공식 모델 사양",
+        "condition": "공개저장소생성30Oct12:13UTC/논문Oct2026.별도정식발표일미확인;1NovKST확인.",
+        "status": "공개 가중치 / 최종 Hybrid RL",
+        "access": "자체 GPU·컴퓨터 실행 환경 / 참고 구현",
+        "parameters": 4.741793792,
+        "context": 32768,
+        "언어 모델 규모 표기": "4B급",
+        "공개 텐서 총수": 4741793792,
+        "설정 위치 상한": 262144,
+        "최대 출력 토큰": "평가 턴당4096;범용최대출력보장미확인",
+        "최종 RL 웹 성공률": "미보고",
+        "표준 API 요금": "미확인",
+        "references": [
+          "https://huggingface.co/api/models/microsoft/Mage-VL-Cowork",
+          "https://huggingface.co/microsoft/Mage-VL-Cowork/raw/main/config.json",
+          "https://huggingface.co/microsoft/Mage-VL-Cowork/raw/main/LICENSE",
+          "https://huggingface.co/microsoft/Mage-VL-Cowork/raw/main/osworld_eval/README.md"
+        ]
+      }
+    },
+    {
+      "id": "mage-cowork-20261030-license",
+      "model": "Mage-VL-Cowork",
+      "provider": "Microsoft",
+      "source_url": "https://huggingface.co/microsoft/Mage-VL-Cowork/raw/main/LICENSE",
+      "checked_on": "2026-11-01",
+      "fields": {
+        "kind": "공식 라이선스",
+        "suite": "Apache 2.0 / Mage-VL-Cowork",
+        "condition": "고지·라이선스·변경표시등재배포조건,상표/무보증유지.개별사업법률승인아님.",
+        "라이선스": "Apache-2.0",
+        "표준 API 요금": "미확인;공개가중치를무료추론으로환산안함"
+      }
+    },
+    {
+      "id": "mage-cowork-20261030-mini-standard-price",
+      "model": "GPT-5.4-mini",
+      "provider": "OpenAI",
+      "source_url": "https://developers.openai.com/api/docs/pricing",
+      "checked_on": "2026-11-01",
+      "fields": {
+        "kind": "공식 API 표준 요금",
+        "suite": "OpenAI Standard / Mage comparison",
+        "condition": "USD/100만토큰,캐시적중분만cache. Batch/Flex/Priority·지역추가/계약/세금·실청구분리.",
+        "access": "OpenAI API",
+        "입력 USD / 100만 토큰": 0.75,
+        "캐시 입력 USD / 100만 토큰": 0.075,
+        "출력 USD / 100만 토큰": 4.5
+      }
+    }
+  ]
+}

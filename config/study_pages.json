@@ -79,7 +79,8 @@
     "google-genie-4-model-guide",
     "gemini-4-carbon-model-guide",
     "unlimited-ocr-2-model-guide",
-    "nemotron-3-5-transcribe-model-guide"
+    "nemotron-3-5-transcribe-model-guide",
+    "mage-vl-cowork-model-guide"
   ],
   "catalogs": {
     "devops-implementation-guide": "devops_tools.2026-10-10.r4.json"
@@ -251,6 +252,9 @@
     ],
     "mistral-large-4-model-guide": [
       "abc69f7f3f52ea13b2f603b3a4c0dfd84b0955fe6152bd9b3755496bf8514798"
+    ],
+    "mage-vl-cowork-model-guide": [
+      "57c5ca84efa5aca69b21c251071e899c43a4cc437f33dfd285c7a059ab436655"
     ]
   },
   "model_introduction_editions": {
@@ -367,6 +371,9 @@
     ],
     "mistral-large-4-model-guide": [
       "abc69f7f3f52ea13b2f603b3a4c0dfd84b0955fe6152bd9b3755496bf8514798"
+    ],
+    "mage-vl-cowork-model-guide": [
+      "57c5ca84efa5aca69b21c251071e899c43a4cc437f33dfd285c7a059ab436655"
     ]
   },
   "model_introduction_purpose_editions": {
@@ -472,6 +479,9 @@
     ],
     "mistral-large-4-model-guide": [
       "abc69f7f3f52ea13b2f603b3a4c0dfd84b0955fe6152bd9b3755496bf8514798"
+    ],
+    "mage-vl-cowork-model-guide": [
+      "57c5ca84efa5aca69b21c251071e899c43a4cc437f33dfd285c7a059ab436655"
     ]
   },
   "model_introduction_reader_editions": {
@@ -574,6 +584,9 @@
     ],
     "mistral-large-4-model-guide": [
       "abc69f7f3f52ea13b2f603b3a4c0dfd84b0955fe6152bd9b3755496bf8514798"
+    ],
+    "mage-vl-cowork-model-guide": [
+      "57c5ca84efa5aca69b21c251071e899c43a4cc437f33dfd285c7a059ab436655"
     ]
   }
 }

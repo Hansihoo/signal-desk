@@ -1,0 +1,754 @@
+{
+  "schema_version": 1,
+  "reports": [
+    {
+      "id": "mage-vl-cowork-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "checked_on": "2026-11-01",
+      "title": "Mage-VL-Cowork 소개 — 화면 조작과 코드를 함께 고르는 4B급 모델",
+      "description": "이전 Mage-VL에서 달라진 학습, 데스크톱·웹 평가의 강약점, 공개 가중치의 배포 조건과 API 비용을 비교한다.",
+      "deck": "Microsoft의 Mage-VL-Cowork는 화면을 보며 마우스·키보드를 조작하거나 코드·터미널을 쓰는 경로를 한 모델이 선택한다. 공개 데스크톱 평가에서 66.0%를 보고했지만 GPT-5.4-mini와 일부 더 큰 공개 모델에는 뒤지고, 웹 58.6%는 최종 공개 RL 모델이 아닌 앞선 SFT 단계의 결과다. 공개 가중치를 내려받는 것과 안전하게 운영할 수 있는 컴퓨터 사용 서비스를 갖추는 것은 별도의 판단이다.",
+      "scope": "2026-11-01 KST 확인. 공식 모델 카드·설정·저장소 메타데이터·라이선스·기술 보고서와 비교 모델의 공식 문서를 대조한 문헌 검토다. 모델 실행, 한국어 문서 업무, Windows 앱, 독립 재현과 실제 청구는 시험하지 않았다.",
+      "source_note": "Hugging Face 공식 저장소 생성은 2026-10-30 12:13 UTC이며 기술 보고서는 October 2026으로만 표시한다. 별도의 일자별 발표일은 확인하지 못했다. 아래 평가는 Microsoft의 발표값 또는 그 보고서가 인용한 값으로, 조건이 다른 현재 순위·일반 업무 성과로 확대하지 않는다.",
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "highlights": [
+        "GUI·코드 통합 학습을 거친 별도 체크포인트",
+        "OSWorld 66.0%와 WebVoyagerStatic SFT 58.6%를 구분",
+        "실제 에이전트 문맥 32,768토큰; Apache 2.0 공개 가중치"
+      ],
+      "summary": [
+        {
+          "label": "무엇이 새로워졌나",
+          "text": "기존 Mage-VL 중간 체크포인트에 GUI·터미널·통합 학습과 온라인 강화학습을 더했다. 모델 이름만 바꾼 배포가 아니라 컴퓨터 사용을 위해 학습한 별도 모델이다.",
+          "source_ids": [
+            "card",
+            "base",
+            "metadata"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "어디에서 강한가",
+          "text": "OSWorld-Verified 총점은 66.0%이며 OS 조작과 복합 작업에서 유리한 결과를 보인다. 같은 보고서의 GPT-5.4-mini 총점 69.6%, Office 68.0%보다 각각 낮아 오피스 업무의 우위를 뜻하지 않는다.",
+          "source_ids": [
+            "paper",
+            "card"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "제공과 비용",
+          "text": "Apache 2.0 가중치와 평가용 구현이 공개됐다. 자체 GPU·실행 환경이 필요하며 공식 표준 API 요금은 확인되지 않았다. 32,768토큰의 실제 학습·추론 안내와 설정상 262,144를 구분해야 한다.",
+          "source_ids": [
+            "card",
+            "config",
+            "license"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "tables": [
+        {
+          "id": "specification",
+          "title": "사양과 역할 — 이전 모델 및 주요 비교 대상",
+          "columns": [
+            "모델",
+            "역할·규모",
+            "문맥과 입출력",
+            "제공·라이선스"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Mage-VL",
+                "이미지·영상 이해의 기반 모델 / 언어 모델 4B급",
+                "이미지·영상·텍스트 이해; Cowork 작업 성공률의 동일 조건 기준값은 미보고",
+                "공개 가중치 / Apache 2.0"
+              ],
+              "source_ids": [
+                "base"
+              ]
+            },
+            {
+              "values": [
+                "Mage-VL-Cowork",
+                "GUI·코드 통합 에이전트 / 4B급 표기, BF16 텐서 총 4,741,793,792개",
+                "화면·텍스트 → 텍스트·도구 호출. 학습·추론 32,768; 설정 위치 상한 262,144",
+                "공개 가중치·참고 실행 구현 / Apache 2.0"
+              ],
+              "source_ids": [
+                "card",
+                "config",
+                "metadata",
+                "license"
+              ]
+            },
+            {
+              "values": [
+                "Fara1.5-4B",
+                "스크린샷 기반 웹 에이전트 / Qwen3.5-4B 기반",
+                "공식 문맥 262,144; 화면 지각 시 DOM·접근성 트리를 쓰지 않는다고 설명",
+                "공개 가중치 / MIT"
+              ],
+              "source_ids": [
+                "fara"
+              ]
+            },
+            {
+              "values": [
+                "Qwen3.6-27B",
+                "범용 시각·언어 모델 / 27B",
+                "기본 262,144, 문서상 확장 1,010,000; 이 길이가 Mage 비교 실행에 적용됐다는 뜻은 아님",
+                "공개 가중치 / Apache 2.0"
+              ],
+              "source_ids": [
+                "qwen"
+              ]
+            },
+            {
+              "values": [
+                "GPT-5.4-mini",
+                "API 모델 / 파라미터 수 미공개",
+                "텍스트·이미지 입력, 텍스트 출력; 문맥 400,000, 최대 입력 272,000·출력 128,000",
+                "OpenAI API / 공개 가중치 아님"
+              ],
+              "source_ids": [
+                "mini"
+              ]
+            }
+          ],
+          "note": "2026-11-01 공식 문서 확인. B는 10억 파라미터 단위다. Mage의 4B 표기와 실제 공개 텐서 총계는 집계 범위가 다르다. 기반 모델의 영상·스트리밍 특성을 Cowork의 검증된 기능으로 승계하지 않는다."
+        },
+        {
+          "id": "desktop",
+          "title": "데스크톱 평가 — 총점과 Office·복합 작업은 다르게 읽어야 한다",
+          "columns": [
+            "모델",
+            "단계 한도",
+            "OS",
+            "Office",
+            "일상",
+            "전문 앱",
+            "복합 작업",
+            "전체"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Mage-VL-Cowork / 최종 RL",
+                "50",
+                "87.5",
+                "64.9",
+                "65.0",
+                "66.3",
+                "62.7",
+                "66.0"
+              ],
+              "source_ids": [
+                "paper",
+                "card"
+              ]
+            },
+            {
+              "values": [
+                "GPT-5.4-mini",
+                "50",
+                "79.2",
+                "68.0",
+                "76.6",
+                "69.4",
+                "63.3",
+                "69.6"
+              ],
+              "source_ids": [
+                "paper"
+              ]
+            },
+            {
+              "values": [
+                "ScaleCUA-Qwen3.5-9B",
+                "50",
+                "79.2",
+                "70.6",
+                "74.3",
+                "89.5",
+                "48.1",
+                "68.7"
+              ],
+              "source_ids": [
+                "paper"
+              ]
+            },
+            {
+              "values": [
+                "Qwen3.6-27B",
+                "원표 미표시",
+                "—",
+                "—",
+                "—",
+                "—",
+                "—",
+                "63.9"
+              ],
+              "source_ids": [
+                "paper"
+              ]
+            },
+            {
+              "values": [
+                "Fara1.5-4B",
+                "50",
+                "25.0",
+                "7.6",
+                "29.5",
+                "12.2",
+                "6.6",
+                "13.9"
+              ],
+              "source_ids": [
+                "paper"
+              ]
+            }
+          ],
+          "note": "단위는 작업 성공률 %. Microsoft 보고서 표 2. OSWorld-Verified의 Google Drive를 제외한 361개 과제, Mage는 50단계·1920×1080·MAGEHybridAgent로 평가했다. 최종 RL은 두 실행 65.33/66.75%의 평균 66.04%를 소수 첫째 자리로 표시한다. GPT-5.4-mini는 같은 361개에서 한 번 실행했으며 나머지 인용 모델의 전 조건이 동일하다고 보장하지 않는다. —는 미보고다."
+        },
+        {
+          "id": "web",
+          "title": "웹 평가 — SFT 결과와 최종 RL 결과를 나누어 본다",
+          "columns": [
+            "모델·학습 판",
+            "WebVoyagerStatic 성공률",
+            "평가 범위"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Mage-VL-Cowork-SFT",
+                "58.6% / 377·643개",
+                "온라인 강화학습 이전의 통합 SFT 판"
+              ],
+              "source_ids": [
+                "paper",
+                "card"
+              ]
+            },
+            {
+              "values": [
+                "Mage-VL-Cowork / 최종 공개 RL",
+                "미보고",
+                "58.6%를 이 판의 결과로 옮길 수 없음"
+              ],
+              "source_ids": [
+                "paper",
+                "card"
+              ]
+            },
+            {
+              "values": [
+                "Fara1.5-4B",
+                "68.0%",
+                "같은 보고서의 Static 비교값"
+              ],
+              "source_ids": [
+                "paper"
+              ]
+            },
+            {
+              "values": [
+                "Qwen3-VL-8B-Thinking",
+                "53.7%",
+                "같은 보고서의 Static 비교값"
+              ],
+              "source_ids": [
+                "paper"
+              ]
+            },
+            {
+              "values": [
+                "Qwen3.5-9B",
+                "53.3%",
+                "같은 보고서의 Static 비교값"
+              ],
+              "source_ids": [
+                "paper"
+              ]
+            }
+          ],
+          "note": "Microsoft 보고서 표 4. 15개 사이트를 재현한 자체 호스팅 환경의 643개 과제를 사용한다. 페이지 방문·필수 동작·최종 답변 및 백엔드 SQLite 상태를 검사한다. 실시간 웹의 가용성이나 실제 업무 성공률과 동일하지 않으며, Fara의 별도 live 웹 평가값을 이 표에 섞지 않는다."
+        },
+        {
+          "id": "stages",
+          "title": "학습 단계별 변화 — 정확도와 자원 지표를 함께 본다",
+          "columns": [
+            "학습 판·참조",
+            "OSWorld 성공률",
+            "평균 모델 호출",
+            "평균 출력 토큰",
+            "그중 추론 토큰"
+          ],
+          "rows": [
+            {
+              "values": [
+                "GUI Agent SFT",
+                "45.56%",
+                "25.36",
+                "6,401",
+                "4,549"
+              ],
+              "source_ids": [
+                "card",
+                "paper"
+              ]
+            },
+            {
+              "values": [
+                "Hybrid CUA SFT",
+                "55.84%",
+                "21.57",
+                "7,374",
+                "3,328"
+              ],
+              "source_ids": [
+                "card",
+                "paper"
+              ]
+            },
+            {
+              "values": [
+                "Hybrid CUA RL / 공개 최종 판",
+                "66.04%",
+                "18.77",
+                "5,499",
+                "2,482"
+              ],
+              "source_ids": [
+                "card",
+                "paper"
+              ]
+            },
+            {
+              "values": [
+                "GPT-5.4-mini / xhigh 참조",
+                "69.57%",
+                "18.24",
+                "12,397",
+                "11,631"
+              ],
+              "source_ids": [
+                "card",
+                "paper"
+              ]
+            }
+          ],
+          "note": "Microsoft의 OSWorld 단계 비교. 추론 토큰은 출력에 포함된 부분이므로 두 열을 더하지 않는다. 호출 수는 경과 시간·전체 시스템 동작 횟수와 다르다. 초기 GUI→통합 SFT에서는 출력 토큰이 늘어 모든 단계가 비용을 줄였다는 결론도 성립하지 않는다. 원문 본문의 +10.16%p는 66.0−55.84이며 카드의 66.04로 계산하면 +10.20%p다. 표시 정밀도 차이를 보존한다."
+        },
+        {
+          "id": "pricing",
+          "title": "표준 비용과 이용 조건 — 가중치, API, 학습 데이터 비용은 별개다",
+          "columns": [
+            "모델·항목",
+            "입력",
+            "캐시 입력",
+            "출력",
+            "가격·이용 범위"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Mage-VL-Cowork",
+                "표준 API 미확인",
+                "미확인",
+                "미확인",
+                "Apache 2.0 공개 가중치. 자체 GPU·실행 VM·저장·운영 비용 별도"
+              ],
+              "source_ids": [
+                "card",
+                "license"
+              ]
+            },
+            {
+              "values": [
+                "Mage-VL / Fara1.5-4B / Qwen3.6-27B",
+                "공개 가중치 가격과 API 단가를 구분",
+                "—",
+                "—",
+                "각 모델의 Apache 2.0 / MIT / Apache 2.0. 가중치 공개가 무료 추론을 뜻하지 않음"
+              ],
+              "source_ids": [
+                "base",
+                "fara",
+                "qwen"
+              ]
+            },
+            {
+              "values": [
+                "GPT-5.4-mini / OpenAI Standard",
+                "0.75 USD",
+                "0.075 USD",
+                "4.50 USD",
+                "100만 토큰당. 캐시 적중 입력에만 캐시 단가 적용"
+              ],
+              "source_ids": [
+                "price",
+                "mini"
+              ]
+            },
+            {
+              "values": [
+                "Mage 논문의 데이터 생성 / 같은 교사 모델",
+                "과제당 0.906 → 0.158 USD",
+                "해당 없음",
+                "해당 없음",
+                "훈련용 데이터 취득 비교. 일회성 workflow 작성·디버깅 제외; Mage API 요금 아님"
+              ],
+              "source_ids": [
+                "paper"
+              ]
+            }
+          ],
+          "note": "2026-11-01 확인. API 요금은 Standard USD/100만 토큰이며 Batch·Flex·Priority·계약·세금·실제 청구와 구분한다. 지역 처리는 추가 요금 조건이 있고 이미지·추론 사용량도 총비용에 영향을 준다. 자체 호스팅에 이 단가나 논문의 데이터 생성비를 대입해 업무 비용·ROI를 계산하지 않는다."
+        }
+      ],
+      "explanation": [
+        {
+          "id": "identity",
+          "title": "기반 시각·언어 모델에서 컴퓨터 사용 정책으로",
+          "lead": "새 모델의 핵심은 화면 이해만이 아니라 다음 동작의 경로를 고르는 학습이다.",
+          "blocks": [
+            {
+              "title": "별도 학습을 거친 공개 체크포인트",
+              "text": "Cowork는 Mage-VL의 중간 체크포인트에서 출발해 GUI 지향 중간 학습, GUI 에이전트 SFT, 코딩·터미널 SFT, 통합 컴퓨터 사용 SFT, 온라인 강화학습을 거쳤다. SFT는 시범 동작을 따라 배우는 지도 학습이고, 마지막 RL은 실행 결과를 보상으로 정책을 더 조정하는 강화학습이다. 따라서 기존 Mage-VL의 이름만 바꾼 판과 구별할 수 있다.",
+              "source_ids": [
+                "card",
+                "base"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            },
+            {
+              "title": "화면 조작과 프로그램 실행의 결합",
+              "text": "한 모델이 스크린샷을 읽고 마우스·키보드 조작을 하거나 지속되는 bash 세션에서 코드·파일 작업을 선택한다. 별도의 큰 모델이 화면 모델과 코딩 모델 사이를 배분하는 구조 대신 하나의 정책으로 선택을 학습했다는 설명이다. 결과는 모델 가중치뿐 아니라 프롬프트·도구 인터페이스·실행 환경을 묶은 harness에도 의존한다.",
+              "source_ids": [
+                "card",
+                "paper"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            },
+            {
+              "title": "공개 시점과 제품 출시의 구분",
+              "text": "공식 Hugging Face 저장소는 10월 30일 12:13 UTC에 만들어졌고 확인한 revision은 6fbe7f91da477c1c73790dbb1f08d001b8626be1이다. 논문에는 October 2026만 적혀 있다. 이 문서는 11월 1일 확인한 공개 가중치 소개이며, Microsoft 365 Copilot에 이 기능이 실제 제공됐다는 발표나 별도 날짜의 상용 출시로 해석하지 않는다.",
+              "source_ids": [
+                "metadata",
+                "paper"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            }
+          ]
+        },
+        {
+          "id": "context-runtime",
+          "title": "32K의 실제 운용 안내와 자체 실행 환경",
+          "lead": "설정 파일의 위치 상한보다 실제 학습·추론 및 도구 연결 조건이 중요하다.",
+          "blocks": [
+            {
+              "title": "문맥 길이와 메모리 전략",
+              "text": "카드는 학습·추론 문맥을 32,768토큰으로 안내한다. config의 max_position_embeddings 262,144는 모델 설정상의 위치 범위이며, 그 길이의 에이전트 동작을 검증했다는 결과는 아니다. 학습 설명에서는 최근 세 장의 화면과 최근 응답을 유지하고 과거 동작을 접는 메모리를 사용한다. 공개 평가 예제도 history_n=3과 images_to_keep=3을 명시한다.",
+              "source_ids": [
+                "card",
+                "config",
+                "eval"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            },
+            {
+              "title": "참고 구현이 필요한 공개 가중치",
+              "text": "모델 타입은 custom llava_onevision2다. 공식 참고 구현은 SGLang 계열 환경과 전용 모델·이미지 처리를 제시하며, 단순히 일반 Qwen 지원 목록에 있다는 이유로 어떤 vLLM 버전에서도 바로 실행된다고 볼 수 없다. 원격 사용자 정의 코드를 허용하는 로딩 예제는 코드를 별도로 검토해야 할 조건이다. 이 조사에서는 패키지 설치·가중치 다운로드·모델 실행을 하지 않았다.",
+              "source_ids": [
+                "card",
+                "config",
+                "eval"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            },
+            {
+              "title": "훈련 장비와 최소 추론 장비",
+              "text": "보고서의 B200 32개 및 다수의 GUI 실행 슬롯은 학습 구성이다. 이를 최소 추론 장비로 제시할 수 없다. GPU 메모리·동시 실행·문맥·이미지 크기에 따른 실제 추론 자원과 지연 시간은 이번에 검증하지 않았다. Fara 카드의 장비 예시 역시 별도 모델에 관한 설명이므로 Cowork의 최소 사양으로 옮기지 않는다.",
+              "source_ids": [
+                "paper",
+                "fara"
+              ],
+              "kind": "judgment",
+              "type": "paragraph"
+            }
+          ]
+        },
+        {
+          "id": "desktop-meaning",
+          "title": "데스크톱 강점은 총점보다 작업 종류에 드러난다",
+          "lead": "작은 모델로 높은 성공률을 보고했지만 Office·전문 앱의 최상위 결과는 아니다.",
+          "blocks": [
+            {
+              "title": "규모 대비 성과와 상대 열세",
+              "text": "Microsoft 표에서 Cowork는 총점 66.0%로 Qwen3.6-27B의 63.9%보다 높고, OS 조작 87.5%는 함께 실행한 GPT-5.4-mini의 79.2%보다 높다. 그러나 GPT-5.4-mini 총점 69.6%와 Office 68.0%, ScaleCUA의 총점 68.7%·Office 70.6%·전문 앱 89.5%에는 뒤진다. 복합 작업에서의 상대 강점과 오피스·전문 앱의 상대 약점을 같이 봐야 한다.",
+              "source_ids": [
+                "paper",
+                "card"
+              ],
+              "kind": "judgment",
+              "type": "paragraph"
+            },
+            {
+              "title": "361개 과제와 반복 횟수의 한계",
+              "text": "Mage 평가는 Google Drive를 제외한 361개 OSWorld 과제와 50단계 예산을 사용했다. 공개 참고 설정은 1920×1080, temperature 0.7, top_p 0.8, 턴당 최대 새 토큰 4,096이다. Mage 최종 판은 두 실행, GPT-5.4-mini는 한 실행이며 다른 인용 모델의 모든 조건은 같다고 확인되지 않았다. 신뢰구간·독립 반복이나 한국어 회사 문서·Windows판 Office의 결과로 넓혀 해석할 근거는 없다.",
+              "source_ids": [
+                "paper",
+                "eval"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            },
+            {
+              "title": "자원 지표의 해석",
+              "text": "GUI SFT에서 통합 SFT, 최종 RL로 갈수록 성공률이 높아지고 마지막 단계는 출력 토큰과 호출 수도 줄었다. 다만 SFT 단계 사이에는 출력 토큰이 증가했다. 모델 호출이나 추론 토큰의 감소가 곧바로 같은 비율의 속도·요금 절감이라는 뜻은 아니다. 소수점 표시가 다른 원문 수치는 별도 표기해 +10.16과 +10.20%p를 같은 정확값으로 취급하지 않았다.",
+              "source_ids": [
+                "card",
+                "paper"
+              ],
+              "kind": "judgment",
+              "type": "paragraph"
+            }
+          ]
+        },
+        {
+          "id": "web-meaning",
+          "title": "웹 결과는 최종 RL 성능과 실시간 웹 성능을 대신하지 않는다",
+          "lead": "데스크톱의 개선 결과가 모든 웹 작업에서 확인된 것은 아니다.",
+          "blocks": [
+            {
+              "title": "통합 SFT 판의 58.6%",
+              "text": "WebVoyagerStatic 58.6%는 643개 중 377개를 통과한 통합 SFT 체크포인트의 값이다. 최종 온라인 RL 판의 웹 성공률은 해당 표에 없다. 같은 표에서 Fara1.5-4B는 68.0%여서, 데스크톱에서 앞선다는 사실만으로 웹 전문 모델에도 우세하다고 말할 수 없다. 최종 RL 가중치에 58.6%를 붙이는 것 역시 검증 범위를 바꾸는 일이다.",
+              "source_ids": [
+                "paper",
+                "card"
+              ],
+              "kind": "judgment",
+              "type": "paragraph"
+            },
+            {
+              "title": "고정 웹 환경의 의미",
+              "text": "WebVoyagerStatic은 15개 사이트를 재현해 백엔드 데이터베이스 상태까지 검사한다. 실행을 반복하기 좋은 반면 실제 사이트의 로그인·접근 제한·UI 변경·외부 서비스 상태를 모두 대변하지 않는다. live 웹의 별도 성공률과의 차이를 모델 능력 하락이나 부정행위로 단정할 수 없으며, 서로 다른 환경과 채점 방법을 먼저 구분해야 한다.",
+              "source_ids": [
+                "paper"
+              ],
+              "kind": "judgment",
+              "type": "paragraph"
+            }
+          ]
+        },
+        {
+          "id": "availability-cost",
+          "title": "라이선스와 비용 — 공개 가중치 이후에도 남는 운영 조건",
+          "lead": "모델을 받을 수 있는지, 상업 사용 조건, API 단가와 실제 업무 비용은 서로 다른 질문이다.",
+          "blocks": [
+            {
+              "title": "Apache 2.0의 제공 범위",
+              "text": "공식 저장소는 공개 상태이며 라이선스 파일은 Apache 2.0이다. 배포 시 라이선스·고지와 변경 표시 등 원문의 조건을 보존해야 하며 상표권이나 서비스 품질 보증이 함께 주어지는 것은 아니다. 조직의 구체적 배포·계약에 대한 법률 적합성 판정은 이번 조사에 포함하지 않았다.",
+              "source_ids": [
+                "metadata",
+                "license"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            },
+            {
+              "title": "같은 단위로 비교할 수 있는 API 가격",
+              "text": "OpenAI 공식 현재 Standard 표의 GPT-5.4-mini는 입력 0.75, 캐시 입력 0.075, 출력 4.50 USD/100만 토큰이다. 캐시 적중 조건과 지역 처리 추가 요금, 출력에 포함되는 추론 사용량 등을 실제 과금에서 고려해야 한다. Mage의 표준 API 단가는 검토한 공식 원문에서 확인되지 않아 0달러로 채우지 않았다. 자체 실행의 GPU·VM·저장·운영비와 이 API 단가를 직접 등치할 수도 없다.",
+              "source_ids": [
+                "price",
+                "mini",
+                "card"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            },
+            {
+              "title": "데이터 생성비는 서비스 요금이 아니다",
+              "text": "논문의 과제당 0.906→0.158 USD는 같은 교사 모델로 훈련 데이터를 얻는 두 방법의 비교다. 일회성 workflow 작성과 디버깅 비용을 제외한 값이므로 Mage 추론 단가나 고객 업무 처리비로 제시하면 안 된다. 공개 가중치의 낮은 파라미터 규모만으로 총소유비용의 우위를 확정하지 않는다.",
+              "source_ids": [
+                "paper"
+              ],
+              "kind": "judgment",
+              "type": "paragraph"
+            }
+          ]
+        },
+        {
+          "id": "limits",
+          "title": "도입 판단에 남는 검증 — 자율 동작과 실제 업무 환경",
+          "lead": "공개 결과는 자체 검증을 시작할 근거이며, 오피스 제품의 제공 기능이나 안전 보증은 아니다.",
+          "blocks": [
+            {
+              "title": "자율 실행 권한의 경계",
+              "text": "이 모델은 파일과 코드·터미널을 다룬다. 공식 설명의 샌드박스·권한 제한·네트워크 범위·되돌릴 수 없는 동작의 사람 승인은 운영 조건으로 읽어야 한다. 벤치마크 성공률이 권한 오용·유출·파일 훼손에 대한 안전 인증을 뜻하지 않는다. 이 조사에서 그러한 방어 동작을 실행 검증하지 않았다.",
+              "source_ids": [
+                "card",
+                "paper"
+              ],
+              "kind": "judgment",
+              "type": "paragraph"
+            },
+            {
+              "title": "확인되지 않은 업무 조건",
+              "text": "한국어 품질, 실제 DOCX·XLSX·PPTX의 보존, Windows 응용프로그램, 사내 인증·보안 정책, 여러 사용자 동시 처리 및 오류 복구는 공개 수치만으로 판정할 수 없다. 기반 Mage-VL의 영상·스트리밍 기능도 Cowork의 실제 제공 기능으로 확인하지 않았다. 문서 AI 제품의 기능 출시와 기반 에이전트 모델의 공개를 나누어 판단해야 한다.",
+              "source_ids": [
+                "base",
+                "card",
+                "paper"
+              ],
+              "kind": "judgment",
+              "type": "paragraph"
+            }
+          ]
+        }
+      ],
+      "result": {
+        "title": "결론 — 작은 통합 에이전트의 공개와 실무 우위는 별도로 평가한다",
+        "points": [
+          {
+            "label": "확인된 변화",
+            "text": "GUI와 코드를 고르는 단일 정책을 추가 학습한 공개 모델이다. OSWorld에서의 규모 대비 성과와 통합 학습의 효과는 주목할 근거가 있다.",
+            "source_ids": [
+              "card",
+              "paper"
+            ],
+            "kind": "judgment"
+          },
+          {
+            "label": "동시에 봐야 할 약점",
+            "text": "Office·전문 앱·총점의 상대 열세, 웹 결과가 SFT 단계라는 제한과 평가 환경 차이를 보존해야 한다. 더 작은 모델이 모든 컴퓨터 업무에서 더 낫다는 결론은 성립하지 않는다.",
+            "source_ids": [
+              "paper"
+            ],
+            "kind": "judgment"
+          },
+          {
+            "label": "제공 판단",
+            "text": "Apache 2.0 가중치와 참고 구현은 확인했으나 관리형 API 표준 요금·최소 추론 장비·한국어 실제 업무 품질은 미확인이다. 32K 운용 안내를 기준으로 자체 환경과 권한을 검증해야 한다.",
+            "source_ids": [
+              "card",
+              "config",
+              "license"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "references": [
+        {
+          "id": "card",
+          "title": "Microsoft Mage-VL-Cowork 모델 카드",
+          "url": "https://huggingface.co/microsoft/Mage-VL-Cowork/raw/main/README.md",
+          "description": "2026-11-01 확인. 원문 발표·평가 조건과 현재 제공 범위를 본문에 구분했다."
+        },
+        {
+          "id": "metadata",
+          "title": "공식 저장소 메타데이터와 공개 시점",
+          "url": "https://huggingface.co/api/models/microsoft/Mage-VL-Cowork",
+          "description": "2026-11-01 확인. 원문 발표·평가 조건과 현재 제공 범위를 본문에 구분했다."
+        },
+        {
+          "id": "config",
+          "title": "공식 모델 설정",
+          "url": "https://huggingface.co/microsoft/Mage-VL-Cowork/raw/main/config.json",
+          "description": "2026-11-01 확인. 원문 발표·평가 조건과 현재 제공 범위를 본문에 구분했다."
+        },
+        {
+          "id": "license",
+          "title": "Apache 2.0 라이선스",
+          "url": "https://huggingface.co/microsoft/Mage-VL-Cowork/raw/main/LICENSE",
+          "description": "2026-11-01 확인. 원문 발표·평가 조건과 현재 제공 범위를 본문에 구분했다."
+        },
+        {
+          "id": "project",
+          "title": "Microsoft Mage-VL-Cowork 프로젝트",
+          "url": "https://microsoft.github.io/Mage/cowork/",
+          "description": "2026-11-01 확인. 원문 발표·평가 조건과 현재 제공 범위를 본문에 구분했다."
+        },
+        {
+          "id": "paper",
+          "title": "Mage-VL-Cowork 기술 보고서 / October 2026",
+          "url": "https://raw.githubusercontent.com/microsoft/Mage/main/assets/mage_vl_cowork_tech_report.pdf",
+          "description": "2026-11-01 확인. 원문 발표·평가 조건과 현재 제공 범위를 본문에 구분했다."
+        },
+        {
+          "id": "base",
+          "title": "이전 Mage-VL 모델 카드",
+          "url": "https://huggingface.co/microsoft/Mage-VL/raw/main/README.md",
+          "description": "2026-11-01 확인. 원문 발표·평가 조건과 현재 제공 범위를 본문에 구분했다."
+        },
+        {
+          "id": "fara",
+          "title": "Microsoft Fara1.5-4B 공식 카드",
+          "url": "https://huggingface.co/microsoft/Fara1.5-4B/raw/main/README.md",
+          "description": "2026-11-01 확인. 원문 발표·평가 조건과 현재 제공 범위를 본문에 구분했다."
+        },
+        {
+          "id": "qwen",
+          "title": "Qwen3.6-27B 공식 카드",
+          "url": "https://huggingface.co/Qwen/Qwen3.6-27B/raw/main/README.md",
+          "description": "2026-11-01 확인. 원문 발표·평가 조건과 현재 제공 범위를 본문에 구분했다."
+        },
+        {
+          "id": "eval",
+          "title": "OSWorld 평가 참고 구현",
+          "url": "https://huggingface.co/microsoft/Mage-VL-Cowork/raw/main/osworld_eval/README.md",
+          "description": "2026-11-01 확인. 원문 발표·평가 조건과 현재 제공 범위를 본문에 구분했다."
+        },
+        {
+          "id": "mini",
+          "title": "OpenAI GPT-5.4-mini 모델 문서",
+          "url": "https://developers.openai.com/api/docs/models/gpt-5.4-mini",
+          "description": "2026-11-01 확인. 원문 발표·평가 조건과 현재 제공 범위를 본문에 구분했다."
+        },
+        {
+          "id": "price",
+          "title": "OpenAI 공식 API 가격표",
+          "url": "https://developers.openai.com/api/docs/pricing",
+          "description": "2026-11-01 확인. 원문 발표·평가 조건과 현재 제공 범위를 본문에 구분했다."
+        }
+      ],
+      "caveats": [
+        {
+          "text": "제공자 발표와 문헌 대조다. 독립 추론 재현·한국어 회사 문서·Windows 앱·청구 검증 및 사람 독해 시험은 수행하지 않았다.",
+          "source_ids": [
+            "card",
+            "paper"
+          ]
+        },
+        {
+          "text": "OSWorld 총점의 일부 모델은 인용값이며 반복·harness·입력 조건의 완전 일치를 보장하지 않는다. 웹 58.6%는 앞선 SFT 판이며 최종 RL 웹 성능은 미보고다.",
+          "source_ids": [
+            "paper"
+          ]
+        },
+        {
+          "text": "실제 문맥 32,768과 설정 위치 상한 262,144를 구분한다. 공개 가중치의 표준 API 요금·최소 추론 자원·상용 서비스 제공을 추정하지 않았다.",
+          "source_ids": [
+            "card",
+            "config"
+          ]
+        }
+      ]
+    }
+  ]
+}

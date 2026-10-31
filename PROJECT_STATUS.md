@@ -391,3 +391,8 @@ Carbon공개완료:78acacf/Pages40762896056 success. 소개1편/전체표62관�
 2026-10-31 제출소스 검증: 214개테스트와수집/publish/brief/review 및Edge PC/390px통과. Mistral4판/정확단가·Cyber수치·출처/날짜·이전판을확인했고다른작업은제외했다. 공개배포진행중. [실제범위](docs/AI_MODEL_REVIEW.2026-10-31.md).
 
 2026-10-31 Mistral 공개완료: bb0031c / [Pages41122671918](https://github.com/Hansihoo/signal-desk/actions/runs/41122671918) 성공. 소개4판과전체표60사실의실제공개값/단위·조건/출처·날짜·이전판과기존누적이력을검증했다. [최종범위](docs/AI_MODEL_REVIEW.2026-10-31.md).
+
+
+2026-11-01 모델 추가: Mage-VL-Cowork 신규소개1판과40개공식관측을동시에등록했다.최종RL/SFT웹·상대열세/32K운용·표준API미확인과공개가중치조건을보존한다.로컬품질/지식연결완료,제출/공개검증진행중. [검토범위](docs/AI_MODEL_REVIEW.2026-11-01.md).
+
+2026-11-01 제출소스검증: 214시험과품질/publish/brief/review·Edge PC/390px통과.소개/전체표의정확값·원문·날짜/판조건과기존사양·소개이력보존을확인했다.공개검증진행중. [검증범위](docs/AI_MODEL_REVIEW.2026-11-01.md).
