@@ -398,3 +398,6 @@ Carbon공개완료:78acacf/Pages40762896056 success. 소개1편/전체표62관�
 2026-11-01 제출소스검증: 214시험과품질/publish/brief/review·Edge PC/390px통과.소개/전체표의정확값·원문·날짜/판조건과기존사양·소개이력보존을확인했다.공개검증진행중. [검증범위](docs/AI_MODEL_REVIEW.2026-11-01.md).
 
 2026-11-01 Mage 공개완료: c99b19a/[Pages41238839569](https://github.com/Hansihoo/signal-desk/actions/runs/41238839569) 성공.신규소개1판과전체표40사실을함께공개했고정확값/단위·조건/원문/날짜·기존이력과실제PC/모바일을검증했다. [최종범위](docs/AI_MODEL_REVIEW.2026-11-01.md).
+
+
+2026-11-02 모델 추가: Surya2.5/SenseNovaLoop 신규소개2편과86공식관측 동시반영. 이전/경쟁평가 반대결과,표좌표/상업제한 및반복계산/차트조건/TBD를보존. 로컬품질/지식연결완료,선택소스/공개검증진행중. [범위](docs/AI_MODEL_REVIEW.2026-11-02.md).

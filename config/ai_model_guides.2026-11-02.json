@@ -1,0 +1,1267 @@
+{
+  "schema_version": 1,
+  "reports": [
+    {
+      "id": "surya-2-5-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "checked_on": "2026-11-02",
+      "title": "Surya 2.5 소개 — 문서 OCR의 처리량 개선과 표 좌표 지원의 한계",
+      "description": "문서 OCR 모델을 고르는 개발자와 관리자가 Surya 2에서 달라진 정확도와 속도, 경쟁 모델 및 상업 이용 조건을 비교할 수 있도록 정리했다.",
+      "deck": "689M 규모의 문서 OCR 모델이다. 이전 Surya 2보다 표와 처리량이 개선됐지만 모든 언어와 문서에서 우세하지 않으며, HTML 표와 셀 좌표 기능을 구분해야 한다.",
+      "scope": "공식 원문의 모델, 평가와 현재 제공 조건 비교. 실제 추론 및 청구 검증은 수행하지 않았다.",
+      "source_note": "2026-11-02 KST 확인. 발표일과 확인일, 공급자 평가와 독립 검증을 구분한다.",
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "highlights": [
+        "689M 규모의 OCR/레이아웃 모델",
+        "표 좌표 기능과 가중치 상업 제한을 구분"
+      ],
+      "summary": [
+        {
+          "label": "발표와 실제 변화",
+          "text": "Datalab은 2026년 10월 29일 Surya 2.5를 발표했다. surya-ocr 0.23.0의 기본 모델이 됐으며 어휘를 88,526개로 늘리고 페이지 표현을 줄였다. 오늘 확인한 과거 발표이며 새 기반 모델의 가중치가 공개된 변경이다.",
+          "source_ids": [
+            "surya-blog",
+            "surya-release",
+            "surya-config"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "성능의 강약점",
+          "text": "동일 패키지 비교에서 OmniParseBench 종합 85.9로 Surya 2의 83.3보다 높다. 그러나 별도 공개 순위표의 Chandra OCR 2는 90.1이고, Surya 2.5의 한국어 77.9%와 영어 90.3%는 특정 내부 시험의 결과다. 모든 문서의 인식 정확도를 뜻하지 않는다.",
+          "source_ids": [
+            "surya-card",
+            "opb-card",
+            "surya-languages"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "도입을 가르는 조건",
+          "text": "HTML 표는 반환하지만 표의 행과 열 좌표를 주는 구조 인식은 지원하지 않는다. 코드는 Apache 2.0, 가중치는 수정 OpenRAIL-M으로 상업 사용과 경쟁 서비스 제한을 별도로 확인해야 한다.",
+          "source_ids": [
+            "surya-card",
+            "surya-license"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "tables": [
+        {
+          "id": "specification",
+          "title": "이전 모델과 경쟁 대안의 역할",
+          "columns": [
+            "모델",
+            "입출력과 역할",
+            "규모 또는 구조",
+            "제공 조건"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Surya 2.5",
+                "문서 이미지 → 읽기 순서가 있는 블록, HTML 표, 수식",
+                "689M; 하나의 VLM이 OCR, 레이아웃과 표 읽기를 수행",
+                "공개 가중치; 수정 OpenRAIL-M"
+              ],
+              "source_ids": [
+                "surya-card"
+              ]
+            },
+            {
+              "values": [
+                "Surya 2",
+                "이전 OCR 모델; 표의 행과 열 좌표가 필요한 기존 기능에 유지 가능",
+                "Surya 2.5의 직접 이전 체크포인트",
+                "공개 가중치; 같은 계열의 수정 가중치 라이선스"
+              ],
+              "source_ids": [
+                "surya-prev",
+                "surya-card",
+                "surya-license"
+              ]
+            },
+            {
+              "values": [
+                "Chandra OCR 2",
+                "공개 순위표의 더 높은 종합 점수를 가진 비교 모델",
+                "Datalab의 별도 모델; Surya 2.5와 동일 체크포인트 아님",
+                "공개 가중치; 이번에 그 모델의 배포 조건 전부를 재검토하지 않음"
+              ],
+              "source_ids": [
+                "opb-card"
+              ]
+            },
+            {
+              "values": [
+                "MiniCPM-OCR-1.0 / Unlimited-OCR 2",
+                "문서 파싱의 다른 공개 가중치 대안",
+                "각각 별도 모델과 권장 실행 설정",
+                "같은 평가표의 결과만 비교; 같은 지연 시간이나 라이선스를 승계하지 않음"
+              ],
+              "source_ids": [
+                "opb-card"
+              ]
+            }
+          ],
+          "note": "M은 100만 파라미터 단위다. Surya 설정의 262,144 위치 범위는 실제 OCR 출력 한도나 긴 문서 전체의 지원 보장이 아니다. 비교 대상은 이전 모델과 문서 파싱 대안이며 범용 채팅 능력 비교가 아니다."
+        },
+        {
+          "id": "opb-pair",
+          "title": "Surya 2와 2.5 — 같은 패키지에서의 정확도 변화",
+          "columns": [
+            "모델",
+            "종합",
+            "텍스트",
+            "표",
+            "레이아웃"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Surya 2",
+                "83.3",
+                "81.0",
+                "74.3",
+                "94.5"
+              ],
+              "source_ids": [
+                "surya-card",
+                "surya-blog"
+              ]
+            },
+            {
+              "values": [
+                "Surya 2.5",
+                "85.9",
+                "83.8",
+                "78.3",
+                "95.7"
+              ],
+              "source_ids": [
+                "surya-card",
+                "surya-blog"
+              ]
+            }
+          ],
+          "note": "Datalab 측정. OmniParseBench의 2,937페이지와 16,288개 검사를 사용한다. 종합은 텍스트, 표와 레이아웃 점수의 평균이다. surya-ocr 0.23.0, 192 DPI, 페이지 전체 재생성 켜짐, 모델별 한 실행이다. 원문 종합 차이는 반올림 전 계산으로 +2.7점, 95% 페이지 부트스트랩 구간 +1.6~+3.7이며 표시값 85.9−83.3과 정밀도가 다르다."
+        },
+        {
+          "id": "opb-competitors",
+          "title": "공개 OmniParseBench 순위표의 상대 강점과 열세",
+          "columns": [
+            "모델",
+            "종합",
+            "텍스트",
+            "표",
+            "레이아웃"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Chandra OCR 2",
+                "90.1",
+                "87.4",
+                "87.4",
+                "95.4"
+              ],
+              "source_ids": [
+                "opb-card"
+              ]
+            },
+            {
+              "values": [
+                "Surya OCR 2.5",
+                "85.9",
+                "83.8",
+                "78.3",
+                "95.7"
+              ],
+              "source_ids": [
+                "opb-card"
+              ]
+            },
+            {
+              "values": [
+                "MiniCPM-OCR-1.0",
+                "83.2",
+                "72.8",
+                "89.1",
+                "87.6"
+              ],
+              "source_ids": [
+                "opb-card"
+              ]
+            },
+            {
+              "values": [
+                "Surya OCR 2",
+                "83.1",
+                "80.6",
+                "74.3",
+                "94.3"
+              ],
+              "source_ids": [
+                "opb-card"
+              ]
+            },
+            {
+              "values": [
+                "Unlimited-OCR 2",
+                "81.2",
+                "72.4",
+                "79.7",
+                "91.6"
+              ],
+              "source_ids": [
+                "opb-card"
+              ]
+            }
+          ],
+          "note": "Datalab의 공개 데이터셋 카드 현재 표. 각 공급자 권장 설정과 어댑터를 사용하므로 실행 조건 전체가 같지는 않다. Surya 2의 이 표 83.1과 별도 동일 패키지 재평가 83.3은 서로 다른 기록으로 보존한다. 이 표의 낮은 표 점수를 모든 종류의 표 성능으로 일반화하지 않는다."
+        },
+        {
+          "id": "throughput",
+          "title": "서버 처리량과 지연 시간 — 192 DPI의 같은 H100 조건",
+          "columns": [
+            "모델",
+            "페이지/초",
+            "중앙 지연(초)",
+            "p95 지연(초)",
+            "페이지당 출력 토큰",
+            "출력 상한 도달"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Surya 2",
+                "2.24",
+                "12.0",
+                "31.3",
+                "3,917",
+                "4.1% / 35/858요청"
+              ],
+              "source_ids": [
+                "surya-blog",
+                "surya-card"
+              ]
+            },
+            {
+              "values": [
+                "Surya 2 + MTP",
+                "2.72",
+                "9.9",
+                "26.0",
+                "3,888",
+                "3.8% / 38/988요청"
+              ],
+              "source_ids": [
+                "surya-blog",
+                "surya-card"
+              ]
+            },
+            {
+              "values": [
+                "Surya 2.5",
+                "4.52",
+                "6.8",
+                "11.3",
+                "1,514",
+                "0.1% / 2/1,390요청"
+              ],
+              "source_ids": [
+                "surya-blog",
+                "surya-card"
+              ]
+            }
+          ],
+          "note": "Datalab의 H100 80GB 한 대, vLLM 0.25.1, 300개 공개 페이지. 처리량, 지연과 토큰은 32개 동시 요청이며 상한 도달 비율은 동시 요청 1/8/32/128의 풀링이다. 완료 페이지는 토큰 상한 전에 끝난 것만 센다. PDF 렌더링은 미리 했으며 전체 문서 변환의 경과 시간이나 80GB 최소 요구량을 뜻하지 않는다."
+        },
+        {
+          "id": "quality-limits",
+          "title": "다른 시험에서 확인되는 개선과 후퇴",
+          "columns": [
+            "시험 또는 범위",
+            "Surya 2",
+            "Surya 2.5",
+            "해석"
+          ],
+          "rows": [
+            {
+              "values": [
+                "olmOCR-bench 전체",
+                "82.8%",
+                "83.7%",
+                "같은 harness, 모델별 세 실행 평균"
+              ],
+              "source_ids": [
+                "surya-card",
+                "surya-blog"
+              ]
+            },
+            {
+              "values": [
+                "olmOCR-bench 오래된 수학 스캔",
+                "79.0%",
+                "78.6%",
+                "모든 범주가 개선된 것은 아님"
+              ],
+              "source_ids": [
+                "surya-card"
+              ]
+            },
+            {
+              "values": [
+                "olmOCR-bench 오래된 스캔",
+                "43.2%",
+                "44.3%",
+                "여전히 어려운 범주"
+              ],
+              "source_ids": [
+                "surya-card"
+              ]
+            },
+            {
+              "values": [
+                "내부 91언어 전체",
+                "74.5%",
+                "74.9%",
+                "36,089검사; 과거의 쉬운 판 87.2와 직접 비교 불가"
+              ],
+              "source_ids": [
+                "surya-languages",
+                "surya-card"
+              ]
+            },
+            {
+              "values": [
+                "내부 한국어",
+                "77.3%",
+                "77.9%",
+                "업무 문서 전체의 문자 정확도 아님"
+              ],
+              "source_ids": [
+                "surya-languages"
+              ]
+            },
+            {
+              "values": [
+                "내부 영어",
+                "94.3%",
+                "90.3%",
+                "상대 하락을 함께 보존"
+              ],
+              "source_ids": [
+                "surya-languages"
+              ]
+            }
+          ],
+          "note": "olmOCR-bench는 revision 54a96a6f, 1,403페이지, 별도 surya25 harness와 B200, MTP 끔, 24동시 요청, 12,384토큰 상한의 평문 출력이다. PP3 후처리 점수 83.6/84.2와 섞지 않는다. 내부 다국어 시험은 레이아웃, 표, 수식과 읽기 순서를 포함하며 언어별 약 24~770검사다."
+        },
+        {
+          "id": "pricing",
+          "title": "표준 요금과 상업 이용 — 자체 실행과 관리형 API",
+          "columns": [
+            "항목",
+            "표준 비용 또는 요금",
+            "적용 조건"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Surya 2.5 / Surya 2 가중치",
+                "고정 API 단가 미확인; 자체 GPU와 운영 비용 별도",
+                "연구/개인 및 제한된 사업자에 무료 허용; 무제한 상업 허용 아님"
+              ],
+              "source_ids": [
+                "surya-card",
+                "surya-license"
+              ]
+            },
+            {
+              "values": [
+                "Datalab Convert fast / balanced",
+                "4 USD / 1,000페이지",
+                "공식 관리형 processor 기본 요금; Surya 2.5 API라고 확정하지 않음"
+              ],
+              "source_ids": [
+                "datalab-price",
+                "surya-blog"
+              ]
+            },
+            {
+              "values": [
+                "Datalab Convert accurate",
+                "10 USD / 1,000페이지",
+                "공식 관리형 processor 기본 요금; 별도 모델/파이프라인"
+              ],
+              "source_ids": [
+                "datalab-price",
+                "surya-blog"
+              ]
+            },
+            {
+              "values": [
+                "별도 상업 가중치 라이선스",
+                "공개 고정 금액 미확인",
+                "매출, 누적 조달금과 경쟁 제품 조건에 따라 별도 허용 범위 확인"
+              ],
+              "source_ids": [
+                "surya-license",
+                "datalab-price"
+              ]
+            }
+          ],
+          "note": "2026-11-02 공식 가격표 확인. 관리형은 실행한 processor별 합산이며 EU 처리 +25%, 데이터 보존 허용 −25% 또는 적격 스타트업 −33% 중 한 할인만 적용한다. 구독/추가 processor 및 별도 가중치 계약과 합치지 않는다. 실제 청구를 시험하지 않았다. 데이터셋의 과거 할인 요금을 현재 표준 요금으로 옮기지 않았다."
+        }
+      ],
+      "explanation": [
+        {
+          "id": "overview",
+          "title": "단어 수와 페이지 표현을 바꾼 작은 문서 모델",
+          "lead": "OCR은 문서 이미지의 내용을 텍스트와 구조로 옮기는 작업이다. 이 모델의 변화는 출력 표현을 더 짧게 만들면서 표와 레이아웃을 유지하려는 데 있다.",
+          "blocks": [
+            {
+              "title": "실제 새 체크포인트",
+              "text": "10월 29일 공식 글과 0.23.0 릴리스는 Surya 2.5 가중치를 명시한다. 기존 모델의 단순 패키지 이름 변경과 구분되는 업데이트다. 공식 글은 이모지와 꾸민 수학 글자를 표현할 수 있도록 어휘를 늘렸다고 설명한다. 설정에도 vocab_size 88,526이 있다.",
+              "source_ids": [
+                "surya-release",
+                "surya-blog",
+                "surya-config"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            },
+            {
+              "title": "한 모델의 출력과 별도 검출기",
+              "text": "레이아웃, OCR과 표 내용은 하나의 시각 언어 모델이 처리한다. 텍스트 줄 검출과 OCR 오류 검출은 별도 작은 모델이다. HTML 표의 병합 셀과 블록 위치를 제공하지만, 개별 표 행과 열의 좌표 기능까지 지원한다는 뜻은 아니다.",
+              "source_ids": [
+                "surya-card"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            },
+            {
+              "title": "긴 위치 설정의 한계",
+              "text": "설정의 max_position_embeddings는 262,144지만 실제 공개 속도 시험은 24,576 모델 길이와 12,288 출력 상한을 썼다. 이 숫자를 256K 문서 전체 변환 보장이나 기본 API 한도로 소개하면 실제 확인 범위를 넘는다.",
+              "source_ids": [
+                "surya-config",
+                "surya-blog"
+              ],
+              "kind": "judgment",
+              "type": "paragraph"
+            }
+          ]
+        },
+        {
+          "id": "performance",
+          "title": "정확도는 개선됐지만 표 중심의 대안 선택은 달라진다",
+          "lead": "작은 규모와 레이아웃 점수가 장점이다. 표만 보면 경쟁 순서가 달라진다.",
+          "blocks": [
+            {
+              "title": "같은 패키지의 이전 판 비교",
+              "text": "동일 재평가에서 텍스트, 표와 레이아웃이 모두 높아졌으며 표는 74.3에서 78.3으로 올랐다. 시험은 재생성 과정까지 포함하므로 순수 모델 한 번의 출력만 비교한 것은 아니다. 표시된 종합 점수의 차이와 원문이 제시한 반올림 전 증가량도 구분한다.",
+              "source_ids": [
+                "surya-card",
+                "surya-blog"
+              ],
+              "kind": "judgment",
+              "type": "paragraph"
+            },
+            {
+              "title": "경쟁 모델의 더 높은 결과",
+              "text": "공개 순위표에서 Chandra OCR 2의 종합 90.1은 Surya 2.5의 85.9보다 높다. MiniCPM-OCR-1.0의 표 89.1과 Unlimited-OCR 2의 표 79.7도 Surya의 78.3보다 높다. Surya의 레이아웃 95.7과 작은 규모가 유리할 수 있으나, 전체 문서나 표 내용에서 가장 정확하다는 결론은 성립하지 않는다.",
+              "source_ids": [
+                "opb-card"
+              ],
+              "kind": "judgment",
+              "type": "paragraph"
+            },
+            {
+              "title": "언어별 후퇴와 오래된 문서",
+              "text": "한국어는 내부 시험 77.9%로 소폭 높아졌지만 영어는 94.3에서 90.3%, 러시아어는 77.8에서 71.7%로 낮아졌다. 오래된 수학 스캔도 olmOCR-bench에서 낮아졌다. 내부 검사 통과율은 글자 단위 정확도나 우리 회사 문서의 결과가 아니다.",
+              "source_ids": [
+                "surya-languages",
+                "surya-card"
+              ],
+              "kind": "judgment",
+              "type": "paragraph"
+            }
+          ]
+        },
+        {
+          "id": "speed",
+          "title": "1.7배는 특정 서버 조건의 페이지 처리량이다",
+          "lead": "적은 출력 토큰과 반복 감소가 페이지 완료를 빠르게 한다. 작은 모델의 계산 속도만을 뜻하지 않는다.",
+          "blocks": [
+            {
+              "title": "동시 실행과 상한의 영향",
+              "text": "192 DPI와 32동시 요청에서 4.52/2.72는 약 1.66배여서 1.7배로 소개된다. 한 요청이나 높은 해상도에서 같은 배율을 보장하지 않는다. 300 DPI에서는 2.68/2.33으로 약 1.15배다. 상한 도달 비율의 분모는 여러 동시성 설정을 합친 요청이므로 처리량 표의 300페이지와 혼동하지 않아야 한다.",
+              "source_ids": [
+                "surya-blog",
+                "surya-card"
+              ],
+              "kind": "judgment",
+              "type": "paragraph"
+            },
+            {
+              "title": "Apple 수치는 별도 표본",
+              "text": "M4 Max 36GB의 llama.cpp Metal 시험은 96 DPI, 16페이지 두 차례, 8동시 요청이다. BF16 처리량은 Surya 2의 0.061에서 0.190페이지/초로 높아졌고, 토큰/초는 274와 270으로 비슷했다. 출력이 짧아진 효과이며 H100 수치와 같은 시험으로 합칠 수 없다. 서버 peak RSS 4,764MB도 모든 환경의 최소 메모리 조건은 아니다.",
+              "source_ids": [
+                "surya-card",
+                "surya-blog"
+              ],
+              "kind": "judgment",
+              "type": "paragraph"
+            }
+          ]
+        },
+        {
+          "id": "license",
+          "title": "가중치의 상업 조건은 코드의 Apache 2.0과 다르다",
+          "lead": "받을 수 있는 모델이라는 사실만으로 상용 제품에 자유롭게 넣을 수는 없다.",
+          "blocks": [
+            {
+              "title": "매출, 조달금과 경쟁 제품 제한",
+              "text": "가중치 LICENSE 부속서 A는 전년 총매출 500만 달러 초과 또는 누적 지분/부채 조달 500만 달러 초과에 상업 사용 제한을 두며, 해당 두 항목에는 개인/연구 예외가 있다. 별도로 라이선서나 계열사의 경쟁 제품/서비스 제공에 관한 제한도 있다. 가격 FAQ의 간단한 규모 설명만으로 이 경쟁 제한을 생략해서는 안 된다.",
+              "source_ids": [
+                "surya-license",
+                "datalab-price"
+              ],
+              "kind": "judgment",
+              "type": "paragraph"
+            },
+            {
+              "title": "고지와 결과물 조항",
+              "text": "본문은 사용 제한, 표시와 라이선스 제공 의무를 두며 결과물에 관한 Share-a-Like 문구도 포함한다. 이번 문헌 검토는 조항의 존재와 범위를 설명한 것이며 특정 회사나 제품의 법률 승인, 상업 라이선스 체결 또는 가격 협의가 아니다.",
+              "source_ids": [
+                "surya-license"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            },
+            {
+              "title": "관리형 가격과 체크포인트의 분리",
+              "text": "현재 Datalab 가격표는 Convert processor별 요금을 제시한다. 공식 Surya 글은 관리형 API에 별도 Chandra 모델을 설명하므로 그 요금을 Surya 2.5 자체의 전용 API 단가로 붙일 수 없다. 가중치 비용, 자체 서버 운영비와 관리형 서비스 비용을 따로 비교해야 한다.",
+              "source_ids": [
+                "surya-blog",
+                "datalab-price"
+              ],
+              "kind": "judgment",
+              "type": "paragraph"
+            }
+          ]
+        }
+      ],
+      "references": [
+        {
+          "id": "datalab-price",
+          "title": "Datalab 공식 표준 가격표",
+          "url": "https://www.datalab.to/pricing",
+          "description": "2026-11-02 확인. 모델 사양, 원래 평가 조건 또는 실제 제공 범위를 본문에서 구분한다."
+        },
+        {
+          "id": "opb-card",
+          "title": "OmniParseBench 공식 데이터셋과 비교 조건",
+          "url": "https://huggingface.co/datasets/datalab-to/omni_parse_bench/raw/main/README.md",
+          "description": "2026-11-02 확인. 모델 사양, 원래 평가 조건 또는 실제 제공 범위를 본문에서 구분한다."
+        },
+        {
+          "id": "surya-blog",
+          "title": "Datalab Surya 2.5 공식 발표",
+          "url": "https://api.datalab.to/blog/surya-2-5",
+          "description": "2026-11-02 확인. 모델 사양, 원래 평가 조건 또는 실제 제공 범위를 본문에서 구분한다."
+        },
+        {
+          "id": "surya-card",
+          "title": "Surya 2.5 공식 모델 카드",
+          "url": "https://huggingface.co/datalab-to/surya-ocr-2.5/raw/main/README.md",
+          "description": "2026-11-02 확인. 모델 사양, 원래 평가 조건 또는 실제 제공 범위를 본문에서 구분한다."
+        },
+        {
+          "id": "surya-config",
+          "title": "Surya 2.5 설정",
+          "url": "https://huggingface.co/datalab-to/surya-ocr-2.5/raw/main/config.json",
+          "description": "2026-11-02 확인. 모델 사양, 원래 평가 조건 또는 실제 제공 범위를 본문에서 구분한다."
+        },
+        {
+          "id": "surya-languages",
+          "title": "Surya 2.5 전체 91언어 결과",
+          "url": "https://huggingface.co/datalab-to/surya-ocr-2.5/raw/main/static/docs/multilingual.md",
+          "description": "2026-11-02 확인. 모델 사양, 원래 평가 조건 또는 실제 제공 범위를 본문에서 구분한다."
+        },
+        {
+          "id": "surya-license",
+          "title": "Surya 가중치 수정 OpenRAIL-M 전문",
+          "url": "https://huggingface.co/datalab-to/surya-ocr-2.5/raw/main/LICENSE",
+          "description": "2026-11-02 확인. 모델 사양, 원래 평가 조건 또는 실제 제공 범위를 본문에서 구분한다."
+        },
+        {
+          "id": "surya-prev",
+          "title": "이전 Surya 2 모델 카드",
+          "url": "https://huggingface.co/datalab-to/surya-ocr-2/raw/main/README.md",
+          "description": "2026-11-02 확인. 모델 사양, 원래 평가 조건 또는 실제 제공 범위를 본문에서 구분한다."
+        },
+        {
+          "id": "surya-release",
+          "title": "surya-ocr 0.23.0 공식 릴리스",
+          "url": "https://api.github.com/repos/datalab-to/surya/releases/tags/v0.23.0",
+          "description": "2026-11-02 확인. 모델 사양, 원래 평가 조건 또는 실제 제공 범위를 본문에서 구분한다."
+        }
+      ],
+      "caveats": [
+        {
+          "text": "실제 가중치 실행, 한국어 업무 문서, 최소 장비, 실청구와 독립 사람 독해 시험은 수행하지 않았다.",
+          "source_ids": [
+            "surya-card"
+          ]
+        },
+        {
+          "text": "서로 다른 순위표와 패키지 재평가, 하드웨어, DPI, 후처리와 동시 요청 조건을 합쳐 우열이나 실제 비용을 계산하지 않았다.",
+          "source_ids": [
+            "surya-blog",
+            "opb-card"
+          ]
+        },
+        {
+          "text": "라이선스 조항의 설명은 특정 법인에 대한 법률 판단이 아니다. 중요한 경쟁 서비스 제한과 결과물 조항을 공식 원문에서 확인해야 한다.",
+          "source_ids": [
+            "surya-license"
+          ]
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "유리한 선택 조건",
+            "text": "레이아웃과 읽기 순서를 포함하는 대량 문서 OCR에서, 짧아진 출력과 낮아진 반복 비율을 평가할 가치가 있다. 공개 수치는 제공자의 특정 장비와 시험 결과다.",
+            "source_ids": [
+              "surya-card",
+              "surya-blog"
+            ],
+            "kind": "judgment"
+          },
+          {
+            "label": "전환을 막을 수 있는 조건",
+            "text": "행/열 좌표가 필요한 표 처리, 표 정확도가 최우선인 문서, 일부 언어와 오래된 스캔에서는 손실이나 상대 열세가 남는다. 상업 이용 허용 범위도 모델 선택의 필수 조건이다.",
+            "source_ids": [
+              "surya-card",
+              "opb-card",
+              "surya-license"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sensenova-loop-9b-preview-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "checked_on": "2026-11-02",
+      "title": "SenseNova-Loop-9B-Preview 소개 — 같은 층을 두 번 쓰는 문서 에이전트 모델",
+      "description": "새 공개 가중치 모델을 검토하는 개발자와 관리자가 반복 계산 구조, 문서와 코딩 평가의 강약점, 실제 배포 및 비용 조건을 비교할 수 있도록 정리했다.",
+      "deck": "32개 디코더 층 중 24개를 두 번 사용해 56회의 층 계산을 하는 시각 언어 모델이다. 일부 업무 평가에서 높은 점수를 보고하지만 터미널 작업의 상대 열세와 미공개 평가 조건이 남아 있다.",
+      "scope": "공식 원문의 모델, 평가와 현재 제공 조건 비교. 실제 추론 및 청구 검증은 수행하지 않았다.",
+      "source_note": "2026-11-02 KST 확인. 발표일과 확인일, 공급자 평가와 독립 검증을 구분한다.",
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "highlights": [
+        "32개 층에서 56회 계산하는 공개 미리보기",
+        "문서 업무 점수와 터미널 열세를 함께 비교"
+      ],
+      "summary": [
+        {
+          "label": "공개일과 역할",
+          "text": "SenseNova는 2026년 10월 30일 Loop-9B-Preview를 공개했다. 텍스트와 이미지를 받아 텍스트를 생성하고 문서 이해, 코딩과 외부 도구 작업을 겨냥한다. 9B급 저장 규모와 반복 계산량은 다른 개념이다.",
+          "source_ids": [
+            "loop-card",
+            "loop-config"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "어디에서 낫고 부족한가",
+          "text": "공급자 차트에서 BIRD-Dev 71.38과 RaccoonPPTBench 70.70으로 비교 대상보다 높다. 그러나 Terminal Bench 2.1은 40.45로 Qwen3.5-27B 47.19와 Nanbeige4.2-3B 49.44보다 낮다. 모든 에이전트 작업의 우위를 뜻하지 않는다.",
+          "source_ids": [
+            "loop-card",
+            "loop-chart"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "실제 이용 조건",
+          "text": "Apache 2.0 가중치와 사용자 정의 모델 코드가 공개됐다. 학습 문맥은 최대 262,144토큰이며 상세 기술 보고서는 아직 TBD다. 관리형 표준 API 요금과 최소 추론 장비는 확인되지 않았다.",
+          "source_ids": [
+            "loop-card",
+            "loop-meta",
+            "loop-license"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "tables": [
+        {
+          "id": "specification",
+          "title": "반복 계산 구조와 주요 비교 모델",
+          "columns": [
+            "모델",
+            "규모와 구조",
+            "문맥",
+            "입출력 및 제공"
+          ],
+          "rows": [
+            {
+              "values": [
+                "SenseNova-Loop-9B-Preview",
+                "약 9B; 원문 inference parameters 약 14.6B. 32개 층에서 56회 계산",
+                "학습 최대 262,144; 동일 길이 실사용 검증 아님",
+                "텍스트/이미지 → 텍스트, Apache 2.0 가중치와 전용 코드"
+              ],
+              "source_ids": [
+                "loop-card",
+                "loop-config",
+                "loop-license"
+              ]
+            },
+            {
+              "values": [
+                "Qwen3.5-9B",
+                "9B 언어 모델, 32층의 비교 가능한 하이브리드 구조",
+                "기본 262,144, 문서상 확장 1,010,000",
+                "시각 언어 모델, Apache 2.0 가중치"
+              ],
+              "source_ids": [
+                "qwen35-card"
+              ]
+            },
+            {
+              "values": [
+                "Qwen3.6-27B",
+                "27B 언어 모델, 64층의 더 큰 대안",
+                "기본 262,144, 문서상 확장 1,010,000",
+                "시각 언어 모델, Apache 2.0 가중치"
+              ],
+              "source_ids": [
+                "qwen36-card"
+              ]
+            }
+          ],
+          "note": "같은 규모의 기존 구조와 더 큰 모델을 비교 대상으로 선택했다. Qwen3.5-9B가 Loop의 직접 초기 체크포인트라고 공식 확인된 것은 아니다. 동일 학습 조건의 비반복 ablation이나 직전 SenseNova 모델 결과는 미공개이므로 반복 구조만의 성능 향상을 계산하지 않는다."
+        },
+        {
+          "id": "work-scores",
+          "title": "문서와 데이터 업무 — 공급자 비교 차트",
+          "columns": [
+            "모델",
+            "BIRD-Dev",
+            "WorkBuddy Bench",
+            "AIDABench",
+            "TeamBench"
+          ],
+          "rows": [
+            {
+              "values": [
+                "SenseNova-Loop-9B-Preview",
+                "71.38",
+                "66.89",
+                "58.87",
+                "48.89"
+              ],
+              "source_ids": [
+                "loop-chart"
+              ]
+            },
+            {
+              "values": [
+                "Qwen3.5-9B",
+                "68.48",
+                "41.63",
+                "40.78",
+                "33.33"
+              ],
+              "source_ids": [
+                "loop-chart"
+              ]
+            },
+            {
+              "values": [
+                "Qwen3.6-35B-A3B",
+                "69.80",
+                "61.98",
+                "54.24",
+                "44.44"
+              ],
+              "source_ids": [
+                "loop-chart"
+              ]
+            },
+            {
+              "values": [
+                "Qwen3.5-27B",
+                "69.84",
+                "60.53",
+                "57.19",
+                "44.44"
+              ],
+              "source_ids": [
+                "loop-chart"
+              ]
+            }
+          ],
+          "note": "원그림의 숫자를 직접 읽은 공급자 점수다. 공개 차트에는 정확한 단위, 평가 데이터 판, 표본 수, 추론 예산, 반복 횟수와 전체 harness 조건이 명시되지 않았다. 퍼센트나 독립 재현 점수로 바꾸지 않는다. 모델 이름/추론 표시도 원그림 범위로만 해석한다."
+        },
+        {
+          "id": "agent-scores",
+          "title": "터미널과 자동화 — 우위와 열세가 갈리는 평가",
+          "columns": [
+            "모델",
+            "Terminal Bench 2.1",
+            "T³-Banking",
+            "AutomationBench",
+            "RaccoonPPTBench"
+          ],
+          "rows": [
+            {
+              "values": [
+                "SenseNova-Loop-9B-Preview",
+                "40.45",
+                "18.56",
+                "13.72",
+                "70.70"
+              ],
+              "source_ids": [
+                "loop-chart"
+              ]
+            },
+            {
+              "values": [
+                "Qwen3.5-9B",
+                "29.20",
+                "9.47",
+                "1.05",
+                "33.60"
+              ],
+              "source_ids": [
+                "loop-chart"
+              ]
+            },
+            {
+              "values": [
+                "Qwen3.6-35B-A3B",
+                "40.45",
+                "13.54",
+                "9.33",
+                "64.30"
+              ],
+              "source_ids": [
+                "loop-chart"
+              ]
+            },
+            {
+              "values": [
+                "Qwen3.5-27B",
+                "47.19",
+                "19.59",
+                "10.17",
+                "59.08"
+              ],
+              "source_ids": [
+                "loop-chart"
+              ]
+            },
+            {
+              "values": [
+                "Nanbeige4.2-3B",
+                "49.44",
+                "6.19",
+                "2.77",
+                "차트 미보고"
+              ],
+              "source_ids": [
+                "loop-chart"
+              ]
+            }
+          ],
+          "note": "공급자 공개 차트의 원래 점수. Terminal Bench 2.1을 다른 Terminal-Bench 판으로 옮기지 않는다. RaccoonPPTBench는 원그림 각주상 내부 자체 슬라이드 생성 평가로, 내용 구성과 시각 표현 및 결과 품질을 종합 평가한다. 공개 외부 표준이나 PowerPoint 실제 파일 호환성 시험으로 간주하지 않는다."
+        },
+        {
+          "id": "runtime",
+          "title": "현재 공개와 개발 중인 항목",
+          "columns": [
+            "항목",
+            "확인 상태",
+            "해석"
+          ],
+          "rows": [
+            {
+              "values": [
+                "모델 가중치와 모델링 코드",
+                "공식 HF 파일 목록과 config auto_map에 존재",
+                "일반 Qwen 지원만으로 반복 순서와 mHC 호환을 보장하지 않음"
+              ],
+              "source_ids": [
+                "loop-meta",
+                "loop-config"
+              ]
+            },
+            {
+              "values": [
+                "MTP",
+                "공식 카드 Available",
+                "복수 토큰을 미리 예측하는 가속 경로; 실제 배율 미측정"
+              ],
+              "source_ids": [
+                "loop-card"
+              ]
+            },
+            {
+              "values": [
+                "DSpark / Dflash2",
+                "학습 진행 중",
+                "학습 명령 공개가 완성 가속기 제공을 뜻하지 않음"
+              ],
+              "source_ids": [
+                "loop-card"
+              ]
+            },
+            {
+              "values": [
+                "Transformers 환경",
+                "5.18.0 / PyTorch 2.11.0 / CUDA 13.0 안내",
+                "참고 환경; 원격 사용자 정의 코드 로딩 조건"
+              ],
+              "source_ids": [
+                "loop-card"
+              ]
+            },
+            {
+              "values": [
+                "SGLang / vLLM",
+                "각각 PR #47281 / #64832 구현 경로 안내",
+                "일반 안정판 전체에서 자동 지원된다는 보장 아님"
+              ],
+              "source_ids": [
+                "loop-card"
+              ]
+            },
+            {
+              "values": [
+                "기술 보고서",
+                "TBD",
+                "평가 상세와 훈련 ablation의 공백 유지"
+              ],
+              "source_ids": [
+                "loop-card"
+              ]
+            }
+          ],
+          "note": "문헌 확인이며 설치, GPU 실행 또는 PR 코드의 전수 보안 검토는 수행하지 않았다. 단일 GPU 예제와 4GPU 서버 예제, 8GPU 학습 예제는 최소 추론 장비를 정하는 자료가 아니다."
+        },
+        {
+          "id": "pricing",
+          "title": "표준 요금과 제공 범위",
+          "columns": [
+            "모델 또는 경로",
+            "표준 API 요금",
+            "배포/비용 조건"
+          ],
+          "rows": [
+            {
+              "values": [
+                "SenseNova-Loop-9B-Preview",
+                "확인되지 않음",
+                "Apache 2.0 가중치; 자체 추론 자원과 운영 비용 별도"
+              ],
+              "source_ids": [
+                "loop-card",
+                "loop-license"
+              ]
+            },
+            {
+              "values": [
+                "Qwen3.5-9B 공개 가중치",
+                "가중치 카드에서 정확 모델의 API 표준 요금 미확인",
+                "Apache 2.0; 서비스 제공자의 요금과 별도"
+              ],
+              "source_ids": [
+                "qwen35-card"
+              ]
+            },
+            {
+              "values": [
+                "Qwen3.6-27B 공개 가중치",
+                "가중치 카드에서 정확 모델의 API 표준 요금 미확인",
+                "Apache 2.0; 관리형 제공 경로와 실제 계약 조건 별도"
+              ],
+              "source_ids": [
+                "qwen36-card"
+              ]
+            }
+          ],
+          "note": "2026-11-02 공식 카드와 라이선스 확인 범위. 미확인을 0달러나 무료 추론으로 기록하지 않는다. 저장 파라미터 수나 반복 계산량만으로 토큰 단가, 월 구독량, 지연 시간이나 최소 VRAM을 추정하지 않는다."
+        }
+      ],
+      "explanation": [
+        {
+          "id": "architecture",
+          "title": "가중치를 늘리는 대신 같은 층을 다시 계산한다",
+          "lead": "저장하는 층 수와 한 토큰을 생성할 때 거치는 계산 수를 구분하면 이 모델의 특징을 이해할 수 있다.",
+          "blocks": [
+            {
+              "title": "32개 층과 56회 계산",
+              "text": "앞의 0~3층을 통과한 뒤 4~27층의 24개 층을 같은 가중치로 두 번 계산하고, 끝의 28~31층을 통과한다. 따라서 저장된 층은 32개지만 계산은 4+24×2+4=56회다. 원문의 약 14.6B inference parameters는 이 반복 계산을 설명하는 규모 지표이며 서로 다른 14.6B 가중치를 저장한다는 뜻이 아니다.",
+              "source_ids": [
+                "loop-card",
+                "loop-config"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            },
+            {
+              "title": "두 정보 흐름과 하이브리드 주의",
+              "text": "mHC는 반복 구간의 두 잔차 정보 흐름을 학습한 변환으로 연결하고 섞는다. 설정은 2개 stream과 Sinkhorn 정규화 20회를 사용한다. 디코더는 선형 주의 세 층 뒤 전체 주의 한 층을 반복한다. 호환 실행기는 반복 순서와 이 매핑을 모두 재현해야 한다.",
+              "source_ids": [
+                "loop-card",
+                "loop-config"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            },
+            {
+              "title": "저장 형식과 실제 메모리",
+              "text": "카드는 BF16 backbone과 FP32 routing을 설명한다. 반면 현재 HF 메타데이터는 총 9,656,250,480개 텐서 파라미터 중 F32 9,412,959,856개, BF16 243,290,624개를 집계한다. 실제 export의 집계가 단순 BF16 전체 모델 가정과 다르므로 9B×2바이트로 파일 크기나 최소 VRAM을 확정하지 않는다. 이 차이의 원인과 실제 적재 형식은 실행 검증되지 않았다.",
+              "source_ids": [
+                "loop-meta",
+                "loop-index",
+                "loop-card"
+              ],
+              "kind": "judgment",
+              "type": "paragraph"
+            }
+          ]
+        },
+        {
+          "id": "comparisons",
+          "title": "업무 평가의 높은 점수와 터미널 열세를 함께 본다",
+          "lead": "한 차트의 여러 시험도 서로 다른 작업을 평가한다. 하나의 종합 순위로 합치지 않는다.",
+          "blocks": [
+            {
+              "title": "문서와 도구 업무의 가능성",
+              "text": "공급자 차트에서 Loop는 같은 규모 Qwen3.5-9B보다 BIRD-Dev, WorkBuddy와 AIDABench에서 높다. 더 큰 Qwen3.5-27B와 비교해도 일부 업무 점수가 높으며, 슬라이드 내부 평가도 70.70 대 59.08이다. 따라서 단순 저장 규모 이상의 작업 능력을 탐색할 이유는 있으나, 특정 문서 앱에서 출하 기능이 검증됐다는 증거는 아니다.",
+              "source_ids": [
+                "loop-chart"
+              ],
+              "kind": "judgment",
+              "type": "paragraph"
+            },
+            {
+              "title": "모든 코딩에서 우세하지 않다",
+              "text": "Terminal Bench 2.1의 Loop 40.45는 Qwen3.6-35B-A3B와 같으며 Qwen3.5-27B 47.19, Nanbeige4.2-3B 49.44보다 낮다. T³-Banking에서도 18.56은 Qwen3.5-27B 19.59보다 낮다. 문서 관련 일부 시험의 강점을 일반적인 코딩 우위로 넓힐 수 없다.",
+              "source_ids": [
+                "loop-chart"
+              ],
+              "kind": "judgment",
+              "type": "paragraph"
+            },
+            {
+              "title": "반복 구조의 인과 효과는 미확인",
+              "text": "모델마다 학습 자료, 추론 설정과 도구 환경이 달라질 수 있다. 직전 모델 또는 반복을 끈 같은 체크포인트의 통제 평가가 없어 높은 점수가 loop와 mHC 때문에 생겼다고 분리할 수 없다. 기술 보고서가 TBD인 상태에서 표본 수, 채점 방법과 반복 오차도 추정하지 않는다.",
+              "source_ids": [
+                "loop-card",
+                "loop-chart"
+              ],
+              "kind": "judgment",
+              "type": "paragraph"
+            }
+          ]
+        },
+        {
+          "id": "deployment",
+          "title": "공개 미리보기의 실행 조건과 남은 공백",
+          "lead": "공개 가중치와 전용 구현이 있지만 운영 환경 선택의 검증은 별도로 필요하다.",
+          "blocks": [
+            {
+              "title": "학습 문맥과 모델 입력",
+              "text": "학습 최대 길이와 설정 위치 상한은 262,144토큰이다. Qwen 카드의 1,010,000 확장은 그 모델의 별도 안내이며 Loop에 자동 적용되지 않는다. 공식 카드는 텍스트와 이미지 입력을 설명하고 영어와 중국어 태그를 둔다. config의 video_token_id만으로 영상 제품 지원이나 한국어 성능을 확정하지 않는다.",
+              "source_ids": [
+                "loop-card",
+                "loop-config",
+                "qwen35-card",
+                "qwen36-card"
+              ],
+              "kind": "judgment",
+              "type": "paragraph"
+            },
+            {
+              "title": "구현 공개와 문서의 시차",
+              "text": "HF에는 모델링 코드와 auto_map이 있으며 공식 카드는 custom code를 허용하는 Transformers 로딩을 안내한다. 같은 카드의 리소스 표에는 Transformers 구현 publication details to be announced와 기술 보고서 TBD가 남아 있다. 파일 존재는 확인했지만 모든 문서가 동기화됐다고 볼 수 없으며, 실제 실행을 완료한 검증으로 바꾸지 않는다.",
+              "source_ids": [
+                "loop-card",
+                "loop-meta",
+                "loop-config"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            },
+            {
+              "title": "가속 경로의 제공 단계",
+              "text": "MTP는 제공 항목이고 DSpark와 Dflash2는 학습 진행 중이다. 서버 예제의 GPU 수는 해당 참고 구성이다. 처리량이나 비용 절감 배율, 최소 GPU는 공개된 비교 실측이 없어 확정할 수 없다. 특히 56회 층 계산의 깊이가 커졌다는 사실은 같은 시간과 전력으로 성능이 오른다는 뜻이 아니다.",
+              "source_ids": [
+                "loop-card"
+              ],
+              "kind": "judgment",
+              "type": "paragraph"
+            }
+          ]
+        },
+        {
+          "id": "availability",
+          "title": "라이선스, 비용과 적합성",
+          "lead": "현재 판단 가능한 것은 받을 수 있는 가중치와 참고 환경이며 관리형 서비스 계약이나 실제 업무 성과는 아니다.",
+          "blocks": [
+            {
+              "title": "Apache 2.0과 자체 운영",
+              "text": "공식 Apache 2.0은 라이선스 고지와 변경 표시 등의 조건으로 사용과 배포를 허용하고 상표 권리나 성능 보증을 주지는 않는다. 공개 가중치의 라이선스 비용과 자체 GPU, 장문 요청의 메모리 및 운영 비용은 다른 항목이다. 공식 고정 API 단가는 확인되지 않았다.",
+              "source_ids": [
+                "loop-license",
+                "loop-card"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            },
+            {
+              "title": "비교 모델의 서로 다른 역할",
+              "text": "Qwen3.5-9B는 같은 저장 규모와 32층 구조의 기존 대안, Qwen3.6-27B는 더 큰 공개 시각 언어 모델의 선택지를 보여준다. 이들 카드의 문맥과 라이선스는 현재 사양 비교에 쓰고, Loop 차트에 없는 Qwen3.6-27B 성능을 다른 Qwen 행에서 옮겨 채우지 않는다.",
+              "source_ids": [
+                "qwen35-card",
+                "qwen36-card",
+                "loop-chart"
+              ],
+              "kind": "judgment",
+              "type": "paragraph"
+            },
+            {
+              "title": "문서 기능과 기반 모델의 경계",
+              "text": "PPT 데모와 내부 슬라이드 평가가 있어 문서 생성 연구와 연결된다. 하지만 Office나 PowerPoint 제품에 통합돼 일반 제공 중이라는 발표는 아니며, PPTX 호환성, 한국어 편집과 실제 문서 업무 품질은 별도 검증 영역이다.",
+              "source_ids": [
+                "loop-card",
+                "loop-chart"
+              ],
+              "kind": "judgment",
+              "type": "paragraph"
+            }
+          ]
+        }
+      ],
+      "references": [
+        {
+          "id": "loop-card",
+          "title": "SenseNova-Loop-9B-Preview 공식 카드",
+          "url": "https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview/raw/main/README.md",
+          "description": "2026-11-02 확인. 모델 사양, 원래 평가 조건 또는 실제 제공 범위를 본문에서 구분한다."
+        },
+        {
+          "id": "loop-chart",
+          "title": "공급자 공개 8개 평가 차트",
+          "url": "https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview/resolve/main/assets/loop9b-benchmark-results.png",
+          "description": "2026-11-02 확인. 모델 사양, 원래 평가 조건 또는 실제 제공 범위를 본문에서 구분한다."
+        },
+        {
+          "id": "loop-config",
+          "title": "SenseNova Loop 모델 설정",
+          "url": "https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview/raw/main/config.json",
+          "description": "2026-11-02 확인. 모델 사양, 원래 평가 조건 또는 실제 제공 범위를 본문에서 구분한다."
+        },
+        {
+          "id": "loop-index",
+          "title": "현재 공개 가중치 인덱스",
+          "url": "https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview/raw/main/model.safetensors.index.json",
+          "description": "2026-11-02 확인. 모델 사양, 원래 평가 조건 또는 실제 제공 범위를 본문에서 구분한다."
+        },
+        {
+          "id": "loop-license",
+          "title": "SenseNova Loop Apache 2.0 전문",
+          "url": "https://raw.githubusercontent.com/OpenSenseNova/SenseNova-Loop/main/LICENSE",
+          "description": "2026-11-02 확인. 모델 사양, 원래 평가 조건 또는 실제 제공 범위를 본문에서 구분한다."
+        },
+        {
+          "id": "loop-meta",
+          "title": "공식 HF 저장소 시점과 텐서 메타데이터",
+          "url": "https://huggingface.co/api/models/sensenova/SenseNova-Loop-9B-Preview",
+          "description": "2026-11-02 확인. 모델 사양, 원래 평가 조건 또는 실제 제공 범위를 본문에서 구분한다."
+        },
+        {
+          "id": "qwen35-card",
+          "title": "Qwen3.5-9B 공식 카드",
+          "url": "https://huggingface.co/Qwen/Qwen3.5-9B/raw/main/README.md",
+          "description": "2026-11-02 확인. 모델 사양, 원래 평가 조건 또는 실제 제공 범위를 본문에서 구분한다."
+        },
+        {
+          "id": "qwen36-card",
+          "title": "Qwen3.6-27B 공식 카드",
+          "url": "https://huggingface.co/Qwen/Qwen3.6-27B/raw/main/README.md",
+          "description": "2026-11-02 확인. 모델 사양, 원래 평가 조건 또는 실제 제공 범위를 본문에서 구분한다."
+        }
+      ],
+      "caveats": [
+        {
+          "text": "공급자 차트를 직접 읽은 문헌 비교다. 독립 실행, 실제 PPTX/한국어 문서, 청구 및 사람 독해 시험은 수행하지 않았다.",
+          "source_ids": [
+            "loop-chart",
+            "loop-card"
+          ]
+        },
+        {
+          "text": "차트는 평가 방법, 표본과 점수 단위가 충분히 공개되지 않았다. 내부 PPT 평가와 Terminal Bench 2.1을 외부 표준이나 다른 판의 수치로 바꾸지 않았다.",
+          "source_ids": [
+            "loop-chart"
+          ]
+        },
+        {
+          "text": "현재 파일과 카드의 export 정밀도 및 구현 공개 상태 설명 사이에 차이가 있다. 최소 메모리와 안정판 호환은 확정하지 않았다.",
+          "source_ids": [
+            "loop-meta",
+            "loop-card",
+            "loop-config"
+          ]
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "확인된 강점",
+            "text": "공개된 작은 저장 규모에서 반복 계산과 두 잔차 흐름을 결합했고, 제공자 차트의 여러 문서와 도구 업무에서 더 큰 대안보다 높은 점수를 보고했다.",
+            "source_ids": [
+              "loop-card",
+              "loop-chart"
+            ],
+            "kind": "judgment"
+          },
+          {
+            "label": "남은 판단 조건",
+            "text": "터미널 작업과 일부 금융 업무에서는 더 낮은 결과가 있다. 상세 평가와 실제 자원, 한국어 문서 및 표준 서비스 요금이 미확인인 공개 미리보기이므로 실행 전 배포 호환성과 업무 평가가 필요하다.",
+            "source_ids": [
+              "loop-chart",
+              "loop-card",
+              "loop-meta"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      }
+    }
+  ]
+}

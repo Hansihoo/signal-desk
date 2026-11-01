@@ -80,7 +80,9 @@
     "gemini-4-carbon-model-guide",
     "unlimited-ocr-2-model-guide",
     "nemotron-3-5-transcribe-model-guide",
-    "mage-vl-cowork-model-guide"
+    "mage-vl-cowork-model-guide",
+    "surya-2-5-model-guide",
+    "sensenova-loop-9b-preview-model-guide"
   ],
   "catalogs": {
     "devops-implementation-guide": "devops_tools.2026-10-10.r4.json"
@@ -255,6 +257,12 @@
     ],
     "mage-vl-cowork-model-guide": [
       "57c5ca84efa5aca69b21c251071e899c43a4cc437f33dfd285c7a059ab436655"
+    ],
+    "surya-2-5-model-guide": [
+      "8c6df88919b906d3e8136e499faad1f577e920df6c58eb625354f905c0a56b2f"
+    ],
+    "sensenova-loop-9b-preview-model-guide": [
+      "921a719225b013db1b304730f4124801d4ba7123ee692acb9a2bf242f01803f1"
     ]
   },
   "model_introduction_editions": {
@@ -374,6 +382,12 @@
     ],
     "mage-vl-cowork-model-guide": [
       "57c5ca84efa5aca69b21c251071e899c43a4cc437f33dfd285c7a059ab436655"
+    ],
+    "surya-2-5-model-guide": [
+      "8c6df88919b906d3e8136e499faad1f577e920df6c58eb625354f905c0a56b2f"
+    ],
+    "sensenova-loop-9b-preview-model-guide": [
+      "921a719225b013db1b304730f4124801d4ba7123ee692acb9a2bf242f01803f1"
     ]
   },
   "model_introduction_purpose_editions": {
@@ -482,6 +496,12 @@
     ],
     "mage-vl-cowork-model-guide": [
       "57c5ca84efa5aca69b21c251071e899c43a4cc437f33dfd285c7a059ab436655"
+    ],
+    "surya-2-5-model-guide": [
+      "8c6df88919b906d3e8136e499faad1f577e920df6c58eb625354f905c0a56b2f"
+    ],
+    "sensenova-loop-9b-preview-model-guide": [
+      "921a719225b013db1b304730f4124801d4ba7123ee692acb9a2bf242f01803f1"
     ]
   },
   "model_introduction_reader_editions": {
@@ -587,6 +607,12 @@
     ],
     "mage-vl-cowork-model-guide": [
       "57c5ca84efa5aca69b21c251071e899c43a4cc437f33dfd285c7a059ab436655"
+    ],
+    "surya-2-5-model-guide": [
+      "8c6df88919b906d3e8136e499faad1f577e920df6c58eb625354f905c0a56b2f"
+    ],
+    "sensenova-loop-9b-preview-model-guide": [
+      "921a719225b013db1b304730f4124801d4ba7123ee692acb9a2bf242f01803f1"
     ]
   }
 }

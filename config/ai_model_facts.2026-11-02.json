@@ -1,0 +1,1326 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "id": "surya25-20261029-paired-0-0",
+      "model": "Surya OCR 2",
+      "provider": "Datalab",
+      "source_url": "https://huggingface.co/datalab-to/surya-ocr-2.5/raw/main/README.md",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OmniParseBench / paired package / Headline",
+        "condition": "surya-ocr0.23.0/192DPI/2937pages/16288tests/full-page regeneration on/one run. 종합은3가족평균;표시차이와반올림전+2.7/CI구분.",
+        "평가 점수": 83.3,
+        "단위": "점",
+        "측정 주체": "Datalab 제공자 측정"
+      }
+    },
+    {
+      "id": "surya25-20261029-paired-0-1",
+      "model": "Surya OCR 2",
+      "provider": "Datalab",
+      "source_url": "https://huggingface.co/datalab-to/surya-ocr-2.5/raw/main/README.md",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OmniParseBench / paired package / Text",
+        "condition": "surya-ocr0.23.0/192DPI/2937pages/16288tests/full-page regeneration on/one run. 종합은3가족평균;표시차이와반올림전+2.7/CI구분.",
+        "평가 점수": 81.0,
+        "단위": "점",
+        "측정 주체": "Datalab 제공자 측정"
+      }
+    },
+    {
+      "id": "surya25-20261029-paired-0-2",
+      "model": "Surya OCR 2",
+      "provider": "Datalab",
+      "source_url": "https://huggingface.co/datalab-to/surya-ocr-2.5/raw/main/README.md",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OmniParseBench / paired package / Tables",
+        "condition": "surya-ocr0.23.0/192DPI/2937pages/16288tests/full-page regeneration on/one run. 종합은3가족평균;표시차이와반올림전+2.7/CI구분.",
+        "평가 점수": 74.3,
+        "단위": "점",
+        "측정 주체": "Datalab 제공자 측정"
+      }
+    },
+    {
+      "id": "surya25-20261029-paired-0-3",
+      "model": "Surya OCR 2",
+      "provider": "Datalab",
+      "source_url": "https://huggingface.co/datalab-to/surya-ocr-2.5/raw/main/README.md",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OmniParseBench / paired package / Layout",
+        "condition": "surya-ocr0.23.0/192DPI/2937pages/16288tests/full-page regeneration on/one run. 종합은3가족평균;표시차이와반올림전+2.7/CI구분.",
+        "평가 점수": 94.5,
+        "단위": "점",
+        "측정 주체": "Datalab 제공자 측정"
+      }
+    },
+    {
+      "id": "surya25-20261029-paired-1-0",
+      "model": "Surya OCR 2.5",
+      "provider": "Datalab",
+      "source_url": "https://huggingface.co/datalab-to/surya-ocr-2.5/raw/main/README.md",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OmniParseBench / paired package / Headline",
+        "condition": "surya-ocr0.23.0/192DPI/2937pages/16288tests/full-page regeneration on/one run. 종합은3가족평균;표시차이와반올림전+2.7/CI구분.",
+        "평가 점수": 85.9,
+        "단위": "점",
+        "측정 주체": "Datalab 제공자 측정"
+      }
+    },
+    {
+      "id": "surya25-20261029-paired-1-1",
+      "model": "Surya OCR 2.5",
+      "provider": "Datalab",
+      "source_url": "https://huggingface.co/datalab-to/surya-ocr-2.5/raw/main/README.md",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OmniParseBench / paired package / Text",
+        "condition": "surya-ocr0.23.0/192DPI/2937pages/16288tests/full-page regeneration on/one run. 종합은3가족평균;표시차이와반올림전+2.7/CI구분.",
+        "평가 점수": 83.8,
+        "단위": "점",
+        "측정 주체": "Datalab 제공자 측정"
+      }
+    },
+    {
+      "id": "surya25-20261029-paired-1-2",
+      "model": "Surya OCR 2.5",
+      "provider": "Datalab",
+      "source_url": "https://huggingface.co/datalab-to/surya-ocr-2.5/raw/main/README.md",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OmniParseBench / paired package / Tables",
+        "condition": "surya-ocr0.23.0/192DPI/2937pages/16288tests/full-page regeneration on/one run. 종합은3가족평균;표시차이와반올림전+2.7/CI구분.",
+        "평가 점수": 78.3,
+        "단위": "점",
+        "측정 주체": "Datalab 제공자 측정"
+      }
+    },
+    {
+      "id": "surya25-20261029-paired-1-3",
+      "model": "Surya OCR 2.5",
+      "provider": "Datalab",
+      "source_url": "https://huggingface.co/datalab-to/surya-ocr-2.5/raw/main/README.md",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OmniParseBench / paired package / Layout",
+        "condition": "surya-ocr0.23.0/192DPI/2937pages/16288tests/full-page regeneration on/one run. 종합은3가족평균;표시차이와반올림전+2.7/CI구분.",
+        "평가 점수": 95.7,
+        "단위": "점",
+        "측정 주체": "Datalab 제공자 측정"
+      }
+    },
+    {
+      "id": "surya25-20261029-opb-current-0-0",
+      "model": "Chandra OCR 2",
+      "provider": "Datalab",
+      "source_url": "https://huggingface.co/datasets/datalab-to/omni_parse_bench/raw/main/README.md",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OmniParseBench / current dataset card / Headline",
+        "condition": "2937pages/16288tests/2343docs/92languages. 공급자권장설정/어댑터차이. 이전Surya83.1은별도재평가83.3과별도. 모든실행동일아님.",
+        "평가 점수": 90.1,
+        "단위": "점",
+        "측정 주체": "Datalab 제공자 측정"
+      }
+    },
+    {
+      "id": "surya25-20261029-opb-current-0-1",
+      "model": "Chandra OCR 2",
+      "provider": "Datalab",
+      "source_url": "https://huggingface.co/datasets/datalab-to/omni_parse_bench/raw/main/README.md",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OmniParseBench / current dataset card / Text",
+        "condition": "2937pages/16288tests/2343docs/92languages. 공급자권장설정/어댑터차이. 이전Surya83.1은별도재평가83.3과별도. 모든실행동일아님.",
+        "평가 점수": 87.4,
+        "단위": "점",
+        "측정 주체": "Datalab 제공자 측정"
+      }
+    },
+    {
+      "id": "surya25-20261029-opb-current-0-2",
+      "model": "Chandra OCR 2",
+      "provider": "Datalab",
+      "source_url": "https://huggingface.co/datasets/datalab-to/omni_parse_bench/raw/main/README.md",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OmniParseBench / current dataset card / Tables",
+        "condition": "2937pages/16288tests/2343docs/92languages. 공급자권장설정/어댑터차이. 이전Surya83.1은별도재평가83.3과별도. 모든실행동일아님.",
+        "평가 점수": 87.4,
+        "단위": "점",
+        "측정 주체": "Datalab 제공자 측정"
+      }
+    },
+    {
+      "id": "surya25-20261029-opb-current-0-3",
+      "model": "Chandra OCR 2",
+      "provider": "Datalab",
+      "source_url": "https://huggingface.co/datasets/datalab-to/omni_parse_bench/raw/main/README.md",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OmniParseBench / current dataset card / Layout",
+        "condition": "2937pages/16288tests/2343docs/92languages. 공급자권장설정/어댑터차이. 이전Surya83.1은별도재평가83.3과별도. 모든실행동일아님.",
+        "평가 점수": 95.4,
+        "단위": "점",
+        "측정 주체": "Datalab 제공자 측정"
+      }
+    },
+    {
+      "id": "surya25-20261029-opb-current-1-0",
+      "model": "Surya OCR 2.5",
+      "provider": "Datalab",
+      "source_url": "https://huggingface.co/datasets/datalab-to/omni_parse_bench/raw/main/README.md",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OmniParseBench / current dataset card / Headline",
+        "condition": "2937pages/16288tests/2343docs/92languages. 공급자권장설정/어댑터차이. 이전Surya83.1은별도재평가83.3과별도. 모든실행동일아님.",
+        "평가 점수": 85.9,
+        "단위": "점",
+        "측정 주체": "Datalab 제공자 측정"
+      }
+    },
+    {
+      "id": "surya25-20261029-opb-current-1-1",
+      "model": "Surya OCR 2.5",
+      "provider": "Datalab",
+      "source_url": "https://huggingface.co/datasets/datalab-to/omni_parse_bench/raw/main/README.md",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OmniParseBench / current dataset card / Text",
+        "condition": "2937pages/16288tests/2343docs/92languages. 공급자권장설정/어댑터차이. 이전Surya83.1은별도재평가83.3과별도. 모든실행동일아님.",
+        "평가 점수": 83.8,
+        "단위": "점",
+        "측정 주체": "Datalab 제공자 측정"
+      }
+    },
+    {
+      "id": "surya25-20261029-opb-current-1-2",
+      "model": "Surya OCR 2.5",
+      "provider": "Datalab",
+      "source_url": "https://huggingface.co/datasets/datalab-to/omni_parse_bench/raw/main/README.md",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OmniParseBench / current dataset card / Tables",
+        "condition": "2937pages/16288tests/2343docs/92languages. 공급자권장설정/어댑터차이. 이전Surya83.1은별도재평가83.3과별도. 모든실행동일아님.",
+        "평가 점수": 78.3,
+        "단위": "점",
+        "측정 주체": "Datalab 제공자 측정"
+      }
+    },
+    {
+      "id": "surya25-20261029-opb-current-1-3",
+      "model": "Surya OCR 2.5",
+      "provider": "Datalab",
+      "source_url": "https://huggingface.co/datasets/datalab-to/omni_parse_bench/raw/main/README.md",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OmniParseBench / current dataset card / Layout",
+        "condition": "2937pages/16288tests/2343docs/92languages. 공급자권장설정/어댑터차이. 이전Surya83.1은별도재평가83.3과별도. 모든실행동일아님.",
+        "평가 점수": 95.7,
+        "단위": "점",
+        "측정 주체": "Datalab 제공자 측정"
+      }
+    },
+    {
+      "id": "surya25-20261029-opb-current-2-0",
+      "model": "MiniCPM-OCR-1.0",
+      "provider": "OpenBMB",
+      "source_url": "https://huggingface.co/datasets/datalab-to/omni_parse_bench/raw/main/README.md",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OmniParseBench / current dataset card / Headline",
+        "condition": "2937pages/16288tests/2343docs/92languages. 공급자권장설정/어댑터차이. 이전Surya83.1은별도재평가83.3과별도. 모든실행동일아님.",
+        "평가 점수": 83.2,
+        "단위": "점",
+        "측정 주체": "Datalab 제공자 측정"
+      }
+    },
+    {
+      "id": "surya25-20261029-opb-current-2-1",
+      "model": "MiniCPM-OCR-1.0",
+      "provider": "OpenBMB",
+      "source_url": "https://huggingface.co/datasets/datalab-to/omni_parse_bench/raw/main/README.md",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OmniParseBench / current dataset card / Text",
+        "condition": "2937pages/16288tests/2343docs/92languages. 공급자권장설정/어댑터차이. 이전Surya83.1은별도재평가83.3과별도. 모든실행동일아님.",
+        "평가 점수": 72.8,
+        "단위": "점",
+        "측정 주체": "Datalab 제공자 측정"
+      }
+    },
+    {
+      "id": "surya25-20261029-opb-current-2-2",
+      "model": "MiniCPM-OCR-1.0",
+      "provider": "OpenBMB",
+      "source_url": "https://huggingface.co/datasets/datalab-to/omni_parse_bench/raw/main/README.md",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OmniParseBench / current dataset card / Tables",
+        "condition": "2937pages/16288tests/2343docs/92languages. 공급자권장설정/어댑터차이. 이전Surya83.1은별도재평가83.3과별도. 모든실행동일아님.",
+        "평가 점수": 89.1,
+        "단위": "점",
+        "측정 주체": "Datalab 제공자 측정"
+      }
+    },
+    {
+      "id": "surya25-20261029-opb-current-2-3",
+      "model": "MiniCPM-OCR-1.0",
+      "provider": "OpenBMB",
+      "source_url": "https://huggingface.co/datasets/datalab-to/omni_parse_bench/raw/main/README.md",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OmniParseBench / current dataset card / Layout",
+        "condition": "2937pages/16288tests/2343docs/92languages. 공급자권장설정/어댑터차이. 이전Surya83.1은별도재평가83.3과별도. 모든실행동일아님.",
+        "평가 점수": 87.6,
+        "단위": "점",
+        "측정 주체": "Datalab 제공자 측정"
+      }
+    },
+    {
+      "id": "surya25-20261029-opb-current-3-0",
+      "model": "Surya OCR 2",
+      "provider": "Datalab",
+      "source_url": "https://huggingface.co/datasets/datalab-to/omni_parse_bench/raw/main/README.md",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OmniParseBench / current dataset card / Headline",
+        "condition": "2937pages/16288tests/2343docs/92languages. 공급자권장설정/어댑터차이. 이전Surya83.1은별도재평가83.3과별도. 모든실행동일아님.",
+        "평가 점수": 83.1,
+        "단위": "점",
+        "측정 주체": "Datalab 제공자 측정"
+      }
+    },
+    {
+      "id": "surya25-20261029-opb-current-3-1",
+      "model": "Surya OCR 2",
+      "provider": "Datalab",
+      "source_url": "https://huggingface.co/datasets/datalab-to/omni_parse_bench/raw/main/README.md",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OmniParseBench / current dataset card / Text",
+        "condition": "2937pages/16288tests/2343docs/92languages. 공급자권장설정/어댑터차이. 이전Surya83.1은별도재평가83.3과별도. 모든실행동일아님.",
+        "평가 점수": 80.6,
+        "단위": "점",
+        "측정 주체": "Datalab 제공자 측정"
+      }
+    },
+    {
+      "id": "surya25-20261029-opb-current-3-2",
+      "model": "Surya OCR 2",
+      "provider": "Datalab",
+      "source_url": "https://huggingface.co/datasets/datalab-to/omni_parse_bench/raw/main/README.md",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OmniParseBench / current dataset card / Tables",
+        "condition": "2937pages/16288tests/2343docs/92languages. 공급자권장설정/어댑터차이. 이전Surya83.1은별도재평가83.3과별도. 모든실행동일아님.",
+        "평가 점수": 74.3,
+        "단위": "점",
+        "측정 주체": "Datalab 제공자 측정"
+      }
+    },
+    {
+      "id": "surya25-20261029-opb-current-3-3",
+      "model": "Surya OCR 2",
+      "provider": "Datalab",
+      "source_url": "https://huggingface.co/datasets/datalab-to/omni_parse_bench/raw/main/README.md",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OmniParseBench / current dataset card / Layout",
+        "condition": "2937pages/16288tests/2343docs/92languages. 공급자권장설정/어댑터차이. 이전Surya83.1은별도재평가83.3과별도. 모든실행동일아님.",
+        "평가 점수": 94.3,
+        "단위": "점",
+        "측정 주체": "Datalab 제공자 측정"
+      }
+    },
+    {
+      "id": "surya25-20261029-opb-current-4-0",
+      "model": "Unlimited-OCR 2",
+      "provider": "Baidu",
+      "source_url": "https://huggingface.co/datasets/datalab-to/omni_parse_bench/raw/main/README.md",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OmniParseBench / current dataset card / Headline",
+        "condition": "2937pages/16288tests/2343docs/92languages. 공급자권장설정/어댑터차이. 이전Surya83.1은별도재평가83.3과별도. 모든실행동일아님.",
+        "평가 점수": 81.2,
+        "단위": "점",
+        "측정 주체": "Datalab 제공자 측정"
+      }
+    },
+    {
+      "id": "surya25-20261029-opb-current-4-1",
+      "model": "Unlimited-OCR 2",
+      "provider": "Baidu",
+      "source_url": "https://huggingface.co/datasets/datalab-to/omni_parse_bench/raw/main/README.md",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OmniParseBench / current dataset card / Text",
+        "condition": "2937pages/16288tests/2343docs/92languages. 공급자권장설정/어댑터차이. 이전Surya83.1은별도재평가83.3과별도. 모든실행동일아님.",
+        "평가 점수": 72.4,
+        "단위": "점",
+        "측정 주체": "Datalab 제공자 측정"
+      }
+    },
+    {
+      "id": "surya25-20261029-opb-current-4-2",
+      "model": "Unlimited-OCR 2",
+      "provider": "Baidu",
+      "source_url": "https://huggingface.co/datasets/datalab-to/omni_parse_bench/raw/main/README.md",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OmniParseBench / current dataset card / Tables",
+        "condition": "2937pages/16288tests/2343docs/92languages. 공급자권장설정/어댑터차이. 이전Surya83.1은별도재평가83.3과별도. 모든실행동일아님.",
+        "평가 점수": 79.7,
+        "단위": "점",
+        "측정 주체": "Datalab 제공자 측정"
+      }
+    },
+    {
+      "id": "surya25-20261029-opb-current-4-3",
+      "model": "Unlimited-OCR 2",
+      "provider": "Baidu",
+      "source_url": "https://huggingface.co/datasets/datalab-to/omni_parse_bench/raw/main/README.md",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OmniParseBench / current dataset card / Layout",
+        "condition": "2937pages/16288tests/2343docs/92languages. 공급자권장설정/어댑터차이. 이전Surya83.1은별도재평가83.3과별도. 모든실행동일아님.",
+        "평가 점수": 91.6,
+        "단위": "점",
+        "측정 주체": "Datalab 제공자 측정"
+      }
+    },
+    {
+      "id": "surya25-20261029-olm-0-0",
+      "model": "Surya OCR 2",
+      "provider": "Datalab",
+      "source_url": "https://huggingface.co/datalab-to/surya-ocr-2.5/raw/main/README.md",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "olmOCR-bench / 54a96a6f / Overall",
+        "condition": "surya25 harness/1403pages/oneB200/vLLM0.25.1/MTPoff/24concurrent/12384cap/3passes/temperature0/top_p0.1/plainoutput;PP3別.",
+        "평가 점수": 82.8,
+        "단위": "%",
+        "측정 주체": "Datalab 제공자 측정"
+      }
+    },
+    {
+      "id": "surya25-20261029-olm-0-1",
+      "model": "Surya OCR 2",
+      "provider": "Datalab",
+      "source_url": "https://huggingface.co/datalab-to/surya-ocr-2.5/raw/main/README.md",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "olmOCR-bench / 54a96a6f / OldScan",
+        "condition": "surya25 harness/1403pages/oneB200/vLLM0.25.1/MTPoff/24concurrent/12384cap/3passes/temperature0/top_p0.1/plainoutput;PP3別.",
+        "평가 점수": 43.2,
+        "단위": "%",
+        "측정 주체": "Datalab 제공자 측정"
+      }
+    },
+    {
+      "id": "surya25-20261029-olm-0-2",
+      "model": "Surya OCR 2",
+      "provider": "Datalab",
+      "source_url": "https://huggingface.co/datalab-to/surya-ocr-2.5/raw/main/README.md",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "olmOCR-bench / 54a96a6f / OldMath",
+        "condition": "surya25 harness/1403pages/oneB200/vLLM0.25.1/MTPoff/24concurrent/12384cap/3passes/temperature0/top_p0.1/plainoutput;PP3別.",
+        "평가 점수": 79.0,
+        "단위": "%",
+        "측정 주체": "Datalab 제공자 측정"
+      }
+    },
+    {
+      "id": "surya25-20261029-olm-1-0",
+      "model": "Surya OCR 2.5",
+      "provider": "Datalab",
+      "source_url": "https://huggingface.co/datalab-to/surya-ocr-2.5/raw/main/README.md",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "olmOCR-bench / 54a96a6f / Overall",
+        "condition": "surya25 harness/1403pages/oneB200/vLLM0.25.1/MTPoff/24concurrent/12384cap/3passes/temperature0/top_p0.1/plainoutput;PP3別.",
+        "평가 점수": 83.7,
+        "단위": "%",
+        "측정 주체": "Datalab 제공자 측정"
+      }
+    },
+    {
+      "id": "surya25-20261029-olm-1-1",
+      "model": "Surya OCR 2.5",
+      "provider": "Datalab",
+      "source_url": "https://huggingface.co/datalab-to/surya-ocr-2.5/raw/main/README.md",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "olmOCR-bench / 54a96a6f / OldScan",
+        "condition": "surya25 harness/1403pages/oneB200/vLLM0.25.1/MTPoff/24concurrent/12384cap/3passes/temperature0/top_p0.1/plainoutput;PP3別.",
+        "평가 점수": 44.3,
+        "단위": "%",
+        "측정 주체": "Datalab 제공자 측정"
+      }
+    },
+    {
+      "id": "surya25-20261029-olm-1-2",
+      "model": "Surya OCR 2.5",
+      "provider": "Datalab",
+      "source_url": "https://huggingface.co/datalab-to/surya-ocr-2.5/raw/main/README.md",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "olmOCR-bench / 54a96a6f / OldMath",
+        "condition": "surya25 harness/1403pages/oneB200/vLLM0.25.1/MTPoff/24concurrent/12384cap/3passes/temperature0/top_p0.1/plainoutput;PP3別.",
+        "평가 점수": 78.6,
+        "단위": "%",
+        "측정 주체": "Datalab 제공자 측정"
+      }
+    },
+    {
+      "id": "surya25-20261029-internal-0-0",
+      "model": "Surya OCR 2",
+      "provider": "Datalab",
+      "source_url": "https://huggingface.co/datalab-to/surya-ocr-2.5/raw/main/static/docs/multilingual.md",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Datalab internal91 / All91",
+        "condition": "36089tests/약24~770perlanguage/layout,tables,math,readingorder included. 새어려운판;옛87.2와합치지않음. 문자정확도아님.",
+        "평가 점수": 74.5,
+        "단위": "%",
+        "측정 주체": "Datalab 제공자 측정"
+      }
+    },
+    {
+      "id": "surya25-20261029-internal-0-1",
+      "model": "Surya OCR 2",
+      "provider": "Datalab",
+      "source_url": "https://huggingface.co/datalab-to/surya-ocr-2.5/raw/main/static/docs/multilingual.md",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Datalab internal91 / Korean",
+        "condition": "36089tests/약24~770perlanguage/layout,tables,math,readingorder included. 새어려운판;옛87.2와합치지않음. 문자정확도아님.",
+        "평가 점수": 77.3,
+        "단위": "%",
+        "측정 주체": "Datalab 제공자 측정"
+      }
+    },
+    {
+      "id": "surya25-20261029-internal-0-2",
+      "model": "Surya OCR 2",
+      "provider": "Datalab",
+      "source_url": "https://huggingface.co/datalab-to/surya-ocr-2.5/raw/main/static/docs/multilingual.md",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Datalab internal91 / English",
+        "condition": "36089tests/약24~770perlanguage/layout,tables,math,readingorder included. 새어려운판;옛87.2와합치지않음. 문자정확도아님.",
+        "평가 점수": 94.3,
+        "단위": "%",
+        "측정 주체": "Datalab 제공자 측정"
+      }
+    },
+    {
+      "id": "surya25-20261029-internal-0-3",
+      "model": "Surya OCR 2",
+      "provider": "Datalab",
+      "source_url": "https://huggingface.co/datalab-to/surya-ocr-2.5/raw/main/static/docs/multilingual.md",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Datalab internal91 / Russian",
+        "condition": "36089tests/약24~770perlanguage/layout,tables,math,readingorder included. 새어려운판;옛87.2와합치지않음. 문자정확도아님.",
+        "평가 점수": 77.8,
+        "단위": "%",
+        "측정 주체": "Datalab 제공자 측정"
+      }
+    },
+    {
+      "id": "surya25-20261029-internal-1-0",
+      "model": "Surya OCR 2.5",
+      "provider": "Datalab",
+      "source_url": "https://huggingface.co/datalab-to/surya-ocr-2.5/raw/main/static/docs/multilingual.md",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Datalab internal91 / All91",
+        "condition": "36089tests/약24~770perlanguage/layout,tables,math,readingorder included. 새어려운판;옛87.2와합치지않음. 문자정확도아님.",
+        "평가 점수": 74.9,
+        "단위": "%",
+        "측정 주체": "Datalab 제공자 측정"
+      }
+    },
+    {
+      "id": "surya25-20261029-internal-1-1",
+      "model": "Surya OCR 2.5",
+      "provider": "Datalab",
+      "source_url": "https://huggingface.co/datalab-to/surya-ocr-2.5/raw/main/static/docs/multilingual.md",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Datalab internal91 / Korean",
+        "condition": "36089tests/약24~770perlanguage/layout,tables,math,readingorder included. 새어려운판;옛87.2와합치지않음. 문자정확도아님.",
+        "평가 점수": 77.9,
+        "단위": "%",
+        "측정 주체": "Datalab 제공자 측정"
+      }
+    },
+    {
+      "id": "surya25-20261029-internal-1-2",
+      "model": "Surya OCR 2.5",
+      "provider": "Datalab",
+      "source_url": "https://huggingface.co/datalab-to/surya-ocr-2.5/raw/main/static/docs/multilingual.md",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Datalab internal91 / English",
+        "condition": "36089tests/약24~770perlanguage/layout,tables,math,readingorder included. 새어려운판;옛87.2와합치지않음. 문자정확도아님.",
+        "평가 점수": 90.3,
+        "단위": "%",
+        "측정 주체": "Datalab 제공자 측정"
+      }
+    },
+    {
+      "id": "surya25-20261029-internal-1-3",
+      "model": "Surya OCR 2.5",
+      "provider": "Datalab",
+      "source_url": "https://huggingface.co/datalab-to/surya-ocr-2.5/raw/main/static/docs/multilingual.md",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Datalab internal91 / Russian",
+        "condition": "36089tests/약24~770perlanguage/layout,tables,math,readingorder included. 새어려운판;옛87.2와합치지않음. 문자정확도아님.",
+        "평가 점수": 71.7,
+        "단위": "%",
+        "측정 주체": "Datalab 제공자 측정"
+      }
+    },
+    {
+      "id": "surya25-20261029-throughput-0",
+      "model": "Surya OCR 2",
+      "provider": "Datalab",
+      "source_url": "https://api.datalab.to/blog/surya-2-5",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 처리량 평가",
+        "suite": "H100 80GB / 192DPI / vLLM0.25.1",
+        "condition": "300OPBpages/32concurrent;미리PDF렌더;상한전완료만처리량. cap비율은1/8/32/128풀링. 최소장비아님.",
+        "페이지 / 초": 2.24,
+        "중앙 지연 초": 12.0,
+        "p95 지연 초": 31.3,
+        "출력 토큰 / 페이지": 3917,
+        "출력 상한 도달 %": 4.1
+      }
+    },
+    {
+      "id": "surya25-20261029-throughput-1",
+      "model": "Surya OCR 2 + MTP",
+      "provider": "Datalab",
+      "source_url": "https://api.datalab.to/blog/surya-2-5",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 처리량 평가",
+        "suite": "H100 80GB / 192DPI / vLLM0.25.1",
+        "condition": "300OPBpages/32concurrent;미리PDF렌더;상한전완료만처리량. cap비율은1/8/32/128풀링. 최소장비아님.",
+        "페이지 / 초": 2.72,
+        "중앙 지연 초": 9.9,
+        "p95 지연 초": 26.0,
+        "출력 토큰 / 페이지": 3888,
+        "출력 상한 도달 %": 3.8
+      }
+    },
+    {
+      "id": "surya25-20261029-throughput-2",
+      "model": "Surya OCR 2.5",
+      "provider": "Datalab",
+      "source_url": "https://api.datalab.to/blog/surya-2-5",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 처리량 평가",
+        "suite": "H100 80GB / 192DPI / vLLM0.25.1",
+        "condition": "300OPBpages/32concurrent;미리PDF렌더;상한전완료만처리량. cap비율은1/8/32/128풀링. 최소장비아님.",
+        "페이지 / 초": 4.52,
+        "중앙 지연 초": 6.8,
+        "p95 지연 초": 11.3,
+        "출력 토큰 / 페이지": 1514,
+        "출력 상한 도달 %": 0.1
+      }
+    },
+    {
+      "id": "surya-ocr-25-spec",
+      "model": "Surya OCR 2.5",
+      "provider": "Datalab",
+      "source_url": "https://huggingface.co/datalab-to/surya-ocr-2.5/raw/main/README.md",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 모델 사양",
+        "suite": "공식 모델 사양",
+        "condition": "29Oct발표/2Nov확인;689M반올림및HF총689356864. 설정262144를실제API문맥으로승계안함.",
+        "parameters": 0.689356864,
+        "access": "공개 가중치/자체서버",
+        "status": "surya-ocr0.23.0 기본",
+        "설정 위치 상한": 262144,
+        "어휘 수": 88526,
+        "표 행/열 좌표": "지원 안함;이전Surya2필요",
+        "표준 API 요금": "미확인",
+        "references": [
+          "https://huggingface.co/datalab-to/surya-ocr-2.5/raw/main/config.json",
+          "https://huggingface.co/datalab-to/surya-ocr-2.5/raw/main/LICENSE",
+          "https://huggingface.co/api/models/datalab-to/surya-ocr-2.5",
+          "https://api.github.com/repos/datalab-to/surya/releases/tags/v0.23.0"
+        ]
+      }
+    },
+    {
+      "id": "surya25-20261029-license",
+      "model": "Surya OCR 2.5",
+      "provider": "Datalab",
+      "source_url": "https://huggingface.co/datalab-to/surya-ocr-2.5/raw/main/LICENSE",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 라이선스",
+        "suite": "modified OpenRAIL-M / Surya",
+        "condition": "코드는Apache2;가중치전년매출/누적조달5M초과상업제한과개인연구예외,별도경쟁서비스제한/고지및Share-a-Like문구. 개별법률승인아님.",
+        "표준 API 요금": "미확인;별도라이선스가격미확인"
+      }
+    },
+    {
+      "id": "surya25-20261102-datalab-standard",
+      "model": "Datalab Convert processors",
+      "provider": "Datalab",
+      "source_url": "https://www.datalab.to/pricing",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 서비스 표준 요금",
+        "suite": "Datalab Convert / standard per1000pages",
+        "condition": "Surya2.5전용API아님;별도관리형파이프라인. processor별합산/EU+25%/보존25%또는적격스타트업33%중하나;추가구독/기능·실청구분리.",
+        "fast balanced USD / 1000페이지": 4.0,
+        "accurate USD / 1000페이지": 10.0
+      }
+    },
+    {
+      "id": "sensenova-loop-20261030-chart-0-0",
+      "model": "SenseNova-Loop-9B-Preview",
+      "provider": "SenseNova",
+      "source_url": "https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview/resolve/main/assets/loop9b-benchmark-results.png",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SenseNova 30Oct2026 chart / BIRD-Dev",
+        "condition": "공식PNG수동시각전사;정확단위/표본/평가판(이름이상)/harness/추론예산/반복미공개. RaccoonPPT는내부자체시험;PPTX실사용시험아님.",
+        "평가 점수": 71.38,
+        "단위": "원문 차트 점수 / 정확 단위 미명시",
+        "측정 주체": "SenseNova 공개차트; 독립재현없음"
+      }
+    },
+    {
+      "id": "sensenova-loop-20261030-chart-0-1",
+      "model": "SenseNova-Loop-9B-Preview",
+      "provider": "SenseNova",
+      "source_url": "https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview/resolve/main/assets/loop9b-benchmark-results.png",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SenseNova 30Oct2026 chart / WorkBuddy Bench",
+        "condition": "공식PNG수동시각전사;정확단위/표본/평가판(이름이상)/harness/추론예산/반복미공개. RaccoonPPT는내부자체시험;PPTX실사용시험아님.",
+        "평가 점수": 66.89,
+        "단위": "원문 차트 점수 / 정확 단위 미명시",
+        "측정 주체": "SenseNova 공개차트; 독립재현없음"
+      }
+    },
+    {
+      "id": "sensenova-loop-20261030-chart-0-2",
+      "model": "SenseNova-Loop-9B-Preview",
+      "provider": "SenseNova",
+      "source_url": "https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview/resolve/main/assets/loop9b-benchmark-results.png",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SenseNova 30Oct2026 chart / AIDABench",
+        "condition": "공식PNG수동시각전사;정확단위/표본/평가판(이름이상)/harness/추론예산/반복미공개. RaccoonPPT는내부자체시험;PPTX실사용시험아님.",
+        "평가 점수": 58.87,
+        "단위": "원문 차트 점수 / 정확 단위 미명시",
+        "측정 주체": "SenseNova 공개차트; 독립재현없음"
+      }
+    },
+    {
+      "id": "sensenova-loop-20261030-chart-0-3",
+      "model": "SenseNova-Loop-9B-Preview",
+      "provider": "SenseNova",
+      "source_url": "https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview/resolve/main/assets/loop9b-benchmark-results.png",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SenseNova 30Oct2026 chart / TeamBench",
+        "condition": "공식PNG수동시각전사;정확단위/표본/평가판(이름이상)/harness/추론예산/반복미공개. RaccoonPPT는내부자체시험;PPTX실사용시험아님.",
+        "평가 점수": 48.89,
+        "단위": "원문 차트 점수 / 정확 단위 미명시",
+        "측정 주체": "SenseNova 공개차트; 독립재현없음"
+      }
+    },
+    {
+      "id": "sensenova-loop-20261030-chart-0-4",
+      "model": "SenseNova-Loop-9B-Preview",
+      "provider": "SenseNova",
+      "source_url": "https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview/resolve/main/assets/loop9b-benchmark-results.png",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SenseNova 30Oct2026 chart / Terminal Bench 2.1",
+        "condition": "공식PNG수동시각전사;정확단위/표본/평가판(이름이상)/harness/추론예산/반복미공개. RaccoonPPT는내부자체시험;PPTX실사용시험아님.",
+        "평가 점수": 40.45,
+        "단위": "원문 차트 점수 / 정확 단위 미명시",
+        "측정 주체": "SenseNova 공개차트; 독립재현없음"
+      }
+    },
+    {
+      "id": "sensenova-loop-20261030-chart-0-5",
+      "model": "SenseNova-Loop-9B-Preview",
+      "provider": "SenseNova",
+      "source_url": "https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview/resolve/main/assets/loop9b-benchmark-results.png",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SenseNova 30Oct2026 chart / T³-Banking",
+        "condition": "공식PNG수동시각전사;정확단위/표본/평가판(이름이상)/harness/추론예산/반복미공개. RaccoonPPT는내부자체시험;PPTX실사용시험아님.",
+        "평가 점수": 18.56,
+        "단위": "원문 차트 점수 / 정확 단위 미명시",
+        "측정 주체": "SenseNova 공개차트; 독립재현없음"
+      }
+    },
+    {
+      "id": "sensenova-loop-20261030-chart-0-6",
+      "model": "SenseNova-Loop-9B-Preview",
+      "provider": "SenseNova",
+      "source_url": "https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview/resolve/main/assets/loop9b-benchmark-results.png",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SenseNova 30Oct2026 chart / AutomationBench",
+        "condition": "공식PNG수동시각전사;정확단위/표본/평가판(이름이상)/harness/추론예산/반복미공개. RaccoonPPT는내부자체시험;PPTX실사용시험아님.",
+        "평가 점수": 13.72,
+        "단위": "원문 차트 점수 / 정확 단위 미명시",
+        "측정 주체": "SenseNova 공개차트; 독립재현없음"
+      }
+    },
+    {
+      "id": "sensenova-loop-20261030-chart-0-7",
+      "model": "SenseNova-Loop-9B-Preview",
+      "provider": "SenseNova",
+      "source_url": "https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview/resolve/main/assets/loop9b-benchmark-results.png",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SenseNova 30Oct2026 chart / RaccoonPPTBench",
+        "condition": "공식PNG수동시각전사;정확단위/표본/평가판(이름이상)/harness/추론예산/반복미공개. RaccoonPPT는내부자체시험;PPTX실사용시험아님.",
+        "평가 점수": 70.7,
+        "단위": "원문 차트 점수 / 정확 단위 미명시",
+        "측정 주체": "SenseNova 공개차트; 독립재현없음"
+      }
+    },
+    {
+      "id": "sensenova-loop-20261030-chart-1-0",
+      "model": "Qwen3.5-9B",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview/resolve/main/assets/loop9b-benchmark-results.png",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SenseNova 30Oct2026 chart / BIRD-Dev",
+        "condition": "공식PNG수동시각전사;정확단위/표본/평가판(이름이상)/harness/추론예산/반복미공개. RaccoonPPT는내부자체시험;PPTX실사용시험아님.",
+        "평가 점수": 68.48,
+        "단위": "원문 차트 점수 / 정확 단위 미명시",
+        "측정 주체": "SenseNova 공개차트; 독립재현없음"
+      }
+    },
+    {
+      "id": "sensenova-loop-20261030-chart-1-1",
+      "model": "Qwen3.5-9B",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview/resolve/main/assets/loop9b-benchmark-results.png",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SenseNova 30Oct2026 chart / WorkBuddy Bench",
+        "condition": "공식PNG수동시각전사;정확단위/표본/평가판(이름이상)/harness/추론예산/반복미공개. RaccoonPPT는내부자체시험;PPTX실사용시험아님.",
+        "평가 점수": 41.63,
+        "단위": "원문 차트 점수 / 정확 단위 미명시",
+        "측정 주체": "SenseNova 공개차트; 독립재현없음"
+      }
+    },
+    {
+      "id": "sensenova-loop-20261030-chart-1-2",
+      "model": "Qwen3.5-9B",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview/resolve/main/assets/loop9b-benchmark-results.png",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SenseNova 30Oct2026 chart / AIDABench",
+        "condition": "공식PNG수동시각전사;정확단위/표본/평가판(이름이상)/harness/추론예산/반복미공개. RaccoonPPT는내부자체시험;PPTX실사용시험아님.",
+        "평가 점수": 40.78,
+        "단위": "원문 차트 점수 / 정확 단위 미명시",
+        "측정 주체": "SenseNova 공개차트; 독립재현없음"
+      }
+    },
+    {
+      "id": "sensenova-loop-20261030-chart-1-3",
+      "model": "Qwen3.5-9B",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview/resolve/main/assets/loop9b-benchmark-results.png",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SenseNova 30Oct2026 chart / TeamBench",
+        "condition": "공식PNG수동시각전사;정확단위/표본/평가판(이름이상)/harness/추론예산/반복미공개. RaccoonPPT는내부자체시험;PPTX실사용시험아님.",
+        "평가 점수": 33.33,
+        "단위": "원문 차트 점수 / 정확 단위 미명시",
+        "측정 주체": "SenseNova 공개차트; 독립재현없음"
+      }
+    },
+    {
+      "id": "sensenova-loop-20261030-chart-1-4",
+      "model": "Qwen3.5-9B",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview/resolve/main/assets/loop9b-benchmark-results.png",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SenseNova 30Oct2026 chart / Terminal Bench 2.1",
+        "condition": "공식PNG수동시각전사;정확단위/표본/평가판(이름이상)/harness/추론예산/반복미공개. RaccoonPPT는내부자체시험;PPTX실사용시험아님.",
+        "평가 점수": 29.2,
+        "단위": "원문 차트 점수 / 정확 단위 미명시",
+        "측정 주체": "SenseNova 공개차트; 독립재현없음"
+      }
+    },
+    {
+      "id": "sensenova-loop-20261030-chart-1-5",
+      "model": "Qwen3.5-9B",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview/resolve/main/assets/loop9b-benchmark-results.png",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SenseNova 30Oct2026 chart / T³-Banking",
+        "condition": "공식PNG수동시각전사;정확단위/표본/평가판(이름이상)/harness/추론예산/반복미공개. RaccoonPPT는내부자체시험;PPTX실사용시험아님.",
+        "평가 점수": 9.47,
+        "단위": "원문 차트 점수 / 정확 단위 미명시",
+        "측정 주체": "SenseNova 공개차트; 독립재현없음"
+      }
+    },
+    {
+      "id": "sensenova-loop-20261030-chart-1-6",
+      "model": "Qwen3.5-9B",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview/resolve/main/assets/loop9b-benchmark-results.png",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SenseNova 30Oct2026 chart / AutomationBench",
+        "condition": "공식PNG수동시각전사;정확단위/표본/평가판(이름이상)/harness/추론예산/반복미공개. RaccoonPPT는내부자체시험;PPTX실사용시험아님.",
+        "평가 점수": 1.05,
+        "단위": "원문 차트 점수 / 정확 단위 미명시",
+        "측정 주체": "SenseNova 공개차트; 독립재현없음"
+      }
+    },
+    {
+      "id": "sensenova-loop-20261030-chart-1-7",
+      "model": "Qwen3.5-9B",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview/resolve/main/assets/loop9b-benchmark-results.png",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SenseNova 30Oct2026 chart / RaccoonPPTBench",
+        "condition": "공식PNG수동시각전사;정확단위/표본/평가판(이름이상)/harness/추론예산/반복미공개. RaccoonPPT는내부자체시험;PPTX실사용시험아님.",
+        "평가 점수": 33.6,
+        "단위": "원문 차트 점수 / 정확 단위 미명시",
+        "측정 주체": "SenseNova 공개차트; 독립재현없음"
+      }
+    },
+    {
+      "id": "sensenova-loop-20261030-chart-2-0",
+      "model": "Qwen3.6-35B-A3B",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview/resolve/main/assets/loop9b-benchmark-results.png",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SenseNova 30Oct2026 chart / BIRD-Dev",
+        "condition": "공식PNG수동시각전사;정확단위/표본/평가판(이름이상)/harness/추론예산/반복미공개. RaccoonPPT는내부자체시험;PPTX실사용시험아님.",
+        "평가 점수": 69.8,
+        "단위": "원문 차트 점수 / 정확 단위 미명시",
+        "측정 주체": "SenseNova 공개차트; 독립재현없음"
+      }
+    },
+    {
+      "id": "sensenova-loop-20261030-chart-2-1",
+      "model": "Qwen3.6-35B-A3B",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview/resolve/main/assets/loop9b-benchmark-results.png",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SenseNova 30Oct2026 chart / WorkBuddy Bench",
+        "condition": "공식PNG수동시각전사;정확단위/표본/평가판(이름이상)/harness/추론예산/반복미공개. RaccoonPPT는내부자체시험;PPTX실사용시험아님.",
+        "평가 점수": 61.98,
+        "단위": "원문 차트 점수 / 정확 단위 미명시",
+        "측정 주체": "SenseNova 공개차트; 독립재현없음"
+      }
+    },
+    {
+      "id": "sensenova-loop-20261030-chart-2-2",
+      "model": "Qwen3.6-35B-A3B",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview/resolve/main/assets/loop9b-benchmark-results.png",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SenseNova 30Oct2026 chart / AIDABench",
+        "condition": "공식PNG수동시각전사;정확단위/표본/평가판(이름이상)/harness/추론예산/반복미공개. RaccoonPPT는내부자체시험;PPTX실사용시험아님.",
+        "평가 점수": 54.24,
+        "단위": "원문 차트 점수 / 정확 단위 미명시",
+        "측정 주체": "SenseNova 공개차트; 독립재현없음"
+      }
+    },
+    {
+      "id": "sensenova-loop-20261030-chart-2-3",
+      "model": "Qwen3.6-35B-A3B",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview/resolve/main/assets/loop9b-benchmark-results.png",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SenseNova 30Oct2026 chart / TeamBench",
+        "condition": "공식PNG수동시각전사;정확단위/표본/평가판(이름이상)/harness/추론예산/반복미공개. RaccoonPPT는내부자체시험;PPTX실사용시험아님.",
+        "평가 점수": 44.44,
+        "단위": "원문 차트 점수 / 정확 단위 미명시",
+        "측정 주체": "SenseNova 공개차트; 독립재현없음"
+      }
+    },
+    {
+      "id": "sensenova-loop-20261030-chart-2-4",
+      "model": "Qwen3.6-35B-A3B",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview/resolve/main/assets/loop9b-benchmark-results.png",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SenseNova 30Oct2026 chart / Terminal Bench 2.1",
+        "condition": "공식PNG수동시각전사;정확단위/표본/평가판(이름이상)/harness/추론예산/반복미공개. RaccoonPPT는내부자체시험;PPTX실사용시험아님.",
+        "평가 점수": 40.45,
+        "단위": "원문 차트 점수 / 정확 단위 미명시",
+        "측정 주체": "SenseNova 공개차트; 독립재현없음"
+      }
+    },
+    {
+      "id": "sensenova-loop-20261030-chart-2-5",
+      "model": "Qwen3.6-35B-A3B",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview/resolve/main/assets/loop9b-benchmark-results.png",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SenseNova 30Oct2026 chart / T³-Banking",
+        "condition": "공식PNG수동시각전사;정확단위/표본/평가판(이름이상)/harness/추론예산/반복미공개. RaccoonPPT는내부자체시험;PPTX실사용시험아님.",
+        "평가 점수": 13.54,
+        "단위": "원문 차트 점수 / 정확 단위 미명시",
+        "측정 주체": "SenseNova 공개차트; 독립재현없음"
+      }
+    },
+    {
+      "id": "sensenova-loop-20261030-chart-2-6",
+      "model": "Qwen3.6-35B-A3B",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview/resolve/main/assets/loop9b-benchmark-results.png",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SenseNova 30Oct2026 chart / AutomationBench",
+        "condition": "공식PNG수동시각전사;정확단위/표본/평가판(이름이상)/harness/추론예산/반복미공개. RaccoonPPT는내부자체시험;PPTX실사용시험아님.",
+        "평가 점수": 9.33,
+        "단위": "원문 차트 점수 / 정확 단위 미명시",
+        "측정 주체": "SenseNova 공개차트; 독립재현없음"
+      }
+    },
+    {
+      "id": "sensenova-loop-20261030-chart-2-7",
+      "model": "Qwen3.6-35B-A3B",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview/resolve/main/assets/loop9b-benchmark-results.png",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SenseNova 30Oct2026 chart / RaccoonPPTBench",
+        "condition": "공식PNG수동시각전사;정확단위/표본/평가판(이름이상)/harness/추론예산/반복미공개. RaccoonPPT는내부자체시험;PPTX실사용시험아님.",
+        "평가 점수": 64.3,
+        "단위": "원문 차트 점수 / 정확 단위 미명시",
+        "측정 주체": "SenseNova 공개차트; 독립재현없음"
+      }
+    },
+    {
+      "id": "sensenova-loop-20261030-chart-3-0",
+      "model": "Qwen3.5-27B",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview/resolve/main/assets/loop9b-benchmark-results.png",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SenseNova 30Oct2026 chart / BIRD-Dev",
+        "condition": "공식PNG수동시각전사;정확단위/표본/평가판(이름이상)/harness/추론예산/반복미공개. RaccoonPPT는내부자체시험;PPTX실사용시험아님.",
+        "평가 점수": 69.84,
+        "단위": "원문 차트 점수 / 정확 단위 미명시",
+        "측정 주체": "SenseNova 공개차트; 독립재현없음"
+      }
+    },
+    {
+      "id": "sensenova-loop-20261030-chart-3-1",
+      "model": "Qwen3.5-27B",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview/resolve/main/assets/loop9b-benchmark-results.png",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SenseNova 30Oct2026 chart / WorkBuddy Bench",
+        "condition": "공식PNG수동시각전사;정확단위/표본/평가판(이름이상)/harness/추론예산/반복미공개. RaccoonPPT는내부자체시험;PPTX실사용시험아님.",
+        "평가 점수": 60.53,
+        "단위": "원문 차트 점수 / 정확 단위 미명시",
+        "측정 주체": "SenseNova 공개차트; 독립재현없음"
+      }
+    },
+    {
+      "id": "sensenova-loop-20261030-chart-3-2",
+      "model": "Qwen3.5-27B",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview/resolve/main/assets/loop9b-benchmark-results.png",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SenseNova 30Oct2026 chart / AIDABench",
+        "condition": "공식PNG수동시각전사;정확단위/표본/평가판(이름이상)/harness/추론예산/반복미공개. RaccoonPPT는내부자체시험;PPTX실사용시험아님.",
+        "평가 점수": 57.19,
+        "단위": "원문 차트 점수 / 정확 단위 미명시",
+        "측정 주체": "SenseNova 공개차트; 독립재현없음"
+      }
+    },
+    {
+      "id": "sensenova-loop-20261030-chart-3-3",
+      "model": "Qwen3.5-27B",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview/resolve/main/assets/loop9b-benchmark-results.png",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SenseNova 30Oct2026 chart / TeamBench",
+        "condition": "공식PNG수동시각전사;정확단위/표본/평가판(이름이상)/harness/추론예산/반복미공개. RaccoonPPT는내부자체시험;PPTX실사용시험아님.",
+        "평가 점수": 44.44,
+        "단위": "원문 차트 점수 / 정확 단위 미명시",
+        "측정 주체": "SenseNova 공개차트; 독립재현없음"
+      }
+    },
+    {
+      "id": "sensenova-loop-20261030-chart-3-4",
+      "model": "Qwen3.5-27B",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview/resolve/main/assets/loop9b-benchmark-results.png",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SenseNova 30Oct2026 chart / Terminal Bench 2.1",
+        "condition": "공식PNG수동시각전사;정확단위/표본/평가판(이름이상)/harness/추론예산/반복미공개. RaccoonPPT는내부자체시험;PPTX실사용시험아님.",
+        "평가 점수": 47.19,
+        "단위": "원문 차트 점수 / 정확 단위 미명시",
+        "측정 주체": "SenseNova 공개차트; 독립재현없음"
+      }
+    },
+    {
+      "id": "sensenova-loop-20261030-chart-3-5",
+      "model": "Qwen3.5-27B",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview/resolve/main/assets/loop9b-benchmark-results.png",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SenseNova 30Oct2026 chart / T³-Banking",
+        "condition": "공식PNG수동시각전사;정확단위/표본/평가판(이름이상)/harness/추론예산/반복미공개. RaccoonPPT는내부자체시험;PPTX실사용시험아님.",
+        "평가 점수": 19.59,
+        "단위": "원문 차트 점수 / 정확 단위 미명시",
+        "측정 주체": "SenseNova 공개차트; 독립재현없음"
+      }
+    },
+    {
+      "id": "sensenova-loop-20261030-chart-3-6",
+      "model": "Qwen3.5-27B",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview/resolve/main/assets/loop9b-benchmark-results.png",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SenseNova 30Oct2026 chart / AutomationBench",
+        "condition": "공식PNG수동시각전사;정확단위/표본/평가판(이름이상)/harness/추론예산/반복미공개. RaccoonPPT는내부자체시험;PPTX실사용시험아님.",
+        "평가 점수": 10.17,
+        "단위": "원문 차트 점수 / 정확 단위 미명시",
+        "측정 주체": "SenseNova 공개차트; 독립재현없음"
+      }
+    },
+    {
+      "id": "sensenova-loop-20261030-chart-3-7",
+      "model": "Qwen3.5-27B",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview/resolve/main/assets/loop9b-benchmark-results.png",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SenseNova 30Oct2026 chart / RaccoonPPTBench",
+        "condition": "공식PNG수동시각전사;정확단위/표본/평가판(이름이상)/harness/추론예산/반복미공개. RaccoonPPT는내부자체시험;PPTX실사용시험아님.",
+        "평가 점수": 59.08,
+        "단위": "원문 차트 점수 / 정확 단위 미명시",
+        "측정 주체": "SenseNova 공개차트; 독립재현없음"
+      }
+    },
+    {
+      "id": "sensenova-loop-20261030-nanbeige-terminal",
+      "model": "Nanbeige4.2-3B",
+      "provider": "Nanbeige",
+      "source_url": "https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview/resolve/main/assets/loop9b-benchmark-results.png",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SenseNova 30Oct2026 chart / Terminal Bench 2.1",
+        "condition": "공식차트비교값.표본/harness/예산/정확단위미공개;다른TerminalBench판과합치지않음.",
+        "평가 점수": 49.44,
+        "단위": "원문 차트 점수 / 정확 단위 미명시",
+        "측정 주체": "SenseNova 공개차트; 독립재현없음"
+      }
+    },
+    {
+      "id": "sensenova-loop-9b-preview-spec",
+      "model": "SenseNova-Loop-9B-Preview",
+      "provider": "SenseNova",
+      "source_url": "https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview/raw/main/README.md",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 모델 사양",
+        "suite": "공식 모델 사양",
+        "condition": "30Oct발표/2Nov확인. 약9B와반복계산약14.6B구분;HF9656250480총텐서/파일38138420672bytes는최소VRAM아님.",
+        "parameters": 9.65625048,
+        "context": 262144,
+        "access": "Apache2.0공개가중치/전용코드",
+        "status": "Preview",
+        "규모 표기": "~9B total / ~14.6B inference parameters",
+        "저장 디코더 층": 32,
+        "층 계산 횟수": 56,
+        "반복 범위": "[4,28) twice",
+        "MTP": "Available",
+        "DSpark / Dflash2": "Training in progress",
+        "기술 보고서": "TBD",
+        "표준 API 요금": "미확인",
+        "references": [
+          "https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview/raw/main/config.json",
+          "https://huggingface.co/api/models/sensenova/SenseNova-Loop-9B-Preview",
+          "https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview/raw/main/model.safetensors.index.json",
+          "https://raw.githubusercontent.com/OpenSenseNova/SenseNova-Loop/main/LICENSE"
+        ]
+      }
+    },
+    {
+      "id": "sensenova-loop-20261102-export",
+      "model": "SenseNova-Loop-9B-Preview",
+      "provider": "SenseNova",
+      "source_url": "https://huggingface.co/api/models/sensenova/SenseNova-Loop-9B-Preview",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 export 메타데이터",
+        "suite": "HF current export / 1Nov revision",
+        "condition": "카드BF16backbone/FP32routing설명과파일집계차이. 원인/실제적재미검증;최소장비추정안함.",
+        "총 파라미터": 9656250480,
+        "F32": 9412959856,
+        "BF16": 243290624,
+        "인덱스 총 바이트": 38138420672
+      }
+    },
+    {
+      "id": "sensenova-loop-20261030-license",
+      "model": "SenseNova-Loop-9B-Preview",
+      "provider": "SenseNova",
+      "source_url": "https://raw.githubusercontent.com/OpenSenseNova/SenseNova-Loop/main/LICENSE",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 라이선스",
+        "suite": "Apache2.0 / SenseNova Loop",
+        "condition": "사용/재배포허용과고지/변경표시/상표/무보증조항. 특정사업법률승인아님.",
+        "표준 API 요금": "미확인;자체GPU운영비별도"
+      }
+    },
+    {
+      "id": "sensenova-loop-20261102-qwen-spec-0",
+      "model": "Qwen3.5-9B",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/Qwen/Qwen3.5-9B/raw/main/README.md",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 비교 사양",
+        "suite": "SenseNova comparison / Qwen model card",
+        "condition": "언어모델규모/시각인코더별도.262144기본/1010000문서상확장;Loop로승계안함.정확가중치API단가이번범위미확인.",
+        "parameters": 9,
+        "context": 262144,
+        "디코더 층": 32,
+        "문서상 확장": 1010000,
+        "라이선스": "Apache2.0"
+      }
+    },
+    {
+      "id": "sensenova-loop-20261102-qwen-spec-1",
+      "model": "Qwen3.6-27B",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/Qwen/Qwen3.6-27B/raw/main/README.md",
+      "checked_on": "2026-11-02",
+      "fields": {
+        "kind": "공식 비교 사양",
+        "suite": "SenseNova comparison / Qwen model card",
+        "condition": "언어모델규모/시각인코더별도.262144기본/1010000문서상확장;Loop로승계안함.정확가중치API단가이번범위미확인.",
+        "parameters": 27,
+        "context": 262144,
+        "디코더 층": 64,
+        "문서상 확장": 1010000,
+        "라이선스": "Apache2.0"
+      }
+    }
+  ]
+}
