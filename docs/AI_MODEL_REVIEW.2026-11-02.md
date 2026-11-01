@@ -1,5 +1,7 @@
 # 2026-11-02 Surya 2.5와 SenseNova Loop 모델 검토
 
+현재 상태: 상세 소개2편과전체표86관측의공개반영/실제검증완료. [Pages41346862726](https://github.com/Hansihoo/signal-desk/actions/runs/41346862726). 아래공개전기록은당시상태이며최종결과는끝의공개완료절을따른다.
+
 목표는 문서 OCR과 문서/도구 모델의 이전 및 경쟁 대안 대비 변화, 성능의 반대 결과, 실제 제공과 비용을 비교하는 것이다. 콘텐츠 추가이며 UI나 기존 실행 코드 변경은 없다. 위험은 다른 평가판/장비/추론조건, 코드와 가중치 라이선스, 데모와 제품출시, 저장 규모와 반복 계산을 합치는 것이다. 검증은 원문 관련절/원차트, 별도 첫화면과 본문, 품질, 정확한 제출소스 테스트/publish/brief/review, 실제 PC/모바일 및 공개 값/단위/출처/날짜/이전판 보존이다.
 
 ## 실제 발견과 내용 검토 범위
@@ -65,3 +67,13 @@ Git index의선정10경로와HEAD만을공통소유scratch로내보냈다. 새cl
 IAB의file프로토콜정책거절은그대로보존하고재시도하지않았다. 공개예정HTML3개와CSS만복사한격리폴더를127.0.0.1의운영체제할당포트로읽었다. 고정8766의OS10013은예약포트접근실패이며권한/보안설정을변경하지않았다. CUA로두소개1280px DOM/내부anchor와390px첫화면스크린샷을읽고가로넘침없음을확인했다. SuryaPC스크린샷,비교표연결과공식보기/검색/상세를확인했다. Surya85.9원문/단위/2Nov확인일/1차,Convert4/10USD/1000페이지열,Loop262144/32층56회/Terminal40.45·정확단위미공개/원문차트·1차를실제UI에서대조했다. 초기의AXcheckbox와실제DOMbutton역할차이/검색30행표시때문에잘못지정한검사locator만고쳤고제품코드/원고는변경하지않았다.
 
 공통scratch는검증소비자종료후정상정리됐다. 요구근거/최종선정HTML과로그는D:/9_codex_temp/2026-11-02/signal-models에보존한다. 공개배포와실제공개JSON/화면검증은다음단계다.
+
+## 공개 완료 — 2026-11-02 05:33 KST
+
+Source `3cfb80e80c8a3560e2fe0554c5818225fca6079a`를 기존main에일반push했고 [Pages 41346862726](https://github.com/Hansihoo/signal-desk/actions/runs/41346862726)가성공했다. 신규 [Surya2.5](https://hansihoo.github.io/signal-desk/preview/surya-2-5-model-guide.html), [SenseNovaLoop](https://hansihoo.github.io/signal-desk/preview/sensenova-loop-9b-preview-model-guide.html)와 [전체비교표](https://hansihoo.github.io/signal-desk/preview/ai-models.html)가같은작업에서반영됐다. source-refresh만의완료로세지않는다.
+
+공개research-data의새소개2편과86개관측원본/fields/실제출처/2Nov확인일/1차가검토입력과정확히같다. 다른90현재보고서/221이전판/90report_versions,기존2309모델관측/2416이력및Theo17현재/19이력이전부같다. 현재92보고서/223이전판,2395모델관측/2502이력이다. 보고서2편/전체표/기존Mistral3판HTTP200을확인했다.
+
+CUA로공개소개와전체표의검색/공식보기/상세를열어실제85.9·평가판/출처/확인일,Loop40.45·원문차트단위미명시/1차,Convert4/10USD/1000페이지/관리형별도조건과소개→전체표연결을대조했다. 공개PC/390px에서본문과표가보이고가로넘침이없음을확인했다. 별도UI증거/페이지영수증과public-before/after비교를보존한다. 실제모델추론/한국어회사문서/최소장비/실청구/독립사람독해는미수행이다.
+
+검증증거는D:/9_codex_temp/2026-11-02/signal-models에유지한다. 요구된원문/품질·UI/테스트·공개보존증거이므로일회성scratch삭제대상으로등록하지않는다. 공개예정파일만제공한로컬서버는종료했고임시뷰포트는복원했다. 다른dirty변경과로컬지식원장은제출하지않았다.
