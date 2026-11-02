@@ -437,6 +437,11 @@
       "id": "business-review-2026-11-02",
       "input": "business_review.2026-11-02.json",
       "quality": "business_review.2026-11-02.quality.json"
+    },
+    {
+      "id": "business-review-2026-11-02-r2",
+      "input": "business_review.2026-11-02.r2.json",
+      "quality": "business_review.2026-11-02.r2.quality.json"
     }
   ]
 }
