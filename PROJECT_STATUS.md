@@ -429,3 +429,6 @@ Carbon공개완료:78acacf/Pages40762896056 success. 소개1편/전체표62관�
 LongCat-2.5의 공식 API 제공과 이전/경쟁 평가, 한시 할인 및 출력 문서 충돌을 새 소개와 37개 불변 사실로 연결했다. 로컬 품질/검색 완료, 제출 소스와 공개 검증 진행 중. 실제 범위와 한계는 [원문 검토](docs/AI_MODEL_REVIEW.2026-11-03.md)에 기록한다.
 
 정확한 제출 소스의 214시험/품질/publish/audit/brief/review와 소개 PC/모바일/비교표 수치·원문·날짜·첫 판 검증을 마쳤다. 공개 배포 확인은 진행 중이다.
+
+
+2026-11-03 모델 공개 완료: source0bf2c37/[Pages 41521632311](https://github.com/Hansihoo/signal-desk/actions/runs/41521632311) 성공. LongCat-2.5 소개와 전체표 37사실 동시 반영, 공개 정확값/조건/날짜/모바일/기존 이력 보존 확인. [완료 근거](docs/AI_MODEL_REVIEW.2026-11-03.md).
