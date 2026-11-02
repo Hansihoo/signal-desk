@@ -432,6 +432,11 @@
       "id": "ai-model-update-2026-11-02",
       "input": "ai_model_guides.2026-11-02.json",
       "quality": "ai_model_guides.2026-11-02.quality.json"
+    },
+    {
+      "id": "business-review-2026-11-02",
+      "input": "business_review.2026-11-02.json",
+      "quality": "business_review.2026-11-02.quality.json"
     }
   ]
 }
