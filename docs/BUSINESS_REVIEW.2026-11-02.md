@@ -77,8 +77,8 @@ brief390px 이미지를 실제 확인했다. review는11항목 통과, 기존 �
 
 ## 배포 검증
 
-정상 push, Pages Actions 성공과 실제 공개 현재/이전 판·사업 필터·링크·모바일 화면의
-후속 확인 결과를 완료 뒤 덧붙인다. 배포 전인 현재는 공개 완료로 기록하지 않는다.
+8판 배포 후 실제 첫 화면에서 검토 범위의 날짜 승계를 발견했다. 아래 정정 이력과
+9판의 최종 공개 검증 결과를 함께 적용한다.
 유료 API·신청 제출·고객 연락·견적·예약 변경은 수행하지 않았다.
 
 
@@ -97,4 +97,43 @@ scope 필드뿐이며 checked_on·원문·사실 본문·출처 확인일은8판
 HEAD 구현의 별도 atomic scratch에서 quality3편·publish·audit를 통과했고 실제
 세 HTML의11월2일 범위 설명, 이전10월26일 문구 부재와8판 링크를 확인했다.
 코드는 바뀌지 않았으므로 직전214시험 결과와 구분해 이 표기 정정의 영향 검증을
-수행했다. scratch는 소비자 종료 후 자동 정리했다.9판 공개 후속 검증은 남아 있다.
+수행했다. scratch는 소비자 종료 후 자동 정리했다.당시 남았던9판 공개 검증은 아래 결과로 완료했다.
+
+
+### 최종9판 공개 검증 완료
+
+정정 소스 [ebf1492](https://github.com/Hansihoo/signal-desk/commit/ebf149255fa429d3965a0159437533238d1d7bbf)의
+[Pages41369618360](https://github.com/Hansihoo/signal-desk/actions/runs/41369618360)가 성공했다.
+원격214시험(76.986초)·누적 상태 복구·수집/생성·주거 review·백업·배포가 통과했다. 로컬 주거
+모집중0건과 클라우드의 별도 수집/주거 PASS는 다른 데이터 상태다.
+
+실제 공개 JSON과 목록·현재3편·7/8판6페이지의11개 HTTP 대상을 확인했다.
+현재92편/229판이며 다른89편의 본문·발행 메타데이터, 기존223판의 원문/저장 시각,
+8판3개의 본문이 보존됐다. 기존 모델2395관측/2502이력과 Theo17원문/19판도
+정확히 보존됐다. 사내 경로·프로필 해시·위키 주소와 실제 민감 필드 전체 값이 공개
+JSON/선정 HTML에 없는 것을 대조했다. 최초 HTTP 검증의 일시적 연결 reset은 TLS
+검증을 유지한 제한 재시도로 통과했으며 접근 실패를 원문 독해로 바꾸지 않았다.
+
+실제390px에서 현재 세 보고서의 새 scope와 지난주 문구 부재를 확인했다. 경쟁사
+페이지의 첫 이동은 이전 탐색 캐시를 보여 reload 뒤 현행 판을 확인했다. 영업
+1280px, 문서 AI 비교표390px의 내부 가로 스크롤(335/448px)과 키보드 이동 후40px,
+페이지 가로 넘침 없음(문서375px/viewport390px)을 확인했다. 사업 분야별1건/전체3건,
+명판 검색1건/무결과0건/초기화3건과 실제7판 링크 이동도 확인했다. 초기에 중복된
+데이터 링크와 지원하지 않는 heading level 조건을 쓴 검증 로케이터는 실제 DOM에
+맞게 좁혀 재검증했으며 초기 시도를 성공으로 세지 않았다. 사용자 탭은 보존하고
+검증 탭을 닫고 viewport를 복원했다. 사람 독자 시험이나 실제품 실행은 아니다.
+
+[사업 목록](https://hansihoo.github.io/signal-desk/preview/business.html),
+[국책사업](https://hansihoo.github.io/signal-desk/preview/polaris-government-opportunities.html),
+[영업 검토](https://hansihoo.github.io/signal-desk/preview/polaris-sales-opportunities.html),
+[문서 AI 사업 방향](https://hansihoo.github.io/signal-desk/preview/office-business-directions.html).
+실질 참여 문턱을 통과한 새 추천은 없으며 중요한 미확인은 사내 보류다. 외부 사내
+5건의 검토 상태와 다음 행동을 갱신하고 원 고객·가격·제안·담당 및 과거 판을
+보존했다. 내부 근거를 공개 자료로 승격하지 않았다.
+
+원문 receipt는 ignored data/raw에, 첫 화면/자체 검토·계획·HTML/brief PNG·시험 로그·
+지식/공개 보존 검증은 `D:/9_codex_temp/2026-11-02/signal-business-weekly`에 필요한
+근거로 보존한다. 검증용 source export와 atomic scratch는 소비자 종료 뒤 정리했다.
+일회성 보조 스크립트·중간 draft/제출 복사도 정리하며 필요한 근거가 있는 작업 폴더
+전체를 폐기 완료 대상으로 표시하지 않는다. 생성 DB/HTML/PNG·raw와 사내 자료를
+commit하지 않았다. 신청·연락·견적·유료 API·예약 변경은 없다.
