@@ -128,6 +128,10 @@
     {
       "id": "ai-model-facts-2026-11-02",
       "path": "ai_model_facts.2026-11-02.json"
+    },
+    {
+      "id": "ai-model-facts-2026-11-03",
+      "path": "ai_model_facts.2026-11-03.json"
     }
   ]
 }

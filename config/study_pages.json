@@ -82,7 +82,8 @@
     "nemotron-3-5-transcribe-model-guide",
     "mage-vl-cowork-model-guide",
     "surya-2-5-model-guide",
-    "sensenova-loop-9b-preview-model-guide"
+    "sensenova-loop-9b-preview-model-guide",
+    "longcat-2-5-model-guide"
   ],
   "catalogs": {
     "devops-implementation-guide": "devops_tools.2026-10-10.r4.json"
@@ -269,6 +270,9 @@
     ],
     "sensenova-loop-9b-preview-model-guide": [
       "921a719225b013db1b304730f4124801d4ba7123ee692acb9a2bf242f01803f1"
+    ],
+    "longcat-2-5-model-guide": [
+      "857114b8a3d8fb3f49d59d3aca4faa6ab915b65ba252673df4a13ea56f74675a"
     ]
   },
   "model_introduction_editions": {
@@ -394,6 +398,9 @@
     ],
     "sensenova-loop-9b-preview-model-guide": [
       "921a719225b013db1b304730f4124801d4ba7123ee692acb9a2bf242f01803f1"
+    ],
+    "longcat-2-5-model-guide": [
+      "857114b8a3d8fb3f49d59d3aca4faa6ab915b65ba252673df4a13ea56f74675a"
     ]
   },
   "model_introduction_purpose_editions": {
@@ -508,6 +515,9 @@
     ],
     "sensenova-loop-9b-preview-model-guide": [
       "921a719225b013db1b304730f4124801d4ba7123ee692acb9a2bf242f01803f1"
+    ],
+    "longcat-2-5-model-guide": [
+      "857114b8a3d8fb3f49d59d3aca4faa6ab915b65ba252673df4a13ea56f74675a"
     ]
   },
   "model_introduction_reader_editions": {
@@ -619,6 +629,9 @@
     ],
     "sensenova-loop-9b-preview-model-guide": [
       "921a719225b013db1b304730f4124801d4ba7123ee692acb9a2bf242f01803f1"
+    ],
+    "longcat-2-5-model-guide": [
+      "857114b8a3d8fb3f49d59d3aca4faa6ab915b65ba252673df4a13ea56f74675a"
     ]
   }
 }

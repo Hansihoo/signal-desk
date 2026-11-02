@@ -1,0 +1,568 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "id": "longcat25-20261101-eval-0-0",
+      "model": "LongCat-2.5",
+      "provider": "Meituan",
+      "source_url": "https://longcat.ai/blog/longcat-2.5",
+      "checked_on": "2026-11-03",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Terminal Bench v2.1 / LongCat release table 2026-11-01",
+        "condition": "Claude Code 2.1.280,512K; v2.1 average3runs; LongCat default thinking on,temp1.0,top_p0.95 unless noted. Meituan 제공자 측정/재측정, indicative only; 외부독립 재현 아님",
+        "평가 점수": 88.4,
+        "단위": "원문 표 수치; 공통%단위 미표기",
+        "측정 주체": "Meituan"
+      }
+    },
+    {
+      "id": "longcat25-20261101-eval-0-1",
+      "model": "LongCat-2.0",
+      "provider": "Meituan",
+      "source_url": "https://longcat.ai/blog/longcat-2.5",
+      "checked_on": "2026-11-03",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Terminal Bench v2.1 / LongCat release table 2026-11-01",
+        "condition": "Claude Code 2.1.280,512K; v2.1 average3runs; LongCat default thinking on,temp1.0,top_p0.95 unless noted. Meituan 제공자 측정/재측정, indicative only; 외부독립 재현 아님",
+        "평가 점수": 70.8,
+        "단위": "원문 표 수치; 공통%단위 미표기",
+        "측정 주체": "Meituan"
+      }
+    },
+    {
+      "id": "longcat25-20261101-eval-0-2",
+      "model": "Claude Opus 5",
+      "provider": "Anthropic",
+      "source_url": "https://longcat.ai/blog/longcat-2.5",
+      "checked_on": "2026-11-03",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Terminal Bench v2.1 / LongCat release table 2026-11-01",
+        "condition": "Claude Code 2.1.280,512K; v2.1 average3runs; LongCat default thinking on,temp1.0,top_p0.95 unless noted. 경쟁 점수 *: 공개 기술보고서/공식 순위 인용, 동일 조건 보장 아님",
+        "평가 점수": 89.1,
+        "단위": "원문 표 수치; 공통%단위 미표기",
+        "측정 주체": "원문 * 외부 결과 인용"
+      }
+    },
+    {
+      "id": "longcat25-20261101-eval-0-3",
+      "model": "DeepSeek-V4.1-Flash",
+      "provider": "DeepSeek",
+      "source_url": "https://longcat.ai/blog/longcat-2.5",
+      "checked_on": "2026-11-03",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Terminal Bench v2.1 / LongCat release table 2026-11-01",
+        "condition": "Claude Code 2.1.280,512K; v2.1 average3runs; LongCat default thinking on,temp1.0,top_p0.95 unless noted. 경쟁 점수 *: 공개 기술보고서/공식 순위 인용, 동일 조건 보장 아님",
+        "평가 점수": 90.6,
+        "단위": "원문 표 수치; 공통%단위 미표기",
+        "측정 주체": "원문 * 외부 결과 인용"
+      }
+    },
+    {
+      "id": "longcat25-20261101-eval-1-0",
+      "model": "LongCat-2.5",
+      "provider": "Meituan",
+      "source_url": "https://longcat.ai/blog/longcat-2.5",
+      "checked_on": "2026-11-03",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Terminal Bench v4.0 / LongCat release table 2026-11-01",
+        "condition": "Claude Code 2.1.280,512K; run count not separately stated; LongCat default thinking on,temp1.0,top_p0.95 unless noted. Meituan 제공자 측정/재측정, indicative only; 외부독립 재현 아님",
+        "평가 점수": 38.5,
+        "단위": "원문 표 수치; 공통%단위 미표기",
+        "측정 주체": "Meituan"
+      }
+    },
+    {
+      "id": "longcat25-20261101-eval-1-1",
+      "model": "LongCat-2.0",
+      "provider": "Meituan",
+      "source_url": "https://longcat.ai/blog/longcat-2.5",
+      "checked_on": "2026-11-03",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Terminal Bench v4.0 / LongCat release table 2026-11-01",
+        "condition": "Claude Code 2.1.280,512K; run count not separately stated; LongCat default thinking on,temp1.0,top_p0.95 unless noted. Meituan 제공자 측정/재측정, indicative only; 외부독립 재현 아님",
+        "평가 점수": 3.0,
+        "단위": "원문 표 수치; 공통%단위 미표기",
+        "측정 주체": "Meituan"
+      }
+    },
+    {
+      "id": "longcat25-20261101-eval-1-2",
+      "model": "Claude Opus 5",
+      "provider": "Anthropic",
+      "source_url": "https://longcat.ai/blog/longcat-2.5",
+      "checked_on": "2026-11-03",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Terminal Bench v4.0 / LongCat release table 2026-11-01",
+        "condition": "Claude Code 2.1.280,512K; run count not separately stated; LongCat default thinking on,temp1.0,top_p0.95 unless noted. 경쟁 점수 *: 공개 기술보고서/공식 순위 인용, 동일 조건 보장 아님",
+        "평가 점수": 53.9,
+        "단위": "원문 표 수치; 공통%단위 미표기",
+        "측정 주체": "원문 * 외부 결과 인용"
+      }
+    },
+    {
+      "id": "longcat25-20261101-eval-1-3",
+      "model": "DeepSeek-V4.1-Flash",
+      "provider": "DeepSeek",
+      "source_url": "https://longcat.ai/blog/longcat-2.5",
+      "checked_on": "2026-11-03",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Terminal Bench v4.0 / LongCat release table 2026-11-01",
+        "condition": "Claude Code 2.1.280,512K; run count not separately stated; LongCat default thinking on,temp1.0,top_p0.95 unless noted. 경쟁 점수 *: 공개 기술보고서/공식 순위 인용, 동일 조건 보장 아님",
+        "평가 점수": 31.2,
+        "단위": "원문 표 수치; 공통%단위 미표기",
+        "측정 주체": "원문 * 외부 결과 인용"
+      }
+    },
+    {
+      "id": "longcat25-20261101-eval-2-0",
+      "model": "LongCat-2.5",
+      "provider": "Meituan",
+      "source_url": "https://longcat.ai/blog/longcat-2.5",
+      "checked_on": "2026-11-03",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Program Bench Almost Resolved / LongCat release table 2026-11-01",
+        "condition": "Almost Resolved; Claude Code 2.1.280,512K; LongCat default thinking on,temp1.0,top_p0.95 unless noted. Meituan 제공자 측정/재측정, indicative only; 외부독립 재현 아님",
+        "평가 점수": 25.5,
+        "단위": "원문 표 수치; 공통%단위 미표기",
+        "측정 주체": "Meituan"
+      }
+    },
+    {
+      "id": "longcat25-20261101-eval-2-1",
+      "model": "LongCat-2.0",
+      "provider": "Meituan",
+      "source_url": "https://longcat.ai/blog/longcat-2.5",
+      "checked_on": "2026-11-03",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Program Bench Almost Resolved / LongCat release table 2026-11-01",
+        "condition": "Almost Resolved; Claude Code 2.1.280,512K; LongCat default thinking on,temp1.0,top_p0.95 unless noted. Meituan 제공자 측정/재측정, indicative only; 외부독립 재현 아님",
+        "평가 점수": 2.5,
+        "단위": "원문 표 수치; 공통%단위 미표기",
+        "측정 주체": "Meituan"
+      }
+    },
+    {
+      "id": "longcat25-20261101-eval-2-2",
+      "model": "Claude Opus 5",
+      "provider": "Anthropic",
+      "source_url": "https://longcat.ai/blog/longcat-2.5",
+      "checked_on": "2026-11-03",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Program Bench Almost Resolved / LongCat release table 2026-11-01",
+        "condition": "Almost Resolved; Claude Code 2.1.280,512K; LongCat default thinking on,temp1.0,top_p0.95 unless noted. 경쟁 점수 *: 공개 기술보고서/공식 순위 인용, 동일 조건 보장 아님",
+        "평가 점수": 37.0,
+        "단위": "원문 표 수치; 공통%단위 미표기",
+        "측정 주체": "원문 * 외부 결과 인용"
+      }
+    },
+    {
+      "id": "longcat25-20261101-eval-2-3",
+      "model": "DeepSeek-V4.1-Flash",
+      "provider": "DeepSeek",
+      "source_url": "https://longcat.ai/blog/longcat-2.5",
+      "checked_on": "2026-11-03",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Program Bench Almost Resolved / LongCat release table 2026-11-01",
+        "condition": "Almost Resolved; Claude Code 2.1.280,512K; LongCat default thinking on,temp1.0,top_p0.95 unless noted. 경쟁 점수 *: 공개 기술보고서/공식 순위 인용, 동일 조건 보장 아님",
+        "평가 점수": 20.3,
+        "단위": "원문 표 수치; 공통%단위 미표기",
+        "측정 주체": "원문 * 외부 결과 인용"
+      }
+    },
+    {
+      "id": "longcat25-20261101-eval-3-0",
+      "model": "LongCat-2.5",
+      "provider": "Meituan",
+      "source_url": "https://longcat.ai/blog/longcat-2.5",
+      "checked_on": "2026-11-03",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "PaperBench / LongCat release table 2026-11-01",
+        "condition": "Original table; detailed sample/harness not confirmed; LongCat default thinking on,temp1.0,top_p0.95 unless noted. Meituan 제공자 측정/재측정, indicative only; 외부독립 재현 아님",
+        "평가 점수": 82.1,
+        "단위": "원문 표 수치; 공통%단위 미표기",
+        "측정 주체": "Meituan"
+      }
+    },
+    {
+      "id": "longcat25-20261101-eval-3-1",
+      "model": "LongCat-2.0",
+      "provider": "Meituan",
+      "source_url": "https://longcat.ai/blog/longcat-2.5",
+      "checked_on": "2026-11-03",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "PaperBench / LongCat release table 2026-11-01",
+        "condition": "Original table; detailed sample/harness not confirmed; LongCat default thinking on,temp1.0,top_p0.95 unless noted. Meituan 제공자 측정/재측정, indicative only; 외부독립 재현 아님",
+        "평가 점수": 45.2,
+        "단위": "원문 표 수치; 공통%단위 미표기",
+        "측정 주체": "Meituan"
+      }
+    },
+    {
+      "id": "longcat25-20261101-eval-3-2",
+      "model": "Claude Opus 5",
+      "provider": "Anthropic",
+      "source_url": "https://longcat.ai/blog/longcat-2.5",
+      "checked_on": "2026-11-03",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "PaperBench / LongCat release table 2026-11-01",
+        "condition": "Original table; detailed sample/harness not confirmed; LongCat default thinking on,temp1.0,top_p0.95 unless noted. Meituan 제공자 측정/재측정, indicative only; 외부독립 재현 아님",
+        "평가 점수": 79.1,
+        "단위": "원문 표 수치; 공통%단위 미표기",
+        "측정 주체": "Meituan"
+      }
+    },
+    {
+      "id": "longcat25-20261101-eval-4-0",
+      "model": "LongCat-2.5",
+      "provider": "Meituan",
+      "source_url": "https://longcat.ai/blog/longcat-2.5",
+      "checked_on": "2026-11-03",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "BrowseComp / LongCat release table 2026-11-01",
+        "condition": "Custom Verify/Discard-All256K,max1024rounds;search/browse_with_goal; LongCat default thinking on,temp1.0,top_p0.95 unless noted. Meituan 제공자 측정/재측정, indicative only; 외부독립 재현 아님",
+        "평가 점수": 91.9,
+        "단위": "원문 표 수치; 공통%단위 미표기",
+        "측정 주체": "Meituan"
+      }
+    },
+    {
+      "id": "longcat25-20261101-eval-4-1",
+      "model": "LongCat-2.0",
+      "provider": "Meituan",
+      "source_url": "https://longcat.ai/blog/longcat-2.5",
+      "checked_on": "2026-11-03",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "BrowseComp / LongCat release table 2026-11-01",
+        "condition": "Custom Verify/Discard-All256K,max1024rounds;search/browse_with_goal; LongCat default thinking on,temp1.0,top_p0.95 unless noted. Meituan 제공자 측정/재측정, indicative only; 외부독립 재현 아님",
+        "평가 점수": 79.9,
+        "단위": "원문 표 수치; 공통%단위 미표기",
+        "측정 주체": "Meituan"
+      }
+    },
+    {
+      "id": "longcat25-20261101-eval-4-2",
+      "model": "Claude Opus 5",
+      "provider": "Anthropic",
+      "source_url": "https://longcat.ai/blog/longcat-2.5",
+      "checked_on": "2026-11-03",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "BrowseComp / LongCat release table 2026-11-01",
+        "condition": "Custom Verify/Discard-All256K,max1024rounds;search/browse_with_goal; LongCat default thinking on,temp1.0,top_p0.95 unless noted. 경쟁 점수 *: 공개 기술보고서/공식 순위 인용, 동일 조건 보장 아님",
+        "평가 점수": 90.8,
+        "단위": "원문 표 수치; 공통%단위 미표기",
+        "측정 주체": "원문 * 외부 결과 인용"
+      }
+    },
+    {
+      "id": "longcat25-20261101-eval-4-3",
+      "model": "DeepSeek-V4.1-Flash",
+      "provider": "DeepSeek",
+      "source_url": "https://longcat.ai/blog/longcat-2.5",
+      "checked_on": "2026-11-03",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "BrowseComp / LongCat release table 2026-11-01",
+        "condition": "Custom Verify/Discard-All256K,max1024rounds;search/browse_with_goal; LongCat default thinking on,temp1.0,top_p0.95 unless noted. Meituan 제공자 측정/재측정, indicative only; 외부독립 재현 아님",
+        "평가 점수": 91.5,
+        "단위": "원문 표 수치; 공통%단위 미표기",
+        "측정 주체": "Meituan"
+      }
+    },
+    {
+      "id": "longcat25-20261101-eval-5-0",
+      "model": "LongCat-2.5",
+      "provider": "Meituan",
+      "source_url": "https://longcat.ai/blog/longcat-2.5",
+      "checked_on": "2026-11-03",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "AutomationBench v1.0.6 / LongCat release table 2026-11-01",
+        "condition": "public v1.0.6,600tasks,official evaluation code; LongCat default thinking on,temp1.0,top_p0.95 unless noted. Meituan 제공자 측정/재측정, indicative only; 외부독립 재현 아님",
+        "평가 점수": 51.8,
+        "단위": "원문 표 수치; 공통%단위 미표기",
+        "측정 주체": "Meituan"
+      }
+    },
+    {
+      "id": "longcat25-20261101-eval-5-1",
+      "model": "LongCat-2.0",
+      "provider": "Meituan",
+      "source_url": "https://longcat.ai/blog/longcat-2.5",
+      "checked_on": "2026-11-03",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "AutomationBench v1.0.6 / LongCat release table 2026-11-01",
+        "condition": "public v1.0.6,600tasks,official evaluation code; LongCat default thinking on,temp1.0,top_p0.95 unless noted. Meituan 제공자 측정/재측정, indicative only; 외부독립 재현 아님",
+        "평가 점수": 15.8,
+        "단위": "원문 표 수치; 공통%단위 미표기",
+        "측정 주체": "Meituan"
+      }
+    },
+    {
+      "id": "longcat25-20261101-eval-5-2",
+      "model": "Claude Opus 5",
+      "provider": "Anthropic",
+      "source_url": "https://longcat.ai/blog/longcat-2.5",
+      "checked_on": "2026-11-03",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "AutomationBench v1.0.6 / LongCat release table 2026-11-01",
+        "condition": "public v1.0.6,600tasks,official evaluation code; LongCat default thinking on,temp1.0,top_p0.95 unless noted. 경쟁 점수 *: 공개 기술보고서/공식 순위 인용, 동일 조건 보장 아님",
+        "평가 점수": 50.3,
+        "단위": "원문 표 수치; 공통%단위 미표기",
+        "측정 주체": "원문 * 외부 결과 인용"
+      }
+    },
+    {
+      "id": "longcat25-20261101-eval-5-3",
+      "model": "DeepSeek-V4.1-Flash",
+      "provider": "DeepSeek",
+      "source_url": "https://longcat.ai/blog/longcat-2.5",
+      "checked_on": "2026-11-03",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "AutomationBench v1.0.6 / LongCat release table 2026-11-01",
+        "condition": "public v1.0.6,600tasks,official evaluation code; LongCat default thinking on,temp1.0,top_p0.95 unless noted. 경쟁 점수 *: 공개 기술보고서/공식 순위 인용, 동일 조건 보장 아님",
+        "평가 점수": 54.8,
+        "단위": "원문 표 수치; 공통%단위 미표기",
+        "측정 주체": "원문 * 외부 결과 인용"
+      }
+    },
+    {
+      "id": "longcat25-20261101-eval-6-0",
+      "model": "LongCat-2.5",
+      "provider": "Meituan",
+      "source_url": "https://longcat.ai/blog/longcat-2.5",
+      "checked_on": "2026-11-03",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SpreadsheetBench 2 / LongCat release table 2026-11-01",
+        "condition": "Claude Code 2.1.116; visualization judge gemini-3.6-flash; Linux LibreOffice/fallback; LongCat default thinking on,temp1.0,top_p0.95 unless noted. Meituan 제공자 측정/재측정, indicative only; 외부독립 재현 아님",
+        "평가 점수": 34.9,
+        "단위": "원문 표 수치; 공통%단위 미표기",
+        "측정 주체": "Meituan"
+      }
+    },
+    {
+      "id": "longcat25-20261101-eval-6-1",
+      "model": "LongCat-2.0",
+      "provider": "Meituan",
+      "source_url": "https://longcat.ai/blog/longcat-2.5",
+      "checked_on": "2026-11-03",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SpreadsheetBench 2 / LongCat release table 2026-11-01",
+        "condition": "Claude Code 2.1.116; visualization judge gemini-3.6-flash; Linux LibreOffice/fallback; LongCat default thinking on,temp1.0,top_p0.95 unless noted. Meituan 제공자 측정/재측정, indicative only; 외부독립 재현 아님",
+        "평가 점수": 24.1,
+        "단위": "원문 표 수치; 공통%단위 미표기",
+        "측정 주체": "Meituan"
+      }
+    },
+    {
+      "id": "longcat25-20261101-eval-6-2",
+      "model": "Claude Opus 5",
+      "provider": "Anthropic",
+      "source_url": "https://longcat.ai/blog/longcat-2.5",
+      "checked_on": "2026-11-03",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SpreadsheetBench 2 / LongCat release table 2026-11-01",
+        "condition": "Claude Code 2.1.116; visualization judge gemini-3.6-flash; Linux LibreOffice/fallback; LongCat default thinking on,temp1.0,top_p0.95 unless noted. Meituan 제공자 측정/재측정, indicative only; 외부독립 재현 아님",
+        "평가 점수": 33.0,
+        "단위": "원문 표 수치; 공통%단위 미표기",
+        "측정 주체": "Meituan"
+      }
+    },
+    {
+      "id": "longcat25-20261101-eval-6-3",
+      "model": "DeepSeek-V4.1-Flash",
+      "provider": "DeepSeek",
+      "source_url": "https://longcat.ai/blog/longcat-2.5",
+      "checked_on": "2026-11-03",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SpreadsheetBench 2 / LongCat release table 2026-11-01",
+        "condition": "Claude Code 2.1.116; visualization judge gemini-3.6-flash; Linux LibreOffice/fallback; LongCat default thinking on,temp1.0,top_p0.95 unless noted. Meituan 제공자 측정/재측정, indicative only; 외부독립 재현 아님",
+        "평가 점수": 33.0,
+        "단위": "원문 표 수치; 공통%단위 미표기",
+        "측정 주체": "Meituan"
+      }
+    },
+    {
+      "id": "longcat25-20261101-eval-7-0",
+      "model": "LongCat-2.5",
+      "provider": "Meituan",
+      "source_url": "https://longcat.ai/blog/longcat-2.5",
+      "checked_on": "2026-11-03",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Vision2Web / LongCat release table 2026-11-01",
+        "condition": "Claude Code 2.1.7,256K,temp1.0,top_p0.95,top_k50; LongCat default thinking on,temp1.0,top_p0.95 unless noted. Meituan 제공자 측정/재측정, indicative only; 외부독립 재현 아님",
+        "평가 점수": 78.6,
+        "단위": "원문 표 수치; 공통%단위 미표기",
+        "측정 주체": "Meituan"
+      }
+    },
+    {
+      "id": "longcat25-20261101-eval-7-2",
+      "model": "Claude Opus 5",
+      "provider": "Anthropic",
+      "source_url": "https://longcat.ai/blog/longcat-2.5",
+      "checked_on": "2026-11-03",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Vision2Web / LongCat release table 2026-11-01",
+        "condition": "Claude Code 2.1.7,256K,temp1.0,top_p0.95,top_k50; LongCat default thinking on,temp1.0,top_p0.95 unless noted. 경쟁 점수 *: 공개 기술보고서/공식 순위 인용, 동일 조건 보장 아님",
+        "평가 점수": 80.2,
+        "단위": "원문 표 수치; 공통%단위 미표기",
+        "측정 주체": "원문 * 외부 결과 인용"
+      }
+    },
+    {
+      "id": "longcat25-20261101-eval-7-3",
+      "model": "DeepSeek-V4.1-Flash",
+      "provider": "DeepSeek",
+      "source_url": "https://longcat.ai/blog/longcat-2.5",
+      "checked_on": "2026-11-03",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Vision2Web / LongCat release table 2026-11-01",
+        "condition": "Claude Code 2.1.7,256K,temp1.0,top_p0.95,top_k50; LongCat default thinking on,temp1.0,top_p0.95 unless noted. Meituan 제공자 측정/재측정, indicative only; 외부독립 재현 아님",
+        "평가 점수": 79.2,
+        "단위": "원문 표 수치; 공통%단위 미표기",
+        "측정 주체": "Meituan"
+      }
+    },
+    {
+      "id": "longcat25-20261103-spec",
+      "model": "LongCat-2.5",
+      "provider": "Meituan",
+      "source_url": "https://longcat.chat/platform/docs/api/model-params",
+      "checked_on": "2026-11-03",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "API model parameters 2026-11-03",
+        "condition": "문맥은 입력+출력. max_tokens262144와 quickstart128K충돌; 더 큰 값을 확정하지 않음. temperature생각 on1.0/off0.7고정. 한국어/실계정 미검증.",
+        "context": 1048576,
+        "매개변수 문서 최대 출력 토큰": 262144,
+        "퀵스타트 최대 출력 표기": "128K tokens",
+        "effort": "thinking on/off",
+        "status": "공식 API 제공 이력 확인",
+        "access": "호스팅 API; 가중치 공개 예정"
+      }
+    },
+    {
+      "id": "longcat25-20261101-architecture",
+      "model": "LongCat-2.5",
+      "provider": "Meituan",
+      "source_url": "https://longcat.ai/blog/longcat-2.5",
+      "checked_on": "2026-11-03",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "Technical announcement 2026-11-01",
+        "condition": "공식 제공자 설명; 가중치 공개 예정, 구조/크기 독립 검사 아님. active값약 48B.",
+        "parameters": 1600,
+        "active_parameters": 48,
+        "입력": "텍스트/시각 입력",
+        "status": "API 제공; weights coming soon"
+      }
+    },
+    {
+      "id": "longcat20-20261103-comparison-spec",
+      "model": "LongCat-2.0",
+      "provider": "Meituan",
+      "source_url": "https://huggingface.co/meituan-longcat/LongCat-2.0/raw/main/README.md",
+      "checked_on": "2026-11-03",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "Previous official model card",
+        "condition": "이전 모델 비교용. 원문 1M 표기만 보존; 새 2.5의 정확문맥/출력/라이선스로 승계 안함.",
+        "parameters": 1600,
+        "active_parameters": 48,
+        "원문 문맥": "1M",
+        "라이선스": "weights MIT; trademarks/patents excluded",
+        "access": "공개 가중치"
+      }
+    },
+    {
+      "id": "longcat25-20261103-promotional-usd",
+      "model": "LongCat-2.5",
+      "provider": "Meituan",
+      "source_url": "https://longcat.chat/platform/docs/pricing/longcat-2.5",
+      "checked_on": "2026-11-03",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Limited-time discounted USD per million tokens",
+        "condition": "한시 할인. 표준단가/할인종료일 미공개; 플랫폼/실청구 우선. USD와 CNY는 별도공식표,환산안함.",
+        "한시 할인 입력 USD / 100만 토큰": 0.3,
+        "한시 할인 캐시 입력 USD / 100만 토큰": 0.006,
+        "한시 할인 출력 USD / 100만 토큰": 1.2,
+        "표준 요금": "미공개",
+        "status": "호스팅 API, 한시 할인"
+      }
+    },
+    {
+      "id": "longcat25-20261103-promotional-cny",
+      "model": "LongCat-2.5",
+      "provider": "Meituan",
+      "source_url": "https://longcat.chat/platform/docs/pricing/longcat-2.5",
+      "checked_on": "2026-11-03",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Limited-time CNY per million tokens, separate original table",
+        "condition": "별도위안표의원문값. USD환산아님. 원문 2번째표머리의$/1M표기와셀의¥통화를함께설명. 표준/종료일미공개.",
+        "입력 CNY / 100만 토큰": 2,
+        "캐시 입력 CNY / 100만 토큰": 0.04,
+        "출력 CNY / 100만 토큰": 8
+      }
+    },
+    {
+      "id": "longcat25-20261103-opus5-standard-price",
+      "model": "Claude Opus 5",
+      "provider": "Anthropic",
+      "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+      "checked_on": "2026-11-03",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Standard first-party API USD per million tokens",
+        "condition": "표준 API요금; cache hit 읽기와쓰기가격별도, Batch/구독/협상할인아님. Opus 5.5는위성능표 Opus 5와다른판.",
+        "입력 USD / 100만 토큰": 5,
+        "출력 USD / 100만 토큰": 25,
+        "캐시 읽기 USD / 100만 토큰": 0.5
+      }
+    },
+    {
+      "id": "longcat25-20261103-opus55-standard-price",
+      "model": "Claude Opus 5.5",
+      "provider": "Anthropic",
+      "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+      "checked_on": "2026-11-03",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Standard first-party API USD per million tokens",
+        "condition": "표준 API요금; cache hit 읽기와쓰기가격별도, Batch/구독/협상할인아님. Opus 5.5는위성능표 Opus 5와다른판.",
+        "입력 USD / 100만 토큰": 4,
+        "출력 USD / 100만 토큰": 20,
+        "캐시 읽기 USD / 100만 토큰": 0.2
+      }
+    }
+  ]
+}
