@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "id": "cogent-vr11-20261103-livecve-vr11",
+      "model": "VR-1.1",
+      "provider": "Cogent Security",
+      "source_url": "https://www.cogent.com/blog/vr-1.1-on-livecvebench-remediating-real-vulnerabilities",
+      "checked_on": "2026-11-04",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "LiveCVEBench / Cogent release 2026-11-03 / 190 tasks",
+        "condition": "Cogent 제공자 측정 / 190 tasks,3 attempts each, outbound network blocked, grading tests withheld; inference budgets differed; model effort/tool versions/token and time limits not fully disclosed; not independent reproduction; Cogent own repair harness",
+        "평가 점수": 57.9,
+        "단위": "%",
+        "측정 주체": "Cogent Security",
+        "도구 / Harness": "Cogent own repair harness",
+        "미확인": "공식 동적 순위표의 현행 행과 독립 재현 미확인"
+      }
+    },
+    {
+      "id": "cogent-vr11-20261103-livecve-opus",
+      "model": "Claude Opus 5.5",
+      "provider": "Anthropic",
+      "source_url": "https://www.cogent.com/blog/vr-1.1-on-livecvebench-remediating-real-vulnerabilities",
+      "checked_on": "2026-11-04",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "LiveCVEBench / Cogent release 2026-11-03 / 190 tasks",
+        "condition": "Cogent 제공자 측정 / 190 tasks,3 attempts each, outbound network blocked, grading tests withheld; inference budgets differed; model effort/tool versions/token and time limits not fully disclosed; not independent reproduction; Claude Code",
+        "평가 점수": 45.3,
+        "단위": "%",
+        "측정 주체": "Cogent Security",
+        "도구 / Harness": "Claude Code",
+        "미확인": "공식 동적 순위표의 현행 행과 독립 재현 미확인"
+      }
+    },
+    {
+      "id": "cogent-vr11-20261103-livecve-cyber",
+      "model": "GPT-5.6-Cyber",
+      "provider": "OpenAI",
+      "source_url": "https://www.cogent.com/blog/vr-1.1-on-livecvebench-remediating-real-vulnerabilities",
+      "checked_on": "2026-11-04",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "LiveCVEBench / Cogent release 2026-11-03 / 190 tasks",
+        "condition": "Cogent 제공자 측정 / 190 tasks,3 attempts each, outbound network blocked, grading tests withheld; inference budgets differed; model effort/tool versions/token and time limits not fully disclosed; not independent reproduction; Codex",
+        "평가 점수": 45.3,
+        "단위": "%",
+        "측정 주체": "Cogent Security",
+        "도구 / Harness": "Codex",
+        "미확인": "공식 동적 순위표의 현행 행과 독립 재현 미확인"
+      }
+    },
+    {
+      "id": "cogent-vr11-20261103-spec",
+      "model": "VR-1.1",
+      "provider": "Cogent Security",
+      "source_url": "https://www.cogent.com/blog/vr-1.1-on-livecvebench-remediating-real-vulnerabilities",
+      "checked_on": "2026-11-04",
+      "fields": {
+        "kind": "공식 사양과 제공",
+        "suite": "VR-1.1 official announcement 2026-11-03",
+        "condition": "Official announcement; bringing into Cogent remediation workflow; demo contact; public API/weights/GA not established",
+        "제공 상태": "공식 발표 / Cogent 수정 workflow와 데모 안내",
+        "문맥": "미공개",
+        "최대 출력": "미공개",
+        "파라미터": "미공개",
+        "가중치": "공개 확인 안 됨",
+        "표준 API 요금": "미공개",
+        "이전 모델": "VR-1; 동일 LiveCVEBench 값 미보고",
+        "언어 / 지역": "한국어 평가와 한국 제공 조건 미확인"
+      }
+    },
+    {
+      "id": "cogent-vr11-20261103-budget",
+      "model": "VR-1.1",
+      "provider": "Cogent Security",
+      "source_url": "https://www.prnewswire.com/news-releases/cogent-unveils-vr-1-1--its-latest-frontier-cyber-model-which-tops-livecvebench-for-vulnerability-repair-302927966.html",
+      "checked_on": "2026-11-04",
+      "fields": {
+        "kind": "공식 평가 조건",
+        "suite": "LiveCVEBench / Cogent release 2026-11-03 / resource caveat",
+        "condition": "Three systems have different inference budgets; equal attempts is not equal compute or cost",
+        "시도 수": 3,
+        "과제 수": 190,
+        "주의": "시스템별 추론 예산 다름; 정확 토큰/시간/비용 미공개"
+      }
+    },
+    {
+      "id": "cogent-vr11-20261103-previous",
+      "model": "VR-1",
+      "provider": "Cogent Security",
+      "source_url": "https://www.cogent.com/blog/cogent-at-the-frontier-announcing-vr-1-the-first-mythos-class-ai-model-built-for-cyber-defense",
+      "checked_on": "2026-11-04",
+      "fields": {
+        "kind": "공식 제공 조건",
+        "suite": "VR-1 launch 2026-07-27 / historical comparison",
+        "condition": "Historical launch conditions only; do not inherit as VR-1.1 eligibility",
+        "공개 가중치": "아님",
+        "제공 상태": "심사 조직 대상 Frontier Access Program",
+        "표준 요금": "미확인"
+      }
+    }
+  ]
+}

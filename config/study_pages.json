@@ -83,7 +83,8 @@
     "mage-vl-cowork-model-guide",
     "surya-2-5-model-guide",
     "sensenova-loop-9b-preview-model-guide",
-    "longcat-2-5-model-guide"
+    "longcat-2-5-model-guide",
+    "cogent-vr-1-1-model-guide"
   ],
   "catalogs": {
     "devops-implementation-guide": "devops_tools.2026-10-10.r4.json"
@@ -273,6 +274,9 @@
     ],
     "longcat-2-5-model-guide": [
       "857114b8a3d8fb3f49d59d3aca4faa6ab915b65ba252673df4a13ea56f74675a"
+    ],
+    "cogent-vr-1-1-model-guide": [
+      "4aa05cd64b54a1300b0f77504e251f2faf3584522b62073171b9f4b52827cdcc"
     ]
   },
   "model_introduction_editions": {
@@ -401,6 +405,9 @@
     ],
     "longcat-2-5-model-guide": [
       "857114b8a3d8fb3f49d59d3aca4faa6ab915b65ba252673df4a13ea56f74675a"
+    ],
+    "cogent-vr-1-1-model-guide": [
+      "4aa05cd64b54a1300b0f77504e251f2faf3584522b62073171b9f4b52827cdcc"
     ]
   },
   "model_introduction_purpose_editions": {
@@ -518,6 +525,9 @@
     ],
     "longcat-2-5-model-guide": [
       "857114b8a3d8fb3f49d59d3aca4faa6ab915b65ba252673df4a13ea56f74675a"
+    ],
+    "cogent-vr-1-1-model-guide": [
+      "4aa05cd64b54a1300b0f77504e251f2faf3584522b62073171b9f4b52827cdcc"
     ]
   },
   "model_introduction_reader_editions": {

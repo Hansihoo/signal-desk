@@ -1,0 +1,595 @@
+{
+  "schema_version": 1,
+  "reports": [
+    {
+      "id": "cogent-vr-1-1-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "title": "VR-1.1 소개: 취약점 수정 성능과 경쟁 도구 비교, 제공 조건의 한계",
+      "description": "취약점 수정에 AI를 도입하려는 개발자와 관리자가 이전 VR-1 및 일반 코딩 도구와의 차이, 평가 결과와 공개되지 않은 비용을 구분하도록 정리했다.",
+      "checked_on": "2026-11-04",
+      "scope": "11월 3일 Cogent 발표와 연구 본문, 이전 VR-1, 평가 설명 및 경쟁 모델의 현행 사양과 표준 요금을 읽었다. 제공자 평가의 비교이며 실제 추론이나 독립 재현은 아니다.",
+      "deck": "VR-1.1은 알려진 취약점을 고치고 정상 기능을 보존하는 데 초점을 맞춘 Cogent의 보안 모델이다. 자체 평가에서 일반 코딩 도구보다 높은 수정 성공률을 보고했지만 추론 예산은 서로 달랐다. 공개 API와 가중치, 표준 요금은 확인되지 않았으며 현재 안내는 Cogent의 수정 업무 흐름과 데모로 연결된다.",
+      "highlights": [
+        "취약점 발견에서 수정과 회귀 검사로 확장",
+        "190개 과제의 공급자 평가와 예산 차이",
+        "공개 사양과 표준 가격의 공백을 구분"
+      ],
+      "source_note": "발표일은 2026년 11월 3일, 자료 확인일은 4일이다. 모델과 에이전트 실행 체계의 성과를 분리하며 공식 순위표의 동적 수치는 별도로 재확인하지 못했다.",
+      "summary": [
+        {
+          "label": "모델의 변화",
+          "text": "VR-1.1은 취약점 보고서와 코드를 조사하고 수정안을 만든 뒤, 우회 가능성과 정상 기능의 회귀를 확인하는 작업에 특화됐다. 7월 VR-1의 기업 환경 공격 경로 탐색과는 평가하는 일이 다르다.",
+          "source_ids": [
+            "launch",
+            "previous"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "보고된 성능",
+          "text": "Cogent는 LiveCVEBench 190개 과제에서 VR-1.1 57.9%, Claude Code의 Opus 5.5와 Codex의 GPT-5.6-Cyber 각각 45.3%를 보고했다. 같은 과제와 세 번의 시도 조건이지만 시스템별 추론 예산은 달랐다.",
+          "source_ids": [
+            "launch",
+            "release"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "제공과 비용",
+          "text": "VR-1.1은 11월 3일 공식 발표됐고 Cogent의 수정 업무 흐름으로 연결하는 단계라고 설명한다. 누구나 호출할 수 있는 모델 ID, 가중치와 표준 가격은 이번 공개 자료에서 확인되지 않았다.",
+          "source_ids": [
+            "launch",
+            "release"
+          ],
+          "kind": "judgment"
+        },
+        {
+          "label": "판단의 한계",
+          "text": "점수는 주어진 보안 검사와 기능 검사를 모두 통과한 비율이다. 실제 서비스의 모든 취약점 제거, 운영 무중단이나 일반 코딩 전반의 우위를 뜻하지 않는다.",
+          "source_ids": [
+            "launch",
+            "bench"
+          ],
+          "kind": "judgment"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "explanation": [
+        {
+          "id": "identity",
+          "title": "모델 개요와 이전 VR-1 대비 변화",
+          "lead": "기업 환경의 공격 경로를 찾는 모델 계열에서, 코드의 취약점을 제대로 고치는 능력을 강조한 판이다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "보안 모델과 실행 체계",
+              "text": "Cogent는 VR-1.1을 보안 수정 작업으로 학습한 추론 모델이자 VR 계열의 최신판으로 소개한다. 실제 결과에는 모델 외에 작업 환경, 도구, 재시도와 검토 절차를 묶은 실행 체계도 들어간다. 따라서 비교표의 숫자는 가중치만 바꿔 얻은 순수 모델 성능이 아니라 발표된 에이전트 구성의 결과로 읽어야 한다.",
+              "source_ids": [
+                "launch"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "7월 VR-1과 다른 질문",
+              "text": "이전 VR-1은 제한된 접근에서 기업 환경을 조사하고 여러 시스템의 약점을 연결해 목표에 도달하는지를 중심으로 설명됐다. 자체 IntrusionBench도 이런 경로 탐색을 평가했다. 새 글의 중심은 이미 알려진 취약점 보고서와 코드가 주어졌을 때 공격을 막으면서 정상 동작을 보존하는 수정이다. 같은 LiveCVEBench에서 이전 VR-1을 다시 평가한 값은 없으므로 버전 간 성공률 상승 폭을 계산할 수 없다.",
+              "source_ids": [
+                "previous",
+                "launch"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "공개 사양의 범위",
+              "text": "VR-1.1의 파라미터 수, 기반 모델, 문맥 길이, 최대 출력과 토큰화 방식은 선정 원문에 명시되지 않았다. 공개 자료가 보안 모델 계열을 설명한다는 이유로 특정 공개 모델의 사양을 가져오거나 자체 호스팅 가능성을 가정하지 않는다.",
+              "source_ids": [
+                "launch",
+                "release"
+              ],
+              "kind": "judgment"
+            }
+          ]
+        },
+        {
+          "id": "repair",
+          "title": "재현, 수정과 검증을 연결하는 방식",
+          "lead": "공격을 차단했다는 설명보다 실제 보안 검사와 정상 동작을 함께 보는 점이 핵심이다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "실패를 추적하는 수정 과정",
+              "text": "제공자 설명상 VR-1.1은 환경이 허용하면 취약점을 재현하고, 영향을 받는 코드와 같은 약점이 있는 다른 경로를 추적한다. 수정 후에는 별도 문맥의 검토가 우회와 새 결함을 찾고, 회귀 검사가 정상 동작을 확인한다. 재시도가 필요하면 이전 분석과 실패 정보를 다음 시도에 전달한다. 이 설명은 모든 작업에서 재현이나 검사가 성공한다는 보장이 아니다.",
+              "source_ids": [
+                "launch",
+                "release"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "두 종류의 검사를 통과해야 하는 이유",
+              "text": "공격 입력을 거부하도록 기능 자체를 없애면 취약점은 보이지 않을 수 있지만 유효한 작업도 실패한다. 반대로 보고된 입력 하나만 막으면 다른 경로가 남을 수 있다. LiveCVEBench의 성공은 취약점 검사를 통과하면서 기능 검사도 유지하는 조건이다. 이는 테스트가 다룬 경계에서의 성공이지 코드 전체의 안전성 증명과는 다르다.",
+              "source_ids": [
+                "launch",
+                "bench"
+              ],
+              "kind": "judgment"
+            },
+            {
+              "type": "paragraph",
+              "title": "발표 사례와 최종 평가의 분리",
+              "text": "공식 글의 Fiber 수정 사례는 보안 검사 9개와 기능 검사 12개의 결과를 보여주지만, 별도로 기록한 182개 과제 실행에서 나온 것이다. 최종 190개 과제 결과의 개별 사례나 모든 수정의 대표성으로 확대하지 않는다. 이 소개는 실제 공격 재현이나 패치 실행을 수행하지 않았다.",
+              "source_ids": [
+                "launch"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "comparison",
+          "title": "LiveCVEBench 성능과 비교 조건",
+          "lead": "동일한 문제를 풀었더라도 모델, 실행 도구와 추론 예산이 같아야 순수 성능 차이로 해석할 수 있다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "보고된 차이",
+              "text": "VR-1.1의 57.9%는 두 비교 구성의 45.3%보다 12.6%포인트 높다. 이는 보고된 성공률의 차이이며 비용 대비 효과나 통계적 유의성을 추가로 계산한 결과가 아니다. 비교 대상은 일반 Claude 앱이나 모든 Codex가 아니라 원문에 적힌 Claude Code/Opus 5.5와 Codex/GPT-5.6-Cyber 구성이다.",
+              "source_ids": [
+                "launch"
+              ],
+              "kind": "judgment"
+            },
+            {
+              "type": "paragraph",
+              "title": "시도 수와 예산의 차이",
+              "text": "원문은 동일한 입력과 환경, 과제당 세 번의 시도를 설명한다. 하지만 공식 보도자료는 세 시스템의 추론 예산이 달랐다고 명시한다. 정확한 토큰, 시간, 추론 강도, 도구 판과 총 실행 비용은 선정 자료에서 충분히 확인되지 않았다. 같은 시도 수를 같은 연산량으로 바꾸거나 VR-1.1이 더 저렴하다고 결론내릴 수 없다.",
+              "source_ids": [
+                "launch",
+                "release"
+              ],
+              "kind": "judgment"
+            },
+            {
+              "type": "paragraph",
+              "title": "새 평가라는 이름과 오염 가능성",
+              "text": "평가 프로젝트는 새 CVE를 계속 추가해 오염을 줄이는 설계를 소개한다. 그러나 Cogent가 사용한 현재 집합의 CVE는 비교 모델의 학습 기준일보다 앞선 것으로 원문이 설명한다. 외부 네트워크와 채점 테스트를 차단했더라도 학습 중 보았을 가능성이 사라지지는 않는다. 공식 순위표는 동적 행을 이번 환경에서 재확인하지 못했으므로 수치는 Cogent가 공개한 측정으로 표시한다.",
+              "source_ids": [
+                "launch",
+                "bench"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "advantages",
+          "title": "강점: 수정의 완결성과 점검 가능한 산출물",
+          "lead": "수정안을 제시하는 데서 그치지 않고 실패와 정상 동작을 연결하려는 방향이 구별점이다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "알려진 취약점 수정에 집중",
+              "text": "제공자 평가에서는 보안 검사와 기능 검사를 함께 통과한 비율이 두 일반 코딩 도구 구성보다 높았다. 보고서와 코드가 주어지는 수정 작업을 반복하는 조직에는 검토할 근거가 된다. 다만 다른 과제나 같은 예산에서도 우세할지는 별도의 질문이다.",
+              "source_ids": [
+                "launch",
+                "release"
+              ],
+              "kind": "judgment"
+            },
+            {
+              "type": "paragraph",
+              "title": "수정 근거를 함께 검토하는 구조",
+              "text": "Cogent는 진단, 재현과 실행한 검사를 수정안에 연결한다고 설명한다. 이런 산출물은 검토자가 변경 이유와 테스트 범위를 추적하는 데 유리하다. 설명이나 자동 검토가 있어도 실제 운영 환경의 권한, 변경 승인과 회귀 검사를 대체하지는 않는다.",
+              "source_ids": [
+                "launch"
+              ],
+              "kind": "judgment"
+            }
+          ]
+        },
+        {
+          "id": "limitations",
+          "title": "한계: 범용 성능과 운영 안전은 별개",
+          "lead": "높은 한 개의 성공률로 가격, 배포 가능성이나 자동 수정의 안전까지 추정할 수 없다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "상대 약점을 확인할 자료의 부족",
+              "text": "새 발표에는 VR-1.1이 경쟁 모델보다 낮았던 별도 평가나 같은 집합의 이전 VR-1 값이 제시되지 않는다. 이는 약점이 없다는 뜻이 아니다. 현재 확인할 수 있는 비교상 불리한 조건은 공개 API와 가격, 사양 정보가 일반 Claude API보다 적고, 독립 검증과 같은 예산 비교가 없다는 점이다.",
+              "source_ids": [
+                "launch",
+                "opus",
+                "pricing"
+              ],
+              "kind": "judgment"
+            },
+            {
+              "type": "paragraph",
+              "title": "실제 배포로 옮길 때의 공백",
+              "text": "격리된 평가 환경에서 테스트를 통과한 수정이 운영 데이터, 배포 방식과 다른 종속성에서도 동작한다고 단정할 수 없다. 공개 가중치, 한국어 지원 평가, 한국 이용 가능 범위, 최소 장비나 지역별 처리 조건도 확인되지 않았다. 이번 조사는 회사 코드나 실제 고객 환경을 전달하거나 모델을 실행하지 않았다.",
+              "source_ids": [
+                "launch",
+                "release"
+              ],
+              "kind": "judgment"
+            }
+          ]
+        },
+        {
+          "id": "pricing",
+          "title": "가격과 제공 조건",
+          "lead": "VR-1.1의 도입 비용과 경쟁 모델의 토큰 단가는 서로 다른 정보다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "VR-1.1의 현재 안내",
+              "text": "11월 3일 연구는 Cogent의 취약점 수정 업무 흐름에 VR-1.1을 도입한다고 설명하고 데모를 안내한다. 이전 VR-1은 심사를 통과한 조직을 위한 Frontier Access Program으로 제한됐지만, 그 조건 전체를 새 판의 확정 조건으로 승계하지 않는다. 공개 API 호출, 모델 다운로드나 일반 제공은 확인되지 않았다.",
+              "source_ids": [
+                "launch",
+                "previous-access"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "표준 요금 비교가 가능한 범위",
+              "text": "확인일 기준 Claude Opus 5.5의 기본 API 요금은 100만 토큰당 입력 USD 4, 출력 USD 20이며 캐시 읽기는 USD 0.20이다. 이 단가가 Claude Code의 이번 평가 실행 비용이나 월 구독료는 아니다. VR-1.1과 VR-1, 평가에 쓰인 GPT-5.6-Cyber의 동일 조건 표준 단가를 확보하지 못했으므로 공란을 0으로 채우거나 비용 우위를 계산하지 않는다.",
+              "source_ids": [
+                "pricing",
+                "release"
+              ],
+              "kind": "judgment"
+            },
+            {
+              "type": "paragraph",
+              "title": "비용을 좌우하는 실행 조건",
+              "text": "실제 수정에는 모델 출력 외에도 저장소 준비, 도구 실행과 재시도, 사람의 검토가 들어간다. VR-1.1의 공개 단가와 작업당 자원 사용량이 없으므로 성공률만으로 총비용을 비교하기 어렵다. 가격표의 캐시 쓰기, Batch와 지역 조건은 기본 입력 요금과 별도로 읽어야 한다.",
+              "source_ids": [
+                "launch",
+                "pricing"
+              ],
+              "kind": "judgment"
+            }
+          ]
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "지금 비교할 근거",
+            "text": "VR-1.1은 알려진 취약점을 수정하는 전문 모델과 실행 체계의 성과를 제시한 새 발표다. 정상 동작을 함께 확인하는 조건과 수정 산출물의 추적성은 검토할 가치가 있다.",
+            "source_ids": [
+              "launch"
+            ],
+            "kind": "judgment"
+          },
+          {
+            "label": "선택에 남은 조건",
+            "text": "독립 평가와 동일 예산 비교, 실제 접근 범위 및 가격이 확보되기 전에는 일반 코딩 도구의 전면 대체나 자동 운영 반영을 권고하기 어렵다. 이전 모델 대비 변화와 공개된 측정의 의미를 파악하는 단계로 읽는 것이 타당하다.",
+            "source_ids": [
+              "launch",
+              "release",
+              "previous-access"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "references": [
+        {
+          "id": "launch",
+          "title": "Cogent VR-1.1 공식 연구",
+          "url": "https://www.cogent.com/blog/vr-1.1-on-livecvebench-remediating-real-vulnerabilities",
+          "description": "11월3일 발표의190과제 결과, 재현/수정/검토/회귀 절차와 학습 오염 및 운영 적용 한계."
+        },
+        {
+          "id": "previous",
+          "title": "이전 VR-1 공식 연구",
+          "url": "https://www.cogent.com/blog/how-we-built-and-benchmarked-vr-1-our-frontier-cyber-reasoning-model",
+          "description": "7월27일 VR-1의 기업 환경 조사와 IntrusionBench 초기 평가. 새 수정 평가와 다름."
+        },
+        {
+          "id": "previous-access",
+          "title": "VR-1 공식 발표와 접근 조건",
+          "url": "https://www.cogent.com/blog/cogent-at-the-frontier-announcing-vr-1-the-first-mythos-class-ai-model-built-for-cyber-defense",
+          "description": "이전 VR-1의 비공개 접근과 심사 조직 조건. VR-1.1에 자동 승계하지 않음."
+        },
+        {
+          "id": "bench",
+          "title": "LiveCVEBench 공식 평가 설명",
+          "url": "https://livecvebench.github.io/",
+          "description": "평가 프로젝트의 연속 갱신과 코드 수정 과제 설명. 동적 결과 행은 별도 확인하지 못함."
+        },
+        {
+          "id": "pricing",
+          "title": "Anthropic 표준 API 요금",
+          "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+          "description": "Opus5.5의 USD/100만 토큰 표준 요금과 별도 캐시 조건. 평가 실행 총비용과 다름."
+        },
+        {
+          "id": "opus",
+          "title": "Claude Opus 5.5 사양",
+          "url": "https://platform.claude.com/docs/en/models/opus-5-5/overview",
+          "description": "Opus5.5의 모델 ID, 1M문맥/128K출력 및 API/플랫폼 제공."
+        },
+        {
+          "id": "release",
+          "title": "Cogent 제공 공식 출시 보도자료",
+          "url": "https://www.prnewswire.com/news-releases/cogent-unveils-vr-1-1--its-latest-frontier-cyber-model-which-tops-livecvebench-for-vulnerability-repair-302927966.html",
+          "description": "11월3일 Cogent가 제공한 공식 출시 보도자료. 시스템별 추론 예산 차이를 명시."
+        }
+      ],
+      "caveats": [
+        {
+          "text": "수치는 Cogent가 공개한 190개 과제 평가다. 추론 예산이 다르고 CVE의 학습 데이터 포함 가능성이 남는다. 동적 순위표의 현행 행과 독립 재현은 확인하지 못했다.",
+          "source_ids": [
+            "launch",
+            "release",
+            "bench"
+          ]
+        },
+        {
+          "text": "VR-1.1의 공개 API, 가중치, 파라미터와 문맥, 표준 요금은 미확인이다. 실제 모델 실행, 회사 코드 검증, 과금 및 사람 독자 시험을 수행하지 않았다.",
+          "source_ids": [
+            "launch",
+            "release"
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "specifications",
+          "title": "모델의 목적과 사양, 제공 범위",
+          "columns": [
+            "모델",
+            "주요 작업",
+            "문맥 / 최대 출력",
+            "확인한 제공 경로"
+          ],
+          "rows": [
+            {
+              "values": [
+                "VR-1.1",
+                "알려진 취약점 수정과 검증",
+                "미공개 / 미공개",
+                "Cogent 수정 업무 흐름과 데모 안내; 공개 API와 가중치 미확인"
+              ],
+              "source_ids": [
+                "launch",
+                "release"
+              ]
+            },
+            {
+              "values": [
+                "VR-1",
+                "기업 환경 공격 경로 탐색",
+                "미공개 / 미공개",
+                "7월 발표 당시 심사 조직 대상 Frontier Access Program"
+              ],
+              "source_ids": [
+                "previous",
+                "previous-access"
+              ]
+            },
+            {
+              "values": [
+                "Claude Opus 5.5",
+                "일반 코딩과 지식 작업",
+                "1M / 128K토큰, 원문 표기",
+                "Claude API 및 공식 문서에 기재된 클라우드 경로"
+              ],
+              "source_ids": [
+                "opus"
+              ]
+            },
+            {
+              "values": [
+                "GPT-5.6-Cyber / Codex",
+                "비교 평가의 보안 코딩 구성",
+                "이번 자료에서 미확인",
+                "평가 구성의 명칭; 일반 공개 API 제공을 가정하지 않음"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            }
+          ],
+          "note": "이전 VR-1과 경쟁 평가 구성을 선정했다. 미공개 사양과 일반 모델의 사양을 섞지 않으며 파라미터 수는 선정 원문에서 확인되지 않았다. Opus 5.5의 1M/128K는 공식 표기이며 임의 토큰 수로 환산하지 않는다."
+        },
+        {
+          "id": "benchmarks",
+          "title": "공급자가 공개한 취약점 수정 성공률",
+          "columns": [
+            "시스템",
+            "기반 모델 / 실행 체계",
+            "LiveCVEBench 성공률",
+            "시도와 측정 범위"
+          ],
+          "rows": [
+            {
+              "values": [
+                "VR-1.1",
+                "Cogent 보안 모델과 자체 실행 체계",
+                "57.9%",
+                "190과제, 과제당3시도, Cogent 측정"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Claude Code",
+                "Claude Opus 5.5 / Claude Code",
+                "45.3%",
+                "동일 과제와3시도; 추론 예산은 다름"
+              ],
+              "source_ids": [
+                "launch",
+                "release"
+              ]
+            },
+            {
+              "values": [
+                "Codex",
+                "GPT-5.6-Cyber / Codex",
+                "45.3%",
+                "동일 과제와3시도; 추론 예산은 다름"
+              ],
+              "source_ids": [
+                "launch",
+                "release"
+              ]
+            },
+            {
+              "values": [
+                "이전 VR-1",
+                "기존 Cogent 실행 체계",
+                "동일 평가 미보고",
+                "IntrusionBench 결과를 이 열에 옮기지 않음"
+              ],
+              "source_ids": [
+                "previous",
+                "launch"
+              ]
+            }
+          ],
+          "note": "2026-11-03 Cogent 발표의190과제 집합. 모델별 토큰/시간/추론 강도와 도구 판의 전체 설정은 미확인이다. 같은 시도 수가 같은 비용을 뜻하지 않는다. 공식 동적 순위표를 독립 대조한 값이 아니다."
+        },
+        {
+          "id": "conditions",
+          "title": "평가의 통제 조건과 남은 제한",
+          "columns": [
+            "조건",
+            "확인한 내용",
+            "알 수 없는 것"
+          ],
+          "rows": [
+            {
+              "values": [
+                "수정 입력",
+                "취약점 보고서와 해당 코드; 비교 시스템에 동일 입력",
+                "보고서 없는 새로운 취약점 발견 능력"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "정보 차단",
+                "수정 중 외부 네트워크 차단, 채점 테스트는 완료 후 실행",
+                "학습 데이터에 알려진 CVE와 수정이 포함됐는지"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "예산",
+                "각 과제3시도, 실패 분석을 다음 시도에 전달",
+                "시스템별 동일 토큰/시간/추론 예산의 우열"
+              ],
+              "source_ids": [
+                "launch",
+                "release"
+              ]
+            },
+            {
+              "values": [
+                "성공 판정",
+                "보안 검사와 기능 검사 모두 통과",
+                "운영 환경 전체 안전성과 미검사 회귀"
+              ],
+              "source_ids": [
+                "launch",
+                "bench"
+              ]
+            },
+            {
+              "values": [
+                "이전 모델",
+                "VR-1은 기업 환경 경로를 평가",
+                "VR-1.1과 같은 평가에서의 직접 개선 폭"
+              ],
+              "source_ids": [
+                "previous",
+                "launch"
+              ]
+            }
+          ],
+          "note": "평가 이름, 성공률과 실제 운영 효과를 구분한다. 182과제의 Fiber 시연과190과제 최종 평가는 별개다."
+        },
+        {
+          "id": "prices",
+          "title": "표준 요금과 이용 조건의 비교",
+          "columns": [
+            "모델",
+            "비캐시 입력 / 100만 토큰",
+            "출력 / 100만 토큰",
+            "그 밖의 조건"
+          ],
+          "rows": [
+            {
+              "values": [
+                "VR-1.1",
+                "미공개",
+                "미공개",
+                "공개 API 및 가격표 미확인; 데모 안내"
+              ],
+              "source_ids": [
+                "launch",
+                "release"
+              ]
+            },
+            {
+              "values": [
+                "VR-1",
+                "미확인",
+                "미확인",
+                "7월 당시 심사 조직 접근, 이번 판 요금 아님"
+              ],
+              "source_ids": [
+                "previous-access"
+              ]
+            },
+            {
+              "values": [
+                "Claude Opus 5.5",
+                "USD 4",
+                "USD 20",
+                "캐시 읽기 USD0.20; 5분쓰기5/1시간쓰기8은 별도"
+              ],
+              "source_ids": [
+                "pricing"
+              ]
+            },
+            {
+              "values": [
+                "GPT-5.6-Cyber / Codex",
+                "동일 조건 단가 미확인",
+                "동일 조건 단가 미확인",
+                "Codex 구독료나 다른 GPT의 단가를 승계하지 않음"
+              ],
+              "source_ids": [
+                "launch",
+                "release"
+              ]
+            }
+          ],
+          "note": "2026-11-04 확인. Opus는 기본 Claude API 표준 요금이며 Batch/협상 할인과 지역 가산을 제외한다. 토큰 단가는 이번 에이전트 평가의 작업당 비용이 아니다."
+        }
+      ]
+    }
+  ]
+}
