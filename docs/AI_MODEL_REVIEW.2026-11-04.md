@@ -1,6 +1,6 @@
 # 2026-11-04 VR-1.1 모델 검토
 
-현재 상태: 공식 원문 검토와 상세 소개/누적 비교표의 로컬 등록을 마쳤다. 정확한 제출 소스 검사와 공개 배포는 후속 기록을 따른다. 실제 공개 화면의 필터/모바일 검증은 Work 설정의 로컬 브라우저 비활성화로 미완료다.
+현재 상태: 상세 소개와 전체 비교표의 공개 반영, HTTP 본문/관측 데이터 대조를 마쳤다. 실제 공개 화면의 검색/상세/모바일 검증은 Work 설정의 로컬 브라우저 비활성화로 미완료이므로 전체 발행 작업은 검증 대기다.
 
 ## 범위와 선정
 
@@ -42,3 +42,14 @@ CUA createBrowserTab이 `Local browser use is disabled in Work settings`를 반�
 첫 검증의 불변 알림배치 해시 충돌은 git archive가 core.autocrlf=true를 따라 LF blob을 CRLF로 내보낸 검증 복사본의 문제였다. snapshot 등록값/HEAD blob/변환 바이트 해시를 대조하고 내보내기에만 -c core.autocrlf=false를 적용해 해결했다. DB/불변 원고/전역 Git 설정은 바꾸지 않았다. 일부 model observation ID가 검토 입력 ID가 아닌 정규화 해시라는 점도 실제 original 필드로 대조했다. 검증 도우미의 가정 교정이며 제품 변경이 아니다.
 
 brief390px HTML의 데이터/폭/줄바꿈 검사는 통과했다. 브라우저를 사용하지 않아 PNG가 없으므로 review의 이미지2검사만 실패했다. 현재 복원본의 활성 주거 공고는1건이며 이전 모집중0건 실패와 다르다. 이 이미지 한계와 아직 못한 실제 공개 소개/전체표 필터·상세/모바일 검증을 모델 데이터 실패와 합치지 않는다. source push/Pages/HTTP 검증은 후속으로 남는다. 필요한 품질/선정 HTML·검증 로그는 D:/9_codex_temp/2026-11-04/signal-models에 보존하고 일회성 seed/도우미와 공통 scratch는 마지막 소비자 종료 후 정리한다.
+
+
+## 공개 반영과 남은 화면 검증 — 2026-11-04
+
+Source `0830e6445373635fddfce63ad6f4c7f79322ceeb`를 현재 main에 일반 push했고 [Pages41712734403](https://github.com/Hansihoo/signal-desk/actions/runs/41712734403)가 success로20:34:43UTC에 완료됐다. 클라우드 시험/수집/생성/주거 이미지검사/누적상태 저장과 배포가 통과했다.
+
+공개 [VR-1.1 소개](https://hansihoo.github.io/signal-desk/preview/cogent-vr-1-1-model-guide.html), [전체 비교표](https://hansihoo.github.io/signal-desk/preview/ai-models.html), 자료실과 분야4경로 HTTP200을 확인했다. 소개의27원고 본문,4표,7출처와 전체표 링크가 입력과 일치한다. HTML의 inline table-token span을 제거한 셀 텍스트로 대조했다. 잘못 가정한 preview/<id>-r1.html 경로는404였고 실제 생성기의 현재판/이전판 계약을 확인했다. 새 소개는1판이므로 별도 과거 소개 링크가 없으며 기존 과거판은 보존된다.
+
+전체표의 내장 JSON에서6개 새 관측의 원본 입력/정확값/조건/URL/2026-11-04확인일,1판 및 첫 이력과2438현재/2545이력 일치를 확인했다. 이것은 브라우저 검색/상세 패널의 동작 검증이 아니다. 공개 화면에서 VR-1.1 검색→공식 평가와 요금→57.9% 및190과제/서로 다른 추론 예산, 미공개 표준 요금/출처/확인일/첫 판을 읽고, 소개의 전체표 링크와1280/390px 화면·넘침·키보드를 확인하는 작업이 남는다. 사용자에게 로컬 브라우저 활성화를 요청했으며 답 없이 켜졌다고 가정하거나 다른 UI 자동화로 우회하지 않았다. 전체 완료/모바일 검증 성공으로 기록하지 않는다.
+
+원문 영수증은 data/raw에, 필요 검증 로그/품질 audit/선정 HTML 및 public-verification.json과 public-body-verification.json은 D:/9_codex_temp/2026-11-04/signal-models에 보존한다. 공개 Release의 다운로드 복제본과 공통 scratch는 소비 종료 후 정리했다. 일회성 도우미도 마지막 소비자 종료 후 정리한다. 다른 dirty 파일이나 로컬 knowledge 자료는 제출하지 않았다. 실제 모델 실행/실청구/사람 시험은 없다.
