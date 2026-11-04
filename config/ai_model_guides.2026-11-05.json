@@ -1,0 +1,2844 @@
+{
+  "schema_version": 1,
+  "reports": [
+    {
+      "id": "tencent-hy4-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "title": "Tencent Hy4 소개: 시각 이해와 장기 작업을 더한 정식판, 평가와 가격 비교",
+      "description": "Hy4 Preview를 쓰던 개발자와 관리자가 정식판의 변화, 경쟁 모델과의 비교 및 공개 가중치와 API 비용의 차이를 판단하도록 정리했다.",
+      "checked_on": "2026-11-05",
+      "scope": "발표일 2026-11-04. 자료 확인일 2026-11-05(KST). 발표와 현행 TokenHub 목록/가격, 8월 Preview를 비교했으며 공급자 평가의 독해이다.",
+      "deck": "Hy4 정식판은 이미지 이해와 컴퓨터 조작을 추가하고 긴 작업의 실행 능력을 강화한 Tencent 모델이다. API 목록은 1M 문맥과 64k 최대 출력을 제시한다. 공급자 평가는 환각 감소와 금융 작업의 개선을 보고하지만 독립 재현은 없으며, 가중치와 시스템 카드는 아직 공개 예정이다.",
+      "highlights": [
+        "정식판의 변화",
+        "성능의 근거",
+        "가격과 가중치"
+      ],
+      "source_note": "발표일 2026-11-04. 자료 확인일 2026-11-05(KST). 발표와 현행 TokenHub 목록/가격, 8월 Preview를 비교했으며 공급자 평가의 독해이다.",
+      "summary": [
+        {
+          "label": "정식판의 변화",
+          "text": "텍스트 중심 Preview에서 이미지 이해와 컴퓨터 조작으로 확장됐다. 모델 ID는 hy4이며 hy4-preview와 구분된다.",
+          "source_ids": [
+            "launch",
+            "spec"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "성능의 근거",
+          "text": "Tencent의 금융 전문가 213명, 실제 과제 579개 평가에서 Hy4 3.04, DeepSeek-V4.1-Flash-1017 2.97, Kimi K3.1 Pro와 GLM-5.3 각 2.68을 보고했다.",
+          "source_ids": [
+            "launch"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "가격과 가중치",
+          "text": "TokenHub 목록가는 입력 6, 출력 18, 캐시 적중 입력 0.3 CNY/100만 토큰이다. 한시 50% 할인과 제품 무료 체험은 별도이며 가중치 공개 완료로 읽으면 안 된다.",
+          "source_ids": [
+            "prices",
+            "launch"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "explanation": [
+        {
+          "id": "overview",
+          "title": "모델 개요와 Preview 대비 변화",
+          "lead": "긴 작업을 처리하는 능력에 시각 입력과 컴퓨터 조작을 결합한 정식판이다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "다른 모델 ID와 같은 문맥 한도",
+              "text": "TokenHub는 hy4와 hy4-preview를 별도 모델로 나열한다. 두 판 모두 문맥 1M, 최대 입력 960k, 최대 출력 64k로 적혀 있으며 정식판에 이미지 이해가 추가됐다. 전체 문맥을 모두 입력에 사용할 수 있다거나 입력과 출력 상한을 동시에 보장한다고 해석하지 않는다.",
+              "source_ids": [
+                "spec"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "가중치와 API의 출시 시점",
+              "text": "11월4일 발표는 TokenHub와 WorkBuddy, CodeBuddy, Yuanbao, ima 등에서의 제공을 안내한다. 반면 모델 가중치와 시스템 카드는 며칠 안에 공개할 계획이라고 적었다. Preview의 공개 가중치와 770B 전체/49B 활성 규모를 정식판의 확정 사양으로 복사할 수 없다.",
+              "source_ids": [
+                "launch",
+                "previous"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "capability",
+          "title": "시각 이해와 장기 작업",
+          "lead": "그림과 화면을 읽는 능력이 도구를 사용하는 작업으로 이어진다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "시각 입력과 실행의 결합",
+              "text": "공식 발표는 복잡한 차트와 수학 그림의 이해, 명령줄과 그래픽 화면 조작 및 Blender/CAD를 포함한 전문 소프트웨어 학습을 설명한다. 이것은 공급자가 밝힌 기능 범위이며 특정 운영체제나 모든 소프트웨어에서의 성공률을 보장하는 실사용 검증은 아니다.",
+              "source_ids": [
+                "launch"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "업무 제품과 모델의 구분",
+              "text": "WorkBuddy의 협업 기능과 여러 업무 데이터 연결에는 모델 외에 제품의 권한, 검색과 도구 체계가 들어간다. 발표의 Projects 기능은 향후 제공으로 표현돼 있어 현재 모델 API 기능과 동일시하지 않았다.",
+              "source_ids": [
+                "launch"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "performance",
+          "title": "금융 평가와 사실성 변화",
+          "lead": "같은 발표 안에서도 표본과 채점 방법이 다른 숫자를 구분해야 한다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "전문가가 평가한 금융 과제",
+              "text": "213명 중 153명은 외부 기관 전문가이고 약 70%가 5년 이상 경력이라고 설명한다. 579개 과제의 3.04와 경쟁 모델 수치는 같은 표에서 비교할 수 있지만 평가 척도의 상한, 정확한 추론 예산과 Harness가 발표에 충분히 공개되지 않았다. 8월 Preview의 203개 공학 과제 2.99/4와 모집단이 달라 직접 향상 폭을 계산하지 않는다.",
+              "source_ids": [
+                "launch",
+                "previous"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "환각과 근거 없는 가정",
+              "text": "내부 평가에서 환각 비율은 Preview 12.95%에서 7.2%, 근거 없는 가정의 오류는 23.1%에서 5.6%로 낮아졌다고 한다. 낮을수록 좋은 지표다. 각각 5.75, 17.5%포인트 감소이지만 표본 크기와 채점 정의가 미공개여서 보편적 사실 정확도나 독립 검증으로 확대할 수 없다.",
+              "source_ids": [
+                "launch"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "tradeoffs",
+          "title": "장점과 확인되지 않은 우위",
+          "lead": "구체적인 개선과 전반적 우위를 구분한다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "이전 판보다 확장된 입력과 실행",
+              "text": "이미지 이해와 컴퓨터 사용을 같은 계열에서 추가했고 모델 목록의 API ID와 한도가 분명하다. 텍스트 모델에 별도 시각 판독 결과를 연결하던 구성과 비교할 수 있는 변화다.",
+              "source_ids": [
+                "launch",
+                "spec"
+              ],
+              "kind": "judgment"
+            },
+            {
+              "type": "paragraph",
+              "title": "약점과 반대 방향의 결과",
+              "text": "Tencent는 생물학의 기초 지식에 비해 개방형 실험 설계는 최상위 모델보다 제한적이라고 명시한다. 금융 점수의 우세를 모든 과학, 모든 코딩이나 한국어 문서의 우세로 일반화하지 않았다. GameDev 19.1%와 GameLogic 9.8% 개선은 원문이 상대 변화인지 점수 차이인지 충분히 풀지 않아 다른 퍼센트 지표와 합치지 않는다.",
+              "source_ids": [
+                "launch"
+              ],
+              "kind": "judgment"
+            }
+          ]
+        },
+        {
+          "id": "pricing",
+          "title": "표준 단가와 한시 할인",
+          "lead": "같은 플랫폼의 CNY 목록가를 기준으로 비교한다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "정가와 실제 적용 기간",
+              "text": "TokenHub는 Hy4 입력 6, 출력 18, 캐시 적중 0.3 CNY/100만 토큰을 나열한다. 같은 기간 실제 발생량에 대해 목록가 50%를 적용하며 2026년12월31일 23:59:59 베이징 시각에 종료한다. 한국 시각은 2027년1월1일 00:59:59이다. 단순 절반 계산값은 3/9/0.15 CNY이며 고정 표준 단가가 아니다.",
+              "source_ids": [
+                "prices"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "달러 안내와 제품 무료 사용",
+              "text": "출시 보도자료의 약 USD 0.90/2.70/0.045는 근사값이며 8월 Preview 발표의 0.834/2.501/0.042와도 다르다. 통화 환산으로 동일한 지역 계약을 추정하지 않고 원문을 따로 보존했다. WorkBuddy와 CodeBuddy의 11월4~15일 무료 안내는 API 영구 무료나 무제한 사용을 뜻하지 않는다.",
+              "source_ids": [
+                "launch",
+                "previous",
+                "prices"
+              ],
+              "kind": "fact"
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "specifications",
+          "title": "이전 판과 경쟁 모델의 TokenHub 사양",
+          "columns": [
+            "모델 ID",
+            "입력 유형",
+            "문맥 / 입력 / 출력",
+            "가중치 또는 제공 상태"
+          ],
+          "rows": [
+            {
+              "values": [
+                "hy4",
+                "텍스트와 이미지",
+                "1M / 960k / 64k",
+                "정식 API; 가중치와 시스템 카드 공개 예정"
+              ],
+              "source_ids": [
+                "spec",
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "hy4-preview",
+                "텍스트",
+                "1M / 960k / 64k",
+                "Preview; 8월 공개 가중치"
+              ],
+              "source_ids": [
+                "spec",
+                "previous"
+              ]
+            },
+            {
+              "values": [
+                "hy3",
+                "텍스트",
+                "256k / 192k / 128k",
+                "기존 API"
+              ],
+              "source_ids": [
+                "spec"
+              ]
+            },
+            {
+              "values": [
+                "deepseek-v4.1-flash-1017",
+                "텍스트와 이미지",
+                "1M / 1M / 384k",
+                "TokenHub 목록"
+              ],
+              "source_ids": [
+                "spec"
+              ]
+            }
+          ],
+          "note": "토큰 한도는 Tencent 목록 원문 표기다. 총 문맥과 입출력의 개별 상한은 동시에 합산 보장되는 값이 아니다."
+        },
+        {
+          "id": "finance",
+          "title": "공급자가 보고한 동일 금융 과제 비교",
+          "columns": [
+            "모델",
+            "점수",
+            "평가 조건"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Hy4",
+                "3.04",
+                "213명 / 579과제"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "DeepSeek-V4.1-Flash-1017",
+                "2.97",
+                "같은 발표의 평가"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Kimi K3.1 Pro",
+                "2.68",
+                "같은 발표의 평가"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "GLM-5.3",
+                "2.68",
+                "같은 발표의 평가"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            }
+          ],
+          "note": "Tencent Hy 팀과 Tencent Financial Technology의 평가다. 점수 상한, 전체 과제와 모델별 추론/Harness 세부가 미공개이며 독립 재현이 아니다."
+        },
+        {
+          "id": "prices",
+          "title": "TokenHub 목록가 비교",
+          "columns": [
+            "모델",
+            "입력 / 출력 / 캐시 적중",
+            "조건"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Hy4",
+                "6 / 18 / 0.3 CNY",
+                "정가; 한시 50% 할인 별도"
+              ],
+              "source_ids": [
+                "prices"
+              ]
+            },
+            {
+              "values": [
+                "Hy4 Preview",
+                "6 / 18 / 0.3 CNY",
+                "기존 목록가"
+              ],
+              "source_ids": [
+                "prices"
+              ]
+            },
+            {
+              "values": [
+                "Hy3",
+                "1 / 4 / 0.25 CNY",
+                "기존 목록가"
+              ],
+              "source_ids": [
+                "prices"
+              ]
+            },
+            {
+              "values": [
+                "GLM-5.3",
+                "8 / 28 / 2 CNY",
+                "같은 호스팅 플랫폼"
+              ],
+              "source_ids": [
+                "prices"
+              ]
+            },
+            {
+              "values": [
+                "DeepSeek-V4.1-Flash-1017 원제공자 직결",
+                "유휴 1 / 4 / 0.02, 피크 2 / 8 / 0.04 CNY",
+                "베이징 업무일 09~12,14~18시 피크"
+              ],
+              "source_ids": [
+                "prices"
+              ]
+            }
+          ],
+          "note": "전부 100만 토큰당 CNY. 지역 탭과 계정별 실제 제공, 세금/도구비/재시도 비용은 별도로 확인해야 하며 USD로 임의 환산하지 않는다."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "판단",
+            "text": "Hy4는 Preview의 단순 이름 변경이 아니라 시각 이해와 실행을 확대한 정식판이다. 현재 비교의 강점은 같은 계열의 기능 확장과 공급자 평가의 개선이며, 독립적인 동일 예산 성능과 가중치 자체의 실행 가능성은 별도의 확인 대상이다.",
+            "source_ids": [
+              "launch",
+              "spec",
+              "prices",
+              "previous"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "2026-11-05 원문 확인. API 호출, 실제 화면 조작 성능, 한국어 과제, 계정별 지역 접근과 실청구는 검증하지 않았다. 공급자 벤치마크와 공개 예정 가중치를 각각 구분했다.",
+          "source_ids": [
+            "launch",
+            "spec",
+            "prices",
+            "previous"
+          ]
+        }
+      ],
+      "references": [
+        {
+          "id": "launch",
+          "title": "Tencent가 제공한 Hy4 정식판 출시 발표",
+          "url": "https://en.prnasia.com/releases/apac/tencent-launches-hy4-joining-the-ranks-of-the-world-s-leading-open-source-ai-models-554689.shtml",
+          "description": "11월4일 정식판 발표, 경쟁 평가와 반대 결과의 한계, 현재 제품/API 및 향후 가중치 공개를 구분한다."
+        },
+        {
+          "id": "spec",
+          "title": "Tencent TokenHub 모델 목록",
+          "url": "https://cloud.tencent.com/document/product/1823/130051",
+          "description": "정식판과 Preview의 ID, 1M/960k/64k 및 이미지 지원을 대조한다."
+        },
+        {
+          "id": "prices",
+          "title": "Tencent TokenHub 모델 가격",
+          "url": "https://cloud.tencent.com/document/product/1823/130055",
+          "description": "목록 CNY 단가, 지역 탭과 50% 한시 할인 종료 시각, 경쟁 모델의 같은 플랫폼 단가를 읽었다."
+        },
+        {
+          "id": "previous",
+          "title": "이전 Hy4 Preview 공식 발표",
+          "url": "https://www.tencent.com/tencent-releases-and-open-sources-tencent-hy4-preview/",
+          "description": "8월28일 Preview의 770B/49B와 공개 가중치, 당시 USD 단가를 정식판에 승계하지 않는다."
+        }
+      ]
+    },
+    {
+      "id": "sarvam-prism-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "title": "Sarvam Prism 소개: 선택지별 확률을 돌려주는 판별 모델의 성능과 한계",
+      "description": "분류와 에이전트 평가에 모델을 쓰는 개발자와 관리자가 생성형 모델과 판별 모델의 차이, 속도와 정확도 및 자체 운영 비용을 비교하도록 정리했다.",
+      "checked_on": "2026-11-05",
+      "scope": "발표일2026-11-03, 확인일2026-11-05(KST). 공식 연구와 모델 카드, 현재 API 사양/가격을 대조했다.",
+      "deck": "Prism은 Sarvam 105B를 추가 학습해 정해진 선택지 각각의 확률을 한 번에 계산하는 모델이다. 공급자 평가에서 3지수 평균 71.8과 B200 중앙 응답시간 44ms를 보고하지만 전체 최고 정확도는 아니다. API는 질문당 32,768토큰, 공개 가중치는 131,072토큰이며 두 제공 경로의 한도를 구분해야 한다.",
+      "highlights": [
+        "모델의 역할",
+        "성능과 반대 결과",
+        "제공과 비용"
+      ],
+      "source_note": "발표일2026-11-03, 확인일2026-11-05(KST). 공식 연구와 모델 카드, 현재 API 사양/가격을 대조했다.",
+      "summary": [
+        {
+          "label": "모델의 역할",
+          "text": "자유로운 글을 생성하지 않고 입력 상태와 질문, 선택지를 받아 확률을 계산한다. 기반 Sarvam105B의 새 범용 대화 판과는 목적이 다르다.",
+          "source_ids": [
+            "launch",
+            "api"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "성능과 반대 결과",
+          "text": "공급자 25모델 비교에서 평균 71.8/44ms이지만 mammoth-1은 75.2/284ms, GLiDE1.2는 73.2/116ms다. 빠른 응답과 절대 정확도의 우위를 구분한다.",
+          "source_ids": [
+            "launch"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "제공과 비용",
+          "text": "Apache2.0 FP8 가중치와 Sarvam API가 제공된다. API는 입력 INR4/100만 토큰, 출력 INR0이며 확률 응답이므로 텍스트 출력 가격과 단순 비교하지 않는다.",
+          "source_ids": [
+            "weights",
+            "prices"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "explanation": [
+        {
+          "id": "identity",
+          "title": "기반 모델과 달라진 계산 방식",
+          "lead": "Prism은 문장을 이어 쓰는 대신 선택지의 점수를 계산한다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "105B 기반의 판별 모델",
+              "text": "Sarvam 105B-10B를 기반으로 LoRA 추가 학습과 작은 점수 계산 층을 붙였다. 입력 상태와 질문, 가능한 답을 한 번의 순전파로 처리하고 각 선택지에 확률을 부여한다. 추론 문장을 토큰별로 생성하는 채팅 모델과 달리 답의 범위는 제공한 선택지 안에 있다.",
+              "source_ids": [
+                "launch",
+                "weights"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "확신과 오류의 관계",
+              "text": "학습은 5% 라벨 평활화를 적용한 교차 엔트로피와 Brier 손실을 같은 비중으로 사용했다. Brier는 예측 확률과 정답 사이의 제곱 오차를 벌점으로 삼아 확신한 오답을 줄이려는 방식이다. 실제 배포 데이터에서도 보정이 유지된다고 증명한 것은 아니다.",
+              "source_ids": [
+                "launch"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "comparison",
+          "title": "정확도와 응답시간의 비교",
+          "lead": "같은 제공자의 평가라도 측정 환경이 모두 같지는 않다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "세 지수의 의미",
+              "text": "평균 71.8은 Jev Decision Index 67.0, Sarvam이 재구성한 Artificial Analysis 지수 65.9, 내부 인도어 평가 82.5의 평균이다. 두 번째는 비공개 지식 과제를 어려운 질문과 모름 선택지로 바꾼 것으로 공식 AA 점수라고 표시하지 않는다.",
+              "source_ids": [
+                "launch"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "44ms를 읽는 조건",
+              "text": "시간은 1,000개 요청을 하나씩 실행한 B200 중앙값이며 모델별로 제공자가 배포한 추론 코드를 사용했다. Jev1.14 196ms와 Microsoft-Decision-1 85ms는 API 측 공개 보고 시간으로 같은 GPU 실측이 아니다. 모델 카드의 95백분위는 420ms라서 중앙값을 모든 요청의 지연으로 약속할 수 없다.",
+              "source_ids": [
+                "launch",
+                "weights"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "strengths",
+          "title": "강점과 순서 불변성의 조건",
+          "lead": "확률 출력과 선택지 정규화가 분류에 초점을 맞춘다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "선택지 순서의 영향",
+              "text": "선택지를 받은 순서 그대로 읽으면 Prism도 순서 변경 때 4.0%의 답이 바뀌었다. 내부에서 선택지를 고정 순서로 정렬한 뒤 원래 이름으로 확률을 돌려주는 절차를 적용해 2,000개에서 변경 0건을 보고했다. 모델 자체가 어떤 포장에서도 순서에 무관하다고 일반화하지 않는다.",
+              "source_ids": [
+                "launch",
+                "weights"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "에이전트와 보안 평가",
+              "text": "700개 실행 기록의 1,770개 질문에서 전체 정확도 78.5%, 내부 5,517개 보안 질문에서 89.0%를 보고했다. 라벨 기준과 과제 범위가 정해진 공급자 평가이며 실제 공격을 모두 차단하는 보안 제품 인증은 아니다.",
+              "source_ids": [
+                "launch"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "limits",
+          "title": "더 높은 점수의 경쟁 모델과 언어별 한계",
+          "lead": "빠름과 확신은 오류가 없다는 뜻이 아니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "최고 점수라는 표현의 범위",
+              "text": "100ms 아래 모델 중 평균 점수가 가장 높다는 주장과 전체 모델 중 최고 점수는 다르다. 평균은 mammoth-1과 GLiDE1.2가 더 높고, Jev 지수에서는 Perplexity Decider1.2의 67.7이 Prism67.0보다 높다.",
+              "source_ids": [
+                "launch"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "확신한 답의 비율과 지원 범위",
+              "text": "API 문서는 0.9 확신 문턱을 넘는 응답 비율이 영어 약68.5%, 인도어 약38.4%라고 명시한다. 높은 확신 답에서 오류가 적어도 상당한 요청은 보류될 수 있다. 영어와10개 인도어, Hinglish를 안내하며 한국어 성능은 확인되지 않았다. 이미지와 스트리밍도 지원하지 않는다.",
+              "source_ids": [
+                "api"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "access",
+          "title": "공개 가중치와 API의 다른 한도",
+          "lead": "같은 모델의 자체 운영과 호스팅 조건을 분리한다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "문맥과 하드웨어",
+              "text": "API는 질문당 상태+질문+선택지 합계32,768토큰과 요청60초를 제한한다. 공개 카드와 연구 글의131,072토큰을 API 한도로 옮기지 않았다. FP8 자체 운영은 약120GB 여유 메모리 GPU 한 장과 약106GB 저장공간을 요구하고 B200에서 시험됐다. 전용 FP8 배치와 코드이므로 일반 생성 서버에 그대로 로드하는 가중치가 아니다.",
+              "source_ids": [
+                "api",
+                "weights"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "입력만 과금되는 가격",
+              "text": "Prism은 API 입력 INR4/100만 토큰, 출력 INR0이다. 상태는 요청당 한 번 집계되며 질문을 여럿 넣어도 상태가 매번 중복 과금되는 것은 아니라고 설명한다. 공개 가중치의 라이선스 비용과 GPU, 배포 운영비는 별개의 비용이며 무료 추론이라고 부르지 않는다.",
+              "source_ids": [
+                "prices",
+                "weights"
+              ],
+              "kind": "fact"
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "specifications",
+          "title": "기반 모델과 제공 경로 비교",
+          "columns": [
+            "모델 / 경로",
+            "역할과 입력",
+            "문맥 한도",
+            "제공 조건"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Prism API",
+                "텍스트/JSON → 선택지 확률",
+                "질문당32768토큰",
+                "sarvam-prism; 동기 응답, 이미지/스트리밍 없음"
+              ],
+              "source_ids": [
+                "api"
+              ]
+            },
+            {
+              "values": [
+                "Prism 공개 가중치",
+                "같은 판별 작업",
+                "질문당131072토큰",
+                "Apache2.0; FP8 전용 코드,약120GB GPU"
+              ],
+              "source_ids": [
+                "weights"
+              ]
+            },
+            {
+              "values": [
+                "Sarvam105B",
+                "기반 생성형 모델",
+                "이번 글에서 기반 API 한도 별도 재확인 안 함",
+                "같은 Sarvam API의 일반 텍스트 생성"
+              ],
+              "source_ids": [
+                "launch",
+                "prices"
+              ]
+            },
+            {
+              "values": [
+                "Perplexity Decider1.2 / Jev1.14",
+                "비교 판별 모델",
+                "이 평가의 입력 조건",
+                "일부 시간은 API 보고값"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            }
+          ],
+          "note": "기반 모델과 후속 판별 모델은 출력의 종류가 다르다. 자체 운영 카드의 한도를 호스팅 SLA로 승계하지 않는다."
+        },
+        {
+          "id": "benchmarks",
+          "title": "공급자 25모델 비교의 대표 행",
+          "columns": [
+            "모델",
+            "평균 / Jev 지수",
+            "중앙시간",
+            "측정 주석"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Prism",
+                "71.8 / 67.0",
+                "44ms",
+                "B200"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "mammoth-1",
+                "75.2 / 75.3",
+                "284ms",
+                "같은 공급자 비교"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "GLiDE1.2",
+                "73.2 / 72.0",
+                "116ms",
+                "같은 공급자 비교"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Perplexity Decider1.2",
+                "68.0 / 67.7",
+                "117ms",
+                "같은 공급자 비교"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Jev1.14",
+                "64.5 / 60.7",
+                "196ms",
+                "API 공개 보고 시간"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Microsoft-Decision-1",
+                "61.1 / 57.8",
+                "85ms",
+                "API 공개 보고 시간"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            }
+          ],
+          "note": "점수는 원문 지수 점수이며 퍼센트로 바꾸지 않는다. 평균은37개 공개 평가 기반 Jev, 변형AA, 내부 인도어의3지수로 구성되고 독립 재현이 아니다."
+        },
+        {
+          "id": "prices",
+          "title": "Sarvam 호스팅 표준 API 요금 비교",
+          "columns": [
+            "모델",
+            "입력 / 출력 / 캐시",
+            "상태"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Prism",
+                "4 / 0 / 미표기 INR",
+                "제공중"
+              ],
+              "source_ids": [
+                "prices"
+              ]
+            },
+            {
+              "values": [
+                "Sarvam105B",
+                "15 / 60 / 5 INR",
+                "기반 생성 모델, 제공중"
+              ],
+              "source_ids": [
+                "prices"
+              ]
+            },
+            {
+              "values": [
+                "GLM5.3",
+                "126 / 390 / 20 INR",
+                "동일 플랫폼, 제공중"
+              ],
+              "source_ids": [
+                "prices"
+              ]
+            }
+          ],
+          "note": "모두100만 토큰당 INR이며 원문 ₹를 보존한다. 토큰 생성과 확률 판별의 출력 차이, 캐시 적용과 실제 토큰량 때문에 작업당 비용의 직접 비율로 볼 수 없다."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "판단",
+            "text": "Prism의 의미는 생성형 모델을 작은 단가로 대체한다는 주장보다, 선택지가 정해진 판정을 한 번의 계산으로 수행하고 확률을 반환하는 별도 모델 경로에 있다. 빠른 중앙시간과 높은 평균을 보이지만 최고 정확도, 한국어 품질, 배포 데이터의 확률 보정은 별개의 판단이다.",
+            "source_ids": [
+              "launch",
+              "api",
+              "weights",
+              "prices"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "모든 평가 수치는 Sarvam의 측정이다. 직접 모델/GPU/API 실행, 한국어 검증, 실제 청구와 독립 재현은 수행하지 않았다. API32768토큰과 공개 가중치131072토큰을 구분했다.",
+          "source_ids": [
+            "launch",
+            "api",
+            "weights",
+            "prices"
+          ]
+        }
+      ],
+      "references": [
+        {
+          "id": "launch",
+          "title": "Sarvam Prism 공식 연구",
+          "url": "https://www.sarvam.ai/blogs/sarvam-prism",
+          "description": "11월3일 발표의 25모델/3지수, 시간 측정, 반대 결과와 보정 및 입력 순서 조건을 읽었다."
+        },
+        {
+          "id": "api",
+          "title": "Prism API 모델 사양",
+          "url": "https://docs.sarvam.ai/api/token-factory/models/sarvam-prism",
+          "description": "API 한도와 언어, 이미지/스트리밍 미지원 및 낮은 인도어 고확신 응답 비율을 확인했다."
+        },
+        {
+          "id": "weights",
+          "title": "Prism 공개 모델 카드",
+          "url": "https://huggingface.co/sarvam/prism",
+          "description": "공개 FP8 가중치의 131072토큰, 120GB GPU/106GB 저장공간, 전용 실행 코드와 Apache2.0을 확인했다."
+        },
+        {
+          "id": "prices",
+          "title": "Sarvam API 공식 가격",
+          "url": "https://docs.sarvam.ai/api/getting-started/pricing",
+          "description": "Prism과 기반 Sarvam105B, GLM5.3의 동일 플랫폼 INR 단가 및 상태를 대조했다."
+        }
+      ]
+    },
+    {
+      "id": "hydrogen-1-0-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "title": "Hydrogen-1.0 소개: GLM-5.3 기반 과학 모델의 개선과 반대 결과, 공개 조건",
+      "description": "과학 연구용 모델을 비교하는 개발자와 관리자가 분야 특화 학습의 의미, 경쟁 결과와 비용 대리값 및 가중치 접근 조건을 구분하도록 정리했다.",
+      "checked_on": "2026-11-05",
+      "scope": "자료 확인일2026-11-05(KST). 공식 글과 모델 카드를 읽었다. 발표일은 본문 미표기이며 처음 발견한 과거 글을 오늘 출시로 바꾸지 않는다.",
+      "deck": "Hydrogen-1.0은 GLM-5.3에 화학, 재료와 생명과학 데이터 및 연구 기록을 추가 학습한 모델이다. 공급자는 과학 계산과 반응 예측의 개선을 보고하지만 핵자기공명(NMR) 구조 해석에서는 GPT-6 Astra 최대 추론에 뒤진다. 공개 모델 카드는 1M 문맥과 128K 출력을 안내하며 연구 비용 그래프의 GLM-5.3 대리 단가는 실제 Hydrogen 서비스 가격이 아니다.",
+      "highlights": [
+        "기반 모델의 변화",
+        "우세와 반대 결과",
+        "공개와 비용"
+      ],
+      "source_note": "자료 확인일2026-11-05(KST). 공식 글과 모델 카드를 읽었다. 발표일은 본문 미표기이며 처음 발견한 과거 글을 오늘 출시로 바꾸지 않는다.",
+      "summary": [
+        {
+          "label": "기반 모델의 변화",
+          "text": "지식뿐 아니라 실험 기록과 연속 발견 과정을 학습했다. GLM5.3을 처음부터 새로 사전학습한 범용 모델로 소개하지 않는다.",
+          "source_ids": [
+            "launch",
+            "weights"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "우세와 반대 결과",
+          "text": "Astra 최대 추론 대비 과학 계산+5.13, 반응 예측+4.76%포인트지만 NMR 구조 해석은-3.33%포인트다. 한 분야의 우세를 전체 과학 우위로 확대하지 않는다.",
+          "source_ids": [
+            "launch"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "공개와 비용",
+          "text": "가중치, NeuroSpark API와 Mira 경로를 안내한다. HF 파일 접근은 동의 절차가 있고 정가를 확인하지 못했다. 연구의 GLM 단가 가정은 견적이 아니다.",
+          "source_ids": [
+            "launch",
+            "weights"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "explanation": [
+        {
+          "id": "identity",
+          "title": "GLM-5.3에서 이어진 과학 후속학습",
+          "lead": "완성된 답뿐 아니라 연구 과정의 기록을 학습 자료로 쓴다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "지식과 발견 경로의 결합",
+              "text": "공식 연구는 감독학습과 강화학습을 결합하고, 분야 지식, 연구자의 과제별 피드백, 실험실 기록과 연속된 발견 경로를 사용했다고 설명한다. 실패와 가설 수정도 학습 맥락에 넣는다. 이것은 공개된 학습 개요이며 전체 데이터나 완전한 재학습 절차의 공개를 뜻하지 않는다.",
+              "source_ids": [
+                "launch",
+                "weights"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "모델과 연구 시스템",
+              "text": "일부 시연은 외부 계산 도구와 실험 환경, Mira의 기록 체계가 결합된 결과다. 모델 단독 출력, 도구 실행과 실험실의 물리적 검증을 같은 성공으로 묶지 않는다.",
+              "source_ids": [
+                "launch"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "performance",
+          "title": "과학 과제별 비교와 반대 결과",
+          "lead": "과제와 추론 강도가 바뀌면 우위의 방향도 바뀐다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "계산과 반응 예측, NMR의 차이",
+              "text": "공급자 내부 과학 과제에서 계산과 단일 단계 반응 예측은 Astra의 낮음/높음/최대 추론 각각보다 높았다고 한다. 최대 추론 기준 차이는+5.13/+4.76%포인트이고 NMR 구조 해석에서는 Astra가3.33%포인트 높다. 원문 본문만으로 절대 점수와 세부 표본을 모두 확인할 수 없어 차이를 전체 정확도로 바꾸지 않았다.",
+              "source_ids": [
+                "launch"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "기반 모델과 공개 연구 평가",
+              "text": "FrontierScience-Research에서는 Astra보다 높고 GPQA Diamond에서는 GLM5.3보다 개선돼 Kimi K3와 비슷하다고 설명한다. 이번 읽기에서 동적 그림의 모든 절대 값을 확보하지 못했으므로 숫자를 추정하지 않는다. 모델별 토큰 예산과 평가 Harness가 완전히 같다고 가정하지 않는다.",
+              "source_ids": [
+                "launch"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "discovery",
+          "title": "재료 탐색 성과와 해석 한계",
+          "lead": "목표 물성을 탐색한 결과는 새로운 물질의 실험적 발견과 다르다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "다섯 차례의 독립 탐색 경로",
+              "text": "전이금속 착물 탐색은 같은 초기 집단에서 출발하지만 각 모델은 자신이 추천한 후보의 결과만 받아 다섯 번 갱신한다. 마지막 회차의 지금까지 가장 좋았던 HOMO-LUMO 에너지 간격 평균은 Hydrogen4.318eV, Astra3.689eV, Kimi K3 3.353eV다. 이는 목표로 정한 전자 에너지 간격을 찾는 제한된 탐색 평가이며 합성 성공이나 실제 제품 성능을 뜻하지 않는다.",
+              "source_ids": [
+                "launch"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "실험 계획 비교의 표본 선택",
+              "text": "117개 공통 질문의 계획 평가에서는 Astra와 Opus5.5가 요청의 절반 이상을 거절해 빠지고 Kimi K3와 비교됐다. 거절을 제거한 표만으로 모든 모델보다 우수하다고 결론 내릴 수 없다. 안전성이나 유용성을 포함한 실제 연구 판단과 평가 점수도 구분한다.",
+              "source_ids": [
+                "launch"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "access",
+          "title": "가중치 판과 실행 조건",
+          "lead": "다운로드 경로가 있다는 사실과 즉시 실행 가능함은 다르다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "공개 카드와 접근 절차",
+              "text": "BF16 카드의 문맥은1M, 최대 출력128K토큰이며 SGLang 8GPU 시험을 안내한다. Hugging Face 페이지는 파일 접근 전에 계정 정보를 공유하는 동의가 필요하다고 표시한다. 이번 비로그인 raw README 요청은401이었고 공개 카드 본문만 읽었으며 동의나 가중치 다운로드는 하지 않았다.",
+              "source_ids": [
+                "weights"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "라이선스와 양자화 차이",
+              "text": "카드는 BF16 가중치를MIT로, 독자 작성 코드/문서를Apache2.0으로 구분한다. NVFP4는NVIDIA Blackwell, MXFP4는AMD MI350X/MI355X 판을 별도로 안내한다. 양자화 수치와 가중치가 달라 결과도 달라질 수 있고 카드의 문맥 상한은 런타임/서비스 자원에 따라 제한된다.",
+              "source_ids": [
+                "weights"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "cost",
+          "title": "실제 요금과 연구용 비용 가정",
+          "lead": "GLM5.3의 단가를 썼다는 그래프는 Hydrogen의 서비스 정가가 아니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "그래프마다 다른 포함 범위",
+              "text": "FrontierScience와 GPQA 그림은 출력/추론 토큰 비용만 포함하고 입력과 심판 비용을 제외한다. 분야 과제 그림은 입력/출력과 기록된 캐시 할인까지 포함한다. 양쪽 모두 Hydrogen에 GLM5.3 단가를 사용하므로 실제 NeuroSpark 청구나 GPU 자체 운영 총비용과 다르다.",
+              "source_ids": [
+                "launch"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "가격을 채울 수 있는 범위",
+              "text": "선정 원문은 NeuroSpark API와 Mira 제공 경로를 안내하지만 정확한 현행 정가와 지역별 제공 조건을 확인하지 못했다. 비교표의 Sarvam GLM5.3 가격은 별도 호스팅 경로의INR 단가이며 Hydrogen의 기준 가격으로 환산하지 않았다.",
+              "source_ids": [
+                "launch",
+                "hostprices"
+              ],
+              "kind": "fact"
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "specifications",
+          "title": "기반 모델과 비교 모델의 제공 범위",
+          "columns": [
+            "모델",
+            "역할",
+            "확인한 사양",
+            "제공 조건"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Hydrogen1.0",
+                "과학 후속학습",
+                "1M문맥/128K출력; BF16",
+                "동의가 필요한 HF파일, NeuroSpark/Mira 안내"
+              ],
+              "source_ids": [
+                "weights",
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "GLM5.3",
+                "후속학습의 기반",
+                "이번 글에서 추가 사양 재검증 없음",
+                "Sarvam등 호스팅, Hydrogen과 다른 모델"
+              ],
+              "source_ids": [
+                "launch",
+                "hostprices"
+              ]
+            },
+            {
+              "values": [
+                "GPT6 Astra",
+                "과학 평가 비교 모델",
+                "낮음/높음/최대 추론 비교",
+                "연구 원문의 비교 구성"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Kimi K3",
+                "과학 평가 비교 모델",
+                "별도 추론/실행 조건은 미공개",
+                "K3.1 Pro와 다른 판"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            }
+          ],
+          "note": "파라미터 수와 API 상한을 가중치 저장소 표시나 다른 모델의 사양에서 추정하지 않았다."
+        },
+        {
+          "id": "science",
+          "title": "공급자 과학 평가의 우세와 열세",
+          "columns": [
+            "평가",
+            "Hydrogen",
+            "경쟁 기준",
+            "의미"
+          ],
+          "rows": [
+            {
+              "values": [
+                "과학 계산",
+                "Astra max 대비+5.13%포인트",
+                "Astra max",
+                "절대 정확도 미추정"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "단일 단계 반응 예측",
+                "Astra max 대비+4.76%포인트",
+                "Astra max",
+                "같은 과제군 비교"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "NMR 구조 해석",
+                "Astra max 대비-3.33%포인트",
+                "Astra max",
+                "경쟁 모델이 더 높음"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "5회차 최고 에너지 간격 평균",
+                "4.318eV",
+                "Astra3.689 / Kimi K3 3.353eV",
+                "같은 초기 집단, 서로 독립 피드백"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            }
+          ],
+          "note": "내부 평가이며 하네스, 추론 예산과 전 과제의 독립 재현이 없다. 백분율 차이와 에너지 단위를 섞지 않는다."
+        },
+        {
+          "id": "prices",
+          "title": "실제 정가와 대리 비용의 구분",
+          "columns": [
+            "대상",
+            "확인한 비용",
+            "적용 범위"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Hydrogen NeuroSpark / Mira",
+                "정가 미확인",
+                "서비스 경로만 안내"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Hydrogen 자체 운영",
+                "공개 고정 토큰 단가 없음",
+                "가중치/라이선스 외GPU와 운영비"
+              ],
+              "source_ids": [
+                "weights"
+              ]
+            },
+            {
+              "values": [
+                "연구 비용 그래프",
+                "GLM5.3 단가 대리 사용",
+                "그림마다 입력/심판/캐시 포함 범위가 다름"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "GLM5.3 on Sarvam",
+                "입력126/출력390/캐시20 INR/100만토큰",
+                "별도 호스팅 서비스의 표준 가격"
+              ],
+              "source_ids": [
+                "hostprices"
+              ]
+            }
+          ],
+          "note": "공식 발표에 없는 Hydrogen API 가격을0으로 채우지 않았다. 비교 모델의 호스팅 요금은 연구 그래프의 실제 산식이나 Hydrogen 정가를 보증하지 않는다."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "판단",
+            "text": "Hydrogen1.0은 과학 과정의 기록을 활용한 분야 특화 후속학습의 공개 사례다. 계산과 반응 예측의 강점뿐 아니라 NMR의 열세, 거절에 따른 비교 대상 제외, 비용 대리값과 가중치 접근 절차를 함께 읽어야 과학 전반의 우위로 과장하지 않을 수 있다.",
+            "source_ids": [
+              "launch",
+              "weights",
+              "hostprices"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "발표 본문의 날짜는 명시되지 않아11월2일을 확정 발표일로 채우지 않았다.11월5일 실제 원문을 확인했으며 동적 그림 절대값/실제 추론/청구/실험/한국어 성능은 미검증이다. 공개 모델 카드의 파일 동의가 필요하다.",
+          "source_ids": [
+            "launch",
+            "weights",
+            "hostprices"
+          ]
+        }
+      ],
+      "references": [
+        {
+          "id": "launch",
+          "title": "Deep Principle Hydrogen-1.0 공식 연구",
+          "url": "https://blog.deepprinciple.com/introducing-hydrogen-1.0/",
+          "description": "과학 후속학습, 경쟁 결과의 반대 방향, 비용 대리값과 실험/발견의 한계를 읽었다."
+        },
+        {
+          "id": "weights",
+          "title": "Hydrogen-1.0 공개 모델 카드",
+          "url": "https://huggingface.co/deep-principle/Hydrogen-1.0",
+          "description": "BF16/양자화 판, MIT 가중치와 접근 동의 안내,1M/128K 및 실행 자원 조건을 확인했다."
+        },
+        {
+          "id": "hostprices",
+          "title": "Sarvam 호스팅 GLM5.3 가격 비교",
+          "url": "https://docs.sarvam.ai/api/getting-started/pricing",
+          "description": "비교용 GLM5.3 호스팅 요금만 확인했다. Hydrogen 실제 요금이나 연구 그래프의 비용을 대신하지 않는다."
+        }
+      ]
+    },
+    {
+      "id": "ripple-65b-preview-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "title": "Ripple-65B Preview 소개: 65B 밀집형 모델의 코딩 성능과 범용 과제의 한계",
+      "description": "공개 모델을 자체 운영하거나 코딩 에이전트에 연결하려는 개발자와 관리자가 모델 크기, 평가 구성 및 실제 호스팅 제공 조건을 비교하도록 정리했다.",
+      "checked_on": "2026-11-05",
+      "scope": "자료확인일2026-11-05(KST).공식발표/모델카드/Together현재안내를읽었다.모델카드의성능수치는공급자측정이며출시일을수집일로채우지않았다.",
+      "deck": "Ripple-65B Preview는 Ricursive가 처음부터 학습한 65B 밀집형 텍스트 모델이다. TerminalBench 2.1에서 강한 결과를 보고하지만 과학 코딩, 일반 지식과 일부 에이전트 평가는 더 큰 경쟁 모델보다 낮다. Apache 2.0 가중치를 제공하며 Together의 현재 안내는 출시 예정이어서 발표의 제공 경로와 실제 호스팅 상태를 구분했다.",
+      "highlights": [
+        "모델 구조",
+        "평가의 범위",
+        "제공과 비용"
+      ],
+      "source_note": "자료확인일2026-11-05(KST).공식발표/모델카드/Together현재안내를읽었다.모델카드의성능수치는공급자측정이며출시일을수집일로채우지않았다.",
+      "summary": [
+        {
+          "label": "모델 구조",
+          "text": "모든 토큰에서 65B 파라미터를 사용하는 밀집형 구조다. 12T 토큰으로 새로 사전학습했으며 1M 문맥을 안내한다. 다른 모델을 단순 추가 학습한 판과 구분된다.",
+          "source_ids": [
+            "weights",
+            "launch"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "평가의 범위",
+          "text": "TerminalBench 2.1의 발표 점수는 80.52지만 SciCode 39.4와 SWE-bench Verified 76.5 등에서는 더 큰 경쟁 모델에 뒤진다. 코딩 전반의 우위로 일반화하지 않는다.",
+          "source_ids": [
+            "launch",
+            "weights"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "제공과 비용",
+          "text": "Apache 2.0의 BF16/NVFP4 지시학습 판과 BF16 base를 제공한다. Together는 현재 출시 예정이고 Ripple 정가가 없어 경쟁 모델의 요금을 대신 넣지 않았다.",
+          "source_ids": [
+            "weights",
+            "host"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "explanation": [
+        {
+          "id": "identity",
+          "title": "처음부터 학습한65B 텍스트 모델",
+          "lead": "칩 설계 플랫폼의 비공개 모델과 공개 범용 Preview를 구분한다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "dense 구조와 계보",
+              "text": "모든 토큰에서 65B 파라미터가 활성화되는 밀집형(dense) Transformer다. 일부 전문가만 활성화하는 MoE 모델과 전체 파라미터 수만 비교해서 연산량을 판단할 수 없다. 내부 폭 5120과 80개 층으로 좁고 깊게 구성해 NVIDIA 환경에 맞췄다. Olmo 3의 크기별 실험을 출발점으로 삼았지만, 주로 영어와 코드인 12T 토큰 말뭉치에서 새로 사전학습했다고 명시한다.",
+              "source_ids": [
+                "weights",
+                "launch"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "공개 판과 이전 체크포인트",
+              "text": "회사의 첫 공개 범용 모델이라 직접 비교할 이전 정식 Ripple 출시판은 없다. BF16 base는 후속학습 전 체크포인트이므로 지시학습 판의 점수를 붙이지 않는다. 내부 칩 설계용 모델과 공개 범용 Preview도 서로 다른 판이다.",
+              "source_ids": [
+                "weights",
+                "launch"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "performance",
+          "title": "TerminalBench의 강점과 다른 평가의 열세",
+          "lead": "평가판과 Harness에 따라 순위 차이가 난다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "공급자 보고와 재측정의 차이",
+              "text": "발표는 TerminalBench 2.1에서 80.52를 보고하고 모델 카드는 80.5로 반올림한다. 비교 표에는 경쟁사의 원 보고와 자체 재측정이 섞여 있다. 카드는 BF16 정밀도와 최대 추론을 안내하며, Ripple의 SWE-bench Pro 2.0 Hard와 DeepSWE 1.1에는 Terminus 2, 별도 표시가 없으면 OpenCode를 썼다고 설명한다.",
+              "source_ids": [
+                "launch",
+                "weights"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "동일 Harness가 바꾸는 결과",
+              "text": "공식 Terminus 2와 128K 요약 구성을 사용하면 Muse Spark Open을 제외한 모델의 TerminalBench 점수가 전반적으로 낮아졌다고 적었다. Beam은 원 보고 80.1에서 이 설정 70.8, Ripple은 80.5로 제시된다. 평가 도구와 요약 방식이 달라져도 유지되는 고정 능력치로 읽을 수 없다.",
+              "source_ids": [
+                "weights"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "tradeoffs",
+          "title": "장점과 상대적으로 부족한 과제",
+          "lead": "모델 크기의 장점이 모든 작업의 승리를 뜻하지 않는다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "코딩에 집중한 후속학습",
+              "text": "65B 규모와 NVFP4 판은 더 큰 모델의 전체 가중치를 보관하기 어려운 장치에서 검토할 수 있는 선택지다. 두 B200 GPU, 배치 8에서 초당 250토큰을 보고하지만 이것은 단일 사용자의 지연이나 모든 문맥 길이의 처리량이 아니다. 장치마다 1M 문맥이 곧바로 실행된다는 뜻도 아니다.",
+              "source_ids": [
+                "weights"
+              ],
+              "kind": "judgment"
+            },
+            {
+              "type": "paragraph",
+              "title": "반대 결과의 의미",
+              "text": "SciCode는 Ripple 39.4에 대해 Muse Spark Open 58.5, Beam 49.2다. GPQA도 85.2에 대해 89.0과 90.6이고, SWE-bench Verified는 76.5로 Beam 81.6보다 낮다. 특정 에이전트 코딩 평가의 강점을 일반 지식, 과학 코드나 도구 선택 전반의 우위로 확대할 수 없다.",
+              "source_ids": [
+                "weights"
+              ],
+              "kind": "judgment"
+            }
+          ]
+        },
+        {
+          "id": "access",
+          "title": "가중치와 호스팅의 현재 상태",
+          "lead": "공식 발표와 공급 서비스의 실제 상태가 다를 수 있다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "라이선스와 로컬 자원",
+              "text": "카드는 Apache 2.0과 BF16/NVFP4 지시학습 판, BF16 base 및 DFlash2 경로를 제공한다. NVFP4와 DGX Spark 실행 안내가 있지만 이번 검토에서는 가중치 다운로드나 장치별 속도, 문맥 길이 시험을 수행하지 않았다.",
+              "source_ids": [
+                "weights"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "Together의 제공 충돌",
+              "text": "개발자 발표는 Together 등에서 제공한다고 적지만 현재 Together 모델 페이지는 coming soon과 알림 신청을 표시한다. 이 경로를 지금 서버리스 API로 호출할 수 있다고 기록하지 않았다. 다른 플랫폼도 계정별 접근과 정가를 모두 확인한 것은 아니다.",
+              "source_ids": [
+                "launch",
+                "host"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "prices",
+          "title": "개발비와 API 요금의 구분",
+          "lead": "R&D비용은 추론 호출 가격이 아니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "32M달러의 의미",
+              "text": "Ricursive는 데이터 실험, 합성, 평가, 디버깅과 후속학습을 포함한 전체 연구개발비 3,200만 USD를 주장한다. 비교 회사의 개발비는 외부 추정에 기대므로 독립 회계 감사나 실제 추론 단가가 아니다. 이 비용을 모델을 사용하는 고객의 청구액으로 바꾸지 않는다.",
+              "source_ids": [
+                "launch"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "호스팅 비용의 확인 범위",
+              "text": "Together는 Ripple의 입력과 출력 정가를 표시하지 않았다. 같은 페이지의 Beam 0.40/1.20 USD와 Muse Spark Open 1.25/4.25 USD는 각 경쟁 모델의 100만 토큰당 단가다. 공개 가중치의 라이선스와 GPU, 메모리 및 운영비는 각각 따로 보아야 한다.",
+              "source_ids": [
+                "host",
+                "weights"
+              ],
+              "kind": "fact"
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "specifications",
+          "title": "모델 구조와 공개 판 비교",
+          "columns": [
+            "모델",
+            "전체 / 활성",
+            "역할",
+            "문맥"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Ripple65B Preview",
+                "65B / 65B",
+                "dense 지시학습,텍스트",
+                "최대1M"
+              ],
+              "source_ids": [
+                "weights"
+              ]
+            },
+            {
+              "values": [
+                "Ripple65B Base Preview",
+                "65B / 65B",
+                "후속학습 전 base",
+                "Preview카드의 별도 판"
+              ],
+              "source_ids": [
+                "weights"
+              ]
+            },
+            {
+              "values": [
+                "Reflection Beam",
+                "501B / 23B",
+                "MoE 비교 모델",
+                "이번 글에서 별도 재확인 안 함"
+              ],
+              "source_ids": [
+                "weights"
+              ]
+            },
+            {
+              "values": [
+                "Muse Spark Open",
+                "816B / 42B",
+                "MoE 비교 모델",
+                "이번 글에서 별도 재확인 안 함"
+              ],
+              "source_ids": [
+                "weights"
+              ]
+            }
+          ],
+          "note": "파라미터 수는 공식 비교 카드의 원문 값이다. 전체 크기와 활성 연산량, 장치 메모리 및 성능을 같은 비율로 환산하지 않는다."
+        },
+        {
+          "id": "benchmarks",
+          "title": "강점과 반대 결과를 함께 보는 비교",
+          "columns": [
+            "평가",
+            "Ripple",
+            "Beam",
+            "Muse Spark Open"
+          ],
+          "rows": [
+            {
+              "values": [
+                "TerminalBench2.1 원 보고",
+                "80.5",
+                "80.1",
+                "76.4"
+              ],
+              "source_ids": [
+                "weights"
+              ]
+            },
+            {
+              "values": [
+                "TerminalBench2.1 Terminus2",
+                "80.5",
+                "70.8",
+                "78.7"
+              ],
+              "source_ids": [
+                "weights"
+              ]
+            },
+            {
+              "values": [
+                "SWE-bench Verified",
+                "76.5",
+                "81.6",
+                "78.7"
+              ],
+              "source_ids": [
+                "weights"
+              ]
+            },
+            {
+              "values": [
+                "SciCode InspectAI",
+                "39.4",
+                "49.2",
+                "58.5"
+              ],
+              "source_ids": [
+                "weights"
+              ]
+            },
+            {
+              "values": [
+                "GPQA Diamond",
+                "85.2",
+                "90.6",
+                "89.0"
+              ],
+              "source_ids": [
+                "weights"
+              ]
+            }
+          ],
+          "note": "카드는 원 보고와 자체 평가를 혼합하며 BF16, 최대 추론과 Harness 주석을 제공한다. 숫자는 원문 점수이며 동일 토큰량이나 비용의 독립 재현이 아니다."
+        },
+        {
+          "id": "prices",
+          "title": "호스팅 표준 요금과 미확인 비용",
+          "columns": [
+            "모델 / 경로",
+            "입력 / 출력 USD/100만토큰",
+            "조건"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Ripple on Together",
+                "미표기 / 미표기",
+                "현재 coming soon"
+              ],
+              "source_ids": [
+                "host"
+              ]
+            },
+            {
+              "values": [
+                "Reflection Beam on Together",
+                "0.40 / 1.20",
+                "별도경쟁모델,캐시0.04"
+              ],
+              "source_ids": [
+                "host"
+              ]
+            },
+            {
+              "values": [
+                "Muse Spark Open on Together",
+                "1.25 / 4.25",
+                "별도경쟁모델,캐시0.15"
+              ],
+              "source_ids": [
+                "host"
+              ]
+            },
+            {
+              "values": [
+                "Ripple 자체 운영",
+                "고정공개토큰단가없음",
+                "Apache2.0가중치외장치/운영비"
+              ],
+              "source_ids": [
+                "weights"
+              ]
+            }
+          ],
+          "note": "출시 발표의 개발비 3,200만 USD는 API 요금이 아니다. 다른 플랫폼의 가격이나 현재 접근 가능성을 추정하지 않았다."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "판단",
+            "text": "Ripple-65B Preview는 밀집형 구조와 공개 가중치로 에이전트 코딩을 강조한 첫 공개 모델이다. 실행 체계에 따른 결과 변화와 과학, 일반 지식의 열세를 함께 보아야 한다. Together의 출시 예정 상태가 해소되기 전 그 경로를 현재 호출 가능한 서비스로 권고할 수 없다.",
+            "source_ids": [
+              "launch",
+              "weights",
+              "host"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "공식 본문은 발표일을 명시하지 않는다. 11월 4일 수집 후보에 등장한 시점과 11월 5일 원문 확인일을 구분했다. 실제 실행과 독립 측정, 과금, 한국어 및 장치별 자원 요구량은 미검증이다.",
+          "source_ids": [
+            "launch",
+            "weights",
+            "host"
+          ]
+        }
+      ],
+      "references": [
+        {
+          "id": "launch",
+          "title": "Ricursive Ripple65B 공식 발표",
+          "url": "https://www.ricursive.com/ripple",
+          "description": "모델의 출발점, dense구조, R&D비용과 평가/제공 주장을 읽었다."
+        },
+        {
+          "id": "weights",
+          "title": "Ripple65B 공식 모델 카드",
+          "url": "https://huggingface.co/ricursiveAI/Ripple-65B-Preview",
+          "description": "모델 사양, BF16/NVFP4와 base, 비교표와 더 낮은 과제, Harness 차이를 읽었다."
+        },
+        {
+          "id": "host",
+          "title": "Together Ripple65B 현재 모델 안내",
+          "url": "https://www.together.ai/models/ripple-65b-preview",
+          "description": "출시 발표의 제공 주장과 달리 현재 coming soon이며 정가 미표기, 경쟁 호스팅 단가를 구분했다."
+        }
+      ]
+    },
+    {
+      "id": "homi-audio-decision-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "title": "homi 소개: 오디오 선택지 판별 모델의 성능, 비용 추정과 과확신 한계",
+      "description": "녹음의 특성과 음성 에이전트 실행을 평가하려는 개발자와 관리자가 오디오 판별 모델의 변화와 경쟁 평가, 자체 운영 조건을 비교하도록 정리했다.",
+      "checked_on": "2026-11-05",
+      "scope": "확인일2026-11-05(KST).공식저장소와HF모델카드의구조,평가,비용추정과한계를읽었다.제공자주장을독립성능검증으로표시하지않는다.",
+      "deck": "homi는 Qwen3-Omni-30B-A3B의 기반 가중치를 고정하고 오디오 질문의 선택지별 확률을 돌려주는 추가 학습 모델이다. 공급자 VocalGrad 평가에서는 Gemini 3.8 Flash보다 높지만 MMSU 전체와 화자 수 세기에는 약점이 있다. 공개되는 것은 어댑터와 판별층이며 약 70GB의 여유 GPU 메모리가 필요하다.",
+      "highlights": [
+        "모델의 변화",
+        "평가의 양면",
+        "비용의 조건"
+      ],
+      "source_note": "확인일2026-11-05(KST).공식저장소와HF모델카드의구조,평가,비용추정과한계를읽었다.제공자주장을독립성능검증으로표시하지않는다.",
+      "summary": [
+        {
+          "label": "모델의 변화",
+          "text": "텍스트 생성층 대신 선택지 점수층을 두고 약 17M LoRA 파라미터를 학습했다. 기반 모델 전체를 새로 학습하거나 자유 대화를 생성하는 모델이 아니다.",
+          "source_ids": [
+            "launch",
+            "weights"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "평가의 양면",
+          "text": "VocalGrad 7,200개 질문에서 homi는 73.9%, Gemini 3.8 Flash는 63.0%다. 반대로 MMSU 4,981개 질문에서 homi의 83.1%는 Gemini의 85.7%보다 낮다.",
+          "source_ids": [
+            "weights"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "비용의 조건",
+          "text": "1만 질문당 0.12/0.28 USD는 H200 시간당 4.54 USD와 배치 실행으로 계산한 추정값이다. 판매 API 정가나 실청구로 보지 않는다.",
+          "source_ids": [
+            "launch",
+            "weights"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "explanation": [
+        {
+          "id": "identity",
+          "title": "기반 모델을 오디오 판별에 맞춘 구조",
+          "lead": "녹음의 비언어적 특징을 선택지 확률로 비교한다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "새 사전학습 모델이 아닌 후속 모델",
+              "text": "기반은 Qwen3-Omni-30B-A3B-Instruct다. 기반 가중치를 고정하고 언어 생성층 대신 판별층, 약 17M개의 LoRA 파라미터와 한 개의 확률 보정 온도를 학습했다. 여러 질문을 한 번의 배치 계산으로 처리하며 텍스트를 자유롭게 생성하지 않는다.",
+              "source_ids": [
+                "launch",
+                "weights"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "텍스트 판별 모델과의 차이",
+              "text": "Jev, Clef, Perplexity Decider처럼 정해진 답을 점수화하지만 녹음을 직접 입력받는다. 대본만으로 잃기 쉬운 음높이, 속도와 음량을 다룬다. 한국어 음성이나 모든 음향 상황에서 정확도가 확인됐다는 뜻은 아니다.",
+              "source_ids": [
+                "launch",
+                "weights"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "performance",
+          "title": "같은 오디오 질문의 경쟁 비교",
+          "lead": "정답을 내지 않은 응답도 오답에 포함된다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "VocalGrad와 MMSU",
+              "text": "VocalGrad는 음높이, 속도와 음량의 변화를 묻는 7,200개 질문이고 우연 정답률은 50%다. MMSU는 47개 과제의 4,981개 질문이다. 같은 오디오와 질문, 선택지를 넣으며 무응답은 오답으로 처리한다. gpt-audio는 각각 34%와 13%가 무응답이어서 답한 질문만의 정확도와 전체 점수가 다르다.",
+              "source_ids": [
+                "launch",
+                "weights"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "강점과 반대 결과",
+              "text": "homi의 VocalGrad 73.9%는 Gemini 3.8 Flash 63.0%보다 높지만 속도 항목은 74% 대 78%로 낮다. MMSU 전체도 83.1% 대 85.7%로 낮고 추론 항목은 86.0% 대 89.2%다. 따라서 오디오 작업 전반에서 일관되게 우수하다고 부르지 않았다.",
+              "source_ids": [
+                "weights"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "calibration",
+          "title": "과확신과 화자 수의 약점",
+          "lead": "높은 확률이 같은 비율의 실제 정답을 보장하지 않는다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "확신과 실제 정답률",
+              "text": "VocalGrad의 가장 확신한 답은 평균 98% 확신에도 실제로 약 85%만 맞았다고 저자가 적었다. ECE는 확신과 정답률의 불일치를, Brier는 확률과 정답의 제곱 오차를 나타내며 낮을수록 좋다. MMSU에서 Gemini의 ECE 0.052/Brier 0.238은 homi의 0.076/0.259보다 좋다. 비교 모델 일부보다 보정이 나아도 과확신은 남는다.",
+              "source_ids": [
+                "weights"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "배포에 중요한 실패 범위",
+              "text": "MMSU의 화자 수 세기는 19%에 그치며 여러 사람의 긴 대화, 운율과 쉼에 의한 추론에 약하다. 감정 학습은 주로 연기 음성이고 언어는 주로 영어다. 저자는 진짜 음성과 합성 음성의 구분이 불안정해 딥페이크 탐지에 쓰지 말라고 명시한다.",
+              "source_ids": [
+                "weights"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "access",
+          "title": "어댑터 공개와 자체 운영 조건",
+          "lead": "어댑터 다운로드만으로 기반 모델이 준비되는 것은 아니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "가중치와 실행 환경",
+              "text": "저장소에는 어댑터와 판별층, 코드만 있으며 Qwen 기반 가중치는 별도로 받는다. 카드는 BF16에서 약 70GB의 여유 메모리가 있는 GPU 한 장과 전용 predict.py 경로를 안내한다. 짧은 녹음의 세 질문에 약 75ms라는 값은 H200에서의 조건부 보고이며 긴 파일의 지연이 아니다.",
+              "source_ids": [
+                "weights"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "제공과 라이선스의 범위",
+              "text": "모델 카드는 Apache 2.0과 기반 모델의 Apache 2.0을 표시하면서 학습 음성의 별도 저작권, 표시 의무와 데이터 라이선스 예외도 안내한다. 전체 데이터의 법률 검토를 수행하지 않았다. 공개 호스팅 API 정가와 모든 제공 지역도 확인하지 못했다.",
+              "source_ids": [
+                "weights"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "cost",
+          "title": "GPU 비용 추정과 서비스 요금",
+          "lead": "추정 실험비는 표준 API 가격과 다른 단위다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "배치 H200 시간의 환산",
+              "text": "저자는 H200 시간당 4.54 USD와 배치 처리량으로 1만 질문당 VocalGrad 0.12 USD, MMSU 0.28 USD를 계산했다. 경쟁 API 비용은 기록된 토큰에 목록 단가를 곱하며 Gemini 3.8 Flash에는 프로모션 단가가 적용됐다. 장치 상각, 상시 대기와 운영 인력까지 포함한 총비용이나 판매 정가가 아니다.",
+              "source_ids": [
+                "launch",
+                "weights"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "비교 가능한 판단",
+              "text": "문항 길이와 배치 효율, 실패와 재시도에 따라 비용이 달라진다. homi의 표준 API 정가를 확인하지 못했다는 사실을 무료 서비스로 바꾸지 않았다. 라이선스 비용과 실제 GPU 운영비는 별개다.",
+              "source_ids": [
+                "weights"
+              ],
+              "kind": "judgment"
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "specifications",
+          "title": "기반 모델과 판별 모델 비교",
+          "columns": [
+            "모델",
+            "방식",
+            "입력 / 출력",
+            "제공 조건"
+          ],
+          "rows": [
+            {
+              "values": [
+                "homi",
+                "Qwen3-Omni기반17M LoRA와판별층",
+                "오디오/문자질문 → 선택지확률",
+                "어댑터만공개,기반별도;약70GB BF16 GPU"
+              ],
+              "source_ids": [
+                "weights"
+              ]
+            },
+            {
+              "values": [
+                "Qwen3-Omni30B-A3B",
+                "고정기반",
+                "생성형오디오모델의비교구성",
+                "기반모델을별도다운로드"
+              ],
+              "source_ids": [
+                "launch",
+                "weights"
+              ]
+            },
+            {
+              "values": [
+                "Jev/Clef/Perplexity Decider",
+                "텍스트판별",
+                "텍스트 → 선택지확률",
+                "오디오직접입력과다른범위"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Gemini3.8Flash",
+                "비교API모델",
+                "같은오디오질문",
+                "하위버전/조건은평가설정에따름"
+              ],
+              "source_ids": [
+                "weights"
+              ]
+            }
+          ],
+          "note": "선택지는 choice 2~255개, score 2~10단계다. 문맥과 최대 오디오 길이의 확정 상한은 선정 원문에서 확인되지 않았다."
+        },
+        {
+          "id": "benchmarks",
+          "title": "공급자 동일 질문 비교",
+          "columns": [
+            "모델",
+            "VocalGrad 정확도",
+            "MMSU 정확도",
+            "주석"
+          ],
+          "rows": [
+            {
+              "values": [
+                "homi",
+                "73.9%",
+                "83.1%",
+                "추가학습판"
+              ],
+              "source_ids": [
+                "weights"
+              ]
+            },
+            {
+              "values": [
+                "Gemini3.8Flash",
+                "63.0%",
+                "85.7%",
+                "MMSU에서더높음"
+              ],
+              "source_ids": [
+                "weights"
+              ]
+            },
+            {
+              "values": [
+                "Qwen3-Omni30B-A3B",
+                "50.3%",
+                "72.2%",
+                "기반모델"
+              ],
+              "source_ids": [
+                "weights"
+              ]
+            },
+            {
+              "values": [
+                "Gemini3.5Flash-Lite",
+                "50.9%",
+                "67.4%",
+                "비교API"
+              ],
+              "source_ids": [
+                "weights"
+              ]
+            },
+            {
+              "values": [
+                "gpt-audio",
+                "33.8%",
+                "60.3%",
+                "무응답포함"
+              ],
+              "source_ids": [
+                "weights"
+              ]
+            }
+          ],
+          "note": "각각 7,200개와 4,981개 질문의 공급자 실행이다. 실제 업무와 독립 재현이 아니며 비교 모델의 모든 추론 예산과 업데이트 시점은 미공개다."
+        },
+        {
+          "id": "prices",
+          "title": "평가당 추정 비용과 정가의 구분",
+          "columns": [
+            "모델",
+            "VocalGrad / MMSU USD/1만질문",
+            "비용 정의"
+          ],
+          "rows": [
+            {
+              "values": [
+                "homi",
+                "0.12 / 0.28",
+                "H200시간당4.54USD,배치환산"
+              ],
+              "source_ids": [
+                "weights"
+              ]
+            },
+            {
+              "values": [
+                "Qwen3-Omni기반",
+                "0.11 / 0.19",
+                "같은GPU시간추정"
+              ],
+              "source_ids": [
+                "weights"
+              ]
+            },
+            {
+              "values": [
+                "Gemini3.8Flash",
+                "12.10 / 14.80",
+                "토큰목록가환산,프로모션"
+              ],
+              "source_ids": [
+                "weights"
+              ]
+            },
+            {
+              "values": [
+                "homi 표준 호스팅 API",
+                "미확인",
+                "고정입출력토큰정가없음"
+              ],
+              "source_ids": [
+                "weights"
+              ]
+            }
+          ],
+          "note": "실험비 추정은 판매 정가나 실청구가 아니다. 과제 정확도와 비용을 함께 보며 라이선스가 GPU 운영비를 없애지 않음을 구분한다."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "판단",
+            "text": "homi는 오디오를 직접 보는 공개 판별 경로로 대본 기반 평가를 보완한다. 음높이와 음량 평가의 강점뿐 아니라 화자 수, 긴 대화, 과확신과 주로 영어라는 한계를 함께 보아야 한다. 딥페이크 탐지나 동의 없는 인물 추론의 근거로 확대할 수 없다.",
+            "source_ids": [
+              "launch",
+              "weights"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "발표일은 선정 본문에 미표기다. 11월 4일 커뮤니티 등장과 11월 5일 원문 확인을 구분한다. 실제 GPU 실행과 한국어 음성, 실청구는 미검증이며 학습 데이터 라이선스의 세부 예외는 추가 검토 범위다.",
+          "source_ids": [
+            "launch",
+            "weights"
+          ]
+        }
+      ],
+      "references": [
+        {
+          "id": "launch",
+          "title": "Egma homi 공식 저장소",
+          "url": "https://github.com/egma-ai/homi",
+          "description": "오디오 판별모델의구조와평가모집단,추정비용/오류/거절을읽었다."
+        },
+        {
+          "id": "weights",
+          "title": "homi 공식 모델 카드",
+          "url": "https://huggingface.co/egma-ai/homi",
+          "description": "기반가중치별도,약70GB GPU,과확신/화자수/영어/딥페이크한계및라이선스를읽었다."
+        }
+      ]
+    },
+    {
+      "id": "kimi-k3-1-pro-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "checked_on": "2026-11-05",
+      "title": "Kimi K3.1 Pro 소개: 코딩과 문서 성능, 공개 가중치와 제공 조건",
+      "description": "Kimi K3.1 Pro의 공개 가중치와 상업 라이선스를 설명하고 기존 K3 및 경쟁 모델과의 성능, API와 Highspeed 비용 비교를 날짜별로 구분했다.",
+      "deck": "Kimi K3.1 Pro는 K3를 추가 학습한 대형 멀티모달 모델이다. 코딩과 문서 분석의 여러 평가에서 개선됐지만 일부 과학, 금융과 사실성 평가에서는 경쟁 모델에 뒤진다. 이번 판은 공개 가중치의 사양과 별도 상업 라이선스를 추가했으며, 기존 API 요금과 성능 비교는 10월 24일 확인한 자료로 유지한다.",
+      "scope": "11월 5일에는 공개 모델 카드와 라이선스만 새로 확인했다. 기존 API와 Code 요금 및 경쟁 평가는 10월 24일 검토 자료로 보존하며 현재 단가를 재확인했다고 표시하지 않는다.",
+      "source_note": "11월 5일에는 공개 모델 카드와 라이선스만 새로 확인했다. 기존 API와 Code 요금 및 경쟁 평가는 10월 24일 검토 자료로 보존하며 현재 단가를 재확인했다고 표시하지 않는다.",
+      "highlights": [
+        "모델과 제공",
+        "상대 장점과 단점",
+        "요금의 차이"
+      ],
+      "summary": [
+        {
+          "label": "모델과 제공",
+          "text": "K3의 후속 학습 모델이다. 기존 앱, API와 Code 제공 안내에 이어 공개 가중치의 사양과 별도 라이선스를 11월 5일 확인했다. 서비스 요금과 접근 조건은 10월 24일 기준 자료로 남겼다.",
+          "source_ids": [
+            "launch",
+            "code",
+            "api",
+            "weights",
+            "license"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "상대 장점과 단점",
+          "text": "Terminal-Bench 4.0은65.7로 Opus66.4에 근접하고 SWE-Marathon51.7은 비교군보다 높습니다. 반대로 Science38.1은 Astra68.1보다 낮고, Frontier Finance58.6은 Fable60.8보다 낮습니다.",
+          "source_ids": [
+            "launch",
+            "chart"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "요금의 차이",
+          "text": "10월 24일 확인한 기본 API 가격은 정규형 입력/출력 2/10 USD, Highspeed 4/20 USD/100만 토큰이었다. 기존 Code 요금제 조건과 함께 과거 비교 자료로 보존하며 11월 5일 현행 단가를 재확인한 것은 아니다.",
+          "source_ids": [
+            "prices",
+            "billing",
+            "code"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "가중치 공개",
+          "text": "공개 가중치는 전체 2.8T, 활성 104B이며 상업적 MaaS 등에 별도 라이선스 조건이 있다. API 제공과 자체 운영의 조건을 구분한다.",
+          "source_ids": [
+            "weights",
+            "license"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "tables": [
+        {
+          "id": "specs",
+          "title": "사양과 제공 범위",
+          "columns": [
+            "항목",
+            "확인한 내용"
+          ],
+          "rows": [
+            {
+              "values": [
+                "구조 관계",
+                "K3의 후속 학습; 공개 가중치 전체 2.8T / 활성 104B"
+              ],
+              "source_ids": [
+                "weights"
+              ]
+            },
+            {
+              "values": [
+                "문맥",
+                "API1,048,576토큰; Code는 요금제에 따라 한도 다름"
+              ],
+              "source_ids": [
+                "launch",
+                "code",
+                "api"
+              ]
+            },
+            {
+              "values": [
+                "입출력",
+                "텍스트·이미지·영상 입력과 텍스트 출력; 모든 앱 기능의 실행 능력과 분리"
+              ],
+              "source_ids": [
+                "launch",
+                "code",
+                "api"
+              ]
+            },
+            {
+              "values": [
+                "API ID",
+                "kimi-k3.1-pro / kimi-k3.1-pro-highspeed"
+              ],
+              "source_ids": [
+                "launch",
+                "code",
+                "api"
+              ]
+            },
+            {
+              "values": [
+                "Code ID",
+                "k3.1-pro / k3.1-pro-highspeed"
+              ],
+              "source_ids": [
+                "launch",
+                "code",
+                "api"
+              ]
+            },
+            {
+              "values": [
+                "추론",
+                "low/high/max; 기본max, 생각 끄기 요청은 거부"
+              ],
+              "source_ids": [
+                "launch",
+                "code",
+                "api"
+              ]
+            },
+            {
+              "values": [
+                "가중치",
+                "공개 모델 카드와 가중치 제공; 별도 Kimi K3.1-Pro License, 실제 장치 실행 미검증"
+              ],
+              "source_ids": [
+                "weights",
+                "license"
+              ]
+            },
+            {
+              "values": [
+                "기업 제공",
+                "출시 시 관리자 활성화 필요; 기본 비활성"
+              ],
+              "source_ids": [
+                "launch",
+                "code",
+                "api"
+              ]
+            }
+          ],
+          "note": "가중치와 파라미터 수 행은 11월 5일 확인했다. 나머지 API와 Code 행은 10월 24일 자료다. 모델 카드의 문맥 한도는 모든 장치의 실제 실행 용량이나 정확도 보장이 아니다."
+        },
+        {
+          "id": "previous",
+          "title": "이전 K3 대비 변화",
+          "columns": [
+            "평가",
+            "K3",
+            "K3.1 Pro",
+            "차이"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Kimi Code Bench 3.0 Long-horizon",
+                "55.95",
+                "61.2",
+                "5.25포인트 상승"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "내부 Financial Modeling",
+                "50.4",
+                "57.6",
+                "7.2포인트 상승"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "내부 Financial Research",
+                "58.8",
+                "70.4",
+                "11.6포인트 상승"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Hallu Bench Hard 주장 오류율",
+                "23.4%",
+                "8.3%",
+                "15.1포인트 감소; 낮을수록 좋음"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            }
+          ],
+          "note": "Moonshot의 내부 평가입니다. 서로 다른 평가의 점수를 평균내지 않으며 오류율과 성공 점수의 방향을 구분합니다. 기존 표의 원문 확인일은 2026-10-24이며 11월 5일 재측정이나 요금 재확인이 아니다."
+        },
+        {
+          "id": "comparison",
+          "title": "경쟁 모델과 코딩·문서 성능",
+          "columns": [
+            "평가",
+            "Kimi K3.1 Pro",
+            "Claude Opus 5.5",
+            "GPT-6 Astra",
+            "Claude Fable 5.1",
+            "DeepSeek-V4.1-Flash-1017",
+            "GLM-5.3"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Terminal-Bench 4.0",
+                "65.7",
+                "66.4",
+                "58.2",
+                "57.9",
+                "42.3",
+                "41.8"
+              ],
+              "source_ids": [
+                "launch",
+                "chart"
+              ]
+            },
+            {
+              "values": [
+                "Terminal-Bench Science 0.1",
+                "38.1",
+                "63.3",
+                "68.1",
+                "40.0",
+                "15.7 (이전 Flash; 1017 직접측정 9.3)",
+                "8.1"
+              ],
+              "source_ids": [
+                "launch",
+                "chart"
+              ]
+            },
+            {
+              "values": [
+                "SWE-Marathon v1.1",
+                "51.7",
+                "46.3",
+                "42.5",
+                "45.6",
+                "40.0",
+                "42.5"
+              ],
+              "source_ids": [
+                "launch",
+                "chart"
+              ]
+            },
+            {
+              "values": [
+                "Kimi Code Bench 3.0 Long-horizon",
+                "61.2",
+                "58.5",
+                "66.5",
+                "58.8",
+                "51.5",
+                "45.5"
+              ],
+              "source_ids": [
+                "launch",
+                "chart"
+              ]
+            },
+            {
+              "values": [
+                "OfficeQA Pro v2",
+                "64.4",
+                "62.2",
+                "54.4",
+                "54.5",
+                "40.4",
+                "31.1"
+              ],
+              "source_ids": [
+                "launch",
+                "chart"
+              ]
+            },
+            {
+              "values": [
+                "Frontier Finance",
+                "58.6",
+                "56.7",
+                "45.0",
+                "60.8",
+                "54.5",
+                "57.5"
+              ],
+              "source_ids": [
+                "launch",
+                "chart"
+              ]
+            }
+          ],
+          "note": "Moonshot 그림의 보고값입니다. K3.1 Pro 기본max/temperature1/top-p0.95; 평가별 Harness와 경쟁 모델의 원측정이 다릅니다. Science의 DeepSeek15.7은1017판 직접측정9.3 대신 이전 Flash 리더보드 값을 사용한 수록값입니다. 기존 표의 원문 확인일은 2026-10-24이며 11월 5일 재측정이나 요금 재확인이 아니다."
+        },
+        {
+          "id": "factuality",
+          "title": "주장 단위 오류율 비교",
+          "columns": [
+            "평가",
+            "Kimi K3.1 Pro",
+            "Claude Opus 5.5",
+            "GPT-6 Astra",
+            "Claude Fable 5.1",
+            "DeepSeek-V4.1-Flash-1017",
+            "GLM-5.3"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Kimi Hallu Bench / 도구 없음",
+                "5.4%",
+                "6.8%",
+                "4.2%",
+                "11.4%",
+                "13.1%",
+                "14.8%"
+              ],
+              "source_ids": [
+                "launch",
+                "hallu"
+              ]
+            },
+            {
+              "values": [
+                "Kimi Hallu Bench Hard / 도구 있음",
+                "8.3%",
+                "15.0%",
+                "5.5%",
+                "23.3%",
+                "23.3%",
+                "22.6%"
+              ],
+              "source_ids": [
+                "launch",
+                "hallu"
+              ]
+            }
+          ],
+          "note": "낮을수록 좋습니다. 공급사가 고른 어려운 프롬프트의 스트레스 시험이며 실제 업무 전체의 오류 확률이 아닙니다. 기존 표의 원문 확인일은 2026-10-24이며 11월 5일 재측정이나 요금 재확인이 아니다."
+        },
+        {
+          "id": "prices",
+          "title": "공식 API 표준 단가",
+          "columns": [
+            "모델",
+            "일반 입력",
+            "출력",
+            "캐시 적중 입력",
+            "홈페이지 캐시 쓰기"
+          ],
+          "rows": [
+            {
+              "values": [
+                "K3.1 Pro",
+                "$2.00",
+                "$10.00",
+                "$0.20",
+                "$2.00"
+              ],
+              "source_ids": [
+                "prices",
+                "billing"
+              ]
+            },
+            {
+              "values": [
+                "K3.1 Pro Highspeed",
+                "$4.00",
+                "$20.00",
+                "$0.20",
+                "$4.00"
+              ],
+              "source_ids": [
+                "prices",
+                "billing"
+              ]
+            },
+            {
+              "values": [
+                "K3",
+                "$3.00",
+                "$15.00",
+                "$0.30",
+                "$3.00"
+              ],
+              "source_ids": [
+                "prices",
+                "billing"
+              ]
+            }
+          ],
+          "note": "USD/1,000,000토큰, 세금 제외. 캐시 쓰기는 TTL5분/1시간에 따라 별도 과금되며 홈페이지 표의 값만 보존했습니다. 표에 명시되지 않은1시간 쓰기 요금은 추정하지 않았습니다. 구독료·할당량을 이 API 단가로 환산하지 않습니다. 기존 표의 원문 확인일은 2026-10-24이며 11월 5일 재측정이나 요금 재확인이 아니다."
+        },
+        {
+          "id": "peer-prices",
+          "title": "주요 경쟁 모델의 기본 API 단가",
+          "columns": [
+            "모델",
+            "입력 USD/100만 토큰",
+            "출력 USD/100만 토큰",
+            "제공 범위"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Kimi K3.1 Pro",
+                "2",
+                "10",
+                "Kimi 앱/Work/Code/API; 가중치 예정"
+              ],
+              "source_ids": [
+                "prices",
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Kimi K3.1 Pro Highspeed",
+                "4",
+                "20",
+                "고속 제공; 정규형 대비 같은 능력 설명"
+              ],
+              "source_ids": [
+                "prices",
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Claude Opus 5.5",
+                "4",
+                "20",
+                "공식 API 요금표; 가중치 제공으로 해석하지 않음"
+              ],
+              "source_ids": [
+                "claude-price"
+              ]
+            },
+            {
+              "values": [
+                "Claude Fable 5.1",
+                "10",
+                "50",
+                "공식 API 요금표; 가중치 제공으로 해석하지 않음"
+              ],
+              "source_ids": [
+                "claude-price"
+              ]
+            },
+            {
+              "values": [
+                "GPT-6 Astra",
+                "10",
+                "50",
+                "Standard의 기본 표시 문맥 모드"
+              ],
+              "source_ids": [
+                "openai-price"
+              ]
+            }
+          ],
+          "note": "24일 공식 공개 표의 기본 단가입니다. 캐시/문맥 옵션·실제 토큰 수·세금/지역·도구 비용과 Batch/Fast/Ultrafast는 다릅니다. 같은 요청의 총비용이나 단위 시간 처리량을 직접 측정한 비교가 아닙니다. 기존 표의 원문 확인일은 2026-10-24이며 11월 5일 재측정이나 요금 재확인이 아니다."
+        },
+        {
+          "id": "open-weight-update",
+          "title": "가중치 공개에 따른 제공 경로 비교",
+          "columns": [
+            "경로",
+            "현재 확인한 조건",
+            "가격/판단 범위"
+          ],
+          "rows": [
+            {
+              "values": [
+                "공개K3.1Pro가중치",
+                "2.8T/104B,1048576문맥,MXFP4/8",
+                "별도라이선스와하드웨어/운영비"
+              ],
+              "source_ids": [
+                "weights",
+                "license"
+              ]
+            },
+            {
+              "values": [
+                "공식API/Code",
+                "기존10월24일기사의제공경로",
+                "아래기존요금표는10월24일기준,이번재확인아님"
+              ],
+              "source_ids": [
+                "api",
+                "code",
+                "prices"
+              ]
+            },
+            {
+              "values": [
+                "이전Kimi K3",
+                "기존계열비교기준",
+                "이번공개는K3.1Pro의새접근경로"
+              ],
+              "source_ids": [
+                "launch",
+                "weights"
+              ]
+            }
+          ],
+          "note": "기존 평가와 표준 요금의 확인일을 11월 5일로 바꾸지 않았다. 개별 법인의 라이선스 적용이나 실행 성능을 보증하지 않는다."
+        }
+      ],
+      "explanation": [
+        {
+          "id": "overview",
+          "title": "모델 개요와 K3의 관계",
+          "lead": "K3.1 Pro는 새 이름의 앱이 아니라 K3에 후속 학습을 더한 모델입니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "추가 학습과 실행기",
+              "text": "후속 학습은 기존 모델을 다양한 과제의 피드백으로 다시 조정하는 과정입니다. Moonshot은 강화학습 계산량과 긴 문맥·실행 환경을 확대했다고 설명합니다. 3D 제작이나 문서 검증을 끝내는 전체 제품에는 모델뿐 아니라 검색, 코드 실행, 파일 도구와 에이전트 실행기가 필요합니다. 같은 모델을 연결해도 그 구성에 따라 결과가 달라집니다.",
+              "source_ids": [
+                "launch"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "Highspeed의 의미",
+              "text": "Highspeed는 공식 설명상 같은 모델 능력을 더 빠르게 제공하는 경로입니다. 별도의 성능 향상 모델처럼 점수를 복제하지 않았습니다. 속도2~3배는 공급사 설명이며 모든 입력·혼잡도에서 확인한 지연 보장이 아닙니다.",
+              "source_ids": [
+                "launch",
+                "code"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "analysis",
+          "title": "코딩과 문서 평가의 장점",
+          "lead": "긴 코딩과 문서 분석에서는 이전 K3 및 주요 비교 모델보다 높은 보고값이 있습니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "개선이 보이는 지점",
+              "text": "SWE-Marathon은 긴 소프트웨어 작업의 수행을 평가하며51.7로 Opus46.3보다 높습니다. OfficeQA Pro v2의64.4는 Opus62.2와 Astra54.4보다 높습니다. 이 평가에서 모델은 전체 PDF 묶음을 이미지로 받았고, 정답을 인터넷에서 가져온 과제는0점 처리됐습니다. 결과를 일반 텍스트 검색 정확도나 임의의 사내 문서 정확도로 옮길 수는 없습니다.",
+              "source_ids": [
+                "launch",
+                "chart"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "이전판의 개선과 공개 비교",
+              "text": "내부 금융 모델링57.6은 K3의50.4보다7.2포인트 높고 내부 금융 연구70.4는58.8보다11.6포인트 높습니다. 공급사의 선택한 시험에서 후속 학습 효과를 보여주는 값입니다. 실제 회사의 보고서 작성 시간이나 수익 개선을 직접 측정한 결과는 아닙니다.",
+              "source_ids": [
+                "launch"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "limits",
+          "title": "경쟁 모델보다 부족한 점과 평가 조건",
+          "lead": "종합적인 우위와 개별 과제의 우위를 구분해야 합니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "명확한 반대 결과",
+              "text": "과학 터미널 평가38.1은 Astra68.1와 Opus63.3보다 낮습니다. 내부 장기 코딩61.2도 Astra66.5보다 낮고, 금융58.6은 Fable60.8보다 낮습니다. Hard 오류율8.3%는 K3의23.4%보다 줄었지만 Astra5.5%보다 높습니다. 따라서 코딩·문서에 강하다는 설명을 모든 분야의1위로 읽어서는 안 됩니다.",
+              "source_ids": [
+                "launch",
+                "chart",
+                "hallu"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "같은 시험도 실행 방식이 다름",
+              "text": "Terminal-Bench4.0과 SWE-Marathon의 Kimi는 Claude Code 실행기를 사용했습니다. OfficeQA에서는 Astra만 Codex를 사용하고 다른 모델은 Claude Code를 사용했습니다. 비교군은 각 발표나 리더보드의 최대 보고값을 재수록하며 일부 Claude의 fallback과 GPT의 cyberguard 가능성을 주석으로 명시합니다. 이 표는 동일 환경에서 독립 재측정한 모델 순위가 아닙니다.",
+              "source_ids": [
+                "launch",
+                "chart"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "access",
+          "title": "API·구독과 가중치 제공",
+          "lead": "서비스 이용과 공개 가중치의 자체 운영은 서로 다른 조건이다. 이 절의 API와 구독 내용은 10월 24일 기준이다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "실제 접근 조건",
+              "text": "Kimi Code는 신요금제 Plus 이상에서 정규형을 제공하고 Pro 이상에서1M 문맥과 Highspeed를 제공합니다. 구요금제는 Moderato/Allegretto 조건이 별도로 남습니다. Highspeed의 Code 할당량 소모는 정규형의 약2배이며 API 요금도 두 배입니다. 앱의 모델 선택과 기업 관리자의 활성화를 각각 확인해야 합니다.",
+              "source_ids": [
+                "code",
+                "api",
+                "launch"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "API 제한과 이행 계획",
+              "text": "일반 API는 생각을 끌 수 없고 low/high/max로 강도만 바꿉니다. 안내는 temperature1/top-p0.95 같은 일부 값을 고정하며, 공개 이미지 URL을 직접 입력하는 경로도 지원하지 않는다고 설명합니다. 검색 도구는 갱신 중이어서 당분간 프로덕션 사용을 권하지 않습니다. 11월 5일 공개 가중치와 라이선스는 다음 절에서 따로 설명한다. 이 문단의 API 제약은 10월 24일 확인한 내용이다.",
+              "source_ids": [
+                "api",
+                "launch"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "경쟁 API의 표시 단가와 총비용",
+              "text": "정규형의 기본 입력·출력 단가는 Opus5.5의 $4/$20보다 낮고, Highspeed의 $4/$20는 Opus와 같습니다. Astra의Standard 기본 표시 단가와 Fable5.1은 $10/$50입니다. 다만 같은 글도 모델별 토큰화와 추론량이 달라 총 청구액의 차이를 이 비율로 확정할 수 없습니다. 캐시 쓰기·지역·문맥 옵션과 도구 호출 비용은 별도로 남습니다.",
+              "source_ids": [
+                "prices",
+                "claude-price",
+                "openai-price"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "open-weights",
+          "title": "공개 가중치의 사양과 라이선스 조건",
+          "lead": "11월 4일까지 공개 예정이던 가중치가 실제 모델 카드와 파일로 이어졌다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "가중치와 문맥",
+              "text": "카드는 전체 2.8T/활성 104B인 MoE 구조와 1,048,576토큰 문맥, 텍스트와 이미지 입력을 제시한다. K3의 일부 Gated MLA를 Gated DSA로 바꾸고 MXFP4 가중치와 MXFP8 활성의 양자화 인식 학습을 표시한다. 전체 파라미터를 GPU 메모리 요구량으로 바로 환산하지 않는다. 기존 API의 최대 출력이나 요금도 가중치 판에 자동 승계하지 않았다.",
+              "source_ids": [
+                "weights"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "상업 제공의 별도 조건",
+              "text": "Kimi K3.1-Pro License는 일반적인 사용, 수정과 재배포를 허용한다. 다만 제3자가 입력과 파라미터를 통제하는 MaaS 사업을 운영하고 계열사 합산 연속 12개월 총매출이 2천만 USD를 넘으면 상업 사용 전 별도 계약을 요구한다. 월 활성 이용자 1억 초과 또는 월매출 2천만 USD 초과인 상업 제품에는 모델명 표시 조건도 있다. 각각 내부 사용과 공식 제품 또는 인증 추론 파트너 이용의 예외를 명시하며, 특정 기능 안에만 모델을 넣은 제품과 MaaS의 정의를 구분한다. 이 글에서 개별 조직의 해당 여부를 확정하지 않는다.",
+              "source_ids": [
+                "license"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "새 성능 향상을 뜻하지 않는 공개",
+              "text": "가중치 공개는 기존 K3.1 Pro의 접근 경로가 확장된 사건이다. 새로운 K3.2 모델이나 11월 5일의 성능 향상으로 세지 않았다. 실제 장치 배포, 한국어 평가와 조직별 라이선스 적용 판단은 별도의 검토 대상이다.",
+              "source_ids": [
+                "weights",
+                "license"
+              ],
+              "kind": "judgment"
+            }
+          ]
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "판단 기준",
+            "text": "K3.1 Pro는 기존 K3와 경쟁 모델의 코딩, 문서 결과를 비교할 후보이며 반대 결과와 실행기 차이를 감안해야 한다. 11월 5일 확인한 변화는 가중치와 라이선스의 공개다. 기존 API 요금과 성능은 10월 24일 자료이고, 자체 운영에는 장치 자원과 상업 라이선스 검토가 별도로 필요하다.",
+            "source_ids": [
+              "launch",
+              "chart",
+              "hallu",
+              "code",
+              "api",
+              "prices",
+              "billing",
+              "index",
+              "weights",
+              "license"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "기준은24일 실제 확인한 공식 원문과 그림입니다. 23일 사전 영상만으로 출시를 확정하지 않았고24일 공식 목록/현재 제공 문서를 대조했습니다. 모든 경쟁 모델의 설정·지원 언어·개별 테넌트 접근과 독립 실행·청구는 미검증입니다.",
+          "source_ids": [
+            "launch",
+            "chart",
+            "hallu",
+            "code",
+            "api",
+            "prices",
+            "billing",
+            "index"
+          ]
+        },
+        {
+          "text": "11월 5일에는 공개 모델 카드와 라이선스만 새로 확인했다. 기존 API와 Code 요금 및 경쟁 평가는 10월 24일 검토 자료로 보존하며 현재 단가를 재확인했다고 표시하지 않는다. 가중치를 실제로 받거나 실행하지 않았으며 조직별 법률 적용 판단을 수행하지 않았다.",
+          "source_ids": [
+            "weights",
+            "license"
+          ]
+        }
+      ],
+      "references": [
+        {
+          "id": "launch",
+          "title": "Kimi K3.1 Pro 공식 발표",
+          "url": "https://www.kimi.com/en/blog/kimi-k3-1-pro",
+          "description": "후속 학습, 비교 평가의 주석, 제공 경로와 11월 4일까지 가중치 공개 계획을 읽었습니다."
+        },
+        {
+          "id": "chart",
+          "title": "Kimi의 코딩·문서 평가 그림",
+          "url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/benchmark-overview-v6.webp",
+          "description": "14평가의 모델별 수치와 최대 추론·fallback·cyberguard 주석을 직접 읽었습니다."
+        },
+        {
+          "id": "hallu",
+          "title": "Kimi Hallu Bench 그림",
+          "url": "https://statics.kimi.ai/kimi-blogs/kimi-k3-1/20261023/hallu-bench-results-v2.webp",
+          "description": "도구 유무와 Hard 평가의 주장 단위 오류율을 구분했습니다."
+        },
+        {
+          "id": "code",
+          "title": "Kimi Code 모델별 조건",
+          "url": "https://www.kimi.com/code/docs/en/kimi-code/models.html",
+          "description": "정확한 Code ID, 추론 강제, 문맥과 신·구 요금제 조건을 대조했습니다."
+        },
+        {
+          "id": "api",
+          "title": "Kimi API 모델 안내",
+          "url": "https://platform.kimi.ai/docs/guide/kimi-k3-1-pro-quickstart",
+          "description": "API ID, 문맥, 추론과 샘플링 제약, 캐시 TTL 및 검색 도구의 주의를 확인했습니다."
+        },
+        {
+          "id": "prices",
+          "title": "Kimi API 공식 모델·요금 목록",
+          "url": "https://platform.kimi.ai/",
+          "description": "정규/Highspeed/K3의 입력·출력·캐시 단가를 USD/100만 토큰으로 확인했습니다."
+        },
+        {
+          "id": "billing",
+          "title": "Kimi API 과금 설명",
+          "url": "https://platform.kimi.ai/docs/pricing/chat",
+          "description": "세금 제외, 캐시 쓰기와 TTL, API 종량제와 멤버십 차이를 확인했습니다."
+        },
+        {
+          "id": "index",
+          "title": "Kimi 연구 목록의 발표 날짜",
+          "url": "https://www.kimi.com/en/blog/",
+          "description": "공식 목록의 2026-10-24 표기와 이전 K3의 7월 16일 표기를 확인했습니다."
+        },
+        {
+          "id": "claude-price",
+          "title": "Anthropic 공식 API 요금",
+          "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+          "description": "Opus5.5/Fable5.1의 기본 입력·출력 단가를 현재 공식 표에서 확인했습니다."
+        },
+        {
+          "id": "openai-price",
+          "title": "OpenAI 공식 API 요금",
+          "url": "https://developers.openai.com/api/docs/pricing",
+          "description": "Astra의 Standard 기본 표시 단가와 Batch/Fast/Ultrafast의 구분을 확인했습니다."
+        },
+        {
+          "id": "weights",
+          "title": "Kimi K3.1 Pro 공개 모델 카드",
+          "url": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro",
+          "description": "가중치공개와2.8T/104B,1048576문맥,MXFP4/8,공식비교Harness를확인했다."
+        },
+        {
+          "id": "license",
+          "title": "Kimi K3.1 Pro 공식 라이선스",
+          "url": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro/blob/main/LICENSE",
+          "description": "상업MaaS매출조건,표시의무와내부사용/공식인증파트너예외를읽었다.법률적용판정은아니다."
+        }
+      ]
+    }
+  ]
+}

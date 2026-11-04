@@ -84,7 +84,12 @@
     "surya-2-5-model-guide",
     "sensenova-loop-9b-preview-model-guide",
     "longcat-2-5-model-guide",
-    "cogent-vr-1-1-model-guide"
+    "cogent-vr-1-1-model-guide",
+    "tencent-hy4-model-guide",
+    "sarvam-prism-model-guide",
+    "hydrogen-1-0-model-guide",
+    "ripple-65b-preview-model-guide",
+    "homi-audio-decision-model-guide"
   ],
   "catalogs": {
     "devops-implementation-guide": "devops_tools.2026-10-10.r4.json"
@@ -220,7 +225,8 @@
       "d888f4b9ebb8679622deed1a79bb6f11c47031f91203df154b1383b4879bf82b"
     ],
     "kimi-k3-1-pro-model-guide": [
-      "510d4d853001c063ffd75d6d85794d7261fc0523d87b1b115f7deb3de13e1e2f"
+      "510d4d853001c063ffd75d6d85794d7261fc0523d87b1b115f7deb3de13e1e2f",
+      "c20b55abac018643e6476546f2b54ac848447792417d5702fb186c858e335ca6"
     ],
     "nvidia-nemotron-3-5-bolt-e4b-model-guide": [
       "de83eae3c56202bdd3d218319f96c6d65b101e82d309aba5872594542e3098ec"
@@ -277,6 +283,21 @@
     ],
     "cogent-vr-1-1-model-guide": [
       "4aa05cd64b54a1300b0f77504e251f2faf3584522b62073171b9f4b52827cdcc"
+    ],
+    "tencent-hy4-model-guide": [
+      "7b194ffdf4e9e4c08984670aa1e06237ba3f5c6e617e8b243af2609a846f8d23"
+    ],
+    "sarvam-prism-model-guide": [
+      "e784113f4e31935f6d44bf21b87d81a782437ea1d8dcf2c92f179cdf5ea720c4"
+    ],
+    "hydrogen-1-0-model-guide": [
+      "cfebb3600e50083d95e155df4de896a3eb86d4092f181a722766dc5b8026f206"
+    ],
+    "ripple-65b-preview-model-guide": [
+      "73e56665b2e2ed497bbe0f01e84c17bfc181469324724b69b9bd41d1e12725dc"
+    ],
+    "homi-audio-decision-model-guide": [
+      "d370613bd565e646f7ac251839d2a17def393b20c9b28a81025be28c35478713"
     ]
   },
   "model_introduction_editions": {
@@ -351,7 +372,8 @@
       "d888f4b9ebb8679622deed1a79bb6f11c47031f91203df154b1383b4879bf82b"
     ],
     "kimi-k3-1-pro-model-guide": [
-      "510d4d853001c063ffd75d6d85794d7261fc0523d87b1b115f7deb3de13e1e2f"
+      "510d4d853001c063ffd75d6d85794d7261fc0523d87b1b115f7deb3de13e1e2f",
+      "c20b55abac018643e6476546f2b54ac848447792417d5702fb186c858e335ca6"
     ],
     "nvidia-nemotron-3-5-bolt-e4b-model-guide": [
       "de83eae3c56202bdd3d218319f96c6d65b101e82d309aba5872594542e3098ec"
@@ -408,6 +430,21 @@
     ],
     "cogent-vr-1-1-model-guide": [
       "4aa05cd64b54a1300b0f77504e251f2faf3584522b62073171b9f4b52827cdcc"
+    ],
+    "tencent-hy4-model-guide": [
+      "7b194ffdf4e9e4c08984670aa1e06237ba3f5c6e617e8b243af2609a846f8d23"
+    ],
+    "sarvam-prism-model-guide": [
+      "e784113f4e31935f6d44bf21b87d81a782437ea1d8dcf2c92f179cdf5ea720c4"
+    ],
+    "hydrogen-1-0-model-guide": [
+      "cfebb3600e50083d95e155df4de896a3eb86d4092f181a722766dc5b8026f206"
+    ],
+    "ripple-65b-preview-model-guide": [
+      "73e56665b2e2ed497bbe0f01e84c17bfc181469324724b69b9bd41d1e12725dc"
+    ],
+    "homi-audio-decision-model-guide": [
+      "d370613bd565e646f7ac251839d2a17def393b20c9b28a81025be28c35478713"
     ]
   },
   "model_introduction_purpose_editions": {
@@ -471,7 +508,8 @@
       "d888f4b9ebb8679622deed1a79bb6f11c47031f91203df154b1383b4879bf82b"
     ],
     "kimi-k3-1-pro-model-guide": [
-      "510d4d853001c063ffd75d6d85794d7261fc0523d87b1b115f7deb3de13e1e2f"
+      "510d4d853001c063ffd75d6d85794d7261fc0523d87b1b115f7deb3de13e1e2f",
+      "c20b55abac018643e6476546f2b54ac848447792417d5702fb186c858e335ca6"
     ],
     "nvidia-nemotron-3-5-bolt-e4b-model-guide": [
       "de83eae3c56202bdd3d218319f96c6d65b101e82d309aba5872594542e3098ec"
@@ -528,6 +566,21 @@
     ],
     "cogent-vr-1-1-model-guide": [
       "4aa05cd64b54a1300b0f77504e251f2faf3584522b62073171b9f4b52827cdcc"
+    ],
+    "tencent-hy4-model-guide": [
+      "7b194ffdf4e9e4c08984670aa1e06237ba3f5c6e617e8b243af2609a846f8d23"
+    ],
+    "sarvam-prism-model-guide": [
+      "e784113f4e31935f6d44bf21b87d81a782437ea1d8dcf2c92f179cdf5ea720c4"
+    ],
+    "hydrogen-1-0-model-guide": [
+      "cfebb3600e50083d95e155df4de896a3eb86d4092f181a722766dc5b8026f206"
+    ],
+    "ripple-65b-preview-model-guide": [
+      "73e56665b2e2ed497bbe0f01e84c17bfc181469324724b69b9bd41d1e12725dc"
+    ],
+    "homi-audio-decision-model-guide": [
+      "d370613bd565e646f7ac251839d2a17def393b20c9b28a81025be28c35478713"
     ]
   },
   "model_introduction_reader_editions": {
@@ -588,7 +641,8 @@
       "d888f4b9ebb8679622deed1a79bb6f11c47031f91203df154b1383b4879bf82b"
     ],
     "kimi-k3-1-pro-model-guide": [
-      "510d4d853001c063ffd75d6d85794d7261fc0523d87b1b115f7deb3de13e1e2f"
+      "510d4d853001c063ffd75d6d85794d7261fc0523d87b1b115f7deb3de13e1e2f",
+      "c20b55abac018643e6476546f2b54ac848447792417d5702fb186c858e335ca6"
     ],
     "nvidia-nemotron-3-5-bolt-e4b-model-guide": [
       "de83eae3c56202bdd3d218319f96c6d65b101e82d309aba5872594542e3098ec"
@@ -642,6 +696,21 @@
     ],
     "longcat-2-5-model-guide": [
       "857114b8a3d8fb3f49d59d3aca4faa6ab915b65ba252673df4a13ea56f74675a"
+    ],
+    "tencent-hy4-model-guide": [
+      "7b194ffdf4e9e4c08984670aa1e06237ba3f5c6e617e8b243af2609a846f8d23"
+    ],
+    "sarvam-prism-model-guide": [
+      "e784113f4e31935f6d44bf21b87d81a782437ea1d8dcf2c92f179cdf5ea720c4"
+    ],
+    "hydrogen-1-0-model-guide": [
+      "cfebb3600e50083d95e155df4de896a3eb86d4092f181a722766dc5b8026f206"
+    ],
+    "ripple-65b-preview-model-guide": [
+      "73e56665b2e2ed497bbe0f01e84c17bfc181469324724b69b9bd41d1e12725dc"
+    ],
+    "homi-audio-decision-model-guide": [
+      "d370613bd565e646f7ac251839d2a17def393b20c9b28a81025be28c35478713"
     ]
   }
 }

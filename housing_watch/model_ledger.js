@@ -5,7 +5,7 @@
   // Reviewed values retain their own units and suites rather than becoming AA scores.
   const corePrices = ['입력 USD / 100만 토큰', '캐시 읽기 USD / 100만 토큰', '캐시 입력 USD / 100만 토큰', '출력 USD / 100만 토큰'];
   const priceFields = [...new Set(data.records.filter(row=>row.source_kind==='reviewed')
-    .flatMap(row=>Object.keys(row.fields).filter(key=>key.includes('USD /'))))];
+    .flatMap(row=>Object.keys(row.fields).filter(key=>/\b[A-Z]{3} \//.test(key))))];
   const officialFields = new Map([['official_score','평가 점수'],
     ...[...corePrices, ...priceFields.filter(key=>!corePrices.includes(key)).sort((a,b)=>a.localeCompare(b,'ko'))]
       .map(key=>['official:'+key,key])]);
@@ -55,7 +55,9 @@
     if (typeof value !== 'number') return String(value);
     if (key==='context' || key.includes('tokens')) return value.toLocaleString('en-US',{maximumFractionDigits:0});
     if (key==='parameters' || key==='active_parameters') return value.toLocaleString('en-US') + 'B';
-    return (costs.has(key)?'$':'') + value.toLocaleString('en-US',{maximumFractionDigits:officialFields.has(key)?20:2}) + (percent.has(key)?'%':'');
+    const currency = officialFields.get(key)?.match(/\b([A-Z]{3}) \//)?.[1] || 'USD';
+    const prefix = costs.has(key) ? (currency==='USD'?'$':currency+' ') : '';
+    return prefix + value.toLocaleString('en-US',{maximumFractionDigits:officialFields.has(key)?20:2}) + (percent.has(key)?'%':'');
   }
   function node(tag, text, className) {
     const item = document.createElement(tag);

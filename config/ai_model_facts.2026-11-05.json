@@ -1,0 +1,996 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "id": "hy4-20261104-spec",
+      "model": "Hy4",
+      "provider": "Tencent",
+      "source_url": "https://cloud.tencent.com/document/product/1823/130051",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 사양과 제공",
+        "suite": "Official specification / 2026-11-05",
+        "condition": "TokenHub hy4; catalog 1M/960k/64k; original notation; weights/system card planned, not confirmed released",
+        "context": "1M tokens (원문 표기)",
+        "status": "정식 API / 가중치 공개 예정",
+        "access": "Tencent TokenHub / 제품",
+        "release": "2026-11-04",
+        "최대입력": "960k tokens",
+        "최대출력": "64k tokens",
+        "모델ID": "hy4",
+        "입력": "텍스트와 이미지",
+        "파라미터": "정식판 미확인"
+      }
+    },
+    {
+      "id": "hy4-20261104-standard-cny",
+      "model": "Hy4",
+      "provider": "Tencent",
+      "source_url": "https://cloud.tencent.com/document/product/1823/130055",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "TokenHub standard CNY per million tokens",
+        "condition": "Guangzhou/Singapore catalog; standard list price, temporary 50% discount is separate; token/API/tool taxes and totals not inferred",
+        "입력 CNY / 100만 토큰": 6,
+        "출력 CNY / 100만 토큰": 18,
+        "캐시 읽기 CNY / 100만 토큰": 0.3
+      }
+    },
+    {
+      "id": "hy4-20261104-discount-cny",
+      "model": "Hy4",
+      "provider": "Tencent",
+      "source_url": "https://cloud.tencent.com/document/product/1823/130055",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "TokenHub temporary 50% discount CNY per million tokens",
+        "condition": "Derived exactly as 50% of CNY6/18/0.3; actual usage until 2026-12-31 23:59:59 Beijing / 2027-01-01 00:59:59 KST; not permanent list price",
+        "입력 CNY / 100만 토큰": 3,
+        "출력 CNY / 100만 토큰": 9,
+        "캐시 읽기 CNY / 100만 토큰": 0.15
+      }
+    },
+    {
+      "id": "hy4-20261104-finance-0",
+      "model": "Hy4",
+      "provider": "Tencent",
+      "source_url": "https://en.prnasia.com/releases/apac/tencent-launches-hy4-joining-the-ranks-of-the-world-s-leading-open-source-ai-models-554689.shtml",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Tencent financial blind evaluation / 213 experts / 579 tasks",
+        "condition": "Tencent Hy + Tencent Financial Technology; 153 external experts; inference effort, harness and full task set not disclosed; no independent reproduction",
+        "평가 점수": 3.04,
+        "단위": "원문 점수; 상한 미공개",
+        "측정 주체": "Tencent Hy / Tencent Financial Technology",
+        "harness": "미공개"
+      }
+    },
+    {
+      "id": "hy4-20261104-finance-1",
+      "model": "DeepSeek-V4.1-Flash-1017",
+      "provider": "DeepSeek",
+      "source_url": "https://en.prnasia.com/releases/apac/tencent-launches-hy4-joining-the-ranks-of-the-world-s-leading-open-source-ai-models-554689.shtml",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Tencent financial blind evaluation / 213 experts / 579 tasks",
+        "condition": "Tencent Hy + Tencent Financial Technology; 153 external experts; inference effort, harness and full task set not disclosed; no independent reproduction",
+        "평가 점수": 2.97,
+        "단위": "원문 점수; 상한 미공개",
+        "측정 주체": "Tencent Hy / Tencent Financial Technology",
+        "harness": "미공개"
+      }
+    },
+    {
+      "id": "hy4-20261104-finance-2",
+      "model": "Kimi K3.1 Pro",
+      "provider": "Moonshot AI",
+      "source_url": "https://en.prnasia.com/releases/apac/tencent-launches-hy4-joining-the-ranks-of-the-world-s-leading-open-source-ai-models-554689.shtml",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Tencent financial blind evaluation / 213 experts / 579 tasks",
+        "condition": "Tencent Hy + Tencent Financial Technology; 153 external experts; inference effort, harness and full task set not disclosed; no independent reproduction",
+        "평가 점수": 2.68,
+        "단위": "원문 점수; 상한 미공개",
+        "측정 주체": "Tencent Hy / Tencent Financial Technology",
+        "harness": "미공개"
+      }
+    },
+    {
+      "id": "hy4-20261104-finance-3",
+      "model": "GLM-5.3",
+      "provider": "Z.AI",
+      "source_url": "https://en.prnasia.com/releases/apac/tencent-launches-hy4-joining-the-ranks-of-the-world-s-leading-open-source-ai-models-554689.shtml",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Tencent financial blind evaluation / 213 experts / 579 tasks",
+        "condition": "Tencent Hy + Tencent Financial Technology; 153 external experts; inference effort, harness and full task set not disclosed; no independent reproduction",
+        "평가 점수": 2.68,
+        "단위": "원문 점수; 상한 미공개",
+        "측정 주체": "Tencent Hy / Tencent Financial Technology",
+        "harness": "미공개"
+      }
+    },
+    {
+      "id": "hy4-20261104-hallucination-preview",
+      "model": "Hy4 Preview",
+      "provider": "Tencent",
+      "source_url": "https://en.prnasia.com/releases/apac/tencent-launches-hy4-joining-the-ranks-of-the-world-s-leading-open-source-ai-models-554689.shtml",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Tencent internal hallucination / release 2026-11-04",
+        "condition": "Provider internal evaluation; sample size/grading definition/effort and harness unspecified; not general factuality accuracy",
+        "평가 점수": 12.95,
+        "단위": "%; 낮을수록 좋음",
+        "측정 주체": "Tencent Hy / Tencent Financial Technology",
+        "harness": "미공개"
+      }
+    },
+    {
+      "id": "hy4-20261104-hallucination-final",
+      "model": "Hy4",
+      "provider": "Tencent",
+      "source_url": "https://en.prnasia.com/releases/apac/tencent-launches-hy4-joining-the-ranks-of-the-world-s-leading-open-source-ai-models-554689.shtml",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Tencent internal hallucination / release 2026-11-04",
+        "condition": "Provider internal evaluation; sample size/grading definition/effort and harness unspecified; not general factuality accuracy",
+        "평가 점수": 7.2,
+        "단위": "%; 낮을수록 좋음",
+        "측정 주체": "Tencent Hy / Tencent Financial Technology",
+        "harness": "미공개"
+      }
+    },
+    {
+      "id": "hy4-20261104-unsupported-assumptions-preview",
+      "model": "Hy4 Preview",
+      "provider": "Tencent",
+      "source_url": "https://en.prnasia.com/releases/apac/tencent-launches-hy4-joining-the-ranks-of-the-world-s-leading-open-source-ai-models-554689.shtml",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Tencent internal unsupported-assumptions / release 2026-11-04",
+        "condition": "Provider internal evaluation; sample size/grading definition/effort and harness unspecified; not general factuality accuracy",
+        "평가 점수": 23.1,
+        "단위": "%; 낮을수록 좋음",
+        "측정 주체": "Tencent Hy / Tencent Financial Technology",
+        "harness": "미공개"
+      }
+    },
+    {
+      "id": "hy4-20261104-unsupported-assumptions-final",
+      "model": "Hy4",
+      "provider": "Tencent",
+      "source_url": "https://en.prnasia.com/releases/apac/tencent-launches-hy4-joining-the-ranks-of-the-world-s-leading-open-source-ai-models-554689.shtml",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Tencent internal unsupported-assumptions / release 2026-11-04",
+        "condition": "Provider internal evaluation; sample size/grading definition/effort and harness unspecified; not general factuality accuracy",
+        "평가 점수": 5.6,
+        "단위": "%; 낮을수록 좋음",
+        "측정 주체": "Tencent Hy / Tencent Financial Technology",
+        "harness": "미공개"
+      }
+    },
+    {
+      "id": "prism-20261103-api",
+      "model": "Sarvam Prism",
+      "provider": "Sarvam AI",
+      "source_url": "https://docs.sarvam.ai/api/token-factory/models/sarvam-prism",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 사양과 제공",
+        "suite": "Official specification / 2026-11-05",
+        "condition": "API per-question cap is32768, different from local weight limit131072; text/JSON input and probabilities output",
+        "context": 32768,
+        "status": "API 제공",
+        "access": "Sarvam Decisions API",
+        "모델ID": "sarvam-prism",
+        "언어": "English / 10 Indian languages / Hinglish; 한국어 미확인",
+        "출력": "확률, 텍스트 생성 없음",
+        "이미지": "미지원",
+        "스트리밍": "미지원"
+      }
+    },
+    {
+      "id": "prism-20261103-weights",
+      "model": "Sarvam Prism",
+      "provider": "Sarvam AI",
+      "source_url": "https://huggingface.co/sarvam/prism",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 사양과 제공",
+        "suite": "Official specification / 2026-11-05",
+        "condition": "Local FP8 custom code, not generic text generation server; API limit differs",
+        "context": 131072,
+        "status": "공개 가중치",
+        "access": "자체 운영",
+        "parameters": 105,
+        "라이선스": "Apache-2.0",
+        "메모리": "약120GB 여유 GPU",
+        "저장": "약106GB"
+      }
+    },
+    {
+      "id": "prism-20261103-inr",
+      "model": "Sarvam Prism",
+      "provider": "Sarvam AI",
+      "source_url": "https://docs.sarvam.ai/api/getting-started/pricing",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Sarvam standard INR per million tokens",
+        "condition": "Input-only billing; state counted once per request; probabilities not generated text; currency INR not USD",
+        "입력 INR / 100만 토큰": 4,
+        "출력 INR / 100만 토큰": 0
+      }
+    },
+    {
+      "id": "sarvam105b-20261105-inr",
+      "model": "Sarvam 105B",
+      "provider": "Sarvam AI",
+      "source_url": "https://docs.sarvam.ai/api/getting-started/pricing",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Sarvam standard INR per million tokens",
+        "condition": "Base generative model hosted by Sarvam; not the same output type as Prism",
+        "입력 INR / 100만 토큰": 15,
+        "출력 INR / 100만 토큰": 60,
+        "캐시 읽기 INR / 100만 토큰": 5
+      }
+    },
+    {
+      "id": "prism-20261103-average-0",
+      "model": "Sarvam Prism",
+      "provider": "Sarvam AI",
+      "source_url": "https://www.sarvam.ai/blogs/sarvam-prism",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Sarvam three decision indices average / 2026-11-03",
+        "condition": "Sarvam measured25 models/three indices; AA recreation replaces private test, Indian benchmark internal; own inference code, 1000 serial requests onB200; not independent AA leaderboard",
+        "평가 점수": 71.8,
+        "단위": "원문 지수 점수",
+        "측정 주체": "Sarvam AI",
+        "harness": "각 모델 제공 코드 / Sarvam 측정"
+      }
+    },
+    {
+      "id": "prism-20261103-latency-0",
+      "model": "Sarvam Prism",
+      "provider": "Sarvam AI",
+      "source_url": "https://www.sarvam.ai/blogs/sarvam-prism",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Sarvam decision latency median / B200 / 1000 serial requests",
+        "condition": "Sarvam measured25 models/three indices; AA recreation replaces private test, Indian benchmark internal; own inference code, 1000 serial requests onB200; not independent AA leaderboard",
+        "평가 점수": 44,
+        "단위": "ms; 낮을수록 좋음",
+        "측정 주체": "Sarvam AI",
+        "harness": "각 모델 제공 코드 / Sarvam 측정"
+      }
+    },
+    {
+      "id": "prism-20261103-average-1",
+      "model": "mammoth-1",
+      "provider": "비교 모델 / Sarvam 측정",
+      "source_url": "https://www.sarvam.ai/blogs/sarvam-prism",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Sarvam three decision indices average / 2026-11-03",
+        "condition": "Sarvam measured25 models/three indices; AA recreation replaces private test, Indian benchmark internal; own inference code, 1000 serial requests onB200; not independent AA leaderboard",
+        "평가 점수": 75.2,
+        "단위": "원문 지수 점수",
+        "측정 주체": "Sarvam AI",
+        "harness": "각 모델 제공 코드 / Sarvam 측정"
+      }
+    },
+    {
+      "id": "prism-20261103-latency-1",
+      "model": "mammoth-1",
+      "provider": "비교 모델 / Sarvam 측정",
+      "source_url": "https://www.sarvam.ai/blogs/sarvam-prism",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Sarvam decision latency median / B200 / 1000 serial requests",
+        "condition": "Sarvam measured25 models/three indices; AA recreation replaces private test, Indian benchmark internal; own inference code, 1000 serial requests onB200; not independent AA leaderboard",
+        "평가 점수": 284,
+        "단위": "ms; 낮을수록 좋음",
+        "측정 주체": "Sarvam AI",
+        "harness": "각 모델 제공 코드 / Sarvam 측정"
+      }
+    },
+    {
+      "id": "prism-20261103-average-2",
+      "model": "GLiDE 1.2",
+      "provider": "비교 모델 / Sarvam 측정",
+      "source_url": "https://www.sarvam.ai/blogs/sarvam-prism",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Sarvam three decision indices average / 2026-11-03",
+        "condition": "Sarvam measured25 models/three indices; AA recreation replaces private test, Indian benchmark internal; own inference code, 1000 serial requests onB200; not independent AA leaderboard",
+        "평가 점수": 73.2,
+        "단위": "원문 지수 점수",
+        "측정 주체": "Sarvam AI",
+        "harness": "각 모델 제공 코드 / Sarvam 측정"
+      }
+    },
+    {
+      "id": "prism-20261103-latency-2",
+      "model": "GLiDE 1.2",
+      "provider": "비교 모델 / Sarvam 측정",
+      "source_url": "https://www.sarvam.ai/blogs/sarvam-prism",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Sarvam decision latency median / B200 / 1000 serial requests",
+        "condition": "Sarvam measured25 models/three indices; AA recreation replaces private test, Indian benchmark internal; own inference code, 1000 serial requests onB200; not independent AA leaderboard",
+        "평가 점수": 116,
+        "단위": "ms; 낮을수록 좋음",
+        "측정 주체": "Sarvam AI",
+        "harness": "각 모델 제공 코드 / Sarvam 측정"
+      }
+    },
+    {
+      "id": "prism-20261103-average-3",
+      "model": "Perplexity Decider v1.2",
+      "provider": "Perplexity",
+      "source_url": "https://www.sarvam.ai/blogs/sarvam-prism",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Sarvam three decision indices average / 2026-11-03",
+        "condition": "Sarvam measured25 models/three indices; AA recreation replaces private test, Indian benchmark internal; own inference code, 1000 serial requests onB200; not independent AA leaderboard",
+        "평가 점수": 68.0,
+        "단위": "원문 지수 점수",
+        "측정 주체": "Sarvam AI",
+        "harness": "각 모델 제공 코드 / Sarvam 측정"
+      }
+    },
+    {
+      "id": "prism-20261103-latency-3",
+      "model": "Perplexity Decider v1.2",
+      "provider": "Perplexity",
+      "source_url": "https://www.sarvam.ai/blogs/sarvam-prism",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Sarvam decision latency median / B200 / 1000 serial requests",
+        "condition": "Sarvam measured25 models/three indices; AA recreation replaces private test, Indian benchmark internal; own inference code, 1000 serial requests onB200; not independent AA leaderboard",
+        "평가 점수": 117,
+        "단위": "ms; 낮을수록 좋음",
+        "측정 주체": "Sarvam AI",
+        "harness": "각 모델 제공 코드 / Sarvam 측정"
+      }
+    },
+    {
+      "id": "prism-20261103-jev",
+      "model": "Sarvam Prism",
+      "provider": "Sarvam AI",
+      "source_url": "https://www.sarvam.ai/blogs/sarvam-prism",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Sarvam-run Jev Decision Index / 37 public benchmarks",
+        "condition": "Provider reproduction; not independent measured result",
+        "평가 점수": 67,
+        "단위": "원문 지수 점수",
+        "측정 주체": "Sarvam AI",
+        "harness": "각 모델 제공 코드 / Sarvam 측정"
+      }
+    },
+    {
+      "id": "prism-20261103-decider-jev",
+      "model": "Perplexity Decider v1.2",
+      "provider": "Perplexity",
+      "source_url": "https://www.sarvam.ai/blogs/sarvam-prism",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Sarvam-run Jev Decision Index / 37 public benchmarks",
+        "condition": "Sarvam-run comparison; higher than Prism67.0 on this index",
+        "평가 점수": 67.7,
+        "단위": "원문 지수 점수",
+        "측정 주체": "Sarvam AI",
+        "harness": "각 모델 제공 코드 / Sarvam 측정"
+      }
+    },
+    {
+      "id": "hydrogen10-20261105-weights",
+      "model": "Hydrogen-1.0",
+      "provider": "Deep Principle",
+      "source_url": "https://huggingface.co/deep-principle/Hydrogen-1.0",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 사양과 제공",
+        "suite": "Official specification / 2026-11-05",
+        "condition": "BF16 card only; gated file terms not accepted; rawREADME401, HTML card read; runtime limits may vary",
+        "context": "1M tokens (원문 표기)",
+        "status": "가중치 접근 동의 필요",
+        "access": "HF / ModelScope; NeuroSpark API / Mira 안내",
+        "최대출력": "128K tokens",
+        "기반": "GLM-5.3",
+        "라이선스": "BF16 weights MIT; authored code/docs Apache2.0",
+        "표준요금": "NeuroSpark/Mira 현행 정가 미확인"
+      }
+    },
+    {
+      "id": "hydrogen10-20261105-delta-0",
+      "model": "Hydrogen-1.0",
+      "provider": "Deep Principle",
+      "source_url": "https://blog.deepprinciple.com/introducing-hydrogen-1.0/",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Deep Principle internal scientific computing vs GPT-6 Astra max",
+        "condition": "Signed provider-reported difference, not absolute accuracy. Effort/harness/task counts incomplete; no independent reproduction; Hydrogen graph cost usesGLM5.3 proxy rates",
+        "평가 점수": 5.13,
+        "단위": "%포인트; Astra max 대비",
+        "측정 주체": "Deep Principle",
+        "harness": "Deep Principle 연구 체계 / 세부 미공개"
+      }
+    },
+    {
+      "id": "hydrogen10-20261105-delta-1",
+      "model": "Hydrogen-1.0",
+      "provider": "Deep Principle",
+      "source_url": "https://blog.deepprinciple.com/introducing-hydrogen-1.0/",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Deep Principle internal one-step forward reaction vs GPT-6 Astra max",
+        "condition": "Signed provider-reported difference, not absolute accuracy. Effort/harness/task counts incomplete; no independent reproduction; Hydrogen graph cost usesGLM5.3 proxy rates",
+        "평가 점수": 4.76,
+        "단위": "%포인트; Astra max 대비",
+        "측정 주체": "Deep Principle",
+        "harness": "Deep Principle 연구 체계 / 세부 미공개"
+      }
+    },
+    {
+      "id": "hydrogen10-20261105-delta-2",
+      "model": "Hydrogen-1.0",
+      "provider": "Deep Principle",
+      "source_url": "https://blog.deepprinciple.com/introducing-hydrogen-1.0/",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Deep Principle internal NMR structure elucidation vs GPT-6 Astra max",
+        "condition": "Signed provider-reported difference, not absolute accuracy. Effort/harness/task counts incomplete; no independent reproduction; Hydrogen graph cost usesGLM5.3 proxy rates",
+        "평가 점수": -3.33,
+        "단위": "%포인트; Astra max 대비",
+        "측정 주체": "Deep Principle",
+        "harness": "Deep Principle 연구 체계 / 세부 미공개"
+      }
+    },
+    {
+      "id": "hydrogen10-20261105-tmc-0",
+      "model": "Hydrogen-1.0",
+      "provider": "Deep Principle",
+      "source_url": "https://blog.deepprinciple.com/introducing-hydrogen-1.0/",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Deep Principle TMC discovery / round5 best-so-far mean",
+        "condition": "Same initial population,5 independent recommendation/feedback rounds per model; objective HOMO-LUMO gap, not physical synthesis/product performance; provider measurement",
+        "평가 점수": 4.318,
+        "단위": "eV; 높을수록 좋음",
+        "측정 주체": "Deep Principle",
+        "harness": "Deep Principle 연구 체계 / 세부 미공개"
+      }
+    },
+    {
+      "id": "hydrogen10-20261105-tmc-1",
+      "model": "GPT-6 Astra",
+      "provider": "OpenAI",
+      "source_url": "https://blog.deepprinciple.com/introducing-hydrogen-1.0/",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Deep Principle TMC discovery / round5 best-so-far mean",
+        "condition": "Same initial population,5 independent recommendation/feedback rounds per model; objective HOMO-LUMO gap, not physical synthesis/product performance; provider measurement",
+        "평가 점수": 3.689,
+        "단위": "eV; 높을수록 좋음",
+        "측정 주체": "Deep Principle",
+        "harness": "Deep Principle 연구 체계 / 세부 미공개"
+      }
+    },
+    {
+      "id": "hydrogen10-20261105-tmc-2",
+      "model": "Kimi K3",
+      "provider": "Moonshot AI",
+      "source_url": "https://blog.deepprinciple.com/introducing-hydrogen-1.0/",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Deep Principle TMC discovery / round5 best-so-far mean",
+        "condition": "Same initial population,5 independent recommendation/feedback rounds per model; objective HOMO-LUMO gap, not physical synthesis/product performance; provider measurement",
+        "평가 점수": 3.353,
+        "단위": "eV; 높을수록 좋음",
+        "측정 주체": "Deep Principle",
+        "harness": "Deep Principle 연구 체계 / 세부 미공개"
+      }
+    },
+    {
+      "id": "ripple65-20261105-spec",
+      "model": "Ripple-65B Preview",
+      "provider": "Ricursive Intelligence",
+      "source_url": "https://huggingface.co/ricursiveAI/Ripple-65B-Preview",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 사양과 제공",
+        "suite": "Official specification / 2026-11-05",
+        "condition": "BF16 instruction model; NVFP4/Base separate; max context and real hardware capacity differ",
+        "context": "1M tokens (원문 표기)",
+        "parameters": 65,
+        "active_parameters": 65,
+        "status": "공개 가중치 Preview",
+        "access": "HF 자체 운영",
+        "라이선스": "Apache-2.0",
+        "입력": "텍스트",
+        "최대출력": "선정 원문 미확인"
+      }
+    },
+    {
+      "id": "ripple65-20261105-host",
+      "model": "Ripple-65B Preview",
+      "provider": "Ricursive Intelligence",
+      "source_url": "https://www.together.ai/models/ripple-65b-preview",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 사양과 제공",
+        "suite": "Official specification / 2026-11-05",
+        "condition": "Vendor announcement lists Together available, but current host says coming soon; current host signal takes precedence",
+        "status": "Together 출시 예정",
+        "access": "Together serverless",
+        "표준요금": "미표기; 경쟁모델 요금으로 채우지 않음"
+      }
+    },
+    {
+      "id": "ripple65-20261105-terminalbench21selfreported-0",
+      "model": "Ripple-65B Preview",
+      "provider": "Ricursive Intelligence",
+      "source_url": "https://huggingface.co/ricursiveAI/Ripple-65B-Preview",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Ripple card / TerminalBench2.1 self-reported / 2026-11-05",
+        "condition": "Mixed original vendor and in-house evaluations; BF16/max effort. Harness and128K summarization affect ranking; OpenCode unless separately noted; no equal-cost independent comparison",
+        "평가 점수": 80.5,
+        "단위": "원문 점수",
+        "측정 주체": "Ricursive Intelligence",
+        "harness": "카드 주석의 원보고와 자체 평가 혼합"
+      }
+    },
+    {
+      "id": "ripple65-20261105-terminalbench21selfreported-1",
+      "model": "Reflection Beam",
+      "provider": "Reflection",
+      "source_url": "https://huggingface.co/ricursiveAI/Ripple-65B-Preview",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Ripple card / TerminalBench2.1 self-reported / 2026-11-05",
+        "condition": "Mixed original vendor and in-house evaluations; BF16/max effort. Harness and128K summarization affect ranking; OpenCode unless separately noted; no equal-cost independent comparison",
+        "평가 점수": 80.1,
+        "단위": "원문 점수",
+        "측정 주체": "Ricursive Intelligence",
+        "harness": "카드 주석의 원보고와 자체 평가 혼합"
+      }
+    },
+    {
+      "id": "ripple65-20261105-terminalbench21selfreported-2",
+      "model": "Muse Spark Open",
+      "provider": "Meta",
+      "source_url": "https://huggingface.co/ricursiveAI/Ripple-65B-Preview",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Ripple card / TerminalBench2.1 self-reported / 2026-11-05",
+        "condition": "Mixed original vendor and in-house evaluations; BF16/max effort. Harness and128K summarization affect ranking; OpenCode unless separately noted; no equal-cost independent comparison",
+        "평가 점수": 76.4,
+        "단위": "원문 점수",
+        "측정 주체": "Ricursive Intelligence",
+        "harness": "카드 주석의 원보고와 자체 평가 혼합"
+      }
+    },
+    {
+      "id": "ripple65-20261105-terminalbench21terminus2-0",
+      "model": "Ripple-65B Preview",
+      "provider": "Ricursive Intelligence",
+      "source_url": "https://huggingface.co/ricursiveAI/Ripple-65B-Preview",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Ripple card / TerminalBench2.1 Terminus2 / 2026-11-05",
+        "condition": "Mixed original vendor and in-house evaluations; BF16/max effort. Harness and128K summarization affect ranking; OpenCode unless separately noted; no equal-cost independent comparison",
+        "평가 점수": 80.5,
+        "단위": "원문 점수",
+        "측정 주체": "Ricursive Intelligence",
+        "harness": "카드 주석의 원보고와 자체 평가 혼합"
+      }
+    },
+    {
+      "id": "ripple65-20261105-terminalbench21terminus2-1",
+      "model": "Reflection Beam",
+      "provider": "Reflection",
+      "source_url": "https://huggingface.co/ricursiveAI/Ripple-65B-Preview",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Ripple card / TerminalBench2.1 Terminus2 / 2026-11-05",
+        "condition": "Mixed original vendor and in-house evaluations; BF16/max effort. Harness and128K summarization affect ranking; OpenCode unless separately noted; no equal-cost independent comparison",
+        "평가 점수": 70.8,
+        "단위": "원문 점수",
+        "측정 주체": "Ricursive Intelligence",
+        "harness": "카드 주석의 원보고와 자체 평가 혼합"
+      }
+    },
+    {
+      "id": "ripple65-20261105-terminalbench21terminus2-2",
+      "model": "Muse Spark Open",
+      "provider": "Meta",
+      "source_url": "https://huggingface.co/ricursiveAI/Ripple-65B-Preview",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Ripple card / TerminalBench2.1 Terminus2 / 2026-11-05",
+        "condition": "Mixed original vendor and in-house evaluations; BF16/max effort. Harness and128K summarization affect ranking; OpenCode unless separately noted; no equal-cost independent comparison",
+        "평가 점수": 78.7,
+        "단위": "원문 점수",
+        "측정 주체": "Ricursive Intelligence",
+        "harness": "카드 주석의 원보고와 자체 평가 혼합"
+      }
+    },
+    {
+      "id": "ripple65-20261105-swebenchverified-0",
+      "model": "Ripple-65B Preview",
+      "provider": "Ricursive Intelligence",
+      "source_url": "https://huggingface.co/ricursiveAI/Ripple-65B-Preview",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Ripple card / SWE-bench Verified / 2026-11-05",
+        "condition": "Mixed original vendor and in-house evaluations; BF16/max effort. Harness and128K summarization affect ranking; OpenCode unless separately noted; no equal-cost independent comparison",
+        "평가 점수": 76.5,
+        "단위": "원문 점수",
+        "측정 주체": "Ricursive Intelligence",
+        "harness": "카드 주석의 원보고와 자체 평가 혼합"
+      }
+    },
+    {
+      "id": "ripple65-20261105-swebenchverified-1",
+      "model": "Reflection Beam",
+      "provider": "Reflection",
+      "source_url": "https://huggingface.co/ricursiveAI/Ripple-65B-Preview",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Ripple card / SWE-bench Verified / 2026-11-05",
+        "condition": "Mixed original vendor and in-house evaluations; BF16/max effort. Harness and128K summarization affect ranking; OpenCode unless separately noted; no equal-cost independent comparison",
+        "평가 점수": 81.6,
+        "단위": "원문 점수",
+        "측정 주체": "Ricursive Intelligence",
+        "harness": "카드 주석의 원보고와 자체 평가 혼합"
+      }
+    },
+    {
+      "id": "ripple65-20261105-swebenchverified-2",
+      "model": "Muse Spark Open",
+      "provider": "Meta",
+      "source_url": "https://huggingface.co/ricursiveAI/Ripple-65B-Preview",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Ripple card / SWE-bench Verified / 2026-11-05",
+        "condition": "Mixed original vendor and in-house evaluations; BF16/max effort. Harness and128K summarization affect ranking; OpenCode unless separately noted; no equal-cost independent comparison",
+        "평가 점수": 78.7,
+        "단위": "원문 점수",
+        "측정 주체": "Ricursive Intelligence",
+        "harness": "카드 주석의 원보고와 자체 평가 혼합"
+      }
+    },
+    {
+      "id": "ripple65-20261105-scicodeinspectai-0",
+      "model": "Ripple-65B Preview",
+      "provider": "Ricursive Intelligence",
+      "source_url": "https://huggingface.co/ricursiveAI/Ripple-65B-Preview",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Ripple card / SciCode InspectAI / 2026-11-05",
+        "condition": "Mixed original vendor and in-house evaluations; BF16/max effort. Harness and128K summarization affect ranking; OpenCode unless separately noted; no equal-cost independent comparison",
+        "평가 점수": 39.4,
+        "단위": "원문 점수",
+        "측정 주체": "Ricursive Intelligence",
+        "harness": "카드 주석의 원보고와 자체 평가 혼합"
+      }
+    },
+    {
+      "id": "ripple65-20261105-scicodeinspectai-1",
+      "model": "Reflection Beam",
+      "provider": "Reflection",
+      "source_url": "https://huggingface.co/ricursiveAI/Ripple-65B-Preview",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Ripple card / SciCode InspectAI / 2026-11-05",
+        "condition": "Mixed original vendor and in-house evaluations; BF16/max effort. Harness and128K summarization affect ranking; OpenCode unless separately noted; no equal-cost independent comparison",
+        "평가 점수": 49.2,
+        "단위": "원문 점수",
+        "측정 주체": "Ricursive Intelligence",
+        "harness": "카드 주석의 원보고와 자체 평가 혼합"
+      }
+    },
+    {
+      "id": "ripple65-20261105-scicodeinspectai-2",
+      "model": "Muse Spark Open",
+      "provider": "Meta",
+      "source_url": "https://huggingface.co/ricursiveAI/Ripple-65B-Preview",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Ripple card / SciCode InspectAI / 2026-11-05",
+        "condition": "Mixed original vendor and in-house evaluations; BF16/max effort. Harness and128K summarization affect ranking; OpenCode unless separately noted; no equal-cost independent comparison",
+        "평가 점수": 58.5,
+        "단위": "원문 점수",
+        "측정 주체": "Ricursive Intelligence",
+        "harness": "카드 주석의 원보고와 자체 평가 혼합"
+      }
+    },
+    {
+      "id": "beam-20261105-together-usd",
+      "model": "Reflection Beam",
+      "provider": "Reflection",
+      "source_url": "https://www.together.ai/models/ripple-65b-preview",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Together standard USD per million tokens",
+        "condition": "Related model listing, not Ripple pricing; cache eligibility separate",
+        "입력 USD / 100만 토큰": 0.4,
+        "출력 USD / 100만 토큰": 1.2,
+        "캐시 읽기 USD / 100만 토큰": 0.04
+      }
+    },
+    {
+      "id": "homi-20261105-spec",
+      "model": "homi",
+      "provider": "Egma AI",
+      "source_url": "https://huggingface.co/egma-ai/homi",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 사양과 제공",
+        "suite": "Official specification / 2026-11-05",
+        "condition": "Adapter/head only; frozen Qwen3-Omni30B-A3B weights downloaded separately; no generated text",
+        "status": "공개 어댑터",
+        "access": "HF 자체 운영",
+        "기반": "Qwen3-Omni-30B-A3B-Instruct",
+        "학습파라미터": "17M LoRA",
+        "메모리": "약70GB free BF16 GPU",
+        "최대문맥": "미확인",
+        "표준요금": "공개 호스팅 API 정가 미확인",
+        "라이선스": "Apache2.0; training-data notices/exceptions retained"
+      }
+    },
+    {
+      "id": "homi-20261105-vocalgrad-0",
+      "model": "homi",
+      "provider": "Egma AI",
+      "source_url": "https://huggingface.co/egma-ai/homi",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "homi provider / VocalGrad / 7200 questions",
+        "condition": "Same audio/question/options; unanswered counts wrong; provider execution, full budgets/harness version not disclosed; no Korean/independent reproduction",
+        "평가 점수": 73.9,
+        "단위": "%",
+        "측정 주체": "Egma AI",
+        "harness": "Egma 평가 코드 / 상세 버전 미공개"
+      }
+    },
+    {
+      "id": "homi-20261105-vocalgrad-1",
+      "model": "Gemini 3.8 Flash",
+      "provider": "Google",
+      "source_url": "https://huggingface.co/egma-ai/homi",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "homi provider / VocalGrad / 7200 questions",
+        "condition": "Same audio/question/options; unanswered counts wrong; provider execution, full budgets/harness version not disclosed; no Korean/independent reproduction",
+        "평가 점수": 63,
+        "단위": "%",
+        "측정 주체": "Egma AI",
+        "harness": "Egma 평가 코드 / 상세 버전 미공개"
+      }
+    },
+    {
+      "id": "homi-20261105-vocalgrad-2",
+      "model": "Qwen3-Omni-30B-A3B",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/egma-ai/homi",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "homi provider / VocalGrad / 7200 questions",
+        "condition": "Same audio/question/options; unanswered counts wrong; provider execution, full budgets/harness version not disclosed; no Korean/independent reproduction",
+        "평가 점수": 50.3,
+        "단위": "%",
+        "측정 주체": "Egma AI",
+        "harness": "Egma 평가 코드 / 상세 버전 미공개"
+      }
+    },
+    {
+      "id": "homi-20261105-mmsu-0",
+      "model": "homi",
+      "provider": "Egma AI",
+      "source_url": "https://huggingface.co/egma-ai/homi",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "homi provider / MMSU / 4981 questions / 47 tasks",
+        "condition": "Same audio/question/options; unanswered counts wrong; provider execution, full budgets/harness version not disclosed; no Korean/independent reproduction",
+        "평가 점수": 83.1,
+        "단위": "%",
+        "측정 주체": "Egma AI",
+        "harness": "Egma 평가 코드 / 상세 버전 미공개"
+      }
+    },
+    {
+      "id": "homi-20261105-mmsu-1",
+      "model": "Gemini 3.8 Flash",
+      "provider": "Google",
+      "source_url": "https://huggingface.co/egma-ai/homi",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "homi provider / MMSU / 4981 questions / 47 tasks",
+        "condition": "Same audio/question/options; unanswered counts wrong; provider execution, full budgets/harness version not disclosed; no Korean/independent reproduction",
+        "평가 점수": 85.7,
+        "단위": "%",
+        "측정 주체": "Egma AI",
+        "harness": "Egma 평가 코드 / 상세 버전 미공개"
+      }
+    },
+    {
+      "id": "homi-20261105-mmsu-2",
+      "model": "Qwen3-Omni-30B-A3B",
+      "provider": "Qwen",
+      "source_url": "https://huggingface.co/egma-ai/homi",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "homi provider / MMSU / 4981 questions / 47 tasks",
+        "condition": "Same audio/question/options; unanswered counts wrong; provider execution, full budgets/harness version not disclosed; no Korean/independent reproduction",
+        "평가 점수": 72.2,
+        "단위": "%",
+        "측정 주체": "Egma AI",
+        "harness": "Egma 평가 코드 / 상세 버전 미공개"
+      }
+    },
+    {
+      "id": "homi-20261105-cost-vocalgrad",
+      "model": "homi",
+      "provider": "Egma AI",
+      "source_url": "https://huggingface.co/egma-ai/homi",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 평가 비용 추정",
+        "suite": "homi estimated GPU cost / VocalGrad",
+        "condition": "H200 USD4.54/hour, batched runtime estimate; not standardAPI tariff, actual bill or all-in deployment cost",
+        "평가 점수": 0.12,
+        "단위": "USD / 1만 질문; 낮을수록 좋음",
+        "추정 GPU USD / 1만 질문": 0.12
+      }
+    },
+    {
+      "id": "homi-20261105-cost-mmsu",
+      "model": "homi",
+      "provider": "Egma AI",
+      "source_url": "https://huggingface.co/egma-ai/homi",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 평가 비용 추정",
+        "suite": "homi estimated GPU cost / MMSU",
+        "condition": "H200 USD4.54/hour, batched runtime estimate; not standardAPI tariff, actual bill or all-in deployment cost",
+        "평가 점수": 0.28,
+        "단위": "USD / 1만 질문; 낮을수록 좋음",
+        "추정 GPU USD / 1만 질문": 0.28
+      }
+    },
+    {
+      "id": "kimi-k31-pro-20261105-weights",
+      "model": "Kimi K3.1 Pro",
+      "provider": "Moonshot AI",
+      "source_url": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 사양과 제공",
+        "suite": "Official specification / 2026-11-05",
+        "condition": "Released weights are existingK3.1Pro, not new model; oldAPI/pricing evidence remains2026-10-24",
+        "context": 1048576,
+        "parameters": 2800,
+        "active_parameters": 104,
+        "status": "공개 가중치",
+        "access": "HF 자체 운영",
+        "양자화": "MXFP4 weights / MXFP8 activations",
+        "입력": "텍스트와 이미지",
+        "최대출력": "가중치판 미확인",
+        "라이선스": "Kimi K3.1-Pro License; separate commercial conditions"
+      }
+    },
+    {
+      "id": "kimi-k31-pro-20261105-license",
+      "model": "Kimi K3.1 Pro",
+      "provider": "Moonshot AI",
+      "source_url": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro/blob/main/LICENSE",
+      "checked_on": "2026-11-05",
+      "fields": {
+        "kind": "공식 제공 조건",
+        "suite": "Kimi K3.1-Pro License / 2026-11-05",
+        "condition": "Not legal eligibility advice; preserve exact license definitions/exemptions",
+        "MaaS조건": "MaaS business + affiliates aggregate revenue >USD20M over any consecutive12months: separate agreement before commercial use",
+        "표시조건": "commercial product >100M MAU or >USD20M monthly revenue: display Kimi K3.1-Pro",
+        "예외": "internal use / official products or certified inference partners, per sections2/3 definitions",
+        "기존API가격": "2026-10-24 evidence; not rechecked today"
+      }
+    },
+    {
+      "checked_on": "2026-11-05",
+      "fields": {
+        "API ID": "kimi-k3.1-pro",
+        "Code ID": "k3.1-pro",
+        "access": "API/Code 자료는2026-10-24 기준. 정규 K3.1 Pro 공개 가중치 확인; Highspeed 별도 가중치는 미확인",
+        "condition": "API와 Code ID/요금제를 구분. Code 상위 요금제의1M 한도를 모든 플랜에 보장하지 않음. 3T급은 정확한 전체/활성 파라미터 숫자가 아님. 2026-11-05에는 가중치와 라이선스만 확인. 기존 API/Code 제한은 재확인하지 않음. suite/effort는 관측 정체성과 이전 판 연결을 위해 유지.",
+        "context": 1048576,
+        "effort": "low/high/max; default max; thinking cannot be disabled",
+        "kind": "공식 사양·제공",
+        "suite": "K3.1 Pro / 2026-10-24 확인",
+        "가중치 현재 상태": "정규 모델 공개 / 별도 Kimi K3.1-Pro License",
+        "비교표 상세 소개": "preview/kimi-k3-1-pro-model-guide.html",
+        "입출력": "텍스트/이미지/영상 입력; 텍스트 출력",
+        "정확한 파라미터 수": "2.8T total / 104B active, public weight card",
+        "parameters": 2800,
+        "active_parameters": 104
+      },
+      "id": "kimi31-spec-kimi-k3-1-pro",
+      "model": "Kimi K3.1 Pro",
+      "provider": "Moonshot AI",
+      "source_url": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro"
+    },
+    {
+      "checked_on": "2026-11-05",
+      "fields": {
+        "API ID": "kimi-k3.1-pro-highspeed",
+        "Code ID": "k3.1-pro-highspeed",
+        "access": "API/Code 자료는2026-10-24 기준. 정규 K3.1 Pro 공개 가중치 확인; Highspeed 별도 가중치는 미확인",
+        "condition": "API와 Code ID/요금제를 구분. Code 상위 요금제의1M 한도를 모든 플랜에 보장하지 않음. 3T급은 정확한 전체/활성 파라미터 숫자가 아님. 2026-11-05에는 가중치와 라이선스만 확인. 기존 API/Code 제한은 재확인하지 않음. suite/effort는 관측 정체성과 이전 판 연결을 위해 유지.",
+        "context": 1048576,
+        "effort": "low/high/max; default max; thinking cannot be disabled",
+        "kind": "공식 사양·제공",
+        "suite": "K3.1 Pro / 2026-10-24 확인",
+        "가중치 현재 상태": "정규 모델 공개 / 별도 Kimi K3.1-Pro License",
+        "비교표 상세 소개": "preview/kimi-k3-1-pro-model-guide.html",
+        "입출력": "텍스트/이미지/영상 입력; 텍스트 출력",
+        "정확한 파라미터 수": "미공개"
+      },
+      "id": "kimi31-spec-kimi-k3-1-pro-highspeed",
+      "model": "Kimi K3.1 Pro Highspeed",
+      "provider": "Moonshot AI",
+      "source_url": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro"
+    }
+  ]
+}
