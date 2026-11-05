@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "id": "pangram10-flash-spec",
+      "model": "Pangram Image Flash 1.0",
+      "provider": "Pangram",
+      "source_url": "https://www.pangram.com/blog/introducing-pangram-image-1-0",
+      "checked_on": "2026-11-06",
+      "fields": {
+        "kind": "공식 사양과 제공",
+        "suite": "Pangram Image1.0 / Flash1.0 release2026-11-04",
+        "condition": "Flash image/video detection; individual minimum image dimensions unconfirmed. The 256px statement is under Image1.0 in the release; do not inherit it to Flash. Weights/parameters unconfirmed.",
+        "status": "웹 / API 제공 안내",
+        "access": "웹 / API / 확장 프로그램",
+        "release": "2026-11-04",
+        "역할": "이미지와 프레임별 영상 분석",
+        "최소이미지한변px": "Flash 개별 한도 미확인; Image 1.0의 256px를 자동 적용하지 않음"
+      }
+    },
+    {
+      "id": "omni12-spec",
+      "model": "Gemini Omni 1.2 Flash",
+      "provider": "Google",
+      "source_url": "https://ai.google.dev/gemini-api/docs/models/gemini-omni-flash",
+      "checked_on": "2026-11-06",
+      "fields": {
+        "kind": "공식 사양과 제공",
+        "suite": "Stable gemini-omni-1.2-flash / 2026-11-05",
+        "condition": "Paid Gemini API GA; native audio/video; interpolation and per-turn extension3-10s; total extension30s; native generation3-15s,24fps",
+        "context": "입력 한도 131,072 tokens; 전체 문맥 별도 미확인",
+        "status": "유료 API GA",
+        "access": "Gemini API / 앱 점진 제공",
+        "release": "2026-11-05",
+        "최대출력": 65536,
+        "최대일반생성초": 15,
+        "편집입력최대초": 15,
+        "확장되돌아보기초": 10,
+        "최대참조이미지": 6,
+        "입력토큰한도": 131072
+      }
+    }
+  ]
+}
