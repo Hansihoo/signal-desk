@@ -89,7 +89,12 @@
     "sarvam-prism-model-guide",
     "hydrogen-1-0-model-guide",
     "ripple-65b-preview-model-guide",
-    "homi-audio-decision-model-guide"
+    "homi-audio-decision-model-guide",
+    "gpt-6-cyber-model-guide",
+    "gpt-image-2-6-sunburst-model-guide",
+    "gpt-image-2-6-flare-model-guide",
+    "gemini-omni-1-2-flash-model-guide",
+    "pangram-image-1-0-model-guide"
   ],
   "catalogs": {
     "devops-implementation-guide": "devops_tools.2026-10-10.r4.json"
@@ -298,6 +303,21 @@
     ],
     "homi-audio-decision-model-guide": [
       "d370613bd565e646f7ac251839d2a17def393b20c9b28a81025be28c35478713"
+    ],
+    "gpt-6-cyber-model-guide": [
+      "6b9660d2d0518f8b20c924efb34cd358472282e12785d306ae5ef999808bf0df"
+    ],
+    "gpt-image-2-6-sunburst-model-guide": [
+      "e5e883145ecda7f6a77c39282917ba5fb733b6067cecca83abd218b58cee87da"
+    ],
+    "gpt-image-2-6-flare-model-guide": [
+      "242246bc7bfadaec1fa4b8d594c1a9ec0da7428794c2317f1b11b737fa8edfb5"
+    ],
+    "gemini-omni-1-2-flash-model-guide": [
+      "b3b7b75f0e3f9af249c466504c3f300c8de40bb341753a130e7a703d416f776a"
+    ],
+    "pangram-image-1-0-model-guide": [
+      "43d3f0c4a7979c4224cea8bf6f2e0c218957eac7bf89049431a86c6b12e9f7d6"
     ]
   },
   "model_introduction_editions": {
@@ -445,6 +465,21 @@
     ],
     "homi-audio-decision-model-guide": [
       "d370613bd565e646f7ac251839d2a17def393b20c9b28a81025be28c35478713"
+    ],
+    "gpt-6-cyber-model-guide": [
+      "6b9660d2d0518f8b20c924efb34cd358472282e12785d306ae5ef999808bf0df"
+    ],
+    "gpt-image-2-6-sunburst-model-guide": [
+      "e5e883145ecda7f6a77c39282917ba5fb733b6067cecca83abd218b58cee87da"
+    ],
+    "gpt-image-2-6-flare-model-guide": [
+      "242246bc7bfadaec1fa4b8d594c1a9ec0da7428794c2317f1b11b737fa8edfb5"
+    ],
+    "gemini-omni-1-2-flash-model-guide": [
+      "b3b7b75f0e3f9af249c466504c3f300c8de40bb341753a130e7a703d416f776a"
+    ],
+    "pangram-image-1-0-model-guide": [
+      "43d3f0c4a7979c4224cea8bf6f2e0c218957eac7bf89049431a86c6b12e9f7d6"
     ]
   },
   "model_introduction_purpose_editions": {
@@ -581,6 +616,21 @@
     ],
     "homi-audio-decision-model-guide": [
       "d370613bd565e646f7ac251839d2a17def393b20c9b28a81025be28c35478713"
+    ],
+    "gpt-6-cyber-model-guide": [
+      "6b9660d2d0518f8b20c924efb34cd358472282e12785d306ae5ef999808bf0df"
+    ],
+    "gpt-image-2-6-sunburst-model-guide": [
+      "e5e883145ecda7f6a77c39282917ba5fb733b6067cecca83abd218b58cee87da"
+    ],
+    "gpt-image-2-6-flare-model-guide": [
+      "242246bc7bfadaec1fa4b8d594c1a9ec0da7428794c2317f1b11b737fa8edfb5"
+    ],
+    "gemini-omni-1-2-flash-model-guide": [
+      "b3b7b75f0e3f9af249c466504c3f300c8de40bb341753a130e7a703d416f776a"
+    ],
+    "pangram-image-1-0-model-guide": [
+      "43d3f0c4a7979c4224cea8bf6f2e0c218957eac7bf89049431a86c6b12e9f7d6"
     ]
   },
   "model_introduction_reader_editions": {

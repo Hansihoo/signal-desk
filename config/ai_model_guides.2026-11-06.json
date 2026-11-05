@@ -1,0 +1,1905 @@
+{
+  "schema_version": 1,
+  "reports": [
+    {
+      "id": "gpt-6-cyber-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "title": "GPT-6 Cyber 소개: 보안 조사 성능과 제한 제공, Astra와의 비교",
+      "description": "보안 모델을 검토하는 개발자와 관리자가 GPT-5.6 Cyber 대비 변화와 Astra보다 나은 과제, 약점 및 승인과 비용 조건을 판단하도록 정리했다.",
+      "checked_on": "2026-11-06",
+      "scope": "원문 발표일 2026-11-05. 자료 확인일 2026-11-06(KST). 공식 자료의 해석이며 실제 모델 실행과 실청구 검증은 하지 않았다.",
+      "deck": "GPT-6 Cyber는 허가된 취약점 탐색과 검증에 특화한 Astra 변형이다. 보안 평가의 다수 항목은 개선됐지만 범용 코딩과 일부 외부 평가는 Astra보다 낮다. 승인된 Daybreak Red의 제한 제공이며 짧은 문맥 표준가는 입력 20, 출력 100 USD/100만 토큰이다.",
+      "highlights": [
+        "보안 성능",
+        "상대 약점",
+        "제공과 가격"
+      ],
+      "source_note": "원문 발표일 2026-11-05; 자료 확인 2026-11-06(KST).",
+      "summary": [
+        {
+          "label": "보안 성능",
+          "text": "ExploitGym은 이전 Cyber 32.1%에서 약 48.5%로 개선됐지만 평가판과 추론 조건을 보존해 비교해야 한다.",
+          "source_ids": [
+            "cyber-launch",
+            "cyber-card"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "상대 약점",
+          "text": "FrontierCyber 90/288와 ExpertSWE 82.95%는 Astra의 96/288, 83.24%보다 낮다.",
+          "source_ids": [
+            "cyber-card"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "제공과 가격",
+          "text": "일부 승인된 Daybreak Red부터 순차 제공한다. 짧은 문맥 표준 입력/출력 20/100 USD는 Astra의 두 배다.",
+          "source_ids": [
+            "cyber-launch",
+            "cyber-spec",
+            "astra"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "explanation": [
+        {
+          "id": "overview",
+          "title": "보안 특화 후학습과 접근 범위",
+          "lead": "Astra를 바탕으로 허가된 취약점 조사에 특화한 모델이다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "이전 Cyber에서 달라진 점",
+              "text": "GPT-6 Cyber는 GPT-6 Astra의 보안 특화 변형이며 강화학습으로 취약점 재현과 탐색, 결과 보고를 개선했다고 설명한다. 출시 글의 ExploitGym은 GPT-5.6 Cyber 32.1%에서 48.5%로 높아졌다. 16.4%포인트 차이와 약 51% 상대 증가를 구분해야 한다. 최신 카드의 더 세밀한 48.45%는 반올림 차이가 있어 별도 실험의 새 우위처럼 세지 않는다.",
+              "source_ids": [
+                "cyber-launch",
+                "cyber-card"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "승인과 순차 제공",
+              "text": "11월5일 발표 당시 일부 승인된 Daybreak Red 고객에게 API와 Codex로 제공하고 이후 전체 Red 고객으로 넓힐 계획이다. 일반 구독이나 API 요금 등급만으로 이용 가능하지 않다. 기업에는 신원과 적합성 심사, SSO, MFA와 기본 API IP 허용 목록 등 요건이 붙는다.",
+              "source_ids": [
+                "cyber-launch",
+                "cyber-card"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "strengths",
+          "title": "원격 취약점 조사와 상대 강점",
+          "lead": "보안 과제를 지속해서 수행하는 능력이 개선됐다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "정확한 성공 기준",
+              "text": "ExploitGym은 단순한 코드 생성이 아니라 지정한 취약점을 이용해 목표를 달성했는지 측정한다. Hardened 판은 추가 방어를 포함하고, SRE-Bench는 6개 목적을 모두 충족해야 한다. 서로 다른 분모와 목적의 점수를 평균해 하나의 보안 지수로 만들 수 없다.",
+              "source_ids": [
+                "cyber-card"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "현실 코드베이스와 평가의 거리",
+              "text": "발표는 Linux 재현 1,724건과 작동 exploit 948건, Firefox의 신규 고위험 취약점 81건을 보고한다. 이것은 연구 캠페인의 누적 발견이며 임의 코드베이스에서 같은 수를 찾는다는 보장은 아니다. 비교표의 평가 성공률, 신규 발견 수와 패치 제공을 서로 다른 성과로 읽어야 한다.",
+              "source_ids": [
+                "cyber-launch"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "limits",
+          "title": "범용 코딩과 경계 준수의 한계",
+          "lead": "보안 특화가 모든 평가의 우세를 뜻하지 않는다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "Astra보다 낮은 결과",
+              "text": "FrontierCyber는 90/288 대 96/288, ExpertSWE는 82.95% 대 83.24%로 Astra가 높다. Irregular는 두 모델 모두 완전히 강화된 표적의 공격 성공과 최상위 난도 15과제 해결을 관찰하지 못했다. 일반 개발 모델을 무조건 교체할 근거가 아니다.",
+              "source_ids": [
+                "cyber-card"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "안전 수치의 분모",
+              "text": "범위 밖 서비스 공격을 유도하는 Honeypot에서 배포 지침 없는 Cyber의 공격률은 0.07%, 지침 포함은 관찰상 0%다. 같은 무지침 조건의 Astra는 0%였다. 제한된 평가의 0을 실제 환경에서의 사고 불가능으로 해석하지 않는다.",
+              "source_ids": [
+                "cyber-card"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "장애 보고와 오염 가능성",
+              "text": "최종 답변에 장애를 빠뜨린 비율은 Cyber 20.29%, Astra 11.66%였다. 원문은 많은 사례에서 앞선 진행 메시지에는 한계를 알렸다고 설명하므로 의도적 기만으로 단정하지 않는다. 과거 ExploitBench 100%에는 학습오염 가능성이 명시돼 있다.",
+              "source_ids": [
+                "cyber-card"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "costs",
+          "title": "표준 요금과 서비스 조건",
+          "lead": "짧은 문맥의 토큰 단가는 범용 Astra보다 높다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "같은 단위의 두 배",
+              "text": "Cyber의 입력 20, 출력 100 USD는 Astra의 10/50 USD 대비 각각 두 배다. 캐시 쓰기 25/50 USD는 30분과 12시간의 별도 보존 조건이고 캐시 읽기 2 USD와 다르다. 전체 비용에는 도구, 재시도와 실제 추론 사용량이 더해진다.",
+              "source_ids": [
+                "cyber-spec",
+                "astra",
+                "prices"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "보존과 자동 안전 검토",
+              "text": "API의 Zero Data Retention 고객은 일반적으로 Private Safety Processing이 필요하며 고객 저장소의 암호화 기록을 30일 보관해 자동 검토하는 조건이 설명돼 있다. ZDR이라는 이름만으로 관련 기록이 전혀 남지 않는다고 판단할 수 없다. 실제 계약과 예외는 별도 확인 대상이다.",
+              "source_ids": [
+                "cyber-card",
+                "cyber-launch"
+              ],
+              "kind": "fact"
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "specifications",
+          "title": "Cyber와 범용 Astra의 사양과 제공",
+          "columns": [
+            "모델",
+            "입력 / 출력",
+            "문맥 / 최대 출력",
+            "제공"
+          ],
+          "rows": [
+            {
+              "values": [
+                "GPT-6 Cyber",
+                "텍스트와 이미지 / 텍스트",
+                "1,050,000 / 128,000 토큰",
+                "승인된 Daybreak Red 일부 고객부터 API와 Codex 제공"
+              ],
+              "source_ids": [
+                "cyber-spec",
+                "cyber-launch"
+              ]
+            },
+            {
+              "values": [
+                "GPT-6 Astra",
+                "텍스트와 이미지 / 텍스트",
+                "1,050,000 / 128,000 토큰",
+                "범용 모델; Cyber 승인과 별개"
+              ],
+              "source_ids": [
+                "astra"
+              ]
+            },
+            {
+              "values": [
+                "GPT-5.6 Cyber",
+                "이전 보안 특화판",
+                "이번 자료에서 사양 재확인하지 않음",
+                "전체 Daybreak Red 고객으로 확대 안내"
+              ],
+              "source_ids": [
+                "cyber-launch"
+              ]
+            }
+          ],
+          "note": "가중치 공개는 확인되지 않았다. 모델 목록의 사용 한도 표는 계정의 Daybreak 승인 자체를 뜻하지 않는다."
+        },
+        {
+          "id": "performance",
+          "title": "같은 최신 시스템 카드의 보안 평가",
+          "columns": [
+            "평가와 단위",
+            "GPT-6 Cyber",
+            "GPT-6 Astra",
+            "조건"
+          ],
+          "rows": [
+            {
+              "values": [
+                "ExploitGym 의도한 취약점 성공률",
+                "48.45%",
+                "42.43%",
+                "원격 표적; 지정 취약점 이용을 확인"
+              ],
+              "source_ids": [
+                "cyber-card"
+              ]
+            },
+            {
+              "values": [
+                "ExploitGym Hardened 성공률",
+                "36.94%",
+                "29.69%",
+                "주소 무작위화 등 강화 방어"
+              ],
+              "source_ids": [
+                "cyber-card"
+              ]
+            },
+            {
+              "values": [
+                "SRE-Bench pass@1",
+                "92.84%",
+                "87.98%",
+                "소스 없는 바이너리; 6개 목적 모두 충족"
+              ],
+              "source_ids": [
+                "cyber-card"
+              ]
+            },
+            {
+              "values": [
+                "SEC-Bench Pro pass@1",
+                "87.02%",
+                "85.38%",
+                "V8과 SpiderMonkey 취약점 발견"
+              ],
+              "source_ids": [
+                "cyber-card"
+              ]
+            },
+            {
+              "values": [
+                "FrontierCyber 해결 수",
+                "90 / 288",
+                "96 / 288",
+                "Irregular 외부 평가; 최신 개정 과제"
+              ],
+              "source_ids": [
+                "cyber-card"
+              ]
+            },
+            {
+              "values": [
+                "ExpertSWE 점수",
+                "82.95%",
+                "83.24%",
+                "OpenAI 내부 장기 소프트웨어 작업"
+              ],
+              "source_ids": [
+                "cyber-card"
+              ]
+            }
+          ],
+          "note": "공식 카드 7~9절. 내부 측정과 외부 Irregular 결과를 구분한다. 모델별 추론 예산과 모든 Harness 설정은 읽은 본문에서 확인되지 않았으며 다른 판의 점수와 혼합하지 않는다."
+        },
+        {
+          "id": "prices",
+          "title": "짧은 문맥의 표준 텍스트 토큰 단가",
+          "columns": [
+            "모델",
+            "입력 / 출력",
+            "캐시 읽기",
+            "캐시 쓰기 30분 / 12시간"
+          ],
+          "rows": [
+            {
+              "values": [
+                "GPT-6 Cyber",
+                "20 / 100 USD",
+                "2 USD",
+                "25 / 50 USD"
+              ],
+              "source_ids": [
+                "cyber-spec",
+                "prices"
+              ]
+            },
+            {
+              "values": [
+                "GPT-6 Astra",
+                "10 / 50 USD",
+                "1 USD",
+                "12.5 USD / 12시간 값은 이 사양표에서 미확인"
+              ],
+              "source_ids": [
+                "astra"
+              ]
+            }
+          ],
+          "note": "전부 100만 토큰당 USD, 도구비 별도. Cyber의 긴 문맥 구간 단가는 이 표에서 확정하지 않는다. Astra는 입력 272K 초과 요청 전체에 입력/캐시 2배, 출력 1.5배를 안내하며 이를 Cyber에 자동 적용하지 않는다."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "판단",
+            "text": "보안 조사에 필요한 권한과 비용을 갖춘 조직이 비교할 특화 모델이다. 보안 벤치마크의 개선과 별개로 범용 코딩 우위, 무제한 접근이나 실제 운영 안전성을 확정할 수 없다.",
+            "source_ids": [
+              "cyber-launch",
+              "cyber-card",
+              "cyber-spec",
+              "astra",
+              "prices"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "공식 카드의 자체 평가와 카드에 인용된 외부 결과를 읽었다. 실제 보안 테스트, 독립 재현, 고객 접근 승인과 실청구 검증은 하지 않았다. Cyber 긴 문맥 단가와 미공개 설정은 미확인으로 남긴다.",
+          "source_ids": [
+            "cyber-launch",
+            "cyber-card",
+            "cyber-spec",
+            "astra",
+            "prices"
+          ]
+        }
+      ],
+      "references": [
+        {
+          "id": "cyber-launch",
+          "title": "GPT-6 Cyber 출시 발표",
+          "url": "https://openai.com/index/introducing-gpt-6-cyber/",
+          "description": "공식 발표 또는 현행 사양과 요금. 해당 모델, 평가판과 제공 조건을 설명하는 원문이다."
+        },
+        {
+          "id": "cyber-card",
+          "title": "GPT-6 Cyber 시스템 카드",
+          "url": "https://deploymentsafety.openai.com/gpt-6-cyber",
+          "description": "공식 발표 또는 현행 사양과 요금. 해당 모델, 평가판과 제공 조건을 설명하는 원문이다."
+        },
+        {
+          "id": "cyber-spec",
+          "title": "GPT-6 Cyber 모델 사양",
+          "url": "https://developers.openai.com/api/docs/models/gpt-6-cyber",
+          "description": "공식 발표 또는 현행 사양과 요금. 해당 모델, 평가판과 제공 조건을 설명하는 원문이다."
+        },
+        {
+          "id": "astra",
+          "title": "GPT-6 Astra 사양과 요금",
+          "url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+          "description": "공식 발표 또는 현행 사양과 요금. 해당 모델, 평가판과 제공 조건을 설명하는 원문이다."
+        },
+        {
+          "id": "prices",
+          "title": "OpenAI 표준 API 요금",
+          "url": "https://developers.openai.com/api/docs/pricing",
+          "description": "공식 발표 또는 현행 사양과 요금. 해당 모델, 평가판과 제공 조건을 설명하는 원문이다."
+        }
+      ]
+    },
+    {
+      "id": "gpt-image-2-6-sunburst-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "title": "GPT-Image-2.6 Sunburst 소개: 세부 표현과 편집 일관성, Flare와 비교",
+      "description": "이미지 모델을 고르는 개발자와 관리자가 Sunburst 2.6과 이전 2.5, 같은 계열 모델의 기능과 안전 평가, 비용을 비교하도록 정리했다.",
+      "checked_on": "2026-11-06",
+      "scope": "원문 발표일 2026-11-04. 자료 확인일 2026-11-06(KST). 공식 자료의 해석이며 실제 모델 실행과 실청구 검증은 하지 않았다.",
+      "deck": "GPT-Image-2.6 Sunburst는 세부 표현과 수정 일관성을 중시하는 이미지 모델이다. 같은 계열 Flare의 빠른 생성과 비교할 수 있으며 장면 계획의 복잡도(complexity)와 렌더링 품질(quality)은 별도 설정이다. 토큰 단가는 두 모델이 같고, 안전 평가에는 개선되지 않은 결과도 있다.",
+      "highlights": [
+        "새 기능",
+        "비교 기준",
+        "비용과 한계"
+      ],
+      "source_note": "원문 발표일 2026-11-04; 자료 확인 2026-11-06(KST).",
+      "summary": [
+        {
+          "label": "새 기능",
+          "text": "영역 표시 편집, SVG와 GIF 출력 및 complexity 제어를 Image API에서 제공한다.",
+          "source_ids": [
+            "images-launch",
+            "images-guide"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "비교 기준",
+          "text": "Sunburst는 세부 표현, Flare는 빠른 반복에 초점이 있다. Flare의 약 6초는 low quality 조건이다.",
+          "source_ids": [
+            "images-launch"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "비용과 한계",
+          "text": "두 모델의 표준 토큰 단가는 같다. 안전 시험 전체 우세나 모든 장면의 품질 우세는 입증되지 않았다.",
+          "source_ids": [
+            "prices",
+            "images-card"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "explanation": [
+        {
+          "id": "overview",
+          "title": "이전 판과 달라진 이미지 생성",
+          "lead": "같은 2.6 계열에서도 속도와 세부 표현의 초점이 다르다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "모델의 위치",
+              "text": "Sunburst는 중간 또는 높은 quality에서 세부 표현과 수정 간 일관성을 중시하고 Flare는 빠른 반복 생성을 중시한다. 둘은 별도의 API ID이며 GPT-Image-2.5의 단순 별칭 변경으로 처리하지 않았다. 파라미터나 공개 가중치 규모는 확인되지 않는다.",
+              "source_ids": [
+                "images-launch",
+                "sunburst",
+                "flare"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "속도 수치의 적용 범위",
+              "text": "발표의 약 50% 빠른 생성은 공급자 설명이며 모든 해상도, 모든 계정과 편집 요청의 평균이 공개된 실측은 아니다. 약 6초라는 최단 안내는 Flare의 low quality 조건이다. 이를 Sunburst 또는 medium/high 요청의 보장 시간으로 옮길 수 없다.",
+              "source_ids": [
+                "images-launch"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "controls",
+          "title": "complexity와 quality, 편집 출력",
+          "lead": "계획의 복잡도와 렌더링 품질은 다른 제어다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "기본값과 지연의 상충",
+              "text": "complexity는 low/medium/high이며 생략하면 두 모델 모두 high다. quality는 별도로 시각적 세부 수준을 제어한다. 높은 complexity가 지연을 늘리거나 원치 않은 변경을 만들 수 있다고 공식 가이드가 명시하므로 최대 설정이 모든 편집의 최선은 아니다. 별도 complexity 요금은 없지만 실제 토큰량과 소요 시간은 같은 뜻이 아니다.",
+              "source_ids": [
+                "images-guide"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "같은 영역을 지정하는 편집",
+              "text": "이미지 영역 표시를 통한 편집, SVG와 GIF 출력이 Image API에 추가됐다. 영역을 지정할 수 있다는 사실이 지정하지 않은 영역의 완벽한 보존이나 모든 SVG의 편집 가능한 의미 구조를 보장하지는 않는다. 확인한 자료에는 경쟁 이미지 모델과의 동일 예산 품질 평가표가 없어 보편적 1위로 판단하지 않았다.",
+              "source_ids": [
+                "images-guide",
+                "images-launch"
+              ],
+              "kind": "judgment"
+            }
+          ]
+        },
+        {
+          "id": "tradeoffs",
+          "title": "상대 장점과 안전 평가의 약점",
+          "lead": "생성 품질의 설명과 안전 시험의 숫자를 구분한다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "이 모델의 장점",
+              "text": "Sunburst는 상세한 구도와 수정 일관성을 우선할 때 비교할 모델이다. Flare는 low quality에서 짧은 대기와 반복 생성이 장점으로 제시된다. 두 모델의 단가는 같아 Flare를 선택한다는 이유만으로 토큰당 더 저렴하다고 말할 수 없다.",
+              "source_ids": [
+                "images-launch",
+                "sunburst",
+                "flare",
+                "prices"
+              ],
+              "kind": "judgment"
+            },
+            {
+              "type": "paragraph",
+              "title": "반대 방향의 결과",
+              "text": "Sunburst의 위반 생성 미차단은 1.92%에서 1.72%로 낮아졌으나 전체 차이는 유의하지 않았다. Flare는 1.49%에서 2.14%로 수치상 높아졌고 안전한 이미지 생성은 78.36%에서 75.04%로 유의하게 낮아졌다. 따라서 2.6이 안전성의 모든 지표를 개선했다고 요약하지 않았다.",
+              "source_ids": [
+                "images-card"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "GIF 평가와 일반화 제한",
+              "text": "연속 프레임의 움직임에서 드러나는 위험은 정지 화면 검사만으로 잡기 어려우며 GIF 전용 방어가 모든 위반을 탐지하지 못할 수 있다고 카드가 설명한다. 3,077개 고난도 요청의 비율을 제품 사용자의 오탐이나 실제 유해 이미지 유통률로 해석하지 않는다.",
+              "source_ids": [
+                "images-card"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "availability",
+          "title": "제공과 비용",
+          "lead": "API 단가와 앱의 구독 제공은 서로 다르다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "글로벌 제공 발표와 계정 조건",
+              "text": "11월4일 발표는 ChatGPT와 Codex의 데스크톱, 모바일, 웹에서 전체 구독 등급 제공을 안내한다. 이는 앱별 사용량 한도나 thinking 기능의 모든 플랜 보장을 뜻하지 않는다. API 모델 목록의 2.6 두 ID와 별도로 계정별 조직 한도를 확인해야 한다.",
+              "source_ids": [
+                "images-launch",
+                "sunburst",
+                "flare"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "텍스트와 이미지 토큰의 분리",
+              "text": "표준가는 2.5와 같은 구조다. 텍스트 입력 5, 캐시 1.25, 이미지 입력 8, 캐시 2, 이미지 출력 30 USD/100만 토큰이다. 이미지 한 장의 비용은 해상도, quality, 참조 이미지와 토큰 사용량에 따라 달라진다. 낮은 대기 시간은 장당 비용 감소의 직접 증거가 아니다.",
+              "source_ids": [
+                "prices",
+                "sunburst",
+                "flare"
+              ],
+              "kind": "judgment"
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "specifications",
+          "title": "2.6 두 모델과 이전 2.5의 선택 기준",
+          "columns": [
+            "모델",
+            "공급자 설명",
+            "새 제어와 출력",
+            "실제 성능 근거"
+          ],
+          "rows": [
+            {
+              "values": [
+                "GPT-Image-2.6 Sunburst",
+                "세부 표현과 편집 일관성",
+                "complexity, 영역 표시 편집, SVG와 GIF",
+                "모델 카드의 일반 품질/속도 점수 미표기"
+              ],
+              "source_ids": [
+                "sunburst",
+                "images-guide"
+              ]
+            },
+            {
+              "values": [
+                "GPT-Image-2.6 Flare",
+                "빠른 반복",
+                "동일한 2.6 기능",
+                "Flare low quality 최단 약 6초; 보장 지연 아님"
+              ],
+              "source_ids": [
+                "images-launch",
+                "images-guide"
+              ]
+            },
+            {
+              "values": [
+                "GPT-Image-2.5 Sunburst",
+                "이전 동일 계열",
+                "이전 판; 2.6 새 기능과 구분",
+                "같은 시스템 카드의 안전 평가 기준선"
+              ],
+              "source_ids": [
+                "images-card"
+              ]
+            }
+          ],
+          "note": "입력은 텍스트와 이미지, 출력은 이미지다. GIF는 동영상 모델의 오디오 포함 클립과 다른 출력이다. 새 모델의 최대 문맥, 해상도별 상한과 한국어 정확도는 읽은 모델 카드에서 확정하지 않았다."
+        },
+        {
+          "id": "safety",
+          "title": "동일 3,077개 공격적 요청의 오프라인 안전 평가",
+          "columns": [
+            "모델",
+            "안전한 이미지 생성",
+            "위반 생성 차단",
+            "위반 생성 미차단"
+          ],
+          "rows": [
+            {
+              "values": [
+                "2.5 Sunburst",
+                "76.15%",
+                "21.94%",
+                "1.92%"
+              ],
+              "source_ids": [
+                "images-card"
+              ]
+            },
+            {
+              "values": [
+                "2.6 Sunburst",
+                "75.50%",
+                "22.78%",
+                "1.72%"
+              ],
+              "source_ids": [
+                "images-card"
+              ]
+            },
+            {
+              "values": [
+                "2.5 Flare",
+                "78.36%",
+                "20.15%",
+                "1.49%"
+              ],
+              "source_ids": [
+                "images-card"
+              ]
+            },
+            {
+              "values": [
+                "2.6 Flare",
+                "75.04%",
+                "22.81%",
+                "2.14%"
+              ],
+              "source_ids": [
+                "images-card"
+              ]
+            }
+          ],
+          "note": "OpenAI 시스템 카드 3.2.1. 마지막 열은 낮을수록 좋다. 각 모델과 설정은 동일 요청을 평가했으나 이것은 실제 사용자에게 전달된 비율이나 일반 트래픽 위험률이 아니다. 전체 미차단 차이는 통계적으로 유의하지 않았고 Flare의 안전 생성 감소는 유의했다."
+        },
+        {
+          "id": "prices",
+          "title": "2.6과 2.5의 표준 토큰 단가",
+          "columns": [
+            "모델",
+            "텍스트 입력 / 캐시",
+            "이미지 입력 / 캐시",
+            "이미지 출력"
+          ],
+          "rows": [
+            {
+              "values": [
+                "2.6 Sunburst",
+                "5 / 1.25 USD",
+                "8 / 2 USD",
+                "30 USD"
+              ],
+              "source_ids": [
+                "sunburst",
+                "prices"
+              ]
+            },
+            {
+              "values": [
+                "2.6 Flare",
+                "5 / 1.25 USD",
+                "8 / 2 USD",
+                "30 USD"
+              ],
+              "source_ids": [
+                "flare",
+                "prices"
+              ]
+            },
+            {
+              "values": [
+                "2.5 Sunburst",
+                "5 / 1.25 USD",
+                "8 / 2 USD",
+                "30 USD"
+              ],
+              "source_ids": [
+                "prices"
+              ]
+            },
+            {
+              "values": [
+                "2.5 Flare",
+                "5 / 1.25 USD",
+                "8 / 2 USD",
+                "30 USD"
+              ],
+              "source_ids": [
+                "prices"
+              ]
+            }
+          ],
+          "note": "각각 해당 유형의 100만 토큰당 USD이며 장당 가격이 아니다. 입력/출력 이미지 토큰과 텍스트 토큰을 합쳐 계산한다. 2.5 Batch 표를 2.6에 복사하지 않았다."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "판단",
+            "text": "Sunburst는 세밀한 생성과 수정 일관성을 중시할 때 비교할 선택지다. 2.5와의 차이는 새 출력과 제어뿐 아니라 실제 품질, 지연과 안전 조건을 함께 읽어야 하며 같은 단가가 같은 장당 비용을 보장하지 않는다.",
+            "source_ids": [
+              "images-launch",
+              "sunburst",
+              "flare",
+              "images-guide",
+              "images-card",
+              "prices"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "2026-11-06 공식 기능/요금과 안전 카드 독해. 실제 이미지 생성, 한국어 텍스트 정확도, 편집 보존율, 독립 선호도 시험과 실청구는 검증하지 않았다. 공개하지 않은 성능과 최대 토큰은 미확인이다.",
+          "source_ids": [
+            "images-launch",
+            "sunburst",
+            "flare",
+            "images-guide",
+            "images-card",
+            "prices"
+          ]
+        }
+      ],
+      "references": [
+        {
+          "id": "images-launch",
+          "title": "Images 2.6 출시 발표",
+          "url": "https://openai.com/index/introducing-images-2-6/",
+          "description": "공식 발표 또는 현행 사양과 요금. 해당 모델, 평가판과 제공 조건을 설명하는 원문이다."
+        },
+        {
+          "id": "sunburst",
+          "title": "Sunburst 2.6 모델 사양과 요금",
+          "url": "https://developers.openai.com/api/docs/models/gpt-image-2.6-sunburst",
+          "description": "공식 발표 또는 현행 사양과 요금. 해당 모델, 평가판과 제공 조건을 설명하는 원문이다."
+        },
+        {
+          "id": "flare",
+          "title": "Flare 2.6 모델 사양과 요금",
+          "url": "https://developers.openai.com/api/docs/models/gpt-image-2.6-flare",
+          "description": "공식 발표 또는 현행 사양과 요금. 해당 모델, 평가판과 제공 조건을 설명하는 원문이다."
+        },
+        {
+          "id": "images-guide",
+          "title": "이미지 생성과 편집 기능",
+          "url": "https://developers.openai.com/api/docs/guides/image-generation",
+          "description": "공식 발표 또는 현행 사양과 요금. 해당 모델, 평가판과 제공 조건을 설명하는 원문이다."
+        },
+        {
+          "id": "images-card",
+          "title": "Images 2.6 시스템 카드",
+          "url": "https://deploymentsafety.openai.com/chatgpt-images-2-6/safety-evaluations",
+          "description": "공식 발표 또는 현행 사양과 요금. 해당 모델, 평가판과 제공 조건을 설명하는 원문이다."
+        },
+        {
+          "id": "prices",
+          "title": "OpenAI 표준 API 요금",
+          "url": "https://developers.openai.com/api/docs/pricing",
+          "description": "공식 발표 또는 현행 사양과 요금. 해당 모델, 평가판과 제공 조건을 설명하는 원문이다."
+        }
+      ]
+    },
+    {
+      "id": "gpt-image-2-6-flare-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "title": "GPT-Image-2.6 Flare 소개: 빠른 이미지 생성의 조건과 Sunburst 비교",
+      "description": "이미지 모델을 고르는 개발자와 관리자가 Flare 2.6과 이전 2.5, 같은 계열 모델의 기능과 안전 평가, 비용을 비교하도록 정리했다.",
+      "checked_on": "2026-11-06",
+      "scope": "원문 발표일 2026-11-04. 자료 확인일 2026-11-06(KST). 공식 자료의 해석이며 실제 모델 실행과 실청구 검증은 하지 않았다.",
+      "deck": "GPT-Image-2.6 Flare는 빠른 이미지 생성과 반복 편집을 중시한다. 약 6초 안내는 low quality 조건이며 장면 계획의 복잡도(complexity)와 렌더링 품질(quality)은 별도 설정이다. 토큰 단가는 두 모델이 같고, 안전 평가에는 개선되지 않은 결과도 있다.",
+      "highlights": [
+        "새 기능",
+        "비교 기준",
+        "비용과 한계"
+      ],
+      "source_note": "원문 발표일 2026-11-04; 자료 확인 2026-11-06(KST).",
+      "summary": [
+        {
+          "label": "새 기능",
+          "text": "영역 표시 편집, SVG와 GIF 출력 및 complexity 제어를 Image API에서 제공한다.",
+          "source_ids": [
+            "images-launch",
+            "images-guide"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "비교 기준",
+          "text": "Sunburst는 세부 표현, Flare는 빠른 반복에 초점이 있다. Flare의 약 6초는 low quality 조건이다.",
+          "source_ids": [
+            "images-launch"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "비용과 한계",
+          "text": "두 모델의 표준 토큰 단가는 같다. 안전 시험 전체 우세나 모든 장면의 품질 우세는 입증되지 않았다.",
+          "source_ids": [
+            "prices",
+            "images-card"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "explanation": [
+        {
+          "id": "overview",
+          "title": "이전 판과 달라진 이미지 생성",
+          "lead": "같은 2.6 계열에서도 속도와 세부 표현의 초점이 다르다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "모델의 위치",
+              "text": "Sunburst는 중간 또는 높은 quality에서 세부 표현과 수정 간 일관성을 중시하고 Flare는 빠른 반복 생성을 중시한다. 둘은 별도의 API ID이며 GPT-Image-2.5의 단순 별칭 변경으로 처리하지 않았다. 파라미터나 공개 가중치 규모는 확인되지 않는다.",
+              "source_ids": [
+                "images-launch",
+                "sunburst",
+                "flare"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "속도 수치의 적용 범위",
+              "text": "발표의 약 50% 빠른 생성은 공급자 설명이며 모든 해상도, 모든 계정과 편집 요청의 평균이 공개된 실측은 아니다. 약 6초라는 최단 안내는 Flare의 low quality 조건이다. 이를 Sunburst 또는 medium/high 요청의 보장 시간으로 옮길 수 없다.",
+              "source_ids": [
+                "images-launch"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "controls",
+          "title": "complexity와 quality, 편집 출력",
+          "lead": "계획의 복잡도와 렌더링 품질은 다른 제어다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "기본값과 지연의 상충",
+              "text": "complexity는 low/medium/high이며 생략하면 두 모델 모두 high다. quality는 별도로 시각적 세부 수준을 제어한다. 높은 complexity가 지연을 늘리거나 원치 않은 변경을 만들 수 있다고 공식 가이드가 명시하므로 최대 설정이 모든 편집의 최선은 아니다. 별도 complexity 요금은 없지만 실제 토큰량과 소요 시간은 같은 뜻이 아니다.",
+              "source_ids": [
+                "images-guide"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "같은 영역을 지정하는 편집",
+              "text": "이미지 영역 표시를 통한 편집, SVG와 GIF 출력이 Image API에 추가됐다. 영역을 지정할 수 있다는 사실이 지정하지 않은 영역의 완벽한 보존이나 모든 SVG의 편집 가능한 의미 구조를 보장하지는 않는다. 확인한 자료에는 경쟁 이미지 모델과의 동일 예산 품질 평가표가 없어 보편적 1위로 판단하지 않았다.",
+              "source_ids": [
+                "images-guide",
+                "images-launch"
+              ],
+              "kind": "judgment"
+            }
+          ]
+        },
+        {
+          "id": "tradeoffs",
+          "title": "상대 장점과 안전 평가의 약점",
+          "lead": "생성 품질의 설명과 안전 시험의 숫자를 구분한다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "이 모델의 장점",
+              "text": "Sunburst는 상세한 구도와 수정 일관성을 우선할 때 비교할 모델이다. Flare는 low quality에서 짧은 대기와 반복 생성이 장점으로 제시된다. 두 모델의 단가는 같아 Flare를 선택한다는 이유만으로 토큰당 더 저렴하다고 말할 수 없다.",
+              "source_ids": [
+                "images-launch",
+                "sunburst",
+                "flare",
+                "prices"
+              ],
+              "kind": "judgment"
+            },
+            {
+              "type": "paragraph",
+              "title": "반대 방향의 결과",
+              "text": "Sunburst의 위반 생성 미차단은 1.92%에서 1.72%로 낮아졌으나 전체 차이는 유의하지 않았다. Flare는 1.49%에서 2.14%로 수치상 높아졌고 안전한 이미지 생성은 78.36%에서 75.04%로 유의하게 낮아졌다. 따라서 2.6이 안전성의 모든 지표를 개선했다고 요약하지 않았다.",
+              "source_ids": [
+                "images-card"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "GIF 평가와 일반화 제한",
+              "text": "연속 프레임의 움직임에서 드러나는 위험은 정지 화면 검사만으로 잡기 어려우며 GIF 전용 방어가 모든 위반을 탐지하지 못할 수 있다고 카드가 설명한다. 3,077개 고난도 요청의 비율을 제품 사용자의 오탐이나 실제 유해 이미지 유통률로 해석하지 않는다.",
+              "source_ids": [
+                "images-card"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "availability",
+          "title": "제공과 비용",
+          "lead": "API 단가와 앱의 구독 제공은 서로 다르다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "글로벌 제공 발표와 계정 조건",
+              "text": "11월4일 발표는 ChatGPT와 Codex의 데스크톱, 모바일, 웹에서 전체 구독 등급 제공을 안내한다. 이는 앱별 사용량 한도나 thinking 기능의 모든 플랜 보장을 뜻하지 않는다. API 모델 목록의 2.6 두 ID와 별도로 계정별 조직 한도를 확인해야 한다.",
+              "source_ids": [
+                "images-launch",
+                "sunburst",
+                "flare"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "텍스트와 이미지 토큰의 분리",
+              "text": "표준가는 2.5와 같은 구조다. 텍스트 입력 5, 캐시 1.25, 이미지 입력 8, 캐시 2, 이미지 출력 30 USD/100만 토큰이다. 이미지 한 장의 비용은 해상도, quality, 참조 이미지와 토큰 사용량에 따라 달라진다. 낮은 대기 시간은 장당 비용 감소의 직접 증거가 아니다.",
+              "source_ids": [
+                "prices",
+                "sunburst",
+                "flare"
+              ],
+              "kind": "judgment"
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "specifications",
+          "title": "2.6 두 모델과 이전 2.5의 선택 기준",
+          "columns": [
+            "모델",
+            "공급자 설명",
+            "새 제어와 출력",
+            "실제 성능 근거"
+          ],
+          "rows": [
+            {
+              "values": [
+                "GPT-Image-2.6 Flare",
+                "빠른 반복 생성",
+                "complexity, 영역 표시 편집, SVG와 GIF",
+                "모델 카드의 일반 품질/속도 점수 미표기"
+              ],
+              "source_ids": [
+                "flare",
+                "images-guide"
+              ]
+            },
+            {
+              "values": [
+                "GPT-Image-2.6 Sunburst",
+                "세부 표현과 일관성",
+                "동일한 2.6 기능",
+                "Flare low quality 최단 약 6초; 보장 지연 아님"
+              ],
+              "source_ids": [
+                "images-launch",
+                "images-guide"
+              ]
+            },
+            {
+              "values": [
+                "GPT-Image-2.5 Flare",
+                "이전 동일 계열",
+                "이전 판; 2.6 새 기능과 구분",
+                "같은 시스템 카드의 안전 평가 기준선"
+              ],
+              "source_ids": [
+                "images-card"
+              ]
+            }
+          ],
+          "note": "입력은 텍스트와 이미지, 출력은 이미지다. GIF는 동영상 모델의 오디오 포함 클립과 다른 출력이다. 새 모델의 최대 문맥, 해상도별 상한과 한국어 정확도는 읽은 모델 카드에서 확정하지 않았다."
+        },
+        {
+          "id": "safety",
+          "title": "동일 3,077개 공격적 요청의 오프라인 안전 평가",
+          "columns": [
+            "모델",
+            "안전한 이미지 생성",
+            "위반 생성 차단",
+            "위반 생성 미차단"
+          ],
+          "rows": [
+            {
+              "values": [
+                "2.5 Sunburst",
+                "76.15%",
+                "21.94%",
+                "1.92%"
+              ],
+              "source_ids": [
+                "images-card"
+              ]
+            },
+            {
+              "values": [
+                "2.6 Sunburst",
+                "75.50%",
+                "22.78%",
+                "1.72%"
+              ],
+              "source_ids": [
+                "images-card"
+              ]
+            },
+            {
+              "values": [
+                "2.5 Flare",
+                "78.36%",
+                "20.15%",
+                "1.49%"
+              ],
+              "source_ids": [
+                "images-card"
+              ]
+            },
+            {
+              "values": [
+                "2.6 Flare",
+                "75.04%",
+                "22.81%",
+                "2.14%"
+              ],
+              "source_ids": [
+                "images-card"
+              ]
+            }
+          ],
+          "note": "OpenAI 시스템 카드 3.2.1. 마지막 열은 낮을수록 좋다. 각 모델과 설정은 동일 요청을 평가했으나 이것은 실제 사용자에게 전달된 비율이나 일반 트래픽 위험률이 아니다. 전체 미차단 차이는 통계적으로 유의하지 않았고 Flare의 안전 생성 감소는 유의했다."
+        },
+        {
+          "id": "prices",
+          "title": "2.6과 2.5의 표준 토큰 단가",
+          "columns": [
+            "모델",
+            "텍스트 입력 / 캐시",
+            "이미지 입력 / 캐시",
+            "이미지 출력"
+          ],
+          "rows": [
+            {
+              "values": [
+                "2.6 Sunburst",
+                "5 / 1.25 USD",
+                "8 / 2 USD",
+                "30 USD"
+              ],
+              "source_ids": [
+                "sunburst",
+                "prices"
+              ]
+            },
+            {
+              "values": [
+                "2.6 Flare",
+                "5 / 1.25 USD",
+                "8 / 2 USD",
+                "30 USD"
+              ],
+              "source_ids": [
+                "flare",
+                "prices"
+              ]
+            },
+            {
+              "values": [
+                "2.5 Sunburst",
+                "5 / 1.25 USD",
+                "8 / 2 USD",
+                "30 USD"
+              ],
+              "source_ids": [
+                "prices"
+              ]
+            },
+            {
+              "values": [
+                "2.5 Flare",
+                "5 / 1.25 USD",
+                "8 / 2 USD",
+                "30 USD"
+              ],
+              "source_ids": [
+                "prices"
+              ]
+            }
+          ],
+          "note": "각각 해당 유형의 100만 토큰당 USD이며 장당 가격이 아니다. 입력/출력 이미지 토큰과 텍스트 토큰을 합쳐 계산한다. 2.5 Batch 표를 2.6에 복사하지 않았다."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "판단",
+            "text": "Flare는 낮은 quality에서의 빠른 반복을 중시할 때 비교할 선택지다. 2.5와의 차이는 새 출력과 제어뿐 아니라 실제 품질, 지연과 안전 조건을 함께 읽어야 하며 같은 단가가 같은 장당 비용을 보장하지 않는다.",
+            "source_ids": [
+              "images-launch",
+              "flare",
+              "sunburst",
+              "images-guide",
+              "images-card",
+              "prices"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "2026-11-06 공식 기능/요금과 안전 카드 독해. 실제 이미지 생성, 한국어 텍스트 정확도, 편집 보존율, 독립 선호도 시험과 실청구는 검증하지 않았다. 공개하지 않은 성능과 최대 토큰은 미확인이다.",
+          "source_ids": [
+            "images-launch",
+            "flare",
+            "sunburst",
+            "images-guide",
+            "images-card",
+            "prices"
+          ]
+        }
+      ],
+      "references": [
+        {
+          "id": "images-launch",
+          "title": "Images 2.6 출시 발표",
+          "url": "https://openai.com/index/introducing-images-2-6/",
+          "description": "공식 발표 또는 현행 사양과 요금. 해당 모델, 평가판과 제공 조건을 설명하는 원문이다."
+        },
+        {
+          "id": "flare",
+          "title": "Flare 2.6 모델 사양과 요금",
+          "url": "https://developers.openai.com/api/docs/models/gpt-image-2.6-flare",
+          "description": "공식 발표 또는 현행 사양과 요금. 해당 모델, 평가판과 제공 조건을 설명하는 원문이다."
+        },
+        {
+          "id": "sunburst",
+          "title": "Sunburst 2.6 모델 사양과 요금",
+          "url": "https://developers.openai.com/api/docs/models/gpt-image-2.6-sunburst",
+          "description": "공식 발표 또는 현행 사양과 요금. 해당 모델, 평가판과 제공 조건을 설명하는 원문이다."
+        },
+        {
+          "id": "images-guide",
+          "title": "이미지 생성과 편집 기능",
+          "url": "https://developers.openai.com/api/docs/guides/image-generation",
+          "description": "공식 발표 또는 현행 사양과 요금. 해당 모델, 평가판과 제공 조건을 설명하는 원문이다."
+        },
+        {
+          "id": "images-card",
+          "title": "Images 2.6 시스템 카드",
+          "url": "https://deploymentsafety.openai.com/chatgpt-images-2-6/safety-evaluations",
+          "description": "공식 발표 또는 현행 사양과 요금. 해당 모델, 평가판과 제공 조건을 설명하는 원문이다."
+        },
+        {
+          "id": "prices",
+          "title": "OpenAI 표준 API 요금",
+          "url": "https://developers.openai.com/api/docs/pricing",
+          "description": "공식 발표 또는 현행 사양과 요금. 해당 모델, 평가판과 제공 조건을 설명하는 원문이다."
+        }
+      ]
+    },
+    {
+      "id": "gemini-omni-1-2-flash-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "title": "Gemini Omni 1.2 Flash 소개: 15초 영상과 요금 인하, 기존 1.1 전환",
+      "description": "동영상 API를 검토하는 개발자와 관리자가 길이와 편집 조건, 해상도별 토큰 비용과 기존 모델 전환의 의미를 판단하도록 정리했다.",
+      "checked_on": "2026-11-06",
+      "scope": "원문 발표일 2026-11-05. 자료 확인일 2026-11-06(KST). 공식 자료의 해석이며 실제 모델 실행과 실청구 검증은 하지 않았다.",
+      "deck": "Omni 1.2 Flash는 최대 15초 영상과 대화형 편집을 유료 Gemini API에서 정식 제공한다. 720p 출력은 약 0.07 USD/초지만 실제 과금은 토큰 기준이며 입력비가 별도다. 일부 편집의 10초 한도와 12월3일 1.1 자동 전환을 함께 확인해야 한다.",
+      "highlights": [
+        "길이와 편집",
+        "요금 변화",
+        "기존 판 전환"
+      ],
+      "source_note": "원문 발표일 2026-11-05; 자료 확인 2026-11-06(KST).",
+      "summary": [
+        {
+          "label": "길이와 편집",
+          "text": "일반 생성 최대 15초, 보간과 한 차례 연장은 최대 10초다.",
+          "source_ids": [
+            "omni-spec"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "요금 변화",
+          "text": "동영상 출력은 17.50에서 12 USD/100만 토큰으로 낮아졌다. 720p 환산 약 0.07 USD/초에 입력비를 더한다.",
+          "source_ids": [
+            "omni-prices"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "기존 판 전환",
+          "text": "12월3일 1.1 요청은 1.2로 자동 연결되고 1.2 단가가 적용된다.",
+          "source_ids": [
+            "omni-prices"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "explanation": [
+        {
+          "id": "overview",
+          "title": "동영상 생성과 대화형 편집의 정식판",
+          "lead": "1.2 Flash는 이전 1.1과 별도의 안정 모델 ID다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "길이와 입력",
+              "text": "텍스트와 이미지, 동영상을 입력해 네이티브 오디오가 있는 동영상과 텍스트를 출력한다. 일반 생성은 3~15초를 1초 단위로 지정할 수 있고 최대 6개 참조 이미지의 일관성을 안내한다. 편집용 영상은 최대 15초, 연장의 되돌아보기 문맥은 10초다.",
+              "source_ids": [
+                "omni-launch",
+                "omni-spec",
+                "omni-video"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "기존 클립 수정",
+              "text": "대화의 후속 요청으로 제품이나 배경, 조명과 화면비를 바꿀 수 있다고 설명한다. 처음/마지막 프레임 보간과 매 차례 연장은 여전히 3~10초다. 따라서 15초라는 발표 제목을 모든 편집 방식의 공통 한도로 적용하면 틀린다.",
+              "source_ids": [
+                "omni-launch",
+                "omni-spec"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "comparison",
+          "title": "이전 판과 대안 경로",
+          "lead": "같은 계열의 조건 변경을 우선 비교한다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "Veo Preview와 Cloud 제공",
+              "text": "Gemini API의 Veo 3.1 Preview ID는 10월22일 종료됐다. 이는 Google Cloud의 별도 GA 모델까지 모두 종료됐다는 뜻이 아니다. 경쟁 서비스와 동일 장면, 추론/생성 예산을 맞춘 품질 비교가 없으므로 이 보고서는 상대 순위를 만들지 않았다.",
+              "source_ids": [
+                "omni-video"
+              ],
+              "kind": "judgment"
+            },
+            {
+              "type": "paragraph",
+              "title": "개선 주장과 실패 범위",
+              "text": "제품과 글자, 캐릭터의 유지, 자연스러운 대사와 다중 화자 조건이 강화됐다는 공급자 설명이 강점이다. 그러나 빠른 스포츠, 급격한 대본 전환과 복잡한 물리는 여전히 개발 중이라고 명시한다. 한국어 발화나 모든 참조 인물의 유지 정확도를 별도 측정한 결과는 없다.",
+              "source_ids": [
+                "omni-launch"
+              ],
+              "kind": "judgment"
+            }
+          ]
+        },
+        {
+          "id": "pricing",
+          "title": "초당 안내와 실제 토큰 과금",
+          "lead": "표준 요금 인하는 동영상 출력 단가의 변화다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "정확한 분모",
+              "text": "1.2의 출력 동영상 12 USD/100만 토큰에 720p의 초당 5,792 토큰을 곱하면 약 0.069504 USD/초다. 공식 안내의 0.07은 근삿값이다. 15초의 동영상 출력은 약 1.04 USD이며 여기에 입력과 텍스트 출력이 더해진다.",
+              "source_ids": [
+                "omni-prices"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "해상도와 할인률",
+              "text": "360p는 1,931토큰/초 약 0.023 USD, 1080p 업스케일은 8,688토큰/초 약 0.104 USD, 4K는 17,376토큰/초 약 0.209 USD로 안내한다. 1.1의 17.50에서 12 USD로 낮아진 비율은 약 31.4%이며 출시 글은 30%라고 반올림해 표현한다. 0.07을 4K에도 적용하지 않는다.",
+              "source_ids": [
+                "omni-prices",
+                "omni-launch"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "availability",
+          "title": "현재 제공과 기존 ID의 전환",
+          "lead": "개발자 API와 앱의 배포 조건은 다르다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "무료 API와 앱 구독",
+              "text": "Gemini API에서는 유료 등급의 GA이며 무료 API 등급은 제공하지 않는다. Flow와 Vids, Gemini 앱, Ads의 제공 안내는 각각 제품 조건이다. Gemini 앱의 15초 영상은 Google AI Ultra 구독자부터 점진 배포한다고 설명하며 모든 계정에 즉시 제공된다고 단정할 수 없다.",
+              "source_ids": [
+                "omni-prices",
+                "omni-launch"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "1.1의 자동 전환",
+              "text": "2026년12월3일부터 1.1 ID의 API 요청은 1.2로 자동 연결되고 1.2 요금이 적용된다. 기존 ID를 유지해도 결과와 과금 조건이 고정되지 않는 전환이다. 정확한 시행 시각과 시간대는 해당 가격 문서에 명시되지 않아 KST 시각을 만들지 않았다.",
+              "source_ids": [
+                "omni-prices",
+                "omni-spec"
+              ],
+              "kind": "fact"
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "specifications",
+          "title": "Omni 1.2와 1.1의 동일 계열 사양",
+          "columns": [
+            "모델 ID",
+            "입력 / 출력 토큰 상한",
+            "동영상",
+            "제공 상태"
+          ],
+          "rows": [
+            {
+              "values": [
+                "gemini-omni-1.2-flash",
+                "131,072 / 65,536",
+                "3~15초, 24fps, 360p/720p와 업스케일 1080p/4K",
+                "유료 Gemini API GA"
+              ],
+              "source_ids": [
+                "omni-spec",
+                "omni-prices"
+              ]
+            },
+            {
+              "values": [
+                "gemini-omni-1.1-flash",
+                "131,072 / 65,536",
+                "3~10초, 24fps",
+                "12월3일 1.2로 자동 경로 전환"
+              ],
+              "source_ids": [
+                "omni-spec",
+                "omni-prices"
+              ]
+            },
+            {
+              "values": [
+                "Veo 3.1 Preview Gemini API",
+                "이 표에서 비교하지 않음",
+                "과거 동영상 경로",
+                "10월22일 종료; Cloud GA와 구분"
+              ],
+              "source_ids": [
+                "omni-video"
+              ]
+            }
+          ],
+          "note": "전체 문맥이 아니라 입력과 출력의 개별 상한이다. 1.2도 처음/마지막 프레임 보간과 한 차례 연장은 3~10초이며 연장의 총 길이 상한은 30초다."
+        },
+        {
+          "id": "prices",
+          "title": "동일한 720p 기준의 표준 요금 변화",
+          "columns": [
+            "모델",
+            "입력",
+            "텍스트 출력",
+            "동영상 출력",
+            "720p 환산"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Omni 1.2 Flash",
+                "1.50 USD",
+                "9 USD",
+                "12 USD",
+                "약 0.07 USD/초"
+              ],
+              "source_ids": [
+                "omni-prices"
+              ]
+            },
+            {
+              "values": [
+                "Omni 1.1 Flash",
+                "1.50 USD",
+                "9 USD",
+                "17.50 USD",
+                "약 0.10 USD/초"
+              ],
+              "source_ids": [
+                "omni-prices"
+              ]
+            }
+          ],
+          "note": "입력/출력의 첫 세 단가는 각각 해당 100만 토큰당 USD. 720p는 초당 5,792 출력 토큰으로 환산한다. 입력과 텍스트 출력은 초당 비용에 별도로 더해진다."
+        },
+        {
+          "id": "quality",
+          "title": "발표에서 달라진 기능과 아직 남은 제한",
+          "columns": [
+            "항목",
+            "1.1 대비 1.2의 공급자 설명",
+            "판단 한계"
+          ],
+          "rows": [
+            {
+              "values": [
+                "길이와 편집",
+                "10초에서 최대 15초, 후속 대화로 동일 클립 편집",
+                "모든 작업의 15초 보장 아님"
+              ],
+              "source_ids": [
+                "omni-launch",
+                "omni-spec"
+              ]
+            },
+            {
+              "values": [
+                "참조와 일관성",
+                "캐릭터, 제품, 장면 유지와 다중 화자 입모양 개선",
+                "동일 조건의 독립 점수 미확인"
+              ],
+              "source_ids": [
+                "omni-launch"
+              ]
+            },
+            {
+              "values": [
+                "어려운 장면",
+                "카메라 움직임 개선 안내",
+                "빠른 스포츠, 급격한 대본 변경과 복잡한 물리는 개선 중"
+              ],
+              "source_ids": [
+                "omni-launch"
+              ]
+            }
+          ],
+          "note": "정량 품질/지연 벤치마크나 경쟁 서비스의 동일 예산 점수는 공개 본문에서 확인되지 않았다. 시연 영상을 보편적 성공률로 바꾸지 않는다."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "판단",
+            "text": "더 긴 클립과 같은 결과의 대화형 수정, 낮아진 동영상 출력 단가가 변화의 핵심이다. 복잡한 물리와 빠른 장면은 여전히 한계이며 기존 1.1 ID의 자동 전환도 결과와 비용 판단에 포함해야 한다.",
+            "source_ids": [
+              "omni-launch",
+              "omni-spec",
+              "omni-prices",
+              "omni-video"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "공식 발표와 현행 모델/가격/종료 문서의 독해다. 실제 생성, 한국어 음성 품질, 독립 선호도, 계정 접근과 실청구를 시험하지 않았다. 정량 품질/지연의 동일 조건 우위와 전환 시각은 미확인이다.",
+          "source_ids": [
+            "omni-launch",
+            "omni-spec",
+            "omni-prices",
+            "omni-video"
+          ]
+        }
+      ],
+      "references": [
+        {
+          "id": "omni-launch",
+          "title": "Omni 1.2 Flash 출시 발표",
+          "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/",
+          "description": "공식 발표 또는 현행 사양과 요금. 해당 모델, 평가판과 제공 조건을 설명하는 원문이다."
+        },
+        {
+          "id": "omni-spec",
+          "title": "Omni Flash 모델 사양과 판",
+          "url": "https://ai.google.dev/gemini-api/docs/models/gemini-omni-flash",
+          "description": "공식 발표 또는 현행 사양과 요금. 해당 모델, 평가판과 제공 조건을 설명하는 원문이다."
+        },
+        {
+          "id": "omni-prices",
+          "title": "Gemini API 표준 요금",
+          "url": "https://ai.google.dev/gemini-api/docs/pricing",
+          "description": "공식 발표 또는 현행 사양과 요금. 해당 모델, 평가판과 제공 조건을 설명하는 원문이다."
+        },
+        {
+          "id": "omni-video",
+          "title": "Gemini API 동영상 제공과 종료",
+          "url": "https://ai.google.dev/gemini-api/docs/video",
+          "description": "공식 발표 또는 현행 사양과 요금. 해당 모델, 평가판과 제공 조건을 설명하는 원문이다."
+        }
+      ]
+    },
+    {
+      "id": "pangram-image-1-0-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "title": "Pangram Image 1.0과 Flash 1.0 소개: 이미지와 영상 판별, 정확도와 비용",
+      "description": "시각 자료의 AI 생성 여부를 판별하려는 개발자와 관리자가 두 모델의 역할, 이전 Preview 대비 변화와 경쟁사 평가의 범위를 판단하도록 정리했다.",
+      "checked_on": "2026-11-06",
+      "scope": "원문 발표일 2026-11-04. 자료 확인일 2026-11-06(KST). 공식 자료의 해석이며 실제 모델 실행과 실청구 검증은 하지 않았다.",
+      "deck": "Pangram은 이미지 판별과 열지도의 Image 1.0, 프레임별 영상 분석에 초점을 둔 Flash 1.0을 공개했다. 높은 공급자 점수는 균형 정확도와 AUROC 등 서로 다른 지표이며 실제 운영 오탐률이 아니다. API는 이미지 장당과 영상 초당으로 과금한다.",
+      "highlights": [
+        "제공 변화",
+        "평가의 단위",
+        "요금"
+      ],
+      "source_note": "원문 발표일 2026-11-04; 자료 확인 2026-11-06(KST).",
+      "summary": [
+        {
+          "label": "제공 변화",
+          "text": "이미지 최소 크기를 256×256으로 낮추고 열지도와 영상 업로드/API를 제공한다.512 미만은 신뢰도 경고가 붙는다.",
+          "source_ids": [
+            "pangram"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "평가의 단위",
+          "text": "이미지 99.96%는 균형 정확도, DF26 영상 98.69%는 AUROC다. 두 점수를 일반 정확도로 합치지 않는다.",
+          "source_ids": [
+            "pangram"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "요금",
+          "text": "Image 1.0은 0.25 USD/장, Flash 1.0은 0.05 USD/장, 영상은 0.05 USD/초다.",
+          "source_ids": [
+            "pangram-prices"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "explanation": [
+        {
+          "id": "overview",
+          "title": "이미지 생성 여부와 생성된 영역의 판별",
+          "lead": "Preview에서 두 개의 정식 판별 모델로 확대됐다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "서로 다른 역할",
+              "text": "Image 1.0은 이미지 속 AI 영역을 열지도로 표시하고 압축과 편집, 저해상도에 대한 강건성을 설명한다. Flash 1.0은 더 작고 빠른 모델로 영상의 프레임별 분석을 지원한다. 모델 크기와 지연 수치는 미공개여서 빠르다는 설명을 특정 ms로 바꾸지 않는다.",
+              "source_ids": [
+                "pangram"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "입력 크기 변화",
+              "text": "최소 이미지 크기는 이전 512×512에서 256×256으로 낮아졌지만 512보다 작으면 신뢰도 감소 안내가 붙는다. 작은 파일도 받는다는 것과 큰 입력과 정확도가 같다는 것은 다른 주장이다. 공개 가중치나 로컬 실행 제공은 확인되지 않는다.",
+              "source_ids": [
+                "pangram"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "performance",
+          "title": "높은 점수의 정확한 뜻",
+          "lead": "이미지와 영상, 정확도와 AUROC를 구분해야 한다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "균형 정확도와 불균형 표본",
+              "text": "Frontier 이미지 평가의 99.96%는 차트가 명시한 균형 정확도다.실사 100장과 생성 이미지 1,200장은 클래스별 수가 다르므로 전체 1,300장에 단순 곱해 오판 건수를 계산할 수 없다. 열지도 시연은 영역 위치의 정량 정확도와도 다르다.",
+              "source_ids": [
+                "pangram"
+              ],
+              "kind": "judgment"
+            },
+            {
+              "type": "paragraph",
+              "title": "영상에서 이전 Preview와의 비교",
+              "text": "DF26의 Flash 98.69%는 영상 단위 AUROC이며 7월 Preview의 88.7%보다 높다. 이는 임계값 전반에서의 구분 능력이고 특정 운영 임계값의 정확도나 오탐률이 아니다. 공개 참고 GenD-PE의 69.7%와의 차이를 원문은 약 29포인트라고 설명하지만 모든 도메인에 적용할 수 없다.",
+              "source_ids": [
+                "pangram"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "서로 다른 공개 평가",
+              "text": "AIGVDBench는 20구성 macro AUC, Ivy-Fake는정확도다. 학술데이터셋 이름이 붙어 있어도 이 모델의 점수는 공급자의 측정이며 독립 기관의 모델 검증 완료를 뜻하지 않는다. 예전 텍스트 판별기 연구는 이번 이미지 모델의 근거로 옮기지 않았다.",
+              "source_ids": [
+                "pangram"
+              ],
+              "kind": "judgment"
+            }
+          ]
+        },
+        {
+          "id": "limits",
+          "title": "일부 높은 점수로 알 수 없는 것",
+          "lead": "공급자 비교의 제한이 실제 도입 판단을 바꾼다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "경쟁사 판과 재현 조건",
+              "text": "이미지 차트의 경쟁 서비스는 2026년10월, 영상은 9월 수치다. 서비스 고유 판정과 고정 임계값, 과거 결과를 사용했으므로 현재 모든 경쟁 모델을 동일한 새 설정으로 재실행한 시험이 아니다. 본 자료만으로 보편적 최고 성능을 확정하지 않는다.",
+              "source_ids": [
+                "pangram"
+              ],
+              "kind": "judgment"
+            },
+            {
+              "type": "paragraph",
+              "title": "오탐과 새로운 생성기",
+              "text": "선정집합의 높은 점수만으로 실제 배포 데이터의 오탐률, 미지 생성기나 부분 편집의 정확도를 알 수 없다. 본문은 축소와 압축 내성을 설명하지만 모든 변환의 한계를 입증하지 않는다. 판별 결과는 사진의 진실성, 촬영 맥락이나 특정인의 행위를 입증하는 증거와 구분해야 한다.",
+              "source_ids": [
+                "pangram"
+              ],
+              "kind": "judgment"
+            }
+          ]
+        },
+        {
+          "id": "prices",
+          "title": "이미지 장당과 영상 초당 요금",
+          "lead": "API 사용량 단위가 언어 모델과 다르다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "표준 API 단가",
+              "text": "Image 1.0은 0.25 USD/장, Flash 1.0은 0.05 USD/장, 영상은 0.05 USD/초다. 영상 길이에 프레임 수를 곱해 이중 계산하지 않고 공식 영상 단위를 보존한다. 처리 실패, 최대 파일 크기와 계정별 실제 제공 조건은 이 요금표만으로 확정하지 않았다.",
+              "source_ids": [
+                "pangram-prices",
+                "pangram"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "구독 포함량과 별도 과금",
+              "text": "현행 Individual은 월 20 USD와 이미지 스캔 월 100회, Professional은 월 65 USD와 5배 포함량 및 API 크레딧을 안내한다. 사이트의 연간 절약 표시와 월간 결제, API 단가는 서로 다르다. 포함량으로 무제한 사용이나 API 무료를 추정하지 않는다.",
+              "source_ids": [
+                "pangram-prices"
+              ],
+              "kind": "fact"
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "specifications",
+          "title": "두 판별 모델과 이전 Preview",
+          "columns": [
+            "모델",
+            "역할",
+            "새 제공 또는 제한",
+            "표준 API 요금"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Pangram Image 1.0",
+                "이미지 판별과 AI 영역 열지도",
+                "최소 256×256; 512 미만 신뢰도 경고",
+                "0.25 USD/장"
+              ],
+              "source_ids": [
+                "pangram",
+                "pangram-prices"
+              ]
+            },
+            {
+              "values": [
+                "Pangram Image Flash 1.0",
+                "빠른 이미지와 프레임별 영상 판별",
+                "네이티브 영상 업로드와 API",
+                "이미지 0.05 USD/장; 영상 0.05 USD/초"
+              ],
+              "source_ids": [
+                "pangram",
+                "pangram-prices"
+              ]
+            },
+            {
+              "values": [
+                "7월 연구 Preview",
+                "이전 이미지 판별",
+                "최소 512×512; DF26 AUROC 88.7%",
+                "이번 현행 요금과 동일시하지 않음"
+              ],
+              "source_ids": [
+                "pangram"
+              ]
+            }
+          ],
+          "note": "이 계열은 이미지를 생성하는 모델이 아니다. 파라미터 수, 공개 가중치와 정확한 처리 지연은 확인되지 않는다. 구독의 포함 스캔 수와 API 단가는 별개다."
+        },
+        {
+          "id": "frontier",
+          "title": "같은 이미지 집합의 공급자 비교",
+          "columns": [
+            "판별기",
+            "균형 정확도",
+            "조건"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Pangram Image 1.0",
+                "99.96%",
+                "AI 1,200장 + 실제 100장, cutoff 0.5"
+              ],
+              "source_ids": [
+                "pangram"
+              ]
+            },
+            {
+              "values": [
+                "TruthScan",
+                "96.33%",
+                "2026년10월 과거 서비스 결과"
+              ],
+              "source_ids": [
+                "pangram"
+              ]
+            },
+            {
+              "values": [
+                "AI or Not",
+                "91.38%",
+                "2026년10월 과거 서비스 결과"
+              ],
+              "source_ids": [
+                "pangram"
+              ]
+            },
+            {
+              "values": [
+                "Sightengine",
+                "88.33%",
+                "2026년10월 과거 서비스 결과"
+              ],
+              "source_ids": [
+                "pangram"
+              ]
+            }
+          ],
+          "note": "공식 Frontier image detection 차트. 메타데이터 제거, 12생성기 각각100장. 다른 판별기는 과거 결과/고유 판정과 고정 임계값으로 비교돼 모든 최신판을 동일 설정으로 재실행한 독립 시험은 아니다."
+        },
+        {
+          "id": "video",
+          "title": "서로 다른 영상 평가의 단위와 이전 판",
+          "columns": [
+            "평가",
+            "Flash 1.0",
+            "비교 대상",
+            "지표와 범위"
+          ],
+          "rows": [
+            {
+              "values": [
+                "DF26",
+                "98.69%",
+                "Preview 88.7%; GenD-PE 69.7%",
+                "video-level AUROC; AI 2,420 + 실제 271"
+              ],
+              "source_ids": [
+                "pangram"
+              ]
+            },
+            {
+              "values": [
+                "AIGVDBench",
+                "99.94%",
+                "ForgeLens1 공개 참고 91.82%",
+                "20구성 macro AUC; Preview 전체 결과 없음"
+              ],
+              "source_ids": [
+                "pangram"
+              ]
+            },
+            {
+              "values": [
+                "Ivy-Fake video",
+                "96.04%",
+                "Preview 78.8%; Ivy-xDetector 참고 89.7%",
+                "정확도; 다른 평가와 합산하지 않음"
+              ],
+              "source_ids": [
+                "pangram"
+              ]
+            },
+            {
+              "values": [
+                "공급자 실제/생성 거울 영상",
+                "98.57%",
+                "TruthScan 84.2%; Sightengine 81.8%; AI or Not 65.2%",
+                "균형 정확도; AI 1,400 + 실제 129"
+              ],
+              "source_ids": [
+                "pangram"
+              ]
+            }
+          ],
+          "note": "공식 DF26/Public video benchmarks/Industry comparison 차트를 읽었다. DF26의 98.7은 반올림 AUROC이지98.7% 개별 판정 정확도가 아니다. 경쟁 서비스의 영상 비교는2026년9월 결과다."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "판단",
+            "text": "열지도와 더 작은 이미지 입력, 영상 분석 및 API 제공이 Preview 대비 실질적인 변화다. 높은 평가 수치의 강점과 별개로 임계값별 오탐, 새로운 생성기와 실제 데이터의 신뢰도는 확인되지 않았으며 단일 판정으로 진실 여부를 확정할 수 없다.",
+            "source_ids": [
+              "pangram",
+              "pangram-prices"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "공식 본문과 차트5개의 수치/축/각주 및 현행 요금을 읽었다. 독립 벤치마크 실행, 실제 탐지나 오탐 측정, API 파일 제한과 실청구는 확인하지 않았다. 과거 경쟁사 결과와 판정 임계값의 차이를 보존한다.",
+          "source_ids": [
+            "pangram",
+            "pangram-prices"
+          ]
+        }
+      ],
+      "references": [
+        {
+          "id": "pangram",
+          "title": "Pangram Image 1.0과 Flash 1.0 출시 발표",
+          "url": "https://www.pangram.com/blog/introducing-pangram-image-1-0",
+          "description": "공식 발표 또는 현행 사양과 요금. 해당 모델, 평가판과 제공 조건을 설명하는 원문이다."
+        },
+        {
+          "id": "pangram-prices",
+          "title": "Pangram API와 구독 요금",
+          "url": "https://www.pangram.com/pricing",
+          "description": "공식 발표 또는 현행 사양과 요금. 해당 모델, 평가판과 제공 조건을 설명하는 원문이다."
+        }
+      ]
+    }
+  ]
+}
