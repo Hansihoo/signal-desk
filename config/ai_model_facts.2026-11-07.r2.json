@@ -1,0 +1,182 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "id": "kanana-2-v-decide-spec",
+      "model": "Kanana-2-v-decide-3b-2611",
+      "provider": "Kakao",
+      "source_url": "https://huggingface.co/kakaocorp/kanana-2-v-decide-3b-2611/raw/main/README.md",
+      "checked_on": "2026-11-07",
+      "fields": {
+        "kind": "공식 사양과 제공",
+        "suite": "Kanana-2-v-decide-3b-2611 / 2026-11-06",
+        "condition": "공급자 공식 원문. 실제 계정 제공과 추론 미실행.",
+        "release": "2026-11-06",
+        "context": 20480,
+        "status": "공개 가중치 / Kanana Open License",
+        "access": "Hugging Face / 자체 호스팅",
+        "입력": "텍스트·JSON·대화 및 최대 이미지 10장",
+        "출력": "선택지 확률",
+        "표준 API 요금": "확인되지 않음",
+        "parameters": 3.67
+      }
+    },
+    {
+      "id": "ernie-5-5-flash-base-spec",
+      "model": "ERNIE 5.5 Flash Base",
+      "provider": "Baidu",
+      "source_url": "https://huggingface.co/baidu/ERNIE-5.5-Flash-Base/raw/main/README.md",
+      "checked_on": "2026-11-07",
+      "fields": {
+        "kind": "공식 사양과 제공",
+        "suite": "ERNIE 5.5 Flash Base / 2026-11-05",
+        "condition": "공급자 공식 원문. 실제 계정 제공과 추론 미실행.",
+        "release": "2026-11-05",
+        "context": 1048576,
+        "status": "FP8·BF16 공개 가중치, 사전학습 종료판",
+        "access": "Hugging Face / ModelScope / 자체 호스팅",
+        "학습 최대 토큰": 131072,
+        "표준 API 요금": "해당 Base 미확인",
+        "parameters": 280,
+        "active_parameters": 14
+      }
+    },
+    {
+      "id": "swe-2-flash-spec",
+      "model": "SWE-2 Flash",
+      "provider": "Cognition",
+      "source_url": "https://cognition.com/blog/swe-2-flash",
+      "checked_on": "2026-11-07",
+      "fields": {
+        "kind": "공식 사양과 제공",
+        "suite": "SWE-2 Flash / 2026-11-04",
+        "condition": "규모는 11월 4일 Cognition 발표. 접근은 11월 5일 Devin 모델 목록. 실제 계정 미실행.",
+        "release": "2026-11-04",
+        "status": "Devin Desktop 및 CLI 제공",
+        "access": "무료 플랜 Medium, 유료 High·Max 가능",
+        "Devin Cloud": "미제공",
+        "parameters": 276,
+        "active_parameters": 12,
+        "제공 문서": "https://docs.devin.ai/desktop/models"
+      }
+    },
+    {
+      "id": "swe-2-flash-eval-1",
+      "model": "SWE-2 Flash",
+      "provider": "Cognition",
+      "source_url": "https://cognition.com/blog/swe-2-flash",
+      "checked_on": "2026-11-07",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "FrontierCode 2.0",
+        "condition": "Cognition 11월 4일 발표 비교",
+        "평가 점수": 24,
+        "단위": "%",
+        "측정 주체": "Cognition"
+      }
+    },
+    {
+      "id": "swe-2-flash-eval-2",
+      "model": "SWE-2 Flash",
+      "provider": "Cognition",
+      "source_url": "https://cognition.com/blog/swe-2-flash",
+      "checked_on": "2026-11-07",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "DeepSWE 1.1",
+        "condition": "Cognition 11월 4일 발표 비교",
+        "평가 점수": 60.1,
+        "단위": "%",
+        "측정 주체": "Cognition"
+      }
+    },
+    {
+      "id": "swe-2-flash-eval-3",
+      "model": "SWE-2 Flash",
+      "provider": "Cognition",
+      "source_url": "https://cognition.com/blog/swe-2-flash",
+      "checked_on": "2026-11-07",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Terminal-Bench 4.0",
+        "condition": "Cognition 11월 4일 발표 비교",
+        "평가 점수": 20,
+        "단위": "%",
+        "측정 주체": "Cognition"
+      }
+    },
+    {
+      "id": "swe-2-flash-eval-4",
+      "model": "SWE-2 Flash",
+      "provider": "Cognition",
+      "source_url": "https://cognition.com/blog/swe-2-flash",
+      "checked_on": "2026-11-07",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SWE-Bench Pro v2 Hard",
+        "condition": "Cognition 11월 4일 발표 비교",
+        "평가 점수": 89.9,
+        "단위": "%",
+        "측정 주체": "Cognition"
+      }
+    },
+    {
+      "id": "inkling-2-small-spec",
+      "model": "Inkling 2 Small",
+      "provider": "Thinking Machines Lab",
+      "source_url": "https://thinkingmachines.ai/model-card/inkling-2-small/",
+      "checked_on": "2026-11-07",
+      "fields": {
+        "kind": "공식 사양과 제공",
+        "suite": "Inkling 2 Small / 2026-11-05",
+        "condition": "공급자 공식 원문. 실제 계정 제공과 추론 미실행.",
+        "release": "2026-11-05",
+        "context": 1000000,
+        "status": "Tinker 제공 / 가중치 비공개, Apache 2.0 공개 예정",
+        "access": "Tinker 추론·미세조정 / Playground",
+        "입력": "텍스트와 이미지",
+        "출력": "텍스트",
+        "parameters": 594,
+        "active_parameters": 17
+      }
+    },
+    {
+      "id": "twil-8b-spec",
+      "model": "TwIL-8B",
+      "provider": "webAI",
+      "source_url": "https://huggingface.co/webAI-Official/TwIL-8B/raw/main/README.md",
+      "checked_on": "2026-11-07",
+      "fields": {
+        "kind": "공식 사양과 제공",
+        "suite": "TwIL-8B / 2026-11-03",
+        "condition": "공급자 공식 원문. 실제 계정 제공과 추론 미실행.",
+        "release": "2026-10-14",
+        "context": 131072,
+        "status": "s30 공개 가중치 / 비상업",
+        "access": "Hugging Face BF16·GGUF",
+        "이전 공개": "rl100, 2026-10-14",
+        "표준 API 요금": "확인되지 않음",
+        "parameters": 8.79,
+        "가중치 갱신": "2026-11-03, s30"
+      }
+    },
+    {
+      "id": "meridian-air-spec",
+      "model": "Meridian Air",
+      "provider": "webAI",
+      "source_url": "https://www.webai.com/research/meridian-1-civoe",
+      "checked_on": "2026-11-07",
+      "fields": {
+        "kind": "공식 사양과 제공",
+        "suite": "Meridian Air / 2026-11-04",
+        "condition": "공급자 공식 원문. 실제 계정 제공과 추론 미실행.",
+        "release": "2026-11-04",
+        "status": "11월 4일부터 webAI 앱 배포 시작",
+        "access": "webAI 앱",
+        "표준 API 요금": "미확인",
+        "CivoE": "같은 12B 기반 전문가 구성, 수 주에 걸쳐 배포 예정",
+        "parameters": 12
+      }
+    }
+  ]
+}

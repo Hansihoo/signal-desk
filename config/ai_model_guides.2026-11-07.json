@@ -1,0 +1,1626 @@
+{
+  "schema_version": 1,
+  "reports": [
+    {
+      "id": "kanana-2-v-decide-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "title": "Kanana-2-v-decide 소개 — 한국어와 이미지로 선택지를 판단하는 모델",
+      "description": "Kanana-2-v-decide-3b-2611의 사양과 이전판 대비 변화, 경쟁 모델 성능과 제공 비용을 비교한다.",
+      "checked_on": "2026-11-07",
+      "scope": "원문 기준일 2026-11-06. 자료 확인일 2026-11-07 KST. 공식 발표·카드와 공개 평가의 조건을 대조했다. 실제 모델 실행, 서비스 청구와 사람 독해 시험은 하지 않았다.",
+      "deck": "카카오가 11월 6일 3.67B 멀티모달 판단 모델의 가중치를 공개했다. 한국어 자체 평가와 공개 이미지 판단에서 강점이 있지만, 공개 텍스트 평가에서는 Joey-1이 앞섰다. 사용자가 정의한 선택지별 확률을 반환하며 답변 문장은 생성하지 않는다.",
+      "highlights": [
+        "한국어와 이미지 판단의 강점",
+        "가중치와 운영 비용"
+      ],
+      "source_note": "원문 기준일 2026-11-06. 사양과 제공 확인일 2026-11-07 KST.",
+      "summary": [
+        {
+          "label": "한국어와 이미지 판단의 강점",
+          "text": "한국어 15,909문항으로 구성된 카카오 자체 벤치마크에서 72.50점으로 StartLux 54.38점보다 18.12점 높다. 공개 Decision Index Vision 0.4.1의 61.12점도 표 안의 경쟁 모델 중 가장 높았다. 두 공개 점수의 단순 평균 61.23은 독립된 제3의 평가가 아니다.",
+          "source_ids": [
+            "card"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "가중치와 운영 비용",
+          "text": "Hugging Face 가중치와 자체 호스팅 인터페이스가 공개됐다. 공급자가 운영하는 이 모델의 표준 API 요금은 확인하지 못했다. 자체 배포에는 연산·운영 비용이 들며, Kanana 라이선스 제4조가 별도 계약을 요구하는 상용 이용 유형을 정한다.",
+          "source_ids": [
+            "card",
+            "license",
+            "d1"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "explanation": [
+        {
+          "id": "section-1",
+          "title": "기반 모델에서 판단 모델로",
+          "lead": "기반 모델에서 판단 모델로의 비교 조건과 관측 결과를 정리했다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "사양과 근거",
+              "text": "Kanana-2-v-3b의 언어 모델과 비전 인코더를 사용한다. 상태와 질문을 함께 임베딩하고 각 후보 답변도 임베딩한 뒤, 코사인 유사도에 소프트맥스를 적용해 후보별 확률을 낸다. 선택형, 예·아니요, 순서가 있는 점수를 한 요청에 함께 넣을 수 있다.",
+              "source_ids": [
+                "card",
+                "launch"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "section-2",
+          "title": "한국어와 이미지 판단의 강점",
+          "lead": "한국어와 이미지 판단의 강점의 비교 조건과 관측 결과를 정리했다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "사양과 근거",
+              "text": "한국어 15,909문항으로 구성된 카카오 자체 벤치마크에서 72.50점으로 StartLux 54.38점보다 18.12점 높다. 공개 Decision Index Vision 0.4.1의 61.12점도 표 안의 경쟁 모델 중 가장 높았다. 두 공개 점수의 단순 평균 61.23은 독립된 제3의 평가가 아니다.",
+              "source_ids": [
+                "card"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "section-3",
+          "title": "텍스트 판단과 입력 제한",
+          "lead": "텍스트 판단과 입력 제한의 비교 조건과 관측 결과를 정리했다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "사양과 근거",
+              "text": "공개 텍스트 Decision Index 0.4.1에서는 Joey-1이 63.31점으로 Kanana의 61.34점을 앞섰다. 확률은 주어진 후보에 상대적이어서 후보 구성이 달라지면 분포도 달라진다. 카드는 이미지 최대 10장, 입력 최대 20,480토큰을 명시하고 비디오는 지원하지 않는다. 일반 생성 모델의 답변 품질로 이 점수를 해석할 수 없다.",
+              "source_ids": [
+                "card"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "section-4",
+          "title": "가중치와 운영 비용",
+          "lead": "가중치와 운영 비용의 비교 조건과 관측 결과를 정리했다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "사양과 근거",
+              "text": "Hugging Face 가중치와 자체 호스팅 인터페이스가 공개됐다. 공급자가 운영하는 이 모델의 표준 API 요금은 확인하지 못했다. 자체 배포에는 연산·운영 비용이 들며, Kanana 라이선스 제4조가 별도 계약을 요구하는 상용 이용 유형을 정한다.",
+              "source_ids": [
+                "card",
+                "license",
+                "d1"
+              ],
+              "kind": "fact"
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "spec",
+          "title": "이전 Kanana와 경쟁 판단 모델의 제공 범위",
+          "columns": [
+            "모델",
+            "사양 및 출력",
+            "제공과 비용"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Kanana-2-v-decide",
+                "3.67B, 텍스트·JSON·대화와 이미지 입력, 후보 확률 출력",
+                "가중치 공개, Kanana Open License, 관리형 표준 단가 미확인"
+              ],
+              "source_ids": [
+                "card",
+                "license"
+              ]
+            },
+            {
+              "values": [
+                "Kanana-2-v-3b",
+                "3B급 멀티모달 기반 모델",
+                "개발 기반, 동일 판단 평가와 개별 표준 단가 미확인"
+              ],
+              "source_ids": [
+                "card",
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Liquid AI d1-3B",
+                "3B급 판단 모델",
+                "공식 가중치 카드 제공, 동일 조건의 관리형 단가 미확인"
+              ],
+              "source_ids": [
+                "card",
+                "d1"
+              ]
+            }
+          ],
+          "note": "가중치 공개와 운영 단가는 별도로 확인한다."
+        },
+        {
+          "id": "bench",
+          "title": "공개 판단 평가와 한국어 자체 평가",
+          "columns": [
+            "모델",
+            "한국어 15,909문항",
+            "Decision Index 0.4.1",
+            "Vision 0.4.1",
+            "공개 두 점수 평균"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Kanana-2-v-decide",
+                "72.50",
+                "61.34",
+                "61.12",
+                "61.23"
+              ],
+              "source_ids": [
+                "card"
+              ]
+            },
+            {
+              "values": [
+                "StartLux-Decision-v1.1-2B-Instant",
+                "54.38",
+                "59.17",
+                "59.90",
+                "59.54"
+              ],
+              "source_ids": [
+                "card"
+              ]
+            },
+            {
+              "values": [
+                "Liquid AI d1-3B",
+                "52.71",
+                "48.97",
+                "51.86",
+                "50.42"
+              ],
+              "source_ids": [
+                "card"
+              ]
+            },
+            {
+              "values": [
+                "Base Labs Joey-1",
+                "42.38",
+                "63.31",
+                "54.23",
+                "58.77"
+              ],
+              "source_ids": [
+                "card"
+              ]
+            }
+          ],
+          "note": "카카오 카드의 원문 점수다. 세부 실행 Harness, 반복 분산과 운영 임계값은 공개 표에서 확인되지 않았다."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "판단",
+            "text": "한국어·이미지 입력을 받아 미리 정한 선택지를 판단하는 용도로 검토할 만하다. 범용 생성이 필요한 경우 기반 모델과 역할이 다르며, 텍스트만 사용하는 조건에서는 Joey-1의 역전 결과도 고려할 근거가 된다.",
+            "source_ids": [
+              "card",
+              "launch",
+              "license",
+              "d1"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "공식 발표·카드와 공개 평가의 조건을 대조했다. 실제 모델 실행, 서비스 청구와 사람 독해 시험은 하지 않았다.",
+          "source_ids": [
+            "card",
+            "launch",
+            "license",
+            "d1"
+          ]
+        }
+      ],
+      "references": [
+        {
+          "id": "card",
+          "title": "카카오 모델 카드와 평가표",
+          "url": "https://huggingface.co/kakaocorp/kanana-2-v-decide-3b-2611/raw/main/README.md",
+          "description": "사양, 평가, 경쟁 모델과 출력 계약"
+        },
+        {
+          "id": "launch",
+          "title": "카카오 공식 개발 발표",
+          "url": "https://tech.kakao.com/posts/846",
+          "description": "공개 배경과 System One 기반"
+        },
+        {
+          "id": "license",
+          "title": "Kanana Open License",
+          "url": "https://huggingface.co/kakaocorp/kanana-2-v-decide-3b-2611/raw/main/LICENSE",
+          "description": "상용 조항과 가중치 권리"
+        },
+        {
+          "id": "d1",
+          "title": "Liquid AI d1-3B 카드",
+          "url": "https://huggingface.co/LiquidAI/d1-3B/raw/main/README.md",
+          "description": "경쟁 모델의 목적과 가중치 경로"
+        }
+      ]
+    },
+    {
+      "id": "ernie-5-5-flash-base-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "title": "ERNIE 5.5 Flash Base 소개 — 280B 사전학습 가중치와 긴 문맥",
+      "description": "ERNIE 5.5 Flash Base의 사양과 이전판 대비 변화, 경쟁 모델 성능과 제공 비용을 비교한다.",
+      "checked_on": "2026-11-07",
+      "scope": "원문 기준일 2026-11-05. 자료 확인일 2026-11-07 KST. 공식 발표·카드와 공개 평가의 조건을 대조했다. 실제 모델 실행, 서비스 청구와 사람 독해 시험은 하지 않았다.",
+      "deck": "바이두가 ERNIE 5.5 Flash의 사전학습 종료 가중치를 FP8과 BF16으로 공개했다. 이전 4.5 Base보다 활성 파라미터가 47B에서 14B로 줄고 추론 문맥은 1,048,576토큰까지 지원한다. 지식·코딩 점수의 개선과 달리 일부 재순위·장문 평가에서는 경쟁 Base가 앞선다.",
+      "highlights": [
+        "이전 Base 대비 구조와 문맥",
+        "가중치와 상용 제공"
+      ],
+      "source_note": "원문 기준일 2026-11-05. 사양과 제공 확인일 2026-11-07 KST.",
+      "summary": [
+        {
+          "label": "이전 Base 대비 구조와 문맥",
+          "text": "이전 4.5 텍스트 Base는 300B 전체, 47B 활성, 131,072토큰 문맥이었다. 5.5는 장거리 정보를 압축해서 보는 층과 토큰 단위 희소 어텐션 층을 섞는다. 사전학습은 최대 131,072토큰이고, 배포 설정에서 미세조정·추론은 1,048,576토큰까지 지원한다. 활성 파라미터 감소만으로 실제 메모리와 처리비 절감 폭은 알 수 없다.",
+          "source_ids": [
+            "card",
+            "launch",
+            "prev"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "가중치와 상용 제공",
+          "text": "FP8과 BF16을 공개하고 SGLang과 vLLM 제공 방법을 설명한다. 4.5의 Apache 2.0과 달리 이번에는 ERNIE 전용 계약이 상용 조건을 정한다. 확인한 원문에는 이 Base 체크포인트의 바이두 관리형 표준 API 가격이 없다.",
+          "source_ids": [
+            "card",
+            "license",
+            "prev"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "explanation": [
+        {
+          "id": "section-1",
+          "title": "사전학습 가중치의 역할",
+          "lead": "사전학습 가중치의 역할의 비교 조건과 관측 결과를 정리했다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "사양과 근거",
+              "text": "280B 전체 파라미터 중 토큰마다 14B를 활성화하는 희소 전문가 혼합 모델이다. 33.5조 토큰으로 사전학습했으며 중간학습과 지시·정렬 후학습 전 체크포인트다. 추가 학습의 출발점으로 공개됐기 때문에 채팅 서비스의 지시 준수나 도구 사용 능력을 이 성능으로 판단하기 어렵다.",
+              "source_ids": [
+                "card",
+                "launch"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "section-2",
+          "title": "이전 Base 대비 구조와 문맥",
+          "lead": "이전 Base 대비 구조와 문맥의 비교 조건과 관측 결과를 정리했다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "사양과 근거",
+              "text": "이전 4.5 텍스트 Base는 300B 전체, 47B 활성, 131,072토큰 문맥이었다. 5.5는 장거리 정보를 압축해서 보는 층과 토큰 단위 희소 어텐션 층을 섞는다. 사전학습은 최대 131,072토큰이고, 배포 설정에서 미세조정·추론은 1,048,576토큰까지 지원한다. 활성 파라미터 감소만으로 실제 메모리와 처리비 절감 폭은 알 수 없다.",
+              "source_ids": [
+                "card",
+                "launch",
+                "prev"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "section-3",
+          "title": "지식과 코드 평가에서의 우위",
+          "lead": "지식과 코드 평가에서의 우위의 비교 조건과 관측 결과를 정리했다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "사양과 근거",
+              "text": "바이두는 같은 프롬프트와 예시 수의 파이프라인에서 네 Base를 비교했다. MMLU-Pro 5-shot 정확 일치 점수는 78.4로 DeepSeek의 69.2보다 높고, HumanEval+ 1-shot pass@1은 82.3으로 Hy3의 78.0보다 높다. 지식·코드 생성에 유리한 출발점이라는 근거다.",
+              "source_ids": [
+                "card"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "section-4",
+          "title": "장문 처리에서도 갈리는 결과",
+          "lead": "장문 처리에서도 갈리는 결과의 비교 조건과 관측 결과를 정리했다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "사양과 근거",
+              "text": "LongBench-v2는 48.7점으로 표에서 앞섰지만, HELMET-Rerank NDCG@10은 56.2로 DeepSeek의 60.0보다 낮다. InfiniteBench 평균도 46.5로 DeepSeek의 48.0보다 낮다. 문맥 상한은 더 긴 입력을 담을 수 있다는 사양이며, 긴 입력 전체에서 일관되게 높은 성능을 보인다는 의미는 별도 평가가 필요하다.",
+              "source_ids": [
+                "card"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "section-5",
+          "title": "가중치와 상용 제공",
+          "lead": "가중치와 상용 제공의 비교 조건과 관측 결과를 정리했다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "사양과 근거",
+              "text": "FP8과 BF16을 공개하고 SGLang과 vLLM 제공 방법을 설명한다. 4.5의 Apache 2.0과 달리 이번에는 ERNIE 전용 계약이 상용 조건을 정한다. 확인한 원문에는 이 Base 체크포인트의 바이두 관리형 표준 API 가격이 없다.",
+              "source_ids": [
+                "card",
+                "license",
+                "prev"
+              ],
+              "kind": "fact"
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "spec",
+          "title": "동일 계열 이전판과 공개 Base의 사양·비용",
+          "columns": [
+            "모델",
+            "전체 / 활성",
+            "문맥·가중치",
+            "제공 비용"
+          ],
+          "rows": [
+            {
+              "values": [
+                "ERNIE 5.5 Flash Base",
+                "280B / 14B",
+                "사전학습 131,072, 추론·미세조정 1,048,576토큰, FP8·BF16",
+                "공개 가중치, ERNIE 전용 계약, 표준 API 미확인"
+              ],
+              "source_ids": [
+                "card",
+                "license"
+              ]
+            },
+            {
+              "values": [
+                "ERNIE 4.5 Base PT",
+                "300B / 47B",
+                "131,072토큰",
+                "공개 가중치, Apache 2.0, 동일 모델 표준 API 미확인"
+              ],
+              "source_ids": [
+                "prev"
+              ]
+            },
+            {
+              "values": [
+                "DeepSeek V4 Flash Base",
+                "284B / 13B",
+                "바이두 동조건 Base 비교 대상",
+                "비교표는 가중치 단계의 결과, 관리형 채팅 가격 미적용"
+              ],
+              "source_ids": [
+                "card"
+              ]
+            },
+            {
+              "values": [
+                "Hy3 Preview Base",
+                "295B / 21B",
+                "바이두 동조건 Base 비교 대상",
+                "동일 체크포인트의 관리형 가격 미확인"
+              ],
+              "source_ids": [
+                "card"
+              ]
+            }
+          ],
+          "note": "상용 계약, 호스팅과 하드웨어 비용은 토큰별 API 정가와 분리한다."
+        },
+        {
+          "id": "bench",
+          "title": "바이두 파이프라인의 Base 평가",
+          "columns": [
+            "평가와 조건",
+            "ERNIE 5.5",
+            "DeepSeek V4 Flash",
+            "Hy3 Preview",
+            "MiMo V2.5"
+          ],
+          "rows": [
+            {
+              "values": [
+                "MMLU-Pro, 5-shot EM",
+                "78.4",
+                "69.2",
+                "66.9",
+                "65.7"
+              ],
+              "source_ids": [
+                "card"
+              ]
+            },
+            {
+              "values": [
+                "HumanEval+, 1-shot pass@1",
+                "82.3",
+                "69.5",
+                "78.0",
+                "74.4"
+              ],
+              "source_ids": [
+                "card"
+              ]
+            },
+            {
+              "values": [
+                "HELMET-Rerank, 0-shot NDCG@10",
+                "56.2",
+                "60.0",
+                "55.7",
+                "56.6"
+              ],
+              "source_ids": [
+                "card"
+              ]
+            },
+            {
+              "values": [
+                "InfiniteBench, 0-shot 평균",
+                "46.5",
+                "48.0",
+                "33.0",
+                "46.7"
+              ],
+              "source_ids": [
+                "card"
+              ]
+            }
+          ],
+          "note": "Baidu 모델 카드의 원문 점수다. 예시 수와 지표가 다르므로 서로 다른 행을 합산하지 않는다. 세부 런타임·디코딩은 인용 표에서 전부 확인되지 않았다."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "판단",
+            "text": "대규모 언어 모델의 추가 학습을 시작할 때 지식·코드 성능과 긴 문맥을 함께 고려할 수 있다. 재순위나 장문 작업의 판단은 해당 평가를 따로 보고, 상용 배포 비용은 사용 조건과 인프라를 포함해 비교해야 한다.",
+            "source_ids": [
+              "card",
+              "launch",
+              "license",
+              "prev"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "공식 발표·카드와 공개 평가의 조건을 대조했다. 실제 모델 실행, 서비스 청구와 사람 독해 시험은 하지 않았다.",
+          "source_ids": [
+            "card",
+            "launch",
+            "license",
+            "prev"
+          ]
+        }
+      ],
+      "references": [
+        {
+          "id": "card",
+          "title": "바이두 사양과 통합 비교 평가",
+          "url": "https://huggingface.co/baidu/ERNIE-5.5-Flash-Base/raw/main/README.md",
+          "description": "학습·추론 문맥과 비교 평가"
+        },
+        {
+          "id": "launch",
+          "title": "바이두 기술 발표",
+          "url": "https://ernie.baidu.com/release/ernie-5-5-flash-base/",
+          "description": "공개일, 사전학습 단계와 설계"
+        },
+        {
+          "id": "license",
+          "title": "ERNIE 5.5 Flash Base 이용계약",
+          "url": "https://huggingface.co/baidu/ERNIE-5.5-Flash-Base/raw/main/LICENSE",
+          "description": "별도 상용 조건과 정의"
+        },
+        {
+          "id": "prev",
+          "title": "ERNIE 4.5 Base 공식 카드",
+          "url": "https://huggingface.co/baidu/ERNIE-4.5-300B-A47B-Base-PT/raw/main/README.md",
+          "description": "이전 텍스트 Base의 구조·문맥과 라이선스"
+        }
+      ]
+    },
+    {
+      "id": "swe-2-flash-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "title": "SWE-2 Flash 소개 — 코딩 속도와 평가별 성능 차이",
+      "description": "SWE-2 Flash의 사양과 이전판 대비 변화, 경쟁 모델 성능과 제공 비용을 비교한다.",
+      "checked_on": "2026-11-07",
+      "scope": "원문 기준일 2026-11-04. 자료 확인일 2026-11-07 KST. 공식 발표·카드와 공개 평가의 조건을 대조했다. 실제 모델 실행, 서비스 청구와 사람 독해 시험은 하지 않았다.",
+      "deck": "Cognition의 276B 코딩 모델이 Devin Desktop과 CLI에 추가됐다. FrontierCode 2.0에서는 SWE-2와 비슷했지만, DeepSWE 1.1과 Terminal-Bench 4.0에서는 더 낮았다. Medium·High·Max는 같은 모델의 추론 설정이며 현재 문서에 프로모션 종료 뒤 추가 사용 요금이 공개돼 있다.",
+      "highlights": [
+        "속도와 강점이 드러난 평가",
+        "플랜과 추가 사용 요금"
+      ],
+      "source_note": "원문 기준일 2026-11-04. 사양과 제공 확인일 2026-11-07 KST.",
+      "summary": [
+        {
+          "label": "속도와 강점이 드러난 평가",
+          "text": "FrontierCode 2.0의 24.0은 SWE-2의 23.8과 가깝고, SWE-Bench Pro v2 Hard도 89.9 대 90.6이다. 속도 데모는 Terminal-Bench 4.0의 한 과제를 각 모델이 수행한 기록을 같은 길이로 잘라 200 대 60토큰/초로 재생한 것이다. 데모 배속을 독립 처리량이나 종단간 성공률로 환산하지 않는다.",
+          "source_ids": [
+            "launch"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "플랜과 추가 사용 요금",
+          "text": "현재 문서에서 무료 플랜은 Medium, 유료 플랜은 High와 Max도 선택할 수 있다. Devin Cloud에는 제공하지 않는다. 셀프서비스 무료 기간은 12월 4일 18:00 UTC까지, ACU 기업 할인은 11월 18일 18:00 UTC까지이며 두 조건을 섞지 않는다. 세 추론 설정의 프로모션 뒤 단가는 같고, 할당량 소모는 토큰 단가와 다를 수 있다.",
+          "source_ids": [
+            "devin",
+            "launch"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "explanation": [
+        {
+          "id": "section-1",
+          "title": "같은 계열의 경량 코딩 모델",
+          "lead": "같은 계열의 경량 코딩 모델의 비교 조건과 관측 결과를 정리했다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "사양과 근거",
+              "text": "SWE-2 Flash는 전체 276B, 토큰당 활성 12B로 발표됐다. 원래 SWE-2의 2.8T 전체, 104B 활성보다 작다. Cognition은 이전 Inkling-Small 계열 기반으로 소프트웨어 엔지니어링의 중간학습과 강화학습을 적용했다고 설명한다. 표에 비교된 Inkling-Small은 Inkling 2 Small과 다른 모델이다.",
+              "source_ids": [
+                "launch",
+                "prev"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "section-2",
+          "title": "속도와 강점이 드러난 평가",
+          "lead": "속도와 강점이 드러난 평가의 비교 조건과 관측 결과를 정리했다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "사양과 근거",
+              "text": "FrontierCode 2.0의 24.0은 SWE-2의 23.8과 가깝고, SWE-Bench Pro v2 Hard도 89.9 대 90.6이다. 속도 데모는 Terminal-Bench 4.0의 한 과제를 각 모델이 수행한 기록을 같은 길이로 잘라 200 대 60토큰/초로 재생한 것이다. 데모 배속을 독립 처리량이나 종단간 성공률로 환산하지 않는다.",
+              "source_ids": [
+                "launch"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "section-3",
+          "title": "더 어려운 과제에서의 손실",
+          "lead": "더 어려운 과제에서의 손실의 비교 조건과 관측 결과를 정리했다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "사양과 근거",
+              "text": "DeepSWE 1.1에서는 60.1 대 73.0, Terminal-Bench 4.0에서는 20.0 대 27.3으로 SWE-2가 높다. Claude Haiku 5.5도 Terminal-Bench 4.0에서 39.2로 Flash를 앞섰다. Cognition 비교표의 모델별 추론 설정이나 모든 평가의 실행 환경이 동일하다고 확인되지는 않는다.",
+              "source_ids": [
+                "launch"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "section-4",
+          "title": "플랜과 추가 사용 요금",
+          "lead": "플랜과 추가 사용 요금의 비교 조건과 관측 결과를 정리했다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "사양과 근거",
+              "text": "현재 문서에서 무료 플랜은 Medium, 유료 플랜은 High와 Max도 선택할 수 있다. Devin Cloud에는 제공하지 않는다. 셀프서비스 무료 기간은 12월 4일 18:00 UTC까지, ACU 기업 할인은 11월 18일 18:00 UTC까지이며 두 조건을 섞지 않는다. 세 추론 설정의 프로모션 뒤 단가는 같고, 할당량 소모는 토큰 단가와 다를 수 있다.",
+              "source_ids": [
+                "devin",
+                "launch"
+              ],
+              "kind": "fact"
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "spec",
+          "title": "이전판과 경쟁 코딩 모델의 제공·가격",
+          "columns": [
+            "모델",
+            "규모 / 제공",
+            "표준 또는 프로모션 뒤 USD/100만 토큰"
+          ],
+          "rows": [
+            {
+              "values": [
+                "SWE-2 Flash",
+                "276B / 12B 활성, Devin Desktop·CLI",
+                "입력 0.10, 출력 0.50, 캐시 읽기 0.01, 쓰기 0.125"
+              ],
+              "source_ids": [
+                "launch",
+                "devin"
+              ]
+            },
+            {
+              "values": [
+                "SWE-2",
+                "2.8T / 104B 활성, Devin 계열",
+                "입력 3.00, 출력 15.00, 캐시 읽기 0.30. 프로모션 별도"
+              ],
+              "source_ids": [
+                "launch",
+                "devin",
+                "prev"
+              ]
+            },
+            {
+              "values": [
+                "Claude Haiku 5.5",
+                "Anthropic 범용 경량 모델, Claude API",
+                "Anthropic 직접 API 시작가 입력 0.10, 출력 0.50. Devin 추가 사용 단가와 별개"
+              ],
+              "source_ids": [
+                "haiku"
+              ]
+            }
+          ],
+          "note": "Devin Flash 표준가는 할당량과 별개인 추가 사용 단가다. 출시 글의 이전 가격 대비 표현과 최신 플랜별 절대 단가를 별도로 읽는다."
+        },
+        {
+          "id": "bench",
+          "title": "Cognition 발표판의 코딩 평가",
+          "columns": [
+            "평가판",
+            "SWE-2 Flash",
+            "SWE-2",
+            "Claude Haiku 5.5"
+          ],
+          "rows": [
+            {
+              "values": [
+                "FrontierCode 2.0",
+                "24.0",
+                "23.8",
+                "27.7"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "DeepSWE 1.1",
+                "60.1",
+                "73.0",
+                "59.3"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Terminal-Bench 4.0",
+                "20.0",
+                "27.3",
+                "39.2"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "SWE-Bench Pro v2 Hard",
+                "89.9",
+                "90.6",
+                "90.2"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            }
+          ],
+          "note": "Cognition 발표 표의 원문 점수다. 벤치마크 버전 차이와 공개하지 않은 세부 Harness를 보존한다."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "판단",
+            "text": "Devin Desktop과 CLI에서 빠르고 저렴한 코딩 경로가 추가됐다. FrontierCode와 DeepSWE, 터미널 과제가 서로 다른 결과를 보이므로, 높은 난도에서 속도와 성공률의 교환관계를 평가별로 확인할 수 있다.",
+            "source_ids": [
+              "launch",
+              "devin",
+              "prev",
+              "haiku"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "공식 발표·카드와 공개 평가의 조건을 대조했다. 실제 모델 실행, 서비스 청구와 사람 독해 시험은 하지 않았다.",
+          "source_ids": [
+            "launch",
+            "devin",
+            "prev",
+            "haiku"
+          ]
+        }
+      ],
+      "references": [
+        {
+          "id": "launch",
+          "title": "Cognition SWE-2 Flash 발표",
+          "url": "https://cognition.com/blog/swe-2-flash",
+          "description": "공급자 성능 비교와 속도 예시"
+        },
+        {
+          "id": "devin",
+          "title": "Devin 모델과 요금",
+          "url": "https://docs.devin.ai/desktop/models",
+          "description": "현재 접근·요금·프로모션"
+        },
+        {
+          "id": "prev",
+          "title": "이전 SWE-2 출시",
+          "url": "https://cognition.com/blog/swe-2",
+          "description": "이전 계열 모델의 포지션"
+        },
+        {
+          "id": "haiku",
+          "title": "Anthropic 공식 모델 목록",
+          "url": "https://platform.claude.com/docs/en/about-claude/models/overview",
+          "description": "경쟁 모델의 공식 제공과 가격"
+        }
+      ]
+    },
+    {
+      "id": "inkling-2-small-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "title": "Inkling 2 Small 소개 — Tinker 제공과 코딩·장시간 추론 비용",
+      "description": "Inkling 2 Small의 사양과 이전판 대비 변화, 경쟁 모델 성능과 제공 비용을 비교한다.",
+      "checked_on": "2026-11-07",
+      "scope": "원문 기준일 2026-11-05. 자료 확인일 2026-11-07 KST. 공식 발표·카드와 공개 평가의 조건을 대조했다. 실제 모델 실행, 서비스 청구와 사람 독해 시험은 하지 않았다.",
+      "deck": "Thinking Machines Lab의 594B 멀티모달 모델이 Tinker 추론과 미세조정에 추가됐다. 이전 Inkling Small보다 코딩과 복합 작업 점수가 올랐지만, 독립 평가에서 출력 토큰과 과제 비용도 늘었다. 확인 시점에 가중치는 비공개이며 Apache 2.0 공개는 예정 단계다.",
+      "highlights": [
+        "이전 모델 대비 코딩과 추론",
+        "추론, 학습, 체크포인트 비용"
+      ],
+      "source_note": "원문 기준일 2026-11-05. 사양과 제공 확인일 2026-11-07 KST.",
+      "summary": [
+        {
+          "label": "이전 모델 대비 코딩과 추론",
+          "text": "공급자는 이전 Inkling-Small보다 에이전트 코딩·시각·지식 작업 점수가 높아졌다고 발표했다. Artificial Analysis의 v5.0.1에서는 이전 모델 대비 지수가 약 18점 올랐고, FrontierCode 2.0은 5%에서 25%로 높아졌다. 이 변화와 함께 평균 출력은 약 37K에서 약 150K 토큰으로 늘었고 지수 과제당 비용도 약 $0.20에서 $1.18로 증가했다.",
+          "source_ids": [
+            "launch",
+            "aa"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "추론, 학습, 체크포인트 비용",
+          "text": "Tinker의 표준가는 입력 $0.30, 캐시 입력 $0.03, 샘플 출력 $1.00이다. 학습은 64K $1.50, 256K $3.00으로 문맥 항목에 따라 다르다. 모두 100만 토큰 기준이고 체크포인트 보관은 별도다. 발표에서 외부 안전 시험 이후 가중치 공개 계획을 제시했으나 현재 체크포인트 내려받기를 보장하지 않는다.",
+          "source_ids": [
+            "prices",
+            "launch"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "explanation": [
+        {
+          "id": "section-1",
+          "title": "가중치 공개 전의 제공 범위",
+          "lead": "가중치 공개 전의 제공 범위의 비교 조건과 관측 결과를 정리했다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "사양과 근거",
+              "text": "이미지와 텍스트를 받아 텍스트를 내는 희소 전문가 혼합 모델이며 활성 파라미터는 17B다. 음성을 지원했던 이전 계열과 달리 이번 모델은 음성 입력을 지원하지 않는다. 최대 1M 토큰은 모델 카드의 사양이고, 요금표의 64K와 256K는 명시된 Tinker 제공 항목이다. 모든 경로에서 1M을 이용할 수 있다고 확정할 근거는 없다.",
+              "source_ids": [
+                "card",
+                "launch",
+                "prices"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "section-2",
+          "title": "이전 모델 대비 코딩과 추론",
+          "lead": "이전 모델 대비 코딩과 추론의 비교 조건과 관측 결과를 정리했다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "사양과 근거",
+              "text": "공급자는 이전 Inkling-Small보다 에이전트 코딩·시각·지식 작업 점수가 높아졌다고 발표했다. Artificial Analysis의 v5.0.1에서는 이전 모델 대비 지수가 약 18점 올랐고, FrontierCode 2.0은 5%에서 25%로 높아졌다. 이 변화와 함께 평균 출력은 약 37K에서 약 150K 토큰으로 늘었고 지수 과제당 비용도 약 $0.20에서 $1.18로 증가했다.",
+              "source_ids": [
+                "launch",
+                "aa"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "section-3",
+          "title": "최대 추론 설정의 커널 최적화",
+          "lead": "최대 추론 설정의 커널 최적화의 비교 조건과 관측 결과를 정리했다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "사양과 근거",
+              "text": "Thinking Machines는 PMPP-Hard 69과제에서 각 모델을 최대 추론 설정, PI Harness와 공통 문맥 압축 정책으로 평가했다. Inkling은 10시간 내 평균 54.25개를 풀어 DeepSeek V4.1 Flash의 55.25개보다 적었지만 4회 중 한 번 이상 해결한 수는 64개로 62개보다 많았다. 평균과 pass@4는 다른 측정이며, 커널 속도는 전체 학습 속도와 별개다.",
+              "source_ids": [
+                "launch"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "section-4",
+          "title": "추론, 학습, 체크포인트 비용",
+          "lead": "추론, 학습, 체크포인트 비용의 비교 조건과 관측 결과를 정리했다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "사양과 근거",
+              "text": "Tinker의 표준가는 입력 $0.30, 캐시 입력 $0.03, 샘플 출력 $1.00이다. 학습은 64K $1.50, 256K $3.00으로 문맥 항목에 따라 다르다. 모두 100만 토큰 기준이고 체크포인트 보관은 별도다. 발표에서 외부 안전 시험 이후 가중치 공개 계획을 제시했으나 현재 체크포인트 내려받기를 보장하지 않는다.",
+              "source_ids": [
+                "prices",
+                "launch"
+              ],
+              "kind": "fact"
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "spec",
+          "title": "이전판과 경쟁 모델의 사양·제공·가격",
+          "columns": [
+            "모델",
+            "규모 / 제공",
+            "USD/100만 토큰"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Inkling 2 Small",
+                "594B / 17B 활성, 텍스트·이미지, Tinker",
+                "입력 0.30, 캐시 0.03, 출력 1.00, 학습 1.50 또는 3.00"
+              ],
+              "source_ids": [
+                "card",
+                "prices"
+              ]
+            },
+            {
+              "values": [
+                "Inkling-Small",
+                "276B / 12B 활성, 음성·이미지, Tinker",
+                "공식 표의 64K 입력 0.58, 출력 1.44, 학습 1.73"
+              ],
+              "source_ids": [
+                "prices"
+              ]
+            },
+            {
+              "values": [
+                "DeepSeek V4.1 Flash 1017",
+                "PMPP 및 AA 비교 모델, 별도 가중치와 제공 경로",
+                "이 표의 Tinker 단가와 공급자 가격은 별개"
+              ],
+              "source_ids": [
+                "card",
+                "launch"
+              ]
+            }
+          ],
+          "note": "이전 Inkling-Small 가격은 문서 확인 시점의 Tinker 표시값이다. 64K·256K 가격을 섞지 않는다."
+        },
+        {
+          "id": "bench",
+          "title": "Thinking Machines PMPP-Hard 평가",
+          "columns": [
+            "모델",
+            "평균 해결 / 69",
+            "pass@4 / 69",
+            "곡선 아래 면적 / 과제·시간"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Inkling 2 Small",
+                "54.25",
+                "64",
+                "494.27"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "DeepSeek V4.1 Flash",
+                "55.25",
+                "62",
+                "497.36"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "GPT-6 Astra",
+                "63",
+                "63",
+                "616.39"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            }
+          ],
+          "note": "공급자 자체 측정. 모델별 최대 추론, 4회, 10시간 구간, PI Harness와 공통 문맥 압축 정책."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "판단",
+            "text": "Tinker에서 추론과 맞춤 학습을 시작할 수 있으며 이전판보다 높은 코딩·지식 성능이 관측됐다. 저렴한 토큰 단가와 과제당 비용은 서로 다르다. 로컬 가중치가 필요한 도입은 실제 가중치 공개 시점과 라이선스를 확인해야 한다.",
+            "source_ids": [
+              "card",
+              "launch",
+              "prices",
+              "aa"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "공식 발표·카드와 공개 평가의 조건을 대조했다. 실제 모델 실행, 서비스 청구와 사람 독해 시험은 하지 않았다.",
+          "source_ids": [
+            "card",
+            "launch",
+            "prices",
+            "aa"
+          ]
+        }
+      ],
+      "references": [
+        {
+          "id": "card",
+          "title": "Thinking Machines Inkling 2 Small 모델 카드",
+          "url": "https://thinkingmachines.ai/model-card/inkling-2-small/",
+          "description": "공식 사양, 평가와 제공 범위"
+        },
+        {
+          "id": "launch",
+          "title": "Thinking Machines 발표와 커널 실험",
+          "url": "https://thinkingmachines.ai/news/inkling-2-small/",
+          "description": "출시 시점과 가중치 계획, PMPP 실험"
+        },
+        {
+          "id": "prices",
+          "title": "Tinker 공식 요금과 ID",
+          "url": "https://tinker-docs.thinkingmachines.ai/tinker/models/models_and_pricing/",
+          "description": "표준 추론·학습 단가, 64K·256K 구분"
+        },
+        {
+          "id": "aa",
+          "title": "Artificial Analysis 직접 측정",
+          "url": "https://artificialanalysis.ai/es/articles/thinking-machines-releases-inkling-2-small-highest-scoring-open-weights-model-outside-of-chinia-upon-weights-release-it",
+          "description": "독립 평가, 속도 및 제공 조건"
+        }
+      ]
+    },
+    {
+      "id": "twil-8b-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "title": "TwIL-8B 소개 — 추론 길이를 줄인 s30 판의 강점과 한계",
+      "description": "TwIL-8B의 사양과 이전판 대비 변화, 경쟁 모델 성능과 제공 비용을 비교한다.",
+      "checked_on": "2026-11-07",
+      "scope": "원문 기준일 2026-11-03. 자료 확인일 2026-11-07 KST. 공식 발표·카드와 공개 평가의 조건을 대조했다. 실제 모델 실행, 서비스 청구와 사람 독해 시험은 하지 않았다.",
+      "deck": "webAI가 기존 TwIL-8B 가중치를 11월 3일 s30 길이 압축판으로 갱신했다. 8.79B 로컬 모델에서 수학과 일부 코드 평가가 강하지만, 과학·지식 평가는 비교 모델보다 낮다. balanced와 verbose는 같은 계열의 배포판이며 비상업 조건이 적용된다.",
+      "highlights": [
+        "수학과 코드 평가의 강점",
+        "가중치 라이선스와 로컬 비용"
+      ],
+      "source_note": "원문 기준일 2026-11-03. 사양과 제공 확인일 2026-11-07 KST.",
+      "summary": [
+        {
+          "label": "수학과 코드 평가의 강점",
+          "text": "webAI 카드에서 MATH-500은 98.2%, LiveCodeBench는 81.6%다. 표에 실린 Qwen3.5-9B의 96.6%, 65.6%보다 높지만 webAI가 경쟁 모델을 동일 Harness에서 재실행한 결과는 아니다. LiveCodeBench의 세부 평가 조건과 표본 차이까지 통제한 동등 비교로 해석하기는 어렵다.",
+          "source_ids": [
+            "card",
+            "qwen"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "가중치 라이선스와 로컬 비용",
+          "text": "BF16은 변형별 16.38GiB이며 Q4_K_M은 4.98GiB 파일로 제공된다. 디스크 크기에 추론 메모리, KV 캐시와 런타임 비용이 포함되지는 않는다. IBM 기반 모델의 Apache 2.0과 별도로 TwIL 체크포인트에는 webAI 비상업 라이선스가 적용된다. 모델 전용 표준 관리형 API 단가는 확인되지 않았다.",
+          "source_ids": [
+            "card",
+            "license",
+            "base"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "explanation": [
+        {
+          "id": "section-1",
+          "title": "10월 가중치에서 s30으로",
+          "lead": "10월 가중치에서 s30으로의 비교 조건과 관측 결과를 정리했다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "사양과 근거",
+              "text": "공식 저장소에는 10월 14일 rl100 가중치가 올라왔고 11월 3일 s30 길이 압축 체크포인트로 교체됐다. 11월 4일 카드 수정은 최초 공개일과 다르다. 모델은 IBM Granite 4.2 8B를 기반으로 추가 학습했으며 balanced는 길이를 줄이는 추가 강화학습을 적용한 기본판, verbose는 더 긴 추론을 허용하는 배포판이다.",
+              "source_ids": [
+                "history",
+                "card",
+                "base"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "section-2",
+          "title": "수학과 코드 평가의 강점",
+          "lead": "수학과 코드 평가의 강점의 비교 조건과 관측 결과를 정리했다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "사양과 근거",
+              "text": "webAI 카드에서 MATH-500은 98.2%, LiveCodeBench는 81.6%다. 표에 실린 Qwen3.5-9B의 96.6%, 65.6%보다 높지만 webAI가 경쟁 모델을 동일 Harness에서 재실행한 결과는 아니다. LiveCodeBench의 세부 평가 조건과 표본 차이까지 통제한 동등 비교로 해석하기는 어렵다.",
+              "source_ids": [
+                "card",
+                "qwen"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "section-3",
+          "title": "과학·지식과 추론 길이",
+          "lead": "과학·지식과 추론 길이의 비교 조건과 관측 결과를 정리했다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "사양과 근거",
+              "text": "GPQA Diamond에서는 70.2%로 Qwen3.5-9B 81.7%보다 낮고, AIME 2026에서도 88.3% 대 92.5%로 낮다. 같은 카드의 토큰 표에서 AIME 2026은 19.5K 대 31.2K지만, 토큰 감소와 정확도 차이를 함께 읽어야 한다. 카드의 고추론 pass@1 결과를 짧은 기본 요청이나 처리 시간으로 환산할 수 없다.",
+              "source_ids": [
+                "card"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "section-4",
+          "title": "가중치 라이선스와 로컬 비용",
+          "lead": "가중치 라이선스와 로컬 비용의 비교 조건과 관측 결과를 정리했다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "사양과 근거",
+              "text": "BF16은 변형별 16.38GiB이며 Q4_K_M은 4.98GiB 파일로 제공된다. 디스크 크기에 추론 메모리, KV 캐시와 런타임 비용이 포함되지는 않는다. IBM 기반 모델의 Apache 2.0과 별도로 TwIL 체크포인트에는 webAI 비상업 라이선스가 적용된다. 모델 전용 표준 관리형 API 단가는 확인되지 않았다.",
+              "source_ids": [
+                "card",
+                "license",
+                "base"
+              ],
+              "kind": "fact"
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "spec",
+          "title": "이전 체크포인트와 동급 공개 모델",
+          "columns": [
+            "모델",
+            "사양과 구분",
+            "제공과 비용"
+          ],
+          "rows": [
+            {
+              "values": [
+                "TwIL-8B s30",
+                "8.79B, 텍스트, 131,072토큰 문맥",
+                "BF16·GGUF, webAI 비상업, 표준 API 미확인"
+              ],
+              "source_ids": [
+                "card",
+                "license"
+              ]
+            },
+            {
+              "values": [
+                "TwIL-8B rl100",
+                "10월 14일 공개, s30 이전 체크포인트",
+                "공식 변경 이력 보존, 최신 파일과 구분"
+              ],
+              "source_ids": [
+                "history"
+              ]
+            },
+            {
+              "values": [
+                "Qwen3.5-9B",
+                "비교 표에 포함된 9B급 모델",
+                "공식 가중치, 별도 제공 계약·호스팅 비용"
+              ],
+              "source_ids": [
+                "card",
+                "qwen"
+              ]
+            }
+          ],
+          "note": "파일 크기와 실제 필요한 메모리를 구분한다."
+        },
+        {
+          "id": "bench",
+          "title": "공개 카드의 TwIL과 Qwen 평가",
+          "columns": [
+            "평가",
+            "TwIL-8B",
+            "Qwen3.5-9B"
+          ],
+          "rows": [
+            {
+              "values": [
+                "MATH-500",
+                "98.2%",
+                "96.6%"
+              ],
+              "source_ids": [
+                "card"
+              ]
+            },
+            {
+              "values": [
+                "LiveCodeBench",
+                "81.6%",
+                "65.6%"
+              ],
+              "source_ids": [
+                "card"
+              ]
+            },
+            {
+              "values": [
+                "GPQA Diamond",
+                "70.2%",
+                "81.7%"
+              ],
+              "source_ids": [
+                "card"
+              ]
+            },
+            {
+              "values": [
+                "AIME 2026",
+                "88.3%",
+                "92.5%"
+              ],
+              "source_ids": [
+                "card"
+              ]
+            }
+          ],
+          "note": "TwIL은 자체 고추론 pass@1, thinking 사용. 경쟁 수치는 11월 3일 확인한 각 공개 출처를 재인용했으며 동일 조건의 재실행이 아니다."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "판단",
+            "text": "비상업 환경의 로컬 수학·코드 추론에서 비교할 만한 모델이다. 지식·과학 결과와 상대 추론 길이를 함께 비교해야 하며, 이 배포판은 이전 10월 가중치와 구분해 재현해야 한다.",
+            "source_ids": [
+              "card",
+              "history",
+              "license",
+              "base",
+              "qwen"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "공식 발표·카드와 공개 평가의 조건을 대조했다. 실제 모델 실행, 서비스 청구와 사람 독해 시험은 하지 않았다.",
+          "source_ids": [
+            "card",
+            "history",
+            "license",
+            "base",
+            "qwen"
+          ]
+        }
+      ],
+      "references": [
+        {
+          "id": "card",
+          "title": "webAI TwIL-8B 모델 카드",
+          "url": "https://huggingface.co/webAI-Official/TwIL-8B/raw/main/README.md",
+          "description": "구성, 비교표와 평가의 비대칭"
+        },
+        {
+          "id": "history",
+          "title": "webAI 공개 가중치 변경 이력",
+          "url": "https://huggingface.co/api/models/webAI-Official/TwIL-8B/commits/main",
+          "description": "10월 rl100과 11월 s30 교체 시점"
+        },
+        {
+          "id": "license",
+          "title": "webAI 비상업 라이선스",
+          "url": "https://huggingface.co/webAI-Official/TwIL-8B/raw/main/LICENSE.md",
+          "description": "상업 이용 제한"
+        },
+        {
+          "id": "base",
+          "title": "IBM Granite 4.2 8B 공식 카드",
+          "url": "https://huggingface.co/ibm-granite/granite-4.2-8b/raw/main/README.md",
+          "description": "기반 모델과 제공"
+        },
+        {
+          "id": "qwen",
+          "title": "Qwen3.5-9B 공식 카드",
+          "url": "https://huggingface.co/Qwen/Qwen3.5-9B/raw/main/README.md",
+          "description": "경쟁 공개 가중치"
+        }
+      ]
+    },
+    {
+      "id": "meridian-air-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "title": "Meridian Air 소개 — 앱에 나온 12B 모델과 예고된 CivoE",
+      "description": "Meridian Air의 사양과 이전판 대비 변화, 경쟁 모델 성능과 제공 비용을 비교한다.",
+      "checked_on": "2026-11-07",
+      "scope": "원문 기준일 2026-11-04. 자료 확인일 2026-11-07 KST. 공식 발표·카드와 공개 평가의 조건을 대조했다. 실제 모델 실행, 서비스 청구와 사람 독해 시험은 하지 않았다.",
+      "deck": "webAI가 11월 4일부터 Meridian Air의 앱 배포를 시작했다. 현재 배포 모델은 12B 기반 모델이며, 분야별 전문가를 붙인 CivoE는 순차 제공 예정이다. 보고된 85.5점은 예고된 전문가 구성의 성적이고, 기반 모델의 동일 문항 점수는 59.8점이다.",
+      "highlights": [
+        "전문가를 붙인 CivoE 평가",
+        "제공 시점과 비용"
+      ],
+      "source_note": "원문 기준일 2026-11-04. 사양과 제공 확인일 2026-11-07 KST.",
+      "summary": [
+        {
+          "label": "전문가를 붙인 CivoE 평가",
+          "text": "예고된 CivoE는 기반 가중치를 공유하는 전문가 구성이다. webAI가 14개 공개 데이터셋에서 고른 과제군을 각각 0~100으로 환산한 내부 비교에서, 기반 모델 59.8점과 CivoE 85.5점이 나왔다. CivoE의 Gemini 4 대비 차이는 0.8점이며 95% 부트스트랩 구간은 −1.5~2.9점이다. 이 구간으로 우위를 판단하기 어렵다.",
+          "source_ids": [
+            "card"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "제공 시점과 비용",
+          "text": "현재 확인한 공급자 발표는 앱에 기반 모델이 배포되기 시작했다고 설명한다. CivoE는 수 주에 걸친 제공 예정이며 계정별 실제 사용 가능 여부는 확인되지 않았다. 두 구성의 별도 관리형 API 정가, 연산 요건과 가중치 이용 조건도 발표에서 확인되지 않았다.",
+          "source_ids": [
+            "card",
+            "launch"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "explanation": [
+        {
+          "id": "section-1",
+          "title": "앱에 공개된 12B 모델",
+          "lead": "앱에 공개된 12B 모델의 비교 조건과 관측 결과를 정리했다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "사양과 근거",
+              "text": "webAI는 11월 4일부터 앱에 12B Meridian Air가 배포된다고 밝혔다. 이전 동일 계열의 체크포인트, 모델 ID, 문맥 토큰과 공개 가중치 조건은 발표에서 확인할 수 없다. Gemma 4를 양자화한 별도의 Air-26B-A4B 파일과 이름이 유사하지만 발표의 12B 기반 모델을 가리키지 않는다.",
+              "source_ids": [
+                "card",
+                "launch"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "section-2",
+          "title": "전문가를 붙인 CivoE 평가",
+          "lead": "전문가를 붙인 CivoE 평가의 비교 조건과 관측 결과를 정리했다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "사양과 근거",
+              "text": "예고된 CivoE는 기반 가중치를 공유하는 전문가 구성이다. webAI가 14개 공개 데이터셋에서 고른 과제군을 각각 0~100으로 환산한 내부 비교에서, 기반 모델 59.8점과 CivoE 85.5점이 나왔다. CivoE의 Gemini 4 대비 차이는 0.8점이며 95% 부트스트랩 구간은 −1.5~2.9점이다. 이 구간으로 우위를 판단하기 어렵다.",
+              "source_ids": [
+                "card"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "section-3",
+          "title": "장점이 나타난 과제와 반대 결과",
+          "lead": "장점이 나타난 과제와 반대 결과의 비교 조건과 관측 결과를 정리했다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "사양과 근거",
+              "text": "전문가 구성은 개인정보 태깅과 사진 질의에서 최고 비교군보다 각각 15.0점과 14.0점 높았지만, 표 이미지 전사와 재무 보고서 질의에서는 각각 5.5점과 11.0점 낮았다. 발표의 경쟁 프런티어 모델은 Cursor 작업자를 통해 실행했고 정확한 모델판과 추론 설정을 완전히 통제하지 못했다.",
+              "source_ids": [
+                "card"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "section-4",
+          "title": "제공 시점과 비용",
+          "lead": "제공 시점과 비용의 비교 조건과 관측 결과를 정리했다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "사양과 근거",
+              "text": "현재 확인한 공급자 발표는 앱에 기반 모델이 배포되기 시작했다고 설명한다. CivoE는 수 주에 걸친 제공 예정이며 계정별 실제 사용 가능 여부는 확인되지 않았다. 두 구성의 별도 관리형 API 정가, 연산 요건과 가중치 이용 조건도 발표에서 확인되지 않았다.",
+              "source_ids": [
+                "card",
+                "launch"
+              ],
+              "kind": "fact"
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "spec",
+          "title": "기반 모델과 전문가 구성 및 경쟁 제품의 제공 범위",
+          "columns": [
+            "구성",
+            "사양과 제공",
+            "표준 요금"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Meridian Air",
+                "12B 기반, 11월 4일부터 webAI 앱 배포",
+                "별도 표준 API 미확인"
+              ],
+              "source_ids": [
+                "card",
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Meridian Air CivoE",
+                "같은 12B 기반에 전문가 연결, 순차 제공 예정",
+                "별도 표준 API 미확인"
+              ],
+              "source_ids": [
+                "card"
+              ]
+            },
+            {
+              "values": [
+                "Claude Opus 5.5",
+                "공급자 평가에서 Cursor 경유, 별도 Claude API 제공",
+                "직접 API 입력 4, 출력 20 USD/100만 토큰"
+              ],
+              "source_ids": [
+                "card",
+                "haiku"
+              ]
+            }
+          ],
+          "note": "앱의 배포 시작은 전 계정의 접근이나 별도 API의 제공을 뜻하지 않는다."
+        },
+        {
+          "id": "bench",
+          "title": "webAI 선정 과제군의 정규화 점수",
+          "columns": [
+            "모델 또는 구성",
+            "종합 점수 / 100",
+            "시험 조건"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Meridian Air",
+                "59.8",
+                "기반 모델 단독"
+              ],
+              "source_ids": [
+                "card"
+              ]
+            },
+            {
+              "values": [
+                "Meridian Air CivoE",
+                "85.5",
+                "같은 기반에 전문가 연결"
+              ],
+              "source_ids": [
+                "card"
+              ]
+            },
+            {
+              "values": [
+                "Gemini 4",
+                "84.7",
+                "Cursor 작업자 경유"
+              ],
+              "source_ids": [
+                "card"
+              ]
+            },
+            {
+              "values": [
+                "Claude Opus 5.5",
+                "82.7",
+                "Cursor 작업자 경유"
+              ],
+              "source_ids": [
+                "card"
+              ]
+            }
+          ],
+          "note": "webAI의 14개 공개 데이터셋 중 선정 문항에서 과제군별 동일 가중치를 준 종합 지표다. 범용 정확도 백분율과 별개다."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "판단",
+            "text": "현재 앱 배포는 12B 기반 모델을 평가할 기회다. 전문가 구성의 개선은 별도 평가 근거이며, 앱에서 실제 제공될 때까지 기존 모델의 성능이나 가격으로 적용할 수 없다.",
+            "source_ids": [
+              "card",
+              "launch",
+              "haiku"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "공식 발표·카드와 공개 평가의 조건을 대조했다. 실제 모델 실행, 서비스 청구와 사람 독해 시험은 하지 않았다.",
+          "source_ids": [
+            "card",
+            "launch",
+            "haiku"
+          ]
+        }
+      ],
+      "references": [
+        {
+          "id": "card",
+          "title": "webAI Meridian Air 공식 발표와 실험",
+          "url": "https://www.webai.com/research/meridian-1-civoe",
+          "description": "출시·평가·상대 수치와 조건"
+        },
+        {
+          "id": "launch",
+          "title": "webAI 제품과 제공 정보",
+          "url": "https://www.webai.com/",
+          "description": "앱 제공 경로"
+        },
+        {
+          "id": "haiku",
+          "title": "Anthropic 공식 비교 모델 요금",
+          "url": "https://platform.claude.com/docs/en/about-claude/models/overview",
+          "description": "비교 제품의 독립 API 단가"
+        }
+      ]
+    }
+  ]
+}

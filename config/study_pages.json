@@ -94,7 +94,13 @@
     "gpt-image-2-6-sunburst-model-guide",
     "gpt-image-2-6-flare-model-guide",
     "gemini-omni-1-2-flash-model-guide",
-    "pangram-image-1-0-model-guide"
+    "pangram-image-1-0-model-guide",
+    "kanana-2-v-decide-model-guide",
+    "ernie-5-5-flash-base-model-guide",
+    "swe-2-flash-model-guide",
+    "inkling-2-small-model-guide",
+    "twil-8b-model-guide",
+    "meridian-air-model-guide"
   ],
   "catalogs": {
     "devops-implementation-guide": "devops_tools.2026-10-10.r4.json"
@@ -318,6 +324,24 @@
     ],
     "pangram-image-1-0-model-guide": [
       "43d3f0c4a7979c4224cea8bf6f2e0c218957eac7bf89049431a86c6b12e9f7d6"
+    ],
+    "kanana-2-v-decide-model-guide": [
+      "e0b7fefe04fa84d8f93b5a9a5a23da0d6521653a944e3ba28e5877c75397e678"
+    ],
+    "ernie-5-5-flash-base-model-guide": [
+      "c80fe47a9decb66a25ee25539e2f9f1a71554e1e54ff329bf0f8331860775770"
+    ],
+    "swe-2-flash-model-guide": [
+      "d9705018368f0a605e1b82268deb47fcb65014497e69c14510a063b9441c7198"
+    ],
+    "inkling-2-small-model-guide": [
+      "d0eee0a7c19cf2450e75d7b705560091d1be496fa278a6368220c1c192ae7027"
+    ],
+    "twil-8b-model-guide": [
+      "a438fe68a5baaa74cf05bf3931c69e6abbbe1f767985f88b96781403938455d9"
+    ],
+    "meridian-air-model-guide": [
+      "4644251099888aa0885e34331aaaf722ccbf7d0f003783a8bad59f944cced857"
     ]
   },
   "model_introduction_editions": {
@@ -480,6 +504,24 @@
     ],
     "pangram-image-1-0-model-guide": [
       "43d3f0c4a7979c4224cea8bf6f2e0c218957eac7bf89049431a86c6b12e9f7d6"
+    ],
+    "kanana-2-v-decide-model-guide": [
+      "e0b7fefe04fa84d8f93b5a9a5a23da0d6521653a944e3ba28e5877c75397e678"
+    ],
+    "ernie-5-5-flash-base-model-guide": [
+      "c80fe47a9decb66a25ee25539e2f9f1a71554e1e54ff329bf0f8331860775770"
+    ],
+    "swe-2-flash-model-guide": [
+      "d9705018368f0a605e1b82268deb47fcb65014497e69c14510a063b9441c7198"
+    ],
+    "inkling-2-small-model-guide": [
+      "d0eee0a7c19cf2450e75d7b705560091d1be496fa278a6368220c1c192ae7027"
+    ],
+    "twil-8b-model-guide": [
+      "a438fe68a5baaa74cf05bf3931c69e6abbbe1f767985f88b96781403938455d9"
+    ],
+    "meridian-air-model-guide": [
+      "4644251099888aa0885e34331aaaf722ccbf7d0f003783a8bad59f944cced857"
     ]
   },
   "model_introduction_purpose_editions": {
@@ -631,6 +673,24 @@
     ],
     "pangram-image-1-0-model-guide": [
       "43d3f0c4a7979c4224cea8bf6f2e0c218957eac7bf89049431a86c6b12e9f7d6"
+    ],
+    "kanana-2-v-decide-model-guide": [
+      "e0b7fefe04fa84d8f93b5a9a5a23da0d6521653a944e3ba28e5877c75397e678"
+    ],
+    "ernie-5-5-flash-base-model-guide": [
+      "c80fe47a9decb66a25ee25539e2f9f1a71554e1e54ff329bf0f8331860775770"
+    ],
+    "swe-2-flash-model-guide": [
+      "d9705018368f0a605e1b82268deb47fcb65014497e69c14510a063b9441c7198"
+    ],
+    "inkling-2-small-model-guide": [
+      "d0eee0a7c19cf2450e75d7b705560091d1be496fa278a6368220c1c192ae7027"
+    ],
+    "twil-8b-model-guide": [
+      "a438fe68a5baaa74cf05bf3931c69e6abbbe1f767985f88b96781403938455d9"
+    ],
+    "meridian-air-model-guide": [
+      "4644251099888aa0885e34331aaaf722ccbf7d0f003783a8bad59f944cced857"
     ]
   },
   "model_introduction_reader_editions": {

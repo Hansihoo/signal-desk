@@ -1,0 +1,423 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "id": "kanana-2-v-decide-spec",
+      "model": "Kanana-2-v-decide-3b-2611",
+      "provider": "Kakao",
+      "source_url": "https://huggingface.co/kakaocorp/kanana-2-v-decide-3b-2611/raw/main/README.md",
+      "checked_on": "2026-11-07",
+      "fields": {
+        "kind": "공식 사양과 제공",
+        "suite": "Kanana-2-v-decide-3b-2611 / 2026-11-06",
+        "condition": "공급자 공식 원문. 실제 계정 제공과 추론 미실행.",
+        "release": "2026-11-06",
+        "context": 20480,
+        "parameters_b": 3.67,
+        "status": "공개 가중치 / Kanana Open License",
+        "access": "Hugging Face / 자체 호스팅",
+        "입력": "텍스트·JSON·대화 및 최대 이미지 10장",
+        "출력": "선택지 확률",
+        "표준 API 요금": "확인되지 않음"
+      }
+    },
+    {
+      "id": "kanana-2-v-decide-eval-1",
+      "model": "Kanana-2-v-decide-3b-2611",
+      "provider": "Kakao",
+      "source_url": "https://huggingface.co/kakaocorp/kanana-2-v-decide-3b-2611/raw/main/README.md",
+      "checked_on": "2026-11-07",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Kanana Decision Bench / Korean text",
+        "condition": "카카오 자체 15,909문항",
+        "평가 점수": 72.5,
+        "단위": "점",
+        "측정 주체": "Kakao"
+      }
+    },
+    {
+      "id": "kanana-2-v-decide-eval-2",
+      "model": "Kanana-2-v-decide-3b-2611",
+      "provider": "Kakao",
+      "source_url": "https://huggingface.co/kakaocorp/kanana-2-v-decide-3b-2611/raw/main/README.md",
+      "checked_on": "2026-11-07",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Decision Index / 0.4.1 public",
+        "condition": "카카오 카드의 공개 텍스트 평가",
+        "평가 점수": 61.34,
+        "단위": "점",
+        "측정 주체": "Kakao"
+      }
+    },
+    {
+      "id": "kanana-2-v-decide-eval-3",
+      "model": "Kanana-2-v-decide-3b-2611",
+      "provider": "Kakao",
+      "source_url": "https://huggingface.co/kakaocorp/kanana-2-v-decide-3b-2611/raw/main/README.md",
+      "checked_on": "2026-11-07",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Decision Index Vision / 0.4.1 public",
+        "condition": "카카오 카드의 공개 이미지 판단 평가",
+        "평가 점수": 61.12,
+        "단위": "점",
+        "측정 주체": "Kakao"
+      }
+    },
+    {
+      "id": "ernie-5-5-flash-base-spec",
+      "model": "ERNIE 5.5 Flash Base",
+      "provider": "Baidu",
+      "source_url": "https://huggingface.co/baidu/ERNIE-5.5-Flash-Base/raw/main/README.md",
+      "checked_on": "2026-11-07",
+      "fields": {
+        "kind": "공식 사양과 제공",
+        "suite": "ERNIE 5.5 Flash Base / 2026-11-05",
+        "condition": "공급자 공식 원문. 실제 계정 제공과 추론 미실행.",
+        "release": "2026-11-05",
+        "context": 1048576,
+        "parameters_b": 280,
+        "active_parameters_b": 14,
+        "status": "FP8·BF16 공개 가중치, 사전학습 종료판",
+        "access": "Hugging Face / ModelScope / 자체 호스팅",
+        "학습 최대 토큰": 131072,
+        "표준 API 요금": "해당 Base 미확인"
+      }
+    },
+    {
+      "id": "ernie-5-5-flash-base-eval-1",
+      "model": "ERNIE 5.5 Flash Base",
+      "provider": "Baidu",
+      "source_url": "https://huggingface.co/baidu/ERNIE-5.5-Flash-Base/raw/main/README.md",
+      "checked_on": "2026-11-07",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "MMLU-Pro / 5-shot EM",
+        "condition": "바이두 동일 Base 파이프라인",
+        "평가 점수": 78.4,
+        "단위": "점",
+        "측정 주체": "Baidu"
+      }
+    },
+    {
+      "id": "ernie-5-5-flash-base-eval-2",
+      "model": "ERNIE 5.5 Flash Base",
+      "provider": "Baidu",
+      "source_url": "https://huggingface.co/baidu/ERNIE-5.5-Flash-Base/raw/main/README.md",
+      "checked_on": "2026-11-07",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "HumanEval+ / 1-shot pass@1",
+        "condition": "바이두 동일 Base 파이프라인",
+        "평가 점수": 82.3,
+        "단위": "점",
+        "측정 주체": "Baidu"
+      }
+    },
+    {
+      "id": "ernie-5-5-flash-base-eval-3",
+      "model": "ERNIE 5.5 Flash Base",
+      "provider": "Baidu",
+      "source_url": "https://huggingface.co/baidu/ERNIE-5.5-Flash-Base/raw/main/README.md",
+      "checked_on": "2026-11-07",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "HELMET-Rerank / 0-shot NDCG@10",
+        "condition": "바이두 동일 Base 파이프라인",
+        "평가 점수": 56.2,
+        "단위": "점",
+        "측정 주체": "Baidu"
+      }
+    },
+    {
+      "id": "ernie-5-5-flash-base-eval-4",
+      "model": "ERNIE 5.5 Flash Base",
+      "provider": "Baidu",
+      "source_url": "https://huggingface.co/baidu/ERNIE-5.5-Flash-Base/raw/main/README.md",
+      "checked_on": "2026-11-07",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "InfiniteBench / 0-shot Avg",
+        "condition": "바이두 동일 Base 파이프라인",
+        "평가 점수": 46.5,
+        "단위": "점",
+        "측정 주체": "Baidu"
+      }
+    },
+    {
+      "id": "swe-2-flash-spec",
+      "model": "SWE-2 Flash",
+      "provider": "Cognition",
+      "source_url": "https://cognition.com/blog/swe-2-flash",
+      "checked_on": "2026-11-07",
+      "fields": {
+        "kind": "공식 사양과 제공",
+        "suite": "SWE-2 Flash / 2026-11-04",
+        "condition": "공급자 공식 원문. 실제 계정 제공과 추론 미실행.",
+        "release": "2026-11-04",
+        "parameters_b": 276,
+        "active_parameters_b": 12,
+        "status": "Devin Desktop 및 CLI 제공",
+        "access": "무료 플랜 Medium, 유료 High·Max 가능",
+        "Devin Cloud": "미제공"
+      }
+    },
+    {
+      "id": "swe-2-flash-price",
+      "model": "SWE-2 Flash",
+      "provider": "Cognition",
+      "source_url": "https://docs.devin.ai/desktop/models",
+      "checked_on": "2026-11-07",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "USD / 100만 토큰, 표준 또는 프로모션 뒤",
+        "condition": "Devin 추가 사용 단가. 셀프서비스 무료 2026-12-04 18:00 UTC, ACU 기업 할인 2026-11-18 18:00 UTC까지. Medium·High·Max 공통.",
+        "입력 USD / 100만 토큰": 0.1,
+        "출력 USD / 100만 토큰": 0.5,
+        "캐시 읽기 USD / 100만 토큰": 0.01,
+        "캐시 쓰기 USD / 100만 토큰": 0.125
+      }
+    },
+    {
+      "id": "swe-2-flash-eval-1",
+      "model": "SWE-2 Flash",
+      "provider": "Cognition",
+      "source_url": "https://cognition.com/blog/swe-2-flash",
+      "checked_on": "2026-11-07",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "FrontierCode 2.0",
+        "condition": "Cognition 11월 4일 발표 비교",
+        "평가 점수": 24,
+        "단위": "원문 점수",
+        "측정 주체": "Cognition"
+      }
+    },
+    {
+      "id": "swe-2-flash-eval-2",
+      "model": "SWE-2 Flash",
+      "provider": "Cognition",
+      "source_url": "https://cognition.com/blog/swe-2-flash",
+      "checked_on": "2026-11-07",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "DeepSWE 1.1",
+        "condition": "Cognition 11월 4일 발표 비교",
+        "평가 점수": 60.1,
+        "단위": "원문 점수",
+        "측정 주체": "Cognition"
+      }
+    },
+    {
+      "id": "swe-2-flash-eval-3",
+      "model": "SWE-2 Flash",
+      "provider": "Cognition",
+      "source_url": "https://cognition.com/blog/swe-2-flash",
+      "checked_on": "2026-11-07",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Terminal-Bench 4.0",
+        "condition": "Cognition 11월 4일 발표 비교",
+        "평가 점수": 20,
+        "단위": "원문 점수",
+        "측정 주체": "Cognition"
+      }
+    },
+    {
+      "id": "swe-2-flash-eval-4",
+      "model": "SWE-2 Flash",
+      "provider": "Cognition",
+      "source_url": "https://cognition.com/blog/swe-2-flash",
+      "checked_on": "2026-11-07",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SWE-Bench Pro v2 Hard",
+        "condition": "Cognition 11월 4일 발표 비교",
+        "평가 점수": 89.9,
+        "단위": "원문 점수",
+        "측정 주체": "Cognition"
+      }
+    },
+    {
+      "id": "inkling-2-small-spec",
+      "model": "Inkling 2 Small",
+      "provider": "Thinking Machines Lab",
+      "source_url": "https://thinkingmachines.ai/model-card/inkling-2-small/",
+      "checked_on": "2026-11-07",
+      "fields": {
+        "kind": "공식 사양과 제공",
+        "suite": "Inkling 2 Small / 2026-11-05",
+        "condition": "공급자 공식 원문. 실제 계정 제공과 추론 미실행.",
+        "release": "2026-11-05",
+        "context": 1000000,
+        "parameters_b": 594,
+        "active_parameters_b": 17,
+        "status": "Tinker 제공 / 가중치 비공개, Apache 2.0 공개 예정",
+        "access": "Tinker 추론·미세조정 / Playground",
+        "입력": "텍스트와 이미지",
+        "출력": "텍스트"
+      }
+    },
+    {
+      "id": "inkling-2-small-price",
+      "model": "Inkling 2 Small",
+      "provider": "Thinking Machines Lab",
+      "source_url": "https://tinker-docs.thinkingmachines.ai/tinker/models/models_and_pricing/",
+      "checked_on": "2026-11-07",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "USD / 100만 토큰, 표준 또는 프로모션 뒤",
+        "condition": "Tinker 표준 단가. 모델 카드 1M 상한과 제공 64K·256K의 요금 항목을 구분.",
+        "입력 USD / 100만 토큰": 0.3,
+        "캐시 읽기 USD / 100만 토큰": 0.03,
+        "출력 USD / 100만 토큰": 1,
+        "학습 64K USD / 100만 토큰": 1.5,
+        "학습 256K USD / 100만 토큰": 3
+      }
+    },
+    {
+      "id": "inkling-2-small-eval-1",
+      "model": "Inkling 2 Small",
+      "provider": "Thinking Machines Lab",
+      "source_url": "https://thinkingmachines.ai/news/inkling-2-small/",
+      "checked_on": "2026-11-07",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "PMPP-Hard / mean solved / Nov 5",
+        "condition": "Thinking Machines, 최대 추론, PI Harness, 4회, 10시간",
+        "평가 점수": 54.25,
+        "단위": "해결 과제 수 / 69",
+        "측정 주체": "Thinking Machines Lab"
+      }
+    },
+    {
+      "id": "inkling-2-small-eval-2",
+      "model": "Inkling 2 Small",
+      "provider": "Thinking Machines Lab",
+      "source_url": "https://thinkingmachines.ai/news/inkling-2-small/",
+      "checked_on": "2026-11-07",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "PMPP-Hard / pass@4 / Nov 5",
+        "condition": "Thinking Machines, 최대 추론, PI Harness, 4회, 10시간",
+        "평가 점수": 64,
+        "단위": "과제 수 / 69",
+        "측정 주체": "Thinking Machines Lab"
+      }
+    },
+    {
+      "id": "twil-8b-spec",
+      "model": "TwIL-8B",
+      "provider": "webAI",
+      "source_url": "https://huggingface.co/webAI-Official/TwIL-8B/raw/main/README.md",
+      "checked_on": "2026-11-07",
+      "fields": {
+        "kind": "공식 사양과 제공",
+        "suite": "TwIL-8B / 2026-11-03",
+        "condition": "공급자 공식 원문. 실제 계정 제공과 추론 미실행.",
+        "release": "2026-11-03",
+        "context": 131072,
+        "parameters_b": 8.79,
+        "status": "s30 공개 가중치 / 비상업",
+        "access": "Hugging Face BF16·GGUF",
+        "이전 공개": "rl100, 2026-10-14",
+        "표준 API 요금": "확인되지 않음"
+      }
+    },
+    {
+      "id": "twil-8b-eval-1",
+      "model": "TwIL-8B",
+      "provider": "webAI",
+      "source_url": "https://huggingface.co/webAI-Official/TwIL-8B/raw/main/README.md",
+      "checked_on": "2026-11-07",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "MATH-500 / card s30",
+        "condition": "webAI 고추론 thinking pass@1",
+        "평가 점수": 98.2,
+        "단위": "%",
+        "측정 주체": "webAI"
+      }
+    },
+    {
+      "id": "twil-8b-eval-2",
+      "model": "TwIL-8B",
+      "provider": "webAI",
+      "source_url": "https://huggingface.co/webAI-Official/TwIL-8B/raw/main/README.md",
+      "checked_on": "2026-11-07",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "LiveCodeBench / card s30",
+        "condition": "webAI 고추론 thinking pass@1, 정확한 공개 평가 범위 별도 확인",
+        "평가 점수": 81.6,
+        "단위": "%",
+        "측정 주체": "webAI"
+      }
+    },
+    {
+      "id": "twil-8b-eval-3",
+      "model": "TwIL-8B",
+      "provider": "webAI",
+      "source_url": "https://huggingface.co/webAI-Official/TwIL-8B/raw/main/README.md",
+      "checked_on": "2026-11-07",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "GPQA Diamond / card s30",
+        "condition": "webAI 고추론 thinking pass@1",
+        "평가 점수": 70.2,
+        "단위": "%",
+        "측정 주체": "webAI"
+      }
+    },
+    {
+      "id": "twil-8b-eval-4",
+      "model": "TwIL-8B",
+      "provider": "webAI",
+      "source_url": "https://huggingface.co/webAI-Official/TwIL-8B/raw/main/README.md",
+      "checked_on": "2026-11-07",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "AIME 2026 / card s30",
+        "condition": "webAI 고추론 thinking pass@1",
+        "평가 점수": 88.3,
+        "단위": "%",
+        "측정 주체": "webAI"
+      }
+    },
+    {
+      "id": "meridian-air-spec",
+      "model": "Meridian Air",
+      "provider": "webAI",
+      "source_url": "https://www.webai.com/research/meridian-1-civoe",
+      "checked_on": "2026-11-07",
+      "fields": {
+        "kind": "공식 사양과 제공",
+        "suite": "Meridian Air / 2026-11-04",
+        "condition": "공급자 공식 원문. 실제 계정 제공과 추론 미실행.",
+        "release": "2026-11-04",
+        "parameters_b": 12,
+        "status": "11월 4일부터 webAI 앱 배포 시작",
+        "access": "webAI 앱",
+        "표준 API 요금": "미확인",
+        "CivoE": "같은 12B 기반 전문가 구성, 수 주에 걸쳐 배포 예정"
+      }
+    },
+    {
+      "id": "meridian-air-eval-1",
+      "model": "Meridian Air",
+      "provider": "webAI",
+      "source_url": "https://www.webai.com/research/meridian-1-civoe",
+      "checked_on": "2026-11-07",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "webAI curated composite / foundation-only",
+        "condition": "webAI, 14 공개 데이터셋에서 선정한 과제군 정규화 평균. 기반 단독",
+        "평가 점수": 59.8,
+        "단위": "점 / 100",
+        "측정 주체": "webAI"
+      }
+    }
+  ]
+}
