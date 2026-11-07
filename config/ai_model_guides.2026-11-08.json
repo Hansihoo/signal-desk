@@ -1,0 +1,1239 @@
+{
+  "schema_version": 1,
+  "reports": [
+    {
+      "id": "arete-27b-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "title": "Arete-27B 소개: Qwen3.8-27B 후학습이 민감한 질문의 답변을 어떻게 바꿨나",
+      "description": "공개 가중치의 사양과 비용, 사실 회상과 답변 관점의 변화, 코딩 성능이 유지됐다는 근거의 한계를 비교합니다.",
+      "checked_on": "2026-11-08",
+      "scope": "2026년 11월 6일 공식 공개(UTC), 11월 8일 KST 확인. 고정 모델 카드와 공개 평가·학습 데이터, 경쟁 모델의 제공·가격 자료를 대조했습니다. 자체 추론, 비용 청구, 평가 재현은 수행하지 않았습니다.",
+      "deck": "Nous Research가 Qwen3.8-27B를 후학습한 27B 모델의 가중치와 평가 자료를 공개했습니다. 영어 중심 803문항에서 같은 설정으로 비교했을 때 사실 점수는 2.32에서 2.98로 올랐고, 평가 기준상 중국 정부 공식 서술을 자기 답으로 채택한 비율은 22%에서 0.9%로 낮아졌습니다. 이 결과는 해당 평가의 변화이며, 일반 사실 정확도나 한국어 정확도를 보장하지 않습니다.",
+      "highlights": [
+        "같은 모델 구조, 달라진 답변",
+        "공개 가중치와 운영 조건"
+      ],
+      "source_note": "평가값은 Nous Research 측정입니다. 가중치 공개일과 가격 확인일을 구분하며 모델별 청구·실행은 검증하지 않았습니다.",
+      "summary": [
+        {
+          "label": "같은 구조, 달라진 답변",
+          "text": "Qwen3.8-27B의 언어 가중치를 지도 미세조정했습니다. 추론을 끄고 온도 0에서 803문항을 다섯 차례 평가한 평균에서 사실 점수가 개선됐습니다. Mistral Large 4의 사실 점수는 더 높았지만 온도 등 설정이 동일하지 않습니다.",
+          "source_ids": [
+            "card",
+            "launch",
+            "evaluation"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "공개 가중치와 운영 조건",
+          "text": "BF16 가중치는 Apache 2.0으로 공개됐습니다. Arete의 표준 관리형 API 요금은 확인하지 못했습니다. 자체 배포는 연산·운영 비용이 들며, 한국어와 이미지에서 같은 효과를 낸다는 근거는 없습니다.",
+          "source_ids": [
+            "card",
+            "weights",
+            "qwen",
+            "mistral"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "references": [
+        {
+          "id": "launch",
+          "title": "Nous Research 공식 발표",
+          "url": "https://nousresearch.com/arete",
+          "description": "11월 6일 모델 공개, 학습과 평가 기준 및 반복별 조건."
+        },
+        {
+          "id": "card",
+          "title": "Arete-27B 모델 카드 고정판",
+          "url": "https://huggingface.co/NousResearch/Arete-27B/raw/108f0afbdcfaa1ceeda4a635004304dfff6d4da2/README.md",
+          "description": "SFT 단계, 모델 구조와 일반·에이전트 평가."
+        },
+        {
+          "id": "config",
+          "title": "Arete-27B 배포 설정 고정판",
+          "url": "https://huggingface.co/NousResearch/Arete-27B/raw/108f0afbdcfaa1ceeda4a635004304dfff6d4da2/config.json",
+          "description": "배포 설정의 위치 상한과 MTP 구성."
+        },
+        {
+          "id": "weights",
+          "title": "Arete-27B 공개 가중치 메타데이터",
+          "url": "https://huggingface.co/api/models/NousResearch/Arete-27B",
+          "description": "공개 상태, 11월 6일 UTC 저장소 생성, BF16 가중치."
+        },
+        {
+          "id": "evaluation",
+          "title": "Nous Research의 Propaganda_Eval",
+          "url": "https://huggingface.co/datasets/NousResearch/Propaganda_Eval",
+          "description": "803문항의 출처와 평가 구성."
+        },
+        {
+          "id": "training",
+          "title": "Nous Research의 Arete 학습 자료",
+          "url": "https://huggingface.co/datasets/NousResearch/arete-data-pairs",
+          "description": "공개한 학습 자료이며 평가 데이터와 별개."
+        },
+        {
+          "id": "qwen",
+          "title": "Qwen3.8-27B 공식 카드",
+          "url": "https://huggingface.co/Qwen/Qwen3.8-27B/raw/main/README.md",
+          "description": "비교 기준이 되는 Qwen 원래 가중치와 멀티모달 문맥."
+        },
+        {
+          "id": "qwen-api",
+          "title": "OpenRouter Qwen3.8-27B 엔드포인트",
+          "url": "https://openrouter.ai/api/v1/models/qwen/qwen3.8-27b/endpoints",
+          "description": "Chutes 등 API 공급자별 가용 한도와 토큰 단가."
+        },
+        {
+          "id": "mistral",
+          "title": "Mistral Large 4 공식 API 문서",
+          "url": "https://docs.mistral.ai/models/mistral-large?trk=article-ssr-frontend-pulse_little-text-block",
+          "description": "모델 사양과 표준·할인 단가."
+        }
+      ],
+      "explanation": [
+        {
+          "id": "checkpoint",
+          "title": "Qwen 기반과 텍스트 후학습",
+          "lead": "Arete는 구조를 바꾸기보다 특정 응답 행동을 바꾸는 데 초점을 맞춘 파생 모델입니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "27B 가중치의 변화",
+              "text": "Nous Research는 Inkling을 교사로 사용해 약 5,280만 토큰을 2에폭, 1,202스텝에 걸쳐 지도 미세조정(SFT)했습니다. 언어 가중치를 학습하고 비전 인코더는 고정했으며 학습 중 다중 토큰 예측 헤드를 비활성화했습니다. 강화학습이나 선호 최적화는 쓰지 않았습니다.",
+              "source_ids": [
+                "card",
+                "launch",
+                "training"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "64K와 262,144토큰의 의미",
+              "text": "64K는 텍스트 후학습의 문맥 길이입니다. 배포 설정의 텍스트 위치 상한은 262,144지만, 해당 길이에서 검색 정확도와 실제 엔드포인트 한도가 검증된 것은 아닙니다. 비전 구조가 남아 있어도 이 후학습은 텍스트로만 수행했고 이미지·영상의 개선이나 보존 여부를 직접 평가하지 않았습니다.",
+              "source_ids": [
+                "card",
+                "config",
+                "qwen"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "target-eval",
+          "title": "사실 회상과 공식 서술 채택",
+          "lead": "두 수치는 서로 다른 질문에 답합니다. 점수 향상을 전반적인 정치적 중립성으로 해석할 수는 없습니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "평가가 분리한 두 가지",
+              "text": "803개 질문에 날짜가 있는 원문과 2~4개 필수 사실을 연결했습니다. 모델 이름을 숨긴 상태에서 Grok 4.7이 사실의 언급·누락·반박과 특정 공식 서술의 채택 여부를 따로 채점했습니다. 공식 입장을 인용해 소개하는 것과 그 입장을 답으로 받아들이는 것을 구분하는 기준입니다.",
+              "source_ids": [
+                "launch",
+                "evaluation"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "개선 폭과 반대 결과",
+              "text": "Arete와 원본 Qwen의 동일 설정에서는 사실 점수가 0.66점 개선됐습니다. 온도를 0.6으로 맞춘 추론 끔 비교에서도 2.88 대 2.24점이었습니다. 다른 설정으로 측정한 Mistral Large 4는 3.65점과 0.3%로 더 나았으며, GLM 5.3은 사실 점수가 3.10으로 높으면서 공식 서술 채택 비율도 15%로 높았습니다. 두 지표를 한 순위로 합치면 이 차이를 잃습니다.",
+              "source_ids": [
+                "launch",
+                "evaluation"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "판정 범위",
+              "text": "판정 기준은 연구팀이 만든 것으로, 영어 자료와 7개 주제로 한정됩니다. 25문항을 사람과 대조해 판정 규칙을 고친 것은 전체 803문항을 사람이 채점했다는 뜻이 아닙니다. 추론 켬의 3.07점과 0.6%는 발표 당시 다섯 회 중 두 회만 마친 잠정값이라 표의 확정 비교와 분리했습니다.",
+              "source_ids": [
+                "launch",
+                "evaluation"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "capability",
+          "title": "일반 능력과 코딩의 엇갈린 결과",
+          "lead": "좁은 평가의 개선과 범용 모델로서의 성능은 따로 비교해야 합니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "일반 능력과 터미널 작업",
+              "text": "내부 Hermes Bench는 원본 65.77%, Arete 65.60%로 0.17%p 낮았고, Terminal-Bench 2.1은 67%에서 70%로 높았습니다. 연구팀은 같은 하드웨어와 설정으로 비교했다고 밝혔지만 공식 순위와는 추론·하니스가 다를 수 있다고 했습니다. 세부 하니스와 반복 분산이 공개되지 않아 3%p 차이를 확정 우위로 해석할 근거는 없습니다.",
+              "source_ids": [
+                "card",
+                "launch"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "availability",
+          "title": "가중치와 관리형 가격의 차이",
+          "lead": "모델을 내려받을 수 있다는 사실과 특정 가격으로 호스팅된다는 사실은 별개입니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "다운로드와 운영 비용",
+              "text": "Arete는 BF16 가중치와 설정을 공개했습니다. 메타데이터의 약 273.6억 가중치를 2바이트로 단순 계산하면 약 54.7GB이며, 이 값에 실행 중 캐시·런타임 메모리는 포함되지 않습니다. 공개 카드는 관리형 공급자를 연결하지 않으며 공식 표준 API 요금은 확인되지 않았습니다.",
+              "source_ids": [
+                "weights",
+                "card",
+                "config"
+              ],
+              "kind": "judgment"
+            },
+            {
+              "type": "paragraph",
+              "title": "경쟁 API 가격 비교",
+              "text": "Qwen 원본은 Chutes 경로의 OpenRouter 단가를 사용했고, Mistral은 자체 API의 표준가와 별도 할인 표시를 구분했습니다. 이 가격은 같은 실행 환경이나 동일 성능을 뜻하지 않으며, 다른 공급자나 지역의 가격으로 옮겨 쓰면 안 됩니다.",
+              "source_ids": [
+                "qwen-api",
+                "mistral"
+              ],
+              "kind": "fact"
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "offers",
+          "title": "이전·경쟁 모델의 사양, 제공 경로와 표준 단가",
+          "columns": [
+            "모델",
+            "사양·제공",
+            "USD / 100만 토큰 (입력·캐시 읽기·출력)"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Arete-27B",
+                "27B급, BF16 가중치 공개, Apache 2.0. 설정 상한 262,144토큰; 후학습 64K.",
+                "공식 관리형 표준 요금 미확인"
+              ],
+              "source_ids": [
+                "card",
+                "config",
+                "weights"
+              ]
+            },
+            {
+              "values": [
+                "Qwen3.8-27B",
+                "27B급, 텍스트·이미지·영상 입력, 공개 가중치. Chutes 경로 문맥 262,144.",
+                "$0.039 / $0.0039 / $1.25 (OpenRouter·Chutes)"
+              ],
+              "source_ids": [
+                "qwen",
+                "qwen-api"
+              ]
+            },
+            {
+              "values": [
+                "Mistral Large 4",
+                "1.05T 총량, 52B 활성, 1M 문맥, 공개 가중치 및 Mistral API 미리보기.",
+                "$1.36 / $0.14 / $4.18 (표준 표시); 할인 표시는 $0.68 / $0.07 / $2.09"
+              ],
+              "source_ids": [
+                "mistral"
+              ]
+            }
+          ],
+          "note": "2026-11-08 KST 확인. API 단가와 자체 호스팅 비용은 비교 단위가 다릅니다."
+        },
+        {
+          "id": "framing",
+          "title": "Nous Research의 803문항 평가: 사실 회상과 답변의 관점",
+          "columns": [
+            "모델",
+            "사실 점수 평균 (0–5)",
+            "공식 서술 채택 비율",
+            "추론·온도"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Arete-27B",
+                "2.98 ± 0.03",
+                "0.9%",
+                "끔 / 0"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Qwen3.8-27B",
+                "2.32 ± 0.03",
+                "22%",
+                "끔 / 0"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Mistral Large 4",
+                "3.65 ± 0.04",
+                "0.3%",
+                "미명시 / 0.6"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "GLM 5.3",
+                "3.10 ± 0.06",
+                "15%",
+                "끔 / 0.6"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            }
+          ],
+          "note": "각 모델 803문항 × 5회, 응답 상한 32K 토큰. ±는 회차 간 표준편차. 판정 모델 Grok 4.7. 다른 디코딩 조건의 행은 순위를 확정하는 비교가 아닙니다."
+        },
+        {
+          "id": "general",
+          "title": "같은 평가 안에서 비교한 일반 능력과 코딩",
+          "columns": [
+            "평가판",
+            "Qwen3.8-27B",
+            "Arete-27B",
+            "해석"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Hermes Bench (내부)",
+                "65.77%",
+                "65.60%",
+                "Arete가 0.17%p 낮음. 연구팀은 잡음 범위로 판단."
+              ],
+              "source_ids": [
+                "card",
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "Terminal-Bench 2.1",
+                "67%",
+                "70%",
+                "같은 내부 설정에서 3%p 차이. 공식 결과나 일반 코딩 우위로 확대할 수 없음."
+              ],
+              "source_ids": [
+                "card",
+                "launch"
+              ]
+            }
+          ],
+          "note": "Nous Research 측정. 카드에 세부 하니스, 시드 및 반복 분산이 명시되지 않았습니다."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "비교 판단",
+            "text": "Arete는 같은 Qwen 기반에서 특정 응답 행동이 얼마나 달라지는지 공개 데이터로 대조할 수 있는 모델입니다. 해당 영어 평가의 변화가 선택 이유라면 비교 가치가 있습니다. 일반 정확도, 한국어, 이미지·영상의 개선이나 실제 운영 비용이 선택 기준이면 이 자료만으로 원본을 교체할 근거는 부족합니다.",
+            "source_ids": [
+              "launch",
+              "card",
+              "evaluation",
+              "weights"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "모델 실행, 실제 API 청구와 독립 재현은 하지 않았습니다. 라이선스 표기는 공개 모델 카드 기준입니다.",
+          "source_ids": [
+            "card",
+            "weights"
+          ]
+        },
+        {
+          "text": "평가의 '공식 서술 채택'은 개발자 정의이며, 여러 국가나 정치 관점을 포괄하는 독립 중립성 지표가 아닙니다.",
+          "source_ids": [
+            "evaluation",
+            "launch"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lfm3-family-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "checked_on": "2026-11-08",
+      "title": "LFM3 소개: 문서·음성·판별 성능과 공개 API 요금",
+      "description": "LFM3를 이전 세대와 비교하고 텍스트·시각·음성 모델의 표준 요금, 자체 호스팅, OpenRouter의 입력·출력 한도와 데이터 조건을 구분합니다.",
+      "deck": "LFM3는 약 20억 파라미터의 문서·음성·판별 모델군으로 10월 27일 공개됐습니다. 11월 6일 OpenRouter에 기존 LFM3-1.7B가 등록됐고, Liquid AI의 공개 가격표에서는 텍스트·VL·Audio·Omni 요금이 확인됩니다. 문서 이해와 도구 사용의 강점은 그대로지만, API 제공 범위와 데이터 처리 조건은 로컬 실행과 다릅니다.",
+      "scope": "모델 사양·평가는 2026년 10월 27일 발표 및 10월 28일 KST 원문 확인을 보존합니다. OpenRouter의 11월 6일 등록과 Liquid AI 공개 가격은 11월 8일 KST 확인했습니다. 실제 추론·청구는 검증하지 않았습니다.",
+      "source_note": "모델은 10월 27일 공개, OpenRouter 경로는 11월 6일 등록입니다. 가격·경로 확인일은 11월 8일 KST입니다.",
+      "highlights": [
+        "새로운 모델군",
+        "상대 장단점",
+        "제공과 비용"
+      ],
+      "summary": [
+        {
+          "label": "새로운 모델군",
+          "text": "LFM3-1.7B를 바탕으로 VL, Audio, Omni와 두 d1 모델을 제공합니다. 텍스트 문맥은 256K, VL은 128K, Audio와 Omni는 32K로 서로 다릅니다.",
+          "source_ids": [
+            "launch",
+            "text",
+            "vision",
+            "audio",
+            "omni"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "상대 장단점",
+          "text": "LFM3-VL의 DocVQA는 96.7로 이전 VL의 91.8보다 높지만 TextVQA는 87.9로 이전 90.4보다 낮습니다. 텍스트 모델도 Qwen3.5-9B보다 코딩과 일부 지식 평가에서 낮습니다.",
+          "source_ids": [
+            "vision",
+            "text"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "제공과 비용",
+          "text": "Liquid AI의 텍스트 1.7B 표준가는 100만 토큰당 입력 $0.08, 캐시 읽기 $0.02, 출력 $0.20입니다. OpenRouter의 유료 경로는 같은 단가를 표시하며, 별도 무료 경로와 8,192 토큰 출력 상한이 있습니다. 해당 경로는 프롬프트·응답의 보관과 학습 이용 가능성을 고지합니다.",
+          "source_ids": [
+            "pricing",
+            "router-paid",
+            "router-free",
+            "router-notice",
+            "license"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "tables": [
+        {
+          "id": "family",
+          "title": "모델별 사양과 제공 범위",
+          "columns": [
+            "모델 ID (LiquidAI/)",
+            "파라미터",
+            "입력 → 출력",
+            "문맥",
+            "주요 제약"
+          ],
+          "rows": [
+            {
+              "values": [
+                "LFM3-1.7B",
+                "1.73B",
+                "텍스트 → 텍스트",
+                "256K, 입출력 합계",
+                "복잡한 에이전트 코딩과 다단계 추론 비권장"
+              ],
+              "source_ids": [
+                "text"
+              ]
+            },
+            {
+              "values": [
+                "LFM3-VL-2B",
+                "1.92B",
+                "텍스트, 이미지, 영상 → 텍스트",
+                "128K, 입출력 합계",
+                "영상 2fps; 코딩, 긴 다중 대화와 복잡 추론 비권장"
+              ],
+              "source_ids": [
+                "vision"
+              ]
+            },
+            {
+              "values": [
+                "LFM3-Audio-2B",
+                "2B",
+                "텍스트, 16kHz 음성 → 텍스트, 24kHz 음성",
+                "32K, 입출력 합계",
+                "언어별 인식 및 발화 조건이 다름"
+              ],
+              "source_ids": [
+                "audio"
+              ]
+            },
+            {
+              "values": [
+                "LFM3-Omni-2B",
+                "2.17B",
+                "텍스트, 이미지, 영상, 음성 → 텍스트, 음성",
+                "32K, 입출력 합계",
+                "비추론 모델; enable_thinking 미지원"
+              ],
+              "source_ids": [
+                "omni"
+              ]
+            },
+            {
+              "values": [
+                "d1-2B",
+                "1.92B",
+                "텍스트, 이미지, 영상 → 형식화한 답과 확률",
+                "128K",
+                "생성 토큰 없음; 약 64K 이후 신뢰도 저하"
+              ],
+              "source_ids": [
+                "decision"
+              ]
+            },
+            {
+              "values": [
+                "d1-Omni-2B",
+                "2.17B",
+                "텍스트, 이미지, 영상, 음성 → 답과 확률",
+                "128K",
+                "대화, 전사와 음성 생성 모델이 아님"
+              ],
+              "source_ids": [
+                "decision-omni"
+              ]
+            }
+          ],
+          "note": "2026-10-28 확인. B는 10억 파라미터, K는 카드의 토큰 표기입니다. 공통 기반의 최대 문맥을 모든 파생 모델에 적용하지 않습니다. 기반 체크포인트 LFM3-1.7B-Base는 후학습 출발점이며 위 여섯 완성 모델과 구분합니다."
+        },
+        {
+          "id": "text-evals",
+          "title": "텍스트 모델: 도구 사용의 개선과 코딩의 한계",
+          "columns": [
+            "평가 ↑",
+            "LFM3-1.7B",
+            "LFM2.5-2.6B",
+            "Qwen3.5-9B"
+          ],
+          "rows": [
+            {
+              "values": [
+                "WebArena-Verified",
+                "38.42",
+                "3.02",
+                "28.94"
+              ],
+              "source_ids": [
+                "text"
+              ]
+            },
+            {
+              "values": [
+                "BFCL V4",
+                "71.39",
+                "55.89",
+                "62.83"
+              ],
+              "source_ids": [
+                "text"
+              ]
+            },
+            {
+              "values": [
+                "MCP-Atlas",
+                "32.57",
+                "16.45",
+                "42.67"
+              ],
+              "source_ids": [
+                "text"
+              ]
+            },
+            {
+              "values": [
+                "SWE-bench Verified, OpenCode",
+                "43.4",
+                "18.0",
+                "51.2"
+              ],
+              "source_ids": [
+                "text"
+              ]
+            },
+            {
+              "values": [
+                "Terminal-Bench 2.1, OpenCode",
+                "12.92",
+                "0.0",
+                "17.98"
+              ],
+              "source_ids": [
+                "text"
+              ]
+            },
+            {
+              "values": [
+                "GPQA Diamond",
+                "63.37",
+                "57.78",
+                "80.4"
+              ],
+              "source_ids": [
+                "text"
+              ]
+            },
+            {
+              "values": [
+                "AA-LCR",
+                "52.83",
+                "6.0",
+                "62.0"
+              ],
+              "source_ids": [
+                "text"
+              ]
+            },
+            {
+              "values": [
+                "RULER 128K",
+                "65.56",
+                "1.15",
+                "87.11"
+              ],
+              "source_ids": [
+                "text"
+              ]
+            }
+          ],
+          "note": "Liquid AI의 같은 카드 비교, 0–100 점수. BF16/vLLM, 모델별 전체 문맥과 권장 설정. 일반 temperature=0.6, top_p=0.95; BFCL은 greedy/최대 32,768 출력, WebArena 40단계, MCP-Atlas 256턴, SWE-bench OpenCode 250턴, Terminal 100턴입니다. 모델 크기와 문맥은 같지 않으며 순수 모델 효과만 분리한 실험은 아닙니다."
+        },
+        {
+          "id": "vision-evals",
+          "title": "시각 모델: 문서 평가에도 개선과 역전이 함께 존재",
+          "columns": [
+            "평가 ↑",
+            "LFM3-VL-2B",
+            "LFM2.5-VL-3B",
+            "Qwen3.5-4B",
+            "Gemma 4 12B"
+          ],
+          "rows": [
+            {
+              "values": [
+                "62평가 평균",
+                "71.4",
+                "57.6",
+                "73.4",
+                "71.7"
+              ],
+              "source_ids": [
+                "vision"
+              ]
+            },
+            {
+              "values": [
+                "DocVQA val",
+                "96.7",
+                "91.8",
+                "97.1",
+                "97.0"
+              ],
+              "source_ids": [
+                "vision"
+              ]
+            },
+            {
+              "values": [
+                "TextVQA val",
+                "87.9",
+                "90.4",
+                "88.0",
+                "88.4"
+              ],
+              "source_ids": [
+                "vision"
+              ]
+            },
+            {
+              "values": [
+                "ChartQA test",
+                "92.7",
+                "80.6",
+                "85.8",
+                "89.4"
+              ],
+              "source_ids": [
+                "vision"
+              ]
+            },
+            {
+              "values": [
+                "MMMU-Pro",
+                "45.7",
+                "33.2",
+                "67.2",
+                "69.1"
+              ],
+              "source_ids": [
+                "vision"
+              ]
+            }
+          ],
+          "note": "Liquid AI, vLLM 0.27.1, 0–100 정규화. LFM3와 경쟁 모델은 추론 모드, 이전 LFM2.5-VL은 추론 미지원입니다. 62평가 평균은 전체 평가의 단순 평균입니다. DocVQA 원 단위는 0–1 ANLS이며 표는 ×100입니다. MMMU-Pro는 10지선다형입니다."
+        },
+        {
+          "id": "audio-evals",
+          "title": "음성 모델: 음질 향상과 영어 인식 오류율의 역전",
+          "columns": [
+            "평가와 방향",
+            "LFM3-Audio-2B",
+            "LFM2.5-Audio-1.5B",
+            "Qwen2.5-Omni-3B"
+          ],
+          "rows": [
+            {
+              "values": [
+                "영어 ASR WER %, ↓",
+                "6.23",
+                "6.13",
+                "6.3"
+              ],
+              "source_ids": [
+                "audio"
+              ]
+            },
+            {
+              "values": [
+                "영어 TTS UTMOSv2, 1–5 ↑",
+                "3.83",
+                "3.22",
+                "3.42"
+              ],
+              "source_ids": [
+                "audio"
+              ]
+            },
+            {
+              "values": [
+                "VoiceBench, 0–100 ↑",
+                "73.13",
+                "55.17",
+                "66.37"
+              ],
+              "source_ids": [
+                "audio"
+              ]
+            },
+            {
+              "values": [
+                "MMAR, 0–100 ↑",
+                "50.6",
+                "25.85",
+                "54.41"
+              ],
+              "source_ids": [
+                "audio"
+              ]
+            }
+          ],
+          "note": "Liquid AI 공급자 측정. 영어 인식은 ESB/Open ASR 평균 WER로 낮을수록 좋습니다. UTMOSv2는 음질 점수로 오류율이 아닙니다. 이 영어 수치로 한국어 인식 성능을 확정하지 않습니다."
+        },
+        {
+          "id": "omni-evals",
+          "title": "통합 입력 모델과 판별 모델의 강약점",
+          "columns": [
+            "평가 ↑",
+            "새 모델",
+            "비교 모델",
+            "원문 조건"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Daily-Omni",
+                "LFM3-Omni-2B 70.09",
+                "Qwen2.5-Omni-7B 61.32",
+                "영상과 소리의 다지선다 정확도"
+              ],
+              "source_ids": [
+                "omni"
+              ]
+            },
+            {
+              "values": [
+                "OmniBench overall",
+                "LFM3-Omni-2B 46.32",
+                "Qwen2.5-Omni-7B 49.65",
+                "이미지와 음성 1,142문항"
+              ],
+              "source_ids": [
+                "omni"
+              ]
+            },
+            {
+              "values": [
+                "ImajevBench v2.0-lite",
+                "d1-2B 75.5 / d1-Omni-2B 72.3",
+                "d1-3B 64.0",
+                "같은 항목과 채점; 판별 응답"
+              ],
+              "source_ids": [
+                "decision",
+                "decision-omni"
+              ]
+            },
+            {
+              "values": [
+                "Typed Decisions",
+                "d1-2B 61.3 / d1-Omni-2B 63.1",
+                "d1-3B 65.0",
+                "큰 모델이 여전히 우세한 반대 결과"
+              ],
+              "source_ids": [
+                "decision",
+                "decision-omni"
+              ]
+            }
+          ],
+          "note": "Liquid AI 측정. Omni는 모델별 템플릿/전처리, 텍스트 greedy 설정입니다. d1 비교의 이미지 평가 표본은 평가별 최대 1,000행이며 생성형 LLM의 코딩 점수와 합치지 않습니다."
+        },
+        {
+          "id": "cost",
+          "title": "표준 요금과 자체 운영 조건",
+          "columns": [
+            "제공 방식",
+            "확인한 조건",
+            "비용 해석"
+          ],
+          "rows": [
+            {
+              "values": [
+                "LFM3 개별 API",
+                "현재 요금표에 새 개별 모델 ID 단가가 명시되지 않음",
+                "기존 d1 또는 LFM2.5 API 단가를 이식하지 않음"
+              ],
+              "source_ids": [
+                "pricing"
+              ]
+            },
+            {
+              "values": [
+                "공개 가중치",
+                "LFM Open License v1.0",
+                "연매출 1천만 달러 문턱에 연결된 상업 사용 제한; 별도 기업 계약 검토"
+              ],
+              "source_ids": [
+                "license",
+                "pricing"
+              ]
+            },
+            {
+              "values": [
+                "자체 운영",
+                "직접 GPU/CPU 운영과 모델별 지원 런타임",
+                "하드웨어, 메모리, 전력과 유지 비용은 별도"
+              ],
+              "source_ids": [
+                "text",
+                "vision",
+                "audio",
+                "omni"
+              ]
+            },
+            {
+              "values": [
+                "텍스트 4비트",
+                "제공자 소개의 약 1GB",
+                "모든 모델의 256K 문맥 실행 총메모리 보장이 아님"
+              ],
+              "source_ids": [
+                "text",
+                "launch"
+              ]
+            }
+          ],
+          "note": "2026-10-28 공식 요금표 및 라이선스 확인. 명목 토큰 단가와 실제 완료 작업당 비용을 혼합하지 않습니다."
+        },
+        {
+          "id": "api-pricing",
+          "title": "LFM3 API 표준 요금과 별도 무료 경로",
+          "columns": [
+            "공급 경로·모델",
+            "과금 대상",
+            "입력",
+            "캐시 읽기",
+            "출력"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Liquid AI · LFM3-1.7B",
+                "텍스트",
+                "$0.08",
+                "$0.02",
+                "$0.20"
+              ],
+              "source_ids": [
+                "pricing"
+              ]
+            },
+            {
+              "values": [
+                "Liquid AI · LFM3-VL-2B",
+                "텍스트 / 이미지",
+                "각 $0.10",
+                "각 $0.02",
+                "텍스트 $0.50 / 이미지 —"
+              ],
+              "source_ids": [
+                "pricing"
+              ]
+            },
+            {
+              "values": [
+                "Liquid AI · LFM3-Audio-2B",
+                "텍스트 / 음성",
+                "$0.10 / $2.00",
+                "$0.02 / —",
+                "$1.00 / $10.00"
+              ],
+              "source_ids": [
+                "pricing"
+              ]
+            },
+            {
+              "values": [
+                "Liquid AI · LFM3-Omni-2B",
+                "텍스트 / 이미지 / 음성",
+                "$0.10 / $0.10 / $2.00",
+                "$0.02 / $0.02 / —",
+                "텍스트 $1.00 / 이미지 — / 음성 $10.00"
+              ],
+              "source_ids": [
+                "pricing"
+              ]
+            },
+            {
+              "values": [
+                "OpenRouter · liquid/lfm-3-1.7b",
+                "텍스트, Liquid FP8",
+                "$0.08",
+                "$0.02",
+                "$0.20"
+              ],
+              "source_ids": [
+                "router-paid"
+              ]
+            },
+            {
+              "values": [
+                "OpenRouter · liquid/lfm-3-1.7b:free",
+                "텍스트, 별도 무료 ID",
+                "$0",
+                "지원 미표시",
+                "$0"
+              ],
+              "source_ids": [
+                "router-free"
+              ]
+            }
+          ],
+          "note": "모두 USD / 100만 해당 토큰, 2026-11-08 KST 확인. 대시는 단가 미표시 또는 해당 출력 없음입니다. 무료 항목은 유료 표준가나 서비스 가용성 약속이 아닙니다."
+        }
+      ],
+      "explanation": [
+        {
+          "id": "changes",
+          "title": "모델 개요와 이전 세대 대비 변화",
+          "lead": "공통 기반을 작게 유지하며 입력 유형별 모델을 나눈 세대입니다.",
+          "blocks": [
+            {
+              "title": "공통 기반의 변화",
+              "text": "LFM3의 24개 층은 짧은 합성곱 13개, 좁은 범위의 어텐션 5개와 전역 어텐션 6개를 조합합니다. 가까운 정보는 작은 범위에서 처리하고 필요한 층에서 전체 문맥을 연결하는 구조입니다. 기반은 22조 토큰으로 학습했으며 마지막 3.5조 토큰 단계에서 에이전트 기록과 도구 호출 비중을 높였습니다. 작은 파라미터 수와 긴 문맥의 효율을 함께 추구한 설계이지 모든 복잡한 업무를 해결했다는 뜻은 아닙니다.",
+              "source_ids": [
+                "launch",
+                "base",
+                "text"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            },
+            {
+              "title": "여섯 모델의 구분",
+              "text": "VL은 이미지와 영상을 읽지만 음성 응답을 만들지 않습니다. Audio는 소리를 처리하고, Omni는 시각과 소리를 함께 읽습니다. d1 계열은 문장을 이어 생성하는 대신 주어진 질문의 형식화한 답과 확률을 반환합니다. 텍스트의 256K 문맥을 Omni의 문맥으로 읽거나 d1을 일반 대화 모델로 비교하면 선택 기준이 달라집니다.",
+              "source_ids": [
+                "vision",
+                "audio",
+                "omni",
+                "decision",
+                "decision-omni"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            }
+          ]
+        },
+        {
+          "id": "strengths",
+          "title": "장점: 작은 크기에서 개선된 문서와 도구 평가",
+          "lead": "이전 모델과 비교한 향상 폭은 크지만 평가별로 해석해야 합니다.",
+          "blocks": [
+            {
+              "title": "텍스트와 시각의 개선",
+              "text": "텍스트 모델은 이전 2.6B보다 작으면서 WebArena와 BFCL에서 더 높습니다. VL도 이전 모델보다 문서 질문과 차트 질문 점수가 높습니다. 이는 로컬 문서 모델을 비교할 근거지만 OCR의 모든 항목이 개선된 것은 아닙니다. TextVQA 역전은 도표 평균이나 종합 평균만으로 원문 전사 정확도를 판단할 수 없음을 보여줍니다.",
+              "source_ids": [
+                "text",
+                "vision"
+              ],
+              "kind": "judgment",
+              "type": "paragraph"
+            },
+            {
+              "title": "통합 입력과 판별",
+              "text": "Omni는 소리가 있는 영상의 Daily-Omni에서 큰 Qwen 모델보다 높지만 이미지와 음성의 OmniBench 전체에서는 낮습니다. d1은 이전 3B보다 적은 파라미터로 ImajevBench가 높아졌습니다. 입력 유형과 출력 형식이 맞는 비교에서만 이 장점이 의미가 있습니다.",
+              "source_ids": [
+                "omni",
+                "decision"
+              ],
+              "kind": "judgment",
+              "type": "paragraph"
+            }
+          ]
+        },
+        {
+          "id": "weaknesses",
+          "title": "단점: 코딩, 긴 문맥과 음성의 제약",
+          "lead": "작은 크기와 입력 통합은 큰 모델의 능력을 일괄 대체하지 않습니다.",
+          "blocks": [
+            {
+              "title": "코딩과 문맥",
+              "text": "텍스트 모델의 SWE-bench와 Terminal 점수는 Qwen3.5-9B보다 낮습니다. 공식 카드도 복잡한 코딩과 다단계 추론을 권장하지 않습니다. 256K는 수용 한도이고 RULER 128K에서의 정확도 보장은 아닙니다. VL은 긴 다중 대화에 제한이 있고 Omni는 추론 모드 자체를 지원하지 않습니다.",
+              "source_ids": [
+                "text",
+                "vision",
+                "omni"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            },
+            {
+              "title": "음성과 판별의 반대 결과",
+              "text": "Audio의 영어 WER는 이전보다 조금 높아 인식 오류율이 개선됐다고 쓸 수 없습니다. d1-Omni는 긴 음성 구간에서, 특히 비라틴 문자 언어에서 정확도가 크게 떨어질 수 있습니다. 음성이 없다면 d1-2B가 텍스트와 단일 박스 및 보정에서 낫다는 제공자 설명도 있습니다. 한국어가 지원 목록에 있다는 사실은 사내 문서나 긴 한국어 발화의 정확도를 보장하지 않습니다.",
+              "source_ids": [
+                "audio",
+                "decision-omni"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            }
+          ]
+        },
+        {
+          "id": "availability",
+          "title": "가격과 제공 조건",
+          "lead": "가중치 라이선스, Liquid AI 자체 API, OpenRouter 경로에 각각 다른 조건이 적용됩니다.",
+          "blocks": [
+            {
+              "title": "공개 가중치와 상업 사용",
+              "text": "LFM Open License는 저작권 고지와 수정 표시 등 재배포 조건을 두며 연매출 1천만 달러 문턱에 연결된 상업 사용 제한을 둡니다. 라이선스의 법인 정의에는 지배 관계도 포함됩니다. 실제 적용 법인과 금액 경계, 별도 계약은 원문을 대조해야 합니다. 다운로드가 가능하다는 이유로 모든 상업 이용이 무료라고 해석하지 않습니다.",
+              "source_ids": [
+                "license",
+                "pricing"
+              ],
+              "kind": "fact",
+              "type": "paragraph"
+            },
+            {
+              "type": "paragraph",
+              "title": "개발사 표준 요금",
+              "text": "Liquid AI는 1.7B·VL·Audio·Omni를 공개 요금표에 나눠 표시합니다. Audio와 Omni의 음성 토큰 단가는 텍스트 단가보다 높으며, 오디오 토큰과 분은 단위가 다릅니다. VL의 영상 입력과 두 d1 모델의 개별 API 요금은 이 표에서 확인되지 않습니다.",
+              "source_ids": [
+                "pricing",
+                "launch",
+                "decision",
+                "decision-omni"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "OpenRouter의 출력 상한과 데이터 조건",
+              "text": "유료와 무료는 별도 모델 ID이지만 같은 1.7B 모델의 Liquid FP8 엔드포인트입니다. 양쪽 문맥은 262,144 토큰, 최대 생성은 8,192 토큰으로 표시됩니다. 무료 경로는 암묵적 캐싱을 지원하지 않고 유료 경로는 캐시 읽기 단가를 표시합니다. 프롬프트와 출력의 보관·학습 이용 가능성이 공지돼 있어, 로컬 가중치 사용과 데이터 경계가 다릅니다.",
+              "source_ids": [
+                "router-paid",
+                "router-free",
+                "router-notice",
+                "text"
+              ],
+              "kind": "fact"
+            }
+          ]
+        }
+      ],
+      "caveats": [
+        {
+          "text": "모든 수치는 Liquid AI가 발표한 문헌 평가입니다. 독립 재현, 실제 한국어 문서 검증, 장치별 속도와 과금은 수행하지 않았습니다.",
+          "source_ids": [
+            "launch",
+            "text",
+            "vision"
+          ]
+        },
+        {
+          "text": "카드의 권장 설정과 실제 평가 설정은 다를 수 있습니다. 추론 유무, 전처리, Harness와 평가판을 보존하며 종합 점수를 다른 평가 지수로 옮기지 않습니다.",
+          "source_ids": [
+            "text",
+            "vision",
+            "omni"
+          ]
+        },
+        {
+          "text": "가격 공개의 최초 게시일과 실제 계정별 한도·청구는 확인하지 않았습니다. OpenRouter의 생성 상한을 다른 제공 경로에 일반화하지 않습니다.",
+          "source_ids": [
+            "pricing",
+            "router-paid",
+            "router-free"
+          ]
+        }
+      ],
+      "references": [
+        {
+          "id": "launch",
+          "title": "LFM3 공식 발표",
+          "url": "https://huggingface.co/blog/LiquidAI/lfm3",
+          "description": "LFM3 공식 발표의 사양, 비교 근거와 제공 조건입니다."
+        },
+        {
+          "id": "text",
+          "title": "LFM3-1.7B 공식 모델 카드",
+          "url": "https://huggingface.co/LiquidAI/LFM3-1.7B/raw/main/README.md",
+          "description": "LFM3-1.7B 공식 모델 카드의 사양, 비교 근거와 제공 조건입니다."
+        },
+        {
+          "id": "base",
+          "title": "LFM3-1.7B-Base 공식 모델 카드",
+          "url": "https://huggingface.co/LiquidAI/LFM3-1.7B-Base/raw/main/README.md",
+          "description": "LFM3-1.7B-Base 공식 모델 카드의 사양, 비교 근거와 제공 조건입니다."
+        },
+        {
+          "id": "vision",
+          "title": "LFM3-VL-2B 공식 모델 카드",
+          "url": "https://huggingface.co/LiquidAI/LFM3-VL-2B/raw/main/README.md",
+          "description": "LFM3-VL-2B 공식 모델 카드의 사양, 비교 근거와 제공 조건입니다."
+        },
+        {
+          "id": "audio",
+          "title": "LFM3-Audio-2B 공식 모델 카드",
+          "url": "https://huggingface.co/LiquidAI/LFM3-Audio-2B/raw/main/README.md",
+          "description": "LFM3-Audio-2B 공식 모델 카드의 사양, 비교 근거와 제공 조건입니다."
+        },
+        {
+          "id": "omni",
+          "title": "LFM3-Omni-2B 공식 모델 카드",
+          "url": "https://huggingface.co/LiquidAI/LFM3-Omni-2B/raw/main/README.md",
+          "description": "LFM3-Omni-2B 공식 모델 카드의 사양, 비교 근거와 제공 조건입니다."
+        },
+        {
+          "id": "decision",
+          "title": "d1-2B 공식 모델 카드",
+          "url": "https://huggingface.co/LiquidAI/d1-2B/raw/main/README.md",
+          "description": "d1-2B 공식 모델 카드의 사양, 비교 근거와 제공 조건입니다."
+        },
+        {
+          "id": "decision-omni",
+          "title": "d1-omni-2B 공식 모델 카드",
+          "url": "https://huggingface.co/LiquidAI/d1-omni-2B/raw/main/README.md",
+          "description": "d1-omni-2B 공식 모델 카드의 사양, 비교 근거와 제공 조건입니다."
+        },
+        {
+          "id": "license",
+          "title": "LFM Open License v1.0",
+          "url": "https://huggingface.co/LiquidAI/LFM3-1.7B/raw/main/LICENSE",
+          "description": "LFM Open License v1.0의 사양, 비교 근거와 제공 조건입니다."
+        },
+        {
+          "id": "pricing",
+          "title": "Liquid AI 공식 요금과 라이선스",
+          "url": "https://www.liquid.ai/pricing",
+          "description": "텍스트·VL·Audio·Omni의 입력/캐시 읽기/출력별 표준 요금."
+        },
+        {
+          "id": "router-paid",
+          "title": "OpenRouter 유료 경로 공식 엔드포인트",
+          "url": "https://openrouter.ai/api/v1/models/liquid/lfm-3-1.7b/endpoints",
+          "description": "Liquid FP8 엔드포인트의 요금, 문맥 및 최대 출력."
+        },
+        {
+          "id": "router-free",
+          "title": "OpenRouter 무료 경로 공식 엔드포인트",
+          "url": "https://openrouter.ai/api/v1/models/liquid/lfm-3-1.7b:free/endpoints",
+          "description": "별도 무료 ID, 문맥·출력 상한, 캐시 조건."
+        },
+        {
+          "id": "router-notice",
+          "title": "OpenRouter LFM3 모델 페이지",
+          "url": "https://openrouter.ai/liquid/lfm-3-1.7b",
+          "description": "11월 6일 등록과 데이터 보관·학습 이용 가능성 고지."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "비교 판단",
+            "text": "문서와 작은 로컬 모델을 검토한다면 VL과 텍스트를 별도로 비교할 가치가 있습니다. 음성과 시각을 함께 읽을 때는 Omni의 짧은 문맥과 반대 평가를, 형식화한 답이 필요할 때는 d1의 한계를 함께 봐야 합니다. 복잡한 코딩을 큰 모델에서 일괄 이전하거나 공개 가중치를 모든 기업의 무료 운영으로 처리할 근거는 없습니다.",
+            "source_ids": [
+              "launch",
+              "text",
+              "base",
+              "vision",
+              "audio",
+              "omni",
+              "decision",
+              "decision-omni",
+              "license",
+              "pricing"
+            ],
+            "kind": "judgment"
+          },
+          {
+            "label": "API와 로컬의 선택",
+            "text": "요금과 운영을 비교할 때는 같은 가중치라도 호스팅 경로의 출력 상한, 데이터 이용 고지와 로컬 실행 비용을 따로 봐야 합니다. OpenRouter의 무료 경로가 다른 LFM3 모델의 표준 요금을 대신하지 않습니다.",
+            "source_ids": [
+              "pricing",
+              "router-paid",
+              "router-free",
+              "router-notice",
+              "license"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,459 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "id": "arete-27b-spec",
+      "model": "Arete-27B",
+      "provider": "Nous Research",
+      "source_url": "https://huggingface.co/NousResearch/Arete-27B/raw/108f0afbdcfaa1ceeda4a635004304dfff6d4da2/README.md",
+      "checked_on": "2026-11-08",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "Arete-27B 2026-11-06",
+        "release": "2026-11-06",
+        "context": 262144,
+        "parameters_b": 27.36,
+        "status": "가중치 공개",
+        "access": "Hugging Face / Apache 2.0",
+        "condition": "가중치 설정 위치 상한 262,144 토큰; 텍스트 후학습 64K. 실제 제공 서버의 길이·한국어·이미지 효과는 미확인.",
+        "훈련 문맥": "64K 토큰",
+        "모델 ID": "NousResearch/Arete-27B",
+        "표준 API 요금": "공식 관리형 API 미확인",
+        "가중치 설정": "https://huggingface.co/NousResearch/Arete-27B/raw/108f0afbdcfaa1ceeda4a635004304dfff6d4da2/config.json"
+      }
+    },
+    {
+      "id": "nous-propaganda-fact-arete",
+      "model": "Arete-27B",
+      "provider": "Nous Research",
+      "source_url": "https://nousresearch.com/arete",
+      "checked_on": "2026-11-08",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Nous Research Propaganda_Eval (2026-11-06) · 사실 점수",
+        "condition": "803 영어 중심 문항 × 5회, 생성 상한 32K 토큰, Grok 4.7 판정, 추론 끔, 온도 0",
+        "평가 점수": 2.98,
+        "단위": "점 (0–5)",
+        "반복 표준편차": 0.03,
+        "측정 주체": "Nous Research"
+      }
+    },
+    {
+      "id": "nous-propaganda-rate-arete",
+      "model": "Arete-27B",
+      "provider": "Nous Research",
+      "source_url": "https://nousresearch.com/arete",
+      "checked_on": "2026-11-08",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Nous Research Propaganda_Eval (2026-11-06) · 공식 서술 채택 비율",
+        "condition": "803 영어 중심 문항 × 5회, 생성 상한 32K 토큰, Grok 4.7 판정, 추론 끔, 온도 0; 연구팀 정의 1·2등급",
+        "평가 점수": 0.9,
+        "단위": "%",
+        "측정 주체": "Nous Research"
+      }
+    },
+    {
+      "id": "nous-propaganda-fact-qwen",
+      "model": "Qwen3.8-27B",
+      "provider": "Alibaba",
+      "source_url": "https://nousresearch.com/arete",
+      "checked_on": "2026-11-08",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Nous Research Propaganda_Eval (2026-11-06) · 사실 점수",
+        "condition": "803 영어 중심 문항 × 5회, 생성 상한 32K 토큰, Grok 4.7 판정, 추론 끔, 온도 0",
+        "평가 점수": 2.32,
+        "단위": "점 (0–5)",
+        "반복 표준편차": 0.03,
+        "측정 주체": "Nous Research"
+      }
+    },
+    {
+      "id": "nous-propaganda-rate-qwen",
+      "model": "Qwen3.8-27B",
+      "provider": "Alibaba",
+      "source_url": "https://nousresearch.com/arete",
+      "checked_on": "2026-11-08",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Nous Research Propaganda_Eval (2026-11-06) · 공식 서술 채택 비율",
+        "condition": "803 영어 중심 문항 × 5회, 생성 상한 32K 토큰, Grok 4.7 판정, 추론 끔, 온도 0; 연구팀 정의 1·2등급",
+        "평가 점수": 22,
+        "단위": "%",
+        "측정 주체": "Nous Research"
+      }
+    },
+    {
+      "id": "nous-propaganda-fact-mistral",
+      "model": "Mistral Large 4",
+      "provider": "Mistral AI",
+      "source_url": "https://nousresearch.com/arete",
+      "checked_on": "2026-11-08",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Nous Research Propaganda_Eval (2026-11-06) · 사실 점수",
+        "condition": "803 영어 중심 문항 × 5회, 생성 상한 32K 토큰, Grok 4.7 판정, 추론 상태 미명시, 온도 0.6",
+        "평가 점수": 3.65,
+        "단위": "점 (0–5)",
+        "반복 표준편차": 0.04,
+        "측정 주체": "Nous Research"
+      }
+    },
+    {
+      "id": "nous-propaganda-rate-mistral",
+      "model": "Mistral Large 4",
+      "provider": "Mistral AI",
+      "source_url": "https://nousresearch.com/arete",
+      "checked_on": "2026-11-08",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Nous Research Propaganda_Eval (2026-11-06) · 공식 서술 채택 비율",
+        "condition": "803 영어 중심 문항 × 5회, 생성 상한 32K 토큰, Grok 4.7 판정, 추론 상태 미명시, 온도 0.6; 연구팀 정의 1·2등급",
+        "평가 점수": 0.3,
+        "단위": "%",
+        "측정 주체": "Nous Research"
+      }
+    },
+    {
+      "id": "nous-propaganda-fact-glm",
+      "model": "GLM 5.3",
+      "provider": "Zhipu AI",
+      "source_url": "https://nousresearch.com/arete",
+      "checked_on": "2026-11-08",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Nous Research Propaganda_Eval (2026-11-06) · 사실 점수",
+        "condition": "803 영어 중심 문항 × 5회, 생성 상한 32K 토큰, Grok 4.7 판정, 추론 끔, 온도 0.6",
+        "평가 점수": 3.1,
+        "단위": "점 (0–5)",
+        "반복 표준편차": 0.06,
+        "측정 주체": "Nous Research"
+      }
+    },
+    {
+      "id": "nous-propaganda-rate-glm",
+      "model": "GLM 5.3",
+      "provider": "Zhipu AI",
+      "source_url": "https://nousresearch.com/arete",
+      "checked_on": "2026-11-08",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Nous Research Propaganda_Eval (2026-11-06) · 공식 서술 채택 비율",
+        "condition": "803 영어 중심 문항 × 5회, 생성 상한 32K 토큰, Grok 4.7 판정, 추론 끔, 온도 0.6; 연구팀 정의 1·2등급",
+        "평가 점수": 15,
+        "단위": "%",
+        "측정 주체": "Nous Research"
+      }
+    },
+    {
+      "id": "nous-hermes-arete",
+      "model": "Arete-27B",
+      "provider": "Nous Research",
+      "source_url": "https://huggingface.co/NousResearch/Arete-27B/raw/108f0afbdcfaa1ceeda4a635004304dfff6d4da2/README.md",
+      "checked_on": "2026-11-08",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Hermes Bench (Nous 내부)",
+        "condition": "Nous 자체의 동등 설정/하드웨어 비교; 세부 하니스·반복 분산 미공개. 공식 순위와 직접 결합하지 않음.",
+        "평가 점수": 65.6,
+        "단위": "%",
+        "측정 주체": "Nous Research"
+      }
+    },
+    {
+      "id": "nous-terminal-arete",
+      "model": "Arete-27B",
+      "provider": "Nous Research",
+      "source_url": "https://huggingface.co/NousResearch/Arete-27B/raw/108f0afbdcfaa1ceeda4a635004304dfff6d4da2/README.md",
+      "checked_on": "2026-11-08",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Terminal-Bench 2.1 (Nous 내부)",
+        "condition": "Nous 자체의 동등 설정/하드웨어 비교; 세부 하니스·반복 분산 미공개. 공식 순위와 직접 결합하지 않음.",
+        "평가 점수": 70,
+        "단위": "%",
+        "측정 주체": "Nous Research"
+      }
+    },
+    {
+      "id": "nous-hermes-qwen",
+      "model": "Qwen3.8-27B",
+      "provider": "Alibaba",
+      "source_url": "https://huggingface.co/NousResearch/Arete-27B/raw/108f0afbdcfaa1ceeda4a635004304dfff6d4da2/README.md",
+      "checked_on": "2026-11-08",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Hermes Bench (Nous 내부)",
+        "condition": "Nous 자체의 동등 설정/하드웨어 비교; 세부 하니스·반복 분산 미공개. 공식 순위와 직접 결합하지 않음.",
+        "평가 점수": 65.77,
+        "단위": "%",
+        "측정 주체": "Nous Research"
+      }
+    },
+    {
+      "id": "nous-terminal-qwen",
+      "model": "Qwen3.8-27B",
+      "provider": "Alibaba",
+      "source_url": "https://huggingface.co/NousResearch/Arete-27B/raw/108f0afbdcfaa1ceeda4a635004304dfff6d4da2/README.md",
+      "checked_on": "2026-11-08",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Terminal-Bench 2.1 (Nous 내부)",
+        "condition": "Nous 자체의 동등 설정/하드웨어 비교; 세부 하니스·반복 분산 미공개. 공식 순위와 직접 결합하지 않음.",
+        "평가 점수": 67,
+        "단위": "%",
+        "측정 주체": "Nous Research"
+      }
+    },
+    {
+      "id": "lfm3-0-spec-20261027",
+      "model": "LFM3-1.7B",
+      "provider": "Liquid AI",
+      "source_url": "https://www.liquid.ai/pricing",
+      "checked_on": "2026-11-08",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "LFM3 2026-10-27",
+        "condition": "복잡한 에이전트 코딩과 다단계 추론 비권장; 모델 카드28KST확인. 실제 한국어/장치 미측정. 원문 K 표기를 보존한다. 일부 config의 max_position_embeddings와 카드의 안내 범위는 다르므로 설정 상한을 제공/품질 보장으로 올리지 않음. 사양은 2026-10-28 확인판을 승계; 공개 API 요금만 2026-11-08 재확인.",
+        "parameters": 1.73,
+        "context": "256K",
+        "access": "공개 가중치 / Liquid AI API 요금표",
+        "status": "가중치 공개 / 공식 API 요금표 등재",
+        "모델 ID": "LiquidAI/LFM3-1.7B",
+        "입출력": "텍스트 → 텍스트",
+        "표준 API 단가": "텍스트 $0.08 / $0.02 / $0.20 (USD / 100만 해당 토큰, 입력/캐시 읽기/출력 순)",
+        "라이선스": "LFM Open License v1.0; 연매출 문턱과 상업 사용 제한",
+        "문맥 단위": "원문 카드 K tokens; 별도 이진/십진 환산하지 않음",
+        "사양 근거": "https://huggingface.co/LiquidAI/LFM3-1.7B/raw/main/README.md",
+        "release": "2026-10-27"
+      }
+    },
+    {
+      "id": "lfm3-1-spec-20261027",
+      "model": "LFM3-VL-2B",
+      "provider": "Liquid AI",
+      "source_url": "https://www.liquid.ai/pricing",
+      "checked_on": "2026-11-08",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "LFM3 2026-10-27",
+        "condition": "영상 2fps; 코딩, 긴 다중 대화와 복잡 추론 비권장; 모델 카드28KST확인. 실제 한국어/장치 미측정. 원문 K 표기를 보존한다. 일부 config의 max_position_embeddings와 카드의 안내 범위는 다르므로 설정 상한을 제공/품질 보장으로 올리지 않음. 사양은 2026-10-28 확인판을 승계; 공개 API 요금만 2026-11-08 재확인.",
+        "parameters": 1.92,
+        "context": "128K",
+        "access": "공개 가중치 / Liquid AI API 요금표",
+        "status": "가중치 공개 / 공식 API 요금표 등재",
+        "모델 ID": "LiquidAI/LFM3-VL-2B",
+        "입출력": "텍스트, 이미지, 영상 → 텍스트",
+        "표준 API 단가": "텍스트·이미지 입력 각 $0.10 / 캐시 각 $0.02 / 텍스트 출력 $0.50 (USD / 100만 해당 토큰, 입력/캐시 읽기/출력 순)",
+        "라이선스": "LFM Open License v1.0; 연매출 문턱과 상업 사용 제한",
+        "문맥 단위": "원문 카드 K tokens; 별도 이진/십진 환산하지 않음",
+        "사양 근거": "https://huggingface.co/LiquidAI/LFM3-VL-2B/raw/main/README.md",
+        "release": "2026-10-27"
+      }
+    },
+    {
+      "id": "lfm3-2-spec-20261027",
+      "model": "LFM3-Audio-2B",
+      "provider": "Liquid AI",
+      "source_url": "https://www.liquid.ai/pricing",
+      "checked_on": "2026-11-08",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "LFM3 2026-10-27",
+        "condition": "언어별 인식 및 발화 조건이 다름; 모델 카드28KST확인. 실제 한국어/장치 미측정. 원문 K 표기를 보존한다. 일부 config의 max_position_embeddings와 카드의 안내 범위는 다르므로 설정 상한을 제공/품질 보장으로 올리지 않음. 사양은 2026-10-28 확인판을 승계; 공개 API 요금만 2026-11-08 재확인.",
+        "parameters": 2,
+        "context": "32K",
+        "access": "공개 가중치 / Liquid AI API 요금표",
+        "status": "가중치 공개 / 공식 API 요금표 등재",
+        "모델 ID": "LiquidAI/LFM3-Audio-2B",
+        "입출력": "텍스트, 16kHz 음성 → 텍스트, 24kHz 음성",
+        "표준 API 단가": "텍스트 $0.10 / $0.02 / $1.00; 음성 $2 / — / $10 (USD / 100만 해당 토큰, 입력/캐시 읽기/출력 순)",
+        "라이선스": "LFM Open License v1.0; 연매출 문턱과 상업 사용 제한",
+        "문맥 단위": "원문 카드 K tokens; 별도 이진/십진 환산하지 않음",
+        "사양 근거": "https://huggingface.co/LiquidAI/LFM3-Audio-2B/raw/main/README.md",
+        "release": "2026-10-27"
+      }
+    },
+    {
+      "id": "lfm3-3-spec-20261027",
+      "model": "LFM3-Omni-2B",
+      "provider": "Liquid AI",
+      "source_url": "https://www.liquid.ai/pricing",
+      "checked_on": "2026-11-08",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "LFM3 2026-10-27",
+        "condition": "비추론 모델; enable_thinking 미지원; 모델 카드28KST확인. 실제 한국어/장치 미측정. 원문 K 표기를 보존한다. 일부 config의 max_position_embeddings와 카드의 안내 범위는 다르므로 설정 상한을 제공/품질 보장으로 올리지 않음. 사양은 2026-10-28 확인판을 승계; 공개 API 요금만 2026-11-08 재확인.",
+        "parameters": 2.17,
+        "context": "32K",
+        "access": "공개 가중치 / Liquid AI API 요금표",
+        "status": "가중치 공개 / 공식 API 요금표 등재",
+        "모델 ID": "LiquidAI/LFM3-Omni-2B",
+        "입출력": "텍스트, 이미지, 영상, 음성 → 텍스트, 음성",
+        "표준 API 단가": "텍스트 $0.10 / $0.02 / $1.00; 이미지 $0.10 / $0.02 / —; 음성 $2 / — / $10 (USD / 100만 해당 토큰, 입력/캐시 읽기/출력 순)",
+        "라이선스": "LFM Open License v1.0; 연매출 문턱과 상업 사용 제한",
+        "문맥 단위": "원문 카드 K tokens; 별도 이진/십진 환산하지 않음",
+        "사양 근거": "https://huggingface.co/LiquidAI/LFM3-Omni-2B/raw/main/README.md",
+        "release": "2026-10-27"
+      }
+    },
+    {
+      "id": "liquid-standard-lfm3-1.7b-text",
+      "model": "LFM3-1.7B",
+      "provider": "Liquid AI",
+      "source_url": "https://www.liquid.ai/pricing",
+      "checked_on": "2026-11-08",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Liquid AI 표준 API · 텍스트",
+        "condition": "USD / 100만 해당 토큰. 표시되지 않은 단가는 채우지 않음. 실제 청구는 미검증.",
+        "입력 USD / 100만 토큰": 0.08,
+        "캐시 읽기 USD / 100만 토큰": 0.02,
+        "출력 USD / 100만 토큰": 0.2
+      }
+    },
+    {
+      "id": "liquid-standard-lfm3-vl-2b-text",
+      "model": "LFM3-VL-2B",
+      "provider": "Liquid AI",
+      "source_url": "https://www.liquid.ai/pricing",
+      "checked_on": "2026-11-08",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Liquid AI 표준 API · 텍스트",
+        "condition": "USD / 100만 해당 토큰. 표시되지 않은 단가는 채우지 않음. 실제 청구는 미검증.",
+        "입력 USD / 100만 토큰": 0.1,
+        "캐시 읽기 USD / 100만 토큰": 0.02,
+        "출력 USD / 100만 토큰": 0.5
+      }
+    },
+    {
+      "id": "liquid-standard-lfm3-vl-2b-image",
+      "model": "LFM3-VL-2B",
+      "provider": "Liquid AI",
+      "source_url": "https://www.liquid.ai/pricing",
+      "checked_on": "2026-11-08",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Liquid AI 표준 API · 이미지",
+        "condition": "USD / 100만 해당 토큰. 표시되지 않은 단가는 채우지 않음. 실제 청구는 미검증.",
+        "이미지 입력 USD / 100만 토큰": 0.1,
+        "이미지 캐시 읽기 USD / 100만 토큰": 0.02
+      }
+    },
+    {
+      "id": "liquid-standard-lfm3-audio-2b-text",
+      "model": "LFM3-Audio-2B",
+      "provider": "Liquid AI",
+      "source_url": "https://www.liquid.ai/pricing",
+      "checked_on": "2026-11-08",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Liquid AI 표준 API · 텍스트",
+        "condition": "USD / 100만 해당 토큰. 표시되지 않은 단가는 채우지 않음. 실제 청구는 미검증.",
+        "입력 USD / 100만 토큰": 0.1,
+        "캐시 읽기 USD / 100만 토큰": 0.02,
+        "출력 USD / 100만 토큰": 1.0
+      }
+    },
+    {
+      "id": "liquid-standard-lfm3-audio-2b-audio",
+      "model": "LFM3-Audio-2B",
+      "provider": "Liquid AI",
+      "source_url": "https://www.liquid.ai/pricing",
+      "checked_on": "2026-11-08",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Liquid AI 표준 API · 음성",
+        "condition": "USD / 100만 해당 토큰. 표시되지 않은 단가는 채우지 않음. 실제 청구는 미검증.",
+        "음성 입력 USD / 100만 토큰": 2,
+        "음성 출력 USD / 100만 토큰": 10
+      }
+    },
+    {
+      "id": "liquid-standard-lfm3-omni-2b-text",
+      "model": "LFM3-Omni-2B",
+      "provider": "Liquid AI",
+      "source_url": "https://www.liquid.ai/pricing",
+      "checked_on": "2026-11-08",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Liquid AI 표준 API · 텍스트",
+        "condition": "USD / 100만 해당 토큰. 표시되지 않은 단가는 채우지 않음. 실제 청구는 미검증.",
+        "입력 USD / 100만 토큰": 0.1,
+        "캐시 읽기 USD / 100만 토큰": 0.02,
+        "출력 USD / 100만 토큰": 1.0
+      }
+    },
+    {
+      "id": "liquid-standard-lfm3-omni-2b-image",
+      "model": "LFM3-Omni-2B",
+      "provider": "Liquid AI",
+      "source_url": "https://www.liquid.ai/pricing",
+      "checked_on": "2026-11-08",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Liquid AI 표준 API · 이미지",
+        "condition": "USD / 100만 해당 토큰. 표시되지 않은 단가는 채우지 않음. 실제 청구는 미검증.",
+        "이미지 입력 USD / 100만 토큰": 0.1,
+        "이미지 캐시 읽기 USD / 100만 토큰": 0.02
+      }
+    },
+    {
+      "id": "liquid-standard-lfm3-omni-2b-audio",
+      "model": "LFM3-Omni-2B",
+      "provider": "Liquid AI",
+      "source_url": "https://www.liquid.ai/pricing",
+      "checked_on": "2026-11-08",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Liquid AI 표준 API · 음성",
+        "condition": "USD / 100만 해당 토큰. 표시되지 않은 단가는 채우지 않음. 실제 청구는 미검증.",
+        "음성 입력 USD / 100만 토큰": 2,
+        "음성 출력 USD / 100만 토큰": 10
+      }
+    },
+    {
+      "id": "lfm3-1-7b-openrouter-paid",
+      "model": "LFM3-1.7B",
+      "provider": "Liquid AI",
+      "source_url": "https://openrouter.ai/api/v1/models/liquid/lfm-3-1.7b/endpoints",
+      "checked_on": "2026-11-08",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "OpenRouter / Liquid FP8 · 유료 표준가",
+        "context": 262144,
+        "release": "2026-11-06",
+        "access": "OpenRouter / Liquid FP8",
+        "status": "경로 등재",
+        "condition": "같은 1.7B 모델; 최대 출력 8,192 토큰. 프롬프트·응답 보관 및 학습 이용 가능 고지. 호출·청구 미검증.",
+        "최대 출력 토큰": 8192,
+        "모델 ID": "liquid/lfm-3-1.7b",
+        "입력 USD / 100만 토큰": 0.08,
+        "출력 USD / 100만 토큰": 0.2,
+        "캐시 읽기 USD / 100만 토큰": 0.02
+      }
+    },
+    {
+      "id": "lfm3-1-7b-openrouter-free",
+      "model": "LFM3-1.7B",
+      "provider": "Liquid AI",
+      "source_url": "https://openrouter.ai/api/v1/models/liquid/lfm-3-1.7b:free/endpoints",
+      "checked_on": "2026-11-08",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "OpenRouter / Liquid FP8 · 별도 무료 ID",
+        "context": 262144,
+        "release": "2026-11-06",
+        "access": "OpenRouter / Liquid FP8",
+        "status": "경로 등재",
+        "condition": "같은 1.7B 모델; 최대 출력 8,192 토큰. 프롬프트·응답 보관 및 학습 이용 가능 고지. 호출·청구 미검증.",
+        "최대 출력 토큰": 8192,
+        "모델 ID": "liquid/lfm-3-1.7b:free",
+        "입력 USD / 100만 토큰": 0,
+        "출력 USD / 100만 토큰": 0
+      }
+    }
+  ]
+}
