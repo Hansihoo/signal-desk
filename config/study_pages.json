@@ -100,7 +100,8 @@
     "swe-2-flash-model-guide",
     "inkling-2-small-model-guide",
     "twil-8b-model-guide",
-    "meridian-air-model-guide"
+    "meridian-air-model-guide",
+    "arete-27b-model-guide"
   ],
   "catalogs": {
     "devops-implementation-guide": "devops_tools.2026-10-10.r4.json"
@@ -263,7 +264,8 @@
       "10914ffb732ebb094827a943260f92537f0bdf88ea8584ad31cde8d7ae00cff6"
     ],
     "lfm3-family-model-guide": [
-      "c3780a0649d22c9f39684feed8335435ffbb10f67f0297f12943aaff53d27549"
+      "c3780a0649d22c9f39684feed8335435ffbb10f67f0297f12943aaff53d27549",
+      "74bd61b604376bec32511e2268bc39190fad17c118cb975679fd2c95f2c4b9af"
     ],
     "google-genie-4-model-guide": [
       "c9892bd0e681ddad40c8d6497a237f7d1eaa1d7c56cbc109a63e4ca45b9e20dc"
@@ -342,6 +344,9 @@
     ],
     "meridian-air-model-guide": [
       "4644251099888aa0885e34331aaaf722ccbf7d0f003783a8bad59f944cced857"
+    ],
+    "arete-27b-model-guide": [
+      "ba91fb4a8cbb6c32883eb85ce6ea6a27784a0768258f63e1f662fd4cd36279b8"
     ]
   },
   "model_introduction_editions": {
@@ -443,7 +448,8 @@
       "10914ffb732ebb094827a943260f92537f0bdf88ea8584ad31cde8d7ae00cff6"
     ],
     "lfm3-family-model-guide": [
-      "c3780a0649d22c9f39684feed8335435ffbb10f67f0297f12943aaff53d27549"
+      "c3780a0649d22c9f39684feed8335435ffbb10f67f0297f12943aaff53d27549",
+      "74bd61b604376bec32511e2268bc39190fad17c118cb975679fd2c95f2c4b9af"
     ],
     "google-genie-4-model-guide": [
       "c9892bd0e681ddad40c8d6497a237f7d1eaa1d7c56cbc109a63e4ca45b9e20dc"
@@ -522,6 +528,9 @@
     ],
     "meridian-air-model-guide": [
       "4644251099888aa0885e34331aaaf722ccbf7d0f003783a8bad59f944cced857"
+    ],
+    "arete-27b-model-guide": [
+      "ba91fb4a8cbb6c32883eb85ce6ea6a27784a0768258f63e1f662fd4cd36279b8"
     ]
   },
   "model_introduction_purpose_editions": {
@@ -612,7 +621,8 @@
       "10914ffb732ebb094827a943260f92537f0bdf88ea8584ad31cde8d7ae00cff6"
     ],
     "lfm3-family-model-guide": [
-      "c3780a0649d22c9f39684feed8335435ffbb10f67f0297f12943aaff53d27549"
+      "c3780a0649d22c9f39684feed8335435ffbb10f67f0297f12943aaff53d27549",
+      "74bd61b604376bec32511e2268bc39190fad17c118cb975679fd2c95f2c4b9af"
     ],
     "google-genie-4-model-guide": [
       "c9892bd0e681ddad40c8d6497a237f7d1eaa1d7c56cbc109a63e4ca45b9e20dc"
@@ -691,6 +701,9 @@
     ],
     "meridian-air-model-guide": [
       "4644251099888aa0885e34331aaaf722ccbf7d0f003783a8bad59f944cced857"
+    ],
+    "arete-27b-model-guide": [
+      "ba91fb4a8cbb6c32883eb85ce6ea6a27784a0768258f63e1f662fd4cd36279b8"
     ]
   },
   "model_introduction_reader_editions": {
@@ -778,7 +791,8 @@
       "10914ffb732ebb094827a943260f92537f0bdf88ea8584ad31cde8d7ae00cff6"
     ],
     "lfm3-family-model-guide": [
-      "c3780a0649d22c9f39684feed8335435ffbb10f67f0297f12943aaff53d27549"
+      "c3780a0649d22c9f39684feed8335435ffbb10f67f0297f12943aaff53d27549",
+      "74bd61b604376bec32511e2268bc39190fad17c118cb975679fd2c95f2c4b9af"
     ],
     "google-genie-4-model-guide": [
       "c9892bd0e681ddad40c8d6497a237f7d1eaa1d7c56cbc109a63e4ca45b9e20dc"
@@ -821,6 +835,9 @@
     ],
     "homi-audio-decision-model-guide": [
       "d370613bd565e646f7ac251839d2a17def393b20c9b28a81025be28c35478713"
+    ],
+    "arete-27b-model-guide": [
+      "ba91fb4a8cbb6c32883eb85ce6ea6a27784a0768258f63e1f662fd4cd36279b8"
     ]
   }
 }
