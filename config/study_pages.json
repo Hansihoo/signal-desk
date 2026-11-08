@@ -101,7 +101,9 @@
     "inkling-2-small-model-guide",
     "twil-8b-model-guide",
     "meridian-air-model-guide",
-    "arete-27b-model-guide"
+    "arete-27b-model-guide",
+    "beautypackocr-ko-model-guide",
+    "bina-04-rizeh-model-guide"
   ],
   "catalogs": {
     "devops-implementation-guide": "devops_tools.2026-10-10.r4.json"
@@ -347,6 +349,12 @@
     ],
     "arete-27b-model-guide": [
       "ba91fb4a8cbb6c32883eb85ce6ea6a27784a0768258f63e1f662fd4cd36279b8"
+    ],
+    "beautypackocr-ko-model-guide": [
+      "ad81da0d0ae7af2332968300b15bd748281dc8140e2ca89ef7ed5b0058bf635d"
+    ],
+    "bina-04-rizeh-model-guide": [
+      "b57a6d4be9daf556d5e65e2685549d83d8ca1de68ca64e5c81ce7fbfc6e50e08"
     ]
   },
   "model_introduction_editions": {
@@ -531,6 +539,12 @@
     ],
     "arete-27b-model-guide": [
       "ba91fb4a8cbb6c32883eb85ce6ea6a27784a0768258f63e1f662fd4cd36279b8"
+    ],
+    "beautypackocr-ko-model-guide": [
+      "ad81da0d0ae7af2332968300b15bd748281dc8140e2ca89ef7ed5b0058bf635d"
+    ],
+    "bina-04-rizeh-model-guide": [
+      "b57a6d4be9daf556d5e65e2685549d83d8ca1de68ca64e5c81ce7fbfc6e50e08"
     ]
   },
   "model_introduction_purpose_editions": {
@@ -704,6 +718,12 @@
     ],
     "arete-27b-model-guide": [
       "ba91fb4a8cbb6c32883eb85ce6ea6a27784a0768258f63e1f662fd4cd36279b8"
+    ],
+    "beautypackocr-ko-model-guide": [
+      "ad81da0d0ae7af2332968300b15bd748281dc8140e2ca89ef7ed5b0058bf635d"
+    ],
+    "bina-04-rizeh-model-guide": [
+      "b57a6d4be9daf556d5e65e2685549d83d8ca1de68ca64e5c81ce7fbfc6e50e08"
     ]
   },
   "model_introduction_reader_editions": {
@@ -838,6 +858,12 @@
     ],
     "arete-27b-model-guide": [
       "ba91fb4a8cbb6c32883eb85ce6ea6a27784a0768258f63e1f662fd4cd36279b8"
+    ],
+    "beautypackocr-ko-model-guide": [
+      "ad81da0d0ae7af2332968300b15bd748281dc8140e2ca89ef7ed5b0058bf635d"
+    ],
+    "bina-04-rizeh-model-guide": [
+      "b57a6d4be9daf556d5e65e2685549d83d8ca1de68ca64e5c81ce7fbfc6e50e08"
     ]
   }
 }

@@ -1,0 +1,341 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "id": "beautypackocr-ko-spec",
+      "model": "BeautyPackOCR-KO",
+      "provider": "Thaki Cloud",
+      "source_url": "https://huggingface.co/ThakiCloud/BeautyPackOCR-KO/raw/2853f14253eb35f0f22927a6440dd8cac16fd32f/MODEL_CARD.ko.md",
+      "checked_on": "2026-11-09",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "BeautyPackOCR-KO · 2026-11-08 공개판",
+        "release": "2026-11-08",
+        "status": "가중치 공개",
+        "access": "Hugging Face / Apache 2.0",
+        "condition": "한국어 중심 실내 포장 사진. 제품명 및 날짜 종류 분류 제외. 관리형 표준 API 단가 미확인.",
+        "모델 ID": "ThakiCloud/BeautyPackOCR-KO",
+        "인식기 파라미터": "8.9M (CRNN 단독)",
+        "문자 목록": "1,578자",
+        "검출기": "DBNet ResNet-50",
+        "표준 API 요금": "공식 관리형 표준 단가 미확인"
+      }
+    },
+    {
+      "id": "beautypackocr-ko-e2e",
+      "model": "BeautyPackOCR-KO",
+      "provider": "Thaki Cloud",
+      "source_url": "https://huggingface.co/ThakiCloud/BeautyPackOCR-KO/raw/2853f14253eb35f0f22927a6440dd8cac16fd32f/MODEL_CARD.ko.md",
+      "checked_on": "2026-11-09",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "dev-B · 전체 사진 줄 검출+인식",
+        "condition": "4,024장·1,173 제품 묶음, 1회, 긴 변 1,280px, DB 임계값 각각 0.3, greedy CTC.",
+        "평가 점수": 0.809,
+        "단위": "F1 (0–1)",
+        "측정 주체": "Thaki Cloud",
+        "95% 신뢰구간": "0.799–0.818",
+        "표본 수": 4024
+      }
+    },
+    {
+      "id": "beautypackocr-ko-dedup-visual",
+      "model": "BeautyPackOCR-KO",
+      "provider": "Thaki Cloud",
+      "source_url": "https://huggingface.co/ThakiCloud/BeautyPackOCR-KO/raw/2853f14253eb35f0f22927a6440dd8cac16fd32f/MODEL_CARD.ko.md",
+      "checked_on": "2026-11-09",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "dev-B · 시각 근접중복 제외",
+        "condition": "시각적 근접중복을 제외한 2,659장, dev-B와 동일 설정.",
+        "평가 점수": 0.792,
+        "단위": "F1 (0–1)",
+        "측정 주체": "Thaki Cloud",
+        "표본 수": 2659
+      }
+    },
+    {
+      "id": "beautypackocr-ko-dedup-union",
+      "model": "BeautyPackOCR-KO",
+      "provider": "Thaki Cloud",
+      "source_url": "https://huggingface.co/ThakiCloud/BeautyPackOCR-KO/raw/2853f14253eb35f0f22927a6440dd8cac16fd32f/MODEL_CARD.ko.md",
+      "checked_on": "2026-11-09",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "dev-B · 시각·텍스트·해시 근접중복 제외",
+        "condition": "중복 신호 하나라도 해당하면 제외한 1,260장. 동일 실내 촬영 조건 및 설정 선택 영향.",
+        "평가 점수": 0.775,
+        "단위": "F1 (0–1)",
+        "측정 주체": "Thaki Cloud",
+        "표본 수": 1260
+      }
+    },
+    {
+      "id": "beautypackocr-ko-full-cer",
+      "model": "BeautyPackOCR-KO",
+      "provider": "Thaki Cloud",
+      "source_url": "https://huggingface.co/ThakiCloud/BeautyPackOCR-KO/raw/2853f14253eb35f0f22927a6440dd8cac16fd32f/MODEL_CARD.ko.md",
+      "checked_on": "2026-11-09",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "dev-B · 매칭된 줄 문자 오류율",
+        "condition": "전체 사진의 매칭된 줄만, 줄 검출 누락이 CER 분모에 모두 포함되는 것은 아님.",
+        "평가 점수": 0.117,
+        "단위": "CER 비율 (0–1)",
+        "측정 주체": "Thaki Cloud"
+      }
+    },
+    {
+      "id": "beautypackocr-ko-date-f1",
+      "model": "BeautyPackOCR-KO",
+      "provider": "Thaki Cloud",
+      "source_url": "https://huggingface.co/ThakiCloud/BeautyPackOCR-KO/raw/2853f14253eb35f0f22927a6440dd8cac16fd32f/MODEL_CARD.ko.md",
+      "checked_on": "2026-11-09",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "dev-B · 날짜 문자열 필드",
+        "condition": "날짜 문자열 정규화. 제조일과 사용기한 분류를 평가하지 않음.",
+        "평가 점수": 0.848,
+        "단위": "F1 (0–1)",
+        "측정 주체": "Thaki Cloud"
+      }
+    },
+    {
+      "id": "beautypackocr-ko-crop-cer",
+      "model": "BeautyPackOCR-KO",
+      "provider": "Thaki Cloud",
+      "source_url": "https://huggingface.co/ThakiCloud/BeautyPackOCR-KO/raw/2853f14253eb35f0f22927a6440dd8cac16fd32f/MODEL_CARD.ko.md",
+      "checked_on": "2026-11-09",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "봉인한 test 분할 · 정답 크롭 인식",
+        "condition": "사람이 정한 박스로 잘라낸 이미지, 검출 오류 제외.",
+        "평가 점수": 0.0158,
+        "단위": "CER 비율 (0–1)",
+        "측정 주체": "Thaki Cloud"
+      }
+    },
+    {
+      "id": "beautypackocr-ko-crop-match",
+      "model": "BeautyPackOCR-KO",
+      "provider": "Thaki Cloud",
+      "source_url": "https://thakicloud.com/tech-blog/ko/research/beautypack-ocr-development-validation/",
+      "checked_on": "2026-11-09",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "포장 정답 크롭 · 완전 일치",
+        "condition": "Thaki Cloud 자체 평가. PP-OCRv5 0.884. 두 대안의 해당 데이터 재학습 없음.",
+        "평가 점수": 0.971,
+        "단위": "정확 일치 비율 (0–1)",
+        "측정 주체": "Thaki Cloud"
+      }
+    },
+    {
+      "id": "beautypackocr-ko-vs-v2",
+      "model": "BeautyPackOCR-KO",
+      "provider": "Thaki Cloud",
+      "source_url": "https://thakicloud.com/tech-blog/ko/research/beautypack-ocr-development-validation/",
+      "checked_on": "2026-11-09",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "포장 정답 크롭 · 이전 모델 대비 CER 변화",
+        "condition": "ThakiOCR-KO-v2와 같은 6,128개 크롭을 짝지어 비교.",
+        "평가 점수": -0.05,
+        "단위": "CER 비율 차이",
+        "측정 주체": "Thaki Cloud",
+        "95% 신뢰구간": "−0.058~−0.043",
+        "표본 수": 6128
+      }
+    },
+    {
+      "id": "beautypackocr-ko-cpu-p50",
+      "model": "BeautyPackOCR-KO",
+      "provider": "Thaki Cloud",
+      "source_url": "https://huggingface.co/ThakiCloud/BeautyPackOCR-KO/raw/2853f14253eb35f0f22927a6440dd8cac16fd32f/MODEL_CARD.ko.md",
+      "checked_on": "2026-11-09",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "dev-B · CPU JPEG 포함 지연",
+        "condition": "AMD EPYC 9355, ONNX Runtime 1.31.1, intra-op 4스레드, 사진 95장, 워밍업 5회. p95 1,381ms.",
+        "평가 점수": 597,
+        "단위": "ms/사진",
+        "측정 주체": "Thaki Cloud"
+      }
+    },
+    {
+      "id": "beautypackocr-ko-cpu-p95",
+      "model": "BeautyPackOCR-KO",
+      "provider": "Thaki Cloud",
+      "source_url": "https://huggingface.co/ThakiCloud/BeautyPackOCR-KO/raw/2853f14253eb35f0f22927a6440dd8cac16fd32f/MODEL_CARD.ko.md",
+      "checked_on": "2026-11-09",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "dev-B · CPU JPEG 포함 지연 p95",
+        "condition": "AMD EPYC 9355, ONNX Runtime 1.31.1, intra-op 4스레드, 사진 95장, 워밍업 5회.",
+        "평가 점수": 1381,
+        "단위": "ms/사진",
+        "측정 주체": "Thaki Cloud"
+      }
+    },
+    {
+      "id": "bina-04-rizeh-spec",
+      "model": "Bina 0.4 Rizeh",
+      "provider": "Reza2kn",
+      "source_url": "https://huggingface.co/Reza2kn/Bina-0.4-Rizeh/raw/51b8c314b0552b1884c1f0e28016cb12a143f637/README.md",
+      "checked_on": "2026-11-09",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "Bina 0.4 Rizeh · 2026-11-07 공개판",
+        "release": "2026-11-07",
+        "status": "가중치 공개",
+        "access": "Hugging Face / 인식기와 코드 CC BY-NC 4.0",
+        "condition": "페르시아어 중심. 핵심 두 네트워크 약 71M, 외부 Surya 레이아웃과 전문 인식기 제외. 별도 모델 라이선스.",
+        "모델 ID": "Reza2kn/Bina-0.4-Rizeh",
+        "인식기 파라미터": 32796250,
+        "검출기 파라미터": "약 38.5M",
+        "표준 API 요금": "이 판의 관리형 표준 단가 미확인"
+      }
+    },
+    {
+      "id": "bina-04-rizeh-internal-overall",
+      "model": "Bina 0.4 Rizeh",
+      "provider": "Reza2kn",
+      "source_url": "https://huggingface.co/Reza2kn/Bina-0.4-Rizeh/raw/51b8c314b0552b1884c1f0e28016cb12a143f637/README.md",
+      "checked_on": "2026-11-09",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "내부 출시 평가 · 193개 크롭 영역",
+        "condition": "개발자 고정 평가. 193개 크롭 영역 전체. 공개 카드에 반복 분산과 하드웨어 미기재.",
+        "평가 점수": 9.39,
+        "단위": "CER (%)",
+        "측정 주체": "Reza2kn",
+        "표본 수": 193
+      }
+    },
+    {
+      "id": "bina-04-rizeh-forms",
+      "model": "Bina 0.4 Rizeh",
+      "provider": "Reza2kn",
+      "source_url": "https://huggingface.co/Reza2kn/Bina-0.4-Rizeh/raw/51b8c314b0552b1884c1f0e28016cb12a143f637/README.md",
+      "checked_on": "2026-11-09",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "내부 출시 평가 · 폼 영역",
+        "condition": "193개 크롭의 폼 하위 집합, 하위 집합 표본 수 미기재.",
+        "평가 점수": 3.8,
+        "단위": "CER (%)",
+        "측정 주체": "Reza2kn"
+      }
+    },
+    {
+      "id": "bina-04-rizeh-table",
+      "model": "Bina 0.4 Rizeh",
+      "provider": "Reza2kn",
+      "source_url": "https://huggingface.co/Reza2kn/Bina-0.4-Rizeh/raw/51b8c314b0552b1884c1f0e28016cb12a143f637/README.md",
+      "checked_on": "2026-11-09",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "내부 출시 평가 · 표 영역",
+        "condition": "193개 크롭의 표 하위 집합. 하위 집합 표본 수 및 세부 하니스 미기재.",
+        "평가 점수": 19.63,
+        "단위": "CER (%)",
+        "측정 주체": "Reza2kn"
+      }
+    },
+    {
+      "id": "bina-04-rizeh-hand-body",
+      "model": "Bina 0.4 Rizeh",
+      "provider": "Reza2kn",
+      "source_url": "https://huggingface.co/Reza2kn/Bina-0.4-Rizeh/raw/51b8c314b0552b1884c1f0e28016cb12a143f637/README.md",
+      "checked_on": "2026-11-09",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "내부 출시 평가 · 손글씨 본문",
+        "condition": "손글씨 50페이지 중 손글씨 본문만. 같은 페이지 전체와 구분.",
+        "평가 점수": 3.97,
+        "단위": "CER (%)",
+        "측정 주체": "Reza2kn",
+        "표본 수": 50
+      }
+    },
+    {
+      "id": "bina-04-rizeh-hand-full",
+      "model": "Bina 0.4 Rizeh",
+      "provider": "Reza2kn",
+      "source_url": "https://huggingface.co/Reza2kn/Bina-0.4-Rizeh/raw/51b8c314b0552b1884c1f0e28016cb12a143f637/README.md",
+      "checked_on": "2026-11-09",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "내부 출시 평가 · 인쇄 글자를 포함한 손글씨 페이지",
+        "condition": "같은 손글씨 50페이지 전체. 인쇄 양식 글자 포함.",
+        "평가 점수": 10.89,
+        "단위": "CER (%)",
+        "측정 주체": "Reza2kn",
+        "표본 수": 50
+      }
+    },
+    {
+      "id": "bina-04-rizeh-hphd",
+      "model": "Bina 0.4 Rizeh",
+      "provider": "Reza2kn",
+      "source_url": "https://huggingface.co/Reza2kn/Bina-0.4-Rizeh/raw/51b8c314b0552b1884c1f0e28016cb12a143f637/README.md",
+      "checked_on": "2026-11-09",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "HPHD 역사 필사본 · 정답 줄 크롭",
+        "condition": "역사 Nastaliq 및 Shekasteh 원고, 인식기에 정답 줄 크롭 제공. 전체 페이지 성능 수치가 아님.",
+        "평가 점수": 67,
+        "단위": "CER (%)",
+        "측정 주체": "Reza2kn"
+      }
+    },
+    {
+      "id": "bina-04-rizeh-triple-print",
+      "model": "Bina 0.4 Rizeh",
+      "provider": "Reza2kn",
+      "source_url": "https://huggingface.co/Reza2kn/Bina-0.4-Rizeh/raw/51b8c314b0552b1884c1f0e28016cb12a143f637/README.md",
+      "checked_on": "2026-11-09",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Persian OCR Triple Threat · 인쇄 (2026-11-03)",
+        "condition": "6,669줄. 95k 학생 인식기, 최종 페이지 조립 변경 전.",
+        "평가 점수": 1.37,
+        "단위": "CER (%)",
+        "측정 주체": "Reza2kn",
+        "표본 수": 6669
+      }
+    },
+    {
+      "id": "bina-04-rizeh-triple-hand",
+      "model": "Bina 0.4 Rizeh",
+      "provider": "Reza2kn",
+      "source_url": "https://huggingface.co/Reza2kn/Bina-0.4-Rizeh/raw/51b8c314b0552b1884c1f0e28016cb12a143f637/README.md",
+      "checked_on": "2026-11-09",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Persian OCR Triple Threat · 손글씨 (2026-11-03)",
+        "condition": "6,669줄. 95k 학생 인식기, 최종 페이지 조립 변경 전.",
+        "평가 점수": 13.01,
+        "단위": "CER (%)",
+        "측정 주체": "Reza2kn",
+        "표본 수": 6669
+      }
+    },
+    {
+      "id": "bina-04-rizeh-triple-overall",
+      "model": "Bina 0.4 Rizeh",
+      "provider": "Reza2kn",
+      "source_url": "https://huggingface.co/Reza2kn/Bina-0.4-Rizeh/raw/51b8c314b0552b1884c1f0e28016cb12a143f637/README.md",
+      "checked_on": "2026-11-09",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Persian OCR Triple Threat · 합산 (2026-11-03)",
+        "condition": "인쇄와 손글씨 각 6,669줄, 95k 학생 인식기, 최종 페이지 조립 변경 전.",
+        "평가 점수": 7.19,
+        "단위": "CER (%)",
+        "측정 주체": "Reza2kn",
+        "표본 수": 13338
+      }
+    }
+  ]
+}

@@ -472,6 +472,11 @@
       "id": "ai-model-update-2026-11-08",
       "input": "ai_model_guides.2026-11-08.json",
       "quality": "ai_model_guides.2026-11-08.quality.json"
+    },
+    {
+      "id": "ai-model-update-2026-11-09",
+      "input": "ai_model_guides.2026-11-09.json",
+      "quality": "ai_model_guides.2026-11-09.quality.json"
     }
   ]
 }

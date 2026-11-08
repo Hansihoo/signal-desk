@@ -1,0 +1,704 @@
+{
+  "schema_version": 1,
+  "reports": [
+    {
+      "id": "beautypackocr-ko-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "title": "BeautyPackOCR-KO 소개 — 한국어 포장 사진의 줄과 날짜 인식",
+      "description": "포장 전용 OCR이 범용 한국어 OCR보다 앞선 평가와, 실제 사진에 적용할 때 남는 검출 오류를 비교합니다.",
+      "checked_on": "2026-11-09",
+      "scope": "Thaki Cloud가 2026년 11월 8일 발표하고 같은 날 공개 가중치를 등록했습니다. 11월 9일 KST 확인. 모델을 실행하거나 매장 사진, 독립 평가, 청구를 검증하지 않았습니다.",
+      "deck": "BeautyPackOCR-KO는 화장품과 의약품의 포장 사진에서 한국어 글자 줄과 날짜 후보를 읽습니다. 다키클라우드의 실내 촬영 사진 평가에서 줄 검출과 인식을 합친 F1은 0.809였고, 학습 사진과 비슷한 장면을 걷어내자 0.775~0.792로 낮아졌습니다. 공개 ONNX 가중치는 CPU에서 실행할 수 있으며, 제품명과 날짜의 종류는 출력 범위 밖입니다.",
+      "highlights": [
+        "포장에 맞춘 소형 모델",
+        "중복을 제거하면 낮아지는 실사진 점수"
+      ],
+      "source_note": "2026년 11월 9일 KST에 모델 카드, 개발자 평가와 배포 자료를 확인했습니다. 개발자 측정과 실제 사용 환경의 검증 범위를 구분했습니다.",
+      "summary": [
+        {
+          "label": "포장에 맞춘 소형 모델",
+          "text": "DBNet 검출기로 글자 줄을 찾고 890만 파라미터 CRNN 인식기로 읽습니다. 정답 위치가 주어진 비교에서는 범용 한국어 모델과 PP-OCRv5보다 나았으나, 사진 전체에서 줄을 찾는 평가와 결과를 합칠 수 없습니다.",
+          "source_ids": [
+            "card",
+            "study"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "중복을 제거하면 낮아지는 실사진 점수",
+          "text": "4,024장 전체 F1은 0.809, 근접중복의 여러 신호를 모두 걸러낸 1,260장의 F1은 0.775였습니다. 평가 데이터에서 후보 설정을 고른 영향과 매장 또는 휴대전화 사진에서의 불확실성이 남습니다.",
+          "source_ids": [
+            "card",
+            "study"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "references": [
+        {
+          "id": "card",
+          "title": "BeautyPackOCR-KO 한국어 모델 카드 고정판",
+          "url": "https://huggingface.co/ThakiCloud/BeautyPackOCR-KO/raw/2853f14253eb35f0f22927a6440dd8cac16fd32f/MODEL_CARD.ko.md",
+          "description": "학습 초기화, 1,578자 범위, 전체 사진과 크롭의 평가, 지연, 알려진 실패 조건."
+        },
+        {
+          "id": "study",
+          "title": "Thaki Cloud의 개발 및 비교 평가",
+          "url": "https://thakicloud.com/tech-blog/ko/research/beautypack-ocr-development-validation/",
+          "description": "같은 크롭에서 기존 인식기와 비교한 실험, 검출기 교체 효과와 근접중복 감사."
+        },
+        {
+          "id": "repo",
+          "title": "BeautyPackOCR-KO 공개 모델 메타데이터",
+          "url": "https://huggingface.co/api/models/ThakiCloud/BeautyPackOCR-KO",
+          "description": "저장소 공개 시각과 ONNX 가중치, 확인 가능한 제공 경로."
+        },
+        {
+          "id": "license",
+          "title": "BeautyPackOCR-KO 가중치와 데이터 고지",
+          "url": "https://huggingface.co/ThakiCloud/BeautyPackOCR-KO/raw/2853f14253eb35f0f22927a6440dd8cac16fd32f/NOTICE",
+          "description": "Apache 2.0 가중치와 코드, 학습 원자료의 재배포 조건."
+        },
+        {
+          "id": "paddle",
+          "title": "PaddlePaddle 한국어 PP-OCRv5 인식기 카드",
+          "url": "https://huggingface.co/PaddlePaddle/korean_PP-OCRv5_mobile_rec/raw/main/README.md",
+          "description": "한국어 줄 인식기의 사양과 공개 가중치 조건, 별도 한국어 벤치마크."
+        },
+        {
+          "id": "portfolio",
+          "title": "Thaki Cloud의 한국어 OCR 모델 목록",
+          "url": "https://thakicloud.com/tech-blog/en/ocr/",
+          "description": "독립 평가용 문서 및 손글씨 데이터 부족에 따른 ThakiOCR-KO-v2의 출시 보류."
+        }
+      ],
+      "explanation": [
+        {
+          "id": "architecture",
+          "title": "검출기와 인식기의 역할",
+          "lead": "텍스트가 어디 있는지 찾고 그 영역에 있는 문자를 읽는 두 단계로 처리합니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "포장용으로 바뀐 두 단계",
+              "text": "검출기는 공개 docTR DBNet ResNet-50에서 시작해 AI 허브 633의 포장 사진으로 3에폭 미세조정했습니다. 줄 인식기는 글자 조각에서 처음부터 학습한 8.9M CRNN입니다. 인식기가 문자를 읽는 CTC 방식은 이미지의 글자마다 별도 위치 라벨을 주지 않고 줄 단위 정답으로 학습합니다. 인식기의 출력 문자 목록은 1,578자입니다.",
+              "source_ids": [
+                "card",
+                "study"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "줄과 날짜의 출력",
+              "text": "줄마다 위치, 문자열과 신뢰 점수를 반환합니다. 날짜 규칙이 읽힌 문자열을 YYYYMM 또는 YYYYMMDD로 정규화하며 종류는 UNCLASSIFIED로 남습니다. 줄 순서는 검출기의 반환 순서입니다. 신뢰 점수는 확률로 보정되지 않았고, EXIF 회전 정보도 반영하지 않습니다.",
+              "source_ids": [
+                "card"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "comparison",
+          "title": "범용 OCR 대비 인식 성능",
+          "lead": "정답 박스가 주어진 인식 성능과 사진 전체의 검출 성능을 분리해야 비교가 가능합니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "같은 크롭에서의 차이",
+              "text": "같은 6,128개 정답 크롭에서 ThakiOCR-KO-v2 대비 문자 오류율이 0.050 낮았습니다. 학습 제품군에 없던 475개에서는 차이가 0.040으로 줄었습니다. PP-OCRv5와의 완전 일치율은 각각 0.971과 0.884였습니다. 두 대안에는 같은 데이터로 추가 학습을 적용하지 않았고, 개발기록은 비교에 쓴 PP-OCRv5의 세부 체크포인트를 명시하지 않습니다. 개발사 목록에는 기존 범용 모델의 공개 출시가 보류로 표시돼, 이 비교는 공개 서비스 간 비교와 구분됩니다.",
+              "source_ids": [
+                "study",
+                "paddle",
+                "portfolio"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "사진 전체를 받을 때의 병목",
+              "text": "같은 CRNN을 두고 검출기만 바꾸면 사진 전체의 F1이 공개 사전학습 DBNet 0.517에서 포장에 맞춘 DBNet 0.809로 올랐습니다. 정답 위치를 제공한 비교에서는 0.967입니다. 인식기가 맞히는 글자라도 검출기가 줄을 놓치면 전체 결과에는 남지 않습니다. 크롭 CER 0.0158과 사진의 매칭된 줄 CER 0.117을 같은 시험으로 읽으면 이 차이를 놓칩니다.",
+              "source_ids": [
+                "card",
+                "study"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "robustness",
+          "title": "근접중복과 촬영 조건",
+          "lead": "학습 제품과 평가 제품의 구분만으로 촬영 장면의 유사성이 제거되지는 않았습니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "중복 제거 후의 반대 결과",
+              "text": "4,024장 중 33.9%에 시각적 근접중복이 발견됐습니다. 시각 기준을 적용한 2,659장에서는 F1이 0.792, 시각·텍스트·해시 중 하나라도 해당하면 제외한 1,260장에서는 0.775였습니다. 모든 표본이 같은 실내 데이터에서 왔고, dev-B로 후보 설정을 고른 영향도 남습니다. 반사, 곡면, 흔들림과 여러 제품이 섞인 사진에 수치를 그대로 적용하기 어렵습니다.",
+              "source_ids": [
+                "card",
+                "study"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "속도 수치의 실행 조건",
+              "text": "AMD EPYC 9355에서 ONNX Runtime 1.31.1, 내부 4스레드, 사진 95장, 워밍업 5회 조건의 JPEG 디코드 포함 중앙값은 597ms, 95번째 백분위는 1,381ms입니다. 최대 RSS는 4.12 GiB였습니다. H200 NVL의 44.7ms 중앙값은 PyTorch FP32로 디코드를 뺀 별도 측정이라 CPU 수치와 연산 경로가 다릅니다.",
+              "source_ids": [
+                "card"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "availability",
+          "title": "가중치 제공과 운영 비용",
+          "lead": "모델 파일과 운영에 필요한 비용, 학습 데이터에 접근하는 조건을 따로 확인해야 합니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "공개 파일과 관리형 요금",
+              "text": "ONNX 가중치와 PyTorch 체크포인트, CPU 추론 코드는 Apache 2.0으로 공개됐습니다. AI 허브의 원자료는 배포에 포함되지 않으며 별도 신청과 데이터 이용 조건이 적용됩니다. 모델 전용 관리형 표준 API 요금은 공식 카드와 공개 제공 경로에서 확인되지 않았습니다. 자체 실행에서는 처리량과 메모리에 따라 인프라 비용이 달라집니다.",
+              "source_ids": [
+                "repo",
+                "license",
+                "card"
+              ],
+              "kind": "fact"
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "offers",
+          "title": "포장 전용과 범용 OCR의 사양 및 제공 조건",
+          "columns": [
+            "모델",
+            "입력과 사양",
+            "제공 및 표준 요금"
+          ],
+          "rows": [
+            {
+              "values": [
+                "BeautyPackOCR-KO",
+                "한국어 중심 포장 이미지. DBNet ResNet-50, CRNN 8.9M, 문자 목록 1,578자",
+                "ONNX 및 체크포인트 공개, Apache 2.0. 공식 관리형 표준 단가 미확인."
+              ],
+              "source_ids": [
+                "card",
+                "study",
+                "repo",
+                "license"
+              ]
+            },
+            {
+              "values": [
+                "ThakiOCR-KO-v2",
+                "기존 범용 한국어 OCR. 동일 비교에서는 정답 크롭 입력.",
+                "개발사 목록은 독립 평가용 문서·손글씨 데이터 부족으로 출시 보류 상태를 표시합니다. 표준 요금 미확인."
+              ],
+              "source_ids": [
+                "study",
+                "portfolio"
+              ]
+            },
+            {
+              "values": [
+                "korean_PP-OCRv5_mobile_rec",
+                "한국어 글자 줄 인식기. 전체 사진에서는 별도 줄 검출기 필요.",
+                "PaddlePaddle 가중치, Apache 2.0. 해당 가중치의 관리형 표준 단가 미확인."
+              ],
+              "source_ids": [
+                "paddle"
+              ]
+            }
+          ],
+          "note": "2026년 11월 9일 KST 확인. 아래 실험의 PP-OCRv5 세부 체크포인트는 공개 비교문에서 확인되지 않습니다."
+        },
+        {
+          "id": "recognition",
+          "title": "Thaki Cloud의 포장 글자 인식 비교",
+          "columns": [
+            "비교 조건",
+            "BeautyPackOCR-KO",
+            "비교값과 해석"
+          ],
+          "rows": [
+            {
+              "values": [
+                "봉인한 정답 크롭의 CER",
+                "0.0158",
+                "기존 ThakiOCR-KO-v2 대비 −0.050, 95% CI −0.058~−0.043, 같은 6,128개."
+              ],
+              "source_ids": [
+                "card",
+                "study"
+              ]
+            },
+            {
+              "values": [
+                "학습에 없던 제품군의 크롭",
+                "CER 차이 −0.040",
+                "ThakiOCR-KO-v2와 같은 475개, 95% CI −0.055~−0.026."
+              ],
+              "source_ids": [
+                "study"
+              ]
+            },
+            {
+              "values": [
+                "정답 크롭 완전 일치율",
+                "0.971",
+                "공개 PP-OCRv5 0.884. 전용 모델만 해당 도메인으로 학습."
+              ],
+              "source_ids": [
+                "study"
+              ]
+            }
+          ],
+          "note": "개발자 측정. CER은 문자 오류 비율이며 낮을수록 좋습니다. 완전 일치율은 한 줄 전체를 맞힌 비율입니다. 사진에서 글자 위치를 찾는 과정은 포함되지 않습니다."
+        },
+        {
+          "id": "photos",
+          "title": "dev-B 전체 사진에서 줄 검출과 인식을 합친 F1",
+          "columns": [
+            "평가 입력",
+            "사진 수",
+            "E2E 줄 F1"
+          ],
+          "rows": [
+            {
+              "values": [
+                "전체 사진",
+                "4,024",
+                "0.809 (95% CI 0.799–0.818)"
+              ],
+              "source_ids": [
+                "card",
+                "study"
+              ]
+            },
+            {
+              "values": [
+                "시각적 근접중복 제외",
+                "2,659",
+                "0.792"
+              ],
+              "source_ids": [
+                "card",
+                "study"
+              ]
+            },
+            {
+              "values": [
+                "시각·텍스트·해시 중 하나라도 중복 신호가 있으면 제외",
+                "1,260",
+                "0.775"
+              ],
+              "source_ids": [
+                "card",
+                "study"
+              ]
+            }
+          ],
+          "note": "Thaki Cloud 자체 평가 1회. 긴 변 1,280px, DB 박스와 이진화 임계값 각각 0.3, 탐욕적 CTC 디코딩. 공개 카드에서 정답 위치를 사용한 크롭 성능과 구분합니다."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "포장 OCR의 적용 범위",
+            "text": "통제된 사진의 글자와 날짜 후보를 사내 CPU에서 추출하려는 경우 공개 가중치와 명시된 지연이 비교 근거가 됩니다. 날짜 종류, 제품명, 실제 매장 사진의 판독이 필요한 경우 공개 평가만으로 채택을 결정할 수 없습니다.",
+            "source_ids": [
+              "card",
+              "study",
+              "license"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "실제 매장 사진에서의 결과와 모델 운영 비용은 확인되지 않았습니다. 근접중복을 제거한 결과에도 평가 데이터로 설정을 고른 영향이 남습니다.",
+          "source_ids": [
+            "card",
+            "study"
+          ]
+        },
+        {
+          "text": "범용 모델의 동일 데이터 재학습과 전체 사진 비교가 빠져 있어 전용 인식기의 우위를 다른 문서로 확대할 수 없습니다.",
+          "source_ids": [
+            "study",
+            "paddle"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bina-04-rizeh-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "title": "Bina 0.4 Rizeh 소개 — 페르시아어 줄 인식과 페이지 조립",
+      "description": "페르시아어 문서에서 작은 줄 인식기가 Koochik과 어떻게 다르고, 인쇄, 손글씨와 표에서 어떤 성능을 보이는지 비교합니다.",
+      "checked_on": "2026-11-09",
+      "scope": "2026년 11월 7일 UTC 공개 가중치 등록, 11월 9일 KST 확인. 고정 모델 카드와 교사 모델 및 배포 자료를 대조했습니다. 독립 평가, 실제 추론과 비용은 확인하지 않았습니다.",
+      "deck": "Bina 0.4 Rizeh는 페르시아어 문서의 글자 줄을 찾아 읽고 페이지 순서에 맞춰 배열하는 공개 OCR입니다. 인쇄와 손글씨를 읽지만 표, 복잡한 열 배치와 역사 필사본에서 오류가 커집니다. 배포된 인식기와 코드는 비상업 조건이며, 문서 레이아웃에 쓰이는 Surya 가중치에는 별도 조건이 적용됩니다.",
+      "highlights": [
+        "교사 모델의 인식 능력을 작은 네트워크로 옮김",
+        "인쇄, 손글씨, 표의 성능 차이"
+      ],
+      "source_note": "평가값은 개발자 측정입니다. 11월 3일 줄 인식 평가와 11월 7일 배포 판의 페이지 시험은 입력 범위와 후처리 조건이 다릅니다.",
+      "summary": [
+        {
+          "label": "교사 모델의 인식 능력을 작은 네트워크로 옮김",
+          "text": "약 6억 3,080만 파라미터의 Koochik 체크포인트로 학습한 3,280만 파라미터 줄 인식기를 여러 검출 및 페이지 정렬 단계에 결합했습니다. 기본 검출기와 인식기의 합은 약 7,100만 파라미터입니다.",
+          "source_ids": [
+            "card",
+            "teacher"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "인쇄, 손글씨, 표의 성능 차이",
+          "text": "개발자 시험에서 손글씨 본문 50페이지의 문자 오류율은 3.97%였고 인쇄 라벨까지 포함한 전체 페이지는 10.89%였습니다. 표는 별도 크롭 평가에서 19.63%, 역사 필사본은 정답 줄을 제공해도 67%였습니다.",
+          "source_ids": [
+            "card"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "references": [
+        {
+          "id": "card",
+          "title": "Bina 0.4 Rizeh 모델 카드 고정판",
+          "url": "https://huggingface.co/Reza2kn/Bina-0.4-Rizeh/raw/51b8c314b0552b1884c1f0e28016cb12a143f637/README.md",
+          "description": "핵심 파라미터, 학생과 교사, 내부 평가, 지원 언어 범위와 라이선스."
+        },
+        {
+          "id": "repo",
+          "title": "Bina 0.4 Rizeh 공개 모델 메타데이터",
+          "url": "https://huggingface.co/api/models/Reza2kn/Bina-0.4-Rizeh",
+          "description": "11월 7일 저장소 공개와 가중치 및 코드 파일 목록."
+        },
+        {
+          "id": "teacher",
+          "title": "Bina 0.4 Koochik 공식 모델 카드",
+          "url": "https://huggingface.co/Reza2kn/Bina-0.4-Koochik/raw/main/README.md",
+          "description": "증류 교사 체크포인트 18,404, 가중치와 브라우저 경로 및 비교 한계."
+        },
+        {
+          "id": "surya",
+          "title": "Surya 공식 저장소와 가중치 조건",
+          "url": "https://raw.githubusercontent.com/datalab-to/surya/master/README.md",
+          "description": "외부 레이아웃 모델과 검출기 계열의 가중치 라이선스."
+        },
+        {
+          "id": "tess",
+          "title": "Tesseract tessdata_fast 페르시아어 가중치",
+          "url": "https://github.com/tesseract-ocr/tessdata_fast/blob/main/fas.traineddata",
+          "description": "페르시아어용 fas 파일 배포 여부."
+        },
+        {
+          "id": "tess-license",
+          "title": "Tesseract tessdata_fast 모델 설명",
+          "url": "https://raw.githubusercontent.com/tesseract-ocr/tessdata_fast/main/README.md",
+          "description": "정수화된 모델과 실행 조건. 페르시아어 손글씨 공통 평가의 근거는 아님."
+        },
+        {
+          "id": "api",
+          "title": "FarsiHoosh의 OCR API 모델 목록",
+          "url": "https://farsihoosh.ir/api-docs-ocr",
+          "description": "호스팅 목록에서 Bina 0.4 Koochik과 0.2 Rizeh의 ID를 구별."
+        }
+      ],
+      "explanation": [
+        {
+          "id": "architecture",
+          "title": "교사 모델과 작은 줄 인식기",
+          "lead": "Koochik은 이미지에서 문자열을 생성하고, Rizeh는 페이지를 분해해 줄 단위로 읽은 뒤 다시 조립합니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "배포 판의 구성",
+              "text": "Koochik 체크포인트 18,404의 출력을 바탕으로 32,796,250 파라미터 인식기를 학습했습니다. CTC는 줄 이미지에서 문자 위치별 정답 없이 문자를 읽는 방식입니다. 핵심 검출기는 약 3,850만 파라미터이며, 약 7,100만이라는 합계는 외부 레이아웃 모델이나 모든 전문 인식기를 포함한 배포 전체 크기가 아닙니다.",
+              "source_ids": [
+                "card",
+                "teacher"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "페이지 처리와 출력",
+              "text": "Surya로 레이아웃을 잡고 줄을 검출합니다. 본문 외에 인쇄 라벨, 폼 셀, 숫자와 수학 기호, 저품질 스캔에는 별도 인식기를 적용합니다. 페이지를 재조립한 뒤 읽는 순서로 정렬한 텍스트와 줄별 위치, 레이어, 신뢰 점수를 JSON으로 제공합니다. PDF는 200dpi 이미지로 변환합니다. 신뢰 점수는 보정된 확률이 아닙니다.",
+              "source_ids": [
+                "card"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "evaluation",
+          "title": "인쇄, 손글씨와 복잡한 페이지",
+          "lead": "문자 오류율(CER)은 글자의 삽입, 삭제와 치환을 정답 문자 수로 나눈 지표입니다. 평가 입력이 줄인지 전체 페이지인지에 따라 포함되는 오류가 달라집니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "개발자가 공개한 두 평가",
+              "text": "2026년 11월 3일 Persian OCR Triple Threat는 최종 페이지 조립 수정 전의 95k 인식기를 사용했습니다. 인쇄와 손글씨를 각 6,669줄로 맞춘 평가에서 CER은 인쇄 1.37%, 손글씨 13.01%, 합산 7.19%입니다. 배포판 내부 시험의 인쇄 338줄 1.76%와 손글씨 본문 50페이지 3.97%는 다른 표본으로 측정한 값입니다.",
+              "source_ids": [
+                "card"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "페이지 조립과 표에서 남은 오류",
+              "text": "동일한 손글씨 50페이지에 인쇄된 양식 글자까지 포함하자 CER은 10.89%로 높아졌습니다. 193개 영역 중 표 하위 집합은 19.63%였으며, 역사 필사본은 정답 줄을 넣어도 67%였습니다. 여러 열과 작은 셀이 있는 페이지에서는 문자를 맞게 읽더라도 순서가 틀릴 수 있습니다.",
+              "source_ids": [
+                "card"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "alternatives",
+          "title": "비교 대상과 실행 조건",
+          "lead": "같은 계열의 Koochik은 증류의 출발점이며, Tesseract의 fas는 별도 페르시아어 OCR 가중치입니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "직접 비교할 수 있는 범위",
+              "text": "Koochik 카드의 양자화 수치는 동일 모델의 원래 출력에 얼마나 가까운지를 나타냅니다. Rizeh의 사람 정답 기준 CER과는 다른 수치입니다. Tesseract fas의 배포 여부는 확인했지만 같은 페르시아어 페이지에서 세 대안을 대조한 개발자 결과는 확인하지 못했습니다.",
+              "source_ids": [
+                "card",
+                "teacher",
+                "tess",
+                "tess-license"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "가중치와 상업 사용 조건",
+              "text": "Rizeh의 핵심 가중치, 페이지 처리 코드와 보정 파일은 공개됐으며 Python 3.10과 NVIDIA GPU가 권장됩니다. 최초 실행에서 고정된 Surya 레이아웃을 받습니다. Bina 인식기 가중치와 코드는 CC BY-NC 4.0입니다. Surya 모델은 별도 조건이 적용되므로 전체 묶음의 사용 조건을 인식기 또는 레이아웃의 한 라이선스로 판단할 수 없습니다.",
+              "source_ids": [
+                "card",
+                "repo",
+                "surya"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "가격과 호스팅 식별자",
+              "text": "FarsiHoosh 문서는 Bina 0.4 Koochik과 Bina 0.2 Rizeh를 구분해 나열합니다. 그 목록에서 0.4 Rizeh는 확인하지 못했으며, 해당 판의 표준 관리형 API 요금도 확인되지 않았습니다. 자체 실행 비용은 GPU, 입력 크기와 처리량에 따라 달라집니다.",
+              "source_ids": [
+                "card",
+                "repo",
+                "api"
+              ],
+              "kind": "fact"
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "offers",
+          "title": "페르시아어 OCR 대안의 사양과 제공 조건",
+          "columns": [
+            "모델",
+            "사양과 역할",
+            "가중치 및 표준 요금"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Bina 0.4 Rizeh",
+                "검출기 38.5M, 인식기 32.8M. 이미지와 200dpi PDF 입력, 페르시아어 중심.",
+                "공개 가중치. 인식기 및 코드 CC BY-NC 4.0, Surya 별도. 0.4 표준 API 요금 미확인."
+              ],
+              "source_ids": [
+                "card",
+                "repo",
+                "surya",
+                "api"
+              ]
+            },
+            {
+              "values": [
+                "Bina 0.4 Koochik",
+                "630,800,496 파라미터 Nemotron-3.5-Parse 기반 이미지 OCR. 교사 체크포인트 18,404.",
+                "OpenMDW 1.1, FP32 및 INT4 파생 배포. 브라우저 INT4 제공, FarsiHoosh에 별도 모델 ID. 표준 단가는 미확인."
+              ],
+              "source_ids": [
+                "teacher",
+                "api"
+              ]
+            },
+            {
+              "values": [
+                "Tesseract tessdata_fast fas",
+                "페르시아어 정수화 인식 가중치, Tesseract에서 자체 실행.",
+                "fas 공개 파일. 해당 가중치의 표준 관리형 API 단가 미확인."
+              ],
+              "source_ids": [
+                "tess",
+                "tess-license"
+              ]
+            }
+          ],
+          "note": "2026년 11월 9일 KST 확인. Koochik이 공개한 양자화 일치율과 Rizeh의 CER은 서로 다른 측정입니다."
+        },
+        {
+          "id": "eval",
+          "title": "Bina 0.4 Rizeh의 내부 페이지 및 영역 평가",
+          "columns": [
+            "평가 범위",
+            "문자 오류율(CER)",
+            "조건"
+          ],
+          "rows": [
+            {
+              "values": [
+                "손글씨 본문만",
+                "3.97%",
+                "50페이지의 손글씨 본문."
+              ],
+              "source_ids": [
+                "card"
+              ]
+            },
+            {
+              "values": [
+                "인쇄된 양식 글자 포함",
+                "10.89%",
+                "같은 50페이지 전체."
+              ],
+              "source_ids": [
+                "card"
+              ]
+            },
+            {
+              "values": [
+                "표 영역",
+                "19.63%",
+                "전체 193개 크롭 영역 중 표 하위 집합. 표 하위 표본 수 미공개."
+              ],
+              "source_ids": [
+                "card"
+              ]
+            },
+            {
+              "values": [
+                "역사 필사본 HPHD",
+                "67%",
+                "정답 줄 크롭을 인식기에 제공."
+              ],
+              "source_ids": [
+                "card"
+              ]
+            }
+          ],
+          "note": "개발자 자체 측정. 11월 3일 줄 단위 Triple Threat 평가와 별개입니다. 입력별 시드, 반복 분산, 상세 하드웨어는 이 표의 공개 카드에 없습니다."
+        },
+        {
+          "id": "lines",
+          "title": "최종 페이지 조립 변경 전의 Persian OCR Triple Threat",
+          "columns": [
+            "줄 유형",
+            "줄 수",
+            "WER / CER"
+          ],
+          "rows": [
+            {
+              "values": [
+                "인쇄",
+                "6,669",
+                "4.70% / 1.37%"
+              ],
+              "source_ids": [
+                "card"
+              ]
+            },
+            {
+              "values": [
+                "손글씨",
+                "6,669",
+                "18.48% / 13.01%"
+              ],
+              "source_ids": [
+                "card"
+              ]
+            },
+            {
+              "values": [
+                "합산",
+                "13,338",
+                "11.59% / 7.19%"
+              ],
+              "source_ids": [
+                "card"
+              ]
+            }
+          ],
+          "note": "2026년 11월 3일 개발자 측정. 95,000스텝 학생 인식기를 사용했으며 최종 페이지 조립 변경 전입니다. WER은 단어 오류율입니다."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "문서 종류에 따른 적용 판단",
+            "text": "Rizeh는 페르시아어 인쇄 및 손글씨 페이지에서 줄 위치와 텍스트를 자체 처리하려는 비상업 용도에 비교 가치가 있습니다. 표와 복잡한 읽기 순서 또는 필사본이 핵심이라면 공개 결과에서 확인된 오류율을 적용 판단에 반영해야 합니다. 동일 업무의 Koochik이나 Tesseract 대비 비용과 성능 차이는 공통 평가가 필요합니다.",
+            "source_ids": [
+              "card",
+              "teacher",
+              "tess",
+              "surya"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "고정 공개 판의 자체 평가를 검토했습니다. 모델이나 파생 런타임을 실행하지 않았고 상업 라이선스 계약과 요금은 확인하지 않았습니다.",
+          "source_ids": [
+            "card",
+            "repo",
+            "surya"
+          ]
+        },
+        {
+          "text": "페르시아어 중심 모델이며 다른 언어는 주요 학습 목표에 포함되지 않았습니다. 표 하위 집합과 필사본의 수치를 다른 문서의 평균으로 사용할 수 없습니다.",
+          "source_ids": [
+            "card"
+          ]
+        }
+      ]
+    }
+  ]
+}
