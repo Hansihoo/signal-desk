@@ -106,7 +106,9 @@
     "bina-04-rizeh-model-guide",
     "k-exaone-25-model-guide",
     "seedream-55-model-guide",
-    "shizuku-duplex-model-guide"
+    "shizuku-duplex-model-guide",
+    "claude-fable-52-model-guide",
+    "claude-mythos-52-model-guide"
   ],
   "catalogs": {
     "devops-implementation-guide": "devops_tools.2026-10-10.r4.json"
@@ -367,6 +369,12 @@
     ],
     "shizuku-duplex-model-guide": [
       "3afcaefcec46918a457e94de775b5824d8345f65b899e08a198bc77ec78bb927"
+    ],
+    "claude-fable-52-model-guide": [
+      "1878386c0470907c15ebcc584dc2934e5d5adba38de133776faf258554994ee2"
+    ],
+    "claude-mythos-52-model-guide": [
+      "0b5021e546fc70687810df251fa2991f90f8f39e3fd6f012610e4410311ec011"
     ]
   },
   "model_introduction_editions": {
@@ -566,6 +574,12 @@
     ],
     "shizuku-duplex-model-guide": [
       "3afcaefcec46918a457e94de775b5824d8345f65b899e08a198bc77ec78bb927"
+    ],
+    "claude-fable-52-model-guide": [
+      "1878386c0470907c15ebcc584dc2934e5d5adba38de133776faf258554994ee2"
+    ],
+    "claude-mythos-52-model-guide": [
+      "0b5021e546fc70687810df251fa2991f90f8f39e3fd6f012610e4410311ec011"
     ]
   },
   "model_introduction_purpose_editions": {
@@ -754,6 +768,12 @@
     ],
     "shizuku-duplex-model-guide": [
       "3afcaefcec46918a457e94de775b5824d8345f65b899e08a198bc77ec78bb927"
+    ],
+    "claude-fable-52-model-guide": [
+      "1878386c0470907c15ebcc584dc2934e5d5adba38de133776faf258554994ee2"
+    ],
+    "claude-mythos-52-model-guide": [
+      "0b5021e546fc70687810df251fa2991f90f8f39e3fd6f012610e4410311ec011"
     ]
   },
   "model_introduction_reader_editions": {
@@ -903,6 +923,12 @@
     ],
     "shizuku-duplex-model-guide": [
       "3afcaefcec46918a457e94de775b5824d8345f65b899e08a198bc77ec78bb927"
+    ],
+    "claude-fable-52-model-guide": [
+      "1878386c0470907c15ebcc584dc2934e5d5adba38de133776faf258554994ee2"
+    ],
+    "claude-mythos-52-model-guide": [
+      "0b5021e546fc70687810df251fa2991f90f8f39e3fd6f012610e4410311ec011"
     ]
   }
 }

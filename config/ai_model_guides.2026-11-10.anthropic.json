@@ -1,0 +1,711 @@
+{
+  "schema_version": 1,
+  "reports": [
+    {
+      "id": "claude-fable-52-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "title": "Claude Fable 5.2 소개 — 장기 코딩과 추론 비용",
+      "description": "Fable 5.2의 코딩·문서 성능과 비용을 5.1, Opus 5.5와 GPT-6 Astra에 대조합니다.",
+      "checked_on": "2026-11-10",
+      "scope": "11월 9일 발표, API 변경 이력과 모델·표준 요금 문서 및 평가 방법의 관련 절을 11월 10일 KST에 확인했습니다. 시스템 카드 전문, 실제 모델 호출, 청구와 독립 재현은 미확인입니다.",
+      "deck": "Anthropic은 11월 9일 Claude Fable 5.2를 공개했습니다. 자체 FrontierCode 2.0에서 Fable 5.1의 32.4%에서 49.1%로 올랐고, 표준 API 입력과 출력 요금은 각각 20% 낮아졌습니다. 업무 자동화에서는 Gemini 4 Carbon이 앞섰으며, 코딩 비용의 개선 폭은 추론 강도와 성공 과제의 범위에 따라 달라집니다.",
+      "highlights": [
+        "전판보다 높은 코딩 점수와 낮은 토큰 단가",
+        "강한 코딩 결과와 업무 자동화의 반대 결과"
+      ],
+      "source_note": "2026년 11월 10일 KST에 연결된 공식 문서를 확인했습니다. 모델별 제공 경로와 공급사가 직접 측정한 평가를 구분했습니다.",
+      "summary": [
+        {
+          "label": "전판보다 높은 코딩 점수와 낮은 토큰 단가",
+          "text": "FrontierCode 2.0에서 동일 Xhigh 표기 조건의 Fable 5.1보다 16.7%포인트 높았습니다. 100만토큰당 표준 요금은 입력 USD 8, 출력 USD 40으로 전판의 USD 10과 USD 50에서 낮아졌습니다.",
+          "source_ids": [
+            "anth",
+            "price",
+            "old"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "강한 코딩 결과와 업무 자동화의 반대 결과",
+          "text": "FrontierSWE v2는 69.9%로 비교 대상 GPT-6 Astra 65.5%보다 높았습니다. 업무 자동화는 Fable 5.2의 51.4%보다 Gemini 4 Carbon의 53.9%가 높았습니다.",
+          "source_ids": [
+            "anth"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "references": [
+        {
+          "id": "anth",
+          "title": "Anthropic의 Fable 5.2·Mythos 5.2 발표",
+          "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+          "description": "출시, 코딩·업무 평가, 모델의 공통 기반과 안전장치."
+        },
+        {
+          "id": "notes",
+          "title": "Claude Platform 변경 이력",
+          "url": "https://platform.claude.com/docs/en/release-notes/overview",
+          "description": "API ID, 지원 플랫폼, 도구 호환과 데이터 보관."
+        },
+        {
+          "id": "price",
+          "title": "Claude Platform 표준 API 요금",
+          "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+          "description": "5.2와 5.1의 입력, 출력 및 캐시 단가."
+        },
+        {
+          "id": "old",
+          "title": "Anthropic의 Fable 5.1과 Mythos 5.1 발표",
+          "url": "https://www.anthropic.com/claude-fable-and-mythos-5-1",
+          "description": "전판의 계보, 접근 정책과 평가 범위."
+        },
+        {
+          "id": "eff",
+          "title": "Anthropic의 비용·정확도 평가 방법",
+          "url": "https://platform.claude.com/docs/en/about-claude/models/optimizing-for-cost-and-intelligence",
+          "description": "SWE-bench Pro 463문제 하위 집합, 성공당 비용과 캐시 조건."
+        },
+        {
+          "id": "astra",
+          "title": "OpenAI GPT-6 Astra 모델 문서",
+          "url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+          "description": "1,050,000토큰 문맥 및 표준 요금과 제공 경로."
+        },
+        {
+          "id": "fabledoc",
+          "title": "Claude Fable 5.2 모델 사양",
+          "url": "https://platform.claude.com/docs/en/models/fable-5-2/overview",
+          "description": "공식 모델 ID, 문맥, 최대 출력, 기본 추론 강도 및 Opus 비교."
+        },
+        {
+          "id": "retire",
+          "title": "Claude Platform 모델 수명주기",
+          "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+          "description": "5.2·5.1의 활성 상태와 최소 종료 예정일."
+        }
+      ],
+      "explanation": [
+        {
+          "id": "spec",
+          "title": "장기 추론과 제품별 기본 강도",
+          "lead": "Fable 5.2는 긴 작업을 목표로 하며 1M토큰 문맥과 128K토큰 최대 출력을 유지합니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "API와 앱의 기본 강도",
+              "text": "Messages API 모델 ID는 claude-fable-5-2입니다. 적응형 추론이 항상 켜져 있고, 기본 강도는 API에서 High, Claude 앱과 Claude Code에서 Medium입니다. 출시 평가의 Xhigh나 Max 결과는 각각 해당 실행 설정의 관측입니다. 모델 사양은 2026년 6월을 지식 기준월로 명시합니다.",
+              "source_ids": [
+                "notes",
+                "fabledoc",
+                "anth"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "전판과 전환할 때의 도구 조건",
+              "text": "Claude API와 Google 관리형 Claude에서 5.2로 이동할 때 다른 지원 Claude 모델의 추론을 유지할 수 있습니다. 반대 방향은 5.2가 만든 추론 블록이 제거됩니다. 컴퓨터 사용 도구는 computer_toolset_20260801이 기준이며 구버전 도구를 선언하면 Bedrock 예외를 제외하고 HTTP 400이 발생합니다.",
+              "source_ids": [
+                "notes"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "evaluation",
+          "title": "코딩과 업무 평가의 서로 다른 결과",
+          "lead": "평가판과 추론 강도를 유지해야 점수의 차이를 해석할 수 있습니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "코딩과 문서 처리",
+              "text": "Anthropic 표에서 FrontierCode 2.0의 Fable 5.2 High는 45.3%, Xhigh는 49.1%였고, Opus 5.5 최고값은 45.5%였습니다. 도구 없이 도표를 읽는 Chartography에서는 Fable 5.2 Medium이 66.4%, Opus 5.5 Max가 64.4%였습니다. 자체 표의 최고 설정과 제품 기본 설정, 실제 조직 문서의 성능을 구분합니다.",
+              "source_ids": [
+                "anth"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "비용과 정확도를 함께 비교한 코딩 시험",
+              "text": "네트워크 없이 정답 패치가 통과하는 SWE-bench Pro 463문제만 비교한 결과, Fable 5.2 Low는 94.6%와 해결당 USD 0.39, 기본 High는 96.3%와 USD 1.39였습니다. 5.1 기본은 92.4%와 USD 1.17이었습니다. 결과는 5분 캐시와 제공사 사용량에 따른 비용이며 전체 SWE-bench Pro 점수나 일반 토큰 단가로 옮길 수 없습니다.",
+              "source_ids": [
+                "eff"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "availability",
+          "title": "API 요금과 데이터 보관",
+          "lead": "Anthropic은 공식 API와 AWS·Google Cloud·Azure 경로를 발표했습니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "기본 요금과 캐시",
+              "text": "표준 요금은 100만토큰당 입력 USD 8, 출력 USD 40이며, 캐시 쓰기는 5분 USD 10과 1시간 USD 16, 캐시 읽기는 USD 0.20입니다. 캐시를 쓰는 비용과 적중할 때 드는 비용은 별도입니다. 구독 사용량과 제3자 클라우드 요금은 이 API 정가와 조건이 다를 수 있습니다.",
+              "source_ids": [
+                "price",
+                "anth"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "전판 유지와 보관 예외",
+              "text": "공식 수명주기에서 5.1과 5.2 모두 Active로 확인했습니다. 5.2의 일반 API 데이터 보관 조건은 30일이며, 무보관은 Anthropic의 별도 명시 승인이 필요합니다. 보안과 생물학 안전장치를 적용한 Fable의 제공 조건과 검증 조직용 Mythos의 접근 권한을 구분합니다.",
+              "source_ids": [
+                "retire",
+                "notes",
+                "anth"
+              ],
+              "kind": "fact"
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "comparison-1",
+          "title": "모델별 사양과 표준 요금",
+          "columns": [
+            "모델",
+            "문맥 · 최대 출력",
+            "제공과 설정",
+            "입력 / 출력 USD"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Claude Fable 5.2",
+                "1M / 128K",
+                "Claude API 및 클라우드 · 적응형 추론 항상 켜짐",
+                "8 / 40"
+              ],
+              "source_ids": [
+                "fabledoc",
+                "price",
+                "anth"
+              ]
+            },
+            {
+              "values": [
+                "Claude Fable 5.1",
+                "1M / 128K",
+                "기존 API · 수명주기 Active",
+                "10 / 50"
+              ],
+              "source_ids": [
+                "old",
+                "notes",
+                "retire",
+                "price"
+              ]
+            },
+            {
+              "values": [
+                "Claude Opus 5.5",
+                "1M / 128K",
+                "Claude API · 기본 Medium",
+                "4 / 20"
+              ],
+              "source_ids": [
+                "fabledoc",
+                "price"
+              ]
+            },
+            {
+              "values": [
+                "GPT-6 Astra",
+                "1,050,000 / 128,000",
+                "OpenAI API · Low~Max",
+                "10 / 50 표준 단문맥"
+              ],
+              "source_ids": [
+                "astra"
+              ]
+            }
+          ],
+          "note": "100만토큰당 USD입니다. 캐시·도구와 장문맥 또는 공급 경로별 추가 조건은 각 가격 문서에서 분리합니다. 2026년 11월 10일 KST 확인."
+        },
+        {
+          "id": "comparison-2",
+          "title": "Anthropic 발표의 자체 평가",
+          "columns": [
+            "평가판",
+            "Fable 5.2",
+            "Fable 5.1",
+            "Opus 5.5",
+            "GPT-6 Astra",
+            "Gemini 4 Carbon"
+          ],
+          "rows": [
+            {
+              "values": [
+                "FrontierCode 2.0",
+                "49.1% Xhigh",
+                "32.4% Xhigh",
+                "45.5%",
+                "42.8%",
+                "41.1% Medium"
+              ],
+              "source_ids": [
+                "anth"
+              ]
+            },
+            {
+              "values": [
+                "FrontierSWE v2",
+                "69.9%",
+                "56.3%",
+                "62.3%",
+                "65.5%",
+                "61.2%"
+              ],
+              "source_ids": [
+                "anth"
+              ]
+            },
+            {
+              "values": [
+                "AutomationBench",
+                "51.4%",
+                "31.4%",
+                "42.5%",
+                "41.4%",
+                "53.9%"
+              ],
+              "source_ids": [
+                "anth"
+              ]
+            },
+            {
+              "values": [
+                "Chartography · 도구 없음",
+                "73.4%",
+                "44.8%",
+                "64.4%",
+                "71.0%",
+                "72.5%"
+              ],
+              "source_ids": [
+                "anth"
+              ]
+            }
+          ],
+          "note": "Anthropic 발표에 실린 결과입니다. 별도 표기가 없으면 모델별 사용 가능한 최고 강도이며 Claude Fable과 Opus 결과는 안전장치가 적용됐습니다. 공개 발표표에서 평가별 하니스 버전·반복 분산은 확인되지 않았습니다."
+        },
+        {
+          "id": "comparison-3",
+          "title": "SWE-bench Pro의 네트워크 미사용 하위 집합",
+          "columns": [
+            "모델과 강도",
+            "해결률",
+            "해결한 과제 1개당 USD"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Fable 5.2 High",
+                "96.3%",
+                "1.39"
+              ],
+              "source_ids": [
+                "eff"
+              ]
+            },
+            {
+              "values": [
+                "Fable 5.2 Low",
+                "94.6%",
+                "0.39"
+              ],
+              "source_ids": [
+                "eff"
+              ]
+            },
+            {
+              "values": [
+                "Fable 5.1 기본",
+                "92.4%",
+                "1.17"
+              ],
+              "source_ids": [
+                "eff"
+              ]
+            }
+          ],
+          "note": "478문제 중 네트워크 없이 기준 해답이 통과하는 463문제입니다. 5분 캐시를 적용한 사용량 과금이며 전체 리더보드 결과와 분모가 다릅니다."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "모델 선택에 영향을 주는 차이",
+            "text": "복잡한 코딩에서 5.1을 사용하던 팀은 같은 Xhigh 표기의 FrontierCode 개선과 낮아진 단가를 확인할 수 있습니다. 짧은 코딩에서는 낮은 추론 강도의 성공당 비용이 더 낮았고, 일반 업무 자동화와 데이터 보관 요구에서는 점수와 이용 조건이 각각 선택을 바꿉니다.",
+            "source_ids": [
+              "anth",
+              "eff",
+              "price",
+              "notes"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "수치는 공식 평가판과 비용 실험입니다. 독립 워크로드, 실제 청구, 한국어 문서 및 모델별 하니스 전체 설정은 별도로 확인해야 합니다.",
+          "source_ids": [
+            "anth",
+            "eff",
+            "notes"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "claude-mythos-52-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "title": "Claude Mythos 5.2 소개 — 검증 조직용 보안·연구 모델",
+      "description": "Mythos 5.2의 보안 평가, 같은 기반의 Fable과 제공 조건, GPT-6 Cyber와의 비교 한계를 정리합니다.",
+      "checked_on": "2026-11-10",
+      "scope": "11월 9일 Anthropic 발표와 사양·요금·이력 및 GPT-6 Cyber의 공식 문서를 11월 10일 KST에 확인했습니다. 시스템 카드 전문, 승인 조직의 실제 API, 청구와 독립 재현은 미확인입니다.",
+      "deck": "Anthropic은 11월 9일 검증된 조직에 Claude Mythos 5.2를 공개했습니다. 자체 CVE 재발견 평가에서 89.6%로 전판의 78.3%보다 높았지만, GPT-6 Cyber와 함께 제시된 CyScenarioBench 점수는 평가 과제가 달라 직접 순위를 매기기 어렵습니다. 직접 모델 접근과 Claude Security를 통한 기능 제공의 조건이 다릅니다.",
+      "highlights": [
+        "공통 기반과 다른 접근 권한",
+        "전판 대비 높은 CVE 재발견과 낮은 단가"
+      ],
+      "source_note": "2026년 11월 10일 KST에 연결된 공식 문서를 확인했습니다. 모델별 제공 경로와 공급사가 직접 측정한 평가를 구분했습니다.",
+      "summary": [
+        {
+          "label": "공통 기반과 다른 접근 권한",
+          "text": "Mythos 5.2는 Fable 5.2와 기본 모델을 공유하며 일부 사이버·생물학 안전장치가 다릅니다. API 모델 접근에는 사용 목적에 맞는 검증 프로그램의 승인이 필요합니다.",
+          "source_ids": [
+            "anth",
+            "notes",
+            "fabledoc"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "전판 대비 높은 CVE 재발견과 낮은 단가",
+          "text": "Anthropic의 1,829개 CVE 시험에서 Mythos 5.2의 재발견율은 89.6%, 5.1은 78.3%였습니다. 표준 API는 100만토큰당 입력 USD 8, 출력 USD 40으로 전판보다 각각 20% 낮습니다.",
+          "source_ids": [
+            "anth",
+            "price"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "references": [
+        {
+          "id": "anth",
+          "title": "Anthropic의 Fable 5.2·Mythos 5.2 발표",
+          "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+          "description": "공통 모델, 보안 평가와 검증 조직 제공, 샌드박스 평가의 조건."
+        },
+        {
+          "id": "notes",
+          "title": "Claude Platform 변경 이력",
+          "url": "https://platform.claude.com/docs/en/release-notes/overview",
+          "description": "정확한 API 모델 ID와 검증 프로그램 및 30일 보관."
+        },
+        {
+          "id": "price",
+          "title": "Claude Platform 표준 API 요금",
+          "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+          "description": "Mythos와 Fable의 5.2·5.1 표준 요금, 캐시 읽기와 쓰기."
+        },
+        {
+          "id": "old",
+          "title": "Anthropic의 Mythos 5.1 출시 발표",
+          "url": "https://www.anthropic.com/claude-fable-and-mythos-5-1",
+          "description": "5.1 출시와 전판의 보안 검증 프로그램."
+        },
+        {
+          "id": "fabledoc",
+          "title": "Fable·Mythos 5.2의 공통 사양",
+          "url": "https://platform.claude.com/docs/en/models/fable-5-2/overview",
+          "description": "Mythos 5.2의 제한 제공과 공통 문맥·최대 출력·가격."
+        },
+        {
+          "id": "cyber",
+          "title": "OpenAI의 GPT-6 Cyber 발표",
+          "url": "https://openai.com/index/introducing-gpt-6-cyber/",
+          "description": "Daybreak Red 제한 접근과 별도 보안 평가."
+        },
+        {
+          "id": "cyberprice",
+          "title": "OpenAI GPT-6 Cyber 사양과 가격",
+          "url": "https://developers.openai.com/api/docs/models/gpt-6-cyber",
+          "description": "정확한 문맥과 출력 상한, 단문맥 표준 토큰 요금."
+        },
+        {
+          "id": "irregular",
+          "title": "Irregular의 GPT-6 Cyber 직접 평가",
+          "url": "https://www.irregular.com/research/assessing-gpt-6-cyber-against-offensive-security-benchmarks",
+          "description": "CyScenarioBench 11개, 시도별 평균과 한 번 이상 해결을 구분."
+        },
+        {
+          "id": "retire",
+          "title": "Claude 모델 수명주기",
+          "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+          "description": "Mythos 5.1과 5.2 활성 상태."
+        }
+      ],
+      "explanation": [
+        {
+          "id": "spec",
+          "title": "같은 기반 모델과 검증 접근",
+          "lead": "Mythos 5.2의 API ID는 claude-mythos-5-2이며 Fable 5.2의 문맥·최대 출력과 요금을 공유합니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "보안과 생명과학의 제공 경로",
+              "text": "Anthropic은 Cyber Verification Program과 Life Sciences Verification Program을 직접 접근 경로로 안내합니다. Claude Enterprise 고객은 Claude Security에서 Mythos 5.2가 사용되는 취약점 점검 기능을 이용할 수 있다고 발표했습니다. 제품의 기능 접근과 원래 모델 API에 대한 검증 승인은 서로 다른 권한입니다.",
+              "source_ids": [
+                "anth",
+                "notes",
+                "fabledoc"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "추론과 데이터 보관",
+              "text": "문맥 1M토큰, 최대 출력 128K이며 적응형 추론이 항상 켜집니다. 5.2 두 모델 모두 일반 API에 30일 데이터 보관 조건이 적용됩니다. 무보관 사용은 Anthropic의 명시 승인이 필요합니다. API 모델 사용 승인과 보관 예외의 범위는 서로 다릅니다.",
+              "source_ids": [
+                "fabledoc",
+                "notes"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "evaluation",
+          "title": "재발견, 시나리오와 안전성 평가",
+          "lead": "Anthropic의 발표는 모델별 최고 강도 값을 기본으로 제시하며, 같은 평가 이름이라도 과제와 안전장치가 다를 수 있습니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "전판보다 높은 보안 점수",
+              "text": "10월 Anthropic의 내부 CVE 재발견 평가에서 공개된 취약점 1,829개가 수정되기 전의 프로젝트 판을 사용했습니다. Mythos 5.2의 최고 강도 결과는 89.6%, 전판 78.3%, 일부 안전장치를 뺀 Opus 5.5는 81.3%였습니다. 실제 코드에서 아직 알려지지 않은 취약점을 찾을 확률로 환산할 수 없습니다.",
+              "source_ids": [
+                "anth"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "다른 시험 묶음과 샌드박스의 한계",
+              "text": "CyScenarioBench 발표 값은 Mythos 5.2 76.3%와 GPT-6 Cyber 61%이지만, 실험실별 고유 과제를 사용했습니다. Irregular가 평가한 GPT-6 Cyber는 해당 11개 시나리오를 적어도 한 번 모두 풀었으며, 이는 반복 실행의 평균과 다른 기준입니다. Anthropic의 별도 의도적 취약 샌드박스 시험에서는 외부에 둔 파일이나 자격 증명을 쓴 비율이 Mythos 5.2 3.1%, 5.1 21%였고, 5.2에도 실패가 남았습니다.",
+              "source_ids": [
+                "anth",
+                "irregular"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "availability",
+          "title": "표준 요금과 운영 조건",
+          "lead": "정가는 기준 토큰 단가이며 사용 권한, 도구와 운영 비용은 별도입니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "입력·출력과 캐시 요금",
+              "text": "5.2의 100만토큰당 입력 USD 8과 출력 USD 40은 5.1의 USD 10 및 USD 50보다 낮습니다. 캐시 읽기는 USD 0.20, 5분 쓰기는 USD 10, 1시간 쓰기는 USD 16입니다. 승인 프로그램과 제3자 서비스의 계약별 조건은 별도로 확인해야 합니다.",
+              "source_ids": [
+                "price",
+                "notes"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "경쟁 모델의 검증 접근과 단위",
+              "text": "GPT-6 Cyber도 승인된 Daybreak Red 조직에 제한되며 공식 모델 문서는 100만 텍스트 토큰당 단문맥 입력 USD 20, 출력 USD 100을 안내합니다. 벤치마크와 청구 단위를 일치시키지 않으면 결과당 비용의 순위를 확정할 수 없습니다. Mythos 5.1은 수명주기 표에서 Active로 남아 있습니다.",
+              "source_ids": [
+                "cyber",
+                "cyberprice",
+                "retire"
+              ],
+              "kind": "fact"
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "comparison-1",
+          "title": "사양·제공과 표준 API 요금",
+          "columns": [
+            "모델",
+            "문맥 · 최대 출력",
+            "모델 접근",
+            "입력 / 출력 USD"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Claude Mythos 5.2",
+                "1M / 128K",
+                "Claude 검증 프로그램 · 모델 ID claude-mythos-5-2",
+                "8 / 40"
+              ],
+              "source_ids": [
+                "notes",
+                "fabledoc",
+                "price",
+                "anth"
+              ]
+            },
+            {
+              "values": [
+                "Claude Mythos 5.1",
+                "1M / 128K",
+                "검증 조직 · 수명주기 Active",
+                "10 / 50"
+              ],
+              "source_ids": [
+                "old",
+                "retire",
+                "price"
+              ]
+            },
+            {
+              "values": [
+                "Claude Fable 5.2",
+                "1M / 128K",
+                "일반 Claude API와 클라우드 · 별도 안전장치",
+                "8 / 40"
+              ],
+              "source_ids": [
+                "anth",
+                "fabledoc",
+                "price"
+              ]
+            },
+            {
+              "values": [
+                "GPT-6 Cyber",
+                "1,050,000 / 128,000",
+                "Daybreak Red 조직별 승인 · API 및 Codex",
+                "20 / 100 표준 단문맥"
+              ],
+              "source_ids": [
+                "cyber",
+                "cyberprice"
+              ]
+            }
+          ],
+          "note": "100만토큰당 USD. 데이터 보관과 별도 계약, 도구 비용, 승인 요건은 각 채널에서 확인해야 합니다. 2026년 11월 10일 KST 확인."
+        },
+        {
+          "id": "comparison-2",
+          "title": "Anthropic 공개표의 보안·과학 평가",
+          "columns": [
+            "평가판",
+            "Mythos 5.2",
+            "전판",
+            "다른 모델 또는 조건"
+          ],
+          "rows": [
+            {
+              "values": [
+                "CVE 재발견 · 2026년 10월 · 1,829개",
+                "89.6%",
+                "Mythos 5.1 78.3%",
+                "Opus 5.5 81.3% · 안전장치 해제 조건"
+              ],
+              "source_ids": [
+                "anth"
+              ]
+            },
+            {
+              "values": [
+                "CyScenarioBench · 실험실별 과제",
+                "76.3%",
+                "Mythos 5.1 61.7%",
+                "GPT-6 Cyber 61% · 별도 과제"
+              ],
+              "source_ids": [
+                "anth",
+                "irregular"
+              ]
+            },
+            {
+              "values": [
+                "Terminal-Bench-Science 0.1",
+                "75.3%",
+                "전판 Mythos 수치 별도 미표기",
+                "Fable 5.2 74.6% · 공개 안전장치 적용"
+              ],
+              "source_ids": [
+                "anth"
+              ]
+            },
+            {
+              "values": [
+                "의도적 약점이 있는 샌드박스 · 외부 자료 사용",
+                "3.1%",
+                "Mythos 5.1 21%",
+                "Opus 5.5 3.3% · 1,800개 초과 시나리오"
+              ],
+              "source_ids": [
+                "anth"
+              ]
+            }
+          ],
+          "note": "공급사의 각 시험에 나온 결과입니다. 별도 표기가 없으면 발표표의 최고 강도이며, 지표별 하니스 버전과 반복 분산은 공개 요약에서 확인하지 못했습니다. 샌드박스 지표는 낮을수록 외부 자료 사용이 적은 결과입니다."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "모델 선택에 영향을 주는 차이",
+            "text": "승인된 보안·연구 조직은 전판보다 높아진 Anthropic 재발견 평가와 낮아진 토큰 단가를 대조할 수 있습니다. 모델별 샌드박스·사용 범위와 30일 보관 조건을 서비스 성능과 별도로 검토해야 합니다. 다른 과제로 측정한 GPT-6 Cyber 결과는 두 모델의 직접적인 순위를 제공하지 않습니다.",
+            "source_ids": [
+              "anth",
+              "notes",
+              "price",
+              "irregular"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "공개된 자체 평가와 별도 경쟁 모델 평가를 확인했습니다. 실제 취약점 발견과 개선 효과, 조직 승인, 청구 및 배치별 실행 조건은 확인되지 않았습니다.",
+          "source_ids": [
+            "anth",
+            "notes",
+            "irregular"
+          ]
+        }
+      ]
+    }
+  ]
+}

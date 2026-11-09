@@ -487,6 +487,11 @@
       "id": "ai-model-guides-2026-11-10",
       "input": "ai_model_guides.2026-11-10.json",
       "quality": "ai_model_guides.2026-11-10.quality.json"
+    },
+    {
+      "id": "ai-model-guides-2026-11-10-anthropic",
+      "input": "ai_model_guides.2026-11-10.anthropic.json",
+      "quality": "ai_model_guides.2026-11-10.anthropic.quality.json"
     }
   ]
 }

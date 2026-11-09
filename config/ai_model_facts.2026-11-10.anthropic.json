@@ -1,0 +1,225 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "id": "claude-fable-52-spec",
+      "model": "Claude Fable 5.2",
+      "provider": "Anthropic",
+      "source_url": "https://platform.claude.com/docs/en/models/fable-5-2/overview",
+      "checked_on": "2026-11-10",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "Claude Fable 5.2 · 2026-11-09 공개",
+        "release": "2026-11-09",
+        "context": 1000000,
+        "status": "공식 API 제공",
+        "access": "Claude API · AWS · Google Cloud · Azure",
+        "condition": "128K 최대 출력. 적응형 추론 항상 활성. API 기본 High, 앱·Claude Code 기본 Medium. 30일 보관, 무보관 별도 승인.",
+        "모델 ID": "claude-fable-5-2",
+        "최대 출력 (토큰)": 128000
+      }
+    },
+    {
+      "id": "claude-fable-52-price",
+      "model": "Claude Fable 5.2",
+      "provider": "Anthropic",
+      "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+      "checked_on": "2026-11-10",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Claude Platform · 표준 API 요금",
+        "condition": "100만토큰당 USD. 기본 입력·출력, 5분·1시간 쓰기, 적중 읽기를 분리. 파트너 요금과 구독 한도 별도.",
+        "입력 USD / 100만 토큰": 8,
+        "출력 USD / 100만 토큰": 40,
+        "캐시 읽기 USD / 100만 토큰": 0.2,
+        "캐시 쓰기 5분 USD / 100만 토큰": 10,
+        "캐시 쓰기 1시간 USD / 100만 토큰": 16
+      }
+    },
+    {
+      "id": "claude-fable-52-frontier-code",
+      "model": "Claude Fable 5.2",
+      "provider": "Anthropic",
+      "source_url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+      "checked_on": "2026-11-10",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "FrontierCode 2.0 · Xhigh",
+        "condition": "Anthropic 발표. Fable 5.1 Xhigh 32.4%, Opus 5.5 45.5%. Fable 안전장치 적용. 세부 하니스와 반복 분산 미확인.",
+        "평가 점수": 49.1,
+        "단위": "%",
+        "측정 주체": "Anthropic"
+      }
+    },
+    {
+      "id": "claude-fable-52-frontier-swe",
+      "model": "Claude Fable 5.2",
+      "provider": "Anthropic",
+      "source_url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+      "checked_on": "2026-11-10",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "FrontierSWE v2",
+        "condition": "Anthropic 발표. Fable 5.1 56.3%, Opus 5.5 62.3%, Astra 65.5%. 각 모델 최고 강도, 동일 강도 보장 없음.",
+        "평가 점수": 69.9,
+        "단위": "%",
+        "측정 주체": "Anthropic"
+      }
+    },
+    {
+      "id": "claude-fable-52-automation",
+      "model": "Claude Fable 5.2",
+      "provider": "Anthropic",
+      "source_url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+      "checked_on": "2026-11-10",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "AutomationBench · Anthropic 11월 발표",
+        "condition": "Anthropic 발표. Fable 5.1 31.4%, Gemini 4 Carbon 53.9%. LG Open-set 별도 평가와 합치지 않음.",
+        "평가 점수": 51.4,
+        "단위": "%",
+        "측정 주체": "Anthropic"
+      }
+    },
+    {
+      "id": "claude-fable-52-chartography",
+      "model": "Claude Fable 5.2",
+      "provider": "Anthropic",
+      "source_url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+      "checked_on": "2026-11-10",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Chartography · 도구 없음",
+        "condition": "Anthropic 발표 최고 강도 표. 별도 Medium 66.4%, Opus 5.5 Max 64.4%. 추론 설정별 결과 구분.",
+        "평가 점수": 73.4,
+        "단위": "%",
+        "측정 주체": "Anthropic"
+      }
+    },
+    {
+      "id": "claude-fable-52-swe-pro-low",
+      "model": "Claude Fable 5.2",
+      "provider": "Anthropic",
+      "source_url": "https://platform.claude.com/docs/en/about-claude/models/optimizing-for-cost-and-intelligence",
+      "checked_on": "2026-11-10",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SWE-bench Pro · 네트워크 미사용 463문제 · Low",
+        "condition": "Anthropic 비용 실험. 478개 중 기준 해답이 네트워크 없이 통과하는 463개. 해결당 USD 0.39, 5분 캐시 요금.",
+        "평가 점수": 94.6,
+        "단위": "%",
+        "측정 주체": "Anthropic"
+      }
+    },
+    {
+      "id": "claude-fable-52-swe-pro-high",
+      "model": "Claude Fable 5.2",
+      "provider": "Anthropic",
+      "source_url": "https://platform.claude.com/docs/en/about-claude/models/optimizing-for-cost-and-intelligence",
+      "checked_on": "2026-11-10",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SWE-bench Pro · 네트워크 미사용 463문제 · High",
+        "condition": "Anthropic 비용 실험. API 기본 High. 해결당 USD 1.39, 5분 캐시 요금. 전체 리더보드와 다른 분모.",
+        "평가 점수": 96.3,
+        "단위": "%",
+        "측정 주체": "Anthropic"
+      }
+    },
+    {
+      "id": "claude-mythos-52-spec",
+      "model": "Claude Mythos 5.2",
+      "provider": "Anthropic",
+      "source_url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "checked_on": "2026-11-10",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "Claude Mythos 5.2 · 2026-11-09 공개",
+        "release": "2026-11-09",
+        "context": 1000000,
+        "status": "검증 조직 제한 제공",
+        "access": "Claude Cyber Verification / Life Sciences Verification",
+        "condition": "최대 출력 128K. 적응형 추론 항상 활성. 직접 API 모델과 Claude Security 제품 경로는 별도. 30일 보관, 무보관 별도 승인.",
+        "모델 ID": "claude-mythos-5-2",
+        "최대 출력 (토큰)": 128000
+      }
+    },
+    {
+      "id": "claude-mythos-52-price",
+      "model": "Claude Mythos 5.2",
+      "provider": "Anthropic",
+      "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+      "checked_on": "2026-11-10",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Claude Platform · 검증 조직 표준 API 요금",
+        "condition": "100만토큰당 USD. 승인 조직용 정가. 캐시 읽기와 5분·1시간 쓰기를 분리하며 계약별 조건 및 제품 요금 별도.",
+        "입력 USD / 100만 토큰": 8,
+        "출력 USD / 100만 토큰": 40,
+        "캐시 읽기 USD / 100만 토큰": 0.2,
+        "캐시 쓰기 5분 USD / 100만 토큰": 10,
+        "캐시 쓰기 1시간 USD / 100만 토큰": 16
+      }
+    },
+    {
+      "id": "claude-mythos-52-cve",
+      "model": "Claude Mythos 5.2",
+      "provider": "Anthropic",
+      "source_url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+      "checked_on": "2026-11-10",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "CVE 재발견 · 2026년 10월 · 1,829개",
+        "condition": "Anthropic 내부 평가. 수정 전 프로젝트의 공개 CVE. Mythos 5.1 78.3%, Opus 5.5 안전장치 해제 조건 81.3%. 미공개 취약점 발견으로 확대 불가.",
+        "평가 점수": 89.6,
+        "단위": "%",
+        "측정 주체": "Anthropic"
+      }
+    },
+    {
+      "id": "claude-mythos-52-cyscenario",
+      "model": "Claude Mythos 5.2",
+      "provider": "Anthropic",
+      "source_url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+      "checked_on": "2026-11-10",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "CyScenarioBench · 실험실별 고유 과제",
+        "condition": "Anthropic 발표. Mythos 5.1 61.7%, GPT-6 Cyber 61%는 다른 과제. 동일 모집단의 직접 순위 비교 불가.",
+        "평가 점수": 76.3,
+        "단위": "%",
+        "측정 주체": "Anthropic"
+      }
+    },
+    {
+      "id": "claude-mythos-52-terminal-science",
+      "model": "Claude Mythos 5.2",
+      "provider": "Anthropic",
+      "source_url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+      "checked_on": "2026-11-10",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Terminal-Bench-Science 0.1",
+        "condition": "Anthropic 발표. Fable 5.2 74.6%. 모델별 최고 강도, 상세 하니스와 반복 분산 미확인.",
+        "평가 점수": 75.3,
+        "단위": "%",
+        "측정 주체": "Anthropic"
+      }
+    },
+    {
+      "id": "claude-mythos-52-sandbox",
+      "model": "Claude Mythos 5.2",
+      "provider": "Anthropic",
+      "source_url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+      "checked_on": "2026-11-10",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Anthropic 의도적 약점 샌드박스 · 외부 자료 사용",
+        "condition": "1,800개 초과 시나리오. 외부 파일 또는 자격 증명 사용 비율, 낮을수록 적음. Mythos 5.1 21%, Opus 5.5 3.3%. 운영 안전 보장 아님.",
+        "평가 점수": 3.1,
+        "단위": "%",
+        "측정 주체": "Anthropic"
+      }
+    }
+  ]
+}
