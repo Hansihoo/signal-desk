@@ -1,0 +1,321 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "id": "k-exaone-25-spec",
+      "model": "K-EXAONE 2.5",
+      "provider": "LG AI Research",
+      "source_url": "https://docs.exaone.ai/en/docs/k-exaone-2.5",
+      "checked_on": "2026-11-10",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "K-EXAONE 2.5 · EXAONE API",
+        "release": "2026-11-09",
+        "status": "공식 API 제공",
+        "access": "EXAONE API Platform · 키 필요",
+        "condition": "텍스트, 입력과 최대 생성 예산 합계 ≤524,288토큰. 추론 항상 활성, low·high·max 설정. 2.5 공개 가중치 미확인.",
+        "모델 ID": "k-exaone_v2.5",
+        "최대 컨텍스트 (토큰)": 524288
+      }
+    },
+    {
+      "id": "k-exaone-25-spec-scale",
+      "model": "K-EXAONE 2.5",
+      "provider": "LG AI Research",
+      "source_url": "https://docs.exaone.ai/en/docs/models",
+      "checked_on": "2026-11-10",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "K-EXAONE 2.5 · 모델 목록",
+        "condition": "한국어·영어 텍스트, 지식 기준 2026-01. 공개 API 한도와 실제 처리량은 별개.",
+        "전체 파라미터": "750B",
+        "활성 파라미터": "31B"
+      }
+    },
+    {
+      "id": "k-exaone-25-price",
+      "model": "K-EXAONE 2.5",
+      "provider": "LG AI Research",
+      "source_url": "https://docs.exaone.ai/en/docs/changelog",
+      "checked_on": "2026-11-10",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "EXAONE API · 2026-11-09 공개",
+        "condition": "현재 무료. API 키와 호출 한도 적용. 종료일 및 보장 호출량 미확인. 종량제 요율은 공시되지 않음.",
+        "표준 API 요금": "무료 (발표 시점)"
+      }
+    },
+    {
+      "id": "k-exaone-25-automation",
+      "model": "K-EXAONE 2.5",
+      "provider": "LG AI Research",
+      "source_url": "https://docs.exaone.ai/en/docs/models",
+      "checked_on": "2026-11-10",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "AutomationBench · Open-set",
+        "condition": "LG 자체 평가. 2.0 16.9, DeepSeek-V4.1-Flash 74.9, GLM-5.3 71.6. 모델 스냅샷·하니스·추론 설정 미공개.",
+        "평가 점수": 74.6,
+        "단위": "점",
+        "측정 주체": "LG AI Research"
+      }
+    },
+    {
+      "id": "k-exaone-25-swe-pro",
+      "model": "K-EXAONE 2.5",
+      "provider": "LG AI Research",
+      "source_url": "https://docs.exaone.ai/en/docs/models",
+      "checked_on": "2026-11-10",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SWE-Bench Pro",
+        "condition": "LG 자체 평가. 2.0 47.10, DeepSeek-V4.1-Flash 58.41, GLM-5.3 64.03. 설정과 반복 횟수 미공개.",
+        "평가 점수": 59.21,
+        "단위": "점",
+        "측정 주체": "LG AI Research"
+      }
+    },
+    {
+      "id": "k-exaone-25-browse",
+      "model": "K-EXAONE 2.5",
+      "provider": "LG AI Research",
+      "source_url": "https://docs.exaone.ai/en/docs/models",
+      "checked_on": "2026-11-10",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "BrowseComp",
+        "condition": "LG 자체 평가. 2.0 50.87, DeepSeek-V4.1-Flash 75.80, GLM-5.3 79.00. 검색 도구·하니스 세부 미공개.",
+        "평가 점수": 78,
+        "단위": "점",
+        "측정 주체": "LG AI Research"
+      }
+    },
+    {
+      "id": "k-exaone-25-claw",
+      "model": "K-EXAONE 2.5",
+      "provider": "LG AI Research",
+      "source_url": "https://docs.exaone.ai/en/docs/models",
+      "checked_on": "2026-11-10",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Claw-Eval",
+        "condition": "LG 자체 평가. 2.0 62.11, DeepSeek-V4.1-Flash 75.78, GLM-5.3 77.64. 모델 스냅샷·추론 강도 미공개.",
+        "평가 점수": 77.29,
+        "단위": "점",
+        "측정 주체": "LG AI Research"
+      }
+    },
+    {
+      "id": "seedream-55-spec",
+      "model": "Seedream 5.5",
+      "provider": "ByteDance Seed",
+      "source_url": "https://seed.bytedance.com/zh/blog/more-realistic-images-more-stable-editing-across-100-rounds-introducing-seedream-5-5?view_from=content_recommend",
+      "checked_on": "2026-11-10",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "Seedream 5.5 · 2026-11-09 발표판",
+        "release": "2026-11-09",
+        "status": "순차 배포 발표",
+        "access": "즉몽 · Doubao · Doubao Work · Volcano Engine Ark",
+        "condition": "공급사 시연 기준 같은 이미지의 연속 수정 최대 100회. 모델은 알파 채널 지원. API 모델 ID, 한도·지역·표준 단가 미확인.",
+        "연속 편집 시연 (회)": 100,
+        "출력": "투명·반투명을 포함하는 네이티브 RGBA",
+        "표준 API 요금": "공식 표준 단가 미확인"
+      }
+    },
+    {
+      "id": "seedream-55-text-severe",
+      "model": "Seedream 5.5",
+      "provider": "ByteDance Seed",
+      "source_url": "https://seed.bytedance.com/en/blog/more-realistic-images-more-stable-editing-across-100-rounds-introducing-seedream-5-5",
+      "checked_on": "2026-11-10",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "중국·영어 문자 평가 · 심각한 오류",
+        "condition": "공급사 평가. 밀집된 작은 글씨 포함. 한국어·표본 수 및 세부 설정 미공개.",
+        "평가 점수": 0.4,
+        "단위": "오류율 (%)",
+        "측정 주체": "ByteDance Seed"
+      }
+    },
+    {
+      "id": "seedream-55-text-minor",
+      "model": "Seedream 5.5",
+      "provider": "ByteDance Seed",
+      "source_url": "https://seed.bytedance.com/en/blog/more-realistic-images-more-stable-editing-across-100-rounds-introducing-seedream-5-5",
+      "checked_on": "2026-11-10",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "중국·영어 문자 평가 · 경미한 오류",
+        "condition": "공급사 평가. 밀집된 작은 글씨 포함. 별도 오류 범주이며 심각 오류와 합산하지 않음.",
+        "평가 점수": 1.7,
+        "단위": "오류율 (%)",
+        "측정 주체": "ByteDance Seed"
+      }
+    },
+    {
+      "id": "seedream-55-i2i-realism-prev",
+      "model": "Seedream 5.5",
+      "provider": "ByteDance Seed",
+      "source_url": "https://lf3-static.bytednsdoc.com/obj/eden-cn/lapzild-tss/ljhwZthlaukjlkulzlp/user-upload/4xfa4mw8m342o.jpg",
+      "checked_on": "2026-11-10",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "ByteDance 전문가 쌍대평가 · I2I 사실감 vs Seedream 5.0 Pro",
+        "condition": "전문가 쌍대 선호, 양수는 Seedream 5.5에 유리. 절대 성공률이 아님. 표본 수·실행 설정 미공개.",
+        "평가 점수": 55.62,
+        "단위": "GSB (%)",
+        "측정 주체": "ByteDance Seed",
+        "references": [
+          "https://seed.bytedance.com/en/blog/more-realistic-images-more-stable-editing-across-100-rounds-introducing-seedream-5-5"
+        ]
+      }
+    },
+    {
+      "id": "seedream-55-i2i-realism-nano",
+      "model": "Seedream 5.5",
+      "provider": "ByteDance Seed",
+      "source_url": "https://lf3-static.bytednsdoc.com/obj/eden-cn/lapzild-tss/ljhwZthlaukjlkulzlp/user-upload/4xfa4mw8m342o.jpg",
+      "checked_on": "2026-11-10",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "ByteDance 전문가 쌍대평가 · I2I 사실감 vs Nano Banana 2.1",
+        "condition": "전문가 쌍대 선호, 음수는 Nano Banana 2.1에 유리. 표본 수·실행 설정 미공개.",
+        "평가 점수": -6.18,
+        "단위": "GSB (%)",
+        "측정 주체": "ByteDance Seed",
+        "references": [
+          "https://seed.bytedance.com/en/blog/more-realistic-images-more-stable-editing-across-100-rounds-introducing-seedream-5-5"
+        ]
+      }
+    },
+    {
+      "id": "seedream-55-t2i-realism-nano",
+      "model": "Seedream 5.5",
+      "provider": "ByteDance Seed",
+      "source_url": "https://lf3-static.bytednsdoc.com/obj/eden-cn/lapzild-tss/ljhwZthlaukjlkulzlp/user-upload/4xfa4mw8m342o.jpg",
+      "checked_on": "2026-11-10",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "ByteDance 전문가 쌍대평가 · T2I 사실감 vs Nano Banana 2.1",
+        "condition": "전문가 쌍대 선호, 양수는 Seedream 5.5에 유리. 다른 작업의 I2I 점수와 구분.",
+        "평가 점수": 21.79,
+        "단위": "GSB (%)",
+        "측정 주체": "ByteDance Seed",
+        "references": [
+          "https://seed.bytedance.com/en/blog/more-realistic-images-more-stable-editing-across-100-rounds-introducing-seedream-5-5"
+        ]
+      }
+    },
+    {
+      "id": "seedream-55-i2i-text-nano",
+      "model": "Seedream 5.5",
+      "provider": "ByteDance Seed",
+      "source_url": "https://lf3-static.bytednsdoc.com/obj/eden-cn/lapzild-tss/ljhwZthlaukjlkulzlp/user-upload/4xfa4mw8m342o.jpg",
+      "checked_on": "2026-11-10",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "ByteDance 전문가 쌍대평가 · I2I 문자 구조 vs Nano Banana 2.1",
+        "condition": "전문가 쌍대 선호. 절대 문자 정확도와 별개. 표본 수·세부 설정 미공개.",
+        "평가 점수": 3.82,
+        "단위": "GSB (%)",
+        "측정 주체": "ByteDance Seed",
+        "references": [
+          "https://seed.bytedance.com/en/blog/more-realistic-images-more-stable-editing-across-100-rounds-introducing-seedream-5-5"
+        ]
+      }
+    },
+    {
+      "id": "shizuku-duplex-spec",
+      "model": "Shizuku-Duplex",
+      "provider": "Shizuku AI",
+      "source_url": "https://shizuku.ai/blog/1/",
+      "checked_on": "2026-11-10",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "Shizuku-Duplex · 2026-11-08 연구 공개",
+        "release": "2026-11-08",
+        "status": "연구 발표 · 녹화 시연",
+        "access": "공식 연구 원문 · 일반 API와 가중치 미확인",
+        "condition": "일본어 양방향 음성, 80ms는 내부 처리 주기. 직접 호출과 배포 조건 미확인.",
+        "처리 주기 (ms)": 80,
+        "표준 API 요금": "공식 표준 단가 미확인"
+      }
+    },
+    {
+      "id": "shizuku-duplex-interruption",
+      "model": "Shizuku-Duplex",
+      "provider": "Shizuku AI",
+      "source_url": "https://shizuku.ai/blog/1/",
+      "checked_on": "2026-11-10",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "일본어 Full-Duplex · 끼어들기 후 2초 이내 정지",
+        "condition": "Shizuku AI 자체 평가. GPT-Live-1 82%, J-Moshi-ext 73%. 일본어 자체 평가 하니스.",
+        "평가 점수": 89,
+        "단위": "비율 (%)",
+        "측정 주체": "Shizuku AI"
+      }
+    },
+    {
+      "id": "shizuku-duplex-backchannel",
+      "model": "Shizuku-Duplex",
+      "provider": "Shizuku AI",
+      "source_url": "https://shizuku.ai/blog/1/",
+      "checked_on": "2026-11-10",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "일본어 Full-Duplex · 짧은 맞장구 중 발화 유지",
+        "condition": "Shizuku AI 자체 평가. GPT-Live-1 88%, J-Moshi-ext 80%.",
+        "평가 점수": 95,
+        "단위": "비율 (%)",
+        "측정 주체": "Shizuku AI"
+      }
+    },
+    {
+      "id": "shizuku-duplex-latency",
+      "model": "Shizuku-Duplex",
+      "provider": "Shizuku AI",
+      "source_url": "https://shizuku.ai/blog/1/",
+      "checked_on": "2026-11-10",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "일본어 Full-Duplex · 사용자의 발화가 끝난 뒤 응답 중앙값",
+        "condition": "서버 녹음으로 측정. 통신 왕복 제외. GPT-Live-1 0.53초.",
+        "평가 점수": 0.57,
+        "단위": "초",
+        "측정 주체": "Shizuku AI"
+      }
+    },
+    {
+      "id": "shizuku-duplex-multiturn",
+      "model": "Shizuku-Duplex",
+      "provider": "Shizuku AI",
+      "source_url": "https://shizuku.ai/blog/1/",
+      "checked_on": "2026-11-10",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "일본어 자체 평가 · 여러 차례 문답",
+        "condition": "Shizuku AI 자체 평가. GPT-Live-1 95%, J-Moshi-ext 1%. 출력 음성 전사 Haas-ja-v1.0.",
+        "평가 점수": 79,
+        "단위": "정확도 (%)",
+        "측정 주체": "Shizuku AI"
+      }
+    },
+    {
+      "id": "shizuku-duplex-naturalness",
+      "model": "Shizuku-Duplex",
+      "provider": "Shizuku AI",
+      "source_url": "https://shizuku.ai/blog/1/",
+      "checked_on": "2026-11-10",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "일본어 자체 평가 · 잡담 자연스러움",
+        "condition": "Claude Opus 5.5 채점. GPT-Live-1 7.6점, J-Moshi-ext 3.4점. 총평과 지표 구분.",
+        "평가 점수": 6.2,
+        "단위": "점 (1–10)",
+        "측정 주체": "Shizuku AI"
+      }
+    }
+  ]
+}

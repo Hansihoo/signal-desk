@@ -103,7 +103,10 @@
     "meridian-air-model-guide",
     "arete-27b-model-guide",
     "beautypackocr-ko-model-guide",
-    "bina-04-rizeh-model-guide"
+    "bina-04-rizeh-model-guide",
+    "k-exaone-25-model-guide",
+    "seedream-55-model-guide",
+    "shizuku-duplex-model-guide"
   ],
   "catalogs": {
     "devops-implementation-guide": "devops_tools.2026-10-10.r4.json"
@@ -355,6 +358,15 @@
     ],
     "bina-04-rizeh-model-guide": [
       "b57a6d4be9daf556d5e65e2685549d83d8ca1de68ca64e5c81ce7fbfc6e50e08"
+    ],
+    "k-exaone-25-model-guide": [
+      "acc1837b854a738efcaa6bd68e46d189eb481f8b3bd95bd6561c1d2723b0f89f"
+    ],
+    "seedream-55-model-guide": [
+      "c00acc80e9b679fe94df2312ffdf6663e063ae3fe3943a2a60fcab1664ebd3f6"
+    ],
+    "shizuku-duplex-model-guide": [
+      "3afcaefcec46918a457e94de775b5824d8345f65b899e08a198bc77ec78bb927"
     ]
   },
   "model_introduction_editions": {
@@ -545,6 +557,15 @@
     ],
     "bina-04-rizeh-model-guide": [
       "b57a6d4be9daf556d5e65e2685549d83d8ca1de68ca64e5c81ce7fbfc6e50e08"
+    ],
+    "k-exaone-25-model-guide": [
+      "acc1837b854a738efcaa6bd68e46d189eb481f8b3bd95bd6561c1d2723b0f89f"
+    ],
+    "seedream-55-model-guide": [
+      "c00acc80e9b679fe94df2312ffdf6663e063ae3fe3943a2a60fcab1664ebd3f6"
+    ],
+    "shizuku-duplex-model-guide": [
+      "3afcaefcec46918a457e94de775b5824d8345f65b899e08a198bc77ec78bb927"
     ]
   },
   "model_introduction_purpose_editions": {
@@ -724,6 +745,15 @@
     ],
     "bina-04-rizeh-model-guide": [
       "b57a6d4be9daf556d5e65e2685549d83d8ca1de68ca64e5c81ce7fbfc6e50e08"
+    ],
+    "k-exaone-25-model-guide": [
+      "acc1837b854a738efcaa6bd68e46d189eb481f8b3bd95bd6561c1d2723b0f89f"
+    ],
+    "seedream-55-model-guide": [
+      "c00acc80e9b679fe94df2312ffdf6663e063ae3fe3943a2a60fcab1664ebd3f6"
+    ],
+    "shizuku-duplex-model-guide": [
+      "3afcaefcec46918a457e94de775b5824d8345f65b899e08a198bc77ec78bb927"
     ]
   },
   "model_introduction_reader_editions": {
@@ -864,6 +894,15 @@
     ],
     "bina-04-rizeh-model-guide": [
       "b57a6d4be9daf556d5e65e2685549d83d8ca1de68ca64e5c81ce7fbfc6e50e08"
+    ],
+    "k-exaone-25-model-guide": [
+      "acc1837b854a738efcaa6bd68e46d189eb481f8b3bd95bd6561c1d2723b0f89f"
+    ],
+    "seedream-55-model-guide": [
+      "c00acc80e9b679fe94df2312ffdf6663e063ae3fe3943a2a60fcab1664ebd3f6"
+    ],
+    "shizuku-duplex-model-guide": [
+      "3afcaefcec46918a457e94de775b5824d8345f65b899e08a198bc77ec78bb927"
     ]
   }
 }

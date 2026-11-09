@@ -1,0 +1,983 @@
+{
+  "schema_version": 1,
+  "reports": [
+    {
+      "id": "k-exaone-25-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "title": "K-EXAONE 2.5 소개 — 한국어 추론 모델과 무료 API",
+      "description": "한국어 도구 호출과 코딩에 쓰는 K-EXAONE 2.5를 전판 및 두 경쟁 모델과 비교합니다.",
+      "checked_on": "2026-11-10",
+      "scope": "2026년 11월 9일 LG 발표와 API 변경 이력, 11월 10일 KST의 제공사 문서를 확인했습니다. 실제 추론, 계정별 호출 한도, 청구와 독립 성능 재현은 확인 범위 밖입니다.",
+      "deck": "LG AI연구원은 11월 9일 K-EXAONE 2.5를 무료 API로 공개했습니다. 전판보다 LG의 도구 사용·검색·코딩 평가가 모두 올랐고, 텍스트 API에서 입력과 생성 예산을 합쳐 최대 524,288토큰을 다룹니다. GLM-5.3에 뒤진 코딩 평가와 무료 기간·호출 한도가 남아 있어 성능과 제공 조건을 따로 봐야 합니다.",
+      "highlights": [
+        "전판 이후 추가 학습과 API 제공",
+        "자동화의 큰 개선과 코딩 격차"
+      ],
+      "source_note": "2026년 11월 10일 KST에 연결된 공식 문서를 확인했습니다. 모델별 제공 경로와 공급사가 직접 측정한 평가를 구분했습니다.",
+      "summary": [
+        {
+          "label": "전판 이후 추가 학습과 API 제공",
+          "text": "2.5는 기존 2.0 공개 가중치에 연결되는 후속 기술 검증 모델입니다. 공식 플랫폼은 총 750B와 활성 31B를 표기하며 한국어·영어 텍스트를 안내합니다. 2.0의 공개 가중치에 붙은 Apache 2.0을 2.5 API나 가중치에 적용할 근거는 확인되지 않았습니다.",
+          "source_ids": [
+            "lg",
+            "lgmodels",
+            "lgprev"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "자동화의 큰 개선과 코딩 격차",
+          "text": "LG 자체 비교에서 AutomationBench 공개 세트는 16.9점에서 74.6점으로 올랐습니다. SWE-Bench Pro는 47.10점에서 59.21점으로 상승했지만 GLM-5.3의 64.03점에 못 미쳤습니다.",
+          "source_ids": [
+            "lgmodels"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "references": [
+        {
+          "id": "lg",
+          "title": "LG AI연구원의 무료 API 발표",
+          "url": "https://www.lgresearch.ai/news/view?seq=754",
+          "description": "K-EXAONE 2.5의 무료 공개와 8월 공개판 이후 추가 학습의 성격."
+        },
+        {
+          "id": "lgmodels",
+          "title": "EXAONE API Platform 모델 목록과 평가표",
+          "url": "https://docs.exaone.ai/en/docs/models",
+          "description": "750B와 활성 31B, 한국어·영어, 지식 기준일과 공급자 자체 비교 평가."
+        },
+        {
+          "id": "lgapi",
+          "title": "K-EXAONE 2.5 API 명세",
+          "url": "https://docs.exaone.ai/en/docs/k-exaone-2.5",
+          "description": "정확한 ID, 524,288토큰 합산 상한과 추론 설정, 도구 호출."
+        },
+        {
+          "id": "lglog",
+          "title": "EXAONE API Platform 변경 이력",
+          "url": "https://docs.exaone.ai/en/docs/changelog",
+          "description": "11월 9일 API 공개 및 현재 무료 제공 범위."
+        },
+        {
+          "id": "lglimit",
+          "title": "EXAONE API 호출 제한",
+          "url": "https://docs.exaone.ai/en/docs/rate-limits",
+          "description": "초·분·일 단위 제한 응답과 예시의 적용 범위."
+        },
+        {
+          "id": "lgprev",
+          "title": "K-EXAONE 2.0 공식 가중치 카드",
+          "url": "https://huggingface.co/LGAI-EXAONE/K-EXAONE-2.0-750B-A37B/raw/main/README.md",
+          "description": "전판 가중치 라이선스, MoE 규모, 지원 언어와 로컬 설정."
+        },
+        {
+          "id": "deepseek",
+          "title": "DeepSeek API 모델과 가격",
+          "url": "https://api-docs.deepseek.com/quick_start/pricing/",
+          "description": "현재 서비스 모델 버전, 문맥과 피크·비피크 요금."
+        },
+        {
+          "id": "glm",
+          "title": "GLM-5.3 API 모델 문서",
+          "url": "https://docs.z.ai/guides/llm/glm-5.3",
+          "description": "텍스트 전용 입력, 1M 문맥과 최대 128K 생성, 항상 활성화된 추론."
+        },
+        {
+          "id": "glmprice",
+          "title": "Z.AI 표준 가격표",
+          "url": "https://docs.z.ai/guides/overview/pricing",
+          "description": "GLM-5.3의 100만토큰당 입력·캐시 입력·출력 단가."
+        }
+      ],
+      "explanation": [
+        {
+          "id": "model",
+          "title": "추가 학습과 텍스트 API",
+          "lead": "2.0과 총 파라미터 수는 같으며 공개된 활성 파라미터 수와 제공 경로가 달라졌습니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "750B 모델에서 한 토큰에 쓰는 규모",
+              "text": "LG의 두 자료에서 총 규모는 750B로 같습니다. 전문가 혼합 모델은 토큰마다 일부 전문가를 사용합니다. 제공 문서의 활성 규모는 2.0이 37B, 2.5가 31B입니다. 2.5는 합성 데이터와 비정상 데이터 탐지를 활용해 추가 학습했다고 LG가 설명합니다. 활성 규모만으로 응답 속도나 서버 비용을 환산할 수 없습니다.",
+              "source_ids": [
+                "lg",
+                "lgmodels",
+                "lgprev"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "입력과 추론이 공유하는 문맥",
+              "text": "API 모델 ID는 k-exaone_v2.5입니다. 입력 토큰에 추론을 포함한 최대 생성 토큰을 더해 524,288을 넘기면 HTTP 400이 납니다. low·high·max 중 추론 강도를 고를 수 있고 기본값은 max입니다. 플랫폼은 도구 호출과 구조화 출력, 스트리밍을 안내하며 입력과 출력은 텍스트입니다.",
+              "source_ids": [
+                "lgapi",
+                "lgmodels"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "evaluation",
+          "title": "자체 평가의 장점과 한계",
+          "lead": "LG는 공개 평가 데이터를 이용해 2.0과 두 경쟁 모델을 같은 표에 놓았습니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "도구 호출과 검색에서 높아진 점수",
+              "text": "AutomationBench 공개 세트에서 57.7점, BrowseComp에서 27.13점 올랐습니다. BrowseComp 78.00점은 평가에 쓰인 DeepSeek보다 2.20점 높고 GLM보다 1.00점 낮습니다. Claw-Eval 77.29점도 DeepSeek의 75.78점 위, GLM의 77.64점 아래였습니다.",
+              "source_ids": [
+                "lgmodels"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "코딩 점수와 평가 설정",
+              "text": "SWE-Bench Pro의 59.21점은 DeepSeek 비교판보다 0.80점 높고 GLM보다 4.82점 낮습니다. LG 공개 표는 모델별 스냅샷, 반복 횟수, 추론 강도, 도구 실행 환경인 하니스와 신뢰구간을 명시하지 않습니다. 0.30점 차이인 AutomationBench 상위 두 모델 사이에서 통계적으로 안정적인 순위를 판단하기 어렵습니다.",
+              "source_ids": [
+                "lg",
+                "lgmodels"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "access",
+          "title": "무료 제공과 호출 한도",
+          "lead": "무료 제공은 11월 9일 발표에서 확인한 현재 상태입니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "계정별 운영 조건",
+              "text": "API 키를 발급받아 호출하는 경로입니다. 초·분·일 단위 제한은 응답 헤더로 확인합니다. 문서에 나온 429 응답 예시의 숫자는 전 계정의 보장 한도로 해석할 수 없습니다. 무료 종료일과 별도 상용 계약 조건은 확인되지 않았습니다.",
+              "source_ids": [
+                "lg",
+                "lglog",
+                "lglimit"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "유료 모델의 요금 단위",
+              "text": "DeepSeek의 Flash는 시간대별 요금이 적용되고 Z.AI는 GLM-5.3의 캐시 적중 입력을 일반 입력과 다르게 청구합니다. 2.0 공개 가중치는 다운로드 후 GPU와 운영비를 별도로 부담합니다. 2.5 무료 API에 대해 영구적인 토큰당 요금이나 운영비를 산정할 수 없습니다.",
+              "source_ids": [
+                "deepseek",
+                "glmprice",
+                "lgprev",
+                "lglog"
+              ],
+              "kind": "fact"
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "comparison-1",
+          "title": "사양과 제공 경로",
+          "columns": [
+            "모델",
+            "문맥과 입력",
+            "제공 방식",
+            "표준 요금"
+          ],
+          "rows": [
+            {
+              "values": [
+                "K-EXAONE 2.5",
+                "524,288토큰 합산 · 텍스트",
+                "EXAONE API · k-exaone_v2.5",
+                "키 발급 후 현재 무료"
+              ],
+              "source_ids": [
+                "lgapi",
+                "lglog",
+                "lgmodels"
+              ]
+            },
+            {
+              "values": [
+                "K-EXAONE 2.0 750B-A37B",
+                "750B 총량 · 37B 활성 · 10개 언어",
+                "Apache 2.0 가중치 및 데모",
+                "자체 운영비 별도 · 관리형 표준 단가 미확인"
+              ],
+              "source_ids": [
+                "lgprev"
+              ]
+            },
+            {
+              "values": [
+                "DeepSeek-V4.1-Flash-1017",
+                "1M · 최대 384K 출력 · 이미지 입력 지원",
+                "DeepSeek API · deepseek-flash",
+                "USD 0.30 / 0.006 / 1.20 피크, 0.15 / 0.003 / 0.60 비피크"
+              ],
+              "source_ids": [
+                "deepseek"
+              ]
+            },
+            {
+              "values": [
+                "GLM-5.3",
+                "1M · 최대 128K 출력 · 텍스트",
+                "Z.AI API · 추론 항상 활성",
+                "USD 1.40 / 0.26 / 4.40"
+              ],
+              "source_ids": [
+                "glm",
+                "glmprice"
+              ]
+            }
+          ],
+          "note": "유료 행의 순서는 100만토큰당 일반 입력(캐시 미적중), 캐시 적중 입력, 출력입니다. DeepSeek API의 현재 제공판과 LG 평가표의 DeepSeek 행은 스냅샷 일치 여부가 미공개입니다."
+        },
+        {
+          "id": "comparison-2",
+          "title": "LG의 에이전트 자체 평가",
+          "columns": [
+            "평가판",
+            "2.5",
+            "2.0",
+            "DeepSeek-V4.1-Flash",
+            "GLM-5.3"
+          ],
+          "rows": [
+            {
+              "values": [
+                "AutomationBench · Open-set",
+                "74.60",
+                "16.90",
+                "74.90",
+                "71.60"
+              ],
+              "source_ids": [
+                "lgmodels"
+              ]
+            },
+            {
+              "values": [
+                "SWE-Bench Pro",
+                "59.21",
+                "47.10",
+                "58.41",
+                "64.03"
+              ],
+              "source_ids": [
+                "lgmodels"
+              ]
+            },
+            {
+              "values": [
+                "BrowseComp",
+                "78.00",
+                "50.87",
+                "75.80",
+                "79.00"
+              ],
+              "source_ids": [
+                "lgmodels"
+              ]
+            },
+            {
+              "values": [
+                "Claw-Eval",
+                "77.29",
+                "62.11",
+                "75.78",
+                "77.64"
+              ],
+              "source_ids": [
+                "lgmodels"
+              ]
+            }
+          ],
+          "note": "LG가 공개 데이터셋에서 측정한 원문 점수입니다. 각 점수는 같은 행 안에서 읽을 수 있습니다. 평가별 추론 강도·하니스·스냅샷·반복 횟수와 독립 재현은 확인되지 않았습니다."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "모델 선택에 영향을 주는 차이",
+            "text": "한국어 텍스트 처리와 도구 호출을 함께 검토하는 팀에 2.5 무료 API는 직접 비교할 경로를 열었습니다. 도구 사용과 검색에서 큰 전판 대비 개선을 보였으며, 코딩을 우선하면 같은 LG 평가에서 GLM이 앞선 결과도 함께 고려할 수 있습니다. 자체 운영과 이미지 입력이 요구되면 공개 가중치·모달리티 조건이 모델 선택을 바꿉니다.",
+            "source_ids": [
+              "lgmodels",
+              "lgapi",
+              "lgprev",
+              "deepseek"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "2.5 가중치의 공개와 무료 기간, 실제 계정별 호출량은 확인되지 않았습니다. 평가 결과는 제공사 비교이며 실제 작업 성공률이나 서비스 수준 보장이 아닙니다.",
+          "source_ids": [
+            "lgmodels",
+            "lglog",
+            "lglimit"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "seedream-55-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "title": "Seedream 5.5 소개 — 반복 편집과 투명 이미지 생성",
+      "description": "반복 이미지 편집과 문자 렌더링에서 Seedream 5.5가 전판 및 경쟁 모델과 어떻게 다른지 비교합니다.",
+      "checked_on": "2026-11-10",
+      "scope": "2026년 11월 9일 발표와 평가 그래프, 11월 10일 KST의 가격·제공 문서를 확인했습니다. 호출, 한국어 문자 정확도, 앱별 기능 제공과 결제는 직접 확인하지 않았습니다.",
+      "deck": "ByteDance는 11월 9일 Seedream 5.5를 발표하고 일부 서비스에서 순차 제공을 시작했습니다. 같은 이미지에서 100회 연속 편집을 시연했고, 투명도를 담는 알파 채널을 직접 출력합니다. 자체 평가에서 글자 구조와 텍스트로 생성한 이미지의 사실감은 비교 모델보다 앞섰지만, 기존 이미지를 편집한 결과의 사실감에서는 Nano Banana 2.1에 뒤졌습니다.",
+      "highlights": [
+        "100회 편집 시연과 알파 채널",
+        "문자와 사실감의 순위는 다름"
+      ],
+      "source_note": "2026년 11월 10일 KST에 연결된 공식 문서를 확인했습니다. 모델별 제공 경로와 공급사가 직접 측정한 평가를 구분했습니다.",
+      "summary": [
+        {
+          "label": "100회 편집 시연과 알파 채널",
+          "text": "이전 결과를 다음 입력에 넣는 100회 편집을 공급사가 시연했습니다. 바꾸지 않는 영역의 색과 세부를 유지하도록 학습했으며, RGBA 출력은 픽셀별 알파 값으로 투명·반투명 경계를 표현합니다.",
+          "source_ids": [
+            "seed",
+            "seedsite"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "문자와 사실감의 순위는 다름",
+          "text": "ByteDance 쌍대평가에서 문자 구조는 Nano Banana 2.1 대비 이미지 편집 +3.82%, 텍스트에서 생성 +5.23%였습니다. 같은 두 모델의 사실감에서는 편집 −6.18%, 텍스트에서 생성 +21.79%였습니다.",
+          "source_ids": [
+            "seed",
+            "seedchart"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "references": [
+        {
+          "id": "seed",
+          "title": "ByteDance Seed의 Seedream 5.5 발표",
+          "url": "https://seed.bytedance.com/en/blog/more-realistic-images-more-stable-editing-across-100-rounds-introducing-seedream-5-5",
+          "description": "반복 편집, 알파 출력, 평가 방법과 중국·영어 문자 오류율."
+        },
+        {
+          "id": "seedsite",
+          "title": "Seedream 5.5 모델 페이지",
+          "url": "https://seed.bytedance.com/en/seedream5_5",
+          "description": "공식 체험 진입점과 모델별 공개 기능."
+        },
+        {
+          "id": "seedprev",
+          "title": "Seedream 5.0 Pro 공식 발표",
+          "url": "https://seed.bytedance.com/en/blog/beyond-generation-it-understands-design-introducing-seedream-5-0-pro",
+          "description": "전판의 영역 지정, 레이어 분리와 다언어 렌더링."
+        },
+        {
+          "id": "seedprevprice",
+          "title": "Volcano Engine 이미지 상품 요금",
+          "url": "https://docs.volcengine.com/docs/large-model-of-image-generation/package-billing-instructions?lang=en",
+          "description": "5.0 Pro용 특정 이미지 상품의 픽셀 구간과 위안 단위."
+        },
+        {
+          "id": "gptimage25",
+          "title": "OpenAI GPT Image 2.5 Sunburst 모델과 요금",
+          "url": "https://developers.openai.com/api/docs/models/gpt-image-2.5-sunburst",
+          "description": "ByteDance 비교에 사용된 이전 Sunburst 모델과 토큰 단가."
+        },
+        {
+          "id": "gptimage",
+          "title": "OpenAI GPT Image 2.6 Sunburst 모델과 요금",
+          "url": "https://developers.openai.com/api/docs/models/gpt-image-2.6-sunburst",
+          "description": "현재 비교 대상으로 사용할 수 있는 별도 판과 표준 단가."
+        },
+        {
+          "id": "gptguide",
+          "title": "OpenAI 이미지 생성 문서",
+          "url": "https://developers.openai.com/api/docs/guides/image-generation",
+          "description": "2.6 계열의 마크업 편집, SVG와 애니메이션 GIF 지원."
+        },
+        {
+          "id": "nano",
+          "title": "Google Gemini API 공식 요금",
+          "url": "https://ai.google.dev/gemini-api/docs/pricing",
+          "description": "Nano Banana 2.1의 모델 ID, 해상도별 출력 환산액과 검색 조건."
+        },
+        {
+          "id": "seedchart",
+          "title": "ByteDance의 원본 GSB 평가 그래프",
+          "url": "https://lf3-static.bytednsdoc.com/obj/eden-cn/lapzild-tss/ljhwZthlaukjlkulzlp/user-upload/4xfa4mw8m342o.jpg",
+          "description": "세 비교 모델과 편집·생성별 GSB 수치의 그래프 판독."
+        },
+        {
+          "id": "seedcn",
+          "title": "ByteDance Seed 중국어 출시 공지",
+          "url": "https://seed.bytedance.com/zh/blog/more-realistic-images-more-stable-editing-across-100-rounds-introducing-seedream-5-5?view_from=content_recommend",
+          "description": "즉몽·Doubao·Doubao Work·Volcano Engine Ark의 순차 제공 안내."
+        }
+      ],
+      "explanation": [
+        {
+          "id": "model",
+          "title": "편집 안정성과 투명 출력",
+          "lead": "전판의 영역 편집에 더해 연속 수정에서 바꾸지 않은 영역을 보존하는 능력에 초점을 맞췄습니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "이전 결과를 다시 입력하는 편집",
+              "text": "5.0 Pro는 점·올가미·스케치 등 영역을 지정해 수정하고 레이어를 분리할 수 있다고 발표했습니다. 5.5는 바꾸지 않는 영역을 픽셀 수준에서 보존하도록 학습했다고 설명합니다. 100회 수치는 공개 시연의 편집 횟수이며 다양한 이미지에서 동일 품질을 보장하는 호출 제한이나 독립 평가 결과는 확인되지 않았습니다.",
+              "source_ids": [
+                "seed",
+                "seedprev"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "배경 경계에 남는 정보",
+              "text": "RGBA는 RGB 색상에 투명도를 기록하는 알파 채널을 더합니다. 모델이 알파를 직접 출력하면 윤곽의 반투명도를 후속 합성에 전달할 수 있습니다. 공식 자료는 투명 소재 출력과 배경 보존을 서로 다른 기능으로 소개합니다. 개별 앱의 알파 저장 형식과 API의 출력 매개변수는 확인되지 않았습니다.",
+              "source_ids": [
+                "seed",
+                "seedsite"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "evaluation",
+          "title": "평가에서 앞선 작업과 뒤진 작업",
+          "lead": "ByteDance는 MagicArena의 활용도 평가와 전문가의 두 이미지 선호 평가를 따로 공개했습니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "장르별 활용도와 작은 글자",
+              "text": "전문 평가자는 전자상거래·마케팅·영상·게임·사무·패션의 여섯 용도에서 이미지 품질과 사용 가능성을 평가했습니다. 공급사 발표에서는 모두 5.0 Pro보다 높았고 영상·사무의 사용 가능 비율은 두 배를 넘었습니다. 중국·영어의 작은 글자를 포함한 별도 시험에서 심각한 문자 오류율 0.4%, 경미한 오류율 1.7%를 보고했습니다. 한국어별 점수와 전체 표본 수는 확인되지 않았습니다.",
+              "source_ids": [
+                "seed"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "사실감에서 나타난 역전",
+              "text": "전문가가 두 결과를 더 좋음·같음·더 나쁨으로 평가한 GSB에서 양수는 5.5에 유리합니다. 5.0 Pro 대비 기존 이미지 편집 사실감은 +55.62%지만 Nano Banana 2.1 대비는 −6.18%입니다. GPT Image 비교판은 2.5 Sunburst입니다. 현재 2.6 Sunburst의 성능 순위를 이 표에서 추론할 수 없습니다. 이미지 크기·설정·추론·하니스·평가자 수와 오차 범위는 공개 본문에 명시되지 않았습니다.",
+              "source_ids": [
+                "seed",
+                "gptimage25",
+                "gptimage",
+                "seedchart"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "availability",
+          "title": "순차 제공과 요금 범위",
+          "lead": "공식 발표와 모델 페이지는 체험 경로를 안내하며 동일 계정의 이용 조건은 지역·서비스별로 다를 수 있습니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "공식 발표에서 확인한 경로",
+              "text": "중국어 발표는 즉몽, Doubao, Doubao Work, Volcano Engine Ark의 순차 출시를 안내합니다. 영어 모델 페이지에는 Dola와 BytePlus Playground 진입점이 있습니다. 5.5의 표준 청구 단가, 호출 제한, 지역별 사용 가능 범위 및 일반 API의 안정적인 모델 ID는 확인하지 못했습니다. 5.5 Pro는 공급사 발표에서 예고한 별도 판입니다.",
+              "source_ids": [
+                "seed",
+                "seedsite",
+                "seedcn"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "이미지당과 토큰당 요금",
+              "text": "Volcano Engine의 5.0 Pro 가격은 특정 이미지 상품의 위안/장 환산액이며, Google은 이미지 토큰 가격을 해상도별 출력 장당 가격으로 환산합니다. OpenAI는 이미지와 텍스트를 서로 다른 토큰 요율로 청구합니다. 5.5에서 비교 가능한 단가와 동일한 호출 조건이 공개되기 전에는 어느 쪽이 저렴한지 판단하기 어렵습니다.",
+              "source_ids": [
+                "seedprevprice",
+                "nano",
+                "gptimage",
+                "seed"
+              ],
+              "kind": "fact"
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "comparison-1",
+          "title": "편집 기능과 공식 요금",
+          "columns": [
+            "모델",
+            "편집 또는 생성 범위",
+            "공식 경로",
+            "확인된 요금"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Seedream 5.5",
+                "100회 연속 편집 시연 · 네이티브 RGBA",
+                "중국 서비스 순차 배포 · Dola 및 BytePlus 진입점",
+                "표준 API 단가 미확인"
+              ],
+              "source_ids": [
+                "seed",
+                "seedsite",
+                "seedcn"
+              ]
+            },
+            {
+              "values": [
+                "Seedream 5.0 Pro",
+                "영역 지정 · 다중 이미지 편집 · 레이어 분리",
+                "Volcano Engine 이미지 상품",
+                "CNY 0.60/장(≤236만 픽셀) 또는 1.20/장(초과), 첫 장을 넘는 업로드 CNY 0.04/장"
+              ],
+              "source_ids": [
+                "seedprev",
+                "seedprevprice"
+              ]
+            },
+            {
+              "values": [
+                "GPT Image 2.6 Sunburst",
+                "마크업 편집 · SVG · 애니메이션 GIF",
+                "OpenAI Images API",
+                "USD 5.00 텍스트 입력, USD 8.00 이미지 입력, USD 30.00 이미지 출력 / 각각 100만 해당 토큰"
+              ],
+              "source_ids": [
+                "gptimage",
+                "gptguide"
+              ]
+            },
+            {
+              "values": [
+                "Nano Banana 2.1",
+                "대화형 편집 · 검색 근거 · 1K·2K·4K",
+                "Gemini API · gemini-nano-banana-2.1",
+                "표준 USD 0.0336/0.0504/0.113 per 1K/2K/4K 이미지 출력 환산"
+              ],
+              "source_ids": [
+                "nano"
+              ]
+            }
+          ],
+          "note": "2026년 11월 10일 KST 확인. 각 가격의 서비스, 통화, 단위와 적용 조건이 다릅니다. Google의 입력·생각 토큰 및 검색 비용은 별도이며, 2.6 Sunburst는 아래 자체 평가 비교판이 아닙니다."
+        },
+        {
+          "id": "comparison-2",
+          "title": "ByteDance의 문자 구조와 사실감 쌍대평가",
+          "columns": [
+            "5.5의 비교 상대",
+            "문자 구조 · 편집 / 생성",
+            "사실감 · 편집 / 생성"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Seedream 5.0 Pro",
+                "+18.54% / +5.00%",
+                "+55.62% / +39.44%"
+              ],
+              "source_ids": [
+                "seed",
+                "seedchart"
+              ]
+            },
+            {
+              "values": [
+                "GPT Image 2.5 Sunburst",
+                "+20.72% / +16.01%",
+                "+36.05% / +37.29%"
+              ],
+              "source_ids": [
+                "seed",
+                "seedchart"
+              ]
+            },
+            {
+              "values": [
+                "Nano Banana 2.1",
+                "+3.82% / +5.23%",
+                "−6.18% / +21.79%"
+              ],
+              "source_ids": [
+                "seed",
+                "seedchart"
+              ]
+            }
+          ],
+          "note": "11월 9일 ByteDance 발표 그래프의 GSB(%)입니다. 편집은 I2I, 생성은 T2I이고 0은 동률입니다. 이 지표는 문자 오류율이나 절대 성공률과 단위가 다릅니다."
+        },
+        {
+          "id": "comparison-3",
+          "title": "작은 문자의 오류율",
+          "columns": [
+            "평가 항목",
+            "5.5 자체 평가",
+            "조건"
+          ],
+          "rows": [
+            {
+              "values": [
+                "심각한 문자 오류",
+                "0.4%",
+                "중국어와 영어, 밀집된 작은 글씨 포함"
+              ],
+              "source_ids": [
+                "seed"
+              ]
+            },
+            {
+              "values": [
+                "경미한 문자 오류",
+                "1.7%",
+                "한국어별 결과, 표본 규모 및 재현 조건 미공개"
+              ],
+              "source_ids": [
+                "seed"
+              ]
+            }
+          ],
+          "note": "ByteDance Seed가 두 범주로 나눠 보고한 오류율입니다. 쌍대 선호와 별개이며 평가 전체의 실패 비율로 합산하지 않습니다."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "모델 선택에 영향을 주는 차이",
+            "text": "편집을 거듭할 때 원래 구도와 색을 보존하거나 알파 채널이 있는 소재를 합성하는 작업에서 비교할 가치가 있습니다. 사실감이 최우선인 기존 이미지 편집에서는 Nano Banana 2.1에 뒤진 공급사 평가도 적용 판단에 포함할 수 있습니다. 도입 비용과 한국어 문자 성능은 현재 공개 근거로 확정하기 어렵습니다.",
+            "source_ids": [
+              "seed",
+              "seedsite",
+              "nano",
+              "seedchart"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "공급사 시연·전문가 평가를 확인했습니다. 실제 API 응답, 개별 지역 계정, 가격과 결제, 한국어 및 외부 작업 데이터의 결과는 확인하지 않았습니다.",
+          "source_ids": [
+            "seed",
+            "seedsite",
+            "seedprevprice"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shizuku-duplex-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "title": "Shizuku-Duplex 소개 — 일본어 실시간 음성 대화",
+      "description": "동시에 듣고 말하는 일본어 음성 모델을 대화 타이밍, 답변 품질과 제공 상태로 비교합니다.",
+      "checked_on": "2026-11-10",
+      "scope": "개발사의 2026년 11월 8일 연구 발표, 녹화 시연 안내와 평가 그래프를 11월 10일 KST에 확인했습니다. 모델 실행, API 계정과 요금 청구, 독립 평가를 확인하지 않았습니다.",
+      "deck": "Shizuku AI는 11월 8일 일본어 음성 연구 모델 Shizuku-Duplex와 녹화 시연을 공개했습니다. 자체 평가에서 상대가 끼어든 뒤 2초 안에 발화를 멈춘 비율은 89%로 GPT-Live-1의 82%보다 높았지만, 여러 차례 묻고 답하는 평가의 정확도는 79% 대 95%였습니다. 일반 API·가중치·요금의 공개 근거는 확인되지 않았습니다.",
+      "highlights": [
+        "일본어 동시 입출력",
+        "대화 타이밍과 답변 품질의 차이"
+      ],
+      "source_note": "2026년 11월 10일 KST에 연결된 공식 문서를 확인했습니다. 모델별 제공 경로와 공급사가 직접 측정한 평가를 구분했습니다.",
+      "summary": [
+        {
+          "label": "일본어 동시 입출력",
+          "text": "모델은 사용자 음성을 들으면서 응답을 내보냅니다. 80ms 단위로 대화 흐름을 판단하는 앞단이 말을 이어가는 동안 백그라운드 모델이 웹 검색을 처리할 수 있습니다.",
+          "source_ids": [
+            "shizuku"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "대화 타이밍과 답변 품질의 차이",
+          "text": "일본어 자체 시험에서 끼어들었을 때의 정지율은 GPT-Live-1보다 높았고, 여러 차례 이어지는 문답 정확도와 단순 잡담의 관련성은 낮았습니다. 연구 원문은 녹화 시연을 제공하며 API나 가중치 이용 조건은 확인되지 않았습니다.",
+          "source_ids": [
+            "shizuku",
+            "gptlive"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "references": [
+        {
+          "id": "shizuku",
+          "title": "Shizuku AI 연구 발표와 일본어 자체 평가",
+          "url": "https://shizuku.ai/blog/1/",
+          "description": "80ms 처리, 두 모델의 역할, 일본어 벤치마크, 녹화 시연 및 개발 범위."
+        },
+        {
+          "id": "gptlive",
+          "title": "OpenAI GPT-Live 1 모델·요금 문서",
+          "url": "https://developers.openai.com/api/docs/models/gpt-live-1",
+          "description": "공식 음성 세션 API, 도구 실행 분리, 분당 가격과 초 단위 청구."
+        },
+        {
+          "id": "jmoshi",
+          "title": "J-Moshi-ext 공개 모델 카드",
+          "url": "https://huggingface.co/nu-dialogue/j-moshi-ext",
+          "description": "Moshi 기반 일본어 가중치, 자체 호스팅과 CC BY-NC 4.0 범위."
+        }
+      ],
+      "explanation": [
+        {
+          "id": "architecture",
+          "title": "듣고 말하는 모델과 비동기 검색",
+          "lead": "기존 일본어 Moshi 계열이 선행 연구이며, Shizuku AI는 자체 구조와 학습을 새로 설계했다고 설명합니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "80ms의 내부 처리 간격",
+              "text": "음성 인코더가 80ms마다 입력을 넘기면 상호작용 모델이 음성·텍스트·행동을 결정합니다. 사용자가 아직 말하는 중에도 모델은 맞장구나 침묵을 선택할 수 있습니다. 80ms는 내부 주기이며 사용자가 느끼는 전체 대기 시간은 발화 시작 판단과 네트워크 지연을 포함할 수 있습니다.",
+              "source_ids": [
+                "shizuku"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "응답을 이어가며 도구 결과 대기",
+              "text": "지식이나 검색이 필요하면 별도 백그라운드 모델이 처리하고 결과를 음성 대화 흐름에 돌려줍니다. 개발사는 약 5분마다 요약한 대화 문맥을 바꿔 끼우는 구조를 설명합니다. 전체 문맥 상한, 백그라운드 모델의 공개 ID와 실제 단말의 동시 처리량은 확인되지 않았습니다.",
+              "source_ids": [
+                "shizuku"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "evaluation",
+          "title": "일본어 대화에서 앞선 지표와 낮은 지표",
+          "lead": "Shizuku AI는 Full-Duplex-Bench와 M3-DuplexBench의 상황과 지표를 참고해 일본어 평가를 구성했습니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "끼어들기와 응답 지연",
+              "text": "Shizuku-Duplex는 GPT-Live-1보다 끼어들기 2초 이내 정지율이 7%포인트 높았고, 상대의 짧은 맞장구 동안 계속 말한 비율은 95% 대 88%였습니다. 말을 마친 뒤 첫 응답의 중앙값은 0.57초로 GPT-Live-1의 0.53초보다 0.04초 길었습니다. 두 지연은 서버 녹음 기준이며 통신 왕복을 제외합니다.",
+              "source_ids": [
+                "shizuku"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "질의 정확도와 자연스러움의 범위",
+              "text": "여러 차례 문답에서는 79% 대 95%, 웹 조회 답변 정확도는 43% 대 50%로 GPT-Live-1이 앞섰습니다. 음성은 Haas-ja-v1.0으로 전사했고 관련성과 잡담의 자연스러움은 Claude Opus 5.5가 채점했습니다. 잡담 자연스러움도 세부 표에서는 6.2/10 대 7.6/10으로 GPT-Live-1이 높았습니다. 대화 자연스러움에 대한 개발사의 총평과 개별 채점 지표를 구분해야 합니다.",
+              "source_ids": [
+                "shizuku"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "access",
+          "title": "녹화 시연과 사용 가능한 비교 모델",
+          "lead": "Shizuku AI의 녹화는 특정 목소리와 페르소나가 설정된 통화입니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "공개 시연의 범위",
+              "text": "모델 발표와 녹화 시연은 확인했습니다. 일반 API, 직접 호출할 수 있는 공개 서비스, 가중치, 과금과 지역별 사용 조건은 공식 자료에서 확인되지 않았습니다. 현재 연구의 초점은 일본어 음성이고 시각 입력과 행동은 개발 방향으로 언급됐습니다.",
+              "source_ids": [
+                "shizuku"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "요금 비교의 단위",
+              "text": "GPT-Live-1은 음성 세션에 USD 0.05/분을 초 단위로 청구하며 백엔드 모델과 도구 비용이 별도입니다. J-Moshi-ext의 공개 가중치는 비상업 연구용 CC BY-NC 4.0이며 자체 운영 비용이 듭니다. Shizuku-Duplex의 미공개 요금을 무료나 0으로 대체할 수 없습니다.",
+              "source_ids": [
+                "gptlive",
+                "jmoshi",
+                "shizuku"
+              ],
+              "kind": "fact"
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "comparison-1",
+          "title": "양방향 음성 사양과 접근 조건",
+          "columns": [
+            "모델",
+            "사양",
+            "공개 경로",
+            "표준 요금"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Shizuku-Duplex",
+                "일본어 동시 음성 입출력 · 80ms 처리 주기",
+                "공식 연구 글과 녹화 시연",
+                "일반 API·가중치·요금 미확인"
+              ],
+              "source_ids": [
+                "shizuku"
+              ]
+            },
+            {
+              "values": [
+                "GPT-Live 1",
+                "동시 음성 입출력 · 백엔드 도구 위임",
+                "OpenAI API · gpt-live-1",
+                "USD 0.05/분, 초 단위 · 백엔드 및 도구 별도"
+              ],
+              "source_ids": [
+                "gptlive"
+              ]
+            },
+            {
+              "values": [
+                "J-Moshi-ext",
+                "Moshi 7B 기반 일본어 실시간 양방향 음성",
+                "Hugging Face · CC BY-NC 4.0",
+                "자체 운영비 별도 · 표준 관리형 API 요금 미확인"
+              ],
+              "source_ids": [
+                "jmoshi"
+              ]
+            }
+          ],
+          "note": "J-Moshi-ext는 선행 일본어 모델이며 Shizuku-Duplex의 이전 버전으로 확인된 모델은 없습니다. 2026년 11월 10일 KST 확인."
+        },
+        {
+          "id": "comparison-2",
+          "title": "Shizuku AI의 일본어 평가",
+          "columns": [
+            "평가 항목",
+            "Shizuku-Duplex",
+            "GPT-Live-1",
+            "J-Moshi-ext"
+          ],
+          "rows": [
+            {
+              "values": [
+                "끼어든 뒤 2초 이내 정지율",
+                "89%",
+                "82%",
+                "73%"
+              ],
+              "source_ids": [
+                "shizuku"
+              ]
+            },
+            {
+              "values": [
+                "사용자 맞장구 중 발화 유지",
+                "95%",
+                "88%",
+                "80%"
+              ],
+              "source_ids": [
+                "shizuku"
+              ]
+            },
+            {
+              "values": [
+                "응답 시작 중앙값 · 서버 녹음",
+                "0.57초",
+                "0.53초",
+                "비교 본문 미기재"
+              ],
+              "source_ids": [
+                "shizuku"
+              ]
+            },
+            {
+              "values": [
+                "잡담 자연스러움 · 10점 만점",
+                "6.2",
+                "7.6",
+                "3.4"
+              ],
+              "source_ids": [
+                "shizuku"
+              ]
+            },
+            {
+              "values": [
+                "여러 차례 문답 정확도",
+                "79%",
+                "95%",
+                "1%"
+              ],
+              "source_ids": [
+                "shizuku"
+              ]
+            },
+            {
+              "values": [
+                "웹 조회 답변 정확도",
+                "43%",
+                "50%",
+                "2%"
+              ],
+              "source_ids": [
+                "shizuku"
+              ]
+            }
+          ],
+          "note": "11월 8일 공개된 일본어 자체 비교입니다. 지연은 서버 측 기준이며 통신 왕복을 포함하지 않습니다. 잡담 점수는 Claude Opus 5.5 채점입니다. 모델별 세부 추론 설정과 독립 재현은 확인되지 않았습니다."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "모델 선택에 영향을 주는 차이",
+            "text": "일본어 실시간 대화에서 끼어들기와 맞장구를 얼마나 잘 구분하는지 비교할 수 있는 공개 연구입니다. 정답이 필요한 질의에서는 GPT-Live-1의 우세가 뚜렷한 평가도 있으며, 실제 서비스 대기 시간과 Shizuku-Duplex 이용 조건을 따로 확인해야 합니다.",
+            "source_ids": [
+              "shizuku",
+              "gptlive",
+              "jmoshi"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "공급사 평가와 녹화 범위의 검토입니다. 표의 성능을 다른 언어, 네트워크, 백엔드 검색 및 실제 운영 환경의 보장으로 확장할 수 없습니다.",
+          "source_ids": [
+            "shizuku"
+          ]
+        }
+      ]
+    }
+  ]
+}

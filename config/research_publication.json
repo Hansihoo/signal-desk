@@ -482,6 +482,11 @@
       "id": "business-review-2026-11-09",
       "input": "business_review.2026-11-09.json",
       "quality": "business_review.2026-11-09.quality.json"
+    },
+    {
+      "id": "ai-model-guides-2026-11-10",
+      "input": "ai_model_guides.2026-11-10.json",
+      "quality": "ai_model_guides.2026-11-10.quality.json"
     }
   ]
 }
