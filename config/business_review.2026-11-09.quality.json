@@ -1,0 +1,1057 @@
+{
+  "packages": [
+    {
+      "version": "question-research-1",
+      "status": "ready",
+      "plan": {
+        "version": "question-research-1",
+        "request": {
+          "id": "office-business-directions",
+          "topic_id": "business",
+          "topic_path": [
+            "사업",
+            "경쟁사·시장"
+          ],
+          "reader": "문서 제품의 공공·기업 도입 방향을 비교하는 사업기획 담당자",
+          "reader_question": "리포트·전자서식에 AI를 넣는 기능과 조직이 에이전트의 접근·행동을 통제하는 기능은 구매 판단을 어떻게 바꾸는가?",
+          "outcome": "현재 이용할 수 있는 기능과 시연·베타·예정 기능을 구분하고 서식 재사용, 실행 권한, 민감 파일의 데이터 경계를 나눠 비교한다.",
+          "research_type": "custom",
+          "custom_profile": {
+            "method": "공식 출시 안내·제품 사양·관리자 변경 원문에서 이전 제공 범위와 현재 조건을 대조한다. 시장점유율이나 실제 성과를 추정하지 않고 서식 처리·에이전트 통제·파일 암호화의 구매 조건을 분리한다.",
+            "requires": [
+              "change",
+              "condition",
+              "limitation"
+            ]
+          },
+          "sources": [
+            {
+              "id": "clip-news",
+              "title": "한컴이노스트림: 공공솔루션마켓과 CLIP v6.0 정식 출시",
+              "url": "https://www.hancomins.com/newsletter?mode=view&no=1251481",
+              "kind": "official_document"
+            },
+            {
+              "id": "clip-report",
+              "title": "CLIP report for AX 제품 설명",
+              "url": "https://www.hancomins.com/product?no=10",
+              "kind": "official_document"
+            },
+            {
+              "id": "clip-form",
+              "title": "CLIP e-Form for AX 제품 설명",
+              "url": "https://www.hancomins.com/product?no=11",
+              "kind": "official_document"
+            },
+            {
+              "id": "box-controls",
+              "title": "Box: 외부 에이전트 보안 및 콘텐츠 통제",
+              "url": "https://blog.box.com/box-announces-new-controls-secure-ai-threats-and-automate-content-governance",
+              "kind": "official_document"
+            },
+            {
+              "id": "box-architect",
+              "title": "Box Architect 공개",
+              "url": "https://blog.box.com/box-unveils-architect-reimagine-content-workflows-frontier-ai",
+              "kind": "official_document"
+            },
+            {
+              "id": "google-cse",
+              "title": "Google Workspace: 규칙 기반 클라이언트 측 암호화 베타",
+              "url": "https://workspaceupdates.googleblog.com/2026/11/automatically-apply-client-side-encryption-to-confidential-Editors-and-Drive-files-now-available-in-Beta.html",
+              "kind": "official_document"
+            },
+            {
+              "id": "box-mcp-help",
+              "title": "Box Support: MCP Server 쓰기 도구의 관리자 제어",
+              "url": "https://support.box.com/hc/en-us/articles/56701327071763-New-MCP-Guardrails-for-the-Box-MCP-Server",
+              "kind": "official_document"
+            }
+          ],
+          "authoring": {
+            "template": "research-report"
+          }
+        },
+        "questions": [
+          {
+            "id": "core",
+            "question": "리포트·전자서식에 AI를 넣는 기능과 조직이 에이전트의 접근·행동을 통제하는 기능은 구매 판단을 어떻게 바꾸는가?",
+            "requires": [
+              "change",
+              "condition",
+              "limitation"
+            ]
+          }
+        ],
+        "method": "공식 출시 안내·제품 사양·관리자 변경 원문에서 이전 제공 범위와 현재 조건을 대조한다. 시장점유율이나 실제 성과를 추정하지 않고 서식 처리·에이전트 통제·파일 암호화의 구매 조건을 분리한다."
+      },
+      "sources": [
+        {
+          "id": "clip-news",
+          "title": "한컴이노스트림: 공공솔루션마켓과 CLIP v6.0 정식 출시",
+          "url": "https://www.hancomins.com/newsletter?mode=view&no=1251481",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "37defaa6026b04beb15fc1c32a411d4b112865ef84f79800bdf8d2a52f06ea4e",
+          "text": "CLIP e-Form v6.0 for AX 정식 출시! AX 시대에 맞춰 리포팅과 전자서식 솔루션이 한 단계 더 진화했습니다. 지능형 문서 관리부터 개발",
+          "text_hash": "755ceec4cf45f16d0696170659bc29bf1f0e0d7d8be9232c4837e2b662b2ea58",
+          "last_successful_collection": "2026-11-09T00:02:44.222754+00:00",
+          "published_on": "2026-10-27",
+          "reviewed_at": "2026-11-09",
+          "raw_path": "data/raw/business/2026-11-09/clip-news.html",
+          "acquisition_method": "direct_http",
+          "acquisition_url": "https://www.hancomins.com/newsletter?mode=view&no=1251481",
+          "review_scope": "두 CLIP 제품의 정식 출시 안내와 11월 19일 공공 전시 계획을 분리한다. 오케스트레이션 그리드의 별도 제공 상태는 확정하지 않는다."
+        },
+        {
+          "id": "clip-report",
+          "title": "CLIP report for AX 제품 설명",
+          "url": "https://www.hancomins.com/product?no=10",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "96e9b4ddaac704b5e4571ac9c27ffa01fdff7b3c596476b7567c2bb799d60c12",
+          "text": "편의성 서식 관리에 최적화된 전용 저장소와 Admin Page로 관리자의 업무 효율 향상 ㅤ 솔루션 구성 제품특징 CLIP report with AI 탁월한",
+          "text_hash": "4c0165831e26ad59893f0a728a49fb87bd695ad59aeb3b3fd56bd612fb9f3355",
+          "last_successful_collection": "2026-11-09T00:02:44.235508+00:00",
+          "published_on": null,
+          "reviewed_at": "2026-11-09",
+          "raw_path": "data/raw/business/2026-11-09/clip-report.html",
+          "acquisition_method": "direct_http",
+          "acquisition_url": "https://www.hancomins.com/product?no=10",
+          "review_scope": "보고서 뷰어 요약과 출처, 통합 디자이너, 서식 저장소와 LLM 등록 설명을 확인한다."
+        },
+        {
+          "id": "clip-form",
+          "title": "CLIP e-Form for AX 제품 설명",
+          "url": "https://www.hancomins.com/product?no=11",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "11138b25d653b4083828ba659a8369a36dc0673975795b5e91afcd778b3bb31c",
+          "text": "통해 정제된 전자서식 결과를 AI와 연동하여 서식 탐색, 문서 생성 및 분석, 산출물 생성까지 이어지는 지능형 전자서식 업무 환경을 완성합니다. AI",
+          "text_hash": "23f60600052bd4c1352cc3c876e3465f7ded926d5e52c9862d90cdc3a41d3395",
+          "last_successful_collection": "2026-11-09T00:02:44.217893+00:00",
+          "published_on": null,
+          "reviewed_at": "2026-11-09",
+          "raw_path": "data/raw/business/2026-11-09/clip-form.html",
+          "acquisition_method": "direct_http",
+          "acquisition_url": "https://www.hancomins.com/product?no=11",
+          "review_scope": "전자서식 뷰어의 요약·질의와 MCP를 통한 탐색·생성·분석 연결을 확인한다."
+        },
+        {
+          "id": "box-controls",
+          "title": "Box: 외부 에이전트 보안 및 콘텐츠 통제",
+          "url": "https://blog.box.com/box-announces-new-controls-secure-ai-threats-and-automate-content-governance",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "b01be4e548c27ff1e690c3c489b4230149642729ff974e123d83b988af2171eb",
+          "text": "Guardrails, and threshold alerts are generally available. Agent session governance and audit trails are planned for Q4.",
+          "text_hash": "c9f24e71a00a0a0ceb943a1028a62db449c92c17864f057167d361c138a935e4",
+          "last_successful_collection": "2026-11-09T00:02:44.852999+00:00",
+          "published_on": "2026-11-05",
+          "reviewed_at": "2026-11-09",
+          "raw_path": "data/raw/business/2026-11-09/box-controls.html",
+          "acquisition_method": "direct_http",
+          "acquisition_url": "https://blog.box.com/box-announces-new-controls-secure-ai-threats-and-automate-content-governance",
+          "review_scope": "분류 기반 접근·MCP 작업 제한·임계치 알림의 일반 제공과 세션 감사의 예정 상태를 대조한다."
+        },
+        {
+          "id": "box-architect",
+          "title": "Box Architect 공개",
+          "url": "https://blog.box.com/box-unveils-architect-reimagine-content-workflows-frontier-ai",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "e1ebe8fbfb9396082f3a8f836bf7ad7be422c2bdb955282b7aead1ba791e5c0b",
+          "text": "outputs and routing, and add human reviews and approvals at important decision points. From an onboarding goal to a working",
+          "text_hash": "3f0635a6c12168156e79ad69a5229656b14d84eea8dc8bab767bbee83d71c7de",
+          "last_successful_collection": "2026-11-09T00:02:44.738152+00:00",
+          "published_on": "2026-11-05",
+          "reviewed_at": "2026-11-09",
+          "raw_path": "data/raw/business/2026-11-09/box-architect.html",
+          "acquisition_method": "direct_http",
+          "acquisition_url": "https://blog.box.com/box-unveils-architect-reimagine-content-workflows-frontier-ai",
+          "review_scope": "업무 흐름 설계·시험·사람 승인 방향의 발표이며 상용 계정 제공을 보장하지 않는다."
+        },
+        {
+          "id": "google-cse",
+          "title": "Google Workspace: 규칙 기반 클라이언트 측 암호화 베타",
+          "url": "https://workspaceupdates.googleblog.com/2026/11/automatically-apply-client-side-encryption-to-confidential-Editors-and-Drive-files-now-available-in-Beta.html",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "1110b82f34c1d0bb8f3b496190eec56a574c9e419fdca9930c026028ff7bfa75",
+          "text": "Configuration: This feature is OFF by default and can be configured in the Admin console. Once allowlisted,",
+          "text_hash": "eb918f7d86c2f71133948e7cc060765c929fb71edaba2867287e071b48d67e26",
+          "last_successful_collection": "2026-11-09T00:02:45.037660+00:00",
+          "published_on": "2026-11-05",
+          "reviewed_at": "2026-11-09",
+          "raw_path": "data/raw/business/2026-11-09/google-cse.html",
+          "acquisition_method": "direct_http",
+          "acquisition_url": "https://workspaceupdates.googleblog.com/2026/11/automatically-apply-client-side-encryption-to-confidential-Editors-and-Drive-files-now-available-in-Beta.html",
+          "review_scope": "기존 주소를 유지하는 파일 암호화, Enterprise Plus 추가 구독·베타 등록과 기본 꺼짐을 확인한다."
+        },
+        {
+          "id": "box-mcp-help",
+          "title": "Box Support: MCP Server 쓰기 도구의 관리자 제어",
+          "url": "https://support.box.com/hc/en-us/articles/56701327071763-New-MCP-Guardrails-for-the-Box-MCP-Server",
+          "kind": "official_document",
+          "status": "collected",
+          "content_hash": "14900f037c0f89f48ce817cad76d65949ec86ecac177b8e464039e0edbdde3d0",
+          "text": "Read operations stay out of scope and are governed by Shield Access Policies.",
+          "text_hash": "58f07dd05704cb91ee8261603a386499ef9425fc2f3c18b0a0595713fbbec8ad",
+          "last_successful_collection": "2026-11-09T00:04:40.050826+00:00",
+          "published_on": null,
+          "reviewed_at": "2026-11-09",
+          "raw_path": "data/raw/business/2026-11-09/box-mcp-help.html",
+          "acquisition_method": "direct_http",
+          "acquisition_url": "https://support.box.com/hc/en-us/articles/56701327071763-New-MCP-Guardrails-for-the-Box-MCP-Server",
+          "review_scope": "일부 쓰기 도구와 읽기 권한의 적용 경로, Enterprise Advanced 조건을 확인했다."
+        }
+      ],
+      "analysis": {
+        "evidence": [
+          {
+            "id": "e-clip-news",
+            "source_id": "clip-news",
+            "quote": "CLIP e-Form v6.0 for AX 정식 출시! AX 시대에 맞춰 리포팅과 전자서식 솔루션이 한 단계 더 진화했습니다. 지능형 문서 관리부터 개발",
+            "source_hash": "37defaa6026b04beb15fc1c32a411d4b112865ef84f79800bdf8d2a52f06ea4e",
+            "meaning": "두 CLIP 제품의 정식 출시 안내와 11월 19일 공공 전시 계획을 분리한다. 오케스트레이션 그리드의 별도 제공 상태는 확정하지 않는다.",
+            "limits": "해당 공식 자료의 설명과 표시 범위; 독립 제품 시험·계약·공공 사용·성과 근거가 아니다.",
+            "supports": [
+              "change",
+              "condition",
+              "limitation"
+            ]
+          },
+          {
+            "id": "e-clip-report",
+            "source_id": "clip-report",
+            "quote": "편의성 서식 관리에 최적화된 전용 저장소와 Admin Page로 관리자의 업무 효율 향상 ㅤ 솔루션 구성 제품특징 CLIP report with AI 탁월한",
+            "source_hash": "96e9b4ddaac704b5e4571ac9c27ffa01fdff7b3c596476b7567c2bb799d60c12",
+            "meaning": "보고서 뷰어 요약과 출처, 통합 디자이너, 서식 저장소와 LLM 등록 설명을 확인한다.",
+            "limits": "해당 공식 자료의 설명과 표시 범위; 독립 제품 시험·계약·공공 사용·성과 근거가 아니다.",
+            "supports": [
+              "change",
+              "condition",
+              "limitation"
+            ]
+          },
+          {
+            "id": "e-clip-form",
+            "source_id": "clip-form",
+            "quote": "통해 정제된 전자서식 결과를 AI와 연동하여 서식 탐색, 문서 생성 및 분석, 산출물 생성까지 이어지는 지능형 전자서식 업무 환경을 완성합니다. AI",
+            "source_hash": "11138b25d653b4083828ba659a8369a36dc0673975795b5e91afcd778b3bb31c",
+            "meaning": "전자서식 뷰어의 요약·질의와 MCP를 통한 탐색·생성·분석 연결을 확인한다.",
+            "limits": "해당 공식 자료의 설명과 표시 범위; 독립 제품 시험·계약·공공 사용·성과 근거가 아니다.",
+            "supports": [
+              "change",
+              "condition",
+              "limitation"
+            ]
+          },
+          {
+            "id": "e-box-controls",
+            "source_id": "box-controls",
+            "quote": "Guardrails, and threshold alerts are generally available. Agent session governance and audit trails are planned for Q4.",
+            "source_hash": "b01be4e548c27ff1e690c3c489b4230149642729ff974e123d83b988af2171eb",
+            "meaning": "분류 기반 접근·MCP 작업 제한·임계치 알림의 일반 제공과 세션 감사의 예정 상태를 대조한다.",
+            "limits": "해당 공식 자료의 설명과 표시 범위; 독립 제품 시험·계약·공공 사용·성과 근거가 아니다.",
+            "supports": [
+              "change",
+              "condition",
+              "limitation"
+            ]
+          },
+          {
+            "id": "e-box-architect",
+            "source_id": "box-architect",
+            "quote": "outputs and routing, and add human reviews and approvals at important decision points. From an onboarding goal to a working",
+            "source_hash": "e1ebe8fbfb9396082f3a8f836bf7ad7be422c2bdb955282b7aead1ba791e5c0b",
+            "meaning": "업무 흐름 설계·시험·사람 승인 방향의 발표이며 상용 계정 제공을 보장하지 않는다.",
+            "limits": "해당 공식 자료의 설명과 표시 범위; 독립 제품 시험·계약·공공 사용·성과 근거가 아니다.",
+            "supports": [
+              "change",
+              "condition",
+              "limitation"
+            ]
+          },
+          {
+            "id": "e-google-cse",
+            "source_id": "google-cse",
+            "quote": "Configuration: This feature is OFF by default and can be configured in the Admin console. Once allowlisted,",
+            "source_hash": "1110b82f34c1d0bb8f3b496190eec56a574c9e419fdca9930c026028ff7bfa75",
+            "meaning": "기존 주소를 유지하는 파일 암호화, Enterprise Plus 추가 구독·베타 등록과 기본 꺼짐을 확인한다.",
+            "limits": "해당 공식 자료의 설명과 표시 범위; 독립 제품 시험·계약·공공 사용·성과 근거가 아니다.",
+            "supports": [
+              "change",
+              "condition",
+              "limitation"
+            ]
+          },
+          {
+            "id": "e-box-mcp-help",
+            "source_id": "box-mcp-help",
+            "quote": "Read operations stay out of scope and are governed by Shield Access Policies.",
+            "source_hash": "14900f037c0f89f48ce817cad76d65949ec86ecac177b8e464039e0edbdde3d0",
+            "meaning": "일부 쓰기 도구와 읽기 권한의 적용 경로, Enterprise Advanced 조건을 확인했다.",
+            "limits": "해당 공식 자료의 설명과 표시 범위; 독립 제품 시험·계약·공공 사용·성과 근거가 아니다.",
+            "supports": [
+              "change",
+              "condition",
+              "limitation"
+            ]
+          }
+        ],
+        "answers": [
+          {
+            "question_id": "core",
+            "answer": "한컴이노스트림은 리포트와 전자서식의 디자이너를 통합하고 뷰어에 AI를 넣었다. Box와 Google의 변경을 함께 보면, 기업이 비교할 항목은 서식 재사용뿐 아니라 AI가 열 수 있는 파일, 실행할 수 있는 작업, 파일을 보호하는 조건까지 넓어진다.",
+            "reasoning": "서식의 개발·뷰어 단계, 파일을 읽고 쓰는 권한, 암호화가 적용되는 단계를 나누고 상용 제공·베타·예정을 각각 표시했다.",
+            "limits": "공급자 제품 사양과 일정의 확인이다. 가격, 폴라리스오피스 지원 범위, 실제 계정과 공공 환경에서의 동작, 납품·인증 적용 또는 절감 효과는 검증하지 않았다.",
+            "evidence_ids": [
+              "e-clip-news",
+              "e-clip-report",
+              "e-clip-form",
+              "e-box-controls",
+              "e-box-architect",
+              "e-google-cse",
+              "e-box-mcp-help"
+            ]
+          }
+        ],
+        "gaps": []
+      },
+      "draft": {
+        "report": {
+          "id": "office-business-directions",
+          "topic_id": "business",
+          "topic_path": [
+            "사업",
+            "경쟁사·시장"
+          ],
+          "checked_on": "2026-11-09",
+          "title": "문서 AI의 사업 방향: 전자서식 재사용과 에이전트 권한",
+          "description": "전자서식에 AI를 붙이는 한컴이노스트림과 접근·행동을 통제하는 Box, 민감 파일을 규칙으로 암호화하는 Google을 비교한다.",
+          "deck": "한컴이노스트림은 리포트와 전자서식의 디자이너를 통합하고 뷰어에 AI를 넣었다. Box와 Google의 변경을 함께 보면, 기업이 비교할 항목은 서식 재사용뿐 아니라 AI가 열 수 있는 파일, 실행할 수 있는 작업, 파일을 보호하는 조건까지 넓어진다.",
+          "summary": [
+            {
+              "label": "서식 개발과 문서 질의가 한 제품에 들어갔다",
+              "text": "한컴이노스트림은 10월 27일 뉴스레터에서 CLIP report와 CLIP e-Form v6.0 for AX를 정식 출시했다고 밝혔다. 제품 문서는 통합 디자이너, 뷰어 안의 요약·질의와 외부 AI가 문서 업무를 호출하는 MCP 연결을 설명한다.",
+              "source_ids": [
+                "clip-news",
+                "clip-report",
+                "clip-form"
+              ],
+              "kind": "fact"
+            },
+            {
+              "label": "에이전트가 볼 파일과 할 작업은 따로 제어한다",
+              "text": "Box는 11월 5일 파일 분류에 따른 접근 제어, MCP 쓰기 제한, 다운로드 한도 알림이 일반 제공된다고 밝혔다. 같은 날 소개된 Architect의 업무 흐름 설계와 세션 감사는 이 기능들과 제공 단계가 다르다.",
+              "source_ids": [
+                "box-controls",
+                "box-mcp-help",
+                "box-architect"
+              ],
+              "kind": "fact"
+            },
+            {
+              "label": "민감 파일은 암호화 단계부터 따져야 한다",
+              "text": "Google은 11월 5일 Drive 원본 파일의 주소를 바꾸지 않고 규칙으로 암호화하는 베타를 열었다. Enterprise Plus 추가 구독과 베타 등록이 필요하며 기본 설정은 꺼져 있다.",
+              "source_ids": [
+                "google-cse"
+              ],
+              "kind": "fact"
+            }
+          ],
+          "highlights": [
+            "서식 설계와 뷰어 안 문서 질의",
+            "외부 AI의 읽기와 쓰기 제어",
+            "기존 파일에 적용하는 관리자 암호화"
+          ],
+          "metrics": [],
+          "datasets": [],
+          "scope": "2026-11-09에 확인한 공식 출시 안내, 제품 페이지, 관리자 도움말의 공개 범위. 대표 문서를 넣은 기능 시험이나 실제 구매·도입 성과를 검증하지 않았다. 이전 주제와 확인일은 이전 판에 남겨 두었다.",
+          "source_note": "날짜가 확인된 공식 게시일은 각 항목에 표시했다. 게시일이 보이지 않는 제품·지원 문서는 2026-11-09 확인으로 표시했다.",
+          "references": [
+            {
+              "id": "clip-news",
+              "title": "한컴이노스트림: 공공솔루션마켓과 CLIP v6.0 정식 출시",
+              "url": "https://www.hancomins.com/newsletter?mode=view&no=1251481",
+              "description": "2026-10-27 발표·안내; 2026-11-09 관련 절 확인. 두 CLIP 제품의 정식 출시 안내와 11월 19일 공공 전시 계획을 분리한다. 오케스트레이션 그리드의 별도 제공 상태는 확정하지 않는다."
+            },
+            {
+              "id": "clip-report",
+              "title": "CLIP report for AX 제품 설명",
+              "url": "https://www.hancomins.com/product?no=10",
+              "description": "원문 게시일 미확인; 2026-11-09 관련 절 확인. 보고서 뷰어 요약과 출처, 통합 디자이너, 서식 저장소와 LLM 등록 설명을 확인한다."
+            },
+            {
+              "id": "clip-form",
+              "title": "CLIP e-Form for AX 제품 설명",
+              "url": "https://www.hancomins.com/product?no=11",
+              "description": "원문 게시일 미확인; 2026-11-09 관련 절 확인. 전자서식 뷰어의 요약·질의와 MCP를 통한 탐색·생성·분석 연결을 확인한다."
+            },
+            {
+              "id": "box-controls",
+              "title": "Box: 외부 에이전트 보안 및 콘텐츠 통제",
+              "url": "https://blog.box.com/box-announces-new-controls-secure-ai-threats-and-automate-content-governance",
+              "description": "2026-11-05 발표·안내; 2026-11-09 관련 절 확인. 분류 기반 접근·MCP 작업 제한·임계치 알림의 일반 제공과 세션 감사의 예정 상태를 대조한다."
+            },
+            {
+              "id": "box-architect",
+              "title": "Box Architect 공개",
+              "url": "https://blog.box.com/box-unveils-architect-reimagine-content-workflows-frontier-ai",
+              "description": "2026-11-05 발표·안내; 2026-11-09 관련 절 확인. 업무 흐름 설계·시험·사람 승인 방향의 발표이며 상용 계정 제공을 보장하지 않는다."
+            },
+            {
+              "id": "google-cse",
+              "title": "Google Workspace: 규칙 기반 클라이언트 측 암호화 베타",
+              "url": "https://workspaceupdates.googleblog.com/2026/11/automatically-apply-client-side-encryption-to-confidential-Editors-and-Drive-files-now-available-in-Beta.html",
+              "description": "2026-11-05 발표·안내; 2026-11-09 관련 절 확인. 기존 주소를 유지하는 파일 암호화, Enterprise Plus 추가 구독·베타 등록과 기본 꺼짐을 확인한다."
+            },
+            {
+              "id": "box-mcp-help",
+              "title": "Box Support: MCP Server 쓰기 도구의 관리자 제어",
+              "url": "https://support.box.com/hc/en-us/articles/56701327071763-New-MCP-Guardrails-for-the-Box-MCP-Server",
+              "description": "원문 게시일 미확인; 2026-11-09 관련 절 확인. 일부 쓰기 도구와 읽기 권한의 적용 경로, Enterprise Advanced 조건을 확인했다."
+            }
+          ],
+          "explanation": [
+            {
+              "id": "clip-forms",
+              "title": "한컴이노스트림: 기존 서식을 바탕으로 문서를 만들고 질의한다",
+              "lead": "정형 데이터를 서식에 넣어 보고서를 만들거나 전자서식의 입력을 받는 제품에, 이미 생성한 문서를 읽고 다음 작업으로 넘기는 기능을 추가했다.",
+              "blocks": [
+                {
+                  "title": "정식 출시와 공공 현장 시연",
+                  "text": "10월 27일 공식 안내는 CLIP report와 CLIP e-Form v6.0 for AX를 정식 출시 제품으로 소개하고, 11월 19일 공공솔루션마켓에서 실물을 시연한다고 밝혔다. 출시일의 정확한 날짜는 안내에 없다. 같은 부스의 오케스트레이션 그리드 소개는 별도 제품의 일반 제공이나 공공 납품을 확인한 근거로 쓰지 않는다.",
+                  "source_ids": [
+                    "clip-news"
+                  ],
+                  "kind": "fact",
+                  "type": "paragraph"
+                },
+                {
+                  "title": "통합 디자이너와 기존 서식의 재사용",
+                  "text": "두 제품 문서는 보고서와 전자서식을 한 디자이너에서 다룬다고 설명한다. 리포트 제품은 기존 HWPX와 오피스 문서의 재사용, 서식 버전 비교와 롤백을 안내한다. 전자서식 제품은 입력 항목과 전자서식 결과를 연계하는 경로를 제시한다. 서식 재사용을 검토할 때는 원본의 입력 규칙과 최종 출력이 그대로 유지되는지 확인해야 한다.",
+                  "source_ids": [
+                    "clip-report",
+                    "clip-form"
+                  ],
+                  "kind": "fact",
+                  "type": "paragraph"
+                },
+                {
+                  "title": "뷰어 안의 질의와 외부 도구 호출",
+                  "text": "제품 문서상 내장 AI는 이미 만들어진 리포트와 전자서식을 요약하고 답의 근거가 된 서식 위치를 안내한다. MCP는 외부 AI가 서식 탐색·문서 생성·분석 같은 도구를 호출하는 연결 규약이다. 리포트 관리 화면의 모델 등록과 로그 관리 안내만으로 모든 AI 기능의 폐쇄망 제공, 데이터 처리 위치 또는 인증의 적용 판을 확정할 수 없다.",
+                  "source_ids": [
+                    "clip-report",
+                    "clip-form"
+                  ],
+                  "kind": "fact",
+                  "type": "paragraph"
+                }
+              ]
+            },
+            {
+              "id": "enterprise-controls",
+              "title": "Box와 Google: 실행 권한과 파일 보호의 차이",
+              "lead": "업무에 AI를 연결할 수 있어도 민감 파일을 열 수 있는 주체와 파일에 쓸 수 있는 주체를 따로 정해야 한다.",
+              "blocks": [
+                {
+                  "title": "Box: 일부 쓰기 도구를 실행 전에 검사한다",
+                  "text": "Box의 11월 5일 안내는 파일 분류에 따른 접근 제어, MCP 작업 제한, 다운로드 기준 초과 알림을 일반 제공으로 구분한다. 지원 문서는 MCP Guardrails가 Enterprise Advanced 전용이며 Box MCP Server의 지정 쓰기 동작에 적용된다고 설명한다. 읽기 작업은 Box Shield 정책으로 통제한다. 세션 단위 관리·감사 추적은 4분기 예정이며, 업무 흐름을 설계하는 Architect 발표를 이 제어 기능의 제공과 같은 사건으로 취급하지 않는다.",
+                  "source_ids": [
+                    "box-controls",
+                    "box-mcp-help",
+                    "box-architect"
+                  ],
+                  "kind": "fact",
+                  "type": "paragraph"
+                },
+                {
+                  "title": "Google: 파일 자체에 관리자 규칙을 적용한다",
+                  "text": "Workspace 베타는 사용자가 암호화한 복사본을 만들고 기존 파일을 관리하던 작업을 관리자 규칙으로 옮긴다. 지원되는 파일의 원본 주소를 유지하며 개인·공유 드라이브의 Docs, Sheets, Slides와 일부 Office·PDF 파일에 적용할 수 있다. Enterprise Plus에 Assured Controls 또는 Plus 추가 구독과 베타 등록이 필요하다. 이 자료는 파일 보호 조건을 설명하며 암호화된 파일에서 Gemini가 모든 기능을 제공한다는 근거가 아니다.",
+                  "source_ids": [
+                    "google-cse"
+                  ],
+                  "kind": "fact",
+                  "type": "paragraph"
+                },
+                {
+                  "title": "문서의 도입 판단",
+                  "text": "공공·기업 제품 비교에서는 서식의 재사용과 결과 확인, AI 호출 주체별 읽기·쓰기 권한, 민감 파일의 저장과 키 관리를 별개로 확인할 필요가 있다. 제품 기능표에 MCP가 표시되어 있어도 대상 도구와 실제 역할별 차단 동작이 확인되어야 한다.",
+                  "source_ids": [
+                    "clip-report",
+                    "clip-form",
+                    "box-mcp-help",
+                    "google-cse"
+                  ],
+                  "kind": "judgment",
+                  "type": "paragraph"
+                }
+              ]
+            }
+          ],
+          "tables": [
+            {
+              "id": "form-agent-boundaries",
+              "title": "제품마다 달라지는 구매 조건",
+              "columns": [
+                "공식 근거",
+                "바뀐 작업",
+                "확인한 제공 단계",
+                "비교할 조건"
+              ],
+              "rows": [
+                {
+                  "values": [
+                    "한컴이노스트림 · 10월 27일",
+                    "리포트·전자서식 통합 디자이너, 뷰어 질의와 MCP 도구 연결",
+                    "공급자가 v6.0 정식 출시 안내. 11월 19일 공공 현장 시연은 예정",
+                    "기존 양식·입력 규칙·출력 보존, 모델 연결과 데이터 위치"
+                  ],
+                  "source_ids": [
+                    "clip-news",
+                    "clip-report",
+                    "clip-form"
+                  ]
+                },
+                {
+                  "values": [
+                    "Box · 11월 5일",
+                    "분류에 따른 접근과 지정 쓰기 도구 제어",
+                    "제어 기능 일반 제공, MCP Guardrails는 Enterprise Advanced. 세션 감사와 Architect는 별도",
+                    "읽기 정책과 쓰기 정책의 적용 범위, 차단·알림·감사 기록"
+                  ],
+                  "source_ids": [
+                    "box-controls",
+                    "box-mcp-help",
+                    "box-architect"
+                  ]
+                },
+                {
+                  "values": [
+                    "Google Workspace · 11월 5일",
+                    "관리자 규칙으로 Drive 원본 파일을 제자리에서 암호화",
+                    "등록형 베타, Enterprise Plus의 지정 추가 구독, 기본 꺼짐",
+                    "외부 키 서비스, 파일 유형, 작업과 협업에 미치는 제약"
+                  ],
+                  "source_ids": [
+                    "google-cse"
+                  ]
+                }
+              ],
+              "note": "지원 문서와 발표에서 확인한 범위다. 제품을 실행해 같은 성능이나 보안 기준으로 시험한 결과가 아니다."
+            }
+          ],
+          "result": {
+            "title": "서식, 작업 권한, 파일 보호를 나눠 비교한다",
+            "points": [
+              {
+                "label": "도입 대상이 되는 문서",
+                "text": "전자서식이나 리포트 제품은 기존 양식을 옮긴 뒤에도 입력 규칙과 최종 결과물이 유지되는지부터 비교한다.",
+                "source_ids": [
+                  "clip-report",
+                  "clip-form"
+                ],
+                "kind": "judgment"
+              },
+              {
+                "label": "도입 대상이 되는 작업",
+                "text": "문서 에이전트는 실제로 열 수 있는 파일과 실행할 수 있는 쓰기 동작, 실패·차단 기록, 파일 보호 적용 후 사용 가능한 작업을 별개로 확인한다.",
+                "source_ids": [
+                  "box-controls",
+                  "box-mcp-help",
+                  "google-cse"
+                ],
+                "kind": "judgment"
+              }
+            ]
+          },
+          "caveats": [
+            {
+              "text": "공급자 제품 사양과 일정의 확인이다. 가격, 폴라리스오피스 지원 범위, 실제 계정과 공공 환경에서의 동작, 납품·인증 적용 또는 절감 효과는 검증하지 않았다.",
+              "source_ids": [
+                "clip-news",
+                "clip-report",
+                "clip-form",
+                "box-controls",
+                "google-cse"
+              ]
+            }
+          ]
+        },
+        "claims": [
+          {
+            "path": "/summary/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-clip-news",
+              "e-clip-report",
+              "e-clip-form"
+            ]
+          },
+          {
+            "path": "/summary/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-box-controls",
+              "e-box-mcp-help",
+              "e-box-architect"
+            ]
+          },
+          {
+            "path": "/summary/2",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-google-cse"
+            ]
+          },
+          {
+            "path": "/explanation/0/blocks/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-clip-news"
+            ]
+          },
+          {
+            "path": "/explanation/0/blocks/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-clip-report",
+              "e-clip-form"
+            ]
+          },
+          {
+            "path": "/explanation/0/blocks/2",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-clip-report",
+              "e-clip-form"
+            ]
+          },
+          {
+            "path": "/explanation/1/blocks/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-box-controls",
+              "e-box-mcp-help",
+              "e-box-architect"
+            ]
+          },
+          {
+            "path": "/explanation/1/blocks/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-google-cse"
+            ]
+          },
+          {
+            "path": "/explanation/1/blocks/2",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-clip-report",
+              "e-clip-form",
+              "e-box-mcp-help",
+              "e-google-cse"
+            ]
+          },
+          {
+            "path": "/tables/0/rows/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-clip-news",
+              "e-clip-report",
+              "e-clip-form"
+            ]
+          },
+          {
+            "path": "/tables/0/rows/1",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-box-controls",
+              "e-box-mcp-help",
+              "e-box-architect"
+            ]
+          },
+          {
+            "path": "/tables/0/rows/2",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-google-cse"
+            ]
+          },
+          {
+            "path": "/result/points/0",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-clip-report",
+              "e-clip-form"
+            ]
+          },
+          {
+            "path": "/result/points/1",
+            "kind": "inference",
+            "evidence_ids": [
+              "e-box-controls",
+              "e-box-mcp-help",
+              "e-google-cse"
+            ]
+          },
+          {
+            "path": "/caveats/0",
+            "kind": "fact",
+            "evidence_ids": [
+              "e-clip-news",
+              "e-clip-report",
+              "e-clip-form",
+              "e-box-controls",
+              "e-google-cse"
+            ]
+          }
+        ],
+        "answer_paths": {
+          "core": [
+            "/summary",
+            "/explanation/0",
+            "/explanation/1",
+            "/tables/0",
+            "/result"
+          ]
+        }
+      },
+      "issues": [],
+      "authoring": {
+        "recipe": {
+          "version": "authoring-recipe-1",
+          "catalog_version": "1.0.2",
+          "brief": {
+            "id": "office-business-directions",
+            "reader": "문서 제품의 공공·기업 도입 방향을 비교하는 사업기획 담당자",
+            "reader_question": "리포트·전자서식에 AI를 넣는 기능과 조직이 에이전트의 접근·행동을 통제하는 기능은 구매 판단을 어떻게 바꾸는가?",
+            "outcome": "현재 이용할 수 있는 기능과 시연·베타·예정 기능을 구분하고 서식 재사용, 실행 권한, 민감 파일의 데이터 경계를 나눠 비교한다.",
+            "profile": "custom"
+          },
+          "request_hash": "9c8200b1531df1666f8d15051a02d019be291bc3ac1b1d82c956cb2d86f3753b",
+          "components": [
+            {
+              "id": "common-principles",
+              "kind": "policy",
+              "version": "1.0.0",
+              "supports": [
+                "technology",
+                "comparison",
+                "market",
+                "opportunity",
+                "model_introduction",
+                "news",
+                "custom"
+              ],
+              "stages": [
+                "analyze",
+                "write",
+                "review"
+              ],
+              "sources": [
+                {
+                  "path": "docs/authoring/common.md",
+                  "sha256": "cf56f106511609377d003f3d592937b858b2de9a999cf78cb6e6408aa0aa59f7",
+                  "text": "# 공통 작성 원칙\n\n근거와 의미 보존, 자연스러운 한국어 및 본문과 편집 기록의 구분에 적용한다. 새 소식은 유형별 기사 형식을 사용한다. 학습 글을 명시한 문장은 그 유형에만 적용한다.\n\n## 독자 본문과 편집 기록을 분리하기\n\n독자는 주제와 실제 구현 방법을 배우려는 사람이다. 소제목에 `검토 의견` 같은\n내부 분류를 붙이거나 판 변경, 수집·검수 과정과 사이트 읽기 안내로 본문을 채우지\n않는다. 원문 링크와 자료의 설명은 더 자세한 내용을 배우는 데 사용한다. 출처 설명에는\n무엇을 알 수 있는지와 필요한 자료의 조건을 쓰고, 실제 수집/검토 시각과 실패 및 편집\n기록은 품질 패키지·작업 기록에 둔다. 가상 사례의 가정, 실습 준비물과 실행 조건,\n기술 한계와 통계 해석의 조건은 본문에 남긴다. [DevOps r12 수정](../DEVOPS_READER_COPY.2026-10-12.md).\n\n## 2026-10-10: 작성 목적 다음에 요약 배치하기\n\n앞으로 새로 작성하는 공유용 리서치 보고서는 다음 순서로 시작한다. 신규 소식 기사는 2026-10-14 기사 기준과 NEWSROOM.md의 별도 형식을 따른다.\n\n1. 제목 아래에 어떤 목적으로 만든 문서인지 한두 문장으로 짧게 설명한다.\n   독자의 어떤 문제나 판단을 돕기 위한 것인지 구체적으로 쓴다.\n2. 바로 다음 본문 구역은 `요약`으로 표시하고 핵심 내용과 결론을 정리한다.\n3. 요약 이후의 구성은 주제와 독자의 필요에 맞게 정한다. 목차, 개념 설명,\n   비교표, 도해, 사례, 실습, 출처의 순서와 분량을 일률적으로 고정하지 않는다.\n\n작성 목적은 “왜 이 문서를 만들었는가”에, 요약은 “핵심 내용과 결론이 무엇인가”에\n답한다. 둘을 같은 소개 문장으로 반복하지 않는다. DevOps 문서의 장 수나\n도구 카탈로그를 다른 주제의 필수 양식으로 삼지 않는다. 기존 페이지를 일괄\n재작성하는 규칙은 아니며, 앞서 정한 출처와 검토 기준은 유지한다.\n\n예시 작성 목적: “기존 Jenkins를 사용하는 C++ 팀이 검사 결과를 보관하고,\n검사한 파일을 릴리스하는 절차를 정할 수 있도록 구축 방법을 정리했다.”\n\n검토할 때는 첫 화면만 읽어 작성 목적을 알 수 있는지, 그다음 구역이 요약인지,\n요약에서 핵심 내용과 결론을 파악할 수 있는지 각각 확인한다. 본문 구성은\n이 고정된 앞부분 이후에 필요한 설명을 충분히 제공하는지로 판단한다.\n\n## 2026-10-10: 가운데점으로 단어나 동작을 묶지 않기\n\n새로 작성하거나 수정하는 제목, 요약, 본문, 표와 도구 설명에는 가운데점으로\n단어를 압축해 나열하지 않는다. 점을 공백으로 지우는 것으로 끝내지 않는다.\n병렬 항목은 쉼표나 자연스러운 연결어로 구분하고, 동작은 누가 무엇을 어떤\n순서로 하는지 문장으로 쓴다. 원문 코드, URL과 기존 분류 식별자는 보존한다.\n\n- 피할 표현: “누가 어떤 코드와 결과물을 검사·승인·반영했는지”\n- 사용할 표현: “누가 코드를 검사했고, 어떤 결과물을 승인해 실제 환경에 반영했는지”\n- 피할 표현: “개발·QA·운영이 공동 책임”\n- 사용할 표현: “개발 담당자는 코드를 수정하고 QA는 검사한다. 운영 담당자는 승인된 파일을 배포한다.”\n\n## 글을 쓰기 전에 정할 것\n\n교재형 글은 선행 개념의 순서를 확인한다. 먼저 익숙한 상황과 값으로 문제를\n설명하고, 그 문제에서 새 개념이 하는 일을 가르친 뒤 기술 이름·구조·코드를 연결한다.\n새 약어를 풀어 쓰는 것만으로 선행 지식의 공백이 해결되지는 않는다.\n\n목적은 자료 요약, 표 생성, 제목 작성이 아니라 **독자에게 생겨야 할 변화**다.\n먼저 아래 내용을 짧은 편집 메모에 적는다. 모르는 독자의 수준은 가정임을\n밝히고, 대화에서 이미 확인한 필요를 우선한다.\n\n| 질문 | 작성할 내용 |\n| --- | --- |\n| 누가 읽는가 | 주제와의 거리, 현재 알고 있는 것, 새로 설명해야 할 것 |\n| 왜 읽는가 | 이해하려는 문제 또는 내려야 할 결정 하나 |\n| 읽은 뒤 무엇이 가능한가 | 구분·설명·선택·실행처럼 확인 가능한 결과 |\n| 무엇을 다룰 것인가 | 그 결과에 필요한 범위와 선행 개념 |\n| 어떤 근거가 필요한가 | 기능, 수치, 적용 조건, 비교를 지지할 원문 |\n| 어떻게 확인할 것인가 | 다른 사례에 적용하는 질문 또는 관찰할 실행 결과 |\n\n예: MCP Apps의 역할을 모르는 독자가 공고 후보를 비교하는 업무에 이 기술을\n쓸 이유와 시작 경로를 고르고, 설명된 사례의 입력·조회·화면 결과를 추적한 뒤\n자기 목록에 적용할 변경점을 찾도록 쓴다. 역할을 설명하는 것은 이 작업을 위한\n중간 단계다. 예시를 실제로 실행시키는 경로를 제공하려면 현재 지원 환경·준비물·\n실행 절차·예상 결과를 확인한다. 이것이 없는 원고는 원리 설명으로 상태를 남긴다.\n\n‘초급~중급 개발자’라는 범위만으로 API, JSON, 비동기 처리, MCP를 이미\n안다고 가정하지 않는다. 필요한 개념은 설명하거나 정확한 선행 학습으로 연결한다.\n\n## 목적에 맞게 글의 성격을 고르기\n\n| 독자의 질문 | 중심 내용 | 완료를 확인하는 방법 |\n| --- | --- | --- |\n| 무엇이 바뀌고 내 작업에 어떤 영향이 있나 | 이전 상태, 변화, 해당 대상, 영향, 대응 시점 | 자신의 사용 여부와 다음 점검을 정할 수 있음 |\n| 이것은 무엇이고 왜 필요한가 | 익숙한 상황, 개념, 작동 이유, 구체적 사례, 한계 | 새로운 사례의 동작을 자기 말로 설명함 |\n| 어느 대안이 내 조건에 맞나 | 같은 비교 기준, 적용 조건, 비용·제약, 선택 이유 | 주어진 조건으로 대안을 고르고 이유를 말함 |\n| 따라 하면서 익히려면 무엇을 하나 | 준비물, 순서, 입력, 예상 출력, 오류 관찰 | 실제 결과를 재현하고 어느 단계에서 틀렸는지 찾음 |\n| 신청·참여할 수 있나 | 대상, 현재 접수 상태, 자격, 제외 조건, 제출물 | 해당·비해당·추가 확인을 구분하고 준비물을 정함 |\n| 이 수치·사례는 무엇을 알려주나 | 측정 대상·기간·단위, 관찰과 해석, 적용 한계 | 수치의 의미와 이 자료로 알 수 없는 것을 구분함 |\n\n설명 글과 실습 글의 역할은 다르다. 설명은 관계와 이유를 풀어내고, 실습은\n독자가 행동한 뒤 확인할 결과를 제공한다. 하나의 보고서에 둘 다 필요하면\n단위를 나누어 연결한다. 단순히 명령어를 넣었다고 실습이 완성되는 것은 아니다.\n이 구분은 [Diátaxis의 설명](https://diataxis.fr/explanation/)과\n[튜토리얼](https://diataxis.fr/tutorials/)을 참고한 프로젝트 편집 선택이다.\n\n## 원문에서 의미를 보존하기\n\n자료를 읽을 때 제목부터 만들지 않는다. 독자의 질문에 답하는 근거를 먼저\n확보하고, 아래 항목이 필요한 주장에 함께 남긴다.\n\n- 누가 무엇을 하는가: 제공자·실행자·요청자·결과 수신자를 구분한다.\n- 언제, 누구에게 적용되는가: 확인일, 발표일, 종료일, 지역·계정·버전 조건.\n- 무엇을 측정했는가: 기간·표본·분모·단위와 출처의 자체 공개 여부.\n- 무엇을 관찰했고 무엇을 해석했는가: 공식 기능, 편집 판단, 가상 예시를 구분한다.\n- 어떤 제한이 결론을 바꾸는가: 적용 제외, 필수 준비, 비교하지 못한 부분.\n\n출처 링크가 붙어 있는 것과 그 출처가 문장을 뒷받침하는 것은 별개다.\n원문의 주어·목적어·인과관계를 요약 과정에서 바꾸지 않는다. 예를 들어\n‘서버가 화면을 제공하고 호스트가 읽는다’를 ‘서버가 읽는 화면’으로 줄이면\n구조가 바뀐다. 규격은 실제 동작의 보장, 최대 지원액은 확정 지급액,\n한 회사의 성장과 제품 전략은 검증된 성장 원인으로 바꾸지 않는다.\n\n동적 규정·모델명·가격·프로그램 상태는 보강 시 공식 자료를 다시 확인한다.\n개념 문장을 고쳤다는 이유로 재확인하지 않은 다른 표의 확인일을 올리지 않는다.\n\n## 짧은 메인과 충분한 보고서\n\n메인은 독자가 읽을 보고서를 고를 수 있게 핵심 변화·문제·대상 조건을 짧게\n전달한다. 보고서는 선택한 내용을 혼자 이해할 수 있을 만큼 풀어 쓴다.\n메인의 분량 기준을 본문에 적용하지 않는다. 고정 글자 수나 항목 수로\n필수 설명을 자르지 않는다.\n\n펼치기는 상세 절차·추가 사례·사양·선택적 심화에 사용한다. 제목을 이해하는 데\n필요한 정의, 결론의 이유, 결정적인 자격·제약은 기본 읽기 경로에 둔다.\n처음 읽는 사람이 모든 펼치기를 열어야만 첫 문장을 이해한다면 배치가 잘못됐다.\n펼친 내용은 요약의 반복이 아니라 빠진 관계와 사례를 설명해야 한다.\n\n현재 Editorial의 `요약 → 데이터 → 결과 → 해설` 순서와 블록 개수는 의미 품질을\n보장하지 않는다. 원고를 먼저 완성하고 기존 데이터 필드에 의미를 유지하며\n옮긴다. 필요한 설명을 현재 필드로 자연스럽게 표현할 수 없으면 원고를 보존하고\n렌더링 개선을 별도 작업으로 기록한다. 원고를 양식에 맞춰 다시 축약하지 않는다.\n\n## 작성 지식베이스에 남길 내용\n\n새 주제의 편집 메모는 관련 보고서·검토 문서에 아래 정보를 남긴다. 단순\n용어집, 출처 모음, 글자 수 지침만 쌓지 않는다.\n\n| 항목 | 저장할 지식 |\n| --- | --- |\n| 독자의 질문 | 해당 글이 해결할 질문과 선행 지식 가정 |\n| 개념 관계 | 기존 개념과의 차이, 역할과 데이터 이동 |\n| 의미 근거 | 주장별 원문 위치·적용 조건·확인일 |\n| 끝까지 이어지는 예시 | 입력, 중간 값, 출력, 정상·실패 이유 |\n| 발견한 실패 | 원고의 어떤 표현이 무슨 오해를 만들었는지 |\n| 개선 원고 | 실제로 고친 문단과 독자가 대답할 수 있어야 할 질문 |\n| 보강 상태 | 진단·원고·사실 확인·실행 검증·게시 중 완료한 범위 |\n\n현재 결함 기록은 [앞선 내용 검토](../RESEARCH_CONTENT_REVIEW.2026-10-08.md)에,\n20편의 목적·실제 보강·검토 범위는 [전체 보강 기록](../RESEARCH_REPAIR.2026-10-08.md)에\n남긴다. 새 판의 본문 데이터는 `config/research_comprehension.2026-10-08.json`이다.\n[앞선 개선 원고](../RESEARCH_WRITING_EXAMPLES.md)는 부분 보강의 역사로 유지한다.\n사용자가 새 판을 승인한 완성 교재라는 뜻은 아니다. 날짜가 붙은 기능·규정은\n원문을 재확인하고 재사용한다. 예시 문장은 이번 독자 목적에 맞춘 사례다.\n\n## 참고한 작성 원칙\n\n- [Google Technical Writing — Audience](https://developers.google.com/tech-writing/one/audience): 독자의 현재 지식과 목표에 필요한 지식의 차이를 설명 범위로 삼는다.\n- [Google Technical Writing — Documents](https://developers.google.com/tech-writing/one/documents): 대상 독자와 읽은 뒤 가능한 일을 정하고 그 필요에 맞춰 내용을 조직한다.\n- [Diátaxis — Explanation](https://diataxis.fr/explanation/): 이해를 위한 관계·배경 설명의 역할을 구분한다.\n- [Diátaxis — Tutorials](https://diataxis.fr/tutorials/): 행동과 관찰할 결과를 통해 배우는 실습을 구분한다.\n\n2026-10-08 원문 확인. 위 원칙의 적용 방식과 검토 질문은 이 프로젝트의\n편집 판단이며, 문서화만으로 독자 이해 개선이 검증됐다는 뜻은 아니다.\n"
+                }
+              ]
+            },
+            {
+              "id": "profile-custom",
+              "kind": "profile",
+              "version": "1.0.0",
+              "supports": [
+                "custom"
+              ],
+              "stages": [
+                "analyze",
+                "write",
+                "review"
+              ],
+              "sources": [
+                {
+                  "path": "docs/authoring/types.md",
+                  "section": "별도 목적",
+                  "sha256": "1d3ac01369c6ed985b97338bb7d5df2ee6fb3c606a1037e42595b59b4fe2cc68",
+                  "text": "## 별도 목적\n\n요청서에 독자의 질문, 결과와 조사 방법을 명시한다. 기존 유형과 섞는 이유 및 필요한 근거를 기록한다. 별도 목적이라는 이유로 모든 글에 학습 예제나 수치 차트를 강제하지 않는다.\n"
+                }
+              ]
+            },
+            {
+              "id": "writing-workflow",
+              "kind": "method",
+              "version": "2.1.0",
+              "supports": [
+                "technology",
+                "comparison",
+                "market",
+                "opportunity",
+                "model_introduction",
+                "news",
+                "custom"
+              ],
+              "stages": [
+                "write"
+              ],
+              "sources": [
+                {
+                  "path": "skills/research-teaching/SKILL.md",
+                  "sha256": "09d2dac52b42f7fd556193e005da59b29c16215a125f34dec3a55b8cc08c1227",
+                  "text": "---\nname: research-teaching\ndescription: \"Compose and revise Korean research by reader purpose. Select content/editing/presentation profiles, preserve evidence and version records, then finish local knowledge registration and query checks. Use for research explanations, comparisons and editing; models and news keep their own profiles. Does not authorize redesign, paid calls, delegation or publication.\"\nmetadata:\n  version: \"2.1.0\"\n---\n\n# 목적에 맞게 조사하고 이해할 수 있게 쓰기\n\n먼저 [작성 관리](../../docs/authoring/MANAGEMENT.md)와 현재 원고를 읽는다.\n대화에 이미 나온 독자, 목적과 요청을 사용하며 같은 질문을 다시 요구하지 않는다.\n정보가 부족하면 조사로 돌아간다. 이해의 빈칸을 문장 교정이나 목차 증가로 대신하지 않는다.\n\n## 이번 글에 적용할 기준 선택\n\n1. 독자의 질문과 끝에 가능한 설명, 판단 또는 실행을 요청서에 적는다.\n2. [공통 원칙](../../docs/authoring/common.md)을 적용하고 [목적별 유형](../../docs/authoring/types.md)을 선택한다.\n   모델 소개와 소식 기사에 학습 글의 실습, 가상 업무와 응용 문제를 강제하지 않는다.\n3. 필요한 작성 방법만 고른다. 설명 글은 [설명 방법](../../docs/authoring/explanation.md),\n   실행을 약속한 실습은 [실습 조건](../../docs/authoring/tutorial.md)을 사용한다.\n   기존 원고의 표현을 고칠 때는 [편집 방법](references/editing.md)을 사용한다.\n4. 기존 화면 계약과 개별 요청을 선택해 authoring plan으로 조합을 고정한다.\n   이 기록은 작성 지침이며 HTML 렌더러를 변경하지 않는다. 새 디자인 구현은 별도 작업이다.\n\n## 작성과 편집\n\n원문 근거에서 질문의 답을 도출하고 충분한 본문을 쓴 뒤 제목과 요약을 만든다.\n선행 개념은 주제와의 거리를 기준으로 판단한다. 개발자라는 이유로 API나 JSON을 안다고 가정하지 않는다.\n필요한 용어는 처음 나오는 자리에서 뜻과 역할을 설명한다. 기능을 쓰는 경로와 직접 구현하는 경로를 구분한다.\n설명 사례는 입력, 중간 변화와 출력의 이유가 끝까지 연결되어야 한다.\n그림과 표는 [시각 자료 기준](../../docs/authoring/visuals.md)에 따라 필요한 곳에 선택한다.\n웹 디자인은 이번 요청에 없으면 변경하지 않는다.\n\n정보 가치가 부족하다는 피드백을 받거나 여러 글을 보강하면\n[질문과 근거 검토](references/substantive-review.md)를 읽는다.\n문장 연결의 구체적인 실패는 [집필 예시](references/teaching-patterns.md)와 대조한다.\n과거 Pass를 사용자 승인이나 완성 교재의 견본으로 취급하지 않는다.\n\n## 검토와 적용 기록\n\n[내용과 독해 검토](../../docs/authoring/review.md)에 따라 첫 화면과 본문을 따로 읽는다.\n첫 화면 입력에서는 본문을 실제로 제외한다. 외부 지식으로 빠진 설명을 메우지 않는다.\n막힌 문장과 근거 위치를 기록하고 고친다. 자체 검토, 독립 에이전트 검토와 사람 시험을 구분한다.\n위임이 승인된 경우에만 다른 에이전트를 사용하고 수정된 원고 자체를 재검토하게 한다.\n실제 실행, 링크와 출력 검사도 내용 검토와 별도로 기록한다.\n\n완성한 판에 authoring record로 원고 지문과 사용한 조합을 연결한다.\n자동 생성은 품질 패키지의 authoring에 같은 정보를 남긴다.\n이 기록은 지침 선택과 사용 기록이며 사실 검토나 사람 독해 합격을 뜻하지 않는다.\n이전 판을 덮지 않는다. 기준 변경은 새 조합으로 채택하며 작업 중의 기록에 자동 반영하지 않는다.\n\n## 리서치 추가·수정 후 지식베이스 반영\n\n이 프로젝트의 리서치·모델 소개·뉴스를 추가하거나 수정하면\n[지식베이스 완료 절차](../../docs/KNOWLEDGE_BASE.md#리서치-추가수정-작업의-완료-절차)를\n같은 작업 안에서 실행한다. 실제 내용 검토를 현재 판의 지문에 연결하고 색인을 갱신한 뒤,\n독자의 질문으로 새 본문과 출처가 검색되는지 확인해야 작성 작업을 완료한 것으로 보고한다.\n사용자에게 지식베이스 갱신을 따로 요청하게 하지 않는다.\n\n이 단계는 로컬 작업을 수행하는 Codex의 책임이다. JSON을 생성하는 집필 모델이나\n수집 성공만으로 검토 완료를 선언하지 않는다. 초안은 초안으로 연결하고 실제 검토일과\n기존 판을 보존한다. 사용자의 MD 전용·미발행 범위를 지키며 별도 배포를 실행하지 않는다.\n"
+                },
+                {
+                  "path": "docs/KNOWLEDGE_BASE.md",
+                  "section": "리서치 추가·수정 작업의 완료 절차",
+                  "sha256": "ab8e0592885a8698e99d8b01cd3bcc8097bd3c1eda77c754bdaffd293fd9de03",
+                  "text": "## 리서치 추가·수정 작업의 완료 절차\n\n새 리서치를 만들거나 기존 글을 고치는 Codex는 아래 반영을 같은 작업 안에서 마친다.\n사용자는 지식베이스 갱신을 따로 요청할 필요가 없다. 보고서, 모델 소개, 뉴스에 공통으로\n적용하며 글의 목적별 작성·검토 기준은 유지한다. 색인 갱신을 새 원문 조사로 기록하지 않는다.\n\n1. **원고와 실제 저장 판을 맞춘다.** 내용·근거·독해 검토와 수정이 끝난 판을 기존 저장\n   절차로 반영하고 작성 기준의 적용 기록도 남긴다. 기존 판과 품질 부록은 보존한다.\n   사용자가 MD 파일만 요청했다면 DB 발행을 강제하지 않는다. 해당 파일만 연결 목록에\n   `kind: draft`로 등록해 미발행 상태를 유지하고 초안을 포함하는 검색으로 확인한다.\n   프로젝트 전체 폴더를 자동 수집하거나 비공개 자료를 연결하지 않는다.\n2. **현재 본문 지문을 읽는다.** DB에 저장한 글은 아래 명령의 `document`에서 실제\n   `key`, `revision`, `source_hash`, `document_digest`를 확인한다. 보고서는 `report:<id>`,\n   뉴스는 `article:<id>`다. 이 명령은 미검토 글도 명시적으로 읽을 수 있다.\n\n   ```powershell\n   python -m housing_watch knowledge --document report:<id> --json\n   ```\n\n3. **실제 검토를 현재 판에 연결한다.** `config/knowledge_sources.json`의 `review_ledger`가\n   가리키는 원장의 기존 항목을 보존하면서 이번 글의 검토 항목을 추가하거나 갱신한다.\n   `key`, `revision`, `source_hash`, `document_digest`, `reviewed_on`, `verdict`,\n   `reader_question`, `finding`, `body_locations`, `reference_urls`를 실제 원고·검토 기록에서\n   채운다. 새 파일의 등록 시각을 사실 확인일로 쓰지 않는다. `verdict`는 확인한 범위에\n   따라 정하고 계획·미완성·오래된 사실을 무조건 `usable_with_limits`로 바꾸지 않는다.\n   원문의 접근 실패와 미확인 조건은 `finding`, `advisories`, `link_check`에 해당 범위대로\n   남긴다. authoring record나 형식 검사 통과는 내용 검토의 대체물이 아니다.\n4. **검토 이력을 보존한다.** 기존 검토를 바꾸면 날짜와 작업 식별자를 붙인 새 원장\n   파일에 기존 현재 항목과 이번 항목을 함께 저장한다. 예를 들어\n   `config/content_review.<날짜>.<작업ID>.json`을 만들고 검증한 뒤 `review_ledger` 포인터를\n   옮긴다. 이전 원장을 덮거나 다른 글의 검토를 누락하지 않는다. 그 파일이 이미 있으면\n   새 판 이름을 쓴다. 신규 항목 추가도 같은 방식으로 기록한다.\n5. **색인과 실제 질의를 확인한다.** 아래 명령이 성공한 뒤 해당 글의 상태·현재 판·본문\n   지문과 출처가 맞는지 읽고, 독자가 물을 질문으로 검색한다. DB에 저장된 검토 완료 글은\n   기본 검색에서 새 본문이 나와야 한다. 미발행 MD는 `--include-drafts`로 확인하며,\n   검토하지 않은 자료를 기본 답변에 넣기 위해 제외 옵션을 풀지 않는다.\n\n   ```powershell\n   python -m housing_watch knowledge --build --status\n   python -m housing_watch knowledge --document report:<id> --json\n   python -m housing_watch knowledge \"이번 글의 구체적인 독자 질문\" --limit 5 --json\n   ```\n\n6. **반영까지 마친 뒤 완료를 보고한다.** 본문 지문이 달라 `review_outdated`로 남거나\n   검토 완료 글을 찾지 못하면 저장 판·원장·연결 목록·질문 표현을 대조해 원인을 고친다.\n   해결되지 않으면 글 저장과 검색 반영의 상태를 따로 보고하고 검색 연결 완료로 표시하지\n   않는다. 결과에는 새 글의 ID·판, 검토 범위, 검색 확인과 남은 한계를 남긴다.\n\n이 절차의 저장과 색인 갱신은 기존 저장소 계정·원격 검증 규칙을 따른다. 별도 사용자\n확인을 반복해서 요구하지 않는다. 파일 반영 권한이 확인되지 않으면 기존 가드대로 멈춘다.\n유료 생성·클라우드 업로드·예약·홈페이지 배포 권한을 추가하지 않는다. 단독 수집기 실행은\n내용 검토가 아니며 이 절차는 리서치 작성 작업의 완료 단계다.\n\n"
+                }
+              ]
+            },
+            {
+              "id": "section-editing",
+              "kind": "method",
+              "version": "1.0.0",
+              "supports": [
+                "technology",
+                "comparison",
+                "market",
+                "opportunity",
+                "model_introduction",
+                "news",
+                "custom"
+              ],
+              "stages": [
+                "write"
+              ],
+              "sources": [
+                {
+                  "path": "skills/research-teaching/references/editing.md",
+                  "section": "절별 편집",
+                  "sha256": "6373e218756a33531f9acb90d5a399223ec984f56181558f94b2a06f550a3900",
+                  "text": "## 절별 편집\n\n각 절이 답할 독자의 질문을 찾고 실제 답의 문장을 지목한다.\n정의 전에 나온 용어, 빠진 전제와 연결 설명, 비교 축이 섞인 부분을 찾는다.\n문제를 발견하면 원문, 문제의 이유와 수정안을 함께 남긴다. 정보가 부족하면 추가 조사로 돌아간다.\n본문을 충분히 설명한 뒤 요점, 표와 제목을 실제 내용에 맞춘다.\n문체 수정을 위해 근거 없는 통계, 인용이나 저자의 경험담을 추가하지 않는다.\n\n"
+                }
+              ]
+            },
+            {
+              "id": "korean-editing",
+              "kind": "method",
+              "version": "1.0.0",
+              "supports": [
+                "technology",
+                "comparison",
+                "market",
+                "opportunity",
+                "model_introduction",
+                "news",
+                "custom"
+              ],
+              "stages": [
+                "write"
+              ],
+              "sources": [
+                {
+                  "path": "skills/research-teaching/references/editing.md",
+                  "section": "한국어 문장 편집",
+                  "sha256": "a078b16d877034b6718a0cd576ee7c8561832cffe6939ae80a1292ee5d151968",
+                  "text": "## 한국어 문장 편집\n\n번역투, 불필요한 명사화, 같은 마무리의 반복, 추상적인 단어 나열과 과장을 찾는다.\n이번 독자에게 필요한 용어와 일관된 격식은 보존한다. 특정 단어나 문장부호를 기계적으로 삭제하지 않는다.\n원문과 수정문에서 행위자, 수치와 단위, 날짜, 부정과 추정, 적용 조건 및 인과관계를 대조한다.\n추정 표현을 단정으로 바꾸거나 실제로 없던 효과를 넣은 수정은 되돌린다.\n코드, 명령, 식별자와 링크는 일반 문장 교정 대상으로 취급하지 않는다.\n첫 절에서 변경 전후와 이유를 확인한 뒤 같은 방법을 나머지 원고에 적용한다.\n\n"
+                }
+              ]
+            },
+            {
+              "id": "reader-review",
+              "kind": "method",
+              "version": "1.0.0",
+              "supports": [
+                "technology",
+                "comparison",
+                "market",
+                "opportunity",
+                "model_introduction",
+                "news",
+                "custom"
+              ],
+              "stages": [
+                "review"
+              ],
+              "sources": [
+                {
+                  "path": "docs/authoring/review.md",
+                  "sha256": "0f86c95aa64ab7b60ffd6c825a237f573a1e246c89fe0e2300b10493f4cfec7a",
+                  "text": "# 내용과 독해 검토 방법\n\n선택한 유형과 질문에 해당하는 기준으로 검토한다. 에이전트 검토와 사람 시험을 구분하며 위임 권한을 만들지 않는다.\n\n## 2026-10-12: 설명 그림의 의미와 연결을 검토하기\n\n먼저 그림이 답할 독자의 질문을 정한다. 개념의 정의를 작업 순서 그림만으로 대신하지 않는다. 관계를 설명한다면 행위자와 공유하는 목표, 정보 및 책임을 본문과 그림에 연결한다.\n\n각 화살표의 출발 상자, 도착 상자, 전달하는 입력이나 결과를 표로 적고 실제 이미지의 선과 화살촉을 대조한다. 꼬리가 출발 경계에 닿는지, 도착 방향이 맞는지, 겹침과 불필요한 순서가 생기지 않는지 확인한다. 함께 고려하는 조건에 순차 화살표를 붙이지 않는다. 실패와 성공 경로를 그렸다면 다음 행동도 일치해야 한다.\n\n도해를 단순화했다면 생략한 조건과 역할의 참여 범위를 설명한다. 그림, 대체 텍스트와 본문의 의미가 같은지 확인하며, 그림이 예쁘거나 확대 버튼이 동작한다는 사실을 의미 검토와 합산하지 않는다. [DevOps r5의 거부와 r6 수정](../DEVOPS_DIAGRAM_REPAIR.2026-10-12.md)을 참고하되 수정본의 독자 승인을 주장하지 않는다.\n\n2026-10-09 보강: [AI 집필 연구](../AI_WRITING_RESEARCH.2026-10-09.md)와\n[질문·근거·학습 결과 검토](../../skills/research-teaching/references/substantive-review.md)를 적용한다.\n독자의 핵심 질문마다 본문의 답 위치·근거·공백을 연결한다. 기술마다 고유한 원리와 실제 자료\n해석이 있어야 하며, ‘조건 확인·검증·기록’의 반복만으로 보강됐다고 판정하지 않는다.\n사용자가 승인한 독립 에이전트 검토에서는 수정 원고를 읽게 하고 지적을 고친 뒤 재판정한다.\n전체 보강의 현재 범위와 실제 검증 결과는 [작업 상태](../RESEARCH_AUTHORING_REPAIR.2026-10-09.md)에 남긴다.\n\n2026-10-08부터 Signal Desk의 리서치 작성·보강·내용 검토에 적용한다.\n이 문서는 작성 에이전트의 작업 기준이다. 독자에게 그대로 보여줄 목차나\n모든 보고서에 강제할 양식이 아니다.\n\n## 에이전트의 작성 절차와 게시 판단\n\n1. **독자 작업 정의:** 업무 문제, 기존 지식, 끝낼 작업, 확인할 결과를 작성한다.\n   'MCP 이해하기', 'RAG 알아보기'처럼 기술 이름만 쓰면 다시 구체화한다.\n2. **필요한 근거 조사:** 이 작업을 할 수 있는 현재 도구·기능, 시작 조건, 제약,\n   공식 예제를 확인한다. 원문 요약을 바로 게시용 문장으로 바꾸지 않는다.\n3. **완성된 사례 구성:** 실제 샘플 값과 중간 결과를 고정한다. 어느 입력이 어떤\n   처리를 거쳐 어떤 출력에 대응하는지 끝까지 보여주고, 필요한 개념을 그 관계로\n   설명한다. 가상 사례·개념 코드·실행 확인한 실습은 구분한다.\n4. **학습과 적용 작성:** 왜 쓰는지, 어떻게 동작하는지, 어떻게 시작하는지,\n   자기 작업으로 바꾸려면 무엇이 달라지는지 설명한다. 설명형 학습에는 풀이가\n   있는 변형 문제를, 실습에는 행동·예상 출력·정상/실패 판정을 제공한다.\n5. **검토 후 재작성:** 아래 질문에 본문 위치를 인용해 답한다. 필요한 답이\n   본문에 없으면 누락으로 기록하고 원고를 보강한다. 검토자 자신의 상식으로\n   빈칸을 메워 통과시키지 않는다. 어려운 용어의 정의만 반복해 해결하지 않는다.\n6. **표현과 게시:** 내용이 충족된 뒤 메인 요약과 HTML을 만든다. 설명 필드를\n   모두 채웠거나 테스트가 통과했다고 교재 완성으로 처리하지 않는다. 검수 결과와\n   실행 확인 범위를 기록하고, 필요한 본문은 펼치기 안에 숨기지 않는다.\n\n| 검토 질문 | 원고가 보여줘야 할 근거 |\n| --- | --- |\n| 이 방법으로 내 어떤 작업이 나아지는가 | 구체적인 문제·완성 결과·적합하지 않은 경우 |\n| 어디서 어떻게 시작하는가 | 선택한 사용/구현 경로와 확인한 환경·준비물·첫 행동 |\n| 각 부분이 왜 필요한가 | 예시 값과 연결된 개념·처리 원리·선행 지식 |\n| 한 사례의 입력부터 결과까지 따라갈 수 있는가 | 실제 샘플 값·중간 변화·출력과 그 의미 |\n| 내 자료로 바꾸려면 무엇을 바꾸는가 | 다른 입력으로의 변형 예시와 풀이·변경점 |\n| 틀렸을 때 무엇을 확인하는가 | 관찰할 증상·확인 순서·실패 조건 |\n\n이 표는 게시용 목차나 점수표가 아니다. 모든 주제에 실행 실습을 강제하지 않는다.\n개념 교재에도 끝까지 풀어 준 사례와 새로운 상황에 적용하는 설명이 필요하다.\n실습을 약속한 글은 재현 경로가 빠지면 '실습 초안'으로 남긴다. 실행해 보지 않은\n단계를 검증 완료로 표시하거나 독자 사용성 시험을 했다고 주장하지 않는다.\n\n자동화를 구성할 때는 프로젝트 AGENTS에 위 목적과 필수 읽기를 두고, 작성 스킬에는\n단계별 입력·산출물·누락 시 재작성 규칙을 둔다. 지식베이스는 출처와 기능 조건,\n끝까지 풀어 준 예제, 사용자 검토를 받은 원고, 실패한 문장의 이유를 보존한다.\n기술 정리 역할과 집필·검토 역할은 별도 작업 단계로 수행한다. 여러 에이전트를\n자동으로 만드는 규칙은 아니며, 같은 에이전트의 별도 검토 과정으로도 수행한다.\n\nGoogle의 [독자 기준](https://developers.google.com/tech-writing/one/audience)은\n업무에 필요한 지식과 독자가 이미 가진 지식의 차이를 설명 범위로 삼는다.\nDiátaxis의 [실습 기준](https://diataxis.fr/tutorials/)은 구체적인 행동과 예상 결과를\n연결한다. [OpenAI의 스킬 문서](https://developers.openai.com/codex/skills)는\n재사용할 작업 절차를 지침·참고자료로 묶고 명시적인 입력·출력으로 설계하도록\n안내한다. 세 원문의 적용 절차와 위 검토 기준은 이 프로젝트의 편집 판단이다.\n\n## 제목·요약만으로 무엇을 배우는지 알 수 있는가\n\n2026-10-09 음성 보고서의 사용자 거부는 앞선 독립 Pass가 첫 화면의 이해와 자연스러움을\n충분히 검증하지 못했음을 보여준다. [수정 기록](../VOICE_REPORT_REPAIR.2026-10-09.md)과\n[구체적인 회귀 사례](../../skills/research-teaching/references/substantive-review.md#첫-화면과-비교-기준의-회귀-사례)를 따른다.\n첫 화면 검토에서는 본문을 실제로 제외한다. 명사형 소개를 완결된 문장으로 바꾸고, 독자가\n하려는 작업과 실제 비교 대상을 먼저 밝힌다. 구현 구조와 제품명을 같은 종류의 행으로 섞지 않는다.\n성능·비용·난이도 비교를 약속할 때는 실측·문헌 근거·설계 해석을 구분한다.\n\n제목에는 기술·주제 이름과 평이한 기능·변화·문제를 함께 담는다. 이름이 빠져\n무엇에 관한 글인지 알 수 없는 제목, 낯선 이름만 나열한 제목은 보강한다.\n요약은 본문 밖에서 읽어도 대상, 하는 일, 구체적인 쓰임과 중요한 조건이 전달되어야 한다.\n그림의 번호와 화살표를 읽는 방법이나 사이트 사용 안내로 주제의 답을 대신하지 않는다.\n필요한 도해 설명은 해당 그림의 캡션·접근성 설명에 두고 요약에는 주제의 정보를 담는다.\n본문의 B·호스트·UI 리소스·문맥을 설명 없이 가져오지 않는다.\n\n본문을 읽은 지식으로 요약의 빈칸을 채우지 않는다. 제목·요약만 보고 다시 설명한 답과\n근거 문장을 남기고, 알 수 없는 부분을 실제로 고친다. 본문은 별도로 개념 순서,\n한 사례의 전체 과정과 다른 조건의 문제를 검토한다. 검사표 점수나 글자 수로 대체하지 않는다.\n\n## 내용 검토와 기술 검증을 분리해서 기록\n\n게시 전에는 원고만으로 아래 질문에 답할 수 있는지 검토한다.\n\n1. 독자가 해결할 질문에 이 글이 실제로 답했는가?\n2. 선행 지식을 모르면 어느 문장에서 막히며, 그 부분을 설명했는가?\n3. 주어·대상·조건·단위가 원문과 같은가? 인과관계를 과장하지 않았는가?\n4. 한 예시의 입력·처리·출력이 연결되고 서로 모순되지 않는가?\n5. 결론이 왜 나오는지 설명하며 적용되지 않는 조건도 구분했는가?\n6. 처음의 예시와 다른 상황에 독자가 이 개념을 적용할 수 있는가?\n7. 원문 링크는 근거 확인·심화 학습을 돕는가? 빠진 본문 설명을 대신하지 않는가?\n\n각 질문은 통과 문구를 붙이는 체크박스가 아니라 실제 원고를 고칠 기준이다.\n막힌 문장과 수정 이유를 기록한다. 새 사례에 대한 예상 답은 근거와 함께\n작성하되 실제 독자 시험을 하지 않았다면 독자 검증 완료라고 쓰지 않는다.\n\n현재 `validate_report`는 형식·출처 ID·자료 타입을, `review`는 주택 브리핑의\n운영·출력 상태를 검사한다. 테스트 통과·출처 수·학습 장 수·모바일 넘침 없음은\n독자의 이해를 증명하지 않는다. 자동 검사에는 구조적으로 확인 가능한 부분만\n맡기고 사실 의미·논리·설명 충실도는 원문과 원고를 읽어 검토한다.\n\n보고서 수정 게시 시에는 새 immutable batch와 같은 보고서 ID로 이력을\n남긴다. 앞선 판을 덮어쓰지 않는다. 렌더링·링크·모바일 검증은 내용 검토와\n함께 수행하되 각각의 결과를 구분해 기록한다.\n"
+                },
+                {
+                  "path": "skills/research-teaching/references/substantive-review.md",
+                  "sha256": "2030364c1fc5a9af175b38395fa5e7c14a9471c7a97cae427d616e8bfcbe618b",
+                  "text": "# 질문에 답하는 정보와 설명을 검토하기\n\n## 글마다 독자가 알아야 할 것이 다르다\n\n기술 설명의 독자는 입력이 어떤 과정을 거쳐 결과가 되는지, 다른 방식과 왜 다른지\n이해해야 한다. 실습의 독자는 준비부터 실행·기대 출력·실패 진단까지 따라갈 수 있어야 한다.\n시장 분석의 독자는 관측 대상·기간·단위와 비교 범위, 반대 근거를 보고 자기 판단을 좁혀야 한다.\n행사·지원 안내의 독자는 자신이 어떤 참여 역할과 필수 조건에 해당하는지 선별할 수 있어야 한다.\n원문에 없는 내용은 추가로 조사한다. 같은 목차·문단 수·SDK 코드·퀴즈를 모든 글에 강제하지 않는다.\n\n모델 소개는 [모델 소개 운영 기준](../../../docs/AI_MODEL_RESEARCH.md)에 따른다.\\n가상 활용 사례나 응용 문제를 요구하지 않고 다른 모델과의 비교 및 장단점에 답하는지 확인한다.\\n\\n## 질문과 근거의 공백을 작업 메모에서 찾는다\n\n핵심 질문마다 필요한 자료, 원문에서 확인한 답, 본문의 답 위치, 남은 공백을 연결한다.\n글의 제목이 실제보다 큰 결과를 약속하면 제목과 범위를 조정하거나 그 결과까지 보강한다.\n자료가 부족한 상태에서 익숙한 일반 조언으로 문단을 채우지 않는다.\n\n| 원고의 약속 | 실질 내용의 예 | 그 내용이 없을 때 할 일 |\n| --- | --- | --- |\n| 문서 검색 AI를 이해한다 | 원문 부분·색인·질문·후보·선택·답변의 관계와 버전·권한의 역할 | 검색 과정에 답하는 문서와 후보 출력 확보 |\n| 작은 AI 앱을 만든다 | 모델의 호출 요청, 프로그램 실행, 결과 반환, 최종 답·화면이 끝까지 연결 | 실제 연결을 제공하거나 원리·제작 계획으로 범위 조정 |\n| 비용 표로 모델을 고른다 | 토큰 단가·구독 차감·시도당 비용·성공당 비용의 정의와 계산 | 출처 없는 배율을 예산 사실처럼 쓰지 않고 계산 가능한 범위 설명 |\n| 시장 변화를 판단한다 | 표본·기간·분모·관측 단위·다른 가능한 설명·선택의 조건 | 단일 채용 공고·자가 보고·과거 수입으로 전체 시장을 단정하지 않기 |\n| 지원 기회를 선별한다 | 원문·첨부의 신청 역할, 선행 자격, 일정·재정 조건을 사례에 대입 | 첨부 미열람을 남기고 신청 가능성을 확정하지 않기 |\n\n## 번역과 요약은 의미가 유지되는지 대조한다\n\n행위자, 조건, 수치·단위, 기간, 인과관계의 강도가 보존되는지 확인한다.\n원문이 기능 존재를 말했는데 ‘업무 성과가 향상됐다’로 바꾸거나, 제한된 표본을\n전체 시장으로 확대하지 않는다. 원문 자체가 작동 과정이나 실제 효과에 답하지 않는다면\n문체를 교정할 것이 아니라 자료를 추가한다. 영문 초안과 번역을 대조하지 않았다면\n번역을 직접 원인으로 확정하지 않는다.\n\n## 제목과 요약을 독립적으로 읽는다\n\n제목·요약만 받은 독자가 대상, 하는 일, 쓰임, 중요한 조건을 자기 말로 설명할 수 있는지 본다.\n낯선 이름은 일상적인 기능 설명과 연결한다. 기술 이름을 지우고 모호한 동사만 남기지 않는다.\n‘이 보고서는 설명한다’, ‘검증해야 한다’ 같은 안내 문장을 사실·원리·비교의 대용품으로 쓰지 않는다.\n\n## 본문은 같은 사례의 과정을 추적한다\n\n첫 등장 개념을 먼저 설명하고, 사례의 입력·중간 상태·출력과 각 단계의 이유를 함께 읽는다.\n핵심 설명은 주된 읽기 경로에 둔다. 코드는 앞에서 설명한 값과 과정을 그대로 구현해야 한다.\n제품 호출을 실행하지 않았다면 개념 예시·로컬 모의 실행·실제 서비스 실행을 구분한다.\n배운 내용을 다른 조건에 적용하는 문제에서는 결론뿐 아니라 이유와 본문 근거를 확인한다.\n\n## 첫 화면과 비교 기준의 회귀 사례\n\n2026-10-09 사용자는 독립 검토를 통과한 음성 보고서의 제목과 소개를 다시 거부했다.\n이 사례의 문제는 원문 기능 자체가 없다는 것이 아니라 독자의 질문 대신 집필자의\n검토 동작을 소개하고, 서로 다른 비교 기준을 섞었다는 점이다.\n\n| 거부된 표현·구성 | 실제 실패 | 수정할 정보 |\n| --- | --- | --- |\n| 말로 AI 업무를 실행하는 세 가지 구조와 오류 찾기 | 어떤 앱의 무엇을 추가·선택하는지 모호함 | 기존 AI 앱의 음성 입력·답변·대화 기능이라는 대상과 목적 |\n| 같은 발화를 음성 인식·업무 조회·답변 재생으로 추적한다 | 독자의 필요보다 집필자의 설명 방법부터 나옴 | 키보드 대신 말로 요청하고, 답도 들을지 결정하는 상황 |\n| 이미 만든 텍스트 앱…선택 기준. | 서술어 없는 소개, 무엇을 기준으로 무엇을 고르는지 비어 있음 | 중간 문장을 확인할 필요와 대화 중 조건 변경 같은 실제 조건 |\n| 세 구조 제목 아래 Gemini Live/GPT-Live/Realtime/단계형 네 행 | 공급사 제품과 역할 분담을 같은 종류처럼 비교 | 동일한 역할 분담을 행으로 비교하고 제품 사례를 별도 연결 |\n| 속도·난이도·비용을 설명한다고 약속 | 기능 문서만으로 실측 우열을 알 수 없음 | 맡아야 할 구현 작업과 측정 항목, 실제 확보한 수치의 범위 |\n\n초기 검토는 title/deck/description/summary/highlights만 별도 입력으로 제공한다.\n검토자는 그 문장으로 알 수 있는 대상·문제·대안·쓰임과 추측해야 하는 부분을 구분한다.\n그 뒤 본문에서 제목의 약속, 비교 기준, 설명 순서와 사실 근거를 검토한다.\n이 순서를 수행해도 실제 초보 사람의 이해가 확인된 것으로 부르지 않는다.\n요약에 설명할 내용의 목록만 있고 실제로 알게 되는 정보가 없다면 추가 보강한다.\n\n음성 입력만 추가하는 범위와 STT→AI→TTS 구조는 서로 배타적인 세 구조로 분류할 수 없다.\n전자는 필요한 기능 범위이고 후자는 음성으로 답하는 구현 경로다. 원문을 확인해 비교 기준을\n정한 뒤 원고를 쓴다. '3가지'라는 제목을 유지하려고 실제 내용을 왜곡하지 않는다.\n\n## 독립 에이전트 검토의 실제 기록\n\n위임은 사용자 또는 적용 가능한 지침의 승인 범위에서만 한다. 승인됐다면 검토자에게\n수정된 원고와 필요한 원문을 제공하고, 기대 답이나 ‘통과시켜야 한다’는 압력을 주지 않는다.\n새로운 평가가 목적이면 기존 판정을 답안처럼 제공하지 않는다. 이전 결함의 재검증이면\n그 결함과 수정 범위를 제공할 수 있으며 이를 새 독자의 무정보 시험으로 부르지 않는다.\n\n검토 기록에는 읽은 보고서 ID/판 또는 정확한 파일 hash, 제목·요약 이해, 본문 막힘 위치,\n해결할 누락·과장, 수정 후 재판정을 남긴다. 출력은 Pass / Revise / Evidence gap처럼\n명확히 하되 판단 이유가 본문에 있어야 한다. 분량·구조·인용 수는 합격 근거가 아니다.\n에이전트 검토가 끝나도 실제 사람의 독해·실습 시험을 수행했다고 말하지 않는다.\n\n## 참고한 방법과 적용의 한계\n\n질문하며 자료를 찾는 사전 조사(STORM), 유창성·정확성·인용 지원의 분리(ALCE),\n과제별 내용 기준(WritingBench/DeepResearch Bench), 깊은 설명과 풀이 사례(IES)를 참고했다.\n이 절차 전체나 하나의 집필 프롬프트가 한국어 교재 품질을 보장한다는 실험 결과는 아니다.\n실제 원고의 질문·사례·근거와 검토자의 막힘으로 효과를 확인하고 필요한 지침만 수정한다.\n\n원문: https://aclanthology.org/2024.naacl-long.347/,\nhttps://aclanthology.org/2023.emnlp-main.398/,\nhttps://arxiv.org/html/2503.05244v1,\nhttps://arxiv.org/html/2506.11763v1,\nhttps://ies.ed.gov/ncee/wwc/Docs/PracticeGuide/20072004.pdf.\n"
+                }
+              ]
+            },
+            {
+              "id": "research-report",
+              "kind": "template",
+              "version": "1.0.1",
+              "supports": [
+                "technology",
+                "comparison",
+                "market",
+                "opportunity",
+                "model_introduction",
+                "custom"
+              ],
+              "stages": [
+                "write"
+              ],
+              "sources": [
+                {
+                  "path": "docs/authoring/presentation.md",
+                  "section": "수치 비교 보고서",
+                  "sha256": "f4161db0f905d25e11128feed10d96a153f791bb90f2ee60fae5b5eba1542631",
+                  "text": "## 수치 비교 보고서\n\n기존 수치 보고서 표시를 사용한다. 같은 비교 기준의 표와 실제 수치의 차트를 선택한다. 수치가 없는 개념 설명에 임의 데이터를 만들지 않는다. 공통 화면 계약은 [보고서 화면](../BRIEFING_TEMPLATE.md)에 있다.\n\n"
+                },
+                {
+                  "path": "docs/BRIEFING_TEMPLATE.md",
+                  "section": "Unified typography, 2026-10-09",
+                  "sha256": "59e9506cc40a434ba77fb1f3851037e2b9ddee910e1d45c2c407ed36f43fc800",
+                  "text": "## Unified typography, 2026-10-09\n\nUse the locally packaged full Pretendard Variable v1.3.9 face for Korean, Latin,\nnumbers and punctuation in the shared Editorial shell, main, authored reports,\nnavigation, native model views and model reading companions. Main headings use700,\nsubheadings/emphasis600 and body400. Do not restore text-specific heading subsets:\nnew titles contained Korean glyphs missing from the old subset, and the reported\nUpwork heading actually used Roboto Slab, Noto Serif KR and Malgun Gothic together.\nCSS `font-synthesis:none` prevents simulated weight/style; the variable face\nprovides the actual weights. Code retains its monospace family. Imported originals\ninside isolated model iframes keep their original presentation.\n\nThe unmodified full font and original SIL OFL notice are in\n`housing_watch/assets/editorial/`; see its README for exact provenance/hash. The\nexisting build embeds one font in the shared content-versioned stylesheet, with\nno external font request. Uncompressed CSS grows from347,313 to2,851,316 bytes;\nthis is the cost of complete future Korean coverage and remains shared/cached\nacross pages. Standalone exports remain self-contained.\n\nLocal verification: actual browser font selection on the reported title now\ncontains only Pretendard Variable. All11,172 modern Korean syllables plus sample\nLatin/digits/punctuation select the same face; actual weights700/600 are used.\nAt320/390/1280px,96 font/representative-page checks and253 all34-report/model-\ncompanion/search/disclosure/history checks pass.109 tests,195HTML/9676 internal\nreferences, brief/desk/review and inspected PNG pass; report/history/model data\nand publication order exactly match the pre-change local snapshot. Receipts\nand before/after captures are retained under the existing registered research\nreview roots. App browser connection failed, so visual tests used standalone\nPlaywright/Edge. Optional host/favicon404 remains separately recorded.\n\nSource `4f956357646c12ca8972edb61826f2a6ad2072b2` deployed successfully through\n[Pages37891501551](https://github.com/Hansihoo/signal-desk/actions/runs/37891501551).\nPublic checks at2026-10-09 06:04:56.544319 UTC confirm exact34 current reports,\n122 edition documents,14 original model rows and publication order, matching\nlocal CSS (normalized SHA256 `5f48bd5bff11375877f7b14fea252e3becd3f87dd8f46795d5e2f8b6bc9ba7fc`),\none active font face and the original published license. Actual390px public\nfont/coverage/representative-route/search/disclosure/menu checks all36 pass at\n06:05:03.752 UTC; inspected public title/main screenshots match the intended\nuniform weights. Optional host favicon404 is separate from content errors.\nApp opening returned queued; this is not proof that the user viewed the page.\nThe retained public receipts are `font-weight-public-data-checks.json` and\n`font-weight-public-checks.json`; no reader preference/learning approval claimed.\n\n\n"
+                }
+              ],
+              "output_kind": "report",
+              "artifacts": [
+                {
+                  "path": "housing_watch/editorial.py",
+                  "sha256": "48962242f1a249780861a02b15a0e02f23fddcf9398a69c4ce7f8f3aad33baae"
+                },
+                {
+                  "path": "housing_watch/editorial_shell.html",
+                  "sha256": "51c686c3933942a76a282c20106d211332c08d5ba59dab0a5de9adfe953842fb"
+                },
+                {
+                  "path": "housing_watch/editorial.css",
+                  "sha256": "2ffc886b1f941a55822ff0a77442c37cbda110af5b7832a35e56d01101a31b66"
+                },
+                {
+                  "path": "housing_watch/editorial.js",
+                  "sha256": "d3435dc19709427b81a9b77514c5945cc34402e2dcf60232bb044280e43550b8"
+                },
+                {
+                  "path": "housing_watch/assets/editorial/fonts.css",
+                  "sha256": "44b9b2028cf703cc40c0446093e23aa7d3427015c9f61e6ee164f5c45123df30"
+                },
+                {
+                  "path": "housing_watch/assets/editorial/main.css",
+                  "sha256": "2574c51914d2bdf3d8da8afb4ec41fcbc73adcc12ebac376e26242efa04e33df"
+                },
+                {
+                  "path": "housing_watch/editorial_report.html",
+                  "sha256": "ac134b199a8f3e8255501679b6869c170b1088789c0d0dadcb869fa92aa244d7"
+                },
+                {
+                  "path": "housing_watch/briefing_preview.py",
+                  "sha256": "9432ec00398f5ce9ba1222366502d237e88b87723d54e975ea7780e58f82a463"
+                }
+              ]
+            }
+          ],
+          "requirements": [],
+          "preferences": {},
+          "overrides": [],
+          "scope": "document",
+          "status": "planned",
+          "recipe_hash": "24038b238fae48de89c03b47699c8abda1d9dea8d4369168786b938dbd7b8dfc"
+        },
+        "content_hash": "652c7831933aec17edafd4a6fbf9455715cee62be2850f13e7d70815874ad2a1"
+      },
+      "review_limits": "작성자의 첫 화면과 본문 별도 자체 검토. 독립 검토·실제 독자 시험·제품 실행·회사 자격 검증 없음.",
+      "first_screen_review": {
+        "input_hash": "b9b5bd78808ba9f271d7cb351f71bdf4f62103887031295bfeb2124de5f5a330",
+        "reviewer": "author_self_review; isolated first-screen fields",
+        "reviewed_at": "2026-11-09T00:04:40.058064+00:00",
+        "checks": {
+          "readability": {
+            "passed": true,
+            "reason": "서식 재사용과 에이전트 권한의 두 축을 제목이 밝힌다. 첫 문장은 한컴 제품의 변화를 독자에게 바로 알려 준다.",
+            "locations": [
+              "/title",
+              "/deck"
+            ]
+          },
+          "question_answered": {
+            "passed": true,
+            "reason": "소개와 요약문만으로 서식 처리·행동 제한·파일 보호가 다른 판단이라는 점을 확인했다.",
+            "locations": [
+              "/description",
+              "/deck"
+            ]
+          },
+          "reader_outcome": {
+            "passed": true,
+            "reason": "업무 목적별 비교라는 범위가 드러나며 비용이나 성능 우열을 약속하지 않는다.",
+            "locations": [
+              "/description",
+              "/deck"
+            ]
+          }
+        },
+        "issues": []
+      },
+      "body_review": {
+        "input_hash": "37c58df40b40a558c6aafcc8f9c8d8117b019f59e9f42e94f25f7cfde34ae5cc",
+        "reviewer": "author_self_review; official originals compared with content",
+        "reviewed_at": "2026-11-09T00:04:40.058291+00:00",
+        "checks": {
+          "readability": {
+            "passed": true,
+            "reason": "도구를 부르는 MCP를 첫 본문에서 설명하고 표에서 제공 단계와 도입 확인을 나눴다.",
+            "locations": [
+              "/draft/report/explanation/0",
+              "/draft/report/tables/0"
+            ]
+          },
+          "question_answered": {
+            "passed": true,
+            "reason": "서식 재사용, 에이전트 접근과 쓰기, 파일 자체의 보호 조건을 따로 답했다.",
+            "locations": [
+              "/draft/report/explanation/0",
+              "/draft/report/explanation/1"
+            ]
+          },
+          "reader_outcome": {
+            "passed": true,
+            "reason": "두 결론이 검토 대상 양식·업무 권한의 서로 다른 확인을 지시한다.",
+            "locations": [
+              "/draft/report/result"
+            ]
+          },
+          "analysis": {
+            "passed": true,
+            "reason": "한컴 정식 출시, 시연 예정, Box의 일반 제공·감사 예정, Google 등록형 베타가 섞이지 않는지 확인했다.",
+            "locations": [
+              "/draft/report/tables/0"
+            ]
+          },
+          "evidence": {
+            "passed": true,
+            "reason": "공급자 자료와 지원 문서로 각 변화의 근거를 연결하고 확인일과 원문 날짜를 분리했다.",
+            "locations": [
+              "/draft/report/references",
+              "/analysis/evidence"
+            ]
+          },
+          "factuality": {
+            "passed": true,
+            "reason": "Enterprise Advanced 쓰기 적용과 읽기 예외, Google의 추가 구독과 기본 꺼짐을 재대조했다. 가격·한국 계정·도입 성과는 확정하지 않았다.",
+            "locations": [
+              "/draft/report/explanation/1",
+              "/draft/report/caveats"
+            ]
+          }
+        },
+        "issues": []
+      },
+      "events": []
+    }
+  ]
+}
