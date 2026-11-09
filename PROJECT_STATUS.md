@@ -456,3 +456,7 @@ source aea2b3e의 [Pages41909996607](https://github.com/Hansihoo/signal-desk/act
 ### 2026-11-06 모델 발행 검증 완료
 
 sourcee8e348d/Pages42104478094성공.실제공개5소개와최신45facts/2541관측2652이력,기존2605이력보존과필터/단위/출처/날짜/첫판/보완이력,390/1280px이미지/표/연결/상세닫기와오류0을확인했다.전일이미지잔여도완료했다.클라우드와로컬저장시각및독립/실행/사람검증한계를보존한다.[최종범위](docs/AI_MODEL_REVIEW.2026-11-06.md#2026-11-06-공개-반영과-화면-검증-완료).
+
+## 2026-11-09 사업 주간 검토
+
+[문서 AI 사업 방향 10판](https://hansihoo.github.io/signal-desk/preview/office-business-directions.html)을 [Pages 실행](https://github.com/Hansihoo/signal-desk/actions/runs/42538532896)으로 공개했다. 전자서식 재사용과 외부 AI의 읽기·쓰기 권한, 파일 암호화의 적용 조건을 비교했다. 기존 국책·영업 보고서 및 경쟁사 이전 판은 보존했다. 국책사업 참여 추천 기준을 통과한 건은 없었으며 검토 상태는 사내에서만 갱신했다. [조사와 공개 검증](docs/BUSINESS_REVIEW.2026-11-09.md).

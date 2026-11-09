@@ -8,3 +8,9 @@
 - Microsoft 365 Copilot 릴리스, Google Workspace, Adobe 공식 뉴스와 Acrobat 변경 문서, 한컴 공식 뉴스/공시, Upstage와 사이냅 블로그의 관련 부분을 확인했다. 사이냅 RSS는 404이고 공식 블로그에서 보완했다. 11월 3일 사이냅 게시물은 이미 수록한 10월 28일 서식 인식 기능에 관한 재보도였다.
 
 원문 URL과 확인일은 각 공개판의 참고자료에 있다. 내용과 첫 화면은 작성자가 별도로 자체 검토했다. 공개판에는 회사 자격 근거와 내부 판단을 싣지 않았다.
+
+## 공개 검증
+
+- [Pages 실행](https://github.com/Hansihoo/signal-desk/actions/runs/42538532896) 성공. [사업 목록](https://hansihoo.github.io/signal-desk/preview/business.html)에서 경쟁사·시장 필터와 검색으로 새 보고서를 찾았다. 390px에서 키보드로 새 본문을 열고 목록과 본문의 폭, 표의 스크롤 영역, 공식 출처 링크와 [이전 9판](https://hansihoo.github.io/signal-desk/preview/history/office-business-directions-r9.html)을 확인했다.
+- 로컬 보고서 품질 검사와 빈 DB부터의 발행 순서 재현, 사업 관련 테스트와 지식 검색 통과. 저장소에 있던 미출시 학습 템플릿 지문 불일치로 로컬 범위 확대 리서치 테스트는 실패했으며, 배포 실행의 제출 소스 전체 테스트는 통과했다. 로컬 주거 review의 활성 공고 0건은 사업 페이지와 별개이며 클라우드 주거 확인은 통과했다.
+- 사내 작업은 외부 원장과 화면에서 갱신했다. 공개 입력 및 사이트의 사업 화면·공개 라이브러리·리서치 데이터에 사내 레코드 ID와 외부 경로가 없음을 확인했다.
