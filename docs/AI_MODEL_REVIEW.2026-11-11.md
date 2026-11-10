@@ -13,3 +13,11 @@ Theo catalog 18편을 수집했다. 새 원문은 Claude Fable 5.2이며, Gemini
 ## 로컬 검증
 
 신규 소개 3편과 Carbon 개정판, 공식 관측 29건을 함께 등록했다. 로컬 발행, 품질 게이트, 모델·발행 테스트 37개가 통과했다. Muse Ember 공식 요금 상세에서 200K 초과 조건, 출력 USD 1.50 및 캐시 USD 0.012와 확인일을 확인했다. Pages 공개와 브라우저 검증 결과는 배포가 끝난 뒤 기록한다.
+
+## 공개 완료 — 2026-11-11 05:19 KST
+
+커밋 `955cf58`의 [GitHub Pages 실행](https://github.com/Hansihoo/signal-desk/actions/runs/42893121819)이 성공했다. 제출본 테스트 214개와 클라우드 주거 점검이 통과했다. 로컬 주거 점검은 활성 공고 0건 항목만 실패했다. 로컬 지식 색인에는 소개 4편의 현재판 지문과 근거를 연결했고 Muse Ember 요금 질의를 확인했다.
+
+공개 데이터에서 소개 4편과 공식 관측 29건이 검토 입력과 일치했다. 배포 전 보고서 258판, 모델 관측 2,776판, Theo 원문 23판의 지문을 모두 보존했다. 새 배포에는 보고서 262판, 모델 관측 2,805판, Theo 원문 23판이 있다. Theo 기존 3편의 수집 변화는 연결 자산의 개정이며 본문은 같다.
+
+공개 390px 브라우저에서 새 소개 4편의 비교표 8개, 비교표 링크, Carbon의 제한 제공 1판을 확인했다. [전체 모델 비교표](https://hansihoo.github.io/signal-desk/preview/ai-models.html)에서는 5개 모델을 검색해 Muse Ember의 FrontierCode 27.2%와 장문 요금, Robotics의 96% 실증, MiniMax의 FP4 제공, Carbon의 12월 단가, Fable의 CursorBench 60.0% 및 평가 비용 USD 32.79를 원문 단위·조건·확인일과 함께 확인했다. LFM3-Omni-2B의 1~3차 관측과 [Theo Fable 5.2 원문](https://hansihoo.github.io/signal-desk/preview/model-guides/claude-fable-5-2-model-guide.html)의 검색·정렬을 실제로 확인했다.
