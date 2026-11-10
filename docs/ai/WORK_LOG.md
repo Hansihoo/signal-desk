@@ -899,3 +899,7 @@ Arete-27B 신규 가이드와 기존 LFM3 가이드의 API 요금·제공 개정
 K-EXAONE 2.5, Seedream 5.5, Shizuku-Duplex, Claude Fable 5.2와 Mythos 5.2의 소개와 공식 사실 34건을 불변 배치로 연결했다. 무료 API, 순차 배포, 연구 시연, 일반 API 및 검증 조직 제한 제공을 구분했다. 각 보고서의 지문과 로컬 지식 검색을 검증했다.
 
 첫 실행은 업로드 후 아티팩트 조회에 실패했고 [후속 Pages 42692434618](https://github.com/Hansihoo/signal-desk/actions/runs/42692434618)이 성공했다. 클라우드 전체 214개와 로컬 관련 37개 테스트가 통과했다. 공개 소개 5편과 전체표의 값·단위·조건·출처·날짜·이전 판을 확인했다. 390px에서 표 12개 및 본문 비교표 링크 5개를 확인했고 배포 전 이력의 지문을 대조했다. 로컬 주거 활성 공고 0건은 별도로 기록했다. [확인 범위](../AI_MODEL_REVIEW.2026-11-10.md).
+
+## 2026-11-11 모델 소개와 전체 비교표
+
+Theo 신규 Fable 5.2 원문과 3편 개정, 비교표 원본 6건을 수집했다. Muse Ember, Gemini Robotics 2.5, MiniMax H3 Image PE 소개와 Gemini 4 Carbon 제공 확대 개정판을 공식 관측 29건과 함께 로컬 발행했다. 품질 검사와 관련 테스트 37개 및 로컬 Muse Ember 장문 요금 상세를 확인했다. [검토 범위](../AI_MODEL_REVIEW.2026-11-11.md).

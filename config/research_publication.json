@@ -75,7 +75,10 @@
     "practical-ai-workflows",
     "ai-assisted-writing",
     "ai-game-creation",
-    "ai-hackathons-2026"
+    "ai-hackathons-2026",
+    "muse-ember-model-guide",
+    "gemini-robotics-25-model-guide",
+    "minimax-h3-image-pe-model-guide"
   ],
   "batches": [
     {
@@ -492,6 +495,11 @@
       "id": "ai-model-guides-2026-11-10-anthropic",
       "input": "ai_model_guides.2026-11-10.anthropic.json",
       "quality": "ai_model_guides.2026-11-10.anthropic.quality.json"
+    },
+    {
+      "id": "ai-model-guides-2026-11-11",
+      "input": "ai_model_guides.2026-11-11.json",
+      "quality": "ai_model_guides.2026-11-11.quality.json"
     }
   ]
 }

@@ -108,7 +108,10 @@
     "seedream-55-model-guide",
     "shizuku-duplex-model-guide",
     "claude-fable-52-model-guide",
-    "claude-mythos-52-model-guide"
+    "claude-mythos-52-model-guide",
+    "muse-ember-model-guide",
+    "gemini-robotics-25-model-guide",
+    "minimax-h3-image-pe-model-guide"
   ],
   "catalogs": {
     "devops-implementation-guide": "devops_tools.2026-10-10.r4.json"
@@ -278,7 +281,8 @@
       "c9892bd0e681ddad40c8d6497a237f7d1eaa1d7c56cbc109a63e4ca45b9e20dc"
     ],
     "gemini-4-carbon-model-guide": [
-      "75e0c943fd9ec2496c3bcf7b7d58696b513b5d3d804c28ec377bd3fe8297f45a"
+      "75e0c943fd9ec2496c3bcf7b7d58696b513b5d3d804c28ec377bd3fe8297f45a",
+      "ba031f1d44d97cf305424cb79757888a742ee9516478e42ca57b828f3ca2ede9"
     ],
     "unlimited-ocr-2-model-guide": [
       "83702dc96e994c400e7c5254e6cb21bb2ca0e4e2116d21b5eaf0d414a1a17acc"
@@ -375,6 +379,15 @@
     ],
     "claude-mythos-52-model-guide": [
       "0b5021e546fc70687810df251fa2991f90f8f39e3fd6f012610e4410311ec011"
+    ],
+    "muse-ember-model-guide": [
+      "99df650391293f6972cbb0e447572e6b8847fd53161f5177bd2e99d81307ec2c"
+    ],
+    "gemini-robotics-25-model-guide": [
+      "a6cca61328d6512612d3ea610ac7f2d87343d01b46d1987e0e918d8753b88488"
+    ],
+    "minimax-h3-image-pe-model-guide": [
+      "4149aa89f284c68c0c6795488dc66d7ff2f0dd21bbf95b4a347dff621444f71e"
     ]
   },
   "model_introduction_editions": {
@@ -483,7 +496,8 @@
       "c9892bd0e681ddad40c8d6497a237f7d1eaa1d7c56cbc109a63e4ca45b9e20dc"
     ],
     "gemini-4-carbon-model-guide": [
-      "75e0c943fd9ec2496c3bcf7b7d58696b513b5d3d804c28ec377bd3fe8297f45a"
+      "75e0c943fd9ec2496c3bcf7b7d58696b513b5d3d804c28ec377bd3fe8297f45a",
+      "ba031f1d44d97cf305424cb79757888a742ee9516478e42ca57b828f3ca2ede9"
     ],
     "unlimited-ocr-2-model-guide": [
       "83702dc96e994c400e7c5254e6cb21bb2ca0e4e2116d21b5eaf0d414a1a17acc"
@@ -580,6 +594,15 @@
     ],
     "claude-mythos-52-model-guide": [
       "0b5021e546fc70687810df251fa2991f90f8f39e3fd6f012610e4410311ec011"
+    ],
+    "muse-ember-model-guide": [
+      "99df650391293f6972cbb0e447572e6b8847fd53161f5177bd2e99d81307ec2c"
+    ],
+    "gemini-robotics-25-model-guide": [
+      "a6cca61328d6512612d3ea610ac7f2d87343d01b46d1987e0e918d8753b88488"
+    ],
+    "minimax-h3-image-pe-model-guide": [
+      "4149aa89f284c68c0c6795488dc66d7ff2f0dd21bbf95b4a347dff621444f71e"
     ]
   },
   "model_introduction_purpose_editions": {
@@ -677,7 +700,8 @@
       "c9892bd0e681ddad40c8d6497a237f7d1eaa1d7c56cbc109a63e4ca45b9e20dc"
     ],
     "gemini-4-carbon-model-guide": [
-      "75e0c943fd9ec2496c3bcf7b7d58696b513b5d3d804c28ec377bd3fe8297f45a"
+      "75e0c943fd9ec2496c3bcf7b7d58696b513b5d3d804c28ec377bd3fe8297f45a",
+      "ba031f1d44d97cf305424cb79757888a742ee9516478e42ca57b828f3ca2ede9"
     ],
     "unlimited-ocr-2-model-guide": [
       "83702dc96e994c400e7c5254e6cb21bb2ca0e4e2116d21b5eaf0d414a1a17acc"
@@ -774,6 +798,15 @@
     ],
     "claude-mythos-52-model-guide": [
       "0b5021e546fc70687810df251fa2991f90f8f39e3fd6f012610e4410311ec011"
+    ],
+    "muse-ember-model-guide": [
+      "99df650391293f6972cbb0e447572e6b8847fd53161f5177bd2e99d81307ec2c"
+    ],
+    "gemini-robotics-25-model-guide": [
+      "a6cca61328d6512612d3ea610ac7f2d87343d01b46d1987e0e918d8753b88488"
+    ],
+    "minimax-h3-image-pe-model-guide": [
+      "4149aa89f284c68c0c6795488dc66d7ff2f0dd21bbf95b4a347dff621444f71e"
     ]
   },
   "model_introduction_reader_editions": {

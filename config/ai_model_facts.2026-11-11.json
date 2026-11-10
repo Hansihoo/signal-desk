@@ -1,0 +1,477 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "id": "muse-ember-meta-availability",
+      "model": "Muse Ember",
+      "provider": "Meta",
+      "source_url": "https://research.meta.ai/blog/muse-ember",
+      "checked_on": "2026-11-11",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "Meta Model API · 공개 사양",
+        "access": "Meta Model API 및 Muse Code",
+        "context": 1000000,
+        "status": "공개",
+        "release": "2026-11-09",
+        "condition": "muse-ember-1.0 · 최대 출력 512K 토큰 · Responses API · 제공사 출시 문서 표기"
+      }
+    },
+    {
+      "id": "muse-ember-cloud-preview",
+      "model": "Muse Ember",
+      "provider": "Meta",
+      "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/meta/muse-ember-1-0",
+      "checked_on": "2026-11-11",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "Google Cloud · 파트너 Preview",
+        "access": "Gemini Enterprise Agent Platform, 글로벌",
+        "context": 1048576,
+        "status": "Preview",
+        "release": "2026-11-09",
+        "condition": "최대 출력 524,288토큰. 텍스트·이미지 입력, 텍스트 출력. Batch·Provisioned Throughput 미지원."
+      }
+    },
+    {
+      "id": "muse-ember-meta-price-le",
+      "model": "Muse Ember",
+      "provider": "Meta",
+      "source_url": "https://dev.meta.ai/docs/pricing-rate-limits",
+      "checked_on": "2026-11-11",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Meta Model API · 표준 입력 ≤200K",
+        "입력 USD / 100만 토큰": 0.1,
+        "캐시 읽기 USD / 100만 토큰": 0.004,
+        "출력 USD / 100만 토큰": 0.5,
+        "condition": "요청 입력 합계 200,000토큰 이하. 저장 대화와 캐시 토큰 포함."
+      }
+    },
+    {
+      "id": "muse-ember-meta-price-gt",
+      "model": "Muse Ember",
+      "provider": "Meta",
+      "source_url": "https://dev.meta.ai/docs/pricing-rate-limits",
+      "checked_on": "2026-11-11",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Meta Model API · 표준 입력 >200K",
+        "입력 USD / 100만 토큰": 0.3,
+        "캐시 읽기 USD / 100만 토큰": 0.012,
+        "출력 USD / 100만 토큰": 1.5,
+        "condition": "요청 입력 합계 200,000토큰 초과 시 전체에 적용. 저장 대화와 캐시 토큰 포함."
+      }
+    },
+    {
+      "id": "muse-ember-aa-v5",
+      "model": "Muse Ember",
+      "provider": "Meta",
+      "source_url": "https://research.meta.ai/blog/muse-ember",
+      "checked_on": "2026-11-11",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Artificial Analysis Intelligence Index v5",
+        "평가 점수": 36,
+        "condition": "11월 9일 반올림, Max.",
+        "effort": "Max",
+        "단위": "점",
+        "측정 주체": "Artificial Analysis (Meta 공개 표)"
+      }
+    },
+    {
+      "id": "muse-ember-automation",
+      "model": "Muse Ember",
+      "provider": "Meta",
+      "source_url": "https://research.meta.ai/blog/muse-ember",
+      "checked_on": "2026-11-11",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "AutomationBench-AA",
+        "평가 점수": 37.8,
+        "condition": "11월 9일, strict pass@1, Max.",
+        "effort": "Max",
+        "단위": "%",
+        "측정 주체": "Artificial Analysis (Meta 공개 표)"
+      }
+    },
+    {
+      "id": "muse-ember-terminal",
+      "model": "Muse Ember",
+      "provider": "Meta",
+      "source_url": "https://research.meta.ai/blog/muse-ember",
+      "checked_on": "2026-11-11",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Terminal-Bench 4.0",
+        "평가 점수": 40.9,
+        "condition": "Max, mini-swe-agent. 모델별 최고 공개 하니스.",
+        "effort": "Max",
+        "단위": "%",
+        "측정 주체": "Meta"
+      }
+    },
+    {
+      "id": "muse-ember-frontiercode",
+      "model": "Muse Ember",
+      "provider": "Meta",
+      "source_url": "https://research.meta.ai/blog/muse-ember",
+      "checked_on": "2026-11-11",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "FrontierCode 2.0-AA",
+        "평가 점수": 27.2,
+        "condition": "11월 9일, Max, 병합 가능성 평가.",
+        "effort": "Max",
+        "단위": "%",
+        "측정 주체": "Artificial Analysis (Meta 공개 표)"
+      }
+    },
+    {
+      "id": "muse-ember-gdp-pdf",
+      "model": "Muse Ember",
+      "provider": "Meta",
+      "source_url": "https://research.meta.ai/blog/muse-ember",
+      "checked_on": "2026-11-11",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "GDP.pdf-AA",
+        "평가 점수": 22.8,
+        "condition": "Max, 전문 장문 문서.",
+        "effort": "Max",
+        "단위": "%",
+        "측정 주체": "Artificial Analysis (Meta 공개 표)"
+      }
+    },
+    {
+      "id": "muse-ember-osworld-partial",
+      "model": "Muse Ember",
+      "provider": "Meta",
+      "source_url": "https://research.meta.ai/blog/muse-ember",
+      "checked_on": "2026-11-11",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OSWorld 2.1 · 부분점수",
+        "평가 점수": 69.5,
+        "condition": "Max, 부분점수 채점.",
+        "effort": "Max",
+        "단위": "%",
+        "측정 주체": "Meta"
+      }
+    },
+    {
+      "id": "muse-ember-osworld-binary",
+      "model": "Muse Ember",
+      "provider": "Meta",
+      "source_url": "https://research.meta.ai/blog/muse-ember",
+      "checked_on": "2026-11-11",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OSWorld 2.1 · 이진 성공률",
+        "평가 점수": 33.8,
+        "condition": "Max, 완전 성공 이진 채점.",
+        "effort": "Max",
+        "단위": "%",
+        "측정 주체": "Meta"
+      }
+    },
+    {
+      "id": "gr25-partner-release",
+      "model": "Gemini Robotics 2.5",
+      "provider": "Google DeepMind",
+      "source_url": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/",
+      "checked_on": "2026-11-11",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "Google DeepMind · VLA 모델",
+        "status": "파트너 배포",
+        "access": "Google DeepMind 로봇 파트너",
+        "release": "2026-11-10",
+        "condition": "Apollo 2 및 Franka Duo 공개 사례. 일반 API와 표준 요금 미확인."
+      }
+    },
+    {
+      "id": "gr25-kitting",
+      "model": "Gemini Robotics 2.5",
+      "provider": "Google DeepMind",
+      "source_url": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/",
+      "checked_on": "2026-11-11",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "자동차 부품 정리 실증",
+        "평가 점수": 96,
+        "condition": "Mercedes-Benz 헝가리 및 독일 생산라인. Apollo 2 + Gemini Robotics ER + 2.5. 표본 수 미공개.",
+        "단위": "성공률 %",
+        "측정 주체": "Google DeepMind"
+      }
+    },
+    {
+      "id": "gr25-obstacles",
+      "model": "Gemini Robotics 2.5",
+      "provider": "Google DeepMind",
+      "source_url": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/",
+      "checked_on": "2026-11-11",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "장애물 주변 안전 과제 완료",
+        "평가 점수": 33,
+        "condition": "DeepMind 자체, 추론 시점 안전 유도 적용 비교.",
+        "단위": "상대 개선 %",
+        "측정 주체": "Google DeepMind"
+      }
+    },
+    {
+      "id": "gr25-nearby-people",
+      "model": "Gemini Robotics 2.5",
+      "provider": "Google DeepMind",
+      "source_url": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/",
+      "checked_on": "2026-11-11",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "사람 주변 안전 과제 완료",
+        "평가 점수": 43,
+        "condition": "DeepMind 자체, 추론 시점 안전 유도 적용 비교.",
+        "단위": "상대 개선 %",
+        "측정 주체": "Google DeepMind"
+      }
+    },
+    {
+      "id": "minimax-h3-image-pe-weights",
+      "model": "MiniMax H3 Image PE",
+      "provider": "MiniMax",
+      "source_url": "https://huggingface.co/MiniMaxAI/MiniMax-H3-Image-PE",
+      "checked_on": "2026-11-11",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "공식 모델 카드 · 텍스트-이미지 확장",
+        "status": "공개 가중치",
+        "access": "Hugging Face, MiniMax-H3-Image Community License Agreement",
+        "release": "2026-11-10",
+        "condition": "Qwen3.8-27B 기반 FP4. 텍스트에서 상세 설명과 화면비를 생성. 이미지 편집 확장은 프롬프트만 공개."
+      }
+    },
+    {
+      "id": "gemini-4-carbon-ga-2026-11-10",
+      "model": "Gemini 4 Carbon",
+      "provider": "Google DeepMind",
+      "source_url": "https://aistudio.google.com/docs/models/gemini-4-carbon",
+      "checked_on": "2026-11-11",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "Gemini API · 안정 모델",
+        "status": "Stable · 유료",
+        "access": "Gemini API, Google AI Studio",
+        "context": 1048576,
+        "release": "2026-11-10",
+        "condition": "gemini-4-carbon. 합산 입력·출력 1,048,576토큰. 기본 동기 65,536, long decode 최대 1,048,576 출력 표기."
+      }
+    },
+    {
+      "id": "gemini-4-carbon-standard-intro-2026-11",
+      "model": "Gemini 4 Carbon",
+      "provider": "Google DeepMind",
+      "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
+      "checked_on": "2026-11-11",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Gemini API · Standard 도입",
+        "입력 USD / 100만 토큰": 2,
+        "캐시 읽기 USD / 100만 토큰": 0.1,
+        "출력 USD / 100만 토큰": 10,
+        "condition": "2026-11-30까지 도입 요금. 유료, 출력에 추론 포함, 자동 캐시 적중만 지원."
+      }
+    },
+    {
+      "id": "gemini-4-carbon-standard-dec-2026-11",
+      "model": "Gemini 4 Carbon",
+      "provider": "Google DeepMind",
+      "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
+      "checked_on": "2026-11-11",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Gemini API · Standard 12월",
+        "입력 USD / 100만 토큰": 4,
+        "캐시 읽기 USD / 100만 토큰": 0.2,
+        "출력 USD / 100만 토큰": 20,
+        "condition": "2026-12-01부터 적용 예정. 유료, 출력에 추론 포함, 자동 캐시 적중만 지원."
+      }
+    },
+    {
+      "id": "carbon-official-2026-11-graphwalks",
+      "model": "Gemini 4 Carbon",
+      "provider": "Google DeepMind",
+      "source_url": "https://deepmind.google/models/gemini/",
+      "checked_on": "2026-11-11",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "GraphWalks · 256K–1M BFS (F1)",
+        "평가 점수": 96.2,
+        "condition": "긴 문맥 BFS F1. 실제 API 독립 재현 없음.",
+        "단위": "%",
+        "측정 주체": "Google DeepMind"
+      }
+    },
+    {
+      "id": "carbon-official-2026-11-frontierswe",
+      "model": "Gemini 4 Carbon",
+      "provider": "Google DeepMind",
+      "source_url": "https://deepmind.google/models/gemini/",
+      "checked_on": "2026-11-11",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "FrontierSWE 2",
+        "평가 점수": 61.2,
+        "condition": "Google 표, 에이전트 코딩. 실제 API 독립 재현 없음.",
+        "단위": "%",
+        "측정 주체": "Google DeepMind"
+      }
+    },
+    {
+      "id": "carbon-official-2026-11-osworld",
+      "model": "Gemini 4 Carbon",
+      "provider": "Google DeepMind",
+      "source_url": "https://deepmind.google/models/gemini/",
+      "checked_on": "2026-11-11",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OSWorld 2.1",
+        "평가 점수": 81.5,
+        "condition": "Google 표의 오프라인 하위 집합. 실제 API 독립 재현 없음.",
+        "단위": "%",
+        "측정 주체": "Google DeepMind"
+      }
+    },
+    {
+      "id": "fable-52-cursorbench-low",
+      "model": "Claude Fable 5.2",
+      "provider": "Anthropic",
+      "source_url": "https://cursor.com/es/cursorbench",
+      "checked_on": "2026-11-11",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "CursorBench 4.0 · Low",
+        "평가 점수": 53.2,
+        "단위": "%",
+        "측정 주체": "Cursor",
+        "평가 비용 USD": 3.94,
+        "평가 토큰": 36616,
+        "평가 단계": 30,
+        "effort": "Low",
+        "harness": "Cursor",
+        "condition": "Cursor 원문 11월 11일 KST 확인. 실제 Cursor 세션에서 구성한 모호한 다중 파일 과제. 실행일 미명시. 공개 표의 비용이며 표준 API 단가와 구분."
+      }
+    },
+    {
+      "id": "fable-52-cursorbench-medium",
+      "model": "Claude Fable 5.2",
+      "provider": "Anthropic",
+      "source_url": "https://cursor.com/es/cursorbench",
+      "checked_on": "2026-11-11",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "CursorBench 4.0 · Medium",
+        "평가 점수": 54.8,
+        "단위": "%",
+        "측정 주체": "Cursor",
+        "평가 비용 USD": 4.66,
+        "평가 토큰": 44103,
+        "평가 단계": 35,
+        "effort": "Medium",
+        "harness": "Cursor",
+        "condition": "Cursor 원문 11월 11일 KST 확인. 실제 Cursor 세션에서 구성한 모호한 다중 파일 과제. 실행일 미명시. 공개 표의 비용이며 표준 API 단가와 구분."
+      }
+    },
+    {
+      "id": "fable-52-cursorbench-high",
+      "model": "Claude Fable 5.2",
+      "provider": "Anthropic",
+      "source_url": "https://cursor.com/es/cursorbench",
+      "checked_on": "2026-11-11",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "CursorBench 4.0 · High",
+        "평가 점수": 56.9,
+        "단위": "%",
+        "측정 주체": "Cursor",
+        "평가 비용 USD": 9.7,
+        "평가 토큰": 99259,
+        "평가 단계": 69,
+        "effort": "High",
+        "harness": "Cursor",
+        "condition": "Cursor 원문 11월 11일 KST 확인. 실제 Cursor 세션에서 구성한 모호한 다중 파일 과제. 실행일 미명시. 공개 표의 비용이며 표준 API 단가와 구분."
+      }
+    },
+    {
+      "id": "fable-52-cursorbench-extra-high",
+      "model": "Claude Fable 5.2",
+      "provider": "Anthropic",
+      "source_url": "https://cursor.com/es/cursorbench",
+      "checked_on": "2026-11-11",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "CursorBench 4.0 · Extra High",
+        "평가 점수": 56.3,
+        "단위": "%",
+        "측정 주체": "Cursor",
+        "평가 비용 USD": 15.48,
+        "평가 토큰": 161251,
+        "평가 단계": 108,
+        "effort": "Extra High",
+        "harness": "Cursor",
+        "condition": "Cursor 원문 11월 11일 KST 확인. 실제 Cursor 세션에서 구성한 모호한 다중 파일 과제. 실행일 미명시. 공개 표의 비용이며 표준 API 단가와 구분."
+      }
+    },
+    {
+      "id": "fable-52-cursorbench-max",
+      "model": "Claude Fable 5.2",
+      "provider": "Anthropic",
+      "source_url": "https://cursor.com/es/cursorbench",
+      "checked_on": "2026-11-11",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "CursorBench 4.0 · Max",
+        "평가 점수": 60,
+        "단위": "%",
+        "측정 주체": "Cursor",
+        "평가 비용 USD": 32.79,
+        "평가 토큰": 352794,
+        "평가 단계": 218,
+        "effort": "Max",
+        "harness": "Cursor",
+        "condition": "Cursor 원문 11월 11일 KST 확인. 실제 Cursor 세션에서 구성한 모호한 다중 파일 과제. 실행일 미명시. 공개 표의 비용이며 표준 API 단가와 구분."
+      }
+    },
+    {
+      "id": "fable-52-cursor-availability",
+      "model": "Claude Fable 5.2",
+      "provider": "Anthropic",
+      "source_url": "https://prod.cursor.com/docs/models/claude-fable-5-2",
+      "checked_on": "2026-11-11",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "Cursor · Fable 5.2",
+        "access": "Cursor 지원 계정, 팀·조직 접근 정책",
+        "status": "제공",
+        "context": 300000,
+        "최대 문맥 (토큰)": 1000000,
+        "condition": "기본 300k, 최대 1M. Privacy Mode 사용 시 데이터 보관 정책 승인 필요. 조직·그룹 모델 접근 정책 적용."
+      }
+    },
+    {
+      "id": "fable-52-cursor-standard-price",
+      "model": "Claude Fable 5.2",
+      "provider": "Anthropic",
+      "source_url": "https://prod.cursor.com/docs/models/claude-fable-5-2",
+      "checked_on": "2026-11-11",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Cursor · Fable 5.2 공개 단가",
+        "입력 USD / 100만 토큰": 8,
+        "캐시 읽기 USD / 100만 토큰": 0.2,
+        "캐시 쓰기 USD / 100만 토큰": 10,
+        "출력 USD / 100만 토큰": 40,
+        "condition": "Cursor X Subscription 선불 크레딧 차감. 기존 요금제는 Other Models 사용량. 포함 사용량 및 Anthropic 직접 API와 구분."
+      }
+    }
+  ]
+}

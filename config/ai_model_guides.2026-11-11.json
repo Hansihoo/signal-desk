@@ -1,0 +1,1221 @@
+{
+  "schema_version": 1,
+  "reports": [
+    {
+      "id": "muse-ember-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "title": "Muse Ember 소개 — 저비용 에이전트와 긴 문맥 요금",
+      "description": "Meta의 경량 모델 Muse Ember를 같은 계열의 Spark 1.3과 동급 경쟁 모델에 대조해 가격과 성능의 차이를 설명합니다.",
+      "checked_on": "2026-11-11",
+      "scope": "공개 공급자 문서와 11월 9일 평가 스냅샷을 확인했습니다. 실제 호출, 청구, 한국어 입력 성능과 독립 업무 재현은 미확인입니다.",
+      "deck": "Muse Ember는 20만 입력 토큰 이하에서 100만 토큰당 입력 USD 0.10, 출력 USD 0.50입니다. Artificial Analysis Intelligence Index v5에서 Spark 1.3과 1점 차이였고, FrontierCode 2.0에서는 Claude Haiku 5.5보다 낮았습니다. 20만 입력 토큰을 넘으면 요청 전체에 긴 문맥 요금이 붙습니다.",
+      "highlights": [
+        "비용을 줄인 같은 계열의 선택지",
+        "업무 자동화와 병합 가능한 코드의 차이"
+      ],
+      "source_note": "2026년 11월 11일 KST에 공식 자료의 관련 부분을 확인했습니다.",
+      "summary": [
+        {
+          "label": "비용을 줄인 같은 계열의 선택지",
+          "text": "Meta가 11월 9일 Muse Code와 Model API에서 muse-ember-1.0을 공개했습니다. 출시 자료에 재현된 AA Intelligence Index v5 Max는 Ember 36점, Spark 1.3 37점이고, 정가를 적용한 평균 과제당 비용은 각각 USD 0.14와 USD 2.39입니다.",
+          "source_ids": [
+            "meta"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "업무 자동화와 병합 가능한 코드의 차이",
+          "text": "AA AutomationBench strict pass@1에서 Ember 37.8%, Haiku 5.5 13.9%, GPT-6 Luna 20.2%였습니다. FrontierCode 2.0에서는 Haiku 34.9%가 Ember 27.2%보다 높았습니다.",
+          "source_ids": [
+            "meta"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "references": [
+        {
+          "id": "meta",
+          "title": "Meta Muse Ember 출시",
+          "url": "https://research.meta.ai/blog/muse-ember",
+          "description": "텍스트·이미지·음성·영상 이해, 평가판과 모델 공개 경로."
+        },
+        {
+          "id": "metaprice",
+          "title": "Meta Model API 표준 요금",
+          "url": "https://dev.meta.ai/docs/pricing-rate-limits",
+          "description": "요금 구간, 캐시 적중, 호출 팀 한도와 도구 비용."
+        },
+        {
+          "id": "gcloud",
+          "title": "Google Cloud Muse Ember 모델 카드",
+          "url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/meta/muse-ember-1-0",
+          "description": "파트너 Preview와 지원 입력·출력, 지역과 토큰 상한."
+        },
+        {
+          "id": "haiku",
+          "title": "Anthropic Claude Haiku 5.5 사양",
+          "url": "https://platform.claude.com/docs/en/models/haiku-5-5/overview",
+          "description": "동급 모델의 문맥, 출력, 장문 요금 경계."
+        },
+        {
+          "id": "luna",
+          "title": "OpenAI GPT-6 Luna 사양",
+          "url": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+          "description": "동급 모델의 문맥, 출력, 표준 및 장문 요금."
+        }
+      ],
+      "explanation": [
+        {
+          "id": "overview",
+          "title": "모델 계열과 입력 범위",
+          "lead": "Ember는 Muse Wonder Full을 이용해 학습한 첫 모델이며, 반복적인 도구 호출과 코딩 하위 작업에 맞춰 출시됐습니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "직접 API와 제품 문서",
+              "text": "Meta는 입력으로 텍스트, 이미지, 음성, 비디오를 이해한다고 설명합니다. 출시 문서에는 1M토큰 문맥과 최대 512K토큰 출력, Responses API를 명시합니다. 매개변수 규모와 공개 가중치는 확인되지 않았습니다.",
+              "source_ids": [
+                "meta"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "Google Cloud의 별도 상한",
+              "text": "파트너 문서는 meta/muse-ember-1.0의 글로벌 Preview에서 텍스트와 이미지를 입력하고 텍스트를 출력한다고 명시합니다. 최대 입력 1,048,576토큰과 최대 출력 524,288토큰은 해당 제공 문서의 상한입니다. Batch 예측과 Provisioned Throughput은 미지원입니다.",
+              "source_ids": [
+                "gcloud"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "results",
+          "title": "자동화·코딩·문서 평가",
+          "lead": "같은 Max 표기를 쓰더라도 평가 주체와 실행 환경이 달라집니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "자동화와 코드 병합",
+              "text": "AA의 자동화는 한 번의 시도로 전체 업무를 완료하는 비율을 봅니다. FrontierCode 2.0은 공학 과제의 병합 가능성을 평가합니다. Ember는 전자에서 두 경쟁 모델보다 높았고 후자에서는 Haiku보다 7.7%포인트 낮았습니다.",
+              "source_ids": [
+                "meta"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "터미널과 데스크톱",
+              "text": "Terminal-Bench 4.0은 Ember에 mini-swe-agent, Haiku에 Claude Code, Luna에 Codex를 사용한 각 최고 공개 하니스입니다. OSWorld 2.1의 부분점수 69.5%와 이진 성공률 33.8%는 같은 실행을 서로 다른 채점 기준으로 본 결과입니다.",
+              "source_ids": [
+                "meta"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "긴 PDF 작업",
+              "text": "GDP.pdf-AA에서 Ember와 Luna는 22.8%로 같았고 Haiku는 20.8%였습니다. 긴 문서를 받는 토큰 상한과 문서 과제의 성공률은 별개의 관측입니다.",
+              "source_ids": [
+                "meta"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "pricing",
+          "title": "표준 요금과 긴 문맥",
+          "lead": "Meta 직접 API의 USD 단가를 100만 토큰으로 비교했습니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "20만 토큰 구간의 경계",
+              "text": "캐시 토큰과 이어 붙인 저장 대화도 입력 합계에 포함됩니다. 20만을 초과하면 입력·출력·캐시 적중 모두 요청 전체에 높은 단가를 적용합니다. 모델 기본 호출에 웹 검색을 쓰면 검색 1,000회당 USD 2.50가 별도로 붙습니다.",
+              "source_ids": [
+                "metaprice"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "팀 한도와 별도 제공 경로",
+              "text": "Meta 표준 요금표의 Ember 한도는 팀당 분당 3,000회, 분당 400만 토큰입니다. Spark에는 데이터 활용을 허용하는 별도 Contributor 요금제가 있고 Ember 직접 API에는 없습니다. 파트너 플랫폼의 실제 비용과 권한은 별도입니다.",
+              "source_ids": [
+                "metaprice",
+                "gcloud"
+              ],
+              "kind": "fact"
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "comparison-1",
+          "title": "사양과 표준 API 단가",
+          "columns": [
+            "모델과 제공",
+            "입력과 문맥",
+            "입력 / 캐시 적중 / 출력 (USD / 100만 토큰)",
+            "기준"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Muse Ember · Meta Model API, Muse Code",
+                "텍스트·이미지·음성·영상 이해, 1M 문맥, 최대 512K 출력",
+                "0.10 / 0.004 / 0.50",
+                "입력 ≤200K, 표준"
+              ],
+              "source_ids": [
+                "meta",
+                "metaprice",
+                "gcloud",
+                "haiku",
+                "luna"
+              ]
+            },
+            {
+              "values": [
+                "Muse Ember · Meta Model API",
+                "같은 모델의 긴 문맥 요금",
+                "0.30 / 0.012 / 1.50",
+                "입력 >200K, 요청 전체"
+              ],
+              "source_ids": [
+                "meta",
+                "metaprice",
+                "gcloud",
+                "haiku",
+                "luna"
+              ]
+            },
+            {
+              "values": [
+                "Muse Ember · Google Cloud Preview",
+                "텍스트·이미지→텍스트, 1,048,576 입력 및 524,288 출력 상한",
+                "별도 파트너 요금",
+                "글로벌 엔드포인트"
+              ],
+              "source_ids": [
+                "meta",
+                "metaprice",
+                "gcloud",
+                "haiku",
+                "luna"
+              ]
+            },
+            {
+              "values": [
+                "Muse Spark 1.3 · Meta Model API",
+                "같은 계열의 상위 모델",
+                "1.25 / 0.15 / 4.25",
+                "표준, 장문 할증 없음"
+              ],
+              "source_ids": [
+                "meta",
+                "metaprice",
+                "gcloud",
+                "haiku",
+                "luna"
+              ]
+            },
+            {
+              "values": [
+                "Claude Haiku 5.5 · Claude API",
+                "1M 문맥, 최대 128K 출력",
+                "0.10 / 0.01 / 0.50 (≤100K)",
+                "100K 초과 시 0.50 / 0.05 / 2.50"
+              ],
+              "source_ids": [
+                "meta",
+                "metaprice",
+                "gcloud",
+                "haiku",
+                "luna"
+              ]
+            },
+            {
+              "values": [
+                "GPT-6 Luna · OpenAI API",
+                "1,050,000 문맥, 최대 128,000 출력",
+                "0.10 / 0.01 / 0.50 (≤272K)",
+                "272K 초과 시 입력·캐시 2배, 출력 1.5배"
+              ],
+              "source_ids": [
+                "meta",
+                "metaprice",
+                "gcloud",
+                "haiku",
+                "luna"
+              ]
+            }
+          ],
+          "note": "출처별 공식 사양 또는 공개 평가입니다. 빈 값은 확인 범위를 뜻합니다."
+        },
+        {
+          "id": "comparison-2",
+          "title": "같은 Max 표기의 출시 비교",
+          "columns": [
+            "평가",
+            "Ember",
+            "Spark 1.3",
+            "Haiku 5.5",
+            "GPT-6 Luna",
+            "조건"
+          ],
+          "rows": [
+            {
+              "values": [
+                "AA Intelligence Index v5 (점)",
+                "36",
+                "37",
+                "36",
+                "28",
+                "2026-11-09, 반올림"
+              ],
+              "source_ids": [
+                "meta"
+              ]
+            },
+            {
+              "values": [
+                "AutomationBench-AA (%)",
+                "37.8",
+                "미공개",
+                "13.9",
+                "20.2",
+                "strict pass@1"
+              ],
+              "source_ids": [
+                "meta"
+              ]
+            },
+            {
+              "values": [
+                "Terminal-Bench 4.0 (%)",
+                "40.9",
+                "미공개",
+                "39.2",
+                "16.4",
+                "모델별 최적 공개 하니스"
+              ],
+              "source_ids": [
+                "meta"
+              ]
+            },
+            {
+              "values": [
+                "FrontierCode 2.0-AA (%)",
+                "27.2",
+                "미공개",
+                "34.9",
+                "25.2",
+                "병합 가능성 평가"
+              ],
+              "source_ids": [
+                "meta"
+              ]
+            },
+            {
+              "values": [
+                "GDP.pdf-AA (%)",
+                "22.8",
+                "미공개",
+                "20.8",
+                "22.8",
+                "전문 PDF 문서 과제"
+              ],
+              "source_ids": [
+                "meta"
+              ]
+            },
+            {
+              "values": [
+                "OSWorld 2.1 (%)",
+                "69.5 부분 / 33.8 이진",
+                "미공개",
+                "68.9 / 27.8",
+                "50.5 / 17.0",
+                "부분점수와 완전 성공을 분리"
+              ],
+              "source_ids": [
+                "meta"
+              ]
+            }
+          ],
+          "note": "출처별 공식 사양 또는 공개 평가입니다. 빈 값은 확인 범위를 뜻합니다."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "평가와 적용 범위",
+            "text": "Ember는 공개 평가에서 저비용 반복 작업에 강점을 보였습니다. 병합까지 요구하는 코딩에서는 Haiku의 반대 결과를 함께 봐야 하고, 많은 문서를 한 번에 넣는 요청은 20만 입력 토큰 경계가 비용을 바꿉니다.",
+            "source_ids": [
+              "meta",
+              "metaprice",
+              "gcloud",
+              "haiku",
+              "luna"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "공개 공급자 문서와 11월 9일 평가 스냅샷을 확인했습니다. 실제 호출, 청구, 한국어 입력 성능과 독립 업무 재현은 미확인입니다.",
+          "source_ids": [
+            "meta",
+            "metaprice",
+            "gcloud",
+            "haiku",
+            "luna"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gemini-robotics-25-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "title": "Gemini Robotics 2.5 소개 — 로봇 조작과 현장 검증",
+      "description": "로봇의 실제 동작을 출력하는 Google DeepMind의 모델을 전판 및 동종 연구 모델과 비교하고, 현장 성공률의 적용 범위를 설명합니다.",
+      "checked_on": "2026-11-11",
+      "scope": "공식 발표와 비교 연구만 검토했습니다. 독립 로봇 시험, 배포 고객별 접근, 실제 비용과 생산라인 장기 성능은 미확인입니다.",
+      "deck": "Gemini Robotics 2.5는 파트너에 배포 중인 시각·언어·행동 모델입니다. DeepMind는 이전 기준 대비 작업별 성공률이 30~100% 높고 수행 시간이 20~30% 짧았다고 보고했습니다. Mercedes-Benz 실증의 96%는 Apollo 2와 별도 추론 모델을 결합한 부품 정리 과제의 성공률입니다.",
+      "highlights": [
+        "로봇 행동과 계획의 역할",
+        "현장 실증은 부품 정리에 한정"
+      ],
+      "source_note": "2026년 11월 11일 KST에 공식 자료의 관련 부분을 확인했습니다.",
+      "summary": [
+        {
+          "label": "로봇 행동과 계획의 역할",
+          "text": "Robotics 2.5가 팔과 손의 동작을 제어하고, 시각 언어 모델 Robotics ER은 과제 진행을 추적했습니다. Apollo 2와 Franka Duo의 손 구조가 달라 동일한 모델 계열을 여러 기기에 적용한 점이 특징입니다.",
+          "source_ids": [
+            "robot"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "현장 실증은 부품 정리에 한정",
+          "text": "헝가리와 독일 생산라인에서 부품 분류·배치를 수행한 조합의 성공률은 96%였습니다. 공장 전체의 장기 가동률, 불량률과 운영비는 공개되지 않았습니다.",
+          "source_ids": [
+            "robot"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "references": [
+        {
+          "id": "robot",
+          "title": "Google DeepMind Gemini Robotics 2.5 발표",
+          "url": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/",
+          "description": "이전 기준과의 차이, 실증 환경, 배포 및 안전 시험."
+        },
+        {
+          "id": "gr2",
+          "title": "Google DeepMind Gemini Robotics 2 발표",
+          "url": "https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots/",
+          "description": "전판 행동·추론 모델 구분과 다섯 손가락 조작의 한계."
+        },
+        {
+          "id": "pi",
+          "title": "Physical Intelligence π0.7 연구",
+          "url": "https://www.pi.website/blog/pi07",
+          "description": "동종 시각·언어·행동 모델의 연구 범위와 일반화 비교."
+        }
+      ],
+      "explanation": [
+        {
+          "id": "model",
+          "title": "행동 모델과 추론 모델의 분리",
+          "lead": "VLA는 시각 정보와 언어 지시를 바탕으로 기기가 실행할 동작을 산출하는 모델입니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "전판과 같은 역할 분리",
+              "text": "7월의 Robotics 2 계열도 행동 모델과 시각 언어 추론 모델 ER 2를 분리했습니다. 전판 발표는 다섯 손가락을 쓰는 정교한 조작이 여전히 어려웠다고 설명합니다. 2.5 발표의 다섯 손가락 Apollo 2와 두 손가락 Franka Duo는 서로 다른 구동기입니다.",
+              "source_ids": [
+                "robot",
+                "gr2"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "학습에 쓰인 Argon",
+              "text": "DeepMind는 Gemini 4 Argon으로 카메라 장면에서 가상 연습 데이터를 만들고 실패 원인을 분석했다고 설명합니다. 현장에서는 Robotics 2.5가 동작을 제어하고 ER이 진행을 추적합니다.",
+              "source_ids": [
+                "robot"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "evaluation",
+          "title": "정교한 조작, 작업 속도와 안전",
+          "lead": "DeepMind는 200개 이상의 서로 다른 과제에서 과제 범위, 성능, 복잡성을 평가했다고 밝혔습니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "상대 개선과 절대 성공률",
+              "text": "공개 발표의 성공률 30~100% 향상과 속도 20~30% 개선은 과제별 이전 기준과의 상대값입니다. 별도로 공개한 96%는 두 생산라인에서 Apollo 2가 수행한 부품 정리 실증의 절대 성공률입니다. 반복 횟수와 중단을 포함한 통계는 발표에서 확인되지 않았습니다.",
+              "source_ids": [
+                "robot"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "위험 회피의 범위",
+              "text": "추론 시점에 위험을 피하도록 유도했을 때 장애물 주변의 안전한 과제 완료가 33%, 사람 주변에서 43% 개선됐다는 내부 결과입니다. ASIMOV-Jailbreak의 99.5%는 Argon의 별도 결과이고, 앞선 82%는 ER 2 기준입니다.",
+              "source_ids": [
+                "robot"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "다른 연구 모델과의 비교",
+              "text": "Physical Intelligence의 π0.7도 전문 모델이 다루던 세밀한 조작을 하나의 모델로 일반화하는 방향을 연구합니다. 로봇 기종과 과제, 실행 조건이 달라 양쪽의 자체 성공률을 직접 순위로 바꾸기 어렵습니다.",
+              "source_ids": [
+                "robot",
+                "pi"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "access",
+          "title": "파트너 제공과 비용",
+          "lead": "2.5 행동 모델의 공개 발표는 로봇 파트너로의 배포를 명시합니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "공개 인터페이스의 범위",
+              "text": "전판의 ER 2는 Google AI Studio에 공개됐지만 그 상태를 2.5 행동 모델에 적용할 수 없습니다. 2.5의 일반 API 모델 ID, 가중치, 표준 API 요금과 지원 로봇 전체 목록은 미확인입니다.",
+              "source_ids": [
+                "robot",
+                "gr2"
+              ],
+              "kind": "fact"
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "comparison-1",
+          "title": "이전판과 경쟁 연구 모델",
+          "columns": [
+            "모델",
+            "입력과 출력",
+            "공개 평가 조건",
+            "제공과 요금"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Gemini Robotics 2.5",
+                "시각·언어를 로봇 동작으로 변환, Apollo 2와 Franka Duo 사례",
+                "DeepMind 과제별 이전 기준 비교, Apollo 2 자동차 부품 정리 실증",
+                "파트너 배포, 공개 API·표준 요금 미확인"
+              ],
+              "source_ids": [
+                "robot",
+                "gr2",
+                "pi"
+              ]
+            },
+            {
+              "values": [
+                "Gemini Robotics 2",
+                "시각·언어를 전신과 손 동작으로 변환",
+                "DeepMind 자체, 전신과 그리퍼 조작에 비해 다섯 손가락 조작이 어려웠음",
+                "행동 모델 파트너 중심, ER 2 제공 별도"
+              ],
+              "source_ids": [
+                "robot",
+                "gr2",
+                "pi"
+              ]
+            },
+            {
+              "values": [
+                "Physical Intelligence π0.7",
+                "시각·언어 입력 기반 로봇 동작, 조작 기술 재조합",
+                "자체 과제와 기존 π*0.6 전문 모델 대조",
+                "연구 발표, 표준 API 요금 미확인"
+              ],
+              "source_ids": [
+                "robot",
+                "gr2",
+                "pi"
+              ]
+            }
+          ],
+          "note": "출처별 공식 사양 또는 공개 평가입니다. 빈 값은 확인 범위를 뜻합니다."
+        },
+        {
+          "id": "comparison-2",
+          "title": "공개된 2.5 평가 결과",
+          "columns": [
+            "평가",
+            "결과",
+            "조건"
+          ],
+          "rows": [
+            {
+              "values": [
+                "과제별 성공률",
+                "이전 기준보다 30~100% 향상",
+                "DeepMind 자체, 과제 종류별 상대 개선"
+              ],
+              "source_ids": [
+                "robot"
+              ]
+            },
+            {
+              "values": [
+                "과제 수행 속도",
+                "이전 기준보다 20~30% 빠름",
+                "DeepMind 자체, 공개 범위 기준"
+              ],
+              "source_ids": [
+                "robot"
+              ]
+            },
+            {
+              "values": [
+                "자동차 부품 정리",
+                "96% 성공",
+                "Apollo 2 + Robotics ER + 2.5, 헝가리·독일 실증"
+              ],
+              "source_ids": [
+                "robot"
+              ]
+            },
+            {
+              "values": [
+                "안전하게 과제 완료",
+                "장애물 주변 33%, 사람 주변 43% 개선",
+                "추론 시점 안전 유도 기능의 내부 비교"
+              ],
+              "source_ids": [
+                "robot"
+              ]
+            }
+          ],
+          "note": "출처별 공식 사양 또는 공개 평가입니다. 빈 값은 확인 범위를 뜻합니다."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "평가와 적용 범위",
+            "text": "2.5의 변화는 전판에서 어렵던 조작을 넓히고 부품 정리 실증까지 보여 준 데 있습니다. 현장 도입 판단에 필요한 장시간 가동, 실패 개입과 모델 접근 조건은 해당 기기 및 공정별로 따로 확인해야 합니다.",
+            "source_ids": [
+              "robot",
+              "gr2",
+              "pi"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "공식 발표와 비교 연구만 검토했습니다. 독립 로봇 시험, 배포 고객별 접근, 실제 비용과 생산라인 장기 성능은 미확인입니다.",
+          "source_ids": [
+            "robot",
+            "gr2",
+            "pi"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "minimax-h3-image-pe-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "title": "MiniMax H3 Image PE 소개 — 이미지 생성 전 프롬프트 확장",
+      "description": "MiniMax가 공개한 이미지 프롬프트 확장 체크포인트를 기본 Qwen 모델과 H3 Image 생성 모델에 대조합니다.",
+      "checked_on": "2026-11-11",
+      "scope": "공급자 공식 카드와 연결 문서를 확인했습니다. 가중치 실행, 실제 비용, 한국어 지시의 성능과 같은 조건의 독립 비교는 미확인입니다.",
+      "deck": "MiniMax H3 Image PE는 짧은 지시를 상세한 이미지 설명과 화면비 추천으로 바꾸는 Qwen3.8-27B 기반 FP4 가중치입니다. 텍스트에서 이미지로 만드는 경로의 확장 모델을 공개했고, 이미지 편집 경로에는 다른 시각언어 모델에 넣을 프롬프트만 제공합니다. 공개 평가나 전용 단가는 확인되지 않았습니다.",
+      "highlights": [
+        "이미지 생성의 입력을 만드는 모델",
+        "편집 경로의 가중치는 미공개"
+      ],
+      "source_note": "2026년 11월 11일 KST에 공식 자료의 관련 부분을 확인했습니다.",
+      "summary": [
+        {
+          "label": "이미지 생성의 입력을 만드는 모델",
+          "text": "PE는 Prompt Expansion의 약자입니다. 짧은 텍스트 요청을 모델이 사용할 자세한 장면 설명과 화면비로 바꿉니다. 공개된 FP4 가중치는 Qwen3.8-27B에서 미세 조정했습니다.",
+          "source_ids": [
+            "minicard",
+            "qwen"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "편집 경로의 가중치는 미공개",
+          "text": "이미지 편집 경로에는 참조 이미지와 지시를 전달하는 형식과 프롬프트가 있습니다. 공개 안내는 그 경로에 사용자가 고른 시각언어 모델을 쓰도록 설명합니다.",
+          "source_ids": [
+            "minicard"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "references": [
+        {
+          "id": "minicard",
+          "title": "MiniMax H3 Image PE 공식 모델 카드",
+          "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3-Image-PE",
+          "description": "FP4 가중치, 작업별 산출물, 라이선스와 JSON 제약."
+        },
+        {
+          "id": "qwen",
+          "title": "Qwen3.8-27B 공식 모델 카드",
+          "url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+          "description": "기본 체크포인트의 기능과 라이선스."
+        },
+        {
+          "id": "minigen",
+          "title": "MiniMax H3 Image 공식 모델 카드",
+          "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3-Image",
+          "description": "이미지 생성·편집 모델과 별도의 앱·API 제공."
+        }
+      ],
+      "explanation": [
+        {
+          "id": "pipeline",
+          "title": "확장 모델과 이미지 생성 모델",
+          "lead": "이미지 생성 파이프라인에서는 지시 정리와 실제 픽셀 생성이 다른 단계입니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "PE의 입력과 출력",
+              "text": "공개 가중치가 담당하는 텍스트-이미지 확장은 텍스트 지시를 받고 상세 설명과 권장 화면비를 생성합니다. 카드의 로컬 구성은 JSON 스키마 제약을 써서 응답 형식을 맞춥니다. 이 제약은 결과 이미지의 품질을 측정하지 않습니다.",
+              "source_ids": [
+                "minicard"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "생성 엔진과 편집용 프롬프트",
+              "text": "H3 Image는 이미지 생성과 편집을 실행하며 별도 API와 앱으로 제공됩니다. PE 카드의 이미지 편집 경로는 참조 이미지를 읽을 수 있는 다른 모델에 넣을 프롬프트와 메시지 구성만 공개했습니다.",
+              "source_ids": [
+                "minicard",
+                "minigen"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "limits",
+          "title": "전용화와 공개 근거의 한계",
+          "lead": "기반 Qwen3.8-27B는 일반 추론에 쓰이는 모델이고, PE 가중치는 이미지 지시 확장에 맞춰 조정됐습니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "형식과 품질의 차이",
+              "text": "화면비와 장면 설명을 구조화해 후속 생성기에 전달할 수 있습니다. 동일한 지시로 기반 Qwen과 비교했을 때 이미지 충실도나 실패율이 얼마나 개선됐는지 보여 주는 통제 평가는 모델 카드에서 확인되지 않았습니다.",
+              "source_ids": [
+                "minicard",
+                "qwen"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "가중치 사용 조건",
+              "text": "기반 Qwen의 Apache 2.0과 별도로 PE 카드에는 MiniMax-H3-Image Community License Agreement가 명시됩니다. 전용 가중치의 실제 설치 자원, 지연과 독립 실행 비용은 확인하지 않았습니다.",
+              "source_ids": [
+                "minicard",
+                "qwen"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "access",
+          "title": "가중치 제공과 비용",
+          "lead": "공개 카드에는 가중치로 실행하는 경로와 관리형 이미지 API 문서 링크가 있습니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "표준 단가의 적용 범위",
+              "text": "카드에서 해당 FP4 체크포인트의 공개 가중치를 확인했습니다. 그 체크포인트의 관리형 호출 ID와 전용 표준 요금은 확인되지 않았으며, 생성 결과에 부과되는 요금과 PE의 로컬 실행 비용은 별도입니다.",
+              "source_ids": [
+                "minicard",
+                "minigen"
+              ],
+              "kind": "fact"
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "comparison-1",
+          "title": "확장과 생성의 역할 비교",
+          "columns": [
+            "모델",
+            "입력",
+            "출력과 제공",
+            "평가 및 요금"
+          ],
+          "rows": [
+            {
+              "values": [
+                "MiniMax H3 Image PE",
+                "짧은 텍스트 지시",
+                "상세 설명과 화면비, 27B 기반 FP4 가중치",
+                "공통 성능 평가·전용 표준 요금 미확인"
+              ],
+              "source_ids": [
+                "minicard",
+                "qwen",
+                "minigen"
+              ]
+            },
+            {
+              "values": [
+                "Qwen3.8-27B",
+                "범용 지시, 공식 카드의 지원 입력",
+                "기반 모델의 응답, Apache 2.0 가중치",
+                "PE 특화 동등 평가와 직접 표준 요금 미확인"
+              ],
+              "source_ids": [
+                "minicard",
+                "qwen",
+                "minigen"
+              ]
+            },
+            {
+              "values": [
+                "MiniMax H3 Image",
+                "생성 지시, 편집용 참조 이미지",
+                "최종 이미지, 모델 카드·관리형 API·앱",
+                "PE 모델의 성능이나 요금과 별개"
+              ],
+              "source_ids": [
+                "minicard",
+                "qwen",
+                "minigen"
+              ]
+            }
+          ],
+          "note": "출처별 공식 사양 또는 공개 평가입니다. 빈 값은 확인 범위를 뜻합니다."
+        },
+        {
+          "id": "comparison-2",
+          "title": "PE에서 공개한 작업 범위",
+          "columns": [
+            "경로",
+            "공개 산출물",
+            "성능 해석"
+          ],
+          "rows": [
+            {
+              "values": [
+                "텍스트-이미지 확장",
+                "미세 조정 FP4 가중치와 프롬프트",
+                "같은 생성기를 쓴 PE 적용 전후 비교 수치는 미확인"
+              ],
+              "source_ids": [
+                "minicard"
+              ]
+            },
+            {
+              "values": [
+                "이미지 편집용 확장",
+                "프롬프트와 메시지 형식",
+                "공개 편집 전용 PE 가중치 및 점수 미확인"
+              ],
+              "source_ids": [
+                "minicard"
+              ]
+            }
+          ],
+          "note": "출처별 공식 사양 또는 공개 평가입니다. 빈 값은 확인 범위를 뜻합니다."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "평가와 적용 범위",
+            "text": "이 공개로 텍스트 지시 확장 단계를 별도 가중치로 고정할 수 있습니다. 이미지 편집, 최종 이미지의 품질 개선폭과 제공 비용을 판단하려면 각각의 모델과 같은 평가 조건을 분리해야 합니다.",
+            "source_ids": [
+              "minicard",
+              "qwen",
+              "minigen"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "공급자 공식 카드와 연결 문서를 확인했습니다. 가중치 실행, 실제 비용, 한국어 지시의 성능과 같은 조건의 독립 비교는 미확인입니다.",
+          "source_ids": [
+            "minicard",
+            "qwen",
+            "minigen"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gemini-4-carbon-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "title": "Gemini 4 Carbon 소개 — 정식 API와 이전 모델 비교",
+      "description": "제한 제공에서 정식 API로 확대된 Gemini 4 Carbon의 접근, 요금, 평가 강약을 Argon과 경쟁 모델에 대조합니다.",
+      "checked_on": "2026-11-11",
+      "scope": "11월 11일 KST에 제공 확대 공지, 공식 사양·요금 및 공개 비교표를 확인했습니다. 실제 호출과 청구, 독립 재현과 조직별 권한은 미확인입니다.",
+      "deck": "Google은 11월 10일 Gemini 4 Carbon을 유료 API 이용자에게 공개했습니다. 11월 말까지 표준 입력과 출력은 100만 토큰당 USD 2와 USD 10이며, 12월 1일부터 USD 4와 USD 20입니다. Google의 장문 평가에서는 Argon보다 앞섰고, 오프라인 데스크톱 조작에서는 Claude Opus 5.5가 더 높았습니다.",
+      "highlights": [
+        "제한판에서 안정 API로",
+        "도입 가격과 평가 차이"
+      ],
+      "source_note": "2026년 11월 11일 KST에 공식 자료의 관련 부분을 확인했습니다.",
+      "summary": [
+        {
+          "label": "제한판에서 안정 API로",
+          "text": "10월 Fairwind 제공은 선정된 사이버 방어자 대상이었습니다. 11월 10일에는 유료 개발자와 기업이 gemini-4-carbon을 사용할 수 있게 됐고, Google AI Ultra의 앱·Antigravity·검색 AI Mode 제공은 순차적으로 진행됩니다.",
+          "source_ids": [
+            "carbon",
+            "carbspec"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "도입 가격과 평가 차이",
+          "text": "도입 요금은 Argon과 같지만 Carbon의 추론 사용량은 작업에 따라 달라집니다. Google 표에서 Carbon의 GraphWalks F1은 96.2%, Argon은 84.2%였습니다. FrontierSWE 2는 Carbon 61.2%, GPT-6 Astra 65.5%였습니다.",
+          "source_ids": [
+            "carbon",
+            "gprice",
+            "carbeval"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "references": [
+        {
+          "id": "carbon",
+          "title": "Google의 Gemini 4 Carbon 제공 확대 발표",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/",
+          "description": "Fairwind 제한판과 11월 10일 유료 API 및 Ultra 순차 제공."
+        },
+        {
+          "id": "carbspec",
+          "title": "Gemini 4 Carbon 공식 모델 사양",
+          "url": "https://aistudio.google.com/docs/models/gemini-4-carbon",
+          "description": "안정 모델 ID, 합산 문맥, 동기 및 long decode 출력 상한."
+        },
+        {
+          "id": "gprice",
+          "title": "Gemini API 공식 요금표",
+          "url": "https://ai.google.dev/gemini-api/docs/pricing",
+          "description": "11월 한시 요금, 12월 표준 가격과 자동 캐시."
+        },
+        {
+          "id": "carbeval",
+          "title": "Google DeepMind Gemini 모델 비교",
+          "url": "https://deepmind.google/models/gemini/",
+          "description": "Carbon과 Argon, Astra, Opus의 조건별 공개 평가."
+        }
+      ],
+      "explanation": [
+        {
+          "id": "access",
+          "title": "제한 제공에서 안정 버전으로",
+          "lead": "이번 변경은 10월 말에 발표한 Carbon의 접근 범위 확대입니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "API와 구독",
+              "text": "유료 개발자와 기업을 대상으로 안정 ID gemini-4-carbon을 공개했습니다. 무료 API 등급은 지원되지 않으며, Ultra 구독의 앱 제공은 순차 배포입니다. API와 구독의 실제 계정별 제공은 별도입니다.",
+              "source_ids": [
+                "carbon",
+                "carbspec",
+                "gprice"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "합산 문맥과 출력 모드",
+              "text": "공식 사양은 입력과 출력의 합산 한도를 1,048,576토큰으로 명시합니다. 기본 동기 출력은 최대 65,536토큰이고 long decode는 최대 1,048,576토큰 표기입니다. 후자의 출력 상한과 별개의 100만 입력 한도를 합산할 수 없습니다.",
+              "source_ids": [
+                "carbspec"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "evaluation",
+          "title": "장문·코딩·데스크톱 평가",
+          "lead": "Google의 공개 비교는 업무 유형에 따라 순서가 달라집니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "장문과 다중 양식",
+              "text": "GraphWalks의 256K~1M BFS F1과 차트 독해 Chartography에서는 Carbon이 Argon을 각각 12.0%포인트, 0.9%포인트 앞섰습니다. 긴 문맥 입력을 처리하는 상한과 실제 과제의 F1은 다른 종류의 수치입니다.",
+              "source_ids": [
+                "carbeval",
+                "carbspec"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "코딩과 데스크톱의 반대 결과",
+              "text": "Google 표의 Terminal-Bench 4.0에서는 Carbon이 65.2%였지만 FrontierSWE 2에서는 Astra보다 낮고, OSWorld 2.1 오프라인 하위 집합에서는 Opus 5.5보다 낮습니다. 제공자 표의 외부 비교 모델 설정을 실제 서비스의 기본값과 동일시하기 어렵습니다.",
+              "source_ids": [
+                "carbeval"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "cost",
+          "title": "도입 요금, 표준 요금과 캐시",
+          "lead": "Google API 요금표의 USD 100만 토큰당 가격을 비교합니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "도입 구간",
+              "text": "11월 30일까지 입력 USD 2, 출력 USD 10, 자동 캐시 적중 USD 0.10입니다. 출력에는 추론 토큰이 포함되며, 그라운딩을 사용하면 내부 도구 지시 및 함수 선언 토큰도 과금됩니다.",
+              "source_ids": [
+                "gprice"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "12월부터의 단가",
+              "text": "12월 1일부터 입력 USD 4, 출력 USD 20, 자동 캐시 적중 USD 0.20입니다. 명시적 캐시는 지원되지 않습니다. API 표준과 Batch·Flex 단가, 검색 요금과 구독은 각각 적용 조건이 다릅니다.",
+              "source_ids": [
+                "gprice",
+                "carbon"
+              ],
+              "kind": "fact"
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "comparison-1",
+          "title": "제공 상태와 표준 요금",
+          "columns": [
+            "대상",
+            "제공·조건",
+            "입력 / 캐시 적중 / 출력 (USD / 100만 토큰)"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Carbon 10월 초기판",
+                "선정된 사이버 방어자 대상 Fairwind",
+                "공개 표준 적용 확인 불가"
+              ],
+              "source_ids": [
+                "carbon",
+                "carbspec",
+                "gprice"
+              ]
+            },
+            {
+              "values": [
+                "Carbon 11월 안정 API",
+                "유료 API, 11월 30일까지 도입 요금",
+                "2 / 0.10 / 10"
+              ],
+              "source_ids": [
+                "carbon",
+                "carbspec",
+                "gprice"
+              ]
+            },
+            {
+              "values": [
+                "Carbon 12월 안정 API",
+                "12월 1일부터 표준, 출력에 추론 토큰 포함",
+                "4 / 0.20 / 20"
+              ],
+              "source_ids": [
+                "carbon",
+                "carbspec",
+                "gprice"
+              ]
+            },
+            {
+              "values": [
+                "Argon",
+                "같은 계열의 효율형 안정 API, 11월 도입 요금",
+                "2 / 0.10 / 10"
+              ],
+              "source_ids": [
+                "carbon",
+                "carbspec",
+                "gprice"
+              ]
+            }
+          ],
+          "note": "출처별 공식 사양 또는 공개 평가입니다. 빈 값은 확인 범위를 뜻합니다."
+        },
+        {
+          "id": "comparison-2",
+          "title": "Google 공개 평가",
+          "columns": [
+            "평가",
+            "Carbon",
+            "Argon",
+            "GPT-6 Astra",
+            "Claude Opus 5.5",
+            "조건"
+          ],
+          "rows": [
+            {
+              "values": [
+                "GraphWalks F1 (%)",
+                "96.2",
+                "84.2",
+                "71.8",
+                "66.8",
+                "256K~1M BFS"
+              ],
+              "source_ids": [
+                "carbeval"
+              ]
+            },
+            {
+              "values": [
+                "Chartography (%)",
+                "72.5",
+                "71.6",
+                "71.0",
+                "66.3",
+                "차트 해석"
+              ],
+              "source_ids": [
+                "carbeval"
+              ]
+            },
+            {
+              "values": [
+                "FrontierSWE 2 (%)",
+                "61.2",
+                "55.0",
+                "65.5",
+                "62.3",
+                "에이전트 코딩"
+              ],
+              "source_ids": [
+                "carbeval"
+              ]
+            },
+            {
+              "values": [
+                "Terminal-Bench 4.0 (AA, %)",
+                "65.2",
+                "57.1",
+                "59.1",
+                "59.6",
+                "공개 표 인용, 제품 기본 설정과 구분"
+              ],
+              "source_ids": [
+                "carbeval"
+              ]
+            },
+            {
+              "values": [
+                "OSWorld 2.1 (%)",
+                "81.5",
+                "74.7",
+                "80.9",
+                "87.2",
+                "오프라인 하위 집합"
+              ],
+              "source_ids": [
+                "carbeval"
+              ]
+            }
+          ],
+          "note": "출처별 공식 사양 또는 공개 평가입니다. 빈 값은 확인 범위를 뜻합니다."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "평가와 적용 범위",
+            "text": "Carbon은 안정 API에서 사용할 수 있는 선택지로 확대됐습니다. 장문 분석과 일부 터미널 코딩에 강점을 보였지만 세부 평가마다 경쟁 모델이 앞선 결과가 있으며, 비용 산정에는 12월 요금과 작업별 실제 추론량이 필요합니다.",
+            "source_ids": [
+              "carbon",
+              "carbspec",
+              "gprice",
+              "carbeval"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "11월 11일 KST에 제공 확대 공지, 공식 사양·요금 및 공개 비교표를 확인했습니다. 실제 호출과 청구, 독립 재현과 조직별 권한은 미확인입니다.",
+          "source_ids": [
+            "carbon",
+            "carbspec",
+            "gprice",
+            "carbeval"
+          ]
+        }
+      ]
+    }
+  ]
+}
