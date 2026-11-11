@@ -1,0 +1,611 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "id": "botpsy-08b-weights",
+      "model": "QVAC BotPsy-0.8B",
+      "provider": "Tether AI Research",
+      "checked_on": "2026-11-12",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "QVAC · 공식 가중치",
+        "condition": "0.8B Qwen3.5 기반. 텍스트와 도구 호출, 영어 권장. 별도 관리형 정가 미확인.",
+        "status": "공개 가중치",
+        "release": "2026-11-11",
+        "access": "Hugging Face · Apache 2.0 BF16 safetensors 및 GGUF"
+      },
+      "source_url": "https://huggingface.co/qvac/BotPsy-0.8B/raw/main/README.md"
+    },
+    {
+      "id": "botpsy-08b-gguf",
+      "model": "QVAC BotPsy-0.8B",
+      "provider": "Tether AI Research",
+      "checked_on": "2026-11-12",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "QVAC · GGUF 파일 크기",
+        "condition": "모델 파일 크기. 실제 실행 메모리 아님.",
+        "BF16 파일 GB": 1.52,
+        "Q8_0 파일 GB": 0.81,
+        "Q4_K_M 파일 GB": 0.53,
+        "status": "공개 가중치"
+      },
+      "source_url": "https://huggingface.co/qvac/BotPsy-0.8B-GGUFs/raw/main/README.md"
+    },
+    {
+      "id": "botpsy-08b-bfcl",
+      "model": "QVAC BotPsy-0.8B",
+      "provider": "Tether AI Research",
+      "checked_on": "2026-11-12",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "BFCL v4",
+        "평가 점수": 44,
+        "단위": "%",
+        "측정 주체": "Tether AI Research",
+        "condition": "공식 가중식, 3회 평균. 기반 23.4%, Qwen 2B 37.7%. 5개 모델 공통 평가, 추론 모드. BotPsy BF16 vLLM. 외부 API 사용 평가는 2026-11-03.",
+        "harness": "Tether 공통 평가 · BotPsy vLLM",
+        "effort": "Thinking"
+      },
+      "source_url": "https://huggingface.co/qvac/BotPsy-0.8B/raw/main/README.md"
+    },
+    {
+      "id": "botpsy-08b-ace",
+      "model": "QVAC BotPsy-0.8B",
+      "provider": "Tether AI Research",
+      "checked_on": "2026-11-12",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "ACEBench",
+        "평가 점수": 58.7,
+        "단위": "%",
+        "측정 주체": "Tether AI Research",
+        "condition": "FC 모드 2회 평균. 기반 30.1%, Qwen 2B 55.4%. 5개 모델 공통 평가, 추론 모드. BotPsy BF16 vLLM. 외부 API 사용 평가는 2026-11-03.",
+        "harness": "Tether 공통 평가 · BotPsy vLLM",
+        "effort": "Thinking"
+      },
+      "source_url": "https://huggingface.co/qvac/BotPsy-0.8B/raw/main/README.md"
+    },
+    {
+      "id": "botpsy-08b-claw",
+      "model": "QVAC BotPsy-0.8B",
+      "provider": "Tether AI Research",
+      "checked_on": "2026-11-12",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Claw-Eval",
+        "평가 점수": 46.5,
+        "단위": "%",
+        "측정 주체": "Tether AI Research",
+        "condition": "안전·완료·견고성 결합 3회 평균. Qwen 2B 48.9%. 5개 모델 공통 평가, 추론 모드. BotPsy BF16 vLLM. 외부 API 사용 평가는 2026-11-03.",
+        "harness": "Tether 공통 평가 · BotPsy vLLM",
+        "effort": "Thinking"
+      },
+      "source_url": "https://huggingface.co/qvac/BotPsy-0.8B/raw/main/README.md"
+    },
+    {
+      "id": "botpsy-08b-browse",
+      "model": "QVAC BotPsy-0.8B",
+      "provider": "Tether AI Research",
+      "checked_on": "2026-11-12",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "BrowseComp-Plus",
+        "평가 점수": 4.5,
+        "단위": "%",
+        "측정 주체": "Tether AI Research",
+        "condition": "정확도, 최대 30단계. 기반 1.9%, Qwen 2B 2.8%. 5개 모델 공통 평가, 추론 모드. BotPsy BF16 vLLM. 외부 API 사용 평가는 2026-11-03.",
+        "harness": "Tether 공통 평가 · BotPsy vLLM",
+        "effort": "Thinking"
+      },
+      "source_url": "https://huggingface.co/qvac/BotPsy-0.8B/raw/main/README.md"
+    },
+    {
+      "id": "botpsy-08b-gpqa",
+      "model": "QVAC BotPsy-0.8B",
+      "provider": "Tether AI Research",
+      "checked_on": "2026-11-12",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "GPQA Diamond",
+        "평가 점수": 38.1,
+        "단위": "%",
+        "측정 주체": "Tether AI Research",
+        "condition": "198문항, 3회 평균. Qwen 2B 59.9%. 5개 모델 공통 평가, 추론 모드. BotPsy BF16 vLLM. 외부 API 사용 평가는 2026-11-03.",
+        "harness": "Tether 공통 평가 · BotPsy vLLM",
+        "effort": "Thinking"
+      },
+      "source_url": "https://huggingface.co/qvac/BotPsy-0.8B/raw/main/README.md"
+    },
+    {
+      "id": "botpsy-08b-tool",
+      "model": "QVAC BotPsy-0.8B",
+      "provider": "Tether AI Research",
+      "checked_on": "2026-11-12",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "ToolSandbox",
+        "평가 점수": 64.6,
+        "단위": "%",
+        "측정 주체": "Tether AI Research",
+        "condition": "8개 환경 평균 유사도. 기반 30.5%, Qwen 2B 41.2%. 5개 모델 공통 평가, 추론 모드. BotPsy BF16 vLLM. 외부 API 사용 평가는 2026-11-03.",
+        "harness": "Tether 공통 평가 · BotPsy vLLM",
+        "effort": "Thinking"
+      },
+      "source_url": "https://huggingface.co/qvac/BotPsy-0.8B/raw/main/README.md"
+    },
+    {
+      "id": "ernie-55-flash-preview-qianfan",
+      "model": "ERNIE 5.5 Flash Preview",
+      "provider": "Baidu",
+      "checked_on": "2026-11-12",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "Qianfan · 후속 학습 중간판",
+        "condition": "280B 전체 / 토큰당 14B 활성, 텍스트 입출력. Apache 2.0 가중치는 공개 예고.",
+        "status": "API Preview",
+        "release": "2026-11-11",
+        "access": "Baidu Qianfan",
+        "context": 1000000
+      },
+      "source_url": "https://ernie.baidu.com/release/ernie-5-5-flash-preview/"
+    },
+    {
+      "id": "ernie-55-flash-preview-openrouter",
+      "model": "ERNIE 5.5 Flash Preview",
+      "provider": "Baidu",
+      "checked_on": "2026-11-12",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "OpenRouter · 무료 엔드포인트",
+        "condition": "baidu/ernie-5.5-flash-preview:free. 해당 채널 최대 완료 921,600 토큰.",
+        "status": "무료 채널",
+        "access": "OpenRouter · Baidu",
+        "context": 1024000
+      },
+      "source_url": "https://openrouter.ai/api/v1/models/baidu/ernie-5.5-flash-preview:free/endpoints"
+    },
+    {
+      "id": "ernie-55-flash-preview-or-free",
+      "model": "ERNIE 5.5 Flash Preview",
+      "provider": "Baidu",
+      "checked_on": "2026-11-12",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "OpenRouter · :free",
+        "condition": "무료 경로의 표시 단가. Qianfan 직결 요금 및 무료 호출 한도와 별개.",
+        "입력 USD / 100만 토큰": 0,
+        "출력 USD / 100만 토큰": 0
+      },
+      "source_url": "https://openrouter.ai/api/v1/models/baidu/ernie-5.5-flash-preview:free/endpoints"
+    },
+    {
+      "id": "ernie-55-flash-preview-automation",
+      "model": "ERNIE 5.5 Flash Preview",
+      "provider": "Baidu",
+      "checked_on": "2026-11-12",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "AutomationBench v1.0.6 공개 부분집합",
+        "평가 점수": 61.9,
+        "단위": "원표 점수",
+        "측정 주체": "Baidu",
+        "condition": "DeepSeek V4.1 Flash 57.2와 Opus 5.5 58.0은 Baidu 재측정. 2026-11-11 공개 원표의 최고 가용 추론 설정.",
+        "harness": "공식 실행 환경 기본값",
+        "effort": "최고 가용"
+      },
+      "source_url": "https://ernie.baidu.com/research-assets/ernie-5-5-flash-preview/benchmark-table-final.png"
+    },
+    {
+      "id": "ernie-55-flash-preview-sheets",
+      "model": "ERNIE 5.5 Flash Preview",
+      "provider": "Baidu",
+      "checked_on": "2026-11-12",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SpreadsheetBench V2",
+        "평가 점수": 36.4,
+        "단위": "원표 점수",
+        "측정 주체": "Baidu",
+        "condition": "WebSearch·WebFetch 비활성. Qwen3.8-Max 시각화 판정. 2026-11-11 공개 원표의 최고 가용 추론 설정.",
+        "harness": "Claude Code 2.1.138",
+        "effort": "최고 가용"
+      },
+      "source_url": "https://ernie.baidu.com/research-assets/ernie-5-5-flash-preview/benchmark-table-final.png"
+    },
+    {
+      "id": "ernie-55-flash-preview-deepswe",
+      "model": "ERNIE 5.5 Flash Preview",
+      "provider": "Baidu",
+      "checked_on": "2026-11-12",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "DeepSWE v1.1",
+        "평가 점수": 71.2,
+        "단위": "원표 점수",
+        "측정 주체": "Baidu",
+        "condition": "8 CPU 코어·16 GB. 비교 DeepSeek 77.0 및 Opus 74.2는 원표 인용값. 2026-11-11 공개 원표의 최고 가용 추론 설정.",
+        "harness": "mini-swe-agent 2.4.6",
+        "effort": "최고 가용"
+      },
+      "source_url": "https://ernie.baidu.com/research-assets/ernie-5-5-flash-preview/benchmark-table-final.png"
+    },
+    {
+      "id": "ernie-55-flash-preview-apex",
+      "model": "ERNIE 5.5 Flash Preview",
+      "provider": "Baidu",
+      "checked_on": "2026-11-12",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "APEX-Agents 1.1",
+        "평가 점수": 64.2,
+        "단위": "원표 점수",
+        "측정 주체": "Baidu",
+        "condition": "100단계·10,800초, 텍스트 모델의 멀티모달 도구 결과는 대체 텍스트. Opus Baidu 재측정 72.9. 2026-11-11 공개 원표의 최고 가용 추론 설정.",
+        "harness": "공식 실행 환경",
+        "effort": "최고 가용"
+      },
+      "source_url": "https://ernie.baidu.com/research-assets/ernie-5-5-flash-preview/benchmark-table-final.png"
+    },
+    {
+      "id": "minimax-h3-image-checkpoint",
+      "model": "MiniMax H3 Image",
+      "provider": "MiniMax",
+      "checked_on": "2026-11-12",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "MiniMax H3 Image · 공개 체크포인트",
+        "condition": "33.1B 확산 변환기, 6회 샘플링, 4096×4096 직접 출력 예. 별도 H3 인코더. Community License Agreement.",
+        "status": "공개 가중치",
+        "access": "Hugging Face",
+        "release": "2026-11-11",
+        "확산 변환기 파라미터 B": 33.1
+      },
+      "source_url": "https://huggingface.co/MiniMaxAI/MiniMax-H3-Image"
+    },
+    {
+      "id": "minimax-h3-image-api-spec",
+      "model": "MiniMax H3 Image",
+      "provider": "MiniMax",
+      "checked_on": "2026-11-12",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "MiniMax API · Standard 및 Highspeed",
+        "condition": "최대 참조 16장. 직접 출력 크기 655,360~20,000,000 픽셀 및 1:3~3:1. 마스크 편집 및 투명 배경 미지원.",
+        "status": "API 제공",
+        "access": "MiniMax API",
+        "release": "2026-11-11",
+        "최대 참조 이미지 수": 16
+      },
+      "source_url": "https://platform.minimax.io/docs/guides/image-generation"
+    },
+    {
+      "id": "minimax-h3-image-price-std",
+      "model": "MiniMax H3 Image",
+      "provider": "MiniMax",
+      "checked_on": "2026-11-12",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Standard · 텍스트 및 이미지 토큰",
+        "condition": "공식 표준 종량제. 입력 텍스트에 프롬프트 확장 토큰 포함.",
+        "텍스트 입력 USD / 100만 토큰": 2.3,
+        "이미지 입력 USD / 100만 토큰": 1.5,
+        "이미지 출력 USD / 100만 토큰": 3.8
+      },
+      "source_url": "https://platform.minimax.io/docs/pricing/overview"
+    },
+    {
+      "id": "minimax-h3-image-4k-price-std",
+      "model": "MiniMax H3 Image",
+      "provider": "MiniMax",
+      "checked_on": "2026-11-12",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Standard · 4K 텍스트 생성 요금 예시",
+        "condition": "4096×4096, 참조 없음. 예시로 고정 단가 아님. 할인 최종 ≥16,600,000px, 2026-11-17 16:00 UTC 미포함.",
+        "표준 예시 USD / 장": 0.06879,
+        "할인 예시 USD / 장": 0.03439
+      },
+      "source_url": "https://platform.minimax.io/docs/pricing/overview"
+    },
+    {
+      "id": "minimax-h3-image-price-high",
+      "model": "MiniMax H3 Image",
+      "provider": "MiniMax",
+      "checked_on": "2026-11-12",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Highspeed · 텍스트 및 이미지 토큰",
+        "condition": "공식 표준 종량제. 입력 텍스트에 프롬프트 확장 토큰 포함.",
+        "텍스트 입력 USD / 100만 토큰": 2.3,
+        "이미지 입력 USD / 100만 토큰": 3,
+        "이미지 출력 USD / 100만 토큰": 7.6
+      },
+      "source_url": "https://platform.minimax.io/docs/pricing/overview"
+    },
+    {
+      "id": "minimax-h3-image-4k-price-high",
+      "model": "MiniMax H3 Image",
+      "provider": "MiniMax",
+      "checked_on": "2026-11-12",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Highspeed · 4K 텍스트 생성 요금 예시",
+        "condition": "4096×4096, 참조 없음. 예시로 고정 단가 아님. 할인 최종 ≥16,600,000px, 2026-11-17 16:00 UTC 미포함.",
+        "표준 예시 USD / 장": 0.13001,
+        "할인 예시 USD / 장": 0.06501
+      },
+      "source_url": "https://platform.minimax.io/docs/pricing/overview"
+    },
+    {
+      "id": "alpamayo-2-edge-spec",
+      "model": "Alpamayo 2 Edge",
+      "provider": "NVIDIA",
+      "checked_on": "2026-11-12",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "NVIDIA · 주행 VLA BF16",
+        "condition": "Cosmos 3 Edge 기반. 백본 2.45B, 행동 전문가 0.2B. 경로 64점/6.4초. 별도 관리형 정가 미확인.",
+        "status": "공개 가중치",
+        "release": "2026-11-10",
+        "access": "OpenMDW-1.1 · Hugging Face"
+      },
+      "source_url": "https://huggingface.co/nvidia/Alpamayo2-Edge"
+    },
+    {
+      "id": "alpamayo-2-edge-lingoqa",
+      "model": "Alpamayo 2 Edge",
+      "provider": "NVIDIA",
+      "checked_on": "2026-11-12",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "LingoQA · Lingo-Judge",
+        "평가 점수": 75.2,
+        "단위": "점",
+        "측정 주체": "NVIDIA",
+        "condition": "NVIDIA 공식 카드, 이전 1.5 10B 74.2점. 실제 주행 지표 아님."
+      },
+      "source_url": "https://huggingface.co/nvidia/Alpamayo2-Edge"
+    },
+    {
+      "id": "alpamayo-2-edge-alpasim",
+      "model": "Alpamayo 2 Edge",
+      "provider": "NVIDIA",
+      "checked_on": "2026-11-12",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "AlpaSim · 폐루프",
+        "평가 점수": 15.15,
+        "단위": "km / 과실 사고",
+        "측정 주체": "NVIDIA",
+        "condition": "875장면, 3 rollout/장면, 표준편차 0.04 km. 과실 충돌 또는 도로 이탈. 1.5와 지표·표본 다름.",
+        "harness": "AlpaSim"
+      },
+      "source_url": "https://huggingface.co/nvidia/Alpamayo2-Edge"
+    },
+    {
+      "id": "alpamayo-2-edge-minade",
+      "model": "Alpamayo 2 Edge",
+      "provider": "NVIDIA",
+      "checked_on": "2026-11-12",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "PhysicalAI-AV · 개루프 minADE_6",
+        "평가 점수": 0.52,
+        "단위": "m",
+        "측정 주체": "NVIDIA",
+        "condition": "1,392표본, 5초 시점. 낮을수록 좋음. 1.5 10B의 6.4초와 직접 비교 불가."
+      },
+      "source_url": "https://huggingface.co/nvidia/Alpamayo2-Edge"
+    },
+    {
+      "id": "pan-2-diffusion-checkpoint",
+      "model": "PAN 2",
+      "provider": "IFM / MBZUAI",
+      "checked_on": "2026-11-12",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "IFM · 29.2B 영상 확산 백본",
+        "condition": "704×1248, 24 fps, 최대 20초. 별도 Qwen3.5 인코더 및 Wan2.2 VAE. 관리형 표준 단가 미확인.",
+        "status": "공개 가중치",
+        "release": "2026-11-11",
+        "access": "Hugging Face · IFM 자체 가중치 Apache 2.0"
+      },
+      "source_url": "https://github.com/ifm-ai/PAN2"
+    },
+    {
+      "id": "pan-2-physics-iq-leaderboard",
+      "model": "PAN 2",
+      "provider": "IFM / MBZUAI",
+      "checked_on": "2026-11-12",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Physics-IQ Verified (I2V) · 순위표",
+        "평가 점수": 49.38,
+        "단위": "정규화 점수",
+        "측정 주체": "IFM / MBZUAI",
+        "condition": "두 실제 촬영 사이 변동=100. Opus 5.5 개념 추론, 4시드 123–126, SD 0.64.",
+        "harness": "Claude Opus 5.5 개념 추론"
+      },
+      "source_url": "https://huggingface.co/IFM/PAN2/resolve/main/assets/report/results_benchmarks_light.png"
+    },
+    {
+      "id": "pan-2-physics-iq-default",
+      "model": "PAN 2",
+      "provider": "IFM / MBZUAI",
+      "checked_on": "2026-11-12",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Physics-IQ Verified (I2V) · 기본 실행",
+        "평가 점수": 37.48,
+        "단위": "정규화 점수",
+        "측정 주체": "IFM / MBZUAI",
+        "condition": "IFM이 각 모델의 기본 파이프라인으로 실행. SD 0.48. MiniMax H3 기본 42.91±0.58."
+      },
+      "source_url": "https://huggingface.co/IFM/PAN2/resolve/main/assets/report/results_benchmarks_light.png"
+    },
+    {
+      "id": "pan-2-phyground",
+      "model": "PAN 2",
+      "provider": "IFM / MBZUAI",
+      "checked_on": "2026-11-12",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "PhyGround",
+        "평가 점수": 4.74,
+        "단위": "점 / 5점",
+        "측정 주체": "IFM / MBZUAI",
+        "condition": "SD 0.02. Qwen3.8-27B 심사. MiniMax H3 4.73±0.01."
+      },
+      "source_url": "https://huggingface.co/IFM/PAN2/resolve/main/assets/report/results_benchmarks_light.png"
+    },
+    {
+      "id": "pan-2-rbench",
+      "model": "PAN 2",
+      "provider": "IFM / MBZUAI",
+      "checked_on": "2026-11-12",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "RBench",
+        "평가 점수": 57.04,
+        "단위": "범주 평균 ×100",
+        "측정 주체": "IFM / MBZUAI",
+        "condition": "SD 0.61. 5개 작업 및 4개 구현체 범주. MiniMax H3 56.16±1.12."
+      },
+      "source_url": "https://huggingface.co/IFM/PAN2/resolve/main/assets/report/results_benchmarks_light.png"
+    },
+    {
+      "id": "ernie-55-flash-preview-qf-cn-peak-list",
+      "model": "ERNIE 5.5 Flash Preview",
+      "provider": "Baidu",
+      "checked_on": "2026-11-12",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Qianfan 중국 · 08:00–22:00 정가",
+        "condition": "공식 중국 사이트 온라인 추론. 원문 CNY / 1천 토큰. 요금 시간대의 기준 시간대는 미표기. 행사 종료는 Baidu 출시 안내 기준 2026-11-30 23:59:59.",
+        "입력 CNY / 1천 토큰": 0.002,
+        "캐시 읽기 CNY / 1천 토큰": 0.0002,
+        "출력 CNY / 1천 토큰": 0.008
+      },
+      "source_url": "https://cloud.baidu.com/doc/qianfan/s/wmh4sv6ya"
+    },
+    {
+      "id": "ernie-55-flash-preview-qf-cn-peak-promo",
+      "model": "ERNIE 5.5 Flash Preview",
+      "provider": "Baidu",
+      "checked_on": "2026-11-12",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Qianfan 중국 · 08:00–22:00 행사",
+        "condition": "공식 중국 사이트 온라인 추론. 원문 CNY / 1천 토큰. 요금 시간대의 기준 시간대는 미표기. 행사 종료는 Baidu 출시 안내 기준 2026-11-30 23:59:59.",
+        "입력 CNY / 1천 토큰": 0.001,
+        "캐시 읽기 CNY / 1천 토큰": 0.0001,
+        "출력 CNY / 1천 토큰": 0.004
+      },
+      "source_url": "https://cloud.baidu.com/doc/qianfan/s/wmh4sv6ya"
+    },
+    {
+      "id": "ernie-55-flash-preview-qf-cn-off-list",
+      "model": "ERNIE 5.5 Flash Preview",
+      "provider": "Baidu",
+      "checked_on": "2026-11-12",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Qianfan 중국 · 22:00–다음날 08:00 정가",
+        "condition": "공식 중국 사이트 온라인 추론. 원문 CNY / 1천 토큰. 요금 시간대의 기준 시간대는 미표기. 행사 종료는 Baidu 출시 안내 기준 2026-11-30 23:59:59.",
+        "입력 CNY / 1천 토큰": 0.001,
+        "캐시 읽기 CNY / 1천 토큰": 0.0001,
+        "출력 CNY / 1천 토큰": 0.004
+      },
+      "source_url": "https://cloud.baidu.com/doc/qianfan/s/wmh4sv6ya"
+    },
+    {
+      "id": "ernie-55-flash-preview-qf-cn-off-promo",
+      "model": "ERNIE 5.5 Flash Preview",
+      "provider": "Baidu",
+      "checked_on": "2026-11-12",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Qianfan 중국 · 22:00–다음날 08:00 행사",
+        "condition": "공식 중국 사이트 온라인 추론. 원문 CNY / 1천 토큰. 요금 시간대의 기준 시간대는 미표기. 행사 종료는 Baidu 출시 안내 기준 2026-11-30 23:59:59.",
+        "입력 CNY / 1천 토큰": 0.0005,
+        "캐시 읽기 CNY / 1천 토큰": 5e-05,
+        "출력 CNY / 1천 토큰": 0.002
+      },
+      "source_url": "https://cloud.baidu.com/doc/qianfan/s/wmh4sv6ya"
+    },
+    {
+      "id": "ernie-55-flash-preview-qf-intl",
+      "model": "ERNIE 5.5 Flash Preview",
+      "provider": "Baidu",
+      "checked_on": "2026-11-12",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Qianfan 국제 · 표준",
+        "condition": "Baidu 국제 사이트 온라인 추론. 중국 시간대별 정가 및 중계 가격과 별개.",
+        "입력 USD / 100만 토큰": 0.28,
+        "캐시 읽기 USD / 100만 토큰": 0.028,
+        "출력 USD / 100만 토큰": 1.13
+      },
+      "source_url": "https://intl.cloud.baidu.com/en/doc/qianfan/s/Jm8r1826a-intl-en"
+    },
+    {
+      "id": "ernie-light-dt-10-qianfan-spec",
+      "model": "ERNIE-Light-DT-1.0",
+      "provider": "Baidu",
+      "checked_on": "2026-11-12",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "Qianfan · 중국 공식 목록",
+        "condition": "ernie-light-dt-1.0. 문맥 1M, 출력 최대 128K, 기본 60 RPM·100만 TPM. 텍스트 입출력.",
+        "context": 1000000,
+        "status": "API 제공",
+        "access": "Qianfan 중국"
+      },
+      "source_url": "https://cloud.baidu.com/doc/qianfan/s/rmh4stp0j"
+    },
+    {
+      "id": "ernie-light-dt-10-qianfan-price",
+      "model": "ERNIE-Light-DT-1.0",
+      "provider": "Baidu",
+      "checked_on": "2026-11-12",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Qianfan 중국 · 온라인 추론 표준",
+        "condition": "원문 CNY / 1천 토큰. 공식 가격표 2026-11-11. 국제 가격 미확인.",
+        "입력 CNY / 1천 토큰": 0.008,
+        "캐시 읽기 CNY / 1천 토큰": 0.0008,
+        "출력 CNY / 1천 토큰": 0.028
+      },
+      "source_url": "https://cloud.baidu.com/doc/qianfan/s/wmh4sv6ya"
+    },
+    {
+      "id": "ernie-wizshot-me-qianfan-spec",
+      "model": "ERNIE-Wizshot-ME",
+      "provider": "Baidu",
+      "checked_on": "2026-11-12",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "Qianfan · 인물 영상",
+        "condition": "이미지·텍스트·음성에서 1080p 4~15초 영상. 비동기 생성 및 조회. API 문서의 합성 길이 검증은 별도.",
+        "status": "API 제공",
+        "release": "2026-11-11",
+        "access": "Baidu Qianfan"
+      },
+      "source_url": "https://cloud.baidu.com/product/qianfan_home/model_3.html?track=home_banner"
+    },
+    {
+      "id": "ernie-wizshot-me-qianfan-price",
+      "model": "ERNIE-Wizshot-ME",
+      "provider": "Baidu",
+      "checked_on": "2026-11-12",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Qianfan 중국 · 영상 길이별",
+        "condition": "공식 제품 안내의 표준 단가. 결과 영상 초 단위.",
+        "생성 CNY / 영상 초": 0.7
+      },
+      "source_url": "https://cloud.baidu.com/product/qianfan_home/model_3.html?track=home_banner"
+    }
+  ]
+}

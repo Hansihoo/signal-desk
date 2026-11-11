@@ -1,0 +1,1907 @@
+{
+  "schema_version": 1,
+  "reports": [
+    {
+      "id": "qvac-botpsy-0-8b-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "title": "QVAC BotPsy-0.8B 소개 — 로컬 도구 호출과 작은 모델의 한계",
+      "description": "Qwen3.5-0.8B를 도구 호출에 맞게 추가 학습한 BotPsy의 평가 개선과 로컬 실행 조건을 비교합니다.",
+      "checked_on": "2026-11-12",
+      "scope": "Tether 출시문, BF16 및 GGUF 카드의 관련 절을 확인했습니다. 실제 기기 지연, 한국어, 서비스 청구와 독립 재현은 미확인입니다.",
+      "deck": "BotPsy는 Tether의 공통 추론 평가에서 BFCL v4 44.0%를 기록해 기반 Qwen3.5-0.8B의 23.4%를 앞섰습니다. 다만 Claw-Eval과 지식 평가에서는 Qwen3.5-2B가 더 높았고, BrowseComp-Plus 정확도는 4.5%였습니다.",
+      "highlights": [
+        "도구 호출 성능",
+        "로컬 제공"
+      ],
+      "source_note": "2026년 11월 12일 KST에 공식 자료의 관련 부분을 확인했습니다.",
+      "summary": [
+        {
+          "label": "도구 호출 성능",
+          "text": "공통 실행 환경의 추론 모드 평가에서 BFCL v4는 44.0%, ACEBench는 58.7%였습니다. Qwen3.5-2B-Think의 37.7%, 55.4%보다 높았지만 Claw-Eval에서는 46.5%로 2B의 48.9%에 못 미쳤습니다.",
+          "source_ids": [
+            "botcard"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "로컬 제공",
+          "text": "11월 11일 Apache 2.0 BF16과 GGUF 가중치가 공개됐습니다. 공급사가 보고한 Q4_K_M 파일은 약 0.53 GB이며, 실행 메모리는 문맥과 런타임에 따라 별도입니다.",
+          "source_ids": [
+            "teth",
+            "gguf"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "references": [
+        {
+          "id": "teth",
+          "title": "Tether 출시문",
+          "url": "https://tether.io/news/tethers-800m-ai-agent-beats-models-2-5x-its-size-on-everyday-phone-tasks/",
+          "description": "가중치 공개 날짜와 도구 호출 비교."
+        },
+        {
+          "id": "botcard",
+          "title": "QVAC BotPsy BF16 카드",
+          "url": "https://huggingface.co/qvac/BotPsy-0.8B/raw/main/README.md",
+          "description": "공통 평가와 모델·언어·라이선스 조건."
+        },
+        {
+          "id": "gguf",
+          "title": "QVAC BotPsy GGUF 카드",
+          "url": "https://huggingface.co/qvac/BotPsy-0.8B-GGUFs/raw/main/README.md",
+          "description": "양자화별 파일 크기와 측정 범위."
+        }
+      ],
+      "explanation": [
+        {
+          "id": "model",
+          "title": "기반 모델과 추가 학습",
+          "lead": "Tether는 Qwen3.5-0.8B의 구조를 유지하면서 도구 선택과 여러 차례의 상호작용에 맞게 추가 학습했습니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "텍스트와 도구 호출",
+              "text": "BotPsy가 받는 것은 텍스트 지시와 앱이 제공한 도구 정의입니다. 모델은 도구와 인자를 고르고, 앱이 연결 권한과 실제 실행을 맡습니다. 카드에는 지도 미세조정, 여러 교사 모델을 사용한 증류, 두 차례 강화학습을 기재했습니다.",
+              "source_ids": [
+                "botcard"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "scores",
+          "title": "같은 도구 평가에서의 강점과 약점",
+          "lead": "Tether가 5개 모델을 모두 추론 모드와 공통 평가 실행 환경에서 시험했습니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "점수의 적용 범위",
+              "text": "BFCL v4는 다회 호출 등을 가중 평균해 세 번 측정했고, ACEBench는 함수 호출 모드에서 두 번 평균했습니다. Claw-Eval은 완료뿐 아니라 안전성과 견고성도 반영합니다. 외부 API가 필요한 항목은 11월 3일에 실행했습니다.",
+              "source_ids": [
+                "botcard"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "낮은 절대 점수와 반대 결과",
+              "text": "BrowseComp-Plus는 모델마다 최대 30단계로 비교했고, 4.5%는 표의 최고점이지만 정확도 자체는 낮습니다. GPQA Diamond에서는 BotPsy 38.1%, Qwen3.5-2B-Think 59.9%로 사실 추론에서도 순서가 바뀝니다.",
+              "source_ids": [
+                "botcard"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "access",
+          "title": "공개 가중치와 실행 조건",
+          "lead": "BF16 safetensors와 BF16·Q8_0·Q4_K_M GGUF가 제공됩니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "양자화와 비용",
+              "text": "GGUF 파일은 각각 약 1.52, 0.81, 0.53 GB입니다. 카드의 대표 평가는 BF16 vLLM 기반이며 GGUF의 정확도와 메모리 요구량은 해당 설정으로 따로 봐야 합니다. 가중치에 별도 토큰 사용료는 없고, 직접 호스팅과 연결한 서비스 비용은 별도입니다.",
+              "source_ids": [
+                "botcard",
+                "gguf"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "언어와 권한",
+              "text": "공식 카드는 영어를 권장합니다. 공개 다국어 평가에 한국어가 포함되지 않았고, 단말에서 추론해도 외부 도구 호출 시 해당 서비스에 데이터가 전달될 수 있습니다.",
+              "source_ids": [
+                "botcard"
+              ],
+              "kind": "fact"
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "comparison-1",
+          "title": "모델별 사양·제공 비교",
+          "columns": [
+            "모델",
+            "파라미터와 역할",
+            "확인한 제공 범위와 비용"
+          ],
+          "rows": [
+            {
+              "values": [
+                "QVAC BotPsy-0.8B",
+                "0.8B, 텍스트 기반 도구 호출",
+                "Apache 2.0 가중치. 별도 관리형 표준 단가 미확인"
+              ],
+              "source_ids": [
+                "botcard",
+                "gguf"
+              ]
+            },
+            {
+              "values": [
+                "Qwen3.5-0.8B-Think",
+                "0.8B, 비교 기준이자 후속 학습의 기반 계열",
+                "공개 기반 체크포인트, 이 평가의 관리형 단가 미확인"
+              ],
+              "source_ids": [
+                "botcard"
+              ]
+            },
+            {
+              "values": [
+                "Qwen3.5-2B-Think",
+                "2B, 같은 계열에서 규모가 큰 경쟁 기준",
+                "Tether가 비교한 추론 설정. 비교표의 API 단가 미확인"
+              ],
+              "source_ids": [
+                "botcard"
+              ]
+            }
+          ],
+          "note": "가중치 배포와 평가에 사용한 추론 설정을 구분합니다."
+        },
+        {
+          "id": "comparison-2",
+          "title": "Tether 공통 실행 환경의 도구·지식 평가",
+          "columns": [
+            "평가",
+            "BotPsy 0.8B",
+            "Qwen 0.8B",
+            "Qwen 2B",
+            "측정 조건"
+          ],
+          "rows": [
+            {
+              "values": [
+                "BFCL v4",
+                "44.0%",
+                "23.4%",
+                "37.7%",
+                "가중 공식 점수, 3회 평균"
+              ],
+              "source_ids": [
+                "botcard"
+              ]
+            },
+            {
+              "values": [
+                "ACEBench",
+                "58.7%",
+                "30.1%",
+                "55.4%",
+                "FC 모드, 2회 평균"
+              ],
+              "source_ids": [
+                "botcard"
+              ]
+            },
+            {
+              "values": [
+                "Claw-Eval",
+                "46.5%",
+                "39.3%",
+                "48.9%",
+                "안전·완료·견고성, 3회 평균"
+              ],
+              "source_ids": [
+                "botcard"
+              ]
+            },
+            {
+              "values": [
+                "BrowseComp-Plus",
+                "4.5%",
+                "1.9%",
+                "2.8%",
+                "정확도, 최대 30단계"
+              ],
+              "source_ids": [
+                "botcard"
+              ]
+            },
+            {
+              "values": [
+                "GPQA Diamond",
+                "38.1%",
+                "33.2%",
+                "59.9%",
+                "198문항, 3회 평균"
+              ],
+              "source_ids": [
+                "botcard"
+              ]
+            }
+          ],
+          "note": "공급사 측정이며 5개 모델은 추론 모드였습니다. BotPsy는 BF16 vLLM으로 제공됐습니다."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "평가와 적용 범위",
+            "text": "로컬에서 제한된 도구 호출을 맡길 때는 같은 크기의 기반 모델보다 유리한 결과가 있습니다. 개방형 검색, 한국어, 연결 권한과 실제 기기 성능은 업무 환경에서 별도로 검증할 항목입니다.",
+            "source_ids": [
+              "teth",
+              "botcard",
+              "gguf"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "Tether 출시문, BF16 및 GGUF 카드의 관련 절을 확인했습니다. 실제 기기 지연, 한국어, 서비스 청구와 독립 재현은 미확인입니다.",
+          "source_ids": [
+            "teth",
+            "botcard",
+            "gguf"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ernie-5-5-flash-preview-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "title": "ERNIE 5.5 Flash Preview 소개 — 100만 토큰 문맥과 후속 학습",
+      "description": "Baidu가 공개한 Flash Preview를 사전학습 Base 및 동시기 경쟁 모델과 대조해 문서·코딩 평가와 제공 범위를 설명합니다.",
+      "checked_on": "2026-11-12",
+      "scope": "Baidu 출시문, 공식 평가 부록, Qianfan 중국·국제 가격표와 OpenRouter 사양을 확인했습니다. 실제 청구·한국어 성능·독립 재현과 행사 종료일은 미확인입니다.",
+      "deck": "ERNIE 5.5 Flash Preview는 280B 중 토큰마다 14B를 활성화하는 텍스트 모델입니다. Baidu 공개표에서 AutomationBench 61.9를 기록했지만 DeepSWE v1.1은 DeepSeek-V4.1-Flash-1017보다 낮았습니다. Qianfan API는 제공 중이며 Preview 가중치는 공개 예고 상태입니다.",
+      "highlights": [
+        "API에 공개한 후속 학습판",
+        "문서·자동화와 코딩의 차이"
+      ],
+      "source_note": "2026년 11월 12일 KST에 공식 자료의 관련 부분을 확인했습니다.",
+      "summary": [
+        {
+          "label": "API에 공개한 후속 학습판",
+          "text": "11월 5일 사전학습 Base와 같은 280B/14B 구조 및 1M 문맥을 유지합니다. 11월 11일 Qianfan에 공개된 것은 후속 학습 중간 체크포인트로, Base의 공개 가중치가 Preview와 같지는 않습니다.",
+          "source_ids": [
+            "ernie",
+            "ebase"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "문서·자동화와 코딩의 차이",
+          "text": "Baidu 공개표의 AutomationBench 61.9와 SpreadsheetBench V2 36.4는 비교 대상보다 높은 항목이었습니다. DeepSWE v1.1의 71.2는 DeepSeek의 77.0보다 낮았고, 서로 다른 실행 환경의 결과는 별도로 읽어야 합니다.",
+          "source_ids": [
+            "echart"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "references": [
+        {
+          "id": "ernie",
+          "title": "Baidu Flash Preview 출시",
+          "url": "https://ernie.baidu.com/release/ernie-5-5-flash-preview/",
+          "description": "후속 학습, 문맥, 텍스트 입력 및 Qianfan 제공."
+        },
+        {
+          "id": "ebase",
+          "title": "Baidu Flash Base 출시",
+          "url": "https://ernie.baidu.com/release/ernie-5-5-flash-base",
+          "description": "사전학습판의 가중치, 학습 문맥과 추론 지원."
+        },
+        {
+          "id": "echart",
+          "title": "Baidu Flash Preview 공식 평가 원표",
+          "url": "https://ernie.baidu.com/research-assets/ernie-5-5-flash-preview/benchmark-table-final.png",
+          "description": "원표의 값·각주·추론과 실행 환경."
+        },
+        {
+          "id": "eor",
+          "title": "OpenRouter 무료 엔드포인트 사양",
+          "url": "https://openrouter.ai/api/v1/models/baidu/ernie-5.5-flash-preview:free/endpoints",
+          "description": "제공 채널의 모델 ID, 입출력 한도와 무료 표시."
+        },
+        {
+          "id": "ezh",
+          "title": "Baidu Flash Preview 중국어 출시",
+          "url": "https://ernie.baidu.com/zh/release/ernie-5-5-flash-preview/",
+          "description": "Preview 가중치 공개 예고 시점."
+        },
+        {
+          "id": "qmodels",
+          "title": "Qianfan 중국 사이트 모델 목록",
+          "url": "https://cloud.baidu.com/doc/qianfan/s/rmh4stp0j",
+          "description": "직접 API 식별자와 확인 당시 기본 흐름 제한."
+        },
+        {
+          "id": "qdefaults",
+          "title": "Qianfan 모델 기본값",
+          "url": "https://cloud.baidu.com/doc/qianfan/s/6mh4stoyf",
+          "description": "기본 출력과 고정된 추론 강도."
+        },
+        {
+          "id": "qprice",
+          "title": "Qianfan 중국 사이트 모델 요금",
+          "url": "https://cloud.baidu.com/doc/qianfan/s/wmh4sv6ya",
+          "description": "시간대 정가·행사가·원문 단위 및 경쟁 모델 요금."
+        },
+        {
+          "id": "intl",
+          "title": "Qianfan 국제 사이트 모델 요금",
+          "url": "https://intl.cloud.baidu.com/en/doc/qianfan/s/Jm8r1826a-intl-en",
+          "description": "국제 사이트 USD 표준 요금과 경쟁 요금."
+        },
+        {
+          "id": "bpromo",
+          "title": "Baidu Qianfan 출시·프로모션",
+          "url": "https://cloud.baidu.com/product/qianfan_home/model_3.html?track=home_banner",
+          "description": "중국 사이트 행사 종료 시각과 시장별 가격 비교."
+        }
+      ],
+      "explanation": [
+        {
+          "id": "base",
+          "title": "Base와 Preview의 경계",
+          "lead": "Base는 사전학습이 끝난 상태이고 Preview는 도구 사용과 지식 업무를 겨냥해 추가 학습한 중간판입니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "총 파라미터와 활성 파라미터",
+              "text": "희소 전문가 혼합 모델은 토큰 처리마다 일부 파라미터를 골라 사용합니다. 14B 활성은 280B 전체 체크포인트의 보관 크기를 뜻하지 않습니다. Base 출시문은 사전학습 문맥 128K와 미세 조정·추론 지원 1M을 따로 제시합니다.",
+              "source_ids": [
+                "ernie",
+                "ebase"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "텍스트 출력과 외부 도구",
+              "text": "공식 발표에서 문서·3D·영상 산출물은 모델과 도구를 연결한 실행 환경의 결과입니다. 모델이 직접 받거나 출력하는 양식과 에이전트가 외부 도구로 만드는 파일을 분리해야 합니다.",
+              "source_ids": [
+                "ernie"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "evaluation",
+          "title": "평가별 강점과 반대 결과",
+          "lead": "공개 부록은 모델마다 사용할 수 있는 최고 추론 설정을 적용했다고 설명합니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "문서와 자동화",
+              "text": "AutomationBench는 공개 v1.0.6 부분집합과 공식 실행 환경 기본값입니다. SpreadsheetBench V2는 ERNIE와 Claude에 Claude Code 2.1.138, GPT 계열에 Codex 0.162.1을 사용했습니다. 두 검색 도구를 껐고 시각화는 Qwen3.8-Max가 판정했습니다.",
+              "source_ids": [
+                "echart"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "코딩과 에이전트 점수",
+              "text": "DeepSWE v1.1에서 Baidu의 환경은 mini-swe-agent 2.4.6과 8 CPU 코어·16 GB 샌드박스입니다. 원표는 별표가 없는 경쟁 수치를 공식 보고서나 공개 리더보드에서 인용하기도 합니다. 재평가 값과 기존 인용값은 표에서 섞지 않았습니다.",
+              "source_ids": [
+                "echart"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "access",
+          "title": "중국·국제 Qianfan 요금과 무료 중계",
+          "lead": "Qianfan의 중국·국제 가격표와 OpenRouter 무료 경로는 적용 시장과 단위가 다릅니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "직접 API와 문맥",
+              "text": "중국 Qianfan 목록의 접점은 ernie-5.5-flash-preview입니다. 목록은 문맥 1M과 기본 300 RPM·300만 TPM을 표시합니다. 기본 최대 출력 64K, 설정 상한 1M이며 출력 상한에는 추론이 포함됩니다. Qianfan에서 추론은 항상 켜져 있고 강도는 high로 고정됩니다.",
+              "source_ids": [
+                "qmodels",
+                "qdefaults"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "표준·행사·중계 요금",
+              "text": "중국 정가는 1천 토큰당 CNY로 표시합니다. 출시 안내의 절반 할인은 11월 30일 23:59:59까지이며, 공지의 시간대는 명시되지 않았습니다. 국제 사이트는 100만 토큰당 USD 0.28·0.028·1.13입니다. OpenRouter의 무료 경로는 문맥 1,024,000토큰과 최대 완료 921,600토큰을 표시하며 직접 요금과 별개입니다.",
+              "source_ids": [
+                "qprice",
+                "intl",
+                "eor",
+                "bpromo"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "가중치 공개 시점",
+              "text": "중국어 발표는 11월 25일 전 공개를 예고했고 영문 발표는 Apache 2.0을 명시합니다. Base 가중치는 이미 배포됐고 Preview의 운영 종료일은 확인되지 않았습니다.",
+              "source_ids": [
+                "ernie",
+                "ezh",
+                "ebase"
+              ],
+              "kind": "fact"
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "comparison-1",
+          "title": "이전 체크포인트와 경쟁 기준",
+          "columns": [
+            "모델",
+            "사양과 역할",
+            "제공·비용"
+          ],
+          "rows": [
+            {
+              "values": [
+                "ERNIE 5.5 Flash Preview",
+                "280B / 활성 14B, 텍스트, 1M 문맥",
+                "Qianfan 국제 입력·캐시 적중·출력 USD 0.28 / 0.028 / 1.13, 100만 토큰당"
+              ],
+              "source_ids": [
+                "ernie",
+                "intl"
+              ]
+            },
+            {
+              "values": [
+                "ERNIE 5.5 Flash Base",
+                "280B / 활성 14B, 사전학습판, 추론 1M 지원",
+                "11월 5일 가중치 공개. Preview 표준 단가와 별개"
+              ],
+              "source_ids": [
+                "ebase"
+              ]
+            },
+            {
+              "values": [
+                "DeepSeek-V4.1-Flash-1017",
+                "1M 문맥, Baidu 평가의 경쟁 코딩 모델",
+                "Qianfan 국제 입력·캐시 적중·출력 USD 0.28 / 0.006 / 1.13, 100만 토큰당"
+              ],
+              "source_ids": [
+                "echart",
+                "qmodels",
+                "intl"
+              ]
+            },
+            {
+              "values": [
+                "Claude Opus 5.5",
+                "Baidu 평가의 상위 비교 모델",
+                "이 부록은 가격표를 제공하지 않음"
+              ],
+              "source_ids": [
+                "echart"
+              ]
+            }
+          ],
+          "note": "가중치 공개와 동일 모델의 API 제공은 다른 상태입니다."
+        },
+        {
+          "id": "comparison-2",
+          "title": "Baidu 공식 부록의 대표 점수",
+          "columns": [
+            "평가판",
+            "ERNIE Preview",
+            "DeepSeek Flash",
+            "Claude Opus 5.5",
+            "조건"
+          ],
+          "rows": [
+            {
+              "values": [
+                "AutomationBench 공개 v1.0.6",
+                "61.9",
+                "57.2",
+                "58.0",
+                "공식 실행 환경 기본값. 경쟁은 Baidu 재평가 값"
+              ],
+              "source_ids": [
+                "echart"
+              ]
+            },
+            {
+              "values": [
+                "SpreadsheetBench V2",
+                "36.4",
+                "34.7",
+                "35.1",
+                "Claude Code 또는 DSH. WebSearch·WebFetch 비활성"
+              ],
+              "source_ids": [
+                "echart"
+              ]
+            },
+            {
+              "values": [
+                "DeepSWE v1.1",
+                "71.2",
+                "77.0",
+                "74.2",
+                "Baidu의 mini-swe-agent 조건. 경쟁값은 별표 없는 인용"
+              ],
+              "source_ids": [
+                "echart"
+              ]
+            },
+            {
+              "values": [
+                "APEX-Agents 1.1",
+                "64.2",
+                "43.9",
+                "72.9",
+                "Baidu 재평가 경쟁값. 공식 실행 환경, 100단계와 10,800초"
+              ],
+              "source_ids": [
+                "echart"
+              ]
+            }
+          ],
+          "note": "값은 원표 점수 그대로입니다. 발표일 2026-11-11, 확인일 2026-11-12 KST."
+        },
+        {
+          "id": "comparison-3",
+          "title": "Qianfan 중국 사이트의 1천 토큰당 원문 요금",
+          "columns": [
+            "구간",
+            "입력 CNY",
+            "캐시 적중 CNY",
+            "출력 CNY"
+          ],
+          "rows": [
+            {
+              "values": [
+                "08:00–22:00 정가",
+                "0.002",
+                "0.0002",
+                "0.008"
+              ],
+              "source_ids": [
+                "qprice"
+              ]
+            },
+            {
+              "values": [
+                "08:00–22:00 행사",
+                "0.001",
+                "0.0001",
+                "0.004"
+              ],
+              "source_ids": [
+                "qprice"
+              ]
+            },
+            {
+              "values": [
+                "22:00–다음날 08:00 정가",
+                "0.001",
+                "0.0001",
+                "0.004"
+              ],
+              "source_ids": [
+                "qprice"
+              ]
+            },
+            {
+              "values": [
+                "22:00–다음날 08:00 행사",
+                "0.0005",
+                "0.00005",
+                "0.002"
+              ],
+              "source_ids": [
+                "qprice"
+              ]
+            }
+          ],
+          "note": "Baidu 11월 11일 가격표입니다. 행사 종료 11월 30일 23:59:59, 공지의 시간대 미표기. 국제 사이트 및 OpenRouter와 별도입니다."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "평가와 적용 범위",
+            "text": "텍스트 기반 문서·자동화 작업에서 검토할 만한 후보입니다. Qianfan 국제 표준 입출력 가격은 DeepSeek Flash와 같지만 캐시 적중 단가는 더 높습니다. 직접 가중치 운영은 Preview의 실제 공개와 라이선스 확정이 필요합니다.",
+            "source_ids": [
+              "ernie",
+              "ebase",
+              "echart",
+              "eor",
+              "ezh",
+              "qmodels",
+              "qdefaults",
+              "qprice",
+              "intl",
+              "bpromo"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "Baidu 출시문, 공식 평가 부록, Qianfan 중국·국제 가격표와 OpenRouter 사양을 확인했습니다. 실제 청구·한국어 성능·독립 재현과 행사 종료일은 미확인입니다.",
+          "source_ids": [
+            "ernie",
+            "ebase",
+            "echart",
+            "eor",
+            "ezh",
+            "qmodels",
+            "qdefaults",
+            "qprice",
+            "intl",
+            "bpromo"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "minimax-h3-image-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "title": "MiniMax H3 Image 소개 — 약 16MP 생성과 이미지 토큰 요금",
+      "description": "H3 계열의 이미지 생성 모델을 이전 MiniMax 이미지 API와 FLUX.2 klein에 대조해 해상도, 편집 범위와 과금 단위를 설명합니다.",
+      "checked_on": "2026-11-12",
+      "scope": "MiniMax의 공개 모델 카드·API·가격표와 Black Forest Labs의 공식 제공 자료를 읽었습니다. 실제 이미지 품질·지연·청구·라이선스 적용 판단은 미확인입니다.",
+      "deck": "H3 Image는 33.1B 확산 변환기로 약 16MP 이미지를 직접 생성·편집하며 API는 최대 16장의 참조를 받습니다. 4K 미만에서도 장당 고정액 대신 텍스트·입력 이미지·출력 이미지 토큰을 따로 계산합니다.",
+      "highlights": [
+        "4K와 참조 편집",
+        "표준과 고속 요금"
+      ],
+      "source_note": "2026년 11월 12일 KST에 공식 자료의 관련 부분을 확인했습니다.",
+      "summary": [
+        {
+          "label": "4K와 참조 편집",
+          "text": "카드는 4096×4096 정사각형을 업스케일 없이 생성하는 체크포인트를 설명합니다. 관리형 API는 최대 16장 참조와 별도 고속 ID를 제공하며 마스크 편집과 투명 배경은 지원하지 않습니다.",
+          "source_ids": [
+            "minicard",
+            "miniapi"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "표준과 고속 요금",
+          "text": "100만 토큰당 텍스트 입력은 둘 다 USD 2.30입니다. 이미지 입력·출력은 표준 USD 1.50·3.80, 고속 USD 3.00·7.60으로 구분됩니다.",
+          "source_ids": [
+            "mp"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "references": [
+        {
+          "id": "mini",
+          "title": "MiniMax H3 Image 공식 출시",
+          "url": "https://www.minimax.io/blog/minimax-h3-image",
+          "description": "출시일, 자체 속도 주장과 관리형 제공 경로."
+        },
+        {
+          "id": "minicard",
+          "title": "MiniMax H3 Image 공식 모델 카드",
+          "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3-Image",
+          "description": "가중치 사양과 직접 생성, 설치 구성."
+        },
+        {
+          "id": "miniapi",
+          "title": "MiniMax 이미지 생성 API",
+          "url": "https://platform.minimax.io/docs/guides/image-generation",
+          "description": "요청의 참조, 해상도, 모드 및 미지원 항목."
+        },
+        {
+          "id": "mp",
+          "title": "MiniMax API 표준 요금",
+          "url": "https://platform.minimax.io/docs/pricing/overview",
+          "description": "정가, 장당 예시 및 한정 할인."
+        },
+        {
+          "id": "bflklein",
+          "title": "Black Forest Labs FLUX.2 klein 지원 안내",
+          "url": "https://help.bfl.ai/articles/7592221790-how-do-i-generate-quickly-with-flux-2-klein",
+          "description": "경쟁 모델의 사양·라이선스 및 참조 수."
+        },
+        {
+          "id": "bflpub",
+          "title": "Black Forest Labs 해상도별 가격",
+          "url": "https://bfl.ai/pricing?category=flux.2",
+          "description": "경쟁 모델의 4MP 한도와 과금 단위."
+        }
+      ],
+      "explanation": [
+        {
+          "id": "model",
+          "title": "생성과 편집을 통합한 H3 체크포인트",
+          "lead": "MiniMax는 H3 계열의 음성 층을 제외한 확산 변환기와 기존 텍스트 인코더를 사용했습니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "33.1B와 6회 샘플링",
+              "text": "공식 카드는 33.1B가 확산 변환기의 파라미터 수라고 적습니다. 모델은 같은 가중치로 텍스트 기반 생성과 참조 편집을 하고, 기본 증류 체크포인트의 샘플링은 6회입니다. 인코더는 H3 저장소에서 별도로 받습니다.",
+              "source_ids": [
+                "minicard"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "출력 제약",
+              "text": "출력 크기를 직접 지정하는 API는 655,360~20,000,000픽셀과 1:3~3:1 비율을 요구합니다. 자동 영역·화면비 설정과 가로·세로 직접 지정을 한 요청에서 함께 사용할 수 없습니다.",
+              "source_ids": [
+                "miniapi"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "performance",
+          "title": "해상도와 속도의 비교 범위",
+          "lead": "약 16MP 직접 생성과 16장 참조는 공식 사양으로, 출시문이 제시한 속도는 공급사 결과입니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "MiniMax가 보고한 속도",
+              "text": "출시문은 정사각형 4K를 10초 미만으로 생성했다고 설명합니다. 그 수치를 공개 가중치가 모든 장비에서 달성하는 지연이나 API의 서비스 수준으로 해석할 근거는 없습니다. 같은 프롬프트·참조·장비·해상도를 사용한 FLUX.2 klein 대비 정량 품질표는 확인되지 않았습니다.",
+              "source_ids": [
+                "mini",
+                "minicard",
+                "bflklein"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "지원 범위와 배포 비용",
+              "text": "FLUX.2 klein 공식 안내는 최대 참조 4장입니다. H3 Image가 더 많은 참조와 높은 해상도를 제공하지만, 가중치 카드의 변환기 파일만 66.28 GB이고 별도 인코더가 필요합니다. 공급사가 공개한 커뮤니티 라이선스 조건도 배포 전에 확인해야 합니다.",
+              "source_ids": [
+                "minicard",
+                "miniapi",
+                "bflklein",
+                "bflpub"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "price",
+          "title": "토큰 단가와 해상도 할인",
+          "lead": "가격표는 장당 예시와 실제 산정에 쓰는 토큰 단가를 따로 표시합니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "4K 예시와 한정 할인",
+              "text": "가격표의 4096×4096 텍스트 생성 예시는 표준 정가 USD 0.06879, 고속 정가 USD 0.13001입니다. 최종 이미지가 16,600,000픽셀 이상이면 11월 17일 16:00 UTC 직전까지 요청 총액을 50% 할인합니다. 같은 해상도라도 프롬프트 확장 토큰 때문에 비용이 달라질 수 있습니다.",
+              "source_ids": [
+                "mp"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "비교 단위",
+              "text": "이전 image-01 계열은 USD 0.0035/장으로 표시됩니다. FLUX.2 klein 9B의 첫 MP는 USD 0.015이고 이후 MP와 참조 처리의 단가는 별도입니다. 장당 예시, 토큰 단가, 픽셀 기준 단가는 같은 단위로 볼 수 없습니다.",
+              "source_ids": [
+                "mp",
+                "bflpub"
+              ],
+              "kind": "fact"
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "comparison-1",
+          "title": "이미지 모델의 사양과 제공",
+          "columns": [
+            "모델",
+            "이미지 생성·편집",
+            "제공과 표준 요금"
+          ],
+          "rows": [
+            {
+              "values": [
+                "MiniMax H3 Image",
+                "33.1B 변환기, 4096×4096 직접 생성, 참조 최대 16장",
+                "커뮤니티 라이선스 가중치·직접 API. 토큰별 요금"
+              ],
+              "source_ids": [
+                "minicard",
+                "miniapi",
+                "mp"
+              ]
+            },
+            {
+              "values": [
+                "MiniMax image-01 계열",
+                "이전 이미지 API. 같은 4K 평가 미확인",
+                "공식 이전 요금 USD 0.0035/장"
+              ],
+              "source_ids": [
+                "mp"
+              ]
+            },
+            {
+              "values": [
+                "FLUX.2 klein 9B",
+                "9B, 최대 4MP, 참조 최대 4장",
+                "로컬 비상업 조건·관리형 API. 첫 MP USD 0.015"
+              ],
+              "source_ids": [
+                "bflklein",
+                "bflpub"
+              ]
+            }
+          ],
+          "note": "동일 품질·지연 비교가 공개되지 않은 조건에서는 기능과 비용 체계를 비교합니다."
+        },
+        {
+          "id": "comparison-2",
+          "title": "MiniMax API의 원문 단위별 단가",
+          "columns": [
+            "모드",
+            "텍스트 입력 USD/100만 토큰",
+            "이미지 입력 USD/100만 토큰",
+            "이미지 출력 USD/100만 토큰",
+            "4K 텍스트 생성 예시 USD/장"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Standard",
+                "2.30",
+                "1.50",
+                "3.80",
+                "정가 0.06879 / 기간 한정 0.03439"
+              ],
+              "source_ids": [
+                "mp"
+              ]
+            },
+            {
+              "values": [
+                "Highspeed",
+                "2.30",
+                "3.00",
+                "7.60",
+                "정가 0.13001 / 기간 한정 0.06501"
+              ],
+              "source_ids": [
+                "mp"
+              ]
+            }
+          ],
+          "note": "공식 가격표의 표기값입니다. 예시는 표준 단가나 실제 청구 금액이 아닙니다."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "평가와 적용 범위",
+            "text": "고해상도 원본과 여러 참조를 한 번에 처리할 필요가 있을 때 구형 API와 구분되는 선택지입니다. 직접 운영과 관리형 API를 비교할 때는 인코더·메모리, 상업 사용 조건과 실제 토큰 비용을 함께 봐야 합니다.",
+            "source_ids": [
+              "mini",
+              "minicard",
+              "miniapi",
+              "mp",
+              "bflklein",
+              "bflpub"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "MiniMax의 공개 모델 카드·API·가격표와 Black Forest Labs의 공식 제공 자료를 읽었습니다. 실제 이미지 품질·지연·청구·라이선스 적용 판단은 미확인입니다.",
+          "source_ids": [
+            "mini",
+            "minicard",
+            "miniapi",
+            "mp",
+            "bflklein",
+            "bflpub"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "alpamayo-2-edge-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "title": "Alpamayo 2 Edge 소개 — 차량 경로 추론과 시뮬레이션 지표",
+      "description": "NVIDIA의 경량 주행 모델을 Alpamayo 1.5와 기반 Cosmos 3 Edge에 대조해 입력, 평가와 배포 범위를 설명합니다.",
+      "checked_on": "2026-11-12",
+      "scope": "NVIDIA 공식 모델 카드와 비교 자료를 확인했습니다. 공도 안전, 차량 탑재 성능, 별도 하드웨어 및 라이선스 적용은 미확인입니다.",
+      "deck": "Alpamayo 2 Edge는 여러 카메라의 이미지, 내비게이션 지시와 차량의 움직임 기록을 받아 후보 경로와 설명을 생성합니다. NVIDIA의 LingoQA는 75.2점이며, 1.5와 폐루프 시험의 표본·지표가 달라 같은 수치로 비교할 수 없습니다.",
+      "highlights": [
+        "궤적과 설명",
+        "LingoQA와 폐루프의 차이"
+      ],
+      "source_note": "2026년 11월 12일 KST에 공식 자료의 관련 부분을 확인했습니다.",
+      "summary": [
+        {
+          "label": "궤적과 설명",
+          "text": "11월 10일 공개 가중치는 Cosmos 3 Edge의 시각언어 백본에 주행용 행동 디코더를 결합합니다. 각 후보는 0.1초 간격으로 6.4초까지 64개 지점을 출력합니다.",
+          "source_ids": [
+            "alpa"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "LingoQA와 폐루프의 차이",
+          "text": "LingoQA 75.2점은 1.5의 74.2점과 함께 볼 수 있습니다. 875개 장면의 AlpaSim 15.15±0.04 km/과실 사고와 1.5의 AlpaSim 점수 1.37±0.10은 측정 단위부터 다릅니다.",
+          "source_ids": [
+            "alpa",
+            "a15"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "references": [
+        {
+          "id": "alpa",
+          "title": "NVIDIA Alpamayo 2 Edge 공식 카드",
+          "url": "https://huggingface.co/nvidia/Alpamayo2-Edge",
+          "description": "경량 모델 사양, 평가지표와 메모리 조건."
+        },
+        {
+          "id": "a15",
+          "title": "NVIDIA Alpamayo 1.5 10B 공식 카드",
+          "url": "https://huggingface.co/nvidia/Alpamayo-1.5-10B/raw/main/README.md",
+          "description": "이전 판의 벤치마크 조건과 제공 범위."
+        },
+        {
+          "id": "cosmos",
+          "title": "NVIDIA Cosmos 3 Edge 공식 카드",
+          "url": "https://huggingface.co/nvidia/Cosmos3-Edge/raw/main/README.md",
+          "description": "범용 물리 AI 백본의 구조·제공."
+        }
+      ],
+      "explanation": [
+        {
+          "id": "model",
+          "title": "시각언어 백본과 행동 모델",
+          "lead": "카드의 2B 이름은 제품 등급이며 세부 사양은 백본 2.45B와 행동 전문가 0.2B를 구분합니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "관측과 출력",
+              "text": "궤적 예측에서 6대 카메라의 22프레임과 차량 자세 이력 및 내비게이션 지시를 사용합니다. 행동 디코더가 경로를 내고, 시각언어 백본이 경로 설명과 별도 시각 질의 응답을 맡습니다.",
+              "source_ids": [
+                "alpa",
+                "cosmos"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "eval",
+          "title": "점수가 설명하는 평가 범위",
+          "lead": "같은 모델 카드에 질문 응답, 시뮬레이션과 기록 영상 재생 평가가 각각 있습니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "두 주행 수치의 경계",
+              "text": "폐루프는 모델의 행동을 다음 상태에 반영하는 AlpaSim 시험입니다. 875장면을 각각 세 번 실행한 평균은 과실 충돌 또는 도로 이탈 사이의 거리 15.15±0.04 km였습니다. 기록 영상의 개루프 minADE_6는 1,392표본에서 5초 시점 0.52m로, 1.5의 6.4초·1,434표본과 조건이 다릅니다.",
+              "source_ids": [
+                "alpa",
+                "a15"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "장점과 한계",
+              "text": "Lingo-Judge 수치는 작아진 모델의 질의 응답 성능을 확인할 단서입니다. 1점 차이의 불확실성 범위와 공도 안전 성능은 이 표에 없으며, 개별 후보 경로의 자연어 설명이 안전을 보증하지 않습니다.",
+              "source_ids": [
+                "alpa",
+                "a15"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "access",
+          "title": "공개 가중치와 실행 조건",
+          "lead": "NVIDIA는 가중치에 OpenMDW-1.1, 공개 코드에 Apache 2.0을 표시합니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "실측 메모리와 장치 범위",
+              "text": "NVIDIA가 H100 80GB에서 BF16, FlashAttention 2, 배치 1, 22장과 6개 후보를 사용했을 때 GPU 프로세스 최대치는 12.06 GiB였습니다. 해당 구성의 권장 메모리는 16 GB 이상입니다. DRIVE AGX Thor를 위한 모델로 소개되지만 이 수치는 H100 측정입니다.",
+              "source_ids": [
+                "alpa"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "비용 조건",
+              "text": "공개 가중치는 다운로드 제공이며 NVIDIA 모델 카드에서 관리형 API 단가를 확인하지 못했습니다. 실증·장비·시뮬레이션과 별도 데이터셋 사용 조건은 각각 확인해야 합니다.",
+              "source_ids": [
+                "alpa",
+                "a15",
+                "cosmos"
+              ],
+              "kind": "fact"
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "comparison-1",
+          "title": "주행 모델과 기반 계열의 제공 범위",
+          "columns": [
+            "모델",
+            "사양과 출력",
+            "가중치와 비용"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Alpamayo 2 Edge",
+                "백본 2.45B + 행동 전문가 0.2B, 경로·설명",
+                "OpenMDW-1.1 가중치. 공개 API 표준 요금 미확인"
+              ],
+              "source_ids": [
+                "alpa"
+              ]
+            },
+            {
+              "values": [
+                "Alpamayo 1.5 10B",
+                "같은 용도의 이전 10B 주행 모델",
+                "가중치 공개. 모델 카드의 H100 측정과 24GB 이상 안내"
+              ],
+              "source_ids": [
+                "a15"
+              ]
+            },
+            {
+              "values": [
+                "Cosmos 3 Edge",
+                "범용 물리 AI, 시각언어·생성 모델 계열",
+                "공개 기반 체크포인트. 전용 주행 점수를 뜻하지 않음"
+              ],
+              "source_ids": [
+                "cosmos"
+              ]
+            }
+          ],
+          "note": "비교 기준은 같은 계열의 이전 주행 모델과 Edge의 기반 모델입니다."
+        },
+        {
+          "id": "comparison-2",
+          "title": "NVIDIA 모델 카드의 주행·질의 평가",
+          "columns": [
+            "평가",
+            "2 Edge",
+            "1.5 10B",
+            "차이"
+          ],
+          "rows": [
+            {
+              "values": [
+                "LingoQA / Lingo-Judge",
+                "75.2점",
+                "74.2점",
+                "평가판 세부 설정과 분산은 미확인"
+              ],
+              "source_ids": [
+                "alpa",
+                "a15"
+              ]
+            },
+            {
+              "values": [
+                "AlpaSim 폐루프",
+                "15.15±0.04 km/과실 사고",
+                "1.37±0.10 AlpaSim 점수",
+                "875개/913개 장면, 단위 다름"
+              ],
+              "source_ids": [
+                "alpa",
+                "a15"
+              ]
+            },
+            {
+              "values": [
+                "PhysicalAI-AV 개루프 minADE_6",
+                "0.52m · 5초 · 1,392표본",
+                "0.916m · 6.4초 · 1,434표본",
+                "거리 예측 오차, 표본·시간 다름"
+              ],
+              "source_ids": [
+                "alpa",
+                "a15"
+              ]
+            }
+          ],
+          "note": "모든 수치는 NVIDIA 공개 카드입니다. 같은 실도로 시험이 아닙니다."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "평가와 적용 범위",
+            "text": "작은 주행 추론 체크포인트로 경로와 설명을 연구할 수 있습니다. 장치별 메모리·지연과 안전성을 비교할 때는 같은 표본, 시간 범위 및 단위의 실행 검증이 필요합니다.",
+            "source_ids": [
+              "alpa",
+              "a15",
+              "cosmos"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "NVIDIA 공식 모델 카드와 비교 자료를 확인했습니다. 공도 안전, 차량 탑재 성능, 별도 하드웨어 및 라이선스 적용은 미확인입니다.",
+          "source_ids": [
+            "alpa",
+            "a15",
+            "cosmos"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pan-2-world-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "title": "PAN 2 소개 — 행동 결과를 예측하는 공개 영상 월드 모델",
+      "description": "IFM의 PAN 2를 기존 PAN 접근과 영상 생성 기준 모델에 대조해 행동 계획 예측과 물리 평가의 범위를 설명합니다.",
+      "checked_on": "2026-11-12",
+      "scope": "IFM 공개 모델 카드·코드와 공식 평가 도표, Wan 배포 문서를 확인했습니다. 로컬 추론, 물리 정확도 독립 재현과 실제 로봇 적용은 미확인입니다.",
+      "deck": "PAN 2는 구조화한 행동 설명을 704×1248, 24fps, 최대 20초 영상으로 변환하는 공개 가중치입니다. IFM의 Physics-IQ Verified에서 순위표 설정은 49.38이었고 기본 실행은 37.48로, 같은 표의 MiniMax H3 기본값 42.91보다 낮았습니다.",
+      "highlights": [
+        "행동을 영상으로 예측",
+        "설정에 따라 바뀌는 순위"
+      ],
+      "source_note": "2026년 11월 12일 KST에 공식 자료의 관련 부분을 확인했습니다.",
+      "summary": [
+        {
+          "label": "행동을 영상으로 예측",
+          "text": "언어 모델이 행동과 시간 순서가 담긴 세계 상태 설명을 만들고, 29.2B 확산 모델이 이 설명과 선택적 시작 이미지를 받아 영상을 생성합니다. IFM 자체 코드와 가중치는 Apache 2.0입니다.",
+          "source_ids": [
+            "pan",
+            "pg"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "설정에 따라 바뀌는 순위",
+          "text": "Physics-IQ Verified I2V에서 PAN 2의 순위표 설정은 49.38±0.64, 자체 기본 설정은 37.48±0.48입니다. MiniMax H3의 기본값은 42.91±0.58이고 PhyGround에서는 PAN 2 4.74점, H3 4.73점으로 비슷합니다.",
+          "source_ids": [
+            "pan",
+            "pchart"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "references": [
+        {
+          "id": "pan",
+          "title": "IFM PAN 2 공식 모델 카드",
+          "url": "https://huggingface.co/IFM/PAN2",
+          "description": "입출력, 두 단계 구조, 평가와 사용 한계."
+        },
+        {
+          "id": "pg",
+          "title": "IFM PAN 2 공식 코드 저장소",
+          "url": "https://github.com/ifm-ai/PAN2",
+          "description": "가중치·의존 구성 및 공개 범위."
+        },
+        {
+          "id": "pchart",
+          "title": "IFM PAN 2 공식 공개 벤치마크 그림",
+          "url": "https://huggingface.co/IFM/PAN2/resolve/main/assets/report/results_benchmarks_light.png",
+          "description": "순위표·기본 실행의 점수·단위와 비교군."
+        },
+        {
+          "id": "wan",
+          "title": "Wan 2.2 TI2V-5B 공식 카드",
+          "url": "https://huggingface.co/Wan-AI/Wan2.2-TI2V-5B/raw/main/README.md",
+          "description": "공개 가중치와 범용 영상 사양."
+        },
+        {
+          "id": "panold",
+          "title": "PAN 선행 연구",
+          "url": "https://arxiv.org/abs/2511.09057",
+          "description": "선행 구조와 현재 모델의 차이를 보는 기준."
+        }
+      ],
+      "explanation": [
+        {
+          "id": "architecture",
+          "title": "개념 추론과 영상 예측",
+          "lead": "월드 모델은 관측한 상태와 행동으로 이후 상태를 예측합니다. PAN 2는 그 결과를 영상으로 제시합니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "이전 접근과의 연결",
+              "text": "2025년 PAN 선행 연구는 자동회귀 잠재 동역학과 영상 확산 디코더를 결합했습니다. PAN 2의 공개 체크포인트는 명시적으로 구조화한 시간·행동 설명을 조건으로 받고, 별도 언어 모델과 텍스트 인코더, Wan 2.2 영상 디코더를 연결합니다.",
+              "source_ids": [
+                "panold",
+                "pan",
+                "pg"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "영상 생성 모델과의 비교",
+              "text": "Wan 2.2 TI2V-5B도 텍스트 또는 이미지로 720P급 24fps 영상을 생성합니다. PAN 2는 행동의 순서와 결과를 상태 설명에 넣어 시뮬레이션하는 데 초점을 두며, 원표의 크기는 704×1248입니다.",
+              "source_ids": [
+                "pan",
+                "wan"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "bench",
+          "title": "물리·행동 평가의 강점과 반대 결과",
+          "lead": "IFM의 공개 그림은 서로 다른 모델 설정을 한 눈에 볼 수 있게 나눴습니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "순위표와 기본 구성",
+              "text": "순위표 조건에서 PAN 2는 Claude Opus 5.5를 개념 추론에 연결했고 123~126 시드의 평균·표준편차를 제시했습니다. 자체 기본 구성은 공급사가 각 모델 기본 파이프라인을 실행한 비교이며, 기술 보고서의 별도 명시 없는 연구는 Kimi K3를 사용했습니다.",
+              "source_ids": [
+                "pan",
+                "pchart"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "물리 점수와 실제 실행",
+              "text": "Physics-IQ의 100은 두 실제 촬영 사이의 변동을 정규화한 기준이며 성공률 100%가 아닙니다. PhyGround는 Qwen3.8-27B가 판정하는 5점 척도이고 RBench는 범주 평균에 100을 곱한 지표입니다. 공식 카드는 행동 중간에 물리 제약을 건너뛰거나 정확한 손가락 동작을 표현하기 어려울 수 있다고 밝힙니다.",
+              "source_ids": [
+                "pan",
+                "pchart"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "deploy",
+          "title": "제공 경로와 실행 비용",
+          "lead": "IFM은 모델 카드에서 코드와 확산 가중치를 공개했고, 텍스트 인코더와 Wan VAE는 각각의 공개 저장소에서 사용합니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "비용과 구성",
+              "text": "IFM은 자체 모델의 관리형 표준 API 단가를 공개 자료에 제시하지 않았습니다. 로컬 사용에서도 29.2B 영상 모델의 GPU 비용, 텍스트 재작성 모델, 안전 필터가 별도입니다. Wan 2.2 TI2V-5B의 제작사 안내는 24GB 이상 GPU에서 오프로딩을 적용한 예를 따로 제시합니다.",
+              "source_ids": [
+                "pan",
+                "pg",
+                "wan"
+              ],
+              "kind": "fact"
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "comparison-1",
+          "title": "이전 접근과 공개 영상 모델의 비교",
+          "columns": [
+            "모델",
+            "구조와 제공",
+            "요금 또는 조건"
+          ],
+          "rows": [
+            {
+              "values": [
+                "PAN 2",
+                "29.2B 확산 백본, 구조화 상태, 최대 20초, Apache 2.0",
+                "공식 관리형 단가 미확인, 실행 자원 별도"
+              ],
+              "source_ids": [
+                "pan",
+                "pg"
+              ]
+            },
+            {
+              "values": [
+                "PAN 선행 연구",
+                "언어와 행동으로 이후 세계 상태를 예측하는 이전 연구",
+                "이 연구와 PAN 2 가중치·평가를 구분"
+              ],
+              "source_ids": [
+                "panold"
+              ]
+            },
+            {
+              "values": [
+                "Wan 2.2 TI2V-5B",
+                "5B 범용 영상 생성, 720P급·24fps, Apache 2.0",
+                "제작사 카드의 로컬 구성 기준. 이 가중치의 표준 API 단가 미확인"
+              ],
+              "source_ids": [
+                "wan"
+              ]
+            }
+          ],
+          "note": "MiniMax H3와 Cosmos 3 Super의 평가는 아래 IFM 원표에서 비교합니다."
+        },
+        {
+          "id": "comparison-2",
+          "title": "IFM 공개 평가의 단위와 설정별 수치",
+          "columns": [
+            "모델",
+            "Physics-IQ 순위표",
+            "Physics-IQ 기본",
+            "PhyGround / 5",
+            "RBench ×100"
+          ],
+          "rows": [
+            {
+              "values": [
+                "PAN 2",
+                "49.38±0.64",
+                "37.48±0.48",
+                "4.74±0.02",
+                "57.04±0.61"
+              ],
+              "source_ids": [
+                "pan",
+                "pchart"
+              ]
+            },
+            {
+              "values": [
+                "MiniMax H3",
+                "39.79±0.40",
+                "42.91±0.58",
+                "4.73±0.01",
+                "56.16±1.12"
+              ],
+              "source_ids": [
+                "pan",
+                "pchart"
+              ]
+            },
+            {
+              "values": [
+                "Cosmos 3 Super",
+                "48.62±0.46",
+                "36.11±0.37",
+                "4.63±0.01",
+                "50.64±0.30"
+              ],
+              "source_ids": [
+                "pan",
+                "pchart"
+              ]
+            }
+          ],
+          "note": "Physics-IQ는 I2V이며 실제 두 촬영 사이 변동이 100입니다. IFM 원표의 정밀도와 편차를 보존했습니다."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "평가와 적용 범위",
+            "text": "행동 결과를 시각화하는 연구용 비교 후보입니다. 기본 실행과 순위표에서 순서가 달라지므로 같은 추론 모델·조건으로 재검증하고, 생성한 영상에 나타난 동작을 실제 기계의 검증값과 구분해야 합니다.",
+            "source_ids": [
+              "pan",
+              "pg",
+              "pchart",
+              "wan",
+              "panold"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "IFM 공개 모델 카드·코드와 공식 평가 도표, Wan 배포 문서를 확인했습니다. 로컬 추론, 물리 정확도 독립 재현과 실제 로봇 적용은 미확인입니다.",
+          "source_ids": [
+            "pan",
+            "pg",
+            "pchart",
+            "wan",
+            "panold"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ernie-light-dt-1-0-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "title": "ERNIE-Light-DT-1.0 소개 — 100만 토큰 문맥과 선택형 추론",
+      "description": "Baidu의 장문 모델을 기존 ERNIE 5.1과 동시 공개된 Flash Preview에 대조해 문맥, 추론 제어와 중국 Qianfan 요금을 설명합니다.",
+      "checked_on": "2026-11-12",
+      "scope": "Baidu 출시 자료, Qianfan 모델 목록과 중국 표준 요금의 관련 절을 확인했습니다. 실제 지연·품질·청구와 국제 제공 조건은 미확인입니다.",
+      "deck": "ERNIE-Light-DT-1.0은 1M 문맥과 최대 128K 출력을 표기하고 추론을 켜고 끌 수 있습니다. 중국 Qianfan 표준 입력은 1천 토큰당 CNY 0.008로, 동시 공개된 Flash Preview의 성수 시간대 정가 CNY 0.002보다 높습니다.",
+      "highlights": [
+        "장문 입력과 추론 전환",
+        "표준 가격"
+      ],
+      "source_note": "2026년 11월 12일 KST에 공식 자료의 관련 부분을 확인했습니다.",
+      "summary": [
+        {
+          "label": "장문 입력과 추론 전환",
+          "text": "Qianfan은 1M 문맥, 최대 128K 출력, 기본 60 RPM·100만 TPM을 표시합니다. Flash Preview는 항상 high 추론으로 제공되지만 Light DT는 출시 자료에 추론 전환이 명시됩니다.",
+          "source_ids": [
+            "bpromo",
+            "qmodels",
+            "qdefaults"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "표준 가격",
+          "text": "중국 Qianfan은 입력·캐시 적중·출력을 각각 CNY 0.008·0.0008·0.028/1천 토큰으로 표시합니다. 별도 할인·국제 표준가·공개 가중치는 확인한 원문에서 확인되지 않았습니다.",
+          "source_ids": [
+            "qprice",
+            "bpromo"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "references": [
+        {
+          "id": "bpromo",
+          "title": "Baidu Qianfan 세 모델 출시 안내",
+          "url": "https://cloud.baidu.com/product/qianfan_home/model_3.html?track=home_banner",
+          "description": "BSA, 지원 모드와 공개 제공."
+        },
+        {
+          "id": "qmodels",
+          "title": "Qianfan 중국 사이트 모델 목록",
+          "url": "https://cloud.baidu.com/doc/qianfan/s/rmh4stp0j",
+          "description": "모델 식별자, 문맥, 출력과 흐름 제한."
+        },
+        {
+          "id": "qprice",
+          "title": "Qianfan 중국 사이트 모델 요금",
+          "url": "https://cloud.baidu.com/doc/qianfan/s/wmh4sv6ya",
+          "description": "직접 온라인 추론 원문 단가."
+        },
+        {
+          "id": "qdefaults",
+          "title": "Qianfan 모델 기본값",
+          "url": "https://cloud.baidu.com/doc/qianfan/s/6mh4stoyf",
+          "description": "Flash Preview의 기본 출력·고정 추론 대조."
+        }
+      ],
+      "explanation": [
+        {
+          "id": "design",
+          "title": "희소 주의와 장문 처리",
+          "lead": "Baidu는 BSA 희소 주의와 피드백을 이용한 과거 정보 압축을 소개합니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "구조의 의미",
+              "text": "이전 토큰 정보를 보관하는 KV 캐시의 저장·색인 부담을 줄이는 접근입니다. 공급사의 계산 절감 설명은 특정 길이에서의 실제 응답 속도나 정확도 측정값을 제공하지 않습니다.",
+              "source_ids": [
+                "bpromo"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "기존 5.1의 한도와 차이",
+              "text": "Qianfan 공식 목록의 ERNIE 5.1은 문맥 128K, 최대 입력 119K입니다. Light DT의 1M 문맥은 더 긴 입력을 위한 제공 사양이며 입력·출력 한도를 각각 더해 쓸 수 있다는 뜻은 아닙니다.",
+              "source_ids": [
+                "qmodels"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "evaluation",
+          "title": "추론 선택의 장점과 검증 공백",
+          "lead": "고정 추론의 Flash Preview와 달리 Light DT는 서비스가 추론을 선택적으로 사용한다고 명시합니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "공개 평가의 한계",
+              "text": "Baidu는 수학·추론·도구·코딩이 상위권이라고 소개하지만 해당 출시 자료에는 평가판·실행 환경·모델별 점수표가 없습니다. 같은 문서 길이에서 ERNIE 5.1이나 Flash Preview보다 정확하거나 싸다고 판단할 수 없습니다.",
+              "source_ids": [
+                "bpromo",
+                "qmodels",
+                "qprice"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "billing",
+          "title": "시장과 요금 적용 범위",
+          "lead": "공식 가격표에서 Light DT는 중국 온라인 추론으로 확인했습니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "가격 안내의 차이",
+              "text": "출시 랜딩의 Light DT 가격 안내는 출시 공지를 보라고 되어 있고 11월 11일자 모델 요금 문서에 정가가 있습니다. 이 표의 기준은 중국 사이트이며 계정 제한, 다른 시장 요금 및 실제 청구는 별개입니다.",
+              "source_ids": [
+                "bpromo",
+                "qprice"
+              ],
+              "kind": "fact"
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "comparison-1",
+          "title": "Qianfan의 이전 모델과 동시기 모델",
+          "columns": [
+            "모델",
+            "공식 문맥과 제공",
+            "중국 표준 입력 / 캐시 적중 / 출력"
+          ],
+          "rows": [
+            {
+              "values": [
+                "ERNIE-Light-DT-1.0",
+                "1M 문맥, 최대 출력 128K, 추론 전환",
+                "CNY 0.008 / 0.0008 / 0.028"
+              ],
+              "source_ids": [
+                "bpromo",
+                "qmodels",
+                "qprice"
+              ]
+            },
+            {
+              "values": [
+                "ERNIE 5.1",
+                "128K 문맥, 최대 입력 119K",
+                "입력 ≤32K일 때 CNY 0.004 / 미표기 / 0.018"
+              ],
+              "source_ids": [
+                "qmodels",
+                "qprice"
+              ]
+            },
+            {
+              "values": [
+                "ERNIE 5.5 Flash Preview",
+                "1M 문맥, Qianfan 고정 high 추론",
+                "08:00–22:00 정가 CNY 0.002 / 0.0002 / 0.008"
+              ],
+              "source_ids": [
+                "qmodels",
+                "qdefaults",
+                "qprice"
+              ]
+            }
+          ],
+          "note": "가격은 중국 사이트 원문 단위 CNY/1천 토큰입니다. 동일 품질·응답 속도 비교는 미확인입니다."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "평가와 적용 범위",
+            "text": "긴 문맥과 추론 전환이 모두 필요한 경우의 직접 API 선택지입니다. 모델 이름의 Light와 공급사의 계산 절감 설명만으로 토큰 단가나 실제 작업당 비용을 판단할 수 없습니다.",
+            "source_ids": [
+              "bpromo",
+              "qmodels",
+              "qprice",
+              "qdefaults"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "Baidu 출시 자료, Qianfan 모델 목록과 중국 표준 요금의 관련 절을 확인했습니다. 실제 지연·품질·청구와 국제 제공 조건은 미확인입니다.",
+          "source_ids": [
+            "bpromo",
+            "qmodels",
+            "qprice",
+            "qdefaults"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ernie-wizshot-me-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "title": "ERNIE-Wizshot-ME 소개 — 대화형 인물 영상과 초당 과금",
+      "description": "Baidu의 인물 영상 API를 기존 K-Avatar 경로와 일반 영상 생성 모델에 대조해 미세 표정 제어, 입력 요구와 요금을 설명합니다.",
+      "checked_on": "2026-11-12",
+      "scope": "Baidu 공개 출시·요청·결과 문서와 비교 모델의 공식 사양·가격을 읽었습니다. 실제 호출·청구·표정 재현과 한국어 대사 품질은 미확인입니다.",
+      "deck": "ERNIE-Wizshot-ME는 인물 이미지, 참조 음성, 대사와 연기 지시로 짧은 1080p 영상을 만드는 Qianfan 모델입니다. Baidu 표준가는 결과 영상 1초당 CNY 0.7입니다. 표정·입술 동기 품질을 같은 조건으로 수치 비교한 근거는 확인되지 않았습니다.",
+      "highlights": [
+        "입력과 영상 제어",
+        "짧은 영상과 비용"
+      ],
+      "source_note": "2026년 11월 12일 KST에 공식 자료의 관련 부분을 확인했습니다.",
+      "summary": [
+        {
+          "label": "입력과 영상 제어",
+          "text": "일반적인 이미지 한 장과 프롬프트 방식에 더해 인물별 참조와 발화 구간, 표정·감정·장면을 구분해 요청하는 API입니다.",
+          "source_ids": [
+            "bpromo",
+            "wizcreate",
+            "kavatar"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "짧은 영상과 비용",
+          "text": "제품 안내의 출력은 1080p, 4~15초이며 초당 CNY 0.7입니다. 요청 문서의 합성 대사·무음 길이 검사는 4~16초로 별도로 표시됩니다.",
+          "source_ids": [
+            "bpromo",
+            "wizcreate"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "references": [
+        {
+          "id": "bpromo",
+          "title": "Baidu Qianfan 세 모델 출시 안내",
+          "url": "https://cloud.baidu.com/product/qianfan_home/model_3.html?track=home_banner",
+          "description": "출시, 1080p 길이 범위와 초당 표준 단가."
+        },
+        {
+          "id": "wizcreate",
+          "title": "Qianfan Wizshot ME 공식 요청 계약",
+          "url": "https://cloud.baidu.com/doc/qianfan-api/s/8mwbylac7",
+          "description": "인물과 음성 참조, 영상 작업의 입력 범위."
+        },
+        {
+          "id": "wizpoll",
+          "title": "Qianfan Wizshot ME 공식 결과 계약",
+          "url": "https://cloud.baidu.com/doc/qianfan-api/s/Imwc2p4go",
+          "description": "작업 상태, 출력 주소와 과금 관련 결과 필드."
+        },
+        {
+          "id": "kavatar",
+          "title": "Qianfan K-Avatar 공식 요청 계약",
+          "url": "https://cloud.baidu.com/doc/qianfan-api/s/Tmwbl4dza",
+          "description": "기존 디지털 인물 경로의 입력과 모드."
+        },
+        {
+          "id": "mp",
+          "title": "MiniMax API 표준 요금",
+          "url": "https://platform.minimax.io/docs/pricing/overview",
+          "description": "경쟁 영상 API의 해상도·길이별 표준 가격."
+        }
+      ],
+      "explanation": [
+        {
+          "id": "model",
+          "title": "인물별 입력과 발화 구간",
+          "lead": "Baidu는 가까운 인물의 시선, 눈과 입 주변의 작은 움직임을 재현하는 영상 모델로 소개합니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "이전 제품 경로와의 차이",
+              "text": "같은 Qianfan의 K-Avatar 문서는 인물 참조 이미지, 선택 음성·프롬프트와 표준·고충실 모드를 제공합니다. Wizshot ME는 장면의 여러 인물과 각 발화에 대한 연기 지시를 구조화합니다. 공식 자료에는 K-Avatar 가중치의 후속판이라고 적혀 있지 않습니다.",
+              "source_ids": [
+                "wizcreate",
+                "kavatar"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "limits",
+          "title": "표정 제어와 평가 한계",
+          "lead": "두 모델의 API 스펙은 확인할 수 있지만 표정 품질, 입술 동기, 인물 일관성을 동일한 표본으로 비교한 수치는 공개 문서에서 확인되지 않았습니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "제품 길이와 요청 검증",
+              "text": "Baidu 제품 페이지는 4~15초 1080p를 안내하고 API 문서는 합성 음성과 무음 합계에 4~16초 유효 범위를 적습니다. 입력 검증의 상한을 최종 제공 영상의 보장 길이로 적용할 수 없습니다.",
+              "source_ids": [
+                "bpromo",
+                "wizcreate"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "발화 언어와 품질",
+              "text": "요청 문서는 중국어·영어 분량 추정 기준을 제공합니다. 독립적으로 측정한 언어별 입술 동기나 한국어 지원 품질은 확인하지 못했습니다.",
+              "source_ids": [
+                "wizcreate"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "billing",
+          "title": "비동기 제공과 초당 과금",
+          "lead": "API에서 생성 작업과 결과 조회가 분리되어 있으며 관리형 제공입니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "출력 비용과 주소 유효기간",
+              "text": "Baidu 공개 단가는 영상 1초당 CNY 0.7입니다. 결과 응답은 영상 길이·해상도와 연결되며 출력 URL은 24시간 유효하고 영상은 최대 30일 보관된다고 문서에 적혀 있습니다. 공개 가중치와 다른 시장의 단가는 확인되지 않았습니다.",
+              "source_ids": [
+                "bpromo",
+                "wizpoll"
+              ],
+              "kind": "fact"
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "comparison-1",
+          "title": "인물 영상과 일반 영상 API",
+          "columns": [
+            "모델",
+            "공식 제공 범위",
+            "표준 단가 및 비교 조건"
+          ],
+          "rows": [
+            {
+              "values": [
+                "ERNIE-Wizshot-ME",
+                "1080p 4~15초 제품 표기, 인물·음성·대사·연기 제어",
+                "Baidu Qianfan 중국 CNY 0.7/영상 초"
+              ],
+              "source_ids": [
+                "bpromo",
+                "wizcreate"
+              ]
+            },
+            {
+              "values": [
+                "K-Avatar",
+                "Qianfan 디지털 인물 API. 이미지, 선택 음성, 표준·고충실 모드",
+                "이 API 문서에서 정가 미확인"
+              ],
+              "source_ids": [
+                "kavatar"
+              ]
+            },
+            {
+              "values": [
+                "MiniMax Hailuo 2.3",
+                "관리형 범용 생성의 해상도·길이별 요금",
+                "공식 1080p 6초 USD 0.49/영상"
+              ],
+              "source_ids": [
+                "mp"
+              ]
+            }
+          ],
+          "note": "CNY/초와 USD/영상의 원문 단위를 유지했습니다. 동일 입력이나 성능을 전제한 비교는 아닙니다."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "평가와 적용 범위",
+            "text": "인물별 발화와 연기를 한 요청 안에서 표현해야 할 때 기존 디지털 인물 경로와 비교할 수 있습니다. 조달 판단에는 짧은 클립 범위, 음성·이미지 이용 권한, 실제 언어 품질과 재시도 비용이 중요합니다.",
+            "source_ids": [
+              "bpromo",
+              "wizcreate",
+              "wizpoll",
+              "kavatar",
+              "mp"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "Baidu 공개 출시·요청·결과 문서와 비교 모델의 공식 사양·가격을 읽었습니다. 실제 호출·청구·표정 재현과 한국어 대사 품질은 미확인입니다.",
+          "source_ids": [
+            "bpromo",
+            "wizcreate",
+            "wizpoll",
+            "kavatar",
+            "mp"
+          ]
+        }
+      ]
+    }
+  ]
+}

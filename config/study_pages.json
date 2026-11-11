@@ -111,7 +111,14 @@
     "claude-mythos-52-model-guide",
     "muse-ember-model-guide",
     "gemini-robotics-25-model-guide",
-    "minimax-h3-image-pe-model-guide"
+    "minimax-h3-image-pe-model-guide",
+    "qvac-botpsy-0-8b-model-guide",
+    "ernie-5-5-flash-preview-model-guide",
+    "minimax-h3-image-model-guide",
+    "alpamayo-2-edge-model-guide",
+    "pan-2-world-model-guide",
+    "ernie-light-dt-1-0-model-guide",
+    "ernie-wizshot-me-model-guide"
   ],
   "catalogs": {
     "devops-implementation-guide": "devops_tools.2026-10-10.r4.json"
@@ -388,6 +395,27 @@
     ],
     "minimax-h3-image-pe-model-guide": [
       "4149aa89f284c68c0c6795488dc66d7ff2f0dd21bbf95b4a347dff621444f71e"
+    ],
+    "qvac-botpsy-0-8b-model-guide": [
+      "6b5d7ffacdde869b01df25ce7b98eaa016b25a8531bb0841d3978f45fd90398f"
+    ],
+    "ernie-5-5-flash-preview-model-guide": [
+      "432a734057ac31a9a6d36a178a002b144954933534c29f7f1401074e9f931fc0"
+    ],
+    "minimax-h3-image-model-guide": [
+      "69be367e404210721724df98b10d4fcad508fb28b92fd97c1b051809f6a4efc5"
+    ],
+    "alpamayo-2-edge-model-guide": [
+      "37eb356f3ab1427e49d30112f460764d980eff17ce9b0def8250d5e36b642520"
+    ],
+    "pan-2-world-model-guide": [
+      "b1d021a7a30b18273c74dd6a39d74bb0ef9018966cf769578cc6b0af89d317c6"
+    ],
+    "ernie-light-dt-1-0-model-guide": [
+      "895756487aa78f6dc6203ce355233b2fae80563b722ff43312e781b3fd7c9c5a"
+    ],
+    "ernie-wizshot-me-model-guide": [
+      "4a01b6241cdb634a0cf48bd7b0e4cb0948e601dd63d54350e6c0bd7b953b8dde"
     ]
   },
   "model_introduction_editions": {
@@ -603,6 +631,27 @@
     ],
     "minimax-h3-image-pe-model-guide": [
       "4149aa89f284c68c0c6795488dc66d7ff2f0dd21bbf95b4a347dff621444f71e"
+    ],
+    "qvac-botpsy-0-8b-model-guide": [
+      "6b5d7ffacdde869b01df25ce7b98eaa016b25a8531bb0841d3978f45fd90398f"
+    ],
+    "ernie-5-5-flash-preview-model-guide": [
+      "432a734057ac31a9a6d36a178a002b144954933534c29f7f1401074e9f931fc0"
+    ],
+    "minimax-h3-image-model-guide": [
+      "69be367e404210721724df98b10d4fcad508fb28b92fd97c1b051809f6a4efc5"
+    ],
+    "alpamayo-2-edge-model-guide": [
+      "37eb356f3ab1427e49d30112f460764d980eff17ce9b0def8250d5e36b642520"
+    ],
+    "pan-2-world-model-guide": [
+      "b1d021a7a30b18273c74dd6a39d74bb0ef9018966cf769578cc6b0af89d317c6"
+    ],
+    "ernie-light-dt-1-0-model-guide": [
+      "895756487aa78f6dc6203ce355233b2fae80563b722ff43312e781b3fd7c9c5a"
+    ],
+    "ernie-wizshot-me-model-guide": [
+      "4a01b6241cdb634a0cf48bd7b0e4cb0948e601dd63d54350e6c0bd7b953b8dde"
     ]
   },
   "model_introduction_purpose_editions": {
@@ -807,6 +856,27 @@
     ],
     "minimax-h3-image-pe-model-guide": [
       "4149aa89f284c68c0c6795488dc66d7ff2f0dd21bbf95b4a347dff621444f71e"
+    ],
+    "qvac-botpsy-0-8b-model-guide": [
+      "6b5d7ffacdde869b01df25ce7b98eaa016b25a8531bb0841d3978f45fd90398f"
+    ],
+    "ernie-5-5-flash-preview-model-guide": [
+      "432a734057ac31a9a6d36a178a002b144954933534c29f7f1401074e9f931fc0"
+    ],
+    "minimax-h3-image-model-guide": [
+      "69be367e404210721724df98b10d4fcad508fb28b92fd97c1b051809f6a4efc5"
+    ],
+    "alpamayo-2-edge-model-guide": [
+      "37eb356f3ab1427e49d30112f460764d980eff17ce9b0def8250d5e36b642520"
+    ],
+    "pan-2-world-model-guide": [
+      "b1d021a7a30b18273c74dd6a39d74bb0ef9018966cf769578cc6b0af89d317c6"
+    ],
+    "ernie-light-dt-1-0-model-guide": [
+      "895756487aa78f6dc6203ce355233b2fae80563b722ff43312e781b3fd7c9c5a"
+    ],
+    "ernie-wizshot-me-model-guide": [
+      "4a01b6241cdb634a0cf48bd7b0e4cb0948e601dd63d54350e6c0bd7b953b8dde"
     ]
   },
   "model_introduction_reader_editions": {
@@ -962,6 +1032,27 @@
     ],
     "claude-mythos-52-model-guide": [
       "0b5021e546fc70687810df251fa2991f90f8f39e3fd6f012610e4410311ec011"
+    ],
+    "qvac-botpsy-0-8b-model-guide": [
+      "6b5d7ffacdde869b01df25ce7b98eaa016b25a8531bb0841d3978f45fd90398f"
+    ],
+    "ernie-5-5-flash-preview-model-guide": [
+      "432a734057ac31a9a6d36a178a002b144954933534c29f7f1401074e9f931fc0"
+    ],
+    "minimax-h3-image-model-guide": [
+      "69be367e404210721724df98b10d4fcad508fb28b92fd97c1b051809f6a4efc5"
+    ],
+    "alpamayo-2-edge-model-guide": [
+      "37eb356f3ab1427e49d30112f460764d980eff17ce9b0def8250d5e36b642520"
+    ],
+    "pan-2-world-model-guide": [
+      "b1d021a7a30b18273c74dd6a39d74bb0ef9018966cf769578cc6b0af89d317c6"
+    ],
+    "ernie-light-dt-1-0-model-guide": [
+      "895756487aa78f6dc6203ce355233b2fae80563b722ff43312e781b3fd7c9c5a"
+    ],
+    "ernie-wizshot-me-model-guide": [
+      "4a01b6241cdb634a0cf48bd7b0e4cb0948e601dd63d54350e6c0bd7b953b8dde"
     ]
   }
 }

@@ -905,3 +905,8 @@ K-EXAONE 2.5, Seedream 5.5, Shizuku-Duplex, Claude Fable 5.2와 Mythos 5.2의 �
 Theo 신규 Fable 5.2 원문과 3편 개정, 비교표 원본 6건을 수집했다. Muse Ember, Gemini Robotics 2.5, MiniMax H3 Image PE 소개와 Gemini 4 Carbon 제공 확대 개정판을 공식 관측 29건과 함께 로컬 발행했다. 품질 검사와 관련 테스트 37개 및 로컬 Muse Ember 장문 요금 상세를 확인했다. [검토 범위](../AI_MODEL_REVIEW.2026-11-11.md).
 
 2026-11-11 공개 완료. 소스 `955cf58`의 [Pages 실행 42893121819](https://github.com/Hansihoo/signal-desk/actions/runs/42893121819) 성공. 제출본 테스트 214개와 클라우드 주거 점검을 통과했다. 공개 소개 4편, 공식 관측 29건, 이전판 지문 및 390px 검색·상세·링크·Theo 원본 표를 확인했다. [공개 검증](../AI_MODEL_REVIEW.2026-11-11.md#공개-완료--2026-11-11-0519-kst).
+
+
+## 2026-11-12 신규 모델 원문 검토 및 로컬 발행
+
+Theo 원문 18편과 누적표 원본 806건에 변경이 없었다. BotPsy 0.8B, ERNIE 5.5 Flash Preview, MiniMax H3 Image, Alpamayo 2 Edge, PAN 2, ERNIE Light DT, ERNIE Wizshot ME의 소개 7편과 공식 관측 39건을 함께 추가했다. 품질 게이트·모델 관련 테스트 32개·로컬 발행을 확인했다. 로컬 연구 워크플로 전체 테스트는 기존 미커밋 템플릿 지문 불일치로 일부 실패했다. [출처와 검증](../AI_MODEL_REVIEW.2026-11-12.md).
