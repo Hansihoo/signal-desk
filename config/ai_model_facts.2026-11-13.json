@@ -1,0 +1,522 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "id": "gemini4-hydrogen-spec",
+      "model": "Gemini 4 Hydrogen",
+      "provider": "Google",
+      "checked_on": "2026-11-13",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "Gemini API · stable",
+        "condition": "입출력 통합 한도. long decode도 같은 문맥의 잔여 예산. 이미지·음성 생성 및 Live API 미지원.",
+        "status": "정식 API",
+        "release": "2026-11-12",
+        "model_id": "gemini-4-hydrogen",
+        "통합 문맥 tokens": 1048576,
+        "기본 최대 출력 tokens": 65536,
+        "long decode 최대 tokens": 1048576,
+        "effort": "low / medium / high / xhigh"
+      },
+      "source_url": "https://aistudio.google.com/docs/models/gemini-4-hydrogen"
+    },
+    {
+      "id": "gemini4-hydrogen-standard",
+      "model": "Gemini 4 Hydrogen",
+      "provider": "Google",
+      "checked_on": "2026-11-13",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Gemini API · Standard",
+        "condition": "USD per 1M tokens. 출력 thinking 포함. implicit caching만 지원. 검색·도구 요금 별도.",
+        "입력 USD / 100만 토큰": 1.5,
+        "출력 USD / 100만 토큰": 7.5
+      },
+      "source_url": "https://aistudio.google.com/docs/pricing"
+    },
+    {
+      "id": "gemini4-hydrogen-batch-flex",
+      "model": "Gemini 4 Hydrogen",
+      "provider": "Google",
+      "checked_on": "2026-11-13",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Gemini API · Batch / Flex",
+        "condition": "USD per 1M tokens. 출력 thinking 포함. implicit caching만 지원. 검색·도구 요금 별도.",
+        "입력 USD / 100만 토큰": 0.75,
+        "출력 USD / 100만 토큰": 3.75
+      },
+      "source_url": "https://aistudio.google.com/docs/pricing"
+    },
+    {
+      "id": "gemini4-hydrogen-priority",
+      "model": "Gemini 4 Hydrogen",
+      "provider": "Google",
+      "checked_on": "2026-11-13",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Gemini API · Priority",
+        "condition": "USD per 1M tokens. 출력 thinking 포함. implicit caching만 지원. 검색·도구 요금 별도.",
+        "입력 USD / 100만 토큰": 2.7,
+        "출력 USD / 100만 토큰": 13.5
+      },
+      "source_url": "https://aistudio.google.com/docs/pricing"
+    },
+    {
+      "id": "gemini4-hydrogen-swe",
+      "model": "Gemini 4 Hydrogen",
+      "provider": "Google",
+      "checked_on": "2026-11-13",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SWE-sweep",
+        "condition": "Sonnet5.5 3.1%,Terra5.8%. Google 2026-11표. 세부 thinking/harness 동등성 미확인. 독립 재현 아님.",
+        "평가 점수": 13.5,
+        "단위": "%",
+        "측정 주체": "Google",
+        "harness": "Google 모델 카드; 세부 방법론 미확인"
+      },
+      "source_url": "https://deepmind.google/models/model-cards/gemini-4-hydrogen/"
+    },
+    {
+      "id": "gemini4-hydrogen-tb41",
+      "model": "Gemini 4 Hydrogen",
+      "provider": "Google",
+      "checked_on": "2026-11-13",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Terminal-Bench 4.1",
+        "condition": "Cheating-adjusted. Sonnet63.9%,Terra 미기재. Google 2026-11표. 세부 thinking/harness 동등성 미확인. 독립 재현 아님.",
+        "평가 점수": 57,
+        "단위": "%",
+        "측정 주체": "Google",
+        "harness": "Google 모델 카드; 세부 방법론 미확인"
+      },
+      "source_url": "https://deepmind.google/models/model-cards/gemini-4-hydrogen/"
+    },
+    {
+      "id": "gemini4-hydrogen-ale",
+      "model": "Gemini 4 Hydrogen",
+      "provider": "Google",
+      "checked_on": "2026-11-13",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Agents Last Exam v1.1",
+        "condition": "Sonnet60.4%,Terra69.8%. Google 2026-11표. 세부 thinking/harness 동등성 미확인. 독립 재현 아님.",
+        "평가 점수": 71.6,
+        "단위": "%",
+        "측정 주체": "Google",
+        "harness": "Google 모델 카드; 세부 방법론 미확인"
+      },
+      "source_url": "https://deepmind.google/models/model-cards/gemini-4-hydrogen/"
+    },
+    {
+      "id": "gemini4-hydrogen-aa",
+      "model": "Gemini 4 Hydrogen",
+      "provider": "Google",
+      "checked_on": "2026-11-13",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "AutomationBench-AA",
+        "condition": "Sonnet71.8%,Terra60.2%. Google 2026-11표. 세부 thinking/harness 동등성 미확인. 독립 재현 아님.",
+        "평가 점수": 76.1,
+        "단위": "%",
+        "측정 주체": "Google",
+        "harness": "Google 모델 카드; 세부 방법론 미확인"
+      },
+      "source_url": "https://deepmind.google/models/model-cards/gemini-4-hydrogen/"
+    },
+    {
+      "id": "gemini4-hydrogen-osworld",
+      "model": "Gemini 4 Hydrogen",
+      "provider": "Google",
+      "checked_on": "2026-11-13",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OSWorld-2.1",
+        "condition": "Offline subset.Sonnet83.9%,Terra74.2%. Google 2026-11표. 세부 thinking/harness 동등성 미확인. 독립 재현 아님.",
+        "평가 점수": 77.6,
+        "단위": "%",
+        "측정 주체": "Google",
+        "harness": "Google 모델 카드; 세부 방법론 미확인"
+      },
+      "source_url": "https://deepmind.google/models/model-cards/gemini-4-hydrogen/"
+    },
+    {
+      "id": "gemini4-hydrogen-science",
+      "model": "Gemini 4 Hydrogen",
+      "provider": "Google",
+      "checked_on": "2026-11-13",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Terminal-Bench-Science 0.1",
+        "condition": "Sonnet59.9%,Terra58.3%. Google 2026-11표. 세부 thinking/harness 동등성 미확인. 독립 재현 아님.",
+        "평가 점수": 51.4,
+        "단위": "%",
+        "측정 주체": "Google",
+        "harness": "Google 모델 카드; 세부 방법론 미확인"
+      },
+      "source_url": "https://deepmind.google/models/model-cards/gemini-4-hydrogen/"
+    },
+    {
+      "id": "gemini4-hydrogen-hle",
+      "model": "Gemini 4 Hydrogen",
+      "provider": "Google",
+      "checked_on": "2026-11-13",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "HLE-Diamond",
+        "condition": "Sonnet53.3%,Terra47.3%. Google 2026-11표. 세부 thinking/harness 동등성 미확인. 독립 재현 아님.",
+        "평가 점수": 58.8,
+        "단위": "%",
+        "측정 주체": "Google",
+        "harness": "Google 모델 카드; 세부 방법론 미확인"
+      },
+      "source_url": "https://deepmind.google/models/model-cards/gemini-4-hydrogen/"
+    },
+    {
+      "id": "gemini-decision1-spec",
+      "model": "Gemini Decision 1",
+      "provider": "Google",
+      "checked_on": "2026-11-13",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "Decisions API · v1beta",
+        "condition": "공유 입력과 모든 질문 합계. 선택·등급2~255개. 생성·function calling·캐시·Batch 미지원.",
+        "status": "Developer API 제공",
+        "release": "2026-11-11",
+        "model_id": "gemini-decision-1",
+        "입력 문맥 tokens": 262144,
+        "출력 tokens": 0,
+        "요청당 최대 질문": 1000
+      },
+      "source_url": "https://aistudio.google.com/docs/models/gemini-decision-1"
+    },
+    {
+      "id": "gemini-decision1-standard",
+      "model": "Gemini Decision 1",
+      "provider": "Google",
+      "checked_on": "2026-11-13",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Gemini API · Standard",
+        "condition": "모든 모달리티. 공유 입력 요청당 한 번, 각 질문 지시·기준 추가 입력. 출력0토큰으로 출력 가격 해당 없음. 캐시·Batch 미지원.",
+        "입력 USD / 100만 토큰": 0.1,
+        "출력 요금": "해당 없음 · 0 output tokens"
+      },
+      "source_url": "https://aistudio.google.com/docs/pricing"
+    },
+    {
+      "id": "gemini-decision1-jev",
+      "model": "Gemini Decision 1",
+      "provider": "Google",
+      "checked_on": "2026-11-13",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "JevBench",
+        "condition": "Public split. Jev1.14 90.0%,Luna90.9%,Flash-Lite86.6%. 공급자 공통 평가. 거부·차단·수용 불가 요청은 오답.",
+        "평가 점수": 92.2,
+        "단위": "%",
+        "측정 주체": "Google",
+        "harness": "Google 7 shared evals",
+        "effort": "Decision prefill; Flash-Lite Interactions minimal"
+      },
+      "source_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-decision__benchmarks__tab.width-1200.format-webp_3LrengT.webp"
+    },
+    {
+      "id": "gemini-decision1-esci",
+      "model": "Gemini Decision 1",
+      "provider": "Google",
+      "checked_on": "2026-11-13",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Amazon ESCI",
+        "condition": "Macro-F1. Jev56.7%,Luna54.7%,Flash-Lite47.2%. 공급자 공통 평가. 거부·차단·수용 불가 요청은 오답.",
+        "평가 점수": 58.7,
+        "단위": "%",
+        "측정 주체": "Google",
+        "harness": "Google 7 shared evals",
+        "effort": "Decision prefill; Flash-Lite Interactions minimal"
+      },
+      "source_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-decision__benchmarks__tab.width-1200.format-webp_3LrengT.webp"
+    },
+    {
+      "id": "gemini-decision1-mind2web",
+      "model": "Gemini Decision 1",
+      "provider": "Google",
+      "checked_on": "2026-11-13",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Mind2Web Multimodal",
+        "condition": "Jev86.8%,Luna81.8%,Flash-Lite78.0%. 공급자 공통 평가. 거부·차단·수용 불가 요청은 오답.",
+        "평가 점수": 86.2,
+        "단위": "%",
+        "측정 주체": "Google",
+        "harness": "Google 7 shared evals",
+        "effort": "Decision prefill; Flash-Lite Interactions minimal"
+      },
+      "source_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-decision__benchmarks__tab.width-1200.format-webp_3LrengT.webp"
+    },
+    {
+      "id": "gemini-decision1-when2call",
+      "model": "Gemini Decision 1",
+      "provider": "Google",
+      "checked_on": "2026-11-13",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "When2Call",
+        "condition": "Jev82.0%,Luna70.4%,Flash-Lite60.9%. 공급자 공통 평가. 거부·차단·수용 불가 요청은 오답.",
+        "평가 점수": 79.9,
+        "단위": "%",
+        "측정 주체": "Google",
+        "harness": "Google 7 shared evals",
+        "effort": "Decision prefill; Flash-Lite Interactions minimal"
+      },
+      "source_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-decision__benchmarks__tab.width-1200.format-webp_3LrengT.webp"
+    },
+    {
+      "id": "gemini-decision1-ece",
+      "model": "Gemini Decision 1",
+      "provider": "Google",
+      "checked_on": "2026-11-13",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Top-1 ECE · 7 shared evals",
+        "condition": "Jev0.0494,Luna0.0721,Flash-Lite0.2104. 정확도 아님. 공급자 공통 평가. 거부·차단·수용 불가 요청은 오답.",
+        "평가 점수": 0.025,
+        "단위": "ECE · 낮을수록 좋음",
+        "측정 주체": "Google",
+        "harness": "Google 7 shared evals",
+        "effort": "Decision prefill; Flash-Lite Interactions minimal"
+      },
+      "source_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-decision__benchmarks__tab.width-1200.format-webp_3LrengT.webp"
+    },
+    {
+      "id": "gemini-decision1-evalcost",
+      "model": "Gemini Decision 1",
+      "provider": "Google",
+      "checked_on": "2026-11-13",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "7 shared evals · total price",
+        "condition": "총액USD, 토큰 정가 아님. Jev0.68,Luna0.93,Flash-Lite4.14.",
+        "평가 총비용 USD": 0.88,
+        "측정 주체": "Google",
+        "harness": "Google 7 shared evals"
+      },
+      "source_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-decision__benchmarks__tab.width-1200.format-webp_3LrengT.webp"
+    },
+    {
+      "id": "qwen4-max-preview-spec",
+      "model": "Qwen4-Max-Preview",
+      "provider": "Alibaba QwenCloud",
+      "checked_on": "2026-11-13",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "QwenCloud · Token Plan",
+        "condition": "원문1M context. thinking+final 공유 출력;max_tokens 의미 변경. 별칭qwen4.0-max-preview는 같은 모델.",
+        "status": "기간 한정 프리뷰",
+        "release": "2026-11-11",
+        "model_id": "qwen4-max-preview",
+        "문맥 원문": "1M tokens",
+        "최대 출력 tokens": 393216,
+        "KST 종료": "2026-11-26 01:00",
+        "effort": "low / medium / xhigh(default)",
+        "평가": "공식 정량 비교 미확인"
+      },
+      "source_url": "https://docs.qwencloud.com/developer-guides/getting-started/latest-model"
+    },
+    {
+      "id": "qwen4-max-preview-plan",
+      "model": "Qwen4-Max-Preview",
+      "provider": "Alibaba QwenCloud",
+      "checked_on": "2026-11-13",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Token Plan Individual · 월 정가",
+        "condition": "Singapore·가변 Credits. 개인 대화형 도구 전용; 자동화·백엔드·비대화형 배치 미허용. 종료 후 모델 retired. per-token 정가 없음.",
+        "월 정가 USD": "6 / 10 / 18 / 43",
+        "월 Credits": "20000 / 45000 / 80000 / 200000",
+        "한정 할인": "신규 Lite3/Essential5 USD 11-30 UTC+8까지; Qwen4 Credits20%,야간8% 프로모션"
+      },
+      "source_url": "https://docs.qwencloud.com/token-plan/personal/token-plan-personal-overview"
+    },
+    {
+      "id": "alphagenome2-spec",
+      "model": "AlphaGenome 2",
+      "provider": "Google DeepMind",
+      "checked_on": "2026-11-13",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "DNA 조건부 예측",
+        "condition": "DNA bases는 언어 tokens와 다른 단위. 사람/생쥐+한 조건. methylation·single-cell 출력 추가, PROCAP·quantile_score 제거.",
+        "status": "연구 API 제공",
+        "release": "2026-11-11",
+        "최대 DNA 길이 원문": "1 Mb",
+        "요청당 자체 인간 scRNA-seq 세포 상한": 256
+      },
+      "source_url": "https://www.alphagenomedocs.com/user_guides/ag1_vs_ag2.html"
+    },
+    {
+      "id": "alphagenome2-access",
+      "model": "AlphaGenome 2",
+      "provider": "Google DeepMind",
+      "checked_on": "2026-11-13",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "AlphaGenome API · 비상업 연구",
+        "condition": "비상업 API 무료. 수요별 요청률, live prediction 수천 건 규모 안내. 상업 private preview 별도; 임상 승인 아님.",
+        "비상업 연구 API": "무료",
+        "상업 가격": "미확인 · private preview"
+      },
+      "source_url": "https://www.alphagenomedocs.com/"
+    },
+    {
+      "id": "alphagenome2-tenk-causal",
+      "model": "AlphaGenome 2",
+      "provider": "Google DeepMind",
+      "checked_on": "2026-11-13",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "TenK10K sc-eQTL causality recall",
+        "condition": "Precision90%,AG1-sc16%. 공식 논문4~5쪽. held-out test chromosomes, full-genome distilled model. 임상 수치 아님.",
+        "평가 점수": 30,
+        "단위": "%",
+        "측정 주체": "Google DeepMind",
+        "harness": "AG2 fine-mapped variant 평가"
+      },
+      "source_url": "https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/alphagenome-2.pdf"
+    },
+    {
+      "id": "alphagenome2-tenk-sign",
+      "model": "AlphaGenome 2",
+      "provider": "Google DeepMind",
+      "checked_on": "2026-11-13",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "TenK10K sc-eQTL sign recall",
+        "condition": "Accuracy90%,AG1-sc23%. 공식 논문4~5쪽. held-out test chromosomes, full-genome distilled model. 임상 수치 아님.",
+        "평가 점수": 43,
+        "단위": "%",
+        "측정 주체": "Google DeepMind",
+        "harness": "AG2 fine-mapped variant 평가"
+      },
+      "source_url": "https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/alphagenome-2.pdf"
+    },
+    {
+      "id": "alphagenome2-tenk-auprc",
+      "model": "AlphaGenome 2",
+      "provider": "Google DeepMind",
+      "checked_on": "2026-11-13",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "TenK10K sc-eQTL causality AUPRC",
+        "condition": "AG1-sc0.72,Scooby0.69. 공식 논문4~5쪽. held-out test chromosomes, full-genome distilled model. 임상 수치 아님.",
+        "평가 점수": 0.76,
+        "단위": "AUPRC",
+        "측정 주체": "Google DeepMind",
+        "harness": "AG2 fine-mapped variant 평가"
+      },
+      "source_url": "https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/alphagenome-2.pdf"
+    },
+    {
+      "id": "alphagenome2-gtex-auprc",
+      "model": "AlphaGenome 2",
+      "provider": "Google DeepMind",
+      "checked_on": "2026-11-13",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "GTEx eQTL causality AUPRC",
+        "condition": "AG1 0.72,Borzoi0.69;49 tissues. 공식 논문4~5쪽. held-out test chromosomes, full-genome distilled model. 임상 수치 아님.",
+        "평가 점수": 0.74,
+        "단위": "AUPRC",
+        "측정 주체": "Google DeepMind",
+        "harness": "AG2 fine-mapped variant 평가"
+      },
+      "source_url": "https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/alphagenome-2.pdf"
+    },
+    {
+      "id": "praxis1-openweights",
+      "model": "Praxis-1",
+      "provider": "Runway",
+      "checked_on": "2026-11-13",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "공개 가중치 · Apache 2.0",
+        "condition": "9월 최초 소개.2026-11-11 가중치·추론·미세조정 코드 공개라는 의미 있는 변경.",
+        "status": "공개 가중치",
+        "release": "2026-11-11",
+        "최초 발표": "2026-09",
+        "영상 backbone B": 26.9,
+        "활성 backbone B": 2.8,
+        "행동 expert M": 314
+      },
+      "source_url": "https://runway.com/news/company-news/praxis-1-is-now-available"
+    },
+    {
+      "id": "praxis1-compute",
+      "model": "Praxis-1",
+      "provider": "Runway",
+      "checked_on": "2026-11-13",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "자체 운영 조건",
+        "condition": "가중치·코드 Apache2.0. 기본 예제 Python3.12·CUDA13.0·GPU80GB 이상. 연구 H100 USD3.95/hour는 비용 가정이며 API정가 아님.",
+        "기본 GPU 메모리 GB 하한": 80,
+        "관리형 API 정가": "미확인"
+      },
+      "source_url": "https://raw.githubusercontent.com/runwayml/praxis-1-oss/main/README.md"
+    },
+    {
+      "id": "praxis1-robolab",
+      "model": "Praxis-1",
+      "provider": "Runway",
+      "checked_on": "2026-11-13",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "RoboLab-120",
+        "condition": "DROID fine-tune,120tasks×10trials,555/1200. FLUX3Action42.9%,Cosmos3Nano36.8%,pi0.5 28.0%. 공급자 측정, 독립 실행 아님.",
+        "평가 점수": 46.2,
+        "단위": "%",
+        "측정 주체": "Runway",
+        "harness": "RoboLab-120 / SimplerEnv 조건별",
+        "effort": "fine-tuned checkpoint"
+      },
+      "source_url": "https://runway.com/research/praxis-1-video-pretraining-to-robot-control"
+    },
+    {
+      "id": "praxis1-rt1",
+      "model": "Praxis-1",
+      "provider": "Runway",
+      "checked_on": "2026-11-13",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SimplerEnv RT-1 visual matching · mean",
+        "condition": "RT-1 30K-step fine-tune,4tasks864episodes. 원 RT-1 52.4%,FLUX3Action39.7%. 공급자 측정, 독립 실행 아님.",
+        "평가 점수": 80,
+        "단위": "%",
+        "측정 주체": "Runway",
+        "harness": "RoboLab-120 / SimplerEnv 조건별",
+        "effort": "fine-tuned checkpoint"
+      },
+      "source_url": "https://runway.com/research/praxis-1-video-pretraining-to-robot-control"
+    },
+    {
+      "id": "praxis1-drawer",
+      "model": "Praxis-1",
+      "provider": "Runway",
+      "checked_on": "2026-11-13",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SimplerEnv RT-1 · open/close drawer",
+        "condition": "RT-1 30K-step fine-tune. 원 RT-1 73.1%,FLUX3Action38.9%. 이전보다 낮은 과제 포함. 공급자 측정, 독립 실행 아님.",
+        "평가 점수": 56.5,
+        "단위": "%",
+        "측정 주체": "Runway",
+        "harness": "RoboLab-120 / SimplerEnv 조건별",
+        "effort": "fine-tuned checkpoint"
+      },
+      "source_url": "https://runway.com/research/praxis-1-video-pretraining-to-robot-control"
+    }
+  ]
+}

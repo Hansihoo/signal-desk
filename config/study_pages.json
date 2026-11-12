@@ -118,7 +118,12 @@
     "alpamayo-2-edge-model-guide",
     "pan-2-world-model-guide",
     "ernie-light-dt-1-0-model-guide",
-    "ernie-wizshot-me-model-guide"
+    "ernie-wizshot-me-model-guide",
+    "gemini-4-hydrogen-model-guide",
+    "gemini-decision-1-model-guide",
+    "qwen4-max-preview-model-guide",
+    "alphagenome-2-model-guide",
+    "praxis-1-world-action-model-guide"
   ],
   "catalogs": {
     "devops-implementation-guide": "devops_tools.2026-10-10.r4.json"
@@ -416,6 +421,21 @@
     ],
     "ernie-wizshot-me-model-guide": [
       "4a01b6241cdb634a0cf48bd7b0e4cb0948e601dd63d54350e6c0bd7b953b8dde"
+    ],
+    "gemini-4-hydrogen-model-guide": [
+      "69cca9670edcd22e81af9f230c76015ca7b359fc523fada4bb8b363416b9492d"
+    ],
+    "gemini-decision-1-model-guide": [
+      "521243756be41359aeb50ec511f4ff62b91b763aa371af53480c69617ac2f2fa"
+    ],
+    "qwen4-max-preview-model-guide": [
+      "52cf81a44130836187047815e09a76b689c97117ccad812eb7b2e97a3f66fda0"
+    ],
+    "alphagenome-2-model-guide": [
+      "cdfee16dc4e8f8fe4f4834f0f49ff3d5a7ba44e12b063d3f93b772caef83cbdc"
+    ],
+    "praxis-1-world-action-model-guide": [
+      "6a99b5914c3c980f0594b1d1b5a223cc1b3b6debe257ab91e45a1e39107ee3cd"
     ]
   },
   "model_introduction_editions": {
@@ -652,6 +672,21 @@
     ],
     "ernie-wizshot-me-model-guide": [
       "4a01b6241cdb634a0cf48bd7b0e4cb0948e601dd63d54350e6c0bd7b953b8dde"
+    ],
+    "gemini-4-hydrogen-model-guide": [
+      "69cca9670edcd22e81af9f230c76015ca7b359fc523fada4bb8b363416b9492d"
+    ],
+    "gemini-decision-1-model-guide": [
+      "521243756be41359aeb50ec511f4ff62b91b763aa371af53480c69617ac2f2fa"
+    ],
+    "qwen4-max-preview-model-guide": [
+      "52cf81a44130836187047815e09a76b689c97117ccad812eb7b2e97a3f66fda0"
+    ],
+    "alphagenome-2-model-guide": [
+      "cdfee16dc4e8f8fe4f4834f0f49ff3d5a7ba44e12b063d3f93b772caef83cbdc"
+    ],
+    "praxis-1-world-action-model-guide": [
+      "6a99b5914c3c980f0594b1d1b5a223cc1b3b6debe257ab91e45a1e39107ee3cd"
     ]
   },
   "model_introduction_purpose_editions": {
@@ -877,6 +912,21 @@
     ],
     "ernie-wizshot-me-model-guide": [
       "4a01b6241cdb634a0cf48bd7b0e4cb0948e601dd63d54350e6c0bd7b953b8dde"
+    ],
+    "gemini-4-hydrogen-model-guide": [
+      "69cca9670edcd22e81af9f230c76015ca7b359fc523fada4bb8b363416b9492d"
+    ],
+    "gemini-decision-1-model-guide": [
+      "521243756be41359aeb50ec511f4ff62b91b763aa371af53480c69617ac2f2fa"
+    ],
+    "qwen4-max-preview-model-guide": [
+      "52cf81a44130836187047815e09a76b689c97117ccad812eb7b2e97a3f66fda0"
+    ],
+    "alphagenome-2-model-guide": [
+      "cdfee16dc4e8f8fe4f4834f0f49ff3d5a7ba44e12b063d3f93b772caef83cbdc"
+    ],
+    "praxis-1-world-action-model-guide": [
+      "6a99b5914c3c980f0594b1d1b5a223cc1b3b6debe257ab91e45a1e39107ee3cd"
     ]
   },
   "model_introduction_reader_editions": {
@@ -1053,6 +1103,21 @@
     ],
     "ernie-wizshot-me-model-guide": [
       "4a01b6241cdb634a0cf48bd7b0e4cb0948e601dd63d54350e6c0bd7b953b8dde"
+    ],
+    "gemini-4-hydrogen-model-guide": [
+      "69cca9670edcd22e81af9f230c76015ca7b359fc523fada4bb8b363416b9492d"
+    ],
+    "gemini-decision-1-model-guide": [
+      "521243756be41359aeb50ec511f4ff62b91b763aa371af53480c69617ac2f2fa"
+    ],
+    "qwen4-max-preview-model-guide": [
+      "52cf81a44130836187047815e09a76b689c97117ccad812eb7b2e97a3f66fda0"
+    ],
+    "alphagenome-2-model-guide": [
+      "cdfee16dc4e8f8fe4f4834f0f49ff3d5a7ba44e12b063d3f93b772caef83cbdc"
+    ],
+    "praxis-1-world-action-model-guide": [
+      "6a99b5914c3c980f0594b1d1b5a223cc1b3b6debe257ab91e45a1e39107ee3cd"
     ]
   }
 }

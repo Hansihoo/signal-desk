@@ -1,0 +1,1933 @@
+{
+  "schema_version": 1,
+  "reports": [
+    {
+      "id": "gemini-4-hydrogen-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "title": "Gemini 4 Hydrogen: 빠른 실행을 위한 Gemini 4와 통합 1M 문맥",
+      "description": "이전 Flash 대비 변화, 경쟁 모델보다 낮은 평가, 요금과 긴 출력의 경계를 비교합니다.",
+      "checked_on": "2026-11-13",
+      "scope": "2026-11-13 확인. Google 공급자 평가이며 독립 재현하지 않았다. 방법론 링크 수집에서 해당 문서를 확인하지 못해 세부 harness·모델별 thinking 설정의 동일성은 미확인이다. 한국어 품질·국내 계정 개통·실제 청구는 시험하지 않았다.",
+      "deck": "Gemini 4 Hydrogen은 Carbon에서 파생된 빠른 실행용 모델입니다. 1,048,576토큰을 입력과 출력이 함께 쓰며 기본 동기 출력 65,536토큰과 백그라운드 긴 출력을 구분합니다. 코딩·지식 작업 일부 평가의 강점이 터미널·컴퓨터 조작·과학 평가의 일관된 우위를 뜻하지는 않습니다.",
+      "highlights": [
+        "새 모델",
+        "통합 문맥",
+        "표준 요금"
+      ],
+      "source_note": "2026년 11월 13일 KST에 공식 자료의 관련 부분을 확인했습니다.",
+      "summary": [
+        {
+          "label": "새 모델",
+          "text": "11월 12일 발표한 stable 모델 gemini-4-hydrogen입니다. 장기 추론용 Carbon·Argon과 함께 쓰는 빠른 실행용 모델로 소개됐습니다.",
+          "source_ids": [
+            "hlaunch",
+            "hmodel"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "통합 문맥",
+          "text": "입출력 합계 1,048,576토큰, 기본 출력 65,536토큰입니다. 긴 출력도 전체 문맥의 남은 예산 안에서 가능합니다.",
+          "source_ids": [
+            "hmodel"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "표준 요금",
+          "text": "USD/100만 토큰 기준 입력 1.50, 출력 7.50입니다. 추론 토큰과 도구 관련 입력도 과금 대상입니다.",
+          "source_ids": [
+            "gprice"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "references": [
+        {
+          "id": "hlaunch",
+          "title": "Google · Hydrogen 출시",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
+          "description": "출시일·이전 Flash 대비 공급자 주장과 제공 경로"
+        },
+        {
+          "id": "hmodel",
+          "title": "Gemini API · Hydrogen 계약",
+          "url": "https://aistudio.google.com/docs/models/gemini-4-hydrogen",
+          "description": "통합 문맥·출력·stable 식별자와 지원 기능"
+        },
+        {
+          "id": "hcard",
+          "title": "Google DeepMind · Hydrogen 카드",
+          "url": "https://deepmind.google/models/model-cards/gemini-4-hydrogen/",
+          "description": "평가 원표·반대 결과·지식 기준과 안전성 제약"
+        },
+        {
+          "id": "hprev",
+          "title": "Gemini API · 이전 Flash",
+          "url": "https://aistudio.google.com/docs/models/gemini-3.8-flash",
+          "description": "이전 모델 식별자와 기능"
+        },
+        {
+          "id": "gprice",
+          "title": "Google · API 요금",
+          "url": "https://aistudio.google.com/docs/pricing",
+          "description": "Standard·Batch·Flex·Priority와 이전 모델의 한정 요금"
+        }
+      ],
+      "explanation": [
+        {
+          "id": "position",
+          "title": "Carbon에서 파생된 실행용 모델",
+          "lead": "가족 내 역할이 다릅니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "모델 개요",
+              "text": "Google은 Hydrogen을 Carbon에서 적응시킨 모델로 설명합니다. 텍스트·이미지·동영상·음성·PDF를 입력받아 텍스트를 내며 함수 호출·구조화 출력·코드 실행·컴퓨터 사용을 지원합니다. 이미지 생성·음성 생성·Live API는 지원하지 않습니다.",
+              "source_ids": [
+                "hcard",
+                "hmodel"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "이전 Flash 대비",
+              "text": "출시 글은 Gemini 3.8 Flash 대비 high 설정의 완료 속도 2.5배와 Terminal-Bench 4.1의 18.2%에서 57.0%로 개선을 주장합니다. 모든 작업의 고정 속도 배수나 실제 서비스 지연 보장은 아닙니다.",
+              "source_ids": [
+                "hlaunch"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "limits",
+          "title": "입출력이 같은 1M 예산을 쓰는 구조",
+          "lead": "입력 1M에 출력 1M을 더하는 사양이 아닙니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "출력·추론",
+              "text": "동기 출력 최대 65,536토큰, 백그라운드 long decode 최대 1,048,576토큰이지만 모두 입출력 합계 한도 안에 들어가야 합니다. low·medium·high·xhigh 중 높은 단계는 더 많은 시간과 토큰을 쓸 수 있습니다.",
+              "source_ids": [
+                "hmodel",
+                "hcard"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "캐시",
+              "text": "implicit caching만 지원하고 명시적 캐시 생성은 지원하지 않습니다. 기존 명시적 캐시를 쓰는 호출과 동일한 비용 구조라고 가정하면 안 됩니다.",
+              "source_ids": [
+                "hmodel",
+                "gprice"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "performance",
+          "title": "지식 작업의 강점과 터미널·과학 평가의 역전",
+          "lead": "서로 다른 지표를 종합 순위로 바꾸지 않습니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "강한 결과",
+              "text": "Google 표에서 SWE-sweep은 Hydrogen 13.5%, Sonnet 5.5 3.1%, GPT-6.1 Terra 5.8%입니다. Agents’ Last Exam v1.1과 AutomationBench-AA에서도 높았습니다. 공급자 표에 실린 결과이며 독립 실행 결과가 아닙니다.",
+              "source_ids": [
+                "hcard"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "낮은 결과",
+              "text": "cheating-adjusted Terminal-Bench 4.1은 Sonnet 63.9%가 Hydrogen 57.0%보다 높습니다. OSWorld-2.1 offline subset과 과학 평가도 Sonnet이 높고, 과학에서는 Terra 58.3%도 Hydrogen 51.4%보다 높습니다.",
+              "source_ids": [
+                "hcard"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "cost",
+          "title": "정가와 이전 Flash의 할인 기간",
+          "lead": "캐시·배치·할인을 분리합니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "과금",
+              "text": "Standard 입력/출력은 USD 1.50/7.50 per 1M tokens이고 추론 출력도 포함합니다. implicit cache 입력 0.075, Batch·Flex 0.75/3.75, Priority 2.70/13.50입니다. 검색·도구는 별도 비용이 붙을 수 있습니다.",
+              "source_ids": [
+                "gprice"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "현재 비용 비교",
+              "text": "이전 3.8 Flash의 0.75/3.75는 2026-12-31까지의 할인이고 2027-01-01부터 1.50/7.50입니다. 확인일 현재 Hydrogen이 이전 Flash보다 저렴하다고 쓸 수 없습니다. 무료 등급의 데이터는 제품 개선에 사용될 수 있고 유료 등급은 사용하지 않는다고 안내합니다.",
+              "source_ids": [
+                "gprice"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "availability",
+          "title": "제공 경로와 안전성 한계",
+          "lead": "stable 표기와 앱별 이용권을 구분합니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "제공",
+              "text": "Gemini API·AI Studio 등에서 제공하며 앱 모델 선택과 자동 선택은 이용권에 따라 다릅니다. 출시 글의 Antigravity 접근은 Google AI Pro·Ultra와 연결됩니다. 모든 한국 계정에서 같은 기능이 개통된다는 검증은 하지 않았습니다.",
+              "source_ids": [
+                "hlaunch",
+                "hmodel"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "남은 제약",
+              "text": "지식 기준은 2026년 3월입니다. 환각·지연·시간 초과, 높은 추론 단계의 토큰 증가가 남아 있고 이전 Flash보다 부당한 거부가 늘었습니다. 일부 안전 결과는 자동 평가이고 전체 안전 보고서는 예고 상태입니다.",
+              "source_ids": [
+                "hcard"
+              ],
+              "kind": "fact"
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "comparison-1",
+          "title": "같은 Google 평가표의 경쟁 모델 비교",
+          "columns": [
+            "평가·조건",
+            "Hydrogen",
+            "Sonnet 5.5",
+            "GPT-6.1 Terra"
+          ],
+          "rows": [
+            {
+              "values": [
+                "SWE-sweep · %",
+                "13.5",
+                "3.1",
+                "5.8"
+              ],
+              "source_ids": [
+                "hcard"
+              ]
+            },
+            {
+              "values": [
+                "Terminal-Bench 4.1 · cheating-adjusted %",
+                "57.0",
+                "63.9",
+                "미기재"
+              ],
+              "source_ids": [
+                "hcard"
+              ]
+            },
+            {
+              "values": [
+                "Agents’ Last Exam v1.1 · %",
+                "71.6",
+                "60.4",
+                "69.8"
+              ],
+              "source_ids": [
+                "hcard"
+              ]
+            },
+            {
+              "values": [
+                "AutomationBench-AA · %",
+                "76.1",
+                "71.8",
+                "60.2"
+              ],
+              "source_ids": [
+                "hcard"
+              ]
+            },
+            {
+              "values": [
+                "OSWorld-2.1 · offline subset %",
+                "77.6",
+                "83.9",
+                "74.2"
+              ],
+              "source_ids": [
+                "hcard"
+              ]
+            },
+            {
+              "values": [
+                "Terminal-Bench-Science 0.1 · %",
+                "51.4",
+                "59.9",
+                "58.3"
+              ],
+              "source_ids": [
+                "hcard"
+              ]
+            },
+            {
+              "values": [
+                "HLE-Diamond · %",
+                "58.8",
+                "53.3",
+                "47.3"
+              ],
+              "source_ids": [
+                "hcard"
+              ]
+            }
+          ],
+          "note": "Google 2026년 11월 카드. 세부 harness·thinking 설정 동등성은 미확인이다. 지표 간 평균을 만들지 않는다."
+        },
+        {
+          "id": "comparison-2",
+          "title": "요금과 이전 모델의 차이",
+          "columns": [
+            "항목",
+            "Gemini 4 Hydrogen",
+            "Gemini 3.8 Flash"
+          ],
+          "rows": [
+            {
+              "values": [
+                "사양 경계",
+                "입출력 통합 1,048,576; 기본 출력65,536; 긴 출력도 같은 문맥",
+                "기존 Flash 계약 참조"
+              ],
+              "source_ids": [
+                "hmodel",
+                "hprev"
+              ]
+            },
+            {
+              "values": [
+                "Standard 입력/출력 · USD per 1M tokens",
+                "1.50 / 7.50",
+                "0.75 / 3.75 (2026-12-31까지), 이후1.50 / 7.50"
+              ],
+              "source_ids": [
+                "gprice"
+              ]
+            },
+            {
+              "values": [
+                "캐시 입력 · USD per 1M tokens",
+                "0.075; implicit only",
+                "0.075 (2026-12-31까지), 이후0.15; 보관료 별도"
+              ],
+              "source_ids": [
+                "gprice"
+              ]
+            },
+            {
+              "values": [
+                "제공",
+                "stable API",
+                "기존 제공 모델"
+              ],
+              "source_ids": [
+                "hmodel",
+                "hprev"
+              ]
+            }
+          ],
+          "note": "2026-11-13 확인. 검색·도구 비용과 무료 등급 데이터 이용 조건은 별도다."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "평가와 적용 범위",
+            "text": "Hydrogen은 Gemini 4의 빠른 실행용 선택지입니다. 통합 문맥과 implicit-only 캐시는 호출의 예산·상태 설계를 바꾸며 현재 Flash 할인 가격과 평가별 역전을 함께 고려해야 합니다. 성능 우위를 모든 작업으로 일반화할 근거는 없습니다.",
+            "source_ids": [
+              "hlaunch",
+              "hmodel",
+              "hcard",
+              "hprev",
+              "gprice"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "2026-11-13 확인. Google 공급자 평가이며 독립 재현하지 않았다. 방법론 링크 수집에서 해당 문서를 확인하지 못해 세부 harness·모델별 thinking 설정의 동일성은 미확인이다. 한국어 품질·국내 계정 개통·실제 청구는 시험하지 않았다.",
+          "source_ids": [
+            "hlaunch",
+            "hmodel",
+            "hcard",
+            "hprev",
+            "gprice"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gemini-decision-1-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "title": "Gemini Decision 1: 생성 없이 확률을 반환하는 멀티모달 판단 모델",
+      "description": "1,000개 질문의 공유 입력, 생성 모델 대비 비용 구조, 보정 지표와 경쟁 모델에 뒤지는 평가를 비교합니다.",
+      "checked_on": "2026-11-13",
+      "scope": "2026-11-13 공식 발표·모델 계약·API 제한·평가 이미지 확인. Google 측 평가이며 독립 재현·실제 지연·청구·한국어 교정은 검증하지 않았다. 보정된 확률이라는 공급자 설명은 개별 업무의 정확도 보장이 아니다.",
+      "deck": "Gemini Decision 1은 문장을 생성하는 대신 이진 판단·선택·등급의 확률을 반환합니다. 공유 입력과 모든 질문 합계 262,144토큰, 요청당 최대 1,000개 독립 질문을 처리합니다. 출력 토큰이 없지만 질문·기준 자체는 입력으로 과금되며 경쟁 모델보다 항상 싸거나 정확한 것은 아닙니다.",
+      "highlights": [
+        "전용 모델",
+        "비용",
+        "반대 결과"
+      ],
+      "source_note": "2026년 11월 13일 KST에 공식 자료의 관련 부분을 확인했습니다.",
+      "summary": [
+        {
+          "label": "전용 모델",
+          "text": "11월 11일 발표한 gemini-decision-1은 단일 prefill pass의 판단 모델입니다. 도구 선택을 판정할 수 있어도 함수 호출을 직접 실행하지는 않습니다.",
+          "source_ids": [
+            "dlaunch",
+            "dmodel"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "비용",
+          "text": "Standard 입력 USD0.10/100만 토큰, 출력0토큰입니다. 공유 입력은 요청당 한 번, 각 질문의 지시·기준은 추가 입력으로 셉니다.",
+          "source_ids": [
+            "gprice"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "반대 결과",
+          "text": "JevBench92.2%와 ECE0.0250을 제시하지만 Mind2Web·When2Call 및 공통 평가 총비용에서는 TypeSafe Jev1.14가 앞섭니다.",
+          "source_ids": [
+            "dchart"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "references": [
+        {
+          "id": "dlaunch",
+          "title": "Google · Decisions API 발표",
+          "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
+          "description": "발표일·모델 역할·공급자 지연 조건"
+        },
+        {
+          "id": "dmodel",
+          "title": "Gemini API · Decision 1 계약",
+          "url": "https://aistudio.google.com/docs/models/gemini-decision-1",
+          "description": "입력 한도·무출력·미지원 기능"
+        },
+        {
+          "id": "ddocs",
+          "title": "Google · Decisions API 문서",
+          "url": "https://aistudio.google.com/docs/decisions-api",
+          "description": "질문·선택지·입력과 캐시·배치 제한"
+        },
+        {
+          "id": "dchart",
+          "title": "Google · Decision 1 평가 원표",
+          "url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-decision__benchmarks__tab.width-1200.format-webp_3LrengT.webp",
+          "description": "원표 이미지를 열어 수치·총비용·ECE·역전을 확인"
+        },
+        {
+          "id": "gprice",
+          "title": "Google · 공식 API 요금",
+          "url": "https://aistudio.google.com/docs/pricing",
+          "description": "Decision과 Flash-Lite Standard 단가와 데이터 조건"
+        },
+        {
+          "id": "dlite",
+          "title": "Gemini API · 3.5 Flash-Lite",
+          "url": "https://aistudio.google.com/docs/models/gemini-3.5-flash-lite",
+          "description": "이전 생성형 비교 모델의 계약"
+        }
+      ],
+      "explanation": [
+        {
+          "id": "identity",
+          "title": "고정된 질문에 확률을 반환하는 모델",
+          "lead": "첫 전용 모델이므로 생성형 분류가 비교 기준입니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "입출력",
+              "text": "텍스트·이미지·동영상·음성·PDF를 받아 yes/no 확률, 선택지별 확률, 순서 있는 등급의 기대 점수를 반환합니다. yes/no 범위는0.01~0.99이고 choice·score는2~255선택지입니다. 자유 텍스트·추론문·근거 인용을 생성하지 않습니다.",
+              "source_ids": [
+                "dmodel",
+                "ddocs"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "이전 방식과 차이",
+              "text": "Flash-Lite 같은 생성 모델로 판정문을 만들고 해석하는 방식 대신 정해진 타입의 결과를 받습니다. 확률을 반환한다는 점과 실제 데이터에서 확률이 정확히 보정됐다는 판단은 별개입니다.",
+              "source_ids": [
+                "dlaunch",
+                "dlite",
+                "ddocs"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "shared",
+          "title": "공유 입력과 서로 독립인 질문",
+          "lead": "최대 질문 수와 최대 입력을 동시에 보장하지 않습니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "한도",
+              "text": "공유 입력과 질문 전체 합계가262,144토큰을 넘을 수 없습니다. 질문은 다른 질문의 답을 보지 못하고 지시에는 텍스트만 허용됩니다. 이미지·PDF는 공유 입력으로 들어갑니다.",
+              "source_ids": [
+                "ddocs"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "미지원",
+              "text": "v1beta Decisions API만 지원합니다. YouTube URL·gs:// URI, 대화 history/thought/tool-call 블록, 캐시·Batch·Flex·Priority를 지원하지 않습니다. 요청을 나누면 반복 입력을 다시 계산합니다.",
+              "source_ids": [
+                "ddocs",
+                "dmodel"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "evaluation",
+          "title": "정확도와 확률 보정·평가 총액",
+          "lead": "서로 다른 지표입니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "강점",
+              "text": "Google 원표에서 JevBench92.2%, ESCI macro-F1 58.7%, 비영어 Global-MMLU-Lite86.0%입니다. 7개 공통 평가의 Top-1 ECE0.0250은 Jev0.0494보다 낮습니다. ECE는 낮을수록 좋으며 정확도97.5%라는 뜻이 아닙니다.",
+              "source_ids": [
+                "dchart"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "역전",
+              "text": "Mind2Web은 Decision86.2% 대 Jev86.8%, When2Call은79.9% 대82.0%입니다. 7개 공통 평가 총액은 USD0.88 대0.68입니다. 차단·거부·수용불가 요청은 오답이고 별도 표시가 없는 점수는 Top-1 accuracy입니다.",
+              "source_ids": [
+                "dchart"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "cost",
+          "title": "출력 없는 과금과 생성 모델의 요금",
+          "lead": "단가와 평가 묶음 지출을 분리합니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "Standard",
+              "text": "모든 입력 모달리티 USD0.10 per1M tokens, 출력은0토큰이므로 출력 가격 적용 대상이 없습니다. 무료 출력 생성이라고 표현하면 안 됩니다. 무료 등급 데이터는 제품 개선에 쓰일 수 있고 유료 등급은 사용하지 않는다고 안내합니다.",
+              "source_ids": [
+                "gprice"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "지연·비용의 조건",
+              "text": "150~250ms 종단 간 지연은 최대16K 입력·1~100질문이라는 공급자 조건입니다. 최대 문맥·1,000질문에서도 같은 지연을 보장하지 않습니다. Flash-Lite Standard 입력/출력0.30/2.50과는 출력 길이와 재사용 방식도 달라 단가 배수만으로 총비용을 확정할 수 없습니다.",
+              "source_ids": [
+                "dlaunch",
+                "gprice"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "availability",
+          "title": "개발자 API와 남은 범위",
+          "lead": "판정이 설명이나 감사 근거를 자동 생성하지는 않습니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "제공 상태",
+              "text": "발표일에 Gemini Developer API와 AI Studio 실험 경로가 열렸고 Google Cloud 지원은 예정으로 안내됐습니다. 모든 Cloud 상품의 즉시 제공으로 간주하지 않습니다.",
+              "source_ids": [
+                "dlaunch"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "적용 의미",
+              "text": "고정 후보의 판단에는 생성 토큰을 줄일 수 있지만 근거 문장·새 내용·여러 단계 도구 실행은 지원 범위 밖입니다. 조직 데이터·한국어에서의 정확도와 확률 교정은 측정하지 않았습니다.",
+              "source_ids": [
+                "dmodel",
+                "ddocs"
+              ],
+              "kind": "fact"
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "comparison-1",
+          "title": "Google 발표의 평가·경쟁 결과",
+          "columns": [
+            "지표",
+            "Decision 1",
+            "TypeSafe Jev1.14",
+            "GPT-6 Luna Decisions",
+            "3.5 Flash-Lite"
+          ],
+          "rows": [
+            {
+              "values": [
+                "JevBench public split · %",
+                "92.2",
+                "90.0",
+                "90.9",
+                "86.6"
+              ],
+              "source_ids": [
+                "dchart"
+              ]
+            },
+            {
+              "values": [
+                "ESCI macro-F1 · %",
+                "58.7",
+                "56.7",
+                "54.7",
+                "47.2"
+              ],
+              "source_ids": [
+                "dchart"
+              ]
+            },
+            {
+              "values": [
+                "Mind2Web Multimodal · %",
+                "86.2",
+                "86.8",
+                "81.8",
+                "78.0"
+              ],
+              "source_ids": [
+                "dchart"
+              ]
+            },
+            {
+              "values": [
+                "When2Call · %",
+                "79.9",
+                "82.0",
+                "70.4",
+                "60.9"
+              ],
+              "source_ids": [
+                "dchart"
+              ]
+            },
+            {
+              "values": [
+                "Top-1 ECE · 7shared evals, 낮을수록 좋음",
+                "0.0250",
+                "0.0494",
+                "0.0721",
+                "0.2104"
+              ],
+              "source_ids": [
+                "dchart"
+              ]
+            },
+            {
+              "values": [
+                "7shared evals 총비용 · USD",
+                "0.88",
+                "0.68",
+                "0.93",
+                "4.14"
+              ],
+              "source_ids": [
+                "dchart"
+              ]
+            }
+          ],
+          "note": "Google 공급자 측정. Flash-Lite는 Interactions API minimal. 세부 버전·harness 완전 동등성은 미확인이다."
+        },
+        {
+          "id": "comparison-2",
+          "title": "사양·표준 요금의 차이",
+          "columns": [
+            "항목",
+            "Gemini Decision1",
+            "기존 Gemini3.5 Flash-Lite"
+          ],
+          "rows": [
+            {
+              "values": [
+                "입출력",
+                "262,144입력;0출력토큰",
+                "멀티모달 입력 후 텍스트 생성"
+              ],
+              "source_ids": [
+                "dmodel",
+                "dlite"
+              ]
+            },
+            {
+              "values": [
+                "Standard · USD per1M tokens",
+                "입력0.10 / 출력 해당없음",
+                "입력0.30 / 출력2.50"
+              ],
+              "source_ids": [
+                "gprice"
+              ]
+            },
+            {
+              "values": [
+                "제공",
+                "v1beta Decisions API",
+                "기존 생성 API"
+              ],
+              "source_ids": [
+                "ddocs",
+                "dlite"
+              ]
+            },
+            {
+              "values": [
+                "판정 계약",
+                "1~1,000독립 질문;공유 입력은 한 번",
+                "생성 토큰·프롬프트 방식에 의존"
+              ],
+              "source_ids": [
+                "ddocs",
+                "gprice"
+              ]
+            }
+          ],
+          "note": "2026-11-13 확인. 질문의 지시·기준은 추가 입력이며 공통 평가 총액은 표준 토큰 단가가 아니다."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "평가와 적용 범위",
+            "text": "Decision1은 생성형 모델의 작은 이름 변경이 아닌 판단 전용 모델입니다. 같은 입력의 독립 질문을 모을 때 비용 구조가 달라지지만 설명 생성·도구 실행·배치·캐시가 필요한 흐름에는 기능적 차이가 남습니다. 정확도·보정·총비용을 따로 비교해야 합니다.",
+            "source_ids": [
+              "dlaunch",
+              "dmodel",
+              "ddocs",
+              "dchart",
+              "gprice",
+              "dlite"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "2026-11-13 공식 발표·모델 계약·API 제한·평가 이미지 확인. Google 측 평가이며 독립 재현·실제 지연·청구·한국어 교정은 검증하지 않았다. 보정된 확률이라는 공급자 설명은 개별 업무의 정확도 보장이 아니다.",
+          "source_ids": [
+            "dlaunch",
+            "dmodel",
+            "ddocs",
+            "dchart",
+            "gprice",
+            "dlite"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "qwen4-max-preview-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "title": "Qwen4-Max-Preview: 1M 문맥과 종료일이 있는 멀티모달 프리뷰",
+      "description": "공유 출력 예산, 기존 Qwen의 계약 변화, 구독 정가·할인·용도 제한을 비교합니다.",
+      "checked_on": "2026-11-13",
+      "scope": "2026-11-13 공식 모델·구독 문서 확인. Qwen4의 비교 가능한 정량 평가·파라미터·공개 가중치·한국어 품질은 확인하지 못했다. 이를 추정 점수로 채우지 않았다. 구매·API 호출·실제 차감 시험은 하지 않았다.",
+      "deck": "Qwen4-Max-Preview는 원문 1M 문맥, 텍스트·이미지·동영상 입력과 최대 393,216토큰 출력을 지원합니다. 출력 한도는 추론과 최종 답변이 공유하며 기본 추론 강도는 xhigh입니다. Token Plan 전용 프리뷰이고 KST 11월 26일 01:00에 종료된 뒤 모델은 폐기될 예정입니다.",
+      "highlights": [
+        "제공",
+        "출력 계약",
+        "구독 제한"
+      ],
+      "source_note": "2026년 11월 13일 KST에 공식 자료의 관련 부분을 확인했습니다.",
+      "summary": [
+        {
+          "label": "제공",
+          "text": "qwen4-max-preview와 qwen4.0-max-preview는 같은 모델의 별칭입니다. 별도의 두 신규 모델로 세지 않습니다.",
+          "source_ids": [
+            "qmodel",
+            "qindividual"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "출력 계약",
+          "text": "이 모델부터 max_tokens는 추론과 답변 합계 예산을 제한합니다. 기존 Qwen 모델의 동작은 유지됩니다.",
+          "source_ids": [
+            "qmodel"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "구독 제한",
+          "text": "Singapore Token Plan과 전용 키가 필요하며 pay-as-you-go는 없습니다. Individual은 대화형 도구 용도이며 앱 백엔드·무인 배치는 금지합니다.",
+          "source_ids": [
+            "qmodel",
+            "qindividual",
+            "qplan"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "references": [
+        {
+          "id": "qmodel",
+          "title": "QwenCloud · Qwen4-Max-Preview",
+          "url": "https://docs.qwencloud.com/developer-guides/getting-started/latest-model",
+          "description": "프리뷰 기간·문맥·출력·추론·API 계약"
+        },
+        {
+          "id": "qindividual",
+          "title": "QwenCloud · Token Plan Individual",
+          "url": "https://docs.qwencloud.com/token-plan/personal/token-plan-personal-overview",
+          "description": "별칭·정가·크레딧·할인·대화형 전용 조건"
+        },
+        {
+          "id": "qplan",
+          "title": "QwenCloud · Token Plan",
+          "url": "https://docs.qwencloud.com/token-plan/overview",
+          "description": "Singapore 전용 구매·별도 키·Team 제공"
+        },
+        {
+          "id": "qselect",
+          "title": "QwenCloud · 모델 선택",
+          "url": "https://docs.qwencloud.com/developer-guides/getting-started/model-selection",
+          "description": "기존 Qwen 계열과 지역별 목록 차이"
+        },
+        {
+          "id": "hmodel",
+          "title": "Gemini API · Hydrogen",
+          "url": "https://aistudio.google.com/docs/models/gemini-4-hydrogen",
+          "description": "경쟁 모델의 문맥·출력 사양"
+        },
+        {
+          "id": "gprice",
+          "title": "Google · API 공식 요금",
+          "url": "https://aistudio.google.com/docs/pricing",
+          "description": "경쟁 모델 Standard 가격"
+        }
+      ],
+      "explanation": [
+        {
+          "id": "identity",
+          "title": "문서·영상 이해를 포함한 Qwen 프리뷰",
+          "lead": "사양과 성능 순위를 분리합니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "입출력·도구",
+              "text": "텍스트 생성·이미지와 동영상 이해·웹 검색·도구 호출·JSON Object와 Schema를 지원합니다. OpenAI Chat Completions·Responses와 Anthropic Messages 호환을 안내합니다. 호환이 모든 클라이언트의 전 기능이나 동일 결과를 뜻하지는 않습니다.",
+              "source_ids": [
+                "qmodel"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "이전 계열",
+              "text": "현재 목록에서 Qwen3.7-Plus는 균형형, 3.8-Flash는 비용·속도형, Qwen4는 복잡한 추론·코딩용 프리뷰입니다. 같은 조건의 공식 성능표는 확인하지 못해 이전·경쟁 모델보다 얼마나 향상됐는지 수치로 판정할 수 없습니다.",
+              "source_ids": [
+                "qselect",
+                "qmodel"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "budget",
+          "title": "추론과 답변이 함께 쓰는 출력 예산",
+          "lead": "기존 max_tokens의 의미가 바뀝니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "사양",
+              "text": "문맥 길이는 원문 1M tokens, 최대 출력은 393,216토큰이며 추론·최종 답변이 함께 들어갑니다. max_tokens와 max_completion_tokens가 같은 의미로 바뀌어 이전 답변 길이만 고려한 제한은 출력 잘림을 만들 수 있습니다.",
+              "source_ids": [
+                "qmodel"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "추론·대화 상태",
+              "text": "추론은 기본 활성화이고 low·medium·xhigh 중 xhigh가 기본입니다. reasoning_effort와 thinking_budget을 함께 쓸 수 없습니다. Chat Completions에서는 preserve_thinking이 기본이어서 과거 추론을 reasoning_content에 보존하는 계약입니다.",
+              "source_ids": [
+                "qmodel"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "comparison",
+          "title": "큰 출력 한도와 아직 없는 성능 비교",
+          "lead": "큰 문맥이 정확도를 보장하지 않습니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "확인한 강점",
+              "text": "시각 이해·텍스트·도구·구조화 출력을 한 모델에서 다루며 두 주요 API 형식을 지원합니다. 긴 출력 예산은 변화이지만 긴 추론이 더 높은 정확도·낮은 지연을 보장하지는 않습니다.",
+              "source_ids": [
+                "qmodel"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "공백",
+              "text": "공식 파라미터·가중치·비교 가능한 정량 평가를 확인하지 못했습니다. 다른 모델의 수치를 Qwen4의 누락 칸에 넣거나 오피스 생산성이라는 공급자 설명을 실사용 검증으로 바꾸지 않습니다.",
+              "source_ids": [
+                "qmodel",
+                "hmodel"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "price",
+          "title": "월 정가와 가변 Credits",
+          "lead": "토큰 정가가 없는 구독입니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "정가·한도",
+              "text": "Individual 월 정가는 USD 6/10/18/43, Credits는 20,000/45,000/80,000/200,000입니다. 신규 Lite·Essential 월 3/5는 11월 30일 UTC+8까지의 한정 할인입니다. 차감은 모델·토큰·추론·도구에 따라 달라 USD/100만 토큰으로 환산하지 않습니다.",
+              "source_ids": [
+                "qindividual"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "한정 행사",
+              "text": "Qwen4 Credits 소비는 표준의 20%까지 낮아지고 UTC+8 22:00~08:00에는 추가 60% 할인으로 8%가 된다고 안내합니다. 실제 USD 단가나 무제한 이용이 아니며 행사는 조정될 수 있습니다. 청구에서는 같은 모델 별칭 qwen4.0-max-preview로 표시합니다.",
+              "source_ids": [
+                "qindividual"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "availability",
+          "title": "짧은 프리뷰와 용도 제한",
+          "lead": "상시 제공 모델과 다른 조건입니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "기간",
+              "text": "원문 기간은 2026-11-11 10:00~11-25 24:00 UTC+8, KST로 11-11 11:00~11-26 01:00입니다. 기간 중 모델을 변경하지 않지만 종료 후 폐기한다고 명시합니다. 정식 후속의 제공 시점은 확인되지 않았습니다.",
+              "source_ids": [
+                "qmodel"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "지역·사용 목적",
+              "text": "구매·사용 지역은 Singapore이고 전용 endpoint·키가 필요합니다. Individual은 대화형 코딩·에이전트 도구만 허용하며 자동 스크립트·맞춤 앱 백엔드·비대화형 배치는 허용하지 않습니다. Global 배포와 국경 간 데이터 전송도 명시돼 있습니다. Team의 모든 조건이 Individual과 같다고 가정하지 않습니다.",
+              "source_ids": [
+                "qplan",
+                "qindividual"
+              ],
+              "kind": "fact"
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "comparison-1",
+          "title": "확인한 사양과 이전·경쟁 모델",
+          "columns": [
+            "항목",
+            "Qwen4-Max-Preview",
+            "Qwen3.7-Plus",
+            "Gemini 4 Hydrogen"
+          ],
+          "rows": [
+            {
+              "values": [
+                "역할",
+                "차세대 멀티모달 프리뷰",
+                "균형형·시각 이해",
+                "빠른 실행용 Gemini 4"
+              ],
+              "source_ids": [
+                "qmodel",
+                "qselect",
+                "hmodel"
+              ]
+            },
+            {
+              "values": [
+                "문맥 / 출력",
+                "원문 1M / 393,216; thinking 포함",
+                "수치 이번 조사 미확인",
+                "통합1,048,576 / 기본65,536; 긴 출력은 잔여 문맥"
+              ],
+              "source_ids": [
+                "qmodel",
+                "hmodel"
+              ]
+            },
+            {
+              "values": [
+                "정량 성능 비교",
+                "공식 비교 수치 미확인",
+                "같은 harness 미확인",
+                "별도 Google 평가; Qwen과 동등 조건 아님"
+              ],
+              "source_ids": [
+                "qmodel",
+                "hmodel"
+              ]
+            },
+            {
+              "values": [
+                "제공",
+                "Token Plan만; 종료 KST11-26 01:00",
+                "지역별 모델 목록",
+                "stable API"
+              ],
+              "source_ids": [
+                "qmodel",
+                "qselect",
+                "hmodel"
+              ]
+            },
+            {
+              "values": [
+                "표준 비용",
+                "월 구독+가변 Credits; per-token 정가 없음",
+                "이번 조사 정가 미확인",
+                "USD/1M tokens 입력1.50 / 출력7.50"
+              ],
+              "source_ids": [
+                "qindividual",
+                "gprice"
+              ]
+            }
+          ],
+          "note": "Qwen 원문의 1M을 임의로 1,048,576으로 변환하지 않는다. 성능·단가의 공백을 추정하지 않는다."
+        },
+        {
+          "id": "comparison-2",
+          "title": "Individual 정가와 월 한도",
+          "columns": [
+            "요금제",
+            "월 정가 · USD",
+            "월 Credits"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Lite",
+                "6",
+                "20,000"
+              ],
+              "source_ids": [
+                "qindividual"
+              ]
+            },
+            {
+              "values": [
+                "Essential",
+                "10",
+                "45,000"
+              ],
+              "source_ids": [
+                "qindividual"
+              ]
+            },
+            {
+              "values": [
+                "Standard",
+                "18",
+                "80,000"
+              ],
+              "source_ids": [
+                "qindividual"
+              ]
+            },
+            {
+              "values": [
+                "Pro",
+                "43",
+                "200,000"
+              ],
+              "source_ids": [
+                "qindividual"
+              ]
+            },
+            {
+              "values": [
+                "활성 구독용 Credit Pack",
+                "15 / pack / month",
+                "20,000; 동시 최대5개"
+              ],
+              "source_ids": [
+                "qindividual"
+              ]
+            }
+          ],
+          "note": "2026-11-13 확인. 신규·프리뷰 할인은 정가와 별도이고 미사용 월 한도는 이월되지 않는다."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "평가와 적용 범위",
+            "text": "Qwen4-Max-Preview는 멀티모달·긴 출력과 추론 계약의 변화가 핵심입니다. 종료일과 대화형 사용 제한이 있어 상시 앱 백엔드처럼 취급할 수 없습니다. 문맥 크기와 할인만으로 기존 모델보다 품질·총비용이 우월하다고 결론내릴 수 없습니다.",
+            "source_ids": [
+              "qmodel",
+              "qindividual",
+              "qplan",
+              "qselect",
+              "hmodel",
+              "gprice"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "2026-11-13 공식 모델·구독 문서 확인. Qwen4의 비교 가능한 정량 평가·파라미터·공개 가중치·한국어 품질은 확인하지 못했다. 이를 추정 점수로 채우지 않았다. 구매·API 호출·실제 차감 시험은 하지 않았다.",
+          "source_ids": [
+            "qmodel",
+            "qindividual",
+            "qplan",
+            "qselect",
+            "hmodel",
+            "gprice"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "alphagenome-2-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "title": "AlphaGenome 2: DNA와 세포 상태를 함께 읽는 유전체 모델",
+      "description": "1Mb DNA의 조건부 예측, 단일세포 변이 평가와 이전 모델의 기능 차이·연구 이용 조건을 비교합니다.",
+      "checked_on": "2026-11-13",
+      "scope": "2026-11-13 발표, 논문1~5쪽, 모델 이전 문서·API 조건을 확인했다. 개발팀 평가이며 독립 생물학적 재현·임상 검증을 하지 않았다. 상업 가격·가중치 사용권은 미확인이고 연구 API를 임상 진단 승인으로 해석하지 않는다.",
+      "deck": "AlphaGenome 2는 1Mb DNA와 특정 조직·세포 유형·상태를 함께 입력하는 생물학 모델입니다. 여러 조직 동시 출력에서 한 조건의 정밀 예측으로 바뀌었고 TenK10K의 90% precision에서 인과 변이 recall을 16%에서 30%로 높였다고 보고합니다. 비상업 연구 API는 무료이며 상업 연구는 private preview입니다.",
+      "highlights": [
+        "모델 변화",
+        "지표의 단위",
+        "제공"
+      ],
+      "source_note": "2026년 11월 13일 KST에 공식 자료의 관련 부분을 확인했습니다.",
+      "summary": [
+        {
+          "label": "모델 변화",
+          "text": "11월 11일 발표. 사람·생쥐 bulk·단일세포 데이터와 1억700만 세포 프로필을 활용하며 메틸화와 조건별 출력이 추가됐습니다.",
+          "source_ids": [
+            "aglaunch",
+            "agpaper"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "지표의 단위",
+          "text": "30%는 일반 정확도가 아닌 90% precision에서의 인과 recall입니다. 효과 방향은 90% accuracy에서 recall43% 대23%입니다.",
+          "source_ids": [
+            "agpaper"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "제공",
+          "text": "비상업 API는 무료이고 요청률은 수요에 따라 달라집니다. 상업 private preview의 공개 표준 단가는 확인되지 않았습니다.",
+          "source_ids": [
+            "aglaunch",
+            "agdocs"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "references": [
+        {
+          "id": "aglaunch",
+          "title": "Google DeepMind · AlphaGenome2 발표",
+          "url": "https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/",
+          "description": "발표·조건화·학습 데이터·신규 출력·제공"
+        },
+        {
+          "id": "agpaper",
+          "title": "AlphaGenome2 공식 논문",
+          "url": "https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/alphagenome-2.pdf",
+          "description": "논문1~5쪽 구조·held-out 평가·반대 조건·Borzoi·Scooby 비교"
+        },
+        {
+          "id": "agmigrate",
+          "title": "AlphaGenome · 1에서 2로",
+          "url": "https://www.alphagenomedocs.com/user_guides/ag1_vs_ag2.html",
+          "description": "한 조건 단위·출력 제거·점수 계약과 이전 모델 유지"
+        },
+        {
+          "id": "agdocs",
+          "title": "AlphaGenome 공식 API 문서",
+          "url": "https://www.alphagenomedocs.com/",
+          "description": "비상업 무료 API·요청률·연구 규모 제한"
+        }
+      ],
+      "explanation": [
+        {
+          "id": "model",
+          "title": "DNA와 세포 조건을 함께 입력",
+          "lead": "언어 모델의 토큰과 다른 단위입니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "입출력",
+              "text": "최대1Mb DNA·사람/생쥐 종·목표 조건을 받아 유전자 발현·스플라이싱·접근성·히스톤·전사인자 결합·접촉 지도·CpG 메틸화 등을 예측합니다. DNA 염기 길이를 언어 토큰 수로 바꾸지 않습니다.",
+              "source_ids": [
+                "agpaper",
+                "agmigrate"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "구조의 변화",
+              "text": "AlphaGenome1은 고정된 조직·실험 트랙을 병렬 출력합니다. 2는 초기 층부터 조건 embedding을 반영해 한 조건씩 예측합니다. 자체 인간 scRNA-seq에서 상태를 만들거나 미측정 modality를 추정하지만 추정 출력이 실제 측정값이 되는 것은 아닙니다.",
+              "source_ids": [
+                "aglaunch",
+                "agpaper",
+                "agmigrate"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "evaluation",
+          "title": "고정 precision에서 더 많은 변이를 회수",
+          "lead": "대조군·평가 축을 따로 봅니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "단일세포",
+              "text": "TenK10K 28개 면역 세포 유형 sc-eQTL 인과 판별에서 precision90%의 recall은 AG2 30%, AG1-sc16%입니다. 전체 AUPRC는0.76/0.72, Scooby0.69입니다. 방향 판별은 accuracy90%의 recall43%/23%, 전체 곡선 AUC0.85/0.79, Scooby0.77입니다.",
+              "source_ids": [
+                "agpaper"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "bulk와 반대 범위",
+              "text": "GTEx49개 조직의 인과 AUPRC는 AG2 0.74, AG1 0.72, Borzoi0.69입니다. 기존 bulk 스플라이싱·접근성·DNase·polyadenylation QTL에서는 AG1과 비슷했고 접근성 peak 밖의 방향 AUROC도 최대0.63에 머뭅니다. 균일한 향상은 아닙니다.",
+              "source_ids": [
+                "agpaper"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "change",
+          "title": "새 출력과 이전 기능의 손실",
+          "lead": "후속 모델이 기존 계약을 모두 보존하지는 않습니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "추가",
+              "text": "단일세포 발현·접근성·메틸화, input gradient와 세포 인코딩이 추가됐습니다. 자체 인간 scRNA-seq 조건화는 원시 UMI count·Ensembl ID를 요구하며 호출당 최대256세포입니다.",
+              "source_ids": [
+                "agmigrate"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "달라진 계약",
+              "text": "한 조건 단위로 예측하며 quantile_score와 PRO-cap을 제거했습니다. 접촉 지도도 이전 값과 직접 비교할 수 없습니다. 과거 논문 재현·모든 조직 동시 scoring·PRO-cap에는 AlphaGenome1을 유지하라는 안내가 있습니다.",
+              "source_ids": [
+                "agmigrate"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "conditions",
+          "title": "연구 API와 상업 private preview",
+          "lead": "연구 결과와 임상적 유효성은 다릅니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "가격·규모",
+              "text": "비상업 API는 무료입니다. 수요별 요청률이 달라지고 live prediction은 수백만 건보다 수천 건 규모 분석에 적합하다고 안내합니다. 상업 연구 private preview의 정가·가중치 공개 사용권은 이번 범위에서 확인하지 못했습니다.",
+              "source_ids": [
+                "agdocs",
+                "aglaunch"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "해석",
+              "text": "평가는 보류된 유전체 구간·염색체와 대조 변이에 대한 개발팀 측정입니다. 질병 관련 변이의 우선순위를 예측하는 연구이며 개인 질병을 확진하거나 인과를 실험적으로 입증한 결과가 아닙니다. 새 세포 상태·실제 임상 검증은 별도입니다.",
+              "source_ids": [
+                "agpaper"
+              ],
+              "kind": "fact"
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "comparison-1",
+          "title": "모델과 평가의 비교",
+          "columns": [
+            "비교축",
+            "AlphaGenome2",
+            "이전 AlphaGenome",
+            "다른 모델"
+          ],
+          "rows": [
+            {
+              "values": [
+                "구조",
+                "1Mb DNA+한 조건",
+                "1Mb DNA→고정 실험·조직 병렬 트랙",
+                "다른 모델은 아래 평가 범위"
+              ],
+              "source_ids": [
+                "agpaper",
+                "agmigrate"
+              ]
+            },
+            {
+              "values": [
+                "TenK10K 인과 AUPRC",
+                "0.76",
+                "AG1-sc0.72",
+                "Scooby0.69"
+              ],
+              "source_ids": [
+                "agpaper"
+              ]
+            },
+            {
+              "values": [
+                "TenK10K 방향 곡선 AUC",
+                "0.85",
+                "AG1-sc0.79",
+                "Scooby0.77"
+              ],
+              "source_ids": [
+                "agpaper"
+              ]
+            },
+            {
+              "values": [
+                "GTEx 인과 AUPRC",
+                "0.74",
+                "AG1 0.72",
+                "Borzoi0.69"
+              ],
+              "source_ids": [
+                "agpaper"
+              ]
+            },
+            {
+              "values": [
+                "이전 특수 출력",
+                "PRO-cap·quantile_score 없음",
+                "PRO-cap·quantile_score 유지",
+                "타 모델 계약 이번 범위 미확인"
+              ],
+              "source_ids": [
+                "agmigrate"
+              ]
+            },
+            {
+              "values": [
+                "가격·제공",
+                "비상업 API무료 / 상업private preview",
+                "기존 API에서 이전 모델 유지",
+                "상업 단가·사용권 이번 범위 미확인"
+              ],
+              "source_ids": [
+                "agdocs",
+                "aglaunch",
+                "agmigrate"
+              ]
+            }
+          ],
+          "note": "개발팀 논문1~5쪽. AG1-sc는 단일세포용으로 맞춘 이전 모델이다. AUC·AUPRC와 특정 임계값 recall은 다르다."
+        },
+        {
+          "id": "comparison-2",
+          "title": "고정 기준에서 회수한 변이",
+          "columns": [
+            "지표·조건",
+            "AlphaGenome2",
+            "이전 모델"
+          ],
+          "rows": [
+            {
+              "values": [
+                "TenK10K 인과 recall · precision90%",
+                "30%",
+                "AG1-sc16%"
+              ],
+              "source_ids": [
+                "agpaper"
+              ]
+            },
+            {
+              "values": [
+                "TenK10K 방향 recall · accuracy90%",
+                "43%",
+                "AG1-sc23%"
+              ],
+              "source_ids": [
+                "agpaper"
+              ]
+            },
+            {
+              "values": [
+                "GTEx 인과 recall · precision90%",
+                "26%",
+                "AG1 17%"
+              ],
+              "source_ids": [
+                "agpaper"
+              ]
+            },
+            {
+              "values": [
+                "GTEx 방향 recall · accuracy90%",
+                "40%",
+                "AG1 32%"
+              ],
+              "source_ids": [
+                "agpaper"
+              ]
+            }
+          ],
+          "note": "held-out 평가. recall을 일반 정확도·환자 진단 민감도로 표현하지 않는다."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "평가와 적용 범위",
+            "text": "AlphaGenome2는 세포 조건을 중심으로 변이 해석의 해상도를 높였습니다. 고정 precision에서 더 많은 변이를 회수한 것이 핵심이며 모든 생물학 지표 개선·임상 유효성을 의미하지 않습니다. 이전 출력·점수 계약을 쓰는 분석은 AlphaGenome1을 보존할 이유가 있습니다.",
+            "source_ids": [
+              "aglaunch",
+              "agpaper",
+              "agmigrate",
+              "agdocs"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "2026-11-13 발표, 논문1~5쪽, 모델 이전 문서·API 조건을 확인했다. 개발팀 평가이며 독립 생물학적 재현·임상 검증을 하지 않았다. 상업 가격·가중치 사용권은 미확인이고 연구 API를 임상 진단 승인으로 해석하지 않는다.",
+          "source_ids": [
+            "aglaunch",
+            "agpaper",
+            "agmigrate",
+            "agdocs"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "praxis-1-world-action-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "title": "Praxis-1: 공개 가중치로 풀린 영상 기반 로봇 행동 모델",
+      "description": "9월 발표 이후 공개가 바꾼 제공 범위, RoboLab·RT-1 성능과 로봇·GPU 조건을 비교합니다.",
+      "checked_on": "2026-11-13",
+      "scope": "2026-11-13 공개 안내·보고서의 구조·평가·한계와 저장소 요구조건을 읽었다. 성능은 Runway 보고이며 로봇·시뮬레이터 실행이나 호스팅 요금 검증을 하지 않았다. 9월 모델 소개와 11월 11일 공개 가중치 제공을 구분한다.",
+      "deck": "Runway는 9월 소개한 Praxis-1 가중치와 추론·미세조정 코드를 11월 11일 Apache 2.0으로 공개했습니다. 미래 영상과 행동을 함께 예측하며 DROID 적응판의 RoboLab-120 성공률 46.2%를 보고합니다. 이번 변화는 공개 범위의 확대이며 모든 로봇에서 바로 작동하거나 무료로 운영된다는 뜻은 아닙니다.",
+      "highlights": [
+        "의미 있는 변경",
+        "구조",
+        "한계"
+      ],
+      "source_note": "2026년 11월 13일 KST에 공식 자료의 관련 부분을 확인했습니다.",
+      "summary": [
+        {
+          "label": "의미 있는 변경",
+          "text": "기존 모델의 가중치·추론·미세조정 코드를 공개했습니다. GitHub·Hugging Face·LeRobot·vLLM-Omni 경로와 Apache2.0 상업 사용을 안내합니다.",
+          "source_ids": [
+            "praxislaunch"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "구조",
+          "text": "영상 backbone26.9B 중 토큰당 약2.8B가 활성화되고 행동 expert는 약314M입니다. 반올림27B와 활성 파라미터를 구분합니다.",
+          "source_ids": [
+            "praxis"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "한계",
+          "text": "RoboLab-120은1,200회 중555회 성공입니다. 닮은 물체 선택·모호한 지시·한 프롬프트의 긴 다단계 과제가 어렵습니다.",
+          "source_ids": [
+            "praxis"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "references": [
+        {
+          "id": "praxislaunch",
+          "title": "Runway · Praxis-1 공개",
+          "url": "https://runway.com/news/company-news/praxis-1-is-now-available",
+          "description": "9월 소개와 가중치 공개 차이·Apache2.0·제공 경로"
+        },
+        {
+          "id": "praxis",
+          "title": "Runway · Praxis-1 연구 보고서",
+          "url": "https://runway.com/research/praxis-1-video-pretraining-to-robot-control",
+          "description": "구조·RoboLab·RT-1·추론 측정·실패·한계"
+        },
+        {
+          "id": "prcode",
+          "title": "Runway · 공개 README",
+          "url": "https://raw.githubusercontent.com/runwayml/praxis-1-oss/main/README.md",
+          "description": "기본 실행 메모리·환경·checkpoint 조건, 실행 없이 열람"
+        }
+      ],
+      "explanation": [
+        {
+          "id": "change",
+          "title": "9월 소개에서 실제 공개 제공으로",
+          "lead": "같은 모델을 새 모델로 중복 계산하지 않습니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "공개 내용",
+              "text": "11월 11일 안내는 9월 소개한 같은 모델이라고 명시합니다. DROID 적응판·양팔 YAM 적응판·base mid-trained 세 checkpoint와 full/LoRA 미세조정 코드가 공개됐습니다. 파트너 중심 제공에서 직접 실행·적응할 수 있는 범위로 바뀌었습니다.",
+              "source_ids": [
+                "praxislaunch",
+                "praxis"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "모델 역할",
+              "text": "카메라 프레임·지시·현재 pose를 받아 미래 영상과 행동 chunk를 만듭니다. 일반 텍스트 답변·영상 생성 서비스가 아니며 로봇별 projection과 적응 학습이 실제 embodiment를 연결합니다.",
+              "source_ids": [
+                "praxis"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "architecture",
+          "title": "영상 예측과 행동 expert",
+          "lead": "전체 규모와 활성 파라미터는 다릅니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "사양",
+              "text": "영상 backbone은 MoE26.9B, 활성 약2.8B이고 행동 expert는314M입니다. 고정된 Wan2.2 VAE와 Qwen3.5-2B text encoder를 사용합니다. 활성2.8B만으로 전체 모델이 메모리에 들어간다고 볼 수 없습니다.",
+              "source_ids": [
+                "praxis"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "행동·지연 단위",
+              "text": "기본 호출은15Hz 행동24행,1.6초 chunk를 반환하며 첫 호출은21행입니다. 단일 H100 기본 경로에서 약0.55~0.6초 왕복이라는 측정은 반환 행동의 시간 길이와 다른 단위입니다.",
+              "source_ids": [
+                "praxis"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "evaluation",
+          "title": "시뮬레이션 우위와 과제별 역전",
+          "lead": "적응판·학습 데이터·평가 횟수가 붙은 결과입니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "RoboLab",
+              "text": "DROID형 팔 시뮬레이션120과제·각10회에서 DROID 적응판은555/1,200,46.2%입니다. 같은 표의 FLUX3 Action42.9%, Cosmos3 Nano36.8%, π0.5 28.0%보다 높지만 실제 배포의 성공 확률로 바꿀 수 없습니다.",
+              "source_ids": [
+                "praxis",
+                "praxislaunch"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "RT-1",
+              "text": "RT-1 데이터로30K step 적응한 판은 SimplerEnv visual matching4과제·864회 평균80.0%로 원 RT-1의52.4%보다 높습니다. 그러나 서랍 열기·닫기는56.5%로 원 RT-1의73.1%보다 낮습니다. 새 로봇에서 무학습으로 얻은 결과가 아닙니다.",
+              "source_ids": [
+                "praxis"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "runtime",
+          "title": "오픈 가중치와 실제 운영비",
+          "lead": "라이선스·기본 예제·하드웨어별 최적화는 다릅니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "기본 실행",
+              "text": "README 기본 시작 경로는 Python3.12·CUDA13.0 driver·80GB 이상 단일 CUDA GPU를 요구합니다. 출시 글의 RTX·Jetson Thor 경로가 기본 경로와 같은 메모리·속도를 보장하지는 않습니다. 실제 실행하지 않았습니다.",
+              "source_ids": [
+                "prcode",
+                "praxislaunch"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "가격",
+              "text": "Apache2.0은 상업 사용을 허용하지만 GPU·로봇·데이터·운영이 무료라는 뜻은 아닙니다. 보고서의 H100 USD3.95/시간은 특정 실험 비용 가정이며 managed API 정가가 아닙니다. Reactor 호스팅의 표준 단가는 이번 조사에서 확인하지 못했습니다.",
+              "source_ids": [
+                "praxislaunch",
+                "praxis"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "limits",
+          "title": "비슷한 물체와 긴 지시에서의 실패",
+          "lead": "영상 예측 오류가 행동으로 이어질 수 있습니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "약점",
+              "text": "가장 흔한 실제 로봇 실패는 목표와 닮은 물체를 집는 경우라고 보고합니다. 모호한 지시에서는 대상을 추측하며 한 지시의 여러 단계를 수행할 때 진행 상태 추적이 어렵습니다. 다른 로봇에는 guidance 설정도 다시 맞춰야 합니다.",
+              "source_ids": [
+                "praxis"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "비교의 범위",
+              "text": "시뮬레이션 순위와 실로봇 장면은 가능성을 보여주지만 외부 환경의 안전성·지속 운용·전체 비용 인증이 아닙니다. 장기 계획 모델과의 결합도 향후 연구로 소개합니다.",
+              "source_ids": [
+                "praxis"
+              ],
+              "kind": "fact"
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "comparison-1",
+          "title": "RoboLab-120의 같은 표 비교",
+          "columns": [
+            "모델·평가판",
+            "성공률 · %",
+            "조건"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Praxis-1 DROID fine-tune",
+                "46.2",
+                "555/1,200 episodes"
+              ],
+              "source_ids": [
+                "praxis"
+              ]
+            },
+            {
+              "values": [
+                "FLUX3 Action",
+                "42.9",
+                "같은 공급자 표"
+              ],
+              "source_ids": [
+                "praxis"
+              ]
+            },
+            {
+              "values": [
+                "Cosmos3 Nano",
+                "36.8",
+                "같은 공급자 표"
+              ],
+              "source_ids": [
+                "praxis"
+              ]
+            },
+            {
+              "values": [
+                "π0.5 VLA",
+                "28.0",
+                "같은 공급자 표"
+              ],
+              "source_ids": [
+                "praxis"
+              ]
+            },
+            {
+              "values": [
+                "GR00T N1.6 VLA",
+                "7.3",
+                "같은 공급자 표"
+              ],
+              "source_ids": [
+                "praxis"
+              ]
+            }
+          ],
+          "note": "Runway 2026년11월.120 tabletop tasks×10trials. 외부 순위표를 독립 재실행하지 않았다."
+        },
+        {
+          "id": "comparison-2",
+          "title": "RT-1 적응판과 원 정책",
+          "columns": [
+            "SimplerEnv visual matching",
+            "Praxis-1 RT-1 fine-tune",
+            "원 RT-1 공개치",
+            "FLUX3 Action RT-1 fine-tune"
+          ],
+          "rows": [
+            {
+              "values": [
+                "coke can 집기 · %",
+                "98.3",
+                "85.7",
+                "70.0"
+              ],
+              "source_ids": [
+                "praxis"
+              ]
+            },
+            {
+              "values": [
+                "근처로 이동 · %",
+                "81.7",
+                "44.2",
+                "44.2"
+              ],
+              "source_ids": [
+                "praxis"
+              ]
+            },
+            {
+              "values": [
+                "서랍 열기/닫기 · %",
+                "56.5",
+                "73.1",
+                "38.9"
+              ],
+              "source_ids": [
+                "praxis"
+              ]
+            },
+            {
+              "values": [
+                "서랍에 사과 · %",
+                "83.3",
+                "6.5",
+                "5.6"
+              ],
+              "source_ids": [
+                "praxis"
+              ]
+            },
+            {
+              "values": [
+                "4과제 평균 · %",
+                "80.0",
+                "52.4",
+                "39.7"
+              ],
+              "source_ids": [
+                "praxis"
+              ]
+            }
+          ],
+          "note": "864episodes,30K-step 적응. 경쟁 모델의 학습 recipe가 완전히 같다는 뜻은 아니다."
+        },
+        {
+          "id": "comparison-3",
+          "title": "제공·사양·비용",
+          "columns": [
+            "항목",
+            "확인 내용"
+          ],
+          "rows": [
+            {
+              "values": [
+                "변경",
+                "9월 최초 소개→2026-11-11 Apache2.0 가중치·코드 공개"
+              ],
+              "source_ids": [
+                "praxislaunch"
+              ]
+            },
+            {
+              "values": [
+                "규모",
+                "영상26.9B/활성2.8B; 행동 expert314M"
+              ],
+              "source_ids": [
+                "praxis"
+              ]
+            },
+            {
+              "values": [
+                "기본 실행",
+                "Python3.12·CUDA13.0·GPU80GB 이상"
+              ],
+              "source_ids": [
+                "prcode"
+              ]
+            },
+            {
+              "values": [
+                "표준 요금",
+                "가중치 공개; 자체 GPU 비용 발생; managed 정가 미확인"
+              ],
+              "source_ids": [
+                "praxislaunch",
+                "prcode"
+              ]
+            },
+            {
+              "values": [
+                "연구 비용 가정",
+                "H100 USD3.95/시간; API 정가 아님"
+              ],
+              "source_ids": [
+                "praxis"
+              ]
+            }
+          ],
+          "note": "공개 예제 요구조건이며 하드웨어별 전체 경로 실측은 아니다."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "평가와 적용 범위",
+            "text": "Praxis-1의 이번 변화는 직접 실행·적응할 수 있는 공개 범위입니다. 모의환경 우위는 의미가 있지만 과제별 역전과 적응 데이터·GPU·제어 환경의 조건이 남습니다. 가중치 공개만으로 범용 로봇 성능을 보장하지 않습니다.",
+            "source_ids": [
+              "praxislaunch",
+              "praxis",
+              "prcode"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "2026-11-13 공개 안내·보고서의 구조·평가·한계와 저장소 요구조건을 읽었다. 성능은 Runway 보고이며 로봇·시뮬레이터 실행이나 호스팅 요금 검증을 하지 않았다. 9월 모델 소개와 11월 11일 공개 가중치 제공을 구분한다.",
+          "source_ids": [
+            "praxislaunch",
+            "praxis",
+            "prcode"
+          ]
+        }
+      ]
+    }
+  ]
+}

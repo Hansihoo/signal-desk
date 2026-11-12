@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "id": "gemini4-hydrogen-spec",
+      "model": "Gemini 4 Hydrogen",
+      "provider": "Google",
+      "checked_on": "2026-11-13",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "Gemini API · stable",
+        "condition": "입출력 통합 한도. long decode도 같은 문맥의 잔여 예산. 이미지·음성 생성 및 Live API 미지원.",
+        "status": "정식 API",
+        "release": "2026-11-12",
+        "model_id": "gemini-4-hydrogen",
+        "통합 문맥 tokens": 1048576,
+        "기본 최대 출력 tokens": 65536,
+        "long decode 최대 tokens": 1048576,
+        "effort": "low / medium / high / xhigh",
+        "context": 1048576,
+        "access": "Gemini API / AI Studio"
+      },
+      "source_url": "https://aistudio.google.com/docs/models/gemini-4-hydrogen"
+    },
+    {
+      "id": "gemini4-hydrogen-standard",
+      "model": "Gemini 4 Hydrogen",
+      "provider": "Google",
+      "checked_on": "2026-11-13",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Gemini API · Standard",
+        "condition": "USD per 1M tokens. 출력 thinking 포함. implicit caching만 지원. 검색·도구 요금 별도.",
+        "입력 USD / 100만 토큰": 1.5,
+        "출력 USD / 100만 토큰": 7.5,
+        "캐시 입력 USD / 100만 토큰": 0.075
+      },
+      "source_url": "https://aistudio.google.com/docs/pricing"
+    },
+    {
+      "id": "gemini-decision1-spec",
+      "model": "Gemini Decision 1",
+      "provider": "Google",
+      "checked_on": "2026-11-13",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "Decisions API · v1beta",
+        "condition": "공유 입력과 모든 질문 합계. 선택·등급2~255개. 생성·function calling·캐시·Batch 미지원.",
+        "status": "Developer API 제공",
+        "release": "2026-11-11",
+        "model_id": "gemini-decision-1",
+        "입력 문맥 tokens": 262144,
+        "출력 tokens": 0,
+        "요청당 최대 질문": 1000,
+        "context": 262144,
+        "access": "Gemini Developer API v1beta / AI Studio"
+      },
+      "source_url": "https://aistudio.google.com/docs/models/gemini-decision-1"
+    },
+    {
+      "id": "qwen4-max-preview-spec",
+      "model": "Qwen4-Max-Preview",
+      "provider": "Alibaba QwenCloud",
+      "checked_on": "2026-11-13",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "QwenCloud · Token Plan",
+        "condition": "원문1M context. thinking+final 공유 출력;max_tokens 의미 변경. 별칭qwen4.0-max-preview는 같은 모델.",
+        "status": "기간 한정 프리뷰",
+        "release": "2026-11-11",
+        "model_id": "qwen4-max-preview",
+        "문맥 원문": "1M tokens",
+        "최대 출력 tokens": 393216,
+        "KST 종료": "2026-11-26 01:00",
+        "effort": "low / medium / xhigh(default)",
+        "평가": "공식 정량 비교 미확인",
+        "context": "1M",
+        "access": "Singapore Token Plan; 개인 대화형 도구 제한"
+      },
+      "source_url": "https://docs.qwencloud.com/developer-guides/getting-started/latest-model"
+    }
+  ]
+}
