@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "id": "inkling-2-small-spec",
+      "model": "Inkling 2 Small",
+      "provider": "Thinking Machines Lab",
+      "source_url": "https://thinkingmachines.ai/model-card/inkling-2-small/",
+      "checked_on": "2026-11-14",
+      "fields": {
+        "kind": "공식 사양과 제공",
+        "suite": "Inkling 2 Small / 2026-11-05",
+        "condition": "공급자 공식 원문. 실제 계정 제공과 추론 미실행.",
+        "release": "2026-11-05",
+        "context": 1000000,
+        "status": "11월12일 가중치 공개, 카드 Apache2.0 표기",
+        "access": "Tinker 추론·학습, 공개 NVFP4/MXFP8 체크포인트",
+        "입력": "텍스트와 이미지",
+        "출력": "텍스트",
+        "공개 변경일": "2026-11-12",
+        "NVFP4 최소 합산 VRAM GB": 500,
+        "MXFP8 최소 합산 VRAM GB": 800,
+        "확인 한계": "최대1M은 카드 사양;Tinker64K/256K;별도LICENSE파일 미열람·독립 재실행 없음",
+        "parameters": 594,
+        "active_parameters": 17,
+        "references": [
+          "https://huggingface.co/thinkingmachines/Inkling-2-Small"
+        ]
+      }
+    }
+  ]
+}

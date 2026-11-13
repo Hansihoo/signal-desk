@@ -192,6 +192,14 @@
     {
       "id": "ai-model-facts-2026-11-14",
       "path": "ai_model_facts.2026-11-14.json"
+    },
+    {
+      "id": "ai-model-facts-2026-11-14-display",
+      "path": "ai_model_facts.2026-11-14.display.json"
+    },
+    {
+      "id": "ai-model-facts-2026-11-14-fields",
+      "path": "ai_model_facts.2026-11-14.fields.json"
     }
   ]
 }
