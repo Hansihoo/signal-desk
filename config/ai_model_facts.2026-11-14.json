@@ -1,0 +1,478 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "id": "inkling-2-small-spec",
+      "model": "Inkling 2 Small",
+      "provider": "Thinking Machines Lab",
+      "source_url": "https://thinkingmachines.ai/model-card/inkling-2-small/",
+      "checked_on": "2026-11-14",
+      "fields": {
+        "kind": "공식 사양과 제공",
+        "suite": "Inkling 2 Small / 2026-11-05",
+        "condition": "공급자 공식 원문. 실제 계정 제공과 추론 미실행.",
+        "release": "2026-11-05",
+        "context": 1000000,
+        "parameters_b": 594,
+        "active_parameters_b": 17,
+        "status": "11월12일 가중치 공개, 카드 Apache2.0 표기",
+        "access": "Tinker 추론·학습, 공개 NVFP4/MXFP8 체크포인트",
+        "입력": "텍스트와 이미지",
+        "출력": "텍스트",
+        "공개 변경일": "2026-11-12",
+        "NVFP4 최소 합산 VRAM GB": 500,
+        "MXFP8 최소 합산 VRAM GB": 800,
+        "확인 한계": "최대1M은 카드 사양;Tinker64K/256K;별도LICENSE파일 미열람·독립 재실행 없음"
+      }
+    },
+    {
+      "id": "scribe_v3-spec",
+      "model": "Scribe v3",
+      "provider": "ElevenLabs",
+      "source_url": "https://elevenlabs.io/docs/overview/models",
+      "checked_on": "2026-11-14",
+      "fields": {
+        "kind": "공식 사양과 제공",
+        "suite": "scribe_v3 / 2026-11-10",
+        "model_id": "scribe_v3",
+        "release": "2026-11-10",
+        "input_modalities": "audio",
+        "output_modalities": "text",
+        "status": "관리형 API;이전v2유지",
+        "condition": "90+언어;SDK·리전 문서 차이;규모·문맥·한국어 개별성능 미확인"
+      }
+    },
+    {
+      "id": "scribe_v3-price",
+      "model": "Scribe v3",
+      "provider": "ElevenLabs",
+      "source_url": "https://elevenlabs.io/pricing/api?price.section=speech_to_text&price.sections=speech_to_text%2Cspeech_to_text",
+      "checked_on": "2026-11-14",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "USD / 오디오 시간, 2026-11-14 API 표",
+        "기본 USD / 시간": 0.2,
+        "Keyterm 추가 USD / 시간": 0.05,
+        "편집 추가 USD / 시간": 0.07,
+        "condition": "월플랜·포함량·세금별도, 오디오분미터링;토큰요금아님"
+      }
+    },
+    {
+      "id": "scribe_v3_live-spec",
+      "model": "Scribe v3 Live",
+      "provider": "ElevenLabs",
+      "source_url": "https://elevenlabs.io/docs/overview/models",
+      "checked_on": "2026-11-14",
+      "fields": {
+        "kind": "공식 사양과 제공",
+        "suite": "scribe_v3_live / 2026-11-10",
+        "model_id": "scribe_v3_live",
+        "release": "2026-11-10",
+        "input_modalities": "audio",
+        "output_modalities": "text",
+        "status": "관리형 API;이전v2유지",
+        "condition": "90+언어;SDK·리전 문서 차이;규모·문맥·한국어 개별성능 미확인"
+      }
+    },
+    {
+      "id": "scribe_v3_live-price",
+      "model": "Scribe v3 Live",
+      "provider": "ElevenLabs",
+      "source_url": "https://elevenlabs.io/pricing/api?price.section=speech_to_text&price.sections=speech_to_text%2Cspeech_to_text",
+      "checked_on": "2026-11-14",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "USD / 오디오 시간, 2026-11-14 API 표",
+        "기본 USD / 시간": 0.22,
+        "Keyterm 추가 USD / 시간": 0.08,
+        "편집 추가 USD / 시간": 0.12,
+        "용어 라이브러리 USD / 시간": 0.08,
+        "condition": "월플랜·포함량·세금별도, 오디오분미터링;토큰요금아님"
+      }
+    },
+    {
+      "id": "scribe-fleurs102-doc-v3",
+      "model": "Scribe v3",
+      "provider": "ElevenLabs",
+      "source_url": "https://elevenlabs.io/docs/overview/models",
+      "checked_on": "2026-11-14",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "FLEURS102 / model documentation",
+        "평가 점수": 12.38,
+        "단위": "% WER",
+        "측정 주체": "ElevenLabs 자체 측정",
+        "낮을수록 좋음": true,
+        "condition": "언어별 평균;독립재현·세부Harness미확인"
+      }
+    },
+    {
+      "id": "scribe-fleurs102-doc-v2",
+      "model": "Scribe v2",
+      "provider": "ElevenLabs",
+      "source_url": "https://elevenlabs.io/docs/overview/models",
+      "checked_on": "2026-11-14",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "FLEURS102 / model documentation",
+        "평가 점수": 16.94,
+        "단위": "% WER",
+        "측정 주체": "ElevenLabs 자체 측정",
+        "낮을수록 좋음": true,
+        "condition": "언어별 평균;독립재현·세부Harness미확인"
+      }
+    },
+    {
+      "id": "scribe-fleurs102-chart-v3",
+      "model": "Scribe v3",
+      "provider": "ElevenLabs",
+      "source_url": "https://eleven-public-cdn.elevenlabs.io/payloadcms/cmga0l6wj6c-3-%C2%B7-Batch-WER-vs-other-models.webp",
+      "checked_on": "2026-11-14",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "FLEURS102 / Oct23-29 chart",
+        "평가 점수": 12.4,
+        "단위": "% WER",
+        "측정 주체": "ElevenLabs 자체 측정",
+        "낮을수록 좋음": true,
+        "condition": "이미지반올림;교집합 언어행과구분"
+      }
+    },
+    {
+      "id": "scribe-fleurs102-chart-v2",
+      "model": "Scribe v2",
+      "provider": "ElevenLabs",
+      "source_url": "https://eleven-public-cdn.elevenlabs.io/payloadcms/cmga0l6wj6c-3-%C2%B7-Batch-WER-vs-other-models.webp",
+      "checked_on": "2026-11-14",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "FLEURS102 / Oct23-29 chart",
+        "평가 점수": 17.0,
+        "단위": "% WER",
+        "측정 주체": "ElevenLabs 자체 측정",
+        "낮을수록 좋음": true,
+        "condition": "이미지반올림;교집합 언어행과구분"
+      }
+    },
+    {
+      "id": "scribe-fleurs102-chart-gemini",
+      "model": "Gemini 3.5 Transcribe",
+      "provider": "Google",
+      "source_url": "https://eleven-public-cdn.elevenlabs.io/payloadcms/cmga0l6wj6c-3-%C2%B7-Batch-WER-vs-other-models.webp",
+      "checked_on": "2026-11-14",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "FLEURS102 / Oct23-29 chart",
+        "평가 점수": 18.5,
+        "단위": "% WER",
+        "측정 주체": "ElevenLabs 자체 측정",
+        "낮을수록 좋음": true,
+        "condition": "이미지반올림;교집합 언어행과구분"
+      }
+    },
+    {
+      "id": "scribe-fleurs60-v3",
+      "model": "Scribe v3",
+      "provider": "ElevenLabs",
+      "source_url": "https://eleven-public-cdn.elevenlabs.io/payloadcms/cmga0l6wj6c-3-%C2%B7-Batch-WER-vs-other-models.webp",
+      "checked_on": "2026-11-14",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "FLEURS 60 language intersection / Oct23-29",
+        "평가 점수": 6.5,
+        "단위": "% WER",
+        "측정 주체": "ElevenLabs 자체 측정",
+        "낮을수록 좋음": true,
+        "condition": "공급자교집합언어평균;102언어와교차순위불가"
+      }
+    },
+    {
+      "id": "scribe-fleurs60-other",
+      "model": "MAI-Transcribe 2",
+      "provider": "Microsoft",
+      "source_url": "https://eleven-public-cdn.elevenlabs.io/payloadcms/cmga0l6wj6c-3-%C2%B7-Batch-WER-vs-other-models.webp",
+      "checked_on": "2026-11-14",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "FLEURS 60 language intersection / Oct23-29",
+        "평가 점수": 7.5,
+        "단위": "% WER",
+        "측정 주체": "ElevenLabs 자체 측정",
+        "낮을수록 좋음": true,
+        "condition": "공급자교집합언어평균;102언어와교차순위불가"
+      }
+    },
+    {
+      "id": "scribe-fleurs58-v3",
+      "model": "Scribe v3",
+      "provider": "ElevenLabs",
+      "source_url": "https://eleven-public-cdn.elevenlabs.io/payloadcms/cmga0l6wj6c-3-%C2%B7-Batch-WER-vs-other-models.webp",
+      "checked_on": "2026-11-14",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "FLEURS 58 language intersection / Oct23-29",
+        "평가 점수": 5.5,
+        "단위": "% WER",
+        "측정 주체": "ElevenLabs 자체 측정",
+        "낮을수록 좋음": true,
+        "condition": "공급자교집합언어평균;102언어와교차순위불가"
+      }
+    },
+    {
+      "id": "scribe-fleurs58-other",
+      "model": "GPT-Transcribe",
+      "provider": "OpenAI",
+      "source_url": "https://eleven-public-cdn.elevenlabs.io/payloadcms/cmga0l6wj6c-3-%C2%B7-Batch-WER-vs-other-models.webp",
+      "checked_on": "2026-11-14",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "FLEURS 58 language intersection / Oct23-29",
+        "평가 점수": 9.7,
+        "단위": "% WER",
+        "측정 주체": "ElevenLabs 자체 측정",
+        "낮을수록 좋음": true,
+        "condition": "공급자교집합언어평균;102언어와교차순위불가"
+      }
+    },
+    {
+      "id": "scribe-fleurs18-v3",
+      "model": "Scribe v3",
+      "provider": "ElevenLabs",
+      "source_url": "https://eleven-public-cdn.elevenlabs.io/payloadcms/cmga0l6wj6c-3-%C2%B7-Batch-WER-vs-other-models.webp",
+      "checked_on": "2026-11-14",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "FLEURS 18 language intersection / Oct23-29",
+        "평가 점수": 4.0,
+        "단위": "% WER",
+        "측정 주체": "ElevenLabs 자체 측정",
+        "낮을수록 좋음": true,
+        "condition": "공급자교집합언어평균;102언어와교차순위불가"
+      }
+    },
+    {
+      "id": "scribe-fleurs18-other",
+      "model": "AssemblyAI Universal 3.5 Pro",
+      "provider": "AssemblyAI",
+      "source_url": "https://eleven-public-cdn.elevenlabs.io/payloadcms/cmga0l6wj6c-3-%C2%B7-Batch-WER-vs-other-models.webp",
+      "checked_on": "2026-11-14",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "FLEURS 18 language intersection / Oct23-29",
+        "평가 점수": 7.2,
+        "단위": "% WER",
+        "측정 주체": "ElevenLabs 자체 측정",
+        "낮을수록 좋음": true,
+        "condition": "공급자교집합언어평균;102언어와교차순위불가"
+      }
+    },
+    {
+      "id": "scribe-der16-v3",
+      "model": "Scribe v3",
+      "provider": "ElevenLabs",
+      "source_url": "https://eleven-public-cdn.elevenlabs.io/payloadcms/wlgjqovkm1-1-%C2%B7-Diarization--batch--DER-.webp",
+      "checked_on": "2026-11-14",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Internal16language batch / Oct26-Nov3",
+        "평가 점수": 5.6,
+        "단위": "% DER",
+        "측정 주체": "ElevenLabs 자체 측정",
+        "낮을수록 좋음": true,
+        "condition": "회의·통화·메모전체;데이터공개·독립재현미확인;Live정렬과비교불가"
+      }
+    },
+    {
+      "id": "scribe-der16-v2",
+      "model": "Scribe v2",
+      "provider": "ElevenLabs",
+      "source_url": "https://eleven-public-cdn.elevenlabs.io/payloadcms/wlgjqovkm1-1-%C2%B7-Diarization--batch--DER-.webp",
+      "checked_on": "2026-11-14",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Internal16language batch / Oct26-Nov3",
+        "평가 점수": 6.4,
+        "단위": "% DER",
+        "측정 주체": "ElevenLabs 자체 측정",
+        "낮을수록 좋음": true,
+        "condition": "회의·통화·메모전체;데이터공개·독립재현미확인;Live정렬과비교불가"
+      }
+    },
+    {
+      "id": "scribe-der-en-aligned-v3",
+      "model": "Scribe v3 Live",
+      "provider": "ElevenLabs",
+      "source_url": "https://eleven-public-cdn.elevenlabs.io/payloadcms/5c356xqr2rn-3a-%C2%B7-Scribe-v3-Live-diarization--English--DER--%C2%B7-goes-before-_Multilingual-accuracy-in-realtime_.webp",
+      "checked_on": "2026-11-14",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "English aligned realtime / Nov4",
+        "평가 점수": 3.1,
+        "단위": "% DER",
+        "측정 주체": "ElevenLabs 자체 측정",
+        "낮을수록 좋음": true,
+        "condition": "자체자료 영어부분집합;정답전사사전정렬;녹음DER와비교불가"
+      }
+    },
+    {
+      "id": "scribe-der-en-aligned-grok",
+      "model": "Grok Voice Transcribe 2.0",
+      "provider": "xAI",
+      "source_url": "https://eleven-public-cdn.elevenlabs.io/payloadcms/5c356xqr2rn-3a-%C2%B7-Scribe-v3-Live-diarization--English--DER--%C2%B7-goes-before-_Multilingual-accuracy-in-realtime_.webp",
+      "checked_on": "2026-11-14",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "English aligned realtime / Nov4",
+        "평가 점수": 5.9,
+        "단위": "% DER",
+        "측정 주체": "ElevenLabs 자체 측정",
+        "낮을수록 좋음": true,
+        "condition": "자체자료 영어부분집합;정답전사사전정렬;녹음DER와비교불가"
+      }
+    },
+    {
+      "id": "scribe-der-en-aligned-assembly",
+      "model": "AssemblyAI Universal 3.6 Pro Realtime",
+      "provider": "AssemblyAI",
+      "source_url": "https://eleven-public-cdn.elevenlabs.io/payloadcms/5c356xqr2rn-3a-%C2%B7-Scribe-v3-Live-diarization--English--DER--%C2%B7-goes-before-_Multilingual-accuracy-in-realtime_.webp",
+      "checked_on": "2026-11-14",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "English aligned realtime / Nov4",
+        "평가 점수": 6.1,
+        "단위": "% DER",
+        "측정 주체": "ElevenLabs 자체 측정",
+        "낮을수록 좋음": true,
+        "condition": "자체자료 영어부분집합;정답전사사전정렬;녹음DER와비교불가"
+      }
+    },
+    {
+      "id": "scribe-der-en-aligned-deepgram",
+      "model": "Deepgram Nova 3",
+      "provider": "Deepgram",
+      "source_url": "https://eleven-public-cdn.elevenlabs.io/payloadcms/5c356xqr2rn-3a-%C2%B7-Scribe-v3-Live-diarization--English--DER--%C2%B7-goes-before-_Multilingual-accuracy-in-realtime_.webp",
+      "checked_on": "2026-11-14",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "English aligned realtime / Nov4",
+        "평가 점수": 7.3,
+        "단위": "% DER",
+        "측정 주체": "ElevenLabs 자체 측정",
+        "낮을수록 좋음": true,
+        "condition": "자체자료 영어부분집합;정답전사사전정렬;녹음DER와비교불가"
+      }
+    },
+    {
+      "id": "scribe-live-earnings-22-v3",
+      "model": "Scribe v3 Live",
+      "provider": "ElevenLabs",
+      "source_url": "https://elevenlabs.io/docs/overview/models",
+      "checked_on": "2026-11-14",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Earnings-22 / model documentation",
+        "평가 점수": 3.91,
+        "단위": "% WER",
+        "측정 주체": "ElevenLabs 자체 측정",
+        "낮을수록 좋음": true,
+        "condition": "영어금융통화/유럽의회;한국어성능 대체불가;세부Harness미확인"
+      }
+    },
+    {
+      "id": "scribe-live-earnings-22-v2",
+      "model": "Scribe v2 Realtime",
+      "provider": "ElevenLabs",
+      "source_url": "https://elevenlabs.io/docs/overview/models",
+      "checked_on": "2026-11-14",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Earnings-22 / model documentation",
+        "평가 점수": 5.99,
+        "단위": "% WER",
+        "측정 주체": "ElevenLabs 자체 측정",
+        "낮을수록 좋음": true,
+        "condition": "영어금융통화/유럽의회;한국어성능 대체불가;세부Harness미확인"
+      }
+    },
+    {
+      "id": "scribe-live-voxpopuli-v3",
+      "model": "Scribe v3 Live",
+      "provider": "ElevenLabs",
+      "source_url": "https://elevenlabs.io/docs/overview/models",
+      "checked_on": "2026-11-14",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "VoxPopuli / model documentation",
+        "평가 점수": 1.71,
+        "단위": "% WER",
+        "측정 주체": "ElevenLabs 자체 측정",
+        "낮을수록 좋음": true,
+        "condition": "영어금융통화/유럽의회;한국어성능 대체불가;세부Harness미확인"
+      }
+    },
+    {
+      "id": "scribe-live-voxpopuli-v2",
+      "model": "Scribe v2 Realtime",
+      "provider": "ElevenLabs",
+      "source_url": "https://elevenlabs.io/docs/overview/models",
+      "checked_on": "2026-11-14",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "VoxPopuli / model documentation",
+        "평가 점수": 2.13,
+        "단위": "% WER",
+        "측정 주체": "ElevenLabs 자체 측정",
+        "낮을수록 좋음": true,
+        "condition": "영어금융통화/유럽의회;한국어성능 대체불가;세부Harness미확인"
+      }
+    },
+    {
+      "id": "fish-live-3-spec",
+      "model": "Fish Live 3",
+      "provider": "Fish Audio",
+      "source_url": "https://fish.audio/blog/introducing-live-3/",
+      "checked_on": "2026-11-14",
+      "fields": {
+        "kind": "공식 사양과 제공",
+        "suite": "Live3 / 2026-11-10",
+        "release": "2026-11-10",
+        "input_modalities": "audio",
+        "output_modalities": "audio",
+        "status": "API·플랫폼·기업배포를 공급자가 설명",
+        "condition": "영어only;동시듣기/말하기·별도추론;API고정ID·규모·문맥·공개가중치미확인"
+      }
+    },
+    {
+      "id": "fish-live-3-price",
+      "model": "Fish Live 3",
+      "provider": "Fish Audio",
+      "source_url": "https://fish.audio/live3/",
+      "checked_on": "2026-11-14",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "USD / 플랫폼 분, Live3 포함",
+        "표준 USD / 분": 0.07,
+        "한시 할인 USD / 분": 0.035,
+        "할인 종료": "2026-12-31;시각·시간대미확인",
+        "전화 추가 USD / 분": 0.01,
+        "번호 USD / 월": 1.2,
+        "condition": "full-duplex/cascaded;고급LLM토큰별도,단독토큰가격아님"
+      }
+    },
+    {
+      "id": "fish-live-3-decision-latency",
+      "model": "Fish Live 3",
+      "provider": "Fish Audio",
+      "source_url": "https://fish.audio/blog/introducing-live-3/",
+      "checked_on": "2026-11-14",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Minimum response-decision latency / launch claim",
+        "평가 점수": 186,
+        "단위": "ms, 응답 결정 최소값",
+        "측정 주체": "Fish Audio 공급자 주장",
+        "condition": "as little as;종단첫음성평균/p95아님;하드웨어·분포·독립/경쟁측정미확인"
+      }
+    }
+  ]
+}

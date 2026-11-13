@@ -123,7 +123,9 @@
     "gemini-decision-1-model-guide",
     "qwen4-max-preview-model-guide",
     "alphagenome-2-model-guide",
-    "praxis-1-world-action-model-guide"
+    "praxis-1-world-action-model-guide",
+    "elevenlabs-scribe-v3-model-guide",
+    "fish-live-3-model-guide"
   ],
   "catalogs": {
     "devops-implementation-guide": "devops_tools.2026-10-10.r4.json"
@@ -360,7 +362,8 @@
       "d9705018368f0a605e1b82268deb47fcb65014497e69c14510a063b9441c7198"
     ],
     "inkling-2-small-model-guide": [
-      "d0eee0a7c19cf2450e75d7b705560091d1be496fa278a6368220c1c192ae7027"
+      "d0eee0a7c19cf2450e75d7b705560091d1be496fa278a6368220c1c192ae7027",
+      "3cdcb05104443782f96fdfaffe569dd5d23fbd8873ab256377dd7fd740d5b08f"
     ],
     "twil-8b-model-guide": [
       "a438fe68a5baaa74cf05bf3931c69e6abbbe1f767985f88b96781403938455d9"
@@ -436,6 +439,12 @@
     ],
     "praxis-1-world-action-model-guide": [
       "6a99b5914c3c980f0594b1d1b5a223cc1b3b6debe257ab91e45a1e39107ee3cd"
+    ],
+    "elevenlabs-scribe-v3-model-guide": [
+      "b5ce13d68e1b88c11b69769e20138ce38138408f57358508b0a10c99b8e3990b"
+    ],
+    "fish-live-3-model-guide": [
+      "516a5efc27d447709484eb4cf7910665be13f4960fef9ef49ad31ee7953e3368"
     ]
   },
   "model_introduction_editions": {
@@ -611,7 +620,8 @@
       "d9705018368f0a605e1b82268deb47fcb65014497e69c14510a063b9441c7198"
     ],
     "inkling-2-small-model-guide": [
-      "d0eee0a7c19cf2450e75d7b705560091d1be496fa278a6368220c1c192ae7027"
+      "d0eee0a7c19cf2450e75d7b705560091d1be496fa278a6368220c1c192ae7027",
+      "3cdcb05104443782f96fdfaffe569dd5d23fbd8873ab256377dd7fd740d5b08f"
     ],
     "twil-8b-model-guide": [
       "a438fe68a5baaa74cf05bf3931c69e6abbbe1f767985f88b96781403938455d9"
@@ -687,6 +697,12 @@
     ],
     "praxis-1-world-action-model-guide": [
       "6a99b5914c3c980f0594b1d1b5a223cc1b3b6debe257ab91e45a1e39107ee3cd"
+    ],
+    "elevenlabs-scribe-v3-model-guide": [
+      "b5ce13d68e1b88c11b69769e20138ce38138408f57358508b0a10c99b8e3990b"
+    ],
+    "fish-live-3-model-guide": [
+      "516a5efc27d447709484eb4cf7910665be13f4960fef9ef49ad31ee7953e3368"
     ]
   },
   "model_introduction_purpose_editions": {
@@ -851,7 +867,8 @@
       "d9705018368f0a605e1b82268deb47fcb65014497e69c14510a063b9441c7198"
     ],
     "inkling-2-small-model-guide": [
-      "d0eee0a7c19cf2450e75d7b705560091d1be496fa278a6368220c1c192ae7027"
+      "d0eee0a7c19cf2450e75d7b705560091d1be496fa278a6368220c1c192ae7027",
+      "3cdcb05104443782f96fdfaffe569dd5d23fbd8873ab256377dd7fd740d5b08f"
     ],
     "twil-8b-model-guide": [
       "a438fe68a5baaa74cf05bf3931c69e6abbbe1f767985f88b96781403938455d9"
@@ -927,6 +944,12 @@
     ],
     "praxis-1-world-action-model-guide": [
       "6a99b5914c3c980f0594b1d1b5a223cc1b3b6debe257ab91e45a1e39107ee3cd"
+    ],
+    "elevenlabs-scribe-v3-model-guide": [
+      "b5ce13d68e1b88c11b69769e20138ce38138408f57358508b0a10c99b8e3990b"
+    ],
+    "fish-live-3-model-guide": [
+      "516a5efc27d447709484eb4cf7910665be13f4960fef9ef49ad31ee7953e3368"
     ]
   },
   "model_introduction_reader_editions": {
@@ -1118,6 +1141,15 @@
     ],
     "praxis-1-world-action-model-guide": [
       "6a99b5914c3c980f0594b1d1b5a223cc1b3b6debe257ab91e45a1e39107ee3cd"
+    ],
+    "inkling-2-small-model-guide": [
+      "3cdcb05104443782f96fdfaffe569dd5d23fbd8873ab256377dd7fd740d5b08f"
+    ],
+    "elevenlabs-scribe-v3-model-guide": [
+      "b5ce13d68e1b88c11b69769e20138ce38138408f57358508b0a10c99b8e3990b"
+    ],
+    "fish-live-3-model-guide": [
+      "516a5efc27d447709484eb4cf7910665be13f4960fef9ef49ad31ee7953e3368"
     ]
   }
 }

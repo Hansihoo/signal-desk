@@ -1,0 +1,1177 @@
+{
+  "schema_version": 1,
+  "reports": [
+    {
+      "id": "inkling-2-small-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "title": "Inkling 2 Small 소개 — 공개 가중치와 코딩·배포 비용",
+      "description": "11월 12일 공개된 가중치의 GPU 메모리 조건과 이전판·경쟁 모델 성능, Tinker 요금을 비교한다.",
+      "checked_on": "2026-11-14",
+      "scope": "2026-11-14 KST 공식 관련 절 확인. 독립 성능 재현, 유료 API 호출, 실제 청구·사람 독해 시험은 하지 않았다. AA는 11월 7일 확인판을 보존하며 새로 측정하지 않았다.",
+      "deck": "Thinking Machines Lab이 11월 12일 Inkling 2 Small의 가중치를 공개했다. 594B 중 17B가 활성화되는 모델이지만 자체 배포에는 NVFP4 기준 합계 500GB 이상의 GPU 메모리가 필요하다. 코딩·장시간 추론의 강점과 함께 이전판보다 늘어난 출력량·과제 비용과 음성 미지원이 남는다.",
+      "highlights": [
+        "공개 가중치와 배포 규모",
+        "코딩 성능과 과제 비용"
+      ],
+      "source_note": "11월 5일 최초 발표, 11월 12일 가중치 공개. 가중치·사양·요금은 11월 14일 KST 확인. AA 평가 원문은 11월 7일 확인판을 유지했다.",
+      "summary": [
+        {
+          "label": "공개 가중치와 배포 규모",
+          "text": "공식 Hugging Face 카드에 Apache 2.0 표기와 가중치가 공개됐다. 기본 NVFP4는 최소 합산 VRAM 500GB, 대안 MXFP8은 800GB를 요구한다. 활성 파라미터 17B를 전체 가중치 적재량으로 해석할 수 없다.",
+          "source_ids": [
+            "launch",
+            "inkweights"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "코딩 성능과 과제 비용",
+          "text": "11월 7일 확인한 AA v5.0.1에서 이전판보다 지수는 약 18점 높지만 평균 출력은 약 37K에서 150K 토큰, 과제 비용은 약 USD0.20에서 1.18로 늘었다. 이번 개정은 가중치 제공 변경이며 새로운 성능 측정이 아니다.",
+          "source_ids": [
+            "aa",
+            "launch"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "explanation": [
+        {
+          "id": "section-1",
+          "title": "11월 12일 가중치 공개와 자체 배포",
+          "lead": "Tinker에 더해 공개 체크포인트와 추론·학습 프레임워크의 배포 경로가 생겼다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "사양과 근거",
+              "text": "이미지와 텍스트를 받아 텍스트를 내는 희소 전문가 혼합 모델이며 활성 파라미터는 17B다. 음성을 지원했던 이전 계열과 달리 이번 모델은 음성 입력을 지원하지 않는다. 최대 1M 토큰은 모델 카드의 사양이고, 요금표의 64K와 256K는 명시된 Tinker 제공 항목이다. 모든 경로에서 1M을 이용할 수 있다고 확정할 근거는 없다.",
+              "source_ids": [
+                "card",
+                "launch",
+                "prices"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "GPU 메모리와 정밀도",
+              "text": "공식 카드의 최소 NVFP4 구성 예는 B300 2장 또는 H200 4장, MXFP8은 B300 4장 또는 H200 8장이다. 기본 사전·중간·사후 학습 정밀도는 NVFP4다. MXFP8의 평가 차이 1~2%p는 공급자가 실용적 의미가 작다고 설명한 값이며 모든 과제의 차이를 보장하지 않는다. 카드의 Apache 2.0 표기와 이용 정책 연결은 확인했으나 별도 LICENSE 파일 URL은 열리지 않았다.",
+              "source_ids": [
+                "inkweights"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "section-2",
+          "title": "이전 모델 대비 코딩과 추론",
+          "lead": "이전 모델 대비 코딩과 추론의 비교 조건과 관측 결과를 정리했다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "사양과 근거",
+              "text": "11월 7일 확인한 독립 평가 원문에서 공급자는 이전 Inkling-Small보다 에이전트 코딩·시각·지식 작업 점수가 높아졌다고 발표했다. Artificial Analysis의 v5.0.1에서는 이전 모델 대비 지수가 약 18점 올랐고, FrontierCode 2.0은 5%에서 25%로 높아졌다. 이 변화와 함께 평균 출력은 약 37K에서 약 150K 토큰으로 늘었고 지수 과제당 비용도 약 $0.20에서 $1.18로 증가했다. 공개 체크포인트를 동일 조건으로 재평가한 결과는 이번 확인 범위에 없다.",
+              "source_ids": [
+                "launch",
+                "aa"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "section-3",
+          "title": "최대 추론 설정의 커널 최적화",
+          "lead": "최대 추론 설정의 커널 최적화의 비교 조건과 관측 결과를 정리했다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "사양과 근거",
+              "text": "Thinking Machines는 PMPP-Hard 69과제에서 각 모델을 최대 추론 설정, PI Harness와 공통 문맥 압축 정책으로 평가했다. Inkling은 10시간 내 평균 54.25개를 풀어 DeepSeek V4.1 Flash의 55.25개보다 적었지만 4회 중 한 번 이상 해결한 수는 64개로 62개보다 많았다. 평균과 pass@4는 다른 측정이며, 커널 속도는 전체 학습 속도와 별개다.",
+              "source_ids": [
+                "launch"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "section-4",
+          "title": "추론, 학습, 체크포인트 비용",
+          "lead": "추론, 학습, 체크포인트 비용의 비교 조건과 관측 결과를 정리했다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "사양과 근거",
+              "text": "Tinker 표준 요금은 100만 토큰당 입력 USD0.30, 캐시 입력 0.03, 출력 1.00이다. 학습은 64K 1.50, 256K 3.00이며 체크포인트 저장은 별도다. 모델 카드의 최대 1M 문맥과 Tinker의 64K·256K 제공 항목은 다르다. 자체 가중치 운영비와 제3자 API 단가는 이 표로 확정할 수 없다.",
+              "source_ids": [
+                "prices",
+                "launch"
+              ],
+              "kind": "fact"
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "spec",
+          "title": "이전판과 경쟁 모델의 사양·제공·가격",
+          "columns": [
+            "모델",
+            "규모 / 제공",
+            "USD/100만 토큰"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Inkling 2 Small",
+                "594B / 17B 활성, 텍스트·이미지, Tinker·공개 가중치",
+                "입력 0.30, 캐시 0.03, 출력 1.00, 학습 1.50 또는 3.00"
+              ],
+              "source_ids": [
+                "card",
+                "prices",
+                "inkweights"
+              ]
+            },
+            {
+              "values": [
+                "Inkling-Small",
+                "276B / 12B 활성, 음성·이미지, Tinker",
+                "공식 표의 64K 입력 0.58, 출력 1.44, 학습 1.73"
+              ],
+              "source_ids": [
+                "prices"
+              ]
+            },
+            {
+              "values": [
+                "DeepSeek V4.1 Flash 1017",
+                "PMPP 및 AA 비교 모델, 별도 가중치와 제공 경로",
+                "이 표의 Tinker 단가와 공급자 가격은 별개"
+              ],
+              "source_ids": [
+                "card",
+                "launch"
+              ]
+            }
+          ],
+          "note": "이전 Inkling-Small 가격은 문서 확인 시점의 Tinker 표시값이다. 64K·256K 가격을 섞지 않는다."
+        },
+        {
+          "id": "bench",
+          "title": "Thinking Machines PMPP-Hard 평가",
+          "columns": [
+            "모델",
+            "평균 해결 / 69",
+            "pass@4 / 69",
+            "곡선 아래 면적 / 과제·시간"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Inkling 2 Small",
+                "54.25",
+                "64",
+                "494.27"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "DeepSeek V4.1 Flash",
+                "55.25",
+                "62",
+                "497.36"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            },
+            {
+              "values": [
+                "GPT-6 Astra",
+                "63",
+                "63",
+                "616.39"
+              ],
+              "source_ids": [
+                "launch"
+              ]
+            }
+          ],
+          "note": "공급자 자체 측정. 모델별 최대 추론, 4회, 10시간 구간, PI Harness와 공통 문맥 압축 정책."
+        },
+        {
+          "id": "weights",
+          "title": "공개 체크포인트의 GPU 메모리 조건",
+          "columns": [
+            "형식",
+            "최소 합산 VRAM",
+            "공급자 구성 예"
+          ],
+          "rows": [
+            {
+              "values": [
+                "NVFP4",
+                "500GB",
+                "B300 2장 또는 H200 4장, 기본 정밀도"
+              ],
+              "source_ids": [
+                "inkweights"
+              ]
+            },
+            {
+              "values": [
+                "MXFP8",
+                "800GB",
+                "B300 4장 또는 H200 8장"
+              ],
+              "source_ids": [
+                "inkweights"
+              ]
+            }
+          ],
+          "note": "공식 카드의 최소 구성 예다. 최대 문맥·동시 처리·소프트웨어에 따른 실제 메모리·처리량을 실측한 결과는 아니다."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "판단",
+            "text": "가중치 공개로 자체 배포·학습의 경로가 넓어졌다. 공개는 낮은 메모리 사용이나 무료 운영을 뜻하지 않는다. 코딩 성능과 더 긴 출력·과제 비용, 음성 미지원, Tinker와 자체 배포의 문맥 차이를 함께 비교할 모델이다.",
+            "source_ids": [
+              "card",
+              "launch",
+              "prices",
+              "aa",
+              "inkweights"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "2026-11-14 KST 공식 관련 절 확인. 독립 성능 재현, 유료 API 호출, 실제 청구·사람 독해 시험은 하지 않았다. AA는 11월 7일 확인판을 보존하며 새로 측정하지 않았다.",
+          "source_ids": [
+            "card",
+            "launch",
+            "prices",
+            "aa",
+            "inkweights"
+          ]
+        }
+      ],
+      "references": [
+        {
+          "id": "card",
+          "title": "Thinking Machines Inkling 2 Small 모델 카드",
+          "url": "https://thinkingmachines.ai/model-card/inkling-2-small/",
+          "description": "공식 사양, 평가와 제공 범위"
+        },
+        {
+          "id": "launch",
+          "title": "Thinking Machines 발표와 커널 실험",
+          "url": "https://thinkingmachines.ai/news/inkling-2-small/",
+          "description": "출시 시점과 가중치 계획, PMPP 실험"
+        },
+        {
+          "id": "prices",
+          "title": "Tinker 공식 요금과 ID",
+          "url": "https://tinker-docs.thinkingmachines.ai/tinker/models/models_and_pricing/",
+          "description": "표준 추론·학습 단가, 64K·256K 구분"
+        },
+        {
+          "id": "aa",
+          "title": "Artificial Analysis 직접 측정",
+          "url": "https://artificialanalysis.ai/es/articles/thinking-machines-releases-inkling-2-small-highest-scoring-open-weights-model-outside-of-chinia-upon-weights-release-it",
+          "description": "독립 평가, 속도 및 제공 조건"
+        },
+        {
+          "id": "inkweights",
+          "title": "공식 Hugging Face 가중치 카드",
+          "url": "https://huggingface.co/thinkingmachines/Inkling-2-Small",
+          "description": "공개 가중치·정밀도·GPU 메모리·라이선스 표기"
+        }
+      ]
+    },
+    {
+      "id": "elevenlabs-scribe-v3-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "title": "Scribe v3·v3 Live 소개 — 녹음 전사와 실시간 화자 구분",
+      "description": "이전 Scribe 및 경쟁 전사 모델의 오류율, 화자 구분 조건, 시간당 요금과 실제 제공 제한을 비교한다.",
+      "checked_on": "2026-11-14",
+      "scope": "2026-11-14 KST 공식 관련 절 확인. 공급자 평가이며 독립 성능 재현·유료 호출·실제 청구·사람 독해 시험은 하지 않았다. 한국어 개별 성능·세부 Harness·계약별 제공은 미확인이다.",
+      "deck": "ElevenLabs가 녹음 전사용 Scribe v3와 실시간 전사용 v3 Live를 발표했다. 자체 평가에서 이전판보다 전사·화자 오류가 줄었고 Live에 의미 기반 발화 종료와 대규모 용어 사전이 추가됐다. 음성 답변 생성 모델은 아니며 녹음형·실시간 점수와 지역·SDK 제공 조건을 나눠 봐야 한다.",
+      "highlights": [
+        "이전판 대비 전사와 발화 종료",
+        "오디오 시간 요금과 제공 조건"
+      ],
+      "source_note": "2026년 11월 14일 KST에 공식 자료의 관련 부분을 확인했습니다.",
+      "summary": [
+        {
+          "label": "이전판 대비 전사와 발화 종료",
+          "text": "공식 문서의 102언어 FLEURS WER는 v2 16.94%에서 v3 12.38%로 줄었다. Live는 의미 기반 발화 종료·다국어 전환·10,000개 용어 라이브러리를 제공한다. 공급자 자체 측정이며 한국어 개별 결과는 확인되지 않았다.",
+          "source_ids": [
+            "scribemodels",
+            "scribelaunch"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "오디오 시간 요금과 제공 조건",
+          "text": "공식 API 표는 녹음형 USD0.20/오디오 시간, Live 0.22/오디오 시간이며 용어·편집은 별도다. SDK와 데이터 거주 워크스페이스 문서는 발표와 차이가 있어 모든 계정에서 같은 기능이 제공된다고 보지 않았다.",
+          "source_ids": [
+            "scribeprice",
+            "scribemodels",
+            "scribeguide"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "references": [
+        {
+          "id": "scribelaunch",
+          "title": "Scribe v3·Live 공식 발표",
+          "url": "https://elevenlabs.io/blog/scribe-v3",
+          "description": "발표일·실시간/녹음 변화·평가 범위·기업 제공"
+        },
+        {
+          "id": "scribemodels",
+          "title": "공식 모델 문서",
+          "url": "https://elevenlabs.io/docs/overview/models",
+          "description": "ID·사양·이전판·정밀WER·Live기본설정·SDK제한"
+        },
+        {
+          "id": "scribeprice",
+          "title": "공식 API 요금",
+          "url": "https://elevenlabs.io/pricing/api?price.section=speech_to_text&price.sections=speech_to_text%2Cspeech_to_text",
+          "description": "오디오시간 기본·옵션·월플랜·세금·경쟁대화요금"
+        },
+        {
+          "id": "scribechanges",
+          "title": "API 변경 기록",
+          "url": "https://elevenlabs.io/docs/changelog/2026/11/9",
+          "description": "API제공일과 발표일 구분·Live평가범위"
+        },
+        {
+          "id": "scribeguide",
+          "title": "공식 전사 사용 안내",
+          "url": "https://elevenlabs.io/docs/eleven-creative/playground/speech-to-text",
+          "description": "출력 편집·내보내기·지역워크스페이스/Agents이전판"
+        },
+        {
+          "id": "chartbatch",
+          "title": "공식 WER 비교 이미지",
+          "url": "https://eleven-public-cdn.elevenlabs.io/payloadcms/cmga0l6wj6c-3-%C2%B7-Batch-WER-vs-other-models.webp",
+          "description": "직접 시각 판독:내부10/23~29,언어별평균·교집합 모집단"
+        },
+        {
+          "id": "chartder",
+          "title": "공식 녹음 DER 이미지",
+          "url": "https://eleven-public-cdn.elevenlabs.io/payloadcms/wlgjqovkm1-1-%C2%B7-Diarization--batch--DER-.webp",
+          "description": "직접 시각 판독:자체16언어·10/26및11/3"
+        },
+        {
+          "id": "chartlive",
+          "title": "공식 Live DER 이미지",
+          "url": "https://eleven-public-cdn.elevenlabs.io/payloadcms/5c356xqr2rn-3a-%C2%B7-Scribe-v3-Live-diarization--English--DER--%C2%B7-goes-before-_Multilingual-accuracy-in-realtime_.webp",
+          "description": "직접 시각 판독:11/4영어부분집합·정답전사정렬"
+        }
+      ],
+      "explanation": [
+        {
+          "id": "identity",
+          "title": "녹음 전사와 실시간 전사의 두 모델",
+          "lead": "API 변경 기록은 11월 9일, 공식 발표는 11월 10일이다. 11월 14일의 소개 추가와 출시를 구분한다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "사양과 이전 모델",
+              "text": "scribe_v3는 녹음 파일을, scribe_v3_live는 스트리밍 음성을 텍스트로 바꾼다. 이전 scribe_v2와 scribe_v2_realtime은 유지된다. 제품의 90개 이상 언어 지원과 102언어 벤치마크는 다른 범위다. 구조·파라미터·토큰 문맥은 공개 관련 절에서 확인되지 않았다.",
+              "source_ids": [
+                "scribemodels",
+                "scribechanges"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "batch",
+          "title": "녹음형의 화자와 전사 결과 처리",
+          "lead": "인식 정확도와 결과 편집·내보내기의 변화를 구분한다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "전사 결과의 구조",
+              "text": "최대 32명 화자 구분, 단어·문자 시각, 오디오 이벤트 태그와 최대 1,000개 keyterm을 설명한다. 숫자/단어 출력 설정과 보조 언어 힌트, 전사 편집·엔터티 및 SRT·DOCX·PDF 내보내기가 있다. verbatim 모드는 지원하지 않는다. 앱의 편집·내보내기를 기반 모델의 새 성능 점수로 취급하지 않는다.",
+              "source_ids": [
+                "scribemodels",
+                "scribeguide"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "live",
+          "title": "의미 기반 발화 종료와 대규모 용어",
+          "lead": "말을 잠시 멈춘 경우와 발화를 마친 경우를 의미로 구분하는 선택지가 추가됐다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "기본 동작과 설정",
+              "text": "기본 commit은 manual이며 turn_prediction을 선택해야 의미 기반 종료가 적용된다. multilingual mode는 문장 중 언어 전환에도 해당 문자 체계로 전사한다. 최대 10,000개 용어 라이브러리는 일반 50개 keyterm과 별도다. 부분 전사와 확정된 화자 전사는 이벤트가 다르며 PCM 8~48kHz·μ-law 입력을 안내한다.",
+              "source_ids": [
+                "scribemodels",
+                "scribelaunch"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "SDK 지원의 문서 차이",
+              "text": "발표에는 SDK 예시가 있지만 모델 문서는 발화 종료·다국어·용어 라이브러리를 SDK가 아직 지원하지 않아 WebSocket 직접 연결이 필요하다고 적는다. 특정 SDK 버전에서 모두 작동한다고 확인하지 않았다.",
+              "source_ids": [
+                "scribemodels",
+                "scribelaunch"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "wer",
+          "title": "전사 오류율과 서로 다른 언어 집합",
+          "lead": "WER는 단어 삽입·삭제·대체 오류이며 의미 WER와 별개다. 낮을수록 좋다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "녹음형의 이전판·경쟁 비교",
+              "text": "모델 문서의 FLEURS 102언어 WER는 v2 16.94%, v3 12.38%다. 발표 이미지의 반올림값은 v2 17.0%, v3 12.4%, Gemini 3.5 Transcribe 18.5%다. 경쟁 모델 지원 언어의 교집합별로 평가 행이 달라진다. 18언어 v3 4.0%와 102언어 12.4%를 같은 모집단 점수로 비교하면 안 된다. 이미지의 내부 시험일은 10월 23~29일이며 반복 분산·독립 재현은 미확인이다.",
+              "source_ids": [
+                "scribemodels",
+                "chartbatch"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "Live의 평가 범위 차이",
+              "text": "발표는 FLEURS 102언어에서 의미 WER 43%·WER 31% 상대 감소를, 문서·변경 기록은 73언어 의미 WER 44% 감소를 적는다. 범위가 달라 하나의 확정 개선율로 합치지 않았다. Earnings-22 WER 5.99→3.91%, VoxPopuli 2.13→1.71%는 한국어 개별 결과를 대신하지 않는다.",
+              "source_ids": [
+                "scribelaunch",
+                "scribemodels",
+                "scribechanges"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "der",
+          "title": "화자 오류율과 정답 정렬의 한계",
+          "lead": "DER는 누가 언제 말했는지의 오류이며 단어 전사 오류율과 다르다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "녹음형과 Live의 비교 조건",
+              "text": "녹음형은 16언어 자체 회의·통화·음성 메모의 전체 DER v3 5.6%, v2 6.4%, 3명 이상 대화 v3 8.0%, v2 9.6%다. 내부 시험일은 10월 26일·11월 3일이다. Live 3.1%는 11월 4일 영어 부분집합에서 전사를 정답에 먼저 정렬한 뒤 계산한 DER다. 녹음형 5.6%와 교차 순위를 만들 수 없고 실제 전체 서비스 오류율도 아니다. 공개 예정 데이터셋의 실제 공개와 독립 재현은 확인되지 않았다.",
+              "source_ids": [
+                "chartder",
+                "chartlive",
+                "scribelaunch"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "price",
+          "title": "시간당 기본 단가와 추가 옵션",
+          "lead": "토큰 요금으로 환산하지 않고 원문의 오디오 시간 단위를 보존했다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "옵션·플랜·세금",
+              "text": "녹음형 기본 USD0.20/시간에 keyterm 0.050·전사 편집 0.070이 별도다. Live 기본 0.22에 keyterm 0.080·용어 라이브러리 0.080·편집 0.120이 각각 별도 표기된다. 월 플랜·포함 사용량·세금은 별개이며 실제 미터링은 오디오 분이다. 표의 기본 단가가 실제 청구나 무제한 무료를 뜻하지 않는다.",
+              "source_ids": [
+                "scribeprice"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "access",
+          "title": "지역·관리·개인정보 제공 조건",
+          "lead": "제품 발표와 현재 제품 사용 문서를 대조했다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "워크스페이스·배포의 차이",
+              "text": "발표는 미국 기본과 Enterprise의 EU·인도·싱가포르 격리 환경, 무보존·전용 배포 및 BAA 조건의 HIPAA 적격을 설명한다. 반면 Playground 안내는 데이터 거주 워크스페이스에 Scribe v2를, Agents 기본 모델에 v2 Realtime을 적는다. 계약·리전·관리 설정에 따른 실제 제공은 미확인이다. 공개 가중치 제공도 확인되지 않았다.",
+              "source_ids": [
+                "scribelaunch",
+                "scribeguide",
+                "scribemodels"
+              ],
+              "kind": "fact"
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "comparison-1",
+          "title": "이전판과 현재 제공·가격",
+          "columns": [
+            "모델",
+            "역할과 사양",
+            "기본 USD/오디오 시간"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Scribe v3",
+                "녹음 STT·90+언어·최대32화자",
+                "0.20, 옵션 별도"
+              ],
+              "source_ids": [
+                "scribemodels",
+                "scribeprice"
+              ]
+            },
+            {
+              "values": [
+                "Scribe v2",
+                "이전 녹음 STT, 계속 제공",
+                "0.20, 현재 표"
+              ],
+              "source_ids": [
+                "scribemodels",
+                "scribeprice"
+              ]
+            },
+            {
+              "values": [
+                "Scribe v3 Live",
+                "실시간 STT·의미 종료·화자·다국어",
+                "0.22, 옵션 별도"
+              ],
+              "source_ids": [
+                "scribemodels",
+                "scribeprice"
+              ]
+            },
+            {
+              "values": [
+                "Scribe v2 Realtime",
+                "이전 실시간 STT, 계속 제공",
+                "0.22, 현재 표"
+              ],
+              "source_ids": [
+                "scribemodels",
+                "scribeprice"
+              ]
+            }
+          ],
+          "note": "11월 14일 표 기준. 구조·파라미터·토큰 문맥은 미확인. 음성 생성·추론 모델과 역할이 다르다."
+        },
+        {
+          "id": "comparison-2",
+          "title": "공급자 전사 오류율 비교",
+          "columns": [
+            "평가",
+            "v3 / Live",
+            "이전판 또는 경쟁 모델",
+            "조건"
+          ],
+          "rows": [
+            {
+              "values": [
+                "FLEURS102언어 WER",
+                "12.38%",
+                "v2 16.94%",
+                "문서 정밀값"
+              ],
+              "source_ids": [
+                "scribemodels"
+              ]
+            },
+            {
+              "values": [
+                "FLEURS102언어 WER",
+                "12.4%",
+                "Gemini3.5 Transcribe18.5%",
+                "10/23~29 내부, 반올림"
+              ],
+              "source_ids": [
+                "chartbatch"
+              ]
+            },
+            {
+              "values": [
+                "FLEURS60언어 교집합",
+                "6.5%",
+                "MAI-Transcribe2 7.5%",
+                "다른 모집단"
+              ],
+              "source_ids": [
+                "chartbatch"
+              ]
+            },
+            {
+              "values": [
+                "FLEURS58언어 교집합",
+                "5.5%",
+                "GPT-Transcribe9.7%",
+                "다른 모집단"
+              ],
+              "source_ids": [
+                "chartbatch"
+              ]
+            },
+            {
+              "values": [
+                "FLEURS18언어 교집합",
+                "4.0%",
+                "AssemblyAI Universal3.5Pro7.2%",
+                "다른 모집단"
+              ],
+              "source_ids": [
+                "chartbatch"
+              ]
+            },
+            {
+              "values": [
+                "Live Earnings-22 WER",
+                "3.91%",
+                "v2Realtime5.99%",
+                "영어 금융통화"
+              ],
+              "source_ids": [
+                "scribemodels"
+              ]
+            },
+            {
+              "values": [
+                "Live VoxPopuli WER",
+                "1.71%",
+                "v2Realtime2.13%",
+                "유럽의회 발화"
+              ],
+              "source_ids": [
+                "scribemodels"
+              ]
+            }
+          ],
+          "note": "낮을수록 좋다. 언어별 평균·교집합 모집단이 다른 행을 합쳐 순위를 만들지 않는다. 독립 재현·경쟁 모델 현재 정가는 이 이미지로 확인할 수 없다."
+        },
+        {
+          "id": "comparison-3",
+          "title": "화자 오류율 DER의 조건",
+          "columns": [
+            "평가",
+            "v3 / Live",
+            "이전판·경쟁 모델",
+            "조건"
+          ],
+          "rows": [
+            {
+              "values": [
+                "녹음 전체",
+                "5.6%",
+                "v2 6.4%; MAI2 8.5%; Gemini3.5 10.6%",
+                "자체16언어,10/26·11/3"
+              ],
+              "source_ids": [
+                "chartder"
+              ]
+            },
+            {
+              "values": [
+                "녹음3명 이상",
+                "8.0%",
+                "v2 9.6%; MAI2 15.0%; Gemini3.5 14.3%",
+                "자체16언어 부분집합"
+              ],
+              "source_ids": [
+                "chartder"
+              ]
+            },
+            {
+              "values": [
+                "Live 영어",
+                "3.1%",
+                "GrokVoiceTranscribe2.0 5.9%; AssemblyAI3.6ProRealtime6.1%; DeepgramNova3 7.3%",
+                "11/4 영어, 정답 전사 정렬"
+              ],
+              "source_ids": [
+                "chartlive"
+              ]
+            }
+          ],
+          "note": "DER는 낮을수록 좋다. Live는 정답 정렬이므로 녹음형과 교차 비교 불가. 데이터 공개·독립 재현 미확인."
+        },
+        {
+          "id": "comparison-4",
+          "title": "추가 옵션 요금",
+          "columns": [
+            "형태",
+            "기본",
+            "Keyterm",
+            "용어 라이브러리",
+            "편집"
+          ],
+          "rows": [
+            {
+              "values": [
+                "v3",
+                "0.20",
+                "+0.050",
+                "별도 표 없음",
+                "+0.070"
+              ],
+              "source_ids": [
+                "scribeprice"
+              ]
+            },
+            {
+              "values": [
+                "v3 Live",
+                "0.22",
+                "+0.080",
+                "+0.080",
+                "+0.120"
+              ],
+              "source_ids": [
+                "scribeprice"
+              ]
+            }
+          ],
+          "note": "모두 USD/오디오 시간, 세금·월 플랜·포함량 별도. 옵션 적용·조합은 서비스 설정에 따른다."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "평가와 적용 범위",
+            "text": "녹음 전사·화자 구분과 실시간 전사 각각에 개선 근거가 있다. 언어·정렬 조건이 다른 오류율로 모든 서비스 순위를 만들 수 없다. 음성 생성·추론은 별도이며 기존 Agents·지역 워크스페이스의 자동 업그레이드를 확정하지 않았다.",
+            "source_ids": [
+              "scribelaunch",
+              "scribemodels",
+              "scribeprice",
+              "scribechanges",
+              "scribeguide",
+              "chartbatch",
+              "chartder",
+              "chartlive"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "2026-11-14 KST 공식 관련 절 확인. 공급자 평가이며 독립 성능 재현·유료 호출·실제 청구·사람 독해 시험은 하지 않았다. 한국어 개별 성능·세부 Harness·계약별 제공은 미확인이다.",
+          "source_ids": [
+            "scribelaunch",
+            "scribemodels",
+            "scribeprice",
+            "scribechanges",
+            "scribeguide",
+            "chartbatch",
+            "chartder",
+            "chartlive"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fish-live-3-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "title": "Fish Live 3 소개 — 듣기와 말하기를 겹치는 음성 대화 모델",
+      "description": "양방향 음성 처리, 기존 Fish 합성·경쟁 대화 모델과의 차이, 영어 지원 및 플랫폼 분당 요금을 비교한다.",
+      "checked_on": "2026-11-14",
+      "scope": "2026-11-14 KST 공식 관련 절 확인. 영어 외 언어·구조·규모·토큰 문맥·공개 API ID·가중치 라이선스 및 동등 조건 경쟁 성능은 미확인이다. 독립 재현·유료 호출·실제 청구·사람 독해 시험은 하지 않았다.",
+      "deck": "Fish Audio가 11월 10일 듣기와 말하기를 동시에 처리하는 Live 3를 발표했다. 맞장구와 끼어들기를 구분하는 대화 타이밍이 핵심이며 추론·도구 처리는 별도 계층과 연결된다. 현재 영어만 지원하고 186ms는 최소 응답 결정 시간 주장이므로 실제 종단 지연이나 경쟁 우위로 해석할 수 없다.",
+      "highlights": [
+        "동시에 듣고 말하는 대화",
+        "영어와 플랫폼 요금"
+      ],
+      "source_note": "2026년 11월 14일 KST에 공식 자료의 관련 부분을 확인했습니다.",
+      "summary": [
+        {
+          "label": "동시에 듣고 말하는 대화",
+          "text": "말하는 동안 입력을 듣고 맞장구·중단 요청을 구분한다. 추론·도구 실행은 별도 계층이므로 자연스러운 발화가 업무 판단 정확도를 보장하지 않는다.",
+          "source_ids": [
+            "fishlaunch"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "영어와 플랫폼 요금",
+          "text": "현재 영어만 지원한다. Live 3 포함 플랫폼의 표준가는 USD0.07/분, 2026년 12월 31일까지 한시 할인은 0.035/분이다. 고급 추론 모델 토큰·전화 연결은 별도다.",
+          "source_ids": [
+            "fishlaunch",
+            "fishprice"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "references": [
+        {
+          "id": "fishlaunch",
+          "title": "Fish Live3 공식 발표",
+          "url": "https://fish.audio/blog/introducing-live-3/",
+          "description": "동시음성·별도추론·영어·최소응답결정·API/기업배포"
+        },
+        {
+          "id": "fishprice",
+          "title": "공식 플랫폼 요금",
+          "url": "https://fish.audio/live3/",
+          "description": "표준/할인·기한·추론토큰·전화·번호"
+        },
+        {
+          "id": "fishmodels",
+          "title": "Fish 모델 기능 문서",
+          "url": "https://docs.fish.audio/overview/capabilities",
+          "description": "기존합성·전사의 역할,직접전작평가아님"
+        },
+        {
+          "id": "scribeprice",
+          "title": "ElevenLabs 공식 API 요금",
+          "url": "https://elevenlabs.io/pricing/api?price.section=speech_to_text&price.sections=speech_to_text%2Cspeech_to_text",
+          "description": "경쟁대화연결분·토큰·초과동시접속요금"
+        },
+        {
+          "id": "scribemodels",
+          "title": "ElevenLabs 모델 문서",
+          "url": "https://elevenlabs.io/docs/overview/models",
+          "description": "실시간전사와음성생성역할구분"
+        }
+      ],
+      "explanation": [
+        {
+          "id": "identity",
+          "title": "발화가 겹치는 음성 대화",
+          "lead": "11월 10일 발표한 모델의 누락 소개를 11월 14일 보완했다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "입출력과 별도 추론",
+              "text": "Live 3는 음성을 듣는 동안 말할 수 있는 full-duplex 모델이다. 인간 대화에서 학습한 타이밍으로 시작·정지·대기·발화 겹침을 다루며 추론·지시·도구는 별도 계층에 둔다. 세부 구조·파라미터·토큰 문맥은 공개 관련 절에서 확인되지 않았다.",
+              "source_ids": [
+                "fishlaunch"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "change",
+          "title": "기존 Fish 합성·전사와 다른 역할",
+          "lead": "이전 제품군의 비교이며 확인되지 않은 직접 전작을 만들지 않았다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "합성·전사·대화의 차이",
+              "text": "Fish 문서는 s2.1-pro를 운영용 텍스트→음성 합성 모델로 설명한다. Live 3는 음성↔음성의 겹치는 대화, Transcribe 계열은 음성→텍스트다. S2.1 Pro가 Live 3의 직접 전작이라는 근거와 동일 평가의 세대별 성능 수치는 없다. 다른 역할을 전사 정확도 한 순위로 비교할 수 없다.",
+              "source_ids": [
+                "fishmodels",
+                "fishlaunch"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "timing",
+          "title": "맞장구·중단과 186ms의 의미",
+          "lead": "기능 동작의 설명과 수치의 측정 범위를 구분한다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "대화 타이밍의 장점",
+              "text": "공급자는 짧은 맞장구에 답변을 매번 끊지 않고 실제 끼어들기에는 중단하며 망설임·정정에는 기다린다고 설명한다. 발화 종료 뒤에만 응답하는 경로보다 겹치는 대화를 직접 다룬다는 장점이다. 다양한 소음·억양의 오인율이나 한국어 결과는 확인되지 않았다.",
+              "source_ids": [
+                "fishlaunch"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "최소 응답 결정 시간",
+              "text": "as little as 186 milliseconds는 응답할지 결정하는 최소 시간 주장이다. 첫 음성까지의 평균·p95, 네트워크·전화·추론 지연을 합한 수치가 아니다. 하드웨어·데이터·반복 횟수와 동등 경쟁 시험이 없어 다른 업체의 첫 오디오 지연·전사 지연과 숫자만 비교할 수 없다.",
+              "source_ids": [
+                "fishlaunch"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "compare",
+          "title": "경쟁 대화 API와 전사 API",
+          "lead": "기능·제공·가격을 비교하되 없는 정량 성능을 채우지 않았다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "역할과 과금 범위",
+              "text": "Eleven Realtime v1 Mini는 음성 대화 경로이며 연결 오디오 분 요금에 입출력 토큰 요금이 붙는다. Scribe v3 Live는 전사만 제공하므로 별도 추론·음성 생성이 없는 기본 단가를 Live 3 전체 대화 비용과 직접 비교할 수 없다. 이 모델들의 공통 조건 정확도·지연·자연스러움 평가는 확인되지 않았다.",
+              "source_ids": [
+                "scribeprice",
+                "scribemodels",
+                "fishlaunch",
+                "fishprice"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "price",
+          "title": "표준 요금과 한시 할인",
+          "lead": "상시 가격과 기한 있는 할인, 추가 청구를 분리한다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "플랫폼 분당 요금",
+              "text": "Live 3를 포함하는 플랫폼은 full-duplex 또는 cascaded를 표준 USD0.07/분으로 표시한다. 한시 50% 할인은 0.035/분, 종료일 표기는 2026-12-31이며 정확한 시각·시간대는 미확인이다. 고급 추론은 해당 모델 토큰 단가가 추가되고 전화 수·발신 USD0.01/분·번호 USD1.20/월이 별도다. 단독 모델 토큰 가격이나 공개 가중치 운영비가 아니다.",
+              "source_ids": [
+                "fishprice"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "access",
+          "title": "영어·API·기업 배포",
+          "lead": "플랫폼 전체의 다국어 소개를 Live 3 지원으로 확대하지 않았다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "현재 제공과 남은 조건",
+              "text": "발표는 현재 영어와 API·플랫폼·기업 자체 환경 배포를 설명한다. 일반 다국어 음성 목록은 Live 3 한국어 제공의 증거가 아니다. 기업 배포·무보존은 계약 조건이며 공개 다운로드·가중치 라이선스와 다르다. 검토 원문에 고정 API 모델 ID가 없어 추정해 등록하지 않았다.",
+              "source_ids": [
+                "fishlaunch",
+                "fishprice"
+              ],
+              "kind": "fact"
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "comparison-1",
+          "title": "음성 모델별 역할·제공·요금",
+          "columns": [
+            "모델",
+            "입출력과 역할",
+            "제공·기본 요금"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Fish Live 3",
+                "음성↔음성·동시 듣기/말하기·별도 추론",
+                "영어;플랫폼USD0.07/분,추가비용별도"
+              ],
+              "source_ids": [
+                "fishlaunch",
+                "fishprice"
+              ]
+            },
+            {
+              "values": [
+                "Fish S2.1 Pro",
+                "텍스트→음성 합성",
+                "운영용TTS;동일조건 단가 이번 미확인"
+              ],
+              "source_ids": [
+                "fishmodels"
+              ]
+            },
+            {
+              "values": [
+                "Eleven Realtime v1 Mini",
+                "음성 대화 API",
+                "연결USD0.080/분+입력0.20/출력6.00 USD/100만토큰"
+              ],
+              "source_ids": [
+                "scribeprice"
+              ]
+            },
+            {
+              "values": [
+                "Scribe v3 Live",
+                "음성→텍스트·실시간전사",
+                "USD0.22/오디오시간;추론·생성·옵션별도"
+              ],
+              "source_ids": [
+                "scribeprice",
+                "scribemodels"
+              ]
+            }
+          ],
+          "note": "11월 14일 확인. 역할·과금 범위가 다르다. Realtime 동시접속 초과 연결 오디오는 USD0.160/분이며 월플랜·포함량·세금도 별개다. TTS는 직접 전작으로 단정하지 않는다."
+        },
+        {
+          "id": "comparison-2",
+          "title": "성능 주장과 공개 공백",
+          "columns": [
+            "항목",
+            "공식 확인값",
+            "해석 범위"
+          ],
+          "rows": [
+            {
+              "values": [
+                "응답 결정",
+                "최소186ms",
+                "공급자주장;종단 첫음성 평균/p95아님"
+              ],
+              "source_ids": [
+                "fishlaunch"
+              ]
+            },
+            {
+              "values": [
+                "발화 겹침",
+                "맞장구·중단·정정 설명",
+                "정량오류율·독립재현미확인"
+              ],
+              "source_ids": [
+                "fishlaunch"
+              ]
+            },
+            {
+              "values": [
+                "경쟁·세대별 성능",
+                "동등조건 공개값 미확인",
+                "데모·다른작업 지연으로 순위생성불가"
+              ],
+              "source_ids": [
+                "fishlaunch",
+                "fishmodels"
+              ]
+            }
+          ],
+          "note": "구조·모델 규모·토큰 문맥은 미확인. 공개 비교 성능이 없어 정량 우열을 결론에서 제외했다."
+        },
+        {
+          "id": "comparison-3",
+          "title": "플랫폼 표준·할인·추가비용",
+          "columns": [
+            "항목",
+            "가격",
+            "조건"
+          ],
+          "rows": [
+            {
+              "values": [
+                "기본",
+                "USD0.07/분",
+                "Live3 full-duplex/cascaded"
+              ],
+              "source_ids": [
+                "fishprice"
+              ]
+            },
+            {
+              "values": [
+                "한시할인",
+                "USD0.035/분",
+                "50%;2026-12-31종료·시각/시간대미확인"
+              ],
+              "source_ids": [
+                "fishprice"
+              ]
+            },
+            {
+              "values": [
+                "고급추론",
+                "모델별 토큰단가 추가",
+                "선택모델 요금"
+              ],
+              "source_ids": [
+                "fishprice"
+              ]
+            },
+            {
+              "values": [
+                "전화",
+                "+USD0.01/분",
+                "수·발신,번호USD1.20/월별도"
+              ],
+              "source_ids": [
+                "fishprice"
+              ]
+            }
+          ],
+          "note": "개별 호출·청구는 시험하지 않았다. 무료 크레딧은 표준 단가와 별개다."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "평가와 적용 범위",
+            "text": "변화의 핵심은 겹치는 발화를 다루는 대화 타이밍이다. 영어 제공과 별도 추론·도구 계층, 플랫폼 추가 비용이 선택 조건이다. 공개 동등 조건 시험이나 지연 분포가 없어 데모·최소 지연만으로 정확도·자연스러움·총비용 우위를 확정할 수 없다.",
+            "source_ids": [
+              "fishlaunch",
+              "fishprice",
+              "fishmodels",
+              "scribeprice",
+              "scribemodels"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "2026-11-14 KST 공식 관련 절 확인. 영어 외 언어·구조·규모·토큰 문맥·공개 API ID·가중치 라이선스 및 동등 조건 경쟁 성능은 미확인이다. 독립 재현·유료 호출·실제 청구·사람 독해 시험은 하지 않았다.",
+          "source_ids": [
+            "fishlaunch",
+            "fishprice",
+            "fishmodels",
+            "scribeprice",
+            "scribemodels"
+          ]
+        }
+      ]
+    }
+  ]
+}

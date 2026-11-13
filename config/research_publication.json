@@ -90,7 +90,10 @@
     "gemini-decision-1-model-guide",
     "qwen4-max-preview-model-guide",
     "alphagenome-2-model-guide",
-    "praxis-1-world-action-model-guide"
+    "praxis-1-world-action-model-guide",
+    "inkling-2-small-model-guide",
+    "elevenlabs-scribe-v3-model-guide",
+    "fish-live-3-model-guide"
   ],
   "batches": [
     {
@@ -522,6 +525,11 @@
       "id": "ai-model-guides-2026-11-13",
       "input": "ai_model_guides.2026-11-13.json",
       "quality": "ai_model_guides.2026-11-13.quality.json"
+    },
+    {
+      "id": "ai-model-guides-2026-11-14",
+      "input": "ai_model_guides.2026-11-14.json",
+      "quality": "ai_model_guides.2026-11-14.quality.json"
     }
   ]
 }
