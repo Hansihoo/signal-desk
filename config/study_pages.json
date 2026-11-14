@@ -125,7 +125,9 @@
     "alphagenome-2-model-guide",
     "praxis-1-world-action-model-guide",
     "elevenlabs-scribe-v3-model-guide",
-    "fish-live-3-model-guide"
+    "fish-live-3-model-guide",
+    "perplexity-decider-v1-3-model-guide",
+    "ling-3-2-flash-model-guide"
   ],
   "catalogs": {
     "devops-implementation-guide": "devops_tools.2026-10-10.r4.json"
@@ -445,6 +447,16 @@
     ],
     "fish-live-3-model-guide": [
       "516a5efc27d447709484eb4cf7910665be13f4960fef9ef49ad31ee7953e3368"
+    ],
+    "perplexity-decider-v1-3-model-guide": [
+      "87a4f3c9b387248673634d5b5ec97b8f44e3ecc7e5a6895a1dccf19b8bf70ed0",
+      "51299cdd0da38136ea7754032e6394c3ce8031757f8c4df5129c8bc05c2c095b",
+      "4f996de3a8fccdc0422cb409111686d02c167f65d120f0025df70304306b051c"
+    ],
+    "ling-3-2-flash-model-guide": [
+      "06fb99883b44b62837f37c9f6cbcef14bad90eef2e2a239571ebe5d44921e107",
+      "8bbe09a59a28428b258bf996c72c4e0f540549ccc7b5647dab1b2892d847fe23",
+      "f6eb08e5def53e306ac62919d45964cd61a598e3da25eab94fc59a73a0a9d462"
     ]
   },
   "model_introduction_editions": {
@@ -703,6 +715,16 @@
     ],
     "fish-live-3-model-guide": [
       "516a5efc27d447709484eb4cf7910665be13f4960fef9ef49ad31ee7953e3368"
+    ],
+    "perplexity-decider-v1-3-model-guide": [
+      "87a4f3c9b387248673634d5b5ec97b8f44e3ecc7e5a6895a1dccf19b8bf70ed0",
+      "51299cdd0da38136ea7754032e6394c3ce8031757f8c4df5129c8bc05c2c095b",
+      "4f996de3a8fccdc0422cb409111686d02c167f65d120f0025df70304306b051c"
+    ],
+    "ling-3-2-flash-model-guide": [
+      "06fb99883b44b62837f37c9f6cbcef14bad90eef2e2a239571ebe5d44921e107",
+      "8bbe09a59a28428b258bf996c72c4e0f540549ccc7b5647dab1b2892d847fe23",
+      "f6eb08e5def53e306ac62919d45964cd61a598e3da25eab94fc59a73a0a9d462"
     ]
   },
   "model_introduction_purpose_editions": {
@@ -950,6 +972,16 @@
     ],
     "fish-live-3-model-guide": [
       "516a5efc27d447709484eb4cf7910665be13f4960fef9ef49ad31ee7953e3368"
+    ],
+    "perplexity-decider-v1-3-model-guide": [
+      "87a4f3c9b387248673634d5b5ec97b8f44e3ecc7e5a6895a1dccf19b8bf70ed0",
+      "51299cdd0da38136ea7754032e6394c3ce8031757f8c4df5129c8bc05c2c095b",
+      "4f996de3a8fccdc0422cb409111686d02c167f65d120f0025df70304306b051c"
+    ],
+    "ling-3-2-flash-model-guide": [
+      "06fb99883b44b62837f37c9f6cbcef14bad90eef2e2a239571ebe5d44921e107",
+      "8bbe09a59a28428b258bf996c72c4e0f540549ccc7b5647dab1b2892d847fe23",
+      "f6eb08e5def53e306ac62919d45964cd61a598e3da25eab94fc59a73a0a9d462"
     ]
   },
   "model_introduction_reader_editions": {
@@ -1150,6 +1182,16 @@
     ],
     "fish-live-3-model-guide": [
       "516a5efc27d447709484eb4cf7910665be13f4960fef9ef49ad31ee7953e3368"
+    ],
+    "perplexity-decider-v1-3-model-guide": [
+      "87a4f3c9b387248673634d5b5ec97b8f44e3ecc7e5a6895a1dccf19b8bf70ed0",
+      "51299cdd0da38136ea7754032e6394c3ce8031757f8c4df5129c8bc05c2c095b",
+      "4f996de3a8fccdc0422cb409111686d02c167f65d120f0025df70304306b051c"
+    ],
+    "ling-3-2-flash-model-guide": [
+      "06fb99883b44b62837f37c9f6cbcef14bad90eef2e2a239571ebe5d44921e107",
+      "8bbe09a59a28428b258bf996c72c4e0f540549ccc7b5647dab1b2892d847fe23",
+      "f6eb08e5def53e306ac62919d45964cd61a598e3da25eab94fc59a73a0a9d462"
     ]
   }
 }

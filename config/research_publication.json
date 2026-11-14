@@ -93,7 +93,9 @@
     "praxis-1-world-action-model-guide",
     "inkling-2-small-model-guide",
     "elevenlabs-scribe-v3-model-guide",
-    "fish-live-3-model-guide"
+    "fish-live-3-model-guide",
+    "perplexity-decider-v1-3-model-guide",
+    "ling-3-2-flash-model-guide"
   ],
   "batches": [
     {
@@ -530,6 +532,21 @@
       "id": "ai-model-guides-2026-11-14",
       "input": "ai_model_guides.2026-11-14.json",
       "quality": "ai_model_guides.2026-11-14.quality.json"
+    },
+    {
+      "id": "ai-model-guides-2026-11-15",
+      "input": "ai_model_guides.2026-11-15.json",
+      "quality": "ai_model_guides.2026-11-15.quality.json"
+    },
+    {
+      "id": "ai-model-guides-2026-11-15-r2",
+      "input": "ai_model_guides.2026-11-15.r2.json",
+      "quality": "ai_model_guides.2026-11-15.r2.quality.json"
+    },
+    {
+      "id": "ai-model-guides-2026-11-15-r3",
+      "input": "ai_model_guides.2026-11-15.r3.json",
+      "quality": "ai_model_guides.2026-11-15.r3.quality.json"
     }
   ]
 }
