@@ -127,7 +127,8 @@
     "elevenlabs-scribe-v3-model-guide",
     "fish-live-3-model-guide",
     "perplexity-decider-v1-3-model-guide",
-    "ling-3-2-flash-model-guide"
+    "ling-3-2-flash-model-guide",
+    "edge0-145b-120b-model-guide"
   ],
   "catalogs": {
     "devops-implementation-guide": "devops_tools.2026-10-10.r4.json"
@@ -319,7 +320,8 @@
       "921a719225b013db1b304730f4124801d4ba7123ee692acb9a2bf242f01803f1"
     ],
     "longcat-2-5-model-guide": [
-      "857114b8a3d8fb3f49d59d3aca4faa6ab915b65ba252673df4a13ea56f74675a"
+      "857114b8a3d8fb3f49d59d3aca4faa6ab915b65ba252673df4a13ea56f74675a",
+      "893c179c087092a9db60f2ee918bd48219b12e9eab8a050dc511d60345f9bfb6"
     ],
     "cogent-vr-1-1-model-guide": [
       "4aa05cd64b54a1300b0f77504e251f2faf3584522b62073171b9f4b52827cdcc"
@@ -457,6 +459,9 @@
       "06fb99883b44b62837f37c9f6cbcef14bad90eef2e2a239571ebe5d44921e107",
       "8bbe09a59a28428b258bf996c72c4e0f540549ccc7b5647dab1b2892d847fe23",
       "f6eb08e5def53e306ac62919d45964cd61a598e3da25eab94fc59a73a0a9d462"
+    ],
+    "edge0-145b-120b-model-guide": [
+      "11655dd3aae0fc1652130bd977502aae464d06fe8f989d13f99c2d8b3fac8614"
     ]
   },
   "model_introduction_editions": {
@@ -587,7 +592,8 @@
       "921a719225b013db1b304730f4124801d4ba7123ee692acb9a2bf242f01803f1"
     ],
     "longcat-2-5-model-guide": [
-      "857114b8a3d8fb3f49d59d3aca4faa6ab915b65ba252673df4a13ea56f74675a"
+      "857114b8a3d8fb3f49d59d3aca4faa6ab915b65ba252673df4a13ea56f74675a",
+      "893c179c087092a9db60f2ee918bd48219b12e9eab8a050dc511d60345f9bfb6"
     ],
     "cogent-vr-1-1-model-guide": [
       "4aa05cd64b54a1300b0f77504e251f2faf3584522b62073171b9f4b52827cdcc"
@@ -725,6 +731,9 @@
       "06fb99883b44b62837f37c9f6cbcef14bad90eef2e2a239571ebe5d44921e107",
       "8bbe09a59a28428b258bf996c72c4e0f540549ccc7b5647dab1b2892d847fe23",
       "f6eb08e5def53e306ac62919d45964cd61a598e3da25eab94fc59a73a0a9d462"
+    ],
+    "edge0-145b-120b-model-guide": [
+      "11655dd3aae0fc1652130bd977502aae464d06fe8f989d13f99c2d8b3fac8614"
     ]
   },
   "model_introduction_purpose_editions": {
@@ -844,7 +853,8 @@
       "921a719225b013db1b304730f4124801d4ba7123ee692acb9a2bf242f01803f1"
     ],
     "longcat-2-5-model-guide": [
-      "857114b8a3d8fb3f49d59d3aca4faa6ab915b65ba252673df4a13ea56f74675a"
+      "857114b8a3d8fb3f49d59d3aca4faa6ab915b65ba252673df4a13ea56f74675a",
+      "893c179c087092a9db60f2ee918bd48219b12e9eab8a050dc511d60345f9bfb6"
     ],
     "cogent-vr-1-1-model-guide": [
       "4aa05cd64b54a1300b0f77504e251f2faf3584522b62073171b9f4b52827cdcc"
@@ -982,6 +992,9 @@
       "06fb99883b44b62837f37c9f6cbcef14bad90eef2e2a239571ebe5d44921e107",
       "8bbe09a59a28428b258bf996c72c4e0f540549ccc7b5647dab1b2892d847fe23",
       "f6eb08e5def53e306ac62919d45964cd61a598e3da25eab94fc59a73a0a9d462"
+    ],
+    "edge0-145b-120b-model-guide": [
+      "11655dd3aae0fc1652130bd977502aae464d06fe8f989d13f99c2d8b3fac8614"
     ]
   },
   "model_introduction_reader_editions": {
@@ -1097,7 +1110,8 @@
       "921a719225b013db1b304730f4124801d4ba7123ee692acb9a2bf242f01803f1"
     ],
     "longcat-2-5-model-guide": [
-      "857114b8a3d8fb3f49d59d3aca4faa6ab915b65ba252673df4a13ea56f74675a"
+      "857114b8a3d8fb3f49d59d3aca4faa6ab915b65ba252673df4a13ea56f74675a",
+      "893c179c087092a9db60f2ee918bd48219b12e9eab8a050dc511d60345f9bfb6"
     ],
     "tencent-hy4-model-guide": [
       "7b194ffdf4e9e4c08984670aa1e06237ba3f5c6e617e8b243af2609a846f8d23"
@@ -1192,6 +1206,9 @@
       "06fb99883b44b62837f37c9f6cbcef14bad90eef2e2a239571ebe5d44921e107",
       "8bbe09a59a28428b258bf996c72c4e0f540549ccc7b5647dab1b2892d847fe23",
       "f6eb08e5def53e306ac62919d45964cd61a598e3da25eab94fc59a73a0a9d462"
+    ],
+    "edge0-145b-120b-model-guide": [
+      "11655dd3aae0fc1652130bd977502aae464d06fe8f989d13f99c2d8b3fac8614"
     ]
   }
 }

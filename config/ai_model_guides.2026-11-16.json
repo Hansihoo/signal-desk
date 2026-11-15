@@ -1,0 +1,1457 @@
+{
+  "schema_version": 1,
+  "reports": [
+    {
+      "id": "edge0-145b-120b-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "title": "Edge0-145B와 120B 소개 — 로컬 코딩 성능, 메모리와 상용 조건",
+      "description": "이전 Edge0와 기반 Qwen 모델을 비교해 두 대형 로컬 모델의 성능 차이, 실제 메모리 조건과 제품 제공 권리의 범위를 설명한다.",
+      "checked_on": "2026-11-16",
+      "scope": "2026년 11월 16일 KST에 공식 카드, 공개 저장소, 라이선스와 관련 설정을 읽었습니다. 공급자 측 평가이며 독립 추론, 실제 장비 성능, API 청구와 사람 독해 시험은 수행하지 않았습니다. 최초 모델 발표일은 카드에 명시되지 않았습니다. 공식 저장소 생성일은 11월 11일이며 12일 고지는 라이선스 적용 범위의 날짜입니다. 이 날짜를 오늘의 신규 출시일로 바꾸지 않습니다.",
+      "deck": "Edge0-145B와 120B는 Qwen3.8-Flash-Next의 전문가 계층을 좁은 잠재 공간으로 재구성한 로컬 모델이다. 145B는 공급자 코딩 평가에서 더 높고, 120B는 가중치가 작고 빠르다. 다만 모든 일반 평가에서 기반 모델을 이기지 않으며, 한 장의 GPU에서 실행된다는 설명에는 호스트 메모리와 SSD 접근이 포함된다. 현재 가중치에는 Edge0와 Qwen의 이용 조건이 함께 적용된다.",
+      "highlights": [
+        "코딩 점수와 속도의 교환",
+        "GPU 밖의 메모리까지 읽는 배포 조건",
+        "상용 모델 서비스는 별도 허가 범위"
+      ],
+      "source_note": "공식 자료 확인: 2026-11-16 KST. Edge0 평가 그림은 2026-11-12 기준선을 표기하며 측정 시각과 전체 평가 설정은 별도 공개되지 않았다.",
+      "summary": [
+        {
+          "label": "145B의 코딩 성능과 120B의 속도",
+          "text": "공급자 그림에서 Terminal-Bench 2.1은 86.5와 75.3, DeepSWE 1.1은 64.6과 51.3이다. 같은 RTX 5090 D의 Q3_K 에이전트 디코드는 각각 초당 121.2와 144.6토큰으로, 성능 점수와 생성 속도의 우세가 다르다.",
+          "source_ids": [
+            "edge145",
+            "edge120",
+            "edgequality"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "파일 크기와 작업 메모리",
+          "text": "Q3_K 가중치는 145B 40.81GiB, 120B 27.98GiB다. 16GiB VRAM과 20GiB RAM은 공급자의 제한 실험 조건이며 최소 요구 사양이 아니다.",
+          "source_ids": [
+            "edge145",
+            "edge120"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "공개 가중치와 제품 권리",
+          "text": "내부 사용과 출력의 상업 이용을 허용하는 범위가 있으나 모델 판매, 상용 추론 서비스와 독립 코딩 또는 오피스 AI 제품은 별도 Edge0 허가 대상이다. 상위 Qwen의 조건도 별도로 적용된다.",
+          "source_ids": [
+            "edgelicense",
+            "qwenlicense"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "references": [
+        {
+          "id": "edge145",
+          "title": "Edge0-145B 공식 모델 카드",
+          "url": "https://huggingface.co/Edge0/Edge0-145B-q3k/raw/main/README.md",
+          "description": "구조, 형식별 파일 크기, 장비별 속도와 메모리 조건"
+        },
+        {
+          "id": "edge120",
+          "title": "Edge0-120B 공식 모델 카드",
+          "url": "https://huggingface.co/Edge0/Edge0-120B-q3k/raw/main/README.md",
+          "description": "작은 전문가 풀과 모델별 성능, 형식별 파일 크기"
+        },
+        {
+          "id": "edgeprior",
+          "title": "이전 Edge0-35B-A3B Preview 카드",
+          "url": "https://huggingface.co/Edge0/Edge0-35B-A3B-preview/raw/main/README.md",
+          "description": "이전 계열의 기반 모델과 플랫폼 범위"
+        },
+        {
+          "id": "qwenbase",
+          "title": "Qwen3.8-Flash-Next 공식 카드",
+          "url": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next/raw/main/README.md",
+          "description": "상위 기반 모델의 구조와 파라미터 집계 범위"
+        },
+        {
+          "id": "edgequality",
+          "title": "Edge0 공식 여섯 모델 평가 그림",
+          "url": "https://huggingface.co/Edge0/Edge0-145B-q3k/raw/main/assets/quality/quality-overview.svg",
+          "description": "11월 12일 기준선 표기, 원문 점수와 미보고 값"
+        },
+        {
+          "id": "edgemodel",
+          "title": "Edge0-145B 공식 실행 설정",
+          "url": "https://huggingface.co/Edge0/Edge0-145B-q3k/raw/main/model.json",
+          "description": "정확한 문맥 값, 활성 파라미터와 실행 인자 사이의 차이"
+        },
+        {
+          "id": "edge120model",
+          "title": "Edge0-120B 공식 실행 설정",
+          "url": "https://huggingface.co/Edge0/Edge0-120B-q3k/raw/main/model.json",
+          "description": "262,144 지원 문맥, 실행 인자와 활성 6.1B 표기"
+        },
+        {
+          "id": "edgelicense",
+          "title": "Edge0 Community Model License 1.0",
+          "url": "https://huggingface.co/Edge0/Edge0-145B-q3k/raw/main/LICENSE",
+          "description": "내부 사용, 출력 이용과 별도 상용 모델 제공의 구분"
+        },
+        {
+          "id": "qwenlicense",
+          "title": "Qwen Community License 1.0",
+          "url": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next/raw/main/LICENSE",
+          "description": "상위 모델의 별도 허가와 표시 조건"
+        },
+        {
+          "id": "edgenotice",
+          "title": "Edge0 릴리스 고지",
+          "url": "https://huggingface.co/Edge0/Edge0-145B-q3k/raw/main/NOTICE",
+          "description": "11월 12일 고지와 상위 라이선스 참조의 한계"
+        },
+        {
+          "id": "edgescope",
+          "title": "Edge0 릴리스 권리 범위",
+          "url": "https://huggingface.co/Edge0/Edge0-145B-q3k/raw/main/release-scope.json",
+          "description": "Edge0 기여, 상위 권리와 이전 유효 허가를 구분"
+        },
+        {
+          "id": "edge145meta",
+          "title": "Edge0-145B 공개 저장소 메타데이터",
+          "url": "https://huggingface.co/api/models/Edge0/Edge0-145B-q3k",
+          "description": "저장소 생성일, 공개 상태와 파일 목록"
+        }
+      ],
+      "explanation": [
+        {
+          "id": "identity",
+          "title": "전문가 계층을 다시 학습한 로컬 모델",
+          "lead": "기존 체크포인트의 이름이나 저장 정밀도만 바꾼 모델과는 구분된다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "잠재 공간의 전문가",
+              "text": "공급자는 48개 계층의 라우팅 전문가를 잠재 MoE로 교체하고 다시 후학습했다고 설명한다. 입력 표현을 좁은 폭으로 내려 전문가를 계산한 뒤 원래 폭으로 되돌려, 추론 때 옮겨야 하는 전문가 데이터의 양을 줄이는 방식이다. 기반 모델은 Qwen3.8-Flash-Next이며 범용 기반 모델을 처음부터 새로 만들었다는 뜻은 아니다.",
+              "source_ids": [
+                "edge145",
+                "qwenbase"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "이전 Preview와의 차이",
+              "text": "이전 Edge0-35B-A3B Preview는 Qwen3.6-35B-A3B 기반으로 휴대전화급 메모리와 여러 모바일 플랫폼을 설명했다. 새 145B와 120B 카드의 빌드 안내는 NVIDIA CUDA 13을 쓰는 Windows와 Linux, Apple Silicon Metal을 중심으로 한다. 과거 Preview의 휴대전화 실행 설명을 새 대형 모델의 보장으로 옮길 수 없다.",
+              "source_ids": [
+                "edgeprior",
+                "edge145",
+                "edge120"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "parameters",
+          "title": "파라미터와 문맥의 집계 차이",
+          "lead": "총 파라미터, 활성 값과 실행 설정은 같은 수치가 아니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "총량을 같은 기준으로 비교하기",
+              "text": "Edge0 카드의 145B와 120B는 각각 51.2B의 PLE n-gram 테이블과 1.26B의 MTP 초안 모델을 설명한다. Qwen 카드는 125B 본체에 51B n-gram 임베딩과 4B MTP를 별도로 적는다. 두 표제 숫자만으로 총량의 증감을 계산하면 집계 범위를 섞게 된다. 공급자가 같은 기준으로 제시한 라우팅 전문가 풀은 Qwen 120.8B에서 Edge0 84.6B와 60.4B로 줄었다.",
+              "source_ids": [
+                "edge145",
+                "edge120",
+                "qwenbase"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "서로 다른 활성 값",
+              "text": "145B 카드의 활성 값은 토큰당 10.12B지만 model.json에는 6.6B가 들어 있다. 120B도 카드 8.64B와 설정 6.1B가 다르다. 이 차이의 정의와 산식은 확인되지 않았다. 비교표의 카드 관측과 설정 관측을 분리한다. Hugging Face 화면의 5B 자동 표기를 전체 모델의 실제 총량으로 채택하지 않는다.",
+              "source_ids": [
+                "edge145",
+                "edge120",
+                "edgemodel",
+                "edge120model",
+                "edge145meta"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "지원 문맥과 실행 상한",
+              "text": "카드의 256K는 model.json의 context 262,144와 대응하지만 같은 파일의 실행 인자는 최대 문맥 131,072를 지정한다. 따라서 지원 가능한 문맥 표기와 해당 실행 설정의 실제 상한을 분리해야 한다. 256K 전체를 각 소비자 장비에서 재현한 것은 아니다.",
+              "source_ids": [
+                "edge145",
+                "edgemodel"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "performance",
+          "title": "코딩 평가의 우세와 일반 평가의 반대 결과",
+          "lead": "공급자의 동일 그림을 읽되 전체 실행 조건이 일치한다고 가정하지 않는다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "145B가 앞서는 영역",
+              "text": "DeepSWE 1.1에서 145B는 기반 Qwen의 58.7보다 높은 64.6, Terminal-Bench 2.1에서는 83.3보다 높은 86.5다. 반대로 120B는 두 평가에서 기반 모델보다 낮다. 더 작은 파일과 빠른 추론이 코딩 과제 성공률까지 높인다는 뜻은 아니다.",
+              "source_ids": [
+                "edgequality"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "일반 지식과 긴 문맥의 한계",
+              "text": "HLE와 GPQA-Diamond, IFBench에서 두 Edge0 모델은 같은 그림의 Qwen3.8-Flash-Next보다 낮다. AA-LCR에서는 120B가 145B보다 높지만 Qwen3.8-27B의 82.0보다 낮다. 평가별 우열이 달라 모든 작업의 순위를 하나로 합칠 근거가 없다.",
+              "source_ids": [
+                "edgequality"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "평가판과 측정 주체",
+              "text": "원문 그림은 여섯 평가를 0~100 점수 척도로 표시한다. 이를 모두 백분율 정확도나 AA Intelligence Index로 바꾸지 않았다. 그림의 Claude는 Opus 4.6 Max이며 최신 Opus 5.5의 결과가 아니다. 전체 Harness, 추론 예산, 표본과 양자화별 평가 일치 여부는 미확인이므로 독립적으로 통제한 재평가로 해석할 수 없다.",
+              "source_ids": [
+                "edgequality"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "memory",
+          "title": "속도는 GPU와 호스트 메모리의 배치에 달린다",
+          "lead": "가중치 파일, VRAM, RAM과 캐시는 서로 다른 자원이다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "제한 예산의 의미",
+              "text": "145B Q3_K의 제한 실험은 24GB RTX 5090 D에서 VRAM 예약으로 약 16GiB만 쓰고, 시스템 RAM은 cgroup으로 20GiB, swap 없이 제한한 조건이다. 같은 조건의 채팅 디코드는 145B 36.8, 120B 62.4토큰/초다. 상단의 121.2와 144.6은 다른 메모리 배치의 에이전트 디코드이므로 서로 바꿔 읽으면 안 된다.",
+              "source_ids": [
+                "edge145",
+                "edge120"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "상주 배치의 추가 메모리",
+              "text": "상주 모드에서 145B Q3_K는 23.14GiB VRAM과 31.28GiB RAM, 120B는 22.93GiB와 18.40GiB를 보고한다. 두 메모리에는 겹치지 않는 전문가 집합을 둔다. 가중치 파일 크기만으로 전체 프로세스 메모리나 디스크 접근 비용을 계산할 수 없고, 한 GPU 실행이 모든 가중치의 GPU 상주를 뜻하지도 않는다.",
+              "source_ids": [
+                "edge145",
+                "edge120"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "licensing",
+          "title": "표준 API 요금 대신 확인할 로컬 비용과 이용 조건",
+          "lead": "토큰 과금이 없는 배포와 비용이 없는 제품은 다르다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "공개 표준 요금의 범위",
+              "text": "검토한 공식 카드에는 관리형 API의 표준 입력 또는 출력 토큰 요금이 없다. 로컬 가중치의 이용 범위와 장비, 저장 공간, 전력, 운영 비용을 따로 읽어야 한다. 상용 모델 제공의 별도 허가 가격도 공개 정가로 확인되지 않아 0달러로 기입하지 않았다.",
+              "source_ids": [
+                "edge145",
+                "edge120",
+                "edgelicense"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "Edge0와 Qwen의 조건",
+              "text": "Edge0는 개인과 연구, 내부 사용, 비상업적 공유 및 출력의 상업 이용 등을 허용하지만 모델 판매나 상용 번들, 모델 서비스와 독립 코딩 또는 오피스 AI 제품은 별도 서면 허가 대상으로 정한다. Qwen 역시 모델 서비스 또는 AI 업무 보조 사업자의 상업 이용에 별도 허가 조건을 둔다. 내부 사용 예외와 기능형 보조 도구의 범위는 각각의 원문 정의를 따라야 한다.",
+              "source_ids": [
+                "edgelicense",
+                "qwenlicense"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "코드와 모델, 과거 허가의 구분",
+              "text": "Apache 2.0인 프레임워크와 MIT인 Strata 코드를 모델 가중치 전체의 이용 허가로 확대할 수 없다. 릴리스 범위 문서는 Edge0가 권한을 가진 기여만 지정하며 상위 권리와 이전의 유효한 허가를 철회하지 않는다고 명시한다. 라이선스 참조 커밋은 학습에 실제 사용한 정확한 상위 가중치 판의 독립 증명이 아니다.",
+              "source_ids": [
+                "edgelicense",
+                "edgenotice",
+                "edgescope"
+              ],
+              "kind": "fact"
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "specs",
+          "title": "이전 모델과 기반 모델의 사양, 제공과 요금",
+          "columns": [
+            "모델",
+            "공식 파라미터 표기",
+            "문맥",
+            "가중치와 제공",
+            "표준 API 요금 / 이용 조건"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Edge0-145B",
+                "총 145B, 카드 활성 10.12B; 설정 6.6B로 충돌",
+                "262,144 지원 표기 / 실행 인자 131,072",
+                "Q3_K 40.81GiB / NVFP4 47.79GiB, 공개 로컬 팩",
+                "표준 API 요금 미공개. 별도 상용 모델 제공은 허가 대상"
+              ],
+              "source_ids": [
+                "edge145",
+                "edgemodel",
+                "edgelicense"
+              ]
+            },
+            {
+              "values": [
+                "Edge0-120B",
+                "총 120B, 카드 활성 8.64B; 설정 6.1B로 충돌",
+                "262,144 지원 표기 / 실행 인자 131,072",
+                "Q3_K 27.98GiB / NVFP4 32.96GiB, 공개 로컬 팩",
+                "표준 API 요금 미공개. Edge0와 Qwen 조건 적용"
+              ],
+              "source_ids": [
+                "edge120",
+                "edge120model",
+                "edgelicense",
+                "qwenlicense"
+              ]
+            },
+            {
+              "values": [
+                "Edge0-35B-A3B Preview",
+                "35B 계열, Qwen3.6-35B-A3B 기반",
+                "이번 대조에서 수치 미확인",
+                "이전 Preview. 모바일 플랫폼과 3GiB 활성 메모리는 이전판 설명",
+                "현재 대형 모델과 동일한 성능 또는 권리 범위로 간주하지 않음"
+              ],
+              "source_ids": [
+                "edgeprior",
+                "edgelicense"
+              ]
+            },
+            {
+              "values": [
+                "Qwen3.8-Flash-Next",
+                "125B 본체 +51B n-gram +4B MTP; 본체 활성 6B",
+                "기본 262,144, 확장 조건 별도",
+                "공개 가중치. Edge0 재구성의 상위 모델",
+                "로컬 가중치와 별도 관리형 Qwen3.8-Flash API를 구분. Qwen 이용 조건 적용"
+              ],
+              "source_ids": [
+                "qwenbase",
+                "qwenlicense"
+              ]
+            }
+          ],
+          "note": "2026-11-16 공식 카드와 설정 확인. 총량의 포함 범위가 달라 표제 숫자만으로 압축률을 계산하지 않는다. 다운로드 파일 크기는 작업 메모리 최소값이 아니다."
+        },
+        {
+          "id": "benchmarks",
+          "title": "공급자 그림의 평가별 비교",
+          "columns": [
+            "평가",
+            "Edge0-145B",
+            "Edge0-120B",
+            "Qwen3.8-Flash-Next",
+            "Qwen3.8-27B",
+            "DeepSeek-V4-Flash-0731",
+            "Claude-Opus-4.6 (Max)"
+          ],
+          "rows": [
+            {
+              "values": [
+                "DeepSWE 1.1",
+                "64.6",
+                "51.3",
+                "58.7",
+                "42.2",
+                "54.4",
+                "미보고"
+              ],
+              "source_ids": [
+                "edgequality"
+              ]
+            },
+            {
+              "values": [
+                "Terminal-Bench 2.1",
+                "86.5",
+                "75.3",
+                "83.3",
+                "73.0",
+                "82.7",
+                "78.2"
+              ],
+              "source_ids": [
+                "edgequality"
+              ]
+            },
+            {
+              "values": [
+                "HLE",
+                "35.4",
+                "31.0",
+                "35.9",
+                "30.8",
+                "33.8",
+                "40.0"
+              ],
+              "source_ids": [
+                "edgequality"
+              ]
+            },
+            {
+              "values": [
+                "GPQA-Diamond",
+                "90.4",
+                "87.4",
+                "91.7",
+                "89.2",
+                "90.8",
+                "91.3"
+              ],
+              "source_ids": [
+                "edgequality"
+              ]
+            },
+            {
+              "values": [
+                "IFBench",
+                "80.6",
+                "79.3",
+                "81.3",
+                "79.5",
+                "79.2",
+                "62.5"
+              ],
+              "source_ids": [
+                "edgequality"
+              ]
+            },
+            {
+              "values": [
+                "AA-LCR",
+                "79.3",
+                "81.0",
+                "79.1",
+                "82.0",
+                "79.7",
+                "78.0"
+              ],
+              "source_ids": [
+                "edgequality"
+              ]
+            }
+          ],
+          "note": "Edge0 그림의 2026-11-12 기준선, 원문 단위 score(0~100), 높을수록 좋음. 공급자 인용 비교이며 모든 모델의 Harness, 추론 설정과 측정 시점 일치는 미확인. Opus 4.6 Max를 최신 Opus로 바꾸지 않으며 미보고를 0으로 채우지 않는다."
+        },
+        {
+          "id": "speed",
+          "title": "RTX 5090 D Q3_K에서의 속도와 메모리 조건",
+          "columns": [
+            "항목",
+            "Edge0-145B",
+            "Edge0-120B"
+          ],
+          "rows": [
+            {
+              "values": [
+                "16K 입력 prefill / 토큰·초⁻¹",
+                "3,554.9",
+                "4,576.5"
+              ],
+              "source_ids": [
+                "edge145",
+                "edge120"
+              ]
+            },
+            {
+              "values": [
+                "상단 채팅 decode / 토큰·초⁻¹",
+                "99.7",
+                "130.2"
+              ],
+              "source_ids": [
+                "edge145",
+                "edge120"
+              ]
+            },
+            {
+              "values": [
+                "상단 에이전트 decode / 토큰·초⁻¹",
+                "121.2",
+                "144.6"
+              ],
+              "source_ids": [
+                "edge145",
+                "edge120"
+              ]
+            },
+            {
+              "values": [
+                "16GiB VRAM +20GiB RAM 제한: 채팅 decode",
+                "36.8",
+                "62.4"
+              ],
+              "source_ids": [
+                "edge145",
+                "edge120"
+              ]
+            },
+            {
+              "values": [
+                "16GiB VRAM +20GiB RAM 제한: 에이전트 decode",
+                "44.9",
+                "73.3"
+              ],
+              "source_ids": [
+                "edge145",
+                "edge120"
+              ]
+            },
+            {
+              "values": [
+                "상주 모드 VRAM / RAM, GiB",
+                "23.14 /31.28",
+                "22.93 /18.40"
+              ],
+              "source_ids": [
+                "edge145",
+                "edge120"
+              ]
+            }
+          ],
+          "note": "공급자 24GB RTX 5090 D 측정. 16GiB 제한 행도 같은 GPU이며 swap 없이 RAM을 제한했다. 시험 예산은 최소 사양이 아니다. 장비와 빌드, prefill과 decode의 의미를 분리한다."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "두 모델의 선택 기준",
+            "text": "145B는 공급자 코딩 평가의 높은 점수, 120B는 더 작은 전문가 풀과 빠른 로컬 디코드가 상대 강점이다. 일반 평가의 열세와 메모리 배치 차이, 활성 파라미터 표기의 충돌 및 별도 상용 허가 범위가 남는다. 공개 가중치만으로 장비 적합성이나 배포 권리가 확정되는 것은 아니다.",
+            "source_ids": [
+              "edge145",
+              "edge120",
+              "edgequality",
+              "edgelicense",
+              "qwenlicense"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "2026년 11월 16일 KST에 공식 카드, 공개 저장소, 라이선스와 관련 설정을 읽었습니다. 공급자 측 평가이며 독립 추론, 실제 장비 성능, API 청구와 사람 독해 시험은 수행하지 않았습니다. 평가 그림의 기준선은 2026-11-12이며 전체 Harness와 추론 설정은 미확인이다. 최신 경쟁 모델의 직접 측정이나 한국어 업무 검증이 아니다.",
+          "source_ids": [
+            "edgequality",
+            "edge145",
+            "edge120"
+          ]
+        }
+      ]
+    },
+    {
+      "caveats": [
+        {
+          "source_ids": [
+            "launch"
+          ],
+          "text": "공식 표는 제공자 측정과 외부 수치 인용이 섞여 있다. 공통 단위가 표 머리에 없어 원문 수치를 그대로 표시하며 평가판과 개별 방법을 함께 읽는다. 이 비교는 독립 재현이나 모든 모델의 통제된 순위가 아니다."
+        },
+        {
+          "source_ids": [
+            "launch",
+            "pricing",
+            "params",
+            "quick",
+            "longweights",
+            "longconfig"
+          ],
+          "text": "가중치 공개와 로컬 배포 조건, 한시 할인과 표준 단가 미공개, 최대 출력 문서 충돌을 구분한다. 실제 추론, 한국어 회사 문서, 로그인과 실청구 또는 사람 독자 검증은 수행하지 않았다."
+        },
+        {
+          "text": "2026년 11월 16일 KST에 공식 카드, 공개 저장소, 라이선스와 관련 설정을 읽었습니다. 공급자 측 평가이며 독립 추론, 실제 장비 성능, API 청구와 사람 독해 시험은 수행하지 않았습니다. 이번 개정은 가중치와 배포 경로의 변화다. 기존 출시와 평가의 확인일은 11월 3일로 보존하며 재측정으로 바꾸지 않았다. 공식 HF 저장소 생성일은 11월 4일이고 최신 수정은 10일이다. 최초 가중치 공개 완료 시각은 확정하지 않는다.",
+          "source_ids": [
+            "longweights",
+            "longw4",
+            "longmeta",
+            "longw4meta",
+            "longconfig",
+            "longnpu",
+            "longlicense",
+            "longprice",
+            "longparams"
+          ]
+        }
+      ],
+      "checked_on": "2026-11-16",
+      "datasets": [],
+      "deck": "LongCat-2.5는 기존 API와 웹 제공에 더해 BF16 및 W4A4 가중치를 공개했다. 1.6조 총 파라미터와 약 480억 활성 파라미터라는 공급자 설명은 유지되지만, 로컬 설정의 위치 임베딩 상한은 API 문맥 표기와 다르다. 공개 가중치의 MIT 조건, NPU 배포 예제의 실제 규모와 한시 할인 API 요금을 분리해야 자체 운영과 호스팅을 비교할 수 있다.",
+      "description": "기존 API 모델에 추가된 MIT 공개 가중치와 로컬 NPU 배포 조건을 이전 모델, 경쟁 모델 및 API 요금과 구분해 설명한다.",
+      "explanation": [
+        {
+          "blocks": [
+            {
+              "kind": "fact",
+              "source_ids": [
+                "launch",
+                "previous",
+                "change"
+              ],
+              "text": "LongCat-2.0과 2.5는 모두 공식 설명상 총 1.6조, 토큰당 약 480억 파라미터를 사용한다. 따라서 매개변수 수 증가가 이번 변화라고 설명할 수 없다. 9월 25일의 2.5-Preview는 이미 이미지 이해를 설명했으며,11월 2일 정식 이름의 제공 이력은 시각 코딩과 장기 엔지니어링 작업을 강조한다. Preview와 정식판 사이의 통제된 성능 차이는 공개 표에서 확정하지 않는다.",
+              "title": "2.0, Preview와 정식 제공의 구분",
+              "type": "paragraph"
+            },
+            {
+              "kind": "fact",
+              "source_ids": [
+                "launch",
+                "company"
+              ],
+              "text": "이미지는 여러 수준의 이산 토큰으로 표현돼 본체가 텍스트와 함께 처리한다. 학습에는 긴 도구 사용 기록과 재현 가능한 실패 과제를 보강했다. 회사가 보여 준 3D 장면과 업무 결과물은 시연이며, 개별 파일의 정확도나 한국어 문서 성능을 입증한 독립 시험은 아니다.",
+              "title": "시각 표현과 긴 과업 학습",
+              "type": "paragraph"
+            }
+          ],
+          "id": "identity",
+          "lead": "전체 규모의 확대보다 입력과 긴 과업 학습의 변화가 핵심이다.",
+          "title": "모델 개요와 이전 모델 대비 변화"
+        },
+        {
+          "blocks": [
+            {
+              "kind": "fact",
+              "source_ids": [
+                "launch"
+              ],
+              "text": "공식 표의 Terminal v2.1은 70.8에서 88.4, v4.0은 3.0에서 38.5로 올랐다. 이 수치는 Claude Code 2.1.280과 최대 512K 길이의 평가 조건이다. v2.1만 3회 독립 실행 평균으로 설명되므로 그 조건을 v4.0에 옮기지 않는다.",
+              "title": "이전 모델 대비 향상",
+              "type": "paragraph"
+            },
+            {
+              "kind": "fact",
+              "source_ids": [
+                "launch"
+              ],
+              "text": "PaperBench82.1은 표의 Opus 5 재측정 79.1보다 높지만, Program Bench Almost Resolved25.5는 Opus 5 인용 37.0보다 낮다. 표의 별표가 있는 경쟁 점수는 외부 기술 보고서나 공식 순위에서 가져왔으며 나머지는 Meituan의 재측정이다. 원문의 비교 모델은 Opus 5와 DeepSeek-V4.1-Flash이며 현행 Opus 5.5의 성능 순위로 읽을 수 없다.",
+              "title": "경쟁 모델 대비 장점과 열세",
+              "type": "paragraph"
+            }
+          ],
+          "id": "comparison",
+          "lead": "이전 모델과 경쟁 모델은 원문이 제시한 같은 행에서 비교하되 측정 주체의 차이를 유지한다.",
+          "title": "성능 비교와 평가 조건"
+        },
+        {
+          "blocks": [
+            {
+              "kind": "fact",
+              "source_ids": [
+                "launch"
+              ],
+              "text": "BrowseComp는 Verify와 Discard-All을 갖춘 자체 실행 기반에서 두 검색 도구와 최대 1024탐색 회차를 사용한다. AutomationBench는 공개 v1.0.6의 600과제를 공식 평가 코드로 측정했다. 기사에서 인용된 다른 AutomationBench 판이나 수치를 이 행의 값으로 대체하지 않는다.",
+              "title": "검색과 업무 평가",
+              "type": "paragraph"
+            },
+            {
+              "kind": "fact",
+              "source_ids": [
+                "launch"
+              ],
+              "text": "SpreadsheetBench 2는 Claude Code 2.1.116을 쓰고 시각화는 gemini-3.6-flash가 심사한다. 차트는 Linux LibreOffice로 렌더링하며 별도 OOXML/Pillow 경로가 대체한다. Vision2Web는 Claude Code 2.1.7과 256K 길이다. 이는 해당 실행 기반의 결과이며 모든 Office 파일의 편집 정확도나 배포 제품의 지원 범위를 보장하지 않는다.",
+              "title": "스프레드시트와 시각 평가",
+              "type": "paragraph"
+            }
+          ],
+          "id": "conditions",
+          "lead": "같은 모델의 수치도 도구, 평가판과 심사 방식이 달라지면 다른 관측이다.",
+          "title": "평가판과 실행 기반의 차이"
+        },
+        {
+          "blocks": [
+            {
+              "kind": "judgment",
+              "source_ids": [
+                "launch",
+                "previous"
+              ],
+              "text": "이전 2.0 대비 코딩, 검색과 스프레드시트 평가의 상승은 해당 작업을 비교할 이유가 된다. 특히 새 시각 입력을 코드와 연결하는 방향은 텍스트 모델의 입력 한계를 넓힌다. 다만 시각 행에서 이전 모델의 빈칸은 0점이 아니므로 향상 폭을 계산하지 않는다.",
+              "title": "세대 간 개선의 의미",
+              "type": "paragraph"
+            },
+            {
+              "kind": "judgment",
+              "source_ids": [
+                "quick",
+                "change"
+              ],
+              "text": "현재 API는 두 요청 형식을 지원하므로 기존 도구와 연결할 문서가 있다. 이것은 연동 가능성을 살필 자료이며 도구별 모든 기능, 계정의 실제 접근이나 데이터 처리 조건이 검증됐다는 뜻은 아니다.",
+              "title": "제공 방식의 선택",
+              "type": "paragraph"
+            }
+          ],
+          "id": "strengths",
+          "lead": "파일을 읽는 모델과 긴 작업을 마치는 실행 기반을 구분해 개선을 해석한다.",
+          "title": "장점: 이전 세대에서 넓어진 시각 입력과 과업 수행"
+        },
+        {
+          "blocks": [
+            {
+              "kind": "fact",
+              "source_ids": [
+                "launch"
+              ],
+              "text": "Terminal v4.0과 Program Bench에서는 Opus 5보다 낮다. Vision2Web78.6도 Opus 5 인용 80.2와 Flash 재측정 79.2보다 낮다. 이전 세대보다 좋아졌다는 사실과 해당 경쟁 모델보다 우세하다는 주장은 다르다.",
+              "title": "프로젝트 완성과 시각 작업의 상대 열세",
+              "type": "paragraph"
+            },
+            {
+              "kind": "judgment",
+              "source_ids": [
+                "previous",
+                "longweights",
+                "longlicense",
+                "longnpu"
+              ],
+              "text": "2.5의 공식 카드와 LICENSE에서 MIT 가중치가 확인됐다. 2.0의 라이선스를 단순 승계한 판단이 아니다. 다만 NPU 예제를 읽은 것과 자체 장비에 실제로 적재한 것은 다르다. 한국어 품질, 최소 장비, 기업별 이용 자격과 실제 전체 과업 비용은 이번 문헌 비교로 확정하지 않는다.",
+              "title": "가중치와 실사용의 공백",
+              "type": "paragraph"
+            }
+          ],
+          "id": "limits",
+          "lead": "공개 표와 문서만으로 확정할 수 없는 경계를 남긴다.",
+          "title": "단점: 상대 열세와 공개되지 않은 조건"
+        },
+        {
+          "blocks": [
+            {
+              "kind": "fact",
+              "source_ids": [
+                "params",
+                "quick"
+              ],
+              "text": "매개변수 문서는 문맥 1,048,576과 max_tokens 상한 262,144를 명시한다. 퀵스타트는 1M 문맥과 128K 최대 출력을 적는다. 더 큰 값을 임의로 정답으로 채택하지 않고 두 문서를 병기한다. 문맥이 길다는 사실은 전체 길이에서 정확도가 유지된다는 측정이 아니다.",
+              "title": "정확한 문맥 수치와 서로 다른 출력 표기",
+              "type": "paragraph"
+            },
+            {
+              "kind": "fact",
+              "source_ids": [
+                "params"
+              ],
+              "text": "temperature는 추론을 켰을 때 1.0, 껐을 때 0.7로 고정되며 다른 값은 덮어쓴다. thinking_budget의 최대 262,144는 추론 과정의 예산 표기다. 이 한도와 최종 출력, 최대 입력을 합해 별도의 보장 길이를 만들지 않는다.",
+              "title": "추론 모드의 고정 설정",
+              "type": "paragraph"
+            }
+          ],
+          "id": "specifications",
+          "lead": "문맥은 입력과 출력을 합한 한도이며 출력 상한과 별개다.",
+          "title": "주요 사양과 출력 상한의 문서 충돌"
+        },
+        {
+          "blocks": [
+            {
+              "kind": "fact",
+              "source_ids": [
+                "pricing"
+              ],
+              "text": "가격표는 USD와 위안 표를 따로 제시하며 100만 토큰당 비캐시 입력 0.30달러/2위안, 캐시 입력 0.006달러/0.04위안, 출력 1.20달러/8위안이다. 이는 공식 표의 두 통화 값이며 환율 환산 결과가 아니다. 표준 단가와 할인 종료일은 미공개이고 실제 플랫폼과 청구 기록이 우선한다.",
+              "title": "LongCat의 한시 할인",
+              "type": "paragraph"
+            },
+            {
+              "kind": "fact",
+              "source_ids": [
+                "claude-price",
+                "pricing"
+              ],
+              "text": "동일 확인일의 Anthropic 표준표에서 Opus 5는 입력 5달러와 출력 25달러, Opus 5.5는 4달러와 20달러다. 이 값은 100만 토큰 기준이고 캐시 쓰기나 Batch, 구독 또는 협상 할인이 아니다. LongCat의 할인과 직접적인 상시 가격 비율로 계산하지 않으며 두 모델이 같은 토큰 수로 같은 일을 끝낸다고 가정하지 않는다.",
+              "title": "경쟁 모델의 표준 API 요금",
+              "type": "paragraph"
+            },
+            {
+              "kind": "judgment",
+              "source_ids": [
+                "quick",
+                "pricing"
+              ],
+              "text": "공식 가이드는 계정 등록과 키 발급을 요구하고 429제한 응답을 설명한다. 실제 계정의 한국 접근 조건, 사용량 한도와 과금은 확인하지 않았다. 모델의 요금표와 작업을 완료하는 총비용은 다르며 도구 실행, 반복 요청과 검토 비용도 남는다.",
+              "title": "계정과 실제 비용",
+              "type": "paragraph"
+            }
+          ],
+          "id": "pricing",
+          "lead": "한시 할인과 표준 요금, 토큰 단위와 실제 청구를 구분한다.",
+          "title": "가격과 현재 제공 조건"
+        },
+        {
+          "id": "open-weights",
+          "title": "MIT 가중치와 로컬 배포 조건",
+          "lead": "기존 모델의 제공 경로가 늘었으며, 새 성능 평가로 해석하지 않는다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "두 체크포인트의 공개",
+              "text": "공식 LongCat-2.5와 LongCat-2.5-W4A4 저장소는 비제한 공개 상태이며 실제 가중치 파일을 나열한다. 모델 카드는 가중치에 MIT 라이선스를 적용한다. 저장소 생성일과 수정 시각은 최초 공개 완료 시각이나 새 모델 출시일과 다르며, 파일 전체 다운로드와 실제 로딩은 수행하지 않았다.",
+              "source_ids": [
+                "longweights",
+                "longw4",
+                "longmeta",
+                "longw4meta",
+                "longlicense"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "모델 설명과 파일 집계",
+              "text": "모델 카드는 총 1.6T, 토큰당 약 48B를 설명한다. HF의 BF16 저장소 자동 집계는 약 1.77975T이며 두 숫자의 포함 범위가 완전히 설명되지는 않는다. W4A4의 포장된 I32, I8 텐서 개수를 BF16 모델의 논리 파라미터 수와 직접 비교할 수 없다.",
+              "source_ids": [
+                "longweights",
+                "longmeta",
+                "longw4meta"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "로컬 문맥과 API 문맥",
+              "text": "공개 config.json의 max_position_embeddings는 524,288이다. 현행 API 매개변수 문서는 입력과 출력을 합친 1,048,576 토큰, 최대 출력 262,144를 설명하므로 이 값을 로컬 가중치에 그대로 적용하지 않는다. 이전 API 출력 상한 문서 사이의 262,144와 128K 차이도 이번 가중치 공개만으로 해결됐다고 보지 않는다.",
+              "source_ids": [
+                "longconfig",
+                "longparams",
+                "params",
+                "quick"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "194카드 예제의 의미",
+              "text": "공식 NPU 예제는 Ascend Atlas A2 194카드에서 Encoder 2, Prefill 64, Decode 128카드를 분리한다. Linux x86_64, Python 3.11, PyTorch 2.9와 해당 CANN, 드라이버 조합을 제시한다. 이는 제공자가 확인한 배포 구성의 예이지 최소 요구 사양이나 NVIDIA 지원을 배제한다는 증거가 아니다.",
+              "source_ids": [
+                "longnpu"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "MIT와 운영 비용",
+              "text": "MIT 공개는 고지 유지와 보증 부인 아래 이용할 권리를 제공하지만 장비와 운영 비용까지 무료로 만드는 것은 아니다. API 한시 할인은 현행 USD와 CNY 표에서 다시 확인했으며 표준 정가, 할인 종료일이나 실제 청구를 확정하지 않았다. 모델 카드의 출시 당시 평가를 새로운 체크포인트의 독립 검증 결과로 바꾸지 않는다.",
+              "source_ids": [
+                "longlicense",
+                "longprice",
+                "longweights"
+              ],
+              "kind": "fact"
+            }
+          ]
+        }
+      ],
+      "highlights": [
+        "달라진 모델",
+        "평가의 장점과 약점",
+        "제공과 비용",
+        "문서 사이의 공백"
+      ],
+      "id": "longcat-2-5-model-guide",
+      "learning": [],
+      "metrics": [],
+      "references": [
+        {
+          "description": "2026-11-01 당시의 구조와 평가표, 실행 조건 및 가중치 공개 예정 표기. 현재 가중치 상태는 새 공식 공개 카드와 구분한다.",
+          "id": "launch",
+          "title": "LongCat 2.5 공식 기술 발표",
+          "url": "https://longcat.ai/blog/longcat-2.5"
+        },
+        {
+          "description": "11월 2일 기업 발표와 동시 API 제공 설명. 자사 성능 설명과 외부 독립 검증은 다르다.",
+          "id": "company",
+          "title": "Meituan 공식 발표",
+          "url": "https://www.meituan.com/news/NN261102280001343"
+        },
+        {
+          "description": "9월 25일 Preview,11월 2일 정식 API 이름과 6월 30일 2.0을 구분하는 이력.",
+          "id": "change",
+          "title": "LongCat 공식 변경 이력",
+          "url": "https://longcat.chat/platform/docs/change-log"
+        },
+        {
+          "description": "현재 한시 할인, USD와 위안의 별도 원문 값 및 실제 청구 기록 우선 조건.",
+          "id": "pricing",
+          "title": "LongCat 공식 요금과 한시 할인",
+          "url": "https://longcat.chat/platform/docs/pricing/longcat-2.5"
+        },
+        {
+          "description": "정확한 문맥, 최대 출력, 고정 추론 설정과 thinking_budget의 정의.",
+          "id": "params",
+          "title": "LongCat 모델별 매개변수",
+          "url": "https://longcat.chat/platform/docs/api/model-params"
+        },
+        {
+          "description": "현재 지원 모델, 계정과 요청 형식 및 1M/128K 한도 설명.",
+          "id": "quick",
+          "title": "LongCat 공식 제공 모델과 기본 제한",
+          "url": "https://longcat.chat/platform/docs/"
+        },
+        {
+          "description": "이전 2.0의 1.6T/약 48B,1M 문맥과 MIT 가중치 조건.",
+          "id": "previous",
+          "title": "LongCat 2.0 공식 모델 카드",
+          "url": "https://huggingface.co/meituan-longcat/LongCat-2.0/raw/main/README.md"
+        },
+        {
+          "description": "Opus 5와 5.5의 표준 USD/100만 토큰 요금, 별도 캐시와 부가 조건.",
+          "id": "claude-price",
+          "title": "Anthropic 공식 표준 요금",
+          "url": "https://platform.claude.com/docs/en/about-claude/pricing"
+        },
+        {
+          "id": "longweights",
+          "title": "LongCat-2.5 공식 공개 모델 카드",
+          "url": "https://huggingface.co/meituan-longcat/LongCat-2.5/raw/main/README.md",
+          "description": "MIT 가중치, 생각 모드와 NPU 배포 안내"
+        },
+        {
+          "id": "longw4",
+          "title": "LongCat-2.5-W4A4 공식 카드",
+          "url": "https://huggingface.co/meituan-longcat/LongCat-2.5-W4A4/raw/main/README.md",
+          "description": "별도의 W4A4 체크포인트와 배포 경로"
+        },
+        {
+          "id": "longmeta",
+          "title": "LongCat BF16 공개 저장소 메타데이터",
+          "url": "https://huggingface.co/api/models/meituan-longcat/LongCat-2.5",
+          "description": "비제한 공개 상태, 실제 파일 목록과 자동 텐서 집계"
+        },
+        {
+          "id": "longw4meta",
+          "title": "LongCat W4A4 공개 저장소 메타데이터",
+          "url": "https://huggingface.co/api/models/meituan-longcat/LongCat-2.5-W4A4",
+          "description": "별도 정밀도 가중치의 공개 상태와 파일 목록"
+        },
+        {
+          "id": "longconfig",
+          "title": "LongCat 공개 체크포인트 설정",
+          "url": "https://huggingface.co/meituan-longcat/LongCat-2.5/raw/main/config.json",
+          "description": "로컬 위치 임베딩 상한을 API 문맥과 분리"
+        },
+        {
+          "id": "longnpu",
+          "title": "LongCat 공식 NPU 배포 예제",
+          "url": "https://raw.githubusercontent.com/meituan-longcat/SGLang-FluentLLM/refs/heads/longcat-2.5-npu/npu_test/ReadMe.md",
+          "description": "Ascend Atlas A2, 194카드와 EPD 역할 분리"
+        },
+        {
+          "id": "longlicense",
+          "title": "LongCat MIT 라이선스",
+          "url": "https://huggingface.co/meituan-longcat/LongCat-2.5/raw/main/LICENSE",
+          "description": "가중치의 이용 조건, 보증 부인과 고지 유지"
+        },
+        {
+          "id": "longprice",
+          "title": "LongCat 현재 공식 API 요금",
+          "url": "https://longcat.ai/platform/docs/pricing/longcat-2.5",
+          "description": "한시 할인 USD와 CNY 표, 표준 단가와 종료일 미공개"
+        },
+        {
+          "id": "longparams",
+          "title": "LongCat 현재 API 매개변수",
+          "url": "https://longcat.ai/platform/docs/api/model-params",
+          "description": "입력과 출력을 합친 1M 문맥, 최대 출력과 고정 샘플링 조건"
+        }
+      ],
+      "result": {
+        "points": [
+          {
+            "kind": "judgment",
+            "label": "비교할 이유",
+            "source_ids": [
+              "launch",
+              "previous"
+            ],
+            "text": "이전 2.0의 사용자가 시각 입력과 긴 코딩 작업을 검토할 때 유의미한 후보다. 같은 평가판의 개선과 상대 열세를 함께 보고 실제 작업에서 판단할 필요가 있다."
+          },
+          {
+            "kind": "judgment",
+            "label": "선택을 보류할 조건",
+            "source_ids": [
+              "longweights",
+              "longlicense",
+              "longprice",
+              "params",
+              "quick",
+              "longnpu"
+            ],
+            "text": "고정된 상시 API 요금과 명확한 최대 출력, 로컬 장비 최소 구성을 요구하면 아직 공백이 있다. 가중치와 MIT 라이선스는 공개됐지만 할인 이후 요금과 출력 문서 충돌, 실제 자체 운영 비용까지 해결된 것은 아니다."
+          },
+          {
+            "label": "공개 가중치 이후의 선택",
+            "text": "가중치 자체를 통제할 경로가 추가됐지만 공식 NPU 예제의 규모와 로컬 문맥 조건이 자체 운영의 현실적인 제약이다. 기존 코딩 평가의 상대 강점과 반대 결과는 유지하되 새 체크포인트 실측으로 오해하지 않아야 한다. API의 한시 할인과 자체 운영 비용을 동일한 정가로 비교하지 않는다.",
+            "source_ids": [
+              "longweights",
+              "longconfig",
+              "longnpu",
+              "longprice"
+            ],
+            "kind": "judgment"
+          }
+        ],
+        "title": "결론"
+      },
+      "scope": "2026년 11월 16일 KST에 공식 카드, 공개 저장소, 라이선스와 관련 설정을 읽었습니다. 공급자 측 평가이며 독립 추론, 실제 장비 성능, API 청구와 사람 독해 시험은 수행하지 않았습니다. 이번 개정은 가중치와 배포 경로의 변화다. 기존 출시와 평가의 확인일은 11월 3일로 보존하며 재측정으로 바꾸지 않았다. 공식 HF 저장소 생성일은 11월 4일이고 최신 수정은 10일이다. 최초 가중치 공개 완료 시각은 확정하지 않는다.",
+      "source_note": "가중치, 로컬 설정, NPU 예제와 현행 요금 관련 절 확인: 2026-11-16 KST. 기존 출시와 평가 비교의 자료 확인일은 2026-11-03이며 실제 평가 재현은 수행하지 않았다.",
+      "summary": [
+        {
+          "kind": "fact",
+          "label": "달라진 모델",
+          "source_ids": [
+            "launch",
+            "company",
+            "change"
+          ],
+          "text": "1.6조 총 파라미터 중 토큰당 약 480억을 사용하는 모델로, 시각 입력을 이산 토큰으로 바꾸고 긴 과업을 수행하는 학습을 강화했다. 기술 글은 11월 1일, 기업 발표와 정식 API 이력은 2일이다."
+        },
+        {
+          "kind": "fact",
+          "label": "평가의 장점과 약점",
+          "source_ids": [
+            "launch"
+          ],
+          "text": "Terminal Bench v2.1은 88.4로 이전 70.8보다 높다. 그러나 v4.0은 38.5로 공식 표의 Opus 5 인용 53.9보다 낮다. 두 평가판을 같은 점수로 비교하거나 최신 Claude Opus 5.5의 결과로 바꾸지 않는다."
+        },
+        {
+          "kind": "fact",
+          "label": "제공과 비용",
+          "source_ids": [
+            "longweights",
+            "longw4",
+            "longnpu",
+            "longprice"
+          ],
+          "text": "BF16과 W4A4 가중치가 MIT 라이선스로 공개됐다. 공식 NPU 예제는 Ascend Atlas A2 194카드의 분리 배포이며 최소 사양을 뜻하지 않는다. API의 비캐시 입력, 캐시 입력, 출력은 100만 토큰당 USD 0.30, 0.006, 1.20의 한시 할인이고 표준 단가와 종료일은 여전히 미확인이다."
+        },
+        {
+          "kind": "judgment",
+          "label": "문서 사이의 공백",
+          "source_ids": [
+            "params",
+            "quick"
+          ],
+          "text": "매개변수 문서는 문맥 1,048,576토큰과 최대 출력 262,144토큰을 적지만 퀵스타트는 최대 출력 128K라고 적는다. 호출 전 적용 한도를 확인해야 하며 한국어 업무 정확도와 실제 비용은 별도 측정 대상이다."
+        }
+      ],
+      "tables": [
+        {
+          "columns": [
+            "모델",
+            "규모",
+            "문맥",
+            "입력과 제공",
+            "가중치"
+          ],
+          "id": "specifications",
+          "note": "기존 출시와 평가 자료는 2026-11-03 확인 기준. 1M은 이전 카드의 원문 표기다. 정식 2.5의 정확한 수치는 매개변수 문서에서만 가져왔다.",
+          "rows": [
+            {
+              "source_ids": [
+                "launch",
+                "params",
+                "quick",
+                "change",
+                "longweights",
+                "longconfig",
+                "longparams"
+              ],
+              "values": [
+                "LongCat-2.5",
+                "총 1600B, 토큰당 약 48B",
+                "1,048,576토큰; 출력 262,144/128K 문서 충돌",
+                "텍스트와 시각 입력, 공식 API 제공",
+                "BF16/W4A4 MIT 가중치 공개. 로컬 설정 524,288과 API 문맥을 구분"
+              ]
+            },
+            {
+              "source_ids": [
+                "previous"
+              ],
+              "values": [
+                "LongCat-2.0",
+                "총 1600B, 토큰당 약 48B",
+                "공식 카드 1M, 정확한 변환/현행 API 출력 미확인",
+                "공식 카드는 텍스트 생성 모델",
+                "MIT 가중치 공개"
+              ]
+            },
+            {
+              "source_ids": [
+                "change"
+              ],
+              "values": [
+                "LongCat-2.5-Preview",
+                "이번 문서에서 규모를 별도 확정하지 않음",
+                "종전판 한도를 정식판에 승계하지 않음",
+                "9월 25일 제공 이력, 이미지 이해 설명",
+                "정식 2.5의 공개 가중치와 별개"
+              ]
+            }
+          ],
+          "title": "사양과 제공 범위"
+        },
+        {
+          "columns": [
+            "평가판",
+            "LongCat-2.5",
+            "LongCat-2.0",
+            "Claude Opus 5",
+            "DeepSeek-V4.1-Flash"
+          ],
+          "id": "benchmarks",
+          "note": "기존 출시와 평가 자료는 2026-11-03 확인 기준. 공식 11월 1일 표의 선정 8행. *는 외부 보고서/공식 순위 인용이며 그 외는 Meituan 재측정이다. 공통%단위는 미표기여서 수치를 임의%로 바꾸지 않는다. 빈칸은 미보고다. Opus 5를 최신 5.5의 평가로 대체하지 않는다.",
+          "rows": [
+            {
+              "source_ids": [
+                "launch"
+              ],
+              "values": [
+                "Terminal Bench v2.1",
+                "88.4",
+                "70.8",
+                "89.1*",
+                "90.6*"
+              ]
+            },
+            {
+              "source_ids": [
+                "launch"
+              ],
+              "values": [
+                "Terminal Bench v4.0",
+                "38.5",
+                "3.0",
+                "53.9*",
+                "31.2*"
+              ]
+            },
+            {
+              "source_ids": [
+                "launch"
+              ],
+              "values": [
+                "Program Bench Almost Resolved",
+                "25.5",
+                "2.5",
+                "37.0*",
+                "20.3*"
+              ]
+            },
+            {
+              "source_ids": [
+                "launch"
+              ],
+              "values": [
+                "PaperBench",
+                "82.1",
+                "45.2",
+                "79.1",
+                "미보고"
+              ]
+            },
+            {
+              "source_ids": [
+                "launch"
+              ],
+              "values": [
+                "BrowseComp",
+                "91.9",
+                "79.9",
+                "90.8*",
+                "91.5"
+              ]
+            },
+            {
+              "source_ids": [
+                "launch"
+              ],
+              "values": [
+                "AutomationBench v1.0.6",
+                "51.8",
+                "15.8",
+                "50.3*",
+                "54.8*"
+              ]
+            },
+            {
+              "source_ids": [
+                "launch"
+              ],
+              "values": [
+                "SpreadsheetBench 2",
+                "34.9",
+                "24.1",
+                "33.0",
+                "33.0"
+              ]
+            },
+            {
+              "source_ids": [
+                "launch"
+              ],
+              "values": [
+                "Vision2Web",
+                "78.6",
+                "미보고",
+                "80.2*",
+                "79.2"
+              ]
+            }
+          ],
+          "title": "제공자 표의 이전 모델과 경쟁 모델 비교"
+        },
+        {
+          "columns": [
+            "평가",
+            "실행 기반과 길이",
+            "별도 조건"
+          ],
+          "id": "evaluation-conditions",
+          "note": "기존 출시와 평가 자료는 2026-11-03 확인 기준. 측정 조건이 다르므로 행을 합쳐 단일 성능 지수를 만들지 않는다.",
+          "rows": [
+            {
+              "source_ids": [
+                "launch"
+              ],
+              "values": [
+                "Terminal v2.1/v4.0, Program Bench",
+                "Claude Code 2.1.280,512K",
+                "v2.1만 3회 평균 명시; 기본 추론 on,temperature1.0,top_p0.95"
+              ]
+            },
+            {
+              "source_ids": [
+                "launch"
+              ],
+              "values": [
+                "BrowseComp",
+                "자체 Verify/Discard-All, 임계 256K",
+                "최대 1024회, 검색과 browse_with_goal 두 도구"
+              ]
+            },
+            {
+              "source_ids": [
+                "launch"
+              ],
+              "values": [
+                "AutomationBench public v1.0.6",
+                "공개 600과제, 공식 평가 코드",
+                "제공자 측정 51.8; 다른 판의 수치로 대체하지 않음"
+              ]
+            },
+            {
+              "source_ids": [
+                "launch"
+              ],
+              "values": [
+                "SpreadsheetBench 2",
+                "Claude Code 2.1.116",
+                "시각화 gemini-3.6-flash 심사; Linux LibreOffice와 대체 렌더러"
+              ]
+            },
+            {
+              "source_ids": [
+                "launch"
+              ],
+              "values": [
+                "Vision2Web",
+                "Claude Code 2.1.7,256K",
+                "temperature1.0,top_p0.95,top_k50"
+              ]
+            },
+            {
+              "source_ids": [
+                "launch"
+              ],
+              "values": [
+                "PaperBench",
+                "선정 표에 세부 실행 기반/표본을 확정할 정보 부족",
+                "82.1과 79.1은 원문의 비교 값이며 독립 재현 아님"
+              ]
+            }
+          ],
+          "title": "평가 조건과 해석 범위"
+        },
+        {
+          "columns": [
+            "모델과 요금 성격",
+            "비캐시 입력 / 100만 토큰",
+            "캐시 입력 또는 읽기 / 100만 토큰",
+            "출력 / 100만 토큰",
+            "조건"
+          ],
+          "id": "price",
+          "note": "기존 출시와 평가 자료는 2026-11-03 확인 기준. 모든 요금 확인일 2026-11-03. 토큰화, 캐시 조건과 완료에 필요한 요청량이 다르므로 작업비 배수로 일반화하지 않는다.",
+          "rows": [
+            {
+              "source_ids": [
+                "pricing"
+              ],
+              "values": [
+                "LongCat-2.5, 한시 할인 USD",
+                "0.30 USD",
+                "0.006 USD",
+                "1.20 USD",
+                "표준 요금/종료일 미공개"
+              ]
+            },
+            {
+              "source_ids": [
+                "pricing"
+              ],
+              "values": [
+                "LongCat-2.5, 별도 위안 표",
+                "2 CNY",
+                "0.04 CNY",
+                "8 CNY",
+                "환율 환산 아님, 두 번째 표의 원문 통화"
+              ]
+            },
+            {
+              "source_ids": [
+                "claude-price"
+              ],
+              "values": [
+                "Claude Opus 5, 표준 USD",
+                "5 USD",
+                "0.50 USD (cache hit)",
+                "25 USD",
+                "별도 캐시 쓰기/Batch/구독 제외"
+              ]
+            },
+            {
+              "source_ids": [
+                "claude-price"
+              ],
+              "values": [
+                "Claude Opus 5.5, 표준 USD",
+                "4 USD",
+                "0.20 USD (cache hit)",
+                "20 USD",
+                "현행 비용 기준만 제시; 위 성능표 Opus 5와 다른 판"
+              ]
+            },
+            {
+              "source_ids": [
+                "previous",
+                "pricing"
+              ],
+              "values": [
+                "LongCat-2.0",
+                "현행 동일 API 요금 미확인",
+                "미확인",
+                "미확인",
+                "이전 MIT 가중치의 운영비는 무료 API와 다름"
+              ]
+            }
+          ],
+          "title": "원문 통화와 요금 성격을 보존한 비교"
+        },
+        {
+          "id": "open-weight-deployment",
+          "title": "공개 가중치와 기존 API의 제공 조건",
+          "columns": [
+            "구분",
+            "현재 확인한 값",
+            "해석 범위"
+          ],
+          "rows": [
+            {
+              "values": [
+                "BF16 공개 저장소",
+                "MIT, private=false /gated=false, 가중치 파일 공개",
+                "파일 목록과 메타데이터 확인. 전체 파일 적재 미검증"
+              ],
+              "source_ids": [
+                "longweights",
+                "longmeta",
+                "longlicense"
+              ]
+            },
+            {
+              "values": [
+                "W4A4 공개 저장소",
+                "별도 가중치와 MIT 카드",
+                "포장된 텐서 수를 모델 총 파라미터 수로 사용하지 않음"
+              ],
+              "source_ids": [
+                "longw4",
+                "longw4meta"
+              ]
+            },
+            {
+              "values": [
+                "로컬 위치 임베딩 상한",
+                "524,288",
+                "config.json 값. 현행 API의 1,048,576과 분리"
+              ],
+              "source_ids": [
+                "longconfig",
+                "longparams"
+              ]
+            },
+            {
+              "values": [
+                "공식 Ascend NPU 예제",
+                "Atlas A2 194카드: Encoder2 /Prefill64 /Decode128",
+                "공식 예제 구성이며 최소 사양 또는 모든 하드웨어 지원표가 아님"
+              ],
+              "source_ids": [
+                "longnpu"
+              ]
+            },
+            {
+              "values": [
+                "API 100만 토큰당 한시 할인",
+                "USD 0.30 입력 /0.006 캐시 입력 /1.20 출력; CNY 2 /0.04 /8",
+                "두 통화의 별도 원문 표, 환산값 아님. 표준 단가와 종료일 미공개"
+              ],
+              "source_ids": [
+                "longprice"
+              ]
+            }
+          ],
+          "note": "신규 제공 조건 확인: 2026-11-16 KST. 기존 성능 비교표의 자료 확인일 2026-11-03은 유지한다."
+        }
+      ],
+      "title": "LongCat-2.5 소개 — MIT 가중치 공개, 로컬 문맥과 API 비용",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ]
+    }
+  ]
+}

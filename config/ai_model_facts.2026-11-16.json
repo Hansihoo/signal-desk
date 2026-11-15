@@ -1,0 +1,506 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "id": "edge0-145b-card-spec",
+      "model": "Edge0-145B",
+      "provider": "Edge0",
+      "source_url": "https://huggingface.co/Edge0/Edge0-145B-q3k/raw/main/README.md",
+      "checked_on": "2026-11-16",
+      "fields": {
+        "kind": "공식 사양과 제공",
+        "suite": "Edge0 public model card / 2026-11-12 baseline",
+        "condition": "카드의 총/활성 파라미터. 145B model.json active 6.6B와 카드10.12B의 정의 차이 미확인. 표기총량에 PLE 포함; HF자동5B집계와 다름. 최소장비/한국어 실측 아님.",
+        "parameters": 145,
+        "active_parameters": 10.12,
+        "context": 262144,
+        "잠재 전문가 폭": 1792,
+        "가중치 Q3_K GiB": 40.81,
+        "가중치 NVFP4 GiB": 47.79,
+        "status": "공개 로컬 팩; 현행 Edge0 및 Qwen 조건 적용",
+        "access": "공개 가중치/Edge0 전용 런타임",
+        "표준 API 요금": "미공개",
+        "license": "Edge0 Community Model License 1.0 + Qwen Community License 1.0"
+      }
+    },
+    {
+      "id": "edge0-120b-card-spec",
+      "model": "Edge0-120B",
+      "provider": "Edge0",
+      "source_url": "https://huggingface.co/Edge0/Edge0-120B-q3k/raw/main/README.md",
+      "checked_on": "2026-11-16",
+      "fields": {
+        "kind": "공식 사양과 제공",
+        "suite": "Edge0 public model card / 2026-11-12 baseline",
+        "condition": "카드의 총/활성 파라미터. 145B model.json active 6.6B와 카드10.12B의 정의 차이 미확인. 표기총량에 PLE 포함; HF자동5B집계와 다름. 최소장비/한국어 실측 아님.",
+        "parameters": 120,
+        "active_parameters": 8.64,
+        "context": 262144,
+        "잠재 전문가 폭": 1280,
+        "가중치 Q3_K GiB": 27.98,
+        "가중치 NVFP4 GiB": 32.96,
+        "status": "공개 로컬 팩; 현행 Edge0 및 Qwen 조건 적용",
+        "access": "공개 가중치/Edge0 전용 런타임",
+        "표준 API 요금": "미공개",
+        "license": "Edge0 Community Model License 1.0 + Qwen Community License 1.0"
+      }
+    },
+    {
+      "id": "edge0-145b-execution-config",
+      "model": "Edge0-145B",
+      "provider": "Edge0",
+      "source_url": "https://huggingface.co/Edge0/Edge0-145B-q3k/raw/main/model.json",
+      "checked_on": "2026-11-16",
+      "fields": {
+        "kind": "공식 실행 설정",
+        "suite": "Edge0 model.json / Q3_K",
+        "condition": "카드와 별도 관측. 활성 값의 정의·산식 미확인. context는지원값,실행인자는현재런처상한.",
+        "설정 활성 파라미터 B": 6.6,
+        "지원 문맥 토큰": 262144,
+        "실행 인자 문맥 토큰": 131072,
+        "원문 활성 표기": "6.6 B",
+        "harness": "strata inference runtime; 평가 Harness 확인 아님"
+      }
+    },
+    {
+      "id": "edge0-120b-execution-config",
+      "model": "Edge0-120B",
+      "provider": "Edge0",
+      "source_url": "https://huggingface.co/Edge0/Edge0-120B-q3k/raw/main/model.json",
+      "checked_on": "2026-11-16",
+      "fields": {
+        "kind": "공식 실행 설정",
+        "suite": "Edge0 model.json / Q3_K",
+        "condition": "카드8.64B와 설정6.1B의 정의·산식 차이 미확인. 지원문맥과현재실행인자상한분리.",
+        "설정 활성 파라미터 B": 6.1,
+        "지원 문맥 토큰": 262144,
+        "실행 인자 문맥 토큰": 131072,
+        "원문 활성 표기": "6.1 B",
+        "harness": "strata inference runtime; 평가 Harness 확인 아님"
+      }
+    },
+    {
+      "id": "edge0-145b-deepswe_1_1",
+      "model": "Edge0-145B",
+      "provider": "Edge0",
+      "source_url": "https://huggingface.co/Edge0/Edge0-145B-q3k/raw/main/assets/quality/quality-overview.svg",
+      "checked_on": "2026-11-16",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "DeepSWE 1.1 / Edge0 figure baseline 2026-11-12",
+        "condition": "Edge0공급자그림 0~100 score. 높을수록좋음. 전체Harness·추론예산·표본·양자화별동일조건미공개. 독립재현아님.",
+        "평가 점수": 64.6,
+        "원문 단위": "score (0–100)",
+        "측정 주체": "Edge0 / 공급자 비교 그림",
+        "harness": "전체 평가 Harness 미공개"
+      }
+    },
+    {
+      "id": "edge0-120b-deepswe_1_1",
+      "model": "Edge0-120B",
+      "provider": "Edge0",
+      "source_url": "https://huggingface.co/Edge0/Edge0-145B-q3k/raw/main/assets/quality/quality-overview.svg",
+      "checked_on": "2026-11-16",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "DeepSWE 1.1 / Edge0 figure baseline 2026-11-12",
+        "condition": "Edge0공급자그림 0~100 score. 높을수록좋음. 전체Harness·추론예산·표본·양자화별동일조건미공개. 독립재현아님.",
+        "평가 점수": 51.3,
+        "원문 단위": "score (0–100)",
+        "측정 주체": "Edge0 / 공급자 비교 그림",
+        "harness": "전체 평가 Harness 미공개"
+      }
+    },
+    {
+      "id": "edge0-145b-terminal_bench_2_1",
+      "model": "Edge0-145B",
+      "provider": "Edge0",
+      "source_url": "https://huggingface.co/Edge0/Edge0-145B-q3k/raw/main/assets/quality/quality-overview.svg",
+      "checked_on": "2026-11-16",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Terminal-Bench 2.1 / Edge0 figure baseline 2026-11-12",
+        "condition": "Edge0공급자그림 0~100 score. 높을수록좋음. 전체Harness·추론예산·표본·양자화별동일조건미공개. 독립재현아님.",
+        "평가 점수": 86.5,
+        "원문 단위": "score (0–100)",
+        "측정 주체": "Edge0 / 공급자 비교 그림",
+        "harness": "전체 평가 Harness 미공개"
+      }
+    },
+    {
+      "id": "edge0-120b-terminal_bench_2_1",
+      "model": "Edge0-120B",
+      "provider": "Edge0",
+      "source_url": "https://huggingface.co/Edge0/Edge0-145B-q3k/raw/main/assets/quality/quality-overview.svg",
+      "checked_on": "2026-11-16",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Terminal-Bench 2.1 / Edge0 figure baseline 2026-11-12",
+        "condition": "Edge0공급자그림 0~100 score. 높을수록좋음. 전체Harness·추론예산·표본·양자화별동일조건미공개. 독립재현아님.",
+        "평가 점수": 75.3,
+        "원문 단위": "score (0–100)",
+        "측정 주체": "Edge0 / 공급자 비교 그림",
+        "harness": "전체 평가 Harness 미공개"
+      }
+    },
+    {
+      "id": "edge0-145b-hle",
+      "model": "Edge0-145B",
+      "provider": "Edge0",
+      "source_url": "https://huggingface.co/Edge0/Edge0-145B-q3k/raw/main/assets/quality/quality-overview.svg",
+      "checked_on": "2026-11-16",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "HLE / Edge0 figure baseline 2026-11-12",
+        "condition": "Edge0공급자그림 0~100 score. 높을수록좋음. 전체Harness·추론예산·표본·양자화별동일조건미공개. 독립재현아님.",
+        "평가 점수": 35.4,
+        "원문 단위": "score (0–100)",
+        "측정 주체": "Edge0 / 공급자 비교 그림",
+        "harness": "전체 평가 Harness 미공개"
+      }
+    },
+    {
+      "id": "edge0-120b-hle",
+      "model": "Edge0-120B",
+      "provider": "Edge0",
+      "source_url": "https://huggingface.co/Edge0/Edge0-145B-q3k/raw/main/assets/quality/quality-overview.svg",
+      "checked_on": "2026-11-16",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "HLE / Edge0 figure baseline 2026-11-12",
+        "condition": "Edge0공급자그림 0~100 score. 높을수록좋음. 전체Harness·추론예산·표본·양자화별동일조건미공개. 독립재현아님.",
+        "평가 점수": 31.0,
+        "원문 단위": "score (0–100)",
+        "측정 주체": "Edge0 / 공급자 비교 그림",
+        "harness": "전체 평가 Harness 미공개"
+      }
+    },
+    {
+      "id": "edge0-145b-gpqa_diamond",
+      "model": "Edge0-145B",
+      "provider": "Edge0",
+      "source_url": "https://huggingface.co/Edge0/Edge0-145B-q3k/raw/main/assets/quality/quality-overview.svg",
+      "checked_on": "2026-11-16",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "GPQA-Diamond / Edge0 figure baseline 2026-11-12",
+        "condition": "Edge0공급자그림 0~100 score. 높을수록좋음. 전체Harness·추론예산·표본·양자화별동일조건미공개. 독립재현아님.",
+        "평가 점수": 90.4,
+        "원문 단위": "score (0–100)",
+        "측정 주체": "Edge0 / 공급자 비교 그림",
+        "harness": "전체 평가 Harness 미공개"
+      }
+    },
+    {
+      "id": "edge0-120b-gpqa_diamond",
+      "model": "Edge0-120B",
+      "provider": "Edge0",
+      "source_url": "https://huggingface.co/Edge0/Edge0-145B-q3k/raw/main/assets/quality/quality-overview.svg",
+      "checked_on": "2026-11-16",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "GPQA-Diamond / Edge0 figure baseline 2026-11-12",
+        "condition": "Edge0공급자그림 0~100 score. 높을수록좋음. 전체Harness·추론예산·표본·양자화별동일조건미공개. 독립재현아님.",
+        "평가 점수": 87.4,
+        "원문 단위": "score (0–100)",
+        "측정 주체": "Edge0 / 공급자 비교 그림",
+        "harness": "전체 평가 Harness 미공개"
+      }
+    },
+    {
+      "id": "edge0-145b-ifbench",
+      "model": "Edge0-145B",
+      "provider": "Edge0",
+      "source_url": "https://huggingface.co/Edge0/Edge0-145B-q3k/raw/main/assets/quality/quality-overview.svg",
+      "checked_on": "2026-11-16",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "IFBench / Edge0 figure baseline 2026-11-12",
+        "condition": "Edge0공급자그림 0~100 score. 높을수록좋음. 전체Harness·추론예산·표본·양자화별동일조건미공개. 독립재현아님.",
+        "평가 점수": 80.6,
+        "원문 단위": "score (0–100)",
+        "측정 주체": "Edge0 / 공급자 비교 그림",
+        "harness": "전체 평가 Harness 미공개"
+      }
+    },
+    {
+      "id": "edge0-120b-ifbench",
+      "model": "Edge0-120B",
+      "provider": "Edge0",
+      "source_url": "https://huggingface.co/Edge0/Edge0-145B-q3k/raw/main/assets/quality/quality-overview.svg",
+      "checked_on": "2026-11-16",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "IFBench / Edge0 figure baseline 2026-11-12",
+        "condition": "Edge0공급자그림 0~100 score. 높을수록좋음. 전체Harness·추론예산·표본·양자화별동일조건미공개. 독립재현아님.",
+        "평가 점수": 79.3,
+        "원문 단위": "score (0–100)",
+        "측정 주체": "Edge0 / 공급자 비교 그림",
+        "harness": "전체 평가 Harness 미공개"
+      }
+    },
+    {
+      "id": "edge0-145b-aa_lcr",
+      "model": "Edge0-145B",
+      "provider": "Edge0",
+      "source_url": "https://huggingface.co/Edge0/Edge0-145B-q3k/raw/main/assets/quality/quality-overview.svg",
+      "checked_on": "2026-11-16",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "AA-LCR / Edge0 figure baseline 2026-11-12",
+        "condition": "Edge0공급자그림 0~100 score. 높을수록좋음. 전체Harness·추론예산·표본·양자화별동일조건미공개. 독립재현아님.",
+        "평가 점수": 79.3,
+        "원문 단위": "score (0–100)",
+        "측정 주체": "Edge0 / 공급자 비교 그림",
+        "harness": "전체 평가 Harness 미공개"
+      }
+    },
+    {
+      "id": "edge0-120b-aa_lcr",
+      "model": "Edge0-120B",
+      "provider": "Edge0",
+      "source_url": "https://huggingface.co/Edge0/Edge0-145B-q3k/raw/main/assets/quality/quality-overview.svg",
+      "checked_on": "2026-11-16",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "AA-LCR / Edge0 figure baseline 2026-11-12",
+        "condition": "Edge0공급자그림 0~100 score. 높을수록좋음. 전체Harness·추론예산·표본·양자화별동일조건미공개. 독립재현아님.",
+        "평가 점수": 81.0,
+        "원문 단위": "score (0–100)",
+        "측정 주체": "Edge0 / 공급자 비교 그림",
+        "harness": "전체 평가 Harness 미공개"
+      }
+    },
+    {
+      "id": "edge0-145b-q3k-5090d-prefill16k",
+      "model": "Edge0-145B",
+      "provider": "Edge0",
+      "source_url": "https://huggingface.co/Edge0/Edge0-145B-q3k/raw/main/README.md",
+      "checked_on": "2026-11-16",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Q3_K / RTX 5090 D 24GB / prefill16k",
+        "condition": "공급자 16K입력 prefill;장비·메모리배치에한정,최소사양아님;KV/추론부하전체일치미검증",
+        "평가 점수": 3554.9,
+        "원문 단위": "tokens/s",
+        "측정 주체": "Edge0",
+        "harness": "Edge0/Strata inference runtime, Q3_K"
+      }
+    },
+    {
+      "id": "edge0-145b-q3k-5090d-chat-decode",
+      "model": "Edge0-145B",
+      "provider": "Edge0",
+      "source_url": "https://huggingface.co/Edge0/Edge0-145B-q3k/raw/main/README.md",
+      "checked_on": "2026-11-16",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Q3_K / RTX 5090 D 24GB / chat-decode",
+        "condition": "공급자 상단 채팅decode;장비·메모리배치에한정,최소사양아님;KV/추론부하전체일치미검증",
+        "평가 점수": 99.7,
+        "원문 단위": "tokens/s",
+        "측정 주체": "Edge0",
+        "harness": "Edge0/Strata inference runtime, Q3_K"
+      }
+    },
+    {
+      "id": "edge0-145b-q3k-5090d-agent-decode",
+      "model": "Edge0-145B",
+      "provider": "Edge0",
+      "source_url": "https://huggingface.co/Edge0/Edge0-145B-q3k/raw/main/README.md",
+      "checked_on": "2026-11-16",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Q3_K / RTX 5090 D 24GB / agent-decode",
+        "condition": "공급자 상단 에이전트decode;장비·메모리배치에한정,최소사양아님;KV/추론부하전체일치미검증",
+        "평가 점수": 121.2,
+        "원문 단위": "tokens/s",
+        "측정 주체": "Edge0",
+        "harness": "Edge0/Strata inference runtime, Q3_K"
+      }
+    },
+    {
+      "id": "edge0-145b-q3k-5090d-limited-chat",
+      "model": "Edge0-145B",
+      "provider": "Edge0",
+      "source_url": "https://huggingface.co/Edge0/Edge0-145B-q3k/raw/main/README.md",
+      "checked_on": "2026-11-16",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Q3_K / RTX 5090 D 24GB / limited-chat",
+        "condition": "공급자 16GiB VRAM+20GiB RAM제한,swap없음,채팅decode;장비·메모리배치에한정,최소사양아님;KV/추론부하전체일치미검증",
+        "평가 점수": 36.8,
+        "원문 단위": "tokens/s",
+        "측정 주체": "Edge0",
+        "harness": "Edge0/Strata inference runtime, Q3_K"
+      }
+    },
+    {
+      "id": "edge0-145b-q3k-5090d-limited-agent",
+      "model": "Edge0-145B",
+      "provider": "Edge0",
+      "source_url": "https://huggingface.co/Edge0/Edge0-145B-q3k/raw/main/README.md",
+      "checked_on": "2026-11-16",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Q3_K / RTX 5090 D 24GB / limited-agent",
+        "condition": "공급자 16GiB VRAM+20GiB RAM제한,swap없음,에이전트decode;장비·메모리배치에한정,최소사양아님;KV/추론부하전체일치미검증",
+        "평가 점수": 44.9,
+        "원문 단위": "tokens/s",
+        "측정 주체": "Edge0",
+        "harness": "Edge0/Strata inference runtime, Q3_K"
+      }
+    },
+    {
+      "id": "edge0-120b-q3k-5090d-prefill16k",
+      "model": "Edge0-120B",
+      "provider": "Edge0",
+      "source_url": "https://huggingface.co/Edge0/Edge0-120B-q3k/raw/main/README.md",
+      "checked_on": "2026-11-16",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Q3_K / RTX 5090 D 24GB / prefill16k",
+        "condition": "공급자 16K입력 prefill;장비·메모리배치에한정,최소사양아님;KV/추론부하전체일치미검증",
+        "평가 점수": 4576.5,
+        "원문 단위": "tokens/s",
+        "측정 주체": "Edge0",
+        "harness": "Edge0/Strata inference runtime, Q3_K"
+      }
+    },
+    {
+      "id": "edge0-120b-q3k-5090d-chat-decode",
+      "model": "Edge0-120B",
+      "provider": "Edge0",
+      "source_url": "https://huggingface.co/Edge0/Edge0-120B-q3k/raw/main/README.md",
+      "checked_on": "2026-11-16",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Q3_K / RTX 5090 D 24GB / chat-decode",
+        "condition": "공급자 상단 채팅decode;장비·메모리배치에한정,최소사양아님;KV/추론부하전체일치미검증",
+        "평가 점수": 130.2,
+        "원문 단위": "tokens/s",
+        "측정 주체": "Edge0",
+        "harness": "Edge0/Strata inference runtime, Q3_K"
+      }
+    },
+    {
+      "id": "edge0-120b-q3k-5090d-agent-decode",
+      "model": "Edge0-120B",
+      "provider": "Edge0",
+      "source_url": "https://huggingface.co/Edge0/Edge0-120B-q3k/raw/main/README.md",
+      "checked_on": "2026-11-16",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Q3_K / RTX 5090 D 24GB / agent-decode",
+        "condition": "공급자 상단 에이전트decode;장비·메모리배치에한정,최소사양아님;KV/추론부하전체일치미검증",
+        "평가 점수": 144.6,
+        "원문 단위": "tokens/s",
+        "측정 주체": "Edge0",
+        "harness": "Edge0/Strata inference runtime, Q3_K"
+      }
+    },
+    {
+      "id": "edge0-120b-q3k-5090d-limited-chat",
+      "model": "Edge0-120B",
+      "provider": "Edge0",
+      "source_url": "https://huggingface.co/Edge0/Edge0-120B-q3k/raw/main/README.md",
+      "checked_on": "2026-11-16",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Q3_K / RTX 5090 D 24GB / limited-chat",
+        "condition": "공급자 16GiB VRAM+20GiB RAM제한,swap없음,채팅decode;장비·메모리배치에한정,최소사양아님;KV/추론부하전체일치미검증",
+        "평가 점수": 62.4,
+        "원문 단위": "tokens/s",
+        "측정 주체": "Edge0",
+        "harness": "Edge0/Strata inference runtime, Q3_K"
+      }
+    },
+    {
+      "id": "edge0-120b-q3k-5090d-limited-agent",
+      "model": "Edge0-120B",
+      "provider": "Edge0",
+      "source_url": "https://huggingface.co/Edge0/Edge0-120B-q3k/raw/main/README.md",
+      "checked_on": "2026-11-16",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Q3_K / RTX 5090 D 24GB / limited-agent",
+        "condition": "공급자 16GiB VRAM+20GiB RAM제한,swap없음,에이전트decode;장비·메모리배치에한정,최소사양아님;KV/추론부하전체일치미검증",
+        "평가 점수": 73.3,
+        "원문 단위": "tokens/s",
+        "측정 주체": "Edge0",
+        "harness": "Edge0/Strata inference runtime, Q3_K"
+      }
+    },
+    {
+      "checked_on": "2026-11-16",
+      "fields": {
+        "active_parameters": 48,
+        "condition": "공급자 명목1.6T/활성약48B. HF자동BF16집계약1.77975T와 포함범위 차이미확인. 기존 모델의 제공경로변경이며 신규 평가 아님.",
+        "kind": "공식 사양",
+        "parameters": 1600,
+        "status": "공식 API와 MIT 공개 BF16/W4A4 가중치",
+        "suite": "Technical announcement 2026-11-01",
+        "입력": "텍스트/시각 입력",
+        "access": "API/웹/공개가중치"
+      },
+      "id": "longcat25-20261101-architecture",
+      "model": "LongCat-2.5",
+      "provider": "Meituan",
+      "source_url": "https://huggingface.co/meituan-longcat/LongCat-2.5/raw/main/README.md"
+    },
+    {
+      "checked_on": "2026-11-16",
+      "fields": {
+        "access": "호스팅 API; 로컬가중치는별도관측",
+        "condition": "현행 API 문맥은입력+출력1,048,576;max_tokens262,144. 11/3 quickstart128K차이 해소미확인. 로컬config524,288과동일시하지 않음;생각on온도1/off0.7고정.",
+        "context": 1048576,
+        "effort": "thinking on/off",
+        "kind": "공식 사양",
+        "status": "공식 API 제공",
+        "suite": "API model parameters 2026-11-03",
+        "매개변수 문서 최대 출력 토큰": 262144,
+        "퀵스타트 최대 출력 표기": "128K tokens"
+      },
+      "id": "longcat25-20261103-spec",
+      "model": "LongCat-2.5",
+      "provider": "Meituan",
+      "source_url": "https://longcat.ai/platform/docs/api/model-params"
+    },
+    {
+      "id": "longcat25-openweight-context",
+      "model": "LongCat-2.5",
+      "provider": "Meituan",
+      "source_url": "https://huggingface.co/meituan-longcat/LongCat-2.5/raw/main/config.json",
+      "checked_on": "2026-11-16",
+      "fields": {
+        "kind": "공식 로컬 사양",
+        "suite": "Public checkpoint config / max_position_embeddings",
+        "condition": "공개체크포인트설정값. API문맥1,048,576과 분리. 전체문맥 실제추론미검증.",
+        "context": 524288,
+        "status": "공개 로컬 가중치",
+        "access": "BF16/W4A4 weights"
+      }
+    },
+    {
+      "id": "longcat25-openweights-npu",
+      "model": "LongCat-2.5",
+      "provider": "Meituan",
+      "source_url": "https://raw.githubusercontent.com/meituan-longcat/SGLang-FluentLLM/refs/heads/longcat-2.5-npu/npu_test/ReadMe.md",
+      "checked_on": "2026-11-16",
+      "fields": {
+        "kind": "공식 로컬 배포",
+        "suite": "SGLang-FluentLLM longcat-2.5-npu / W4A4",
+        "condition": "공식 배포예제이며 최소 요구사항아님. NVIDIA미지원 판정아님. 실제추론미검증.",
+        "status": "MIT W4A4 가중치 공개",
+        "access": "Ascend Atlas A2 NPU example",
+        "카드 합계": 194,
+        "Encoder 카드": 2,
+        "Prefill 카드": 64,
+        "Decode 카드": 128,
+        "OS": "Linux x86_64",
+        "Python": "3.11",
+        "PyTorch": "2.9"
+      }
+    }
+  ]
+}
