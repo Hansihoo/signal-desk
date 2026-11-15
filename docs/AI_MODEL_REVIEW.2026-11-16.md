@@ -27,3 +27,14 @@
 - 두 현재 소개의 authoring edition과 본문 검토 지문, usable_with_limits 상태, 지식 재색인과 관련 문맥/요금 질의 연결을 확인했다. 출력과 검색 검사는 작성자 원문 검토, 독립 성능 시험 및 사람 검토와 구분한다.
 
 공개 배포와 실제 공개 URL/이력/화면 검증은 아직 완료로 기록하지 않는다. 이후 실제 결과를 이 문서에 추가한다.
+
+
+## 공개 배포와 최종 검증 완료
+
+source `d52ebaa`의 [Pages 43760724295](https://github.com/Hansihoo/signal-desk/actions/runs/43760724295)이 성공했다. Actions의 시험, 복원, 수집/발행, 클라우드 주거 brief/review, 상태 보존과 배포가 모두 성공했다. 실제 공개 데이터 생성 시각은 2026-11-15T20:58:44Z이며 공개 확인 영수증은 2026-11-15T21:03:21.092289+00:00다.
+
+- [Edge0 새 소개](https://hansihoo.github.io/signal-desk/preview/edge0-145b-120b-model-guide.html)와 [LongCat 2판](https://hansihoo.github.io/signal-desk/preview/longcat-2-5-model-guide.html)의 전체 원고가 입력과 일치했다. [전체 모델 비교표](https://hansihoo.github.io/signal-desk/preview/ai-models.html)의 30건 원본도 입력과 일치했다. 관련 없는 기존 현재 보고서 136편, 이전 보고서 283판, 모델 2932판 및 Theo 원문 23판을 지문으로 보존 확인했다.
+- 두 실제 공개 소개를 390/1280px에서 열고 제목, 표8개, 페이지 폭, 전체 비교표 실제 이동과 LongCat 1판을 확인했다. 선택 소개/전체표의 내부 링크와 fragment 449개를 HTTP/anchor로 확인했고 이전 소개도 200이다. 모델 이름으로 검색한 공식 보기에서 30건 수치·출처·확인일·평가판·조건·최초 저장과 LongCat 개정 관측의 이전 판을 대조했다. score 0–100과 tokens/s의 실제 원문 단위를 확인했으며 AA 점수/일괄 백분율로 바꾸지 않았다.
+- USD 0.30/0.006/1.20, CNY 2/0.04/8과 한시 할인 조건, 사양 열의 145B/262,144가 실제 표시됐다. 기존 가격 관측의 11월3일 확인일은 보존했고 11월16일 요금 재검토 범위는 새 본문에 명시했다. PC/모바일 소개, 공식 평가·요금·사양 상세 PNG를 열어 확인했다. 페이지 오류는 없고 검증 브라우저를 닫았다.
+
+공개 JSON/HTTP 영수증과 브라우저 결과/필수 PNG는 비추적 `data/raw/model_maintenance/2026-11-16/`에 보존했다. 원문·관련 운영 문서만 제출했으며 생성 DB/JSON/HTML/PNG와 다른 작업의 변경은 제출하지 않았다. 소유 임시 소스 폴더는 atomic runner 종료 시 정리됐다. 독립 모델 실행, 실제 API 청구, 사람 독해 시험 및 미확인 상용 허가 가격의 한계는 그대로다.
