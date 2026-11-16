@@ -30,4 +30,11 @@ Theo 본문18편과 비교 원본806관측은 이번 수집에서 변경이 없�
 - 첫 브라우저 검사의 경쟁 모델 검색은 기존 관측이 많아 첫 페이지에서 대상 행을 찾지 못했다. 현재 원본 데이터에는 해당 관측이 있었고, 모델 이름만으로 모든 판이 한 페이지에 나올 것이라는 검사 가정이 원인이었다. 공식 자료·모델·평가판으로 범위를 좁히는 실제 검색으로 검사를 고친 뒤55건이 통과했다. 제품 코드나 기록을 우회·삭제하지 않았다.
 - 주거 review는11항목 통과/활성 공고0의1항목 실패다. 생성 brief PNG를 확인했으며 이 기존 주거 자료 제한을 모델 기능 실패와 분리한다. 독립 모델 실행·실청구·사람 독해 시험은 하지 않았다.
 
-원격 push와 Pages·실제 공개 반영은 아직 후속 확인이다. 배포 완료 기록은 아래에 별도로 추가한다.
+## 공개 배포와 최종 검증 완료
+
+- 기능 소스 `718fa92ba8e3a59b7d42c756952e7b9b346fdf3a`를 기존 main에 정상 push했고 [Pages 43950829935](https://github.com/Hansihoo/signal-desk/actions/runs/43950829935)가 성공했다. 2026-11-17 05:40 KST 실제 공개 `research-data.json`에서 소개3판·공식55관측의 입력 일치, 다른 현재 보고서137편과 이전 보고서285판·모델2962판·Theo원문23판의 내용 보존을 확인했다.
+- 공개 소개3편의 PC1280/모바일390 화면과12표, 전체 비교표 실제 이동, Qwen 프리뷰1판, 내부 링크/anchor504개를 확인했다. 공개 공식 보기55관측의 평가 수치·원문 단위·평가판·조건·출처·확인일·최초 이력과 실제 단가/과제비용28셀, 제공자·모델·사양 필터가 통과했고 브라우저 오류는 없었다.
+- 공개390px 첫 화면3편 및 요금·평가 상세 PNG를 열어 읽었다. Hy4 Flash CNY 반값의 입력0.25/출력1/캐시읽기0.01(100만 토큰당), 종료11월30일13:00KST와 LongCat 애니메이션2.114의 반대 결과가 실제 상세에 표시됐다. Qwen의 지역별 표준가·이전 판과 LongCat의 가중치/운영비 구분도 보존됐다.
+- 공개 확인은 배포물과 입력·출력의 대조다. 독립 모델 실행, 실청구, 한국어 업무 및 사람 독해 시험은 수행하지 않았다. 원문·공개 응답·화면 근거는 비추적 raw에 보존하며 일회성 소유 소스 복사본은 정리했다. 이 기록만 담은 후속 문서 커밋은 배포된 기능 소스를 바꾸지 않는다.
+
+공개 소개: [Qwen4-Max 정식판](https://hansihoo.github.io/signal-desk/preview/qwen4-max-preview-model-guide.html), [Hy4 Flash](https://hansihoo.github.io/signal-desk/preview/tencent-hy4-flash-model-guide.html), [LongCat-Video-Avatar 1.6](https://hansihoo.github.io/signal-desk/preview/longcat-video-avatar-1-6-model-guide.html). [전체 모델 비교표](https://hansihoo.github.io/signal-desk/preview/ai-models.html)도 같은 작업에서 공개 반영됐다.
