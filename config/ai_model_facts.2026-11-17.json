@@ -1,0 +1,828 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "id": "qwen4-max-formal-spec",
+      "model": "Qwen4-Max",
+      "provider": "Alibaba QwenCloud",
+      "source_url": "https://docs.qwencloud.com/developer-guides/getting-started/latest-model",
+      "checked_on": "2026-11-17",
+      "fields": {
+        "kind": "공식 사양과 제공",
+        "suite": "QwenCloud qwen4-max / formal 2026-11-16",
+        "condition": "문맥은토큰.최대값동시사용보장아님;formalID와previewID는분리.가중치·Batch·fine-tuning·자체 배포 미지원 또는 미확인",
+        "parameters": 2400,
+        "active_parameters": 71,
+        "context": 1000000,
+        "release": "2026-11-16",
+        "status": "정식 API·Token Plan 제공",
+        "access": "QwenCloud API / QwenWork / QwenStudio",
+        "비추론 최대 입력": 991808,
+        "추론 최대 입력": 983616,
+        "비추론 최대 출력": 131072,
+        "생각+답변 최대": 262144,
+        "기본 생각 예산": 131072,
+        "규모 근거": "https://www.alibabacloud.com/blog/alibaba-unveils-qwen4-max-new-ai-teammate-for-work-creativity-and-discovery_603783"
+      }
+    },
+    {
+      "id": "qwen4-max-standard-singapore",
+      "model": "Qwen4-Max",
+      "provider": "Alibaba QwenCloud",
+      "source_url": "https://docs.qwencloud.com/developer-guides/getting-started/model-prices",
+      "checked_on": "2026-11-17",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "QwenCloud standard USD / Singapore International",
+        "condition": "0<Token≤1M;생각/비생각;출력은생각+답변.기본입력과캐시읽기·쓰기를분리.표준가,할인/크레딧아님",
+        "입력 USD / 100만 토큰": 1.5,
+        "출력 USD / 100만 토큰": 4.5,
+        "캐시 읽기 USD / 100만 토큰": 0.075,
+        "캐시 쓰기 5분 USD / 100만 토큰": 1.875,
+        "캐시 쓰기 1시간 USD / 100만 토큰": 3,
+        "region": "Singapore International"
+      }
+    },
+    {
+      "id": "qwen4-max-standard-beijing",
+      "model": "Qwen4-Max",
+      "provider": "Alibaba QwenCloud",
+      "source_url": "https://docs.qwencloud.com/developer-guides/getting-started/model-prices",
+      "checked_on": "2026-11-17",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "QwenCloud standard USD / Beijing and Global",
+        "condition": "0<Token≤1M;생각/비생각;출력은생각+답변.기본입력과캐시읽기·쓰기를분리.표준가,할인/크레딧아님",
+        "입력 USD / 100만 토큰": 1.413,
+        "출력 USD / 100만 토큰": 4.24,
+        "캐시 읽기 USD / 100만 토큰": 0.071,
+        "캐시 쓰기 5분 USD / 100만 토큰": 1.767,
+        "캐시 쓰기 1시간 USD / 100만 토큰": 2.827,
+        "region": "Beijing and Global"
+      }
+    },
+    {
+      "id": "qwen38-max-current-singapore-price",
+      "model": "Qwen3.8-Max",
+      "provider": "Alibaba QwenCloud",
+      "source_url": "https://docs.qwencloud.com/developer-guides/getting-started/model-prices",
+      "checked_on": "2026-11-17",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "QwenCloud standard USD / Singapore International",
+        "condition": "정식Qwen4와동일 지역비교;0<Token≤1M;캐시는별도미검토",
+        "입력 USD / 100만 토큰": 2,
+        "출력 USD / 100만 토큰": 6
+      }
+    },
+    {
+      "id": "qwen4-launch-arena-claude-fable-5-2",
+      "model": "Claude Fable 5.2",
+      "provider": "Anthropic",
+      "source_url": "https://img.alicdn.com/imgextra/i1/O1CN015qhsInXrSKD1chua_!!6000000005161-2-tps-800-800.png",
+      "checked_on": "2026-11-17",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Code Arena WebDev / Alibaba launch image 2026-11-16",
+        "condition": "발표자가인용한Arena그림.현재Arena독립조회아님.오차막대미추정;모델별설정·Harness통제아님",
+        "평가 점수": 1826,
+        "원문 단위": "Arena score",
+        "effort": "xhigh"
+      }
+    },
+    {
+      "id": "qwen4-launch-arena-claude-opus-5-5",
+      "model": "Claude Opus 5.5",
+      "provider": "Anthropic",
+      "source_url": "https://img.alicdn.com/imgextra/i1/O1CN015qhsInXrSKD1chua_!!6000000005161-2-tps-800-800.png",
+      "checked_on": "2026-11-17",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Code Arena WebDev / Alibaba launch image 2026-11-16",
+        "condition": "발표자가인용한Arena그림.현재Arena독립조회아님.오차막대미추정;모델별설정·Harness통제아님",
+        "평가 점수": 1816,
+        "원문 단위": "Arena score",
+        "effort": "max"
+      }
+    },
+    {
+      "id": "qwen4-launch-arena-gemini-4-carbon",
+      "model": "Gemini 4 Carbon",
+      "provider": "Google",
+      "source_url": "https://img.alicdn.com/imgextra/i1/O1CN015qhsInXrSKD1chua_!!6000000005161-2-tps-800-800.png",
+      "checked_on": "2026-11-17",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Code Arena WebDev / Alibaba launch image 2026-11-16",
+        "condition": "발표자가인용한Arena그림.현재Arena독립조회아님.오차막대미추정;모델별설정·Harness통제아님",
+        "평가 점수": 1768,
+        "원문 단위": "Arena score",
+        "effort": "high"
+      }
+    },
+    {
+      "id": "qwen4-launch-arena-gpt-6-astra",
+      "model": "GPT-6 Astra",
+      "provider": "OpenAI",
+      "source_url": "https://img.alicdn.com/imgextra/i1/O1CN015qhsInXrSKD1chua_!!6000000005161-2-tps-800-800.png",
+      "checked_on": "2026-11-17",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Code Arena WebDev / Alibaba launch image 2026-11-16",
+        "condition": "발표자가인용한Arena그림.현재Arena독립조회아님.오차막대미추정;모델별설정·Harness통제아님",
+        "평가 점수": 1763,
+        "원문 단위": "Arena score",
+        "effort": "max"
+      }
+    },
+    {
+      "id": "qwen4-launch-arena-qwen4-max",
+      "model": "Qwen4-Max",
+      "provider": "Alibaba QwenCloud",
+      "source_url": "https://img.alicdn.com/imgextra/i1/O1CN015qhsInXrSKD1chua_!!6000000005161-2-tps-800-800.png",
+      "checked_on": "2026-11-17",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Code Arena WebDev / Alibaba launch image 2026-11-16",
+        "condition": "발표자가인용한Arena그림.현재Arena독립조회아님.오차막대미추정;모델별설정·Harness통제아님",
+        "평가 점수": 1750,
+        "원문 단위": "Arena score",
+        "effort": "xhigh"
+      }
+    },
+    {
+      "id": "qwen4-launch-arena-gpt-6-1-sol",
+      "model": "GPT-6.1 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://img.alicdn.com/imgextra/i1/O1CN015qhsInXrSKD1chua_!!6000000005161-2-tps-800-800.png",
+      "checked_on": "2026-11-17",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Code Arena WebDev / Alibaba launch image 2026-11-16",
+        "condition": "발표자가인용한Arena그림.현재Arena독립조회아님.오차막대미추정;모델별설정·Harness통제아님",
+        "평가 점수": 1742,
+        "원문 단위": "Arena score",
+        "effort": "max"
+      }
+    },
+    {
+      "id": "qwen4-launch-arena-gemini-4-hydrogen",
+      "model": "Gemini 4 Hydrogen",
+      "provider": "Google",
+      "source_url": "https://img.alicdn.com/imgextra/i1/O1CN015qhsInXrSKD1chua_!!6000000005161-2-tps-800-800.png",
+      "checked_on": "2026-11-17",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Code Arena WebDev / Alibaba launch image 2026-11-16",
+        "condition": "발표자가인용한Arena그림.현재Arena독립조회아님.오차막대미추정;모델별설정·Harness통제아님",
+        "평가 점수": 1704,
+        "원문 단위": "Arena score",
+        "effort": "high"
+      }
+    },
+    {
+      "id": "qwen-work360-qwen4-max",
+      "model": "Qwen4-Max",
+      "provider": "Alibaba QwenCloud",
+      "source_url": "https://img.alicdn.com/imgextra/i3/O1CN01flbbkpi4wHD3Zo0O_!!6000000007689-0-tps-1762-950.jpg",
+      "checked_on": "2026-11-17",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Work360 / Alibaba internal 721 fields",
+        "condition": "내부평가;정답률%로변환하지않음.전체 Harness·반복수·날짜미명시",
+        "평가 점수": 52.69,
+        "원문 단위": "원문 overall score"
+      }
+    },
+    {
+      "id": "qwen-work360-qwen3-8-max",
+      "model": "Qwen3.8-Max",
+      "provider": "Alibaba QwenCloud",
+      "source_url": "https://img.alicdn.com/imgextra/i3/O1CN01flbbkpi4wHD3Zo0O_!!6000000007689-0-tps-1762-950.jpg",
+      "checked_on": "2026-11-17",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Work360 / Alibaba internal 721 fields",
+        "condition": "내부평가;정답률%로변환하지않음.전체 Harness·반복수·날짜미명시",
+        "평가 점수": 47.74,
+        "원문 단위": "원문 overall score"
+      }
+    },
+    {
+      "id": "hy4-flash-spec",
+      "model": "Hy4 Flash",
+      "provider": "Tencent",
+      "source_url": "https://www.tencent.com/tencent-launches-hy4-flash-to-power-high-speed-cost-efficient-ai-deployment-for-everyday-workflows/",
+      "checked_on": "2026-11-17",
+      "fields": {
+        "kind": "공식 사양과 제공",
+        "suite": "Tencent Hy4 flash launch 2026-11-16",
+        "condition": "총224B는Engram64B포함;문맥원문1M.출력64k·입력960k는목록원문.가중치는 공개 예정이며다운로드가능으로미확인",
+        "parameters": 224,
+        "active_parameters": 12,
+        "release": "2026-11-16",
+        "status": "API·앱 제공 / 가중치 공개 예정",
+        "access": "TokenHub / WorkBuddy / Tencent apps",
+        "문맥 원문": "1M tokens",
+        "최대 입력 원문": "960k tokens",
+        "최대 출력 원문": "64k tokens",
+        "Engram Params (B)": 64,
+        "사양 근거": "https://cloud.tencent.com/document/product/1823/130051"
+      }
+    },
+    {
+      "id": "hy4-flash-standard-cny",
+      "model": "Hy4 Flash",
+      "provider": "Tencent",
+      "source_url": "https://cloud.tencent.com/document/product/1823/130055",
+      "checked_on": "2026-11-17",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "TokenHub standard CNY per million tokens",
+        "condition": "Guangzhou/Singapore;표준가와 50% 할인을 분리.할인은2026-11-30 12:00Beijing /13:00KST까지실제사용량;API부가도구·총청구별도",
+        "입력 CNY / 100만 토큰": 0.5,
+        "출력 CNY / 100만 토큰": 2,
+        "캐시 읽기 CNY / 100만 토큰": 0.02
+      }
+    },
+    {
+      "id": "hy4-flash-discount-cny",
+      "model": "Hy4 Flash",
+      "provider": "Tencent",
+      "source_url": "https://cloud.tencent.com/document/product/1823/130055",
+      "checked_on": "2026-11-17",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "TokenHub temporary50percent CNY per million tokens",
+        "condition": "Guangzhou/Singapore;표준가와 50% 할인을 분리.할인은2026-11-30 12:00Beijing /13:00KST까지실제사용량;API부가도구·총청구별도",
+        "입력 CNY / 100만 토큰": 0.25,
+        "출력 CNY / 100만 토큰": 1.0,
+        "캐시 읽기 CNY / 100만 토큰": 0.01
+      }
+    },
+    {
+      "id": "hy4-flash-launch-approx-usd",
+      "model": "Hy4 Flash",
+      "provider": "Tencent",
+      "source_url": "https://www.tencent.com/tencent-launches-hy4-flash-to-power-high-speed-cost-efficient-ai-deployment-for-everyday-workflows/",
+      "checked_on": "2026-11-17",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Tencent launch approximate USD per million tokens",
+        "condition": "발표의USD근삿값;환율·기준일미명시.별도CNY정가와합치지않음",
+        "입력 USD / 100만 토큰": 0.07,
+        "출력 USD / 100만 토큰": 0.281,
+        "캐시 읽기 USD / 100만 토큰": 0.003
+      }
+    },
+    {
+      "id": "hyflash-workindex-hy4",
+      "model": "Hy4",
+      "provider": "Tencent",
+      "source_url": "https://www.tencent.com/wp-content/uploads/2026/11/image-25.png",
+      "checked_on": "2026-11-17",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "WorkIndex / Tencent internal8 / launch2026-11-16",
+        "condition": "8개내부업무평가.비용은RMB/과제의반올림값.원문배수13.8/24.5와본문근사1/13·1/20을정확비율로재계산하지않음",
+        "평가 점수": 51.4,
+        "원문 단위": "Performance 원문점수",
+        "과제 비용 CNY / task": 5.7
+      }
+    },
+    {
+      "id": "hyflash-workindex-hy4-preview",
+      "model": "Hy4 Preview",
+      "provider": "Tencent",
+      "source_url": "https://www.tencent.com/wp-content/uploads/2026/11/image-25.png",
+      "checked_on": "2026-11-17",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "WorkIndex / Tencent internal8 / launch2026-11-16",
+        "condition": "8개내부업무평가.비용은RMB/과제의반올림값.원문배수13.8/24.5와본문근사1/13·1/20을정확비율로재계산하지않음",
+        "평가 점수": 39.7,
+        "원문 단위": "Performance 원문점수",
+        "과제 비용 CNY / task": 3.2
+      }
+    },
+    {
+      "id": "hyflash-workindex-hy4-flash",
+      "model": "Hy4 Flash",
+      "provider": "Tencent",
+      "source_url": "https://www.tencent.com/wp-content/uploads/2026/11/image-25.png",
+      "checked_on": "2026-11-17",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "WorkIndex / Tencent internal8 / launch2026-11-16",
+        "condition": "8개내부업무평가.비용은RMB/과제의반올림값.원문배수13.8/24.5와본문근사1/13·1/20을정확비율로재계산하지않음",
+        "평가 점수": 42.1,
+        "원문 단위": "Performance 원문점수",
+        "과제 비용 CNY / task": 0.2
+      }
+    },
+    {
+      "id": "hyflash-blind-deepseek-v4-1-flash-1017",
+      "model": "DeepSeek-V4.1-Flash-1017",
+      "provider": "DeepSeek",
+      "source_url": "https://www.tencent.com/wp-content/uploads/2026/11/image-26.png",
+      "checked_on": "2026-11-17",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Tencent WorkBuddy blind85 users259 tasks27 categories",
+        "condition": "공급자 내부사용자;외부모델high-tier;전체 Harness·세부요청미공개. 독립실사용결과아님",
+        "평가 점수": 3.09,
+        "원문 단위": "만족도 /4점",
+        "중앙 소요 분": 10.3,
+        "과제 비용 CNY / task": 1.2
+      }
+    },
+    {
+      "id": "hyflash-blind-hy4-flash",
+      "model": "Hy4 Flash",
+      "provider": "Tencent",
+      "source_url": "https://www.tencent.com/wp-content/uploads/2026/11/image-26.png",
+      "checked_on": "2026-11-17",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Tencent WorkBuddy blind85 users259 tasks27 categories",
+        "condition": "공급자 내부사용자;외부모델high-tier;전체 Harness·세부요청미공개. 독립실사용결과아님",
+        "평가 점수": 2.79,
+        "원문 단위": "만족도 /4점",
+        "중앙 소요 분": 6.7,
+        "과제 비용 CNY / task": 0.26
+      }
+    },
+    {
+      "id": "hyflash-blind-claude-haiku-5-5",
+      "model": "Claude Haiku 5.5",
+      "provider": "Anthropic",
+      "source_url": "https://www.tencent.com/wp-content/uploads/2026/11/image-26.png",
+      "checked_on": "2026-11-17",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Tencent WorkBuddy blind85 users259 tasks27 categories",
+        "condition": "공급자 내부사용자;외부모델high-tier;전체 Harness·세부요청미공개. 독립실사용결과아님",
+        "평가 점수": 2.81,
+        "원문 단위": "만족도 /4점",
+        "중앙 소요 분": 6.8,
+        "과제 비용 CNY / task": 4.73
+      }
+    },
+    {
+      "id": "hyflash-blind-glm-5-3-flash",
+      "model": "GLM-5.3-Flash",
+      "provider": "Zhipu",
+      "source_url": "https://www.tencent.com/wp-content/uploads/2026/11/image-26.png",
+      "checked_on": "2026-11-17",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Tencent WorkBuddy blind85 users259 tasks27 categories",
+        "condition": "공급자 내부사용자;외부모델high-tier;전체 Harness·세부요청미공개. 독립실사용결과아님",
+        "평가 점수": 2.53,
+        "원문 단위": "만족도 /4점",
+        "중앙 소요 분": 7.6,
+        "과제 비용 CNY / task": 0.81
+      }
+    },
+    {
+      "id": "hy4-flash-lifecycle",
+      "model": "Hy4 Flash",
+      "provider": "Tencent",
+      "source_url": "https://cloud.tencent.com/document/product/1823/130051",
+      "checked_on": "2026-11-17",
+      "fields": {
+        "kind": "공식 제공과 수명주기",
+        "suite": "TokenHub model list 2026-11-16",
+        "condition": "Flash는hy4-flash.종료표시는이전hy4-preview에만적용;정확시각미상",
+        "status": "hy4-flash 현재제공",
+        "이전 Preview 종료일": "2026-12-07"
+      }
+    },
+    {
+      "id": "longcat-avatar16-access",
+      "model": "LongCat-Video-Avatar 1.6",
+      "provider": "Meituan",
+      "source_url": "https://huggingface.co/meituan-longcat/LongCat-Video-Avatar-1.6/raw/main/README.md",
+      "checked_on": "2026-11-17",
+      "fields": {
+        "kind": "공식 사양과 제공",
+        "suite": "LongCat-Video-Avatar1.6 card / release2026-11-15",
+        "condition": "기반13.6B와LoRA포함총계분리;컨텍스트토큰사양을영상모델에임의적용하지않음.공식GPU예제는최소요구아님",
+        "release": "2026-11-15",
+        "status": "공개 가중치",
+        "access": "HF / ModelScope / local GPU",
+        "license": "MIT weights; Meituan trademark/patent rights not automatically granted",
+        "표준 API 요금": "미공개/미확인",
+        "출력": "음성 구동인물 영상;10분초과생성은공급자주장",
+        "입력": "오디오·텍스트·참조이미지",
+        "파라미터 총계": "1.6 LoRA 포함총계미확인"
+      }
+    },
+    {
+      "id": "avatar16-arena-omnihuman-2-0",
+      "model": "OmniHuman-2.0",
+      "provider": "ByteDance",
+      "source_url": "https://huggingface.co/meituan-longcat/LongCat-Video-Avatar-1.6/resolve/main/assets/fig.png",
+      "checked_on": "2026-11-17",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "LongCat Avatar Arena / EvalTalker508 /33051votes15pairs",
+        "condition": "공급자실험.모델별표수가합산총표수가아님;API실패·재생불가제외.전체추론옵션미공개",
+        "평가 점수": 1236.7,
+        "원문 단위": "Bradley–Terry Elo"
+      }
+    },
+    {
+      "id": "avatar16-arena-longcat-video-avatar-1-6",
+      "model": "LongCat-Video-Avatar 1.6",
+      "provider": "Meituan",
+      "source_url": "https://huggingface.co/meituan-longcat/LongCat-Video-Avatar-1.6/resolve/main/assets/fig.png",
+      "checked_on": "2026-11-17",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "LongCat Avatar Arena / EvalTalker508 /33051votes15pairs",
+        "condition": "공급자실험.모델별표수가합산총표수가아님;API실패·재생불가제외.전체추론옵션미공개",
+        "평가 점수": 1068.1,
+        "원문 단위": "Bradley–Terry Elo"
+      }
+    },
+    {
+      "id": "avatar16-arena-longcat-video-avatar-1-5",
+      "model": "LongCat-Video-Avatar 1.5",
+      "provider": "Meituan",
+      "source_url": "https://huggingface.co/meituan-longcat/LongCat-Video-Avatar-1.6/resolve/main/assets/fig.png",
+      "checked_on": "2026-11-17",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "LongCat Avatar Arena / EvalTalker508 /33051votes15pairs",
+        "condition": "공급자실험.모델별표수가합산총표수가아님;API실패·재생불가제외.전체추론옵션미공개",
+        "평가 점수": 1051.8,
+        "원문 단위": "Bradley–Terry Elo"
+      }
+    },
+    {
+      "id": "avatar16-arena-heygen",
+      "model": "HeyGen",
+      "provider": "HeyGen",
+      "source_url": "https://huggingface.co/meituan-longcat/LongCat-Video-Avatar-1.6/resolve/main/assets/fig.png",
+      "checked_on": "2026-11-17",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "LongCat Avatar Arena / EvalTalker508 /33051votes15pairs",
+        "condition": "공급자실험.모델별표수가합산총표수가아님;API실패·재생불가제외.전체추론옵션미공개",
+        "평가 점수": 908.1,
+        "원문 단위": "Bradley–Terry Elo"
+      }
+    },
+    {
+      "id": "avatar16-arena-omnihuman-1-5",
+      "model": "OmniHuman-1.5",
+      "provider": "ByteDance",
+      "source_url": "https://huggingface.co/meituan-longcat/LongCat-Video-Avatar-1.6/resolve/main/assets/fig.png",
+      "checked_on": "2026-11-17",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "LongCat Avatar Arena / EvalTalker508 /33051votes15pairs",
+        "condition": "공급자실험.모델별표수가합산총표수가아님;API실패·재생불가제외.전체추론옵션미공개",
+        "평가 점수": 880.6,
+        "원문 단위": "Bradley–Terry Elo"
+      }
+    },
+    {
+      "id": "avatar16-arena-kling-avatar-2-0",
+      "model": "Kling Avatar 2.0",
+      "provider": "Kuaishou",
+      "source_url": "https://huggingface.co/meituan-longcat/LongCat-Video-Avatar-1.6/resolve/main/assets/fig.png",
+      "checked_on": "2026-11-17",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "LongCat Avatar Arena / EvalTalker508 /33051votes15pairs",
+        "condition": "공급자실험.모델별표수가합산총표수가아님;API실패·재생불가제외.전체추론옵션미공개",
+        "평가 점수": 854.7,
+        "원문 단위": "Bradley–Terry Elo"
+      }
+    },
+    {
+      "id": "avatar16-compare-overall-1-5",
+      "model": "LongCat-Video-Avatar 1.5",
+      "provider": "Meituan",
+      "source_url": "https://raw.githubusercontent.com/meituan-longcat/LongCat-Video/main/assets/LongCat-Video-Avatar-1.6-Tech-Report.pdf",
+      "checked_on": "2026-11-17",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "LongCat1.6 report Fig8 / overall",
+        "condition": "508쌍;사람다움270명·영상당3주석과전문가문제율은별도. 높을수록 좋음",
+        "평가 점수": 3.006,
+        "원문 단위": "사람다움 /5점"
+      }
+    },
+    {
+      "id": "avatar16-compare-overall-1-6",
+      "model": "LongCat-Video-Avatar 1.6",
+      "provider": "Meituan",
+      "source_url": "https://raw.githubusercontent.com/meituan-longcat/LongCat-Video/main/assets/LongCat-Video-Avatar-1.6-Tech-Report.pdf",
+      "checked_on": "2026-11-17",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "LongCat1.6 report Fig8 / overall",
+        "condition": "508쌍;사람다움270명·영상당3주석과전문가문제율은별도. 높을수록 좋음",
+        "평가 점수": 3.322,
+        "원문 단위": "사람다움 /5점"
+      }
+    },
+    {
+      "id": "avatar16-compare-realistic-1-5",
+      "model": "LongCat-Video-Avatar 1.5",
+      "provider": "Meituan",
+      "source_url": "https://raw.githubusercontent.com/meituan-longcat/LongCat-Video/main/assets/LongCat-Video-Avatar-1.6-Tech-Report.pdf",
+      "checked_on": "2026-11-17",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "LongCat1.6 report Fig8 / realistic",
+        "condition": "508쌍;사람다움270명·영상당3주석과전문가문제율은별도. 높을수록 좋음",
+        "평가 점수": 3.083,
+        "원문 단위": "사람다움 /5점"
+      }
+    },
+    {
+      "id": "avatar16-compare-realistic-1-6",
+      "model": "LongCat-Video-Avatar 1.6",
+      "provider": "Meituan",
+      "source_url": "https://raw.githubusercontent.com/meituan-longcat/LongCat-Video/main/assets/LongCat-Video-Avatar-1.6-Tech-Report.pdf",
+      "checked_on": "2026-11-17",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "LongCat1.6 report Fig8 / realistic",
+        "condition": "508쌍;사람다움270명·영상당3주석과전문가문제율은별도. 높을수록 좋음",
+        "평가 점수": 3.441,
+        "원문 단위": "사람다움 /5점"
+      }
+    },
+    {
+      "id": "avatar16-compare-animated-1-5",
+      "model": "LongCat-Video-Avatar 1.5",
+      "provider": "Meituan",
+      "source_url": "https://raw.githubusercontent.com/meituan-longcat/LongCat-Video/main/assets/LongCat-Video-Avatar-1.6-Tech-Report.pdf",
+      "checked_on": "2026-11-17",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "LongCat1.6 report Fig8 / animated",
+        "condition": "508쌍;사람다움270명·영상당3주석과전문가문제율은별도. 높을수록 좋음;1.6에서하락",
+        "평가 점수": 2.246,
+        "원문 단위": "사람다움 /5점"
+      }
+    },
+    {
+      "id": "avatar16-compare-animated-1-6",
+      "model": "LongCat-Video-Avatar 1.6",
+      "provider": "Meituan",
+      "source_url": "https://raw.githubusercontent.com/meituan-longcat/LongCat-Video/main/assets/LongCat-Video-Avatar-1.6-Tech-Report.pdf",
+      "checked_on": "2026-11-17",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "LongCat1.6 report Fig8 / animated",
+        "condition": "508쌍;사람다움270명·영상당3주석과전문가문제율은별도. 높을수록 좋음;1.6에서하락",
+        "평가 점수": 2.114,
+        "원문 단위": "사람다움 /5점"
+      }
+    },
+    {
+      "id": "avatar16-compare-audio-expression-1-5",
+      "model": "LongCat-Video-Avatar 1.5",
+      "provider": "Meituan",
+      "source_url": "https://raw.githubusercontent.com/meituan-longcat/LongCat-Video/main/assets/LongCat-Video-Avatar-1.6-Tech-Report.pdf",
+      "checked_on": "2026-11-17",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "LongCat1.6 report Fig8 / audio-expression",
+        "condition": "508쌍;사람다움270명·영상당3주석과전문가문제율은별도. 낮을수록 좋음",
+        "평가 점수": 13,
+        "원문 단위": "문제율 %"
+      }
+    },
+    {
+      "id": "avatar16-compare-audio-expression-1-6",
+      "model": "LongCat-Video-Avatar 1.6",
+      "provider": "Meituan",
+      "source_url": "https://raw.githubusercontent.com/meituan-longcat/LongCat-Video/main/assets/LongCat-Video-Avatar-1.6-Tech-Report.pdf",
+      "checked_on": "2026-11-17",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "LongCat1.6 report Fig8 / audio-expression",
+        "condition": "508쌍;사람다움270명·영상당3주석과전문가문제율은별도. 낮을수록 좋음",
+        "평가 점수": 6.7,
+        "원문 단위": "문제율 %"
+      }
+    },
+    {
+      "id": "avatar16-compare-transition-1-5",
+      "model": "LongCat-Video-Avatar 1.5",
+      "provider": "Meituan",
+      "source_url": "https://raw.githubusercontent.com/meituan-longcat/LongCat-Video/main/assets/LongCat-Video-Avatar-1.6-Tech-Report.pdf",
+      "checked_on": "2026-11-17",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "LongCat1.6 report Fig8 / transition",
+        "condition": "508쌍;사람다움270명·영상당3주석과전문가문제율은별도. 낮을수록 좋음",
+        "평가 점수": 8.9,
+        "원문 단위": "문제율 %"
+      }
+    },
+    {
+      "id": "avatar16-compare-transition-1-6",
+      "model": "LongCat-Video-Avatar 1.6",
+      "provider": "Meituan",
+      "source_url": "https://raw.githubusercontent.com/meituan-longcat/LongCat-Video/main/assets/LongCat-Video-Avatar-1.6-Tech-Report.pdf",
+      "checked_on": "2026-11-17",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "LongCat1.6 report Fig8 / transition",
+        "condition": "508쌍;사람다움270명·영상당3주석과전문가문제율은별도. 낮을수록 좋음",
+        "평가 점수": 6.5,
+        "원문 단위": "문제율 %"
+      }
+    },
+    {
+      "id": "avatar16-compare-lipsync-1-5",
+      "model": "LongCat-Video-Avatar 1.5",
+      "provider": "Meituan",
+      "source_url": "https://raw.githubusercontent.com/meituan-longcat/LongCat-Video/main/assets/LongCat-Video-Avatar-1.6-Tech-Report.pdf",
+      "checked_on": "2026-11-17",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "LongCat1.6 report Fig8 / lipsync",
+        "condition": "508쌍;사람다움270명·영상당3주석과전문가문제율은별도. 낮을수록 좋음;0.5배속정밀검토",
+        "평가 점수": 83.7,
+        "원문 단위": "문제율 %"
+      }
+    },
+    {
+      "id": "avatar16-compare-lipsync-1-6",
+      "model": "LongCat-Video-Avatar 1.6",
+      "provider": "Meituan",
+      "source_url": "https://raw.githubusercontent.com/meituan-longcat/LongCat-Video/main/assets/LongCat-Video-Avatar-1.6-Tech-Report.pdf",
+      "checked_on": "2026-11-17",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "LongCat1.6 report Fig8 / lipsync",
+        "condition": "508쌍;사람다움270명·영상당3주석과전문가문제율은별도. 낮을수록 좋음;0.5배속정밀검토",
+        "평가 점수": 82.5,
+        "원문 단위": "문제율 %"
+      }
+    },
+    {
+      "id": "avatar16-compare-color-resolution-1-5",
+      "model": "LongCat-Video-Avatar 1.5",
+      "provider": "Meituan",
+      "source_url": "https://raw.githubusercontent.com/meituan-longcat/LongCat-Video/main/assets/LongCat-Video-Avatar-1.6-Tech-Report.pdf",
+      "checked_on": "2026-11-17",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "LongCat1.6 report Fig8 / color-resolution",
+        "condition": "508쌍;사람다움270명·영상당3주석과전문가문제율은별도. 낮을수록 좋음;0은표본 내 결과",
+        "평가 점수": 3.1,
+        "원문 단위": "문제율 %"
+      }
+    },
+    {
+      "id": "avatar16-compare-color-resolution-1-6",
+      "model": "LongCat-Video-Avatar 1.6",
+      "provider": "Meituan",
+      "source_url": "https://raw.githubusercontent.com/meituan-longcat/LongCat-Video/main/assets/LongCat-Video-Avatar-1.6-Tech-Report.pdf",
+      "checked_on": "2026-11-17",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "LongCat1.6 report Fig8 / color-resolution",
+        "condition": "508쌍;사람다움270명·영상당3주석과전문가문제율은별도. 낮을수록 좋음;0은표본 내 결과",
+        "평가 점수": 0,
+        "원문 단위": "문제율 %"
+      }
+    },
+    {
+      "id": "avatar16-compare-character-1-5",
+      "model": "LongCat-Video-Avatar 1.5",
+      "provider": "Meituan",
+      "source_url": "https://raw.githubusercontent.com/meituan-longcat/LongCat-Video/main/assets/LongCat-Video-Avatar-1.6-Tech-Report.pdf",
+      "checked_on": "2026-11-17",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "LongCat1.6 report Fig8 / character",
+        "condition": "508쌍;사람다움270명·영상당3주석과전문가문제율은별도. 낮을수록 좋음",
+        "평가 점수": 1.4,
+        "원문 단위": "문제율 %"
+      }
+    },
+    {
+      "id": "avatar16-compare-character-1-6",
+      "model": "LongCat-Video-Avatar 1.6",
+      "provider": "Meituan",
+      "source_url": "https://raw.githubusercontent.com/meituan-longcat/LongCat-Video/main/assets/LongCat-Video-Avatar-1.6-Tech-Report.pdf",
+      "checked_on": "2026-11-17",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "LongCat1.6 report Fig8 / character",
+        "condition": "508쌍;사람다움270명·영상당3주석과전문가문제율은별도. 낮을수록 좋음",
+        "평가 점수": 0.4,
+        "원문 단위": "문제율 %"
+      }
+    },
+    {
+      "id": "avatar16-compare-consistency-1-5",
+      "model": "LongCat-Video-Avatar 1.5",
+      "provider": "Meituan",
+      "source_url": "https://raw.githubusercontent.com/meituan-longcat/LongCat-Video/main/assets/LongCat-Video-Avatar-1.6-Tech-Report.pdf",
+      "checked_on": "2026-11-17",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "LongCat1.6 report Fig8 / consistency",
+        "condition": "508쌍;사람다움270명·영상당3주석과전문가문제율은별도. 낮을수록 좋음",
+        "평가 점수": 19.9,
+        "원문 단위": "문제율 %"
+      }
+    },
+    {
+      "id": "avatar16-compare-consistency-1-6",
+      "model": "LongCat-Video-Avatar 1.6",
+      "provider": "Meituan",
+      "source_url": "https://raw.githubusercontent.com/meituan-longcat/LongCat-Video/main/assets/LongCat-Video-Avatar-1.6-Tech-Report.pdf",
+      "checked_on": "2026-11-17",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "LongCat1.6 report Fig8 / consistency",
+        "condition": "508쌍;사람다움270명·영상당3주석과전문가문제율은별도. 낮을수록 좋음",
+        "평가 점수": 11.6,
+        "원문 단위": "문제율 %"
+      }
+    },
+    {
+      "id": "avatar16-win-omnihuman-2-0",
+      "model": "LongCat-Video-Avatar 1.6",
+      "provider": "Meituan",
+      "source_url": "https://raw.githubusercontent.com/meituan-longcat/LongCat-Video/main/assets/LongCat-Video-Avatar-1.6-Tech-Report.pdf",
+      "checked_on": "2026-11-17",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "LongCat Avatar Arena pairwise vs OmniHuman-2.0",
+        "condition": "PDF Fig5; (W+0.5T)/(W+L+T);비교쌍별유효표본차이,1자리반올림",
+        "평가 점수": 24.7,
+        "원문 단위": "무승부 보정 승률 %"
+      }
+    },
+    {
+      "id": "avatar16-win-longcat-video-avatar1-5",
+      "model": "LongCat-Video-Avatar 1.6",
+      "provider": "Meituan",
+      "source_url": "https://raw.githubusercontent.com/meituan-longcat/LongCat-Video/main/assets/LongCat-Video-Avatar-1.6-Tech-Report.pdf",
+      "checked_on": "2026-11-17",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "LongCat Avatar Arena pairwise vs LongCat-Video-Avatar1.5",
+        "condition": "PDF Fig5; (W+0.5T)/(W+L+T);비교쌍별유효표본차이,1자리반올림",
+        "평가 점수": 55.6,
+        "원문 단위": "무승부 보정 승률 %"
+      }
+    },
+    {
+      "id": "avatar16-win-heygen",
+      "model": "LongCat-Video-Avatar 1.6",
+      "provider": "Meituan",
+      "source_url": "https://raw.githubusercontent.com/meituan-longcat/LongCat-Video/main/assets/LongCat-Video-Avatar-1.6-Tech-Report.pdf",
+      "checked_on": "2026-11-17",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "LongCat Avatar Arena pairwise vs HeyGen",
+        "condition": "PDF Fig5; (W+0.5T)/(W+L+T);비교쌍별유효표본차이,1자리반올림",
+        "평가 점수": 72.2,
+        "원문 단위": "무승부 보정 승률 %"
+      }
+    },
+    {
+      "id": "avatar16-win-omnihuman-1-5",
+      "model": "LongCat-Video-Avatar 1.6",
+      "provider": "Meituan",
+      "source_url": "https://raw.githubusercontent.com/meituan-longcat/LongCat-Video/main/assets/LongCat-Video-Avatar-1.6-Tech-Report.pdf",
+      "checked_on": "2026-11-17",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "LongCat Avatar Arena pairwise vs OmniHuman-1.5",
+        "condition": "PDF Fig5; (W+0.5T)/(W+L+T);비교쌍별유효표본차이,1자리반올림",
+        "평가 점수": 73.5,
+        "원문 단위": "무승부 보정 승률 %"
+      }
+    },
+    {
+      "id": "avatar16-win-klingavatar2-0",
+      "model": "LongCat-Video-Avatar 1.6",
+      "provider": "Meituan",
+      "source_url": "https://raw.githubusercontent.com/meituan-longcat/LongCat-Video/main/assets/LongCat-Video-Avatar-1.6-Tech-Report.pdf",
+      "checked_on": "2026-11-17",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "LongCat Avatar Arena pairwise vs KlingAvatar2.0",
+        "condition": "PDF Fig5; (W+0.5T)/(W+L+T);비교쌍별유효표본차이,1자리반올림",
+        "평가 점수": 76.6,
+        "원문 단위": "무승부 보정 승률 %"
+      }
+    }
+  ]
+}

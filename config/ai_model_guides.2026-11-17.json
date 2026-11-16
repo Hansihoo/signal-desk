@@ -1,0 +1,1483 @@
+{
+  "schema_version": 1,
+  "reports": [
+    {
+      "id": "qwen4-max-preview-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "title": "Qwen4-Max 소개 — 정식 API, 프리뷰와의 차이와 지역 요금",
+      "description": "정식판과 기간 제한 Preview를 구분하고 이전 Qwen·경쟁 모델 대비 성능, 문맥, 캐시와 지역별 비용을 비교한다.",
+      "checked_on": "2026-11-17",
+      "scope": "2026년 11월 17일 KST에 공식 발표, 모델 문서, 요금표와 평가 그림의 관련 절을 확인했다. 공급자 평가와 외부 결과의 공급자 인용을 구분하며 독립 추론, 실제 API 청구, 한국어 업무 측정과 사람 독해 시험은 수행하지 않았다.",
+      "deck": "Qwen4-Max는 11월 16일 정식 API ID qwen4-max로 제공되기 시작했다. 기간 제한 Token Plan 프리뷰에서 종량제 API와 더 명확한 사양·요금으로 범위가 넓어졌다. 자체 Work360은 이전 모델보다 높지만 공식 발표가 인용한 WebDev 순위는 6위이며 일부 최상위 모델보다 낮다. 작은 Qwen4 모델의 공개 예고는 Max 가중치 공개를 뜻하지 않는다.",
+      "highlights": [
+        "정식판과 Preview",
+        "낮아진 동일 지역 표준 단가",
+        "평가별 다른 위치"
+      ],
+      "source_note": "공식 원문 확인일: 2026-11-17 KST. 발표일·평가 수행 기간·실제 제공 조건은 아래에서 별도로 구분한다.",
+      "summary": [
+        {
+          "label": "정식판과 Preview",
+          "text": "정식 qwen4-max가 종량제와 Token Plan에 제공된다. 기존 qwen4-max-preview/qwen4.0-max-preview의 당시 기간은11월11일02:00–25일16:00 UTC였으며 동일성·자동 전환을 단정하지 않는다.",
+          "source_ids": [
+            "qlaunchweb",
+            "qmodelweb"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "낮아진 동일 지역 표준 단가",
+          "text": "Singapore의100만 토큰당 입력/출력은USD1.50/4.50으로 이전 Qwen3.8-Max의2/6보다25% 낮다. 캐시 읽기0.075와 쓰기 요금은 별도다.",
+          "source_ids": [
+            "qpriceweb"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "평가별 다른 위치",
+          "text": "Work360은52.69 대47.74로 이전 모델보다 높다. Code Arena WebDev 인용값은xHigh1750으로 Fable5.2 xHigh1826과 Carbon High1768보다 낮다.",
+          "source_ids": [
+            "qworkimage",
+            "qcodeimage"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "references": [
+        {
+          "id": "qlaunchweb",
+          "title": "Alibaba의 Qwen4-Max 정식 발표",
+          "url": "https://www.alibabacloud.com/blog/alibaba-unveils-qwen4-max-new-ai-teammate-for-work-creativity-and-discovery_603783",
+          "description": "11월16일 출시, 2.4T/71B와 실제 API·앱 제공. 직접 HTTP는 시간 초과했으며 웹 도구의 공식 본문 응답을 보존했다."
+        },
+        {
+          "id": "qmodelweb",
+          "title": "QwenCloud 현행 모델 사양",
+          "url": "https://docs.qwencloud.com/developer-guides/getting-started/latest-model",
+          "description": "정식 ID, 입력·출력·추론 상한, 지역, Batch 미지원. 웹 도구가 반환한 관련 절이며 완전한 HTTP HTML 수집이 아니다."
+        },
+        {
+          "id": "qpriceweb",
+          "title": "QwenCloud 지역별 표준 요금",
+          "url": "https://docs.qwencloud.com/developer-guides/getting-started/model-prices",
+          "description": "Singapore International과 Beijing/Global 표준 USD, 별도 캐시 읽기·쓰기. 웹 도구의 관련 표를 읽었으며 콘솔 실청구가 아니다."
+        },
+        {
+          "id": "qcodeimage",
+          "title": "Alibaba가 인용한 Code Arena WebDev 그림",
+          "url": "https://img.alicdn.com/imgextra/i1/O1CN015qhsInXrSKD1chua_!!6000000005161-2-tps-800-800.png",
+          "description": "공식 발표에 첨부된 Arena WebDev 순위·점수·노력 수준. 현재 Arena 원장을 독립 재검증한 것이 아니다."
+        },
+        {
+          "id": "qworkimage",
+          "title": "Alibaba Work360 평가 그림",
+          "url": "https://img.alicdn.com/imgextra/i3/O1CN01flbbkpi4wHD3Zo0O_!!6000000007689-0-tps-1762-950.jpg",
+          "description": "공급자 내부 Work360의 52.69/47.74. 표의 척도를 임의로 정답률로 바꾸지 않는다."
+        },
+        {
+          "id": "hylaunch",
+          "title": "Tencent의 Hy4 flash 공식 발표",
+          "url": "https://www.tencent.com/tencent-launches-hy4-flash-to-power-high-speed-cost-efficient-ai-deployment-for-everyday-workflows/",
+          "description": "224B 중 Engram64B, 활성12B, 현재 제공·가중치 공개 계획, USD 근삿값과 공급자 평가 범위."
+        },
+        {
+          "id": "hyspec",
+          "title": "Tencent TokenHub 모델 목록",
+          "url": "https://cloud.tencent.com/document/product/1823/130051",
+          "description": "hy4-flash/hy4/hy4-preview의 1M·960k·64k와 12월7일 Preview 종료 표시. k/M 원문을 임의 정확한 정수로 바꾸지 않는다."
+        },
+        {
+          "id": "hyprice",
+          "title": "Tencent TokenHub 공식 요금",
+          "url": "https://cloud.tencent.com/document/product/1823/130055",
+          "description": "Guangzhou/Singapore CNY 표준 단가와 11월30일12시 Beijing까지의 50% 할인. 상태·시간대·표준가를 분리한다."
+        }
+      ],
+      "explanation": [
+        {
+          "id": "identity",
+          "title": "기간 제한 프리뷰에서 정식 API로",
+          "lead": "같은 계열의 후속 제공이지만 두 ID와 청구 조건은 구분된다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "정식 ID와 출시일",
+              "text": "11월16일 공식 발표는 qwen4-max의 실제 API와 Token Plan, QwenWork와 QwenStudio 제공을 설명한다. 작은 Qwen4 계열의 향후 공개 가중치 예고가 함께 있지만 Max 자체 가중치 공개를 확인한 것은 아니다. 기존 프리뷰의 가격 혜택이나 종료 시각을 정식 API의 조건으로 옮기지 않는다.",
+              "source_ids": [
+                "qlaunchweb",
+                "qmodelweb"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "문맥과 생성 상한",
+              "text": "문맥1,000,000은 실제 답변이100만 토큰이라는 뜻이 아니다. 비추론 최대 출력131,072와 추론·최종답변 합계262,144가 별도이며 기본 thinking budget은131,072다. 최대 입력도 모드별991,808과983,616으로 다르다. 한 호출에서 모든 상한을 동시에 쓸 수 있다는 보장이 아니다.",
+              "source_ids": [
+                "qmodelweb"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "architecture",
+          "title": "큰 총량과 작은 활성 계산량",
+          "lead": "MoE는 전체 전문가를 저장하되 토큰마다 일부 경로만 계산하는 구조다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "2.4T와71B의 의미",
+              "text": "총2400B와 활성71B는 저장할 전체 모델과 토큰당 계산 경로의 크기를 구분한 수치다. 공급자는 같은2400B인 Qwen3.8-Max보다 활성량25% 감소를 설명한다. 이 값만으로 속도나GPU최소 메모리를 산출할 수 없고, Max의 로컬 가중치가 제공된다는 뜻도 아니다.",
+              "source_ids": [
+                "qlaunchweb"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "멀티모달과 도구",
+              "text": "현행 문서는 이미지·영상 이해, 구조화출력과 함수호출, PDF이해, 웹검색·스크래핑, MCP 및 코드인터프리터를 구분한다. 코드인터프리터에는 생각모드가 필요하고 Batch는미지원이다. 모델 지원표가 개별 앱에서 모든 기능을 무조건 제공한다는 뜻은 아니다.",
+              "source_ids": [
+                "qmodelweb"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "strengths",
+          "title": "이전 모델 대비 비용과 산업 과제의 이점",
+          "lead": "정가 감소와 과제별 비용 감소는 서로 다른 비교다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "같은 지역의 단가 감소",
+              "text": "Singapore 입력과 출력 목록가는 이전모델보다 각각25% 낮다. Work360의 토큰35%·비용약60% 감소는 High설정의 내부과제 결과로, 모든 요청의 청구액이60% 줄어든다는 약속이 아니다.",
+              "source_ids": [
+                "qpriceweb",
+                "qlaunchweb"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "높은 결과와 반대 결과",
+              "text": "Work360 전체 점수는52.69로47.74보다 높다. 반면 Code Arena WebDev 인용에서6위1750은 Fable5.2·Opus5.5·Carbon·Astra보다 낮고 Sol Max1742보다 높다. 서로 다른평가의 결과를 평균해 범용 우승 모델로 만들 수 없다.",
+              "source_ids": [
+                "qworkimage",
+                "qcodeimage"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "limits",
+          "title": "긴 문맥과 전문 평가가 보장하지 않는 범위",
+          "lead": "제공 지역과 평가 설정, 가중치 미공개가 실제 선택의 제약이다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "서비스 경로와 지역",
+              "text": "문서에는 Singapore와 Beijing, Frankfurt·Hong Kong·Tokyo·Virginia가 나열되며 Singapore는 별도 가격이다. fine-tuning과 모델 자체 배포는미지원이다. 실제 계정 자격·한국어 정확도·각지역 접근과 결제는 확인하지 않았다.",
+              "source_ids": [
+                "qmodelweb",
+                "qpriceweb"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "평가 조건의 공백",
+              "text": "Work360은 공급자 내부평가이며 외부Arena값도 공급자발표의 인용판이다. 전체 Harness, 동일 추론예산, 통계적 유의성과 영상·한국어 실무 성능은 확정하지 않는다. 공개작업 시연을 독립 운영성과로 바꾸지 않는다.",
+              "source_ids": [
+                "qlaunchweb",
+                "qcodeimage",
+                "qworkimage"
+              ],
+              "kind": "fact"
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "specs",
+          "title": "정식판·이전판·저비용 경쟁 모델의 사양과 제공",
+          "columns": [
+            "모델",
+            "규모와 문맥",
+            "출력과 입력",
+            "제공 범위",
+            "표준 단가 / 100만 토큰"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Qwen4-Max",
+                "총2400B, 활성71B; 문맥1,000,000",
+                "비추론 출력131,072; 추론+답변262,144; 입력991,808/983,616",
+                "QwenCloud API·Token Plan, QwenWork/Studio; Max 가중치 공개 미확인",
+                "Singapore USD1.50 입력 /4.50 출력"
+              ],
+              "source_ids": [
+                "qlaunchweb",
+                "qmodelweb",
+                "qpriceweb"
+              ]
+            },
+            {
+              "values": [
+                "Qwen4-Max-Preview",
+                "당시 문서1,000,000; 정식판과 동일 가중치인지 미확인",
+                "기존 소개1판의 당시 사양 보존",
+                "기간 제한 Token Plan Preview; 당시 종료11월25일16:00UTC",
+                "프리뷰 크레딧 혜택을 정식 종량제 단가로 승계하지 않음"
+              ],
+              "source_ids": [
+                "qmodelweb"
+              ]
+            },
+            {
+              "values": [
+                "Qwen3.8-Max",
+                "공식 발표의 같은2400B 규모; 문맥/출력은 이번 전수 재확인 안함",
+                "정식판은 활성 파라미터가25% 적다는 공급자 설명",
+                "같은 QwenCloud 가격표의 이전 Max",
+                "Singapore USD2 입력 /6 출력"
+              ],
+              "source_ids": [
+                "qlaunchweb",
+                "qpriceweb"
+              ]
+            },
+            {
+              "values": [
+                "Hy4 Flash",
+                "총224B(Engram64B 포함), 활성12B; 원문1M",
+                "원문 최대 입력960k /출력64k",
+                "TokenHub·앱, 가중치는 공개 예정",
+                "TokenHub CNY0.5 입력 /2 출력 /0.02 캐시 읽기; USD 환산 비교 아님"
+              ],
+              "source_ids": [
+                "hylaunch",
+                "hyspec",
+                "hyprice"
+              ]
+            }
+          ],
+          "note": "2026-11-17 확인.  입력·출력은 동일 문맥 예산을 공유한다. Qwen의 두 최대 입력은 비추론/추론 순서다. Preview 정보는11월12일 검토1판의 역사적 제공 조건이며 현행 종료 정책 전체를 다시 읽은 것으로 표시하지 않는다."
+        },
+        {
+          "id": "work360",
+          "title": "이전 Qwen과의 내부 산업 평가",
+          "columns": [
+            "평가",
+            "Qwen4-Max",
+            "Qwen3.8-Max",
+            "조건"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Work360 전체 점수",
+                "52.69",
+                "47.74",
+                "721개 전문 분야의 공급자 내부 평가"
+              ],
+              "source_ids": [
+                "qworkimage",
+                "qlaunchweb"
+              ]
+            },
+            {
+              "values": [
+                "High 노력의 토큰/과제 비용 변화",
+                "토큰35% 감소, 과제 비용 약60% 감소",
+                "비교 기준",
+                "공급자 발표. 표준 API 단가 감소25%와 다른 지표"
+              ],
+              "source_ids": [
+                "qlaunchweb"
+              ]
+            }
+          ],
+          "note": "Work360 점수를 임의 정답률로 바꾸지 않는다. 전체 프롬프트·Harness·과제별 반복 수·측정 시각은 확인되지 않았다. 레이더 그림의 모든 분야가 우세하다고 확대하지 않는다."
+        },
+        {
+          "id": "arena",
+          "title": "공식 발표가 인용한 Code Arena WebDev",
+          "columns": [
+            "모델 / 설정",
+            "Arena score",
+            "그림 순위"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Claude Fable5.2 /xHigh",
+                "1826",
+                "1"
+              ],
+              "source_ids": [
+                "qcodeimage"
+              ]
+            },
+            {
+              "values": [
+                "Claude Opus5.5 /Max",
+                "1816",
+                "2"
+              ],
+              "source_ids": [
+                "qcodeimage"
+              ]
+            },
+            {
+              "values": [
+                "Gemini4Carbon /High",
+                "1768",
+                "4"
+              ],
+              "source_ids": [
+                "qcodeimage"
+              ]
+            },
+            {
+              "values": [
+                "GPT-6Astra /Max",
+                "1763",
+                "5"
+              ],
+              "source_ids": [
+                "qcodeimage"
+              ]
+            },
+            {
+              "values": [
+                "Qwen4-Max /xHigh",
+                "1750",
+                "6"
+              ],
+              "source_ids": [
+                "qcodeimage"
+              ]
+            },
+            {
+              "values": [
+                "GPT-6.1Sol /Max",
+                "1742",
+                "8"
+              ],
+              "source_ids": [
+                "qcodeimage"
+              ]
+            },
+            {
+              "values": [
+                "Gemini4Hydrogen /High",
+                "1704",
+                "11"
+              ],
+              "source_ids": [
+                "qcodeimage"
+              ]
+            }
+          ],
+          "note": "Alibaba의11월16일 그림에 실린 Arena AI WebDev 점수다. 공급자가 인용한 외부 결과로, 현재 Arena 원장을 독립 재검증하지 않았다. 점수는정답률%가 아니며 오차막대 수치는 그림에서 임의 추정하지 않는다. 모델별 노력 수준과 Harness가 동일하다고 가정하지 않는다."
+        },
+        {
+          "id": "prices",
+          "title": "지역과 캐시 방식에 따른 표준 USD 단가",
+          "columns": [
+            "모델·지역",
+            "입력",
+            "출력(생각+답변)",
+            "캐시 읽기",
+            "캐시 쓰기5분 /1시간"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Qwen4-Max /Singapore International",
+                "1.50",
+                "4.50",
+                "0.075",
+                "1.875 /3.00"
+              ],
+              "source_ids": [
+                "qpriceweb"
+              ]
+            },
+            {
+              "values": [
+                "Qwen4-Max /Beijing·Global",
+                "1.413",
+                "4.24",
+                "0.071",
+                "1.767 /2.827"
+              ],
+              "source_ids": [
+                "qpriceweb"
+              ]
+            },
+            {
+              "values": [
+                "Qwen3.8-Max /Singapore",
+                "2.00",
+                "6.00",
+                "이번 개정에서 별도 재검토하지 않음",
+                "Qwen4 캐시 정책과 같다고 가정하지 않음"
+              ],
+              "source_ids": [
+                "qpriceweb"
+              ]
+            }
+          ],
+          "note": "모두USD/100만 토큰의 표준 목록가다. Qwen4의입력0<Token≤1M 구간, 생각/비생각모드에 적용된다. 캐시 읽기는 명시/암묵 공통 표기이며 입력 기본가에 포함되지 않는다. 지역별 endpoint·배포 범위를 구분한다. Singapore의무료1M은 자격·유효기간이 있는 별도종량제 할당이며 Token Plan크레딧과 다르다."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "정식판의 비교 기준",
+            "text": "정식 종량제와 지역·캐시 단가가 명확해진 점, 이전 Qwen 대비 내부평가 상승이 핵심이다. 최상위 WebDev 모델보다 낮은 결과와 가중치·Batch 제약도 함께 남는다. Preview의 새 이름만으로 중복 모델을 늘리기보다 정식 ID와 과거 조건을 분리해 비교하는 것이 타당하다.",
+            "source_ids": [
+              "qlaunchweb",
+              "qmodelweb",
+              "qpriceweb",
+              "qcodeimage"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "2026년 11월 17일 KST에 공식 발표, 모델 문서, 요금표와 평가 그림의 관련 절을 확인했다. 공급자 평가와 외부 결과의 공급자 인용을 구분하며 독립 추론, 실제 API 청구, 한국어 업무 측정과 사람 독해 시험은 수행하지 않았다. QwenCloud와 Alibaba 직접 HTTP 수집은 시간 초과했다. 웹 도구에서 공식 본문의 사양·가격·발표 관련 절을 읽고 응답을 보존했으며 완전한 원본 HTML 수집 성공으로 기록하지 않았다. 이전 Preview의11월12일 검토와 새 정식판의11월17일 확인을 구분한다.",
+          "source_ids": [
+            "qmodelweb",
+            "qpriceweb",
+            "qlaunchweb"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tencent-hy4-flash-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "title": "Hy4 Flash 소개 — 낮은 토큰 비용과 업무 평가의 성능 차이",
+      "description": "Hy4·Preview와 새 Flash의 업무 품질, 표준 가격과 할인, 문맥·출력 및 가중치 공개 범위를 비교한다.",
+      "checked_on": "2026-11-17",
+      "scope": "2026년 11월 17일 KST에 공식 발표, 모델 문서, 요금표와 평가 그림의 관련 절을 확인했다. 공급자 평가와 외부 결과의 공급자 인용을 구분하며 독립 추론, 실제 API 청구, 한국어 업무 측정과 사람 독해 시험은 수행하지 않았다.",
+      "deck": "Hy4 Flash는 11월 16일 공개된 224B급 MoE 모델로, 활성 파라미터 12B와 1M 문맥을 설명한다. 정식 Hy4보다 낮은 요금이 장점이지만 공급자 WorkIndex 점수도 42.1 대 51.4로 낮다. 내부 사용자 시험에서 Haiku 5.5와 만족도는 가깝고 비용은 낮았으나, DeepSeek보다 만족도는 낮다. 현재 API·앱 제공과 향후 가중치 공개 계획을 구분해야 한다.",
+      "highlights": [
+        "작은 활성 경로",
+        "표준가와 종료시각이 있는 할인",
+        "저렴한 비용과 남는 품질 차이"
+      ],
+      "source_note": "공식 원문 확인일: 2026-11-17 KST. 발표일·평가 수행 기간·실제 제공 조건은 아래에서 별도로 구분한다.",
+      "summary": [
+        {
+          "label": "작은 활성 경로",
+          "text": "총 224B에는 Engram 64B가 포함된다. 활성 값은 12B이며, 224B에서 64B를 뺀 값을 별도의 유효 모델 크기라고 부르지 않는다.",
+          "source_ids": [
+            "hylaunch"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "표준가와 종료시각이 있는 할인",
+          "text": "TokenHub 표준 CNY/100만 토큰은 입력 0.5, 출력 2, 캐시 읽기 0.02다. 50% 할인은 11월 30일 13:00 KST까지 실제 사용량에 적용된다.",
+          "source_ids": [
+            "hyprice"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "저렴한 비용과 남는 품질 차이",
+          "text": "WorkIndex 42.1은 Preview 39.7보다 높지만 정식 Hy4의 51.4보다 낮다. 사용자 만족도는 4점 척도에서 2.79로, Haiku 5.5의 2.81에 가깝고 DeepSeek의 3.09보다 낮다.",
+          "source_ids": [
+            "hycosttask",
+            "hyblindimage"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "references": [
+        {
+          "id": "hylaunch",
+          "title": "Tencent의 Hy4 flash 공식 발표",
+          "url": "https://www.tencent.com/tencent-launches-hy4-flash-to-power-high-speed-cost-efficient-ai-deployment-for-everyday-workflows/",
+          "description": "224B 중 Engram64B, 활성12B, 현재 제공·가중치 공개 계획, USD 근삿값과 공급자 평가 범위."
+        },
+        {
+          "id": "hyspec",
+          "title": "Tencent TokenHub 모델 목록",
+          "url": "https://cloud.tencent.com/document/product/1823/130051",
+          "description": "hy4-flash/hy4/hy4-preview의 1M·960k·64k와 12월7일 Preview 종료 표시. k/M 원문을 임의 정확한 정수로 바꾸지 않는다."
+        },
+        {
+          "id": "hyprice",
+          "title": "Tencent TokenHub 공식 요금",
+          "url": "https://cloud.tencent.com/document/product/1823/130055",
+          "description": "Guangzhou/Singapore CNY 표준 단가와 11월30일12시 Beijing까지의 50% 할인. 상태·시간대·표준가를 분리한다."
+        },
+        {
+          "id": "hyvercel",
+          "title": "Vercel AI Gateway Hy4 Flash 제공 공지",
+          "url": "https://vercel.com/changelog/hy4-flash-now-available-on-ai-gateway-for-50-off",
+          "description": "파트너 경로의 현재 제공과 11월29일까지 할인 공지. Tencent 종료 시각과 같은 시각으로 추정하지 않는다."
+        },
+        {
+          "id": "hyworkimage",
+          "title": "Tencent WorkIndex와 공개 평가 산점도",
+          "url": "https://www.tencent.com/wp-content/uploads/2026/11/image-24.png",
+          "description": "내부8평가/공개7평가의 산점도. 점을 보간해 숫자를 만들지 않는다."
+        },
+        {
+          "id": "hycosttask",
+          "title": "Tencent WorkIndex 비용과 성능 그림",
+          "url": "https://www.tencent.com/wp-content/uploads/2026/11/image-25.png",
+          "description": "WorkIndex 점수42.1/39.7/51.4, 반올림 CNY 비용0.2/3.2/5.7, 원문 배수와 본문 근사 설명의 차이."
+        },
+        {
+          "id": "hyblindimage",
+          "title": "Tencent 내부 사용자의 블라인드 평가",
+          "url": "https://www.tencent.com/wp-content/uploads/2026/11/image-26.png",
+          "description": "85명259과제27범주, 만족도4점 척도·중앙시간·과제당 CNY. 외부 모델 high-tier, 공급자 내부 사용자 시험."
+        },
+        {
+          "id": "qmodelweb",
+          "title": "QwenCloud 현행 모델 사양",
+          "url": "https://docs.qwencloud.com/developer-guides/getting-started/latest-model",
+          "description": "정식 ID, 입력·출력·추론 상한, 지역, Batch 미지원. 웹 도구가 반환한 관련 절이며 완전한 HTTP HTML 수집이 아니다."
+        },
+        {
+          "id": "qpriceweb",
+          "title": "QwenCloud 지역별 표준 요금",
+          "url": "https://docs.qwencloud.com/developer-guides/getting-started/model-prices",
+          "description": "Singapore International과 Beijing/Global 표준 USD, 별도 캐시 읽기·쓰기. 웹 도구의 관련 표를 읽었으며 콘솔 실청구가 아니다."
+        }
+      ],
+      "explanation": [
+        {
+          "id": "identity",
+          "title": "Hy4의 저비용 계열",
+          "lead": "대형 Hy4를 그대로 양자화한 별칭으로 취급하지 않는다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "Flash의 파라미터 집계",
+              "text": "Flash는 혼합 어텐션, LatentMoE와 Engram 구조를 설명하며 총 224B에 64B Engram이 포함된다. 토큰당 활성 값은 12B다. 공급자는 KV 캐시가 Hy4의 1/6, Hy3의 1/24이라고 설명하지만 동일 문맥·장비 조건과 절대 메모리는 미확인이다.",
+              "source_ids": [
+                "hylaunch"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "현재 제공과 미래 가중치",
+              "text": "현재 TokenHub와 여러 Tencent 앱에 제공되며 Vercel도 11월 16일 실제 연결을 공지했다. Tencent 발표의 OpenRouter 연결은 예정으로 적혀 있어 동시 공개를 단정하지 않는다. 가중치 공개도 향후 계획이며 다운로드 가능 또는 MIT 허가로 표시하지 않는다.",
+              "source_ids": [
+                "hylaunch",
+                "hyvercel"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "quality",
+          "title": "낮은 비용과 업무 품질의 교환",
+          "lead": "같은 시험에서 품질과 비용이 측정되었어도 통제된 모델 단독 성능과는 다르다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "WorkIndex의 강점과 열세",
+              "text": "Flash 42.1은 Preview 39.7을 넘지만 정식 Hy4의 51.4에는 미치지 못한다. 같은 그림의 과제 비용 0.2 RMB는 Preview 3.2와 Hy4 5.7보다 낮다. 여덟 내부 평가는 슬라이드 작성·편집·공동 작성, 문서 편집, 표 수정, 음성·영상 처리와 시각 이해를 포함한다.",
+              "source_ids": [
+                "hylaunch",
+                "hycosttask"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "85명 사용자 시험",
+              "text": "Flash의 만족도 2.79는 Haiku의 2.81보다 소폭 낮고 DeepSeek의 3.09보다 낮다. 중앙 시간 6.7분은 비교군 중 가장 짧고 과제 비용 0.26 RMB도 낮다. 내부의 259개 과제를 모든 문서나 한국어 작업의 성공률로 바꾸지 않는다.",
+              "source_ids": [
+                "hylaunch",
+                "hyblindimage"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "costs",
+          "title": "토큰 요금과 전체 작업 비용",
+          "lead": "정가·한시 할인·실험 과제 비용을 합쳐 하나의 가격으로 표시할 수 없다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "통화와 할인",
+              "text": "CNY 정가 0.5/2/0.02와 USD 근삿값 0.070/0.281/0.003은 공식 출처부터 서로 다른 표기다. 100만 토큰 단위를 유지하고 캐시 읽기와 생각 출력의 청구를 구분한다. TokenHub 반값 종료는 Beijing 시간 11월 30일 12시로, KST 13시다.",
+              "source_ids": [
+                "hyprice",
+                "hylaunch"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "높은 처리량 주장의 조건",
+              "text": "공급자의 초당 150토큰 초과는 megakernel, 4비트 양자화와 DFly를 결합한 추론 설명이다. 전체 동시 사용자 수, 장비, 프롬프트와 통계 분포가 완전히 확인되지 않았으므로 일반 API의 지연 보장이나 로컬 PC 속도로 옮길 수 없다.",
+              "source_ids": [
+                "hylaunch"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "limits",
+          "title": "빠른 일상 작업과 복잡한 장기 코딩",
+          "lead": "저렴한 모델이 모든 경로에서 큰 모델을 대체한다는 결과는 아니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "출력과 수명주기",
+              "text": "Flash도 원문 64k 출력으로, 1M 문맥 전체를 답변으로 낼 수 없다. 정식 Hy4와 동일한 사양 표기를 갖더라도 평가 점수는 낮다. Preview는 12월 7일 종료 표시가 있고 정확한 종료 시각은 미확인이다.",
+              "source_ids": [
+                "hyspec",
+                "hycosttask"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "검증하지 않은 범위",
+              "text": "공급자는 복잡한 장기 소프트웨어 개발에는 Hy4를 권장한다. 한국어 문서, 회사별 파일, 개별 앱 플랜과 실제 계정의 지역·청구, 가중치 다운로드 및 독립 추론은 확인하지 않았다.",
+              "source_ids": [
+                "hylaunch"
+              ],
+              "kind": "fact"
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "specs",
+          "title": "Hy 계열과 정식 Qwen의 사양·제공 비교",
+          "columns": [
+            "모델",
+            "총량 /활성",
+            "문맥 /최대 입력 /최대 출력",
+            "제공과 제한",
+            "표준 단가 /100만 토큰"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Hy4 Flash",
+                "224B(Engram64B 포함) /12B",
+                "1M /960k /64k 원문 표기",
+                "TokenHub·WorkBuddy·Yuanbao 등. 가중치는 공개예정",
+                "CNY0.5 입력 /2 출력 /0.02 캐시"
+              ],
+              "source_ids": [
+                "hylaunch",
+                "hyspec",
+                "hyprice"
+              ]
+            },
+            {
+              "values": [
+                "Hy4",
+                "이번 공식 원문에서 동일한 집계 총량 미확인",
+                "1M /960k /64k",
+                "더 복잡한 장기 코딩에 권장한다는 공급자 설명",
+                "CNY6 입력 /18 출력 /0.3 캐시"
+              ],
+              "source_ids": [
+                "hylaunch",
+                "hyspec",
+                "hyprice"
+              ]
+            },
+            {
+              "values": [
+                "Hy4 Preview",
+                "770B /49B(공식Flash발표의이전판비교)",
+                "1M /960k /64k",
+                "모델목록은2026-12-07 종료를 표시; 시각미상",
+                "CNY6 입력 /18 출력 /0.3 캐시"
+              ],
+              "source_ids": [
+                "hylaunch",
+                "hyspec",
+                "hyprice"
+              ]
+            },
+            {
+              "values": [
+                "Qwen4-Max",
+                "2400B /71B",
+                "1,000,000; 출력 비추론131,072 /추론+답변262,144",
+                "현재 API, 자체배포미지원",
+                "Singapore USD1.5 입력 /4.5 출력; 통화를 환산해 우열 계산하지 않음"
+              ],
+              "source_ids": [
+                "qmodelweb",
+                "qpriceweb"
+              ]
+            }
+          ],
+          "note": "2026-11-17 확인.  Tencent의 k/M 표시는 그대로 보존하고 정확한 이진·십진 정수는 임의 확정하지 않는다. Hy4, Preview와 Flash는 같은 모델로 합치지 않는다."
+        },
+        {
+          "id": "workindex",
+          "title": "공급자 WorkIndex의 품질과 과제 비용",
+          "columns": [
+            "모델",
+            "Performance 원문점수",
+            "과제당 비용(RMB)"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Hy4",
+                "51.4",
+                "5.7"
+              ],
+              "source_ids": [
+                "hycosttask"
+              ]
+            },
+            {
+              "values": [
+                "Hy4 Preview",
+                "39.7",
+                "3.2"
+              ],
+              "source_ids": [
+                "hycosttask"
+              ]
+            },
+            {
+              "values": [
+                "Hy4 Flash",
+                "42.1",
+                "0.2"
+              ],
+              "source_ids": [
+                "hycosttask"
+              ]
+            }
+          ],
+          "note": "여덟 내부 업무 평가다. 그림의 배수는 24.5×/13.8×이고 본문은 약 1/20·1/13이라고 설명한다. 표시 비용은 반올림값이므로 그대로 나눠 정확한 배수나 정가를 추정하지 않는다. 공개 일곱 평가 산점도의 점수는 눈금에서 보간하지 않았다."
+        },
+        {
+          "id": "blind",
+          "title": "내부 사용자 블라인드 시험",
+          "columns": [
+            "모델",
+            "만족도(4점)",
+            "중앙 소요시간(분)",
+            "과제당 비용(RMB)"
+          ],
+          "rows": [
+            {
+              "values": [
+                "DeepSeek-V4.1-Flash-1017",
+                "3.09",
+                "10.3",
+                "1.2"
+              ],
+              "source_ids": [
+                "hyblindimage",
+                "hylaunch"
+              ]
+            },
+            {
+              "values": [
+                "Hy4 Flash",
+                "2.79",
+                "6.7",
+                "0.26"
+              ],
+              "source_ids": [
+                "hyblindimage",
+                "hylaunch"
+              ]
+            },
+            {
+              "values": [
+                "Claude Haiku5.5",
+                "2.81",
+                "6.8",
+                "4.73"
+              ],
+              "source_ids": [
+                "hyblindimage",
+                "hylaunch"
+              ]
+            },
+            {
+              "values": [
+                "GLM-5.3-Flash",
+                "2.53",
+                "7.6",
+                "0.81"
+              ],
+              "source_ids": [
+                "hyblindimage",
+                "hylaunch"
+              ]
+            }
+          ],
+          "note": "Tencent WorkBuddy 내부 사용자 85명, 259개 과제, 27개 범주. 외부 모델은 high-tier다. 만족도, 시간과 비용은 서로 다른 지표다. 정확한 Harness, 전체 요청 설정과 비용 분해는 미공개다. 내부 표본으로 일반 고객의 품질을 보장하지 않는다."
+        },
+        {
+          "id": "prices",
+          "title": "TokenHub 표준 CNY와 한시 요금",
+          "columns": [
+            "구분",
+            "입력",
+            "출력",
+            "캐시 읽기",
+            "적용"
+          ],
+          "rows": [
+            {
+              "values": [
+                "표준CNY/100만 토큰",
+                "0.5",
+                "2",
+                "0.02",
+                "Guangzhou/Singapore 목록"
+              ],
+              "source_ids": [
+                "hyprice"
+              ]
+            },
+            {
+              "values": [
+                "50% 할인CNY/100만 토큰",
+                "0.25",
+                "1",
+                "0.01",
+                "공식 정가×0.5. 2026-11-30 12:00Beijing /13:00KST까지의실제사용량"
+              ],
+              "source_ids": [
+                "hyprice"
+              ]
+            },
+            {
+              "values": [
+                "공식 발표의근사USD/100만 토큰",
+                "약0.070",
+                "약0.281",
+                "약0.003",
+                "환율기준미상. 표준CNY를임의환산한값아님"
+              ],
+              "source_ids": [
+                "hylaunch"
+              ]
+            }
+          ],
+          "note": "WorkBuddy 무료는 11월 30일까지의 앱 혜택이며 API 정가가 아니다. Vercel은 11월 29일까지의 별도 파트너 할인을 공지한다. 종료 시각·지역을 같다고 추정하지 않고 각 경로의 계약을 구분한다."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "비용 절감의 대가",
+            "text": "Flash는 낮은 정가와 빠른 내부 작업 처리 시간이 상대 강점이다. 정식 Hy4보다 낮은 WorkIndex와 DeepSeek보다 낮은 만족도, 가중치 공개 예정이라는 제약이 남는다. 앱 무료나 초기 반값을 영구 API 정가로 계산해서는 안 된다.",
+            "source_ids": [
+              "hylaunch",
+              "hyprice",
+              "hycosttask",
+              "hyblindimage"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "2026년 11월 17일 KST에 공식 발표, 모델 문서, 요금표와 평가 그림의 관련 절을 확인했다. 공급자 평가와 외부 결과의 공급자 인용을 구분하며 독립 추론, 실제 API 청구, 한국어 업무 측정과 사람 독해 시험은 수행하지 않았다. Hy 연구 랜딩의 직접 응답은 JS 껍데기여서 본문 검토 성공으로 세지 않았다. 별도 공식 발표·사양·요금표와 첨부 평가 그림을 읽었다. 내부 평가의 배수 표기 차이와 원문 단위를 보존한다.",
+          "source_ids": [
+            "hylaunch",
+            "hyspec",
+            "hyprice",
+            "hycosttask"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "longcat-video-avatar-1-6-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "title": "LongCat-Video-Avatar 1.6 소개 — 긴 영상과 자연스러움, 남는 립싱크 오류",
+      "description": "1.5와 상용 아바타 모델의 선호도·사람다움 평가를 비교하고 공개 가중치·배포 조건과 퇴보한 결과를 설명한다.",
+      "checked_on": "2026-11-17",
+      "scope": "2026년 11월 17일 KST에 공식 발표, 모델 문서, 요금표와 평가 그림의 관련 절을 확인했다. 공급자 평가와 외부 결과의 공급자 인용을 구분하며 독립 추론, 실제 API 청구, 한국어 업무 측정과 사람 독해 시험은 수행하지 않았다.",
+      "deck": "LongCat-Video-Avatar 1.6은 음성에 맞춰 사람 영상과 표정을 생성하는 11월 15일 공개 모델이다. 1.5보다 긴 영상의 외양과 전반적 자연스러움이 개선됐지만, 애니메이션 입력 점수는 낮아졌다. 공급자 Arena에서 여섯 모델 중 2위이며 OmniHuman 2.0에는 뒤진다. MIT 가중치를 받아 직접 실행하는 경로와 분당 API를 구매하는 경로는 같은 비용 모델이 아니다.",
+      "highlights": [
+        "10분을 넘는 연속 생성",
+        "평균 개선과 애니메이션 저하",
+        "공개 가중치와 배포비"
+      ],
+      "source_note": "공식 원문 확인일: 2026-11-17 KST. 발표일·평가 수행 기간·실제 제공 조건은 아래에서 별도로 구분한다.",
+      "summary": [
+        {
+          "label": "10분을 넘는 연속 생성",
+          "text": "공급자는 누적 오류를 줄여 10분 초과 영상의 외양과 시간 일관성을 개선했다고 설명한다. 실시간 생성이나 립싱크 오류 제거를 뜻하지 않는다.",
+          "source_ids": [
+            "avcard",
+            "avpaperr2"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "평균 개선과 애니메이션 저하",
+          "text": "5점 사람다움 평균은 3.006→3.322, 실사 평균은 3.083→3.441이다. 애니메이션은 2.246→2.114로 낮아졌고 0.5배속 정밀 검토의 립싱크 불일치는 82.5%였다.",
+          "source_ids": [
+            "avpaperr2"
+          ],
+          "kind": "fact"
+        },
+        {
+          "label": "공개 가중치와 배포비",
+          "text": "1.6 공개 저장소에는 BF16·INT8와 LoRA 파일이 있으며 카드는 가중치 MIT를 명시한다. 관리형 표준 API 단가와 장비별 최소 VRAM은 미확인이고 자체 GPU 비용은 별도다.",
+          "source_ids": [
+            "avcard",
+            "avmeta",
+            "avlicense2"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "references": [
+        {
+          "id": "avrepo",
+          "title": "LongCat 공식 저장소의 출시 이력",
+          "url": "https://raw.githubusercontent.com/meituan-longcat/LongCat-Video/main/README.md",
+          "description": "11월15일1.6 출시와 별도의 기반 비디오 모델13.6B. 기반 크기를 LoRA 포함1.6 총계로 단정하지 않는다."
+        },
+        {
+          "id": "avcard",
+          "title": "LongCat-Video-Avatar 1.6 모델 카드",
+          "url": "https://huggingface.co/meituan-longcat/LongCat-Video-Avatar-1.6/raw/main/README.md",
+          "description": "오디오 구동 영상, 10분 초과 생성 주장, 최적화·2GPU 예제, 가중치 MIT와 미검증 응용 범위."
+        },
+        {
+          "id": "avprior",
+          "title": "LongCat-Video-Avatar 1.5 모델 카드",
+          "url": "https://huggingface.co/meituan-longcat/LongCat-Video-Avatar-1.5/raw/main/README.md",
+          "description": "이전1.5의 공개 가중치·입력 경로와 라이선스. 영상1.6과 텍스트LLM LongCat2.5는 다른 계열이다."
+        },
+        {
+          "id": "avlicense2",
+          "title": "LongCat 저장소 MIT 라이선스",
+          "url": "https://raw.githubusercontent.com/meituan-longcat/LongCat-Video/main/LICENSE",
+          "description": "MIT 고지·보증 부인. 가중치는 모델 카드가 별도로MIT라고 명시하며 저장소 LICENSE만으로 추론하지 않는다."
+        },
+        {
+          "id": "avmeta",
+          "title": "1.6 공개 저장소와 가중치 파일 목록",
+          "url": "https://huggingface.co/api/models/meituan-longcat/LongCat-Video-Avatar-1.6",
+          "description": "gated=false/private=false, BF16/INT8 및 LoRA 파일 존재. 저장소 생성/수정일은 출시일과 구분."
+        },
+        {
+          "id": "avpaperr2",
+          "title": "LongCat-Video-Avatar 1.6 기술 보고서",
+          "url": "https://raw.githubusercontent.com/meituan-longcat/LongCat-Video/main/assets/LongCat-Video-Avatar-1.6-Tech-Report.pdf",
+          "description": "PDF15쪽 중1·3·4·6·8·9·12·13쪽 중심. 508쌍·33051표의Arena,270명5점평가, 애니메이션 저하와0.5배속 립싱크 검토. 9·12쪽 그림도 시각 대조."
+        },
+        {
+          "id": "aveloimage",
+          "title": "LongCat Avatar Arena 공식 순위 그림",
+          "url": "https://huggingface.co/meituan-longcat/LongCat-Video-Avatar-1.6/resolve/main/assets/fig.png",
+          "description": "6모델 Bradley–Terry Elo. 총33051은 모델별 표수 합계가 아니며 각표가 두모델에 걸린다."
+        }
+      ],
+      "explanation": [
+        {
+          "id": "identity",
+          "title": "기존 생성기에 더한 후학습",
+          "lead": "음성에 따라 인물 영상을 만들며 긴 연속 생성의 표정·외양 오류를 다룬다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "1.5에서 달라진 학습",
+              "text": "보고서는 기반 모델을 고정하고 GRPO와 증류·자기 증류용 LoRA를 별도로 학습한 뒤 추론에서 함께 쓴다고 설명한다. LoRA는 기존 가중치에 적은 수의 추가 행렬을 적용하는 방식이다. 처음부터 별도 기반 영상 모델을 만들었다거나 텍스트 LLM 2.5를 바꾼 것이 아니다.",
+              "source_ids": [
+                "avpaperr2",
+                "avrepo"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "짧은 클립에서 긴 영상으로",
+              "text": "후속 클립은 이전 생성 결과를 문맥으로 쓰므로 작은 오류가 반복 누적될 수 있다. 1.6은 모델 자신의 출력에서 이어가는 학습과 실제 영상 문맥을 주는 교사를 결합한다. 10분 초과 품질 유지는 공급자 주장이며 모든 장면의 신원·동작 보장이 아니다.",
+              "source_ids": [
+                "avpaperr2",
+                "avcard"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "strengths",
+          "title": "실사 자연스러움과 일관성의 개선",
+          "lead": "선호도 순위와 절대 평가가 보여주는 개선은 서로 다른 근거다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "이전판과의 차이",
+              "text": "직접 쌍대 비교에서 1.6은 1.5 상대 무승부 보정 승률 55.6%다. 5점 사람다움 전체 평균은 3.322로 상승했고 음성·표정 불일치 6.7%, 일관성 문제 11.6%는 이전보다 낮다. 이를 모든 영상의 성공률이나 객관적 립싱크 정확도로 바꿀 수 없다.",
+              "source_ids": [
+                "avpaperr2"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "상용 비교군과의 위치",
+              "text": "Arena Elo 1068.1은 HeyGen 908.1과 OmniHuman 1.5의 880.6보다 높지만 OmniHuman 2.0의 1236.7보다 낮다. 1.6의 OmniHuman 2.0 상대 승률도 24.7%로 열세다. 보고서는 참조 디테일 강화와 입력 외양 보존의 차이를 가능한 이유로 논의할 뿐 인과를 입증하지 않는다.",
+              "source_ids": [
+                "aveloimage",
+                "avpaperr2"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "limits",
+          "title": "애니메이션 일반화와 남은 동기화 오류",
+          "lead": "새 판에서 모든 하위 범주가 개선된 것은 아니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "애니메이션 점수의 하락",
+              "text": "애니메이션 입력 평균은 2.246에서 2.114로 낮아졌다. 보고서는 긴 애니메이션 훈련 자료가 부족한 점을 가능한 원인으로 제시한다. 실사 평균의 상승만으로 스타일화된 캐릭터까지 좋아졌다고 말할 수 없다.",
+              "source_ids": [
+                "avpaperr2"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "높은 립싱크 문제율의 의미",
+              "text": "전문가가 0.5배속으로 엄격 검토한 립싱크 불일치는 83.7%에서 82.5%로 소폭 줄었다. 이 수치는 일반 재생 중 실패율이나 소리 없는 영상 비율이 아니지만, 자연스러운 입 모양과 정밀 동기화가 별도 문제임을 보여준다.",
+              "source_ids": [
+                "avpaperr2"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "deployment",
+          "title": "가중치와 연산 환경의 조건",
+          "lead": "파일 공개가 즉시 사용 가능한 관리형 API나 정해진 운영 원가를 뜻하지 않는다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "공개 파일과 최적화",
+              "text": "공개 저장소에서 BF16 기반, INT8 및 LoRA 파일을 확인했다. 카드는 일인물·다인물·연속 생성과 기본 2 GPU 예제를 제시하고 Hopper의 FlashAttention 3, 2 GPU 초과 통신 최적화를 설명한다. 이 예제를 최소 GPU 수·VRAM 또는 모든 장비의 성능 보장으로 취급하지 않는다.",
+              "source_ids": [
+                "avcard",
+                "avmeta"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "가격과 이용권",
+              "text": "카드는 가중치를 MIT로 명시하고 저장소 LICENSE도 고지와 보증 부인을 담고 있다. 카드는 상표·특허권이 자동 부여되지 않는다고 명시한다. 관리형 API 표준 요금은 이번 원문에 없으며 자체 GPU 시간·파일 저장·사람 검수 비용은 0이 아니다. 상용 비교군의 평가판과 현재 요금제를 일치시키지 못해 추정 분당 가격을 붙이지 않았다.",
+              "source_ids": [
+                "avcard",
+                "avlicense2",
+                "avpaperr2"
+              ],
+              "kind": "fact"
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "specs",
+          "title": "이전판과 상용 비교군의 제공·비용 범위",
+          "columns": [
+            "모델",
+            "역할과 제공",
+            "사양·입력 범위",
+            "표준 요금과 이용 조건"
+          ],
+          "rows": [
+            {
+              "values": [
+                "LongCat-Video-Avatar1.6",
+                "음성 구동인물 영상;공개 가중치",
+                "음성+텍스트/참조이미지,다인물·연속생성. 기반 LongCat-Video13.6B와1.6 LoRA포함총계는구분",
+                "가중치 MIT. 표준 관리형API요금미확인;자체 GPU·저장비용별도"
+              ],
+              "source_ids": [
+                "avrepo",
+                "avcard",
+                "avmeta"
+              ]
+            },
+            {
+              "values": [
+                "LongCat-Video-Avatar1.5",
+                "직전공개 가중치계열",
+                "같은계열의참조영상·오디오생성;1.6후학습 기준선",
+                "가중치 MIT.1.6과독립적인체크포인트"
+              ],
+              "source_ids": [
+                "avprior",
+                "avpaperr2"
+              ]
+            },
+            {
+              "values": [
+                "OmniHuman2.0 /1.5",
+                "공급자Arena의상용비공개비교군",
+                "정확한 요청 옵션·API판전체미공개",
+                "평가당시단가·플랜미확인.  다른시점단가를평가모델에붙이지않음"
+              ],
+              "source_ids": [
+                "avpaperr2",
+                "aveloimage"
+              ]
+            },
+            {
+              "values": [
+                "HeyGen /Kling Avatar2.0",
+                "공급자Arena의상용비공개비교군",
+                "동일508이미지·음성입력에서생성한유효출력비교",
+                "평가에서사용한상품·요금제미상.토큰단가나자체 GPU비용과직접비교하지않음"
+              ],
+              "source_ids": [
+                "avpaperr2"
+              ]
+            }
+          ],
+          "note": "2026-11-17 확인.  1.6은 텍스트 LLM LongCat 2.5가 아닌 영상 계열이다. 모든 상용 모델의 현행 가격 조사를 완료한 것이 아니며 미확인을 무료로 표시하지 않는다."
+        },
+        {
+          "id": "arena",
+          "title": "508쌍 입력의 공급자 Avatar Arena",
+          "columns": [
+            "모델",
+            "Bradley–Terry Elo",
+            "그림순위"
+          ],
+          "rows": [
+            {
+              "values": [
+                "OmniHuman2.0",
+                "1236.7",
+                "1"
+              ],
+              "source_ids": [
+                "aveloimage",
+                "avpaperr2"
+              ]
+            },
+            {
+              "values": [
+                "LongCat-Video-Avatar1.6",
+                "1068.1",
+                "2"
+              ],
+              "source_ids": [
+                "aveloimage",
+                "avpaperr2"
+              ]
+            },
+            {
+              "values": [
+                "LongCat-Video-Avatar1.5",
+                "1051.8",
+                "3"
+              ],
+              "source_ids": [
+                "aveloimage",
+                "avpaperr2"
+              ]
+            },
+            {
+              "values": [
+                "HeyGen",
+                "908.1",
+                "4"
+              ],
+              "source_ids": [
+                "aveloimage",
+                "avpaperr2"
+              ]
+            },
+            {
+              "values": [
+                "OmniHuman1.5",
+                "880.6",
+                "5"
+              ],
+              "source_ids": [
+                "aveloimage",
+                "avpaperr2"
+              ]
+            },
+            {
+              "values": [
+                "Kling Avatar2.0",
+                "854.7",
+                "6"
+              ],
+              "source_ids": [
+                "aveloimage",
+                "avpaperr2"
+              ]
+            }
+          ],
+          "note": "EvalTalker의 508개 이미지·음성 쌍, 여섯 모델의 15쌍, 유효 개별 표 33,051개. 각 모델의 표수는 중복 집계되므로 합산해 표본 수를 늘리지 않는다. API 실패·재생 불가 출력 제외로 비교쌍별 유효 표본이 다르다. 공급자 시험이며 독립 Arena 원장이 아니다."
+        },
+        {
+          "id": "pairwise",
+          "title": "1.6의 상대 모델별 선호 승률",
+          "columns": [
+            "상대",
+            "무승부보정승률",
+            "승 /패 /무"
+          ],
+          "rows": [
+            {
+              "values": [
+                "OmniHuman2.0",
+                "24.7%",
+                "448 /1427 /60"
+              ],
+              "source_ids": [
+                "avpaperr2"
+              ]
+            },
+            {
+              "values": [
+                "LongCat1.5",
+                "55.6%",
+                "1122 /836 /577"
+              ],
+              "source_ids": [
+                "avpaperr2"
+              ]
+            },
+            {
+              "values": [
+                "HeyGen",
+                "72.2%",
+                "1629 /566 /204"
+              ],
+              "source_ids": [
+                "avpaperr2"
+              ]
+            },
+            {
+              "values": [
+                "OmniHuman1.5",
+                "73.5%",
+                "1610 /534 /144"
+              ],
+              "source_ids": [
+                "avpaperr2"
+              ]
+            },
+            {
+              "values": [
+                "Kling Avatar2.0",
+                "76.6%",
+                "1816 /489 /189"
+              ],
+              "source_ids": [
+                "avpaperr2"
+              ]
+            }
+          ],
+          "note": "(승+0.5×무)/(승+패+무), 소수 1자리 반올림. 2위 Elo와 직접 승률은 다른 척도다. 여섯 모델 전체 표의 모델별 합계에서 직접 승률을 만들지 않는다."
+        },
+        {
+          "id": "human",
+          "title": "이전판과 사람다움·문제율 비교",
+          "columns": [
+            "지표",
+            "1.5",
+            "1.6",
+            "방향·조건"
+          ],
+          "rows": [
+            {
+              "values": [
+                "사람다움 전체",
+                "3.006",
+                "3.322",
+                "5점;높을수록 좋음"
+              ],
+              "source_ids": [
+                "avpaperr2"
+              ]
+            },
+            {
+              "values": [
+                "실사 하위 집합",
+                "3.083",
+                "3.441",
+                "5점;높을수록 좋음"
+              ],
+              "source_ids": [
+                "avpaperr2"
+              ]
+            },
+            {
+              "values": [
+                "애니메이션 하위 집합",
+                "2.246",
+                "2.114",
+                "5점;낮아짐"
+              ],
+              "source_ids": [
+                "avpaperr2"
+              ]
+            },
+            {
+              "values": [
+                "음성·표정불일치",
+                "13.0",
+                "6.7",
+                "문제율 %; 낮을수록 좋음"
+              ],
+              "source_ids": [
+                "avpaperr2"
+              ]
+            },
+            {
+              "values": [
+                "부자연스러운 전환",
+                "8.9",
+                "6.5",
+                "문제율 %; 낮을수록 좋음"
+              ],
+              "source_ids": [
+                "avpaperr2"
+              ]
+            },
+            {
+              "values": [
+                "립싱크 불일치",
+                "83.7",
+                "82.5",
+                "문제율 %; 0.5배속엄격검토"
+              ],
+              "source_ids": [
+                "avpaperr2"
+              ]
+            },
+            {
+              "values": [
+                "색상·해상도변화",
+                "3.1",
+                "0.0",
+                "문제율 %; 표본내0"
+              ],
+              "source_ids": [
+                "avpaperr2"
+              ]
+            },
+            {
+              "values": [
+                "인물 속성 변화",
+                "1.4",
+                "0.4",
+                "문제율 %; 낮을수록 좋음"
+              ],
+              "source_ids": [
+                "avpaperr2"
+              ]
+            },
+            {
+              "values": [
+                "일관성 문제 종합",
+                "19.9",
+                "11.6",
+                "문제율 %; 낮을수록 좋음"
+              ],
+              "source_ids": [
+                "avpaperr2"
+              ]
+            }
+          ],
+          "note": "PDF 12쪽 그림 8과 본문. 508쌍, 270명 참가자, 영상당 3주석의 1–5점 절대 평가와 별도 전문가 문제율을 구분한다. 독립 방사축과 역전축을 단일 성능 점수로 읽지 않는다. 0.0%는 모든 입력의 오류 부재 보장이 아니다."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "개선과 퇴보를 함께 읽기",
+            "text": "1.6은 공개 가중치로 긴 인물 영상을 생성하면서 실사와 외양 일관성을 개선한 후속판이다. 상용 1위에 뒤지는 Arena 결과, 애니메이션 평균 하락과 높은 엄격 립싱크 문제율이 남는다. 공개 가중치의 권리와 직접 운영 비용, 관리형 서비스의 요금과 품질은 분리해 판단해야 한다.",
+            "source_ids": [
+              "avcard",
+              "avpaperr2",
+              "aveloimage",
+              "avlicense2"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "2026년 11월 17일 KST에 공식 발표, 모델 문서, 요금표와 평가 그림의 관련 절을 확인했다. 공급자 평가와 외부 결과의 공급자 인용을 구분하며 독립 추론, 실제 API 청구, 한국어 업무 측정과 사람 독해 시험은 수행하지 않았다. 공식 README 출시일은 11월 15일, HF 저장소 생성일은 11월 13일이다. 508개 입력 쌍은 33,051개 서로 다른 영상이라는 뜻이 아니다. 기술 보고서의 관련 본문과 평가 그림을 읽었으며 전체 실험을 독립 재현하지 않았다. 한국어 화자, 최소 메모리, 실제 생성 속도, 공식 관리형 단가와 각 상용 비교군의 전체 요금은 미확인이다.",
+          "source_ids": [
+            "avrepo",
+            "avmeta",
+            "avpaperr2"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -97,7 +97,9 @@
     "perplexity-decider-v1-3-model-guide",
     "ling-3-2-flash-model-guide",
     "edge0-145b-120b-model-guide",
-    "longcat-2-5-model-guide"
+    "longcat-2-5-model-guide",
+    "tencent-hy4-flash-model-guide",
+    "longcat-video-avatar-1-6-model-guide"
   ],
   "batches": [
     {
@@ -554,6 +556,11 @@
       "id": "ai-model-guides-2026-11-16",
       "input": "ai_model_guides.2026-11-16.json",
       "quality": "ai_model_guides.2026-11-16.quality.json"
+    },
+    {
+      "id": "ai-model-guides-2026-11-17",
+      "input": "ai_model_guides.2026-11-17.json",
+      "quality": "ai_model_guides.2026-11-17.quality.json"
     }
   ]
 }

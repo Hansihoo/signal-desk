@@ -128,7 +128,9 @@
     "fish-live-3-model-guide",
     "perplexity-decider-v1-3-model-guide",
     "ling-3-2-flash-model-guide",
-    "edge0-145b-120b-model-guide"
+    "edge0-145b-120b-model-guide",
+    "tencent-hy4-flash-model-guide",
+    "longcat-video-avatar-1-6-model-guide"
   ],
   "catalogs": {
     "devops-implementation-guide": "devops_tools.2026-10-10.r4.json"
@@ -436,7 +438,8 @@
       "521243756be41359aeb50ec511f4ff62b91b763aa371af53480c69617ac2f2fa"
     ],
     "qwen4-max-preview-model-guide": [
-      "52cf81a44130836187047815e09a76b689c97117ccad812eb7b2e97a3f66fda0"
+      "52cf81a44130836187047815e09a76b689c97117ccad812eb7b2e97a3f66fda0",
+      "cc562625a344c6ede80b3d853942226845a93418f03f6bc40e68635e133977e1"
     ],
     "alphagenome-2-model-guide": [
       "cdfee16dc4e8f8fe4f4834f0f49ff3d5a7ba44e12b063d3f93b772caef83cbdc"
@@ -462,6 +465,12 @@
     ],
     "edge0-145b-120b-model-guide": [
       "11655dd3aae0fc1652130bd977502aae464d06fe8f989d13f99c2d8b3fac8614"
+    ],
+    "tencent-hy4-flash-model-guide": [
+      "8c50527ce71d0a7fdf92142f06ba81c4d150dda8d8cd589c4cb6cbc5c1027fc3"
+    ],
+    "longcat-video-avatar-1-6-model-guide": [
+      "570abb4d967a28ca9dbc136564a4d4ac401f1296572b550734f654eddd43c92b"
     ]
   },
   "model_introduction_editions": {
@@ -708,7 +717,8 @@
       "521243756be41359aeb50ec511f4ff62b91b763aa371af53480c69617ac2f2fa"
     ],
     "qwen4-max-preview-model-guide": [
-      "52cf81a44130836187047815e09a76b689c97117ccad812eb7b2e97a3f66fda0"
+      "52cf81a44130836187047815e09a76b689c97117ccad812eb7b2e97a3f66fda0",
+      "cc562625a344c6ede80b3d853942226845a93418f03f6bc40e68635e133977e1"
     ],
     "alphagenome-2-model-guide": [
       "cdfee16dc4e8f8fe4f4834f0f49ff3d5a7ba44e12b063d3f93b772caef83cbdc"
@@ -734,6 +744,12 @@
     ],
     "edge0-145b-120b-model-guide": [
       "11655dd3aae0fc1652130bd977502aae464d06fe8f989d13f99c2d8b3fac8614"
+    ],
+    "tencent-hy4-flash-model-guide": [
+      "8c50527ce71d0a7fdf92142f06ba81c4d150dda8d8cd589c4cb6cbc5c1027fc3"
+    ],
+    "longcat-video-avatar-1-6-model-guide": [
+      "570abb4d967a28ca9dbc136564a4d4ac401f1296572b550734f654eddd43c92b"
     ]
   },
   "model_introduction_purpose_editions": {
@@ -969,7 +985,8 @@
       "521243756be41359aeb50ec511f4ff62b91b763aa371af53480c69617ac2f2fa"
     ],
     "qwen4-max-preview-model-guide": [
-      "52cf81a44130836187047815e09a76b689c97117ccad812eb7b2e97a3f66fda0"
+      "52cf81a44130836187047815e09a76b689c97117ccad812eb7b2e97a3f66fda0",
+      "cc562625a344c6ede80b3d853942226845a93418f03f6bc40e68635e133977e1"
     ],
     "alphagenome-2-model-guide": [
       "cdfee16dc4e8f8fe4f4834f0f49ff3d5a7ba44e12b063d3f93b772caef83cbdc"
@@ -995,6 +1012,12 @@
     ],
     "edge0-145b-120b-model-guide": [
       "11655dd3aae0fc1652130bd977502aae464d06fe8f989d13f99c2d8b3fac8614"
+    ],
+    "tencent-hy4-flash-model-guide": [
+      "8c50527ce71d0a7fdf92142f06ba81c4d150dda8d8cd589c4cb6cbc5c1027fc3"
+    ],
+    "longcat-video-avatar-1-6-model-guide": [
+      "570abb4d967a28ca9dbc136564a4d4ac401f1296572b550734f654eddd43c92b"
     ]
   },
   "model_introduction_reader_editions": {
@@ -1180,7 +1203,8 @@
       "521243756be41359aeb50ec511f4ff62b91b763aa371af53480c69617ac2f2fa"
     ],
     "qwen4-max-preview-model-guide": [
-      "52cf81a44130836187047815e09a76b689c97117ccad812eb7b2e97a3f66fda0"
+      "52cf81a44130836187047815e09a76b689c97117ccad812eb7b2e97a3f66fda0",
+      "cc562625a344c6ede80b3d853942226845a93418f03f6bc40e68635e133977e1"
     ],
     "alphagenome-2-model-guide": [
       "cdfee16dc4e8f8fe4f4834f0f49ff3d5a7ba44e12b063d3f93b772caef83cbdc"
@@ -1209,6 +1233,12 @@
     ],
     "edge0-145b-120b-model-guide": [
       "11655dd3aae0fc1652130bd977502aae464d06fe8f989d13f99c2d8b3fac8614"
+    ],
+    "tencent-hy4-flash-model-guide": [
+      "8c50527ce71d0a7fdf92142f06ba81c4d150dda8d8cd589c4cb6cbc5c1027fc3"
+    ],
+    "longcat-video-avatar-1-6-model-guide": [
+      "570abb4d967a28ca9dbc136564a4d4ac401f1296572b550734f654eddd43c92b"
     ]
   }
 }
