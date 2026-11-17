@@ -1,0 +1,1236 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "id": "gpt-6-2-astra-spec",
+      "model": "GPT-6.2 Astra",
+      "provider": "OpenAI",
+      "source_url": "https://developers.openai.com/api/docs/models/gpt-6.2-astra.md",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 사양과 제공",
+        "suite": "OpenAI model card 2026-11-18",
+        "condition": "text,image to text;none effort rejected;audio/video and fine tuning unsupported",
+        "context": 1050000,
+        "release": "2026-11-17",
+        "status": "API / ChatGPT Work / Codex 제공",
+        "access": "Responses / Chat Completions",
+        "최대 입력 토큰": 922000,
+        "최대 출력 토큰": 128000
+      }
+    },
+    {
+      "id": "gpt-6-2-astra-price-standard",
+      "model": "GPT-6.2 Astra",
+      "provider": "OpenAI",
+      "source_url": "https://developers.openai.com/api/docs/models/gpt-6.2-astra.md",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Standard short context",
+        "condition": "입력≤272K;USD/1M tokens. 각tier조건 분리;ultrafast전환일Pacific,정확시각미확인",
+        "입력 USD / 100만 토큰": 8,
+        "출력 USD / 100만 토큰": 40,
+        "캐시 읽기 USD / 100만 토큰": 0.4
+      }
+    },
+    {
+      "id": "gpt-6-2-astra-price-batch",
+      "model": "GPT-6.2 Astra",
+      "provider": "OpenAI",
+      "source_url": "https://developers.openai.com/api/docs/models/gpt-6.2-astra.md",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Batch short context",
+        "condition": "입력≤272K;USD/1M tokens. 각tier조건 분리;ultrafast전환일Pacific,정확시각미확인",
+        "입력 USD / 100만 토큰": 4.0,
+        "출력 USD / 100만 토큰": 20.0,
+        "캐시 읽기 USD / 100만 토큰": 0.2
+      }
+    },
+    {
+      "id": "gpt-6-2-astra-price-fast",
+      "model": "GPT-6.2 Astra",
+      "provider": "OpenAI",
+      "source_url": "https://developers.openai.com/api/docs/models/gpt-6.2-astra.md",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Fast short context",
+        "condition": "입력≤272K;USD/1M tokens. 각tier조건 분리;ultrafast전환일Pacific,정확시각미확인",
+        "입력 USD / 100만 토큰": 16,
+        "출력 USD / 100만 토큰": 80,
+        "캐시 읽기 USD / 100만 토큰": 0.8
+      }
+    },
+    {
+      "id": "gpt-6-2-astra-price-ultrafast",
+      "model": "GPT-6.2 Astra",
+      "provider": "OpenAI",
+      "source_url": "https://developers.openai.com/api/docs/models/gpt-6.2-astra.md",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Ultrafast through2027-02-28PT",
+        "condition": "입력≤272K;USD/1M tokens. 각tier조건 분리;ultrafast전환일Pacific,정확시각미확인",
+        "입력 USD / 100만 토큰": 24,
+        "출력 USD / 100만 토큰": 120,
+        "캐시 읽기 USD / 100만 토큰": 1.2000000000000002
+      }
+    },
+    {
+      "id": "gpt-6-2-astra-price-ultrafast-future",
+      "model": "GPT-6.2 Astra",
+      "provider": "OpenAI",
+      "source_url": "https://developers.openai.com/api/docs/models/gpt-6.2-astra.md",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Ultrafast from2027-03-01PT",
+        "condition": "입력≤272K;USD/1M tokens. 각tier조건 분리;ultrafast전환일Pacific,정확시각미확인",
+        "입력 USD / 100만 토큰": 48,
+        "출력 USD / 100만 토큰": 240,
+        "캐시 읽기 USD / 100만 토큰": 2.4000000000000004
+      }
+    },
+    {
+      "id": "gpt-6-2-astra-standard-long",
+      "model": "GPT-6.2 Astra",
+      "provider": "OpenAI",
+      "source_url": "https://developers.openai.com/api/docs/models/gpt-6.2-astra.md",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Standard input>272K full request",
+        "condition": "전체요청 입력·캐시2배,출력1.5배;초과분만 아님",
+        "입력 USD / 100만 토큰": 16,
+        "출력 USD / 100만 토큰": 60.0,
+        "캐시 읽기 USD / 100만 토큰": 0.8
+      }
+    },
+    {
+      "id": "gpt-6-2-astra-cachewrite",
+      "model": "GPT-6.2 Astra",
+      "provider": "OpenAI",
+      "source_url": "https://developers.openai.com/api/docs/models/gpt-6.2-astra.md",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Standard short context cache writes",
+        "condition": "캐시읽기 별도;쓰기보존기간30분/12시간",
+        "캐시 쓰기 30분 USD / 100만 토큰": 10.0,
+        "캐시 쓰기 12시간 USD / 100만 토큰": 20.0
+      }
+    },
+    {
+      "id": "gpt-6-2-sol-spec",
+      "model": "GPT-6.2 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://developers.openai.com/api/docs/models/gpt-6.2-sol.md",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 사양과 제공",
+        "suite": "OpenAI model card 2026-11-18",
+        "condition": "text,image to text;none effort rejected;audio/video and fine tuning unsupported",
+        "context": 1050000,
+        "release": "2026-11-17",
+        "status": "API / ChatGPT Work / Codex 제공",
+        "access": "Responses / Chat Completions",
+        "최대 입력 토큰": 922000,
+        "최대 출력 토큰": 128000
+      }
+    },
+    {
+      "id": "gpt-6-2-sol-price-standard",
+      "model": "GPT-6.2 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://developers.openai.com/api/docs/models/gpt-6.2-sol.md",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Standard short context",
+        "condition": "입력≤272K;USD/1M tokens. 각tier조건 분리;ultrafast전환일Pacific,정확시각미확인",
+        "입력 USD / 100만 토큰": 2,
+        "출력 USD / 100만 토큰": 10,
+        "캐시 읽기 USD / 100만 토큰": 0.1
+      }
+    },
+    {
+      "id": "gpt-6-2-sol-price-batch",
+      "model": "GPT-6.2 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://developers.openai.com/api/docs/models/gpt-6.2-sol.md",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Batch short context",
+        "condition": "입력≤272K;USD/1M tokens. 각tier조건 분리;ultrafast전환일Pacific,정확시각미확인",
+        "입력 USD / 100만 토큰": 1.0,
+        "출력 USD / 100만 토큰": 5.0,
+        "캐시 읽기 USD / 100만 토큰": 0.05
+      }
+    },
+    {
+      "id": "gpt-6-2-sol-price-fast",
+      "model": "GPT-6.2 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://developers.openai.com/api/docs/models/gpt-6.2-sol.md",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Fast short context",
+        "condition": "입력≤272K;USD/1M tokens. 각tier조건 분리;ultrafast전환일Pacific,정확시각미확인",
+        "입력 USD / 100만 토큰": 4,
+        "출력 USD / 100만 토큰": 20,
+        "캐시 읽기 USD / 100만 토큰": 0.2
+      }
+    },
+    {
+      "id": "gpt-6-2-sol-price-ultrafast",
+      "model": "GPT-6.2 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://developers.openai.com/api/docs/models/gpt-6.2-sol.md",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Ultrafast through2027-02-28PT",
+        "condition": "입력≤272K;USD/1M tokens. 각tier조건 분리;ultrafast전환일Pacific,정확시각미확인",
+        "입력 USD / 100만 토큰": 6,
+        "출력 USD / 100만 토큰": 30,
+        "캐시 읽기 USD / 100만 토큰": 0.30000000000000004
+      }
+    },
+    {
+      "id": "gpt-6-2-sol-price-ultrafast-future",
+      "model": "GPT-6.2 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://developers.openai.com/api/docs/models/gpt-6.2-sol.md",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Ultrafast from2027-03-01PT",
+        "condition": "입력≤272K;USD/1M tokens. 각tier조건 분리;ultrafast전환일Pacific,정확시각미확인",
+        "입력 USD / 100만 토큰": 12,
+        "출력 USD / 100만 토큰": 60,
+        "캐시 읽기 USD / 100만 토큰": 0.6000000000000001
+      }
+    },
+    {
+      "id": "gpt-6-2-sol-standard-long",
+      "model": "GPT-6.2 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://developers.openai.com/api/docs/models/gpt-6.2-sol.md",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Standard input>272K full request",
+        "condition": "전체요청 입력·캐시2배,출력1.5배;초과분만 아님",
+        "입력 USD / 100만 토큰": 4,
+        "출력 USD / 100만 토큰": 15.0,
+        "캐시 읽기 USD / 100만 토큰": 0.2
+      }
+    },
+    {
+      "id": "gpt-6-2-sol-cachewrite",
+      "model": "GPT-6.2 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://developers.openai.com/api/docs/models/gpt-6.2-sol.md",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Standard short context cache writes",
+        "condition": "캐시읽기 별도;쓰기보존기간30분/12시간",
+        "캐시 쓰기 30분 USD / 100만 토큰": 2.5,
+        "캐시 쓰기 12시간 USD / 100만 토큰": 5.0
+      }
+    },
+    {
+      "id": "oa62-ale-gpt-6-2-astra",
+      "model": "GPT-6.2 Astra",
+      "provider": "OpenAI",
+      "source_url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Agents Last Exam v1.1 / launch Max",
+        "condition": "공식SVG Max점;비용USD/과제;공급자측정·인용;Fable fallback9과제제외.본문다른delta를혼합하지않음",
+        "평가 점수": 77.6,
+        "원문 단위": "score %",
+        "effort": "max",
+        "과제 비용 USD / task": 4.47
+      }
+    },
+    {
+      "id": "oa62-ale-gpt-6-2-sol",
+      "model": "GPT-6.2 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Agents Last Exam v1.1 / launch Max",
+        "condition": "공식SVG Max점;비용USD/과제;공급자측정·인용;Fable fallback9과제제외.본문다른delta를혼합하지않음",
+        "평가 점수": 73.0,
+        "원문 단위": "score %",
+        "effort": "max",
+        "과제 비용 USD / task": 1.32
+      }
+    },
+    {
+      "id": "oa62-ale-gpt-6-astra",
+      "model": "GPT-6 Astra",
+      "provider": "OpenAI",
+      "source_url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Agents Last Exam v1.1 / launch Max",
+        "condition": "공식SVG Max점;비용USD/과제;공급자측정·인용;Fable fallback9과제제외.본문다른delta를혼합하지않음",
+        "평가 점수": 73.1,
+        "원문 단위": "score %",
+        "effort": "max",
+        "과제 비용 USD / task": 8.99
+      }
+    },
+    {
+      "id": "oa62-ale-gpt-6-1-sol",
+      "model": "GPT-6.1 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Agents Last Exam v1.1 / launch Max",
+        "condition": "공식SVG Max점;비용USD/과제;공급자측정·인용;Fable fallback9과제제외.본문다른delta를혼합하지않음",
+        "평가 점수": 72.5,
+        "원문 단위": "score %",
+        "effort": "max",
+        "과제 비용 USD / task": 2.02
+      }
+    },
+    {
+      "id": "oa62-ale-claude-fable-5-2",
+      "model": "Claude Fable 5.2",
+      "provider": "Anthropic",
+      "source_url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Agents Last Exam v1.1 / launch Max",
+        "condition": "공식SVG Max점;비용USD/과제;공급자측정·인용;Fable fallback9과제제외.본문다른delta를혼합하지않음",
+        "평가 점수": 72.8,
+        "원문 단위": "score %",
+        "effort": "max",
+        "과제 비용 USD / task": 60.05
+      }
+    },
+    {
+      "id": "oa62-ale-claude-opus-5-5",
+      "model": "Claude Opus 5.5",
+      "provider": "Anthropic",
+      "source_url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Agents Last Exam v1.1 / launch Max",
+        "condition": "공식SVG Max점;비용USD/과제;공급자측정·인용;Fable fallback9과제제외.본문다른delta를혼합하지않음",
+        "평가 점수": 71.6,
+        "원문 단위": "score %",
+        "effort": "max",
+        "과제 비용 USD / task": 17.57
+      }
+    },
+    {
+      "id": "oa62-secbench-gpt-6-astra",
+      "model": "GPT-6 Astra",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-6-2-astra-sol",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SEC-Bench Pro / OpenAI system card 2026-11-17",
+        "condition": "공급자평가;SEC보안classifier미적용구성;MentalHealth1215대화4응답,max.세부Harness시스템카드참조",
+        "평가 점수": 85.4,
+        "원문 단위": "pass@1 %"
+      }
+    },
+    {
+      "id": "oa62-secbench-gpt-6-1-sol",
+      "model": "GPT-6.1 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-6-2-astra-sol",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SEC-Bench Pro / OpenAI system card 2026-11-17",
+        "condition": "공급자평가;SEC보안classifier미적용구성;MentalHealth1215대화4응답,max.세부Harness시스템카드참조",
+        "평가 점수": 78.8,
+        "원문 단위": "pass@1 %"
+      }
+    },
+    {
+      "id": "oa62-secbench-gpt-6-2-sol",
+      "model": "GPT-6.2 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-6-2-astra-sol",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SEC-Bench Pro / OpenAI system card 2026-11-17",
+        "condition": "공급자평가;SEC보안classifier미적용구성;MentalHealth1215대화4응답,max.세부Harness시스템카드참조",
+        "평가 점수": 88.34,
+        "원문 단위": "pass@1 %"
+      }
+    },
+    {
+      "id": "oa62-secbench-gpt-6-2-astra",
+      "model": "GPT-6.2 Astra",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-6-2-astra-sol",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SEC-Bench Pro / OpenAI system card 2026-11-17",
+        "condition": "공급자평가;SEC보안classifier미적용구성;MentalHealth1215대화4응답,max.세부Harness시스템카드참조",
+        "평가 점수": 86.75,
+        "원문 단위": "pass@1 %"
+      }
+    },
+    {
+      "id": "oa62-mentalhealthbench-gpt-6-astra",
+      "model": "GPT-6 Astra",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-6-2-astra-sol",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "MentalHealthBench overall / OpenAI system card 2026-11-17",
+        "condition": "공급자평가;SEC보안classifier미적용구성;MentalHealth1215대화4응답,max.세부Harness시스템카드참조",
+        "평가 점수": 58.7,
+        "원문 단위": "score %;SE1.0pp"
+      }
+    },
+    {
+      "id": "oa62-mentalhealthbench-gpt-6-1-sol",
+      "model": "GPT-6.1 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-6-2-astra-sol",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "MentalHealthBench overall / OpenAI system card 2026-11-17",
+        "condition": "공급자평가;SEC보안classifier미적용구성;MentalHealth1215대화4응답,max.세부Harness시스템카드참조",
+        "평가 점수": 57.9,
+        "원문 단위": "score %;SE1.0pp"
+      }
+    },
+    {
+      "id": "oa62-mentalhealthbench-gpt-6-2-sol",
+      "model": "GPT-6.2 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-6-2-astra-sol",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "MentalHealthBench overall / OpenAI system card 2026-11-17",
+        "condition": "공급자평가;SEC보안classifier미적용구성;MentalHealth1215대화4응답,max.세부Harness시스템카드참조",
+        "평가 점수": 50.9,
+        "원문 단위": "score %;SE1.0pp"
+      }
+    },
+    {
+      "id": "oa62-mentalhealthbench-gpt-6-2-astra",
+      "model": "GPT-6.2 Astra",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-6-2-astra-sol",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "MentalHealthBench overall / OpenAI system card 2026-11-17",
+        "condition": "공급자평가;SEC보안classifier미적용구성;MentalHealth1215대화4응답,max.세부Harness시스템카드참조",
+        "평가 점수": 53.3,
+        "원문 단위": "score %;SE1.0pp"
+      }
+    },
+    {
+      "id": "mai-code-2-spec",
+      "model": "MAI Code 2",
+      "provider": "Microsoft",
+      "source_url": "https://microsoft.ai/pdf/MAI-Code-2-And-MAI-Code-2-Flash-Model-Card.pdf?v=3",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 사양과 제공",
+        "suite": "MAI Code2 card v3 2026-11-17",
+        "condition": "Code2 active80=77+3embedded;total본문약값;요약50-100B/5-15B를총량으로사용하지않음.English code optimized",
+        "parameters": 2800,
+        "active_parameters": 80,
+        "context": 1050000,
+        "release": "2026-11-17",
+        "status": "Copilot 제공",
+        "최대 입력 토큰": 922000,
+        "최대 출력 토큰": 128000
+      }
+    },
+    {
+      "id": "mai-code-2-standard",
+      "model": "MAI Code 2",
+      "provider": "Microsoft",
+      "source_url": "https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "GitHub Copilot Standard",
+        "condition": "할인은2027-05-17까지/같은날표준가시작;정확시각·시간대미상.USD/1Mtokens;Foundry실청구별도",
+        "입력 USD / 100만 토큰": 1,
+        "출력 USD / 100만 토큰": 5,
+        "캐시 읽기 USD / 100만 토큰": 0.05
+      }
+    },
+    {
+      "id": "mai-code-2-50percent",
+      "model": "MAI Code 2",
+      "provider": "Microsoft",
+      "source_url": "https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "GitHub Copilot 50percent launch promotion",
+        "condition": "할인은2027-05-17까지/같은날표준가시작;정확시각·시간대미상.USD/1Mtokens;Foundry실청구별도",
+        "입력 USD / 100만 토큰": 0.5,
+        "출력 USD / 100만 토큰": 2.5,
+        "캐시 읽기 USD / 100만 토큰": 0.025
+      }
+    },
+    {
+      "id": "mai-code-2-deepswe1.1",
+      "model": "MAI Code 2",
+      "provider": "Microsoft",
+      "source_url": "https://microsoft.ai/pdf/MAI-Code-2-And-MAI-Code-2-Flash-Model-Card.pdf?v=3",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "DeepSWE1.1 / MSBench CopilotCLI1.0.102",
+        "condition": "max;subagent없음;3독립실행평균;인프라오류실패;pass@k아님",
+        "평가 점수": 73.2,
+        "원문 단위": "mean single-attempt pass %"
+      }
+    },
+    {
+      "id": "mai-code-2-terminalbench2.1",
+      "model": "MAI Code 2",
+      "provider": "Microsoft",
+      "source_url": "https://microsoft.ai/pdf/MAI-Code-2-And-MAI-Code-2-Flash-Model-Card.pdf?v=3",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "TerminalBench2.1 / MSBench CopilotCLI1.0.102",
+        "condition": "max;subagent없음;3독립실행평균;인프라오류실패;pass@k아님",
+        "평가 점수": 84.6,
+        "원문 단위": "mean single-attempt pass %"
+      }
+    },
+    {
+      "id": "mai-code-2-swe-atlas",
+      "model": "MAI Code 2",
+      "provider": "Microsoft",
+      "source_url": "https://microsoft.ai/pdf/MAI-Code-2-And-MAI-Code-2-Flash-Model-Card.pdf?v=3",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SWE Atlas / MSBench CopilotCLI1.0.102",
+        "condition": "max;subagent없음;3독립실행평균;인프라오류실패;pass@k아님",
+        "평가 점수": 43.1,
+        "원문 단위": "mean single-attempt pass %"
+      }
+    },
+    {
+      "id": "mai-code-2-flash-spec",
+      "model": "MAI Code 2 Flash",
+      "provider": "Microsoft",
+      "source_url": "https://microsoft.ai/pdf/MAI-Code-2-And-MAI-Code-2-Flash-Model-Card.pdf?v=3",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 사양과 제공",
+        "suite": "MAI Code2 card v3 2026-11-17",
+        "condition": "Code2 active80=77+3embedded;total본문약값;요약50-100B/5-15B를총량으로사용하지않음.English code optimized",
+        "parameters": 398,
+        "active_parameters": 12,
+        "context": 1050000,
+        "release": "2026-11-17",
+        "status": "Copilot 제공;Foundry 제한preview",
+        "최대 입력 토큰": 922000,
+        "최대 출력 토큰": 128000
+      }
+    },
+    {
+      "id": "mai-code-2-flash-standard",
+      "model": "MAI Code 2 Flash",
+      "provider": "Microsoft",
+      "source_url": "https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "GitHub Copilot Standard",
+        "condition": "할인은2027-05-17까지/같은날표준가시작;정확시각·시간대미상.USD/1Mtokens;Foundry실청구별도",
+        "입력 USD / 100만 토큰": 0.1,
+        "출력 USD / 100만 토큰": 0.5,
+        "캐시 읽기 USD / 100만 토큰": 0.01
+      }
+    },
+    {
+      "id": "mai-code-2-flash-50percent",
+      "model": "MAI Code 2 Flash",
+      "provider": "Microsoft",
+      "source_url": "https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "GitHub Copilot 50percent launch promotion",
+        "condition": "할인은2027-05-17까지/같은날표준가시작;정확시각·시간대미상.USD/1Mtokens;Foundry실청구별도",
+        "입력 USD / 100만 토큰": 0.05,
+        "출력 USD / 100만 토큰": 0.25,
+        "캐시 읽기 USD / 100만 토큰": 0.005
+      }
+    },
+    {
+      "id": "mai-code-2-flash-deepswe1.1",
+      "model": "MAI Code 2 Flash",
+      "provider": "Microsoft",
+      "source_url": "https://microsoft.ai/pdf/MAI-Code-2-And-MAI-Code-2-Flash-Model-Card.pdf?v=3",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "DeepSWE1.1 / MSBench CopilotCLI1.0.102",
+        "condition": "max;subagent없음;3독립실행평균;인프라오류실패;pass@k아님",
+        "평가 점수": 59.9,
+        "원문 단위": "mean single-attempt pass %"
+      }
+    },
+    {
+      "id": "mai-code-2-flash-terminalbench2.1",
+      "model": "MAI Code 2 Flash",
+      "provider": "Microsoft",
+      "source_url": "https://microsoft.ai/pdf/MAI-Code-2-And-MAI-Code-2-Flash-Model-Card.pdf?v=3",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "TerminalBench2.1 / MSBench CopilotCLI1.0.102",
+        "condition": "max;subagent없음;3독립실행평균;인프라오류실패;pass@k아님",
+        "평가 점수": 78.3,
+        "원문 단위": "mean single-attempt pass %"
+      }
+    },
+    {
+      "id": "mai-code-2-flash-swe-atlas",
+      "model": "MAI Code 2 Flash",
+      "provider": "Microsoft",
+      "source_url": "https://microsoft.ai/pdf/MAI-Code-2-And-MAI-Code-2-Flash-Model-Card.pdf?v=3",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SWE Atlas / MSBench CopilotCLI1.0.102",
+        "condition": "max;subagent없음;3독립실행평균;인프라오류실패;pass@k아님",
+        "평가 점수": 44.8,
+        "원문 단위": "mean single-attempt pass %"
+      }
+    },
+    {
+      "id": "mai-cyber2flash-spec",
+      "model": "MAI Cyber 2 Flash",
+      "provider": "Microsoft",
+      "source_url": "https://microsoft.ai/news/introducing-mai-cyber-2-flash/",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 사양과 제공",
+        "suite": "Ignite2026 Cyber2Flash",
+        "condition": "현재일반API아님;eligible MDASH MAI profile mid-December2026예정;정확일시미상;파라미터미확인",
+        "context": 1000000,
+        "release": "2026-11-17",
+        "status": "발표 / 12월중순 보안제품 교체 예정",
+        "access": "Microsoft security products only"
+      }
+    },
+    {
+      "id": "mai-cyber2flash-standard",
+      "model": "MAI Cyber 2 Flash",
+      "provider": "Microsoft",
+      "source_url": "https://microsoft.ai/news/introducing-mai-cyber-2-flash/",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "CyberGymE2E offline list-price assumptions",
+        "condition": "USD/1Mtokens;고객실청구아님;제품구독별도",
+        "입력 USD / 100만 토큰": 0.1,
+        "출력 USD / 100만 토큰": 0.5,
+        "캐시 읽기 USD / 100만 토큰": 0.01
+      }
+    },
+    {
+      "id": "cyber2-cybergym-e2e-mai-cyber-2-flash",
+      "model": "MAI Cyber 2 Flash",
+      "provider": "Microsoft",
+      "source_url": "https://microsoft.ai/news/introducing-mai-cyber-2-flash/",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "CyberGym-E2E / Microsoft launch",
+        "condition": "CyberGym905개 중 겹침92개 제외813;CyberGym MAI절반추론예산,WebExploit동일예산;공급자측정",
+        "평가 점수": 92.3,
+        "원문 단위": "task success %"
+      }
+    },
+    {
+      "id": "cyber2-cybergym-e2e-gpt-6-astra",
+      "model": "GPT-6 Astra",
+      "provider": "OpenAI",
+      "source_url": "https://microsoft.ai/news/introducing-mai-cyber-2-flash/",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "CyberGym-E2E / Microsoft launch",
+        "condition": "CyberGym905개 중 겹침92개 제외813;CyberGym MAI절반추론예산,WebExploit동일예산;공급자측정",
+        "평가 점수": 91.5,
+        "원문 단위": "task success %"
+      }
+    },
+    {
+      "id": "cyber2-webexploitbench-mai-cyber-2-flash",
+      "model": "MAI Cyber 2 Flash",
+      "provider": "Microsoft",
+      "source_url": "https://microsoft.ai/news/introducing-mai-cyber-2-flash/",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "WebExploitBench / Microsoft launch",
+        "condition": "CyberGym905개 중 겹침92개 제외813;CyberGym MAI절반추론예산,WebExploit동일예산;공급자측정",
+        "평가 점수": 40.4,
+        "원문 단위": "task success %"
+      }
+    },
+    {
+      "id": "cyber2-webexploitbench-gpt-5-6-cyber",
+      "model": "GPT-5.6 Cyber",
+      "provider": "OpenAI",
+      "source_url": "https://microsoft.ai/news/introducing-mai-cyber-2-flash/",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "WebExploitBench / Microsoft launch",
+        "condition": "CyberGym905개 중 겹침92개 제외813;CyberGym MAI절반추론예산,WebExploit동일예산;공급자측정",
+        "평가 점수": 38.4,
+        "원문 단위": "task success %"
+      }
+    },
+    {
+      "id": "mai-image-2-7-spec",
+      "model": "MAI Image 2.7",
+      "provider": "Microsoft",
+      "source_url": "https://microsoft.ai/pdf/MAI-Image-2.7-Model-Card.pdf",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 사양과 제공",
+        "suite": "MAI Image2.7 card November2026",
+        "condition": "Flash최적화판;별도파라미터미확인.2.7의10-27평가공개와11-17서비스확대분리",
+        "release": "2026-11-17",
+        "status": "Foundry public preview / MAI Labs / partners",
+        "access": "Managed image generation and editing",
+        "parameters": 20,
+        "context": 32000,
+        "최대 출력 픽셀": 4194304
+      }
+    },
+    {
+      "id": "mai-image-2-7-price",
+      "model": "MAI Image 2.7",
+      "provider": "Microsoft",
+      "source_url": "https://microsoft.ai/news/introducing-mai-image-2-7/",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Microsoft launch approximate per1000 images",
+        "condition": "약10또는35USD/1000장발표에서산술환산;해상도·입력·수정별확정총청구미확인",
+        "출력 USD / 장": 0.035,
+        "원문 가격": "~$35 /1000 images"
+      }
+    },
+    {
+      "id": "mai-image-2-7-flash-spec",
+      "model": "MAI Image 2.7 Flash",
+      "provider": "Microsoft",
+      "source_url": "https://microsoft.ai/pdf/MAI-Image-2.7-Model-Card.pdf",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 사양과 제공",
+        "suite": "MAI Image2.7 card November2026",
+        "condition": "Flash최적화판;별도파라미터미확인.2.7의10-27평가공개와11-17서비스확대분리",
+        "release": "2026-11-17",
+        "status": "Foundry public preview / MAI Labs / partners",
+        "access": "Managed image generation and editing"
+      }
+    },
+    {
+      "id": "mai-image-2-7-flash-price",
+      "model": "MAI Image 2.7 Flash",
+      "provider": "Microsoft",
+      "source_url": "https://microsoft.ai/news/introducing-mai-image-2-7/",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Microsoft launch approximate per1000 images",
+        "condition": "약10또는35USD/1000장발표에서산술환산;해상도·입력·수정별확정총청구미확인",
+        "출력 USD / 장": 0.01,
+        "원문 가격": "~$10 /1000 images"
+      }
+    },
+    {
+      "id": "mai-image27-aaedit",
+      "model": "MAI Image 2.7",
+      "provider": "Microsoft",
+      "source_url": "https://microsoft.ai/news/introducing-mai-image-2-7/",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "AA Image Editing v2.1 /2026-11-16",
+        "condition": "5478votes;공급자외부평가인용;4Elo차이통계유의성미확인",
+        "평가 점수": 1215,
+        "원문 단위": "Elo"
+      }
+    },
+    {
+      "id": "mai-image27-aaedit-sunburst",
+      "model": "GPT Image 2.6 Sunburst",
+      "provider": "OpenAI",
+      "source_url": "https://microsoft.ai/news/introducing-mai-image-2-7/",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "AA Image Editing v2.1 /2026-11-16",
+        "condition": "공식1215보다4점낮음에서계산;max;공급자외부평가인용",
+        "평가 점수": 1211,
+        "원문 단위": "Elo",
+        "effort": "max"
+      }
+    },
+    {
+      "id": "mai-realtime1-access",
+      "model": "MAI Realtime 1",
+      "provider": "Microsoft",
+      "source_url": "https://microsoft.ai/news/introducing-mai-realtime-1/",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 사양과 제공",
+        "suite": "MAIRealtime1 launch2026-11-17",
+        "condition": "speech to speech;OpenAIRealtimeAPIcompatible;Foundrylimitedpreview,publicpreview전미청구;Labs개인비상업",
+        "release": "2026-11-17",
+        "status": "제한접근 preview",
+        "access": "Foundry / MAI Labs"
+      }
+    },
+    {
+      "id": "mai-realtime1-price",
+      "model": "MAI Realtime 1",
+      "provider": "Microsoft",
+      "source_url": "https://microsoft.ai/news/introducing-mai-realtime-1/",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "MAIRealtime1 base audio plus separate reasoning",
+        "condition": "음성분당과추론토큰은합산별도단위;publicpreview이전면제는영구무료아님",
+        "기본 음성 USD / 분": 0.01,
+        "입력 USD / 100만 토큰": 1,
+        "출력 USD / 100만 토큰": 5
+      }
+    },
+    {
+      "id": "mai-rt1-big-bench-audio-mai-realtime-1",
+      "model": "MAI Realtime 1",
+      "provider": "Microsoft",
+      "source_url": "https://microsoft.ai/models/mai-realtime-1/",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Big Bench Audio / MAI rendered comparison",
+        "condition": "MAI내부측정;경쟁AA인용;입력음성1시간정규화비용;BBA비용40문항부분집합",
+        "평가 점수": 98.9,
+        "원문 단위": "accuracy %",
+        "입력 음성 비용 USD / 시간": 1.35
+      }
+    },
+    {
+      "id": "mai-rt1-tau-voice-mai-realtime-1",
+      "model": "MAI Realtime 1",
+      "provider": "Microsoft",
+      "source_url": "https://microsoft.ai/models/mai-realtime-1/",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "tau-Voice / MAI rendered comparison",
+        "condition": "MAI내부측정;경쟁AA인용;입력음성1시간정규화비용;BBA비용40문항부분집합",
+        "평가 점수": 57.5,
+        "원문 단위": "task completion %",
+        "입력 음성 비용 USD / 시간": 1.35
+      }
+    },
+    {
+      "id": "mai-rt1-big-bench-audio-gpt-realtime-2-1-high",
+      "model": "GPT-Realtime-2.1 High",
+      "provider": "OpenAI",
+      "source_url": "https://microsoft.ai/models/mai-realtime-1/",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Big Bench Audio / MAI rendered comparison",
+        "condition": "MAI내부측정;경쟁AA인용;입력음성1시간정규화비용;BBA비용40문항부분집합",
+        "평가 점수": 95.8,
+        "원문 단위": "accuracy %",
+        "입력 음성 비용 USD / 시간": 10.75
+      }
+    },
+    {
+      "id": "mai-rt1-tau-voice-gpt-realtime-2-1-high",
+      "model": "GPT-Realtime-2.1 High",
+      "provider": "OpenAI",
+      "source_url": "https://microsoft.ai/models/mai-realtime-1/",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "tau-Voice / MAI rendered comparison",
+        "condition": "MAI내부측정;경쟁AA인용;입력음성1시간정규화비용;BBA비용40문항부분집합",
+        "평가 점수": 45.7,
+        "원문 단위": "task completion %",
+        "입력 음성 비용 USD / 시간": 10.75
+      }
+    },
+    {
+      "id": "mai-rt1-big-bench-audio-gemini-3-8-live-extended-thinking-high",
+      "model": "Gemini 3.8 Live Extended Thinking High",
+      "provider": "Google",
+      "source_url": "https://microsoft.ai/models/mai-realtime-1/",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Big Bench Audio / MAI rendered comparison",
+        "condition": "MAI내부측정;경쟁AA인용;입력음성1시간정규화비용;BBA비용40문항부분집합",
+        "평가 점수": 97.7,
+        "원문 단위": "accuracy %",
+        "입력 음성 비용 USD / 시간": 3.5
+      }
+    },
+    {
+      "id": "mai-rt1-tau-voice-gemini-3-8-live-extended-thinking-high",
+      "model": "Gemini 3.8 Live Extended Thinking High",
+      "provider": "Google",
+      "source_url": "https://microsoft.ai/models/mai-realtime-1/",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "tau-Voice / MAI rendered comparison",
+        "condition": "MAI내부측정;경쟁AA인용;입력음성1시간정규화비용;BBA비용40문항부분집합",
+        "평가 점수": 68.6,
+        "원문 단위": "task completion %",
+        "입력 음성 비용 USD / 시간": 3.5
+      }
+    },
+    {
+      "id": "mai-rt1-big-bench-audio-gpt-live-1-astra-medium",
+      "model": "GPT-Live-1 Astra medium",
+      "provider": "OpenAI",
+      "source_url": "https://microsoft.ai/models/mai-realtime-1/",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Big Bench Audio / MAI rendered comparison",
+        "condition": "MAI내부측정;경쟁AA인용;입력음성1시간정규화비용;BBA비용40문항부분집합",
+        "평가 점수": 90.1,
+        "원문 단위": "accuracy %",
+        "입력 음성 비용 USD / 시간": 5.83
+      }
+    },
+    {
+      "id": "mai-rt1-tau-voice-gpt-live-1-astra-medium",
+      "model": "GPT-Live-1 Astra medium",
+      "provider": "OpenAI",
+      "source_url": "https://microsoft.ai/models/mai-realtime-1/",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "tau-Voice / MAI rendered comparison",
+        "condition": "MAI내부측정;경쟁AA인용;입력음성1시간정규화비용;BBA비용40문항부분집합",
+        "평가 점수": 74.5,
+        "원문 단위": "task completion %",
+        "입력 음성 비용 USD / 시간": 5.83
+      }
+    },
+    {
+      "id": "msdecision11-spec",
+      "model": "Microsoft-Decision-1.1",
+      "provider": "Microsoft",
+      "source_url": "https://commandline.microsoft.com/microsoft-decision-model-ga/",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 사양과 제공",
+        "suite": "Decision1.1 GA 2026-11-17",
+        "condition": "Gemma4 26B A4B base;typed decisions no freeform rationale;text JSON image;문맥상한미확인",
+        "release": "2026-11-17",
+        "status": "GA",
+        "access": "Foundry / OpenRouter / Vercel",
+        "기반 모델": "Gemma 4 26B A4B"
+      }
+    },
+    {
+      "id": "msdecision11-global",
+      "model": "Microsoft-Decision-1.1",
+      "provider": "Microsoft",
+      "source_url": "https://commandline.microsoft.com/microsoft-decision-model-ga/",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Foundry Global Standard",
+        "condition": "입력USD/1Mtokens;outputfree;파트너·도구별도",
+        "입력 USD / 100만 토큰": 0.042,
+        "출력 USD / 100만 토큰": 0
+      }
+    },
+    {
+      "id": "msdecision11-us",
+      "model": "Microsoft-Decision-1.1",
+      "provider": "Microsoft",
+      "source_url": "https://commandline.microsoft.com/microsoft-decision-model-ga/",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Foundry US Data Zone",
+        "condition": "입력USD/1Mtokens;outputfree;파트너·도구별도",
+        "입력 USD / 100만 토큰": 0.046,
+        "출력 USD / 100만 토큰": 0
+      }
+    },
+    {
+      "id": "msdecision11-eu",
+      "model": "Microsoft-Decision-1.1",
+      "provider": "Microsoft",
+      "source_url": "https://commandline.microsoft.com/microsoft-decision-model-ga/",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Foundry EU APAC Data Zone",
+        "condition": "입력USD/1Mtokens;outputfree;파트너·도구별도",
+        "입력 USD / 100만 토큰": 0.05,
+        "출력 USD / 100만 토큰": 0
+      }
+    },
+    {
+      "id": "msdecision11-aa-62",
+      "model": "Microsoft-Decision-1",
+      "provider": "Microsoft",
+      "source_url": "https://commandline.microsoft.com/microsoft-decision-model-ga/",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "AA Decision Index v2.1 / Microsoft citation",
+        "condition": "quality calibration latency;accuracy%아님;외부원장각행독립조회아님",
+        "평가 점수": 62,
+        "원문 단위": "index points"
+      }
+    },
+    {
+      "id": "msdecision11-aa-68",
+      "model": "Microsoft-Decision-1.1",
+      "provider": "Microsoft",
+      "source_url": "https://commandline.microsoft.com/microsoft-decision-model-ga/",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "AA Decision Index v2.1 / Microsoft citation",
+        "condition": "quality calibration latency;accuracy%아님;외부원장각행독립조회아님",
+        "평가 점수": 68,
+        "원문 단위": "index points"
+      }
+    },
+    {
+      "id": "oa62-posttrain-gpt-6-astra",
+      "model": "GPT-6 Astra",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-6-2-astra-sol",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "PostTrainBench Lite / OpenAI system card",
+        "평가 점수": 76.97,
+        "원문 단위": "mean share of performance gap closed %",
+        "condition": "공급자 연구훈련평가;일반업무정답률아님;Harness와표본은시스템카드참조"
+      }
+    },
+    {
+      "id": "oa62-posttrain-gpt-6-2-sol",
+      "model": "GPT-6.2 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-6-2-astra-sol",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "PostTrainBench Lite / OpenAI system card",
+        "평가 점수": 44.89,
+        "원문 단위": "mean share of performance gap closed %",
+        "condition": "공급자 연구훈련평가;일반업무정답률아님;Harness와표본은시스템카드참조"
+      }
+    },
+    {
+      "id": "oa62-posttrain-gpt-6-2-astra",
+      "model": "GPT-6.2 Astra",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-6-2-astra-sol",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "PostTrainBench Lite / OpenAI system card",
+        "평가 점수": 74.79,
+        "원문 단위": "mean share of performance gap closed %",
+        "condition": "공급자 연구훈련평가;일반업무정답률아님;Harness와표본은시스템카드참조"
+      }
+    },
+    {
+      "id": "oa62-aa3d-gpt-6-2-astra",
+      "model": "GPT-6.2 Astra",
+      "provider": "OpenAI",
+      "source_url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "AA-3D / OpenAI launch external citation",
+        "평가 점수": 1318,
+        "원문 단위": "Elo",
+        "condition": "블라인드3D경험선호;공급자외부평가인용;현행외부원장별도독립조회아님"
+      }
+    },
+    {
+      "id": "oa62-aa3d-gpt-6-2-sol",
+      "model": "GPT-6.2 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "AA-3D / OpenAI launch external citation",
+        "평가 점수": 1259,
+        "원문 단위": "Elo",
+        "condition": "블라인드3D경험선호;공급자외부평가인용;현행외부원장별도독립조회아님"
+      }
+    },
+    {
+      "id": "oa62-aa3d-claude-fable-5-2",
+      "model": "Claude Fable 5.2",
+      "provider": "Anthropic",
+      "source_url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "AA-3D / OpenAI launch external citation",
+        "평가 점수": 1271,
+        "원문 단위": "Elo",
+        "condition": "블라인드3D경험선호;공급자외부평가인용;현행외부원장별도독립조회아님"
+      }
+    },
+    {
+      "id": "mai-code2-safety-mai-code-2-OpenAgentSafety",
+      "model": "MAI Code 2",
+      "provider": "Microsoft",
+      "source_url": "https://microsoft.ai/pdf/MAI-Code-2-And-MAI-Code-2-Flash-Model-Card.pdf?v=3",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OpenAgentSafety Safe+Complete / card v3",
+        "평가 점수": 37.01,
+        "원문 단위": "rate %",
+        "condition": "Safe+Complete높을수록좋음;유해완료율낮을수록좋음;공급자안전평가,실제운영검증아님"
+      }
+    },
+    {
+      "id": "mai-code2-safety-mai-code-2-AgentHarm",
+      "model": "MAI Code 2",
+      "provider": "Microsoft",
+      "source_url": "https://microsoft.ai/pdf/MAI-Code-2-And-MAI-Code-2-Flash-Model-Card.pdf?v=3",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "AgentHarm harmful completion / card v3",
+        "평가 점수": 10.23,
+        "원문 단위": "rate %",
+        "condition": "Safe+Complete높을수록좋음;유해완료율낮을수록좋음;공급자안전평가,실제운영검증아님"
+      }
+    },
+    {
+      "id": "mai-code2-safety-mai-code-2-flash-OpenAgentSafety",
+      "model": "MAI Code 2 Flash",
+      "provider": "Microsoft",
+      "source_url": "https://microsoft.ai/pdf/MAI-Code-2-And-MAI-Code-2-Flash-Model-Card.pdf?v=3",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OpenAgentSafety Safe+Complete / card v3",
+        "평가 점수": 39.92,
+        "원문 단위": "rate %",
+        "condition": "Safe+Complete높을수록좋음;유해완료율낮을수록좋음;공급자안전평가,실제운영검증아님"
+      }
+    },
+    {
+      "id": "mai-code2-safety-mai-code-2-flash-AgentHarm",
+      "model": "MAI Code 2 Flash",
+      "provider": "Microsoft",
+      "source_url": "https://microsoft.ai/pdf/MAI-Code-2-And-MAI-Code-2-Flash-Model-Card.pdf?v=3",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "AgentHarm harmful completion / card v3",
+        "평가 점수": 11.68,
+        "원문 단위": "rate %",
+        "condition": "Safe+Complete높을수록좋음;유해완료율낮을수록좋음;공급자안전평가,실제운영검증아님"
+      }
+    },
+    {
+      "id": "mai-rt1-phonichigh",
+      "model": "Phonic 1 High",
+      "provider": "Phonic",
+      "source_url": "https://microsoft.ai/models/mai-realtime-1/",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "tau-Voice / MAI rendered comparison",
+        "평가 점수": 79.9,
+        "원문 단위": "task completion %",
+        "condition": "경쟁모델AA인용;입력음성1시간비용4.20USD는작업구성별수치"
+      }
+    },
+    {
+      "id": "oa62-prior-standard-gpt-6-astra",
+      "model": "GPT-6 Astra",
+      "provider": "OpenAI",
+      "source_url": "https://developers.openai.com/api/docs/models/gpt-6-astra.md",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "OpenAI Standard comparison checked2026-11-18",
+        "condition": "USD/1Mtokens;shortcontext;도구·고속옵션별도",
+        "입력 USD / 100만 토큰": 10,
+        "캐시 읽기 USD / 100만 토큰": 1,
+        "출력 USD / 100만 토큰": 50
+      }
+    },
+    {
+      "id": "oa62-prior-standard-gpt-6-1-sol",
+      "model": "GPT-6.1 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol.md",
+      "checked_on": "2026-11-18",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "OpenAI Standard comparison checked2026-11-18",
+        "condition": "USD/1Mtokens;shortcontext;도구·고속옵션별도",
+        "입력 USD / 100만 토큰": 2,
+        "캐시 읽기 USD / 100만 토큰": 0.1,
+        "출력 USD / 100만 토큰": 10
+      }
+    }
+  ]
+}

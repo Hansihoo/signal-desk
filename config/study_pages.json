@@ -130,7 +130,15 @@
     "ling-3-2-flash-model-guide",
     "edge0-145b-120b-model-guide",
     "tencent-hy4-flash-model-guide",
-    "longcat-video-avatar-1-6-model-guide"
+    "longcat-video-avatar-1-6-model-guide",
+    "gpt-6-2-astra-model-guide",
+    "gpt-6-2-sol-model-guide",
+    "microsoft-mai-code-2-model-guide",
+    "microsoft-mai-code-2-flash-model-guide",
+    "microsoft-mai-cyber-2-flash-model-guide",
+    "microsoft-mai-image-2-7-model-guide",
+    "microsoft-mai-image-2-7-flash-model-guide",
+    "microsoft-mai-realtime-1-model-guide"
   ],
   "catalogs": {
     "devops-implementation-guide": "devops_tools.2026-10-10.r4.json"
@@ -471,6 +479,33 @@
     ],
     "longcat-video-avatar-1-6-model-guide": [
       "570abb4d967a28ca9dbc136564a4d4ac401f1296572b550734f654eddd43c92b"
+    ],
+    "gpt-6-2-astra-model-guide": [
+      "ebf6bb38501dbf373aaa6565e1e08bec7597df3d9328b7ff2f76f1a23a1ba377"
+    ],
+    "gpt-6-2-sol-model-guide": [
+      "66441e38b96557d0fa19662ca18e60304875c9e1e5eb55b8d40dbc8fc33188c0"
+    ],
+    "microsoft-mai-code-2-model-guide": [
+      "3ea949f0125f026b28c64ad7e7ece51bc67ed849d53b07196d4803d663c13516"
+    ],
+    "microsoft-mai-code-2-flash-model-guide": [
+      "93a54dbdd3fa7fdc9c9389f3df96595fdc07b20c51b2b00c7e97fb6a084afc15"
+    ],
+    "microsoft-mai-cyber-2-flash-model-guide": [
+      "4e98d58c0521551ade0ed93d56dded033332033b8f0dd3fdd352a8b8a04b0742"
+    ],
+    "microsoft-mai-image-2-7-model-guide": [
+      "7d4a6fa8793ab2ac669339a9f7dd020dc1e2ba3b8598ed8b7de97982026ee7cd"
+    ],
+    "microsoft-mai-image-2-7-flash-model-guide": [
+      "4dcc81b17e6d08af11fd397f7e6a037e3acf5cbd989a2a119b357f2a961e2ddf"
+    ],
+    "microsoft-mai-realtime-1-model-guide": [
+      "be1aaa96ffe6b0cd28c08b0f45f6af638e32d60baa1adecb477f6483f8b1727f"
+    ],
+    "microsoft-decision-1-model-guide": [
+      "8f525c62655bb60e94b5ecdea2505c014433c5c2336906404929cd154eedef4b"
     ]
   },
   "model_introduction_editions": {
@@ -750,6 +785,33 @@
     ],
     "longcat-video-avatar-1-6-model-guide": [
       "570abb4d967a28ca9dbc136564a4d4ac401f1296572b550734f654eddd43c92b"
+    ],
+    "gpt-6-2-astra-model-guide": [
+      "ebf6bb38501dbf373aaa6565e1e08bec7597df3d9328b7ff2f76f1a23a1ba377"
+    ],
+    "gpt-6-2-sol-model-guide": [
+      "66441e38b96557d0fa19662ca18e60304875c9e1e5eb55b8d40dbc8fc33188c0"
+    ],
+    "microsoft-mai-code-2-model-guide": [
+      "3ea949f0125f026b28c64ad7e7ece51bc67ed849d53b07196d4803d663c13516"
+    ],
+    "microsoft-mai-code-2-flash-model-guide": [
+      "93a54dbdd3fa7fdc9c9389f3df96595fdc07b20c51b2b00c7e97fb6a084afc15"
+    ],
+    "microsoft-mai-cyber-2-flash-model-guide": [
+      "4e98d58c0521551ade0ed93d56dded033332033b8f0dd3fdd352a8b8a04b0742"
+    ],
+    "microsoft-mai-image-2-7-model-guide": [
+      "7d4a6fa8793ab2ac669339a9f7dd020dc1e2ba3b8598ed8b7de97982026ee7cd"
+    ],
+    "microsoft-mai-image-2-7-flash-model-guide": [
+      "4dcc81b17e6d08af11fd397f7e6a037e3acf5cbd989a2a119b357f2a961e2ddf"
+    ],
+    "microsoft-mai-realtime-1-model-guide": [
+      "be1aaa96ffe6b0cd28c08b0f45f6af638e32d60baa1adecb477f6483f8b1727f"
+    ],
+    "microsoft-decision-1-model-guide": [
+      "8f525c62655bb60e94b5ecdea2505c014433c5c2336906404929cd154eedef4b"
     ]
   },
   "model_introduction_purpose_editions": {
@@ -1018,6 +1080,33 @@
     ],
     "longcat-video-avatar-1-6-model-guide": [
       "570abb4d967a28ca9dbc136564a4d4ac401f1296572b550734f654eddd43c92b"
+    ],
+    "gpt-6-2-astra-model-guide": [
+      "ebf6bb38501dbf373aaa6565e1e08bec7597df3d9328b7ff2f76f1a23a1ba377"
+    ],
+    "gpt-6-2-sol-model-guide": [
+      "66441e38b96557d0fa19662ca18e60304875c9e1e5eb55b8d40dbc8fc33188c0"
+    ],
+    "microsoft-mai-code-2-model-guide": [
+      "3ea949f0125f026b28c64ad7e7ece51bc67ed849d53b07196d4803d663c13516"
+    ],
+    "microsoft-mai-code-2-flash-model-guide": [
+      "93a54dbdd3fa7fdc9c9389f3df96595fdc07b20c51b2b00c7e97fb6a084afc15"
+    ],
+    "microsoft-mai-cyber-2-flash-model-guide": [
+      "4e98d58c0521551ade0ed93d56dded033332033b8f0dd3fdd352a8b8a04b0742"
+    ],
+    "microsoft-mai-image-2-7-model-guide": [
+      "7d4a6fa8793ab2ac669339a9f7dd020dc1e2ba3b8598ed8b7de97982026ee7cd"
+    ],
+    "microsoft-mai-image-2-7-flash-model-guide": [
+      "4dcc81b17e6d08af11fd397f7e6a037e3acf5cbd989a2a119b357f2a961e2ddf"
+    ],
+    "microsoft-mai-realtime-1-model-guide": [
+      "be1aaa96ffe6b0cd28c08b0f45f6af638e32d60baa1adecb477f6483f8b1727f"
+    ],
+    "microsoft-decision-1-model-guide": [
+      "8f525c62655bb60e94b5ecdea2505c014433c5c2336906404929cd154eedef4b"
     ]
   },
   "model_introduction_reader_editions": {
@@ -1239,6 +1328,33 @@
     ],
     "longcat-video-avatar-1-6-model-guide": [
       "570abb4d967a28ca9dbc136564a4d4ac401f1296572b550734f654eddd43c92b"
+    ],
+    "gpt-6-2-astra-model-guide": [
+      "ebf6bb38501dbf373aaa6565e1e08bec7597df3d9328b7ff2f76f1a23a1ba377"
+    ],
+    "gpt-6-2-sol-model-guide": [
+      "66441e38b96557d0fa19662ca18e60304875c9e1e5eb55b8d40dbc8fc33188c0"
+    ],
+    "microsoft-mai-code-2-model-guide": [
+      "3ea949f0125f026b28c64ad7e7ece51bc67ed849d53b07196d4803d663c13516"
+    ],
+    "microsoft-mai-code-2-flash-model-guide": [
+      "93a54dbdd3fa7fdc9c9389f3df96595fdc07b20c51b2b00c7e97fb6a084afc15"
+    ],
+    "microsoft-mai-cyber-2-flash-model-guide": [
+      "4e98d58c0521551ade0ed93d56dded033332033b8f0dd3fdd352a8b8a04b0742"
+    ],
+    "microsoft-mai-image-2-7-model-guide": [
+      "7d4a6fa8793ab2ac669339a9f7dd020dc1e2ba3b8598ed8b7de97982026ee7cd"
+    ],
+    "microsoft-mai-image-2-7-flash-model-guide": [
+      "4dcc81b17e6d08af11fd397f7e6a037e3acf5cbd989a2a119b357f2a961e2ddf"
+    ],
+    "microsoft-mai-realtime-1-model-guide": [
+      "be1aaa96ffe6b0cd28c08b0f45f6af638e32d60baa1adecb477f6483f8b1727f"
+    ],
+    "microsoft-decision-1-model-guide": [
+      "8f525c62655bb60e94b5ecdea2505c014433c5c2336906404929cd154eedef4b"
     ]
   }
 }

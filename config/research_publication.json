@@ -99,7 +99,16 @@
     "edge0-145b-120b-model-guide",
     "longcat-2-5-model-guide",
     "tencent-hy4-flash-model-guide",
-    "longcat-video-avatar-1-6-model-guide"
+    "longcat-video-avatar-1-6-model-guide",
+    "gpt-6-2-astra-model-guide",
+    "gpt-6-2-sol-model-guide",
+    "microsoft-mai-code-2-model-guide",
+    "microsoft-mai-code-2-flash-model-guide",
+    "microsoft-mai-cyber-2-flash-model-guide",
+    "microsoft-mai-image-2-7-model-guide",
+    "microsoft-mai-image-2-7-flash-model-guide",
+    "microsoft-mai-realtime-1-model-guide",
+    "microsoft-decision-1-model-guide"
   ],
   "batches": [
     {
@@ -561,6 +570,11 @@
       "id": "ai-model-guides-2026-11-17",
       "input": "ai_model_guides.2026-11-17.json",
       "quality": "ai_model_guides.2026-11-17.quality.json"
+    },
+    {
+      "id": "ai-model-guides-2026-11-18",
+      "input": "ai_model_guides.2026-11-18.json",
+      "quality": "ai_model_guides.2026-11-18.quality.json"
     }
   ]
 }
