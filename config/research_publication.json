@@ -582,6 +582,11 @@
       "id": "ai-model-guides-2026-11-19",
       "input": "ai_model_guides.2026-11-19.json",
       "quality": "ai_model_guides.2026-11-19.quality.json"
+    },
+    {
+      "id": "ai-model-guides-2026-11-19-readability",
+      "input": "ai_model_guides.2026-11-19.readability.json",
+      "quality": "ai_model_guides.2026-11-19.readability.quality.json"
     }
   ]
 }
