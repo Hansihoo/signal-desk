@@ -1,0 +1,447 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "id": "sensenova-loop-9b-release-spec",
+      "model": "SenseNova-Loop-9B",
+      "provider": "SenseTime",
+      "source_url": "https://huggingface.co/sensenova/SenseNova-Loop-9B",
+      "checked_on": "2026-11-19",
+      "fields": {
+        "kind": "공식 사양과 제공",
+        "suite": "정식판 2026-11-17 / 양자화 링크 11-18",
+        "condition": "512K는원문단위; config401로정확정수미확인; 텍스트·이미지→텍스트; 공유중간24계층2회",
+        "release": "2026-11-17",
+        "status": "정식 가중치·코드 공개; HF접근 동의 조건",
+        "파라미터(원문)": "약9B; 추론등가약14.6B",
+        "문맥(원문 단위)": "512K tokens",
+        "계층 저장 / 실행": "32 /56",
+        "이전 판": "SenseNova-Loop-9B-Preview; 과거관찰보존"
+      }
+    },
+    {
+      "id": "sensenova-loop-9b-release-price",
+      "model": "SenseNova-Loop-9B",
+      "provider": "SenseTime",
+      "source_url": "https://huggingface.co/sensenova/SenseNova-Loop-9B",
+      "checked_on": "2026-11-19",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "표준 API 단가 공개 범위 2026-11-19",
+        "condition": "검토한공식카드에표준입출력토큰단가없음; 라이선스·총운영비별도",
+        "표준 API 요금": "미공개; 무료API/0달러아님",
+        "가중치": "공식프로젝트Apache2.0; HF gated=auto"
+      }
+    },
+    {
+      "id": "sensenova-loop-9b-release-memory",
+      "model": "SenseNova-Loop-9B",
+      "provider": "SenseTime",
+      "source_url": "https://huggingface.co/sensenova/SenseNova-Loop-9B",
+      "checked_on": "2026-11-19",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "4bit가중치·KV별 공급자 메모리 추정",
+        "condition": "실측아님; GB/GiB구분; 동시요청·정식엔진미검증",
+        "4bit 가중치 GB": 4.9,
+        "64K 8bit KV GiB": 10,
+        "64K 4bit KV GiB": 9,
+        "128K 8bit KV GiB": 12,
+        "128K 4bit KV GiB": 10,
+        "256K 8bit KV GiB": 15,
+        "256K 4bit KV GiB": 12,
+        "512K 총메모리": "미공개"
+      }
+    },
+    {
+      "id": "maxwell-v1-flash-spec",
+      "model": "Maxwell-V1.0-Flash",
+      "provider": "Maxwell Team",
+      "source_url": "https://huggingface.co/maxwell-model/Maxwell-V1-Flash",
+      "checked_on": "2026-11-19",
+      "fields": {
+        "kind": "공식 사양과 제공",
+        "suite": "V1.0 Flash; 보고서표기2026-10-30",
+        "condition": "최초공개일미확인; 오늘출시아님; 35B/3B는임베딩제외; text→text",
+        "status": "Apache2.0공개가중치; HF gated=false",
+        "파라미터 총 / 활성(원문)": "35B /3B (임베딩제외)",
+        "문맥(원문 단위)": "256K tokens",
+        "정식이전세대": "공식비교미확인"
+      }
+    },
+    {
+      "id": "maxwell-v1-flash-config",
+      "model": "Maxwell-V1.0-Flash",
+      "provider": "Maxwell Team",
+      "source_url": "https://huggingface.co/maxwell-model/Maxwell-V1-Flash/resolve/main/config.json",
+      "checked_on": "2026-11-19",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "공개 config 2026-11-19 확인",
+        "condition": "설정상한은품질/서비스지원문맥보장아님; 카드256K와구분",
+        "max_position_embeddings": 524288,
+        "계층": 45,
+        "routed experts": 256,
+        "selected routed experts": 12,
+        "shared experts": 2,
+        "attention selected blocks": 32,
+        "attention block tokens": 128
+      }
+    },
+    {
+      "id": "maxwell-v1-flash-price",
+      "model": "Maxwell-V1.0-Flash",
+      "provider": "Maxwell Team",
+      "source_url": "https://raw.githubusercontent.com/maxwell-model/Maxwell-V1-Flash/main/README.md",
+      "checked_on": "2026-11-19",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "표준 API 단가 공개 범위 2026-11-19",
+        "condition": "공식카드·README·보고서검토범위; 공개가중치와호스팅청구구분",
+        "표준 API 요금": "미공개; 무료API/0달러아님",
+        "배포 예제": "B300한GPU; H100최소두GPU; driver>=580/CUDA13; 미실행"
+      }
+    },
+    {
+      "id": "loop-release-chart-preview",
+      "model": "SenseNova-Loop-9B-Preview",
+      "provider": "SenseTime",
+      "source_url": "https://raw.githubusercontent.com/OpenSenseNova/SenseNova-Loop/main/assets/release_benchmark_iuua.png",
+      "checked_on": "2026-11-19",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SenseNova 정식판 비교 그림 2026-11-17",
+        "condition": "측정:SenseNova; 원문score; Harness/추론예산/분산미공개; 과거Preview및Qwen자체평가와별도",
+        "AutomationBench": 14.33,
+        "NL2Repo": 19.91,
+        "AIDABench": 58.62,
+        "BIRD": 71.38,
+        "T³-Banking": 18.56,
+        "GAIA": 37.86
+      }
+    },
+    {
+      "id": "loop-release-chart-release",
+      "model": "SenseNova-Loop-9B",
+      "provider": "SenseTime",
+      "source_url": "https://raw.githubusercontent.com/OpenSenseNova/SenseNova-Loop/main/assets/release_benchmark_iuua.png",
+      "checked_on": "2026-11-19",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SenseNova 정식판 비교 그림 2026-11-17",
+        "condition": "측정:SenseNova; 원문score; Harness/추론예산/분산미공개; 과거Preview및Qwen자체평가와별도",
+        "AutomationBench": 36.67,
+        "NL2Repo": 41.36,
+        "AIDABench": 65.31,
+        "BIRD": 72.34,
+        "T³-Banking": 30.93,
+        "GAIA": 69.9
+      }
+    },
+    {
+      "id": "loop-release-chart-qwen38",
+      "model": "Qwen3.8-27B",
+      "provider": "Alibaba Qwen",
+      "source_url": "https://raw.githubusercontent.com/OpenSenseNova/SenseNova-Loop/main/assets/release_benchmark_iuua.png",
+      "checked_on": "2026-11-19",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SenseNova 정식판 비교 그림 2026-11-17",
+        "condition": "측정:SenseNova; 원문score; Harness/추론예산/분산미공개; 과거Preview및Qwen자체평가와별도",
+        "AutomationBench": 36.67,
+        "NL2Repo": 44.6,
+        "AIDABench": 65.01,
+        "BIRD": 69.82,
+        "T³-Banking": 36.08,
+        "GAIA": 66.99
+      }
+    },
+    {
+      "id": "loop-release-terminal-preview",
+      "model": "SenseNova-Loop-9B-Preview",
+      "provider": "SenseTime",
+      "source_url": "https://raw.githubusercontent.com/OpenSenseNova/SenseNova-Loop/main/assets/release_benchmark_iuua.png",
+      "checked_on": "2026-11-19",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Terminal-Bench 2.1 / SenseNova 정식판 그림",
+        "condition": "측정:SenseNova; 원문 score; Harness·추론 설정 미공개; Qwen3.8의 값이 아님",
+        "Terminal-Bench 2.1": 40.45
+      }
+    },
+    {
+      "id": "loop-release-terminal-release",
+      "model": "SenseNova-Loop-9B",
+      "provider": "SenseTime",
+      "source_url": "https://raw.githubusercontent.com/OpenSenseNova/SenseNova-Loop/main/assets/release_benchmark_iuua.png",
+      "checked_on": "2026-11-19",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Terminal-Bench 2.1 / SenseNova 정식판 그림",
+        "condition": "측정:SenseNova; 원문 score; Harness·추론 설정 미공개; Qwen3.8의 값이 아님",
+        "Terminal-Bench 2.1": 59.55
+      }
+    },
+    {
+      "id": "loop-release-terminal-qwen36",
+      "model": "Qwen3.6-27B",
+      "provider": "Alibaba Qwen",
+      "source_url": "https://raw.githubusercontent.com/OpenSenseNova/SenseNova-Loop/main/assets/release_benchmark_iuua.png",
+      "checked_on": "2026-11-19",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Terminal-Bench 2.1 / SenseNova 정식판 그림",
+        "condition": "측정:SenseNova; 원문 score; Harness·추론 설정 미공개; Qwen3.8의 값이 아님",
+        "Terminal-Bench 2.1": 63.4
+      }
+    },
+    {
+      "id": "maxwell-aime",
+      "model": "Maxwell-V1.0-Flash",
+      "provider": "Maxwell Team",
+      "source_url": "https://raw.githubusercontent.com/maxwell-model/Maxwell-V1-Flash/main/README.md",
+      "checked_on": "2026-11-19",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "AIME 2026",
+        "condition": "Maxwell내부통합사후평가; 원문0–100(%),높을수록좋음; mean@8;128K; 별도표기외t.6/p.95/k20; 경쟁값은같은내부재평가",
+        "AIME 2026": 95,
+        "Qwen3.6-35B-A3B": 91.25,
+        "Gemma-4-26B-A4B-it": 87.5,
+        "Muse-Glimmer-30B": 94.17
+      }
+    },
+    {
+      "id": "maxwell-gpqa",
+      "model": "Maxwell-V1.0-Flash",
+      "provider": "Maxwell Team",
+      "source_url": "https://raw.githubusercontent.com/maxwell-model/Maxwell-V1-Flash/main/README.md",
+      "checked_on": "2026-11-19",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "GPQA Diamond",
+        "condition": "Maxwell내부통합사후평가; 원문0–100(%),높을수록좋음; pass@1;80K; 별도표기외t.6/p.95/k20; 경쟁값은같은내부재평가",
+        "GPQA Diamond": 86.52,
+        "Qwen3.6-35B-A3B": 86,
+        "Gemma-4-26B-A4B-it": 82.3,
+        "Muse-Glimmer-30B": 83.5
+      }
+    },
+    {
+      "id": "maxwell-longbench",
+      "model": "Maxwell-V1.0-Flash",
+      "provider": "Maxwell Team",
+      "source_url": "https://raw.githubusercontent.com/maxwell-model/Maxwell-V1-Flash/main/README.md",
+      "checked_on": "2026-11-19",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "LongBench V2",
+        "condition": "Maxwell내부통합사후평가; 원문0–100(%),높을수록좋음; score; 공통32K설명; 별도표기외t.6/p.95/k20; 경쟁값은같은내부재평가",
+        "LongBench V2": 59.4,
+        "Qwen3.6-35B-A3B": 58.8,
+        "Gemma-4-26B-A4B-it": 53.3,
+        "Muse-Glimmer-30B": 38.6
+      }
+    },
+    {
+      "id": "maxwell-ifbench",
+      "model": "Maxwell-V1.0-Flash",
+      "provider": "Maxwell Team",
+      "source_url": "https://raw.githubusercontent.com/maxwell-model/Maxwell-V1-Flash/main/README.md",
+      "checked_on": "2026-11-19",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "IFBench",
+        "condition": "Maxwell내부통합사후평가; 원문0–100(%),높을수록좋음; score; 공통32K설명; 별도표기외t.6/p.95/k20; 경쟁값은같은내부재평가",
+        "IFBench": 64.8,
+        "Qwen3.6-35B-A3B": 59.6,
+        "Gemma-4-26B-A4B-it": 79.1,
+        "Muse-Glimmer-30B": 83.2
+      }
+    },
+    {
+      "id": "maxwell-ifeval",
+      "model": "Maxwell-V1.0-Flash",
+      "provider": "Maxwell Team",
+      "source_url": "https://raw.githubusercontent.com/maxwell-model/Maxwell-V1-Flash/main/README.md",
+      "checked_on": "2026-11-19",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "IFEval",
+        "condition": "Maxwell내부통합사후평가; 원문0–100(%),높을수록좋음; score; 공통32K설명; 별도표기외t.6/p.95/k20; 경쟁값은같은내부재평가",
+        "IFEval": 93,
+        "Qwen3.6-35B-A3B": 93.8,
+        "Gemma-4-26B-A4B-it": 94,
+        "Muse-Glimmer-30B": 96.8
+      }
+    },
+    {
+      "id": "maxwell-bbeh",
+      "model": "Maxwell-V1.0-Flash",
+      "provider": "Maxwell Team",
+      "source_url": "https://raw.githubusercontent.com/maxwell-model/Maxwell-V1-Flash/main/README.md",
+      "checked_on": "2026-11-19",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "BBEH",
+        "condition": "Maxwell내부통합사후평가; 원문0–100(%),높을수록좋음; score; 공통32K설명; 별도표기외t.6/p.95/k20; 경쟁값은같은내부재평가",
+        "BBEH": 52.51,
+        "Qwen3.6-35B-A3B": 48.05,
+        "Gemma-4-26B-A4B-it": 55.18,
+        "Muse-Glimmer-30B": 64.69
+      }
+    },
+    {
+      "id": "maxwell-lcb",
+      "model": "Maxwell-V1.0-Flash",
+      "provider": "Maxwell Team",
+      "source_url": "https://raw.githubusercontent.com/maxwell-model/Maxwell-V1-Flash/main/README.md",
+      "checked_on": "2026-11-19",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "LiveCodeBench v6",
+        "condition": "Maxwell내부통합사후평가; 원문0–100(%),높을수록좋음; pass@1;64K; 별도표기외t.6/p.95/k20; 경쟁값은같은내부재평가",
+        "LiveCodeBench v6": 85.66,
+        "Qwen3.6-35B-A3B": 85.32,
+        "Gemma-4-26B-A4B-it": 85.96,
+        "Muse-Glimmer-30B": 76.8
+      }
+    },
+    {
+      "id": "maxwell-swe",
+      "model": "Maxwell-V1.0-Flash",
+      "provider": "Maxwell Team",
+      "source_url": "https://raw.githubusercontent.com/maxwell-model/Maxwell-V1-Flash/main/README.md",
+      "checked_on": "2026-11-19",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SWE-bench Verified",
+        "condition": "Maxwell내부통합사후평가; 원문0–100(%),높을수록좋음; pass@1;Claude Code2.1.212;격리;256K;240턴;4h; 별도표기외t.6/p.95/k20; 경쟁값은같은내부재평가",
+        "SWE-bench Verified": 65.4,
+        "Qwen3.6-35B-A3B": 63.4,
+        "Gemma-4-26B-A4B-it": 39.2,
+        "Muse-Glimmer-30B": 47.6
+      }
+    },
+    {
+      "id": "maxwell-terminal",
+      "model": "Maxwell-V1.0-Flash",
+      "provider": "Maxwell Team",
+      "source_url": "https://raw.githubusercontent.com/maxwell-model/Maxwell-V1-Flash/main/README.md",
+      "checked_on": "2026-11-19",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Terminal-Bench 2.1",
+        "condition": "Maxwell내부통합사후평가; 원문0–100(%),높을수록좋음; mean@5;Harbor/Terminus-2;256K;32K출력;2h;t1.0;p.95;k20;interleaved thinking; 별도표기외t.6/p.95/k20; 경쟁값은같은내부재평가",
+        "Terminal-Bench 2.1": 58.65,
+        "Qwen3.6-35B-A3B": 47.42,
+        "Gemma-4-26B-A4B-it": 38.43,
+        "Muse-Glimmer-30B": 48.5
+      }
+    },
+    {
+      "id": "maxwell-browse-base",
+      "model": "Maxwell-V1.0-Flash",
+      "provider": "Maxwell Team",
+      "source_url": "https://raw.githubusercontent.com/maxwell-model/Maxwell-V1-Flash/main/README.md",
+      "checked_on": "2026-11-19",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "BrowseComp /pass@1",
+        "condition": "Maxwell내부평가;원문%; context management 미사용; 비용/독립재현미검증",
+        "BrowseComp": 76.3
+      }
+    },
+    {
+      "id": "maxwell-browse-managed",
+      "model": "Maxwell-V1.0-Flash",
+      "provider": "Maxwell Team",
+      "source_url": "https://raw.githubusercontent.com/maxwell-model/Maxwell-V1-Flash/main/README.md",
+      "checked_on": "2026-11-19",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "BrowseComp /pass@1",
+        "condition": "Maxwell내부평가;원문%; context management 사용(별표); 비용/독립재현미검증",
+        "BrowseComp": 82.2
+      }
+    },
+    {
+      "id": "maxwell-hle-tools-base",
+      "model": "Maxwell-V1.0-Flash",
+      "provider": "Maxwell Team",
+      "source_url": "https://raw.githubusercontent.com/maxwell-model/Maxwell-V1-Flash/main/README.md",
+      "checked_on": "2026-11-19",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "HLE w/Tools /pass@1",
+        "condition": "Maxwell내부평가;원문%; context management 미사용; 비용/독립재현미검증",
+        "HLE w/Tools": 46.1
+      }
+    },
+    {
+      "id": "maxwell-hle-tools-managed",
+      "model": "Maxwell-V1.0-Flash",
+      "provider": "Maxwell Team",
+      "source_url": "https://raw.githubusercontent.com/maxwell-model/Maxwell-V1-Flash/main/README.md",
+      "checked_on": "2026-11-19",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "HLE w/Tools /pass@1",
+        "condition": "Maxwell내부평가;원문%; context management 사용(별표); 비용/독립재현미검증",
+        "HLE w/Tools": 55.1
+      }
+    },
+    {
+      "id": "maxwell-wide-base",
+      "model": "Maxwell-V1.0-Flash",
+      "provider": "Maxwell Team",
+      "source_url": "https://raw.githubusercontent.com/maxwell-model/Maxwell-V1-Flash/main/README.md",
+      "checked_on": "2026-11-19",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "WideSearch /max@4",
+        "condition": "Maxwell내부평가;원문%; context management 미사용; 비용/독립재현미검증",
+        "WideSearch": 74.4
+      }
+    },
+    {
+      "id": "maxwell-wide-managed",
+      "model": "Maxwell-V1.0-Flash",
+      "provider": "Maxwell Team",
+      "source_url": "https://raw.githubusercontent.com/maxwell-model/Maxwell-V1-Flash/main/README.md",
+      "checked_on": "2026-11-19",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "WideSearch /max@4",
+        "condition": "Maxwell내부평가;원문%; context management 사용(별표); 비용/독립재현미검증",
+        "WideSearch": 75.8
+      }
+    },
+    {
+      "id": "maxwell-deep-base",
+      "model": "Maxwell-V1.0-Flash",
+      "provider": "Maxwell Team",
+      "source_url": "https://raw.githubusercontent.com/maxwell-model/Maxwell-V1-Flash/main/README.md",
+      "checked_on": "2026-11-19",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "DeepSearchQA /pass@1",
+        "condition": "Maxwell내부평가;원문%; context management 미사용; 비용/독립재현미검증",
+        "DeepSearchQA": 83.3
+      }
+    },
+    {
+      "id": "maxwell-deep-managed",
+      "model": "Maxwell-V1.0-Flash",
+      "provider": "Maxwell Team",
+      "source_url": "https://raw.githubusercontent.com/maxwell-model/Maxwell-V1-Flash/main/README.md",
+      "checked_on": "2026-11-19",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "DeepSearchQA /pass@1",
+        "condition": "Maxwell내부평가;원문%; context management 사용(별표); 비용/독립재현미검증",
+        "DeepSearchQA": 89.5
+      }
+    }
+  ]
+}

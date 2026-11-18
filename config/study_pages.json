@@ -138,7 +138,8 @@
     "microsoft-mai-cyber-2-flash-model-guide",
     "microsoft-mai-image-2-7-model-guide",
     "microsoft-mai-image-2-7-flash-model-guide",
-    "microsoft-mai-realtime-1-model-guide"
+    "microsoft-mai-realtime-1-model-guide",
+    "maxwell-v1-0-flash-model-guide"
   ],
   "catalogs": {
     "devops-implementation-guide": "devops_tools.2026-10-10.r4.json"
@@ -327,7 +328,8 @@
       "8c6df88919b906d3e8136e499faad1f577e920df6c58eb625354f905c0a56b2f"
     ],
     "sensenova-loop-9b-preview-model-guide": [
-      "921a719225b013db1b304730f4124801d4ba7123ee692acb9a2bf242f01803f1"
+      "921a719225b013db1b304730f4124801d4ba7123ee692acb9a2bf242f01803f1",
+      "844d0cd4532b1e5d3f293b5eae6ddfc91426be5e129fa4011c6d90c39c4a38b1"
     ],
     "longcat-2-5-model-guide": [
       "857114b8a3d8fb3f49d59d3aca4faa6ab915b65ba252673df4a13ea56f74675a",
@@ -506,6 +508,9 @@
     ],
     "microsoft-decision-1-model-guide": [
       "8f525c62655bb60e94b5ecdea2505c014433c5c2336906404929cd154eedef4b"
+    ],
+    "maxwell-v1-0-flash-model-guide": [
+      "d9546d9fe1cd8dfa6c4159b1625ce9a8f7710e4aa0b2be30a8631760bca40fdb"
     ]
   },
   "model_introduction_editions": {
@@ -633,7 +638,8 @@
       "8c6df88919b906d3e8136e499faad1f577e920df6c58eb625354f905c0a56b2f"
     ],
     "sensenova-loop-9b-preview-model-guide": [
-      "921a719225b013db1b304730f4124801d4ba7123ee692acb9a2bf242f01803f1"
+      "921a719225b013db1b304730f4124801d4ba7123ee692acb9a2bf242f01803f1",
+      "844d0cd4532b1e5d3f293b5eae6ddfc91426be5e129fa4011c6d90c39c4a38b1"
     ],
     "longcat-2-5-model-guide": [
       "857114b8a3d8fb3f49d59d3aca4faa6ab915b65ba252673df4a13ea56f74675a",
@@ -812,6 +818,9 @@
     ],
     "microsoft-decision-1-model-guide": [
       "8f525c62655bb60e94b5ecdea2505c014433c5c2336906404929cd154eedef4b"
+    ],
+    "maxwell-v1-0-flash-model-guide": [
+      "d9546d9fe1cd8dfa6c4159b1625ce9a8f7710e4aa0b2be30a8631760bca40fdb"
     ]
   },
   "model_introduction_purpose_editions": {
@@ -928,7 +937,8 @@
       "8c6df88919b906d3e8136e499faad1f577e920df6c58eb625354f905c0a56b2f"
     ],
     "sensenova-loop-9b-preview-model-guide": [
-      "921a719225b013db1b304730f4124801d4ba7123ee692acb9a2bf242f01803f1"
+      "921a719225b013db1b304730f4124801d4ba7123ee692acb9a2bf242f01803f1",
+      "844d0cd4532b1e5d3f293b5eae6ddfc91426be5e129fa4011c6d90c39c4a38b1"
     ],
     "longcat-2-5-model-guide": [
       "857114b8a3d8fb3f49d59d3aca4faa6ab915b65ba252673df4a13ea56f74675a",
@@ -1107,6 +1117,9 @@
     ],
     "microsoft-decision-1-model-guide": [
       "8f525c62655bb60e94b5ecdea2505c014433c5c2336906404929cd154eedef4b"
+    ],
+    "maxwell-v1-0-flash-model-guide": [
+      "d9546d9fe1cd8dfa6c4159b1625ce9a8f7710e4aa0b2be30a8631760bca40fdb"
     ]
   },
   "model_introduction_reader_editions": {
@@ -1219,7 +1232,8 @@
       "8c6df88919b906d3e8136e499faad1f577e920df6c58eb625354f905c0a56b2f"
     ],
     "sensenova-loop-9b-preview-model-guide": [
-      "921a719225b013db1b304730f4124801d4ba7123ee692acb9a2bf242f01803f1"
+      "921a719225b013db1b304730f4124801d4ba7123ee692acb9a2bf242f01803f1",
+      "844d0cd4532b1e5d3f293b5eae6ddfc91426be5e129fa4011c6d90c39c4a38b1"
     ],
     "longcat-2-5-model-guide": [
       "857114b8a3d8fb3f49d59d3aca4faa6ab915b65ba252673df4a13ea56f74675a",
@@ -1355,6 +1369,9 @@
     ],
     "microsoft-decision-1-model-guide": [
       "8f525c62655bb60e94b5ecdea2505c014433c5c2336906404929cd154eedef4b"
+    ],
+    "maxwell-v1-0-flash-model-guide": [
+      "d9546d9fe1cd8dfa6c4159b1625ce9a8f7710e4aa0b2be30a8631760bca40fdb"
     ]
   }
 }

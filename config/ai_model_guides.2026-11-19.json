@@ -1,0 +1,1060 @@
+{
+  "schema_version": 1,
+  "reports": [
+    {
+      "id": "sensenova-loop-9b-preview-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "title": "SenseNova Loop‑9B — 정식판의 성능 향상과 반복 계산의 조건",
+      "description": "Loop‑9B 정식판과 Preview·Qwen의 사양, 공급자 평가, 양자화·접근 조건과 운영비 한계를 비교한다.",
+      "checked_on": "2026-11-19",
+      "scope": "2026-11-19 KST에 공식 카드·공개 저장소·평가 원본 그림을 검토했다. 공급자 측정이며 독립 실행·실측 메모리·한국어 성능·사람 독해 시험은 수행하지 않았다. HF config는401, HF LICENSE는404로 열지 못했으며 공식 GitHub 라이선스는 확인했다. 512K의 정확한 정수 환산, 최대 출력, 정식판 엔진 조합과 512K 총메모리는 미확인이다.",
+      "deck": "11월 17일 정식 가중치가 공개되고18일 AWQ·GGUF 경로가 추가됐다. 같은 공식 그림에서AutomationBench는Preview14.33에서36.67로 높아졌지만 NL2Repo는Qwen3.8‑27B보다 낮다. 문맥은512K로 늘었으며 작은 가중치 용량이 최대 문맥의 낮은 총메모리나 빠른 실행을 보장하지 않는다.",
+      "highlights": [
+        "정식판의 위치와 Preview 이후 변화",
+        "32개 계층을 56회 계산하는 구조",
+        "같은 공식 그림에서 개선과 열세를 함께 비교"
+      ],
+      "source_note": "공식 발표·기술보고서의 날짜와 이번 확인일을 구분한다. 공급자 평가이며 독립 추론·실청구·한국어 문서 작업 및 사람 독해 시험은 수행하지 않았다.",
+      "summary": [
+        {
+          "label": "공개일과 실제 제공",
+          "text": "공식 타임라인은 정식 가중치·코드 공개를 2026년 11월 17일, AWQ·GGUF 링크 추가를 18일로 적는다. 이번 소개는 11월 19일 확인한 개정판이다. 기존 Preview 소개의 같은 문서 ID에서 새 판으로 이어지며 Preview 체크포인트와 당시 평가 기록은 남는다. 현재 타임라인의 Preview 날짜는10월 31일이다. 이전 소개가 당시 원문에서 읽은10월 30일과 다르므로 확인일만 바꿔 과거 판을 덮지 않는다.",
+          "source_ids": [
+            "loop-card",
+            "loop-preview"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "explanation": [
+        {
+          "id": "identity",
+          "title": "정식판의 위치와 Preview 이후 변화",
+          "lead": "같은 계층 반복 구조를 유지하면서 문맥과 성능이 달라진 후속 체크포인트다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "공개일과 실제 제공",
+              "text": "공식 타임라인은 정식 가중치·코드 공개를 2026년 11월 17일, AWQ·GGUF 링크 추가를 18일로 적는다. 이번 소개는 11월 19일 확인한 개정판이다. 기존 Preview 소개의 같은 문서 ID에서 새 판으로 이어지며 Preview 체크포인트와 당시 평가 기록은 남는다. 현재 타임라인의 Preview 날짜는10월 31일이다. 이전 소개가 당시 원문에서 읽은10월 30일과 다르므로 확인일만 바꿔 과거 판을 덮지 않는다.",
+              "source_ids": [
+                "loop-card",
+                "loop-preview"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "입출력과 늘어난 문맥",
+              "text": "정식판은 텍스트와 이미지를 받아 텍스트를 내며 카드의 최대 문맥은512K tokens다. Preview의262,144보다 늘었지만 공개 config를401로 열지 못해512K를 특정 정수로 환산하지 않았다. 최대 출력 토큰과 최대 문맥에서의 품질·총메모리도 별도 보장이 없다. 이미지 입력을 받는다는 사실은 이미지 생성이나 한국어 OCR 정확도의 검증을 뜻하지 않는다.",
+              "source_ids": [
+                "loop-card",
+                "loop-preview"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "9B와 14.6B가 뜻하는 것",
+              "text": "공급자는 총파라미터 약9B, 추론 등가 약14.6B로 설명한다. 공개 메타데이터의 저장 텐서는 약94.13억 개다. 등가 규모는 가중치를 반복 계산하는 설명이며14.6B의 서로 다른 가중치를 저장한다거나 MoE에서 그만큼 활성화한다는 의미가 아니다. 파라미터 수만으로 속도·메모리 또는27B 모델 전반의 대체 가능성을 판단할 수 없다.",
+              "source_ids": [
+                "loop-card",
+                "loop-meta"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "architecture",
+          "title": "32개 계층을 56회 계산하는 구조",
+          "lead": "같은 가중치를 다시 쓰는 깊이 확장과 잔차 정보 흐름을 구분한다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "반복 계층과 계산량",
+              "text": "32개 decoder 계층 중0–3을 먼저 거치고4–27의24개 계층을 같은 가중치로 두 번 지난 뒤28–31로 이어진다. 한 번의 forward에서56회 계층 계산을 하지만 저장 계층은32개다. 반복이 계산량을 늘리는 구조이므로9B라는 이름을 일반적인9B dense 모델과 같은 토큰 속도로 해석하면 안 된다.",
+              "source_ids": [
+                "loop-card"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "혼합 attention과 mHC",
+              "text": "네 계층마다 세 개의 선형 attention과 한 개의 full attention을 배치한다. 반복 구간은 네 계층 묶음에 맞춘다. two-stream mHC는 두 잔차 흐름을 읽고 섞고 쓰는 방식을 학습하며20회의 Sinkhorn 반복으로 혼합 행렬을 정규화한다. 이20회는 decoder를20번 반복한다는 뜻이 아니다.",
+              "source_ids": [
+                "loop-card"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "추가 반복 실험의 범위",
+              "text": "별도 Loop Scaling 실험은 학습·추론 반복 수를 맞춘1–4회 모델들을 비교한다. 일부 과제는3회, 다른 과제는4회에서 최고여서 반복을 늘리면 모든 지표가 단조 상승하는 결과가 아니다. 이 실험을 공개 기본2회 체크포인트의 점수나 사용자가 즉시 켤 수 있는 동적 반복 기능으로 합치지 않았다.",
+              "source_ids": [
+                "loop-card"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "evaluation",
+          "title": "같은 공식 그림에서 개선과 열세를 함께 비교",
+          "lead": "Preview와의 차이는 크지만 모든 경쟁 평가에서 앞서지는 않는다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "Preview 대비 확인된 개선",
+              "text": "정식판 그림에서 AutomationBench는14.33→36.67, Terminal‑Bench2.1은40.45→59.55, GAIA는37.86→69.90이다. NL2Repo는19.91→41.36, AIDABench58.62→65.31, BIRD71.38→72.34, T³‑Banking18.56→30.93이다. 모두 같은 정식판 그림의 비교이며 이전 소개에 남은 당시 Preview 측정값과 일부 다르다. 과거13.72 등의 값을 오류로 덮거나 두 측정판의 차이를 모델 자체 향상으로 계산하지 않는다.",
+              "source_ids": [
+                "loop-chart",
+                "loop-preview"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "Qwen3.8‑27B와의 교환 관계",
+              "text": "공식 그림에서 AutomationBench36.67은Qwen3.8‑27B와 같고 AIDABench65.31은65.01보다0.30 높다. 반면 NL2Repo41.36은44.60보다 낮고 T³‑Banking30.93은36.08보다 낮다. 따라서 작은 저장 규모에서 특정 agent·분석 평가가 경쟁적이라는 해석은 가능하지만27B 전반을 이겼다는 결론은 지원하지 않는다.",
+              "source_ids": [
+                "loop-chart"
+              ],
+              "kind": "judgment"
+            },
+            {
+              "type": "paragraph",
+              "title": "평가판과 측정 조건의 한계",
+              "text": "그림의 Terminal‑Bench2.1에서Qwen 비교 대상은3.8이 아니라Qwen3.6‑27B63.40이다. Qwen3.8 공식 카드의 자체 Terminal‑Bench2.1 73.0을 같은 그림의 수치처럼 삽입하지 않았다. 그림에는 Harness·추론 예산·샘플 수·신뢰구간이 충분히 명시되지 않아 이 수치를 독립 재현 결과나 작은 차이의 통계적 우위로 부르지 않는다. 수치의 원문 단위는 그림의 score이며 일괄적으로 정확도%로 바꾸지 않았다.",
+              "source_ids": [
+                "loop-chart",
+                "qwen38-card"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "availability",
+          "title": "양자화·라이선스·운영비의 실제 조건",
+          "lead": "가중치 용량, 총메모리와 API 단가는 각각 다른 정보다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "가중치와 접근 동의",
+              "text": "공식 GitHub 프로젝트는Apache2.0이며 AWQ와 GGUF 변형의 공식 링크가 있다. 그러나 HF 정식판 공개 메타데이터는gated=auto이고 카드에는 연락 정보 공유·조건 동의가 필요하다는 접근 안내가 나타난다. 공개 카드 열람과 무조건적인 파일 다운로드를 같게 보지 않았다. 이 조사에서는 동의나 가중치 다운로드를 수행하지 않았다.",
+              "source_ids": [
+                "loop-card",
+                "loop-meta",
+                "loop-awq",
+                "loop-license"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "4.9GB와 긴 문맥 메모리",
+              "text": "공급자의4bit 가중치 추정은약4.9GB다. 이는KV cache와 실행 공간을 합한 총VRAM이 아니다. 공식 표의 총메모리 추정은64K에서8bit KV 약10GiB·4bit KV 약9GiB,128K에서12·10GiB,256K에서15·12GiB다. 512K 행은 없으므로 최대 문맥도10GB 미만에서 실행된다고 확대하지 않는다. 이 수치는 공급자 추정이며 해당 장치에서 측정하지 않았다.",
+              "source_ids": [
+                "loop-card"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "실제 배포 경로와 공개 요금",
+              "text": "AWQ 카드에는LightLLM 한 GPU 예제가 있지만BF16·SGLang·vLLM 예제는Preview에서 옮겼고 정식판 버전·설정은 갱신 예정이라고 적는다. 예제가 존재한다는 사실을 최신 엔진 조합의 성공 검증으로 바꾸지 않았다. 확인한 카드에는 공식 표준 입력·출력 API 단가가 없고 HF Inference Provider도 연결돼 있지 않았다. 가중치 라이선스 비용과GPU·전력·운영비 및 제3자 서비스 요금은 구분해야 한다.",
+              "source_ids": [
+                "loop-card",
+                "loop-awq"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "limits",
+          "title": "작은 저장 규모가 남기는 장단점",
+          "lead": "강점은 특정 과제의 효율적 규모이며 복잡한 작업의 일관성은 남은 문제다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "선택할 근거",
+              "text": "같은 공급자 비교에서Preview보다 일곱 지표가 개선됐고 일부 27B 비교값과 가까우며 공식 양자화 경로도 생겼다. 자체 호스팅의 저장 예산이 중요한 환경에서 후속 평가할 근거다. 다만 반복 계산의 지연과 실제 긴 입력의 총비용을 측정하기 전 운영 효율이 더 낫다고 확정할 수는 없다.",
+              "source_ids": [
+                "loop-chart",
+                "loop-card",
+                "loop-awq"
+              ],
+              "kind": "judgment"
+            },
+            {
+              "type": "paragraph",
+              "title": "공급자가 적은 약점",
+              "text": "공식 한계에는 복잡한 도구 정의·다중 제약을 놓칠 수 있음, coding·일반 agent 결과의 일관성 부족, 복잡한 장기 작업의 미흡함이 포함된다. 3D 웹 사례 일부는사용자 피드백과2–3회 보완이 필요하다. 선별된 시연은 독립 평가나 한 번에 완성하는 비율이 아니며 한국어 문서 편집·인용·보안 적합성도 이 원문만으로 확인되지 않는다.",
+              "source_ids": [
+                "loop-card"
+              ],
+              "kind": "fact"
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "specs",
+          "title": "Preview·정식판·Qwen의 사양과 제공 조건",
+          "columns": [
+            "모델",
+            "저장 규모 / 계산",
+            "문맥(원문 표기)",
+            "입출력·제공 / 표준 API 요금"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Loop‑9B Preview",
+                "약9B / 공유24계층2회",
+                "262,144 tokens",
+                "텍스트·이미지→텍스트 / 기존 가중치; 공식 카드의 표준 토큰 단가 미공개"
+              ],
+              "source_ids": [
+                "loop-preview"
+              ]
+            },
+            {
+              "values": [
+                "Loop‑9B 정식판",
+                "약9B /32개 계층·56회 계산",
+                "512K tokens; 정확 정수 미확인",
+                "텍스트·이미지→텍스트 / 접근 동의·AWQ·GGUF; 표준 API 단가 미공개"
+              ],
+              "source_ids": [
+                "loop-card",
+                "loop-awq",
+                "loop-meta"
+              ]
+            },
+            {
+              "values": [
+                "Qwen3.8‑27B",
+                "27B /64계층",
+                "262,144 기본; 최대1,000,000 확장",
+                "텍스트·이미지→텍스트 / 공개 모델 카드; 이 체크포인트의 공식 표준 API 단가 미확인"
+              ],
+              "source_ids": [
+                "qwen38-card"
+              ]
+            }
+          ],
+          "note": "2026-11-19 KST 확인. 모델 카드의 K표기는 그대로 보존했다. 무료 API나 총운영비0을 뜻하지 않는다. 자체 호스팅 비용은 장치·문맥·동시 요청 및 엔진에 따라 달라진다."
+        },
+        {
+          "id": "evaluations",
+          "title": "정식판 공급자 그림의 점수와 반대 결과",
+          "columns": [
+            "평가(그림 score)",
+            "Preview",
+            "정식판",
+            "공식 그림의 경쟁값"
+          ],
+          "rows": [
+            {
+              "values": [
+                "AutomationBench",
+                "14.33",
+                "36.67",
+                "Qwen3.8‑27B36.67"
+              ],
+              "source_ids": [
+                "loop-chart"
+              ]
+            },
+            {
+              "values": [
+                "Terminal‑Bench2.1",
+                "40.45",
+                "59.55",
+                "Qwen3.6‑27B63.40"
+              ],
+              "source_ids": [
+                "loop-chart"
+              ]
+            },
+            {
+              "values": [
+                "NL2Repo",
+                "19.91",
+                "41.36",
+                "Qwen3.8‑27B44.60"
+              ],
+              "source_ids": [
+                "loop-chart"
+              ]
+            },
+            {
+              "values": [
+                "AIDABench",
+                "58.62",
+                "65.31",
+                "Qwen3.8‑27B65.01"
+              ],
+              "source_ids": [
+                "loop-chart"
+              ]
+            },
+            {
+              "values": [
+                "BIRD",
+                "71.38",
+                "72.34",
+                "Qwen3.8‑27B69.82"
+              ],
+              "source_ids": [
+                "loop-chart"
+              ]
+            },
+            {
+              "values": [
+                "T³‑Banking",
+                "18.56",
+                "30.93",
+                "Qwen3.8‑27B36.08"
+              ],
+              "source_ids": [
+                "loop-chart"
+              ]
+            },
+            {
+              "values": [
+                "GAIA",
+                "37.86",
+                "69.90",
+                "Qwen3.8‑27B66.99"
+              ],
+              "source_ids": [
+                "loop-chart"
+              ]
+            }
+          ],
+          "note": "SenseNova 측정. 정식판 그림에 적힌 모델·평가판·수치를 그대로 비교한다. 공통 Harness·추론 설정·분산 미공개. 과거 Preview 소개의 다른 측정판은 보존하며 Qwen 자체 카드의 수치와 합치지 않는다."
+        },
+        {
+          "id": "memory",
+          "title": "공급자 추정 총메모리와 가중치 용량",
+          "columns": [
+            "범위",
+            "8bit KV",
+            "4bit KV",
+            "조건"
+          ],
+          "rows": [
+            {
+              "values": [
+                "64K 문맥",
+                "약10GiB",
+                "약9GiB",
+                "4bit 가중치"
+              ],
+              "source_ids": [
+                "loop-card"
+              ]
+            },
+            {
+              "values": [
+                "128K 문맥",
+                "약12GiB",
+                "약10GiB",
+                "4bit 가중치"
+              ],
+              "source_ids": [
+                "loop-card"
+              ]
+            },
+            {
+              "values": [
+                "256K 문맥",
+                "약15GiB",
+                "약12GiB",
+                "4bit 가중치"
+              ],
+              "source_ids": [
+                "loop-card"
+              ]
+            },
+            {
+              "values": [
+                "512K 문맥",
+                "미공개",
+                "미공개",
+                "최대 문맥의 총메모리 보장 없음"
+              ],
+              "source_ids": [
+                "loop-card"
+              ]
+            },
+            {
+              "values": [
+                "4bit 가중치 자체",
+                "약4.9GB",
+                "약4.9GB",
+                "총VRAM과 단위도 다름"
+              ],
+              "source_ids": [
+                "loop-card"
+              ]
+            }
+          ],
+          "note": "공식 카드의 추정이며 실측이 아니다. GB/GiB를 같은 단위로 바꾸지 않았고 동시 요청·런타임별 추가 요구량은 미확인이다."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "비교 판단",
+            "text": "정식판은Preview 이후 의미 있는 개선이며 기존 소개의 새 판으로 보존할 만하다. 특정 agent 평가의 경쟁력과 양자화 경로가 장점이지만 경쟁 모델에 뒤지는 과제, 반복 계산, 접근 동의 및 미검증 엔진·메모리 조건이 남는다. 자체 업무의 품질·지연·총비용을 별도로 확인하는 전제에서 비교할 모델이다.",
+            "source_ids": [
+              "loop-card",
+              "loop-repo",
+              "loop-chart",
+              "loop-preview",
+              "loop-awq",
+              "loop-meta",
+              "loop-license",
+              "qwen38-card"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "2026-11-19 KST에 공식 카드·공개 저장소·평가 원본 그림을 검토했다. 공급자 측정이며 독립 실행·실측 메모리·한국어 성능·사람 독해 시험은 수행하지 않았다. HF config는401, HF LICENSE는404로 열지 못했으며 공식 GitHub 라이선스는 확인했다. 512K의 정확한 정수 환산, 최대 출력, 정식판 엔진 조합과 512K 총메모리는 미확인이다.",
+          "source_ids": [
+            "loop-card",
+            "loop-repo",
+            "loop-chart",
+            "loop-preview",
+            "loop-awq",
+            "loop-meta",
+            "loop-license",
+            "qwen38-card"
+          ]
+        }
+      ],
+      "references": [
+        {
+          "id": "loop-card",
+          "title": "SenseNova Loop‑9B 정식 모델 카드",
+          "url": "https://huggingface.co/sensenova/SenseNova-Loop-9B",
+          "description": "11월 17일 가중치·코드 공개와 18일 양자화 링크 추가, 512K 문맥·공유 계층·평가 설명·메모리 표·기존 환경에서 옮긴 배포 예제·알려진 한계를 읽었다. 파일의 다운로드 동의는 수행하지 않았다. 원문 확인:2026-11-19 KST."
+        },
+        {
+          "id": "loop-repo",
+          "title": "SenseNova Loop 공식 저장소 README",
+          "url": "https://raw.githubusercontent.com/OpenSenseNova/SenseNova-Loop/main/README.md",
+          "description": "모델 카드와 대응하는 공개 README의 정식판 변경, 사양, 메모리 추정과 제공 조건을 읽었다. 원문 확인:2026-11-19 KST."
+        },
+        {
+          "id": "loop-chart",
+          "title": "SenseNova 정식판 비교 평가 그림",
+          "url": "https://raw.githubusercontent.com/OpenSenseNova/SenseNova-Loop/main/assets/release_benchmark_iuua.png",
+          "description": "공식 저장소의 원본 PNG를 직접 열어 일곱 평가의 모델별 수치와 축을 읽었다. 그림에 없는 Harness·샘플 수·분산은 보완하지 않았다. 원문 확인:2026-11-19 KST."
+        },
+        {
+          "id": "loop-preview",
+          "title": "SenseNova Loop‑9B Preview 모델 카드",
+          "url": "https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview",
+          "description": "이전 체크포인트의 262,144 문맥 및 공유 계층 구조를 정식판과 대조했다. 과거 수록 판은 보존한다. 원문 확인:2026-11-19 KST."
+        },
+        {
+          "id": "loop-awq",
+          "title": "SenseNova Loop‑9B AWQ 모델 카드",
+          "url": "https://huggingface.co/sensenova/SenseNova-Loop-9B-AWQ",
+          "description": "공식 AWQ 가중치 링크와 LightLLM 한 GPU 실행 예제, BF16 예제의 Preview 유래 및 갱신 예정 문구를 읽었다. 실행하지 않았다. 원문 확인:2026-11-19 KST."
+        },
+        {
+          "id": "loop-meta",
+          "title": "Hugging Face 정식판 공개 메타데이터",
+          "url": "https://huggingface.co/api/models/sensenova/SenseNova-Loop-9B",
+          "description": "createdAt·lastModified·gated=auto 및 저장 텐서 수를 읽었다. 생성 시각을 출시일로 대체하지 않았다. 원문 확인:2026-11-19 KST."
+        },
+        {
+          "id": "loop-license",
+          "title": "SenseNova Loop Apache 2.0 라이선스",
+          "url": "https://raw.githubusercontent.com/OpenSenseNova/SenseNova-Loop/main/LICENSE",
+          "description": "공식 저장소의 Apache 2.0 원문을 읽었다. 라이선스와 Hugging Face 파일 접근 조건을 구분한다. 원문 확인:2026-11-19 KST."
+        },
+        {
+          "id": "qwen38-card",
+          "title": "Qwen3.8‑27B 공식 모델 카드",
+          "url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+          "description": "27B·64계층·텍스트/이미지 입력, 262,144 기본 문맥 및 확장 조건과 자체 성능 표를 확인했다. 서로 다른 공급자의 평가 설정을 섞지 않는다. 원문 확인:2026-11-19 KST."
+        }
+      ]
+    },
+    {
+      "id": "maxwell-v1-0-flash-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "title": "Maxwell V1.0 Flash — 공개 MoE의 검색 강점과 배포 조건",
+      "description": "Maxwell의 사양·공급자 성능·경쟁 모델·표준 요금 공개 여부와 실제 배포 조건을 비교한다.",
+      "checked_on": "2026-11-19",
+      "scope": "2026-11-19 KST에 공식 모델 카드·README·38쪽 기술보고서와 공개 설정을 검토했다. 보고서 표기일은 2026-10-30이며 최초 공개일은 확정하지 않았다. 새로 확인해 수록하는 모델로 오늘 출시라고 부르지 않는다. 공급자 내부 평가이며 독립 추론·한국어 검증·실제 GPU 메모리·청구 및 사람 독해 시험은 수행하지 않았다. 256K 지원과 config의 524,288 상한 차이, 공식 토큰 요금·SLA는 미확인이다.",
+      "deck": "총 35B·활성 3B(임베딩 제외)의 텍스트 MoE로 256K 문맥을 지원한다. 공식 내부 평가에서 검색과 일부 추론·코딩은 경쟁적이지만 지시 준수에는 반대 결과가 있다. 보고서 표기일은 10월 30일이며 오늘 출시로 다루지 않는다. 공개 가중치가 있어도 H100 최소 두 장 예제와 미공개 API 단가 등 운영 조건이 남는다.",
+      "highlights": [
+        "새로 확인한 공개 모델의 위치와 날짜",
+        "희소 attention과 여러 교사의 능력을 모으는 학습",
+        "추론·검색의 강점과 지시 준수의 약점"
+      ],
+      "source_note": "공식 발표·기술보고서의 날짜와 이번 확인일을 구분한다. 공급자 평가이며 독립 추론·실청구·한국어 문서 작업 및 사람 독해 시험은 수행하지 않았다.",
+      "summary": [
+        {
+          "label": "모델과 확인 시점",
+          "text": "Maxwell Team의 V1.0 Flash는 텍스트 입력·출력의 MoE 모델이다. 공식 기술보고서에는 2026-10-30이 적혀 있고 HF 저장소 생성은 10월 13일, 공개 GitHub 응답의 Initial commit은 11월 13일이다. 어느 하나도 실제 최초 공개일의 확정 증거로 쓰지 않았다. 이번 11월 19일 소개는 기존 Signal Desk에 없던 모델을 공식 원문으로 확인해 추가하는 것이며 오늘 출시라는 알림은 아니다.",
+          "source_ids": [
+            "max-card",
+            "max-report",
+            "max-meta",
+            "max-commits"
+          ],
+          "kind": "fact"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "explanation": [
+        {
+          "id": "identity",
+          "title": "새로 확인한 공개 모델의 위치와 날짜",
+          "lead": "낯선 새 항목의 수록과 오늘의 출시를 구분한다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "모델과 확인 시점",
+              "text": "Maxwell Team의 V1.0 Flash는 텍스트 입력·출력의 MoE 모델이다. 공식 기술보고서에는 2026-10-30이 적혀 있고 HF 저장소 생성은 10월 13일, 공개 GitHub 응답의 Initial commit은 11월 13일이다. 어느 하나도 실제 최초 공개일의 확정 증거로 쓰지 않았다. 이번 11월 19일 소개는 기존 Signal Desk에 없던 모델을 공식 원문으로 확인해 추가하는 것이며 오늘 출시라는 알림은 아니다.",
+              "source_ids": [
+                "max-card",
+                "max-report",
+                "max-meta",
+                "max-commits"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "35B·3B와 전체 저장 규모",
+              "text": "카드는 임베딩을 제외한 총 35B·토큰당 활성 3B로 설명한다. 공개 저장 텐서 집계는 약 36.81B다. 기준이 달라 단순 오류나 35B 전체가 토큰마다 모두 계산된다는 뜻으로 바꾸지 않는다. 임베딩·항상 활성인 shared expert와 KV cache까지 포함한 실제 운영비는 3B라는 숫자만으로 결정되지 않는다.",
+              "source_ids": [
+                "max-card",
+                "max-meta"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "지원 문맥과 config 상한",
+              "text": "모델 카드·보고서의 지원 문맥은 256K tokens다. config에는 max_position_embeddings=524,288이지만 이 값만으로 512K 품질·서비스 지원을 확대하지 않았다. Qwen3.6‑35B‑A3B는 공식 카드상 텍스트·이미지 입력과 262,144 기본 문맥/1,010,000 확장을 제공한다. Maxwell에 이미지 입력이나 같은 확장 범위를 추가로 가정하지 않았다.",
+              "source_ids": [
+                "max-card",
+                "max-config",
+                "max-report",
+                "qwen36-card"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "architecture",
+          "title": "희소 attention과 여러 교사의 능력을 모으는 학습",
+          "lead": "계산 절약의 원리와 실제 장치 요구량은 별개다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "45개 계층과 전문가 경로",
+              "text": "총 45개 decoder 계층은 3개 dense와 42개 MoE로 구성된다. MoE는 256개의 routed expert 중 토큰마다 12개를 선택하고 2개 shared expert를 항상 사용한다. 학습은 약 26T 다국어 토큰을 사용하고 Muon·multi-token prediction, 두 단계 SFT·분야별 강화학습을 거쳐 여러 교사를 on-policy distillation으로 하나에 모은다. 공식 이전 Maxwell 체크포인트와의 비교는 제시되지 않아 V1.0의 전세대 대비 개선률은 산출하지 않았다.",
+              "source_ids": [
+                "max-card",
+                "max-readme",
+                "max-report"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "4,096개의 선택과256K 문맥",
+              "text": "MBSA는 128토큰 블록 기준 prefix 8·local 8·선택 remote 16개, 총 32블록을 KV 그룹마다 참조한다. 이는 4,096토큰 분량의 선택 attention이지 입력 문맥 4K 제한이 아니다. 이전 전체 KV 이력은 보관하므로 KV 메모리가 4K 크기로 고정된다는 뜻도 아니다. config의 값과 보고서의 설명을 함께 읽었다.",
+              "source_ids": [
+                "max-config",
+                "max-report"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "커널6.7배와 모델 속도",
+              "text": "공급자는 256K의 맞춘 tensor 형상에서 dense GQA 대비 희소 attention 커널 약 6.7배 가속을 보고한다. 전체 모델의 prefill·decode·도구 호출·통신이 포함된 종단 지연 측정은 아니다. mHC는 4개 잔차 흐름과 20회 Sinkhorn을 쓰며 다른 모델의 계층 반복과 구분한다. 따라서 이 자료로 6.7배 빠른 agent나 3B급 GPU 메모리를 보장할 수 없다.",
+              "source_ids": [
+                "max-report"
+              ],
+              "kind": "judgment"
+            }
+          ]
+        },
+        {
+          "id": "evaluation",
+          "title": "추론·검색의 강점과 지시 준수의 약점",
+          "lead": "같은 내부 재평가의 모델과 추론 예산을 기준으로 읽는다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "추론과 긴 문맥의 결과",
+              "text": "공급자 사후학습 표에서 AIME 2026 mean@8은 95.00, GPQA Diamond pass@1은 86.52, LongBench V2는 59.40이다. 비교 대상 Qwen3.6‑35B‑A3B는 각 91.25·86.00·58.80이다. 작은 우위에는 신뢰구간이 제공되지 않았다. 별도 base 체크포인트 RULER 256K 93.35와 post-training RULER 95.81을 같은 평가판의 향상으로 연결하지 않았다.",
+              "source_ids": [
+                "max-readme",
+                "max-report"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "도구·코딩과 검색",
+              "text": "Terminal‑Bench 2.1 mean@5는 58.65, SWE‑bench Verified의 Claude Code pass@1은 65.40으로 같은 공급자 표의 Qwen 47.42·63.40보다 높다. BrowseComp pass@1은 76.30, DeepSearchQA pass@1은 83.30이며 문맥 관리 추가 시 82.20·89.50으로 별도 표시한다. 별표 조건의 높은 값을 기본 모델 결과로 대표시키지 않았다.",
+              "source_ids": [
+                "max-readme"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "같은 표의 반대 결과",
+              "text": "Maxwell의 IFBench 64.80은 Gemma‑4‑26B‑A4B‑it 79.10, Muse‑Glimmer‑30B 83.20보다 낮다. IFEval 93.00은 Qwen 93.80·Muse 96.80보다 낮고 BBEH 52.51은 Gemma 55.18·Muse 64.69보다 낮다. LiveCodeBench V6 pass@1 85.66도 Gemma 85.96보다 낮다. 검색·추론의 강점으로 복잡한 지시 준수나 모든 코딩 평가의 우위까지 주장하지 않는다.",
+              "source_ids": [
+                "max-readme"
+              ],
+              "kind": "judgment"
+            },
+            {
+              "type": "paragraph",
+              "title": "Harness·설정이 만드는 차이",
+              "text": "대부분의 사후평가는 temperature 0.6·top‑p 0.95·top‑k 20·32K 문맥이다. AA‑LCR·수학·HLE는 128K, 과학은 80K, LiveCodeBench V6는 64K이며 다국어 최대 생성은 16K다. SWE는 Claude Code 2.1.212·네트워크 격리·256K·최대 240턴·과제당 4시간이다. Terminal‑Bench 2.1은 Harbor/Terminus‑2·과제당 2시간·256K·최대 생성 32K·temperature 1.0·top‑p 0.95·top‑k 20·interleaved thinking이다. Qwen 자체 카드의 별도 Harness 점수와 섞지 않는다.",
+              "source_ids": [
+                "max-readme"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "Base의 지식 약점은 별도 결과",
+              "text": "사전학습 표에서 Maxwell의 MATH500 71.40은 Qwen3.5‑w35a3‑base 57.50보다 높지만 MMLU 79.85·CMMLU 79.41·C‑Eval 77.41은 각 82.85·87.41·88.78보다 낮다. base와 post-training의 모델·평가판이 다르므로 이 숫자를 현재 chat 모델의 퇴보로도, 모든 언어 지식의 개선으로도 일반화하지 않는다.",
+              "source_ids": [
+                "max-readme",
+                "max-report"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "availability",
+          "title": "공개 가중치와 실제 배포·요금 조건",
+          "lead": "개방형 라이선스와 저렴한 운영의 증명은 다르다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "라이선스와 공개 경로",
+              "text": "공식 가중치는 Apache 2.0이며 확인 당시 HF gated=false다. 공식 README에는 가중치 경로와 Maxwell playground가 있다. 카드 열람과 파일 접근 상태를 확인했지만 다운로드·로그인·playground 실사용은 하지 않았다. 상용 라이선스 허용은 호스팅 서비스의 무료 이용·데이터 보호·SLA를 함께 보장하는 말이 아니다.",
+              "source_ids": [
+                "max-card",
+                "max-license",
+                "max-meta",
+                "max-readme"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "B300 한 장·H100 두 장 예제",
+              "text": "공식 배포 예제는 NVIDIA driver 580 이상/CUDA 13과 제공자 vLLM 이미지를 전제로 B300 한 GPU, H100 최소 두 GPU를 안내한다. custom model 코드가 필요하며 일반 최신 vLLM에서 곧바로 지원된다고 확인한 것은 아니다. GPU 예제에서 최소 VRAM·동시 요청·최대 문맥 성능을 추가 산출하지 않았고 소비자 GPU에서 동작한다고 주장하지 않는다.",
+              "source_ids": [
+                "max-readme"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "표준 요금과 남은 운영비",
+              "text": "확인한 공식 카드·README·보고서에는 표준 입력·출력 API 토큰 단가가 없다. 자체 호스팅 표에서는 공식 단가 미공개로 기록하며 0달러로 채우지 않는다. Qwen 공개 체크포인트도 같은 표에서 확인되지 않은 API 단가는 비워둔다. 선택적 expert 계산과 희소 커널이 있어도 가중치 저장·KV·분산 통신·전력·인프라 및 보안 운영비는 남는다.",
+              "source_ids": [
+                "max-card",
+                "max-readme",
+                "max-report",
+                "qwen36-card"
+              ],
+              "kind": "judgment"
+            }
+          ]
+        },
+        {
+          "id": "limits",
+          "title": "평가가 지지하는 선택과 남는 검증 범위",
+          "lead": "새 팀의 공개 모델을 성능 표만으로 운영 승인하지 않는다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "비교할 가치",
+              "text": "같은 공급자 재평가에서 agent 검색·일부 장문 추론과 코딩이 경쟁적이고 자체 호스팅 가능한 가중치가 공개돼 있다. 다만 공식 이전 세대 비교가 없고 지시 준수·고난도 추론의 일부 반대 결과도 남는다. 지원 문맥, 한국어·보안·서비스 조건과 실제 총비용을 검증하기 전 운영 대체나 비용 절감을 확정할 단계는 아니다.",
+              "source_ids": [
+                "max-readme",
+                "max-report",
+                "max-config"
+              ],
+              "kind": "judgment"
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "specs",
+          "title": "현재 모델과 가까운 공개 모델의 사양·표준 요금",
+          "columns": [
+            "모델",
+            "파라미터·입출력",
+            "문맥",
+            "가중치·배포 / 표준 API 요금"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Maxwell‑V1.0‑Flash",
+                "35B 총·3B 활성(임베딩 제외); 텍스트→텍스트",
+                "256K tokens(카드·보고서); config 524,288은 별도",
+                "Apache 2.0·공식 커스텀 배포; 표준 토큰 단가 미공개"
+              ],
+              "source_ids": [
+                "max-card",
+                "max-config",
+                "max-license",
+                "max-readme"
+              ]
+            },
+            {
+              "values": [
+                "Qwen3.6‑35B‑A3B",
+                "35B 총·3B 활성; 텍스트·이미지→텍스트",
+                "262,144 기본·1,010,000 확장",
+                "공개 체크포인트; 해당 모델 표준 API 단가 미확인"
+              ],
+              "source_ids": [
+                "qwen36-card"
+              ]
+            },
+            {
+              "values": [
+                "이전 Maxwell",
+                "공식 이전 세대 비교 자료 미확인",
+                "미확인",
+                "전세대 대비 향상률·가격 변화를 산출하지 않음"
+              ],
+              "source_ids": [
+                "max-readme",
+                "max-report"
+              ]
+            }
+          ],
+          "note": "2026-11-19 KST. 3B 활성은 전체 저장 규모가 아니다. API 단가 미공개는 무료 API나 총운영비 0이 아니다. 문맥 지원과 설정 상한 및 확장 조건을 구분한다."
+        },
+        {
+          "id": "evaluations",
+          "title": "공급자 사후학습 재평가의 강점·약점",
+          "columns": [
+            "평가 / 조건",
+            "Maxwell",
+            "Qwen3.6‑35B‑A3B",
+            "Gemma4‑26B‑A4B‑it / Muse‑Glimmer‑30B"
+          ],
+          "rows": [
+            {
+              "values": [
+                "AIME2026 mean@8 /128K",
+                "95.00",
+                "91.25",
+                "87.50 /94.17"
+              ],
+              "source_ids": [
+                "max-readme"
+              ]
+            },
+            {
+              "values": [
+                "GPQA Diamond pass@1 /80K",
+                "86.52",
+                "86.00",
+                "82.30 /83.50"
+              ],
+              "source_ids": [
+                "max-readme"
+              ]
+            },
+            {
+              "values": [
+                "LongBenchV2 /기본 32K",
+                "59.40",
+                "58.80",
+                "53.30 /38.60"
+              ],
+              "source_ids": [
+                "max-readme"
+              ]
+            },
+            {
+              "values": [
+                "IFBench /기본 32K",
+                "64.80",
+                "59.60",
+                "79.10 /83.20"
+              ],
+              "source_ids": [
+                "max-readme"
+              ]
+            },
+            {
+              "values": [
+                "IFEval /기본 32K",
+                "93.00",
+                "93.80",
+                "94.00 /96.80"
+              ],
+              "source_ids": [
+                "max-readme"
+              ]
+            },
+            {
+              "values": [
+                "BBEH /기본 32K",
+                "52.51",
+                "48.05",
+                "55.18 /64.69"
+              ],
+              "source_ids": [
+                "max-readme"
+              ]
+            },
+            {
+              "values": [
+                "LiveCodeBenchV6 pass@1 /64K",
+                "85.66",
+                "85.32",
+                "85.96 /76.80"
+              ],
+              "source_ids": [
+                "max-readme"
+              ]
+            },
+            {
+              "values": [
+                "SWE Verified /CC2.1.212 pass@1",
+                "65.40",
+                "63.40",
+                "39.20 /47.60"
+              ],
+              "source_ids": [
+                "max-readme"
+              ]
+            },
+            {
+              "values": [
+                "Terminal‑Bench2.1 /Terminus‑2 mean@5",
+                "58.65",
+                "47.42",
+                "38.43 /48.50"
+              ],
+              "source_ids": [
+                "max-readme"
+              ]
+            },
+            {
+              "values": [
+                "BrowseComp pass@1 /문맥 관리 없음",
+                "76.30",
+                "47.00",
+                "29.20 /55.60"
+              ],
+              "source_ids": [
+                "max-readme"
+              ]
+            },
+            {
+              "values": [
+                "DeepSearchQA pass@1 /문맥 관리 없음",
+                "83.30",
+                "71.10",
+                "63.00 /81.80"
+              ],
+              "source_ids": [
+                "max-readme"
+              ]
+            }
+          ],
+          "note": "원문 단위:0–100 점수(% 표기), 높을수록 좋음. Maxwell의 내부 통합 평가이며 각 벤더 자체 공식 점수와 같지 않다. 기본 32K는 대부분 평가의 공통 설명이며 개별 미공개 차이는 확정하지 않았다. 각 코딩 Harness·시간/턴 예산은 본문에 분리했다."
+        },
+        {
+          "id": "search-conditions",
+          "title": "문맥 관리 여부가 다른 검색 결과",
+          "columns": [
+            "평가",
+            "기본",
+            "문맥 관리 사용(*)",
+            "측정지표"
+          ],
+          "rows": [
+            {
+              "values": [
+                "BrowseComp",
+                "76.30",
+                "82.20",
+                "pass@1"
+              ],
+              "source_ids": [
+                "max-readme"
+              ]
+            },
+            {
+              "values": [
+                "HLE w/Tools",
+                "46.10",
+                "55.10",
+                "pass@1"
+              ],
+              "source_ids": [
+                "max-readme"
+              ]
+            },
+            {
+              "values": [
+                "WideSearch",
+                "74.40",
+                "75.80",
+                "max@4"
+              ],
+              "source_ids": [
+                "max-readme"
+              ]
+            },
+            {
+              "values": [
+                "DeepSearchQA",
+                "83.30",
+                "89.50",
+                "pass@1"
+              ],
+              "source_ids": [
+                "max-readme"
+              ]
+            }
+          ],
+          "note": "공식 표의 별표는 Maxwell의 context management 사용이다. 기본/관리 결과를 하나로 합치지 않으며 추가 관리의 구현·비용을 독립 검증하지 않았다."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "비교 판단",
+            "text": "Maxwell은 새로 확인해 누적할 공개 모델이지만 오늘의 신규 출시는 아니다. 검색·일부 추론 및 코딩 평가가 선택 근거이며 낮은 지시 준수 결과와 공급자 전용 평가 조건도 함께 봐야 한다. 3B 활성·희소 attention을 메모리·전체 속도·청구 비용의 보장으로 바꾸지 않고 공개 라이선스와 실제 서비스 조건을 따로 평가해야 한다.",
+            "source_ids": [
+              "max-card",
+              "max-readme",
+              "max-report",
+              "max-config",
+              "max-meta",
+              "max-commits",
+              "max-license",
+              "qwen36-card"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "2026-11-19 KST에 공식 모델 카드·README·38쪽 기술보고서와 공개 설정을 검토했다. 보고서 표기일은 2026-10-30이며 최초 공개일은 확정하지 않았다. 새로 확인해 수록하는 모델로 오늘 출시라고 부르지 않는다. 공급자 내부 평가이며 독립 추론·한국어 검증·실제 GPU 메모리·청구 및 사람 독해 시험은 수행하지 않았다. 256K 지원과 config의 524,288 상한 차이, 공식 토큰 요금·SLA는 미확인이다.",
+          "source_ids": [
+            "max-card",
+            "max-readme",
+            "max-report",
+            "max-config",
+            "max-meta",
+            "max-commits",
+            "max-license",
+            "qwen36-card"
+          ]
+        }
+      ],
+      "references": [
+        {
+          "id": "max-card",
+          "title": "Maxwell‑V1.0‑Flash 공식 모델 카드",
+          "url": "https://huggingface.co/maxwell-model/Maxwell-V1-Flash",
+          "description": "35B·3B의 임베딩 제외 조건, 사전·사후 학습 평가, 문맥·동작·라이선스 안내를 읽었다. 원문 확인:2026-11-19 KST."
+        },
+        {
+          "id": "max-readme",
+          "title": "Maxwell 공식 저장소 README",
+          "url": "https://raw.githubusercontent.com/maxwell-model/Maxwell-V1-Flash/main/README.md",
+          "description": "사양, 내부 통합 평가표·조건·Harness, 배포 GPU 요구와 공개 가중치 경로를 읽었다. 코드를 실행하지 않았다. 원문 확인:2026-11-19 KST."
+        },
+        {
+          "id": "max-report",
+          "title": "Maxwell‑V1.0‑Flash 공식 기술보고서",
+          "url": "https://raw.githubusercontent.com/maxwell-model/Maxwell-V1-Flash/main/Maxwell_v1_flash_tech_report.pdf",
+          "description": "38쪽 PDF의2026-10-30 표기, 아키텍처·학습·사전/사후 평가 표와 평가 조건을 읽었다. 최초 공개일을 보고서 표기일로 확정하지 않는다. 원문 확인:2026-11-19 KST."
+        },
+        {
+          "id": "max-config",
+          "title": "Maxwell 공개 config",
+          "url": "https://huggingface.co/maxwell-model/Maxwell-V1-Flash/resolve/main/config.json",
+          "description": "524,288 max_position_embeddings,45계층·MoE·희소 attention 설정을 읽었다. 설정 상한과 모델 카드가 보장하는256K 문맥은 구분한다. 원문 확인:2026-11-19 KST."
+        },
+        {
+          "id": "max-meta",
+          "title": "Maxwell 공개 모델 메타데이터",
+          "url": "https://huggingface.co/api/models/maxwell-model/Maxwell-V1-Flash",
+          "description": "저장소 생성10월 13일·마지막 수정11월14일·gated=false 및 저장 텐서 약368.11억을 확인했다. 생성일은 출시일이 아니다. 원문 확인:2026-11-19 KST."
+        },
+        {
+          "id": "max-commits",
+          "title": "Maxwell 공식 저장소 공개 커밋 기록",
+          "url": "https://api.github.com/repos/maxwell-model/Maxwell-V1-Flash/commits?per_page=10",
+          "description": "이번 응답의최초 commit은11월 13일이다. 기술보고서 날짜·저장소 생성·커밋과 실제 최초 공개 시점은 동일하지 않다. 원문 확인:2026-11-19 KST."
+        },
+        {
+          "id": "max-license",
+          "title": "Maxwell Apache2.0 라이선스",
+          "url": "https://huggingface.co/maxwell-model/Maxwell-V1-Flash/resolve/main/LICENSE",
+          "description": "공식 가중치 저장소의Apache2.0 라이선스 원문을 확인했다. 원문 확인:2026-11-19 KST."
+        },
+        {
+          "id": "qwen36-card",
+          "title": "Qwen3.6‑35B‑A3B 공식 모델 카드",
+          "url": "https://huggingface.co/Qwen/Qwen3.6-35B-A3B",
+          "description": "35B총·3B활성·262,144기본/1,010,000확장 문맥과 이미지 입력을 비교했다. Qwen 자체 평가와Maxwell의 재평가를 구분한다. 원문 확인:2026-11-19 KST."
+        }
+      ]
+    }
+  ]
+}

@@ -108,7 +108,9 @@
     "microsoft-mai-image-2-7-model-guide",
     "microsoft-mai-image-2-7-flash-model-guide",
     "microsoft-mai-realtime-1-model-guide",
-    "microsoft-decision-1-model-guide"
+    "microsoft-decision-1-model-guide",
+    "sensenova-loop-9b-preview-model-guide",
+    "maxwell-v1-0-flash-model-guide"
   ],
   "batches": [
     {
@@ -575,6 +577,11 @@
       "id": "ai-model-guides-2026-11-18",
       "input": "ai_model_guides.2026-11-18.json",
       "quality": "ai_model_guides.2026-11-18.quality.json"
+    },
+    {
+      "id": "ai-model-guides-2026-11-19",
+      "input": "ai_model_guides.2026-11-19.json",
+      "quality": "ai_model_guides.2026-11-19.quality.json"
     }
   ]
 }
