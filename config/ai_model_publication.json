@@ -224,6 +224,14 @@
     {
       "id": "ai-model-facts-2026-11-19-fields",
       "path": "ai_model_facts.2026-11-19.fields.json"
+    },
+    {
+      "id": "ai-model-facts-2026-11-20",
+      "path": "ai_model_facts.2026-11-20.json"
+    },
+    {
+      "id": "ai-model-facts-2026-11-20-access",
+      "path": "ai_model_facts.2026-11-20.access.json"
     }
   ]
 }

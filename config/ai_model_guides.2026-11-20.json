@@ -1,0 +1,584 @@
+{
+  "schema_version": 1,
+  "reports": [
+    {
+      "id": "gemini-4-neon-model-guide",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "title": "Gemini 4 Neon — 코딩·문서 분석의 성능과 요금·출력 조건",
+      "description": "Neon이 Carbon에서 이어받은 사양, 경쟁 모델과 갈리는 평가 결과, 표준 단가와 한시 할인·긴 출력의 조건을 비교한다.",
+      "checked_on": "2026-11-20",
+      "scope": "2026-11-20 KST에 Google의 11월 18일 발표, 모델 카드 10쪽과 평가 방법론 6쪽, 원본 비교 그림 2개, 현행 모델·가격 목록과 OpenAI API 사양을 읽었다. Google이 모은 공급자·평가기관 결과이며 독립 모델 실행·실청구·한국어 문서 성능·사람 독해 시험은 하지 않았다. 개별 모델 설명 경로는 404여서 모델 카드·목록으로 범위를 보완했으며 파라미터 수, 가중치 제공, 정확한 1M 정수와 국내 계정별 배포 완료는 미확인이다.",
+      "deck": "Google이 11월 18일 공개한 Neon은 Carbon을 바탕으로 만든 별도 모델이다. 공식 표에서 문서·자동화와 일부 코딩 지표는 강하지만 Terminal-Bench와 차트 읽기에는 경쟁 모델의 우세도 남는다. 표준 요금은 입력·출력 100만 토큰당 3·15달러이며, 1M 문맥과 일반 64K 출력·백그라운드 1M 출력은 서로 다른 한도다.",
+      "highlights": [
+        "Carbon에서 이어진 모델의 위치와 변화",
+        "지표별 강점·열세와 Harness 차이",
+        "표준·할인 요금과 긴 생성·제공 조건"
+      ],
+      "source_note": "발표일은 2026-11-18, 이번 원문 확인일은 2026-11-20 KST다. 공급자의 주장·외부 기관 결과 재인용·자체 평가를 구분하며 직접 성능·요금 청구를 검증한 자료는 아니다.",
+      "summary": [
+        {
+          "label": "핵심 판단",
+          "text": "Neon은 Carbon의 모든 작업을 대체하는 상위판으로 단정하기보다 코딩·복합 자료 분석에서 깊이와 비용의 균형을 비교할 모델이다. 표준 단가는 Carbon 정가보다 25% 낮지만 현재 Carbon의 11월 말까지 할인 단가보다는 50% 높다. 같은 모델도 추론 단계와 실행 도구에 따라 결과가 달라진다.",
+          "source_ids": [
+            "neon-release",
+            "neon-family",
+            "gemini-price",
+            "neon-method"
+          ],
+          "kind": "judgment"
+        }
+      ],
+      "metrics": [],
+      "datasets": [],
+      "learning": [],
+      "explanation": [
+        {
+          "id": "identity",
+          "title": "Carbon에서 이어진 별도 모델",
+          "lead": "같은 계열 안에서 깊은 추론과 반복 작업의 효율 사이를 겨냥한다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "발표와 제공 경로",
+              "text": "Neon의 최초 발표는 11월 18일이다. 모델 ID는 gemini-4-neon이며 Gemini API·AI Studio와 기업용 Gemini 경로로 배포를 시작했다. Gemini 앱과 Antigravity의 개인 구독 경로는 Google AI Pro·Ultra 대상이다. 계정·지역별 배포 완료 시점이나 구독당 실제 작업량을 이번 조사에서 확인하지는 않았다.",
+              "source_ids": [
+                "neon-release",
+                "gemini-models",
+                "neon-card"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "이전 모델 대비 위치",
+              "text": "모델 카드는 Neon이 Carbon에서 adapted되었다고 명시한다. Carbon은 어려운 장기 프로젝트, Hydrogen은 빠른 일상 실행을 겨냥하고 Neon은 그 사이에서 코딩·분석·과학 작업의 깊이와 효율을 조정한다. 정확한 파라미터 수나 학습 변경량은 공개 확인되지 않아 더 작은 가중치 또는 같은 구조의 단순 경량판이라고 단정하지 않는다.",
+              "source_ids": [
+                "neon-card",
+                "neon-family"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "추론 단계와 응답 속도",
+              "text": "Neon은 low·medium·high·xhigh 네 단계이며 기본값은 high다. Carbon의 공개 계열 그림은 low·medium·high를 제시한다. xhigh는 더 깊은 추론에 쓸 예산을 늘리는 설정이므로 최고 점수와 기본 응답 지연·비용을 같은 조건으로 읽으면 안 된다. 계열 그림의 속도 아이콘은 실제 초당 토큰이나 서비스 지연 보장이 아니다.",
+              "source_ids": [
+                "neon-release",
+                "neon-family",
+                "neon-method"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "specification",
+          "title": "1M 문맥과 일반·백그라운드 출력",
+          "lead": "입력과 출력을 합치는 창과 한 번에 생성하는 양을 구분한다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "복합 입력과 출력 한도",
+              "text": "카드는 텍스트·이미지·오디오·비디오 입력과 입력·출력을 합쳐 최대 1M인 통합 문맥을 설명한다. API 목록은 PDF도 입력 형식에 포함한다. 동기 요청의 기본 최대 출력은 64K, 백그라운드 long decode는 최대 1M이다. 1M 입력에 1M 출력을 별도로 더할 수 있다는 의미가 아니며, 자료를 많이 넣으면 생성에 남는 공간과 실제 처리 조건도 달라진다. 원문 M·K를 임의의 정확한 정수로 환산하지 않았다.",
+              "source_ids": [
+                "neon-card",
+                "gemini-models"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "문서 기능과 기반 모델의 범위",
+              "text": "발표는 표·PDF·차트와 여러 매체를 종합해 구조화한 결과를 만드는 능력을 강조한다. Gmail·Docs와 연결되는 앱 기능, 검색 도구와 에이전트 실행 환경은 기반 모델과 별도 구성이다. 이 소개는 한국어 OCR, 표 구조 보존, 원문 인용 정확도나 실제 문서 편집 결과를 실측한 자료가 아니다.",
+              "source_ids": [
+                "neon-release",
+                "neon-card"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "evaluation",
+          "title": "지표별로 갈리는 강점과 한계",
+          "lead": "다른 평가의 점수와 서로 다른 실행 도구를 합쳐 단일 순위로 만들지 않는다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "문서·자동화에서의 강점",
+              "text": "Google의 11월 18일 비교표에서 AA Index v5.0.1은 Neon 61, Opus 5.5 59, GPT-6.2 Sol 57이다. 이 값은 백분율이 아닌 지수다. AutomationBench는 56.3%로 각각 42.5%·41.3%보다 높고, GraphWalks의 256K~1M 조건에서는 95.2%로 66.8%·80.1%보다 높다. 공급자가 선택한 평가판의 장점이며 모든 문서 작업이나 실제 자동화 성공률로 일반화할 수 없다.",
+              "source_ids": [
+                "neon-table",
+                "neon-method"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "코딩에서도 남는 반대 결과",
+              "text": "Terminal-Bench 4.1의 부정행위 보정 정확도는 Neon 65.2%, Opus 65.8%, Sol 61.5%다. FrontierCode 2.0은 Neon 46.2%로 Opus 47.3%보다 낮고 Sol 43.8%보다 높다. FrontierCode의 Neon은 기본 high이며 나머지 평가의 일반적인 최고 설정과 다르다. 차이가 작고 분산·통계적 유의성은 이 표에 없으므로 모델 전반의 확정적 우열로 읽지 않는다.",
+              "source_ids": [
+                "neon-table",
+                "neon-method"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "실행 도구가 바꾸는 SWE-sweep 결과",
+              "text": "SWE-sweep에서 Neon은 mini-swe-agent vision Harness로 12.8%, Antigravity-CLI 1.5.9로 39.0%다. 이는 같은 기반 모델도 파일·도구·하위 에이전트 구성이 결과에 큰 영향을 준다는 사례다. provider Harness 비교에서 Opus는 Claude Code, Sol은 Codex를 쓰므로 39.0·10.1·8.3%를 모델만 교체한 실험으로 취급하면 안 된다. 지표는 하위 과제별 가중 보상이다.",
+              "source_ids": [
+                "neon-table",
+                "neon-method"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "차트 읽기와 긴 문맥의 한계",
+              "text": "Chartography에서는 Neon 73.5%가 Sol 75.1%보다 낮다. 두 값은 도구 없이 Google이 자체 계산했고 Opus 66.3%는 공급자 시스템 카드에서 가져왔다. GraphWalks는 긴 문맥의 그래프 문제 200개로 측정한 결과이지 모든 장문 PDF의 사실 추출·인용 보장이 아니다. 영상 LVBench도 Gemini 1FPS 저해상도, Sol 500프레임, Opus 600프레임의 입력 차이가 있어 별도의 동등 조건 검증 없이 영상 전반의 우열을 판단할 수 없다.",
+              "source_ids": [
+                "neon-method",
+                "neon-table"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "price",
+          "title": "표준 요금과 한시 할인은 다른 비교다",
+          "lead": "토큰 단가, 추론량과 도구 비용을 따로 본다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "일반·캐시·우선 처리",
+              "text": "Neon Standard는 100만 토큰당 입력 3달러, 캐시 읽기 0.15달러, 출력 15달러다. 출력에는 thinking 토큰도 포함되며 명시적 캐시 생성은 지원하지 않고 implicit caching만 제공한다. Batch·Flex는 각각 1.50·0.075·7.50달러, Priority는 5.40·0.27·27달러다. 무료 API 티어는 없으며 각 처리 티어의 가용성과 실행 조건을 구분해야 한다.",
+              "source_ids": [
+                "gemini-price"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "Carbon·Hydrogen·Sol과의 비용 비교",
+              "text": "Carbon 정가 4·20달러와 비교하면 Neon 3·15달러는 25% 낮다. 그러나 Carbon은 11월 30일까지 2·10달러이며 12월 1일부터 정가를 적용하므로, 오늘의 할인 단가와 비교하면 Neon은 50% 높다. Hydrogen의 유료 Standard 1.50·7.50달러와는 2배 차이다. Sol의 입력 272K 이하 Standard 2·10달러와도 Neon이 50% 높지만 입력 매체·추론량·문맥 과금 규칙이 달라 과제당 총비용 차이로 바로 옮길 수 없다.",
+              "source_ids": [
+                "gemini-price",
+                "neon-family",
+                "gpt62-sol"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "긴 생성과 검색을 포함한 총비용",
+              "text": "모델 카드의 백그라운드 최대 1M 출력은 일반 64K와 다른 실행 방식이다. 별도 모델 설명 경로를 404로 열지 못해 활성화·취소·시간 제한·지역별 지원을 확인하지 못했다. 가격표의 Standard 출력 단가만으로 모든 백그라운드 요청의 완료 시간과 최종 청구를 확정하지 않는다. Google Search grounding은 Gemini 3 이상 공유 월 5,000개 무료 검색 이후 개별 검색 query 1,000개당 14달러이며 요청 하나가 여러 query를 만들 수 있다. 도구 내부 지시와 함수 선언을 포함해 처리한 토큰도 과금 대상이다.",
+              "source_ids": [
+                "neon-card",
+                "gemini-price"
+              ],
+              "kind": "fact"
+            }
+          ]
+        },
+        {
+          "id": "limits",
+          "title": "평가 조건과 안전 성능의 적용 한계",
+          "lead": "좋은 수치도 배포 전체의 무오류·무위험을 뜻하지 않는다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "title": "지식 기준일과 잘못된 생성",
+              "text": "모델 카드는 지식 기준일을 2026년 3월로 적으며 일부 분야는 그보다 덜 최신일 수 있고, 환각처럼 사실과 다른 내용을 생성하는 한계도 남는다고 설명한다. 검색 기능이나 자료 업로드가 있다는 이유로 최신 정보·정확한 인용이 자동 보장되지는 않는다. 카드의 다국어 안전 -0.40%p 등 Hydrogen 대비 변화는 신뢰구간 안이라고 설명하므로 작은 수치를 의미 있는 안전 퇴보나 향상으로 단정하지 않는다.",
+              "source_ids": [
+                "neon-card"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "측정 주체와 추론 설정",
+              "text": "방법론은 별도 표기가 없으면 Gemini API 최고 thinking, pass@1을 기본으로 하고 작은 평가를 여러 번 평균낸다고 설명한다. 경쟁 모델은 최대 추론 결과가 있으면 그 값을, 없으면 확인 가능한 최선 설정을 사용한다. Terminal-Bench는 AA·공개 리더보드, FrontierCode는 공식 리더보드, 일부 문서·긴 문맥·보안 평가는 Google 자체 측정이므로 한 기관의 동일 환경 재측정으로 합치지 않았다.",
+              "source_ids": [
+                "neon-method"
+              ],
+              "kind": "fact"
+            },
+            {
+              "type": "paragraph",
+              "title": "안전 평가와 별도 보안 제공",
+              "text": "발표의 간접 프롬프트 주입 저항 0.0% 공격 성공률은 해당 Gray Swan 평가와 최고 thinking·실시간 방어 조건의 결과다. 실제 서비스의 무위험을 뜻하지 않는다. 방법론은 보안 능력 평가에 별도 필터 조건을 적용하며 카드의 위험 평가는 Argon의 일부 결과를 승계한다. 안전·보안 상세 보고서는 카드에서 coming soon으로 표시된다. 별도 cyber 제공은 적격 Fairwind 회원에게 며칠 안에 시작할 예정이라고 발표했으므로 일반 모델 배포와 동일한 현재 접근권으로 취급하지 않는다.",
+              "source_ids": [
+                "neon-card",
+                "neon-method",
+                "neon-release"
+              ],
+              "kind": "fact"
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "specs-price",
+          "title": "같은 계열과 경쟁 모델의 사양·제공·Standard 단가",
+          "columns": [
+            "모델·ID",
+            "문맥·출력(원문 단위)",
+            "입력·제공 범위",
+            "입력 / 캐시 / 출력 USD·100만 토큰"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Gemini 4 Neon / gemini-4-neon",
+                "통합 1M; 일반 64K / background 최대 1M",
+                "텍스트·이미지·오디오·영상·PDF; 유료 API, Pro·Ultra 앱 경로",
+                "3 / 0.15 / 15"
+              ],
+              "source_ids": [
+                "neon-card",
+                "gemini-price",
+                "gemini-models"
+              ]
+            },
+            {
+              "values": [
+                "Gemini 4 Carbon / gemini-4-carbon",
+                "목록 1M; 64K / 1M",
+                "같은 계열의 기반; 유료 API·Ultra 앱 경로",
+                "정가 4 / 0.20 / 20; 11/30까지 2 / 0.10 / 10"
+              ],
+              "source_ids": [
+                "gemini-models",
+                "gemini-price",
+                "neon-family"
+              ]
+            },
+            {
+              "values": [
+                "Gemini 4 Hydrogen / gemini-4-hydrogen",
+                "목록 1M; 64K / 1M",
+                "빠른 일상 실행; API 무료·유료 티어 구분",
+                "유료 Standard 1.50 / 0.075 / 7.50"
+              ],
+              "source_ids": [
+                "gemini-models",
+                "gemini-price",
+                "neon-family"
+              ]
+            },
+            {
+              "values": [
+                "GPT-6.2 Sol / gpt-6.2-sol",
+                "1,050,000; 최대 입력 922,000 / 출력 128,000",
+                "텍스트·이미지→텍스트; API·Codex 등",
+                "입력≤272K: 2 / 0.10 / 10; 초과 시 입력·캐시×2, 출력×1.5"
+              ],
+              "source_ids": [
+                "gpt62-sol"
+              ]
+            }
+          ],
+          "note": "2026-11-20 KST. Carbon은 기반 계열, Hydrogen은 저비용 선택지, Sol은 코딩·문서 분석의 경쟁 모델로 선정했다. 토큰 요금은 도구·구독 요금과 별개다. 최대 출력의 실행 방식과 통합 문맥, 무료 티어의 한도·데이터 조건을 구분한다."
+        },
+        {
+          "id": "evaluations",
+          "title": "Google 11월 18일 비교표의 평가별 장점과 반대 결과",
+          "columns": [
+            "평가·판",
+            "Neon",
+            "Opus 5.5",
+            "GPT-6.2 Sol",
+            "단위·측정/실행 조건"
+          ],
+          "rows": [
+            {
+              "values": [
+                "AA Index v5.0.1",
+                "61",
+                "59",
+                "57",
+                "지수; AA 결과 재인용; 최고 설정 기본"
+              ],
+              "source_ids": [
+                "neon-table",
+                "neon-method"
+              ]
+            },
+            {
+              "values": [
+                "Terminal-Bench 4.1",
+                "65.2",
+                "65.8",
+                "61.5",
+                "% cheating-adjusted; Neon AA/Antigravity-CLI 1.5.9; 경쟁 공개 리더보드"
+              ],
+              "source_ids": [
+                "neon-table",
+                "neon-method"
+              ]
+            },
+            {
+              "values": [
+                "FrontierCode 2.0",
+                "46.2",
+                "47.3",
+                "43.8",
+                "% main score; Neon high; 공개 리더보드"
+              ],
+              "source_ids": [
+                "neon-table",
+                "neon-method"
+              ]
+            },
+            {
+              "values": [
+                "SWE-sweep provider Harness",
+                "39.0",
+                "10.1",
+                "8.3",
+                "% subtask-weighted reward; Neon Antigravity1.5.9 / Opus Claude Code / Sol Codex"
+              ],
+              "source_ids": [
+                "neon-table",
+                "neon-method"
+              ]
+            },
+            {
+              "values": [
+                "SWE-sweep mini-swe Harness",
+                "12.8",
+                "3.6",
+                "11.6",
+                "% subtask-weighted reward; Google 자체 mini-swe-agent vision"
+              ],
+              "source_ids": [
+                "neon-table",
+                "neon-method"
+              ]
+            },
+            {
+              "values": [
+                "AutomationBench",
+                "56.3",
+                "42.5",
+                "41.3",
+                "% 점수; 공식 리더보드 재인용; 세부 Harness 미확인"
+              ],
+              "source_ids": [
+                "neon-table",
+                "neon-method"
+              ]
+            },
+            {
+              "values": [
+                "Agents’ Last Exam v1.1",
+                "75.8",
+                "71.6",
+                "73.0",
+                "% 평균 rubric; Neon 122과제·5시간·Antigravity1.4.8; 경쟁 원문 결과"
+              ],
+              "source_ids": [
+                "neon-table",
+                "neon-method"
+              ]
+            },
+            {
+              "values": [
+                "Terminal-Bench-Science 0.1",
+                "70.5",
+                "63.3",
+                "68.0",
+                "% Average Reward; Neon mini-swe-agent vision·과제당5시도 평균"
+              ],
+              "source_ids": [
+                "neon-table",
+                "neon-method"
+              ]
+            },
+            {
+              "values": [
+                "Chartography",
+                "73.5",
+                "66.3",
+                "75.1",
+                "% 점수; Neon/Sol 도구 없음 Google 자체; Opus 시스템 카드"
+              ],
+              "source_ids": [
+                "neon-table",
+                "neon-method"
+              ]
+            },
+            {
+              "values": [
+                "GraphWalks 256K–1M",
+                "95.2",
+                "66.8",
+                "80.1",
+                "% BFS F1; Google 자체200문제"
+              ],
+              "source_ids": [
+                "neon-table",
+                "neon-method"
+              ]
+            }
+          ],
+          "note": "서로 다른 평가판·Harness·추론 예산을 단일 순위나 업무 성공률로 합산하지 않는다. 별도 표시 외 Neon은 최고 thinking 기본. 경쟁 모델의 미공개 설정·오차범위를 추측하지 않는다."
+        },
+        {
+          "id": "pricing",
+          "title": "Neon 처리 티어별 토큰 요금",
+          "columns": [
+            "티어",
+            "입력 USD / 100만 토큰",
+            "캐시 읽기 USD / 100만 토큰",
+            "출력 USD / 100만 토큰",
+            "조건"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Standard",
+                "3",
+                "0.15",
+                "15",
+                "implicit cache만; thinking 출력 포함; 무료 API 없음"
+              ],
+              "source_ids": [
+                "gemini-price"
+              ]
+            },
+            {
+              "values": [
+                "Batch",
+                "1.5",
+                "0.075",
+                "7.5",
+                "implicit cache만; thinking 출력 포함; 무료 API 없음"
+              ],
+              "source_ids": [
+                "gemini-price"
+              ]
+            },
+            {
+              "values": [
+                "Flex",
+                "1.5",
+                "0.075",
+                "7.5",
+                "implicit cache만; thinking 출력 포함; 무료 API 없음"
+              ],
+              "source_ids": [
+                "gemini-price"
+              ]
+            },
+            {
+              "values": [
+                "Priority",
+                "5.4",
+                "0.27",
+                "27",
+                "implicit cache만; thinking 출력 포함; 무료 API 없음"
+              ],
+              "source_ids": [
+                "gemini-price"
+              ]
+            }
+          ],
+          "note": "원문 USD per 1M tokens. Google Search/Maps 도구 비용·구독료와 구분한다. 이용 가능 티어·배포 및 장시간 요청 조건은 계정·제품별 확인 대상이다."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "label": "비교 판단",
+            "text": "Neon의 선택 근거는 복합 자료·자동화와 일부 코딩 평가, 네 단계 추론과 넓은 입력 범위다. 동시에 Opus보다 낮은 일부 코딩 결과, Sol보다 낮은 차트 읽기, 실행 도구에 따른 성능 변화, 현재 Carbon 할인보다 높은 토큰 단가도 고려해야 한다. 1M 문맥·긴 출력 가능성과 구독의 실제 처리량·과제당 비용·한국어 품질을 서로 대신하지 않는 조건부 비교가 적절하다.",
+            "source_ids": [
+              "neon-release",
+              "neon-card",
+              "neon-method",
+              "neon-table",
+              "neon-family",
+              "gemini-price",
+              "gemini-models",
+              "gpt62-sol"
+            ],
+            "kind": "judgment"
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "2026-11-20 KST에 Google의 11월 18일 발표, 모델 카드 10쪽과 평가 방법론 6쪽, 원본 비교 그림 2개, 현행 모델·가격 목록과 OpenAI API 사양을 읽었다. Google이 모은 공급자·평가기관 결과이며 독립 모델 실행·실청구·한국어 문서 성능·사람 독해 시험은 하지 않았다. 개별 모델 설명 경로는 404여서 모델 카드·목록으로 범위를 보완했으며 파라미터 수, 가중치 제공, 정확한 1M 정수와 국내 계정별 배포 완료는 미확인이다.",
+          "source_ids": [
+            "neon-release",
+            "neon-card",
+            "neon-method",
+            "neon-table",
+            "neon-family",
+            "gemini-price",
+            "gemini-models",
+            "gpt62-sol"
+          ]
+        }
+      ],
+      "references": [
+        {
+          "id": "neon-release",
+          "title": "Gemini 4 Neon 공식 발표",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/",
+          "description": "2026-11-20 KST 확인. 원문 발표·측정 시점과 구별하며 실제 읽은 관련 절과 영수증은 검토 기록에 보존했다."
+        },
+        {
+          "id": "neon-card",
+          "title": "Gemini 4 Neon 모델 카드",
+          "url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-4-Neon-Model-Card.pdf",
+          "description": "2026-11-20 KST 확인. 원문 발표·측정 시점과 구별하며 실제 읽은 관련 절과 영수증은 검토 기록에 보존했다."
+        },
+        {
+          "id": "neon-method",
+          "title": "Gemini 4 Neon 평가 방법론",
+          "url": "https://deepmind.google/models/evals-methodology/gemini-4-neon/",
+          "description": "2026-11-20 KST 확인. 원문 발표·측정 시점과 구별하며 실제 읽은 관련 절과 영수증은 검토 기록에 보존했다."
+        },
+        {
+          "id": "neon-table",
+          "title": "Google 공식 모델별 평가 비교표",
+          "url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_4_neon_table.width-1200.format-webp.webp",
+          "description": "2026-11-20 KST 확인. 원문 발표·측정 시점과 구별하며 실제 읽은 관련 절과 영수증은 검토 기록에 보존했다."
+        },
+        {
+          "id": "neon-family",
+          "title": "Google 공식 Gemini 4 계열 비교 그림",
+          "url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-4-neon__comparison-graphi.width-1200.format-webp.webp",
+          "description": "2026-11-20 KST 확인. 원문 발표·측정 시점과 구별하며 실제 읽은 관련 절과 영수증은 검토 기록에 보존했다."
+        },
+        {
+          "id": "gemini-price",
+          "title": "Gemini API 공식 가격표",
+          "url": "https://ai.google.dev/gemini-api/docs/pricing",
+          "description": "2026-11-20 KST 확인. 원문 발표·측정 시점과 구별하며 실제 읽은 관련 절과 영수증은 검토 기록에 보존했다."
+        },
+        {
+          "id": "gemini-models",
+          "title": "Gemini API 공식 모델 목록",
+          "url": "https://ai.google.dev/gemini-api/docs/models",
+          "description": "2026-11-20 KST 확인. 원문 발표·측정 시점과 구별하며 실제 읽은 관련 절과 영수증은 검토 기록에 보존했다."
+        },
+        {
+          "id": "gpt62-sol",
+          "title": "OpenAI GPT-6.2 Sol 공식 API 사양·요금",
+          "url": "https://developers.openai.com/api/docs/models/gpt-6.2-sol",
+          "description": "2026-11-20 KST 확인. 원문 발표·측정 시점과 구별하며 실제 읽은 관련 절과 영수증은 검토 기록에 보존했다."
+        }
+      ]
+    }
+  ]
+}

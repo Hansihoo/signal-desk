@@ -1,0 +1,580 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "id": "gemini-4-neon-spec",
+      "model": "Gemini 4 Neon",
+      "provider": "Google",
+      "source_url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-4-Neon-Model-Card.pdf",
+      "checked_on": "2026-11-20",
+      "fields": {
+        "kind": "공식 사양과 제공",
+        "suite": "Neon 2026-11-18 / 모델 카드 November2026",
+        "condition": "입출력 합계1M; 정확정수 미확인; 일반 동기와 background long decode 구분",
+        "release": "2026-11-18",
+        "status": "유료 Gemini API·AI Studio·기업 경로 배포 시작; 앱/개인 Antigravity Pro·Ultra",
+        "모델 ID": "gemini-4-neon",
+        "문맥(원문 단위)": "1M tokens combined input-output",
+        "일반 출력(원문 단위)": "64K default synchronous",
+        "백그라운드 출력(원문 단위)": "up to 1M; long decode",
+        "입력 형식": "text,image,audio,video; API목록 PDF",
+        "기반 계열": "adapted from Gemini 4 Carbon",
+        "파라미터·가중치": "공식 공개 확인 못함"
+      }
+    },
+    {
+      "id": "gemini-4-neon-price-standard",
+      "model": "Gemini 4 Neon",
+      "provider": "Google",
+      "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
+      "checked_on": "2026-11-20",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Standard Gemini API",
+        "condition": "USD per1M tokens; output includes thinking; implicit caching only; no free tier; tools billed separately",
+        "입력 USD / 100만 토큰": 3,
+        "캐시 읽기 USD / 100만 토큰": 0.15,
+        "출력 USD / 100만 토큰": 15
+      }
+    },
+    {
+      "id": "gemini-4-neon-price-batch",
+      "model": "Gemini 4 Neon",
+      "provider": "Google",
+      "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
+      "checked_on": "2026-11-20",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Batch Gemini API",
+        "condition": "USD per1M tokens; output includes thinking; implicit caching only; no free tier; tools billed separately",
+        "입력 USD / 100만 토큰": 1.5,
+        "캐시 읽기 USD / 100만 토큰": 0.075,
+        "출력 USD / 100만 토큰": 7.5
+      }
+    },
+    {
+      "id": "gemini-4-neon-price-flex",
+      "model": "Gemini 4 Neon",
+      "provider": "Google",
+      "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
+      "checked_on": "2026-11-20",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Flex Gemini API",
+        "condition": "USD per1M tokens; output includes thinking; implicit caching only; no free tier; tools billed separately",
+        "입력 USD / 100만 토큰": 1.5,
+        "캐시 읽기 USD / 100만 토큰": 0.075,
+        "출력 USD / 100만 토큰": 7.5
+      }
+    },
+    {
+      "id": "gemini-4-neon-price-priority",
+      "model": "Gemini 4 Neon",
+      "provider": "Google",
+      "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
+      "checked_on": "2026-11-20",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Priority Gemini API",
+        "condition": "USD per1M tokens; output includes thinking; implicit caching only; no free tier; tools billed separately",
+        "입력 USD / 100만 토큰": 5.4,
+        "캐시 읽기 USD / 100만 토큰": 0.27,
+        "출력 USD / 100만 토큰": 27
+      }
+    },
+    {
+      "id": "google-neon-comparison-20261118-neon-1",
+      "model": "Gemini 4 Neon",
+      "provider": "Google",
+      "source_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_4_neon_table.width-1200.format-webp.webp",
+      "checked_on": "2026-11-20",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "AA Index v5.0.1 / Google release comparison2026-11-18",
+        "condition": "지수; AA 결과 재인용; 최고 설정 기본; Google방법론의원측정/재인용을구분; 독립재실행아님",
+        "평가 점수": 61,
+        "평가 단위": "index points",
+        "추론 설정": "최고설정기본; 경쟁모델best available; 세부방법론참조",
+        "평가 방법론 URL": "https://deepmind.google/models/evals-methodology/gemini-4-neon/"
+      }
+    },
+    {
+      "id": "google-neon-comparison-20261118-opus55-1",
+      "model": "Claude Opus 5.5",
+      "provider": "Anthropic",
+      "source_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_4_neon_table.width-1200.format-webp.webp",
+      "checked_on": "2026-11-20",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "AA Index v5.0.1 / Google release comparison2026-11-18",
+        "condition": "지수; AA 결과 재인용; 최고 설정 기본; Google방법론의원측정/재인용을구분; 독립재실행아님",
+        "평가 점수": 59,
+        "평가 단위": "index points",
+        "추론 설정": "최고설정기본; 경쟁모델best available; 세부방법론참조",
+        "평가 방법론 URL": "https://deepmind.google/models/evals-methodology/gemini-4-neon/"
+      }
+    },
+    {
+      "id": "google-neon-comparison-20261118-sol62-1",
+      "model": "GPT-6.2 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_4_neon_table.width-1200.format-webp.webp",
+      "checked_on": "2026-11-20",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "AA Index v5.0.1 / Google release comparison2026-11-18",
+        "condition": "지수; AA 결과 재인용; 최고 설정 기본; Google방법론의원측정/재인용을구분; 독립재실행아님",
+        "평가 점수": 57,
+        "평가 단위": "index points",
+        "추론 설정": "최고설정기본; 경쟁모델best available; 세부방법론참조",
+        "평가 방법론 URL": "https://deepmind.google/models/evals-methodology/gemini-4-neon/"
+      }
+    },
+    {
+      "id": "google-neon-comparison-20261118-neon-2",
+      "model": "Gemini 4 Neon",
+      "provider": "Google",
+      "source_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_4_neon_table.width-1200.format-webp.webp",
+      "checked_on": "2026-11-20",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Terminal-Bench 4.1 / Google release comparison2026-11-18",
+        "condition": "% cheating-adjusted; Neon AA/Antigravity-CLI 1.5.9; 경쟁 공개 리더보드; Google방법론의원측정/재인용을구분; 독립재실행아님",
+        "평가 점수": 65.2,
+        "평가 단위": "%",
+        "추론 설정": "최고설정기본; 경쟁모델best available; 세부방법론참조",
+        "평가 방법론 URL": "https://deepmind.google/models/evals-methodology/gemini-4-neon/"
+      }
+    },
+    {
+      "id": "google-neon-comparison-20261118-opus55-2",
+      "model": "Claude Opus 5.5",
+      "provider": "Anthropic",
+      "source_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_4_neon_table.width-1200.format-webp.webp",
+      "checked_on": "2026-11-20",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Terminal-Bench 4.1 / Google release comparison2026-11-18",
+        "condition": "% cheating-adjusted; Neon AA/Antigravity-CLI 1.5.9; 경쟁 공개 리더보드; Google방법론의원측정/재인용을구분; 독립재실행아님",
+        "평가 점수": 65.8,
+        "평가 단위": "%",
+        "추론 설정": "최고설정기본; 경쟁모델best available; 세부방법론참조",
+        "평가 방법론 URL": "https://deepmind.google/models/evals-methodology/gemini-4-neon/"
+      }
+    },
+    {
+      "id": "google-neon-comparison-20261118-sol62-2",
+      "model": "GPT-6.2 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_4_neon_table.width-1200.format-webp.webp",
+      "checked_on": "2026-11-20",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Terminal-Bench 4.1 / Google release comparison2026-11-18",
+        "condition": "% cheating-adjusted; Neon AA/Antigravity-CLI 1.5.9; 경쟁 공개 리더보드; Google방법론의원측정/재인용을구분; 독립재실행아님",
+        "평가 점수": 61.5,
+        "평가 단위": "%",
+        "추론 설정": "최고설정기본; 경쟁모델best available; 세부방법론참조",
+        "평가 방법론 URL": "https://deepmind.google/models/evals-methodology/gemini-4-neon/"
+      }
+    },
+    {
+      "id": "google-neon-comparison-20261118-neon-3",
+      "model": "Gemini 4 Neon",
+      "provider": "Google",
+      "source_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_4_neon_table.width-1200.format-webp.webp",
+      "checked_on": "2026-11-20",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "FrontierCode 2.0 / Google release comparison2026-11-18",
+        "condition": "% main score; Neon high; 공개 리더보드; Google방법론의원측정/재인용을구분; 독립재실행아님",
+        "평가 점수": 46.2,
+        "평가 단위": "%",
+        "추론 설정": "Neon high",
+        "평가 방법론 URL": "https://deepmind.google/models/evals-methodology/gemini-4-neon/"
+      }
+    },
+    {
+      "id": "google-neon-comparison-20261118-opus55-3",
+      "model": "Claude Opus 5.5",
+      "provider": "Anthropic",
+      "source_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_4_neon_table.width-1200.format-webp.webp",
+      "checked_on": "2026-11-20",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "FrontierCode 2.0 / Google release comparison2026-11-18",
+        "condition": "% main score; Neon high; 공개 리더보드; Google방법론의원측정/재인용을구분; 독립재실행아님",
+        "평가 점수": 47.3,
+        "평가 단위": "%",
+        "추론 설정": "Neon high",
+        "평가 방법론 URL": "https://deepmind.google/models/evals-methodology/gemini-4-neon/"
+      }
+    },
+    {
+      "id": "google-neon-comparison-20261118-sol62-3",
+      "model": "GPT-6.2 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_4_neon_table.width-1200.format-webp.webp",
+      "checked_on": "2026-11-20",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "FrontierCode 2.0 / Google release comparison2026-11-18",
+        "condition": "% main score; Neon high; 공개 리더보드; Google방법론의원측정/재인용을구분; 독립재실행아님",
+        "평가 점수": 43.8,
+        "평가 단위": "%",
+        "추론 설정": "Neon high",
+        "평가 방법론 URL": "https://deepmind.google/models/evals-methodology/gemini-4-neon/"
+      }
+    },
+    {
+      "id": "google-neon-comparison-20261118-neon-4",
+      "model": "Gemini 4 Neon",
+      "provider": "Google",
+      "source_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_4_neon_table.width-1200.format-webp.webp",
+      "checked_on": "2026-11-20",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SWE-sweep provider Harness / Google release comparison2026-11-18",
+        "condition": "% subtask-weighted reward; Neon Antigravity1.5.9 / Opus Claude Code / Sol Codex; Google방법론의원측정/재인용을구분; 독립재실행아님",
+        "평가 점수": 39.0,
+        "평가 단위": "%",
+        "추론 설정": "최고설정기본; 경쟁모델best available; 세부방법론참조",
+        "평가 방법론 URL": "https://deepmind.google/models/evals-methodology/gemini-4-neon/"
+      }
+    },
+    {
+      "id": "google-neon-comparison-20261118-opus55-4",
+      "model": "Claude Opus 5.5",
+      "provider": "Anthropic",
+      "source_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_4_neon_table.width-1200.format-webp.webp",
+      "checked_on": "2026-11-20",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SWE-sweep provider Harness / Google release comparison2026-11-18",
+        "condition": "% subtask-weighted reward; Neon Antigravity1.5.9 / Opus Claude Code / Sol Codex; Google방법론의원측정/재인용을구분; 독립재실행아님",
+        "평가 점수": 10.1,
+        "평가 단위": "%",
+        "추론 설정": "최고설정기본; 경쟁모델best available; 세부방법론참조",
+        "평가 방법론 URL": "https://deepmind.google/models/evals-methodology/gemini-4-neon/"
+      }
+    },
+    {
+      "id": "google-neon-comparison-20261118-sol62-4",
+      "model": "GPT-6.2 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_4_neon_table.width-1200.format-webp.webp",
+      "checked_on": "2026-11-20",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SWE-sweep provider Harness / Google release comparison2026-11-18",
+        "condition": "% subtask-weighted reward; Neon Antigravity1.5.9 / Opus Claude Code / Sol Codex; Google방법론의원측정/재인용을구분; 독립재실행아님",
+        "평가 점수": 8.3,
+        "평가 단위": "%",
+        "추론 설정": "최고설정기본; 경쟁모델best available; 세부방법론참조",
+        "평가 방법론 URL": "https://deepmind.google/models/evals-methodology/gemini-4-neon/"
+      }
+    },
+    {
+      "id": "google-neon-comparison-20261118-neon-5",
+      "model": "Gemini 4 Neon",
+      "provider": "Google",
+      "source_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_4_neon_table.width-1200.format-webp.webp",
+      "checked_on": "2026-11-20",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SWE-sweep mini-swe Harness / Google release comparison2026-11-18",
+        "condition": "% subtask-weighted reward; Google 자체 mini-swe-agent vision; Google방법론의원측정/재인용을구분; 독립재실행아님",
+        "평가 점수": 12.8,
+        "평가 단위": "%",
+        "추론 설정": "최고설정기본; 경쟁모델best available; 세부방법론참조",
+        "평가 방법론 URL": "https://deepmind.google/models/evals-methodology/gemini-4-neon/"
+      }
+    },
+    {
+      "id": "google-neon-comparison-20261118-opus55-5",
+      "model": "Claude Opus 5.5",
+      "provider": "Anthropic",
+      "source_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_4_neon_table.width-1200.format-webp.webp",
+      "checked_on": "2026-11-20",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SWE-sweep mini-swe Harness / Google release comparison2026-11-18",
+        "condition": "% subtask-weighted reward; Google 자체 mini-swe-agent vision; Google방법론의원측정/재인용을구분; 독립재실행아님",
+        "평가 점수": 3.6,
+        "평가 단위": "%",
+        "추론 설정": "최고설정기본; 경쟁모델best available; 세부방법론참조",
+        "평가 방법론 URL": "https://deepmind.google/models/evals-methodology/gemini-4-neon/"
+      }
+    },
+    {
+      "id": "google-neon-comparison-20261118-sol62-5",
+      "model": "GPT-6.2 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_4_neon_table.width-1200.format-webp.webp",
+      "checked_on": "2026-11-20",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "SWE-sweep mini-swe Harness / Google release comparison2026-11-18",
+        "condition": "% subtask-weighted reward; Google 자체 mini-swe-agent vision; Google방법론의원측정/재인용을구분; 독립재실행아님",
+        "평가 점수": 11.6,
+        "평가 단위": "%",
+        "추론 설정": "최고설정기본; 경쟁모델best available; 세부방법론참조",
+        "평가 방법론 URL": "https://deepmind.google/models/evals-methodology/gemini-4-neon/"
+      }
+    },
+    {
+      "id": "google-neon-comparison-20261118-neon-6",
+      "model": "Gemini 4 Neon",
+      "provider": "Google",
+      "source_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_4_neon_table.width-1200.format-webp.webp",
+      "checked_on": "2026-11-20",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "AutomationBench / Google release comparison2026-11-18",
+        "condition": "% 점수; 공식 리더보드 재인용; 세부 Harness 미확인; Google방법론의원측정/재인용을구분; 독립재실행아님",
+        "평가 점수": 56.3,
+        "평가 단위": "%",
+        "추론 설정": "최고설정기본; 경쟁모델best available; 세부방법론참조",
+        "평가 방법론 URL": "https://deepmind.google/models/evals-methodology/gemini-4-neon/"
+      }
+    },
+    {
+      "id": "google-neon-comparison-20261118-opus55-6",
+      "model": "Claude Opus 5.5",
+      "provider": "Anthropic",
+      "source_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_4_neon_table.width-1200.format-webp.webp",
+      "checked_on": "2026-11-20",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "AutomationBench / Google release comparison2026-11-18",
+        "condition": "% 점수; 공식 리더보드 재인용; 세부 Harness 미확인; Google방법론의원측정/재인용을구분; 독립재실행아님",
+        "평가 점수": 42.5,
+        "평가 단위": "%",
+        "추론 설정": "최고설정기본; 경쟁모델best available; 세부방법론참조",
+        "평가 방법론 URL": "https://deepmind.google/models/evals-methodology/gemini-4-neon/"
+      }
+    },
+    {
+      "id": "google-neon-comparison-20261118-sol62-6",
+      "model": "GPT-6.2 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_4_neon_table.width-1200.format-webp.webp",
+      "checked_on": "2026-11-20",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "AutomationBench / Google release comparison2026-11-18",
+        "condition": "% 점수; 공식 리더보드 재인용; 세부 Harness 미확인; Google방법론의원측정/재인용을구분; 독립재실행아님",
+        "평가 점수": 41.3,
+        "평가 단위": "%",
+        "추론 설정": "최고설정기본; 경쟁모델best available; 세부방법론참조",
+        "평가 방법론 URL": "https://deepmind.google/models/evals-methodology/gemini-4-neon/"
+      }
+    },
+    {
+      "id": "google-neon-comparison-20261118-neon-7",
+      "model": "Gemini 4 Neon",
+      "provider": "Google",
+      "source_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_4_neon_table.width-1200.format-webp.webp",
+      "checked_on": "2026-11-20",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Agents’ Last Exam v1.1 / Google release comparison2026-11-18",
+        "condition": "% 평균 rubric; Neon 122과제·5시간·Antigravity1.4.8; 경쟁 원문 결과; Google방법론의원측정/재인용을구분; 독립재실행아님",
+        "평가 점수": 75.8,
+        "평가 단위": "%",
+        "추론 설정": "최고설정기본; 경쟁모델best available; 세부방법론참조",
+        "평가 방법론 URL": "https://deepmind.google/models/evals-methodology/gemini-4-neon/"
+      }
+    },
+    {
+      "id": "google-neon-comparison-20261118-opus55-7",
+      "model": "Claude Opus 5.5",
+      "provider": "Anthropic",
+      "source_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_4_neon_table.width-1200.format-webp.webp",
+      "checked_on": "2026-11-20",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Agents’ Last Exam v1.1 / Google release comparison2026-11-18",
+        "condition": "% 평균 rubric; Neon 122과제·5시간·Antigravity1.4.8; 경쟁 원문 결과; Google방법론의원측정/재인용을구분; 독립재실행아님",
+        "평가 점수": 71.6,
+        "평가 단위": "%",
+        "추론 설정": "최고설정기본; 경쟁모델best available; 세부방법론참조",
+        "평가 방법론 URL": "https://deepmind.google/models/evals-methodology/gemini-4-neon/"
+      }
+    },
+    {
+      "id": "google-neon-comparison-20261118-sol62-7",
+      "model": "GPT-6.2 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_4_neon_table.width-1200.format-webp.webp",
+      "checked_on": "2026-11-20",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Agents’ Last Exam v1.1 / Google release comparison2026-11-18",
+        "condition": "% 평균 rubric; Neon 122과제·5시간·Antigravity1.4.8; 경쟁 원문 결과; Google방법론의원측정/재인용을구분; 독립재실행아님",
+        "평가 점수": 73.0,
+        "평가 단위": "%",
+        "추론 설정": "최고설정기본; 경쟁모델best available; 세부방법론참조",
+        "평가 방법론 URL": "https://deepmind.google/models/evals-methodology/gemini-4-neon/"
+      }
+    },
+    {
+      "id": "google-neon-comparison-20261118-neon-8",
+      "model": "Gemini 4 Neon",
+      "provider": "Google",
+      "source_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_4_neon_table.width-1200.format-webp.webp",
+      "checked_on": "2026-11-20",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Terminal-Bench-Science 0.1 / Google release comparison2026-11-18",
+        "condition": "% Average Reward; Neon mini-swe-agent vision·과제당5시도 평균; Google방법론의원측정/재인용을구분; 독립재실행아님",
+        "평가 점수": 70.5,
+        "평가 단위": "%",
+        "추론 설정": "최고설정기본; 경쟁모델best available; 세부방법론참조",
+        "평가 방법론 URL": "https://deepmind.google/models/evals-methodology/gemini-4-neon/"
+      }
+    },
+    {
+      "id": "google-neon-comparison-20261118-opus55-8",
+      "model": "Claude Opus 5.5",
+      "provider": "Anthropic",
+      "source_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_4_neon_table.width-1200.format-webp.webp",
+      "checked_on": "2026-11-20",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Terminal-Bench-Science 0.1 / Google release comparison2026-11-18",
+        "condition": "% Average Reward; Neon mini-swe-agent vision·과제당5시도 평균; Google방법론의원측정/재인용을구분; 독립재실행아님",
+        "평가 점수": 63.3,
+        "평가 단위": "%",
+        "추론 설정": "최고설정기본; 경쟁모델best available; 세부방법론참조",
+        "평가 방법론 URL": "https://deepmind.google/models/evals-methodology/gemini-4-neon/"
+      }
+    },
+    {
+      "id": "google-neon-comparison-20261118-sol62-8",
+      "model": "GPT-6.2 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_4_neon_table.width-1200.format-webp.webp",
+      "checked_on": "2026-11-20",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Terminal-Bench-Science 0.1 / Google release comparison2026-11-18",
+        "condition": "% Average Reward; Neon mini-swe-agent vision·과제당5시도 평균; Google방법론의원측정/재인용을구분; 독립재실행아님",
+        "평가 점수": 68.0,
+        "평가 단위": "%",
+        "추론 설정": "최고설정기본; 경쟁모델best available; 세부방법론참조",
+        "평가 방법론 URL": "https://deepmind.google/models/evals-methodology/gemini-4-neon/"
+      }
+    },
+    {
+      "id": "google-neon-comparison-20261118-neon-9",
+      "model": "Gemini 4 Neon",
+      "provider": "Google",
+      "source_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_4_neon_table.width-1200.format-webp.webp",
+      "checked_on": "2026-11-20",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Chartography / Google release comparison2026-11-18",
+        "condition": "% 점수; Neon/Sol 도구 없음 Google 자체; Opus 시스템 카드; Google방법론의원측정/재인용을구분; 독립재실행아님",
+        "평가 점수": 73.5,
+        "평가 단위": "%",
+        "추론 설정": "최고설정기본; 경쟁모델best available; 세부방법론참조",
+        "평가 방법론 URL": "https://deepmind.google/models/evals-methodology/gemini-4-neon/"
+      }
+    },
+    {
+      "id": "google-neon-comparison-20261118-opus55-9",
+      "model": "Claude Opus 5.5",
+      "provider": "Anthropic",
+      "source_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_4_neon_table.width-1200.format-webp.webp",
+      "checked_on": "2026-11-20",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Chartography / Google release comparison2026-11-18",
+        "condition": "% 점수; Neon/Sol 도구 없음 Google 자체; Opus 시스템 카드; Google방법론의원측정/재인용을구분; 독립재실행아님",
+        "평가 점수": 66.3,
+        "평가 단위": "%",
+        "추론 설정": "최고설정기본; 경쟁모델best available; 세부방법론참조",
+        "평가 방법론 URL": "https://deepmind.google/models/evals-methodology/gemini-4-neon/"
+      }
+    },
+    {
+      "id": "google-neon-comparison-20261118-sol62-9",
+      "model": "GPT-6.2 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_4_neon_table.width-1200.format-webp.webp",
+      "checked_on": "2026-11-20",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Chartography / Google release comparison2026-11-18",
+        "condition": "% 점수; Neon/Sol 도구 없음 Google 자체; Opus 시스템 카드; Google방법론의원측정/재인용을구분; 독립재실행아님",
+        "평가 점수": 75.1,
+        "평가 단위": "%",
+        "추론 설정": "최고설정기본; 경쟁모델best available; 세부방법론참조",
+        "평가 방법론 URL": "https://deepmind.google/models/evals-methodology/gemini-4-neon/"
+      }
+    },
+    {
+      "id": "google-neon-comparison-20261118-neon-10",
+      "model": "Gemini 4 Neon",
+      "provider": "Google",
+      "source_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_4_neon_table.width-1200.format-webp.webp",
+      "checked_on": "2026-11-20",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "GraphWalks 256K–1M / Google release comparison2026-11-18",
+        "condition": "% BFS F1; Google 자체200문제; Google방법론의원측정/재인용을구분; 독립재실행아님",
+        "평가 점수": 95.2,
+        "평가 단위": "%",
+        "추론 설정": "최고설정기본; 경쟁모델best available; 세부방법론참조",
+        "평가 방법론 URL": "https://deepmind.google/models/evals-methodology/gemini-4-neon/"
+      }
+    },
+    {
+      "id": "google-neon-comparison-20261118-opus55-10",
+      "model": "Claude Opus 5.5",
+      "provider": "Anthropic",
+      "source_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_4_neon_table.width-1200.format-webp.webp",
+      "checked_on": "2026-11-20",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "GraphWalks 256K–1M / Google release comparison2026-11-18",
+        "condition": "% BFS F1; Google 자체200문제; Google방법론의원측정/재인용을구분; 독립재실행아님",
+        "평가 점수": 66.8,
+        "평가 단위": "%",
+        "추론 설정": "최고설정기본; 경쟁모델best available; 세부방법론참조",
+        "평가 방법론 URL": "https://deepmind.google/models/evals-methodology/gemini-4-neon/"
+      }
+    },
+    {
+      "id": "google-neon-comparison-20261118-sol62-10",
+      "model": "GPT-6.2 Sol",
+      "provider": "OpenAI",
+      "source_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_4_neon_table.width-1200.format-webp.webp",
+      "checked_on": "2026-11-20",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "GraphWalks 256K–1M / Google release comparison2026-11-18",
+        "condition": "% BFS F1; Google 자체200문제; Google방법론의원측정/재인용을구분; 독립재실행아님",
+        "평가 점수": 80.1,
+        "평가 단위": "%",
+        "추론 설정": "최고설정기본; 경쟁모델best available; 세부방법론참조",
+        "평가 방법론 URL": "https://deepmind.google/models/evals-methodology/gemini-4-neon/"
+      }
+    },
+    {
+      "id": "gemini-4-neon-search-cost",
+      "model": "Gemini 4 Neon",
+      "provider": "Google",
+      "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
+      "checked_on": "2026-11-20",
+      "fields": {
+        "kind": "공식 도구 요금",
+        "suite": "Google Search grounding",
+        "condition": "Gemini3+ shared5000free/month; per-query billing; one request can cause multiplequeries; daily cap applies",
+        "Google Search USD / 1000 queries": 14,
+        "무료 검색 / 월(모델간 공유)": 5000
+      }
+    }
+  ]
+}

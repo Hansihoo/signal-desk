@@ -139,7 +139,8 @@
     "microsoft-mai-image-2-7-model-guide",
     "microsoft-mai-image-2-7-flash-model-guide",
     "microsoft-mai-realtime-1-model-guide",
-    "maxwell-v1-0-flash-model-guide"
+    "maxwell-v1-0-flash-model-guide",
+    "gemini-4-neon-model-guide"
   ],
   "catalogs": {
     "devops-implementation-guide": "devops_tools.2026-10-10.r4.json"
@@ -512,6 +513,10 @@
     ],
     "maxwell-v1-0-flash-model-guide": [
       "d9546d9fe1cd8dfa6c4159b1625ce9a8f7710e4aa0b2be30a8631760bca40fdb"
+    ],
+    "gemini-4-neon-model-guide": [
+      "94ab36e213016a1ed6159daf0225607528296a53e86c7df8008a562fe492943f",
+      "1c8cd1fd722770e6505ab1304c36d2df8ef942618c79e813f780b684f2bcd87d"
     ]
   },
   "model_introduction_editions": {
@@ -823,6 +828,10 @@
     ],
     "maxwell-v1-0-flash-model-guide": [
       "d9546d9fe1cd8dfa6c4159b1625ce9a8f7710e4aa0b2be30a8631760bca40fdb"
+    ],
+    "gemini-4-neon-model-guide": [
+      "94ab36e213016a1ed6159daf0225607528296a53e86c7df8008a562fe492943f",
+      "1c8cd1fd722770e6505ab1304c36d2df8ef942618c79e813f780b684f2bcd87d"
     ]
   },
   "model_introduction_purpose_editions": {
@@ -1123,6 +1132,10 @@
     ],
     "maxwell-v1-0-flash-model-guide": [
       "d9546d9fe1cd8dfa6c4159b1625ce9a8f7710e4aa0b2be30a8631760bca40fdb"
+    ],
+    "gemini-4-neon-model-guide": [
+      "94ab36e213016a1ed6159daf0225607528296a53e86c7df8008a562fe492943f",
+      "1c8cd1fd722770e6505ab1304c36d2df8ef942618c79e813f780b684f2bcd87d"
     ]
   },
   "model_introduction_reader_editions": {
@@ -1376,6 +1389,10 @@
     ],
     "maxwell-v1-0-flash-model-guide": [
       "d9546d9fe1cd8dfa6c4159b1625ce9a8f7710e4aa0b2be30a8631760bca40fdb"
+    ],
+    "gemini-4-neon-model-guide": [
+      "94ab36e213016a1ed6159daf0225607528296a53e86c7df8008a562fe492943f",
+      "1c8cd1fd722770e6505ab1304c36d2df8ef942618c79e813f780b684f2bcd87d"
     ]
   }
 }

@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "id": "gemini-4-neon-spec",
+      "model": "Gemini 4 Neon",
+      "provider": "Google",
+      "source_url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-4-Neon-Model-Card.pdf",
+      "checked_on": "2026-11-20",
+      "fields": {
+        "kind": "공식 사양과 제공",
+        "suite": "Neon 2026-11-18 / 모델 카드 November2026",
+        "condition": "입출력 합계1M; 정확정수 미확인; 일반 동기와 background long decode 구분",
+        "release": "2026-11-18",
+        "status": "유료 Gemini API·AI Studio·기업 경로 배포 시작; 앱/개인 Antigravity Pro·Ultra; Antigravity Pro는 유료 또는 적격 기기 체험 조건",
+        "모델 ID": "gemini-4-neon",
+        "문맥(원문 단위)": "1M tokens combined input-output",
+        "일반 출력(원문 단위)": "64K default synchronous",
+        "백그라운드 출력(원문 단위)": "up to 1M; long decode",
+        "입력 형식": "text,image,audio,video; API목록 PDF",
+        "기반 계열": "adapted from Gemini 4 Carbon",
+        "파라미터·가중치": "공식 공개 확인 못함",
+        "계정별 제공 조건 출처": "https://antigravity.google/docs/models/"
+      }
+    }
+  ]
+}
