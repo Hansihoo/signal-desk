@@ -1,0 +1,410 @@
+{
+  "schema_version": 1,
+  "reports": [
+    {
+      "id": "gpt-live-1-1-model-guide",
+      "title": "GPT-Live-1.1 API 제공 — 다국어 음성과 대기 요금·안전 평가",
+      "topic_id": "opportunities",
+      "topic_path": [
+        "개발 동향",
+        "AI 모델·API"
+      ],
+      "checked_on": "2026-11-21",
+      "description": "기존 앱 소개의 후속 판으로 GPT-Live-1.1 API와 이전 Live·Realtime 모델의 제공·요금·안전 평가 및 위임 조건을 비교합니다.",
+      "deck": "GPT-Live-1.1 API가 11월 19일 공식 등재됐습니다. 기존 앱 모델과 구분해 다국어 전사·억양 개선, 분당 0.05USD와 WebRTC 대기 0.02USD, 별도 백엔드 비용을 비교합니다. 새 API 안전 결과는 기존 앱 표와 다른 관찰이며, 앱 모델의 일부 안전 회귀도 여전히 구분해야 합니다.",
+      "scope": "2026-11-21 KST 공식 모델·가격·11월19일변경 기록·세션/위임문서와시스템카드관련절 확인. 10월15일앱모델과11월19일API출시/평가추가를구분했다. 실제API·한국어음성·지연·과금·독립성능·사람독해는검증하지않았다. Quip API제공은이번근거로확정하지않는다.",
+      "source_note": "공식 발표·원문 확인일·공급자 자체 평가와 미확인 실제 사용을 구분합니다. 이전 판은 보존합니다.",
+      "highlights": [
+        "API 제공",
+        "시간 과금",
+        "평가·한계"
+      ],
+      "summary": [
+        {
+          "kind": "fact",
+          "label": "API 제공",
+          "text": "공식 ID는 gpt-live-1.1이며 Live 세션에서 제공합니다. 말하면서 듣는 full-duplex, 다국어 전사와 억양 일관성 개선은 공급자 설명입니다. 앱 구독 접근과 Quip의 API 제공은 별개입니다.",
+          "source_ids": [
+            "live-model",
+            "live-changelog",
+            "live-system"
+          ]
+        },
+        {
+          "kind": "fact",
+          "label": "시간 과금",
+          "text": "Live1과1.1 모두 활성 0.05USD/분, WebRTC 추론 일시정지 대기 0.02USD/분입니다. 초 단위로 계산하고 백엔드 모델·도구는 별도 청구합니다.",
+          "source_ids": [
+            "live-price",
+            "live-model"
+          ]
+        },
+        {
+          "kind": "fact",
+          "label": "평가·한계",
+          "text": "API 합성 안전 gore 점수는0.74→0.85로 높아졌지만 이는 전체 통화의 안전 발생률이나 한국어 전사 정확도가 아닙니다. 앱1.1의 일부 합성 안전 회귀를 API 점수와 섞지 않습니다.",
+          "source_ids": [
+            "live-system"
+          ]
+        }
+      ],
+      "explanation": [
+        {
+          "id": "overview",
+          "title": "앱 출시와 API 제공의 서로 다른 시점",
+          "lead": "새 모델 페이지를 중복 만들지 않고 제공 변화의 후속 판으로 이어갑니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "11월19일의새범위",
+              "text": "시스템 카드의 최초 발행은 10월 15일이며 당시 소개는 앱의 1.1·Quip과 기존 Live1 API를 구분했습니다. 11월 19일 변경 기록은 gpt-live-1.1과 API 안전 평가를 추가합니다. 이번 판은 API 식별자·요금·운영 조건의 변화를 반영하며 앱의 10월 발표를 오늘의 신규 출시로 바꾸지 않습니다.",
+              "source_ids": [
+                "live-changelog",
+                "live-system",
+                "live-model"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "음성과추론의역할",
+              "text": "1.1 API는 말하면서 듣는 음성 모델이며 이전 Live1보다 다국어 전사·억양·음색 일관성이 개선됐다고 설명합니다. 깊은 추론·도구 작업은 백엔드 모델에 위임하면서 음성 대화를 이어갈 수 있습니다. 대화 진행을 다루는 기능이며 이해·업무 정확도의 독립 실측은 아닙니다.",
+              "source_ids": [
+                "live-model",
+                "live-system",
+                "live-delegate"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "comparison",
+          "title": "Live1·Realtime2.1과 비용·기능 비교",
+          "lead": "세션 시간과 토큰 과금은 직접적인 가격 순위가 아닙니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "입출력과미지원",
+              "text": "Live1.1 문서는 텍스트·음성 입출력과 streaming·Function Calling을 표시합니다. 이미지·영상·structured outputs·fine-tuning은 미지원입니다. 페이지의 endpoint 탐색 항목을 모두 지원한다고 해석하지 않고 실제 신규 제공은 v1/live/sessions 변경 기록으로 확인합니다.",
+              "source_ids": [
+                "live-model",
+                "live-changelog"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "백엔드와통합경계",
+              "text": "Responses 위임은 선택한 모델이 문맥과 도구를 처리하고, client 위임은 애플리케이션의 agent·workflow가 결과를 돌려줍니다. 결과의 검토·삭제 필요성과 지원 도구·비용이 다르므로 음성 1.1의 단독 추론 성능이나 무료 통합 기능으로 부르지 않습니다.",
+              "source_ids": [
+                "live-delegate",
+                "live-price"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "evaluation",
+          "title": "API 안전 평가의 개선과 앱의 반대 결과",
+          "lead": "측정 환경과 모델 변형이 같을 때만 비교합니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "새API평가",
+              "text": "11월 19일 카드는 API 음성 모델의 production·synthetic 결과를 추가했다고 명시합니다. API1.1은 합성 8범주에서 수치상 향상됐고 gore는 Live1 API 0.74에서 1.1 API 0.85입니다. 0~1점수는 높을수록 좋으며 어려운 정책 경계 질문을 음성으로 만든 평가입니다. 전체 트래픽의 위험률이나 전사 오류율이 아닙니다.",
+              "source_ids": [
+                "live-system"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "다른변형의회귀",
+              "text": "같은 카드는 ChatGPT용 1.1의 성적 콘텐츠·정신건강·정서적 의존·gore 합성 범주에 통계적으로 유의한 회귀가 있다고 밝힙니다. API의 상향과 앱의 회귀가 공존하므로 모든 1.1 변형의 안전 개선으로 요약하지 않습니다. 실제 시스템의 보호장치와 원모델 시험도 구분합니다.",
+              "source_ids": [
+                "live-system"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pricing",
+          "title": "활성·대기 요금과 연결 종료",
+          "lead": "무음 자체가 할인 대기나 무료를 뜻하지 않습니다.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "같은표준요금",
+              "text": "1.1과 이전 1의 표준 활성 요금은 0.05USD/분, standby는 0.02USD/분이며 초 단위로 과금합니다. 대기 요금은 추론이 일시정지된 WebRTC 세션에 적용하며 백엔드 모델·도구는 별도입니다. 대기 연결과 세션 종료는 다르며 실제 총청구를 측정하지 않았습니다.",
+              "source_ids": [
+                "live-price",
+                "live-model"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "kind": "fact",
+              "title": "재개와종료조건",
+              "text": "공식 문서는 standby 동안 마이크 트랙을 유지하고 session.paused·resumed로 상태를 구분합니다. 재개 후 첫 짧은 발화의 응답은 더 늦을 수 있습니다. session.closed 확인 전에 연결이 끊기면 최종 사용량 확정이 미확인일 수 있습니다. 동시 세션 한도는 조직별이며 Live1과 1.1의 한도는 별도입니다.",
+              "source_ids": [
+                "live-sessions",
+                "live-model"
+              ]
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "id": "models",
+          "title": "음성 대화 모델의 기능·제공 비교",
+          "columns": [
+            "항목",
+            "GPT-Live-1.1 API",
+            "GPT-Live-1 API",
+            "GPT-Realtime-2.1"
+          ],
+          "rows": [
+            {
+              "values": [
+                "주요제공",
+                "Live세션·full-duplex·다국어개선",
+                "이전Live세션·full-duplex",
+                "추론·도구사용형Realtime"
+              ],
+              "source_ids": [
+                "live-model",
+                "live-previous",
+                "realtime-model"
+              ]
+            },
+            {
+              "values": [
+                "요금기준",
+                "활성0.05/대기0.02 USD/분",
+                "활성0.05/대기0.02 USD/분",
+                "매체별100만토큰단가"
+              ],
+              "source_ids": [
+                "live-price"
+              ]
+            },
+            {
+              "values": [
+                "매체",
+                "텍스트·음성입출력;이미지/영상미지원",
+                "기존음성API;현행카드범위",
+                "텍스트·음성·이미지입력의별도단가"
+              ],
+              "source_ids": [
+                "live-model",
+                "live-previous",
+                "live-price"
+              ]
+            },
+            {
+              "values": [
+                "추론과도구",
+                "선택백엔드로위임·별도비용",
+                "백엔드위임·별도비용",
+                "직접추론/도구모델로다른역할"
+              ],
+              "source_ids": [
+                "live-system",
+                "live-delegate",
+                "realtime-model"
+              ]
+            }
+          ],
+          "note": "2026-11-21확인. 모델별정확문맥/언어별지연의전수재검증은아니다. 앱구독·API청구·추론백엔드를분리한다."
+        },
+        {
+          "id": "prices",
+          "title": "공식 API 표준 요금의 원문 단위",
+          "columns": [
+            "대상",
+            "입력 / 캐시 / 출력 또는 시간단가",
+            "조건"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Live1.1·Live1 활성",
+                "0.05 USD/분",
+                "초단위;백엔드/도구별도"
+              ],
+              "source_ids": [
+                "live-price"
+              ]
+            },
+            {
+              "values": [
+                "Live1.1·Live1 standby",
+                "0.02 USD/분",
+                "WebRTC의추론일시정지기간"
+              ],
+              "source_ids": [
+                "live-model",
+                "live-price"
+              ]
+            },
+            {
+              "values": [
+                "Realtime2.1 음성",
+                "32 /0.40 /64 USD/100만토큰",
+                "분당으로임의환산하지않음"
+              ],
+              "source_ids": [
+                "live-price"
+              ]
+            },
+            {
+              "values": [
+                "Realtime2.1 텍스트",
+                "4 /0.40 /24 USD/100만토큰",
+                "텍스트토큰단위"
+              ],
+              "source_ids": [
+                "live-price"
+              ]
+            },
+            {
+              "values": [
+                "Realtime2.1 이미지",
+                "5 /0.50 /— USD/100만토큰",
+                "이미지출력생성단가아님"
+              ],
+              "source_ids": [
+                "live-price"
+              ]
+            }
+          ],
+          "note": "활성·대기는시간단위이며Realtime의매체토큰단가와직접성공당비용순위를만들지않는다. 무음이자동으로무료/standby가되는것은아니다."
+        },
+        {
+          "id": "safety",
+          "title": "API와 앱의 안전 평가를 분리",
+          "columns": [
+            "비교대상",
+            "확인결과",
+            "해석제한"
+          ],
+          "rows": [
+            {
+              "values": [
+                "Live1 API→1.1 API ·synthetic gore",
+                "0.74→0.85,높을수록좋음",
+                "11월19일API평가추가;전체음성트래픽발생률아님"
+              ],
+              "source_ids": [
+                "live-system"
+              ]
+            },
+            {
+              "values": [
+                "ChatGPT용1.1 대1",
+                "합성4범주유의회귀",
+                "API결과와다른모델/환경"
+              ],
+              "source_ids": [
+                "live-system"
+              ]
+            },
+            {
+              "values": [
+                "다국어전사·억양",
+                "개선공급자설명",
+                "새API개별언어WER·지연비교값미확인"
+              ],
+              "source_ids": [
+                "live-model",
+                "live-system"
+              ]
+            }
+          ],
+          "note": "OpenAI자체음성안전평가. 정확표본·개별스냅샷·추론예산·전체Harness커밋미확인. 앱기존표수치를API평가에복사하지않는다."
+        }
+      ],
+      "references": [
+        {
+          "id": "live-model",
+          "title": "GPT-Live-1.1 공식 API 모델",
+          "url": "https://developers.openai.com/api/docs/models/gpt-live-1.1",
+          "description": "2026-11-21 KST 관련절 확인. 2026-11-21 KST 공식 원문의 API 제공·매체·세션 요금·백엔드 분리·standby·현재 모델 평가 관련 절을 읽었다. 10월15일 앱 출시와11월19일 API 제공·API 평가 추가를 구분했다. 실제 통화·한국어 전사/억양·청구·독립 성능·사람 독해는 검증하지 않았다."
+        },
+        {
+          "id": "live-previous",
+          "title": "GPT-Live-1 기존 API 모델",
+          "url": "https://developers.openai.com/api/docs/models/gpt-live-1",
+          "description": "2026-11-21 KST 관련절 확인. 2026-11-21 KST 공식 원문의 API 제공·매체·세션 요금·백엔드 분리·standby·현재 모델 평가 관련 절을 읽었다. 10월15일 앱 출시와11월19일 API 제공·API 평가 추가를 구분했다. 실제 통화·한국어 전사/억양·청구·독립 성능·사람 독해는 검증하지 않았다."
+        },
+        {
+          "id": "live-price",
+          "title": "OpenAI API 공식 요금",
+          "url": "https://developers.openai.com/api/docs/pricing",
+          "description": "2026-11-21 KST 관련절 확인. 2026-11-21 KST 공식 원문의 API 제공·매체·세션 요금·백엔드 분리·standby·현재 모델 평가 관련 절을 읽었다. 10월15일 앱 출시와11월19일 API 제공·API 평가 추가를 구분했다. 실제 통화·한국어 전사/억양·청구·독립 성능·사람 독해는 검증하지 않았다."
+        },
+        {
+          "id": "live-changelog",
+          "title": "OpenAI API 11월19일 변경 기록",
+          "url": "https://developers.openai.com/api/docs/changelog",
+          "description": "2026-11-21 KST 관련절 확인. 2026-11-21 KST 공식 원문의 API 제공·매체·세션 요금·백엔드 분리·standby·현재 모델 평가 관련 절을 읽었다. 10월15일 앱 출시와11월19일 API 제공·API 평가 추가를 구분했다. 실제 통화·한국어 전사/억양·청구·독립 성능·사람 독해는 검증하지 않았다."
+        },
+        {
+          "id": "live-system",
+          "title": "GPT-Live-1.1 시스템 카드 ·11월19일 API 평가 추가",
+          "url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+          "description": "2026-11-21 KST 관련절 확인. 시스템 카드의10월15일발행·11월19일API평가추가 이력,API/앱모델구분,음성안전production/synthetic와gore0.74→0.85 및앱일부회귀·측정조건을읽었다. 앱의이전표점수를API에복사하지않았다."
+        },
+        {
+          "id": "live-sessions",
+          "title": "GPT-Live 세션·대기·종료 조건",
+          "url": "https://developers.openai.com/api/docs/guides/live-conversations",
+          "description": "2026-11-21 KST 관련절 확인. 2026-11-21 KST 공식 원문의 API 제공·매체·세션 요금·백엔드 분리·standby·현재 모델 평가 관련 절을 읽었다. 10월15일 앱 출시와11월19일 API 제공·API 평가 추가를 구분했다. 실제 통화·한국어 전사/억양·청구·독립 성능·사람 독해는 검증하지 않았다."
+        },
+        {
+          "id": "live-delegate",
+          "title": "GPT-Live 백엔드 위임 조건",
+          "url": "https://developers.openai.com/api/docs/guides/live-delegation",
+          "description": "2026-11-21 KST 관련절 확인. 2026-11-21 KST 공식 원문의 API 제공·매체·세션 요금·백엔드 분리·standby·현재 모델 평가 관련 절을 읽었다. 10월15일 앱 출시와11월19일 API 제공·API 평가 추가를 구분했다. 실제 통화·한국어 전사/억양·청구·독립 성능·사람 독해는 검증하지 않았다."
+        },
+        {
+          "id": "realtime-model",
+          "title": "GPT-Realtime-2.1 공식 API 모델",
+          "url": "https://developers.openai.com/api/docs/models/gpt-realtime-2.1",
+          "description": "2026-11-21 KST 관련절 확인. 2026-11-21 KST 공식 원문의 API 제공·매체·세션 요금·백엔드 분리·standby·현재 모델 평가 관련 절을 읽었다. 10월15일 앱 출시와11월19일 API 제공·API 평가 추가를 구분했다. 실제 통화·한국어 전사/억양·청구·독립 성능·사람 독해는 검증하지 않았다."
+        }
+      ],
+      "result": {
+        "title": "결론",
+        "points": [
+          {
+            "kind": "judgment",
+            "label": "비교 판단",
+            "text": "이번 변화는 기존 앱 출시를 재게시한 것이 아니라 공식 API 제공과 요금·평가 범위의 확대입니다. 자연스러운 다국어 음성과 시간 과금이 특징이지만 백엔드 비용, WebRTC 대기·재개 조건과 API·앱별 안전 결과를 따로 비교해야 합니다.",
+            "source_ids": [
+              "live-model",
+              "live-previous"
+            ]
+          }
+        ]
+      },
+      "caveats": [
+        {
+          "text": "2026-11-21 KST 공식 모델·가격·11월19일변경 기록·세션/위임문서와시스템카드관련절 확인. 10월15일앱모델과11월19일API출시/평가추가를구분했다. 실제API·한국어음성·지연·과금·독립성능·사람독해는검증하지않았다. Quip API제공은이번근거로확정하지않는다.",
+          "source_ids": [
+            "live-model",
+            "live-previous"
+          ]
+        }
+      ],
+      "datasets": [],
+      "metrics": [],
+      "learning": []
+    }
+  ]
+}

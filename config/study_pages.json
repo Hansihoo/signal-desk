@@ -140,7 +140,11 @@
     "microsoft-mai-image-2-7-flash-model-guide",
     "microsoft-mai-realtime-1-model-guide",
     "maxwell-v1-0-flash-model-guide",
-    "gemini-4-neon-model-guide"
+    "gemini-4-neon-model-guide",
+    "olala-v1-mini-model-guide",
+    "olala-v1-summarise-model-guide",
+    "olala-v1-translate-model-guide",
+    "tencent-wemm-video-model-guide"
   ],
   "catalogs": {
     "devops-implementation-guide": "devops_tools.2026-10-10.r4.json"
@@ -241,7 +245,8 @@
       "9a6bd2aefbabe3c0e086eeea65e1b9553ef919d92ef9007971f8c19a661c837e"
     ],
     "gpt-live-1-1-model-guide": [
-      "c48593720a0b1549980919d1205894f117a68509c1b5afa94c1a6790d22926a9"
+      "c48593720a0b1549980919d1205894f117a68509c1b5afa94c1a6790d22926a9",
+      "86c2445021f54be7f4966c80f7364ae221848fd164c3aecb995edb5970fd1f2a"
     ],
     "polaris-government-opportunities": [
       "4c600cdbd4209cd3d02ac3787eab8b29c432b9385a0c3a28d09a1dccbb8478d7",
@@ -307,7 +312,9 @@
       "74bd61b604376bec32511e2268bc39190fad17c118cb975679fd2c95f2c4b9af"
     ],
     "google-genie-4-model-guide": [
-      "c9892bd0e681ddad40c8d6497a237f7d1eaa1d7c56cbc109a63e4ca45b9e20dc"
+      "c9892bd0e681ddad40c8d6497a237f7d1eaa1d7c56cbc109a63e4ca45b9e20dc",
+      "bb57dd314daf65492043dbcf5e96b03be8b5515e7335740e24411a6eff18ce36",
+      "763f590f9f65002d64d206687b1dbeaba8129408f63b9c045afa271431c5a250"
     ],
     "gemini-4-carbon-model-guide": [
       "75e0c943fd9ec2496c3bcf7b7d58696b513b5d3d804c28ec377bd3fe8297f45a",
@@ -341,7 +348,9 @@
       "4aa05cd64b54a1300b0f77504e251f2faf3584522b62073171b9f4b52827cdcc"
     ],
     "tencent-hy4-model-guide": [
-      "7b194ffdf4e9e4c08984670aa1e06237ba3f5c6e617e8b243af2609a846f8d23"
+      "7b194ffdf4e9e4c08984670aa1e06237ba3f5c6e617e8b243af2609a846f8d23",
+      "df64b23901d68532844fee47bb609e449eb93927dfe9cda766e7642557c2d34f",
+      "5e29373bbc3ee9e9bad144759629b2743a45e142d867499efe946858c71b1527"
     ],
     "sarvam-prism-model-guide": [
       "e784113f4e31935f6d44bf21b87d81a782437ea1d8dcf2c92f179cdf5ea720c4"
@@ -479,7 +488,9 @@
       "11655dd3aae0fc1652130bd977502aae464d06fe8f989d13f99c2d8b3fac8614"
     ],
     "tencent-hy4-flash-model-guide": [
-      "8c50527ce71d0a7fdf92142f06ba81c4d150dda8d8cd589c4cb6cbc5c1027fc3"
+      "8c50527ce71d0a7fdf92142f06ba81c4d150dda8d8cd589c4cb6cbc5c1027fc3",
+      "35e5f158428cc1f8b2ec586606ef754bead05ec27b31e54827d418884bda36bd",
+      "cfc0cdcf9bf20feeaafb12322503eab4686003708244c7387dfe0089815634a1"
     ],
     "longcat-video-avatar-1-6-model-guide": [
       "570abb4d967a28ca9dbc136564a4d4ac401f1296572b550734f654eddd43c92b"
@@ -517,6 +528,22 @@
     "gemini-4-neon-model-guide": [
       "94ab36e213016a1ed6159daf0225607528296a53e86c7df8008a562fe492943f",
       "1c8cd1fd722770e6505ab1304c36d2df8ef942618c79e813f780b684f2bcd87d"
+    ],
+    "olala-v1-mini-model-guide": [
+      "f5aec503de9db321c54e8f0298aaf4bb0b43f5bcc5325a16344463c473e5d7ff",
+      "00996429d63d00b77f0ff008636cb353979e1cff49f4d692d8b73341b3ff8960"
+    ],
+    "olala-v1-summarise-model-guide": [
+      "d07df5fc1d8f8f03a98895d10a6a80d0359b9ee32fdb4c575e94764729d0b4cb",
+      "7835c6831c159fe43bf76165a0fc62efad7c932793accc832afb1e02ab129885"
+    ],
+    "olala-v1-translate-model-guide": [
+      "fb1b477ac52e6bf286e8bc68dbc4d76084113405a892d9329d9e6cc16e403235",
+      "e0b03ca06c750353fd08996d623e8168f888100eeb152e808f940ace6dcd2c3a"
+    ],
+    "tencent-wemm-video-model-guide": [
+      "b8ac2ccb5e72e37fd827e3a2fd1b934102124944247febb3425c0a5485971921",
+      "306b8a63e3df7519822e53aface09aa44543744d81c9d946fafbabd85786631c"
     ]
   },
   "model_introduction_editions": {
@@ -562,7 +589,8 @@
       "9a6bd2aefbabe3c0e086eeea65e1b9553ef919d92ef9007971f8c19a661c837e"
     ],
     "gpt-live-1-1-model-guide": [
-      "c48593720a0b1549980919d1205894f117a68509c1b5afa94c1a6790d22926a9"
+      "c48593720a0b1549980919d1205894f117a68509c1b5afa94c1a6790d22926a9",
+      "86c2445021f54be7f4966c80f7364ae221848fd164c3aecb995edb5970fd1f2a"
     ],
     "minimax-m3-1-flash-model-guide": [
       "6fc188af41fb7cd2d2dcf23dee4e927381261d7da395e873d81a9c676b27e24c",
@@ -622,7 +650,9 @@
       "74bd61b604376bec32511e2268bc39190fad17c118cb975679fd2c95f2c4b9af"
     ],
     "google-genie-4-model-guide": [
-      "c9892bd0e681ddad40c8d6497a237f7d1eaa1d7c56cbc109a63e4ca45b9e20dc"
+      "c9892bd0e681ddad40c8d6497a237f7d1eaa1d7c56cbc109a63e4ca45b9e20dc",
+      "bb57dd314daf65492043dbcf5e96b03be8b5515e7335740e24411a6eff18ce36",
+      "763f590f9f65002d64d206687b1dbeaba8129408f63b9c045afa271431c5a250"
     ],
     "gemini-4-carbon-model-guide": [
       "75e0c943fd9ec2496c3bcf7b7d58696b513b5d3d804c28ec377bd3fe8297f45a",
@@ -656,7 +686,9 @@
       "4aa05cd64b54a1300b0f77504e251f2faf3584522b62073171b9f4b52827cdcc"
     ],
     "tencent-hy4-model-guide": [
-      "7b194ffdf4e9e4c08984670aa1e06237ba3f5c6e617e8b243af2609a846f8d23"
+      "7b194ffdf4e9e4c08984670aa1e06237ba3f5c6e617e8b243af2609a846f8d23",
+      "df64b23901d68532844fee47bb609e449eb93927dfe9cda766e7642557c2d34f",
+      "5e29373bbc3ee9e9bad144759629b2743a45e142d867499efe946858c71b1527"
     ],
     "sarvam-prism-model-guide": [
       "e784113f4e31935f6d44bf21b87d81a782437ea1d8dcf2c92f179cdf5ea720c4"
@@ -794,7 +826,9 @@
       "11655dd3aae0fc1652130bd977502aae464d06fe8f989d13f99c2d8b3fac8614"
     ],
     "tencent-hy4-flash-model-guide": [
-      "8c50527ce71d0a7fdf92142f06ba81c4d150dda8d8cd589c4cb6cbc5c1027fc3"
+      "8c50527ce71d0a7fdf92142f06ba81c4d150dda8d8cd589c4cb6cbc5c1027fc3",
+      "35e5f158428cc1f8b2ec586606ef754bead05ec27b31e54827d418884bda36bd",
+      "cfc0cdcf9bf20feeaafb12322503eab4686003708244c7387dfe0089815634a1"
     ],
     "longcat-video-avatar-1-6-model-guide": [
       "570abb4d967a28ca9dbc136564a4d4ac401f1296572b550734f654eddd43c92b"
@@ -832,6 +866,22 @@
     "gemini-4-neon-model-guide": [
       "94ab36e213016a1ed6159daf0225607528296a53e86c7df8008a562fe492943f",
       "1c8cd1fd722770e6505ab1304c36d2df8ef942618c79e813f780b684f2bcd87d"
+    ],
+    "olala-v1-mini-model-guide": [
+      "f5aec503de9db321c54e8f0298aaf4bb0b43f5bcc5325a16344463c473e5d7ff",
+      "00996429d63d00b77f0ff008636cb353979e1cff49f4d692d8b73341b3ff8960"
+    ],
+    "olala-v1-summarise-model-guide": [
+      "d07df5fc1d8f8f03a98895d10a6a80d0359b9ee32fdb4c575e94764729d0b4cb",
+      "7835c6831c159fe43bf76165a0fc62efad7c932793accc832afb1e02ab129885"
+    ],
+    "olala-v1-translate-model-guide": [
+      "fb1b477ac52e6bf286e8bc68dbc4d76084113405a892d9329d9e6cc16e403235",
+      "e0b03ca06c750353fd08996d623e8168f888100eeb152e808f940ace6dcd2c3a"
+    ],
+    "tencent-wemm-video-model-guide": [
+      "b8ac2ccb5e72e37fd827e3a2fd1b934102124944247febb3425c0a5485971921",
+      "306b8a63e3df7519822e53aface09aa44543744d81c9d946fafbabd85786631c"
     ]
   },
   "model_introduction_purpose_editions": {
@@ -866,7 +916,8 @@
       "9a6bd2aefbabe3c0e086eeea65e1b9553ef919d92ef9007971f8c19a661c837e"
     ],
     "gpt-live-1-1-model-guide": [
-      "c48593720a0b1549980919d1205894f117a68509c1b5afa94c1a6790d22926a9"
+      "c48593720a0b1549980919d1205894f117a68509c1b5afa94c1a6790d22926a9",
+      "86c2445021f54be7f4966c80f7364ae221848fd164c3aecb995edb5970fd1f2a"
     ],
     "minimax-m3-1-flash-model-guide": [
       "6fc188af41fb7cd2d2dcf23dee4e927381261d7da395e873d81a9c676b27e24c",
@@ -926,7 +977,9 @@
       "74bd61b604376bec32511e2268bc39190fad17c118cb975679fd2c95f2c4b9af"
     ],
     "google-genie-4-model-guide": [
-      "c9892bd0e681ddad40c8d6497a237f7d1eaa1d7c56cbc109a63e4ca45b9e20dc"
+      "c9892bd0e681ddad40c8d6497a237f7d1eaa1d7c56cbc109a63e4ca45b9e20dc",
+      "bb57dd314daf65492043dbcf5e96b03be8b5515e7335740e24411a6eff18ce36",
+      "763f590f9f65002d64d206687b1dbeaba8129408f63b9c045afa271431c5a250"
     ],
     "gemini-4-carbon-model-guide": [
       "75e0c943fd9ec2496c3bcf7b7d58696b513b5d3d804c28ec377bd3fe8297f45a",
@@ -960,7 +1013,9 @@
       "4aa05cd64b54a1300b0f77504e251f2faf3584522b62073171b9f4b52827cdcc"
     ],
     "tencent-hy4-model-guide": [
-      "7b194ffdf4e9e4c08984670aa1e06237ba3f5c6e617e8b243af2609a846f8d23"
+      "7b194ffdf4e9e4c08984670aa1e06237ba3f5c6e617e8b243af2609a846f8d23",
+      "df64b23901d68532844fee47bb609e449eb93927dfe9cda766e7642557c2d34f",
+      "5e29373bbc3ee9e9bad144759629b2743a45e142d867499efe946858c71b1527"
     ],
     "sarvam-prism-model-guide": [
       "e784113f4e31935f6d44bf21b87d81a782437ea1d8dcf2c92f179cdf5ea720c4"
@@ -1098,7 +1153,9 @@
       "11655dd3aae0fc1652130bd977502aae464d06fe8f989d13f99c2d8b3fac8614"
     ],
     "tencent-hy4-flash-model-guide": [
-      "8c50527ce71d0a7fdf92142f06ba81c4d150dda8d8cd589c4cb6cbc5c1027fc3"
+      "8c50527ce71d0a7fdf92142f06ba81c4d150dda8d8cd589c4cb6cbc5c1027fc3",
+      "35e5f158428cc1f8b2ec586606ef754bead05ec27b31e54827d418884bda36bd",
+      "cfc0cdcf9bf20feeaafb12322503eab4686003708244c7387dfe0089815634a1"
     ],
     "longcat-video-avatar-1-6-model-guide": [
       "570abb4d967a28ca9dbc136564a4d4ac401f1296572b550734f654eddd43c92b"
@@ -1136,6 +1193,22 @@
     "gemini-4-neon-model-guide": [
       "94ab36e213016a1ed6159daf0225607528296a53e86c7df8008a562fe492943f",
       "1c8cd1fd722770e6505ab1304c36d2df8ef942618c79e813f780b684f2bcd87d"
+    ],
+    "olala-v1-mini-model-guide": [
+      "f5aec503de9db321c54e8f0298aaf4bb0b43f5bcc5325a16344463c473e5d7ff",
+      "00996429d63d00b77f0ff008636cb353979e1cff49f4d692d8b73341b3ff8960"
+    ],
+    "olala-v1-summarise-model-guide": [
+      "d07df5fc1d8f8f03a98895d10a6a80d0359b9ee32fdb4c575e94764729d0b4cb",
+      "7835c6831c159fe43bf76165a0fc62efad7c932793accc832afb1e02ab129885"
+    ],
+    "olala-v1-translate-model-guide": [
+      "fb1b477ac52e6bf286e8bc68dbc4d76084113405a892d9329d9e6cc16e403235",
+      "e0b03ca06c750353fd08996d623e8168f888100eeb152e808f940ace6dcd2c3a"
+    ],
+    "tencent-wemm-video-model-guide": [
+      "b8ac2ccb5e72e37fd827e3a2fd1b934102124944247febb3425c0a5485971921",
+      "306b8a63e3df7519822e53aface09aa44543744d81c9d946fafbabd85786631c"
     ]
   },
   "model_introduction_reader_editions": {
@@ -1167,7 +1240,8 @@
       "9a6bd2aefbabe3c0e086eeea65e1b9553ef919d92ef9007971f8c19a661c837e"
     ],
     "gpt-live-1-1-model-guide": [
-      "c48593720a0b1549980919d1205894f117a68509c1b5afa94c1a6790d22926a9"
+      "c48593720a0b1549980919d1205894f117a68509c1b5afa94c1a6790d22926a9",
+      "86c2445021f54be7f4966c80f7364ae221848fd164c3aecb995edb5970fd1f2a"
     ],
     "minimax-m3-1-flash-model-guide": [
       "6fc188af41fb7cd2d2dcf23dee4e927381261d7da395e873d81a9c676b27e24c",
@@ -1227,7 +1301,9 @@
       "74bd61b604376bec32511e2268bc39190fad17c118cb975679fd2c95f2c4b9af"
     ],
     "google-genie-4-model-guide": [
-      "c9892bd0e681ddad40c8d6497a237f7d1eaa1d7c56cbc109a63e4ca45b9e20dc"
+      "c9892bd0e681ddad40c8d6497a237f7d1eaa1d7c56cbc109a63e4ca45b9e20dc",
+      "bb57dd314daf65492043dbcf5e96b03be8b5515e7335740e24411a6eff18ce36",
+      "763f590f9f65002d64d206687b1dbeaba8129408f63b9c045afa271431c5a250"
     ],
     "gemini-4-carbon-model-guide": [
       "75e0c943fd9ec2496c3bcf7b7d58696b513b5d3d804c28ec377bd3fe8297f45a"
@@ -1257,7 +1333,9 @@
       "893c179c087092a9db60f2ee918bd48219b12e9eab8a050dc511d60345f9bfb6"
     ],
     "tencent-hy4-model-guide": [
-      "7b194ffdf4e9e4c08984670aa1e06237ba3f5c6e617e8b243af2609a846f8d23"
+      "7b194ffdf4e9e4c08984670aa1e06237ba3f5c6e617e8b243af2609a846f8d23",
+      "df64b23901d68532844fee47bb609e449eb93927dfe9cda766e7642557c2d34f",
+      "5e29373bbc3ee9e9bad144759629b2743a45e142d867499efe946858c71b1527"
     ],
     "sarvam-prism-model-guide": [
       "e784113f4e31935f6d44bf21b87d81a782437ea1d8dcf2c92f179cdf5ea720c4"
@@ -1355,7 +1433,9 @@
       "11655dd3aae0fc1652130bd977502aae464d06fe8f989d13f99c2d8b3fac8614"
     ],
     "tencent-hy4-flash-model-guide": [
-      "8c50527ce71d0a7fdf92142f06ba81c4d150dda8d8cd589c4cb6cbc5c1027fc3"
+      "8c50527ce71d0a7fdf92142f06ba81c4d150dda8d8cd589c4cb6cbc5c1027fc3",
+      "35e5f158428cc1f8b2ec586606ef754bead05ec27b31e54827d418884bda36bd",
+      "cfc0cdcf9bf20feeaafb12322503eab4686003708244c7387dfe0089815634a1"
     ],
     "longcat-video-avatar-1-6-model-guide": [
       "570abb4d967a28ca9dbc136564a4d4ac401f1296572b550734f654eddd43c92b"
@@ -1393,6 +1473,22 @@
     "gemini-4-neon-model-guide": [
       "94ab36e213016a1ed6159daf0225607528296a53e86c7df8008a562fe492943f",
       "1c8cd1fd722770e6505ab1304c36d2df8ef942618c79e813f780b684f2bcd87d"
+    ],
+    "olala-v1-mini-model-guide": [
+      "f5aec503de9db321c54e8f0298aaf4bb0b43f5bcc5325a16344463c473e5d7ff",
+      "00996429d63d00b77f0ff008636cb353979e1cff49f4d692d8b73341b3ff8960"
+    ],
+    "olala-v1-summarise-model-guide": [
+      "d07df5fc1d8f8f03a98895d10a6a80d0359b9ee32fdb4c575e94764729d0b4cb",
+      "7835c6831c159fe43bf76165a0fc62efad7c932793accc832afb1e02ab129885"
+    ],
+    "olala-v1-translate-model-guide": [
+      "fb1b477ac52e6bf286e8bc68dbc4d76084113405a892d9329d9e6cc16e403235",
+      "e0b03ca06c750353fd08996d623e8168f888100eeb152e808f940ace6dcd2c3a"
+    ],
+    "tencent-wemm-video-model-guide": [
+      "b8ac2ccb5e72e37fd827e3a2fd1b934102124944247febb3425c0a5485971921",
+      "306b8a63e3df7519822e53aface09aa44543744d81c9d946fafbabd85786631c"
     ]
   }
 }

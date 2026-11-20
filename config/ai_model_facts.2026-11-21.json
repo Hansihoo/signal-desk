@@ -1,0 +1,1798 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "id": "hy4-20261104-spec",
+      "model": "Hy4",
+      "provider": "Tencent",
+      "source_url": "https://cloud.tencent.com/document/product/1823/130051",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 사양과 제공",
+        "suite": "Official specification / 2026-11-05",
+        "condition": "TokenHub API 1M/960k/64k·이미지. 별도 공개가중치 문맥1,048,576·텍스트/이미지/영상; 시스템카드URL은HTML응답으로본문미확인. 자체추론미검증.",
+        "context": "1M tokens (원문 표기)",
+        "status": "정식 API / BF16·FP8·base 공개 가중치",
+        "access": "Tencent TokenHub / 제품",
+        "release": "2026-11-04",
+        "최대입력": "960k tokens",
+        "최대출력": "64k tokens",
+        "모델ID": "hy4",
+        "입력": "텍스트와 이미지",
+        "파라미터": "언어백본770B (ViT/adapter/DFly2제외);활성text49B+vision1.23B",
+        "references": [
+          "https://huggingface.co/tencent/Hy4/raw/main/README.md",
+          "https://huggingface.co/tencent/Hy4/raw/main/LICENSE",
+          "https://huggingface.co/tencent/Hy4/raw/main/config.json"
+        ]
+      }
+    },
+    {
+      "id": "hy4-20261104-finance-0",
+      "model": "Hy4",
+      "provider": "Tencent",
+      "source_url": "https://huggingface.co/tencent/Hy4/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Tencent financial blind evaluation / 213 experts / 579 tasks",
+        "condition": "Tencent Hy + Tencent Financial Technology; 153 external experts; inference effort, harness and full task set not disclosed; no independent reproduction; 현행모델카드가평가상한4를명시,점수는기존발표와동일",
+        "평가 점수": 3.04,
+        "단위": "4점 만점 평균",
+        "측정 주체": "Tencent Hy / Tencent Financial Technology",
+        "harness": "미공개"
+      }
+    },
+    {
+      "id": "hy4-20261104-finance-1",
+      "model": "DeepSeek-V4.1-Flash-1017",
+      "provider": "DeepSeek",
+      "source_url": "https://huggingface.co/tencent/Hy4/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Tencent financial blind evaluation / 213 experts / 579 tasks",
+        "condition": "Tencent Hy + Tencent Financial Technology; 153 external experts; inference effort, harness and full task set not disclosed; no independent reproduction; 현행모델카드가평가상한4를명시,점수는기존발표와동일",
+        "평가 점수": 2.97,
+        "단위": "4점 만점 평균",
+        "측정 주체": "Tencent Hy / Tencent Financial Technology",
+        "harness": "미공개"
+      }
+    },
+    {
+      "id": "hy4-20261104-finance-2",
+      "model": "Kimi K3.1 Pro",
+      "provider": "Moonshot AI",
+      "source_url": "https://huggingface.co/tencent/Hy4/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Tencent financial blind evaluation / 213 experts / 579 tasks",
+        "condition": "Tencent Hy + Tencent Financial Technology; 153 external experts; inference effort, harness and full task set not disclosed; no independent reproduction; 현행모델카드가평가상한4를명시,점수는기존발표와동일",
+        "평가 점수": 2.68,
+        "단위": "4점 만점 평균",
+        "측정 주체": "Tencent Hy / Tencent Financial Technology",
+        "harness": "미공개"
+      }
+    },
+    {
+      "id": "hy4-20261104-finance-3",
+      "model": "GLM-5.3",
+      "provider": "Z.AI",
+      "source_url": "https://huggingface.co/tencent/Hy4/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Tencent financial blind evaluation / 213 experts / 579 tasks",
+        "condition": "Tencent Hy + Tencent Financial Technology; 153 external experts; inference effort, harness and full task set not disclosed; no independent reproduction; 현행모델카드가평가상한4를명시,점수는기존발표와동일",
+        "평가 점수": 2.68,
+        "단위": "4점 만점 평균",
+        "측정 주체": "Tencent Hy / Tencent Financial Technology",
+        "harness": "미공개"
+      }
+    },
+    {
+      "id": "tencent-hy-meta-openweights",
+      "model": "Hy4",
+      "provider": "Tencent",
+      "source_url": "https://huggingface.co/api/models/tencent/Hy4",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "Hy4 formal open weights / HF metadata",
+        "condition": "공식파일목록·gated=false;생성/갱신일은최초공개일로간주하지않음;실행/메모리측정없음",
+        "status": "공개 가중치 / Tencent Hy License1.0",
+        "access": "Hugging Face / 자체운영",
+        "정밀도": "BF16 + F32",
+        "HF 텐서 파라미터 계수": 774434002142,
+        "가중치 문맥 tokens": 1048576,
+        "라이선스 URL": "https://huggingface.co/tencent/Hy4/raw/main/LICENSE"
+      }
+    },
+    {
+      "id": "tencent-hy-fp8-openweights",
+      "model": "Hy4-FP8",
+      "provider": "Tencent",
+      "source_url": "https://huggingface.co/api/models/tencent/Hy4-FP8",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "Hy4 formal open weights / HF metadata",
+        "condition": "공식파일목록·gated=false;생성/갱신일은최초공개일로간주하지않음;실행/메모리측정없음",
+        "status": "공개 가중치 / Tencent Hy License1.0",
+        "access": "Hugging Face / 자체운영",
+        "정밀도": "FP8 + BF16 + F32",
+        "HF 텐서 파라미터 계수": 774434002142,
+        "가중치 문맥 tokens": 1048576,
+        "라이선스 URL": "https://huggingface.co/tencent/Hy4/raw/main/LICENSE"
+      }
+    },
+    {
+      "id": "tencent-hy-base-openweights",
+      "model": "Hy4 Base",
+      "provider": "Tencent",
+      "source_url": "https://huggingface.co/api/models/tencent/Hy4-base",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "Hy4 formal open weights / HF metadata",
+        "condition": "공식파일목록·gated=false;생성/갱신일은최초공개일로간주하지않음;실행/메모리측정없음",
+        "status": "공개 가중치 / Tencent Hy License1.0",
+        "access": "Hugging Face / 자체운영",
+        "정밀도": "BF16 + F32",
+        "HF 텐서 파라미터 계수": 771142535581,
+        "가중치 문맥 tokens": 1048576,
+        "라이선스 URL": "https://huggingface.co/tencent/Hy4/raw/main/LICENSE"
+      }
+    },
+    {
+      "id": "hy4-license-maas",
+      "model": "Hy4",
+      "provider": "Tencent",
+      "source_url": "https://huggingface.co/tencent/Hy4/raw/main/LICENSE",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 서비스 조건",
+        "suite": "Tencent Hy License 1.0 / section10",
+        "condition": "Apache2.0과다름;MaaS정의·제외·별도서면허가·내부사용예외는원문조건에따름",
+        "MaaS 전세계12개월총매출 초과 USD": 50000000,
+        "MaaS 제품 월활성사용자 초과": 100000000,
+        "내부사용 예외": "가중치·파생물·출력도제3자에게제공하지않는조건"
+      }
+    },
+    {
+      "id": "hy4-base-mmlu-pro-0",
+      "model": "Hy4 Base",
+      "provider": "Tencent",
+      "source_url": "https://huggingface.co/tencent/Hy4/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "MMLU-Pro / Tencent base few-shot 2026-11",
+        "condition": "Tencent공급자표;5shot;macro-averaged accuracy;합성지시중간학습으로답형식왜곡가능;세부Harness커밋/분산미공개",
+        "effort": "기반 모델",
+        "harness": "Tencent base few-shot suite; commit 미공개",
+        "평가 점수": 73.9,
+        "평가 단위": "정확도 (%)",
+        "shots": 5,
+        "측정 주체": "Tencent Hy"
+      }
+    },
+    {
+      "id": "hy4-base-mmlu-pro-1",
+      "model": "Hy4 Flash Base",
+      "provider": "Tencent",
+      "source_url": "https://huggingface.co/tencent/Hy4/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "MMLU-Pro / Tencent base few-shot 2026-11",
+        "condition": "Tencent공급자표;5shot;macro-averaged accuracy;합성지시중간학습으로답형식왜곡가능;세부Harness커밋/분산미공개",
+        "effort": "기반 모델",
+        "harness": "Tencent base few-shot suite; commit 미공개",
+        "평가 점수": 71.1,
+        "평가 단위": "정확도 (%)",
+        "shots": 5,
+        "측정 주체": "Tencent Hy"
+      }
+    },
+    {
+      "id": "hy4-base-mmlu-pro-2",
+      "model": "Hy3 Preview Base",
+      "provider": "Tencent",
+      "source_url": "https://huggingface.co/tencent/Hy4/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "MMLU-Pro / Tencent base few-shot 2026-11",
+        "condition": "Tencent공급자표;5shot;macro-averaged accuracy;합성지시중간학습으로답형식왜곡가능;세부Harness커밋/분산미공개",
+        "effort": "기반 모델",
+        "harness": "Tencent base few-shot suite; commit 미공개",
+        "평가 점수": 65.8,
+        "평가 단위": "정확도 (%)",
+        "shots": 5,
+        "측정 주체": "Tencent Hy"
+      }
+    },
+    {
+      "id": "hy4-base-mmlu-pro-3",
+      "model": "DeepSeek-V4-Flash-Base",
+      "provider": "DeepSeek",
+      "source_url": "https://huggingface.co/tencent/Hy4/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "MMLU-Pro / Tencent base few-shot 2026-11",
+        "condition": "Tencent공급자표;5shot;macro-averaged accuracy;합성지시중간학습으로답형식왜곡가능;세부Harness커밋/분산미공개",
+        "effort": "기반 모델",
+        "harness": "Tencent base few-shot suite; commit 미공개",
+        "평가 점수": 68.6,
+        "평가 단위": "정확도 (%)",
+        "shots": 5,
+        "측정 주체": "Tencent Hy"
+      }
+    },
+    {
+      "id": "hy4-base-mmlu-pro-4",
+      "model": "DeepSeek-V4-Pro-Base",
+      "provider": "DeepSeek",
+      "source_url": "https://huggingface.co/tencent/Hy4/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "MMLU-Pro / Tencent base few-shot 2026-11",
+        "condition": "Tencent공급자표;5shot;macro-averaged accuracy;합성지시중간학습으로답형식왜곡가능;세부Harness커밋/분산미공개",
+        "effort": "기반 모델",
+        "harness": "Tencent base few-shot suite; commit 미공개",
+        "평가 점수": 73.4,
+        "평가 단위": "정확도 (%)",
+        "shots": 5,
+        "측정 주체": "Tencent Hy"
+      }
+    },
+    {
+      "id": "hy4-base-mbpp-plus-0",
+      "model": "Hy4 Base",
+      "provider": "Tencent",
+      "source_url": "https://huggingface.co/tencent/Hy4/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "MBPP-plus / Tencent base few-shot 2026-11",
+        "condition": "Tencent공급자표;3shot;suite accuracy;instruct코딩평가아님;합성지시중간학습으로답형식왜곡가능;세부Harness커밋/분산미공개",
+        "effort": "기반 모델",
+        "harness": "Tencent base few-shot suite; commit 미공개",
+        "평가 점수": 74,
+        "평가 단위": "정확도 (%)",
+        "shots": 3,
+        "측정 주체": "Tencent Hy"
+      }
+    },
+    {
+      "id": "hy4-base-mbpp-plus-1",
+      "model": "Hy4 Flash Base",
+      "provider": "Tencent",
+      "source_url": "https://huggingface.co/tencent/Hy4/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "MBPP-plus / Tencent base few-shot 2026-11",
+        "condition": "Tencent공급자표;3shot;suite accuracy;instruct코딩평가아님;합성지시중간학습으로답형식왜곡가능;세부Harness커밋/분산미공개",
+        "effort": "기반 모델",
+        "harness": "Tencent base few-shot suite; commit 미공개",
+        "평가 점수": 73.7,
+        "평가 단위": "정확도 (%)",
+        "shots": 3,
+        "측정 주체": "Tencent Hy"
+      }
+    },
+    {
+      "id": "hy4-base-mbpp-plus-2",
+      "model": "Hy3 Preview Base",
+      "provider": "Tencent",
+      "source_url": "https://huggingface.co/tencent/Hy4/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "MBPP-plus / Tencent base few-shot 2026-11",
+        "condition": "Tencent공급자표;3shot;suite accuracy;instruct코딩평가아님;합성지시중간학습으로답형식왜곡가능;세부Harness커밋/분산미공개",
+        "effort": "기반 모델",
+        "harness": "Tencent base few-shot suite; commit 미공개",
+        "평가 점수": 77.4,
+        "평가 단위": "정확도 (%)",
+        "shots": 3,
+        "측정 주체": "Tencent Hy"
+      }
+    },
+    {
+      "id": "hy4-base-mbpp-plus-3",
+      "model": "DeepSeek-V4-Flash-Base",
+      "provider": "DeepSeek",
+      "source_url": "https://huggingface.co/tencent/Hy4/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "MBPP-plus / Tencent base few-shot 2026-11",
+        "condition": "Tencent공급자표;3shot;suite accuracy;instruct코딩평가아님;합성지시중간학습으로답형식왜곡가능;세부Harness커밋/분산미공개",
+        "effort": "기반 모델",
+        "harness": "Tencent base few-shot suite; commit 미공개",
+        "평가 점수": 76.8,
+        "평가 단위": "정확도 (%)",
+        "shots": 3,
+        "측정 주체": "Tencent Hy"
+      }
+    },
+    {
+      "id": "hy4-base-mbpp-plus-4",
+      "model": "DeepSeek-V4-Pro-Base",
+      "provider": "DeepSeek",
+      "source_url": "https://huggingface.co/tencent/Hy4/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "MBPP-plus / Tencent base few-shot 2026-11",
+        "condition": "Tencent공급자표;3shot;suite accuracy;instruct코딩평가아님;합성지시중간학습으로답형식왜곡가능;세부Harness커밋/분산미공개",
+        "effort": "기반 모델",
+        "harness": "Tencent base few-shot suite; commit 미공개",
+        "평가 점수": 79.1,
+        "평가 단위": "정확도 (%)",
+        "shots": 3,
+        "측정 주체": "Tencent Hy"
+      }
+    },
+    {
+      "id": "hy4-base-ocw-0",
+      "model": "Hy4 Base",
+      "provider": "Tencent",
+      "source_url": "https://huggingface.co/tencent/Hy4/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OCW Courses / Tencent base few-shot 2026-11",
+        "condition": "Tencent공급자표;5shot;suite accuracy;합성지시중간학습으로답형식왜곡가능;세부Harness커밋/분산미공개",
+        "effort": "기반 모델",
+        "harness": "Tencent base few-shot suite; commit 미공개",
+        "평가 점수": 66.7,
+        "평가 단위": "정확도 (%)",
+        "shots": 5,
+        "측정 주체": "Tencent Hy"
+      }
+    },
+    {
+      "id": "hy4-base-ocw-1",
+      "model": "Hy4 Flash Base",
+      "provider": "Tencent",
+      "source_url": "https://huggingface.co/tencent/Hy4/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OCW Courses / Tencent base few-shot 2026-11",
+        "condition": "Tencent공급자표;5shot;suite accuracy;합성지시중간학습으로답형식왜곡가능;세부Harness커밋/분산미공개",
+        "effort": "기반 모델",
+        "harness": "Tencent base few-shot suite; commit 미공개",
+        "평가 점수": 64,
+        "평가 단위": "정확도 (%)",
+        "shots": 5,
+        "측정 주체": "Tencent Hy"
+      }
+    },
+    {
+      "id": "hy4-base-ocw-2",
+      "model": "Hy3 Preview Base",
+      "provider": "Tencent",
+      "source_url": "https://huggingface.co/tencent/Hy4/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OCW Courses / Tencent base few-shot 2026-11",
+        "condition": "Tencent공급자표;5shot;suite accuracy;합성지시중간학습으로답형식왜곡가능;세부Harness커밋/분산미공개",
+        "effort": "기반 모델",
+        "harness": "Tencent base few-shot suite; commit 미공개",
+        "평가 점수": 62.6,
+        "평가 단위": "정확도 (%)",
+        "shots": 5,
+        "측정 주체": "Tencent Hy"
+      }
+    },
+    {
+      "id": "hy4-base-ocw-3",
+      "model": "DeepSeek-V4-Flash-Base",
+      "provider": "DeepSeek",
+      "source_url": "https://huggingface.co/tencent/Hy4/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OCW Courses / Tencent base few-shot 2026-11",
+        "condition": "Tencent공급자표;5shot;suite accuracy;합성지시중간학습으로답형식왜곡가능;세부Harness커밋/분산미공개",
+        "effort": "기반 모델",
+        "harness": "Tencent base few-shot suite; commit 미공개",
+        "평가 점수": 63.3,
+        "평가 단위": "정확도 (%)",
+        "shots": 5,
+        "측정 주체": "Tencent Hy"
+      }
+    },
+    {
+      "id": "hy4-base-ocw-4",
+      "model": "DeepSeek-V4-Pro-Base",
+      "provider": "DeepSeek",
+      "source_url": "https://huggingface.co/tencent/Hy4/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OCW Courses / Tencent base few-shot 2026-11",
+        "condition": "Tencent공급자표;5shot;suite accuracy;합성지시중간학습으로답형식왜곡가능;세부Harness커밋/분산미공개",
+        "effort": "기반 모델",
+        "harness": "Tencent base few-shot suite; commit 미공개",
+        "평가 점수": 68.2,
+        "평가 단위": "정확도 (%)",
+        "shots": 5,
+        "측정 주체": "Tencent Hy"
+      }
+    },
+    {
+      "id": "hy4-base-belebele-0",
+      "model": "Hy4 Base",
+      "provider": "Tencent",
+      "source_url": "https://huggingface.co/tencent/Hy4/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Belebele / Tencent base few-shot 2026-11",
+        "condition": "Tencent공급자표;5shot;macro-averaged;5languages4475examples;한국어단독아님;합성지시중간학습으로답형식왜곡가능;세부Harness커밋/분산미공개",
+        "effort": "기반 모델",
+        "harness": "Tencent base few-shot suite; commit 미공개",
+        "평가 점수": 95,
+        "평가 단위": "정확도 (%)",
+        "shots": 5,
+        "측정 주체": "Tencent Hy"
+      }
+    },
+    {
+      "id": "hy4-base-belebele-1",
+      "model": "Hy4 Flash Base",
+      "provider": "Tencent",
+      "source_url": "https://huggingface.co/tencent/Hy4/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Belebele / Tencent base few-shot 2026-11",
+        "condition": "Tencent공급자표;5shot;macro-averaged;5languages4475examples;한국어단독아님;합성지시중간학습으로답형식왜곡가능;세부Harness커밋/분산미공개",
+        "effort": "기반 모델",
+        "harness": "Tencent base few-shot suite; commit 미공개",
+        "평가 점수": 93.8,
+        "평가 단위": "정확도 (%)",
+        "shots": 5,
+        "측정 주체": "Tencent Hy"
+      }
+    },
+    {
+      "id": "hy4-base-belebele-2",
+      "model": "Hy3 Preview Base",
+      "provider": "Tencent",
+      "source_url": "https://huggingface.co/tencent/Hy4/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Belebele / Tencent base few-shot 2026-11",
+        "condition": "Tencent공급자표;5shot;macro-averaged;5languages4475examples;한국어단독아님;합성지시중간학습으로답형식왜곡가능;세부Harness커밋/분산미공개",
+        "effort": "기반 모델",
+        "harness": "Tencent base few-shot suite; commit 미공개",
+        "평가 점수": 94.2,
+        "평가 단위": "정확도 (%)",
+        "shots": 5,
+        "측정 주체": "Tencent Hy"
+      }
+    },
+    {
+      "id": "hy4-base-belebele-3",
+      "model": "DeepSeek-V4-Flash-Base",
+      "provider": "DeepSeek",
+      "source_url": "https://huggingface.co/tencent/Hy4/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Belebele / Tencent base few-shot 2026-11",
+        "condition": "Tencent공급자표;5shot;macro-averaged;5languages4475examples;한국어단독아님;합성지시중간학습으로답형식왜곡가능;세부Harness커밋/분산미공개",
+        "effort": "기반 모델",
+        "harness": "Tencent base few-shot suite; commit 미공개",
+        "평가 점수": 94.4,
+        "평가 단위": "정확도 (%)",
+        "shots": 5,
+        "측정 주체": "Tencent Hy"
+      }
+    },
+    {
+      "id": "hy4-base-belebele-4",
+      "model": "DeepSeek-V4-Pro-Base",
+      "provider": "DeepSeek",
+      "source_url": "https://huggingface.co/tencent/Hy4/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Belebele / Tencent base few-shot 2026-11",
+        "condition": "Tencent공급자표;5shot;macro-averaged;5languages4475examples;한국어단독아님;합성지시중간학습으로답형식왜곡가능;세부Harness커밋/분산미공개",
+        "effort": "기반 모델",
+        "harness": "Tencent base few-shot suite; commit 미공개",
+        "평가 점수": 95.2,
+        "평가 단위": "정확도 (%)",
+        "shots": 5,
+        "측정 주체": "Tencent Hy"
+      }
+    },
+    {
+      "id": "hy4-base-mmmu-pro-0",
+      "model": "Hy4 Base",
+      "provider": "Tencent",
+      "source_url": "https://huggingface.co/tencent/Hy4/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "MMMU-Pro Standard10opts / Tencent base few-shot 2026-11",
+        "condition": "Tencent공급자표;4shot;base2종만;다른모델미공개;합성지시중간학습으로답형식왜곡가능;세부Harness커밋/분산미공개",
+        "effort": "기반 모델",
+        "harness": "Tencent base few-shot suite; commit 미공개",
+        "평가 점수": 59.6,
+        "평가 단위": "정확도 (%)",
+        "shots": 4,
+        "측정 주체": "Tencent Hy"
+      }
+    },
+    {
+      "id": "hy4-base-mmmu-pro-1",
+      "model": "Hy4 Flash Base",
+      "provider": "Tencent",
+      "source_url": "https://huggingface.co/tencent/Hy4/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "MMMU-Pro Standard10opts / Tencent base few-shot 2026-11",
+        "condition": "Tencent공급자표;4shot;base2종만;다른모델미공개;합성지시중간학습으로답형식왜곡가능;세부Harness커밋/분산미공개",
+        "effort": "기반 모델",
+        "harness": "Tencent base few-shot suite; commit 미공개",
+        "평가 점수": 52,
+        "평가 단위": "정확도 (%)",
+        "shots": 4,
+        "측정 주체": "Tencent Hy"
+      }
+    },
+    {
+      "id": "hy4-card-hallucination-formal",
+      "model": "Hy4",
+      "provider": "Tencent",
+      "source_url": "https://huggingface.co/tencent/Hy4/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Tencent internal hallucination / HF card November2026",
+        "condition": "공급자내부평가·표본/채점/추론예산미공개;11월4일12.95→7.2%관찰과동일평가미확인;판간차이계산금지",
+        "harness": "미공개",
+        "평가 점수": 5.45,
+        "평가 단위": "% · 낮을수록 좋음"
+      }
+    },
+    {
+      "id": "hy4-card-hallucination-preview",
+      "model": "Hy4 Preview",
+      "provider": "Tencent",
+      "source_url": "https://huggingface.co/tencent/Hy4/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Tencent internal hallucination / HF card November2026",
+        "condition": "공급자내부평가·표본/채점/추론예산미공개;11월4일12.95→7.2%관찰과동일평가미확인;판간차이계산금지",
+        "harness": "미공개",
+        "평가 점수": 15.76,
+        "평가 단위": "% · 낮을수록 좋음"
+      }
+    },
+    {
+      "id": "hy4-preview-tokenhub-lifecycle",
+      "model": "Hy4 Preview",
+      "provider": "Tencent",
+      "source_url": "https://cloud.tencent.com/document/product/1823/130051",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 수명주기",
+        "suite": "TokenHub hy4-preview lifecycle",
+        "condition": "목록표기2026-12-07종료;정확시각미확인;다운로드가중치회수로해석하지않음",
+        "status": "종료 예정",
+        "API 종료 예정일": "2026-12-07"
+      }
+    },
+    {
+      "id": "genie4-spec-20261027",
+      "model": "Genie 4",
+      "provider": "Google DeepMind",
+      "source_url": "https://ai.google.dev/gemini-api/docs/models/genie-4",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 사양과 제공",
+        "suite": "Genie 4 2026-10-27 research preview",
+        "condition": "최초연구10월27일;제공확대11월18일;API Stable식별자와연구preview별도. 연구약1분/API최대120초/일관성45~90초를구분. 계정별한국접근·실호출미검증.",
+        "status": "유료 Gemini API·AI Studio / 적격 Ultra 순차 제공",
+        "access": "Gemini API Interactions / Project Genie",
+        "입출력": "프롬프트/조작에 반응하는 영상, 소리와 대화",
+        "표준 API 단가": "별도 Standard 요금 관찰 참조",
+        "평가값": "동일 평가판 정량 결과 미확인",
+        "가중치": "공개 다운로드 경로 미확인",
+        "모델 ID": "genie-4",
+        "영상 해상도": "1280x720 ·16:9",
+        "영상 fps": 24,
+        "음성 샘플레이트 Hz": 48000,
+        "API 최대 세션 초": 120,
+        "일관성 강한 구간 초": "45~90",
+        "references": [
+          "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/genie-4-now-available-project-genie/",
+          "https://deepmind.google/models/genie/",
+          "https://ai.google.dev/gemini-api/docs/pricing"
+        ]
+      }
+    },
+    {
+      "id": "genie4-standard-text",
+      "model": "Genie 4",
+      "provider": "Google",
+      "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Genie4 Standard / text-reference input and text output",
+        "condition": "USD per1M;입력text/reference image;출력text;유료만;영상출력은별도행",
+        "입력 USD / 100만 토큰": 1.5,
+        "출력 USD / 100만 토큰": 9
+      }
+    },
+    {
+      "id": "genie4-standard-video",
+      "model": "Genie 4",
+      "provider": "Google",
+      "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Genie4 Standard / video output including audio",
+        "condition": "USD per1M video output tokens;240/frame·24fps=5760/sec;48kHzstereo포함;입력/텍스트출력별도. 무료/Batch/Flex/Priority/cache미지원",
+        "영상 출력 USD / 100만 토큰": 17.5,
+        "영상 tokens / frame": 240,
+        "영상 tokens / second": 5760,
+        "영상 출력만 USD / second": 0.1008,
+        "영상 출력만 USD / minute": 6.048,
+        "세션 종료 조건": "complete()로종료;전송연결해제만으로과금즉시중단아님"
+      }
+    },
+    {
+      "id": "genie4-eval-qualitative",
+      "model": "Genie 4",
+      "provider": "Google DeepMind",
+      "source_url": "https://deepmind.google/models/model-cards/genie-4/",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Genie4 vs Genie3 / model card November18",
+        "condition": "인간/자동평가의정성개선설명;정량점수·표본·전체Harness미공개;점수만들지않음",
+        "harness": "Google 모델 카드; 세부 방법론 미확인",
+        "평가 결과": "사실감·유동적움직임·실시간제어개선 주장;정량값미공개",
+        "원문 모델 카드 배포 문구": "Project Genie배포예정. 실제제공은18일제품발표/현행API와구분"
+      }
+    },
+    {
+      "id": "genie3-session-20261118",
+      "model": "Genie 3",
+      "provider": "Google",
+      "source_url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/genie-4-now-available-project-genie/",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "Project Genie / November18 extended session",
+        "condition": "현행제품발표;이전60초대비최대3분·world chaining;Genie4에복사금지",
+        "최대 생성 초": 180,
+        "기능": "360도panorama grounding·world chaining·실시간events"
+      }
+    },
+    {
+      "id": "hy4-flash-spec",
+      "model": "Hy4 Flash",
+      "provider": "Tencent",
+      "source_url": "https://huggingface.co/tencent/Hy4-flash/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 사양과 제공",
+        "suite": "Tencent Hy4 flash launch 2026-11-16",
+        "condition": "16일발표224B/활성12B와현행카드220B를구분. 가중치백본155.5B+Engram63.5B,시각0.43B·DFly2 0.85B 별도;실행미검증",
+        "parameters": 224,
+        "active_parameters": 12,
+        "release": "2026-11-16",
+        "status": "공개 instruct·FP8·base / API 제공",
+        "access": "TokenHub / WorkBuddy / Tencent apps",
+        "문맥 원문": "1M tokens",
+        "최대 입력 원문": "960k tokens",
+        "최대 출력 원문": "64k tokens",
+        "Engram Params (B)": 64,
+        "사양 근거": "https://cloud.tencent.com/document/product/1823/130051",
+        "가중치 문맥 tokens": 1048576,
+        "카드 총규모 B": 220,
+        "텍스트 활성 B": 11.3,
+        "시각 활성 B": 0.43,
+        "라이선스": "Tencent Hy License1.0;별도MaaS조건",
+        "references": [
+          "https://huggingface.co/api/models/tencent/Hy4-flash",
+          "https://huggingface.co/tencent/Hy4-flash/raw/main/LICENSE",
+          "https://cloud.tencent.com/document/product/1823/130055"
+        ]
+      }
+    },
+    {
+      "id": "hyflash-openweights-tensor",
+      "model": "Hy4 Flash",
+      "provider": "Tencent",
+      "source_url": "https://huggingface.co/api/models/tencent/Hy4-flash",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "Hy4 Flash formal openweights / November2026",
+        "condition": "HF공개instruct파일;16일출시발표224B와계수범위차이를보존;실행/메모리미측정",
+        "가중치 텐서 계수": 220251201958,
+        "레이어 수": 42,
+        "routed experts": 512,
+        "토큰당 routed experts": 16
+      }
+    },
+    {
+      "id": "olala-mini-spec",
+      "model": "Olala v1.0 mini 7A1B",
+      "provider": "OVHai LLM",
+      "source_url": "https://huggingface.co/OVHaiLLM/Olala-v1.0-mini-7A1B/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "Olala v1.0 / November19 release",
+        "condition": "텍스트전용;6.8B total/약1B active;36층(29Mamba3/7attention);fork/float32상태조건;한국어실무미검증",
+        "status": "Apache2.0 공개 가중치 / 유럽API",
+        "access": "자체운영 / OVHcloud AI Endpoints",
+        "문맥 원문": "32K input+output",
+        "출시": "2026-11-19",
+        "라이선스": "Apache2.0;NOTICE보존"
+      }
+    },
+    {
+      "id": "olala-summarise-spec",
+      "model": "Olala v1.0 summarise",
+      "provider": "OVHai LLM",
+      "source_url": "https://huggingface.co/OVHaiLLM/Olala-v1.0-summarise/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "Olala v1.0 / November19 release",
+        "condition": "텍스트전용;6.8B total/약1B active;36층(29Mamba3/7attention);fork/float32상태조건;한국어실무미검증",
+        "status": "Apache2.0 공개 가중치 / 유럽API",
+        "access": "자체운영 / OVHcloud AI Endpoints",
+        "문맥 원문": "32K card;62K hosted catalogue",
+        "출시": "2026-11-19",
+        "라이선스": "Apache2.0;NOTICE보존"
+      }
+    },
+    {
+      "id": "olala-translate-spec",
+      "model": "Olala v1.0 translate",
+      "provider": "OVHai LLM",
+      "source_url": "https://huggingface.co/OVHaiLLM/Olala-v1.0-translate/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "Olala v1.0 / November19 release",
+        "condition": "텍스트전용;6.8B total/약1B active;36층(29Mamba3/7attention);fork/float32상태조건;한국어실무미검증",
+        "status": "Apache2.0 공개 가중치 / 유럽API",
+        "access": "자체운영 / OVHcloud AI Endpoints",
+        "문맥 원문": "32K card;8K training/evaluation/hosted",
+        "출시": "2026-11-19",
+        "라이선스": "Apache2.0;NOTICE보존"
+      }
+    },
+    {
+      "id": "olala-free-7A1B",
+      "model": "Olala v1.0 mini 7A1B",
+      "provider": "OVHai LLM",
+      "source_url": "https://www.ovhcloud.com/en/public-cloud/ai-endpoints/catalog/",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "OVHcloud AI Endpoints / catalogue",
+        "condition": "2026-11-21현행Free표시;영구/무제한/파트너전체가격0추정금지;실청구미검증",
+        "요금 표기": "Free",
+        "가중치 운영비": "미측정;호스팅무료와별개"
+      }
+    },
+    {
+      "id": "olala-free-summarise",
+      "model": "Olala v1.0 summarise",
+      "provider": "OVHai LLM",
+      "source_url": "https://www.ovhcloud.com/en/public-cloud/ai-endpoints/catalog/",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "OVHcloud AI Endpoints / catalogue",
+        "condition": "2026-11-21현행Free표시;영구/무제한/파트너전체가격0추정금지;실청구미검증",
+        "요금 표기": "Free",
+        "가중치 운영비": "미측정;호스팅무료와별개"
+      }
+    },
+    {
+      "id": "olala-free-translate",
+      "model": "Olala v1.0 translate",
+      "provider": "OVHai LLM",
+      "source_url": "https://www.ovhcloud.com/en/public-cloud/ai-endpoints/catalog/",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "OVHcloud AI Endpoints / catalogue",
+        "condition": "2026-11-21현행Free표시;영구/무제한/파트너전체가격0추정금지;실청구미검증",
+        "요금 표기": "Free",
+        "가중치 운영비": "미측정;호스팅무료와별개"
+      }
+    },
+    {
+      "id": "olala-IFBench-Olala v1.0 mini 7A1B",
+      "model": "Olala v1.0 mini 7A1B",
+      "provider": "OVHai LLM",
+      "source_url": "https://huggingface.co/OVHaiLLM/Olala-v1.0-mini-7A1B/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "IFBench / OVHai November2026",
+        "condition": "OVHai자체공통cluster/inspect_ai+vLLM;zero-shot;각모델카드샘플링/추론;Olala high,T0.8,p0.9,k40,float32상태;코드/AIME5샘플pass@1평균;BFCL23범주4981·전체평균제외",
+        "harness": "inspect_ai / vLLM; exact commit 미확인",
+        "평가 점수": 57.7,
+        "평가 단위": "%"
+      }
+    },
+    {
+      "id": "olala-IFBench-Granite4.0-H-Tiny",
+      "model": "Granite4.0-H-Tiny",
+      "provider": "공식 비교대상",
+      "source_url": "https://huggingface.co/OVHaiLLM/Olala-v1.0-mini-7A1B/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "IFBench / OVHai November2026",
+        "condition": "OVHai자체공통cluster/inspect_ai+vLLM;zero-shot;각모델카드샘플링/추론;Olala high,T0.8,p0.9,k40,float32상태;코드/AIME5샘플pass@1평균;BFCL23범주4981·전체평균제외",
+        "harness": "inspect_ai / vLLM; exact commit 미확인",
+        "평가 점수": 14.3,
+        "평가 단위": "%"
+      }
+    },
+    {
+      "id": "olala-IFBench-LFM2.5-8B-A1B",
+      "model": "LFM2.5-8B-A1B",
+      "provider": "공식 비교대상",
+      "source_url": "https://huggingface.co/OVHaiLLM/Olala-v1.0-mini-7A1B/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "IFBench / OVHai November2026",
+        "condition": "OVHai자체공통cluster/inspect_ai+vLLM;zero-shot;각모델카드샘플링/추론;Olala high,T0.8,p0.9,k40,float32상태;코드/AIME5샘플pass@1평균;BFCL23범주4981·전체평균제외",
+        "harness": "inspect_ai / vLLM; exact commit 미확인",
+        "평가 점수": 48.3,
+        "평가 단위": "%"
+      }
+    },
+    {
+      "id": "olala-IFBench-Qwen3.5-4B",
+      "model": "Qwen3.5-4B",
+      "provider": "공식 비교대상",
+      "source_url": "https://huggingface.co/OVHaiLLM/Olala-v1.0-mini-7A1B/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "IFBench / OVHai November2026",
+        "condition": "OVHai자체공통cluster/inspect_ai+vLLM;zero-shot;각모델카드샘플링/추론;Olala high,T0.8,p0.9,k40,float32상태;코드/AIME5샘플pass@1평균;BFCL23범주4981·전체평균제외",
+        "harness": "inspect_ai / vLLM; exact commit 미확인",
+        "평가 점수": 49.7,
+        "평가 단위": "%"
+      }
+    },
+    {
+      "id": "olala-HumanEval+-Olala v1.0 mini 7A1B",
+      "model": "Olala v1.0 mini 7A1B",
+      "provider": "OVHai LLM",
+      "source_url": "https://huggingface.co/OVHaiLLM/Olala-v1.0-mini-7A1B/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "HumanEval+ / OVHai November2026",
+        "condition": "OVHai자체공통cluster/inspect_ai+vLLM;zero-shot;각모델카드샘플링/추론;Olala high,T0.8,p0.9,k40,float32상태;코드/AIME5샘플pass@1평균;BFCL23범주4981·전체평균제외",
+        "harness": "inspect_ai / vLLM; exact commit 미확인",
+        "평가 점수": 88.3,
+        "평가 단위": "%"
+      }
+    },
+    {
+      "id": "olala-HumanEval+-Granite4.0-H-Tiny",
+      "model": "Granite4.0-H-Tiny",
+      "provider": "공식 비교대상",
+      "source_url": "https://huggingface.co/OVHaiLLM/Olala-v1.0-mini-7A1B/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "HumanEval+ / OVHai November2026",
+        "condition": "OVHai자체공통cluster/inspect_ai+vLLM;zero-shot;각모델카드샘플링/추론;Olala high,T0.8,p0.9,k40,float32상태;코드/AIME5샘플pass@1평균;BFCL23범주4981·전체평균제외",
+        "harness": "inspect_ai / vLLM; exact commit 미확인",
+        "평가 점수": 77.4,
+        "평가 단위": "%"
+      }
+    },
+    {
+      "id": "olala-HumanEval+-LFM2.5-8B-A1B",
+      "model": "LFM2.5-8B-A1B",
+      "provider": "공식 비교대상",
+      "source_url": "https://huggingface.co/OVHaiLLM/Olala-v1.0-mini-7A1B/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "HumanEval+ / OVHai November2026",
+        "condition": "OVHai자체공통cluster/inspect_ai+vLLM;zero-shot;각모델카드샘플링/추론;Olala high,T0.8,p0.9,k40,float32상태;코드/AIME5샘플pass@1평균;BFCL23범주4981·전체평균제외",
+        "harness": "inspect_ai / vLLM; exact commit 미확인",
+        "평가 점수": 79.9,
+        "평가 단위": "%"
+      }
+    },
+    {
+      "id": "olala-HumanEval+-Qwen3.5-4B",
+      "model": "Qwen3.5-4B",
+      "provider": "공식 비교대상",
+      "source_url": "https://huggingface.co/OVHaiLLM/Olala-v1.0-mini-7A1B/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "HumanEval+ / OVHai November2026",
+        "condition": "OVHai자체공통cluster/inspect_ai+vLLM;zero-shot;각모델카드샘플링/추론;Olala high,T0.8,p0.9,k40,float32상태;코드/AIME5샘플pass@1평균;BFCL23범주4981·전체평균제외",
+        "harness": "inspect_ai / vLLM; exact commit 미확인",
+        "평가 점수": 83.4,
+        "평가 단위": "%"
+      }
+    },
+    {
+      "id": "olala-AIME2026-Olala v1.0 mini 7A1B",
+      "model": "Olala v1.0 mini 7A1B",
+      "provider": "OVHai LLM",
+      "source_url": "https://huggingface.co/OVHaiLLM/Olala-v1.0-mini-7A1B/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "AIME2026 / OVHai November2026",
+        "condition": "OVHai자체공통cluster/inspect_ai+vLLM;zero-shot;각모델카드샘플링/추론;Olala high,T0.8,p0.9,k40,float32상태;코드/AIME5샘플pass@1평균;BFCL23범주4981·전체평균제외",
+        "harness": "inspect_ai / vLLM; exact commit 미확인",
+        "평가 점수": 52.7,
+        "평가 단위": "%"
+      }
+    },
+    {
+      "id": "olala-AIME2026-Granite4.0-H-Tiny",
+      "model": "Granite4.0-H-Tiny",
+      "provider": "공식 비교대상",
+      "source_url": "https://huggingface.co/OVHaiLLM/Olala-v1.0-mini-7A1B/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "AIME2026 / OVHai November2026",
+        "condition": "OVHai자체공통cluster/inspect_ai+vLLM;zero-shot;각모델카드샘플링/추론;Olala high,T0.8,p0.9,k40,float32상태;코드/AIME5샘플pass@1평균;BFCL23범주4981·전체평균제외",
+        "harness": "inspect_ai / vLLM; exact commit 미확인",
+        "평가 점수": 10,
+        "평가 단위": "%"
+      }
+    },
+    {
+      "id": "olala-AIME2026-LFM2.5-8B-A1B",
+      "model": "LFM2.5-8B-A1B",
+      "provider": "공식 비교대상",
+      "source_url": "https://huggingface.co/OVHaiLLM/Olala-v1.0-mini-7A1B/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "AIME2026 / OVHai November2026",
+        "condition": "OVHai자체공통cluster/inspect_ai+vLLM;zero-shot;각모델카드샘플링/추론;Olala high,T0.8,p0.9,k40,float32상태;코드/AIME5샘플pass@1평균;BFCL23범주4981·전체평균제외",
+        "harness": "inspect_ai / vLLM; exact commit 미확인",
+        "평가 점수": 48,
+        "평가 단위": "%"
+      }
+    },
+    {
+      "id": "olala-AIME2026-Qwen3.5-4B",
+      "model": "Qwen3.5-4B",
+      "provider": "공식 비교대상",
+      "source_url": "https://huggingface.co/OVHaiLLM/Olala-v1.0-mini-7A1B/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "AIME2026 / OVHai November2026",
+        "condition": "OVHai자체공통cluster/inspect_ai+vLLM;zero-shot;각모델카드샘플링/추론;Olala high,T0.8,p0.9,k40,float32상태;코드/AIME5샘플pass@1평균;BFCL23범주4981·전체평균제외",
+        "harness": "inspect_ai / vLLM; exact commit 미확인",
+        "평가 점수": 82,
+        "평가 단위": "%"
+      }
+    },
+    {
+      "id": "olala-BFCL-V3-Olala v1.0 mini 7A1B",
+      "model": "Olala v1.0 mini 7A1B",
+      "provider": "OVHai LLM",
+      "source_url": "https://huggingface.co/OVHaiLLM/Olala-v1.0-mini-7A1B/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "BFCL V3 / OVHai November2026",
+        "condition": "OVHai자체공통cluster/inspect_ai+vLLM;zero-shot;각모델카드샘플링/추론;Olala high,T0.8,p0.9,k40,float32상태;코드/AIME5샘플pass@1평균;BFCL23범주4981·전체평균제외",
+        "harness": "inspect_ai / vLLM; exact commit 미확인",
+        "평가 점수": 59.6,
+        "평가 단위": "%"
+      }
+    },
+    {
+      "id": "olala-BFCL-V3-Granite4.0-H-Tiny",
+      "model": "Granite4.0-H-Tiny",
+      "provider": "공식 비교대상",
+      "source_url": "https://huggingface.co/OVHaiLLM/Olala-v1.0-mini-7A1B/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "BFCL V3 / OVHai November2026",
+        "condition": "OVHai자체공통cluster/inspect_ai+vLLM;zero-shot;각모델카드샘플링/추론;Olala high,T0.8,p0.9,k40,float32상태;코드/AIME5샘플pass@1평균;BFCL23범주4981·전체평균제외",
+        "harness": "inspect_ai / vLLM; exact commit 미확인",
+        "평가 점수": 60.2,
+        "평가 단위": "%"
+      }
+    },
+    {
+      "id": "olala-BFCL-V3-LFM2.5-8B-A1B",
+      "model": "LFM2.5-8B-A1B",
+      "provider": "공식 비교대상",
+      "source_url": "https://huggingface.co/OVHaiLLM/Olala-v1.0-mini-7A1B/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "BFCL V3 / OVHai November2026",
+        "condition": "OVHai자체공통cluster/inspect_ai+vLLM;zero-shot;각모델카드샘플링/추론;Olala high,T0.8,p0.9,k40,float32상태;코드/AIME5샘플pass@1평균;BFCL23범주4981·전체평균제외",
+        "harness": "inspect_ai / vLLM; exact commit 미확인",
+        "평가 점수": 69.7,
+        "평가 단위": "%"
+      }
+    },
+    {
+      "id": "olala-BFCL-V3-Qwen3.5-4B",
+      "model": "Qwen3.5-4B",
+      "provider": "공식 비교대상",
+      "source_url": "https://huggingface.co/OVHaiLLM/Olala-v1.0-mini-7A1B/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "BFCL V3 / OVHai November2026",
+        "condition": "OVHai자체공통cluster/inspect_ai+vLLM;zero-shot;각모델카드샘플링/추론;Olala high,T0.8,p0.9,k40,float32상태;코드/AIME5샘플pass@1평균;BFCL23범주4981·전체평균제외",
+        "harness": "inspect_ai / vLLM; exact commit 미확인",
+        "평가 점수": 67.8,
+        "평가 단위": "%"
+      }
+    },
+    {
+      "id": "olala-summary-ECTSum-Olala v1.0 summarise",
+      "model": "Olala v1.0 summarise",
+      "provider": "OVHai LLM",
+      "source_url": "https://huggingface.co/OVHaiLLM/Olala-v1.0-summarise/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "ECTSum / OVHai summarisation11",
+        "condition": "stemmedROUGE-LsumF1x100;seed42,max1000/test,12Kwords;Olala medium/T0.8/32K출력 vs경쟁greedy/no-think/4K;길이영향·계산비대칭",
+        "harness": "OVHai vLLM0.26 fork",
+        "평가 점수": 15.9,
+        "평가 단위": "ROUGE-Lsum F1 ×100"
+      }
+    },
+    {
+      "id": "olala-summary-ECTSum-Falcon H1-7B-Instruct",
+      "model": "Falcon H1-7B-Instruct",
+      "provider": "공식 비교대상",
+      "source_url": "https://huggingface.co/OVHaiLLM/Olala-v1.0-summarise/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "ECTSum / OVHai summarisation11",
+        "condition": "stemmedROUGE-LsumF1x100;seed42,max1000/test,12Kwords;Olala medium/T0.8/32K출력 vs경쟁greedy/no-think/4K;길이영향·계산비대칭",
+        "harness": "OVHai vLLM0.26 fork",
+        "평가 점수": 15.4,
+        "평가 단위": "ROUGE-Lsum F1 ×100"
+      }
+    },
+    {
+      "id": "olala-summary-ECTSum-Qwen3.5-4B",
+      "model": "Qwen3.5-4B",
+      "provider": "공식 비교대상",
+      "source_url": "https://huggingface.co/OVHaiLLM/Olala-v1.0-summarise/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "ECTSum / OVHai summarisation11",
+        "condition": "stemmedROUGE-LsumF1x100;seed42,max1000/test,12Kwords;Olala medium/T0.8/32K출력 vs경쟁greedy/no-think/4K;길이영향·계산비대칭",
+        "harness": "OVHai vLLM0.26 fork",
+        "평가 점수": 15.8,
+        "평가 단위": "ROUGE-Lsum F1 ×100"
+      }
+    },
+    {
+      "id": "olala-summary-XSum-Olala v1.0 summarise",
+      "model": "Olala v1.0 summarise",
+      "provider": "OVHai LLM",
+      "source_url": "https://huggingface.co/OVHaiLLM/Olala-v1.0-summarise/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "XSum / OVHai summarisation11",
+        "condition": "stemmedROUGE-LsumF1x100;seed42,max1000/test,12Kwords;Olala medium/T0.8/32K출력 vs경쟁greedy/no-think/4K;길이영향·계산비대칭",
+        "harness": "OVHai vLLM0.26 fork",
+        "평가 점수": 16.5,
+        "평가 단위": "ROUGE-Lsum F1 ×100"
+      }
+    },
+    {
+      "id": "olala-summary-XSum-Falcon H1-7B-Instruct",
+      "model": "Falcon H1-7B-Instruct",
+      "provider": "공식 비교대상",
+      "source_url": "https://huggingface.co/OVHaiLLM/Olala-v1.0-summarise/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "XSum / OVHai summarisation11",
+        "condition": "stemmedROUGE-LsumF1x100;seed42,max1000/test,12Kwords;Olala medium/T0.8/32K출력 vs경쟁greedy/no-think/4K;길이영향·계산비대칭",
+        "harness": "OVHai vLLM0.26 fork",
+        "평가 점수": 21.8,
+        "평가 단위": "ROUGE-Lsum F1 ×100"
+      }
+    },
+    {
+      "id": "olala-summary-XSum-Qwen3.5-4B",
+      "model": "Qwen3.5-4B",
+      "provider": "공식 비교대상",
+      "source_url": "https://huggingface.co/OVHaiLLM/Olala-v1.0-summarise/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "XSum / OVHai summarisation11",
+        "condition": "stemmedROUGE-LsumF1x100;seed42,max1000/test,12Kwords;Olala medium/T0.8/32K출력 vs경쟁greedy/no-think/4K;길이영향·계산비대칭",
+        "harness": "OVHai vLLM0.26 fork",
+        "평가 점수": 18.1,
+        "평가 단위": "ROUGE-Lsum F1 ×100"
+      }
+    },
+    {
+      "id": "olala-summary-ROUGE11 mean-Olala v1.0 summarise",
+      "model": "Olala v1.0 summarise",
+      "provider": "OVHai LLM",
+      "source_url": "https://huggingface.co/OVHaiLLM/Olala-v1.0-summarise/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "ROUGE11 mean / OVHai summarisation11",
+        "condition": "stemmedROUGE-LsumF1x100;seed42,max1000/test,12Kwords;Olala medium/T0.8/32K출력 vs경쟁greedy/no-think/4K;길이영향·계산비대칭",
+        "harness": "OVHai vLLM0.26 fork",
+        "평가 점수": 31.27,
+        "평가 단위": "ROUGE-Lsum F1 ×100"
+      }
+    },
+    {
+      "id": "olala-summary-ROUGE11 mean-Falcon H1-7B-Instruct",
+      "model": "Falcon H1-7B-Instruct",
+      "provider": "공식 비교대상",
+      "source_url": "https://huggingface.co/OVHaiLLM/Olala-v1.0-summarise/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "ROUGE11 mean / OVHai summarisation11",
+        "condition": "stemmedROUGE-LsumF1x100;seed42,max1000/test,12Kwords;Olala medium/T0.8/32K출력 vs경쟁greedy/no-think/4K;길이영향·계산비대칭",
+        "harness": "OVHai vLLM0.26 fork",
+        "평가 점수": 33.04,
+        "평가 단위": "ROUGE-Lsum F1 ×100"
+      }
+    },
+    {
+      "id": "olala-summary-ROUGE11 mean-Qwen3.5-4B",
+      "model": "Qwen3.5-4B",
+      "provider": "공식 비교대상",
+      "source_url": "https://huggingface.co/OVHaiLLM/Olala-v1.0-summarise/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "ROUGE11 mean / OVHai summarisation11",
+        "condition": "stemmedROUGE-LsumF1x100;seed42,max1000/test,12Kwords;Olala medium/T0.8/32K출력 vs경쟁greedy/no-think/4K;길이영향·계산비대칭",
+        "harness": "OVHai vLLM0.26 fork",
+        "평가 점수": 30.48,
+        "평가 단위": "ROUGE-Lsum F1 ×100"
+      }
+    },
+    {
+      "id": "olala-translate-WMT28 BLEU-Olala v1.0 translate",
+      "model": "Olala v1.0 translate",
+      "provider": "OVHai LLM",
+      "source_url": "https://huggingface.co/OVHaiLLM/Olala-v1.0-translate/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "WMT28 BLEU / OVHai November2026",
+        "condition": "공급자greedy;경쟁모델벤치별최상native/JSON/plainprompt. WMT28유럽언어방향;COMET28쌍뉴스+9금융영역;DOLFIN340 en-fr문서. 한국어검증아님",
+        "harness": "OVHai supplier evaluation; exact commit 미확인",
+        "평가 점수": 32.6,
+        "평가 단위": "BLEU"
+      }
+    },
+    {
+      "id": "olala-translate-WMT28 BLEU-Gemma4 E4B",
+      "model": "Gemma4 E4B",
+      "provider": "공식 비교대상",
+      "source_url": "https://huggingface.co/OVHaiLLM/Olala-v1.0-translate/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "WMT28 BLEU / OVHai November2026",
+        "condition": "공급자greedy;경쟁모델벤치별최상native/JSON/plainprompt. WMT28유럽언어방향;COMET28쌍뉴스+9금융영역;DOLFIN340 en-fr문서. 한국어검증아님",
+        "harness": "OVHai supplier evaluation; exact commit 미확인",
+        "평가 점수": 31.9,
+        "평가 단위": "BLEU"
+      }
+    },
+    {
+      "id": "olala-translate-WMT28 BLEU-Hy-MT2 7B",
+      "model": "Hy-MT2 7B",
+      "provider": "공식 비교대상",
+      "source_url": "https://huggingface.co/OVHaiLLM/Olala-v1.0-translate/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "WMT28 BLEU / OVHai November2026",
+        "condition": "공급자greedy;경쟁모델벤치별최상native/JSON/plainprompt. WMT28유럽언어방향;COMET28쌍뉴스+9금융영역;DOLFIN340 en-fr문서. 한국어검증아님",
+        "harness": "OVHai supplier evaluation; exact commit 미확인",
+        "평가 점수": 29.1,
+        "평가 단위": "BLEU"
+      }
+    },
+    {
+      "id": "olala-translate-WMT28 BLEU-Tower+2B",
+      "model": "Tower+2B",
+      "provider": "공식 비교대상",
+      "source_url": "https://huggingface.co/OVHaiLLM/Olala-v1.0-translate/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "WMT28 BLEU / OVHai November2026",
+        "condition": "공급자greedy;경쟁모델벤치별최상native/JSON/plainprompt. WMT28유럽언어방향;COMET28쌍뉴스+9금융영역;DOLFIN340 en-fr문서. 한국어검증아님",
+        "harness": "OVHai supplier evaluation; exact commit 미확인",
+        "평가 점수": 32.9,
+        "평가 단위": "BLEU"
+      }
+    },
+    {
+      "id": "olala-translate-NewsFinancial COMET22-Olala v1.0 translate",
+      "model": "Olala v1.0 translate",
+      "provider": "OVHai LLM",
+      "source_url": "https://huggingface.co/OVHaiLLM/Olala-v1.0-translate/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "NewsFinancial COMET22 / OVHai November2026",
+        "condition": "공급자greedy;경쟁모델벤치별최상native/JSON/plainprompt. WMT28유럽언어방향;COMET28쌍뉴스+9금융영역;DOLFIN340 en-fr문서. 한국어검증아님",
+        "harness": "OVHai supplier evaluation; exact commit 미확인",
+        "평가 점수": 88,
+        "평가 단위": "COMET-22 ×100"
+      }
+    },
+    {
+      "id": "olala-translate-NewsFinancial COMET22-Gemma4 E4B",
+      "model": "Gemma4 E4B",
+      "provider": "공식 비교대상",
+      "source_url": "https://huggingface.co/OVHaiLLM/Olala-v1.0-translate/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "NewsFinancial COMET22 / OVHai November2026",
+        "condition": "공급자greedy;경쟁모델벤치별최상native/JSON/plainprompt. WMT28유럽언어방향;COMET28쌍뉴스+9금융영역;DOLFIN340 en-fr문서. 한국어검증아님",
+        "harness": "OVHai supplier evaluation; exact commit 미확인",
+        "평가 점수": 87.4,
+        "평가 단위": "COMET-22 ×100"
+      }
+    },
+    {
+      "id": "olala-translate-NewsFinancial COMET22-Hy-MT2 7B",
+      "model": "Hy-MT2 7B",
+      "provider": "공식 비교대상",
+      "source_url": "https://huggingface.co/OVHaiLLM/Olala-v1.0-translate/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "NewsFinancial COMET22 / OVHai November2026",
+        "condition": "공급자greedy;경쟁모델벤치별최상native/JSON/plainprompt. WMT28유럽언어방향;COMET28쌍뉴스+9금융영역;DOLFIN340 en-fr문서. 한국어검증아님",
+        "harness": "OVHai supplier evaluation; exact commit 미확인",
+        "평가 점수": 86.2,
+        "평가 단위": "COMET-22 ×100"
+      }
+    },
+    {
+      "id": "olala-translate-NewsFinancial COMET22-Tower+2B",
+      "model": "Tower+2B",
+      "provider": "공식 비교대상",
+      "source_url": "https://huggingface.co/OVHaiLLM/Olala-v1.0-translate/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "NewsFinancial COMET22 / OVHai November2026",
+        "condition": "공급자greedy;경쟁모델벤치별최상native/JSON/plainprompt. WMT28유럽언어방향;COMET28쌍뉴스+9금융영역;DOLFIN340 en-fr문서. 한국어검증아님",
+        "harness": "OVHai supplier evaluation; exact commit 미확인",
+        "평가 점수": 87.5,
+        "평가 단위": "COMET-22 ×100"
+      }
+    },
+    {
+      "id": "olala-translate-DOLFIN en-fr BLEU-Olala v1.0 translate",
+      "model": "Olala v1.0 translate",
+      "provider": "OVHai LLM",
+      "source_url": "https://huggingface.co/OVHaiLLM/Olala-v1.0-translate/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "DOLFIN en-fr BLEU / OVHai November2026",
+        "condition": "공급자greedy;경쟁모델벤치별최상native/JSON/plainprompt. WMT28유럽언어방향;COMET28쌍뉴스+9금융영역;DOLFIN340 en-fr문서. 한국어검증아님",
+        "harness": "OVHai supplier evaluation; exact commit 미확인",
+        "평가 점수": 62.6,
+        "평가 단위": "BLEU"
+      }
+    },
+    {
+      "id": "olala-translate-DOLFIN en-fr BLEU-Gemma4 E4B",
+      "model": "Gemma4 E4B",
+      "provider": "공식 비교대상",
+      "source_url": "https://huggingface.co/OVHaiLLM/Olala-v1.0-translate/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "DOLFIN en-fr BLEU / OVHai November2026",
+        "condition": "공급자greedy;경쟁모델벤치별최상native/JSON/plainprompt. WMT28유럽언어방향;COMET28쌍뉴스+9금융영역;DOLFIN340 en-fr문서. 한국어검증아님",
+        "harness": "OVHai supplier evaluation; exact commit 미확인",
+        "평가 점수": 54,
+        "평가 단위": "BLEU"
+      }
+    },
+    {
+      "id": "olala-translate-DOLFIN en-fr BLEU-Hy-MT2 7B",
+      "model": "Hy-MT2 7B",
+      "provider": "공식 비교대상",
+      "source_url": "https://huggingface.co/OVHaiLLM/Olala-v1.0-translate/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "DOLFIN en-fr BLEU / OVHai November2026",
+        "condition": "공급자greedy;경쟁모델벤치별최상native/JSON/plainprompt. WMT28유럽언어방향;COMET28쌍뉴스+9금융영역;DOLFIN340 en-fr문서. 한국어검증아님",
+        "harness": "OVHai supplier evaluation; exact commit 미확인",
+        "평가 점수": 51.7,
+        "평가 단위": "BLEU"
+      }
+    },
+    {
+      "id": "olala-translate-DOLFIN en-fr BLEU-Tower+2B",
+      "model": "Tower+2B",
+      "provider": "공식 비교대상",
+      "source_url": "https://huggingface.co/OVHaiLLM/Olala-v1.0-translate/raw/main/README.md",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "DOLFIN en-fr BLEU / OVHai November2026",
+        "condition": "공급자greedy;경쟁모델벤치별최상native/JSON/plainprompt. WMT28유럽언어방향;COMET28쌍뉴스+9금융영역;DOLFIN340 en-fr문서. 한국어검증아님",
+        "harness": "OVHai supplier evaluation; exact commit 미확인",
+        "평가 점수": 50.8,
+        "평가 단위": "BLEU"
+      }
+    },
+    {
+      "id": "wemm-spec-2",
+      "model": "WeMM-Video-2B",
+      "provider": "Tencent WeChat Vision",
+      "source_url": "https://huggingface.co/api/models/tencent/WeMM-Video-2B",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "WeMM-Video family / November20 open collection",
+        "condition": "중/영시청각이해→텍스트;instruct/thinking;모델카드/공식파일확인,실행미검증;API정가미확인",
+        "status": "Apache2.0 가중치 / 제3자원조건별도",
+        "access": "자체실행 / patched runtime",
+        "전체 규모 B": 2,
+        "활성 규모 B": 2,
+        "35B 위치상한 tokens": "이번설정전수확인안함"
+      }
+    },
+    {
+      "id": "wemm-spec-4",
+      "model": "WeMM-Video-4B",
+      "provider": "Tencent WeChat Vision",
+      "source_url": "https://huggingface.co/api/models/tencent/WeMM-Video-4B",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "WeMM-Video family / November20 open collection",
+        "condition": "중/영시청각이해→텍스트;instruct/thinking;모델카드/공식파일확인,실행미검증;API정가미확인",
+        "status": "Apache2.0 가중치 / 제3자원조건별도",
+        "access": "자체실행 / patched runtime",
+        "전체 규모 B": 4,
+        "활성 규모 B": 4,
+        "35B 위치상한 tokens": "이번설정전수확인안함"
+      }
+    },
+    {
+      "id": "wemm-spec-9",
+      "model": "WeMM-Video-9B",
+      "provider": "Tencent WeChat Vision",
+      "source_url": "https://huggingface.co/api/models/tencent/WeMM-Video-9B",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "WeMM-Video family / November20 open collection",
+        "condition": "중/영시청각이해→텍스트;instruct/thinking;모델카드/공식파일확인,실행미검증;API정가미확인",
+        "status": "Apache2.0 가중치 / 제3자원조건별도",
+        "access": "자체실행 / patched runtime",
+        "전체 규모 B": 9,
+        "활성 규모 B": 9,
+        "35B 위치상한 tokens": "이번설정전수확인안함"
+      }
+    },
+    {
+      "id": "wemm-spec-35",
+      "model": "WeMM-Video-35B-A3B",
+      "provider": "Tencent WeChat Vision",
+      "source_url": "https://huggingface.co/api/models/tencent/WeMM-Video-35BA3B",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "WeMM-Video family / November20 open collection",
+        "condition": "중/영시청각이해→텍스트;instruct/thinking;모델카드/공식파일확인,실행미검증;API정가미확인",
+        "status": "Apache2.0 가중치 / 제3자원조건별도",
+        "access": "자체실행 / patched runtime",
+        "전체 규모 B": 35,
+        "활성 규모 B": 3,
+        "35B 위치상한 tokens": 262144
+      }
+    },
+    {
+      "id": "wemm-table1-Video-MME w/audio-WeMM-Video-35B-A3B Instruct",
+      "model": "WeMM-Video-35B-A3B Instruct",
+      "provider": "Tencent WeChat Vision",
+      "source_url": "https://arxiv.org/pdf/2611.26409",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Video-MME w/audio / WeMM paper Table1 November19",
+        "condition": "논문7쪽Table1;기존공식인용/자체측정혼합;Gemini/Seed medium;WeMM모드별;전체Harness커밋/미디어조건동일미확인",
+        "effort": "non-reasoning",
+        "harness": "Tencent WeMM paper; official-reported and own evaluations mixed",
+        "평가 점수": 84.2,
+        "평가 단위": "%",
+        "원문 쪽": 7
+      }
+    },
+    {
+      "id": "wemm-table1-Video-MME w/audio-WeMM-Video-35B-A3B Thinking",
+      "model": "WeMM-Video-35B-A3B Thinking",
+      "provider": "Tencent WeChat Vision",
+      "source_url": "https://arxiv.org/pdf/2611.26409",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Video-MME w/audio / WeMM paper Table1 November19",
+        "condition": "논문7쪽Table1;기존공식인용/자체측정혼합;Gemini/Seed medium;WeMM모드별;전체Harness커밋/미디어조건동일미확인",
+        "effort": "thinking",
+        "harness": "Tencent WeMM paper; official-reported and own evaluations mixed",
+        "평가 점수": 86.4,
+        "평가 단위": "%",
+        "원문 쪽": 7
+      }
+    },
+    {
+      "id": "wemm-table1-Video-MME w/audio-Seed2.0-Mini-0428",
+      "model": "Seed2.0-Mini-0428",
+      "provider": "공식 비교대상",
+      "source_url": "https://arxiv.org/pdf/2611.26409",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Video-MME w/audio / WeMM paper Table1 November19",
+        "condition": "논문7쪽Table1;기존공식인용/자체측정혼합;Gemini/Seed medium;WeMM모드별;전체Harness커밋/미디어조건동일미확인",
+        "effort": "모델별 원문 설정",
+        "harness": "Tencent WeMM paper; official-reported and own evaluations mixed",
+        "평가 점수": 83.6,
+        "평가 단위": "%",
+        "원문 쪽": 7
+      }
+    },
+    {
+      "id": "wemm-table1-Video-MME w/audio-Qwen3.5-Omni-Flash",
+      "model": "Qwen3.5-Omni-Flash",
+      "provider": "공식 비교대상",
+      "source_url": "https://arxiv.org/pdf/2611.26409",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Video-MME w/audio / WeMM paper Table1 November19",
+        "condition": "논문7쪽Table1;기존공식인용/자체측정혼합;Gemini/Seed medium;WeMM모드별;전체Harness커밋/미디어조건동일미확인",
+        "effort": "모델별 원문 설정",
+        "harness": "Tencent WeMM paper; official-reported and own evaluations mixed",
+        "평가 점수": 79.3,
+        "평가 단위": "%",
+        "원문 쪽": 7
+      }
+    },
+    {
+      "id": "wemm-table1-Video-MME w/audio-Gemini-3.0-Flash",
+      "model": "Gemini-3.0-Flash",
+      "provider": "공식 비교대상",
+      "source_url": "https://arxiv.org/pdf/2611.26409",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "Video-MME w/audio / WeMM paper Table1 November19",
+        "condition": "논문7쪽Table1;기존공식인용/자체측정혼합;Gemini/Seed medium;WeMM모드별;전체Harness커밋/미디어조건동일미확인",
+        "effort": "모델별 원문 설정",
+        "harness": "Tencent WeMM paper; official-reported and own evaluations mixed",
+        "평가 점수": 88.6,
+        "평가 단위": "%",
+        "원문 쪽": 7
+      }
+    },
+    {
+      "id": "wemm-table1-FutureOmni-WeMM-Video-35B-A3B Instruct",
+      "model": "WeMM-Video-35B-A3B Instruct",
+      "provider": "Tencent WeChat Vision",
+      "source_url": "https://arxiv.org/pdf/2611.26409",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "FutureOmni / WeMM paper Table1 November19",
+        "condition": "논문7쪽Table1;기존공식인용/자체측정혼합;Gemini/Seed medium;WeMM모드별;전체Harness커밋/미디어조건동일미확인",
+        "effort": "non-reasoning",
+        "harness": "Tencent WeMM paper; official-reported and own evaluations mixed",
+        "평가 점수": 58.4,
+        "평가 단위": "%",
+        "원문 쪽": 7
+      }
+    },
+    {
+      "id": "wemm-table1-FutureOmni-WeMM-Video-35B-A3B Thinking",
+      "model": "WeMM-Video-35B-A3B Thinking",
+      "provider": "Tencent WeChat Vision",
+      "source_url": "https://arxiv.org/pdf/2611.26409",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "FutureOmni / WeMM paper Table1 November19",
+        "condition": "논문7쪽Table1;기존공식인용/자체측정혼합;Gemini/Seed medium;WeMM모드별;전체Harness커밋/미디어조건동일미확인",
+        "effort": "thinking",
+        "harness": "Tencent WeMM paper; official-reported and own evaluations mixed",
+        "평가 점수": 56.2,
+        "평가 단위": "%",
+        "원문 쪽": 7
+      }
+    },
+    {
+      "id": "wemm-table1-FutureOmni-Seed2.0-Mini-0428",
+      "model": "Seed2.0-Mini-0428",
+      "provider": "공식 비교대상",
+      "source_url": "https://arxiv.org/pdf/2611.26409",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "FutureOmni / WeMM paper Table1 November19",
+        "condition": "논문7쪽Table1;기존공식인용/자체측정혼합;Gemini/Seed medium;WeMM모드별;전체Harness커밋/미디어조건동일미확인",
+        "effort": "모델별 원문 설정",
+        "harness": "Tencent WeMM paper; official-reported and own evaluations mixed",
+        "평가 점수": 52.2,
+        "평가 단위": "%",
+        "원문 쪽": 7
+      }
+    },
+    {
+      "id": "wemm-table1-FutureOmni-Qwen3.5-Omni-Flash",
+      "model": "Qwen3.5-Omni-Flash",
+      "provider": "공식 비교대상",
+      "source_url": "https://arxiv.org/pdf/2611.26409",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "FutureOmni / WeMM paper Table1 November19",
+        "condition": "논문7쪽Table1;기존공식인용/자체측정혼합;Gemini/Seed medium;WeMM모드별;전체Harness커밋/미디어조건동일미확인",
+        "effort": "모델별 원문 설정",
+        "harness": "Tencent WeMM paper; official-reported and own evaluations mixed",
+        "평가 점수": 55.4,
+        "평가 단위": "%",
+        "원문 쪽": 7
+      }
+    },
+    {
+      "id": "wemm-table1-FutureOmni-Gemini-3.0-Flash",
+      "model": "Gemini-3.0-Flash",
+      "provider": "공식 비교대상",
+      "source_url": "https://arxiv.org/pdf/2611.26409",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "FutureOmni / WeMM paper Table1 November19",
+        "condition": "논문7쪽Table1;기존공식인용/자체측정혼합;Gemini/Seed medium;WeMM모드별;전체Harness커밋/미디어조건동일미확인",
+        "effort": "모델별 원문 설정",
+        "harness": "Tencent WeMM paper; official-reported and own evaluations mixed",
+        "평가 점수": 65.3,
+        "평가 단위": "%",
+        "원문 쪽": 7
+      }
+    },
+    {
+      "id": "wemm-table1-JointAVBench-WeMM-Video-35B-A3B Instruct",
+      "model": "WeMM-Video-35B-A3B Instruct",
+      "provider": "Tencent WeChat Vision",
+      "source_url": "https://arxiv.org/pdf/2611.26409",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "JointAVBench / WeMM paper Table1 November19",
+        "condition": "논문7쪽Table1;기존공식인용/자체측정혼합;Gemini/Seed medium;WeMM모드별;전체Harness커밋/미디어조건동일미확인",
+        "effort": "non-reasoning",
+        "harness": "Tencent WeMM paper; official-reported and own evaluations mixed",
+        "평가 점수": 67.4,
+        "평가 단위": "%",
+        "원문 쪽": 7
+      }
+    },
+    {
+      "id": "wemm-table1-JointAVBench-WeMM-Video-35B-A3B Thinking",
+      "model": "WeMM-Video-35B-A3B Thinking",
+      "provider": "Tencent WeChat Vision",
+      "source_url": "https://arxiv.org/pdf/2611.26409",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "JointAVBench / WeMM paper Table1 November19",
+        "condition": "논문7쪽Table1;기존공식인용/자체측정혼합;Gemini/Seed medium;WeMM모드별;전체Harness커밋/미디어조건동일미확인",
+        "effort": "thinking",
+        "harness": "Tencent WeMM paper; official-reported and own evaluations mixed",
+        "평가 점수": 65.9,
+        "평가 단위": "%",
+        "원문 쪽": 7
+      }
+    },
+    {
+      "id": "wemm-table1-JointAVBench-Seed2.0-Mini-0428",
+      "model": "Seed2.0-Mini-0428",
+      "provider": "공식 비교대상",
+      "source_url": "https://arxiv.org/pdf/2611.26409",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "JointAVBench / WeMM paper Table1 November19",
+        "condition": "논문7쪽Table1;기존공식인용/자체측정혼합;Gemini/Seed medium;WeMM모드별;전체Harness커밋/미디어조건동일미확인",
+        "effort": "모델별 원문 설정",
+        "harness": "Tencent WeMM paper; official-reported and own evaluations mixed",
+        "평가 점수": 64.7,
+        "평가 단위": "%",
+        "원문 쪽": 7
+      }
+    },
+    {
+      "id": "wemm-table1-JointAVBench-Qwen3.5-Omni-Flash",
+      "model": "Qwen3.5-Omni-Flash",
+      "provider": "공식 비교대상",
+      "source_url": "https://arxiv.org/pdf/2611.26409",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "JointAVBench / WeMM paper Table1 November19",
+        "condition": "논문7쪽Table1;기존공식인용/자체측정혼합;Gemini/Seed medium;WeMM모드별;전체Harness커밋/미디어조건동일미확인",
+        "effort": "모델별 원문 설정",
+        "harness": "Tencent WeMM paper; official-reported and own evaluations mixed",
+        "평가 점수": 69,
+        "평가 단위": "%",
+        "원문 쪽": 7
+      }
+    },
+    {
+      "id": "wemm-table1-JointAVBench-Gemini-3.0-Flash",
+      "model": "Gemini-3.0-Flash",
+      "provider": "공식 비교대상",
+      "source_url": "https://arxiv.org/pdf/2611.26409",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "JointAVBench / WeMM paper Table1 November19",
+        "condition": "논문7쪽Table1;기존공식인용/자체측정혼합;Gemini/Seed medium;WeMM모드별;전체Harness커밋/미디어조건동일미확인",
+        "effort": "모델별 원문 설정",
+        "harness": "Tencent WeMM paper; official-reported and own evaluations mixed",
+        "평가 점수": 68.4,
+        "평가 단위": "%",
+        "원문 쪽": 7
+      }
+    },
+    {
+      "id": "wemm-table1-video-SALMONN2-WeMM-Video-35B-A3B Instruct",
+      "model": "WeMM-Video-35B-A3B Instruct",
+      "provider": "Tencent WeChat Vision",
+      "source_url": "https://arxiv.org/pdf/2611.26409",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "video-SALMONN2 / WeMM paper Table1 November19",
+        "condition": "논문7쪽Table1;기존공식인용/자체측정혼합;Gemini/Seed medium;WeMM모드별;전체Harness커밋/미디어조건동일미확인",
+        "effort": "non-reasoning",
+        "harness": "Tencent WeMM paper; official-reported and own evaluations mixed",
+        "평가 점수": 27.5,
+        "평가 단위": "total error rate % ·낮을수록좋음",
+        "원문 쪽": 7
+      }
+    },
+    {
+      "id": "wemm-table1-video-SALMONN2-WeMM-Video-35B-A3B Thinking",
+      "model": "WeMM-Video-35B-A3B Thinking",
+      "provider": "Tencent WeChat Vision",
+      "source_url": "https://arxiv.org/pdf/2611.26409",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "video-SALMONN2 / WeMM paper Table1 November19",
+        "condition": "논문7쪽Table1;기존공식인용/자체측정혼합;Gemini/Seed medium;WeMM모드별;전체Harness커밋/미디어조건동일미확인",
+        "effort": "thinking",
+        "harness": "Tencent WeMM paper; official-reported and own evaluations mixed",
+        "평가 점수": 28.3,
+        "평가 단위": "total error rate % ·낮을수록좋음",
+        "원문 쪽": 7
+      }
+    },
+    {
+      "id": "wemm-table1-video-SALMONN2-Seed2.0-Mini-0428",
+      "model": "Seed2.0-Mini-0428",
+      "provider": "공식 비교대상",
+      "source_url": "https://arxiv.org/pdf/2611.26409",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "video-SALMONN2 / WeMM paper Table1 November19",
+        "condition": "논문7쪽Table1;기존공식인용/자체측정혼합;Gemini/Seed medium;WeMM모드별;전체Harness커밋/미디어조건동일미확인",
+        "effort": "모델별 원문 설정",
+        "harness": "Tencent WeMM paper; official-reported and own evaluations mixed",
+        "평가 점수": 32.7,
+        "평가 단위": "total error rate % ·낮을수록좋음",
+        "원문 쪽": 7
+      }
+    },
+    {
+      "id": "wemm-table1-video-SALMONN2-Qwen3.5-Omni-Flash",
+      "model": "Qwen3.5-Omni-Flash",
+      "provider": "공식 비교대상",
+      "source_url": "https://arxiv.org/pdf/2611.26409",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "video-SALMONN2 / WeMM paper Table1 November19",
+        "condition": "논문7쪽Table1;기존공식인용/자체측정혼합;Gemini/Seed medium;WeMM모드별;전체Harness커밋/미디어조건동일미확인",
+        "effort": "모델별 원문 설정",
+        "harness": "Tencent WeMM paper; official-reported and own evaluations mixed",
+        "평가 점수": 28,
+        "평가 단위": "total error rate % ·낮을수록좋음",
+        "원문 쪽": 7
+      }
+    },
+    {
+      "id": "wemm-table1-video-SALMONN2-Gemini-3.0-Flash",
+      "model": "Gemini-3.0-Flash",
+      "provider": "공식 비교대상",
+      "source_url": "https://arxiv.org/pdf/2611.26409",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "video-SALMONN2 / WeMM paper Table1 November19",
+        "condition": "논문7쪽Table1;기존공식인용/자체측정혼합;Gemini/Seed medium;WeMM모드별;전체Harness커밋/미디어조건동일미확인",
+        "effort": "모델별 원문 설정",
+        "harness": "Tencent WeMM paper; official-reported and own evaluations mixed",
+        "평가 점수": 37.7,
+        "평가 단위": "total error rate % ·낮을수록좋음",
+        "원문 쪽": 7
+      }
+    }
+  ]
+}

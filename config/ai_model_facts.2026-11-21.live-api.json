@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "id": "gpt-live11-api-spec",
+      "model": "GPT-Live-1.1 API",
+      "provider": "OpenAI",
+      "source_url": "https://developers.openai.com/api/docs/models/gpt-live-1.1",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 사양",
+        "suite": "GPT-Live1.1 API / November19",
+        "condition": "앱10월15일과API11월19일출시구분;Liveendpoint;한국어/실계정호출미검증",
+        "status": "공식 API 제공",
+        "access": "OpenAI Live API",
+        "모델 ID": "gpt-live-1.1",
+        "매체": "텍스트·음성입출력;이미지/영상없음",
+        "백엔드": "Responses또는client위임;별도비용",
+        "구조화출력/미세조정": "미지원"
+      }
+    },
+    {
+      "id": "live-duration-GPT-Live-1.1 API",
+      "model": "GPT-Live-1.1 API",
+      "provider": "OpenAI",
+      "source_url": "https://developers.openai.com/api/docs/pricing",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Live duration active / WebRTC standby",
+        "condition": "USD/분·초단위과금;standby는WebRTC추론일시정지동안만;백엔드모델·도구별도",
+        "활성 음성 USD / 분": 0.05,
+        "대기 음성 USD / 분": 0.02
+      }
+    },
+    {
+      "id": "live-duration-GPT-Live-1 API",
+      "model": "GPT-Live-1 API",
+      "provider": "OpenAI",
+      "source_url": "https://developers.openai.com/api/docs/pricing",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 요금",
+        "suite": "Live duration active / WebRTC standby",
+        "condition": "USD/분·초단위과금;standby는WebRTC추론일시정지동안만;백엔드모델·도구별도",
+        "활성 음성 USD / 분": 0.05,
+        "대기 음성 USD / 분": 0.02
+      }
+    },
+    {
+      "id": "live-synthetic-gore-GPT-Live-1 API",
+      "model": "GPT-Live-1 API",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OpenAI API synthetic voice safety / November19 / gore",
+        "condition": "0~1 higher better;정책경계합성음성;실제트래픽발생률/한국어WER아님;앱모델과구분",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "평가 점수": 0.74,
+        "평가 단위": "0–1 점수, 높을수록 좋음"
+      }
+    },
+    {
+      "id": "live-synthetic-gore-GPT-Live-1.1 API",
+      "model": "GPT-Live-1.1 API",
+      "provider": "OpenAI",
+      "source_url": "https://deploymentsafety.openai.com/gpt-live-1-1",
+      "checked_on": "2026-11-21",
+      "fields": {
+        "kind": "공식 평가",
+        "suite": "OpenAI API synthetic voice safety / November19 / gore",
+        "condition": "0~1 higher better;정책경계합성음성;실제트래픽발생률/한국어WER아님;앱모델과구분",
+        "harness": "OpenAI 자체 음성 안전성 평가; 커밋 미명시",
+        "평가 점수": 0.85,
+        "평가 단위": "0–1 점수, 높을수록 좋음"
+      }
+    }
+  ]
+}

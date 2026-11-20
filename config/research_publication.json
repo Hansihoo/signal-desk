@@ -111,7 +111,12 @@
     "microsoft-decision-1-model-guide",
     "sensenova-loop-9b-preview-model-guide",
     "maxwell-v1-0-flash-model-guide",
-    "gemini-4-neon-model-guide"
+    "gemini-4-neon-model-guide",
+    "tencent-hy4-model-guide",
+    "olala-v1-mini-model-guide",
+    "olala-v1-summarise-model-guide",
+    "olala-v1-translate-model-guide",
+    "tencent-wemm-video-model-guide"
   ],
   "batches": [
     {
@@ -598,6 +603,21 @@
       "id": "ai-model-guides-2026-11-20-access",
       "input": "ai_model_guides.2026-11-20.access.json",
       "quality": "ai_model_guides.2026-11-20.access.quality.json"
+    },
+    {
+      "id": "ai-model-guides-2026-11-21",
+      "input": "ai_model_guides.2026-11-21.json",
+      "quality": "ai_model_guides.2026-11-21.quality.json"
+    },
+    {
+      "id": "ai-model-guides-2026-11-21-edit",
+      "input": "ai_model_guides.2026-11-21.edit.json",
+      "quality": "ai_model_guides.2026-11-21.edit.quality.json"
+    },
+    {
+      "id": "ai-model-guides-2026-11-21-live-api",
+      "input": "ai_model_guides.2026-11-21.live-api.json",
+      "quality": "ai_model_guides.2026-11-21.live-api.quality.json"
     }
   ]
 }

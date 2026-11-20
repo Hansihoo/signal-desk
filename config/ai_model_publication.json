@@ -232,6 +232,14 @@
     {
       "id": "ai-model-facts-2026-11-20-access",
       "path": "ai_model_facts.2026-11-20.access.json"
+    },
+    {
+      "id": "ai-model-facts-2026-11-21",
+      "path": "ai_model_facts.2026-11-21.json"
+    },
+    {
+      "id": "ai-model-facts-2026-11-21-live-api",
+      "path": "ai_model_facts.2026-11-21.live-api.json"
     }
   ]
 }
